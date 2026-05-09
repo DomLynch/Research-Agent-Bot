@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w",
+  "doi": "10.1177/0148607114567199",
+  "extracted_at": "2026-05-08T20:10:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-u-536",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 536,
+      "sentence": "METHODS: In 33 septic or cardiogenic shock patients receiving EN, plasma amino acid concentrations were measured during 5 days.",
+      "context_window": "g EN, plasma amino acid concentrations were measured during 5 days. Changes in amino acid concentrations, correlations with cl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-pct-833",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 833,
+      "sentence": "In contrast, taurine decreased by >50%, from 47.6 \u00b5mol/L on admission to 20.0 \u00b5mol/L at day 1, and remained low at day 5.",
+      "context_window": "l amino acids increased. In contrast, taurine decreased by >50%, from 47.6 \u00b5mol/L on admission to 20.0 \u00b5mol/L at day 1, and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "47.6 \u00b5mol",
+      "numeric_values": [
+        47.6
+      ],
+      "units": "\u00b5mol",
+      "source_section": "abstract",
+      "source_offset": 843,
+      "sentence": "In contrast, taurine decreased by >50%, from 47.6 \u00b5mol/L on admission to 20.0 \u00b5mol/L at day 1, and remained low at day 5.",
+      "context_window": "ids increased. In contrast, taurine decreased by >50%, from 47.6 \u00b5mol/L on admission to 20.0 \u00b5mol/L at day 1, and remained low at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-u-871",
+      "claim_type": "unit_value",
+      "raw_text": "20.0 \u00b5mol",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "abstract",
+      "source_offset": 871,
+      "sentence": "In contrast, taurine decreased by >50%, from 47.6 \u00b5mol/L on admission to 20.0 \u00b5mol/L at day 1, and remained low at day 5.",
+      "context_window": "taurine decreased by >50%, from 47.6 \u00b5mol/L on admission to 20.0 \u00b5mol/L at day 1, and remained low at day 5. Taurine (admission)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-p-999",
+      "claim_type": "p_value",
+      "raw_text": "P = .015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "Taurine (admission) correlated with time on mechanical ventilation (R = -0.42, P = .015).",
+      "context_window": "correlated with time on mechanical ventilation (R = -0.42, P = .015). Taurine decrease within 24 hours correlated with Acute Ph",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-p-1140",
+      "claim_type": "p_value",
+      "raw_text": "P = .017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1140,
+      "sentence": "Taurine decrease within 24 hours correlated with Acute Physiology and Chronic Health Evaluation II predicted mortality (R = 0.43, P = .017) and Sequential Organ Failure Assessment score (R = 0.36, P = .05).",
+      "context_window": "Chronic Health Evaluation II predicted mortality (R = 0.43, P = .017) and Sequential Organ Failure Assessment score (R = 0.36, P",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_0148607114567199_taurine_concentrations_decrease_in_critically_ill_patients_w-p-1207",
+      "claim_type": "p_value",
+      "raw_text": "P = .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1207,
+      "sentence": "Taurine decrease within 24 hours correlated with Acute Physiology and Chronic Health Evaluation II predicted mortality (R = 0.43, P = .017) and Sequential Organ Failure Assessment score (R = 0.36, P = .05).",
+      "context_window": "7) and Sequential Organ Failure Assessment score (R = 0.36, P = .05). Regression analyses confirmed correlations. CONCLUSIONS:",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

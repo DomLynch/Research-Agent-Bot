@@ -1,0 +1,1450 @@
+{
+  "paper_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi",
+  "doi": "10.1007/s11325-026-03614-1",
+  "extracted_at": "2026-05-08T20:06:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 39,
+    "sample_size": 3,
+    "mean_sd": 10,
+    "unit_value": 13,
+    "p_value": 12,
+    "hazard_ratio": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-716",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 716,
+      "sentence": "The lowest REM quartile corresponded to 8.7% of TST.",
+      "context_window": ".7-year follow-up. The lowest REM quartile corresponded to 8.7% of TST. Participants with reduced REM sleep ( n = 86) were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-n-767",
+      "claim_type": "sample_size",
+      "raw_text": "n = 86",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 767,
+      "sentence": "Participants with reduced REM sleep ( n = 86) were older (66.0 \u00b1 8.1 vs.",
+      "context_window": "onded to 8.7% of TST. Participants with reduced REM sleep ( n = 86) were older (66.0 \u00b1 8.1 vs. 63.0 \u00b1 8.0 years; p = 0.035), h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-787",
+      "claim_type": "mean_sd",
+      "raw_text": "66.0 \u00b1 8.1",
+      "numeric_values": [
+        66.0,
+        8.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 787,
+      "sentence": "Participants with reduced REM sleep ( n = 86) were older (66.0 \u00b1 8.1 vs.",
+      "context_window": ". Participants with reduced REM sleep ( n = 86) were older (66.0 \u00b1 8.1 vs. 63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-802",
+      "claim_type": "mean_sd",
+      "raw_text": "63.0 \u00b1 8.0",
+      "numeric_values": [
+        63.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 802,
+      "sentence": "63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs.",
+      "context_window": "with reduced REM sleep ( n = 86) were older (66.0 \u00b1 8.1 vs. 63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-809",
+      "claim_type": "unit_value",
+      "raw_text": "8.0 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 809,
+      "sentence": "63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs.",
+      "context_window": "duced REM sleep ( n = 86) were older (66.0 \u00b1 8.1 vs. 63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-820",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 820,
+      "sentence": "63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs.",
+      "context_window": "leep ( n = 86) were older (66.0 \u00b1 8.1 vs. 63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.01",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-848",
+      "claim_type": "mean_sd",
+      "raw_text": "29.8 \u00b1 4.6",
+      "numeric_values": [
+        29.8,
+        4.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 848,
+      "sentence": "63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs.",
+      "context_window": "6.0 \u00b1 8.1 vs. 63.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-863",
+      "claim_type": "mean_sd",
+      "raw_text": "28.7 \u00b1 3.8",
+      "numeric_values": [
+        28.7,
+        3.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 863,
+      "sentence": "28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs.",
+      "context_window": "3.0 \u00b1 8.0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs. 497 \u00b1 69 min;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-870",
+      "claim_type": "unit_value",
+      "raw_text": "3.8 kg",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 870,
+      "sentence": "28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs.",
+      "context_window": ".0 years; p = 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs. 497 \u00b1 69 min; p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-881",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 881,
+      "sentence": "28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs.",
+      "context_window": "= 0.035), had higher BMI (29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs. 497 \u00b1 69 min; p < 0.001), less",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-906",
+      "claim_type": "mean_sd",
+      "raw_text": "369 \u00b1 77",
+      "numeric_values": [
+        369.0,
+        77.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 906,
+      "sentence": "28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs.",
+      "context_window": "(29.8 \u00b1 4.6 vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs. 497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-919",
+      "claim_type": "mean_sd",
+      "raw_text": "497 \u00b1 69",
+      "numeric_values": [
+        497.0,
+        69.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 919,
+      "sentence": "497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs.",
+      "context_window": "vs. 28.7 \u00b1 3.8 kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs. 497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-933",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs.",
+      "context_window": "kg/m\u00b2; p = 0.010), shorter TST (369 \u00b1 77 vs. 497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-967",
+      "claim_type": "mean_sd",
+      "raw_text": "5.2 \u00b1 7.0",
+      "numeric_values": [
+        5.2,
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 967,
+      "sentence": "497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs.",
+      "context_window": "69 \u00b1 77 vs. 497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-973",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 973,
+      "sentence": "497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs.",
+      "context_window": "7 vs. 497 \u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-982",
+      "claim_type": "mean_sd",
+      "raw_text": "8.1 \u00b1 10.0",
+      "numeric_values": [
+        8.1,
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 982,
+      "sentence": "8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs.",
+      "context_window": "\u00b1 69 min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs. 35.6 \u00b1 20.1 e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-988",
+      "claim_type": "percentage",
+      "raw_text": "10.0%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 988,
+      "sentence": "8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs.",
+      "context_window": "min; p < 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs. 35.6 \u00b1 20.1 ev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-995",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs.",
+      "context_window": "< 0.001), less slow-wave sleep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs. 35.6 \u00b1 20.1 events/h; p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-1023",
+      "claim_type": "mean_sd",
+      "raw_text": "54.4 \u00b1 26.3",
+      "numeric_values": [
+        54.4,
+        26.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1023,
+      "sentence": "8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs.",
+      "context_window": "ep (5.2 \u00b1 7.0% vs. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs. 35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-msd-1039",
+      "claim_type": "mean_sd",
+      "raw_text": "35.6 \u00b1 20.1",
+      "numeric_values": [
+        35.6,
+        20.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1039,
+      "sentence": "35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270).",
+      "context_window": "s. 8.1 \u00b1 10.0%; p = 0.007), and higher AHI (54.4 \u00b1 26.3 vs. 35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-1061",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270).",
+      "context_window": "007), and higher AHI (54.4 \u00b1 26.3 vs. 35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270). Mortality was 12.8%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1094",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1094,
+      "sentence": "35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270).",
+      "context_window": "vs. 35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270). Mortality was 12.8% in the reduced REM group ve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-n-1101",
+      "claim_type": "sample_size",
+      "raw_text": "n = 270",
+      "numeric_values": [
+        270.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1101,
+      "sentence": "35.6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270).",
+      "context_window": ".6 \u00b1 20.1 events/h; p < 0.001) than those with REM \u2265 8.7% ( n = 270). Mortality was 12.8% in the reduced REM group versus 4.4%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "12.8%",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1125,
+      "sentence": "Mortality was 12.8% in the reduced REM group versus 4.4% in the higher REM group ( p = 0.006).",
+      "context_window": "0.001) than those with REM \u2265 8.7% ( n = 270). Mortality was 12.8% in the reduced REM group versus 4.4% in the higher REM grou",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1163",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "Mortality was 12.8% in the reduced REM group versus 4.4% in the higher REM group ( p = 0.006).",
+      "context_window": "= 270). Mortality was 12.8% in the reduced REM group versus 4.4% in the higher REM group ( p = 0.006). Reduced REM sleep ind",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-1194",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1194,
+      "sentence": "Mortality was 12.8% in the reduced REM group versus 4.4% in the higher REM group ( p = 0.006).",
+      "context_window": "the reduced REM group versus 4.4% in the higher REM group ( p = 0.006). Reduced REM sleep independently predicted mortality (haza",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-hr-l-1259",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 2.39",
+      "numeric_values": [
+        2.39
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1259,
+      "sentence": "Reduced REM sleep independently predicted mortality (hazard ratio 2.39; 95% CI 1.03-5.56; p = 0.043) after adjustment for age, sex, BMI, and CPAP allocation.",
+      "context_window": ".006). Reduced REM sleep independently predicted mortality (hazard ratio 2.39; 95% CI 1.03-5.56; p = 0.043) after adjustment for age, sex",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-ci-1278",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.03-5.56",
+      "numeric_values": [
+        1.03,
+        5.56
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1278,
+      "sentence": "Reduced REM sleep independently predicted mortality (hazard ratio 2.39; 95% CI 1.03-5.56; p = 0.043) after adjustment for age, sex, BMI, and CPAP allocation.",
+      "context_window": "sleep independently predicted mortality (hazard ratio 2.39; 95% CI 1.03-5.56; p = 0.043) after adjustment for age, sex, BMI, and CPAP al",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-1296",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "Reduced REM sleep independently predicted mortality (hazard ratio 2.39; 95% CI 1.03-5.56; p = 0.043) after adjustment for age, sex, BMI, and CPAP allocation.",
+      "context_window": "y predicted mortality (hazard ratio 2.39; 95% CI 1.03-5.56; p = 0.043) after adjustment for age, sex, BMI, and CPAP allocation. F",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-n-1829",
+      "claim_type": "sample_size",
+      "raw_text": "n = 356",
+      "numeric_values": [
+        356.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1829,
+      "sentence": "Patients with a total sleep time (TST) of at least 240 min on the PSG ( n = 356) were included in the current analysis (Fig.",
+      "context_window": "h a total sleep time (TST) of at least 240 min on the PSG ( n = 356) were included in the current analysis (Fig. 1 ). Flow of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-2464",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2464,
+      "sentence": "The lowest quartile of REM sleep percentage (< 8.7%) defined the reduced REM group, while the remaining participants constituted the higher REM group.",
+      "context_window": "ze patients. The lowest quartile of REM sleep percentage (< 8.7%) defined the reduced REM group, while the remaining partici",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-2628",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2628,
+      "sentence": "Follow-up continued for up to eight years, with a median of 4.7 years, during which all-cause mortality was recorded.",
+      "context_window": "Follow-up continued for up to eight years, with a median of 4.7 years, during which all-cause mortality was recorded. Follow-up",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-3711",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3711,
+      "sentence": "Apneas were defined as an almost complete (\u2265 90%) cessation of airflow.",
+      "context_window": "e sleep study. Apneas were defined as an almost complete (\u2265 90%) cessation of airflow. Hypopneas were de-fined as a \u2265 50% r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-3769",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3769,
+      "sentence": "Hypopneas were de-fined as a \u2265 50% reduction in thoracoabdominal movement and/or a \u2265 50% decrease in the nasal pressure amplitude for \u2265 10 s according to the Chicago criteria [ 12 , 13 ].",
+      "context_window": "\u2265 90%) cessation of airflow. Hypopneas were de-fined as a \u2265 50% reduction in thoracoabdominal movement and/or a \u2265 50% decre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-3823",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3823,
+      "sentence": "Hypopneas were de-fined as a \u2265 50% reduction in thoracoabdominal movement and/or a \u2265 50% decrease in the nasal pressure amplitude for \u2265 10 s according to the Chicago criteria [ 12 , 13 ].",
+      "context_window": "s a \u2265 50% reduction in thoracoabdominal movement and/or a \u2265 50% decrease in the nasal pressure amplitude for \u2265 10 s accordi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-4014",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4014,
+      "sentence": "In addition, the total number of significant oxyhemoglobin desaturations (decrease of \u2265 4% from the immediately preceding baseline) were scored, and the oxygen desaturation index (ODI) was calculated as the number of significant desaturations per hour of estimated sleep.",
+      "context_window": "r of significant oxyhemoglobin desaturations (decrease of \u2265 4% from the immediately preceding baseline) were scored, and t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-4214",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4214,
+      "sentence": "Events with a \u2265 30% reduction in thoracoabdominal movement and/or a \u2265 30% de-crease in the nasal pressure amplitude for \u2265 10 s were also scored as hypopneas if there was a significant desaturation (\u2265 4%).",
+      "context_window": "desaturations per hour of estimated sleep. Events with a \u2265 30% reduction in thoracoabdominal movement and/or a \u2265 30% de-cr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-4268",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4268,
+      "sentence": "Events with a \u2265 30% reduction in thoracoabdominal movement and/or a \u2265 30% de-crease in the nasal pressure amplitude for \u2265 10 s were also scored as hypopneas if there was a significant desaturation (\u2265 4%).",
+      "context_window": "h a \u2265 30% reduction in thoracoabdominal movement and/or a \u2265 30% de-crease in the nasal pressure amplitude for \u2265 10 s were a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-4398",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4398,
+      "sentence": "Events with a \u2265 30% reduction in thoracoabdominal movement and/or a \u2265 30% de-crease in the nasal pressure amplitude for \u2265 10 s were also scored as hypopneas if there was a significant desaturation (\u2265 4%).",
+      "context_window": "red as hypopneas if there was a significant desaturation (\u2265 4%). Patients with AHI \u2265 15 per hour of estimated sleep time,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-5463",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 5463,
+      "sentence": "OSA patients receiving CPAP treatment brought their device to the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and hours of CPAP use were obtained from the machines\u2019 internal clocks and recorded.",
+      "context_window": "device to the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years)",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-5472",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5472,
+      "sentence": "OSA patients receiving CPAP treatment brought their device to the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and hours of CPAP use were obtained from the machines\u2019 internal clocks and recorded.",
+      "context_window": "o the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitori",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-5482",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5482,
+      "sentence": "OSA patients receiving CPAP treatment brought their device to the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and hours of CPAP use were obtained from the machines\u2019 internal clocks and recorded.",
+      "context_window": "ic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring setting",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-5492",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5492,
+      "sentence": "OSA patients receiving CPAP treatment brought their device to the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and hours of CPAP use were obtained from the machines\u2019 internal clocks and recorded.",
+      "context_window": "scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and ho",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-5522",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5522,
+      "sentence": "OSA patients receiving CPAP treatment brought their device to the clinic at each scheduled follow-up visit (at 1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and hours of CPAP use were obtained from the machines\u2019 internal clocks and recorded.",
+      "context_window": "1 month, 3 months, 6 months, 1 year, and then yearly up to 6 years); monitoring settings and hours of CPAP use were obtained f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-5715",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5715,
+      "sentence": "In total, 9 follow-up visits were scheduled with a minimum of 5 visits (up to 2 years).",
+      "context_window": "-up visits were scheduled with a minimum of 5 visits (up to 2 years). CPAP use was evaluated as average usage hours per night a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-8915",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8915,
+      "sentence": "A p < 0.05 (two-sided) was considered statistically significant for all analyses.",
+      "context_window": "ces, and significance was tested using the log-rank test. A p < 0.05 (two-sided) was considered statistically significant for al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-58",
+      "claim_type": "unit_value",
+      "raw_text": "57.0 months",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 58,
+      "sentence": "Median follow-up to the mortality or the end of study was 57.0 months (43.0-72.0 months).",
+      "context_window": "Median follow-up to the mortality or the end of study was 57.0 months (43.0-72.0 months). The lowest quartile of REM sleep was 8.",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-76",
+      "claim_type": "unit_value",
+      "raw_text": "72.0 months",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 76,
+      "sentence": "Median follow-up to the mortality or the end of study was 57.0 months (43.0-72.0 months).",
+      "context_window": "to the mortality or the end of study was 57.0 months (43.0-72.0 months). The lowest quartile of REM sleep was 8.7% of the TST in t",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-127",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 127,
+      "sentence": "The lowest quartile of REM sleep was 8.7% of the TST in the entire cohort.",
+      "context_window": "hs (43.0-72.0 months). The lowest quartile of REM sleep was 8.7% of the TST in the entire cohort. As shown in Table 1 , part",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-217",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 217,
+      "sentence": "As shown in Table 1 , participants with REM sleep < 8.7% were slightly older and had a higher body mass index (BMI) compared to those with REM sleep \u2265 8.7%.",
+      "context_window": "cohort. As shown in Table 1 , participants with REM sleep < 8.7% were slightly older and had a higher body mass index (BMI)",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-316",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 316,
+      "sentence": "As shown in Table 1 , participants with REM sleep < 8.7% were slightly older and had a higher body mass index (BMI) compared to those with REM sleep \u2265 8.7%.",
+      "context_window": "er body mass index (BMI) compared to those with REM sleep \u2265 8.7%. Obesity (BMI \u2265 30) was significantly more common in the gr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-468",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 468,
+      "sentence": "Moreover, a higher proportion of participants with REM sleep < 8.7% underwent coronary artery bypass grafting (CABG) at baseline and had a history of atrial fibrillation.",
+      "context_window": "eover, a higher proportion of participants with REM sleep < 8.7% underwent coronary artery bypass grafting (CABG) at baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-917",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 917,
+      "sentence": "Comparison of clinical and demographic characteristics between participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7%\n\nContinuous data are presented as median and 25%-75% quartiles.",
+      "context_window": "aphic characteristics between participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7% Continuous data are presented as medi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-938",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 938,
+      "sentence": "Comparison of clinical and demographic characteristics between participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7%\n\nContinuous data are presented as median and 25%-75% quartiles.",
+      "context_window": "between participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7% Continuous data are presented as median and 25%-75% quarti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-988",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 988,
+      "sentence": "Comparison of clinical and demographic characteristics between participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7%\n\nContinuous data are presented as median and 25%-75% quartiles.",
+      "context_window": "M Sleep \u2265 8.7% Continuous data are presented as median and 25%-75% quartiles. Categorical data are presented as percentage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-992",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 992,
+      "sentence": "Comparison of clinical and demographic characteristics between participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7%\n\nContinuous data are presented as median and 25%-75% quartiles.",
+      "context_window": "eep \u2265 8.7% Continuous data are presented as median and 25%-75% quartiles. Categorical data are presented as percentage. De",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-1235",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1235,
+      "sentence": "Definitions of abbreviations : BMI body mass index, CABG coronary artery by-pass grafting, EDS Excessive Daytime Sleepiness, ESS Epworth Sleepiness Scale, REM rapid eye movements\n\n* p < 0.05\n\nAs illustrated in Table 2 , participants with REM sleep < 8.7% showed significantly worse sleep parameters compared to those with REM sleep \u2265 8.7% having shorter TST, less amount of Slow-Wave-Sleep (SWS), longer sleep onset latency and lower sleep efficiency.",
+      "context_window": "s, ESS Epworth Sleepiness Scale, REM rapid eye movements * p < 0.05 As illustrated in Table 2 , participants with REM sleep <",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1303",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1303,
+      "sentence": "Definitions of abbreviations : BMI body mass index, CABG coronary artery by-pass grafting, EDS Excessive Daytime Sleepiness, ESS Epworth Sleepiness Scale, REM rapid eye movements\n\n* p < 0.05\n\nAs illustrated in Table 2 , participants with REM sleep < 8.7% showed significantly worse sleep parameters compared to those with REM sleep \u2265 8.7% having shorter TST, less amount of Slow-Wave-Sleep (SWS), longer sleep onset latency and lower sleep efficiency.",
+      "context_window": "As illustrated in Table 2 , participants with REM sleep < 8.7% showed significantly worse sleep parameters compared to tho",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1387",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1387,
+      "sentence": "Definitions of abbreviations : BMI body mass index, CABG coronary artery by-pass grafting, EDS Excessive Daytime Sleepiness, ESS Epworth Sleepiness Scale, REM rapid eye movements\n\n* p < 0.05\n\nAs illustrated in Table 2 , participants with REM sleep < 8.7% showed significantly worse sleep parameters compared to those with REM sleep \u2265 8.7% having shorter TST, less amount of Slow-Wave-Sleep (SWS), longer sleep onset latency and lower sleep efficiency.",
+      "context_window": "y worse sleep parameters compared to those with REM sleep \u2265 8.7% having shorter TST, less amount of Slow-Wave-Sleep (SWS), l",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1769",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1769,
+      "sentence": "Sleep parameters of the participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7%\n\nContinuous variables were summarized as means with standard deviations.",
+      "context_window": "2 ). Sleep parameters of the participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7% Continuous variables were summarized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1790",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1790,
+      "sentence": "Sleep parameters of the participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7%\n\nContinuous variables were summarized as means with standard deviations.",
+      "context_window": "s of the participants with REM Sleep < 8.7% and REM Sleep \u2265 8.7% Continuous variables were summarized as means with standar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-2122",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 2122,
+      "sentence": "The average CPAP usage was 3.4 h per night at 1 month and 3.1 h at 2 years.",
+      "context_window": "ated to CPAP. The average CPAP usage was 3.4 h per night at 1 month and 3.1 h at 2 years. As shown in Fig. 3 , patients with re",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-u-2143",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2143,
+      "sentence": "The average CPAP usage was 3.4 h per night at 1 month and 3.1 h at 2 years.",
+      "context_window": "rage CPAP usage was 3.4 h per night at 1 month and 3.1 h at 2 years. As shown in Fig. 3 , patients with reduced REM sleep exhib",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-2290",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2290,
+      "sentence": "3 , patients with reduced REM sleep exhibited significantly lower cumulative survival compared to those with REM sleep \u2265 8.7%, as illustrated in the Kaplan-Meier survival curve).",
+      "context_window": "ower cumulative survival compared to those with REM sleep \u2265 8.7%, as illustrated in the Kaplan-Meier survival curve). Over t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-2439",
+      "claim_type": "percentage",
+      "raw_text": "12.8%",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2439,
+      "sentence": "Over the follow-up period, mortality was markedly higher in the group with less REM sleep (12.8%) than in those with higher REM sleep (4.4%; p = 0.006).",
+      "context_window": "ality was markedly higher in the group with less REM sleep (12.8%) than in those with higher REM sleep (4.4%; p = 0.006). In",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-2483",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "Over the follow-up period, mortality was markedly higher in the group with less REM sleep (12.8%) than in those with higher REM sleep (4.4%; p = 0.006).",
+      "context_window": "less REM sleep (12.8%) than in those with higher REM sleep (4.4%; p = 0.006). In a multivariate Cox proportional hazard anal",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-2489",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2489,
+      "sentence": "Over the follow-up period, mortality was markedly higher in the group with less REM sleep (12.8%) than in those with higher REM sleep (4.4%; p = 0.006).",
+      "context_window": "EM sleep (12.8%) than in those with higher REM sleep (4.4%; p = 0.006). In a multivariate Cox proportional hazard analysis adjust",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-2702",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2702,
+      "sentence": "In a multivariate Cox proportional hazard analysis adjusting for age, sex, BMI, and CPAP treatment allocation, reduced REM sleep was significantly associated with increased risk of mortality (HR 2.39; 95% CI, 1.03-5.56; p = 0.043) (Table 3 ).",
+      "context_window": "antly associated with increased risk of mortality (HR 2.39; 95% CI, 1.03-5.56; p = 0.043) (Table 3 ). Age also emerged as a",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-2721",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2721,
+      "sentence": "In a multivariate Cox proportional hazard analysis adjusting for age, sex, BMI, and CPAP treatment allocation, reduced REM sleep was significantly associated with increased risk of mortality (HR 2.39; 95% CI, 1.03-5.56; p = 0.043) (Table 3 ).",
+      "context_window": "th increased risk of mortality (HR 2.39; 95% CI, 1.03-5.56; p = 0.043) (Table 3 ). Age also emerged as a significant covariate (H",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-2798",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2798,
+      "sentence": "Age also emerged as a significant covariate (HR 1.07; 95% CI, 1.01-1.13; p = 0.028), whereas sex, BMI, and CPAP allocation did not demonstrate significant associations with mortality.",
+      "context_window": "3 ). Age also emerged as a significant covariate (HR 1.07; 95% CI, 1.01-1.13; p = 0.028), whereas sex, BMI, and CPAP alloc",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-p-2817",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2817,
+      "sentence": "Age also emerged as a significant covariate (HR 1.07; 95% CI, 1.01-1.13; p = 0.028), whereas sex, BMI, and CPAP allocation did not demonstrate significant associations with mortality.",
+      "context_window": "ged as a significant covariate (HR 1.07; 95% CI, 1.01-1.13; p = 0.028), whereas sex, BMI, and CPAP allocation did not demonstrate",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-134",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 134,
+      "sentence": "The main finding of the current secondary analysis of the RICCADSA cohort demonstrated that the participants with REM sleep less than 8.7% at baseline had significantly higher mortality risk compared to the individuals with REM sleep at least 8.7%.",
+      "context_window": "demonstrated that the participants with REM sleep less than 8.7% at baseline had significantly higher mortality risk compare",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-243",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 243,
+      "sentence": "The main finding of the current secondary analysis of the RICCADSA cohort demonstrated that the participants with REM sleep less than 8.7% at baseline had significantly higher mortality risk compared to the individuals with REM sleep at least 8.7%.",
+      "context_window": "ty risk compared to the individuals with REM sleep at least 8.7%. Patients with reduced REM sleep was slightly older, had hi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-934",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 934,
+      "sentence": "Individuals in the MrOS cohort had a 13% higher mortality rate for every 5% reduction in REM sleep (percentage) after adjusting for multiple covariates.",
+      "context_window": "as demonstrated [ 5 ]. Individuals in the MrOS cohort had a 13% higher mortality rate for every 5% reduction in REM sleep (",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-970",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 970,
+      "sentence": "Individuals in the MrOS cohort had a 13% higher mortality rate for every 5% reduction in REM sleep (percentage) after adjusting for multiple covariates.",
+      "context_window": "n the MrOS cohort had a 13% higher mortality rate for every 5% reduction in REM sleep (percentage) after adjusting for mul",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1539",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1539,
+      "sentence": "Specifically, each 5% increase in REM sleep percentage corresponded to a 12% reduction in heart failure risk, highlighting the protective cardiovascular effects of adequate REM sleep [ 14 ].",
+      "context_window": "d risk of incident heart failure [ 14 ]. Specifically, each 5% increase in REM sleep percentage corresponded to a 12% redu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-1593",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1593,
+      "sentence": "Specifically, each 5% increase in REM sleep percentage corresponded to a 12% reduction in heart failure risk, highlighting the protective cardiovascular effects of adequate REM sleep [ 14 ].",
+      "context_window": "each 5% increase in REM sleep percentage corresponded to a 12% reduction in heart failure risk, highlighting the protectiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-3496",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3496,
+      "sentence": "Participants with REM sleep proportion of 8.7% or more exhibited significantly better sleep parameters compared to those with REM sleep less than 8.7%.",
+      "context_window": "malities [ 20 ]. Participants with REM sleep proportion of 8.7% or more exhibited significantly better sleep parameters com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12923483_association_of_reduced_rem_sleep_with_mortality_in_adults_wi-pct-3600",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3600,
+      "sentence": "Participants with REM sleep proportion of 8.7% or more exhibited significantly better sleep parameters compared to those with REM sleep less than 8.7%.",
+      "context_window": "sleep parameters compared to those with REM sleep less than 8.7%. Specifically, they had longer total sleep time, shorter sl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

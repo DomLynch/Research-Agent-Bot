@@ -1,0 +1,102 @@
+{
+  "paper_id": "PMC12386660_do_sex_and_gender_interact_with_the_biological_actions_of_ta",
+  "doi": "10.3390/ijms26168097",
+  "extracted_at": "2026-05-08T20:11:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12386660_do_sex_and_gender_interact_with_the_biological_actions_of_ta-u-566",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 566,
+      "sentence": "Nonetheless, it is generally considered that the Western diet provides a sufficient amount of TAU, with adult intake estimated to range from 40 to 400 mg per day [ 1 ].",
+      "context_window": "unt of TAU, with adult intake estimated to range from 40 to 400 mg per day [ 1 ]. TAU-rich sources include seafood (particular",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12386660_do_sex_and_gender_interact_with_the_biological_actions_of_ta-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "1950 mg",
+      "numeric_values": [
+        1950.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 864,
+      "sentence": "For instance, a species of red algae, \u201csusabinori\u201d, commonly consumed in Japan, contains approximately 1950 mg of TAU per 100 g of dry weight [ 2 ].",
+      "context_window": "binori\u201d, commonly consumed in Japan, contains approximately 1950 mg of TAU per 100 g of dry weight [ 2 ]. Energy drinks (e.g.,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12386660_do_sex_and_gender_interact_with_the_biological_actions_of_ta-u-1137",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1137,
+      "sentence": "Additionally, TAU supplements are widely available in various forms, ranging from 500 to 2000 mg per serving [ 1 ].",
+      "context_window": "are widely available in various forms, ranging from 500 to 2000 mg per serving [ 1 ]. Notably, the global market of TAU is inc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12386660_do_sex_and_gender_interact_with_the_biological_actions_of_ta-pct-1244",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1244,
+      "sentence": "Notably, the global market of TAU is increasing [ 4 ] and interestingly, women (77%) use more supplements than men (68%) [ 5 ].",
+      "context_window": "market of TAU is increasing [ 4 ] and interestingly, women (77%) use more supplements than men (68%) [ 5 ]. TAU levels in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12386660_do_sex_and_gender_interact_with_the_biological_actions_of_ta-pct-1280",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1280,
+      "sentence": "Notably, the global market of TAU is increasing [ 4 ] and interestingly, women (77%) use more supplements than men (68%) [ 5 ].",
+      "context_window": "d interestingly, women (77%) use more supplements than men (68%) [ 5 ]. TAU levels in vegans appear to be approximately ha",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

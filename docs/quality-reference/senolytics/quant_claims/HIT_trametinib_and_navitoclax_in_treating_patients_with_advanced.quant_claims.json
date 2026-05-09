@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_trametinib_and_navitoclax_in_treating_patients_with_advanced",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_trametinib_and_navitoclax_in_treating_patients_with_advanced-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "42 days",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Posted outcomes: (Phase 1b) Maximal Tolerated Dose of Trametinib and Navitoclax. timeframe=Within the first 42 days of treatment.",
+      "context_window": "se of Trametinib and Navitoclax. timeframe=Within the first 42 days of treatment. Treatment (Trametinib, Navitoclax)=2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

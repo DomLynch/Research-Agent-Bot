@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1111_jsr_13999_continuous_positive_airway_pressure_and_adherence_in_patient",
+  "doi": "10.1111/jsr.13999",
+  "extracted_at": "2026-05-08T20:06:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jsr_13999_continuous_positive_airway_pressure_and_adherence_in_patient-pct-1123",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "We observed that patients with high collapsibility required a higher CPAP pressure than those with low collapsibility (\u2206 = 0.4 cmH<jats:sub>2</jats:sub>O, 95% confidence interval [CI] = 0.3-1.7).",
+      "context_window": "ith low collapsibility (\u2206 = 0.4 cmH<jats:sub>2</jats:sub>O, 95% confidence interval [CI] = 0.3-1.7). A larger increase in s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_13999_continuous_positive_airway_pressure_and_adherence_in_patient-pct-1533",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1533,
+      "sentence": "High loop gain and high collapsibility were independently associated with longer CPAP use hours per night (\u2206 = 0.6 h, 95% CI = 0.2-1.5 and \u2206 = 0.3 h, 95% CI = 0.03-1.5, respectively).",
+      "context_window": "associated with longer CPAP use hours per night (\u2206 = 0.6 h, 95% CI = 0.2-1.5 and \u2206 = 0.3 h, 95% CI = 0.03-1.5, respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_13999_continuous_positive_airway_pressure_and_adherence_in_patient-pct-1565",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1565,
+      "sentence": "High loop gain and high collapsibility were independently associated with longer CPAP use hours per night (\u2206 = 0.6 h, 95% CI = 0.2-1.5 and \u2206 = 0.3 h, 95% CI = 0.03-1.5, respectively).",
+      "context_window": "hours per night (\u2206 = 0.6 h, 95% CI = 0.2-1.5 and \u2206 = 0.3 h, 95% CI = 0.03-1.5, respectively). In conclusion, different endo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

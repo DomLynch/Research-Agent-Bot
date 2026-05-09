@@ -1,0 +1,2224 @@
+{
+  "paper_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin",
+  "doi": "10.3389/fcvm.2022.1073148",
+  "extracted_at": "2026-05-08T20:06:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "risk_ratio": 30,
+    "confidence_interval": 30,
+    "p_value": 32,
+    "percentage": 7,
+    "sample_size": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-182",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 182,
+      "sentence": "In this systematic review, we aimed to investigate the efficacy and safety of adding low-molecular-weight heparin (LMWH) or unfractionated heparin to low-dose aspirin (LDA) started \u226416 weeks'gestation in the prevention of preeclampsia (PE) in high-risk women.",
+      "context_window": "r unfractionated heparin to low-dose aspirin (LDA) started \u226416 weeks'gestation in the prevention of preeclampsia (PE) in high-ri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-615",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 615,
+      "sentence": "PubMed, Cochrane Library, Embase, and ClinicalTrials.gov databases were searched from their inception to April 2022 for randomized controlled trials (RCTs) that to determine whether the combined treatment of LMWH and LDA is better than single anticoagulant drugs in preventing PE and improving live birth rate of fetus in high-risk women with pregnancy \u226416 weeks.",
+      "context_window": "live birth rate of fetus in high-risk women with pregnancy \u226416 weeks. We also searched Embase, OVID MEDLINE and OVID MEDLINE in-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-953",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "ed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-963",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.44-0.79",
+      "numeric_values": [
+        0.44,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 963,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "e addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95%",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-982",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 982,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-1026",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (R",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-1036",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52-0.97",
+      "numeric_values": [
+        0.52,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1036,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-1055",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "mall-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-1093",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "1, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-1103",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.88",
+      "numeric_values": [
+        0.23,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1103,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-1122",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1122,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "3 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-1163",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ). It is worth emphasizing tha",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-1173",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.25-0.90",
+      "numeric_values": [
+        0.25,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ). It is worth emphasizing that LMWH (or unfracti",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-1192",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1192,
+      "sentence": "The meta-analysis showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ), small-for-gestational age (SGA, RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ), fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02 ) and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ).",
+      "context_window": "and gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02 ). It is worth emphasizing that LMWH (or unfractionated hep",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-200",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 200,
+      "sentence": "The incidence rate of all pregnant women is about 2-8% ( 1 , 2 ).",
+      "context_window": "death. The incidence rate of all pregnant women is about 2-8% ( 1 , 2 ). The main manifestations of PE are maternal and m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-494",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 494,
+      "sentence": "Women with a history of PE are 25-65% likely to have PE again, 3% may have placental abruption, and 10% may have FGR again ( 3 ).",
+      "context_window": "effects on re-pregnancy. Women with a history of PE are 25-65% likely to have PE again, 3% may have placental abruption, a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-523",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 523,
+      "sentence": "Women with a history of PE are 25-65% likely to have PE again, 3% may have placental abruption, and 10% may have FGR again ( 3 ).",
+      "context_window": "en with a history of PE are 25-65% likely to have PE again, 3% may have placental abruption, and 10% may have FGR again (",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-560",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 560,
+      "sentence": "Women with a history of PE are 25-65% likely to have PE again, 3% may have placental abruption, and 10% may have FGR again ( 3 ).",
+      "context_window": "kely to have PE again, 3% may have placental abruption, and 10% may have FGR again ( 3 ). The causes are multifactorial, in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2195",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2195,
+      "sentence": "The primary purpose is to determine whether the combined treatment of LMWH and aspirin is better than single anticoagulant drugs in preventing PE and its complications in high-risk women with pregnancy \u226416 weeks.",
+      "context_window": "PE and its complications in high-risk women with pregnancy \u226416 weeks.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2303",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2303,
+      "sentence": "In this context, it is recommended that women are diagnosed with PE if they present with the following severe features: systolic blood pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on two occasions at least 4 h apart after 20weeks of gestation in a woman with a previously normal blood pressure plus proteinuria, defined asurinary excretion of 300 mg or more per 24 h urine collection (or this amount extrapolated from a timed collection)orc Protein/creatinine ratio of 0.3 mg/dL or more orc Dipstick reading of 2+(used only if other quantitativemethods not available) ( 14 ).",
+      "context_window": "h the following severe features: systolic blood pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on t",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2351",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2351,
+      "sentence": "In this context, it is recommended that women are diagnosed with PE if they present with the following severe features: systolic blood pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on two occasions at least 4 h apart after 20weeks of gestation in a woman with a previously normal blood pressure plus proteinuria, defined asurinary excretion of 300 mg or more per 24 h urine collection (or this amount extrapolated from a timed collection)orc Protein/creatinine ratio of 0.3 mg/dL or more orc Dipstick reading of 2+(used only if other quantitativemethods not available) ( 14 ).",
+      "context_window": "pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on two occasions at least 4 h apart after 20weeks o",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2409",
+      "claim_type": "unit_value",
+      "raw_text": "20weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2409,
+      "sentence": "In this context, it is recommended that women are diagnosed with PE if they present with the following severe features: systolic blood pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on two occasions at least 4 h apart after 20weeks of gestation in a woman with a previously normal blood pressure plus proteinuria, defined asurinary excretion of 300 mg or more per 24 h urine collection (or this amount extrapolated from a timed collection)orc Protein/creatinine ratio of 0.3 mg/dL or more orc Dipstick reading of 2+(used only if other quantitativemethods not available) ( 14 ).",
+      "context_window": "f 90 mmHg or more on two occasions at least 4 h apart after 20weeks of gestation in a woman with a previously normal blood pres",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2530",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2530,
+      "sentence": "In this context, it is recommended that women are diagnosed with PE if they present with the following severe features: systolic blood pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on two occasions at least 4 h apart after 20weeks of gestation in a woman with a previously normal blood pressure plus proteinuria, defined asurinary excretion of 300 mg or more per 24 h urine collection (or this amount extrapolated from a timed collection)orc Protein/creatinine ratio of 0.3 mg/dL or more orc Dipstick reading of 2+(used only if other quantitativemethods not available) ( 14 ).",
+      "context_window": "d pressure plus proteinuria, defined asurinary excretion of 300 mg or more per 24 h urine collection (or this amount extrapola",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2656",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mg/dL",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2656,
+      "sentence": "In this context, it is recommended that women are diagnosed with PE if they present with the following severe features: systolic blood pressure of 140 mmHg or more or diastolic blood pressure of 90 mmHg or more on two occasions at least 4 h apart after 20weeks of gestation in a woman with a previously normal blood pressure plus proteinuria, defined asurinary excretion of 300 mg or more per 24 h urine collection (or this amount extrapolated from a timed collection)orc Protein/creatinine ratio of 0.3 mg/dL or more orc Dipstick reading of 2+(used only if other quantitativemethods not available) ( 14 ).",
+      "context_window": "ted from a timed collection)orc Protein/creatinine ratio of 0.3 mg/dL or more orc Dipstick reading of 2+(used only if other quant",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2860",
+      "claim_type": "unit_value",
+      "raw_text": "160 mm",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2860,
+      "sentence": "The women are diagnosed with sPE when the following conditions are met: systolic blood pressure \u2265160 mm Hg and/or diastolic blood pressure \u2265110 mm Hg; Urine protein ic blood pressure more or the meria was strongly positive; brain nerve symptoms persist and worsen; persistent epigastric pain; serum aspartate aminotransferase significantly increased, creatinine >106 \u03bcmol/L; hypoalbuminemia, pleural or peritoneal effusion, heart failure, pulmonary edema, oligohydramnios, abnormal blood system indicators and other manifestations may occur at the same time.",
+      "context_window": "the following conditions are met: systolic blood pressure \u2265160 mm Hg and/or diastolic blood pressure \u2265110 mm Hg; Urine protei",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-2903",
+      "claim_type": "unit_value",
+      "raw_text": "110 mm",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2903,
+      "sentence": "The women are diagnosed with sPE when the following conditions are met: systolic blood pressure \u2265160 mm Hg and/or diastolic blood pressure \u2265110 mm Hg; Urine protein ic blood pressure more or the meria was strongly positive; brain nerve symptoms persist and worsen; persistent epigastric pain; serum aspartate aminotransferase significantly increased, creatinine >106 \u03bcmol/L; hypoalbuminemia, pleural or peritoneal effusion, heart failure, pulmonary edema, oligohydramnios, abnormal blood system indicators and other manifestations may occur at the same time.",
+      "context_window": "blood pressure \u2265160 mm Hg and/or diastolic blood pressure \u2265110 mm Hg; Urine protein ic blood pressure more or the meria was s",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-3126",
+      "claim_type": "unit_value",
+      "raw_text": "106 \u03bcmol",
+      "numeric_values": [
+        106.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 3126,
+      "sentence": "The women are diagnosed with sPE when the following conditions are met: systolic blood pressure \u2265160 mm Hg and/or diastolic blood pressure \u2265110 mm Hg; Urine protein ic blood pressure more or the meria was strongly positive; brain nerve symptoms persist and worsen; persistent epigastric pain; serum aspartate aminotransferase significantly increased, creatinine >106 \u03bcmol/L; hypoalbuminemia, pleural or peritoneal effusion, heart failure, pulmonary edema, oligohydramnios, abnormal blood system indicators and other manifestations may occur at the same time.",
+      "context_window": "rtate aminotransferase significantly increased, creatinine >106 \u03bcmol/L; hypoalbuminemia, pleural or peritoneal effusion, heart f",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-5216",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5216,
+      "sentence": "For continuous variables, data have been presented as the mean difference (MD) with 95% confidence interval (CI) between the experimental and control groups.",
+      "context_window": ", data have been presented as the mean difference (MD) with 95% confidence interval (CI) between the experimental and contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-5364",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5364,
+      "sentence": "For dichotomous outcome data, the risk ratio (RR) or odds ratio (OR) with 95% CI was calculated.",
+      "context_window": "s outcome data, the risk ratio (RR) or odds ratio (OR) with 95% CI was calculated. The chi-square test was used to assess h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-5571",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5571,
+      "sentence": "The fixed-effects model was applied at P > 0.1 and I 2 < 40% , which showed that there was little heterogeneity between studies.",
+      "context_window": "nt of heterogeneity. The fixed-effects model was applied at P > 0.1 and I 2 < 40% , which showed that there was little heteroge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-pct-5589",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5589,
+      "sentence": "The fixed-effects model was applied at P > 0.1 and I 2 < 40% , which showed that there was little heterogeneity between studies.",
+      "context_window": "y. The fixed-effects model was applied at P > 0.1 and I 2 < 40% , which showed that there was little heterogeneity between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-u-950",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 950,
+      "sentence": "The gestational age of included pregnant women varied among different studies, but all women were randomly divided between the first positive pregnancy test and 16 weeks' gestation.",
+      "context_window": "domly divided between the first positive pregnancy test and 16 weeks' gestation. Because patients' conditions are heterogeneous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-2683",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2683,
+      "sentence": "We observed that the data from ten studies ( 19 - 22 , 25 - 30 ) included ( n = 1,452), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ).",
+      "context_window": "the data from ten studies ( 19 - 22 , 25 - 30 ) included ( n = 1,452), the pooled results obtained using a fixed-effects mod",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-2815",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2815,
+      "sentence": "We observed that the data from ten studies ( 19 - 22 , 25 - 30 ) included ( n = 1,452), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ).",
+      "context_window": "ed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ). In the subgroup analysis, t",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-2825",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.44-0.79",
+      "numeric_values": [
+        0.44,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2825,
+      "sentence": "We observed that the data from ten studies ( 19 - 22 , 25 - 30 ) included ( n = 1,452), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ).",
+      "context_window": "e addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-2844",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2844,
+      "sentence": "We observed that the data from ten studies ( 19 - 22 , 25 - 30 ) included ( n = 1,452), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ).",
+      "context_window": "to LDA reduced the risk of PE (RR: 0.59, 95% CI: 0.44-0.79, P < 0.05 ). In the subgroup analysis, the addition of LMWH to LDA re",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-2964",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2964,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "context_window": "o LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-2974",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45-0.87",
+      "numeric_values": [
+        0.45,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2974,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "context_window": "ced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-2993",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2993,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "context_window": "in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 )",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-3022",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3022,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "context_window": "(RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-3032",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.27-0.90",
+      "numeric_values": [
+        0.27,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3032,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "context_window": ", 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ). Meta-analysis of",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-3051",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3051,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA reduced the risk of PE in women with a history of PE (RR: 0.62, 95% CI: 0.45-0.87, P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ).",
+      "context_window": ", P < 0.05 ) and miscarriages (RR: 0.50, 95% CI: 0.27-0.90, P < 0.05 ), respectively ( Figure 3A ). Meta-analysis of (A) PE and",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-3183",
+      "claim_type": "sample_size",
+      "raw_text": "n=785",
+      "numeric_values": [
+        785.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3183,
+      "sentence": "Five studies ( 19 , 27 , 28 , 31 , 32 ) (n=785) reported the live birth rate, but these studies only included women with a history of miscarriages.",
+      "context_window": "live birth rate. Five studies ( 19 , 27 , 28 , 31 , 32 ) (n=785) reported the live birth rate, but these studies only inclu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-3422",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 1.06",
+      "numeric_values": [
+        1.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3422,
+      "sentence": "The pooled results obtained using a fixed-effects model showed thatthe addition of LMWH to LDA did not improve the live birth rate (RR: 1.06, 95% CI: 0.96-1.16, P > 0.05) ( Figure 3B ).",
+      "context_window": "ddition of LMWH to LDA did not improve the live birth rate (RR: 1.06, 95% CI: 0.96-1.16, P > 0.05) ( Figure 3B ). We observed t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-3432",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.96-1.16",
+      "numeric_values": [
+        0.96,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3432,
+      "sentence": "The pooled results obtained using a fixed-effects model showed thatthe addition of LMWH to LDA did not improve the live birth rate (RR: 1.06, 95% CI: 0.96-1.16, P > 0.05) ( Figure 3B ).",
+      "context_window": "LMWH to LDA did not improve the live birth rate (RR: 1.06, 95% CI: 0.96-1.16, P > 0.05) ( Figure 3B ). We observed that the data from n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-3451",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3451,
+      "sentence": "The pooled results obtained using a fixed-effects model showed thatthe addition of LMWH to LDA did not improve the live birth rate (RR: 1.06, 95% CI: 0.96-1.16, P > 0.05) ( Figure 3B ).",
+      "context_window": "t improve the live birth rate (RR: 1.06, 95% CI: 0.96-1.16, P > 0.05) ( Figure 3B ). We observed that the data from nine studie",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-3564",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3564,
+      "sentence": "We observed that the data from nine studies ( 19 , 20 , 22 , 25 - 29 , 32 ) included ( n = 1,464), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06).",
+      "context_window": "rom nine studies ( 19 , 20 , 22 , 25 - 29 , 32 ) included ( n = 1,464), the pooled results obtained using a fixed-effects mod",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-3721",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3721,
+      "sentence": "We observed that the data from nine studies ( 19 , 20 , 22 , 25 - 29 , 32 ) included ( n = 1,464), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06).",
+      "context_window": "MWH to LDA did not reduced the risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06). In the subgroup analysis, th",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-3731",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.33-1.02",
+      "numeric_values": [
+        0.33,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3731,
+      "sentence": "We observed that the data from nine studies ( 19 , 20 , 22 , 25 - 29 , 32 ) included ( n = 1,464), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06).",
+      "context_window": "did not reduced the risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-3750",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3750,
+      "sentence": "We observed that the data from nine studies ( 19 , 20 , 22 , 25 - 29 , 32 ) included ( n = 1,464), the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06).",
+      "context_window": "e risk of placental abruption (RR: 0.58, 95% CI: 0.33-1.02, P = 0.06). In the subgroup analysis, the addition of LMWH to LDA did",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-3893",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3893,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of placental abruptionin women with a history of PE (RR: 0.96, 95% CI: 0.45-2.05, P = 0.91).",
+      "context_window": "e risk of placental abruptionin women with a history of PE (RR: 0.96, 95% CI: 0.45-2.05, P = 0.91). Conversely, in women with a",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-3903",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45-2.05",
+      "numeric_values": [
+        0.45,
+        2.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3903,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of placental abruptionin women with a history of PE (RR: 0.96, 95% CI: 0.45-2.05, P = 0.91).",
+      "context_window": "placental abruptionin women with a history of PE (RR: 0.96, 95% CI: 0.45-2.05, P = 0.91). Conversely, in women with a history of miscarri",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-3922",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3922,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of placental abruptionin women with a history of PE (RR: 0.96, 95% CI: 0.45-2.05, P = 0.91).",
+      "context_window": "in women with a history of PE (RR: 0.96, 95% CI: 0.45-2.05, P = 0.91). Conversely, in women with a history of miscarriages, the",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-4058",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.30",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4058,
+      "sentence": "Conversely, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of placental abruption (RR: 0.30, 95% CI: 0.12-0.77, P = 0.01) ( Figure 4A ).",
+      "context_window": "of LMWH to LDA can reduce the risk of placental abruption (RR: 0.30, 95% CI: 0.12-0.77, P = 0.01) ( Figure 4A ). Meta-analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-4068",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.12-0.77",
+      "numeric_values": [
+        0.12,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4068,
+      "sentence": "Conversely, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of placental abruption (RR: 0.30, 95% CI: 0.12-0.77, P = 0.01) ( Figure 4A ).",
+      "context_window": "o LDA can reduce the risk of placental abruption (RR: 0.30, 95% CI: 0.12-0.77, P = 0.01) ( Figure 4A ). Meta-analysis of (A) placental a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-4087",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4087,
+      "sentence": "Conversely, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of placental abruption (RR: 0.30, 95% CI: 0.12-0.77, P = 0.01) ( Figure 4A ).",
+      "context_window": "e risk of placental abruption (RR: 0.30, 95% CI: 0.12-0.77, P = 0.01) ( Figure 4A ). Meta-analysis of (A) placental abruption.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-4309",
+      "claim_type": "sample_size",
+      "raw_text": "n = 889",
+      "numeric_values": [
+        889.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4309,
+      "sentence": "Six studies ( 20 , 22 , 23 , 25 , 28 , 30 ) ( n = 889) reported the SGA, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ).",
+      "context_window": "LP syndrome. Six studies ( 20 , 22 , 23 , 25 , 28 , 30 ) ( n = 889) reported the SGA, the pooled results obtained using a fixe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-4461",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4461,
+      "sentence": "Six studies ( 20 , 22 , 23 , 25 , 28 , 30 ) ( n = 889) reported the SGA, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ).",
+      "context_window": "at the addition of LMWH to LDA reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ). But in the subgroup analysi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-4471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52-0.97",
+      "numeric_values": [
+        0.52,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4471,
+      "sentence": "Six studies ( 20 , 22 , 23 , 25 , 28 , 30 ) ( n = 889) reported the SGA, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ).",
+      "context_window": "ition of LMWH to LDA reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ). But in the subgroup analysis, the addition of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-4490",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4490,
+      "sentence": "Six studies ( 20 , 22 , 23 , 25 , 28 , 30 ) ( n = 889) reported the SGA, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ).",
+      "context_window": "A reduced the the risk of SGA (RR: 0.71, 95% CI: 0.52-0.97, P = 0.03 ). But in the subgroup analysis, the addition of LMWH to LD",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-4623",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.73",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4623,
+      "sentence": "But in the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "context_window": "not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 9",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-4633",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52-1.02",
+      "numeric_values": [
+        0.52,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4633,
+      "sentence": "But in the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "context_window": "ed the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-4652",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4652,
+      "sentence": "But in the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "context_window": "in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27),",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-4680",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.63",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4680,
+      "sentence": "But in the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "context_window": "E (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-4690",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.28-1.42",
+      "numeric_values": [
+        0.28,
+        1.42
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4690,
+      "sentence": "But in the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "context_window": "3, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ). Four studies ( 20",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-4709",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4709,
+      "sentence": "But in the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of SGA in women with a history of PE (RR: 0.73, 95% CI: 0.52-1.02, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ).",
+      "context_window": "2, P = 0.07) and miscarriages (RR: 0.63, 95% CI: 0.28-1.42, P = 0.27), respectively ( Figure 4B ). Four studies ( 20 , 22 , 25",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-4786",
+      "claim_type": "sample_size",
+      "raw_text": "n = 777",
+      "numeric_values": [
+        777.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4786,
+      "sentence": "Four studies ( 20 , 22 , 25 , 29 ) ( n = 777) reported the sPE, the pooled results obtained using a random-effects model showed that the addition of LMWH to LDA did not reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23).",
+      "context_window": "tively ( Figure 4B ). Four studies ( 20 , 22 , 25 , 29 ) ( n = 777) reported the sPE, the pooled results obtained using a rand",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-4947",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.46",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4947,
+      "sentence": "Four studies ( 20 , 22 , 25 , 29 ) ( n = 777) reported the sPE, the pooled results obtained using a random-effects model showed that the addition of LMWH to LDA did not reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23).",
+      "context_window": "ddition of LMWH to LDA did not reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23). In the subgroup analysis, th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-4957",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.13-1.62",
+      "numeric_values": [
+        0.13,
+        1.62
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4957,
+      "sentence": "Four studies ( 20 , 22 , 25 , 29 ) ( n = 777) reported the sPE, the pooled results obtained using a random-effects model showed that the addition of LMWH to LDA did not reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23).",
+      "context_window": "LMWH to LDA did not reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-4976",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4976,
+      "sentence": "Four studies ( 20 , 22 , 25 , 29 ) ( n = 777) reported the sPE, the pooled results obtained using a random-effects model showed that the addition of LMWH to LDA did not reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23).",
+      "context_window": "t reduced the the risk of sPE (RR: 0.46, 95% CI: 0.13-1.62, P = 0.23). In the subgroup analysis, the addition of LMWH to LDA did",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-5104",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5104,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of sPE in women with a history of PE (RR: 0.67, 95% CI: 0.17-2.60, P = 0.57).",
+      "context_window": "not reduced the risk of sPE in women with a history of PE (RR: 0.67, 95% CI: 0.17-2.60, P = 0.57). Conversely, in women with a",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-5114",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.17-2.60",
+      "numeric_values": [
+        0.17,
+        2.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5114,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of sPE in women with a history of PE (RR: 0.67, 95% CI: 0.17-2.60, P = 0.57).",
+      "context_window": "ed the risk of sPE in women with a history of PE (RR: 0.67, 95% CI: 0.17-2.60, P = 0.57). Conversely, in women with a history of miscarri",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-5133",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5133,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of sPE in women with a history of PE (RR: 0.67, 95% CI: 0.17-2.60, P = 0.57).",
+      "context_window": "in women with a history of PE (RR: 0.67, 95% CI: 0.17-2.60, P = 0.57). Conversely, in women with a history of miscarriages, the",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-5253",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5253,
+      "sentence": "Conversely, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of sPE (RR: 0.17, 95% CI: 0.04-0.72, P = 0.02 ) ( Figure 4C ).",
+      "context_window": "es, the addition of LMWH to LDA can reduce the risk of sPE (RR: 0.17, 95% CI: 0.04-0.72, P = 0.02 ) ( Figure 4C ). Three studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-5263",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.04-0.72",
+      "numeric_values": [
+        0.04,
+        0.72
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5263,
+      "sentence": "Conversely, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of sPE (RR: 0.17, 95% CI: 0.04-0.72, P = 0.02 ) ( Figure 4C ).",
+      "context_window": "dition of LMWH to LDA can reduce the risk of sPE (RR: 0.17, 95% CI: 0.04-0.72, P = 0.02 ) ( Figure 4C ). Three studies ( 19 - 21 ) ( n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-5282",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5282,
+      "sentence": "Conversely, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of sPE (RR: 0.17, 95% CI: 0.04-0.72, P = 0.02 ) ( Figure 4C ).",
+      "context_window": "DA can reduce the risk of sPE (RR: 0.17, 95% CI: 0.04-0.72, P = 0.02 ) ( Figure 4C ). Three studies ( 19 - 21 ) ( n = 414) repo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-5337",
+      "claim_type": "sample_size",
+      "raw_text": "n = 414",
+      "numeric_values": [
+        414.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5337,
+      "sentence": "Three studies ( 19 - 21 ) ( n = 414) reported the gestational hypertension, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02).",
+      "context_window": ".72, P = 0.02 ) ( Figure 4C ). Three studies ( 19 - 21 ) ( n = 414) reported the gestational hypertension, the pooled results",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-5531",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5531,
+      "sentence": "Three studies ( 19 - 21 ) ( n = 414) reported the gestational hypertension, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02).",
+      "context_window": "WH to LDA reduced the the risk of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02). In the subgroup analysis, th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-5541",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.25-0.90",
+      "numeric_values": [
+        0.25,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5541,
+      "sentence": "Three studies ( 19 - 21 ) ( n = 414) reported the gestational hypertension, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02).",
+      "context_window": "reduced the the risk of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-5560",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5560,
+      "sentence": "Three studies ( 19 - 21 ) ( n = 414) reported the gestational hypertension, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the the risk of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02).",
+      "context_window": "k of gestational hypertension (RR: 0.47, 95% CI: 0.25-0.90, P = 0.02). In the subgroup analysis, the addition of LMWH to LDA did",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-5709",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5709,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of gestational hypertension in women with a history of PE (RR: 0.64, 95% CI: 0.32-1.29, P = 0.21).",
+      "context_window": "of gestational hypertension in women with a history of PE (RR: 0.64, 95% CI: 0.32-1.29, P = 0.21). However, in women with a his",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-5719",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.32-1.29",
+      "numeric_values": [
+        0.32,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5719,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of gestational hypertension in women with a history of PE (RR: 0.64, 95% CI: 0.32-1.29, P = 0.21).",
+      "context_window": "ional hypertension in women with a history of PE (RR: 0.64, 95% CI: 0.32-1.29, P = 0.21). However, in women with a history of miscarriage",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-5738",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.21",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5738,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA did not reduced the risk of gestational hypertension in women with a history of PE (RR: 0.64, 95% CI: 0.32-1.29, P = 0.21).",
+      "context_window": "in women with a history of PE (RR: 0.64, 95% CI: 0.32-1.29, P = 0.21). However, in women with a history of miscarriages, the add",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-5876",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5876,
+      "sentence": "However, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of gestational hypertension (RR: 0.12, 95% CI: 0.02-0.96, P = 0.05) ( Figure 4D ).",
+      "context_window": "MWH to LDA can reduce the risk of gestational hypertension (RR: 0.12, 95% CI: 0.02-0.96, P = 0.05) ( Figure 4D ). Four studies",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-5886",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02-0.96",
+      "numeric_values": [
+        0.02,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5886,
+      "sentence": "However, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of gestational hypertension (RR: 0.12, 95% CI: 0.02-0.96, P = 0.05) ( Figure 4D ).",
+      "context_window": "can reduce the risk of gestational hypertension (RR: 0.12, 95% CI: 0.02-0.96, P = 0.05) ( Figure 4D ). Four studies ( 19 , 21 , 26 , 27",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-5905",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5905,
+      "sentence": "However, in women with a history of miscarriages, the addition of LMWH to LDA can reduce the risk of gestational hypertension (RR: 0.12, 95% CI: 0.02-0.96, P = 0.05) ( Figure 4D ).",
+      "context_window": "k of gestational hypertension (RR: 0.12, 95% CI: 0.02-0.96, P = 0.05) ( Figure 4D ). Four studies ( 19 , 21 , 26 , 27 ) ( n = 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-5968",
+      "claim_type": "sample_size",
+      "raw_text": "n = 491",
+      "numeric_values": [
+        491.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5968,
+      "sentence": "Four studies ( 19 , 21 , 26 , 27 ) ( n = 491) reported the FGR, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48).",
+      "context_window": "0.05) ( Figure 4D ). Four studies ( 19 , 21 , 26 , 27 ) ( n = 491) reported the FGR, the pooled results obtained using a fixe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-6128",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.85",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6128,
+      "sentence": "Four studies ( 19 , 21 , 26 , 27 ) ( n = 491) reported the FGR, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48).",
+      "context_window": "ddition of LMWH to LDA did not reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48). In the subgroup analysis, th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-6138",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.54-1.34",
+      "numeric_values": [
+        0.54,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6138,
+      "sentence": "Four studies ( 19 , 21 , 26 , 27 ) ( n = 491) reported the FGR, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48).",
+      "context_window": "LMWH to LDA did not reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-6157",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6157,
+      "sentence": "Four studies ( 19 , 21 , 26 , 27 ) ( n = 491) reported the FGR, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48).",
+      "context_window": "t reduced the the risk of FGR (RR: 0.85, 95% CI: 0.54-1.34, P = 0.48). In the subgroup analysis, the addition of LMWH to LDA als",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-6290",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6290,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "context_window": "not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 9",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-6300",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.38-1.21",
+      "numeric_values": [
+        0.38,
+        1.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6300,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "context_window": "ed the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-6319",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6319,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "context_window": "in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67),",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-6347",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 1.17",
+      "numeric_values": [
+        1.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6347,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "context_window": "E (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-6357",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.56-2.45",
+      "numeric_values": [
+        0.56,
+        2.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6357,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "context_window": "7, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ). Nine studies ( 20",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-6376",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6376,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of FGR in women with a history of PE (RR: 0.67, 95% CI: 0.38-1.21, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ).",
+      "context_window": "1, P = 0.19) and miscarriages (RR: 1.17, 95% CI: 0.56-2.45, P = 0.67), respectively ( Figure 4E ). Nine studies ( 20 - 23 , 25",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-6463",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6463,
+      "sentence": "Nine studies ( 20 - 23 , 25 , 26 , 28 - 30 ) ( n = 1,220) reported the fetal and neonatal death, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02).",
+      "context_window": "igure 4E ). Nine studies ( 20 - 23 , 25 , 26 , 28 - 30 ) ( n = 1,220) reported the fetal and neonatal death, the pooled resu",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-6655",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6655,
+      "sentence": "Nine studies ( 20 - 23 , 25 , 26 , 28 - 30 ) ( n = 1,220) reported the fetal and neonatal death, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02).",
+      "context_window": "f LMWH to LDA reduced the risk of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02). In the subgroup analysis, th",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-6665",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.88",
+      "numeric_values": [
+        0.23,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6665,
+      "sentence": "Nine studies ( 20 - 23 , 25 , 26 , 28 - 30 ) ( n = 1,220) reported the fetal and neonatal death, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02).",
+      "context_window": "LDA reduced the risk of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-6684",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6684,
+      "sentence": "Nine studies ( 20 - 23 , 25 , 26 , 28 - 30 ) ( n = 1,220) reported the fetal and neonatal death, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA reduced the risk of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02).",
+      "context_window": "k of fetal and neonatal death (RR: 0.45, 95% CI: 0.23-0.88, P = 0.02). In the subgroup analysis, the addition of LMWH to LDA als",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-6833",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.41",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6833,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also can reduced the risk of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk of fetal and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ).",
+      "context_window": "k of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-6843",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.18-0.92",
+      "numeric_values": [
+        0.18,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6843,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also can reduced the risk of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk of fetal and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ).",
+      "context_window": "and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-6862",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6862,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also can reduced the risk of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk of fetal and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ).",
+      "context_window": "in women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk o",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-6998",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6998,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also can reduced the risk of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk of fetal and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ).",
+      "context_window": "and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ). Six studies (",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-7008",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16-1.87",
+      "numeric_values": [
+        0.16,
+        1.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7008,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also can reduced the risk of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk of fetal and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ).",
+      "context_window": "al death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ). Six studies ( 20 - 22 , 25 , 26",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-7027",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7027,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also can reduced the risk of fetal and neonatal deathin women with a history of PE (RR: 0.41, 95% CI: 0.18-0.92, P = 0.03), but the addition of LMWH to LDA did not reduce the risk of fetal and neonatal death in women with a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ).",
+      "context_window": "ith a history of miscarriages (RR: 0.55, 95% CI: 0.16-1.87, P = 0.34) ( Figure 4F ). Six studies ( 20 - 22 , 25 , 26 , 28 ) ( n",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-7094",
+      "claim_type": "sample_size",
+      "raw_text": "n = 918",
+      "numeric_values": [
+        918.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7094,
+      "sentence": "Six studies ( 20 - 22 , 25 , 26 , 28 ) ( n = 918) reported the HELLP syndrome, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not obviously reduced the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18).",
+      "context_window": "4) ( Figure 4F ). Six studies ( 20 - 22 , 25 , 26 , 28 ) ( n = 918) reported the HELLP syndrome, the pooled results obtained u",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-7282",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7282,
+      "sentence": "Six studies ( 20 - 22 , 25 , 26 , 28 ) ( n = 918) reported the HELLP syndrome, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not obviously reduced the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18).",
+      "context_window": "o LDA did not obviously reduced the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18). In the subgroup analysis, th",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-7292",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.22-1.33",
+      "numeric_values": [
+        0.22,
+        1.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7292,
+      "sentence": "Six studies ( 20 - 22 , 25 , 26 , 28 ) ( n = 918) reported the HELLP syndrome, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not obviously reduced the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18).",
+      "context_window": "not obviously reduced the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18). In the subgroup analysis, the addition of LMWH",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-7311",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7311,
+      "sentence": "Six studies ( 20 - 22 , 25 , 26 , 28 ) ( n = 918) reported the HELLP syndrome, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not obviously reduced the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18).",
+      "context_window": "ed the risk of HELLP syndrome (RR: 0.54, 95% CI: 0.22-1.33, P = 0.18). In the subgroup analysis, the addition of LMWH to LDA als",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-7455",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7455,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively.",
+      "context_window": "d the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 9",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-7465",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.22-1.47",
+      "numeric_values": [
+        0.22,
+        1.47
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7465,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively.",
+      "context_window": "of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-7484",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7484,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively.",
+      "context_window": "in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45),",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-7512",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.30",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7512,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively.",
+      "context_window": "E (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively. Although the r",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-7522",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.01-7.12",
+      "numeric_values": [
+        0.01,
+        7.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7522,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively.",
+      "context_window": "7, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively. Although the results were not sta",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-7541",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7541,
+      "sentence": "In the subgroup analysis, the addition of LMWH to LDA also did not reduced the risk of HELLP syndrome in women with a history of PE (RR: 0.57, 95% CI: 0.22-1.47, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively.",
+      "context_window": "7, P = 0.25) and miscarriages (RR: 0.30, 95% CI: 0.01-7.12, P = 0.45), respectively. Although the results were not statistically",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-n-7836",
+      "claim_type": "sample_size",
+      "raw_text": "n = 471",
+      "numeric_values": [
+        471.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7836,
+      "sentence": "Three studies ( 25 , 27 , 29 ) ( n = 471) reported the intrapartum or postpartum hemorrhage, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not increased the risk of intrapartum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ).",
+      "context_window": "ent option ( Figure 4G ). Three studies ( 25 , 27 , 29 ) ( n = 471) reported the intrapartum or postpartum hemorrhage, the poo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-rr-a-8060",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8060,
+      "sentence": "Three studies ( 25 , 27 , 29 ) ( n = 471) reported the intrapartum or postpartum hemorrhage, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not increased the risk of intrapartum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ).",
+      "context_window": "increased the risk of intrapartum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ). Meta-analysis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-ci-8070",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-1.26",
+      "numeric_values": [
+        0.34,
+        1.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8070,
+      "sentence": "Three studies ( 25 , 27 , 29 ) ( n = 471) reported the intrapartum or postpartum hemorrhage, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not increased the risk of intrapartum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ).",
+      "context_window": "the risk of intrapartum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ). Meta-analysis of intrapartum or p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-8089",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8089,
+      "sentence": "Three studies ( 25 , 27 , 29 ) ( n = 471) reported the intrapartum or postpartum hemorrhage, the pooled results obtained using a fixed-effects model showed that the addition of LMWH to LDA did not increased the risk of intrapartum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ).",
+      "context_window": "rtum or postpartum hemorrhage (RR: 0.66, 95% CI: 0.34-1.26, P = 0.20) ( Figure 5 ). Meta-analysis of intrapartum or postpartum",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9780488_low_molecular_weight_heparin_in_addition_to_low_dose_aspirin-p-8307",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8307,
+      "sentence": "The results of Begg's and Egger's tests showed no evidence of publication bias for all the outcomes except PE, as all the results showed P > 0.05 ( Table 2 ).",
+      "context_window": "s for all the outcomes except PE, as all the results showed P > 0.05 ( Table 2 ). However, there was evidence of publication bia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

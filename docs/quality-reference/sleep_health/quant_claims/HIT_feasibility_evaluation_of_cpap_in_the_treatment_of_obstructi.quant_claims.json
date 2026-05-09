@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_feasibility_evaluation_of_cpap_in_the_treatment_of_obstructi",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_feasibility_evaluation_of_cpap_in_the_treatment_of_obstructi-pct-324",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 324,
+      "sentence": "Although it has now been proved that obstructive sleep apnea syndrome (OSAS) is a risk factor of stroke, on the other hand, there is evidence that 50 to 70% of patients in the acute phase of stroke have obstructive sleep apnea (OSA) based on an apnea-hypopnea index (AHI) of \u2265 10.",
+      "context_window": "of stroke, on the other hand, there is evidence that 50 to 70% of patients in the acute phase of stroke have obstructive s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_feasibility_evaluation_of_cpap_in_the_treatment_of_obstructi-u-1121",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "Only one randomised trial has provided the means to document neurological improvement at mid term (1 month) in a targeted population.",
+      "context_window": "the means to document neurological improvement at mid term (1 month) in a targeted population. Before undertaking a comparative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

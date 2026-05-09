@@ -1,0 +1,67 @@
+{
+  "paper_id": "DOI_10_1093_sleep_30_2_219_self_reported_sleep_quality_is_associated_with_the_metabolic",
+  "doi": "10.1093/sleep/30.2.219",
+  "extracted_at": "2026-05-08T20:06:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_30_2_219_self_reported_sleep_quality_is_associated_with_the_metabolic-u-642",
+      "claim_type": "unit_value",
+      "raw_text": "46 years",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 642,
+      "sentence": "PATIENTS/PARTICIPANTS: Two hundred ten volunteers with a mean age of 46 years (57% men) screened for the presence of serious illness and related medications.",
+      "context_window": "PARTICIPANTS: Two hundred ten volunteers with a mean age of 46 years (57% men) screened for the presence of serious illness and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_30_2_219_self_reported_sleep_quality_is_associated_with_the_metabolic-pct-652",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 652,
+      "sentence": "PATIENTS/PARTICIPANTS: Two hundred ten volunteers with a mean age of 46 years (57% men) screened for the presence of serious illness and related medications.",
+      "context_window": "TS: Two hundred ten volunteers with a mean age of 46 years (57% men) screened for the presence of serious illness and relat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_30_2_219_self_reported_sleep_quality_is_associated_with_the_metabolic-p-1136",
+      "claim_type": "p_value",
+      "raw_text": "p = .04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1136,
+      "sentence": "Logistic regression showed that poor global sleep-quality scores on the Pittsburgh Sleep Quality Index were related significantly to the presence of the metabolic syndrome-an increase of the global sleep score of 2.6 points (approximately 1 SD) was associated with an odds of having the metabolic syndrome of 1.44 (p = .04, confidence interval = 1.01-2.06).",
+      "context_window": "ated with an odds of having the metabolic syndrome of 1.44 (p = .04, confidence interval = 1.01-2.06). Linear-regression result",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

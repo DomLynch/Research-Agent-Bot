@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1159_000242741_taurine_and_the_premature",
+  "doi": "10.1159/000242741",
+  "extracted_at": "2026-05-08T20:10:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1159_000242741_taurine_and_the_premature-u-231",
+      "claim_type": "unit_value",
+      "raw_text": "60 \u03bcmol",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "abstract",
+      "source_offset": 231,
+      "sentence": "It can be estimated that the human fetus accumulates approximately 50-60 \u03bcmol/24 h during the last 4 weeks of pregnancy.",
+      "context_window": "estimated that the human fetus accumulates approximately 50-60 \u03bcmol/24 h during the last 4 weeks of pregnancy. As there is evid",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000242741_taurine_and_the_premature-u-260",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 260,
+      "sentence": "It can be estimated that the human fetus accumulates approximately 50-60 \u03bcmol/24 h during the last 4 weeks of pregnancy.",
+      "context_window": "s accumulates approximately 50-60 \u03bcmol/24 h during the last 4 weeks of pregnancy. As there is evidence for the relative inabili",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

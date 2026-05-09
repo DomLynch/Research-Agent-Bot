@@ -1,0 +1,217 @@
+{
+  "paper_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr",
+  "doi": "10.3171/2017.12.jns172284",
+  "extracted_at": "2026-05-08T20:05:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 2,
+    "mean_sd": 2,
+    "sample_size": 2,
+    "p_value": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-pct-174",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 174,
+      "sentence": "<jats:sec><jats:title>OBJECTIVE</jats:title><jats:p>Blunt traumatic extracranial carotid or vertebral artery injury (i.e., traumatic cerebrovascular injury [TCVI]) occurs in 1%-2% of all blunt trauma admissions, carries a 10% risk of thromboembolic ischemic stroke, and accounts for up to 9600 strokes annually in the US.",
+      "context_window": "y (i.e., traumatic cerebrovascular injury [TCVI]) occurs in 1%-2% of all blunt trauma admissions, carries a 10% risk of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-pct-177",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 177,
+      "sentence": "<jats:sec><jats:title>OBJECTIVE</jats:title><jats:p>Blunt traumatic extracranial carotid or vertebral artery injury (i.e., traumatic cerebrovascular injury [TCVI]) occurs in 1%-2% of all blunt trauma admissions, carries a 10% risk of thromboembolic ischemic stroke, and accounts for up to 9600 strokes annually in the US.",
+      "context_window": "i.e., traumatic cerebrovascular injury [TCVI]) occurs in 1%-2% of all blunt trauma admissions, carries a 10% risk of throm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-pct-222",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 222,
+      "sentence": "<jats:sec><jats:title>OBJECTIVE</jats:title><jats:p>Blunt traumatic extracranial carotid or vertebral artery injury (i.e., traumatic cerebrovascular injury [TCVI]) occurs in 1%-2% of all blunt trauma admissions, carries a 10% risk of thromboembolic ischemic stroke, and accounts for up to 9600 strokes annually in the US.",
+      "context_window": ") occurs in 1%-2% of all blunt trauma admissions, carries a 10% risk of thromboembolic ischemic stroke, and accounts for up",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-u-1064",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1064,
+      "sentence": "Patients with CTAs indicating TCVI were treated routinely with 325 mg aspirin daily.",
+      "context_window": "ients with CTAs indicating TCVI were treated routinely with 325 mg aspirin daily. The risk of transfusion > 24 hours after adm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-msd-1482",
+      "claim_type": "mean_sd",
+      "raw_text": "0.9 \u00b1 2.1",
+      "numeric_values": [
+        0.9,
+        2.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1482,
+      "sentence": "The risk of transfusion > 24 hours after admission was compared according to CTA findings (CTA+ or CTA- for positive or negative findings, respectively) and aspirin treatment (ASA+ or ASA- for treatment or no treatment, respectively).</jats:p></jats:sec><jats:sec><jats:title>RESULTS</jats:title><jats:p>The mean overall transfusion amount (number of units of packed red blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001).",
+      "context_window": "unt (number of units of packed red blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/AS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-n-1516",
+      "claim_type": "sample_size",
+      "raw_text": "n = 196",
+      "numeric_values": [
+        196.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1516,
+      "sentence": "The risk of transfusion > 24 hours after admission was compared according to CTA findings (CTA+ or CTA- for positive or negative findings, respectively) and aspirin treatment (ASA+ or ASA- for treatment or no treatment, respectively).</jats:p></jats:sec><jats:sec><jats:title>RESULTS</jats:title><jats:p>The mean overall transfusion amount (number of units of packed red blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001).",
+      "context_window": "blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-msd-1529",
+      "claim_type": "mean_sd",
+      "raw_text": "0.3 \u00b1 1.60",
+      "numeric_values": [
+        0.3,
+        1.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1529,
+      "sentence": "The risk of transfusion > 24 hours after admission was compared according to CTA findings (CTA+ or CTA- for positive or negative findings, respectively) and aspirin treatment (ASA+ or ASA- for treatment or no treatment, respectively).</jats:p></jats:sec><jats:sec><jats:title>RESULTS</jats:title><jats:p>The mean overall transfusion amount (number of units of packed red blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001).",
+      "context_window": "[PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001). In adjusted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-n-1564",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2290",
+      "numeric_values": [
+        2290.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1564,
+      "sentence": "The risk of transfusion > 24 hours after admission was compared according to CTA findings (CTA+ or CTA- for positive or negative findings, respectively) and aspirin treatment (ASA+ or ASA- for treatment or no treatment, respectively).</jats:p></jats:sec><jats:sec><jats:title>RESULTS</jats:title><jats:p>The mean overall transfusion amount (number of units of packed red blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001).",
+      "context_window": "+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001). In adjusted models, the overall relative ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-p-1575",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1575,
+      "sentence": "The risk of transfusion > 24 hours after admission was compared according to CTA findings (CTA+ or CTA- for positive or negative findings, respectively) and aspirin treatment (ASA+ or ASA- for treatment or no treatment, respectively).</jats:p></jats:sec><jats:sec><jats:title>RESULTS</jats:title><jats:p>The mean overall transfusion amount (number of units of packed red blood cells [PRBCs]) was 0.9 \u00b1 2.1 for CTA+/ASA+ patients (n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001).",
+      "context_window": "(n = 196) and 0.3 \u00b1 1.60 for CTA-/ASA- patients (n = 2290) (p < 0.0001). In adjusted models, the overall relative risk (RR) of PRB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-u-1787",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1787,
+      "sentence": "Among age groups, participants whose ages were 50-69 years had the greatest significantly elevated RR (1.71, 95% CI 1.08-2.72) for CTA+/ASA+ patients compared with CTA-/ASA- patients.</jats:p></jats:sec><jats:sec><jats:title>CONCLUSIONS</jats:title><jats:p>Treatment with aspirin for the prevention of stroke in patients with initially asymptomatic TCVI carries a significantly increased risk of PRBC transfusion.",
+      "context_window": "patients. Among age groups, participants whose ages were 50-69 years had the greatest significantly elevated RR (1.71, 95% CI 1.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3171_2017_12_jns172284_aspirin_for_primary_prevention_of_stroke_in_traumatic_cerebr-ci-1846",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.08-2.72",
+      "numeric_values": [
+        1.08,
+        2.72
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1846,
+      "sentence": "Among age groups, participants whose ages were 50-69 years had the greatest significantly elevated RR (1.71, 95% CI 1.08-2.72) for CTA+/ASA+ patients compared with CTA-/ASA- patients.</jats:p></jats:sec><jats:sec><jats:title>CONCLUSIONS</jats:title><jats:p>Treatment with aspirin for the prevention of stroke in patients with initially asymptomatic TCVI carries a significantly increased risk of PRBC transfusion.",
+      "context_window": "-69 years had the greatest significantly elevated RR (1.71, 95% CI 1.08-2.72) for CTA+/ASA+ patients compared with CTA-/ASA- patients.</",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

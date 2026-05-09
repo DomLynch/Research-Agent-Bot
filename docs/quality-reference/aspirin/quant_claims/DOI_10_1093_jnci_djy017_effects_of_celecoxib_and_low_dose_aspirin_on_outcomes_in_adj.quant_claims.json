@@ -1,0 +1,591 @@
+{
+  "paper_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj",
+  "doi": "10.1093/jnci/djy017",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "sample_size": 5,
+    "percentage": 10,
+    "p_value": 11,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-u-465",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 465,
+      "sentence": "Low-dose aspirin of 81 mg or less was a stratification factor.",
+      "context_window": "anastrozole, and celecoxib or placebo. Low-dose aspirin of 81 mg or less was a stratification factor. Due to concerns about",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-n-1110",
+      "claim_type": "sample_size",
+      "raw_text": "n = 811",
+      "numeric_values": [
+        811.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "All statistical tests were two-sided.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622).",
+      "context_window": "esults</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1119",
+      "claim_type": "percentage",
+      "raw_text": "50.0%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1119,
+      "sentence": "All statistical tests were two-sided.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622).",
+      "context_window": "ats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 mont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-n-1138",
+      "claim_type": "sample_size",
+      "raw_text": "n = 811",
+      "numeric_values": [
+        811.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1138,
+      "sentence": "All statistical tests were two-sided.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622).",
+      "context_window": "Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622). At a m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1147",
+      "claim_type": "percentage",
+      "raw_text": "50.0%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1147,
+      "sentence": "All statistical tests were two-sided.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622).",
+      "context_window": "signment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622). At a median o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-u-1177",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1177,
+      "sentence": "All statistical tests were two-sided.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622).",
+      "context_window": ", 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622). At a median of 4.1 years\u2019 follow-up, among 1622",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-n-1188",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1622",
+      "numeric_values": [
+        1622.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1188,
+      "sentence": "All statistical tests were two-sided.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Random assignment to celecoxib (n = 811, 50.0%) or placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622).",
+      "context_window": "placebo (n = 811, 50.0%) was discontinued after 18 months (n = 1622). At a median of 4.1 years\u2019 follow-up, among 1622 patients,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-u-1214",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 years",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1214,
+      "sentence": "At a median of 4.1 years\u2019 follow-up, among 1622 patients, 186 (11.5%) patients had an EFS event: 80 (4.9%) had distant relapse, and 125 (7.7%) died from any cause.",
+      "context_window": "was discontinued after 18 months (n = 1622). At a median of 4.1 years\u2019 follow-up, among 1622 patients, 186 (11.5%) patients had a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1262",
+      "claim_type": "percentage",
+      "raw_text": "11.5%",
+      "numeric_values": [
+        11.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1262,
+      "sentence": "At a median of 4.1 years\u2019 follow-up, among 1622 patients, 186 (11.5%) patients had an EFS event: 80 (4.9%) had distant relapse, and 125 (7.7%) died from any cause.",
+      "context_window": "a median of 4.1 years\u2019 follow-up, among 1622 patients, 186 (11.5%) patients had an EFS event: 80 (4.9%) had distant relapse,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1300",
+      "claim_type": "percentage",
+      "raw_text": "4.9%",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1300,
+      "sentence": "At a median of 4.1 years\u2019 follow-up, among 1622 patients, 186 (11.5%) patients had an EFS event: 80 (4.9%) had distant relapse, and 125 (7.7%) died from any cause.",
+      "context_window": "g 1622 patients, 186 (11.5%) patients had an EFS event: 80 (4.9%) had distant relapse, and 125 (7.7%) died from any cause. C",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1336",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1336,
+      "sentence": "At a median of 4.1 years\u2019 follow-up, among 1622 patients, 186 (11.5%) patients had an EFS event: 80 (4.9%) had distant relapse, and 125 (7.7%) died from any cause.",
+      "context_window": "s had an EFS event: 80 (4.9%) had distant relapse, and 125 (7.7%) died from any cause. Celecoxib did not statistically signi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1471",
+      "claim_type": "p_value",
+      "raw_text": "P = .92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "Celecoxib did not statistically significantly impact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76).",
+      "context_window": "pact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1480",
+      "claim_type": "p_value",
+      "raw_text": "P = .55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "Celecoxib did not statistically significantly impact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76).",
+      "context_window": "DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1493",
+      "claim_type": "p_value",
+      "raw_text": "P = .56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1493,
+      "sentence": "Celecoxib did not statistically significantly impact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76).",
+      "context_window": "in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1543",
+      "claim_type": "p_value",
+      "raw_text": "P = .74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "Celecoxib did not statistically significantly impact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76).",
+      "context_window": ".55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76). Low-dose aspirin use (aspirin users",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1552",
+      "claim_type": "p_value",
+      "raw_text": "P = .60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1552,
+      "sentence": "Celecoxib did not statistically significantly impact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76).",
+      "context_window": "P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76). Low-dose aspirin use (aspirin users n = 476,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1565",
+      "claim_type": "p_value",
+      "raw_text": "P = .76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1565,
+      "sentence": "Celecoxib did not statistically significantly impact EFS, DDFS, or OS in univariate analysis (respectively, P = .92, P = .55, and P = .56) or multivariable analysis (respectively, P = .74, P = .60, and P = .76).",
+      "context_window": "multivariable analysis (respectively, P = .74, P = .60, and P = .76). Low-dose aspirin use (aspirin users n = 476, 21.5%; non-a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-n-1611",
+      "claim_type": "sample_size",
+      "raw_text": "n = 476",
+      "numeric_values": [
+        476.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1611,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "P = .60, and P = .76). Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1620",
+      "claim_type": "percentage",
+      "raw_text": "21.5%",
+      "numeric_values": [
+        21.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1620,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "and P = .76). Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-n-1645",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1733",
+      "numeric_values": [
+        1733.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1645,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "spirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EF",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1655",
+      "claim_type": "percentage",
+      "raw_text": "78.5%",
+      "numeric_values": [
+        78.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1655,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "(aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (haza",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1742",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1742,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "ivariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and wor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1787",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1787,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "o [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-hr-a-1812",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.87",
+      "numeric_values": [
+        1.87
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1812,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "ence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001). After adjusting for base",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-1823",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1823,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "al [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001). After adjusting for baseline",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1846",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1846,
+      "sentence": "Low-dose aspirin use (aspirin users n = 476, 21.5%; non-aspirin users n = 1733, 78.5%) was associated in univariate analyses with worse EFS (hazard ratio [HR] = 1.48, 95% confidence interval [CI] = 1.12 to 1.96, P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001).",
+      "context_window": "P = 0.006) and worse OS (HR = 1.87, 95% CI = 1.35 to 2.61, P < .001). After adjusting for baseline characteristics and treatmen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1977",
+      "claim_type": "p_value",
+      "raw_text": "P = .08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1977,
+      "sentence": "After adjusting for baseline characteristics and treatment arm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no effect on DDFS and EFS in multivariable analysis.",
+      "context_window": "rm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-1996",
+      "claim_type": "p_value",
+      "raw_text": "P = .82",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1996,
+      "sentence": "After adjusting for baseline characteristics and treatment arm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no effect on DDFS and EFS in multivariable analysis.",
+      "context_window": "wed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-hr-a-2054",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.67",
+      "numeric_values": [
+        1.67
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2054,
+      "sentence": "After adjusting for baseline characteristics and treatment arm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no effect on DDFS and EFS in multivariable analysis.",
+      "context_window": "(P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-pct-2065",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2065,
+      "sentence": "After adjusting for baseline characteristics and treatment arm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no effect on DDFS and EFS in multivariable analysis.",
+      "context_window": "but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-p-2088",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2088,
+      "sentence": "After adjusting for baseline characteristics and treatment arm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no effect on DDFS and EFS in multivariable analysis.",
+      "context_window": "h statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_jnci_djy017_effects_of_celecoxib_and_low_dose_aspirin_on_outcomes_in_adj-u-2208",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 2208,
+      "sentence": "After adjusting for baseline characteristics and treatment arm, aspirin use showed no statistical association with EFS (P = .08) and DDFS (P = .82), but was associated with statistically worse OS (HR = 1.67, 95% CI = 1.13 to 2.49, P = .01).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no effect on DDFS and EFS in multivariable analysis.",
+      "context_window": "sion</jats:title> <jats:p>Random assignment to short-term (\u226418 months) celecoxib as well as use of low-dose aspirin showed no eff",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

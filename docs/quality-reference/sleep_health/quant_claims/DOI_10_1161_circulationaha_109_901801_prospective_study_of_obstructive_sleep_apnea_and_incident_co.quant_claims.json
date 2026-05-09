@@ -1,0 +1,193 @@
+{
+  "paper_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co",
+  "doi": "10.1161/circulationaha.109.901801",
+  "extracted_at": "2026-05-08T20:05:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "hazard_ratio": 2,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-u-417",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 417,
+      "sentence": "METHODS AND RESULTS: A total of 1927 men and 2495 women > or =40 years of age and free of coronary heart disease and heart failure at the time of baseline polysomnography were followed up for a median of 8.7 years in this prospective longitudinal epidemiological study.",
+      "context_window": "THODS AND RESULTS: A total of 1927 men and 2495 women > or =40 years of age and free of coronary heart disease and heart failure",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-u-559",
+      "claim_type": "unit_value",
+      "raw_text": "8.7 years",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 559,
+      "sentence": "METHODS AND RESULTS: A total of 1927 men and 2495 women > or =40 years of age and free of coronary heart disease and heart failure at the time of baseline polysomnography were followed up for a median of 8.7 years in this prospective longitudinal epidemiological study.",
+      "context_window": "f baseline polysomnography were followed up for a median of 8.7 years in this prospective longitudinal epidemiological study. Aft",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-u-860",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "After adjustment for multiple risk factors, obstructive sleep apnea was a significant predictor of incident coronary heart disease (myocardial infarction, revascularization procedure, or coronary heart disease death) only in men < or =70 years of age (adjusted hazard ratio 1.10 [95% confidence interval 1.00 to 1.21] per 10-unit increase in apnea-hypopnea index [AHI]) but not in older men or in women of any age.",
+      "context_window": "ocedure, or coronary heart disease death) only in men < or =70 years of age (adjusted hazard ratio 1.10 [95% confidence interval",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-hr-l-877",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.10",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 877,
+      "sentence": "After adjustment for multiple risk factors, obstructive sleep apnea was a significant predictor of incident coronary heart disease (myocardial infarction, revascularization procedure, or coronary heart disease death) only in men < or =70 years of age (adjusted hazard ratio 1.10 [95% confidence interval 1.00 to 1.21] per 10-unit increase in apnea-hypopnea index [AHI]) but not in older men or in women of any age.",
+      "context_window": "ary heart disease death) only in men < or =70 years of age (adjusted hazard ratio 1.10 [95% confidence interval 1.00 to 1.21] per 10-unit increase",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-pct-905",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 905,
+      "sentence": "After adjustment for multiple risk factors, obstructive sleep apnea was a significant predictor of incident coronary heart disease (myocardial infarction, revascularization procedure, or coronary heart disease death) only in men < or =70 years of age (adjusted hazard ratio 1.10 [95% confidence interval 1.00 to 1.21] per 10-unit increase in apnea-hypopnea index [AHI]) but not in older men or in women of any age.",
+      "context_window": "y in men < or =70 years of age (adjusted hazard ratio 1.10 [95% confidence interval 1.00 to 1.21] per 10-unit increase in a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-u-1056",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "Among men 40 to 70 years old, those with AHI > or =30 were 68% more likely to develop coronary heart disease than those with AHI <5.",
+      "context_window": "ut not in older men or in women of any age. Among men 40 to 70 years old, those with AHI > or =30 were 68% more likely to develo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-pct-1099",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "Among men 40 to 70 years old, those with AHI > or =30 were 68% more likely to develop coronary heart disease than those with AHI <5.",
+      "context_window": "Among men 40 to 70 years old, those with AHI > or =30 were 68% more likely to develop coronary heart disease than those wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-hr-l-1255",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio 1.13",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1255,
+      "sentence": "Obstructive sleep apnea predicted incident heart failure in men but not in women (adjusted hazard ratio 1.13 [95% confidence interval 1.02 to 1.26] per 10-unit increase in AHI).",
+      "context_window": "a predicted incident heart failure in men but not in women (adjusted hazard ratio 1.13 [95% confidence interval 1.02 to 1.26] per 10-unit increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-pct-1283",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "Obstructive sleep apnea predicted incident heart failure in men but not in women (adjusted hazard ratio 1.13 [95% confidence interval 1.02 to 1.26] per 10-unit increase in AHI).",
+      "context_window": "ailure in men but not in women (adjusted hazard ratio 1.13 [95% confidence interval 1.02 to 1.26] per 10-unit increase in A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_109_901801_prospective_study_of_obstructive_sleep_apnea_and_incident_co-pct-1378",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1378,
+      "sentence": "Men with AHI > or =30 were 58% more likely to develop heart failure than those with AHI <5.",
+      "context_window": "6] per 10-unit increase in AHI). Men with AHI > or =30 were 58% more likely to develop heart failure than those with AHI <5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

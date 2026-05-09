@@ -1,0 +1,1188 @@
+{
+  "paper_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol",
+  "doi": "10.1016/j.jped.2020.07.007",
+  "extracted_at": "2026-05-08T20:06:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 16,
+    "percentage": 42,
+    "p_value": 3,
+    "confidence_interval": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-212",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 212,
+      "sentence": "Cross-sectional, national, school-based study, involving adolescents aged 12-17 years.",
+      "context_window": "national, school-based study, involving adolescents aged 12-17 years. In the period between 2013-14, data from 59,442 participan",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-827",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 827,
+      "sentence": "Crude and adjusted prevalence ratios and respective 95% confidence intervals were calculated, and a value of p < 0.05 was considered significant for all analyses performed.",
+      "context_window": "alysis. Crude and adjusted prevalence ratios and respective 95% confidence intervals were calculated, and a value of p < 0.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-p-884",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 884,
+      "sentence": "Crude and adjusted prevalence ratios and respective 95% confidence intervals were calculated, and a value of p < 0.05 was considered significant for all analyses performed.",
+      "context_window": "ve 95% confidence intervals were calculated, and a value of p < 0.05 was considered significant for all analyses performed. Pre",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-982",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 982,
+      "sentence": "Prevalence of current asthma was 13.4%, being significantly higher among students with short sleep duration (PR: 1.17; 95% CI: 1.01-1.35; p = 0.034).",
+      "context_window": "r all analyses performed. Prevalence of current asthma was 13.4%, being significantly higher among students with short sleep",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-ci-1068",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.35",
+      "numeric_values": [
+        1.01,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1068,
+      "sentence": "Prevalence of current asthma was 13.4%, being significantly higher among students with short sleep duration (PR: 1.17; 95% CI: 1.01-1.35; p = 0.034).",
+      "context_window": "higher among students with short sleep duration (PR: 1.17; 95% CI: 1.01-1.35; p = 0.034). This remained significant even after adjusting",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-p-1087",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1087,
+      "sentence": "Prevalence of current asthma was 13.4%, being significantly higher among students with short sleep duration (PR: 1.17; 95% CI: 1.01-1.35; p = 0.034).",
+      "context_window": "nts with short sleep duration (PR: 1.17; 95% CI: 1.01-1.35; p = 0.034). This remained significant even after adjusting for the ot",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-99",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 99,
+      "sentence": "Asthma is the most common chronic non-communicable disease in childhood and adolescence, affecting 1%-18% of the population in different countries.",
+      "context_window": "ommunicable disease in childhood and adolescence, affecting 1%-18% of the population in different countries. 1 According t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-102",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 102,
+      "sentence": "Asthma is the most common chronic non-communicable disease in childhood and adolescence, affecting 1%-18% of the population in different countries.",
+      "context_window": "unicable disease in childhood and adolescence, affecting 1%-18% of the population in different countries. 1 According to In",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-295",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 295,
+      "sentence": "1 According to International Study of Asthma and Allergies in Childhood (ISAAC), the Brazilian prevalence of current asthma in adolescents aged 13-14 years was 19%.",
+      "context_window": "azilian prevalence of current asthma in adolescents aged 13-14 years was 19%. 2 More recently, the Study of Cardiovascular Risks",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-308",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 308,
+      "sentence": "1 According to International Study of Asthma and Allergies in Childhood (ISAAC), the Brazilian prevalence of current asthma in adolescents aged 13-14 years was 19%.",
+      "context_window": "lence of current asthma in adolescents aged 13-14 years was 19%. 2 More recently, the Study of Cardiovascular Risks in Adol",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-421",
+      "claim_type": "percentage",
+      "raw_text": "13.1%",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 421,
+      "sentence": "2 More recently, the Study of Cardiovascular Risks in Adolescents (ERICA), showed a prevalence of asthma of 13.1% among Brazilian adolescents.",
+      "context_window": "ks in Adolescents (ERICA), showed a prevalence of asthma of 13.1% among Brazilian adolescents. 3 Previous studies 4 have sho",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1371",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1371,
+      "sentence": "7\n\nNighttime exacerbations are characteristic of asthma, and affect up to 75% of patients.",
+      "context_window": "xacerbations are characteristic of asthma, and affect up to 75% of patients. During sleep, oscillations in lung function oc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-193",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 193,
+      "sentence": "This is a multicenter, national, school-based study carried out in a randomized sample of adolescents aged 12-17 years, representative of the group of adolescents enrolled in schools in municipalities with more than 100,000 inhabitants at the national and regional level, and of each capital and the Federal District.",
+      "context_window": "y carried out in a randomized sample of adolescents aged 12-17 years, representative of the group of adolescents enrolled in sch",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-1049",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1049,
+      "sentence": "12\n\nThe asthma variable was assessed by the question: \u201cIn the last 12 months, how many wheezing attacks (wheezing crises) did you have?\u201d, extracted from the ISAAC questionnaire asthma module for the 13-14 age group, translated and validated for Brazilian culture.",
+      "context_window": "asthma variable was assessed by the question: \u201cIn the last 12 months, how many wheezing attacks (wheezing crises) did you have?\u201d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-1300",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1300,
+      "sentence": "13 Those who reported at least one attack in the past 12 months were classified as having current asthma.",
+      "context_window": "ture. 13 Those who reported at least one attack in the past 12 months were classified as having current asthma. A positive respon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-2895",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2895,
+      "sentence": "This tool has a sensitivity of 85% and specificity of 79% on detection of states of psychological distress as anxiety, depression, and somatoform symptoms, and consists of 12 items that assess the presence of the symptoms in the last two weeks.",
+      "context_window": "ell-being, of an individual. This tool has a sensitivity of 85% and specificity of 79% on detection of states of psychologi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-2918",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2918,
+      "sentence": "This tool has a sensitivity of 85% and specificity of 79% on detection of states of psychological distress as anxiety, depression, and somatoform symptoms, and consists of 12 items that assess the presence of the symptoms in the last two weeks.",
+      "context_window": "dual. This tool has a sensitivity of 85% and specificity of 79% on detection of states of psychological distress as anxiety",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-3974",
+      "claim_type": "unit_value",
+      "raw_text": "200 kg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3974,
+      "sentence": "Anthropometric measurements were performed with the individuals wearing light clothing and bare feet using an electronic scale (L\u00edder\u00ae model P200 M - S\u00e3o Paulo, Brazil,) with a capacity of up to 200 kg and an accuracy of 50 g; height was measured using a portable stadiometer (Alturaexata\u00ae - Minas Gerais, Brazil) with an accuracy of 0.1 cm.",
+      "context_window": "model P200 M - S\u00e3o Paulo, Brazil,) with a capacity of up to 200 kg and an accuracy of 50 g; height was measured using a portab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-4113",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4113,
+      "sentence": "Anthropometric measurements were performed with the individuals wearing light clothing and bare feet using an electronic scale (L\u00edder\u00ae model P200 M - S\u00e3o Paulo, Brazil,) with a capacity of up to 200 kg and an accuracy of 50 g; height was measured using a portable stadiometer (Alturaexata\u00ae - Minas Gerais, Brazil) with an accuracy of 0.1 cm.",
+      "context_window": "r (Alturaexata\u00ae - Minas Gerais, Brazil) with an accuracy of 0.1 cm. 11 The following sociodemographic variables were also eval",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-4208",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4208,
+      "sentence": "11 The following sociodemographic variables were also evaluated: gender, age group (12-14 years or 15-17 years), and type of school (public or private).",
+      "context_window": "raphic variables were also evaluated: gender, age group (12-14 years or 15-17 years), and type of school (public or private). D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-4223",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4223,
+      "sentence": "11 The following sociodemographic variables were also evaluated: gender, age group (12-14 years or 15-17 years), and type of school (public or private).",
+      "context_window": "s were also evaluated: gender, age group (12-14 years or 15-17 years), and type of school (public or private). Descriptive stat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-4568",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4568,
+      "sentence": "Prevalence ratios (PR) and respective 95% confidence intervals (95% CIs) were calculated using a bivariate Poisson regression model.",
+      "context_window": "mon mental disorders. Prevalence ratios (PR) and respective 95% confidence intervals (95% CIs) were calculated using a biva",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-4594",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4594,
+      "sentence": "Prevalence ratios (PR) and respective 95% confidence intervals (95% CIs) were calculated using a bivariate Poisson regression model.",
+      "context_window": "alence ratios (PR) and respective 95% confidence intervals (95% CIs) were calculated using a bivariate Poisson regression m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-p-5125",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5125,
+      "sentence": "The value of p < 0.05 was considered significant for all analyses performed.",
+      "context_window": "both asthma and SSD in the previous analysis. The value of p < 0.05 was considered significant for all analyses performed. To",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-380",
+      "claim_type": "percentage",
+      "raw_text": "55.3%",
+      "numeric_values": [
+        55.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 380,
+      "sentence": "Among the adolescents evaluated, 55.3% were aged between 15 and 17 years and 56.2% were female.",
+      "context_window": "final analysis (Fig. S1). Among the adolescents evaluated, 55.3% were aged between 15 and 17 years and 56.2% were female. Th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-411",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 411,
+      "sentence": "Among the adolescents evaluated, 55.3% were aged between 15 and 17 years and 56.2% were female.",
+      "context_window": "g the adolescents evaluated, 55.3% were aged between 15 and 17 years and 56.2% were female. The prevalence of current asthma was",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-424",
+      "claim_type": "percentage",
+      "raw_text": "56.2%",
+      "numeric_values": [
+        56.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 424,
+      "sentence": "Among the adolescents evaluated, 55.3% were aged between 15 and 17 years and 56.2% were female.",
+      "context_window": "ents evaluated, 55.3% were aged between 15 and 17 years and 56.2% were female. The prevalence of current asthma was 13.4% (95",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-480",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 480,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "and 56.2% were female. The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of ad",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 487,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "2% were female. The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolesc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-495",
+      "claim_type": "percentage",
+      "raw_text": "13.1%",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "female. The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had S",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-501",
+      "claim_type": "percentage",
+      "raw_text": "13.7%",
+      "numeric_values": [
+        13.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 501,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": ". The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( T",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-512",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 512,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "lence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ). T",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-519",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "f current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ). Table",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-527",
+      "claim_type": "percentage",
+      "raw_text": "18.5%",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 527,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "t asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ). Table 1 General",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-533",
+      "claim_type": "percentage",
+      "raw_text": "19.1%",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 533,
+      "sentence": "The prevalence of current asthma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ).",
+      "context_window": "ma was 13.4% (95% CI: 13.1%-13.7%) and 18.8% (95% CI: 18.5%-19.1%) of adolescents had SSD ( Table 1 ). Table 1 General charac",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-716",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 716,
+      "sentence": "Table 1 Variables n % 95% CI Total 59,442 Age group 15-17 yrs 32,712 55.0 54.6-55.4 12-14 yrs 26,730 45.0 Gender Female 33,388 56.2 55.8-56.7 Male 26,054 43.8 Type of school Public 46,088 77.5 22.13-22.8 Private 13,354 22.5 Current asthma Yes 7969 13.4 13.1-13.6 No 51,473 86.6 Sleep duration Short 11,219 18.9 24.07-24.76 Sufficient 48.223 8113 Weight categories Excess weight 14,511 24.4 24.0-24.7 Eutrophic/malnourished 44,931 75.6 CMD Yes 18,237 30.7 30.3-31.0 No 41,205 69.3 95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "context_window": "Adolescents (ERICA), Brazil, 2013-14. Table 1 Variables n % 95% CI Total 59,442 Age group 15-17 yrs 32,712 55.0 54.6-55.4 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1174,
+      "sentence": "Table 1 Variables n % 95% CI Total 59,442 Age group 15-17 yrs 32,712 55.0 54.6-55.4 12-14 yrs 26,730 45.0 Gender Female 33,388 56.2 55.8-56.7 Male 26,054 43.8 Type of school Public 46,088 77.5 22.13-22.8 Private 13,354 22.5 Current asthma Yes 7969 13.4 13.1-13.6 No 51,473 86.6 Sleep duration Short 11,219 18.9 24.07-24.76 Sufficient 48.223 8113 Weight categories Excess weight 14,511 24.4 24.0-24.7 Eutrophic/malnourished 44,931 75.6 CMD Yes 18,237 30.7 30.3-31.0 No 41,205 69.3 95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "context_window": "ed 44,931 75.6 CMD Yes 18,237 30.7 30.3-31.0 No 41,205 69.3 95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1182",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1182,
+      "sentence": "Table 1 Variables n % 95% CI Total 59,442 Age group 15-17 yrs 32,712 55.0 54.6-55.4 12-14 yrs 26,730 45.0 Gender Female 33,388 56.2 55.8-56.7 Male 26,054 43.8 Type of school Public 46,088 77.5 22.13-22.8 Private 13,354 22.5 Current asthma Yes 7969 13.4 13.1-13.6 No 51,473 86.6 Sleep duration Short 11,219 18.9 24.07-24.76 Sufficient 48.223 8113 Weight categories Excess weight 14,511 24.4 24.0-24.7 Eutrophic/malnourished 44,931 75.6 CMD Yes 18,237 30.7 30.3-31.0 No 41,205 69.3 95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "context_window": "1 75.6 CMD Yes 18,237 30.7 30.3-31.0 No 41,205 69.3 95% CI, 95% confidence interval; CMD, common mental disorders. General",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1349",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1349,
+      "sentence": "95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "context_window": "diovascular Risks in Adolescents (ERICA), Brazil, 2013-14. 95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1357",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1357,
+      "sentence": "95% CI, 95% confidence interval; CMD, common mental disorders.",
+      "context_window": "lar Risks in Adolescents (ERICA), Brazil, 2013-14. 95% CI, 95% confidence interval; CMD, common mental disorders. Current",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-ci-1477",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.08-1.44",
+      "numeric_values": [
+        1.08,
+        1.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1477,
+      "sentence": "Current asthma was significantly associated with SSD (PR: 1.25; 95% CI: 1.08-1.44) in the bivariate model.",
+      "context_window": "ent asthma was significantly associated with SSD (PR: 1.25; 95% CI: 1.08-1.44) in the bivariate model. The prevalence of current asthma w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1958",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1958,
+      "sentence": "Table 2 Variables PRcr 95% CI p a PRaj 95% CI p a Short sleep duration 1.25 1.08-1.44 0.002 1.18 1.03-1.34 0.016 Excess weight 1.14 1.02-1.29 0.025 1.12 1.00-1.26 0.045 Common mental disorders 1.87 1.70-2.07 0.000 1.80 1.62-2.01 0.000 Female sex 1.32 1.21-1.43 0.000 1.18 1.08-1.30 0.000 Private school 1.26 1.09-1.46 0.002 1.25 1.08-1.44 0.002 Age group 1.04 0.91-1.17 0.592 - - - 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": "lescents (ERICA), Brazil, 2013-2014. Table 2 Variables PRcr 95% CI p a PRaj 95% CI p a Short sleep duration 1.25 1.08-1.44",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1974",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1974,
+      "sentence": "Table 2 Variables PRcr 95% CI p a PRaj 95% CI p a Short sleep duration 1.25 1.08-1.44 0.002 1.18 1.03-1.34 0.016 Excess weight 1.14 1.02-1.29 0.025 1.12 1.00-1.26 0.045 Common mental disorders 1.87 1.70-2.07 0.000 1.80 1.62-2.01 0.000 Female sex 1.32 1.21-1.43 0.000 1.18 1.08-1.30 0.000 Private school 1.26 1.09-1.46 0.002 1.25 1.08-1.44 0.002 Age group 1.04 0.91-1.17 0.592 - - - 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": ", Brazil, 2013-2014. Table 2 Variables PRcr 95% CI p a PRaj 95% CI p a Short sleep duration 1.25 1.08-1.44 0.002 1.18 1.03-",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-2317",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2317,
+      "sentence": "Table 2 Variables PRcr 95% CI p a PRaj 95% CI p a Short sleep duration 1.25 1.08-1.44 0.002 1.18 1.03-1.34 0.016 Excess weight 1.14 1.02-1.29 0.025 1.12 1.00-1.26 0.045 Common mental disorders 1.87 1.70-2.07 0.000 1.80 1.62-2.01 0.000 Female sex 1.32 1.21-1.43 0.000 1.18 1.08-1.30 0.000 Private school 1.26 1.09-1.46 0.002 1.25 1.08-1.44 0.002 Age group 1.04 0.91-1.17 0.592 - - - 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": "2 1.25 1.08-1.44 0.002 Age group 1.04 0.91-1.17 0.592 - - - 95% CI, 95% confidence interval; PRcr, crude prevalence ratio;",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-2325",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2325,
+      "sentence": "Table 2 Variables PRcr 95% CI p a PRaj 95% CI p a Short sleep duration 1.25 1.08-1.44 0.002 1.18 1.03-1.34 0.016 Excess weight 1.14 1.02-1.29 0.025 1.12 1.00-1.26 0.045 Common mental disorders 1.87 1.70-2.07 0.000 1.80 1.62-2.01 0.000 Female sex 1.32 1.21-1.43 0.000 1.18 1.08-1.30 0.000 Private school 1.26 1.09-1.46 0.002 1.25 1.08-1.44 0.002 Age group 1.04 0.91-1.17 0.592 - - - 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": ".08-1.44 0.002 Age group 1.04 0.91-1.17 0.592 - - - 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, pr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-2660",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2660,
+      "sentence": "95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for nutritional status, common mental disorders, gender, school type.",
+      "context_window": "ovascular Risks in Adolescents (ERICA), Brazil, 2013-2014. 95% CI, 95% confidence interval; PRcr, crude prevalence ratio;",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-2668",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2668,
+      "sentence": "95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for nutritional status, common mental disorders, gender, school type.",
+      "context_window": "r Risks in Adolescents (ERICA), Brazil, 2013-2014. 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, pr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-3297",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3297,
+      "sentence": "Table 3 Variables PRcr 95% CI p a PRaj 95% CI p a Excess weight 1.06 0.98-1.16 0.103 1.13 1.04-1.22 0.002 Common mental disorders 1.41 1.28-1.56 0.000 1.30 1.19-1.43 0.000 Female sex 0.96 0.88-1.04 0.357 -- -- -- Private school 1.07 0.84-1.37 0.543 -- -- -- Age group 2.31 2.11-2.53 0.000 2.29 2.08-2.50 0.000 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for asthma, nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": "lescents (ERICA), Brazil, 2013-2014. Table 3 Variables PRcr 95% CI p a PRaj 95% CI p a Excess weight 1.06 0.98-1.16 0.103 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-3313",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3313,
+      "sentence": "Table 3 Variables PRcr 95% CI p a PRaj 95% CI p a Excess weight 1.06 0.98-1.16 0.103 1.13 1.04-1.22 0.002 Common mental disorders 1.41 1.28-1.56 0.000 1.30 1.19-1.43 0.000 Female sex 0.96 0.88-1.04 0.357 -- -- -- Private school 1.07 0.84-1.37 0.543 -- -- -- Age group 2.31 2.11-2.53 0.000 2.29 2.08-2.50 0.000 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for asthma, nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": ", Brazil, 2013-2014. Table 3 Variables PRcr 95% CI p a PRaj 95% CI p a Excess weight 1.06 0.98-1.16 0.103 1.13 1.04-1.22 0.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-3584",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3584,
+      "sentence": "Table 3 Variables PRcr 95% CI p a PRaj 95% CI p a Excess weight 1.06 0.98-1.16 0.103 1.13 1.04-1.22 0.002 Common mental disorders 1.41 1.28-1.56 0.000 1.30 1.19-1.43 0.000 Female sex 0.96 0.88-1.04 0.357 -- -- -- Private school 1.07 0.84-1.37 0.543 -- -- -- Age group 2.31 2.11-2.53 0.000 2.29 2.08-2.50 0.000 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for asthma, nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": "- -- -- Age group 2.31 2.11-2.53 0.000 2.29 2.08-2.50 0.000 95% CI, 95% confidence interval; PRcr, crude prevalence ratio;",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-3592",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3592,
+      "sentence": "Table 3 Variables PRcr 95% CI p a PRaj 95% CI p a Excess weight 1.06 0.98-1.16 0.103 1.13 1.04-1.22 0.002 Common mental disorders 1.41 1.28-1.56 0.000 1.30 1.19-1.43 0.000 Female sex 0.96 0.88-1.04 0.357 -- -- -- Private school 1.07 0.84-1.37 0.543 -- -- -- Age group 2.31 2.11-2.53 0.000 2.29 2.08-2.50 0.000 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for asthma, nutritional status, common mental disorders, gender, school type. a Poisson regression p-values.",
+      "context_window": "Age group 2.31 2.11-2.53 0.000 2.29 2.08-2.50 0.000 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, pr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-3941",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3941,
+      "sentence": "95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for asthma, nutritional status, common mental disorders, gender, school type.",
+      "context_window": "ovascular Risks in Adolescents (ERICA), Brazil, 2013-2014. 95% CI, 95% confidence interval; PRcr, crude prevalence ratio;",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-3949",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3949,
+      "sentence": "95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, prevalence ratio adjusted for asthma, nutritional status, common mental disorders, gender, school type.",
+      "context_window": "r Risks in Adolescents (ERICA), Brazil, 2013-2014. 95% CI, 95% confidence interval; PRcr, crude prevalence ratio; PRaj, pr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-ci-4329",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.35",
+      "numeric_values": [
+        1.01,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4329,
+      "sentence": "Current asthma and SSD remained significantly associated (PR: 1.17, 95% CI: 1.01-1.35), showing that these are independent factors for both conditions ( Table 4 ).",
+      "context_window": "asthma and SSD remained significantly associated (PR: 1.17, 95% CI: 1.01-1.35), showing that these are independent factors for both condi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-4622",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4622,
+      "sentence": "Table 4 Variables PRaj 95% CI p a Short sleep duration 1.17 1.01-1.35 0.034 Excess weight 1.13 1.01-1.27 0.033 Presence common mental disorders 1.85 1.67-2.04 0.000 a Poisson regression p-values.",
+      "context_window": "lescents (ERICA), Brazil, 2013-2014. Table 4 Variables PRaj 95% CI p a Short sleep duration 1.17 1.01-1.35 0.034 Excess wei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-354",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 354,
+      "sentence": "Urrutia-Pereira et al., in a recent study involving 700 children aged 4-10 years with asthma and/or rhinitis and 454 controls from Latin American countries, including Brazil, showed that patients with asthma had the worst scores on the Sleep Habits Questionnaire, completed by their caregivers, in comparison to controls.",
+      "context_window": "ira et al., in a recent study involving 700 children aged 4-10 years with asthma and/or rhinitis and 454 controls from Latin Ame",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-1180",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1180,
+      "sentence": "9 On the other hand, in 2014, Meltzer et al., in a study involving 298 adolescents between 12-17 years old, 51% male and 48% with asthma, assessed sleep duration, sleep hygiene, and insomnia in patients with and without asthma.",
+      "context_window": "zer et al., in a study involving 298 adolescents between 12-17 years old, 51% male and 48% with asthma, assessed sleep duration,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1194",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1194,
+      "sentence": "9 On the other hand, in 2014, Meltzer et al., in a study involving 298 adolescents between 12-17 years old, 51% male and 48% with asthma, assessed sleep duration, sleep hygiene, and insomnia in patients with and without asthma.",
+      "context_window": "a study involving 298 adolescents between 12-17 years old, 51% male and 48% with asthma, assessed sleep duration, sleep hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-1207",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1207,
+      "sentence": "9 On the other hand, in 2014, Meltzer et al., in a study involving 298 adolescents between 12-17 years old, 51% male and 48% with asthma, assessed sleep duration, sleep hygiene, and insomnia in patients with and without asthma.",
+      "context_window": "lving 298 adolescents between 12-17 years old, 51% male and 48% with asthma, assessed sleep duration, sleep hygiene, and in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-1924",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1924,
+      "sentence": "18 Another study followed 38 patients between 9 and 19 years of age with asthma for two weeks, showed that a lower number of sleep hours was associated with a lower peak expiratory flow (PEF) and less release of morning cortisol, but without association with greater severity of asthma symptoms.",
+      "context_window": "sleep. 18 Another study followed 38 patients between 9 and 19 years of age with asthma for two weeks, showed that a lower numbe",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-3493",
+      "claim_type": "unit_value",
+      "raw_text": "14 year",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 3493,
+      "sentence": "21 However, among ERICA participants, boys in the 12-14 year age group had a longer mean sleep duration than girls, and from 15 years of age there was a more pronounced decline in the number of hours of sleep.",
+      "context_window": "lysis. 21 However, among ERICA participants, boys in the 12-14 year age group had a longer mean sleep duration than girls, and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-3565",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3565,
+      "sentence": "21 However, among ERICA participants, boys in the 12-14 year age group had a longer mean sleep duration than girls, and from 15 years of age there was a more pronounced decline in the number of hours of sleep.",
+      "context_window": "group had a longer mean sleep duration than girls, and from 15 years of age there was a more pronounced decline in the number of",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-ci-4848",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00-1.17",
+      "numeric_values": [
+        1.0,
+        1.17
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4848,
+      "sentence": "26 A recent study evaluating this association among ERICA participants, showed that SSD is associated with overweight/obesity (PR: 1.08; 95% CI: 1.00-1.17).",
+      "context_window": "d that SSD is associated with overweight/obesity (PR: 1.08; 95% CI: 1.00-1.17). 27 In the present sample, the association between this va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-pct-5293",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5293,
+      "sentence": "It is noteworthy that it had a high prevalence among the participants in this study, about 30%, with this proportion being higher among girls and in the age group of 15-17 years.",
+      "context_window": "high prevalence among the participants in this study, about 30%, with this proportion being higher among girls and in the a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9432073_association_between_asthma_and_sleep_hours_in_brazilian_adol-u-5371",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5371,
+      "sentence": "It is noteworthy that it had a high prevalence among the participants in this study, about 30%, with this proportion being higher among girls and in the age group of 15-17 years.",
+      "context_window": "portion being higher among girls and in the age group of 15-17 years. As observed in relation to obesity, the association betwee",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "paper_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n",
+  "doi": "10.1182/blood-2011-03-344333",
+  "extracted_at": "2026-05-08T20:06:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 2,
+    "percentage": 5,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "Overall, 342 patients who did not have clinical indications or contraindications to antiplatelet or anticoagulant therapy were randomly assigned to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166).",
+      "context_window": "anticoagulant therapy were randomly assigned to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166). The inciden",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-n-675",
+      "claim_type": "sample_size",
+      "raw_text": "n = 176",
+      "numeric_values": [
+        176.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 675,
+      "sentence": "Overall, 342 patients who did not have clinical indications or contraindications to antiplatelet or anticoagulant therapy were randomly assigned to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166).",
+      "context_window": "ant therapy were randomly assigned to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166). The incidence of VTE",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-u-703",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/d",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 703,
+      "sentence": "Overall, 342 patients who did not have clinical indications or contraindications to antiplatelet or anticoagulant therapy were randomly assigned to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166).",
+      "context_window": "signed to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166). The incidence of VTE was 2.27% in the ASA group",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-n-712",
+      "claim_type": "sample_size",
+      "raw_text": "n = 166",
+      "numeric_values": [
+        166.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 712,
+      "sentence": "Overall, 342 patients who did not have clinical indications or contraindications to antiplatelet or anticoagulant therapy were randomly assigned to receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166).",
+      "context_window": "receive ASA 100 mg/d (n = 176) or LMWH enoxaparin 40 mg/d (n = 166). The incidence of VTE was 2.27% in the ASA group and 1.20%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-pct-747",
+      "claim_type": "percentage",
+      "raw_text": "2.27%",
+      "numeric_values": [
+        2.27
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 747,
+      "sentence": "The incidence of VTE was 2.27% in the ASA group and 1.20% in the LMWH group.",
+      "context_window": "LMWH enoxaparin 40 mg/d (n = 166). The incidence of VTE was 2.27% in the ASA group and 1.20% in the LMWH group. Compared with",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-pct-774",
+      "claim_type": "percentage",
+      "raw_text": "1.20%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 774,
+      "sentence": "The incidence of VTE was 2.27% in the ASA group and 1.20% in the LMWH group.",
+      "context_window": "= 166). The incidence of VTE was 2.27% in the ASA group and 1.20% in the LMWH group. Compared with LMWH, the absolute differe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-pct-872",
+      "claim_type": "percentage",
+      "raw_text": "1.07%",
+      "numeric_values": [
+        1.07
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 872,
+      "sentence": "Compared with LMWH, the absolute difference in the proportion of VTE was 1.07% (95% confidence interval, -1.69-3.83; P = .452) in the ASA group.",
+      "context_window": "LMWH, the absolute difference in the proportion of VTE was 1.07% (95% confidence interval, -1.69-3.83; P = .452) in the ASA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-pct-879",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 879,
+      "sentence": "Compared with LMWH, the absolute difference in the proportion of VTE was 1.07% (95% confidence interval, -1.69-3.83; P = .452) in the ASA group.",
+      "context_window": "the absolute difference in the proportion of VTE was 1.07% (95% confidence interval, -1.69-3.83; P = .452) in the ASA group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-p-916",
+      "claim_type": "p_value",
+      "raw_text": "P = .452",
+      "numeric_values": [
+        0.452
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 916,
+      "sentence": "Compared with LMWH, the absolute difference in the proportion of VTE was 1.07% (95% confidence interval, -1.69-3.83; P = .452) in the ASA group.",
+      "context_window": "tion of VTE was 1.07% (95% confidence interval, -1.69-3.83; P = .452) in the ASA group. Pulmonary embolism was observed in 1.70%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_03_344333_aspirin_or_enoxaparin_thromboprophylaxis_for_patients_with_n-pct-979",
+      "claim_type": "percentage",
+      "raw_text": "1.70%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 979,
+      "sentence": "Pulmonary embolism was observed in 1.70% of patients in the ASA group and none in the LMWH group.",
+      "context_window": ".452) in the ASA group. Pulmonary embolism was observed in 1.70% of patients in the ASA group and none in the LMWH group. No",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

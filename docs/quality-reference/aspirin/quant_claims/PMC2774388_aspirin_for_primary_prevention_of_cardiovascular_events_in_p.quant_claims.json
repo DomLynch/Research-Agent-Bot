@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p",
   "doi": "10.1136/bmj.b4531",
-  "extracted_at": "2026-05-05T21:18:36+00:00",
+  "extracted_at": "2026-05-08T20:05:14+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 35,
@@ -42,8 +42,8 @@
       "sentence": "When aspirin was compared with placebo there was no statistically significant reduction in the risk of major cardiovascular events (five studies, 9584 participants; relative risk 0.90, 95% confidence interval 0.81 to 1.00), cardiovascular mortality (four studies, n=8557, 0.94; 0.72 to 1.23), or all cause mortality (four studies, n=8557; 0.93, 0.82 to 1.05).",
       "context_window": "jor cardiovascular events (five studies, 9584 participants; relative risk 0.90, 95% confidence interval 0.81 to 1.00), cardiovascular mort",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "placebo",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "vents (five studies, 9584 participants; relative risk 0.90, 95% confidence interval 0.81 to 1.00), cardiovascular mortality",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "rval 0.81 to 1.00), cardiovascular mortality (four studies, n=8557, 0.94; 0.72 to 1.23), or all cause mortality (four studies,",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -97,7 +97,7 @@
       "context_window": "0.94; 0.72 to 1.23), or all cause mortality (four studies, n=8557; 0.93, 0.82 to 1.05). Significant heterogeneity was found i",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -204,10 +204,10 @@
       "sentence": "8 9 10 17 21 22 One trial also included a small proportion (<10%) of patients with pre-existing established cardiovascular events.",
       "context_window": "9 10 17 21 22 One trial also included a small proportion (<10%) of patients with pre-existing established cardiovascular e",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-1106",
@@ -259,9 +259,9 @@
       "context_window": "utcomes. The dose of aspirin used in the trials ranged from 100 mg on an alternate day basis 8 up to 650 mg daily. 21 Follow-u",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-u-1568",
@@ -277,9 +277,9 @@
       "context_window": "trials ranged from 100 mg on an alternate day basis 8 up to 650 mg daily. 21 Follow-up ranged from 3.6 22 to 10.1 years. 8 Com",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-u-1617",
@@ -384,8 +384,8 @@
       "sentence": "No significant reduction in the risk of major cardiovascular events was found with aspirin compared with placebo or no treatment (five studies, 9584 participants, 1258 events; relative risk 0.90, 0.81 to 1.00; P=0.06).",
       "context_window": "no treatment (five studies, 9584 participants, 1258 events; relative risk 0.90, 0.81 to 1.00; P=0.06). There was no significant heterogene",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -402,8 +402,8 @@
       "sentence": "No significant reduction in the risk of major cardiovascular events was found with aspirin compared with placebo or no treatment (five studies, 9584 participants, 1258 events; relative risk 0.90, 0.81 to 1.00; P=0.06).",
       "context_window": "articipants, 1258 events; relative risk 0.90, 0.81 to 1.00; P=0.06). There was no significant heterogeneity among the studies",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -457,7 +457,7 @@
       "context_window": "udies, 10 117 participants, 834 events; 0.86, 0.61 to 1.21; P=0.37). Heterogeneity in this analysis was moderate (Q=13.21; P=0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -583,7 +583,7 @@
       "context_window": "studies, 9584 participants, 382 events; 0.83, 0.60 to 1.14; P=0.25). Heterogeneity among the trials in this analysis was moder",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -691,7 +691,7 @@
       "context_window": "studies, 8557 participants, 626 events; 0.94, 0.72 to 1.23; P=0.68) with aspirin compared with placebo or no treatment (fig 2)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -745,9 +745,9 @@
       "context_window": "of Atherosclerosis with Aspirin for Diabetes (JPAD) study (4% weight), which enrolled Japanese patients only (after exclu",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-p-5223",
@@ -763,9 +763,9 @@
       "context_window": "ed Japanese patients only (after exclusion of JPAD, Q=2.50; P=0.29; I 2 =20.1%). The risk of all cause mortality showed no si",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-5236",
@@ -781,9 +781,9 @@
       "context_window": "atients only (after exclusion of JPAD, Q=2.50; P=0.29; I 2 =20.1%). The risk of all cause mortality showed no significant re",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-p-5427",
@@ -799,7 +799,7 @@
       "context_window": "tudies, 8557 participants, 1018 events; 0.93, 0.82 to 1.05; P=0.22; fig 2). Heterogeneity was not significant among studies in",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -853,7 +853,7 @@
       "context_window": "as significantly reduced in trials where an aspirin dose of 100 mg or less per day was used compared with trials where more th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -871,7 +871,7 @@
       "context_window": "less per day was used compared with trials where more than 100 mg/day was used (P for interaction=0.02). Similarly, the risk of s",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -907,9 +907,9 @@
       "context_window": "ntly reduced the risk of myocardial infarction among men by 43% (three studies, 3126 participants, 265 events; 0.57, 0.34 t",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-p-7142",
@@ -925,9 +925,9 @@
       "context_window": "studies, 3126 participants, 265 events; 0.57, 0.34 to 0.94; P=0.03). In contrast, no effect of aspirin was noted among women (",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-p-7274",
@@ -943,7 +943,7 @@
       "context_window": "studies, 3176 participants, 245 events; 1.08, 0.71 to 1.65; P=0.71) (P for interaction by sex=0.056; fig 3 ). Fig 3 Effect of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -961,7 +961,7 @@
       "context_window": "studies, 2593 participants, 93 events; 1.11, 0.75 to 1.64; P=0.61) or in women (three studies, 3176 participants, 127 events;",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -979,7 +979,7 @@
       "context_window": "studies, 3176 participants, 127 events; 0.75, 0.37 to 1.53; P=0.43; fig 3) (P for interaction by sex=0.34).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -997,9 +997,9 @@
       "context_window": "icantly reduced the risk of myocardial infarction in men by 43%, whereas no benefit was found in women. There was no statis",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-1678",
@@ -1069,7 +1069,7 @@
       "context_window": "e risk reduction associated with aspirin treatment of about 10%, as suggested by our meta-analysis, 1000 people need to be",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1141,9 +1141,9 @@
       "context_window": "icantly reduced the risk of myocardial infarction in men by 43%, whereas no benefit was found in women The expected benefi",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-10213",
@@ -1159,9 +1159,9 @@
       "context_window": "ings, particularly among those at low cardiovascular risk (<20% over 10 years), or among older patients (>70 years) at high",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-u-10222",
@@ -1177,9 +1177,9 @@
       "context_window": "ticularly among those at low cardiovascular risk (<20% over 10 years), or among older patients (>70 years) at high risk of bleed",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-u-10259",
@@ -1195,9 +1195,9 @@
       "context_window": "scular risk (<20% over 10 years), or among older patients (>70 years) at high risk of bleeding",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-1091",
@@ -1213,9 +1213,9 @@
       "context_window": "icantly reduced the risk of myocardial infarction in men by 43%, whereas no benefit was found in women The expected benefi",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-1292",
@@ -1231,9 +1231,9 @@
       "context_window": "ings, particularly among those at low cardiovascular risk (<20% over 10 years), or among older patients (>70 years) at high",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-u-1301",
@@ -1249,9 +1249,9 @@
       "context_window": "ticularly among those at low cardiovascular risk (<20% over 10 years), or among older patients (>70 years) at high risk of bleed",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2774388_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-u-1338",
@@ -1267,9 +1267,9 @@
       "context_window": "scular risk (<20% over 10 years), or among older patients (>70 years) at high risk of bleeding",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

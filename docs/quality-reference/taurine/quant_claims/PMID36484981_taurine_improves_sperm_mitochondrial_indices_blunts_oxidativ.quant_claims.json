@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMID36484981_taurine_improves_sperm_mitochondrial_indices_blunts_oxidativ",
+  "doi": "10.1007/s43032-022-01140-5",
+  "extracted_at": "2026-05-08T20:11:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID36484981_taurine_improves_sperm_mitochondrial_indices_blunts_oxidativ-u-529",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/kg/day",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 529,
+      "sentence": "Mice received Pb (20 mg/kg/day; gavage, 35 consecutive days).",
+      "context_window": "TAU on Pb-induced reproductive toxicity. Mice received Pb (20 mg/kg/day; gavage, 35 consecutive days). Then, sperm indices (quality",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID36484981_taurine_improves_sperm_mitochondrial_indices_blunts_oxidativ-u-1219",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1219,
+      "sentence": "It was found that TAU (500 and 1000 mg/kg) significantly improved oxidative stress biomarkers in both male gonads and gametes of Pb-treated mice.",
+      "context_window": "HSD genes in the male gonad. It was found that TAU (500 and 1000 mg/kg) significantly improved oxidative stress biomarkers in b",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

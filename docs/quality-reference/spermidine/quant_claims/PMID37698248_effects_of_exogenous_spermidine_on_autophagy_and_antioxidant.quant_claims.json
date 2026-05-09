@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMID37698248_effects_of_exogenous_spermidine_on_autophagy_and_antioxidant",
+  "doi": "10.1093/jas/skad301",
+  "extracted_at": "2026-05-08T20:12:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMID37698248_effects_of_exogenous_spermidine_on_autophagy_and_antioxidant-p-776",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 776,
+      "sentence": "Research results showed that putrescine, spermidine and spermine contents in goose ovaries in the group treated with spermidine combined with 3-NPA were 2.70, 1.94, and 1.70 times higher than those in the group treated with 3-NPA, respectively (P < 0.05).",
+      "context_window": "r than those in the group treated with 3-NPA, respectively (P < 0.05). The contents of spermidine and spermine in GCs were 1.37",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37698248_effects_of_exogenous_spermidine_on_autophagy_and_antioxidant-p-959",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 959,
+      "sentence": "The contents of spermidine and spermine in GCs were 1.37 and 0.89 times higher in the spermidine in combination with the 3-NPA group than in the 3-NPA group, respectively (P < 0.05).",
+      "context_window": "with the 3-NPA group than in the 3-NPA group, respectively (P < 0.05). LC3 and p62 were mainly expressed in the follicular granu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37698248_effects_of_exogenous_spermidine_on_autophagy_and_antioxidant-p-1219",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1219,
+      "sentence": "The LC3-II/I ratio and p62 level in GCs in the spermidine combined with 3-NPA treatment group were 1.37 and 0.77 times higher than that of the 3-NPA treatment group, respectively (P < 0.05).",
+      "context_window": "igher than that of the 3-NPA treatment group, respectively (P < 0.05). 3-NPA treatment significantly increased ROS level and the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37698248_effects_of_exogenous_spermidine_on_autophagy_and_antioxidant-p-1386",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1386,
+      "sentence": "3-NPA treatment significantly increased ROS level and the apoptosis rate in GCs, while the combined treatment of spermidine and 3-NPA reversed this change (P < 0.05).",
+      "context_window": "ned treatment of spermidine and 3-NPA reversed this change (P < 0.05). In conclusion, spermidine alleviated the oxidative damage",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,1948 @@
+{
+  "paper_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena",
+  "doi": "10.1097/JCMA.0000000000000465",
+  "extracted_at": "2026-05-08T20:05:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 17,
+    "sample_size": 9,
+    "percentage": 56,
+    "p_value": 15,
+    "odds_ratio": 4,
+    "confidence_interval": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-341",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 341,
+      "sentence": "Low-dose aspirin users with a history of peptic ulcers who did not have gastroduodenal mucosal breaks at initial endoscopy were randomly assigned to receive famotidine (20 mg bid) or omeprazole (20 mg qd) for 6 months.",
+      "context_window": "ial endoscopy were randomly assigned to receive famotidine (20 mg bid) or omeprazole (20 mg qd) for 6 months. Follow-up endos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-367",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 367,
+      "sentence": "Low-dose aspirin users with a history of peptic ulcers who did not have gastroduodenal mucosal breaks at initial endoscopy were randomly assigned to receive famotidine (20 mg bid) or omeprazole (20 mg qd) for 6 months.",
+      "context_window": "y assigned to receive famotidine (20 mg bid) or omeprazole (20 mg qd) for 6 months. Follow-up endoscopy was performed at the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 381,
+      "sentence": "Low-dose aspirin users with a history of peptic ulcers who did not have gastroduodenal mucosal breaks at initial endoscopy were randomly assigned to receive famotidine (20 mg bid) or omeprazole (20 mg qd) for 6 months.",
+      "context_window": "receive famotidine (20 mg bid) or omeprazole (20 mg qd) for 6 months. Follow-up endoscopy was performed at the end of the sixth",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-828",
+      "claim_type": "sample_size",
+      "raw_text": "n = 84",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 828,
+      "sentence": "Between November 2013 and June 2018, 170 patients were randomly assigned to receive either famotidine (n = 84) or omeprazole (n = 86).",
+      "context_window": "tients were randomly assigned to receive either famotidine (n = 84) or omeprazole (n = 86). The incidence of gastroduodenal mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-851",
+      "claim_type": "sample_size",
+      "raw_text": "n = 86",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 851,
+      "sentence": "Between November 2013 and June 2018, 170 patients were randomly assigned to receive either famotidine (n = 84) or omeprazole (n = 86).",
+      "context_window": "signed to receive either famotidine (n = 84) or omeprazole (n = 86). The incidence of gastroduodenal mucosal breaks was 33.8%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-911",
+      "claim_type": "percentage",
+      "raw_text": "33.8%",
+      "numeric_values": [
+        33.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "n = 86). The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-962",
+      "claim_type": "percentage",
+      "raw_text": "19.8%",
+      "numeric_values": [
+        19.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 962,
+      "sentence": "The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "eaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1002",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1002,
+      "sentence": "The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "ing famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045). The two patient groups had comp",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1010",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "tidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045). The two patient groups had comparable in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1015",
+      "claim_type": "percentage",
+      "raw_text": "27.5%",
+      "numeric_values": [
+        27.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1015,
+      "sentence": "The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "e, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045). The two patient groups had comparable incidenc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1022",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1022,
+      "sentence": "The incidence of gastroduodenal mucosal breaks was 33.8% among the patients receiving famotidine, and 19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "19.8% among those receiving omeprazole (95% CI: 0.4%-27.5%; p = 0.045). The two patient groups had comparable incidence rates of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1114",
+      "claim_type": "percentage",
+      "raw_text": "20.0%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1114,
+      "sentence": "The two patient groups had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243).",
+      "context_window": "ps had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1123",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "The two patient groups had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243).",
+      "context_window": "mparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1129",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.071",
+      "numeric_values": [
+        0.071
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1129,
+      "sentence": "The two patient groups had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243).",
+      "context_window": "le incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243). Mult",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1170",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1170,
+      "sentence": "The two patient groups had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243).",
+      "context_window": "rs (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243). Multivariate analysis showed that use of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1178",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1178,
+      "sentence": "The two patient groups had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243).",
+      "context_window": "% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243). Multivariate analysis showed that use of the p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1182",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.243",
+      "numeric_values": [
+        0.243
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1182,
+      "sentence": "The two patient groups had comparable incidence rates of gastroduodenal ulcers (20.0% vs 9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243).",
+      "context_window": "9.8%; p = 0.071), and gastroduodenal bleeding (2.5% vs 0%; p = 0.243). Multivariate analysis showed that use of the proton pump",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-or-l-1299",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio: 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1299,
+      "sentence": "Multivariate analysis showed that use of the proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-ci-1317",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.99",
+      "numeric_values": [
+        0.23,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1317,
+      "sentence": "Multivariate analysis showed that use of the proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "tor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1336",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1336,
+      "sentence": "Multivariate analysis showed that use of the proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "ent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (od",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-or-l-1403",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio: 3.84",
+      "numeric_values": [
+        3.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "Multivariate analysis showed that use of the proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "47), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004). Proton pump inhibitor was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-ci-1421",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.52-9.71",
+      "numeric_values": [
+        1.52,
+        9.71
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "Multivariate analysis showed that use of the proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "ing was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004). Proton pump inhibitor was superior to histami",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1440",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "Multivariate analysis showed that use of the proton pump inhibitor was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047), and that smoking was a risk factor for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "or for mucosal breaks (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004). Proton pump inhibitor was superior to histamine-2 recept",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-35",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 35,
+      "sentence": "Low-dose aspirin, defined as 75 to 325 mg daily, is widely used for the primary and secondary prevention of cardiovascular events.",
+      "context_window": "Low-dose aspirin, defined as 75 to 325 mg daily, is widely used for the primary and secondary prevent",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-156",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 156,
+      "sentence": "Currently, approximately 36% of the adult US population is estimated to take aspirin regularly for cardiovascular protection.",
+      "context_window": "evention of cardiovascular events. Currently, approximately 36% of the adult US population is estimated to take aspirin reg",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-783",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 783,
+      "sentence": "The point prevalence rates of upper gastrointestinal symptoms and gastroduodenal erosions in low-dose aspirin users are approximately 31% and 60%, respectively.",
+      "context_window": "odenal erosions in low-dose aspirin users are approximately 31% and 60%, respectively. 4 , 5 Most of low-dose aspirin-relat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-791",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 791,
+      "sentence": "The point prevalence rates of upper gastrointestinal symptoms and gastroduodenal erosions in low-dose aspirin users are approximately 31% and 60%, respectively.",
+      "context_window": "rosions in low-dose aspirin users are approximately 31% and 60%, respectively. 4 , 5 Most of low-dose aspirin-related pepti",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1005",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1005,
+      "sentence": "6 A prospective study demonstrated that the 12-week cumulative incidence of endoscopic ulcers in low-dose aspirin users was 7%.",
+      "context_window": "ncidence of endoscopic ulcers in low-dose aspirin users was 7%. 7 Patients taking low-dose aspirin had two- to fourfold hi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1297",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1297,
+      "sentence": "4 A large 5-year observational cohort study from Denmark showed that the annual incidence of hospitalization for upper gastrointestinal bleeding in low-dose aspirin users was 0.6% per year.",
+      "context_window": "per gastrointestinal bleeding in low-dose aspirin users was 0.6% per year. 8 Acid inhibitors have been widely used to preve",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-470",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 470,
+      "sentence": "They were recruited for the study if they met the following criteria: initial endoscopic examination revealed normal appearance or pictures of gastritis only; they required long-term use of low-dose aspirin (75-325 mg) for cerebral or cardiovascular events; and they were adult patients aged >20 years.",
+      "context_window": "s only; they required long-term use of low-dose aspirin (75-325 mg) for cerebral or cardiovascular events; and they were adult",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-552",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 552,
+      "sentence": "They were recruited for the study if they met the following criteria: initial endoscopic examination revealed normal appearance or pictures of gastritis only; they required long-term use of low-dose aspirin (75-325 mg) for cerebral or cardiovascular events; and they were adult patients aged >20 years.",
+      "context_window": "r cardiovascular events; and they were adult patients aged >20 years. Patients were excluded if they had a history of gastric or",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 766,
+      "sentence": "Patients were excluded if they had a history of gastric or duodenal surgery other than oversewing of a perforation; if they were allergic to omeprazole or famotidine; if their glomerular filtration rate <30 mL/min/1.73 m2; if they were pregnant; if they had active cancer, acute serious medical illness, or terminal illness; if they had Helicobacter pylori infection; if they have gastroesophageal reflux disease; and if they required long-term treatment with nonsteroidal anti-inflammatory drugs (NSAIDs), anticoagulant agents, or thienopyridine (eg, clopidogrel and ticlopidine).",
+      "context_window": "prazole or famotidine; if their glomerular filtration rate <30 mL/min/1.73 m2; if they were pregnant; if they had active cancer,",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-1584",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1584,
+      "sentence": "The eligible patients were randomly assigned to receive either (1) famotidine (20 mg bid) or (2) omeprazole (20 mg qd) for 24 weeks.",
+      "context_window": "ts were randomly assigned to receive either (1) famotidine (20 mg bid) or (2) omeprazole (20 mg qd) for 24 weeks. Randomizati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-1614",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1614,
+      "sentence": "The eligible patients were randomly assigned to receive either (1) famotidine (20 mg bid) or (2) omeprazole (20 mg qd) for 24 weeks.",
+      "context_window": "eceive either (1) famotidine (20 mg bid) or (2) omeprazole (20 mg qd) for 24 weeks. Randomization was performed with the use",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-1628",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1628,
+      "sentence": "The eligible patients were randomly assigned to receive either (1) famotidine (20 mg bid) or (2) omeprazole (20 mg qd) for 24 weeks.",
+      "context_window": "(1) famotidine (20 mg bid) or (2) omeprazole (20 mg qd) for 24 weeks. Randomization was performed with the use of a computer-gen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-2213",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2213,
+      "sentence": "Patients were followed up as outpatients with visits every 2 months.",
+      "context_window": "Patients were followed up as outpatients with visits every 2 months. Gastrointestinal and cardiovascular symptoms were assessed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-3367",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 cm",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3367,
+      "sentence": "A peptic ulcer was defined as a circumscribed mucosal break at least 0.3 cm in diameter (measured using endoscopy forceps) and with a perceptible depth in the stomach or duodenum.",
+      "context_window": "ulcer was defined as a circumscribed mucosal break at least 0.3 cm in diameter (measured using endoscopy forceps) and with a p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-3866",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3866,
+      "sentence": "13 Poor drug compliance was defined as taking <80% of pills.",
+      "context_window": "tudy period. 13 Poor drug compliance was defined as taking <80% of pills. Chi-square test with or without Yates correction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-4381",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4381,
+      "sentence": "Before conducting the study, we had retrospectively reviewed the endoscopic findings of 20 patients with low-dose aspirin use and famotidine co-therapy for at least 6 months.",
+      "context_window": "low-dose aspirin use and famotidine co-therapy for at least 6 months. Additionally, the endoscopic findings of 20 low-dose aspir",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-4506",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4506,
+      "sentence": "Additionally, the endoscopic findings of 20 low-dose aspirin users who received omeprazole co-therapy for at least 6 months were also investigated.",
+      "context_window": "pirin users who received omeprazole co-therapy for at least 6 months were also investigated. The point incidences of gastroduode",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-4661",
+      "claim_type": "percentage",
+      "raw_text": "35.0%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4661,
+      "sentence": "The point incidences of gastroduodenal mucosal breaks in these patients with co-therapy by famotidine and omeprazole were 35.0% and 15.0%, respectively.",
+      "context_window": "patients with co-therapy by famotidine and omeprazole were 35.0% and 15.0%, respectively. We therefore estimated that at the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-4671",
+      "claim_type": "percentage",
+      "raw_text": "15.0%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4671,
+      "sentence": "The point incidences of gastroduodenal mucosal breaks in these patients with co-therapy by famotidine and omeprazole were 35.0% and 15.0%, respectively.",
+      "context_window": "with co-therapy by famotidine and omeprazole were 35.0% and 15.0%, respectively. We therefore estimated that at the end of 6",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-4734",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4734,
+      "sentence": "We therefore estimated that at the end of 6 months, the primary end point (development of gastroduodenal mucosal break) would occur in 35% of patients in the famotidine group and 15% of patients in the omeprazole group.",
+      "context_window": "0%, respectively. We therefore estimated that at the end of 6 months, the primary end point (development of gastroduodenal mucos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-4827",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4827,
+      "sentence": "We therefore estimated that at the end of 6 months, the primary end point (development of gastroduodenal mucosal break) would occur in 35% of patients in the famotidine group and 15% of patients in the omeprazole group.",
+      "context_window": "development of gastroduodenal mucosal break) would occur in 35% of patients in the famotidine group and 15% of patients in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-4871",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4871,
+      "sentence": "We therefore estimated that at the end of 6 months, the primary end point (development of gastroduodenal mucosal break) would occur in 35% of patients in the famotidine group and 15% of patients in the omeprazole group.",
+      "context_window": "would occur in 35% of patients in the famotidine group and 15% of patients in the omeprazole group. It was estimated that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-5036",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5036,
+      "sentence": "It was estimated that we required a minimum of 81 patients in each treatment group to demonstrate an absolute difference of 20% with a type I error of 0.05 and a type II error of 0.2 in two sided tests, assuming 15% loss to receive follow-up endoscopy.",
+      "context_window": "ch treatment group to demonstrate an absolute difference of 20% with a type I error of 0.05 and a type II error of 0.2 in t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-5124",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5124,
+      "sentence": "It was estimated that we required a minimum of 81 patients in each treatment group to demonstrate an absolute difference of 20% with a type I error of 0.05 and a type II error of 0.2 in two sided tests, assuming 15% loss to receive follow-up endoscopy.",
+      "context_window": ".05 and a type II error of 0.2 in two sided tests, assuming 15% loss to receive follow-up endoscopy. Analysis was by intent",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-5635",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5635,
+      "sentence": "These variables include the following: age (<60 or \u226560 years); gender, history of smoking, history of alcohol consumption (<80 or \u226580 g/d); ingestion of coffee (<1 cup/d or \u22651 cup/d); ingestion of tea (<1 cup/d or \u22651 cup/d); and type of acid inhibitor (PPI or H2RA).",
+      "context_window": "alysis. These variables include the following: age (<60 or \u226560 years); gender, history of smoking, history of alcohol consumptio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-252",
+      "claim_type": "sample_size",
+      "raw_text": "n = 84",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 252,
+      "sentence": "They were randomly assigned to receive famotidine (n = 84) or omeprazole (n = 86).",
+      "context_window": "cruited. They were randomly assigned to receive famotidine (n = 84) or omeprazole (n = 86). Among them, 80 patients in the fam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-275",
+      "claim_type": "sample_size",
+      "raw_text": "n = 86",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 275,
+      "sentence": "They were randomly assigned to receive famotidine (n = 84) or omeprazole (n = 86).",
+      "context_window": "omly assigned to receive famotidine (n = 84) or omeprazole (n = 86). Among them, 80 patients in the famotidine group and 81 pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-632",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 632,
+      "sentence": "In the 161 patients receiving follow-up endoscopy, 4 patients in the famotidine group and 3 patients in the omeprazole group were excluded from PP analysis because of poor drug compliance (taking <80% of pills; Fig.",
+      "context_window": "d from PP analysis because of poor drug compliance (taking <80% of pills; Fig. 1 ). Overall, 76 patients in the famotidine",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-1116",
+      "claim_type": "sample_size",
+      "raw_text": "n =170",
+      "numeric_values": [
+        170.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1116,
+      "sentence": "Demographic data of patients (n =170)\n\nNSAID = nonsteroidal anti-inflammatory drugs.",
+      "context_window": "zes the patient disposition. Demographic data of patients (n =170) NSAID = nonsteroidal anti-inflammatory drugs. Dispositio",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-1375",
+      "claim_type": "sample_size",
+      "raw_text": "n = 80",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1375,
+      "sentence": "Among the patients receiving follow-up endoscopy, 27 subjects in the famotidine group (n = 80) and 16 subjects in the omeprazole group (n = 81) developed gastroduodenal mucosal breaks (Table 2 ).",
+      "context_window": "g follow-up endoscopy, 27 subjects in the famotidine group (n = 80) and 16 subjects in the omeprazole group (n = 81) developed",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-1424",
+      "claim_type": "sample_size",
+      "raw_text": "n = 81",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1424,
+      "sentence": "Among the patients receiving follow-up endoscopy, 27 subjects in the famotidine group (n = 80) and 16 subjects in the omeprazole group (n = 81) developed gastroduodenal mucosal breaks (Table 2 ).",
+      "context_window": "ine group (n = 80) and 16 subjects in the omeprazole group (n = 81) developed gastroduodenal mucosal breaks (Table 2 ). ITT an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1613",
+      "claim_type": "percentage",
+      "raw_text": "33.8%",
+      "numeric_values": [
+        33.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1613,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045)",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1622",
+      "claim_type": "percentage",
+      "raw_text": "19.8%",
+      "numeric_values": [
+        19.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1622,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "duodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045). In the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1641",
+      "claim_type": "percentage",
+      "raw_text": "14.0%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1641,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "eaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045). In the patients with good",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1648",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1648,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "an the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045). In the patients with good drug",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1656",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1656,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "meprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045). In the patients with good drug adherence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1661",
+      "claim_type": "percentage",
+      "raw_text": "27.5%",
+      "numeric_values": [
+        27.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1661,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "zole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045). In the patients with good drug adherence, PP a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1668",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1668,
+      "sentence": "ITT analysis showed that the famotidine group had a higher incidence of gastroduodenal mucosal breaks than the omeprazole group (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045).",
+      "context_window": "oup (33.8% vs 19.8%; difference: 14.0%; 95% CI: 0.4%-27.5%; p = 0.045). In the patients with good drug adherence, PP analysis dem",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1764",
+      "claim_type": "percentage",
+      "raw_text": "35.5%",
+      "numeric_values": [
+        35.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1764,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "d drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1773",
+      "claim_type": "percentage",
+      "raw_text": "20.5%",
+      "numeric_values": [
+        20.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1773,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "herence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1792",
+      "claim_type": "percentage",
+      "raw_text": "15.0%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1792,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "s demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ). Among the patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1799",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1799,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "strated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ). Among the patients wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1807",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1807,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ). Among the patients with gastro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1812",
+      "claim_type": "percentage",
+      "raw_text": "29.0%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1812,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "ar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ). Among the patients with gastroduoden",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1819",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1819,
+      "sentence": "In the patients with good drug adherence, PP analysis demonstrated similar results (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ).",
+      "context_window": "lts (35.5% vs 20.5%; difference: 15.0%; 95% CI: 0.9%-29.0%; p = 0.038; Table 2 ). Among the patients with gastroduodenal mucosal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1940",
+      "claim_type": "percentage",
+      "raw_text": "33.3%",
+      "numeric_values": [
+        33.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1940,
+      "sentence": "Among the patients with gastroduodenal mucosal breaks shown in follow-up endoscopy, nine patients (33.3%) in the famotidine group (n = 27) and five patients (31.3%) in the omeprazole group (n = 16) did not report symptoms.",
+      "context_window": "mucosal breaks shown in follow-up endoscopy, nine patients (33.3%) in the famotidine group (n = 27) and five patients (31.3%)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-1972",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1972,
+      "sentence": "Among the patients with gastroduodenal mucosal breaks shown in follow-up endoscopy, nine patients (33.3%) in the famotidine group (n = 27) and five patients (31.3%) in the omeprazole group (n = 16) did not report symptoms.",
+      "context_window": "p endoscopy, nine patients (33.3%) in the famotidine group (n = 27) and five patients (31.3%) in the omeprazole group (n = 16)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1999",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1999,
+      "sentence": "Among the patients with gastroduodenal mucosal breaks shown in follow-up endoscopy, nine patients (33.3%) in the famotidine group (n = 27) and five patients (31.3%) in the omeprazole group (n = 16) did not report symptoms.",
+      "context_window": "(33.3%) in the famotidine group (n = 27) and five patients (31.3%) in the omeprazole group (n = 16) did not report symptoms.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-n-2031",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2031,
+      "sentence": "Among the patients with gastroduodenal mucosal breaks shown in follow-up endoscopy, nine patients (33.3%) in the famotidine group (n = 27) and five patients (31.3%) in the omeprazole group (n = 16) did not report symptoms.",
+      "context_window": "(n = 27) and five patients (31.3%) in the omeprazole group (n = 16) did not report symptoms. Clinical outcomes of the patient",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2324",
+      "claim_type": "percentage",
+      "raw_text": "20.0%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2324,
+      "sentence": "Among the patients receiving follow-up endoscopy, gastroduodenal ulcer occurred in 16 subjects (20.0%) receiving famotidine prophylaxis and in 8 subjects (9.8%) receiving omeprazole prophylaxis.",
+      "context_window": "up endoscopy, gastroduodenal ulcer occurred in 16 subjects (20.0%) receiving famotidine prophylaxis and in 8 subjects (9.8%)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2383",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2383,
+      "sentence": "Among the patients receiving follow-up endoscopy, gastroduodenal ulcer occurred in 16 subjects (20.0%) receiving famotidine prophylaxis and in 8 subjects (9.8%) receiving omeprazole prophylaxis.",
+      "context_window": "(20.0%) receiving famotidine prophylaxis and in 8 subjects (9.8%) receiving omeprazole prophylaxis. ITT analysis revealed th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2643",
+      "claim_type": "percentage",
+      "raw_text": "10.2%",
+      "numeric_values": [
+        10.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2643,
+      "sentence": "ITT analysis revealed that the famotidine group had a slightly higher incidence of gastroduodenal ulcers than the omeprazole group, although this difference was not statistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ).",
+      "context_window": "not statistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ). Peptic ulcer",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2650",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2650,
+      "sentence": "ITT analysis revealed that the famotidine group had a slightly higher incidence of gastroduodenal ulcers than the omeprazole group, although this difference was not statistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ).",
+      "context_window": "atistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ). Peptic ulcer blee",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2659",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2659,
+      "sentence": "ITT analysis revealed that the famotidine group had a slightly higher incidence of gastroduodenal ulcers than the omeprazole group, although this difference was not statistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ).",
+      "context_window": "ly significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ). Peptic ulcer bleeding occur",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2667",
+      "claim_type": "percentage",
+      "raw_text": "21.0%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2667,
+      "sentence": "ITT analysis revealed that the famotidine group had a slightly higher incidence of gastroduodenal ulcers than the omeprazole group, although this difference was not statistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ).",
+      "context_window": "ficant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ). Peptic ulcer bleeding occurred in tw",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-2674",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.071",
+      "numeric_values": [
+        0.071
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2674,
+      "sentence": "ITT analysis revealed that the famotidine group had a slightly higher incidence of gastroduodenal ulcers than the omeprazole group, although this difference was not statistically significant in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ).",
+      "context_window": "in ITT analysis (difference: 10.2%; 95% CI: -0.6% to 21.0%; p = 0.071; Table 2 ). Peptic ulcer bleeding occurred in two patients",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2744",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2744,
+      "sentence": "Peptic ulcer bleeding occurred in two patients (2.5%) in the famotidine group, but in none of the patients (0%) in the omeprazole group.",
+      "context_window": "Table 2 ). Peptic ulcer bleeding occurred in two patients (2.5%) in the famotidine group, but in none of the patients (0%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2804",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2804,
+      "sentence": "Peptic ulcer bleeding occurred in two patients (2.5%) in the famotidine group, but in none of the patients (0%) in the omeprazole group.",
+      "context_window": "2.5%) in the famotidine group, but in none of the patients (0%) in the omeprazole group. There was no significant differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-2936",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.243",
+      "numeric_values": [
+        0.243
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2936,
+      "sentence": "There was no significant difference in the incidence of peptic ulcer bleeding between the two groups ( p = 0.243).",
+      "context_window": "incidence of peptic ulcer bleeding between the two groups ( p = 0.243). Univariate analysis revealed that PPI use and history of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-3101",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3101,
+      "sentence": "Univariate analysis revealed that PPI use and history of smoking were the two factors associated with the development of gastroduodenal mucosal break ( p = 0.045 and 0.022, respectively; Table 3 ) in low-dose aspirin users with a history of peptic ulcer.",
+      "context_window": "ated with the development of gastroduodenal mucosal break ( p = 0.045 and 0.022, respectively; Table 3 ) in low-dose aspirin user",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-or-l-3284",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio: 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3284,
+      "sentence": "Multivariate analysis showed that PPI use was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047) for the development of mucosal breaks.",
+      "context_window": "s showed that PPI use was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047) for the development of mucos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-ci-3302",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.99",
+      "numeric_values": [
+        0.23,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3302,
+      "sentence": "Multivariate analysis showed that PPI use was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047) for the development of mucosal breaks.",
+      "context_window": "use was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047) for the development of mucosal breaks. In contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-3321",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3321,
+      "sentence": "Multivariate analysis showed that PPI use was an independent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047) for the development of mucosal breaks.",
+      "context_window": "ent protective factor (odds ratio: 0.47; 95% CI: 0.23-0.99; p = 0.047) for the development of mucosal breaks. In contrast, smokin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-or-l-3483",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio: 3.84",
+      "numeric_values": [
+        3.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3483,
+      "sentence": "In contrast, smoking was an independent risk factor predicting the development of gastroduodenal mucosal break (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004) in high-risk users of low-dose aspirin (Table 4 ).",
+      "context_window": "predicting the development of gastroduodenal mucosal break (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004) in high-risk users of low-do",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-ci-3501",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.52-9.71",
+      "numeric_values": [
+        1.52,
+        9.71
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3501,
+      "sentence": "In contrast, smoking was an independent risk factor predicting the development of gastroduodenal mucosal break (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004) in high-risk users of low-dose aspirin (Table 4 ).",
+      "context_window": "elopment of gastroduodenal mucosal break (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004) in high-risk users of low-dose aspirin (Table 4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-3520",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3520,
+      "sentence": "In contrast, smoking was an independent risk factor predicting the development of gastroduodenal mucosal break (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004) in high-risk users of low-dose aspirin (Table 4 ).",
+      "context_window": "uodenal mucosal break (odds ratio: 3.84; 95% CI: 1.52-9.71; p = 0.004) in high-risk users of low-dose aspirin (Table 4 ). Univar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-356",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 356,
+      "sentence": "However, low-dose aspirin therapy is associated with upper gastrointestinal side effects, which range from dyspepsia (point prevalence: 31%), gastroduodenal erosions (point prevalence: 60%), endoscopic peptic ulcer (3-month incidence: 7%) to symptomatic or complicated ulcers (annual incidence of upper gastrointestinal bleeding: 0.6%; relative risk of upper gastrointestinal bleeding: 2.6).",
+      "context_window": "side effects, which range from dyspepsia (point prevalence: 31%), gastroduodenal erosions (point prevalence: 60%), endoscop",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-405",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 405,
+      "sentence": "However, low-dose aspirin therapy is associated with upper gastrointestinal side effects, which range from dyspepsia (point prevalence: 31%), gastroduodenal erosions (point prevalence: 60%), endoscopic peptic ulcer (3-month incidence: 7%) to symptomatic or complicated ulcers (annual incidence of upper gastrointestinal bleeding: 0.6%; relative risk of upper gastrointestinal bleeding: 2.6).",
+      "context_window": "revalence: 31%), gastroduodenal erosions (point prevalence: 60%), endoscopic peptic ulcer (3-month incidence: 7%) to sympto",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-455",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 455,
+      "sentence": "However, low-dose aspirin therapy is associated with upper gastrointestinal side effects, which range from dyspepsia (point prevalence: 31%), gastroduodenal erosions (point prevalence: 60%), endoscopic peptic ulcer (3-month incidence: 7%) to symptomatic or complicated ulcers (annual incidence of upper gastrointestinal bleeding: 0.6%; relative risk of upper gastrointestinal bleeding: 2.6).",
+      "context_window": "evalence: 60%), endoscopic peptic ulcer (3-month incidence: 7%) to symptomatic or complicated ulcers (annual incidence of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-550",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 550,
+      "sentence": "However, low-dose aspirin therapy is associated with upper gastrointestinal side effects, which range from dyspepsia (point prevalence: 31%), gastroduodenal erosions (point prevalence: 60%), endoscopic peptic ulcer (3-month incidence: 7%) to symptomatic or complicated ulcers (annual incidence of upper gastrointestinal bleeding: 0.6%; relative risk of upper gastrointestinal bleeding: 2.6).",
+      "context_window": "lcers (annual incidence of upper gastrointestinal bleeding: 0.6%; relative risk of upper gastrointestinal bleeding: 2.6). 14",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1038",
+      "claim_type": "percentage",
+      "raw_text": "33.8%",
+      "numeric_values": [
+        33.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1038,
+      "sentence": "The data showed that 33.8% of low-dose aspirin users with a peptic ulcer history who received famotidine prophylaxis still had a higher incidence of gastroduodenal mucosal break during a 6-month follow-up period.",
+      "context_window": "rin users with a peptic ulcer history. The data showed that 33.8% of low-dose aspirin users with a peptic ulcer history who r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1368",
+      "claim_type": "percentage",
+      "raw_text": "19.8%",
+      "numeric_values": [
+        19.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1368,
+      "sentence": "The high-risk users of low-dose aspirin users receiving co-therapy with omeprazole had a lower incidence of gastroduodenal mucosal break (19.8%) than those receiving famotidine prophylaxis.",
+      "context_window": "zole had a lower incidence of gastroduodenal mucosal break (19.8%) than those receiving famotidine prophylaxis. Multivariate",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-ci-1607",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.99",
+      "numeric_values": [
+        0.23,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1607,
+      "sentence": "Multivariate analysis verified that PPI use was an independent protective factor for the development of gastroduodenal mucosal break in low-dose aspirin users with an odds ratio of 0.47 (95% CI: 0.23-0.99).",
+      "context_window": "break in low-dose aspirin users with an odds ratio of 0.47 (95% CI: 0.23-0.99). The data confirm our hypothesis that PPI is more effectiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1923",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1923,
+      "sentence": "In the current study, the omeprazole group had a lower incidence of gastroduodenal ulcers than the famotidine group (9.8% vs 20.0%); however, the difference was not statistically significant ( p = 0.071).",
+      "context_window": "cidence of gastroduodenal ulcers than the famotidine group (9.8% vs 20.0%); however, the difference was not statistically si",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-1931",
+      "claim_type": "percentage",
+      "raw_text": "20.0%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1931,
+      "sentence": "In the current study, the omeprazole group had a lower incidence of gastroduodenal ulcers than the famotidine group (9.8% vs 20.0%); however, the difference was not statistically significant ( p = 0.071).",
+      "context_window": "of gastroduodenal ulcers than the famotidine group (9.8% vs 20.0%); however, the difference was not statistically significant",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-1999",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.071",
+      "numeric_values": [
+        0.071
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1999,
+      "sentence": "In the current study, the omeprazole group had a lower incidence of gastroduodenal ulcers than the famotidine group (9.8% vs 20.0%); however, the difference was not statistically significant ( p = 0.071).",
+      "context_window": "however, the difference was not statistically significant ( p = 0.071). A recent randomized controlled trial by Chan et al also d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2235",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2235,
+      "sentence": "A recent randomized controlled trial by Chan et al also demonstrated that high-risk users of low-dose aspirin receiving PPI had slightly lower recurrent bleeding and ulcers than those receiving low-dose aspirin and an H2RA (7.9% vs 12.4%), although these difference were also not statistically significant ( p = 0.26).",
+      "context_window": "d ulcers than those receiving low-dose aspirin and an H2RA (7.9% vs 12.4%), although these difference were also not statisti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-2243",
+      "claim_type": "percentage",
+      "raw_text": "12.4%",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2243,
+      "sentence": "A recent randomized controlled trial by Chan et al also demonstrated that high-risk users of low-dose aspirin receiving PPI had slightly lower recurrent bleeding and ulcers than those receiving low-dose aspirin and an H2RA (7.9% vs 12.4%), although these difference were also not statistically significant ( p = 0.26).",
+      "context_window": "than those receiving low-dose aspirin and an H2RA (7.9% vs 12.4%), although these difference were also not statistically sig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-2319",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2319,
+      "sentence": "A recent randomized controlled trial by Chan et al also demonstrated that high-risk users of low-dose aspirin receiving PPI had slightly lower recurrent bleeding and ulcers than those receiving low-dose aspirin and an H2RA (7.9% vs 12.4%), although these difference were also not statistically significant ( p = 0.26).",
+      "context_window": "these difference were also not statistically significant ( p = 0.26). 16 With regard to upper gastrointestinal bleeding, a case",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-3064",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3064,
+      "sentence": "17 Although the current study and the randomized controlled trial by Chan et al showed similar efficacy of PPIs and H2RAs in reducing the risk of upper gastrointestinal bleeding in high-risk users of low-dose aspirin, a randomized controlled trial by Ng et al demonstrated that gastrointestinal bleeding was significantly more common in high-risk users of low-dose aspirin receiving famotidine than in those receiving pantoprazole (7.7% vs 0%).",
+      "context_window": "receiving famotidine than in those receiving pantoprazole (7.7% vs 0%). 16 , 18 The reported risk factors for upper gastro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-pct-3072",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3072,
+      "sentence": "17 Although the current study and the randomized controlled trial by Chan et al showed similar efficacy of PPIs and H2RAs in reducing the risk of upper gastrointestinal bleeding in high-risk users of low-dose aspirin, a randomized controlled trial by Ng et al demonstrated that gastrointestinal bleeding was significantly more common in high-risk users of low-dose aspirin receiving famotidine than in those receiving pantoprazole (7.7% vs 0%).",
+      "context_window": "ng famotidine than in those receiving pantoprazole (7.7% vs 0%). 16 , 18 The reported risk factors for upper gastrointest",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-u-3245",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3245,
+      "sentence": "16 , 18\n\nThe reported risk factors for upper gastrointestinal injury induced by low-dose aspirin include a history of bleeding peptic ulcers, prior peptic ulcers, age >70 years, H pylori infection, and concomitant drug therapy with NSAIDs, other antiplatelet agents (eg, thienopyridine), or anticoagulants.",
+      "context_window": "istory of bleeding peptic ulcers, prior peptic ulcers, age >70 years, H pylori infection, and concomitant drug therapy with NSAI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-ci-3570",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.52-9.71",
+      "numeric_values": [
+        1.52,
+        9.71
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3570,
+      "sentence": "4 , 8 , 19 In the current study, we found that smoking was an independent risk factor for the development of gastroduodenal mucosal breaks in in our patients with an odds ratio of 3.84 (95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "cosal breaks in in our patients with an odds ratio of 3.84 (95% CI: 1.52-9.71; p = 0.004). Previous studies have reported that smoking is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12965974_omeprazole_vs_famotidine_for_the_prevention_of_gastroduodena-p-3589",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3589,
+      "sentence": "4 , 8 , 19 In the current study, we found that smoking was an independent risk factor for the development of gastroduodenal mucosal breaks in in our patients with an odds ratio of 3.84 (95% CI: 1.52-9.71; p = 0.004).",
+      "context_window": "our patients with an odds ratio of 3.84 (95% CI: 1.52-9.71; p = 0.004). Previous studies have reported that smoking is associated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

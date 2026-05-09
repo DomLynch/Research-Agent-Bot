@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_cilostazol_aspirin_therapy_against_recurrent_stroke_with_int",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_cilostazol_aspirin_therapy_against_recurrent_stroke_with_int-pct-215",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 215,
+      "sentence": "Multi-center, open-labelled randomized controlled trial, to study the effect of aspirin plus cilostazol and aspirin alone on the progression of intracranial arterial stenosis, in 200 chronic stroke patients with 50-99% stenosis, to be followed up for 2 years",
+      "context_window": "l arterial stenosis, in 200 chronic stroke patients with 50-99% stenosis, to be followed up for 2 years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_cilostazol_aspirin_therapy_against_recurrent_stroke_with_int-u-251",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 251,
+      "sentence": "Multi-center, open-labelled randomized controlled trial, to study the effect of aspirin plus cilostazol and aspirin alone on the progression of intracranial arterial stenosis, in 200 chronic stroke patients with 50-99% stenosis, to be followed up for 2 years",
+      "context_window": "stroke patients with 50-99% stenosis, to be followed up for 2 years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

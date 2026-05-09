@@ -1,0 +1,101 @@
+{
+  "paper_id": "DOI_10_30574_gscbps_2023_22_1_0035_assesment_of_serum_taurine_level_as_a_potential_biomarker_fo",
+  "doi": "10.30574/gscbps.2023.22.1.0035",
+  "extracted_at": "2026-05-08T20:10:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_30574_gscbps_2023_22_1_0035_assesment_of_serum_taurine_level_as_a_potential_biomarker_fo-p-1011",
+      "claim_type": "p_value",
+      "raw_text": "P>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1011,
+      "sentence": "Results: The data showed non-significant change in lipid profile, creatinine in urine, and serum Albumine in all patients regarding to control group (P>0.05). that Liver function in all groups demonstrated non significance between groups,but values recorded significant changes in all groups of patients related to frank control group (p<0.05).",
+      "context_window": "serum Albumine in all patients regarding to control group (P>0.05). that Liver function in all groups demonstrated non signif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_30574_gscbps_2023_22_1_0035_assesment_of_serum_taurine_level_as_a_potential_biomarker_fo-p-1197",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1197,
+      "sentence": "Results: The data showed non-significant change in lipid profile, creatinine in urine, and serum Albumine in all patients regarding to control group (P>0.05). that Liver function in all groups demonstrated non significance between groups,but values recorded significant changes in all groups of patients related to frank control group (p<0.05).",
+      "context_window": "s in all groups of patients related to frank control group (p<0.05). Kidney function (urea - creatinine) values recorded very",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_30574_gscbps_2023_22_1_0035_assesment_of_serum_taurine_level_as_a_potential_biomarker_fo-p-1348",
+      "claim_type": "p_value",
+      "raw_text": "p<0.00",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1348,
+      "sentence": "Kidney function (urea - creatinine) values recorded very highly significant changes in all groups of patients related to frank control group (p<0.00), except controlled diabetic group and Early stage of diabetic nephropathy. also, there is a highly significant changes in blood glucose and HbA1c (P>0.001).",
+      "context_window": "s in all groups of patients related to frank control group (p<0.00), except controlled diabetic group and Early stage of diabe",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_30574_gscbps_2023_22_1_0035_assesment_of_serum_taurine_level_as_a_potential_biomarker_fo-p-1503",
+      "claim_type": "p_value",
+      "raw_text": "P>0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1503,
+      "sentence": "Kidney function (urea - creatinine) values recorded very highly significant changes in all groups of patients related to frank control group (p<0.00), except controlled diabetic group and Early stage of diabetic nephropathy. also, there is a highly significant changes in blood glucose and HbA1c (P>0.001).",
+      "context_window": "is a highly significant changes in blood glucose and HbA1c (P>0.001). On the other hand, the data showed extremely significant",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_30574_gscbps_2023_22_1_0035_assesment_of_serum_taurine_level_as_a_potential_biomarker_fo-p-1717",
+      "claim_type": "p_value",
+      "raw_text": "P<0.000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1717,
+      "sentence": "On the other hand, the data showed extremely significant decrease in serum taurine in all diabetic patients according to the severity of diabetic nephropathy compared to that recorded in healthy control (P<0.000).",
+      "context_window": "c nephropathy compared to that recorded in healthy control (P<0.000). Conclusion: Serum taurine is reduced in diabetic patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1583 @@
+{
+  "paper_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with",
+  "doi": "10.1161/JAHA.114.001000",
+  "extracted_at": "2026-05-08T20:06:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 32,
+    "p_value": 36,
+    "mean_sd": 2,
+    "percentage": 12,
+    "sample_size": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-786",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 786,
+      "sentence": "A cross\u2010sectional comparison of DKK\u20101, soluble CD40L (sCD40L; reflecting platelet\u2010mediated inflammation), asymmetric dimethylarginine (ADMA; marker of endothelial dysfunction), and urinary 11\u2010dehydro\u2010thromboxane B 2 (in vivo marker of platelet activation) was performed among 214 diabetic patients (90 receiving aspirin at 100 mg/day) and 30 healthy controls.",
+      "context_window": "formed among 214 diabetic patients (90 receiving aspirin at 100 mg/day) and 30 healthy controls. Plasma DKK\u20101 levels were markedly",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-913",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 913,
+      "sentence": "Plasma DKK\u20101 levels were markedly higher in patients with T2DM than in healthy patients ( P <0.0001).",
+      "context_window": "dly higher in patients with T2DM than in healthy patients ( P <0.0001). DKK\u20101 levels were significantly lower in diabetic patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1041",
+      "claim_type": "p_value",
+      "raw_text": "P =0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1041,
+      "sentence": "DKK\u20101 levels were significantly lower in diabetic patients receiving compared with those not on aspirin treatment ( P =0.008); in the latter, DKK\u20101 was significantly correlated with 11\u2010dehydro\u2010thromboxane B 2 , ADMA, and CD40L (\u03c1=0.303.",
+      "context_window": "ts receiving compared with those not on aspirin treatment ( P =0.008); in the latter, DKK\u20101 was significantly correlated with 11",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1162",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "P <0.0001, \u03c1=0.45.",
+      "context_window": "with 11\u2010dehydro\u2010thromboxane B 2 , ADMA, and CD40L (\u03c1=0.303. P <0.0001, \u03c1=0.45. P <0.0001, and \u03c1=0.37, P <0.0001, respectively) bu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1181",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1181,
+      "sentence": "P <0.0001, and \u03c1=0.37, P <0.0001, respectively) but not with glycemic control or DM duration.",
+      "context_window": "omboxane B 2 , ADMA, and CD40L (\u03c1=0.303. P <0.0001, \u03c1=0.45. P <0.0001, and \u03c1=0.37, P <0.0001, respectively) but not with glycemic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1204",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1204,
+      "sentence": "P <0.0001, and \u03c1=0.37, P <0.0001, respectively) but not with glycemic control or DM duration.",
+      "context_window": "d CD40L (\u03c1=0.303. P <0.0001, \u03c1=0.45. P <0.0001, and \u03c1=0.37, P <0.0001, respectively) but not with glycemic control or DM duration",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-1414",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1414,
+      "sentence": "Among patients not receiving aspirin, improvement of metabolic control in a subgroup of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "context_window": "group of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-1469",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1469,
+      "sentence": "Among patients not receiving aspirin, improvement of metabolic control in a subgroup of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "context_window": "for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DK",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1543",
+      "claim_type": "p_value",
+      "raw_text": "P =0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "Among patients not receiving aspirin, improvement of metabolic control in a subgroup of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "context_window": "ssociated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1556",
+      "claim_type": "p_value",
+      "raw_text": "P =0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1556,
+      "sentence": "Among patients not receiving aspirin, improvement of metabolic control in a subgroup of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "context_window": "h concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1599",
+      "claim_type": "p_value",
+      "raw_text": "P =0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1599,
+      "sentence": "Among patients not receiving aspirin, improvement of metabolic control in a subgroup of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "context_window": "1 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004). Circulating DKK\u20101 is increased in T2DM and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-1612",
+      "claim_type": "p_value",
+      "raw_text": "P =0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1612,
+      "sentence": "Among patients not receiving aspirin, improvement of metabolic control in a subgroup of newly diagnosed patients treated with acarbose for 20 weeks and in a group treated with rosiglitazone for 24 weeks was associated with concurrent significant reductions in DKK\u20101 ( P =0.005 and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004).",
+      "context_window": "and P =0.004) and 11\u2010dehydro\u2010thromboxane B 2 ( P =0.005 and P =0.004). Circulating DKK\u20101 is increased in T2DM and associated wi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-msd-59",
+      "claim_type": "mean_sd",
+      "raw_text": "64\u00b19",
+      "numeric_values": [
+        64.0,
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 59,
+      "sentence": "Two hundred fourteen patients (97 women, 117 men; mean age 64\u00b19 years) with T2DM, as defined in accordance with the criteria of the American Diabetes Association, 16 and 30 healthy subjects (20 women, 10 men; mean age 45\u00b114 years) were enrolled in the study.",
+      "context_window": "Two hundred fourteen patients (97 women, 117 men; mean age 64\u00b19 years) with T2DM, as defined in accordance with the criteri",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-62",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 62,
+      "sentence": "Two hundred fourteen patients (97 women, 117 men; mean age 64\u00b19 years) with T2DM, as defined in accordance with the criteria of the American Diabetes Association, 16 and 30 healthy subjects (20 women, 10 men; mean age 45\u00b114 years) were enrolled in the study.",
+      "context_window": "o hundred fourteen patients (97 women, 117 men; mean age 64\u00b19 years) with T2DM, as defined in accordance with the criteria of t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-msd-218",
+      "claim_type": "mean_sd",
+      "raw_text": "45\u00b114",
+      "numeric_values": [
+        45.0,
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 218,
+      "sentence": "Two hundred fourteen patients (97 women, 117 men; mean age 64\u00b19 years) with T2DM, as defined in accordance with the criteria of the American Diabetes Association, 16 and 30 healthy subjects (20 women, 10 men; mean age 45\u00b114 years) were enrolled in the study.",
+      "context_window": "ion, 16 and 30 healthy subjects (20 women, 10 men; mean age 45\u00b114 years) were enrolled in the study. The baseline characteris",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-221",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 221,
+      "sentence": "Two hundred fourteen patients (97 women, 117 men; mean age 64\u00b19 years) with T2DM, as defined in accordance with the criteria of the American Diabetes Association, 16 and 30 healthy subjects (20 women, 10 men; mean age 45\u00b114 years) were enrolled in the study.",
+      "context_window": ", 16 and 30 healthy subjects (20 women, 10 men; mean age 45\u00b114 years) were enrolled in the study. The baseline characteristics o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-515",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 515,
+      "sentence": "Exclusion criteria were (1) clinically significant hepatic, renal, cardiac, or pulmonary insufficiency; (2) history of malignant neoplasms (diagnosed and treated within the last 5 years); (3) autoimmune disorders and type 1 DM; (4) a recent history (<6 months) of thrombotic events, pregnancy, or lactation; (5) regular use of estroprogestin, iron, antioxidants, nonsteroid anti\u2010inflammatory drugs, or antiplatelet agents other than ASA.",
+      "context_window": "malignant neoplasms (diagnosed and treated within the last 5 years); (3) autoimmune disorders and type 1 DM; (4) a recent hist",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-588",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 588,
+      "sentence": "Exclusion criteria were (1) clinically significant hepatic, renal, cardiac, or pulmonary insufficiency; (2) history of malignant neoplasms (diagnosed and treated within the last 5 years); (3) autoimmune disorders and type 1 DM; (4) a recent history (<6 months) of thrombotic events, pregnancy, or lactation; (5) regular use of estroprogestin, iron, antioxidants, nonsteroid anti\u2010inflammatory drugs, or antiplatelet agents other than ASA.",
+      "context_window": "autoimmune disorders and type 1 DM; (4) a recent history (<6 months) of thrombotic events, pregnancy, or lactation; (5) regular",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-1561",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 1561,
+      "sentence": "Of the diabetic patients, 90 were also being treated with low\u2010dose ASA (100 mg/day) for primary or secondary cardiovascular prevention.",
+      "context_window": "tic patients, 90 were also being treated with low\u2010dose ASA (100 mg/day) for primary or secondary cardiovascular prevention. 17 Di",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-1762",
+      "claim_type": "percentage",
+      "raw_text": "60.7%",
+      "numeric_values": [
+        60.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1762,
+      "sentence": "17\n\nDiabetic patients with arterial hypertension or hypercholesterolemia were included if well controlled with stable drug therapy: 130 (60.7%) had arterial hypertension (64 receiving ASA treatment), defined as current systolic/diastolic blood pressure >130/85 mm Hg; 153 (71.5%) were hypercholesterolemic (73 receiving ASA treatment), in accordance with the ATP III criteria.",
+      "context_window": "included if well controlled with stable drug therapy: 130 (60.7%) had arterial hypertension (64 receiving ASA treatment), de",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-1883",
+      "claim_type": "unit_value",
+      "raw_text": "85 mm",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1883,
+      "sentence": "17\n\nDiabetic patients with arterial hypertension or hypercholesterolemia were included if well controlled with stable drug therapy: 130 (60.7%) had arterial hypertension (64 receiving ASA treatment), defined as current systolic/diastolic blood pressure >130/85 mm Hg; 153 (71.5%) were hypercholesterolemic (73 receiving ASA treatment), in accordance with the ATP III criteria.",
+      "context_window": ", defined as current systolic/diastolic blood pressure >130/85 mm Hg; 153 (71.5%) were hypercholesterolemic (73 receiving ASA",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-1898",
+      "claim_type": "percentage",
+      "raw_text": "71.5%",
+      "numeric_values": [
+        71.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1898,
+      "sentence": "17\n\nDiabetic patients with arterial hypertension or hypercholesterolemia were included if well controlled with stable drug therapy: 130 (60.7%) had arterial hypertension (64 receiving ASA treatment), defined as current systolic/diastolic blood pressure >130/85 mm Hg; 153 (71.5%) were hypercholesterolemic (73 receiving ASA treatment), in accordance with the ATP III criteria.",
+      "context_window": "rrent systolic/diastolic blood pressure >130/85 mm Hg; 153 (71.5%) were hypercholesterolemic (73 receiving ASA treatment), in",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-2130",
+      "claim_type": "percentage",
+      "raw_text": "13.5%",
+      "numeric_values": [
+        13.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2130,
+      "sentence": "Of the 214 patients, 29 (13.5%) (19 receiving ASA treatment) had microvascular complications (nephropathy, detected by the presence of persistent microalbuminuria between 30 and 300 mg/24 hr, in at least 2 of 3 consecutive 24\u2010hour collections, with a glomerular filtration rate \u226590 mL/min per 1.73 m 2 , as calculated with the Modification of Diet in Renal Disease formula; retinopathy, based on fundus oculi examination), and 51 (23.8%) (46 receiving ASA treatment) had a history or physical examination positive for evidence of macrovascular complications (cerebrovascular disease, coronary heart disease, or peripheral arterial disease).",
+      "context_window": "r and macrovascular complications. Of the 214 patients, 29 (13.5%) (19 receiving ASA treatment) had microvascular complicatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-2283",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2283,
+      "sentence": "Of the 214 patients, 29 (13.5%) (19 receiving ASA treatment) had microvascular complications (nephropathy, detected by the presence of persistent microalbuminuria between 30 and 300 mg/24 hr, in at least 2 of 3 consecutive 24\u2010hour collections, with a glomerular filtration rate \u226590 mL/min per 1.73 m 2 , as calculated with the Modification of Diet in Renal Disease formula; retinopathy, based on fundus oculi examination), and 51 (23.8%) (46 receiving ASA treatment) had a history or physical examination positive for evidence of macrovascular complications (cerebrovascular disease, coronary heart disease, or peripheral arterial disease).",
+      "context_window": "the presence of persistent microalbuminuria between 30 and 300 mg/24 hr, in at least 2 of 3 consecutive 24\u2010hour collections,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-2384",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 2384,
+      "sentence": "Of the 214 patients, 29 (13.5%) (19 receiving ASA treatment) had microvascular complications (nephropathy, detected by the presence of persistent microalbuminuria between 30 and 300 mg/24 hr, in at least 2 of 3 consecutive 24\u2010hour collections, with a glomerular filtration rate \u226590 mL/min per 1.73 m 2 , as calculated with the Modification of Diet in Renal Disease formula; retinopathy, based on fundus oculi examination), and 51 (23.8%) (46 receiving ASA treatment) had a history or physical examination positive for evidence of macrovascular complications (cerebrovascular disease, coronary heart disease, or peripheral arterial disease).",
+      "context_window": "ive 24\u2010hour collections, with a glomerular filtration rate \u226590 mL/min per 1.73 m 2 , as calculated with the Modification of Diet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-2536",
+      "claim_type": "percentage",
+      "raw_text": "23.8%",
+      "numeric_values": [
+        23.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2536,
+      "sentence": "Of the 214 patients, 29 (13.5%) (19 receiving ASA treatment) had microvascular complications (nephropathy, detected by the presence of persistent microalbuminuria between 30 and 300 mg/24 hr, in at least 2 of 3 consecutive 24\u2010hour collections, with a glomerular filtration rate \u226590 mL/min per 1.73 m 2 , as calculated with the Modification of Diet in Renal Disease formula; retinopathy, based on fundus oculi examination), and 51 (23.8%) (46 receiving ASA treatment) had a history or physical examination positive for evidence of macrovascular complications (cerebrovascular disease, coronary heart disease, or peripheral arterial disease).",
+      "context_window": "a; retinopathy, based on fundus oculi examination), and 51 (23.8%) (46 receiving ASA treatment) had a history or physical exa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-3371",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3371,
+      "sentence": "Urine samples were added with the antioxidant 4\u2010hydroxy\u2010Tempo (1 mmol/L) (Sigma Chemical Co) and stored at -20\u00b0C until extraction.",
+      "context_window": "ne samples were added with the antioxidant 4\u2010hydroxy\u2010Tempo (1 mmol/L) (Sigma Chemical Co) and stored at -20\u00b0C until extraction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-3656",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 3656,
+      "sentence": "Second, to test the hypothesis of a platelet origin of DKK\u20101, 90 T2DM patients receiving ASA (100 mg/day) were compared with the 124 patients not receiving ASA treatment.",
+      "context_window": "a platelet origin of DKK\u20101, 90 T2DM patients receiving ASA (100 mg/day) were compared with the 124 patients not receiving ASA trea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-4539",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4539,
+      "sentence": "In this protocol, patients with T2DM in an early stage, as defined by a known disease duration <6 months, presenting at the time of recruitment with hemoglobin (Hb)A 1c values <7% in the absence of any treatment affecting glycemic control, were randomly assigned to receive acarbose (up to 100 mg 3 times daily) or placebo, in addition to dietary counseling, for 20 weeks.",
+      "context_window": "in an early stage, as defined by a known disease duration <6 months, presenting at the time of recruitment with hemoglobin (Hb)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-4620",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4620,
+      "sentence": "In this protocol, patients with T2DM in an early stage, as defined by a known disease duration <6 months, presenting at the time of recruitment with hemoglobin (Hb)A 1c values <7% in the absence of any treatment affecting glycemic control, were randomly assigned to receive acarbose (up to 100 mg 3 times daily) or placebo, in addition to dietary counseling, for 20 weeks.",
+      "context_window": "at the time of recruitment with hemoglobin (Hb)A 1c values <7% in the absence of any treatment affecting glycemic control,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-4733",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4733,
+      "sentence": "In this protocol, patients with T2DM in an early stage, as defined by a known disease duration <6 months, presenting at the time of recruitment with hemoglobin (Hb)A 1c values <7% in the absence of any treatment affecting glycemic control, were randomly assigned to receive acarbose (up to 100 mg 3 times daily) or placebo, in addition to dietary counseling, for 20 weeks.",
+      "context_window": "control, were randomly assigned to receive acarbose (up to 100 mg 3 times daily) or placebo, in addition to dietary counselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-4806",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4806,
+      "sentence": "In this protocol, patients with T2DM in an early stage, as defined by a known disease duration <6 months, presenting at the time of recruitment with hemoglobin (Hb)A 1c values <7% in the absence of any treatment affecting glycemic control, were randomly assigned to receive acarbose (up to 100 mg 3 times daily) or placebo, in addition to dietary counseling, for 20 weeks.",
+      "context_window": "s daily) or placebo, in addition to dietary counseling, for 20 weeks. Finally, we also evaluated the effects of rosiglitazone, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-4988",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4988,
+      "sentence": "Finally, we also evaluated the effects of rosiglitazone, a peroxisome proliferator\u2010activated receptor\u2010\u03b3 (PPAR\u03b3) agonist, on these parameters, in 20 patients with T2DM for <10 years, HbA1c<9.5%, already treated with metformin 2000 mg/day, not receiving insulin or insulin secretagogue or thiazolidinedione therapy.",
+      "context_window": "agonist, on these parameters, in 20 patients with T2DM for <10 years, HbA1c<9.5%, already treated with metformin 2000 mg/day, no",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-5004",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5004,
+      "sentence": "Finally, we also evaluated the effects of rosiglitazone, a peroxisome proliferator\u2010activated receptor\u2010\u03b3 (PPAR\u03b3) agonist, on these parameters, in 20 patients with T2DM for <10 years, HbA1c<9.5%, already treated with metformin 2000 mg/day, not receiving insulin or insulin secretagogue or thiazolidinedione therapy.",
+      "context_window": "e parameters, in 20 patients with T2DM for <10 years, HbA1c<9.5%, already treated with metformin 2000 mg/day, not receiving",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5041",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg/day",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 5041,
+      "sentence": "Finally, we also evaluated the effects of rosiglitazone, a peroxisome proliferator\u2010activated receptor\u2010\u03b3 (PPAR\u03b3) agonist, on these parameters, in 20 patients with T2DM for <10 years, HbA1c<9.5%, already treated with metformin 2000 mg/day, not receiving insulin or insulin secretagogue or thiazolidinedione therapy.",
+      "context_window": "M for <10 years, HbA1c<9.5%, already treated with metformin 2000 mg/day, not receiving insulin or insulin secretagogue or thiazolid",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5184",
+      "claim_type": "unit_value",
+      "raw_text": "8 mg/day",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 5184,
+      "sentence": "They were randomly assigned to receive rosiglitazone (8 mg/day), or placebo for 24 weeks.",
+      "context_window": "rapy. They were randomly assigned to receive rosiglitazone (8 mg/day), or placebo for 24 weeks. Subjects took 6 tablets daily (r",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5210",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5210,
+      "sentence": "They were randomly assigned to receive rosiglitazone (8 mg/day), or placebo for 24 weeks.",
+      "context_window": "ssigned to receive rosiglitazone (8 mg/day), or placebo for 24 weeks. Subjects took 6 tablets daily (rosiglitazone 2 mg or place",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5265",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5265,
+      "sentence": "Subjects took 6 tablets daily (rosiglitazone 2 mg or placebo 2 tablets bid [9 am and 8 pm], metformin 500 mg 2 tablets bid [9 am and 8 pm]).",
+      "context_window": "for 24 weeks. Subjects took 6 tablets daily (rosiglitazone 2 mg or placebo 2 tablets bid [9 am and 8 pm], metformin 500 mg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5322",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5322,
+      "sentence": "Subjects took 6 tablets daily (rosiglitazone 2 mg or placebo 2 tablets bid [9 am and 8 pm], metformin 500 mg 2 tablets bid [9 am and 8 pm]).",
+      "context_window": "ne 2 mg or placebo 2 tablets bid [9 am and 8 pm], metformin 500 mg 2 tablets bid [9 am and 8 pm]). Peripheral venous blood (9",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-6401",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6401,
+      "sentence": "The intra\u2010assay and interassay coefficients of variations were <10% for all ELISAs.",
+      "context_window": "intra\u2010assay and interassay coefficients of variations were <10% for all ELISAs. Urinary 11\u2010dehydro\u2010TXB 2 excretion rate wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-6738",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6738,
+      "sentence": "24\n\nWith 124 patients not receiving ASA, 90 receiving ASA, and 30 controls recruited, the study had 98% power to detect a 2\u2010fold difference in plasma DKK\u20101 between patients with T2DM not treated with ASA versus controls and 95% power to detect a reduction by \u226550% in ASA\u2010treated diabetic patients versus diabetic patients not receiving ASA.",
+      "context_window": "90 receiving ASA, and 30 controls recruited, the study had 98% power to detect a 2\u2010fold difference in plasma DKK\u20101 between",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-6862",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6862,
+      "sentence": "24\n\nWith 124 patients not receiving ASA, 90 receiving ASA, and 30 controls recruited, the study had 98% power to detect a 2\u2010fold difference in plasma DKK\u20101 between patients with T2DM not treated with ASA versus controls and 95% power to detect a reduction by \u226550% in ASA\u2010treated diabetic patients versus diabetic patients not receiving ASA.",
+      "context_window": "patients with T2DM not treated with ASA versus controls and 95% power to detect a reduction by \u226550% in ASA\u2010treated diabetic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-6898",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6898,
+      "sentence": "24\n\nWith 124 patients not receiving ASA, 90 receiving ASA, and 30 controls recruited, the study had 98% power to detect a 2\u2010fold difference in plasma DKK\u20101 between patients with T2DM not treated with ASA versus controls and 95% power to detect a reduction by \u226550% in ASA\u2010treated diabetic patients versus diabetic patients not receiving ASA.",
+      "context_window": "ASA versus controls and 95% power to detect a reduction by \u226550% in ASA\u2010treated diabetic patients versus diabetic patients n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-120",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 120,
+      "sentence": "Plasma DKK\u20101 levels were significantly higher in patients with T2DM than in healthy patients (median 2.0\u2010fold increase, P <0.001; Figure 1 A).",
+      "context_window": "th T2DM than in healthy patients (median 2.0\u2010fold increase, P <0.001; Figure 1 A). Plasma ADMA and CD40L levels were also signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-222",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 222,
+      "sentence": "Plasma ADMA and CD40L levels were also significantly higher in T2DM patients ( P <0.0001; Figure 1 B and 1 C).",
+      "context_window": "0L levels were also significantly higher in T2DM patients ( P <0.0001; Figure 1 B and 1 C). Further, patients with T2DM not recei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-772",
+      "claim_type": "p_value",
+      "raw_text": "P =0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 772,
+      "sentence": "In contrast, no significant difference was observed in plasma ADMA levels between patients receiving ASA and patients not receiving ASA ( P =0.37; data not shown).",
+      "context_window": "een patients receiving ASA and patients not receiving ASA ( P =0.37; data not shown). Plasma levels of DKK\u20101 (A), ADMA (B) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-1723",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 1723,
+      "sentence": "Because the large majority (79 of 90) of diabetic patients receiving chronic low\u2010dose ASA therapy had a DM duration >1 year, we asked whether DM duration may affect DKK\u20101 levels and confound the interpretation of our findings about the impact of ASA treatment on plasma DKK\u20101.",
+      "context_window": "s receiving chronic low\u2010dose ASA therapy had a DM duration >1 year, we asked whether DM duration may affect DKK\u20101 levels and c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-n-1978",
+      "claim_type": "sample_size",
+      "raw_text": "n=124",
+      "numeric_values": [
+        124.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1978,
+      "sentence": "Thus, we analyzed the impact of DM duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ).",
+      "context_window": "duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-2085",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2085,
+      "sentence": "Thus, we analyzed the impact of DM duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ).",
+      "context_window": "a DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-n-2093",
+      "claim_type": "sample_size",
+      "raw_text": "n=54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2093,
+      "sentence": "Thus, we analyzed the impact of DM duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ).",
+      "context_window": "concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-2122",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2122,
+      "sentence": "Thus, we analyzed the impact of DM duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ).",
+      "context_window": "with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ). In addition, among T2DM p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-n-2130",
+      "claim_type": "sample_size",
+      "raw_text": "n=70",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2130,
+      "sentence": "Thus, we analyzed the impact of DM duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ).",
+      "context_window": "ly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ). In addition, among T2DM patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-2141",
+      "claim_type": "p_value",
+      "raw_text": "P =0.902",
+      "numeric_values": [
+        0.902
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2141,
+      "sentence": "Thus, we analyzed the impact of DM duration within the subgroup of patients not receiving ASA (n=124), and no difference was detected in plasma DKK\u20101 concentration among patients with newly diagnosed (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ).",
+      "context_window": "d (<1 year, n=54) versus long\u2010standing (\u22651 year, n=70) DM ( P =0.902, Figure 3 ). In addition, among T2DM patients with long\u2010sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-2287",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2287,
+      "sentence": "In addition, among T2DM patients with long\u2010standing DM, DKK\u20101 levels were not different between patients with good (Hb A1c <7%) and worse metabolic control (374.1 [213.8 to 672.7] versus 401.6 [178.4 to 613.5] ng/mL, P =0.863).",
+      "context_window": "vels were not different between patients with good (Hb A1c <7%) and worse metabolic control (374.1 [213.8 to 672.7] versus",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-2380",
+      "claim_type": "p_value",
+      "raw_text": "P =0.863",
+      "numeric_values": [
+        0.863
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2380,
+      "sentence": "In addition, among T2DM patients with long\u2010standing DM, DKK\u20101 levels were not different between patients with good (Hb A1c <7%) and worse metabolic control (374.1 [213.8 to 672.7] versus 401.6 [178.4 to 613.5] ng/mL, P =0.863).",
+      "context_window": "374.1 [213.8 to 672.7] versus 401.6 [178.4 to 613.5] ng/mL, P =0.863). Plasma Dickkopf\u20101 concentration among patients not recei",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-2490",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2490,
+      "sentence": "Plasma Dickkopf\u20101 concentration among patients not receiving ASA treatment with newly diagnosed (<1 year) vs long standing (\u22651 year) diabetes.",
+      "context_window": "patients not receiving ASA treatment with newly diagnosed (<1 year) vs long standing (\u22651 year) diabetes. In patients not rece",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-2517",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2517,
+      "sentence": "Plasma Dickkopf\u20101 concentration among patients not receiving ASA treatment with newly diagnosed (<1 year) vs long standing (\u22651 year) diabetes.",
+      "context_window": "treatment with newly diagnosed (<1 year) vs long standing (\u22651 year) diabetes. In patients not receiving ASA, DKK\u20101 was unrela",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-2822",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2822,
+      "sentence": "A significant correlation was found between plasma DKK\u20101 and urinary 11\u2010dehydro\u2010TXB 2 , plasma ADMA and sCD40L levels in the whole cohort of patients not receiving ASA and controls (\u03c1=0.303, P <0.0001, \u03c1=0.45; P <0.0001, and \u03c1=0.37, P <0.0001, respectively) ( Figure 4 and data not shown).",
+      "context_window": "cohort of patients not receiving ASA and controls (\u03c1=0.303, P <0.0001, \u03c1=0.45; P <0.0001, and \u03c1=0.37, P <0.0001, respectively) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-2841",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2841,
+      "sentence": "A significant correlation was found between plasma DKK\u20101 and urinary 11\u2010dehydro\u2010TXB 2 , plasma ADMA and sCD40L levels in the whole cohort of patients not receiving ASA and controls (\u03c1=0.303, P <0.0001, \u03c1=0.45; P <0.0001, and \u03c1=0.37, P <0.0001, respectively) ( Figure 4 and data not shown).",
+      "context_window": "not receiving ASA and controls (\u03c1=0.303, P <0.0001, \u03c1=0.45; P <0.0001, and \u03c1=0.37, P <0.0001, respectively) ( Figure 4 and data n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-2864",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2864,
+      "sentence": "A significant correlation was found between plasma DKK\u20101 and urinary 11\u2010dehydro\u2010TXB 2 , plasma ADMA and sCD40L levels in the whole cohort of patients not receiving ASA and controls (\u03c1=0.303, P <0.0001, \u03c1=0.45; P <0.0001, and \u03c1=0.37, P <0.0001, respectively) ( Figure 4 and data not shown).",
+      "context_window": "ontrols (\u03c1=0.303, P <0.0001, \u03c1=0.45; P <0.0001, and \u03c1=0.37, P <0.0001, respectively) ( Figure 4 and data not shown). The signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-3117",
+      "claim_type": "p_value",
+      "raw_text": "P =0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3117,
+      "sentence": "The significant correlation between plasma DKK\u20101 and urinary 11\u2010dehydro\u2010TXB 2 , and plasma ADMA remained significant when evaluated in diabetic patients not receiving ASA treatment alone (\u03c1=0.19, P =0.03, and \u03c1=0.33, P =0.006, respectively, data not shown).",
+      "context_window": "iabetic patients not receiving ASA treatment alone (\u03c1=0.19, P =0.03, and \u03c1=0.33, P =0.006, respectively, data not shown). Corr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-3138",
+      "claim_type": "p_value",
+      "raw_text": "P =0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3138,
+      "sentence": "The significant correlation between plasma DKK\u20101 and urinary 11\u2010dehydro\u2010TXB 2 , and plasma ADMA remained significant when evaluated in diabetic patients not receiving ASA treatment alone (\u03c1=0.19, P =0.03, and \u03c1=0.33, P =0.006, respectively, data not shown).",
+      "context_window": "receiving ASA treatment alone (\u03c1=0.19, P =0.03, and \u03c1=0.33, P =0.006, respectively, data not shown). Correlations between plasm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-n-3375",
+      "claim_type": "sample_size",
+      "raw_text": "n=124",
+      "numeric_values": [
+        124.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3375,
+      "sentence": "Correlations between plasma DKK\u20101, urinary 11\u2010dehydro\u2010TXB 2 (A), plasma asymmetric dimethylarginine (ADMA, B), and sCD40L (C) in patients with type 2 diabetes mellitus not receiving ASA therapy (n=124, solid circles) and healthy controls (n=30, open circles).",
+      "context_window": "ts with type 2 diabetes mellitus not receiving ASA therapy (n=124, solid circles) and healthy controls (n=30, open circles).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-n-3419",
+      "claim_type": "sample_size",
+      "raw_text": "n=30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3419,
+      "sentence": "Correlations between plasma DKK\u20101, urinary 11\u2010dehydro\u2010TXB 2 (A), plasma asymmetric dimethylarginine (ADMA, B), and sCD40L (C) in patients with type 2 diabetes mellitus not receiving ASA therapy (n=124, solid circles) and healthy controls (n=30, open circles).",
+      "context_window": "ng ASA therapy (n=124, solid circles) and healthy controls (n=30, open circles). DKK\u20101 indicates Dickkopf\u20101; sCD40L, soluble",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-3897",
+      "claim_type": "p_value",
+      "raw_text": "P =0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3897,
+      "sentence": "Stepwise linear regression yielded a model in which only ADMA (regression coefficient=0.298, SEM=0.211, P =0.013) and urinary 11\u2010dehydro\u2010TXB 2 (regression coefficient=0.252, SEM=0.112, P =0.033) predicted DKK\u20101 levels, independent of age, sex, fasting plasma glucose, HbA 1c , and DM duration (adjusted R 2 =0.15).",
+      "context_window": "n which only ADMA (regression coefficient=0.298, SEM=0.211, P =0.013) and urinary 11\u2010dehydro\u2010TXB 2 (regression coefficient=0.252",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-3978",
+      "claim_type": "p_value",
+      "raw_text": "P =0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3978,
+      "sentence": "Stepwise linear regression yielded a model in which only ADMA (regression coefficient=0.298, SEM=0.211, P =0.013) and urinary 11\u2010dehydro\u2010TXB 2 (regression coefficient=0.252, SEM=0.112, P =0.033) predicted DKK\u20101 levels, independent of age, sex, fasting plasma glucose, HbA 1c , and DM duration (adjusted R 2 =0.15).",
+      "context_window": "11\u2010dehydro\u2010TXB 2 (regression coefficient=0.252, SEM=0.112, P =0.033) predicted DKK\u20101 levels, independent of age, sex, fasting p",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-4180",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4180,
+      "sentence": "We next evaluated in a subgroup of patients with T2DM diagnosis within 1 year, not receiving ASA, whether improvement of metabolic control might be associated with concurrent changes in DKK\u20101 concentrations.",
+      "context_window": "luated in a subgroup of patients with T2DM diagnosis within 1 year, not receiving ASA, whether improvement of metabolic contro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-4472",
+      "claim_type": "p_value",
+      "raw_text": "P =0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4472,
+      "sentence": "A 20\u2010week treatment with acarbose in 10 patients randomized to receive the active medication, was associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels.",
+      "context_window": "as associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-4516",
+      "claim_type": "p_value",
+      "raw_text": "P =0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4516,
+      "sentence": "A 20\u2010week treatment with acarbose in 10 patients randomized to receive the active medication, was associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels.",
+      "context_window": "both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99)",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-4543",
+      "claim_type": "p_value",
+      "raw_text": "P =0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4543,
+      "sentence": "A 20\u2010week treatment with acarbose in 10 patients randomized to receive the active medication, was associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels.",
+      "context_window": "nd postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduc",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-4575",
+      "claim_type": "p_value",
+      "raw_text": "P =0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4575,
+      "sentence": "A 20\u2010week treatment with acarbose in 10 patients randomized to receive the active medication, was associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels.",
+      "context_window": "P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and u",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-4627",
+      "claim_type": "p_value",
+      "raw_text": "P =0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4627,
+      "sentence": "A 20\u2010week treatment with acarbose in 10 patients randomized to receive the active medication, was associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels.",
+      "context_window": "MA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels. In contra",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-4668",
+      "claim_type": "p_value",
+      "raw_text": "P =0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4668,
+      "sentence": "A 20\u2010week treatment with acarbose in 10 patients randomized to receive the active medication, was associated with a significant decrease in both fasting ( P =0.038) and postprandial plasma glucose ( P =0.013), and in HbA 1c ( P =0.025), but not in HOMA\u2010IR ( P =0.99) and with a consistent reduction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels.",
+      "context_window": "duction in DKK\u20101 ( P =0.005) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.005) levels. In contrast, placebo treatment was not associated",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-5027",
+      "claim_type": "p_value",
+      "raw_text": "P =0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5027,
+      "sentence": "In the whole group of subjects evaluated longitudinally, a significant direct correlation was observed between the change in plasma DKK\u20101 and the change in fasting plasma glucose (\u03c1=0.53, P =0.013), ADMA (\u03c1=0.60, P =0.005), and urinary 11\u2010dehydro\u2010TXB 2 (\u03c1=0.67, P <0.0001) ( Figure 5 ), whereas no correlation of any biochemical variable with the change in the HOMA\u2010IR was observed (data not shown).",
+      "context_window": "sma DKK\u20101 and the change in fasting plasma glucose (\u03c1=0.53, P =0.013), ADMA (\u03c1=0.60, P =0.005), and urinary 11\u2010dehydro\u2010TXB 2 (\u03c1=",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-5052",
+      "claim_type": "p_value",
+      "raw_text": "P =0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5052,
+      "sentence": "In the whole group of subjects evaluated longitudinally, a significant direct correlation was observed between the change in plasma DKK\u20101 and the change in fasting plasma glucose (\u03c1=0.53, P =0.013), ADMA (\u03c1=0.60, P =0.005), and urinary 11\u2010dehydro\u2010TXB 2 (\u03c1=0.67, P <0.0001) ( Figure 5 ), whereas no correlation of any biochemical variable with the change in the HOMA\u2010IR was observed (data not shown).",
+      "context_window": "in fasting plasma glucose (\u03c1=0.53, P =0.013), ADMA (\u03c1=0.60, P =0.005), and urinary 11\u2010dehydro\u2010TXB 2 (\u03c1=0.67, P <0.0001) ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-5101",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5101,
+      "sentence": "In the whole group of subjects evaluated longitudinally, a significant direct correlation was observed between the change in plasma DKK\u20101 and the change in fasting plasma glucose (\u03c1=0.53, P =0.013), ADMA (\u03c1=0.60, P =0.005), and urinary 11\u2010dehydro\u2010TXB 2 (\u03c1=0.67, P <0.0001) ( Figure 5 ), whereas no correlation of any biochemical variable with the change in the HOMA\u2010IR was observed (data not shown).",
+      "context_window": "A (\u03c1=0.60, P =0.005), and urinary 11\u2010dehydro\u2010TXB 2 (\u03c1=0.67, P <0.0001) ( Figure 5 ), whereas no correlation of any biochemical va",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5415",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5415,
+      "sentence": "Correlations of individual percentage of baseline of plasma DKK\u20101, ADMA (A), and urinary 11\u2010dehydro\u2010thromboxane (TX)B 2 (B), in a group of subjects with T2DM diagnosis within 1 year, not receiving ASA, evaluated longitudinally during 20 weeks of randomized acarbose (closed circles) vs placebo treatment (open circles).",
+      "context_window": ")B 2 (B), in a group of subjects with T2DM diagnosis within 1 year, not receiving ASA, evaluated longitudinally during 20 week",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5474",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5474,
+      "sentence": "Correlations of individual percentage of baseline of plasma DKK\u20101, ADMA (A), and urinary 11\u2010dehydro\u2010thromboxane (TX)B 2 (B), in a group of subjects with T2DM diagnosis within 1 year, not receiving ASA, evaluated longitudinally during 20 weeks of randomized acarbose (closed circles) vs placebo treatment (open circles).",
+      "context_window": "1 year, not receiving ASA, evaluated longitudinally during 20 weeks of randomized acarbose (closed circles) vs placebo treatmen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-5979",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5979,
+      "sentence": "Finally, we evaluated the effect of improvement of metabolic control on DKK\u20101 plasma levels and TX\u2010dependent platelet activation in patients with variable disease duration (1 to 10 years) and not receiving chronic ASA treatment.",
+      "context_window": "activation in patients with variable disease duration (1 to 10 years) and not receiving chronic ASA treatment. A 24\u2010week treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-6224",
+      "claim_type": "p_value",
+      "raw_text": "P =0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6224,
+      "sentence": "A 24\u2010week treatment with rosiglitazone in 11 patients randomized to receive the active medication on top of metformin was associated with a significant decrease in both fasting plasma glucose ( P =0.003) and in HbA 1c ( P =0.029) and with a consistent reduction in DKK\u20101 ( P =0.004) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.004) levels.",
+      "context_window": "ith a significant decrease in both fasting plasma glucose ( P =0.003) and in HbA 1c ( P =0.029) and with a consistent reduction",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-6250",
+      "claim_type": "p_value",
+      "raw_text": "P =0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6250,
+      "sentence": "A 24\u2010week treatment with rosiglitazone in 11 patients randomized to receive the active medication on top of metformin was associated with a significant decrease in both fasting plasma glucose ( P =0.003) and in HbA 1c ( P =0.029) and with a consistent reduction in DKK\u20101 ( P =0.004) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.004) levels.",
+      "context_window": "in both fasting plasma glucose ( P =0.003) and in HbA 1c ( P =0.029) and with a consistent reduction in DKK\u20101 ( P =0.004) and u",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-6303",
+      "claim_type": "p_value",
+      "raw_text": "P =0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6303,
+      "sentence": "A 24\u2010week treatment with rosiglitazone in 11 patients randomized to receive the active medication on top of metformin was associated with a significant decrease in both fasting plasma glucose ( P =0.003) and in HbA 1c ( P =0.029) and with a consistent reduction in DKK\u20101 ( P =0.004) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.004) levels.",
+      "context_window": "A 1c ( P =0.029) and with a consistent reduction in DKK\u20101 ( P =0.004) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.004) levels. In the gr",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-6344",
+      "claim_type": "p_value",
+      "raw_text": "P =0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6344,
+      "sentence": "A 24\u2010week treatment with rosiglitazone in 11 patients randomized to receive the active medication on top of metformin was associated with a significant decrease in both fasting plasma glucose ( P =0.003) and in HbA 1c ( P =0.029) and with a consistent reduction in DKK\u20101 ( P =0.004) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.004) levels.",
+      "context_window": "duction in DKK\u20101 ( P =0.004) and urinary 11\u2010dehydro\u2010TXB 2 ( P =0.004) levels. In the group of subjects randomized to rosiglitazo",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-6563",
+      "claim_type": "p_value",
+      "raw_text": "P =0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6563,
+      "sentence": "In the group of subjects randomized to rosiglitazone, evaluated longitudinally, a significant direct correlation was observed between urinary 11\u2010dehydro\u2010TXB 2 and both fasting plasma glucose (\u03c1=0.439, P =0.041) and plasma DKK\u20101 throughout the treatment period (\u03c1=0.794, P <0.0001) ( Figure 6 ).",
+      "context_window": "11\u2010dehydro\u2010TXB 2 and both fasting plasma glucose (\u03c1=0.439, P =0.041) and plasma DKK\u20101 throughout the treatment period (\u03c1=0.794,",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-p-6632",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6632,
+      "sentence": "In the group of subjects randomized to rosiglitazone, evaluated longitudinally, a significant direct correlation was observed between urinary 11\u2010dehydro\u2010TXB 2 and both fasting plasma glucose (\u03c1=0.439, P =0.041) and plasma DKK\u20101 throughout the treatment period (\u03c1=0.794, P <0.0001) ( Figure 6 ).",
+      "context_window": "and plasma DKK\u20101 throughout the treatment period (\u03c1=0.794, P <0.0001) ( Figure 6 ). Correlations between urinary 11\u2010dehydro\u2010thr",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-u-6894",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6894,
+      "sentence": "Correlations between urinary 11\u2010dehydro\u2010thromboxane B 2 and both fasting plasma glucose (A) and plasma Dickkopf\u20101 (B) throughout the 24\u2010week rosiglitazone treatment period, in a subgroup of patients with variable disease duration (1 to 10 years) and not receiving chronic ASA treatment, randomized to rosiglitazone.",
+      "context_window": "a subgroup of patients with variable disease duration (1 to 10 years) and not receiving chronic ASA treatment, randomized to ros",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4310390_circulating_dickkopf_1_in_diabetes_mellitus_association_with-pct-3498",
+      "claim_type": "percentage",
+      "raw_text": "23.8%",
+      "numeric_values": [
+        23.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3498,
+      "sentence": "28 - 31 In our cohort, less than 1 of 4 patients (23.8%) had a history or evidence of vascular disease, and circulating DKK\u20101 levels where unrelated to vascular events or carotid plaque, regardless of ongoing ASA treatment.",
+      "context_window": "stenosis. 28 - 31 In our cohort, less than 1 of 4 patients (23.8%) had a history or evidence of vascular disease, and circula",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

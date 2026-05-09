@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1093_gerona_glab002_senolytic_combination_of_dasatinib_and_quercetin_alleviates",
+  "doi": "10.1093/gerona/glab002",
+  "extracted_at": "2026-05-08T20:01:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_gerona_glab002_senolytic_combination_of_dasatinib_and_quercetin_alleviates-n-754",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 754,
+      "sentence": "Here, we examine the effect of D+Q on senescence (p16Ink4a and p21Cip1) and inflammation (Cxcl1, Il1\u03b2, Il6, Mcp1, and Tnf\u03b1) markers in small (ileum) and large (caecum and colon) intestine in aged mice (n = 10) compared to age-matched placebo-treated mice (n = 10).",
+      "context_window": "ileum) and large (caecum and colon) intestine in aged mice (n = 10) compared to age-matched placebo-treated mice (n = 10). Add",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "d+q",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_gerona_glab002_senolytic_combination_of_dasatinib_and_quercetin_alleviates-n-808",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "Here, we examine the effect of D+Q on senescence (p16Ink4a and p21Cip1) and inflammation (Cxcl1, Il1\u03b2, Il6, Mcp1, and Tnf\u03b1) markers in small (ileum) and large (caecum and colon) intestine in aged mice (n = 10) compared to age-matched placebo-treated mice (n = 10).",
+      "context_window": "mice (n = 10) compared to age-matched placebo-treated mice (n = 10). Additionally, we examine microbial composition along the",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "d+q",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

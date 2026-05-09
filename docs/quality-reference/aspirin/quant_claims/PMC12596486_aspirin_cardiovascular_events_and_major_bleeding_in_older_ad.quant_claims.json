@@ -1,0 +1,1178 @@
+{
+  "paper_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad",
+  "doi": "10.1093/eurheartj/ehaf514",
+  "extracted_at": "2026-05-08T20:06:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 23,
+    "percentage": 24,
+    "confidence_interval": 12,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-465",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 465,
+      "sentence": "At enrolment, participants were aged \u226570 years (\u226565 years for US minorities) without prior cardiovascular events, dementia, or independence-limiting physical disability.",
+      "context_window": ") data were analysed. At enrolment, participants were aged \u226570 years (\u226565 years for US minorities) without prior cardiovascular",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-476",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 476,
+      "sentence": "At enrolment, participants were aged \u226570 years (\u226565 years for US minorities) without prior cardiovascular events, dementia, or independence-limiting physical disability.",
+      "context_window": "analysed. At enrolment, participants were aged \u226570 years (\u226565 years for US minorities) without prior cardiovascular events, dem",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-669",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 669,
+      "sentence": "Randomization was to daily low-dose aspirin or matching placebo for the 4.7 years of the trial.",
+      "context_window": "n was to daily low-dose aspirin or matching placebo for the 4.7 years of the trial. Of the 19 114 participants randomized (9525",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-968",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 968,
+      "sentence": "No long-term benefit of randomization to aspirin was observed for MACE for the entire in-trial and post-trial period [hazard ratio (HR) 1.04, 95% confidence interval (CI) .94, 1.15].",
+      "context_window": "ire in-trial and post-trial period [hazard ratio (HR) 1.04, 95% confidence interval (CI) .94, 1.15]. However, during the po",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-1055",
+      "claim_type": "unit_value",
+      "raw_text": "4.3 years",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "However, during the post-trial period (median 4.3 years), there was a higher rate of MACE (HR 1.17, 95% CI 1.01, 1.36) in those randomized to aspirin compared with placebo.",
+      "context_window": ") .94, 1.15]. However, during the post-trial period (median 4.3 years), there was a higher rate of MACE (HR 1.17, 95% CI 1.01, 1.",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-1109",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01, 1.36",
+      "numeric_values": [
+        1.01,
+        1.36
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "However, during the post-trial period (median 4.3 years), there was a higher rate of MACE (HR 1.17, 95% CI 1.01, 1.36) in those randomized to aspirin compared with placebo.",
+      "context_window": "edian 4.3 years), there was a higher rate of MACE (HR 1.17, 95% CI 1.01, 1.36) in those randomized to aspirin compared with placebo. Over",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-1318",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.10, 1.39",
+      "numeric_values": [
+        1.1,
+        1.39
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1318,
+      "sentence": "Over the entire period, a higher rate of major haemorrhage was observed in the randomized aspirin group compared with placebo (HR 1.24, 95% CI 1.10, 1.39).",
+      "context_window": "he randomized aspirin group compared with placebo (HR 1.24, 95% CI 1.10, 1.39). The present study provides novel evidence concerning lon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 402,
+      "sentence": "The ASPirin in Reducing Events in the Elderly (ASPREE) randomized clinical trial (RCT) found that aspirin did not extend disability-free survival or significantly reduce CVD events over a median of 4.7 years, but increased the risk of major haemorrhage and cancer death.",
+      "context_window": "urvival or significantly reduce CVD events over a median of 4.7 years, but increased the risk of major haemorrhage and cancer dea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-734",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 734,
+      "sentence": "4 - 6 Notwithstanding this, after the guidelines were updated, an estimated 23%-46% of older adults in the US population still regularly take low-dose aspirin for primary prevention.",
+      "context_window": "nding this, after the guidelines were updated, an estimated 23%-46% of older adults in the US population still regularly ta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-738",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 738,
+      "sentence": "4 - 6 Notwithstanding this, after the guidelines were updated, an estimated 23%-46% of older adults in the US population still regularly take low-dose aspirin for primary prevention.",
+      "context_window": "g this, after the guidelines were updated, an estimated 23%-46% of older adults in the US population still regularly take l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-1080",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1080,
+      "sentence": "7 - 9\n\nWe have previously reported the immediate effects of aspirin within the ASPREE trial, both as a randomized comparison with placebo 1 - 3 (and according to actual use and non-use of aspirin 10 ) including a hazard ratio (HR) of .95 [95% confidence interval (CI) .83, 1.08] for CVD events, a secondary endpoint.",
+      "context_window": "n-use of aspirin 10 ) including a hazard ratio (HR) of .95 [95% confidence interval (CI) .83, 1.08] for CVD events, a secon",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-1396",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1396,
+      "sentence": "2 Concerning MACE, a HR of .89 (95% CI .77, 1.03) for effects of aspirin vs placebo was seen in-trial.",
+      "context_window": "urably by low-dose aspirin. 2 Concerning MACE, a HR of .89 (95% CI .77, 1.03) for effects of aspirin vs placebo was seen in",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-100",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 100,
+      "sentence": "The ASPREE was a large-scale placebo-controlled randomized trial ( NCT01038583 ) of daily low-dose (100 mg) enteric-coated aspirin conducted in 19 114 adults aged over 70 years residing in Australia and the USA (\u2265 65 years for US minorities) who had no prior cardiovascular events, dementia, or independence-limiting physical disability at trial enrolment.",
+      "context_window": "trolled randomized trial ( NCT01038583 ) of daily low-dose (100 mg) enteric-coated aspirin conducted in 19 114 adults aged ove",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-168",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 168,
+      "sentence": "The ASPREE was a large-scale placebo-controlled randomized trial ( NCT01038583 ) of daily low-dose (100 mg) enteric-coated aspirin conducted in 19 114 adults aged over 70 years residing in Australia and the USA (\u2265 65 years for US minorities) who had no prior cardiovascular events, dementia, or independence-limiting physical disability at trial enrolment.",
+      "context_window": "enteric-coated aspirin conducted in 19 114 adults aged over 70 years residing in Australia and the USA (\u2265 65 years for US minori",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-214",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 214,
+      "sentence": "The ASPREE was a large-scale placebo-controlled randomized trial ( NCT01038583 ) of daily low-dose (100 mg) enteric-coated aspirin conducted in 19 114 adults aged over 70 years residing in Australia and the USA (\u2265 65 years for US minorities) who had no prior cardiovascular events, dementia, or independence-limiting physical disability at trial enrolment.",
+      "context_window": "lts aged over 70 years residing in Australia and the USA (\u2265 65 years for US minorities) who had no prior cardiovascular events,",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-403",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 403,
+      "sentence": "21 The median enrolment age of the cohort was 74 years [interquartile range (IQR) 72-78 ].",
+      "context_window": "al enrolment. 21 The median enrolment age of the cohort was 74 years [interquartile range (IQR) 72-78 ]. Recruitment was underta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 545,
+      "sentence": "Recruitment was undertaken between 2010 and 2014, and participants were followed for a median of 4.7 years (IQR 3.6-5.7) during the in-trial period.",
+      "context_window": "10 and 2014, and participants were followed for a median of 4.7 years (IQR 3.6-5.7) during the in-trial period. The ASPREE protoc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-783",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 783,
+      "sentence": "The trial ended 6 months early on 12 June 2017 due to conditional power calculations showing it was unlikely that a beneficial effect on the primary endpoint of disability-free survival would be shown.",
+      "context_window": "ng, of the prior year\u2019s unused medication. The trial ended 6 months early on 12 June 2017 due to conditional power calculations",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-1426",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1426,
+      "sentence": "22 For a further 15 months, participants remained blinded to their study medication assignment and unaware of the trial\u2019s principal findings.",
+      "context_window": "REE-XT), an extended observational period. 22 For a further 15 months, participants remained blinded to their study medication as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-4116",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4116,
+      "sentence": "Adherence was defined dichotomously, with two definitions using different thresholds to enable sensitivity analyses: (i) the average annual proportion of study pills used \u226515% (and no open-label aspirin use in-trial, i.e. no report of aspirin in concomitant medication lists) and (ii) average annual proportion of study pills used \u226585% (and no open-label aspirin use in-trial).",
+      "context_window": "ses: (i) the average annual proportion of study pills used \u226515% (and no open-label aspirin use in-trial, i.e. no report of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-4276",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4276,
+      "sentence": "Adherence was defined dichotomously, with two definitions using different thresholds to enable sensitivity analyses: (i) the average annual proportion of study pills used \u226515% (and no open-label aspirin use in-trial, i.e. no report of aspirin in concomitant medication lists) and (ii) average annual proportion of study pills used \u226585% (and no open-label aspirin use in-trial).",
+      "context_window": "ts) and (ii) average annual proportion of study pills used \u226585% (and no open-label aspirin use in-trial). Further details a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-4498",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4498,
+      "sentence": "Study pill adherence during the trial was bimodally distributed, with most participants assessed as either \u226585% or <15% adherent.",
+      "context_window": "lly distributed, with most participants assessed as either \u226585% or <15% adherent. To assess the as-treated effects of actu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-4506",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4506,
+      "sentence": "Study pill adherence during the trial was bimodally distributed, with most participants assessed as either \u226585% or <15% adherent.",
+      "context_window": "ributed, with most participants assessed as either \u226585% or <15% adherent. To assess the as-treated effects of actual aspir",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-5003",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5003,
+      "sentence": "To provide a definition with high sensitivity, exposure was first defined as any of \u226515% adherence to aspirin (during the trial for those randomized to aspirin), participant reporting aspirin use on two or more days per week in questionnaires (only collected post-trial), or study records of aspirin in concomitant medications (both in-trial and post-trial).",
+      "context_window": "ith high sensitivity, exposure was first defined as any of \u226515% adherence to aspirin (during the trial for those randomized",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-5471",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5471,
+      "sentence": "19 To provide a definition with higher specificity, the second exposure definition was either \u226585% adherence to in-trial study aspirin pills, participant reporting aspirin use on six or more days per week in post-trial questionnaires, or study recording of aspirin in concomitant medications.",
+      "context_window": "her specificity, the second exposure definition was either \u226585% adherence to in-trial study aspirin pills, participant repo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-6366",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6366,
+      "sentence": "Two-sided 5% significance levels were used for statistical significance throughout, without adjustment for the multiple outcomes being tested, and all analyses were conducted using R (version 4.4.1) and Stata (version 18).",
+      "context_window": "d at the time of MACE and without that censoring. Two-sided 5% significance levels were used for statistical significance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-9498",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9498,
+      "sentence": "In the sensitivity analysis using characteristics at trial end, \u223c75% of participants had missing data in at least one characteristic, prompting the use of multiple imputation with chained equations and 75 imputed datasets.",
+      "context_window": "e sensitivity analysis using characteristics at trial end, \u223c75% of participants had missing data in at least one characteri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-10671",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10671,
+      "sentence": "The switch times were determined using the two aspirin exposure thresholds of 15% and 85%.",
+      "context_window": "ere determined using the two aspirin exposure thresholds of 15% and 85%. The exact timing of each switch was unknown, and s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-10679",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10679,
+      "sentence": "The switch times were determined using the two aspirin exposure thresholds of 15% and 85%.",
+      "context_window": "rmined using the two aspirin exposure thresholds of 15% and 85%. The exact timing of each switch was unknown, and switches",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 293,
+      "sentence": "3 In participants previously randomized to aspirin, who were not censored for MACE, actual use of aspirin (based on the 15% aspirin exposure threshold) gradually declined during the trial, and there was a sharp decrease when the trial ended, due to the cessation of study medication ( Figure 1 ).",
+      "context_window": "not censored for MACE, actual use of aspirin (based on the 15% aspirin exposure threshold) gradually declined during the t",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-1990",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1990,
+      "sentence": "Among these 15 668 participants, the median age at the end of the trial was 79 years (IQR 76-82).",
+      "context_window": "68 participants, the median age at the end of the trial was 79 years (IQR 76-82). Among participants who remained free of MACE d",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-2289",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2289,
+      "sentence": "Including those with in-trial MACE (assigned a 100% predicted risk), among all ASPREE-XT participants, the mean predicted 5-year MACE risk was slightly higher in the placebo group than in the aspirin group because of the slightly higher proportion of participants in the placebo group with in-trial MACE ( Table 1 ).",
+      "context_window": "Table S3 ). Including those with in-trial MACE (assigned a 100% predicted risk), among all ASPREE-XT participants, the mean",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-2603",
+      "claim_type": "unit_value",
+      "raw_text": "4.3 years",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2603,
+      "sentence": "Participants were followed for a median of 4.3 years (IQR 4.0-4.6) for MACE and major haemorrhage in the post-trial period.",
+      "context_window": "CE ( Table 1 ). Participants were followed for a median of 4.3 years (IQR 4.0-4.6) for MACE and major haemorrhage in the post-tr",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-2866",
+      "claim_type": "unit_value",
+      "raw_text": "8.3 years",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2866,
+      "sentence": "Long-term effects of aspirin were estimated to be close to null (HRs close to 1) for MACE for the entire period including the in-trial and post-trial follow-up (median follow-up of 8.3 years, IQR 7.0-9.5) ( Table 2 ).",
+      "context_window": "the in-trial and post-trial follow-up (median follow-up of 8.3 years, IQR 7.0-9.5) ( Table 2 ). Adjusting for baseline covariate",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-3597",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.02, 1.37",
+      "numeric_values": [
+        1.02,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3597,
+      "sentence": "Specifically, during the post-trial period, there were higher rates of MACE (HR 1.18, 95% CI 1.02, 1.37) and also myocardial infarction (HR 1.25, 95% CI 1.01, 1.54) in those randomized to aspirin compared with those randomized to placebo, whereas during the trial, these rates were lower in the aspirin group compared with placebo ( Table 2 ).",
+      "context_window": "ost-trial period, there were higher rates of MACE (HR 1.18, 95% CI 1.02, 1.37) and also myocardial infarction (HR 1.25, 95% CI 1.01, 1.54",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-3657",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01, 1.54",
+      "numeric_values": [
+        1.01,
+        1.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3657,
+      "sentence": "Specifically, during the post-trial period, there were higher rates of MACE (HR 1.18, 95% CI 1.02, 1.37) and also myocardial infarction (HR 1.25, 95% CI 1.01, 1.54) in those randomized to aspirin compared with those randomized to placebo, whereas during the trial, these rates were lower in the aspirin group compared with placebo ( Table 2 ).",
+      "context_window": "95% CI 1.02, 1.37) and also myocardial infarction (HR 1.25, 95% CI 1.01, 1.54) in those randomized to aspirin compared with those randomi",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-4723",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01, 1.36",
+      "numeric_values": [
+        1.01,
+        1.36
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4723,
+      "sentence": "MACE IPW HR 1.17, 95% CI 1.01, 1.36) compared with the unweighted analyses presented in Table 2 (e.g.",
+      "context_window": "pplementary data online , Table S8 , e.g. MACE IPW HR 1.17, 95% CI 1.01, 1.36) compared with the unweighted analyses presented in Table 2",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-4832",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.02, 1.37",
+      "numeric_values": [
+        1.02,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4832,
+      "sentence": "MACE unweighted HR 1.18, 95% CI 1.02, 1.37).",
+      "context_window": "nalyses presented in Table 2 (e.g. MACE unweighted HR 1.18, 95% CI 1.02, 1.37). Additional adjustment for characteristics with absolute s",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-5000",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.00, 1.35",
+      "numeric_values": [
+        1.0,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5000,
+      "sentence": "Additional adjustment for characteristics with absolute standardized differences between .1 and .2 produced very similar results (MACE IPW HR 1.16, 95% CI 1.00, 1.35).",
+      "context_window": ".1 and .2 produced very similar results (MACE IPW HR 1.16, 95% CI 1.00, 1.35). No heterogeneity of aspirin effects in the post-trial per",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-5616",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.10, 1.39",
+      "numeric_values": [
+        1.1,
+        1.39
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5616,
+      "sentence": "Over the entire period of the in-trial and post-trial follow-up, higher rates of major haemorrhage were observed in those randomized to aspirin compared with placebo (HR 1.24, 95% CI 1.10, 1.39), and likewise upper gastrointestinal bleeding (HR 1.43, 95% CI 1.13, 1.81), and bleeding at another site (HR 1.25, 95% CI 1.01, 1.54) ( Table 3 ).",
+      "context_window": "those randomized to aspirin compared with placebo (HR 1.24, 95% CI 1.10, 1.39), and likewise upper gastrointestinal bleeding (HR 1.43, 95",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-5691",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.13, 1.81",
+      "numeric_values": [
+        1.13,
+        1.81
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5691,
+      "sentence": "Over the entire period of the in-trial and post-trial follow-up, higher rates of major haemorrhage were observed in those randomized to aspirin compared with placebo (HR 1.24, 95% CI 1.10, 1.39), and likewise upper gastrointestinal bleeding (HR 1.43, 95% CI 1.13, 1.81), and bleeding at another site (HR 1.25, 95% CI 1.01, 1.54) ( Table 3 ).",
+      "context_window": "39), and likewise upper gastrointestinal bleeding (HR 1.43, 95% CI 1.13, 1.81), and bleeding at another site (HR 1.25, 95% CI 1.01, 1.54)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-5750",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01, 1.54",
+      "numeric_values": [
+        1.01,
+        1.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5750,
+      "sentence": "Over the entire period of the in-trial and post-trial follow-up, higher rates of major haemorrhage were observed in those randomized to aspirin compared with placebo (HR 1.24, 95% CI 1.10, 1.39), and likewise upper gastrointestinal bleeding (HR 1.43, 95% CI 1.13, 1.81), and bleeding at another site (HR 1.25, 95% CI 1.01, 1.54) ( Table 3 ).",
+      "context_window": "95% CI 1.13, 1.81), and bleeding at another site (HR 1.25, 95% CI 1.01, 1.54) ( Table 3 ). Adjusted HRs were consistent with the main re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-6140",
+      "claim_type": "unit_value",
+      "raw_text": "32 days",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6140,
+      "sentence": "Time lost to bleeding was greater in the aspirin group than the placebo group for major haemorrhage (difference in restricted mean time lost = 32 days, P < .01) and upper gastrointestinal bleeding (difference = 13 days, P < .01) (see Supplementary data online , Table S5 ).",
+      "context_window": "ajor haemorrhage (difference in restricted mean time lost = 32 days, P < .01) and upper gastrointestinal bleeding (difference =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-p-6149",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6149,
+      "sentence": "Time lost to bleeding was greater in the aspirin group than the placebo group for major haemorrhage (difference in restricted mean time lost = 32 days, P < .01) and upper gastrointestinal bleeding (difference = 13 days, P < .01) (see Supplementary data online , Table S5 ).",
+      "context_window": "orrhage (difference in restricted mean time lost = 32 days, P < .01) and upper gastrointestinal bleeding (difference = 13 days,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-6208",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6208,
+      "sentence": "Time lost to bleeding was greater in the aspirin group than the placebo group for major haemorrhage (difference in restricted mean time lost = 32 days, P < .01) and upper gastrointestinal bleeding (difference = 13 days, P < .01) (see Supplementary data online , Table S5 ).",
+      "context_window": "P < .01) and upper gastrointestinal bleeding (difference = 13 days, P < .01) (see Supplementary data online , Table S5 ). Dur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-p-6217",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6217,
+      "sentence": "Time lost to bleeding was greater in the aspirin group than the placebo group for major haemorrhage (difference in restricted mean time lost = 32 days, P < .01) and upper gastrointestinal bleeding (difference = 13 days, P < .01) (see Supplementary data online , Table S5 ).",
+      "context_window": "and upper gastrointestinal bleeding (difference = 13 days, P < .01) (see Supplementary data online , Table S5 ). During the p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-6498",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6498,
+      "sentence": "During the post-trial period alone, there was no significant difference in rates of major haemorrhage between the randomized aspirin and placebo groups ( Table 3 and Figure 4 ) with a HR for overall major haemorrhage of 1.08 (95% CI .91, 1.29), although the difference between the ITT aspirin effects during the post-trial and in-trial time periods was not significant ( P = .06).",
+      "context_window": "Figure 4 ) with a HR for overall major haemorrhage of 1.08 (95% CI .91, 1.29), although the difference between the ITT aspi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-p-6643",
+      "claim_type": "p_value",
+      "raw_text": "P = .06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6643,
+      "sentence": "During the post-trial period alone, there was no significant difference in rates of major haemorrhage between the randomized aspirin and placebo groups ( Table 3 and Figure 4 ) with a HR for overall major haemorrhage of 1.08 (95% CI .91, 1.29), although the difference between the ITT aspirin effects during the post-trial and in-trial time periods was not significant ( P = .06).",
+      "context_window": "post-trial and in-trial time periods was not significant ( P = .06). However, there was a significant difference in as-randomi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-p-6797",
+      "claim_type": "p_value",
+      "raw_text": "P = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6797,
+      "sentence": "However, there was a significant difference in as-randomized comparisons during the post-trial and in-trial periods for intracranial bleeding ( P = .03) and upper gastrointestinal bleeding ( P = .03).",
+      "context_window": "post-trial and in-trial periods for intracranial bleeding ( P = .03) and upper gastrointestinal bleeding ( P = .03). Estimates",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-p-6844",
+      "claim_type": "p_value",
+      "raw_text": "P = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6844,
+      "sentence": "However, there was a significant difference in as-randomized comparisons during the post-trial and in-trial periods for intracranial bleeding ( P = .03) and upper gastrointestinal bleeding ( P = .03).",
+      "context_window": "l bleeding ( P = .03) and upper gastrointestinal bleeding ( P = .03). Estimates with IPW of post-trial effects on bleeding (se",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-6988",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6988,
+      "sentence": "Estimates with IPW of post-trial effects on bleeding (see Supplementary data online , Table S8 , e.g. major haemorrhage IPW HR 1.08, 95% CI .91, 1.28) were similar to the unweighted analyses presented in Table 3 (absolute standardized differences shown in Supplementary data online , Table S9 ).",
+      "context_window": "ata online , Table S8 , e.g. major haemorrhage IPW HR 1.08, 95% CI .91, 1.28) were similar to the unweighted analyses prese",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-7859",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7859,
+      "sentence": "There was borderline statistical significance for an observation of aspirin harm post-trial only in participants who did not adhere to randomized assignment during the trial [ P interaction adherence (85% definition) = .06, P interaction adherence (15% definition) = .09] (see Supplementary data online , Figure S7 ).",
+      "context_window": "ized assignment during the trial [ P interaction adherence (85% definition) = .06, P interaction adherence (15% definition)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-7907",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7907,
+      "sentence": "There was borderline statistical significance for an observation of aspirin harm post-trial only in participants who did not adhere to randomized assignment during the trial [ P interaction adherence (85% definition) = .06, P interaction adherence (15% definition) = .09] (see Supplementary data online , Figure S7 ).",
+      "context_window": "adherence (85% definition) = .06, P interaction adherence (15% definition) = .09] (see Supplementary data online , Figure",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-8364",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8364,
+      "sentence": "In particular, the estimate of ongoing aspirin use on MACE was HR .97 (95% CI .84, 1.12).",
+      "context_window": "ar, the estimate of ongoing aspirin use on MACE was HR .97 (95% CI .84, 1.12). The IPCW HRs for major haemorrhagic events (",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-39",
+      "claim_type": "unit_value",
+      "raw_text": "4.3 years",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 39,
+      "sentence": "Using extended follow-up for a further 4.3 years of participants in the ASPREE trial, we examined long-term effects of aspirin on MACE and major haemorrhage ( Structured Graphical Abstract ).",
+      "context_window": "Using extended follow-up for a further 4.3 years of participants in the ASPREE trial, we examined long-term",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-274",
+      "claim_type": "unit_value",
+      "raw_text": "8.3 years",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 274,
+      "sentence": "We found an absence of MACE benefit over the total long-term follow-up (median of 8.3 years).",
+      "context_window": "MACE benefit over the total long-term follow-up (median of 8.3 years). However, we also found a notable contrast between the tre",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-393",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 393,
+      "sentence": "However, we also found a notable contrast between the trend towards MACE benefit during the trial (HR .89, 95% CI .77, 1.03) and an elevated risk of MACE post-trial (IPW HR 1.17, 95% CI 1.01, 1.36) in individuals originally randomized to aspirin compared with placebo.",
+      "context_window": "en the trend towards MACE benefit during the trial (HR .89, 95% CI .77, 1.03) and an elevated risk of MACE post-trial (IPW",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-465",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01, 1.36",
+      "numeric_values": [
+        1.01,
+        1.36
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 465,
+      "sentence": "However, we also found a notable contrast between the trend towards MACE benefit during the trial (HR .89, 95% CI .77, 1.03) and an elevated risk of MACE post-trial (IPW HR 1.17, 95% CI 1.01, 1.36) in individuals originally randomized to aspirin compared with placebo.",
+      "context_window": "1.03) and an elevated risk of MACE post-trial (IPW HR 1.17, 95% CI 1.01, 1.36) in individuals originally randomized to aspirin compared w",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-ci-3250",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.34, 1.41",
+      "numeric_values": [
+        1.34,
+        1.41
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3250,
+      "sentence": "This result is consistent with a large Swedish cohort study, in which individuals who discontinued low-dose aspirin had a higher risk of MACE than those who continued (HR 1.37, 95% CI 1.34, 1.41) over an average 3-year follow-up.",
+      "context_window": "ad a higher risk of MACE than those who continued (HR 1.37, 95% CI 1.34, 1.41) over an average 3-year follow-up. 18 This could be explain",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-4152",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4152,
+      "sentence": "38 , 39\n\nIt should be noted that in our study, cumulative incidence curves post-trial took 2-3 years to display elevated MACE risk in the randomized aspirin group, which also does not seem to concur with short-term rebound harm.",
+      "context_window": "in our study, cumulative incidence curves post-trial took 2-3 years to display elevated MACE risk in the randomized aspirin gro",
+      "claim_role": "background",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-5812",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5812,
+      "sentence": "An early small-scale randomized trial showed that low-dose aspirin (50 mg daily) provided no benefit in preventing carotid plaque growth and might even accelerate it.",
+      "context_window": "small-scale randomized trial showed that low-dose aspirin (50 mg daily) provided no benefit in preventing carotid plaque gro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-6506",
+      "claim_type": "unit_value",
+      "raw_text": "8.3 years",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6506,
+      "sentence": "The effects in the context of ongoing usage of aspirin were also investigated in our as-treated analysis of ongoing aspirin use over a median of 8.3 years of follow-up.",
+      "context_window": "as-treated analysis of ongoing aspirin use over a median of 8.3 years of follow-up. We found no benefit on MACE of aspirin use th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-pct-7075",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7075,
+      "sentence": "42 In this respect, key strengths of the follow-up of participants from the ASPREE trial were the high consent rate (93%) for the post-trial follow-up period, the continuation for 5 years of annual visits with participants, and the detailed documentation and adjudication of clinical events, strengths that were similar to those of the randomized trial.",
+      "context_window": "ticipants from the ASPREE trial were the high consent rate (93%) for the post-trial follow-up period, the continuation for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12596486_aspirin_cardiovascular_events_and_major_bleeding_in_older_ad-u-7138",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7138,
+      "sentence": "42 In this respect, key strengths of the follow-up of participants from the ASPREE trial were the high consent rate (93%) for the post-trial follow-up period, the continuation for 5 years of annual visits with participants, and the detailed documentation and adjudication of clinical events, strengths that were similar to those of the randomized trial.",
+      "context_window": ") for the post-trial follow-up period, the continuation for 5 years of annual visits with participants, and the detailed docume",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

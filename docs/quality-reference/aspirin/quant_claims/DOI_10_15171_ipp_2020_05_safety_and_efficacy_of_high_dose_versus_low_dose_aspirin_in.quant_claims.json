@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_15171_ipp_2020_05_safety_and_efficacy_of_high_dose_versus_low_dose_aspirin_in",
+  "doi": "10.15171/ipp.2020.05",
+  "extracted_at": "2026-05-08T20:05:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "hazard_ratio": 2,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_15171_ipp_2020_05_safety_and_efficacy_of_high_dose_versus_low_dose_aspirin_in-hr-l-1131",
+      "claim_type": "hazard_ratio",
+      "raw_text": "Adjusted hazard ratio: 0.85",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1131,
+      "sentence": "There was no significant difference between high-dose and low-dose aspirin in terms of efficacy (Adjusted hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.65, 95% CI=0.41-6.69). <jats:bold>Conclusion:</jats:bold> Efficacy and safety outcomes were not significantly different between high-dose and low-dose aspirin.</jats:p>",
+      "context_window": "etween high-dose and low-dose aspirin in terms of efficacy (Adjusted hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard rati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15171_ipp_2020_05_safety_and_efficacy_of_high_dose_versus_low_dose_aspirin_in-pct-1160",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "There was no significant difference between high-dose and low-dose aspirin in terms of efficacy (Adjusted hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.65, 95% CI=0.41-6.69). <jats:bold>Conclusion:</jats:bold> Efficacy and safety outcomes were not significantly different between high-dose and low-dose aspirin.</jats:p>",
+      "context_window": "aspirin in terms of efficacy (Adjusted hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15171_ipp_2020_05_safety_and_efficacy_of_high_dose_versus_low_dose_aspirin_in-hr-l-1198",
+      "claim_type": "hazard_ratio",
+      "raw_text": "Adjusted hazard ratio: 1.65",
+      "numeric_values": [
+        1.65
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1198,
+      "sentence": "There was no significant difference between high-dose and low-dose aspirin in terms of efficacy (Adjusted hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.65, 95% CI=0.41-6.69). <jats:bold>Conclusion:</jats:bold> Efficacy and safety outcomes were not significantly different between high-dose and low-dose aspirin.</jats:p>",
+      "context_window": "d hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.65, 95% CI=0.41-6.69). <jats:bold>Conclusion:</jats:bold> Effi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15171_ipp_2020_05_safety_and_efficacy_of_high_dose_versus_low_dose_aspirin_in-pct-1227",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1227,
+      "sentence": "There was no significant difference between high-dose and low-dose aspirin in terms of efficacy (Adjusted hazard ratio: 0.85, 95% CI=0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.65, 95% CI=0.41-6.69). <jats:bold>Conclusion:</jats:bold> Efficacy and safety outcomes were not significantly different between high-dose and low-dose aspirin.</jats:p>",
+      "context_window": "0.29-2.45) and safety outcome (Adjusted hazard ratio: 1.65, 95% CI=0.41-6.69). <jats:bold>Conclusion:</jats:bold> Efficacy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

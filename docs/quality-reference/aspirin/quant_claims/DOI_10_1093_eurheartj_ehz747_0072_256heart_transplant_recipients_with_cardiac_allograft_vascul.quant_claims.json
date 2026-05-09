@@ -1,0 +1,272 @@
+{
+  "paper_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul",
+  "doi": "10.1093/eurheartj/ehz747.0072",
+  "extracted_at": "2026-05-08T20:05:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 2,
+    "confidence_interval": 6,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-u-1052",
+      "claim_type": "unit_value",
+      "raw_text": "8.6 years",
+      "numeric_values": [
+        8.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1052,
+      "sentence": "The antiplatelet effect of aspirin has not been thoroughly examined in HTx-patients.</jats:p> </jats:sec> <jats:sec> <jats:title>Purpose</jats:title> <jats:p>To investigate baseline platelet aggregation and the antiplatelet effect of aspirin in HTx-patients with and without CAV.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>We included 68 HTx-patients (median 8.6 years from HTx).",
+      "context_window": "ds</jats:title> <jats:p>We included 68 HTx-patients (median 8.6 years from HTx). In 66 patients taking 75 mg aspirin for a minimu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-u-1095",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "In 66 patients taking 75 mg aspirin for a minimum of 7 days, platelet aggregation was measured in whole blood using impedance aggregometry with the following agonists: Adenosine diphosphate (ADP) stimulating ADP-receptors and arachidonic acid (AA) for monitoring of aspirin treatment.",
+      "context_window": "patients (median 8.6 years from HTx). In 66 patients taking 75 mg aspirin for a minimum of 7 days, platelet aggregation was m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-u-1126",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "In 66 patients taking 75 mg aspirin for a minimum of 7 days, platelet aggregation was measured in whole blood using impedance aggregometry with the following agonists: Adenosine diphosphate (ADP) stimulating ADP-receptors and arachidonic acid (AA) for monitoring of aspirin treatment.",
+      "context_window": "HTx). In 66 patients taking 75 mg aspirin for a minimum of 7 days, platelet aggregation was measured in whole blood using imp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-n-1830",
+      "claim_type": "sample_size",
+      "raw_text": "n=37",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1830,
+      "sentence": "Patients were divided into two groups; no CAV (n=37) and CAV (n=29).</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>In HTx-patients not treated with aspirin, we found significantly increased ADP-induced platelet aggregation in patients with CAV vs. patients without CAV (904 (95% CI 813-995) vs.",
+      "context_window": "ssification. Patients were divided into two groups; no CAV (n=37) and CAV (n=29).</jats:p> </jats:sec> <jats:sec> <jats:titl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-n-1845",
+      "claim_type": "sample_size",
+      "raw_text": "n=29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1845,
+      "sentence": "Patients were divided into two groups; no CAV (n=37) and CAV (n=29).</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>In HTx-patients not treated with aspirin, we found significantly increased ADP-induced platelet aggregation in patients with CAV vs. patients without CAV (904 (95% CI 813-995) vs.",
+      "context_window": "tients were divided into two groups; no CAV (n=37) and CAV (n=29).</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-ci-2085",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 813-995",
+      "numeric_values": [
+        813.0,
+        995.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2085,
+      "sentence": "Patients were divided into two groups; no CAV (n=37) and CAV (n=29).</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>In HTx-patients not treated with aspirin, we found significantly increased ADP-induced platelet aggregation in patients with CAV vs. patients without CAV (904 (95% CI 813-995) vs.",
+      "context_window": "egation in patients with CAV vs. patients without CAV (904 (95% CI 813-995) vs. 786 (95% CI 728-843) AU*min, P=0.02). Baseline AA-indu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-ci-2110",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 728-843",
+      "numeric_values": [
+        728.0,
+        843.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2110,
+      "sentence": "786 (95% CI 728-843) AU*min, P=0.02).",
+      "context_window": "CAV vs. patients without CAV (904 (95% CI 813-995) vs. 786 (95% CI 728-843) AU*min, P=0.02). Baseline AA-induced aggregation was also",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-p-2134",
+      "claim_type": "p_value",
+      "raw_text": "P=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2134,
+      "sentence": "786 (95% CI 728-843) AU*min, P=0.02).",
+      "context_window": "CAV (904 (95% CI 813-995) vs. 786 (95% CI 728-843) AU*min, P=0.02). Baseline AA-induced aggregation was also higher in patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-ci-2267",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 907-1081",
+      "numeric_values": [
+        907.0,
+        1081.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2267,
+      "sentence": "Baseline AA-induced aggregation was also higher in patients with CAV vs. patients without CAV, though non-significant (994 (95% CI 907-1081) vs.",
+      "context_window": "CAV vs. patients without CAV, though non-significant (994 (95% CI 907-1081) vs. 905 (95% CI 839-972) AU*min, P=0.10). Even though aspi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-ci-2293",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 839-972",
+      "numeric_values": [
+        839.0,
+        972.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2293,
+      "sentence": "905 (95% CI 839-972) AU*min, P=0.10).",
+      "context_window": "CAV, though non-significant (994 (95% CI 907-1081) vs. 905 (95% CI 839-972) AU*min, P=0.10). Even though aspirin reduced AA-induced pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-p-2317",
+      "claim_type": "p_value",
+      "raw_text": "P=0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2317,
+      "sentence": "905 (95% CI 839-972) AU*min, P=0.10).",
+      "context_window": "ant (994 (95% CI 907-1081) vs. 905 (95% CI 839-972) AU*min, P=0.10). Even though aspirin reduced AA-induced platelet aggregati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-ci-2542",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 295-465",
+      "numeric_values": [
+        295.0,
+        465.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2542,
+      "sentence": "Even though aspirin reduced AA-induced platelet aggregation in both groups, patients with CAV had significantly increased AA-induced platelet aggregation compared with patients without CAV on aspirin treatment (380 (95% CI 295-465) vs.",
+      "context_window": "mpared with patients without CAV on aspirin treatment (380 (95% CI 295-465) vs. 286 (95% CI 239-334) AU*min, P=0.04) (Fig. 1).</jats:p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-ci-2567",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 239-334",
+      "numeric_values": [
+        239.0,
+        334.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2567,
+      "sentence": "286 (95% CI 239-334) AU*min, P=0.04) (Fig.",
+      "context_window": "out CAV on aspirin treatment (380 (95% CI 295-465) vs. 286 (95% CI 239-334) AU*min, P=0.04) (Fig. 1).</jats:p> <jats:p/> </jats:sec> <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz747_0072_256heart_transplant_recipients_with_cardiac_allograft_vascul-p-2591",
+      "claim_type": "p_value",
+      "raw_text": "P=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2591,
+      "sentence": "286 (95% CI 239-334) AU*min, P=0.04) (Fig.",
+      "context_window": "ment (380 (95% CI 295-465) vs. 286 (95% CI 239-334) AU*min, P=0.04) (Fig. 1).</jats:p> <jats:p/> </jats:sec> <jats:sec> <jats:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

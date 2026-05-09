@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1016_j_stress_2025_101100_specific_redox_regulation_of_carbohydrate_organic_acid_amino",
+  "doi": "10.1016/j.stress.2025.101100",
+  "extracted_at": "2026-05-08T20:11:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_stress_2025_101100_specific_redox_regulation_of_carbohydrate_organic_acid_amino-u-517",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 517,
+      "sentence": "Interestingly, Asc treatment led to an increase in nitric oxide (NO) levels even after three days, while the other two compounds exerted their effects only after 7 days.",
+      "context_window": "le the other two compounds exerted their effects only after 7 days. In parallel, Asc-treated seedlings had greater carbohydrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_stress_2025_101100_specific_redox_regulation_of_carbohydrate_organic_acid_amino-u-620",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 620,
+      "sentence": "In parallel, Asc-treated seedlings had greater carbohydrates (arabinose, ribose) content after 3 days, and diminished levels of organic acid (citrate), amino acids (Asp, Thr, Ser, Asn, Glu, Gly, Ala, Tyr, Orn), and polyamines (PUT, SPD and DAP) levels after 7 days compared to H2O2- and H2S-treated ones.",
+      "context_window": "had greater carbohydrates (arabinose, ribose) content after 3 days, and diminished levels of organic acid (citrate), amino aci",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_stress_2025_101100_specific_redox_regulation_of_carbohydrate_organic_acid_amino-u-783",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 783,
+      "sentence": "In parallel, Asc-treated seedlings had greater carbohydrates (arabinose, ribose) content after 3 days, and diminished levels of organic acid (citrate), amino acids (Asp, Thr, Ser, Asn, Glu, Gly, Ala, Tyr, Orn), and polyamines (PUT, SPD and DAP) levels after 7 days compared to H2O2- and H2S-treated ones.",
+      "context_window": ", Tyr, Orn), and polyamines (PUT, SPD and DAP) levels after 7 days compared to H2O2- and H2S-treated ones. Furthermore, the ex",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1111_jsr_13448_large_scale_implementation_of_insomnia_treatment_in_routine",
+  "doi": "10.1111/jsr.13448",
+  "extracted_at": "2026-05-08T20:06:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jsr_13448_large_scale_implementation_of_insomnia_treatment_in_routine-u-849",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 849,
+      "sentence": "We retrieved patient data from 3 years before and 3 years after the CBT\u2010I implementation.",
+      "context_window": "ts in a psychiatric setting. We retrieved patient data from 3 years before and 3 years after the CBT\u2010I implementation. Measures",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_13448_large_scale_implementation_of_insomnia_treatment_in_routine-u-868",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 868,
+      "sentence": "We retrieved patient data from 3 years before and 3 years after the CBT\u2010I implementation.",
+      "context_window": "setting. We retrieved patient data from 3 years before and 3 years after the CBT\u2010I implementation. Measures were the Montgomer",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_13448_large_scale_implementation_of_insomnia_treatment_in_routine-pct-1425",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "Contrary to the hypothesis, there were no significant changes in the group having treatment for depression regarding insomnia severity or comorbid insomnia diagnosis (from 66% to 68%) after CBT\u2010I implementation.",
+      "context_window": "ding insomnia severity or comorbid insomnia diagnosis (from 66% to 68%) after CBT\u2010I implementation. Also contrary to the hy",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_13448_large_scale_implementation_of_insomnia_treatment_in_routine-pct-1432",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1432,
+      "sentence": "Contrary to the hypothesis, there were no significant changes in the group having treatment for depression regarding insomnia severity or comorbid insomnia diagnosis (from 66% to 68%) after CBT\u2010I implementation.",
+      "context_window": "somnia severity or comorbid insomnia diagnosis (from 66% to 68%) after CBT\u2010I implementation. Also contrary to the hypothesi",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

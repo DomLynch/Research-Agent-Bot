@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_study_comparing_esomeprazole_and_acetylsalicylic_acid_asa_co",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_comparing_esomeprazole_and_acetylsalicylic_acid_asa_co-u-105",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 105,
+      "sentence": "The purpose of this study is to investigate whether treatment with a combination capsule of Esomeprazole 40 mg and Aspirin (ASA) 325 mg is bioequivalent (i.e.has the same effect within the body) as these medications taken separately.",
+      "context_window": "hether treatment with a combination capsule of Esomeprazole 40 mg and Aspirin (ASA) 325 mg is bioequivalent (i.e.has the same",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_comparing_esomeprazole_and_acetylsalicylic_acid_asa_co-u-129",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 129,
+      "sentence": "The purpose of this study is to investigate whether treatment with a combination capsule of Esomeprazole 40 mg and Aspirin (ASA) 325 mg is bioequivalent (i.e.has the same effect within the body) as these medications taken separately.",
+      "context_window": "combination capsule of Esomeprazole 40 mg and Aspirin (ASA) 325 mg is bioequivalent (i.e.has the same effect within the body)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

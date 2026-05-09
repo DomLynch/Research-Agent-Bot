@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea",
+  "doi": "10.1093/sleep/zsaf009",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-u-503",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 503,
+      "sentence": "Inclusion criteria included age \u226565 years and new diagnosis of OSA.",
+      "context_window": "laims for years 2016-2019. Inclusion criteria included age \u226565 years and new diagnosis of OSA. Exclusion criteria included evide",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-u-609",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 609,
+      "sentence": "Exclusion criteria included evidence of prior OSA treatment during the 12 months prior to the index date, active cancer, or end-stage renal disease.",
+      "context_window": "riteria included evidence of prior OSA treatment during the 12 months prior to the index date, active cancer, or end-stage renal",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-pct-1564",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1564,
+      "sentence": "Of these, 45% were adherent to PAP, 10% were nonadherent, and 44% did not initiate PAP.",
+      "context_window": "28 220 Medicare beneficiaries with comorbid OSA. Of these, 45% were adherent to PAP, 10% were nonadherent, and 44% did not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-pct-1590",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1590,
+      "sentence": "Of these, 45% were adherent to PAP, 10% were nonadherent, and 44% did not initiate PAP.",
+      "context_window": "ries with comorbid OSA. Of these, 45% were adherent to PAP, 10% were nonadherent, and 44% did not initiate PAP. Relative to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-pct-1616",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1616,
+      "sentence": "Of these, 45% were adherent to PAP, 10% were nonadherent, and 44% did not initiate PAP.",
+      "context_window": "these, 45% were adherent to PAP, 10% were nonadherent, and 44% did not initiate PAP. Relative to noninitiators, beneficiar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-u-1756",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "Relative to noninitiators, beneficiaries who initiated PAP displayed $195 reduced per-member per-month costs over 24 months.",
+      "context_window": "PAP displayed $195 reduced per-member per-month costs over 24 months. This finding remained consistent across all seven medical",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf009_association_between_positive_airway_pressure_therapy_and_hea-u-2116",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 2116,
+      "sentence": "This finding remained consistent across all seven medical and psychiatric subgroups, as well as among individuals with multimorbidity.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>In this national analysis of Medicare beneficiaries with common chronic conditions, PAP adherence was associated with reduced costs over 24 months.</jats:p> </jats:sec>",
+      "context_window": "tions, PAP adherence was associated with reduced costs over 24 months.</jats:p> </jats:sec>",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

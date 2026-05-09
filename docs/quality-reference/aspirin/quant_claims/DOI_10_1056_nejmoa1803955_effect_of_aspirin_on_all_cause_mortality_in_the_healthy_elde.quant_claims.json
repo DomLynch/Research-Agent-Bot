@@ -1,0 +1,156 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde",
+  "doi": "10.1056/nejmoa1803955",
+  "extracted_at": "2026-05-08T20:05:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-u-520",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 520,
+      "sentence": "METHODS: From 2010 through 2014, we enrolled community-dwelling persons in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and did not have cardiovascular disease, dementia, or disability.",
+      "context_window": "welling persons in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-u-550",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 550,
+      "sentence": "METHODS: From 2010 through 2014, we enrolled community-dwelling persons in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and did not have cardiovascular disease, dementia, or disability.",
+      "context_window": "nd the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-u-728",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 728,
+      "sentence": "Participants were randomly assigned to receive 100 mg of enteric-coated aspirin or placebo.",
+      "context_window": "disability. Participants were randomly assigned to receive 100 mg of enteric-coated aspirin or placebo. Deaths were classifie",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-u-1237",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1237,
+      "sentence": "A total of 1052 deaths occurred during a median of 4.7 years of follow-up.",
+      "context_window": "placebo. A total of 1052 deaths occurred during a median of 4.7 years of follow-up. The risk of death from any cause was 12.7 eve",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-pct-1433",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1433,
+      "sentence": "The risk of death from any cause was 12.7 events per 1000 person-years in the aspirin group and 11.1 events per 1000 person-years in the placebo group (hazard ratio, 1.14; 95% confidence interval [CI], 1.01 to 1.29).",
+      "context_window": "1000 person-years in the placebo group (hazard ratio, 1.14; 95% confidence interval [CI], 1.01 to 1.29). Cancer was the maj",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-pct-1646",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1646,
+      "sentence": "Cancer-related death occurred in 3.1% of the participants in the aspirin group and in 2.3% of those in the placebo group (hazard ratio, 1.31; 95% CI, 1.10 to 1.56).",
+      "context_window": "ths per 1000 person-years. Cancer-related death occurred in 3.1% of the participants in the aspirin group and in 2.3% of tho",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-pct-1699",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1699,
+      "sentence": "Cancer-related death occurred in 3.1% of the participants in the aspirin group and in 2.3% of those in the placebo group (hazard ratio, 1.31; 95% CI, 1.10 to 1.56).",
+      "context_window": "red in 3.1% of the participants in the aspirin group and in 2.3% of those in the placebo group (hazard ratio, 1.31; 95% CI,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1803955_effect_of_aspirin_on_all_cause_mortality_in_the_healthy_elde-pct-1755",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1755,
+      "sentence": "Cancer-related death occurred in 3.1% of the participants in the aspirin group and in 2.3% of those in the placebo group (hazard ratio, 1.31; 95% CI, 1.10 to 1.56).",
+      "context_window": "in 2.3% of those in the placebo group (hazard ratio, 1.31; 95% CI, 1.10 to 1.56). CONCLUSIONS: Higher all-cause mortality",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

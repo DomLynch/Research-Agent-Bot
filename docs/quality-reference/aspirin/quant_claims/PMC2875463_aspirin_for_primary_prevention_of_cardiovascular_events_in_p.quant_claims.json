@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p",
   "doi": "10.2337/dc10-0555",
-  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extracted_at": "2026-05-08T20:06:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 11,
@@ -23,9 +23,9 @@
       "context_window": "s found that aspirin reduced the risk of vascular events by 12% (RR 0.88, 95% CI 0.82-0.94). The largest reduction was for",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-ci-690",
@@ -42,9 +42,9 @@
       "context_window": "spirin reduced the risk of vascular events by 12% (RR 0.88, 95% CI 0.82-0.94). The largest reduction was for nonfatal MI (RR 0.77, 95% C",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-ci-761",
@@ -80,9 +80,9 @@
       "context_window": ".67-0.89). Aspirin had little effect on CHD death (RR 0.95, 95% CI 0.78-1.15) or total stroke (RR 0.95, 95% CI 0.85-1.06). The net effec",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-ci-873",
@@ -99,9 +99,9 @@
       "context_window": "death (RR 0.95, 95% CI 0.78-1.15) or total stroke (RR 0.95, 95% CI 0.85-1.06). The net effect on total stroke reflected a relative reduc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-983",
@@ -154,7 +154,7 @@
       "context_window": "effect by sex. Aspirin reduced CHD events in men (RR 0.77, 95% CI 0.67-0.89) but not in women (RR 0.95, 95% CI 0.77-1.17). Conversely,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -173,7 +173,7 @@
       "context_window": "men (RR 0.77, 95% CI 0.67-0.89) but not in women (RR 0.95, 95% CI 0.77-1.17). Conversely, aspirin had no effect on stroke in men (RR 1.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -192,7 +192,7 @@
       "context_window": "onversely, aspirin had no effect on stroke in men (RR 1.01, 95% CI 0.74-1.39) but reduced stroke in women (RR 0.77, 95% CI 0.59-0.99). T",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -211,7 +211,7 @@
       "context_window": "01, 95% CI 0.74-1.39) but reduced stroke in women (RR 0.77, 95% CI 0.59-0.99). These potential differences in effect by sex were of bord",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -230,9 +230,9 @@
       "context_window": "as similar for patients with and without diabetes: RR 0.88, 95% CI 0.67-1.15, and RR 0.87, 95% CI 0.79-0.96, respectively. The CI was wi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-ci-2028",
@@ -249,9 +249,9 @@
       "context_window": "d without diabetes: RR 0.88, 95% CI 0.67-1.15, and RR 0.87, 95% CI 0.79-0.96, respectively. The CI was wider for those with diabetes bec",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-2565",
@@ -267,7 +267,7 @@
       "context_window": "-effects model, we found that aspirin was associated with a 9% decrease in risk of CHD events (nonfatal and fatal MI) that",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -286,7 +286,7 @@
       "context_window": "fatal MI) that was not statistically significant (RR 0.91, 95% CI 0.79-1.05). We did not identify important heterogeneity (\u03c7 2 = 8.71,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -486,9 +486,9 @@
       "context_window": "aspirin similar to those of our analysis: for MI, RR 0.86 (95% CI 0.61-1.21) with moderate heterogeneity (I 2 = 62.2%), mainly due to i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-pct-4858",
@@ -504,9 +504,9 @@
       "context_window": "0.86 (95% CI 0.61-1.21) with moderate heterogeneity (I 2 = 62.2%), mainly due to inclusion of WHS and PHS. For stroke, they",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2875463_aspirin_for_primary_prevention_of_cardiovascular_events_in_p-ci-4997",
@@ -560,7 +560,7 @@
       "context_window": "t modification by sex: aspirin reduced MI for men (RR 0.57, 95% CI 0.34-0.94) but not for women (RR 1.08, 95% CI 0.71-1.65). Zhang and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -579,7 +579,7 @@
       "context_window": "men (RR 0.57, 95% CI 0.34-0.94) but not for women (RR 1.08, 95% CI 0.71-1.65). Zhang and colleagues ( 20 ) included seven trials in the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

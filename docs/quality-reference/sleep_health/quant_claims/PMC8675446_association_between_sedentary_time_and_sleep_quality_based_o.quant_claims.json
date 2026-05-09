@@ -1,0 +1,710 @@
+{
+  "paper_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o",
+  "doi": "10.1186/s12889-021-12388-y",
+  "extracted_at": "2026-05-08T20:06:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 12,
+    "odds_ratio": 11,
+    "confidence_interval": 11,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-u-190",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 190,
+      "sentence": "The data of adults (aged \u2265 19 years) from the 2018 Korea Community Health Survey were analyzed.",
+      "context_window": "lity among South Korean adults. The data of adults (aged \u2265 19 years) from the 2018 Korea Community Health Survey were analyzed.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-717",
+      "claim_type": "percentage",
+      "raw_text": "35.6%",
+      "numeric_values": [
+        35.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 717,
+      "sentence": "Of the 224,118 participants, 35,784/100,454 men (35.6%) and 58,271/123,664 women (47.1%) had poor sleep quality.",
+      "context_window": ", by sex. Of the 224,118 participants, 35,784/100,454 men (35.6%) and 58,271/123,664 women (47.1%) had poor sleep quality. C",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-750",
+      "claim_type": "percentage",
+      "raw_text": "47.1%",
+      "numeric_values": [
+        47.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 750,
+      "sentence": "Of the 224,118 participants, 35,784/100,454 men (35.6%) and 58,271/123,664 women (47.1%) had poor sleep quality.",
+      "context_window": "pants, 35,784/100,454 men (35.6%) and 58,271/123,664 women (47.1%) had poor sleep quality. Compared with \u2264 3.9 h/day, sedenta",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-931",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 931,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-972",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.19",
+      "numeric_values": [
+        1.19
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 972,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respective",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-982",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.14-1.25",
+      "numeric_values": [
+        1.14,
+        1.25
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 982,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR:",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-1001",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.30",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1001,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "ence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95%",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-1011",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.25-1.34",
+      "numeric_values": [
+        1.25,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1011,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "val [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR:",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-1055",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.06",
+      "numeric_values": [
+        1.06
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22,",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-1065",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.03-1.10",
+      "numeric_values": [
+        1.03,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26,",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-1084",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.12",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respective",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-1094",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.08-1.16",
+      "numeric_values": [
+        1.08,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1094,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "ectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively). In subgroup an",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-1113",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1113,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": "(OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively). In subgroup analyses of",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-1123",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.18-1.26",
+      "numeric_values": [
+        1.18,
+        1.26
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "Compared with \u2264 3.9 h/day, sedentary times 4.0-5.9, 6.0-7.9, and \u2265 8 h/day were associated with worse sleep quality among men (odds ratio [OR]: 1.12, 95% confidence interval [CI]: 1.08-1.16; OR: 1.19, 95% CI: 1.14-1.25; OR: 1.30, 95% CI: 1.25-1.34, respectively) and women (OR: 1.06, 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively).",
+      "context_window": ", 95% CI: 1.03-1.10; OR: 1.12, 95% CI: 1.08-1.16; OR: 1.22, 95% CI: 1.18-1.26, respectively). In subgroup analyses of sleep quality, subj",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-63",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 63,
+      "sentence": "Insomnia is a common sleep disorder affecting approximately 10-20% of people worldwide.",
+      "context_window": "omnia is a common sleep disorder affecting approximately 10-20% of people worldwide. The World Health Organization recently",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-u-283",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 283,
+      "sentence": "At the time of the survey, trained investigators visited sampled households containing adults aged \u2265 19 years to conduct a 1:1 interview using a laptop equipped with a survey program [ 22 ].",
+      "context_window": "igators visited sampled households containing adults aged \u2265 19 years to conduct a 1:1 interview using a laptop equipped with a s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-n-735",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 735,
+      "sentence": "Of the 228,558 participants considered for inclusion in this study, we excluded those who answered, \u201cdon\u2019t know,\u201d provided invalid responses to the questions, or did not answer all the questions included in this study ( n = 4,440).",
+      "context_window": "r did not answer all the questions included in this study ( n = 4,440). Finally, a total of 224,118 participants (100,454 men",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-3847",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3847,
+      "sentence": "The results were reported using ORs and 95% confidence intervals (CIs).",
+      "context_window": "gory (\u2264 3.9 h/day). The results were reported using ORs and 95% confidence intervals (CIs). Furthermore, an ordinal logisti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-198",
+      "claim_type": "percentage",
+      "raw_text": "35.6%",
+      "numeric_values": [
+        35.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 198,
+      "sentence": "Among the 224,118 study participants, poor SQ was observed in 35,784/100,454 (35.6%) men and 58,271/123,664 (47.1%) women.",
+      "context_window": "study participants, poor SQ was observed in 35,784/100,454 (35.6%) men and 58,271/123,664 (47.1%) women. As shown in Table 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-229",
+      "claim_type": "percentage",
+      "raw_text": "47.1%",
+      "numeric_values": [
+        47.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 229,
+      "sentence": "Among the 224,118 study participants, poor SQ was observed in 35,784/100,454 (35.6%) men and 58,271/123,664 (47.1%) women.",
+      "context_window": "observed in 35,784/100,454 (35.6%) men and 58,271/123,664 (47.1%) women. As shown in Table 1 , most men (32.8%) and women (3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-275",
+      "claim_type": "percentage",
+      "raw_text": "32.8%",
+      "numeric_values": [
+        32.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 275,
+      "sentence": "As shown in Table 1 , most men (32.8%) and women (39.7%) reported an ST of \u2264 3.9 h/day; the lowest frequency was observed for an ST of 6.0-7.9 h/day (17.3 and 13.1%).",
+      "context_window": ",271/123,664 (47.1%) women. As shown in Table 1 , most men (32.8%) and women (39.7%) reported an ST of \u2264 3.9 h/day; the lowes",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "39.7%",
+      "numeric_values": [
+        39.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 293,
+      "sentence": "As shown in Table 1 , most men (32.8%) and women (39.7%) reported an ST of \u2264 3.9 h/day; the lowest frequency was observed for an ST of 6.0-7.9 h/day (17.3 and 13.1%).",
+      "context_window": "%) women. As shown in Table 1 , most men (32.8%) and women (39.7%) reported an ST of \u2264 3.9 h/day; the lowest frequency was ob",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-402",
+      "claim_type": "percentage",
+      "raw_text": "13.1%",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 402,
+      "sentence": "As shown in Table 1 , most men (32.8%) and women (39.7%) reported an ST of \u2264 3.9 h/day; the lowest frequency was observed for an ST of 6.0-7.9 h/day (17.3 and 13.1%).",
+      "context_window": "frequency was observed for an ST of 6.0-7.9 h/day (17.3 and 13.1%). Table 1 General characteristics of the study population V",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-n-590",
+      "claim_type": "sample_size",
+      "raw_text": "N =224",
+      "numeric_values": [
+        224.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 590,
+      "sentence": "Table 1 General characteristics of the study population Variables Poor sleep quality (PSQI > 5) Men Women TOTAL Yes No P-value TOTAL Yes No P-value N % N % N % N % N % N % Total ( N =224,118) 100,454 100.0 35,784 35.6 64,670 64.4 123,664 100.0 58,271 47.1 65,393 52.9 Sedentary time (hours/day) <.0001 <.0001 \u22643.9 32,998 32.8 10,496 31.8 22,502 68.2 39,886 32.3 17,313 43.4 22,573 56.6 4.0-5.9 23,450 23.3 8,194 34.9 15,256 65.1 29,745 24.1 13,794 46.4 15,951 53.6 6.0-7.9 13,197 13.1 4,827 36.6 8,370 63.4 17,367 14.0 8,359 48.1 9,008 51.9 \u22658.0 30,809 30.7 12,267 39.8 18,542 60.2 36,666 29.6 18,805 51.3 17,861 48.7 Age <.0001 <.0001 19-29 11,181 11.1 3,358 30.0 7,823 70.0 12,034 9.7 4,538 37.7 7,496 62.3 30-39 13,115 13.1 4,468 34.1 8,647 65.9 14,793 12.0 6,002 40.6 8,791 59.4 40-49 17,015 16.9 5,813 34.2 11,202 65.8 <.001 19,349 15.6 7,441 38.5 11,908 61.5 <.001 50-59 19,778 19.7 6,824 34.5 12,954 65.5 23,966 19.4 10,801 45.1 13,165 54.9 60-69 19,030 18.9 6,841 35.9 12,189 64.1 22,757 18.4 11,487 50.5 11,270 49.5 \u226570 20,335 20.2 8,480 41.7 11,855 58.3 30,765 24.9 18,002 58.5 12,763 41.5 Marital status <.0001 <.0001 Living with spouse 72,622 72.3 25,124 34.6 47,498 65.4 77,987 63.1 35,189 45.1 42,798 54.9 Living without spouse 27,832 27.7 10,660 38.3 17,172 61.7 45,677 36.9 23,082 50.5 22,595 49.5 Occupational categories a <.0001 <.0001 White 22,346 22.2 7,196 32.2 15,150 67.8 20,802 16.8 7,776 37.4 13,026 62.6 Pink 9,885 9.8 3,238 32.8 6,647 67.2 17,821 14.4 7,628 42.8 10,193 57.2 Blue 42,023 41.8 14,687 34.9 27,336 65.1 25,394 20.5 12,097 47.6 13,297 52.4 Inoccupation 26,200 26.1 10,663 40.7 15,537 59.3 59,647 48.2 30,770 51.6 28,877 48.4 Educational level <.0001 <.0001 Middle shool or lower 26,914 26.8 11,072 41.1 15,842 58.9 53,156 43.0 29,440 55.4 23,716 44.6 High school 31,545 31.4 11,125 35.3 20,420 64.7 32,069 25.9 14,085 43.9 17,984 56.1 College or higher 41,995 41.8 13,587 32.4 28,408 67.6 38,439 31.1 14,746 38.4 23,693 61.6 Household income <.0001 <.0001 Low 15,795 15.7 6,919 43.8 8,876 56.2 27,680 22.4 15,903 57.5 11,777 42.5 Mid-low 30,637 30.5 11,529 37.6 19,108 62.4 36,380 29.4 17,961 49.4 18,419 50.6 Mid-high 26,618 26.5 8,724 32.8 17,894 67.2 28,975 23.4 12,243 42.3 16,732 57.7 High 27,404 27.3 8,612 31.4 18,792 68.6 30,629 24.8 12,164 39.7 18,465 60.3 Smoking status <.0001 <.0001 Current smokers 35,155 35.0 13,053 37.1 22,102 62.9 3,663 3.0 2,242 61.2 1,421 38.8 Past smokers 37,909 37.7 14,146 37.3 23,763 62.7 2,846 2.3 1,654 58.1 1,192 41.9 Nonsmoker 27,390 27.3 8,585 31.3 18,805 68.7 117,155 94.7 54,375 46.4 62,780 53.6 Drinking status <.0001 <.0001 Yes 67,608 67.3 23,653 35.0 43,955 65.0 46,317 37.5 20,494 44.2 25,823 55.8 No 32,846 32.7 12,131 36.9 20,715 63.1 77,347 62.5 37,777 48.8 39,570 51.2 Walking frequently b <.0001 <.0001 Yes 45,799 45.6 15,599 34.1 30,200 65.9 53,681 43.4 24,092 44.9 29,589 55.1 No 54,655 54.4 20,185 36.9 34,470 63.1 69,983 56.6 34,179 48.8 35,804 51.2 Obesity status (BMI) c <.0001 <.0001 Underweight & normal range 2,337 2.3 982 42.0 1,355 58.0 4,850 3.9 2,281 47.0 2,569 53.0 Overweight 44,744 44.5 16,131 36.1 28,613 63.9 62,287 50.4 28,882 46.4 33,405 53.6 Obese 53,373 53.1 18,671 35.0 34,702 65.0 56,527 45.7 27,108 48.0 29,419 52.0 The number of chronic diseases d <.0001 <.0001 0 68,031 67.7 22,909 33.7 45,122 66.3 83,451 67.5 35,941 43.1 47,510 56.9 1 25,143 25.0 9,812 39.0 15,331 61.0 31,566 25.5 17,249 54.6 14,317 45.4 2 7,280 7.2 3,063 42.1 4,217 57.9 8,647 7.0 5,081 58.8 3,566 41.2 Perceived health status e <.0001 <.0001 Yes 77,817 77.5 24,276 31.2 53,541 68.8 93,964 76.0 39,192 41.7 54,772 58.3 No 22,637 22.5 11,508 50.8 11,129 49.2 29,700 24.0 19,079 64.2 10,621 35.8 Perceived stress <.0001 <.0001 Less 40,442 40.3 10,585 26.2 29,857 73.8 38,489 31.1 12,459 32.4 26,030 67.6 More 60,012 59.7 25,199 42.0 34,813 58.0 85,175 68.9 45,812 53.8 39,363 46.2 a Three groups (white, pink, blue) based on the International Standard Classification Occupations codes.",
+      "context_window": "-value TOTAL Yes No P-value N % N % N % N % N % N % Total ( N =224,118) 100,454 100.0 35,784 35.6 64,670 64.4 123,664 100.0 58",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-5972",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.12",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5972,
+      "sentence": "In men, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34).",
+      "context_window": "dds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-5982",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.08-1.16",
+      "numeric_values": [
+        1.08,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5982,
+      "sentence": "In men, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34).",
+      "context_window": "r SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-6017",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.19",
+      "numeric_values": [
+        1.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6017,
+      "sentence": "In men, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34).",
+      "context_window": "4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-6027",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.14-1.25",
+      "numeric_values": [
+        1.14,
+        1.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6027,
+      "sentence": "In men, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34).",
+      "context_window": "day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34). Similarly,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-6064",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.30",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6064,
+      "sentence": "In men, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34).",
+      "context_window": "0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34). Similarly, in women, the odds of poor",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-6074",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.25-1.34",
+      "numeric_values": [
+        1.25,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6074,
+      "sentence": "In men, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), 6.0-7.9 h/day (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34).",
+      "context_window": "y (OR: 1.19, 95% CI: 1.14-1.25), and \u2265 8.0 h/day (OR: 1.30, 95% CI: 1.25-1.34). Similarly, in women, the odds of poor SQ increased with i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-6180",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.06",
+      "numeric_values": [
+        1.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6180,
+      "sentence": "Similarly, in women, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26).",
+      "context_window": "dds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-6190",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.03-1.10",
+      "numeric_values": [
+        1.03,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6190,
+      "sentence": "Similarly, in women, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26).",
+      "context_window": "r SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-6225",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.12",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6225,
+      "sentence": "Similarly, in women, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26).",
+      "context_window": "4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-6235",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.08-1.16",
+      "numeric_values": [
+        1.08,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6235,
+      "sentence": "Similarly, in women, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26).",
+      "context_window": "day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26). Table 2 As",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-or-a-6272",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6272,
+      "sentence": "Similarly, in women, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26).",
+      "context_window": "0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26). Table 2 Association between sedentary",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-ci-6282",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.18-1.26",
+      "numeric_values": [
+        1.18,
+        1.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6282,
+      "sentence": "Similarly, in women, the odds of poor SQ increased with increasing ST: 4.0-5.9 h/day (OR: 1.06, 95% CI: 1.03-1.10), 6.0-7.9 h/day (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26).",
+      "context_window": "y (OR: 1.12, 95% CI: 1.08-1.16), and \u2265 8.0 h/day (OR: 1.22, 95% CI: 1.18-1.26). Table 2 Association between sedentary time and poor sleep",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-6421",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6421,
+      "sentence": "Table 2 Association between sedentary time and poor sleep quality Variables Poor sleep quality (PSQI > 5) Men Women OR 95% CI OR 95% CI Total Sedentary time (hours/day) \u22643.9 1.00 1.00 4.0-5.9 1.12 (1.08 - 1.16) 1.06 (1.03 - 1.10) 6.0-7.9 1.19 (1.14 - 1.25) 1.12 (1.08 - 1.16) \u22658.0 1.30 (1.25 - 1.34) 1.22 (1.18 - 1.26) Age 19-29 1.00 1.00 30-39 1.28 (1.20 - 1.36) 1.15 (1.09 - 1.22) 40-49 1.29 (1.21 - 1.37) 1.07 (1.02 - 1.13) 50-59 1.33 (1.25 - 1.42) 1.32 (1.25 - 1.40) 60-69 1.35 (1.26 - 1.44) 1.39 (1.30 - 1.47) \u226570 1.47 (1.37 - 1.58) 1.53 (1.43 - 1.63) Marital status Living with spouse 1.00 1.00 Living without spouse 1.36 (1.31 - 1.41) 1.08 (1.05 - 1.11) Occupational categories a White 1.00 1.00 Pink 1.02 (0.96 - 1.07) 1.07 (1.02 - 1.12) Blue 1.07 (1.03 - 1.12) 1.08 (1.03 - 1.13) Inoccupation 1.18 (1.12 - 1.24) 1.28 (1.23 - 1.33) Educational level Middle shool or lower 1.00 1.00 High school 0.91 (0.87 - 0.94) 0.89 (0.86 - 0.93) College or higher 0.87 (0.83 - 0.92) 0.80 (0.77 - 0.84) Household income Low 1.00 1.00 Mid-low 0.90 (0.87 - 0.94) 0.91 (0.88 - 0.94) Mid-high 0.82 (0.79 - 0.86) 0.85 (0.82 - 0.88) High 0.81 (0.77 - 0.85) 0.85 (0.82 - 0.89) Smoking status 1.00 Current smokers 1.00 1.00 Past smokers 1.00 (0.97 - 1.04) 0.90 (0.81 - 1.00) Nonsmokers 0.87 (0.84 - 0.90) 0.64 (0.59 - 0.68) Drinking status Yes 1.00 1.00 No 0.95 (0.92 - 0.98) 0.90 (0.87 - 0.92) Walking frequently b Yes 1.00 1.00 No 1.03 (1.00 - 1.06) 1.05 (1.02 - 1.07) Obesity status (BMI) c Underweight & normal range 1.00 1.00 Overweight 0.97 (0.89 - 1.06) 0.99 (0.93 - 1.06) Obese 0.92 (0.84 - 1.00) 0.96 (0.90 - 1.02) The number of chronic diseases d 0 1.00 1.00 1 1.04 (1.01 - 1.08) 1.05 (1.01 - 1.08) 2 1.07 (1.02 - 1.13) 1.08 (1.03 - 1.14) Perceived health status e Yes 1.00 1.00 No 1.73 (1.68 - 1.78) 1.85 (1.80 - 1.90) Perceived stress Less 1.00 More 0.44 (0.43 - 0.46) 0.39 (0.38 - 0.41) a Three groups (white, pink, blue) based on the International standard classification occupations codes.",
+      "context_window": "uality Variables Poor sleep quality (PSQI > 5) Men Women OR 95% CI OR 95% CI Total Sedentary time (hours/day) \u22643.9 1.00 1.0",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8675446_association_between_sedentary_time_and_sleep_quality_based_o-pct-6431",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6431,
+      "sentence": "Table 2 Association between sedentary time and poor sleep quality Variables Poor sleep quality (PSQI > 5) Men Women OR 95% CI OR 95% CI Total Sedentary time (hours/day) \u22643.9 1.00 1.00 4.0-5.9 1.12 (1.08 - 1.16) 1.06 (1.03 - 1.10) 6.0-7.9 1.19 (1.14 - 1.25) 1.12 (1.08 - 1.16) \u22658.0 1.30 (1.25 - 1.34) 1.22 (1.18 - 1.26) Age 19-29 1.00 1.00 30-39 1.28 (1.20 - 1.36) 1.15 (1.09 - 1.22) 40-49 1.29 (1.21 - 1.37) 1.07 (1.02 - 1.13) 50-59 1.33 (1.25 - 1.42) 1.32 (1.25 - 1.40) 60-69 1.35 (1.26 - 1.44) 1.39 (1.30 - 1.47) \u226570 1.47 (1.37 - 1.58) 1.53 (1.43 - 1.63) Marital status Living with spouse 1.00 1.00 Living without spouse 1.36 (1.31 - 1.41) 1.08 (1.05 - 1.11) Occupational categories a White 1.00 1.00 Pink 1.02 (0.96 - 1.07) 1.07 (1.02 - 1.12) Blue 1.07 (1.03 - 1.12) 1.08 (1.03 - 1.13) Inoccupation 1.18 (1.12 - 1.24) 1.28 (1.23 - 1.33) Educational level Middle shool or lower 1.00 1.00 High school 0.91 (0.87 - 0.94) 0.89 (0.86 - 0.93) College or higher 0.87 (0.83 - 0.92) 0.80 (0.77 - 0.84) Household income Low 1.00 1.00 Mid-low 0.90 (0.87 - 0.94) 0.91 (0.88 - 0.94) Mid-high 0.82 (0.79 - 0.86) 0.85 (0.82 - 0.88) High 0.81 (0.77 - 0.85) 0.85 (0.82 - 0.89) Smoking status 1.00 Current smokers 1.00 1.00 Past smokers 1.00 (0.97 - 1.04) 0.90 (0.81 - 1.00) Nonsmokers 0.87 (0.84 - 0.90) 0.64 (0.59 - 0.68) Drinking status Yes 1.00 1.00 No 0.95 (0.92 - 0.98) 0.90 (0.87 - 0.92) Walking frequently b Yes 1.00 1.00 No 1.03 (1.00 - 1.06) 1.05 (1.02 - 1.07) Obesity status (BMI) c Underweight & normal range 1.00 1.00 Overweight 0.97 (0.89 - 1.06) 0.99 (0.93 - 1.06) Obese 0.92 (0.84 - 1.00) 0.96 (0.90 - 1.02) The number of chronic diseases d 0 1.00 1.00 1 1.04 (1.01 - 1.08) 1.05 (1.01 - 1.08) 2 1.07 (1.02 - 1.13) 1.08 (1.03 - 1.14) Perceived health status e Yes 1.00 1.00 No 1.73 (1.68 - 1.78) 1.85 (1.80 - 1.90) Perceived stress Less 1.00 More 0.44 (0.43 - 0.46) 0.39 (0.38 - 0.41) a Three groups (white, pink, blue) based on the International standard classification occupations codes.",
+      "context_window": "iables Poor sleep quality (PSQI > 5) Men Women OR 95% CI OR 95% CI Total Sedentary time (hours/day) \u22643.9 1.00 1.00 4.0-5.9",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

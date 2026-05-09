@@ -1,0 +1,160 @@
+{
+  "paper_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe",
+  "doi": "10.1002/ijc.30061",
+  "extracted_at": "2026-05-08T20:05:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "hazard_ratio": 3,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-pct-737",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 737,
+      "sentence": "Time\u2010dependent multivariable Cox proportional hazard models were adopted to estimate Hazard Ratios (HRs) and related 95% confidence intervals (95% CI) of PCa associated with use of LDA.",
+      "context_window": "ls were adopted to estimate Hazard Ratios (HRs) and related 95% confidence intervals (95% CI) of PCa associated with use of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-pct-763",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 763,
+      "sentence": "Time\u2010dependent multivariable Cox proportional hazard models were adopted to estimate Hazard Ratios (HRs) and related 95% confidence intervals (95% CI) of PCa associated with use of LDA.",
+      "context_window": "e Hazard Ratios (HRs) and related 95% confidence intervals (95% CI) of PCa associated with use of LDA. The exposure was lag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-hr-a-1068",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1068,
+      "sentence": "Use of LDA was associated with a decreased incidence rate of PCa (HR = 0.64; 95% CI: 0.48-0.86), which was primarily driven by a frequency of LDA use equal to or higher than twice per week (HR = 0.60; 95% CI: 0.43-0.83).",
+      "context_window": "LDA was associated with a decreased incidence rate of PCa (HR = 0.64; 95% CI: 0.48-0.86), which was primarily driven by a freque",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-ci-1079",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.48-0.86",
+      "numeric_values": [
+        0.48,
+        0.86
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1079,
+      "sentence": "Use of LDA was associated with a decreased incidence rate of PCa (HR = 0.64; 95% CI: 0.48-0.86), which was primarily driven by a frequency of LDA use equal to or higher than twice per week (HR = 0.60; 95% CI: 0.43-0.83).",
+      "context_window": "sociated with a decreased incidence rate of PCa (HR = 0.64; 95% CI: 0.48-0.86), which was primarily driven by a frequency of LDA use equa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-hr-a-1192",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1192,
+      "sentence": "Use of LDA was associated with a decreased incidence rate of PCa (HR = 0.64; 95% CI: 0.48-0.86), which was primarily driven by a frequency of LDA use equal to or higher than twice per week (HR = 0.60; 95% CI: 0.43-0.83).",
+      "context_window": "requency of LDA use equal to or higher than twice per week (HR = 0.60; 95% CI: 0.43-0.83). Such an association was more pronounce",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-ci-1203",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.43-0.83",
+      "numeric_values": [
+        0.43,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1203,
+      "sentence": "Use of LDA was associated with a decreased incidence rate of PCa (HR = 0.64; 95% CI: 0.48-0.86), which was primarily driven by a frequency of LDA use equal to or higher than twice per week (HR = 0.60; 95% CI: 0.43-0.83).",
+      "context_window": "LDA use equal to or higher than twice per week (HR = 0.60; 95% CI: 0.43-0.83). Such an association was more pronounced (HR = 0.43; 95% C",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-hr-a-1264",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.43",
+      "numeric_values": [
+        0.43
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1264,
+      "sentence": "Such an association was more pronounced (HR = 0.43; 95% CI: 0.21-0.91) when LDA was used for five or more years.",
+      "context_window": "5% CI: 0.43-0.83). Such an association was more pronounced (HR = 0.43; 95% CI: 0.21-0.91) when LDA was used for five or more year",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_30061_risk_of_prostate_cancer_in_low_dose_aspirin_users_a_retrospe-ci-1275",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.21-0.91",
+      "numeric_values": [
+        0.21,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1275,
+      "sentence": "Such an association was more pronounced (HR = 0.43; 95% CI: 0.21-0.91) when LDA was used for five or more years.",
+      "context_window": "-0.83). Such an association was more pronounced (HR = 0.43; 95% CI: 0.21-0.91) when LDA was used for five or more years. Our findings ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

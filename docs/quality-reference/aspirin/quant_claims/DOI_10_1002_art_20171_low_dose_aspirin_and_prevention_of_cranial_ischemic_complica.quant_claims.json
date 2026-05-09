@@ -1,0 +1,247 @@
+{
+  "paper_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica",
+  "doi": "10.1002/art.20171",
+  "extracted_at": "2026-05-08T20:05:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 7,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-u-510",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 510,
+      "sentence": "Data for 166 patients who were followed up for at least 3 months were also available.",
+      "context_window": "ta. Data for 166 patients who were followed up for at least 3 months were also available. RESULTS: At the time of the diagnosis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-599",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 599,
+      "sentence": "RESULTS: At the time of the diagnosis of GCA, 36 patients (21%) had already been receiving low-dose aspirin (100 mg/day).",
+      "context_window": "RESULTS: At the time of the diagnosis of GCA, 36 patients (21%) had already been receiving low-dose aspirin (100 mg/day).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 649,
+      "sentence": "RESULTS: At the time of the diagnosis of GCA, 36 patients (21%) had already been receiving low-dose aspirin (100 mg/day).",
+      "context_window": "patients (21%) had already been receiving low-dose aspirin (100 mg/day). In all cases, the indication for this treatment was ische",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-1204",
+      "claim_type": "percentage",
+      "raw_text": "38.9%",
+      "numeric_values": [
+        38.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1204,
+      "sentence": "Cerebrovascular risk factors (hypertension, hyperlipidemia, or diabetes mellitus) were more common in the aspirin-treated group (38.9% versus 20%; P= 0.03).",
+      "context_window": "es mellitus) were more common in the aspirin-treated group (38.9% versus 20%; P= 0.03). Cranial ischemic complications were d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-1217",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1217,
+      "sentence": "Cerebrovascular risk factors (hypertension, hyperlipidemia, or diabetes mellitus) were more common in the aspirin-treated group (38.9% versus 20%; P= 0.03).",
+      "context_window": "were more common in the aspirin-treated group (38.9% versus 20%; P= 0.03). Cranial ischemic complications were diagnosed in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-p-1222",
+      "claim_type": "p_value",
+      "raw_text": "P= 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1222,
+      "sentence": "Cerebrovascular risk factors (hypertension, hyperlipidemia, or diabetes mellitus) were more common in the aspirin-treated group (38.9% versus 20%; P= 0.03).",
+      "context_window": "more common in the aspirin-treated group (38.9% versus 20%; P= 0.03). Cranial ischemic complications were diagnosed in 43 patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-1440",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "Only 3 of the aspirin-treated patients (8%) presented with cranial ischemic complications, compared with 40 (29%) of the non-aspirin-treated patients (P = 0.01).",
+      "context_window": "ons simultaneously. Only 3 of the aspirin-treated patients (8%) presented with cranial ischemic complications, compared wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-1509",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1509,
+      "sentence": "Only 3 of the aspirin-treated patients (8%) presented with cranial ischemic complications, compared with 40 (29%) of the non-aspirin-treated patients (P = 0.01).",
+      "context_window": "nted with cranial ischemic complications, compared with 40 (29%) of the non-aspirin-treated patients (P = 0.01). Despite th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-p-1551",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1551,
+      "sentence": "Only 3 of the aspirin-treated patients (8%) presented with cranial ischemic complications, compared with 40 (29%) of the non-aspirin-treated patients (P = 0.01).",
+      "context_window": "compared with 40 (29%) of the non-aspirin-treated patients (P = 0.01). Despite the use of steroid therapy, cranial ischemic comp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-u-1681",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1681,
+      "sentence": "Despite the use of steroid therapy, cranial ischemic complications developed in 14 of the 166 patients followed up for 3 months or longer.",
+      "context_window": "cations developed in 14 of the 166 patients followed up for 3 months or longer. However, cranial ischemic complications develope",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-1759",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1759,
+      "sentence": "However, cranial ischemic complications developed in only 3% of the aspirin-treated patients, compared with 13% of the patients treated with prednisone only (P = 0.02).",
+      "context_window": ". However, cranial ischemic complications developed in only 3% of the aspirin-treated patients, compared with 13% of the p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-pct-1809",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1809,
+      "sentence": "However, cranial ischemic complications developed in only 3% of the aspirin-treated patients, compared with 13% of the patients treated with prednisone only (P = 0.02).",
+      "context_window": "d in only 3% of the aspirin-treated patients, compared with 13% of the patients treated with prednisone only (P = 0.02). CO",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_art_20171_low_dose_aspirin_and_prevention_of_cranial_ischemic_complica-p-1859",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1859,
+      "sentence": "However, cranial ischemic complications developed in only 3% of the aspirin-treated patients, compared with 13% of the patients treated with prednisone only (P = 0.02).",
+      "context_window": "ared with 13% of the patients treated with prednisone only (P = 0.02). CONCLUSION: These data suggest that low-dose aspirin decr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

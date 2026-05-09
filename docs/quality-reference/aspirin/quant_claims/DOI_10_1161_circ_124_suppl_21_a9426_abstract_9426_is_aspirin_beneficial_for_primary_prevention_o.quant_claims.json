@@ -1,0 +1,288 @@
+{
+  "paper_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o",
+  "doi": "10.1161/circ.124.suppl_21.a9426",
+  "extracted_at": "2026-05-08T20:05:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "sample_size": 4,
+    "percentage": 1,
+    "hazard_ratio": 3,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-u-714",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 714,
+      "sentence": "We randomly assigned 2,539 patients to the aspirin group (81 or 100 mg daily) or the no aspirin group, and followed for 4.4 years.",
+      "context_window": "andomly assigned 2,539 patients to the aspirin group (81 or 100 mg daily) or the no aspirin group, and followed for 4.4 years.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-u-770",
+      "claim_type": "unit_value",
+      "raw_text": "4.4 years",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "We randomly assigned 2,539 patients to the aspirin group (81 or 100 mg daily) or the no aspirin group, and followed for 4.4 years.",
+      "context_window": "or 100 mg daily) or the no aspirin group, and followed for 4.4 years. We classified all participants into four subgroups accordi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-u-898",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 898,
+      "sentence": "We classified all participants into four subgroups according to the following risk stratification: age (men, >50 or \u226450 years; women, >60 or \u226460 years) and one or more additional risk factors (smoking, hypertension, dyslipidemia, family history of coronary artery disease, and proteinuria).",
+      "context_window": "ing to the following risk stratification: age (men, >50 or \u226450 years; women, >60 or \u226460 years) and one or more additional risk f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-u-923",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 923,
+      "sentence": "We classified all participants into four subgroups according to the following risk stratification: age (men, >50 or \u226450 years; women, >60 or \u226460 years) and one or more additional risk factors (smoking, hypertension, dyslipidemia, family history of coronary artery disease, and proteinuria).",
+      "context_window": "stratification: age (men, >50 or \u226450 years; women, >60 or \u226460 years) and one or more additional risk factors (smoking, hyperten",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-n-1145",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1145,
+      "sentence": "Most of the participants were older patients with risk factors (group A: n = 1,804); however, aspirin did not reduce cardiovascular events in the group A (hazard ratio [HR]: 0.83, 95% confidence interval [CI]: 0.58 to 1.17).",
+      "context_window": "articipants were older patients with risk factors (group A: n = 1,804); however, aspirin did not reduce cardiovascular events",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-pct-1252",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1252,
+      "sentence": "Most of the participants were older patients with risk factors (group A: n = 1,804); however, aspirin did not reduce cardiovascular events in the group A (hazard ratio [HR]: 0.83, 95% confidence interval [CI]: 0.58 to 1.17).",
+      "context_window": "diovascular events in the group A (hazard ratio [HR]: 0.83, 95% confidence interval [CI]: 0.58 to 1.17). On the other hand,",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-n-1365",
+      "claim_type": "sample_size",
+      "raw_text": "n = 268",
+      "numeric_values": [
+        268.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1365,
+      "sentence": "On the other hand, in older patients without risk factors (group B: n = 268), aspirin significantly reduced cardiovascular events (HR: 0.24, 95% CI: 0.04 to 0.89).",
+      "context_window": "ther hand, in older patients without risk factors (group B: n = 268), aspirin significantly reduced cardiovascular events (HR:",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-hr-a-1428",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1428,
+      "sentence": "On the other hand, in older patients without risk factors (group B: n = 268), aspirin significantly reduced cardiovascular events (HR: 0.24, 95% CI: 0.04 to 0.89).",
+      "context_window": "268), aspirin significantly reduced cardiovascular events (HR: 0.24, 95% CI: 0.04 to 0.89). Either in younger patients with ris",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-ci-1438",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.04 to 0.89",
+      "numeric_values": [
+        0.04,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "On the other hand, in older patients without risk factors (group B: n = 268), aspirin significantly reduced cardiovascular events (HR: 0.24, 95% CI: 0.04 to 0.89).",
+      "context_window": "irin significantly reduced cardiovascular events (HR: 0.24, 95% CI: 0.04 to 0.89). Either in younger patients with risk factors (group C: n",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-n-1516",
+      "claim_type": "sample_size",
+      "raw_text": "n = 402",
+      "numeric_values": [
+        402.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1516,
+      "sentence": "Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32).",
+      "context_window": "89). Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-n-1559",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1559,
+      "sentence": "Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32).",
+      "context_window": "actors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-hr-a-1616",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1616,
+      "sentence": "Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32).",
+      "context_window": "D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-ci-1626",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.27 to 2.9",
+      "numeric_values": [
+        0.27,
+        2.9
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1626,
+      "sentence": "Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32).",
+      "context_window": ", we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32). In the present stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-hr-a-1656",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.26",
+      "numeric_values": [
+        1.26
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1656,
+      "sentence": "Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32).",
+      "context_window": "s benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32). In the present study, low-dose aspiri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_is_aspirin_beneficial_for_primary_prevention_o-ci-1666",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.05 to 32",
+      "numeric_values": [
+        0.05,
+        32.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1666,
+      "sentence": "Either in younger patients with risk factors (group C: n = 402) or without risk factors (group D: n = 58), we could not detect aspirin's benefit (group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32).",
+      "context_window": "(group C, HR: 0.93, 95% CI: 0.27 to 2.9; group D, HR: 1.26, 95% CI: 0.05 to 32). In the present study, low-dose aspirin was beneficial for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,921 @@
+{
+  "paper_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto",
+  "doi": "10.3390/brainsci15111175",
+  "extracted_at": "2026-05-08T20:10:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "sample_size": 9,
+    "percentage": 21,
+    "mean_sd": 6,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-1432",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1432,
+      "sentence": "Subsequently, patients encounter respiratory and cardiac complications, which culminate in early death most often before the age of 40 years.",
+      "context_window": "which culminate in early death most often before the age of 40 years. While there is currently no cure for DMD, significant res",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-6533",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 6533,
+      "sentence": "In a preceding study, we evaluated amounts of healthy, regenerating, and necrotic muscle fibers in H&E sections from mdx tibialis anterior (TIB) muscle at 4, 8, 12, and 26 weeks of age, and observed the number of affected fibers to increase until eight weeks of age, later appearing to stabilize [ 26 ].",
+      "context_window": "ns from mdx tibialis anterior (TIB) muscle at 4, 8, 12, and 26 weeks of age, and observed the number of affected fibers to incre",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-7233",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 weeks",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 7233,
+      "sentence": "In mdx treated with 4.6 g taurine/kg body weight from birth until 5.5 weeks of age we observed improvements in skeletal muscle histology and a reduction in the expression of inflammatory cytokines TNF\u03b1 and IL-1\u03b2 and chemokine C-C motif ligand 2 (CCL2); however, these mice did not perform better in the hanging grid test evaluating stamina [ 24 ].",
+      "context_window": "treated with 4.6 g taurine/kg body weight from birth until 5.5 weeks of age we observed improvements in skeletal muscle histolog",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-168",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 168,
+      "sentence": "Dystrophin deficient C57BL/10ScSn-Dmdmdx/J ( mdx ) mice and the representative genetic healthy control strain C57BL/10SnJ fully checked for health were obtained at age 8 weeks (The Jackson Laboratory, Bar Harbor, ME, USA), after which they were bred and kept at the animal facility of Ghent University Hospital.",
+      "context_window": "n C57BL/10SnJ fully checked for health were obtained at age 8 weeks (The Jackson Laboratory, Bar Harbor, ME, USA), after which",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-1128",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1128,
+      "sentence": "Three groups were included in the experiment: untreated age-matched healthy controls (BLA, n = 8, one litter), mdx untreated controls (n = 8, one litter), and mdx receiving 2.5% taurine in the drinking water (n = 8, two litters).",
+      "context_window": "he experiment: untreated age-matched healthy controls (BLA, n = 8, one litter), mdx untreated controls (n = 8, one litter), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-1172",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1172,
+      "sentence": "Three groups were included in the experiment: untreated age-matched healthy controls (BLA, n = 8, one litter), mdx untreated controls (n = 8, one litter), and mdx receiving 2.5% taurine in the drinking water (n = 8, two litters).",
+      "context_window": "controls (BLA, n = 8, one litter), mdx untreated controls (n = 8, one litter), and mdx receiving 2.5% taurine in the drinkin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1210,
+      "sentence": "Three groups were included in the experiment: untreated age-matched healthy controls (BLA, n = 8, one litter), mdx untreated controls (n = 8, one litter), and mdx receiving 2.5% taurine in the drinking water (n = 8, two litters).",
+      "context_window": "x untreated controls (n = 8, one litter), and mdx receiving 2.5% taurine in the drinking water (n = 8, two litters). Through",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-1246",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1246,
+      "sentence": "Three groups were included in the experiment: untreated age-matched healthy controls (BLA, n = 8, one litter), mdx untreated controls (n = 8, one litter), and mdx receiving 2.5% taurine in the drinking water (n = 8, two litters).",
+      "context_window": "ter), and mdx receiving 2.5% taurine in the drinking water (n = 8, two litters). Throughout the experiment, the amount of wat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-msd-1503",
+      "claim_type": "mean_sd",
+      "raw_text": "4.3 \u00b1 0.1",
+      "numeric_values": [
+        4.3,
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1503,
+      "sentence": "Water intake was similar between mdx mice receiving taurine (4.3 \u00b1 0.1 mL per day) and control mice with access to regular drinking water (4.2 \u00b1 0.2 mL per day).",
+      "context_window": "ater intake was similar between mdx mice receiving taurine (4.3 \u00b1 0.1 mL per day) and control mice with access to regular drinkin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-1509",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mL",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1509,
+      "sentence": "Water intake was similar between mdx mice receiving taurine (4.3 \u00b1 0.1 mL per day) and control mice with access to regular drinking water (4.2 \u00b1 0.2 mL per day).",
+      "context_window": "ntake was similar between mdx mice receiving taurine (4.3 \u00b1 0.1 mL per day) and control mice with access to regular drinking w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-msd-1581",
+      "claim_type": "mean_sd",
+      "raw_text": "4.2 \u00b1 0.2",
+      "numeric_values": [
+        4.2,
+        0.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1581,
+      "sentence": "Water intake was similar between mdx mice receiving taurine (4.3 \u00b1 0.1 mL per day) and control mice with access to regular drinking water (4.2 \u00b1 0.2 mL per day).",
+      "context_window": "ay) and control mice with access to regular drinking water (4.2 \u00b1 0.2 mL per day). Groups contained both male and female mice in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-1587",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mL",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1587,
+      "sentence": "Water intake was similar between mdx mice receiving taurine (4.3 \u00b1 0.1 mL per day) and control mice with access to regular drinking water (4.2 \u00b1 0.2 mL per day).",
+      "context_window": "d control mice with access to regular drinking water (4.2 \u00b1 0.2 mL per day). Groups contained both male and female mice in a 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-1818",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1818,
+      "sentence": "The experiment was conducted in parallel for the three groups, and starting points were less than 3 days apart, minimizing confounding factors related to breeding/feeding conditions.",
+      "context_window": "el for the three groups, and starting points were less than 3 days apart, minimizing confounding factors related to breeding/f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-1962",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1962,
+      "sentence": "Taurine treatment was initiated pre-weaning when pups were 1 week old, weaning was carried out at 4 weeks, mice were sacrificed at 5.5 weeks.",
+      "context_window": "Taurine treatment was initiated pre-weaning when pups were 1 week old, weaning was carried out at 4 weeks, mice were sacrific",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-2001",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2001,
+      "sentence": "Taurine treatment was initiated pre-weaning when pups were 1 week old, weaning was carried out at 4 weeks, mice were sacrificed at 5.5 weeks.",
+      "context_window": "aning when pups were 1 week old, weaning was carried out at 4 weeks, mice were sacrificed at 5.5 weeks. General behavior was ev",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-2034",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 weeks",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2034,
+      "sentence": "Taurine treatment was initiated pre-weaning when pups were 1 week old, weaning was carried out at 4 weeks, mice were sacrificed at 5.5 weeks.",
+      "context_window": "weaning was carried out at 4 weeks, mice were sacrificed at 5.5 weeks. General behavior was evaluated two-daily and all animals s",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-2462",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2462,
+      "sentence": "Mice were anesthetized with a mixture containing 200 mg ketamine/mL (Dechra Pharmaceuticals, Northwich, UK) and 2% xylazine (Bayer, Leverkusen, Germany), and euthanized by cervical dislocation.",
+      "context_window": "the mice. Mice were anesthetized with a mixture containing 200 mg ketamine/mL (Dechra Pharmaceuticals, Northwich, UK) and 2%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-2525",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2525,
+      "sentence": "Mice were anesthetized with a mixture containing 200 mg ketamine/mL (Dechra Pharmaceuticals, Northwich, UK) and 2% xylazine (Bayer, Leverkusen, Germany), and euthanized by cervical dislocation.",
+      "context_window": "mg ketamine/mL (Dechra Pharmaceuticals, Northwich, UK) and 2% xylazine (Bayer, Leverkusen, Germany), and euthanized by ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-5241",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5241,
+      "sentence": "Samples were boiled for 2 min, and 20 \u03bcL was loaded onto NuPAGE 10% bis-tris gels for electrophoresis in 3-(N-morpholino)propanesulfonic acid buffer (Thermo Fisher Scientific).",
+      "context_window": "les were boiled for 2 min, and 20 \u03bcL was loaded onto NuPAGE 10% bis-tris gels for electrophoresis in 3-(N-morpholino)propan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-5798",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5798,
+      "sentence": "The membrane was blocked for 1 h with milk blocking solution consisting of tris-buffered saline (TBS) and 2% non-fat dry milk (Bio-Rad Laboratories, Hercules, CA, USA).",
+      "context_window": "cking solution consisting of tris-buffered saline (TBS) and 2% non-fat dry milk (Bio-Rad Laboratories, Hercules, CA, USA).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-5910",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5910,
+      "sentence": "The membrane was washed repeatedly with TBS with 0.1% Tween 20 added (TBST), and incubated with primary antibodies in milk blocking solution overnight (see Section 2 for dilutions).",
+      "context_window": "CA, USA). The membrane was washed repeatedly with TBS with 0.1% Tween 20 added (TBST), and incubated with primary antibodie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-7329",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7329,
+      "sentence": "The pellet was resuspended in SOL buffer (50 mM tris-HCl 1 mM EDTA 0.5% Triton-X-100 pH 6.8) and centrifuged for 10 min 800\u00d7 g at 4 \u00b0C.",
+      "context_window": "let was resuspended in SOL buffer (50 mM tris-HCl 1 mM EDTA 0.5% Triton-X-100 pH 6.8) and centrifuged for 10 min 800\u00d7 g at 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-7614",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7614,
+      "sentence": "Samples were supplemented with loading buffer containing 10% \u03b2-mercaptoethanol and 90% 4\u00d7 Laemmli sample buffer, boiled for 2 min, and loaded in equal amounts of 30 \u00b5g protein onto 4-20% Mini-Protean TGX Stain-Free gels (Bio-Rad Laboratories).",
+      "context_window": "). Samples were supplemented with loading buffer containing 10% \u03b2-mercaptoethanol and 90% 4\u00d7 Laemmli sample buffer, boiled",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-7640",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7640,
+      "sentence": "Samples were supplemented with loading buffer containing 10% \u03b2-mercaptoethanol and 90% 4\u00d7 Laemmli sample buffer, boiled for 2 min, and loaded in equal amounts of 30 \u00b5g protein onto 4-20% Mini-Protean TGX Stain-Free gels (Bio-Rad Laboratories).",
+      "context_window": "ed with loading buffer containing 10% \u03b2-mercaptoethanol and 90% 4\u00d7 Laemmli sample buffer, boiled for 2 min, and loaded in e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-7740",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7740,
+      "sentence": "Samples were supplemented with loading buffer containing 10% \u03b2-mercaptoethanol and 90% 4\u00d7 Laemmli sample buffer, boiled for 2 min, and loaded in equal amounts of 30 \u00b5g protein onto 4-20% Mini-Protean TGX Stain-Free gels (Bio-Rad Laboratories).",
+      "context_window": "2 min, and loaded in equal amounts of 30 \u00b5g protein onto 4-20% Mini-Protean TGX Stain-Free gels (Bio-Rad Laboratories). Pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-8721",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8721,
+      "sentence": "The sections were permeabilized for 2 min in cooled acetone, and incubated in phosphate-buffered saline (PBS) with 2% bovine serum albumin, 10% heat-inactivated human serum, and 5% donkey serum (PBS/BSA/HD) for 30 min.",
+      "context_window": "tone, and incubated in phosphate-buffered saline (PBS) with 2% bovine serum albumin, 10% heat-inactivated human serum, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-8746",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8746,
+      "sentence": "The sections were permeabilized for 2 min in cooled acetone, and incubated in phosphate-buffered saline (PBS) with 2% bovine serum albumin, 10% heat-inactivated human serum, and 5% donkey serum (PBS/BSA/HD) for 30 min.",
+      "context_window": "osphate-buffered saline (PBS) with 2% bovine serum albumin, 10% heat-inactivated human serum, and 5% donkey serum (PBS/BSA/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-8784",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8784,
+      "sentence": "The sections were permeabilized for 2 min in cooled acetone, and incubated in phosphate-buffered saline (PBS) with 2% bovine serum albumin, 10% heat-inactivated human serum, and 5% donkey serum (PBS/BSA/HD) for 30 min.",
+      "context_window": "bovine serum albumin, 10% heat-inactivated human serum, and 5% donkey serum (PBS/BSA/HD) for 30 min. The primary antibodie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-10457",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10457,
+      "sentence": "Mean gray values were determined and reported as percentages, with 100% set at the mean level obtained in untreated mdx .",
+      "context_window": "ay values were determined and reported as percentages, with 100% set at the mean level obtained in untreated mdx . Software",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-187",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 187,
+      "sentence": "Explorative protein arrays showed no overt differences between the levels of apoptotic proteins in pooled GAS muscle samples from the three mouse groups, being healthy control mice (BLA; n = 4), mdx (n = 6) and taurine-treated mdx (n = 6).",
+      "context_window": "om the three mouse groups, being healthy control mice (BLA; n = 4), mdx (n = 6) and taurine-treated mdx (n = 6). The four mos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-200",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 200,
+      "sentence": "Explorative protein arrays showed no overt differences between the levels of apoptotic proteins in pooled GAS muscle samples from the three mouse groups, being healthy control mice (BLA; n = 4), mdx (n = 6) and taurine-treated mdx (n = 6).",
+      "context_window": "mouse groups, being healthy control mice (BLA; n = 4), mdx (n = 6) and taurine-treated mdx (n = 6). The four most prominent p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-232",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 232,
+      "sentence": "Explorative protein arrays showed no overt differences between the levels of apoptotic proteins in pooled GAS muscle samples from the three mouse groups, being healthy control mice (BLA; n = 4), mdx (n = 6) and taurine-treated mdx (n = 6).",
+      "context_window": "rol mice (BLA; n = 4), mdx (n = 6) and taurine-treated mdx (n = 6). The four most prominent proteins were cyclin-dependent ki",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-p-828",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 828,
+      "sentence": "Significantly decreased RIP1 protein levels ( p = 0.003) were observed in total protein extracts prepared from GAS muscle of taurine-treated mdx compared to untreated age-matched control mdx , while levels of RIP3 protein and LC3 II over SQSTM1 ratios remained unchanged ( Figure 2 B).",
+      "context_window": "ern blotting. Significantly decreased RIP1 protein levels ( p = 0.003) were observed in total protein extracts prepared from GAS",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-1104",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1104,
+      "sentence": "The RIP1 effect size (equal groups, n = 7) was -2.937, with a confidence interval for d Cohen of -5.073 to -0.801 (computed for confidence coefficient 95%).",
+      "context_window": "nchanged ( Figure 2 B). The RIP1 effect size (equal groups, n = 7) was -2.937, with a confidence interval for d Cohen of -5.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-1219",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1219,
+      "sentence": "The RIP1 effect size (equal groups, n = 7) was -2.937, with a confidence interval for d Cohen of -5.073 to -0.801 (computed for confidence coefficient 95%).",
+      "context_window": "en of -5.073 to -0.801 (computed for confidence coefficient 95%). The LC3 II/SQSTM1 ratio was also not significantly lower",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-2041",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2041,
+      "sentence": "The percentages of LC3 II-positive macrophages were 5% (1 of 21) in BLA, 70% (35 of 50) in control mdx , and 32% (29 of 90) in taurine-treated mdx .",
+      "context_window": "group. The percentages of LC3 II-positive macrophages were 5% (1 of 21) in BLA, 70% (35 of 50) in control mdx , and 32% (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-2062",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2062,
+      "sentence": "The percentages of LC3 II-positive macrophages were 5% (1 of 21) in BLA, 70% (35 of 50) in control mdx , and 32% (29 of 90) in taurine-treated mdx .",
+      "context_window": "es of LC3 II-positive macrophages were 5% (1 of 21) in BLA, 70% (35 of 50) in control mdx , and 32% (29 of 90) in taurine-t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-2098",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2098,
+      "sentence": "The percentages of LC3 II-positive macrophages were 5% (1 of 21) in BLA, 70% (35 of 50) in control mdx , and 32% (29 of 90) in taurine-treated mdx .",
+      "context_window": "re 5% (1 of 21) in BLA, 70% (35 of 50) in control mdx , and 32% (29 of 90) in taurine-treated mdx . Low homogeneous SQSTM1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-p-3074",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3074,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untrea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-msd-3110",
+      "claim_type": "mean_sd",
+      "raw_text": "80 \u00b1 5",
+      "numeric_values": [
+        80.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3110,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-3115",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3115,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "ficant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-3119",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3119,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "nt reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-msd-3161",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 12",
+      "numeric_values": [
+        100.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3161,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "ted mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ). Similarly, RIP3 muscl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-3167",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3167,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "x (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ). Similarly, RIP3 muscle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-n-3172",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3172,
+      "sentence": "In order to confirm the observed trend, RIP1 staining intensity was quantified in randomly selected microscopic fields, and revealed a significant reduction ( p < 0.0001) in taurine-treated mdx (80 \u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ).",
+      "context_window": "\u00b1 5%; n = 5) compared to untreated control mdx (100 \u00b1 12%, n = 5) ( Supplementary Figure S3 ). Similarly, RIP3 muscle fiber",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-u-298",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 298,
+      "sentence": "These authors reported a transient peak of RIP1 and RIP3 mRNA expression in TIB muscle of mdx at 3 weeks of age, coinciding with significantly higher RIP3 protein levels in TIB and GAS muscle [ 21 ], suggesting a transitory necroptotic peak in young mdx .",
+      "context_window": "ak of RIP1 and RIP3 mRNA expression in TIB muscle of mdx at 3 weeks of age, coinciding with significantly higher RIP3 protein l",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-msd-2344",
+      "claim_type": "mean_sd",
+      "raw_text": "2.2 \u00b1 0.3",
+      "numeric_values": [
+        2.2,
+        0.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2344,
+      "sentence": "It should, however, be noted that percentages of necrotic fibers were very low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respectively [ 24 ], possibly due to the young age of mice.",
+      "context_window": "s of necrotic fibers were very low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-2350",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2350,
+      "sentence": "It should, however, be noted that percentages of necrotic fibers were very low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respectively [ 24 ], possibly due to the young age of mice.",
+      "context_window": "ecrotic fibers were very low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-msd-2372",
+      "claim_type": "mean_sd",
+      "raw_text": "1.9 \u00b1 0.2",
+      "numeric_values": [
+        1.9,
+        0.2
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2372,
+      "sentence": "It should, however, be noted that percentages of necrotic fibers were very low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respectively [ 24 ], possibly due to the young age of mice.",
+      "context_window": "ry low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respectively [ 24 ], possibly due",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649910_early_taurine_administration_decreases_the_levels_of_recepto-pct-2378",
+      "claim_type": "percentage",
+      "raw_text": "0.2%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2378,
+      "sentence": "It should, however, be noted that percentages of necrotic fibers were very low in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respectively [ 24 ], possibly due to the young age of mice.",
+      "context_window": "in both groups, reaching 2.2 \u00b1 0.3% in untreated and 1.9 \u00b1 0.2% in taurine-treated mdx , respectively [ 24 ], possibly due",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1523 @@
+{
+  "paper_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi",
+  "doi": "10.1093/gerona/glaf198",
+  "extracted_at": "2026-05-08T20:05:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 36,
+    "confidence_interval": 14,
+    "hazard_ratio": 7,
+    "sample_size": 2,
+    "percentage": 24
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-409",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 409,
+      "sentence": "The ASPREE (ASPirin in Reducing Events in the Elderly) trial randomized 19 114 community-dwelling Australians and US adults aged 70+ years (US minorities \u226565 years) who were free of overt cardiovascular disease, dementia, and limitations in activities of daily living to daily 100 mg aspirin versus placebo.",
+      "context_window": "ng Australians and US adults aged 70+ years (US minorities \u226565 years) who were free of overt cardiovascular disease, dementia, a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-531",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 531,
+      "sentence": "The ASPREE (ASPirin in Reducing Events in the Elderly) trial randomized 19 114 community-dwelling Australians and US adults aged 70+ years (US minorities \u226565 years) who were free of overt cardiovascular disease, dementia, and limitations in activities of daily living to daily 100 mg aspirin versus placebo.",
+      "context_window": "tia, and limitations in activities of daily living to daily 100 mg aspirin versus placebo. Linear mixed models were used to co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-848",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 848,
+      "sentence": "Over a median of 4.7 years, the changes in grip strength (\u03b2: 0.001; 95% CI: -0.004 to 0.005) and gait speed (\u03b2: -0.004; 95% CI: -0.010 to 0.001) did not differ significantly between aspirin and placebo groups.",
+      "context_window": "wness between aspirin and placebo groups. Over a median of 4.7 years, the changes in grip strength (\u03b2: 0.001; 95% CI: -0.004 to",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-899",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.004 to 0.005",
+      "numeric_values": [
+        -0.004,
+        0.005
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 899,
+      "sentence": "Over a median of 4.7 years, the changes in grip strength (\u03b2: 0.001; 95% CI: -0.004 to 0.005) and gait speed (\u03b2: -0.004; 95% CI: -0.010 to 0.001) did not differ significantly between aspirin and placebo groups.",
+      "context_window": "edian of 4.7 years, the changes in grip strength (\u03b2: 0.001; 95% CI: -0.004 to 0.005) and gait speed (\u03b2: -0.004; 95% CI: -0.010 to 0.001) did no",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-951",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.010 to 0.001",
+      "numeric_values": [
+        -0.01,
+        0.001
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "Over a median of 4.7 years, the changes in grip strength (\u03b2: 0.001; 95% CI: -0.004 to 0.005) and gait speed (\u03b2: -0.004; 95% CI: -0.010 to 0.001) did not differ significantly between aspirin and placebo groups.",
+      "context_window": "0.001; 95% CI: -0.004 to 0.005) and gait speed (\u03b2: -0.004; 95% CI: -0.010 to 0.001) did not differ significantly between aspirin and placebo g",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-1243",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00, 1.10",
+      "numeric_values": [
+        1.0,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1243,
+      "sentence": "There was no difference in the risk of incident grip weakness (Hazard Ratio (HR): 1.05; 95% CI: 1.00, 1.10) and gait slowness (HR: 1.00; 95% CI: 0.95, 1.05) between individuals randomized to aspirin versus placebo.",
+      "context_window": "he risk of incident grip weakness (Hazard Ratio (HR): 1.05; 95% CI: 1.00, 1.10) and gait slowness (HR: 1.00; 95% CI: 0.95, 1.05) between i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-1282",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.00",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "There was no difference in the risk of incident grip weakness (Hazard Ratio (HR): 1.05; 95% CI: 1.00, 1.10) and gait slowness (HR: 1.00; 95% CI: 0.95, 1.05) between individuals randomized to aspirin versus placebo.",
+      "context_window": "rd Ratio (HR): 1.05; 95% CI: 1.00, 1.10) and gait slowness (HR: 1.00; 95% CI: 0.95, 1.05) between individuals randomized to aspi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-1292",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.95, 1.05",
+      "numeric_values": [
+        0.95,
+        1.05
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1292,
+      "sentence": "There was no difference in the risk of incident grip weakness (Hazard Ratio (HR): 1.05; 95% CI: 1.00, 1.10) and gait slowness (HR: 1.00; 95% CI: 0.95, 1.05) between individuals randomized to aspirin versus placebo.",
+      "context_window": "HR): 1.05; 95% CI: 1.00, 1.10) and gait slowness (HR: 1.00; 95% CI: 0.95, 1.05) between individuals randomized to aspirin versus placebo.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-3009",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3009,
+      "sentence": "18 ASPREE also determined that low-dose aspirin does not reduce the risk of incident frailty 19 ; however, there was some evidence that it may reduce persistent physical disability, although it did not reach significance over the trial\u2019s median follow-up period of 4.7 years.",
+      "context_window": "ch significance over the trial\u2019s median follow-up period of 4.7 years. 20 , 21 Changes in grip strength and gait speed are early",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-n-479",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 479,
+      "sentence": "Recruitment occurred from March 2010 through December 2014 in Australia ( n = 16 703) and the United States ( n = 2411).",
+      "context_window": "curred from March 2010 through December 2014 in Australia ( n = 16 703) and the United States ( n = 2411). 18 , 22 In Australi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-n-515",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2411",
+      "numeric_values": [
+        2411.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 515,
+      "sentence": "Recruitment occurred from March 2010 through December 2014 in Australia ( n = 16 703) and the United States ( n = 2411).",
+      "context_window": "ber 2014 in Australia ( n = 16 703) and the United States ( n = 2411). 18 , 22 In Australia, participants were recruited through",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-779",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 779,
+      "sentence": "Eligible participants were community-dwelling individuals aged \u226570 years (or aged \u226565 years for US minority-African American or Hispanic groups).",
+      "context_window": "ible participants were community-dwelling individuals aged \u226570 years (or aged \u226565 years for US minority-African American or Hisp",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-798",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 798,
+      "sentence": "Eligible participants were community-dwelling individuals aged \u226570 years (or aged \u226565 years for US minority-African American or Hispanic groups).",
+      "context_window": "ere community-dwelling individuals aged \u226570 years (or aged \u226565 years for US minority-African American or Hispanic groups). 18 De",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1618",
+      "claim_type": "unit_value",
+      "raw_text": "180 mmHg",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1618,
+      "sentence": "18 In brief, individuals were excluded if they had a history of a diagnosed cardiovascular disease (CVD) (ie, stroke, myocardial infarction, unstable angina, heart failure, transient ischemic attack, coronary artery reperfusion procedures and bypass grafting, and abdominal aortic aneurysm); a clinical diagnosis of atrial fibrillation; a diagnosis of dementia or a score of <78 on the Modified Mini-Mental State Examination; substantial physical activity limitations (ie, severe difficulty or unable to perform any of 6 basic activities of daily living [ADL]); a condition with high risk of major bleeding; anemia; uncontrolled hypertension (ie, a systolic blood pressure \u2265180 mmHg and/or a diastolic blood pressure \u2265 105 mmHg); a serious illness likely to cause death within the next 5 years as perceived by the recruiting general practitioner; and were currently using aspirin (and unwilling to stop) or other antiplatelet or antithrombotic medication.",
+      "context_window": "; uncontrolled hypertension (ie, a systolic blood pressure \u2265180 mmHg and/or a diastolic blood pressure \u2265 105 mmHg); a serious il",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1663",
+      "claim_type": "unit_value",
+      "raw_text": "105 mmHg",
+      "numeric_values": [
+        105.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1663,
+      "sentence": "18 In brief, individuals were excluded if they had a history of a diagnosed cardiovascular disease (CVD) (ie, stroke, myocardial infarction, unstable angina, heart failure, transient ischemic attack, coronary artery reperfusion procedures and bypass grafting, and abdominal aortic aneurysm); a clinical diagnosis of atrial fibrillation; a diagnosis of dementia or a score of <78 on the Modified Mini-Mental State Examination; substantial physical activity limitations (ie, severe difficulty or unable to perform any of 6 basic activities of daily living [ADL]); a condition with high risk of major bleeding; anemia; uncontrolled hypertension (ie, a systolic blood pressure \u2265180 mmHg and/or a diastolic blood pressure \u2265 105 mmHg); a serious illness likely to cause death within the next 5 years as perceived by the recruiting general practitioner; and were currently using aspirin (and unwilling to stop) or other antiplatelet or antithrombotic medication.",
+      "context_window": "lood pressure \u2265180 mmHg and/or a diastolic blood pressure \u2265 105 mmHg); a serious illness likely to cause death within the next 5",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1730",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1730,
+      "sentence": "18 In brief, individuals were excluded if they had a history of a diagnosed cardiovascular disease (CVD) (ie, stroke, myocardial infarction, unstable angina, heart failure, transient ischemic attack, coronary artery reperfusion procedures and bypass grafting, and abdominal aortic aneurysm); a clinical diagnosis of atrial fibrillation; a diagnosis of dementia or a score of <78 on the Modified Mini-Mental State Examination; substantial physical activity limitations (ie, severe difficulty or unable to perform any of 6 basic activities of daily living [ADL]); a condition with high risk of major bleeding; anemia; uncontrolled hypertension (ie, a systolic blood pressure \u2265180 mmHg and/or a diastolic blood pressure \u2265 105 mmHg); a serious illness likely to cause death within the next 5 years as perceived by the recruiting general practitioner; and were currently using aspirin (and unwilling to stop) or other antiplatelet or antithrombotic medication.",
+      "context_window": "g); a serious illness likely to cause death within the next 5 years as perceived by the recruiting general practitioner; and we",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-2241",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2241,
+      "sentence": "Participants with \u226580% compliance were randomly assigned to receive a 100 mg enteric-coated aspirin tablet daily or a matching enteric-coated placebo tablet in a ratio of 1:1.",
+      "context_window": "s was not disclosed to the participants. Participants with \u226580% compliance were randomly assigned to receive a 100 mg enter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-2292",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2292,
+      "sentence": "Participants with \u226580% compliance were randomly assigned to receive a 100 mg enteric-coated aspirin tablet daily or a matching enteric-coated placebo tablet in a ratio of 1:1.",
+      "context_window": "ts with \u226580% compliance were randomly assigned to receive a 100 mg enteric-coated aspirin tablet daily or a matching enteric-c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-2727",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2727,
+      "sentence": "The randomization list was generated using the STATA \u201cralloc\u201d procedure with randomization stratified according to location of general practice in Australia, regional site in the United States, and age (65-79 or \u226580 years), which ensured balanced allocation across groups.",
+      "context_window": "lia, regional site in the United States, and age (65-79 or \u226580 years), which ensured balanced allocation across groups. The rand",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-3657",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3657,
+      "sentence": "23 , 24 Given a total sample size of >19 000, we have 90% power to detect a hazard ratio of 1.23 comparing the aspirin group with placebo in an intention-to-treat analysis, where compliance with medication and dropout are assumed as for the primary endpoint.",
+      "context_window": "usly. 23 , 24 Given a total sample size of >19 000, we have 90% power to detect a hazard ratio of 1.23 comparing the aspiri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-7590",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7590,
+      "sentence": "Grip weakness was defined based on the lowest 20% grip strength at baseline within sex and BMI-specific categories (described in Table S1 ).",
+      "context_window": "s separately. Grip weakness was defined based on the lowest 20% grip strength at baseline within sex and BMI-specific categ",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-7975",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7975,
+      "sentence": "Gait slowness was defined as the slowest 20% at baseline within sex- and height-specific categories (described in Table S2 ).",
+      "context_window": "eria for weakness. Gait slowness was defined as the slowest 20% at baseline within sex- and height-specific categories (des",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-8385",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8385,
+      "sentence": "Of note, our approach to defining weakness and slowness based on the lowest 20% of grip strength and slowest 20% of gait speed at baseline, adjusted for sex, and BMI or height, follows the method used to operationalize the Fried Frailty Phenotype.",
+      "context_window": "roach to defining weakness and slowness based on the lowest 20% of grip strength and slowest 20% of gait speed at baseline,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-8418",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8418,
+      "sentence": "Of note, our approach to defining weakness and slowness based on the lowest 20% of grip strength and slowest 20% of gait speed at baseline, adjusted for sex, and BMI or height, follows the method used to operationalize the Fried Frailty Phenotype.",
+      "context_window": "owness based on the lowest 20% of grip strength and slowest 20% of gait speed at baseline, adjusted for sex, and BMI or hei",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-8972",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8972,
+      "sentence": "28 Moreover, our grip weakness cutoff values are broadly consistent with international norms for handgrip strength levels of the weakest 20% among older adults, representing 69 countries and regions.",
+      "context_window": "rnational norms for handgrip strength levels of the weakest 20% among older adults, representing 69 countries and regions.",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-9921",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9921,
+      "sentence": "Of note, the cumulative incidence of death during follow-up was low (<5%).",
+      "context_window": "he cumulative incidence of death during follow-up was low (<5%). Subgroup analyses were also undertaken to determine the e",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-32",
+      "claim_type": "percentage",
+      "raw_text": "56.4%",
+      "numeric_values": [
+        56.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 32,
+      "sentence": "A total of 19 114 participants (56.4% women) aged 65-98 years were included in this trial and underwent randomization (9525 participants to the aspirin group and 9589 to the placebo group, Table 1 ).",
+      "context_window": "A total of 19 114 participants (56.4% women) aged 65-98 years were included in this trial and und",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-53",
+      "claim_type": "unit_value",
+      "raw_text": "98 years",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 53,
+      "sentence": "A total of 19 114 participants (56.4% women) aged 65-98 years were included in this trial and underwent randomization (9525 participants to the aspirin group and 9589 to the placebo group, Table 1 ).",
+      "context_window": "A total of 19 114 participants (56.4% women) aged 65-98 years were included in this trial and underwent randomization (95",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-214",
+      "claim_type": "percentage",
+      "raw_text": "85.6%",
+      "numeric_values": [
+        85.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 214,
+      "sentence": "The majority (85.6%) were White Australians, and the median age of the participants was 74 years in both the aspirin and placebo groups.",
+      "context_window": "oup and 9589 to the placebo group, Table 1 ). The majority (85.6%) were White Australians, and the median age of the particip",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-288",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 288,
+      "sentence": "The majority (85.6%) were White Australians, and the median age of the participants was 74 years in both the aspirin and placebo groups.",
+      "context_window": "ite Australians, and the median age of the participants was 74 years in both the aspirin and placebo groups. Characteristics of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-726",
+      "claim_type": "unit_value",
+      "raw_text": "126 mg/dL",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 726,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "s mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hyperten",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-738",
+      "claim_type": "unit_value",
+      "raw_text": "7 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 738,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "s defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is d",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-853",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 853,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "ension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking choles",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-969",
+      "claim_type": "unit_value",
+      "raw_text": "212 mg/dL",
+      "numeric_values": [
+        212.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 969,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "king cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; Unite",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-981",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 mmol",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 981,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "erol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) o",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1009",
+      "claim_type": "unit_value",
+      "raw_text": "240 mg/dL",
+      "numeric_values": [
+        240.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1009,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1021",
+      "claim_type": "unit_value",
+      "raw_text": "6.2 mmol",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1021,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "sterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L). The me",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1057",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg/dL",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1057,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "ralia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L). The medication compliance rate was 73% for",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1069",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 mmol",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1069,
+      "sentence": "Diabetes mellitus is defined from self-report or fasting glucose \u2265 126 mg/dL (\u22657 mmol/L) or on treatment for diabetes mellitus; Hypertension is defined as \u201con treatment\u201d for high BP or BP > 140/90 mmHg at study entry; Dyslipidemia defined as those taking cholesterol-lowering medications or serum cholesterol \u2265212 mg/dL (\u22655.5 mmol/L; Australia) and \u2265240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L).",
+      "context_window": "240 mg/dL (\u22656.2 mmol/L; United States) or LDL > 160 mg/dL (>4.1 mmol/L). The medication compliance rate was 73% for those in th",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1118,
+      "sentence": "The medication compliance rate was 73% for those in the aspirin group and 74% for those in the placebo group throughout the trial period.",
+      "context_window": "60 mg/dL (>4.1 mmol/L). The medication compliance rate was 73% for those in the aspirin group and 74% for those in the pla",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-1157",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1157,
+      "sentence": "The medication compliance rate was 73% for those in the aspirin group and 74% for those in the placebo group throughout the trial period.",
+      "context_window": "compliance rate was 73% for those in the aspirin group and 74% for those in the placebo group throughout the trial period.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1557",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1557,
+      "sentence": "31\n\nOver a median of 4.7 years, there was no evidence of a difference in the average trajectories of grip strength overall between the aspirin and placebo groups (\u03b2: 0.001; 95% CI: -0.004 to 0.005, Figures 1 and 2 ).",
+      "context_window": "aspirin use, was described previously. 31 Over a median of 4.7 years, there was no evidence of a difference in the average traje",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-1709",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.004 to 0.005",
+      "numeric_values": [
+        -0.004,
+        0.005
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1709,
+      "sentence": "31\n\nOver a median of 4.7 years, there was no evidence of a difference in the average trajectories of grip strength overall between the aspirin and placebo groups (\u03b2: 0.001; 95% CI: -0.004 to 0.005, Figures 1 and 2 ).",
+      "context_window": "h overall between the aspirin and placebo groups (\u03b2: 0.001; 95% CI: -0.004 to 0.005, Figures 1 and 2 ). The associations differed by ethno-raci",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-1938",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.002 to 0.072",
+      "numeric_values": [
+        0.002,
+        0.072
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1938,
+      "sentence": "The associations differed by ethno-racial groups ( p -interaction = .04), with the aspirin group being associated with better grip strength over time among Hispanics/Latinos (\u03b2: 0.037; 95% CI: 0.002 to 0.072, Figure 2 ).",
+      "context_window": "grip strength over time among Hispanics/Latinos (\u03b2: 0.037; 95% CI: 0.002 to 0.072, Figure 2 ). No significant associations were found in othe",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-2824",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.010 to 0.001",
+      "numeric_values": [
+        -0.01,
+        0.001
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2824,
+      "sentence": "Similarly, there was no evidence of a difference in the average trajectories of gait speed overall between aspirin and placebo groups (\u03b2: -0.004; 95% CI: -0.010 to 0.001, Figures 1 and 3 ).",
+      "context_window": "peed overall between aspirin and placebo groups (\u03b2: -0.004; 95% CI: -0.010 to 0.001, Figures 1 and 3 ). The effect of aspirin on gait speed tra",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-3075",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.027 to -0.005",
+      "numeric_values": [
+        -0.027,
+        -0.005
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3075,
+      "sentence": "Aspirin was associated with worse gait speed over time among individuals with normal weight (\u03b2: -0.016; 95% CI: -0.027 to -0.005, Figure 3 ) compared to normal-weight individuals in the placebo group.",
+      "context_window": "over time among individuals with normal weight (\u03b2: -0.016; 95% CI: -0.027 to -0.005, Figure 3 ) compared to normal-weight individuals in the pl",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-3743",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3743,
+      "sentence": "Over a median of 4.7 years, 6203 participants experienced incident grip weakness, comprising 3138 (98.4 events per 1000-person years) from the aspirin group and 3065 (93.9 events per 1000-person years) from the placebo group.",
+      "context_window": "nce between groups. BMI, body mass index. Over a median of 4.7 years, 6203 participants experienced incident grip weakness, comp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-4234",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.05",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4234,
+      "sentence": "There was no difference in the risk of incident grip weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between individuals randomized to aspirin versus placebo ( Figure 4 ).",
+      "context_window": "re was no difference in the risk of incident grip weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-4244",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00 to 1.10",
+      "numeric_values": [
+        1.0,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4244,
+      "sentence": "There was no difference in the risk of incident grip weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between individuals randomized to aspirin versus placebo ( Figure 4 ).",
+      "context_window": "difference in the risk of incident grip weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-4284",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.00",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4284,
+      "sentence": "There was no difference in the risk of incident grip weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between individuals randomized to aspirin versus placebo ( Figure 4 ).",
+      "context_window": "weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between individuals randomized to as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-4294",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.95 to 1.05",
+      "numeric_values": [
+        0.95,
+        1.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4294,
+      "sentence": "There was no difference in the risk of incident grip weakness (HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between individuals randomized to aspirin versus placebo ( Figure 4 ).",
+      "context_window": "HR: 1.05; 95% CI: 1.00 to 1.10) or gait slowness (HR: 1.00; 95% CI: 0.95 to 1.05) between individuals randomized to aspirin versus placebo (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-4477",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 1.04",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4477,
+      "sentence": "Similar results were observed when considering the competing risk of death in the models (HR: 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.04 for incident gait slowness).",
+      "context_window": "when considering the competing risk of death in the models (HR: 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-4487",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.99 to 1.09",
+      "numeric_values": [
+        0.99,
+        1.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4487,
+      "sentence": "Similar results were observed when considering the competing risk of death in the models (HR: 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.04 for incident gait slowness).",
+      "context_window": "dering the competing risk of death in the models (HR: 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-4539",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4539,
+      "sentence": "Similar results were observed when considering the competing risk of death in the models (HR: 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.04 for incident gait slowness).",
+      "context_window": ": 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.04 for incident gait slowness). Further,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-4549",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.95 to 1.04",
+      "numeric_values": [
+        0.95,
+        1.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4549,
+      "sentence": "Similar results were observed when considering the competing risk of death in the models (HR: 1.04; 95% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.04 for incident gait slowness).",
+      "context_window": "% CI 0.99 to 1.09 for incident grip weakness, and HR: 0.99; 95% CI 0.95 to 1.04 for incident gait slowness). Further, the results were the",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-5378",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5378,
+      "sentence": "A lower risk of incident gait slowness was observed in the aspirin group among African Americans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96).",
+      "context_window": "was observed in the aspirin group among African Americans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-5388",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71 to 0.99",
+      "numeric_values": [
+        0.71,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5388,
+      "sentence": "A lower risk of incident gait slowness was observed in the aspirin group among African Americans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96).",
+      "context_window": "ved in the aspirin group among African Americans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96). No",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-hr-a-5433",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5433,
+      "sentence": "A lower risk of incident gait slowness was observed in the aspirin group among African Americans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96).",
+      "context_window": "ans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96). No evidence of a differential effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-ci-5443",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.55 to 0.96",
+      "numeric_values": [
+        0.55,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5443,
+      "sentence": "A lower risk of incident gait slowness was observed in the aspirin group among African Americans (HR: 0.84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96).",
+      "context_window": ".84; 95% CI: 0.71 to 0.99) and Hispanics/Latinos (HR: 0.72; 95% CI: 0.55 to 0.96). No evidence of a differential effect of aspirin on the ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1124",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1124,
+      "sentence": "However, we found no difference in the risk of developing grip weakness or gait slowness between individuals taking low-dose aspirin and those taking a placebo over a median of 4.7 years of follow-up.",
+      "context_window": "ow-dose aspirin and those taking a placebo over a median of 4.7 years of follow-up. It is known that aspirin reduces the product",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-7721",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7721,
+      "sentence": "22 Another strength of our study is that we assessed grip strength and gait speed at multiple time points over 5 years, and these assessments were administered by trained staff following strict standard operational procedures.",
+      "context_window": "d grip strength and gait speed at multiple time points over 5 years, and these assessments were administered by trained staff f",
+      "claim_role": "dose",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-8307",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8307,
+      "sentence": "One limitation is that approximately 90% of our study participants were White Australians and Americans.",
+      "context_window": "ength and gait speed). One limitation is that approximately 90% of our study participants were White Australians and Americ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-8762",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8762,
+      "sentence": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third living in socioeconomically disadvantaged areas).",
+      "context_window": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-8789",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8789,
+      "sentence": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third living in socioeconomically disadvantaged areas).",
+      "context_window": "ution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (abou",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-8798",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8798,
+      "sentence": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third living in socioeconomically disadvantaged areas).",
+      "context_window": "terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third li",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-9018",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9018,
+      "sentence": "In addition, our ASPREE study cohort is largely representative of community-dwelling older Australians (49% living in regional or rural areas) and older Americans (mostly located in the Midwest and East Coast).",
+      "context_window": "ely representative of community-dwelling older Australians (49% living in regional or rural areas) and older Americans (mos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-9698",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9698,
+      "sentence": "Additionally, it is recognized that the medication adherence in our ASPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with comparable rates between the two groups, thereby reducing the likelihood that differential adherence biased the findings.",
+      "context_window": "medication adherence in our ASPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-9728",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9728,
+      "sentence": "Additionally, it is recognized that the medication adherence in our ASPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with comparable rates between the two groups, thereby reducing the likelihood that differential adherence biased the findings.",
+      "context_window": "SPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with comparable rates between the t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-10028",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 10028,
+      "sentence": "Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up.",
+      "context_window": "al concluded in June 2017. Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-10116",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 10116,
+      "sentence": "Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up.",
+      "context_window": "only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 ye",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-10179",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 10179,
+      "sentence": "Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up.",
+      "context_window": "ears of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up. Furthermore, in-person assessments of grip st",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-315",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 315,
+      "sentence": "22 Another strength of our study is that we assessed grip strength and gait speed at multiple time points over 5 years, and these assessments were administered by trained staff following strict standard operational procedures.",
+      "context_window": "d grip strength and gait speed at multiple time points over 5 years, and these assessments were administered by trained staff f",
+      "claim_role": "dose",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-901",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 901,
+      "sentence": "One limitation is that approximately 90% of our study participants were White Australians and Americans.",
+      "context_window": "ength and gait speed). One limitation is that approximately 90% of our study participants were White Australians and Americ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-1356",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1356,
+      "sentence": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third living in socioeconomically disadvantaged areas).",
+      "context_window": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-1383",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1383,
+      "sentence": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third living in socioeconomically disadvantaged areas).",
+      "context_window": "ution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (abou",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-1392",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 1392,
+      "sentence": "Our sample had good distribution in terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third living in socioeconomically disadvantaged areas).",
+      "context_window": "terms of gender (women, 56%), education level (eg, 45% had <12 years of education), and socioeconomic status (about one-third li",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-1612",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1612,
+      "sentence": "In addition, our ASPREE study cohort is largely representative of community-dwelling older Australians (49% living in regional or rural areas) and older Americans (mostly located in the Midwest and East Coast).",
+      "context_window": "ely representative of community-dwelling older Australians (49% living in regional or rural areas) and older Americans (mos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-2292",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 2292,
+      "sentence": "Additionally, it is recognized that the medication adherence in our ASPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with comparable rates between the two groups, thereby reducing the likelihood that differential adherence biased the findings.",
+      "context_window": "medication adherence in our ASPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-pct-2322",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 2322,
+      "sentence": "Additionally, it is recognized that the medication adherence in our ASPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with comparable rates between the two groups, thereby reducing the likelihood that differential adherence biased the findings.",
+      "context_window": "SPREE trial was moderate (ie, 73% for the aspirin group and 74% for the placebo group), with comparable rates between the t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-2622",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 2622,
+      "sentence": "Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up.",
+      "context_window": "al concluded in June 2017. Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-2710",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 2710,
+      "sentence": "Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up.",
+      "context_window": "only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 ye",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-2773",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 2773,
+      "sentence": "Thus, with a median follow-up of 4.7 years across the cohort, only participants enrolled earlier (ie, in 2010) had up to 7 years of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up.",
+      "context_window": "ears of follow-up, whereas those enrolled in 2014 had about 3 years of follow-up. Furthermore, in-person assessments of grip st",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12479048_effect_of_aspirin_on_grip_strength_and_gait_speed_in_communi-u-241",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 241,
+      "sentence": "In summary, our study found that taking low-dose aspirin among older people was not associated with significant changes in grip strength and gait speed over time and did not reduce the risk of grip weakness or gait slowness over a median of 4.7 years of follow-up.",
+      "context_window": "the risk of grip weakness or gait slowness over a median of 4.7 years of follow-up. These findings suggest that low-dose aspirin",
+      "claim_role": "duration",
+      "endpoint": "walk speed",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_evaluation_of_response_of_dasatinib_to_treat_mastocytosis",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_evaluation_of_response_of_dasatinib_to_treat_mastocytosis-u-297",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 297,
+      "sentence": "Upon completion of a treatment induction period, subjects will be treated with dasatinib at a dose of 100 mg per os (OS) once daily (QD).",
+      "context_window": "eriod, subjects will be treated with dasatinib at a dose of 100 mg per os (OS) once daily (QD).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

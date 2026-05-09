@@ -1,0 +1,1153 @@
+{
+  "paper_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_",
+  "doi": "10.1007/s11325-025-03564-0",
+  "extracted_at": "2026-05-08T20:05:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 4,
+    "p_value": 7,
+    "percentage": 19,
+    "unit_value": 27,
+    "sample_size": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-ci-953",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.12-1.97",
+      "numeric_values": [
+        1.12,
+        1.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "CAO independently predicted both MACE (HR 1.48, 95% CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.001).",
+      "context_window": "mortality. CAO independently predicted both MACE (HR 1.48, 95% CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-971",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 971,
+      "sentence": "CAO independently predicted both MACE (HR 1.48, 95% CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.001).",
+      "context_window": "dependently predicted both MACE (HR 1.48, 95% CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-ci-1016",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.44-2.22",
+      "numeric_values": [
+        1.44,
+        2.22
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "CAO independently predicted both MACE (HR 1.48, 95% CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.001).",
+      "context_window": "CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.001). Excessive daytime sleepiness (EDS) was associa",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-1034",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "CAO independently predicted both MACE (HR 1.48, 95% CI 1.12-1.97, p < 0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.001).",
+      "context_window": "0.006) and all-cause mortality (HR 1.78, 95% CI 1.44-2.22, p < 0.001). Excessive daytime sleepiness (EDS) was associated with in",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-ci-1131",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.01-1.85",
+      "numeric_values": [
+        1.01,
+        1.85
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1131,
+      "sentence": "Excessive daytime sleepiness (EDS) was associated with increased mortality (HR 1.37, 95% CI 1.01-1.85, p = 0.045).",
+      "context_window": "ess (EDS) was associated with increased mortality (HR 1.37, 95% CI 1.01-1.85, p = 0.045). A significant interaction was found between CA",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-1149",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1149,
+      "sentence": "Excessive daytime sleepiness (EDS) was associated with increased mortality (HR 1.37, 95% CI 1.01-1.85, p = 0.045).",
+      "context_window": "ciated with increased mortality (HR 1.37, 95% CI 1.01-1.85, p = 0.045). A significant interaction was found between CAO and habit",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-ci-1330",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.31-3.76",
+      "numeric_values": [
+        1.31,
+        3.76
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1330,
+      "sentence": "A significant interaction was found between CAO and habitual snoring, with participants displaying both having more than a twofold increased risk of mortality (HR 2.22, 95% CI 1.31-3.76, p = 0.003).",
+      "context_window": "g more than a twofold increased risk of mortality (HR 2.22, 95% CI 1.31-3.76, p = 0.003). CAO and EDS emerged as independent predictors",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-1348",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1348,
+      "sentence": "A significant interaction was found between CAO and habitual snoring, with participants displaying both having more than a twofold increased risk of mortality (HR 2.22, 95% CI 1.31-3.76, p = 0.003).",
+      "context_window": "old increased risk of mortality (HR 2.22, 95% CI 1.31-3.76, p = 0.003). CAO and EDS emerged as independent predictors of mortali",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-382",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 382,
+      "sentence": "Using the spirometric criterion of a post-bronchodilator FEV 1 /FVC ratio below 0.7 to diagnose COPD [ 2 ], an estimated 392 million individuals aged 30 to 79 had COPD in 2019, representing a global prevalence of 10.3% [ 3 ].",
+      "context_window": "to 79 had COPD in 2019, representing a global prevalence of 10.3% [ 3 ]. Obstructive sleep apnea (OSA), a disorder characteri",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-1473",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1473,
+      "sentence": "The occurrence of this syndrome is estimated to affect 1-2% of adults in the general population but may be much higher in clinical settings [ 11 ].",
+      "context_window": "]. The occurrence of this syndrome is estimated to affect 1-2% of adults in the general population but may be much higher",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-3420",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3420,
+      "sentence": "However, this risk increase did not achieve statistical significance after a 7-year follow-up among 10,388 participants aged 20 years or older [ 18 ].",
+      "context_window": "nce after a 7-year follow-up among 10,388 participants aged 20 years or older [ 18 ]. The aim of the current study was to exami",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-n-1333",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7949",
+      "numeric_values": [
+        7949.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1333,
+      "sentence": "For the major adverse cardiovascular event (MACE) endpoint, an additional 253 participants with pre-existing cardiovascular disease at baseline were excluded, leaving 3 , 052 individuals eligible for analysis\n\nThe study group included all individuals born in the years 1925 to 1927 and 1950 to 1951, residing in Bergen, Norway, who had participated in an earlier phase of the HUSK study during 1992-1993 ( n = 7949, participation rate: 67%) [ 19 ].",
+      "context_window": "ed in an earlier phase of the HUSK study during 1992-1993 ( n = 7949, participation rate: 67%) [ 19 ]. Of the 7949 individuals e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-1363",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1363,
+      "sentence": "For the major adverse cardiovascular event (MACE) endpoint, an additional 253 participants with pre-existing cardiovascular disease at baseline were excluded, leaving 3 , 052 individuals eligible for analysis\n\nThe study group included all individuals born in the years 1925 to 1927 and 1950 to 1951, residing in Bergen, Norway, who had participated in an earlier phase of the HUSK study during 1992-1993 ( n = 7949, participation rate: 67%) [ 19 ].",
+      "context_window": "HUSK study during 1992-1993 ( n = 7949, participation rate: 67%) [ 19 ]. Of the 7949 individuals eligible for the study, 49",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-n-1583",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5100",
+      "numeric_values": [
+        5100.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1583,
+      "sentence": "Among the remaining 7456 individuals, random selections of 510 women and 510 men from each birth year ( n = 5100) received an invitation via postal mail.",
+      "context_window": "selections of 510 women and 510 men from each birth year ( n = 5100) received an invitation via postal mail. Ultimately, 3506 p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-1689",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1689,
+      "sentence": "Ultimately, 3506 participants (1780 women and 1726 men, 69% of invited subjects) responded and underwent examination at the HUSK study center.",
+      "context_window": "il. Ultimately, 3506 participants (1780 women and 1726 men, 69% of invited subjects) responded and underwent examination at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-2584",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2584,
+      "sentence": "This validation revealed its ability to correctly identify 100% of cases with severe OSA (defined as an apnea-hypopnea index (AHI) of \u2265 40).",
+      "context_window": "This validation revealed its ability to correctly identify 100% of cases with severe OSA (defined as an apnea-hypopnea inde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-2744",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2744,
+      "sentence": "For an AHI threshold of \u2265 10, the questionnaire demonstrated a sensitivity of 78% and a specificity of 67% [ 21 ].",
+      "context_window": "ld of \u2265 10, the questionnaire demonstrated a sensitivity of 78% and a specificity of 67% [ 21 ]. Data on smoking habits, u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-2769",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2769,
+      "sentence": "For an AHI threshold of \u2265 10, the questionnaire demonstrated a sensitivity of 78% and a specificity of 67% [ 21 ].",
+      "context_window": "aire demonstrated a sensitivity of 78% and a specificity of 67% [ 21 ]. Data on smoking habits, use of antihypertensive me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-n-3396",
+      "claim_type": "sample_size",
+      "raw_text": "n = 201",
+      "numeric_values": [
+        201.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3396,
+      "sentence": "Details regarding the characteristics of the excluded subjects ( n = 201) have been previously documented [ 22 ].",
+      "context_window": "ls regarding the characteristics of the excluded subjects ( n = 201) have been previously documented [ 22 ]. In all conducted a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-4931",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 4931,
+      "sentence": "Obesity was defined as BMI \u2265 30 kg/m 2 , or waist-hip ratio \u2265 0.85 in women and \u2265 0.90 in men, as recommended by the World Health Organization [ 26 ].",
+      "context_window": "waist-hip ratio were computed. Obesity was defined as BMI \u2265 30 kg/m 2 , or waist-hip ratio \u2265 0.85 in women and \u2265 0.90 in men,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-5270",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 5270,
+      "sentence": "Hypertension was defined as either systolic BP of \u2265 140 mmHg and/or diastolic BP of \u2265 90 mmHg, based upon clinic BP values.",
+      "context_window": "sterol. Hypertension was defined as either systolic BP of \u2265 140 mmHg and/or diastolic BP of \u2265 90 mmHg, based upon clinic BP valu",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-5304",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 5304,
+      "sentence": "Hypertension was defined as either systolic BP of \u2265 140 mmHg and/or diastolic BP of \u2265 90 mmHg, based upon clinic BP values.",
+      "context_window": "s either systolic BP of \u2265 140 mmHg and/or diastolic BP of \u2265 90 mmHg, based upon clinic BP values. A total cholesterol level of",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-5371",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5371,
+      "sentence": "A total cholesterol level of 7.0 mmol/l or more was defined as elevated.",
+      "context_window": ", based upon clinic BP values. A total cholesterol level of 7.0 mmol/l or more was defined as elevated. For HDL cholesterol, lev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-5449",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mmol",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5449,
+      "sentence": "For HDL cholesterol, levels below 1.3 mmol/l and 1.0 mmol/l were considered low in women and men, respectively.",
+      "context_window": "was defined as elevated. For HDL cholesterol, levels below 1.3 mmol/l and 1.0 mmol/l were considered low in women and men, resp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-5464",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5464,
+      "sentence": "For HDL cholesterol, levels below 1.3 mmol/l and 1.0 mmol/l were considered low in women and men, respectively.",
+      "context_window": "elevated. For HDL cholesterol, levels below 1.3 mmol/l and 1.0 mmol/l were considered low in women and men, respectively. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6701",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 6701,
+      "sentence": "Obesity: body mass index (BMI) \u2265 30 kg/m\u00b2.",
+      "context_window": "ith GOLD recommendations. Obesity: body mass index (BMI) \u2265 30 kg/m\u00b2. Central obesity: waist-hip ratio \u2265 0.85 in women and \u2265",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6821",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 6821,
+      "sentence": "Hypertension: systolic blood pressure \u2265 140 mmHg and/or diastolic blood pressure \u2265 90 mmHg.",
+      "context_window": "and \u2265 0.90 in men. Hypertension: systolic blood pressure \u2265 140 mmHg and/or diastolic blood pressure \u2265 90 mmHg. Low HDL cholest",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6864",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 6864,
+      "sentence": "Hypertension: systolic blood pressure \u2265 140 mmHg and/or diastolic blood pressure \u2265 90 mmHg.",
+      "context_window": "blood pressure \u2265 140 mmHg and/or diastolic blood pressure \u2265 90 mmHg. Low HDL cholesterol: < 1.3 mmol/L in women and < 1.0 mmol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6897",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mmol",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 6897,
+      "sentence": "Low HDL cholesterol: < 1.3 mmol/L in women and < 1.0 mmol/L in men.",
+      "context_window": "diastolic blood pressure \u2265 90 mmHg. Low HDL cholesterol: < 1.3 mmol/L in women and < 1.0 mmol/L in men. Elevated total cholest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6923",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 6923,
+      "sentence": "Low HDL cholesterol: < 1.3 mmol/L in women and < 1.0 mmol/L in men.",
+      "context_window": "90 mmHg. Low HDL cholesterol: < 1.3 mmol/L in women and < 1.0 mmol/L in men. Elevated total cholesterol: \u2265 7.0 mmol/L. Diabe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6973",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 6973,
+      "sentence": "Elevated total cholesterol: \u2265 7.0 mmol/L.",
+      "context_window": "men and < 1.0 mmol/L in men. Elevated total cholesterol: \u2265 7.0 mmol/L. Diabetes: self-reported physician diagnosis. Smoking s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-8625",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8625,
+      "sentence": "All statistical analyses were carried out using SPSS version 26, with a predetermined level of statistical significance set at 5%.",
+      "context_window": "th a predetermined level of statistical significance set at 5%. To reduce the likelihood of Type I error due to multiple t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-8782",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8782,
+      "sentence": "To reduce the likelihood of Type I error due to multiple testing, the threshold for statistical significance in the interaction analyses was adjusted to 1%.",
+      "context_window": "al significance in the interaction analyses was adjusted to 1%.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-68",
+      "claim_type": "percentage",
+      "raw_text": "49.5%",
+      "numeric_values": [
+        49.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 68,
+      "sentence": "In total, 3305 participants were included in the analysis, of which 49.5% (1635) were men.",
+      "context_window": ", 3305 participants were included in the analysis, of which 49.5% (1635) were men. Approximately 60% of the study population",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-105",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 105,
+      "sentence": "Approximately 60% of the study population were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC ratio below 0.7, and 5.4% had a history of cardiovascular disease.",
+      "context_window": "the analysis, of which 49.5% (1635) were men. Approximately 60% of the study population were either current ( n = 788) or f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-n-155",
+      "claim_type": "sample_size",
+      "raw_text": "n = 788",
+      "numeric_values": [
+        788.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 155,
+      "sentence": "Approximately 60% of the study population were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC ratio below 0.7, and 5.4% had a history of cardiovascular disease.",
+      "context_window": "oximately 60% of the study population were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-n-184",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1248",
+      "numeric_values": [
+        1248.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 184,
+      "sentence": "Approximately 60% of the study population were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC ratio below 0.7, and 5.4% had a history of cardiovascular disease.",
+      "context_window": "pulation were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-195",
+      "claim_type": "percentage",
+      "raw_text": "9.2%",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 195,
+      "sentence": "Approximately 60% of the study population were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC ratio below 0.7, and 5.4% had a history of cardiovascular disease.",
+      "context_window": "re either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC ratio b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-273",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 273,
+      "sentence": "Approximately 60% of the study population were either current ( n = 788) or former smokers ( n = 1248), 9.2% had CAO defined by a post-bronchodilator FEV 1 /FVC ratio below 0.7, and 5.4% had a history of cardiovascular disease.",
+      "context_window": "ed by a post-bronchodilator FEV 1 /FVC ratio below 0.7, and 5.4% had a history of cardiovascular disease. Among the self-rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-394",
+      "claim_type": "percentage",
+      "raw_text": "17.0%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 394,
+      "sentence": "Among the self-reported symptoms of OSA, snoring was the most prevalent at 17.0%, followed by daytime sleepiness and breathing cessations with respective prevalences of 10.4% and 3.0%.",
+      "context_window": "reported symptoms of OSA, snoring was the most prevalent at 17.0%, followed by daytime sleepiness and breathing cessations wi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-488",
+      "claim_type": "percentage",
+      "raw_text": "10.4%",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 488,
+      "sentence": "Among the self-reported symptoms of OSA, snoring was the most prevalent at 17.0%, followed by daytime sleepiness and breathing cessations with respective prevalences of 10.4% and 3.0%.",
+      "context_window": "ess and breathing cessations with respective prevalences of 10.4% and 3.0%. In total, 4.8% of the study sample were classifie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-498",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 498,
+      "sentence": "Among the self-reported symptoms of OSA, snoring was the most prevalent at 17.0%, followed by daytime sleepiness and breathing cessations with respective prevalences of 10.4% and 3.0%.",
+      "context_window": "eathing cessations with respective prevalences of 10.4% and 3.0%. In total, 4.8% of the study sample were classified as \u201cOSA",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-514",
+      "claim_type": "percentage",
+      "raw_text": "4.8%",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 514,
+      "sentence": "In total, 4.8% of the study sample were classified as \u201cOSA cases\u201d.",
+      "context_window": "ns with respective prevalences of 10.4% and 3.0%. In total, 4.8% of the study sample were classified as \u201cOSA cases\u201d. Table",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-n-1388",
+      "claim_type": "sample_size",
+      "raw_text": "N = 3305",
+      "numeric_values": [
+        3305.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1388,
+      "sentence": "Baseline characteristics of the study population within age and sex strata, N = 3305\n\n*Chi-Square test, except for variables with cell counts below 5 (Fischer\u2019s exact test).",
+      "context_window": "eristics of the study population within age and sex strata, N = 3305 *Chi-Square test, except for variables with cell counts be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-1790",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1790,
+      "sentence": "BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in 1 second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u00b5g Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the older age group, significant differences between women and men were found for all variables except hypertension, diabetes, FVC, breathing cessations and daytime sleepiness.",
+      "context_window": "ypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg c Low HDL chol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-1835",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1835,
+      "sentence": "BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in 1 second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u00b5g Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the older age group, significant differences between women and men were found for all variables except hypertension, diabetes, FVC, breathing cessations and daytime sleepiness.",
+      "context_window": "d pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg c Low HDL cholesterol was defined by levels below 1.3 mmol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-1894",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mmol",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1894,
+      "sentence": "BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in 1 second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u00b5g Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the older age group, significant differences between women and men were found for all variables except hypertension, diabetes, FVC, breathing cessations and daytime sleepiness.",
+      "context_window": "\u226590 mmHg c Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men d Spirom",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-1935",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1935,
+      "sentence": "BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in 1 second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u00b5g Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the older age group, significant differences between women and men were found for all variables except hypertension, diabetes, FVC, breathing cessations and daytime sleepiness.",
+      "context_window": "ed by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men d Spirometry was done 20 minutes after inhalation",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-2870",
+      "claim_type": "unit_value",
+      "raw_text": "9.9 years",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2870,
+      "sentence": "During a mean follow-up period of 9.9 years for MACE, a total of 382 events were recorded.",
+      "context_window": "han in women (Table 1 ). During a mean follow-up period of 9.9 years for MACE, a total of 382 events were recorded. Meanwhile, f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-2986",
+      "claim_type": "unit_value",
+      "raw_text": "10.3 years",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2986,
+      "sentence": "Meanwhile, for all-cause mortality, the follow-up averaged 10.3 years, during which 510 events were observed.",
+      "context_window": "Meanwhile, for all-cause mortality, the follow-up averaged 10.3 years, during which 510 events were observed. Bivariate analyses",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-4358",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 4358,
+      "sentence": "10-year incidence of major adverse cardiovascular events (MACE) and all-cause mortality\n\n*Chi-Square test BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in one second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \u201dOSA cases\u201d defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the Cox regression analyses, all the adjustment variables demonstrated significant HRs for both outcomes in crude and multivariate analyses, with the exceptions of obesity (defined by an elevated waist-hip ratio), high total cholesterol, and low HDL cholesterol.",
+      "context_window": "ypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg c Low HDL chol",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-4403",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 4403,
+      "sentence": "10-year incidence of major adverse cardiovascular events (MACE) and all-cause mortality\n\n*Chi-Square test BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in one second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \u201dOSA cases\u201d defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the Cox regression analyses, all the adjustment variables demonstrated significant HRs for both outcomes in crude and multivariate analyses, with the exceptions of obesity (defined by an elevated waist-hip ratio), high total cholesterol, and low HDL cholesterol.",
+      "context_window": "d pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg c Low HDL cholesterol was defined by levels below 1.3 mmol",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-4462",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mmol",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4462,
+      "sentence": "10-year incidence of major adverse cardiovascular events (MACE) and all-cause mortality\n\n*Chi-Square test BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in one second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \u201dOSA cases\u201d defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the Cox regression analyses, all the adjustment variables demonstrated significant HRs for both outcomes in crude and multivariate analyses, with the exceptions of obesity (defined by an elevated waist-hip ratio), high total cholesterol, and low HDL cholesterol.",
+      "context_window": "\u226590 mmHg c Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men d Spirom",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-4503",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4503,
+      "sentence": "10-year incidence of major adverse cardiovascular events (MACE) and all-cause mortality\n\n*Chi-Square test BP, blood pressure; HDL, high-density lipoprotein; FVC, forced vital capacity; FEV1, forced expiratory volume in one second; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \u201dOSA cases\u201d defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nIn the Cox regression analyses, all the adjustment variables demonstrated significant HRs for both outcomes in crude and multivariate analyses, with the exceptions of obesity (defined by an elevated waist-hip ratio), high total cholesterol, and low HDL cholesterol.",
+      "context_window": "ed by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men d Spirometry was done 20 minutes after inhalation",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6490",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 6490,
+      "sentence": "MACE, major adverse cardiovascular event; HR, hazard ratio; CI, confidence interval; BP, blood pressure; HDL, high-density lipoprotein; FEV1, forced expiratory volume in one second; FVC, forced vital capacity; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nMultivariate interaction analyses revealed no statistically significant interactions between any of the OSA symptoms, CAO, and MACE.",
+      "context_window": "ypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg c Low HDL chol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6535",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 6535,
+      "sentence": "MACE, major adverse cardiovascular event; HR, hazard ratio; CI, confidence interval; BP, blood pressure; HDL, high-density lipoprotein; FEV1, forced expiratory volume in one second; FVC, forced vital capacity; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nMultivariate interaction analyses revealed no statistically significant interactions between any of the OSA symptoms, CAO, and MACE.",
+      "context_window": "d pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg c Low HDL cholesterol was defined by levels below 1.3 mmol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6594",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mmol",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 6594,
+      "sentence": "MACE, major adverse cardiovascular event; HR, hazard ratio; CI, confidence interval; BP, blood pressure; HDL, high-density lipoprotein; FEV1, forced expiratory volume in one second; FVC, forced vital capacity; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nMultivariate interaction analyses revealed no statistically significant interactions between any of the OSA symptoms, CAO, and MACE.",
+      "context_window": "\u226590 mmHg c Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men d Spirom",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-u-6635",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 6635,
+      "sentence": "MACE, major adverse cardiovascular event; HR, hazard ratio; CI, confidence interval; BP, blood pressure; HDL, high-density lipoprotein; FEV1, forced expiratory volume in one second; FVC, forced vital capacity; OSA, obstructive sleep apnea\n\na Cut-offs of 0.85 and 0.90 were used to define obesity in women and men, respectively\n\nb Hypertension defined by measured systolic blood pressure of \u2265140 mmHg and/or diastolic blood pressure of \u226590 mmHg\n\nc Low HDL cholesterol was defined by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men\n\nd Spirometry was done 20 minutes after inhalation of 400 \u03bcg Salbutamol\n\ne \"OSA cases\" defined by self-reported co-occurrence of snoring, breathing cessations, and daytime sleepiness\n\nMultivariate interaction analyses revealed no statistically significant interactions between any of the OSA symptoms, CAO, and MACE.",
+      "context_window": "ed by levels below 1.3 mmol/l in women, and by levels below 1.0 mmol/l in men d Spirometry was done 20 minutes after inhalation",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-8536",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8536,
+      "sentence": "Compared with the reference group (no CAO, no snoring), adjusted Cox regression hazard ratios (95% CI) were: CAO only 1.54 (1.21-1.96, p < 0.001), snoring only 0.66 (0.48-0.90, p = 0.009), and CAO + snoring 2.25 (1.52-3.35, p < 0.001)\n\nA summary of the statistically significant associations between predictors and outcomes is presented in Table 5 , complementing the full regression results shown in Tables 3 and 4 .",
+      "context_window": "no CAO, no snoring), adjusted Cox regression hazard ratios (95% CI) were: CAO only 1.54 (1.21-1.96, p < 0.001), snoring onl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-8576",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8576,
+      "sentence": "Compared with the reference group (no CAO, no snoring), adjusted Cox regression hazard ratios (95% CI) were: CAO only 1.54 (1.21-1.96, p < 0.001), snoring only 0.66 (0.48-0.90, p = 0.009), and CAO + snoring 2.25 (1.52-3.35, p < 0.001)\n\nA summary of the statistically significant associations between predictors and outcomes is presented in Table 5 , complementing the full regression results shown in Tables 3 and 4 .",
+      "context_window": "sion hazard ratios (95% CI) were: CAO only 1.54 (1.21-1.96, p < 0.001), snoring only 0.66 (0.48-0.90, p = 0.009), and CAO + snori",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-8618",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8618,
+      "sentence": "Compared with the reference group (no CAO, no snoring), adjusted Cox regression hazard ratios (95% CI) were: CAO only 1.54 (1.21-1.96, p < 0.001), snoring only 0.66 (0.48-0.90, p = 0.009), and CAO + snoring 2.25 (1.52-3.35, p < 0.001)\n\nA summary of the statistically significant associations between predictors and outcomes is presented in Table 5 , complementing the full regression results shown in Tables 3 and 4 .",
+      "context_window": "1.54 (1.21-1.96, p < 0.001), snoring only 0.66 (0.48-0.90, p = 0.009), and CAO + snoring 2.25 (1.52-3.35, p < 0.001) A summary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-p-8665",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8665,
+      "sentence": "Compared with the reference group (no CAO, no snoring), adjusted Cox regression hazard ratios (95% CI) were: CAO only 1.54 (1.21-1.96, p < 0.001), snoring only 0.66 (0.48-0.90, p = 0.009), and CAO + snoring 2.25 (1.52-3.35, p < 0.001)\n\nA summary of the statistically significant associations between predictors and outcomes is presented in Table 5 , complementing the full regression results shown in Tables 3 and 4 .",
+      "context_window": "(0.48-0.90, p = 0.009), and CAO + snoring 2.25 (1.52-3.35, p < 0.001) A summary of the statistically significant associations b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12769650_impact_of_obstructive_lung_disease_and_sleep_apnea_symptoms_-pct-5697",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5697,
+      "sentence": "This study\u2019s strengths include a high participation rate (69%), single-operator post-bronchodilator spirometry performed on all participants, and reliance on registry-based outcomes.",
+      "context_window": "This study\u2019s strengths include a high participation rate (69%), single-operator post-bronchodilator spirometry performed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "paper_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a",
+  "doi": "10.3389/fped.2024.1490247",
+  "extracted_at": "2026-05-08T20:10:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 11,
+    "p_value": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-u-846",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 846,
+      "sentence": "Alongside the standard care, participants from both groups were administered taurine or placebo capsules (30 mg/kg. day) in divided doses from the day of PICU admission through PICU discharge.",
+      "context_window": "both groups were administered taurine or placebo capsules (30 mg/kg. day) in divided doses from the day of PICU admission th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "standard care",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-1159",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1159,
+      "sentence": "VAP incidence was 7.9% in the taurine group and 64.1% in the placebo group.",
+      "context_window": "aurine group and 39 in the placebo group. VAP incidence was 7.9% in the taurine group and 64.1% in the placebo group. Taurin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-1189",
+      "claim_type": "percentage",
+      "raw_text": "64.1%",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1189,
+      "sentence": "VAP incidence was 7.9% in the taurine group and 64.1% in the placebo group.",
+      "context_window": "cebo group. VAP incidence was 7.9% in the taurine group and 64.1% in the placebo group. Taurine significantly reduced the dur",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-1398",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1398,
+      "sentence": "The occurrence of septic shock was lower in the taurine group at 5.3%.",
+      "context_window": "ccurrence of septic shock was lower in the taurine group at 5.3%. Stepwise logistic regression showed that placebo receipt w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-p-1566",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1566,
+      "sentence": "Stepwise logistic regression showed that placebo receipt was the only risk factor for VAP, with placebo recipients being 20.8 times more likely to develop VAP. ( P < 0.0001, OR 20.8, 95% CI 6.11-97.93) Taurine treatment also significantly reduced inflammatory markers such as CRP, pro-calcitonin, and interleukin-6 compared to placebo.",
+      "context_window": "o recipients being 20.8 times more likely to develop VAP. ( P < 0.0001, OR 20.8, 95% CI 6.11-97.93) Taurine treatment also signifi",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-ci-1587",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 6.11-97.93",
+      "numeric_values": [
+        6.11,
+        97.93
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1587,
+      "sentence": "Stepwise logistic regression showed that placebo receipt was the only risk factor for VAP, with placebo recipients being 20.8 times more likely to develop VAP. ( P < 0.0001, OR 20.8, 95% CI 6.11-97.93) Taurine treatment also significantly reduced inflammatory markers such as CRP, pro-calcitonin, and interleukin-6 compared to placebo.",
+      "context_window": ".8 times more likely to develop VAP. ( P < 0.0001, OR 20.8, 95% CI 6.11-97.93) Taurine treatment also significantly reduced inflammatory",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-292",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 292,
+      "sentence": "VAP is the second most common infection in pediatric intensive care units (PICUs) and has a high mortality rate of 33% to 71% ( 1 , 2 ).",
+      "context_window": "tensive care units (PICUs) and has a high mortality rate of 33% to 71% ( 1 , 2 ). A study on pediatric cardiac surgery pati",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-299",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 299,
+      "sentence": "VAP is the second most common infection in pediatric intensive care units (PICUs) and has a high mortality rate of 33% to 71% ( 1 , 2 ).",
+      "context_window": "care units (PICUs) and has a high mortality rate of 33% to 71% ( 1 , 2 ). A study on pediatric cardiac surgery patients in",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-u-436",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 days",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 436,
+      "sentence": "A study on pediatric cardiac surgery patients in India found that VAP increased the duration of mechanical ventilation by 3.7 days, resulting in an estimated cost of $11,897 per episode ( 3 ).",
+      "context_window": "hat VAP increased the duration of mechanical ventilation by 3.7 days, resulting in an estimated cost of $11,897 per episode ( 3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-319",
+      "claim_type": "percentage",
+      "raw_text": "25.4%",
+      "numeric_values": [
+        25.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 319,
+      "sentence": "In our study, we observed that 25.4% of patients developed VAP.",
+      "context_window": "g agent for preventing VAP. In our study, we observed that 25.4% of patients developed VAP. Based on a recent review article",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-477",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 477,
+      "sentence": "Based on a recent review article in 2022, pediatric studies worldwide have reported a variable incidence of VAP ranging from 2%-35% among mechanically ventilated patients in PICUs ( 5 ).",
+      "context_window": "wide have reported a variable incidence of VAP ranging from 2%-35% among mechanically ventilated patients in PICUs ( 5 ).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-480",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 480,
+      "sentence": "Based on a recent review article in 2022, pediatric studies worldwide have reported a variable incidence of VAP ranging from 2%-35% among mechanically ventilated patients in PICUs ( 5 ).",
+      "context_window": "e have reported a variable incidence of VAP ranging from 2%-35% among mechanically ventilated patients in PICUs ( 5 ). Disc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-917",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 917,
+      "sentence": "Also, VAP can lengthen hospitalizations by up to two days and raise the risk of death by as much as 14%, especially in those with pre-existing health issues ( 13 ).",
+      "context_window": "by up to two days and raise the risk of death by as much as 14%, especially in those with pre-existing health issues ( 13 )",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-2136",
+      "claim_type": "percentage",
+      "raw_text": "44.12%",
+      "numeric_values": [
+        44.12
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2136,
+      "sentence": "A recent randomized controlled trial conducted by Roshanzamiri et al. has shown that daily use of a probiotic containing Limosilactobacillus reuteri during hospitalization in the PICU reduced the incidence of VAP in the probiotic group compared to the placebo group significantly (44.12% VS 21.05%) ( 6 ).",
+      "context_window": "robiotic group compared to the placebo group significantly (44.12% VS 21.05%) ( 6 ). Our research had even more significant re",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-pct-2146",
+      "claim_type": "percentage",
+      "raw_text": "21.05%",
+      "numeric_values": [
+        21.05
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2146,
+      "sentence": "A recent randomized controlled trial conducted by Roshanzamiri et al. has shown that daily use of a probiotic containing Limosilactobacillus reuteri during hospitalization in the PICU reduced the incidence of VAP in the probiotic group compared to the placebo group significantly (44.12% VS 21.05%) ( 6 ).",
+      "context_window": "roup compared to the placebo group significantly (44.12% VS 21.05%) ( 6 ). Our research had even more significant results than",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-u-3214",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/kg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3214,
+      "sentence": "In a study by Tapan M Bhavsar et al., Syrian hamsters with LPS-induced lung inflammation used a single dose of taurine (50 mg/kg/day).",
+      "context_window": "PS-induced lung inflammation used a single dose of taurine (50 mg/kg/day). They demonstrated protective properties against inflammat",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-u-7141",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7141,
+      "sentence": "Moreover, a trial conducted among type 2 diabetes mellitus patients demonstrated that supplementation with 1,000 mg of taurine for eight weeks positively affected oxidative stress status ( 59 ), aligning with the results of the research above.\n\n`Various factors in mechanically ventilated patients weaken the immune system and increase the risk of VAP, including critical illness, comorbidities ( 60 ), malnutrition ( 61 ), decreased cough reflex due to endotracheal intubation ( 62 ), and direct access for bacteria to move from the upper to the lower respiratory tract ( 63 , 64 ).",
+      "context_window": "mellitus patients demonstrated that supplementation with 1,000 mg of taurine for eight weeks positively affected oxidative st",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-u-8013",
+      "claim_type": "unit_value",
+      "raw_text": "9 days",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8013,
+      "sentence": "In contrast to a previous study where patients were ventilated for an average of 9 days, our study found an average duration of 4 days ( 6 ).",
+      "context_window": "ious study where patients were ventilated for an average of 9 days, our study found an average duration of 4 days ( 6 ). Furth",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757258_effect_of_taurine_supplementation_on_preventing_ventilator_a-u-8060",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8060,
+      "sentence": "In contrast to a previous study where patients were ventilated for an average of 9 days, our study found an average duration of 4 days ( 6 ).",
+      "context_window": "n average of 9 days, our study found an average duration of 4 days ( 6 ). Furthermore, research has indicated that patients wi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

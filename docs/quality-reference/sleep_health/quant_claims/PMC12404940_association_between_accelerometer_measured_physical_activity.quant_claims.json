@@ -1,0 +1,1160 @@
+{
+  "paper_id": "PMC12404940_association_between_accelerometer_measured_physical_activity",
+  "doi": "10.3389/fpubh.2025.1635020",
+  "extracted_at": "2026-05-08T20:05:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 14,
+    "p_value": 24,
+    "unit_value": 6,
+    "sample_size": 8,
+    "confidence_interval": 10,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-687",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 687,
+      "sentence": "The machine learning interpretability process involved dividing a 20% internal validation test set, using the grid search method and five-fold cross-validation to construct RF, GBDT, XGBoost, and LightGBM models, as well as a two-layer stacked ensemble model for model comparison, with external validation of the optimal model\u2019s performance.",
+      "context_window": "chine learning interpretability process involved dividing a 20% internal validation test set, using the grid search method",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-1262",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1262,
+      "sentence": "Among the constructed models, GBDT performed best, with internal validation AUC = 0.859 (0.821-0.897, p < 0.001) and external validation AUC = 0.707 (0.690-0.730, p < 0.001).",
+      "context_window": "ed best, with internal validation AUC = 0.859 (0.821-0.897, p < 0.001) and external validation AUC = 0.707 (0.690-0.730, p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-1323",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1323,
+      "sentence": "Among the constructed models, GBDT performed best, with internal validation AUC = 0.859 (0.821-0.897, p < 0.001) and external validation AUC = 0.707 (0.690-0.730, p < 0.001).",
+      "context_window": "< 0.001) and external validation AUC = 0.707 (0.690-0.730, p < 0.001). SHAP analysis results indicated that physical activity vo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-1245",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1245,
+      "sentence": "Notably, those engaging in leisure walking exhibit a 34% higher probability of achieving adequate sleep duration compared to non-walkers ( 10 ).",
+      "context_window": "( 9 ). Notably, those engaging in leisure walking exhibit a 34% higher probability of achieving adequate sleep duration com",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-u-2326",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2326,
+      "sentence": "For example, the correlation between self-reported MVPA time and accelerometer-measured MVPA time was only 0.4 among adults aged 65 years or older ( 12 ).",
+      "context_window": "lerometer-measured MVPA time was only 0.4 among adults aged 65 years or older ( 12 ). Moreover, unlike exercise, which is a stru",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 665,
+      "sentence": "We focused on adults aged 60 years or older and applied the following exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data ( n = 863), and individuals missing key covariates including household income, marital status, BMI, smoking status, and alcohol use status ( n = 372).",
+      "context_window": "lete activity monitoring records. We focused on adults aged 60 years or older and applied the following exclusion criteria: part",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-u-755",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 755,
+      "sentence": "We focused on adults aged 60 years or older and applied the following exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data ( n = 863), and individuals missing key covariates including household income, marital status, BMI, smoking status, and alcohol use status ( n = 372).",
+      "context_window": "the following exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data (",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-766",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 766,
+      "sentence": "We focused on adults aged 60 years or older and applied the following exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data ( n = 863), and individuals missing key covariates including household income, marital status, BMI, smoking status, and alcohol use status ( n = 372).",
+      "context_window": "ng exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data ( n = 863)",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-824",
+      "claim_type": "sample_size",
+      "raw_text": "n = 863",
+      "numeric_values": [
+        863.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 824,
+      "sentence": "We focused on adults aged 60 years or older and applied the following exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data ( n = 863), and individuals missing key covariates including household income, marital status, BMI, smoking status, and alcohol use status ( n = 372).",
+      "context_window": "( n = 16,299), those with insufficient accelerometer data ( n = 863), and individuals missing key covariates including househol",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-963",
+      "claim_type": "sample_size",
+      "raw_text": "n = 372",
+      "numeric_values": [
+        372.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 963,
+      "sentence": "We focused on adults aged 60 years or older and applied the following exclusion criteria: participants younger than 60 years ( n = 16,299), those with insufficient accelerometer data ( n = 863), and individuals missing key covariates including household income, marital status, BMI, smoking status, and alcohol use status ( n = 372).",
+      "context_window": "rital status, BMI, smoking status, and alcohol use status ( n = 372). The final derivation cohort comprised 2,397 eligible part",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-u-1045",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1045,
+      "sentence": "The final derivation cohort comprised 2,397 eligible participants aged \u226560 years.",
+      "context_window": "rivation cohort comprised 2,397 eligible participants aged \u226560 years. External validation was performed using NHANES 2005-2006",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-1120",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1120,
+      "sentence": "External validation was performed using NHANES 2005-2006 data ( N = 10,348) through temporal validation ( 15 , 16 ).",
+      "context_window": "rnal validation was performed using NHANES 2005-2006 data ( N = 10,348) through temporal validation ( 15 , 16 ). This validati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-u-1408",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1408,
+      "sentence": "Exclusion criteria mirrored the derivation phase: participants younger than 60 years ( n = 8,778), those with missing accelerometer data ( n = 328), and cases with incomplete covariate data ( n = 169).",
+      "context_window": "ia mirrored the derivation phase: participants younger than 60 years ( n = 8,778), those with missing accelerometer data ( n = 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-1419",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1419,
+      "sentence": "Exclusion criteria mirrored the derivation phase: participants younger than 60 years ( n = 8,778), those with missing accelerometer data ( n = 328), and cases with incomplete covariate data ( n = 169).",
+      "context_window": "the derivation phase: participants younger than 60 years ( n = 8,778), those with missing accelerometer data ( n = 328), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-1471",
+      "claim_type": "sample_size",
+      "raw_text": "n = 328",
+      "numeric_values": [
+        328.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1471,
+      "sentence": "Exclusion criteria mirrored the derivation phase: participants younger than 60 years ( n = 8,778), those with missing accelerometer data ( n = 328), and cases with incomplete covariate data ( n = 169).",
+      "context_window": "years ( n = 8,778), those with missing accelerometer data ( n = 328), and cases with incomplete covariate data ( n = 169). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-1524",
+      "claim_type": "sample_size",
+      "raw_text": "n = 169",
+      "numeric_values": [
+        169.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1524,
+      "sentence": "Exclusion criteria mirrored the derivation phase: participants younger than 60 years ( n = 8,778), those with missing accelerometer data ( n = 328), and cases with incomplete covariate data ( n = 169).",
+      "context_window": "data ( n = 328), and cases with incomplete covariate data ( n = 169). The validation cohort ultimately included 1,073 participa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-5327",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5327,
+      "sentence": "To mitigate the influence of extreme values, we applied 1% winsorization to both tails of the distribution.",
+      "context_window": "me. To mitigate the influence of extreme values, we applied 1% winsorization to both tails of the distribution. The study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-u-6506",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 6506,
+      "sentence": "Alcohol drinkers (0 = non-drinker, 1 = drinker) were determined based on affirmative responses to the question: \u201cDuring any 1 year, have you had at least 12 drinks of any type of alcoholic beverage?\" ( 21 ).",
+      "context_window": "based on affirmative responses to the question: \u201cDuring any 1 year, have you had at least 12 drinks of any type of alcoholic b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-7462",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7462,
+      "sentence": "Variables showing p < 0.05 in univariate analyses were subsequently incorporated into four machine learning algorithms: Random Forest (RF), Gradient Boosting Decision Tree (GBDT), eXtreme Gradient Boosting (XGBoost), and Light Gradient Boosting Machine (LightGBM).",
+      "context_window": "re developed to verify result robustness. Variables showing p < 0.05 in univariate analyses were subsequently incorporated into",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-165",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 165,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "sented in Table 1 . Statistically significant differences ( p < 0.05) were observed between the groups for the following variabl",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-243",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "erved between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p <",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-261",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 261,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-290",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 290,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "ables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital s",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-308",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 308,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": ".001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001)",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-338",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 338,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-367",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 367,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-398",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 398,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-427",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 427,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physica",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-461",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 461,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001). Th",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-516",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 516,
+      "sentence": "Statistically significant differences ( p < 0.05) were observed between the groups for the following variables: age ( p < 0.001), sex ( p < 0.001), race/ethnicity ( p < 0.001), BMI ( p < 0.001), education level ( p < 0.001), marital status ( p < 0.001), household income ( p < 0.001), smoking status ( p < 0.001), alcohol consumption ( p < 0.001), and total daily physical activity volume ( p < 0.001).",
+      "context_window": "on ( p < 0.001), and total daily physical activity volume ( p < 0.001). The comparison of baseline characteristics between groups",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-805",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 805,
+      "sentence": "Table 2 presents the odds ratios (ORs) and 95% confidence intervals (CIs) for the association between total physical activity volume and sleep duration.",
+      "context_window": "ANES 2011-2014. Table 2 presents the odds ratios (ORs) and 95% confidence intervals (CIs) for the association between tota",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-960",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.000524-1.000525",
+      "numeric_values": [
+        1.000524,
+        1.000525
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 960,
+      "sentence": "The crude analysis showed an OR of 1.000525 (95% CI: 1.000524-1.000525).",
+      "context_window": "leep duration. The crude analysis showed an OR of 1.000525 (95% CI: 1.000524-1.000525). After adjustment for age and race/ethnicity, the OR for a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-1085",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.000539-1.000539",
+      "numeric_values": [
+        1.000539,
+        1.000539
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1085,
+      "sentence": "After adjustment for age and race/ethnicity, the OR for appropriate sleep duration was 1.000539 (95% CI: 1.000539-1.000539).",
+      "context_window": "nicity, the OR for appropriate sleep duration was 1.000539 (95% CI: 1.000539-1.000539). Further adjustment for additional covariates including BM",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-1258",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.000563-1.000564",
+      "numeric_values": [
+        1.000563,
+        1.000564
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1258,
+      "sentence": "Further adjustment for additional covariates including BMI, household income, smoking status, and alcohol consumption yielded an OR of 1.000563 (95% CI: 1.000563-1.000564), with all models showing statistical significance ( p < 0.001).",
+      "context_window": "status, and alcohol consumption yielded an OR of 1.000563 (95% CI: 1.000563-1.000564), with all models showing statistical significance ( p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-1337",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1337,
+      "sentence": "Further adjustment for additional covariates including BMI, household income, smoking status, and alcohol consumption yielded an OR of 1.000563 (95% CI: 1.000563-1.000564), with all models showing statistical significance ( p < 0.001).",
+      "context_window": "000564), with all models showing statistical significance ( p < 0.001). Furthermore, interpreting the odds ratio in the context o",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-2492",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2492,
+      "sentence": "Odds ratios (95% CI) of sleep duration by physical activity levels.",
+      "context_window": "ation. The calculation formula is as follows. Odds ratios (95% CI) of sleep duration by physical activity levels. OR, odd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-2972",
+      "claim_type": "percentage",
+      "raw_text": "20.8%",
+      "numeric_values": [
+        20.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2972,
+      "sentence": "Finally, to ensure the robustness of our findings, we conducted sensitivity analyses by redefining appropriate sleep duration as 7-8 h (representing 20.8% of the total sample) as the positive outcome.",
+      "context_window": "edefining appropriate sleep duration as 7-8 h (representing 20.8% of the total sample) as the positive outcome. After perform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-or-a-3311",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.000207",
+      "numeric_values": [
+        1.000207
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3311,
+      "sentence": "After performing weighted multivariate logistic regression using the same analytical pipeline, the sensitivity results remained consistent with our primary findings, demonstrating a positive association between physical activity volume and the probability of appropriate sleep duration (OR = 1.000207, p < 0.001).",
+      "context_window": "y volume and the probability of appropriate sleep duration (OR = 1.000207, p < 0.001). These results demonstrate that higher physica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-3326",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3326,
+      "sentence": "After performing weighted multivariate logistic regression using the same analytical pipeline, the sensitivity results remained consistent with our primary findings, demonstrating a positive association between physical activity volume and the probability of appropriate sleep duration (OR = 1.000207, p < 0.001).",
+      "context_window": "e probability of appropriate sleep duration (OR = 1.000207, p < 0.001). These results demonstrate that higher physical activity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-3678",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3678,
+      "sentence": "The predictive model for sleep duration classification was constructed using 10 variables identified as significant ( p < 0.05) in univariate analyses as input features, with continued application of WTMEC2YR weighting.",
+      "context_window": "constructed using 10 variables identified as significant ( p < 0.05) in univariate analyses as input features, with continued a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-4049",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4049,
+      "sentence": "The dataset was partitioned into training (80%) and independent test (20%) sets while preserving the weighted survey design.",
+      "context_window": "label encoding. The dataset was partitioned into training (80%) and independent test (20%) sets while preserving the weigh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-4076",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4076,
+      "sentence": "The dataset was partitioned into training (80%) and independent test (20%) sets while preserving the weighted survey design.",
+      "context_window": "t was partitioned into training (80%) and independent test (20%) sets while preserving the weighted survey design. For hyp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-n-4881",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4881,
+      "sentence": "As shown in Table 4 , bootstrap resampling ( n = 100 iterations) was employed for model performance evaluation.",
+      "context_window": "ch algorithm. As shown in Table 4 , bootstrap resampling ( n = 100 iterations) was employed for model performance evaluation.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-5063",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.800-0.896",
+      "numeric_values": [
+        0.8,
+        0.896
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5063,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-5084",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5084,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-5115",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.821-0.897",
+      "numeric_values": [
+        0.821,
+        0.897
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5115,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-5136",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5136,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-5170",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.813-0.893",
+      "numeric_values": [
+        0.813,
+        0.893
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5170,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-5191",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5191,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-5230",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.807-0.883",
+      "numeric_values": [
+        0.807,
+        0.883
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5230,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001). These results indicate excellent discriminativ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-5251",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5251,
+      "sentence": "The results demonstrated that all four models achieved AUC values exceeding 0.80 on the test set: RF (AUC = 0.851, 95% CI: 0.800-0.896, p < 0.001), GBDT (AUC = 0.859, 95% CI: 0.821-0.897, p < 0.001), XGBoost (AUC = 0.852, 95% CI: 0.813-0.893, p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001).",
+      "context_window": "p < 0.001), and LightGBM (AUC = 0.847, 95% CI: 0.807-0.883, p < 0.001). These results indicate excellent discriminative ability i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-5724",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.790-0.871",
+      "numeric_values": [
+        0.79,
+        0.871
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5724,
+      "sentence": "The ensemble model achieved an AUC of 0.837 (95% CI: 0.790-0.871, p < 0.001), which was slightly lower than the standalone GBDT model (\u0394AUC = 0.022).",
+      "context_window": "base-learners. The ensemble model achieved an AUC of 0.837 (95% CI: 0.790-0.871, p < 0.001), which was slightly lower than the standalone G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-5745",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5745,
+      "sentence": "The ensemble model achieved an AUC of 0.837 (95% CI: 0.790-0.871, p < 0.001), which was slightly lower than the standalone GBDT model (\u0394AUC = 0.022).",
+      "context_window": "semble model achieved an AUC of 0.837 (95% CI: 0.790-0.871, p < 0.001), which was slightly lower than the standalone GBDT model (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-6572",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6572,
+      "sentence": "ROC curve of the machine learning model on the test set (95% CI).",
+      "context_window": ". ROC curve of the machine learning model on the test set (95% CI). To further assess model stability and technical robus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-7180",
+      "claim_type": "percentage",
+      "raw_text": "0.26%",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7180,
+      "sentence": "The analysis revealed remarkable parameter stability, with the model achieving a mean AUC of 0.8641 and a standard deviation of merely 0.0023, corresponding to a negligible coefficient of variation of 0.26%.",
+      "context_window": ", corresponding to a negligible coefficient of variation of 0.26%. The AUC values remained consistently high across all teste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-7327",
+      "claim_type": "percentage",
+      "raw_text": "0.93%",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7327,
+      "sentence": "The AUC values remained consistently high across all tested configurations, ranging from 0.8585 to 0.8678 with a minimal total variation of 0.93%.",
+      "context_window": "ing from 0.8585 to 0.8678 with a minimal total variation of 0.93%. These findings demonstrate that the model\u2019s predictive per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-7812",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7812,
+      "sentence": "The validation set revealed significant class imbalance between adequate sleep duration (92%) and poor sleep duration (8%).",
+      "context_window": "ignificant class imbalance between adequate sleep duration (92%) and poor sleep duration (8%). To address this imbalance, w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-7842",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7842,
+      "sentence": "The validation set revealed significant class imbalance between adequate sleep duration (92%) and poor sleep duration (8%).",
+      "context_window": "ween adequate sleep duration (92%) and poor sleep duration (8%). To address this imbalance, we implemented the improved SM",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-8566",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.690-0.730",
+      "numeric_values": [
+        0.69,
+        0.73
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8566,
+      "sentence": "Although differences in physical activity measurement units and sleep duration assessment methods between the derivation and validation cohorts might theoretically compromise predictive performance, the validation results demonstrated robust performance: AUC = 0.707 (95% CI: 0.690-0.730) with Borderline-SMOTE balancing and AUC = 0.754 (95% CI: 0.716-0.792) with SMOTE-ENN balancing, indicating stable predictive outcomes.",
+      "context_window": "ation results demonstrated robust performance: AUC = 0.707 (95% CI: 0.690-0.730) with Borderline-SMOTE balancing and AUC = 0.754 (95% CI: 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-ci-8636",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.716-0.792",
+      "numeric_values": [
+        0.716,
+        0.792
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8636,
+      "sentence": "Although differences in physical activity measurement units and sleep duration assessment methods between the derivation and validation cohorts might theoretically compromise predictive performance, the validation results demonstrated robust performance: AUC = 0.707 (95% CI: 0.690-0.730) with Borderline-SMOTE balancing and AUC = 0.754 (95% CI: 0.716-0.792) with SMOTE-ENN balancing, indicating stable predictive outcomes.",
+      "context_window": "690-0.730) with Borderline-SMOTE balancing and AUC = 0.754 (95% CI: 0.716-0.792) with SMOTE-ENN balancing, indicating stable predictive out",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-pct-9130",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9130,
+      "sentence": "Final model external validation ROC curve (95% CI).",
+      "context_window": "leep durations. Final model external validation ROC curve (95% CI). Following model development, we conducted SHAP interp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-272",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "conclusion",
+      "source_offset": 272,
+      "sentence": "This study was the first to explore the relationship between physical activity volume and sleep duration in older adults through objective monitoring data and using the SHAP interpretation of the GBDT model, with excellent generalisation ability AUC = 0.859 (0.821-0.897, p < 0.001) for the internal validation of the model, and continued to maintain good predictive performance on the external validation set AUC = 0.707 (0.690-0.730, p < 0.001).",
+      "context_window": "excellent generalisation ability AUC = 0.859 (0.821-0.897, p < 0.001) for the internal validation of the model, and continued to",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12404940_association_between_accelerometer_measured_physical_activity-p-436",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "conclusion",
+      "source_offset": 436,
+      "sentence": "This study was the first to explore the relationship between physical activity volume and sleep duration in older adults through objective monitoring data and using the SHAP interpretation of the GBDT model, with excellent generalisation ability AUC = 0.859 (0.821-0.897, p < 0.001) for the internal validation of the model, and continued to maintain good predictive performance on the external validation set AUC = 0.707 (0.690-0.730, p < 0.001).",
+      "context_window": "ce on the external validation set AUC = 0.707 (0.690-0.730, p < 0.001). The SHAP bar plot results indicate that physical activit",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

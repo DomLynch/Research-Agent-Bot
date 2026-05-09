@@ -1,0 +1,540 @@
+{
+  "paper_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi",
+  "doi": "10.3390/jcm11237066",
+  "extracted_at": "2026-05-08T20:05:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 20,
+    "percentage": 4,
+    "confidence_interval": 4,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-370",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 370,
+      "sentence": "(1) Background: Hypertensive patients with obstructive sleep apnea (OSA) are at high risk for cardiovascular diseases (CVDs), and the utility of aspirin for primary cardiovascular prevention in this population remains uncertain. (2) Methods: In this retrospective cohort study using data from the Urumchi Hypertension Database (UHDATA), hypertensive patients older than 18 years old with a first-time diagnosis of OSA were divided into three groups depending on aspirin history.",
+      "context_window": "tension Database (UHDATA), hypertensive patients older than 18 years old with a first-time diagnosis of OSA were divided into th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-pct-911",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "The inverse probability of treatment weighting (IPTW) method was used to balance the confounding factors among the groups, and the Cox proportional hazards model was used to calculate the hazard ratio (HR) and 95% confidence interval (CI). (3) Results: In persistent aspirin users, the risk of MACCE events (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.84) was significantly elevated. (4) Conclusions: Continuous aspirin use increases the incidence of cardiovascular adverse events in hypertensive patients with OSA receiving aspirin for primary prevention of cardiovascular disease.",
+      "context_window": "zards model was used to calculate the hazard ratio (HR) and 95% confidence interval (CI). (3) Results: In persistent aspiri",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-ci-1018",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.23-3.63",
+      "numeric_values": [
+        1.23,
+        3.63
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1018,
+      "sentence": "The inverse probability of treatment weighting (IPTW) method was used to balance the confounding factors among the groups, and the Cox proportional hazards model was used to calculate the hazard ratio (HR) and 95% confidence interval (CI). (3) Results: In persistent aspirin users, the risk of MACCE events (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.84) was significantly elevated. (4) Conclusions: Continuous aspirin use increases the incidence of cardiovascular adverse events in hypertensive patients with OSA receiving aspirin for primary prevention of cardiovascular disease.",
+      "context_window": "ersistent aspirin users, the risk of MACCE events (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascul",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-ci-1062",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.42-4.69",
+      "numeric_values": [
+        1.42,
+        4.69
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1062,
+      "sentence": "The inverse probability of treatment weighting (IPTW) method was used to balance the confounding factors among the groups, and the Cox proportional hazards model was used to calculate the hazard ratio (HR) and 95% confidence interval (CI). (3) Results: In persistent aspirin users, the risk of MACCE events (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.84) was significantly elevated. (4) Conclusions: Continuous aspirin use increases the incidence of cardiovascular adverse events in hypertensive patients with OSA receiving aspirin for primary prevention of cardiovascular disease.",
+      "context_window": "vents (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and no",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-ci-1113",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.44-4.51",
+      "numeric_values": [
+        1.44,
+        4.51
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1113,
+      "sentence": "The inverse probability of treatment weighting (IPTW) method was used to balance the confounding factors among the groups, and the Cox proportional hazards model was used to calculate the hazard ratio (HR) and 95% confidence interval (CI). (3) Results: In persistent aspirin users, the risk of MACCE events (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.84) was significantly elevated. (4) Conclusions: Continuous aspirin use increases the incidence of cardiovascular adverse events in hypertensive patients with OSA receiving aspirin for primary prevention of cardiovascular disease.",
+      "context_window": "HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-ci-1175",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.69-5.84",
+      "numeric_values": [
+        1.69,
+        5.84
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1175,
+      "sentence": "The inverse probability of treatment weighting (IPTW) method was used to balance the confounding factors among the groups, and the Cox proportional hazards model was used to calculate the hazard ratio (HR) and 95% confidence interval (CI). (3) Results: In persistent aspirin users, the risk of MACCE events (HR 2.11, 95%CI 1.23-3.63), ischemic events (HR 2.58, 95%CI 1.42-4.69), cerebrovascular events (HR 2.55, 95%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.84) was significantly elevated. (4) Conclusions: Continuous aspirin use increases the incidence of cardiovascular adverse events in hypertensive patients with OSA receiving aspirin for primary prevention of cardiovascular disease.",
+      "context_window": "%CI 1.44-4.51), and non-fatal cerebral infarction (HR 3.14, 95%CI 1.69-5.84) was significantly elevated. (4) Conclusions: Continuous as",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-3152",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3152,
+      "sentence": "Excluded were 141 patients with \u226430 days of follow-up and serious underlying conditions, including liver failure, chronic kidney disease (CKD) stage > 4, advanced malignant tumor, severe chronic obstructive pulmonary disease, respiratory failure, pregnancy, and mental disorder.",
+      "context_window": "scription \u2265 4 times/year). Excluded were 141 patients with \u226430 days of follow-up and serious underlying conditions, including l",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6103",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 years",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6103,
+      "sentence": "Patients in this trial were followed for a maximum of 7.4 years from the index date until the occurrence of the study outcome, death, or the end of follow-up (whichever occurred first).",
+      "context_window": "2022. Patients in this trial were followed for a maximum of 7.4 years from the index date until the occurrence of the study outco",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6969",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6969,
+      "sentence": "Results for end-point occurrences that happened within 30 days of the index date were not recorded to evaluate if they were connected to aspirin consumption.",
+      "context_window": "ata. Results for end-point occurrences that happened within 30 days of the index date were not recorded to evaluate if they wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-pct-7440",
+      "claim_type": "percentage",
+      "raw_text": "6.76%",
+      "numeric_values": [
+        6.76
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7440,
+      "sentence": "In this dataset, missing data accounted for 6.76% of all covariates ( Supplementary Table S1 ).",
+      "context_window": "re unavoidable. In this dataset, missing data accounted for 6.76% of all covariates ( Supplementary Table S1 ). To reduce the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-p-9084",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9084,
+      "sentence": "Data were analyzed using R (version 4.2.1; R Foundation for Statistical Computing, Vienna, Austria) statistical software, all analyses were two-tailed, and p < 0.05 was considered statistically significant.",
+      "context_window": "ia) statistical software, all analyses were two-tailed, and p < 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-205",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 years",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 205,
+      "sentence": "Patients in this trial were followed for a maximum of 7.4 years from the index date until the occurrence of the study outcome, death, or the end of follow-up (whichever occurred first).",
+      "context_window": "2022. Patients in this trial were followed for a maximum of 7.4 years from the index date until the occurrence of the study outco",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-1071",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1071,
+      "sentence": "Results for end-point occurrences that happened within 30 days of the index date were not recorded to evaluate if they were connected to aspirin consumption.",
+      "context_window": "ata. Results for end-point occurrences that happened within 30 days of the index date were not recorded to evaluate if they wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-pct-368",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 368,
+      "sentence": "The 2022 USPSTF Recommendations in the Primary Prevention of Cardiovascular Disease Population state that the net benefit of aspirin use is small in people aged 40 to 59 with a cardiovascular disease risk of > 10%, and it is advised that persons \u2265 60 years old not begin low-dose aspirin for primary prevention of CVDs [ 22 ].",
+      "context_window": "eople aged 40 to 59 with a cardiovascular disease risk of > 10%, and it is advised that persons \u2265 60 years old not begin lo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-406",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 406,
+      "sentence": "The 2022 USPSTF Recommendations in the Primary Prevention of Cardiovascular Disease Population state that the net benefit of aspirin use is small in people aged 40 to 59 with a cardiovascular disease risk of > 10%, and it is advised that persons \u2265 60 years old not begin low-dose aspirin for primary prevention of CVDs [ 22 ].",
+      "context_window": "lar disease risk of > 10%, and it is advised that persons \u2265 60 years old not begin low-dose aspirin for primary prevention of CV",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-836",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 836,
+      "sentence": "Our investigation found that in hypertensive patients with OSA for primary prevention, prolonged aspirin usage was related to an increased risk of MACCE events and that this risk was greater in individuals \u226550 years of age and in patients with mild OSA.",
+      "context_window": "MACCE events and that this risk was greater in individuals \u226550 years of age and in patients with mild OSA. The proportion of is",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-pct-2965",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2965,
+      "sentence": "The results of Scinico et al. indicate that the rate of aspirin resistance in OSA patients is 17% and that the patient\u2019s responsiveness to aspirin has improved following therapy with continuous positive airway pressure (CPAP) [ 28 ].",
+      "context_window": "cate that the rate of aspirin resistance in OSA patients is 17% and that the patient\u2019s responsiveness to aspirin has improv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-3472",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3472,
+      "sentence": "In addition, due to long-term chronic hypoxia, the compensatory increase of red blood cells in patients with OSA and red blood cells will increase the platelet aggregation-promoting effect, resulting in the insufficient reduction of platelet aggregation reactivity despite taking 200-300 mg of aspirin [ 29 ].",
+      "context_window": "ction of platelet aggregation reactivity despite taking 200-300 mg of aspirin [ 29 ]. Additionally, the hemodynamic disturbanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-4262",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 4262,
+      "sentence": "In addition, the dosage of aspirin warrants further examination in light of the aforementioned research findings and perspectives because in the actual world, the majority of hypertensive patients with OSA take low-dose aspirin (75-100 mg/d) for primary CVD protection.",
+      "context_window": "of hypertensive patients with OSA take low-dose aspirin (75-100 mg/d) for primary CVD protection. It is common knowledge that lo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6089",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6089,
+      "sentence": "Second, although the participants in JPPP were of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in this age group than in the older population.",
+      "context_window": "e of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u22657",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6156",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6156,
+      "sentence": "Second, although the participants in JPPP were of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in this age group than in the older population.",
+      "context_window": "s; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 yea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6218",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6218,
+      "sentence": "Second, although the participants in JPPP were of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in this age group than in the older population.",
+      "context_window": "years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6278",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6278,
+      "sentence": "Second, although the participants in JPPP were of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in this age group than in the older population.",
+      "context_window": "65 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6300",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6300,
+      "sentence": "Second, although the participants in JPPP were of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in this age group than in the older population.",
+      "context_window": "ticipants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-6392",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6392,
+      "sentence": "Second, although the participants in JPPP were of Asian ethnicity, the participants in JPPP were aged 60-85 years; the participants in ASPREE were all elderly people aged \u226570 years (including a small number of Latino minorities aged \u226565 years), and the participants in ARRIVE were also older (>55 years for men and >60 years for women); in the present study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in this age group than in the older population.",
+      "context_window": "ent study, the majority of participants were between 40 and 50 years of age, and the risk of bleeding was significantly lower in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-7018",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 years",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7018,
+      "sentence": "However, the median follow-up time in this trial was only 3.5 years, and we do not know if the patient\u2019s risk of bleeding will increase after taking the treatment for a longer period; therefore, extended observation and follow-up are still required.",
+      "context_window": ". However, the median follow-up time in this trial was only 3.5 years, and we do not know if the patient\u2019s risk of bleeding will",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-8113",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8113,
+      "sentence": "In this study, in addition to our finding that aspirin consumption increases the risk of adverse cardiovascular events, we also paid special attention to the risk stratification of patients in different age groups and found that in people aged \u226550 years, primary prevention with aspirin will not be advantageous but will be associated with increased potential risks, particularly the likelihood of ischemic events.",
+      "context_window": "ents in different age groups and found that in people aged \u226550 years, primary prevention with aspirin will not be advantageous b",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-8704",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8704,
+      "sentence": "The USPSTF\u2019s most recent statement lowered the upper age restriction for avoiding aspirin as a primary CVDs preventive medicine to 60 years [ 22 ].",
+      "context_window": "r avoiding aspirin as a primary CVDs preventive medicine to 60 years [ 22 ]. However, unlike our investigation, the population i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9737230_the_use_of_aspirin_increases_the_risk_of_major_adverse_cardi-u-9158",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 9158,
+      "sentence": "Based on our findings, continued aspirin use significantly raised the incidence of MACCE events, ischemic events, cardiac events, cerebrovascular events, and ischemic stroke in individuals \u226550 years old.",
+      "context_window": "cerebrovascular events, and ischemic stroke in individuals \u226550 years old. This shows that the use of aspirin for primary prevent",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

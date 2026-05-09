@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_the_effect_of_beta_blockers_and_aspirin_on_hemostasis_and_en",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_effect_of_beta_blockers_and_aspirin_on_hemostasis_and_en-u-133",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 133,
+      "sentence": "This randomized double-blinded controlled trial uses a factorial design to investigate whether application of beta-blockers (inderal 80 mg) or aspirin (100 mg) or a combination thereof has an effect on the activation of the hemostatic system, the platelets and the endothelium in response to acute mental stress.",
+      "context_window": "o investigate whether application of beta-blockers (inderal 80 mg) or aspirin (100 mg) or a combination thereof has an effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effect_of_beta_blockers_and_aspirin_on_hemostasis_and_en-u-152",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 152,
+      "sentence": "This randomized double-blinded controlled trial uses a factorial design to investigate whether application of beta-blockers (inderal 80 mg) or aspirin (100 mg) or a combination thereof has an effect on the activation of the hemostatic system, the platelets and the endothelium in response to acute mental stress.",
+      "context_window": "er application of beta-blockers (inderal 80 mg) or aspirin (100 mg) or a combination thereof has an effect on the activation o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

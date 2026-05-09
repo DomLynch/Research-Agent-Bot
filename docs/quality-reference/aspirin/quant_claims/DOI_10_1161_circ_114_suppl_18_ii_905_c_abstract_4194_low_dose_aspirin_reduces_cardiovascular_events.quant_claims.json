@@ -1,0 +1,356 @@
+{
+  "paper_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events",
+  "doi": "10.1161/circ.114.suppl_18.ii_905-c",
+  "extracted_at": "2026-05-08T20:05:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 3,
+    "percentage": 9,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-u-417",
+      "claim_type": "unit_value",
+      "raw_text": "325mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 417,
+      "sentence": "However, in that analysis, stable and unstable patients were grouped together, all anti-platelet agents were combined and most of the aspirin studies used a dose higher than currently recommended (>325mg/day).",
+      "context_window": "rin studies used a dose higher than currently recommended (>325mg/day). The effect of low-dose aspirin (50-325mg/day) in patients",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-u-464",
+      "claim_type": "unit_value",
+      "raw_text": "325mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 464,
+      "sentence": "The effect of low-dose aspirin (50-325mg/day) in patients with stable cardiovascular disease has not been reported. </jats:p> <jats:p> <jats:bold>Methods:</jats:bold> Secondary prevention trials of low-dose aspirin in patients with stable cardiovascular disease were identified by searches of the MEDLINE database from 1966 to 2006.",
+      "context_window": "ecommended (>325mg/day). The effect of low-dose aspirin (50-325mg/day) in patients with stable cardiovascular disease has not bee",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-n-864",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "Six randomized trials were identified that enrolled patients with a history of myocardial infarction (n=1), stable angina (n=1) and a stroke or transient ischemic attack (n=4).",
+      "context_window": "enrolled patients with a history of myocardial infarction (n=1), stable angina (n=1) and a stroke or transient ischemic at",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-n-885",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 885,
+      "sentence": "Six randomized trials were identified that enrolled patients with a history of myocardial infarction (n=1), stable angina (n=1) and a stroke or transient ischemic attack (n=4).",
+      "context_window": "th a history of myocardial infarction (n=1), stable angina (n=1) and a stroke or transient ischemic attack (n=4). A random",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-n-933",
+      "claim_type": "sample_size",
+      "raw_text": "n=4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "Six randomized trials were identified that enrolled patients with a history of myocardial infarction (n=1), stable angina (n=1) and a stroke or transient ischemic attack (n=4).",
+      "context_window": "ble angina (n=1) and a stroke or transient ischemic attack (n=4). A random effects model was used to combine results from i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1167",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "patients. Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal M",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1299",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1299,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "tal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-p-1340",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1340,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "s Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95%",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1349",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1349,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1402",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of strok",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-p-1422",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1422,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1431",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1431,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "isk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1478",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1478,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-p-1498",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1498,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "uction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1512",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1512,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95%",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1572",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1572,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 3",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-p-1592",
+      "claim_type": "p_value",
+      "raw_text": "P=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1592,
+      "sentence": "Aspirin therapy was associated with a significant 21% reduction in the risk of cardiovascular events (non-fatal MI, non-fatal stroke and cardiovascular death) (Odds Ratio (OR) 0.79, 95% Confidence Interval (CI) 0.72- 0.88, P<0.01), 26% reduction in the risk of non-fatal MI (OR, 0.74, 95% CI, 0.60- 0.91, P<0.01), 25% reduction in the risk of stroke (OR, 0.75, 95% CI, 0.65- 0.87, P<0.01) and a 13% reduction in the risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dose aspirin is required to prevent 1 cardiovascular event, 83 patients to prevent 1 non-fatal MI, 40 patients to prevent 1 stroke and 71 patients to prevent 1 death.",
+      "context_window": "risk of all-cause mortality (OR, 0.87, 95% CI, 0.76- 0.98, P=0.03).Based on these data, treatment of 30 patients with low-dos",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-pct-1923",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1923,
+      "sentence": "Patients treated with aspirin were significantly more likely to experience severe bleeding (OR, 2.2, 95% CI, 1.4-3.4, P<0.01).",
+      "context_window": "icantly more likely to experience severe bleeding (OR, 2.2, 95% CI, 1.4-3.4, P<0.01). The number needed to harm from severe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_114_suppl_18_ii_905_c_abstract_4194_low_dose_aspirin_reduces_cardiovascular_events-p-1940",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1940,
+      "sentence": "Patients treated with aspirin were significantly more likely to experience severe bleeding (OR, 2.2, 95% CI, 1.4-3.4, P<0.01).",
+      "context_window": "ly to experience severe bleeding (OR, 2.2, 95% CI, 1.4-3.4, P<0.01). The number needed to harm from severe bleeding is 111 pat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

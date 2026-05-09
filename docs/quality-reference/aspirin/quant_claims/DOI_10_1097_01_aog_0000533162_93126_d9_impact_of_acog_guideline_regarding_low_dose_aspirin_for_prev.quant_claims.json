@@ -1,0 +1,250 @@
+{
+  "paper_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev",
+  "doi": "10.1097/01.aog.0000533162.93126.d9",
+  "extracted_at": "2026-05-08T20:05:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 9,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-u-721",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 721,
+      "sentence": "We offered daily 81 mg aspirin.",
+      "context_window": "before and after the ACOG recommendation. We offered daily 81 mg aspirin. The cohort was stratified by other risk factors fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1237",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1237,
+      "sentence": "The incidence of SIP in all women with CHTN was 20 (25%) vs 232 (37%), OR 0.43 (95% CI 0.26-0.73).",
+      "context_window": "tients. The incidence of SIP in all women with CHTN was 20 (25%) vs 232 (37%), OR 0.43 (95% CI 0.26-0.73). SIP and SIPSF we",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1250",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1250,
+      "sentence": "The incidence of SIP in all women with CHTN was 20 (25%) vs 232 (37%), OR 0.43 (95% CI 0.26-0.73).",
+      "context_window": "ncidence of SIP in all women with CHTN was 20 (25%) vs 232 (37%), OR 0.43 (95% CI 0.26-0.73). SIP and SIPSF were significan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-ci-1265",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.26-0.73",
+      "numeric_values": [
+        0.26,
+        0.73
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1265,
+      "sentence": "The incidence of SIP in all women with CHTN was 20 (25%) vs 232 (37%), OR 0.43 (95% CI 0.26-0.73).",
+      "context_window": "in all women with CHTN was 20 (25%) vs 232 (37%), OR 0.43 (95% CI 0.26-0.73). SIP and SIPSF were significantly decreased in the subgrou",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1396",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1396,
+      "sentence": "SIP and SIPSF were significantly decreased in the subgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "context_window": "bgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1413",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "SIP and SIPSF were significantly decreased in the subgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "context_window": "ith CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-ci-1428",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.08-0.73",
+      "numeric_values": [
+        0.08,
+        0.73
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1428,
+      "sentence": "SIP and SIPSF were significantly decreased in the subgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "context_window": "t other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "SIP and SIPSF were significantly decreased in the subgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "context_window": "0%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1472",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1472,
+      "sentence": "SIP and SIPSF were significantly decreased in the subgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "context_window": "(30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively. Maternal demogr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-ci-1487",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.54-0.97",
+      "numeric_values": [
+        0.54,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1487,
+      "sentence": "SIP and SIPSF were significantly decreased in the subgroup of women with CHTN without other risk factors: 4/41 (10%) vs 106/355 (30%), OR 0.25 (95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively.",
+      "context_window": "(95% CI 0.08-0.73); and 2/41 (5%) vs 65/355 (18%), OR 0.22 (95% CI 0.54-0.97), respectively. Maternal demographics and secondary outcome",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1736",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1736,
+      "sentence": "Maternal demographics and secondary outcomes were not significantly different.</jats:p> </jats:sec> <jats:sec> <jats:title>CONCLUSION:</jats:title> <jats:p>After the ACOG guideline, low dose aspirin decreased SIP by 57% in all women with CHTN.",
+      "context_window": "After the ACOG guideline, low dose aspirin decreased SIP by 57% in all women with CHTN. The benefit was higher in women wit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1852",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1852,
+      "sentence": "The benefit was higher in women with CHTN without other risk factors, with decreases of 75% in SIP and 78% in SIPSF.</jats:p> </jats:sec>",
+      "context_window": "men with CHTN without other risk factors, with decreases of 75% in SIP and 78% in SIPSF.</jats:p> </jats:sec>",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000533162_93126_d9_impact_of_acog_guideline_regarding_low_dose_aspirin_for_prev-pct-1867",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1867,
+      "sentence": "The benefit was higher in women with CHTN without other risk factors, with decreases of 75% in SIP and 78% in SIPSF.</jats:p> </jats:sec>",
+      "context_window": "ithout other risk factors, with decreases of 75% in SIP and 78% in SIPSF.</jats:p> </jats:sec>",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

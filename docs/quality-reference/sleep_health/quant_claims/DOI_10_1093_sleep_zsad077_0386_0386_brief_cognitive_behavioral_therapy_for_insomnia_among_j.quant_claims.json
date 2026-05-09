@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j",
+  "doi": "10.1093/sleep/zsad077.0386",
+  "extracted_at": "2026-05-08T20:05:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 1,
+    "correlation": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-n-753",
+      "claim_type": "sample_size",
+      "raw_text": "N = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 753,
+      "sentence": "Occupational therapy and physical therapy students (N = 18) in a university with self-reported sleep disturbances (Insomnia Severity Index; ISI score \u2265 9) were offered 90-minutes of sleep education (e.g., two-process model of sleep regulation, stimulus control, and sleep hygiene) then prescribed personalized sleep restriction therapy (SRT) and stimulus control therapy (SCT) goals based upon 10-days of sleep diary data.",
+      "context_window": "SHUSH. Occupational therapy and physical therapy students (N = 18) in a university with self-reported sleep disturbances (Ins",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-u-1780",
+      "claim_type": "unit_value",
+      "raw_text": "19.7 years",
+      "numeric_values": [
+        19.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1780,
+      "sentence": "Dependent t-tests (d) and Wilcoxon rank sum tests (r) were used to test differences between baseline and posttest assessments.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>There were 15 students who completed SHUSH with a mean age of 19.7 years; 9 were women.",
+      "context_window": "ere were 15 students who completed SHUSH with a mean age of 19.7 years; 9 were women. Improvements were found in sleep disturbance",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-corr-1851",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.843)",
+      "numeric_values": [
+        0.843
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1851,
+      "sentence": "Improvements were found in sleep disturbance (r = 0.843), sleep quality (r = 0.851), daytime sleepiness (d = 0.762), sleep hygiene practice (d = 1.216) and change from an eveningness towards a morningness circadian preference (d = 0.990).",
+      "context_window": "9 were women. Improvements were found in sleep disturbance (r = 0.843), sleep quality (r = 0.851), daytime sleepiness (d = 0.762),",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-corr-1878",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.851)",
+      "numeric_values": [
+        0.851
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1878,
+      "sentence": "Improvements were found in sleep disturbance (r = 0.843), sleep quality (r = 0.851), daytime sleepiness (d = 0.762), sleep hygiene practice (d = 1.216) and change from an eveningness towards a morningness circadian preference (d = 0.990).",
+      "context_window": "were found in sleep disturbance (r = 0.843), sleep quality (r = 0.851), daytime sleepiness (d = 0.762), sleep hygiene practice (d",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-corr-2122",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.851)",
+      "numeric_values": [
+        0.851
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2122,
+      "sentence": "Sleep onset latency (r = 0.851), nighttime awakening (r = 0.514), and sleep efficiency (r = 0.880) also improved.",
+      "context_window": "4) and depression (d = 0.729) improved. Sleep onset latency (r = 0.851), nighttime awakening (r = 0.514), and sleep efficiency (r =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-corr-2155",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.514)",
+      "numeric_values": [
+        0.514
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2155,
+      "sentence": "Sleep onset latency (r = 0.851), nighttime awakening (r = 0.514), and sleep efficiency (r = 0.880) also improved.",
+      "context_window": "roved. Sleep onset latency (r = 0.851), nighttime awakening (r = 0.514), and sleep efficiency (r = 0.880) also improved. Participan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0386_0386_brief_cognitive_behavioral_therapy_for_insomnia_among_j-corr-2189",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.880)",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2189,
+      "sentence": "Sleep onset latency (r = 0.851), nighttime awakening (r = 0.514), and sleep efficiency (r = 0.880) also improved.",
+      "context_window": "851), nighttime awakening (r = 0.514), and sleep efficiency (r = 0.880) also improved. Participants were satisfied with the SHUSH g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

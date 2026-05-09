@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai",
   "doi": "10.1371/journal.pmed.1003012",
-  "extracted_at": "2026-05-05T21:43:40+00:00",
+  "extracted_at": "2026-05-08T20:12:29+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 17,
@@ -25,9 +25,9 @@
       "context_window": "ps in the Baltimore Longitudinal Study of Aging (BLSA) (AD: n = 17; Asymptomatic AD [ASY]: n = 13; Control [CN]: n = 13) (over",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-n-684",
@@ -43,9 +43,9 @@
       "context_window": "l Study of Aging (BLSA) (AD: n = 17; Asymptomatic AD [ASY]: n = 13; Control [CN]: n = 13) (overall 37.2% female; mean age at d",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-n-706",
@@ -61,9 +61,9 @@
       "context_window": ") (AD: n = 17; Asymptomatic AD [ASY]: n = 13; Control [CN]: n = 13) (overall 37.2% female; mean age at death 86.118 \u00b1 9.842 ye",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-pct-723",
@@ -79,9 +79,9 @@
       "context_window": "ymptomatic AD [ASY]: n = 13; Control [CN]: n = 13) (overall 37.2% female; mean age at death 86.118 \u00b1 9.842 years) in regions",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-msd-755",
@@ -98,9 +98,9 @@
       "context_window": "trol [CN]: n = 13) (overall 37.2% female; mean age at death 86.118 \u00b1 9.842 years) in regions both vulnerable and resistant to AD patho",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-u-764",
@@ -116,9 +116,9 @@
       "context_window": ": n = 13) (overall 37.2% female; mean age at death 86.118 \u00b1 9.842 years) in regions both vulnerable and resistant to AD pathology.",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-p-1518",
@@ -134,7 +134,7 @@
       "context_window": "eactions in the (1) methionine cycle (choline: lower in AD, p = 0.003; S-adenosyl methionine: higher in AD, p = 0.005); (2) trans",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -152,7 +152,7 @@
       "context_window": "ower in AD, p = 0.003; S-adenosyl methionine: higher in AD, p = 0.005); (2) transsulfuration and glutathione synthesis (cysteine:",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -170,7 +170,7 @@
       "context_window": "furation and glutathione synthesis (cysteine: higher in AD, p < 0.001; reduced glutathione [GSH]: higher in AD, p < 0.001); (3) p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -188,7 +188,7 @@
       "context_window": "in AD, p < 0.001; reduced glutathione [GSH]: higher in AD, p < 0.001); (3) polyamine synthesis/catabolism (spermidine: higher in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -206,7 +206,7 @@
       "context_window": ") polyamine synthesis/catabolism (spermidine: higher in AD, p = 0.004); (4) urea cycle (N-acetyl glutamate: lower in AD, p < 0.00",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -224,7 +224,7 @@
       "context_window": "= 0.004); (4) urea cycle (N-acetyl glutamate: lower in AD, p < 0.001); (5) glutamate-aspartate metabolism (N-acetyl aspartate: l",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -242,7 +242,7 @@
       "context_window": "mate-aspartate metabolism (N-acetyl aspartate: lower in AD, p = 0.002); and (6) neurotransmitter metabolism (gamma-amino-butyric",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -260,7 +260,7 @@
       "context_window": "nsmitter metabolism (gamma-amino-butyric acid: lower in AD, p < 0.001). Utilizing three Gene Expression Omnibus (GEO) datasets, w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -367,10 +367,10 @@
       "sentence": "Autopsy participants were classified within three groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C).",
       "context_window": "e groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive im",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-u-1267",
@@ -385,10 +385,10 @@
       "sentence": "Autopsy participants were classified within three groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C).",
       "context_window": "ther AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B o",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-n-1367",
@@ -403,10 +403,10 @@
       "sentence": "Autopsy participants were classified within three groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C).",
       "context_window": "ore of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pa",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-u-1403",
@@ -421,10 +421,10 @@
       "sentence": "Autopsy participants were classified within three groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C).",
       "context_window": "rol (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-n-1513",
@@ -439,10 +439,10 @@
       "sentence": "Autopsy participants were classified within three groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C).",
       "context_window": "e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pa",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-u-1549",
@@ -457,10 +457,10 @@
       "sentence": "Autopsy participants were classified within three groups based on the following criteria: AD participants ( n = 17) had a clinical diagnosis of either AD or mild cognitive impairment (MCI) due to AD within 1 year of death and a CERAD pathology score of >1 (i.e., CERAD B or C); control (CN) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score \u22641 (i.e., CERAD 0 or A); and asymptomatic AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C).",
       "context_window": "AD (ASY) participants ( n = 13) had normal cognition within 1 year of death and a CERAD pathology score >1 (i.e., CERAD B or C",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai-n-2860",
@@ -692,7 +692,7 @@
       "context_window": "ys, 1 metabolite (spermine) was dropped due to missingness >30%. For the remaining metabolites (i.e., 26 in total), values",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1214,7 +1214,7 @@
       "context_window": "se. We observed a higher concentration of spermidine (ITG: p = 0.004) in AD, as well as associations between higher concentratio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1232,7 +1232,7 @@
       "context_window": "tion of spermidine and greater neuritic plaque burden (ITG: p = 0.002*; MFG: p = 0.013) and greater neurofibrillary pathology (IT",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1250,7 +1250,7 @@
       "context_window": "e and greater neuritic plaque burden (ITG: p = 0.002*; MFG: p = 0.013) and greater neurofibrillary pathology (ITG: p = 0.003*).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1268,7 +1268,7 @@
       "context_window": "MFG: p = 0.013) and greater neurofibrillary pathology (ITG: p = 0.003*). A lower concentration of NAG is observed in AD in the I",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "increase",
       "binding_confidence": "partial"
     },

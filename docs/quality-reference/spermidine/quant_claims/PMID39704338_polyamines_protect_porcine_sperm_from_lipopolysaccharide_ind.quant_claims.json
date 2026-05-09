@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMID39704338_polyamines_protect_porcine_sperm_from_lipopolysaccharide_ind",
+  "doi": "10.1093/jas/skae383",
+  "extracted_at": "2026-05-08T20:12:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID39704338_polyamines_protect_porcine_sperm_from_lipopolysaccharide_ind-p-814",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 814,
+      "sentence": "The supplementation of spermine and spermidine in the diluent resulted in higher sperm motility, viability, acrosome integrity, and mitochondrial membrane potential (\u0394\u03a8m) after preservation in vitro at 17 \u00b0C for 7 d (P < 0.05).",
+      "context_window": "tential (\u0394\u03a8m) after preservation in vitro at 17 \u00b0C for 7 d (P < 0.05). LPS-induced sperm quality deterioration, \u0394\u03a8m decline, cel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39704338_polyamines_protect_porcine_sperm_from_lipopolysaccharide_ind-p-1081",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1081,
+      "sentence": "LPS-induced sperm quality deterioration, \u0394\u03a8m decline, cellular adenosine-triphosphate depletion, mitochondrial ultrastructure abnormality, mitochondrial permeability transition pore opening, phosphatidylserine (PS) translocation, and caspase-3 activation (P < 0.05).",
+      "context_window": "hatidylserine (PS) translocation, and caspase-3 activation (P < 0.05). Interestingly, spermine and spermidine alleviated the LPS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

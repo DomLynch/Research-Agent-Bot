@@ -1,0 +1,103 @@
+{
+  "paper_id": "PMC7234671_s218_taurine_does_not_prevent_social_deficits_induced_by_mk_",
+  "doi": "10.1093/schbul/sbaa031.284",
+  "extracted_at": "2026-05-08T20:10:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7234671_s218_taurine_does_not_prevent_social_deficits_induced_by_mk_-u-1190",
+      "claim_type": "unit_value",
+      "raw_text": "200 mL",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 1190,
+      "sentence": "For the social interaction test, animals were individually placed in a beaker with 200 mL of tank water (control) or taurine solution (42, 150 and 400 mg/L) for 20 minutes, and then exposed to water or MK-801 (5 \u00b5M) for another 20 minutes (n = 12 animals per group).",
+      "context_window": "ion test, animals were individually placed in a beaker with 200 mL of tank water (control) or taurine solution (42, 150 and 40",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7234671_s218_taurine_does_not_prevent_social_deficits_induced_by_mk_-u-1254",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1254,
+      "sentence": "For the social interaction test, animals were individually placed in a beaker with 200 mL of tank water (control) or taurine solution (42, 150 and 400 mg/L) for 20 minutes, and then exposed to water or MK-801 (5 \u00b5M) for another 20 minutes (n = 12 animals per group).",
+      "context_window": "mL of tank water (control) or taurine solution (42, 150 and 400 mg/L) for 20 minutes, and then exposed to water or MK-801 (5 \u00b5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7234671_s218_taurine_does_not_prevent_social_deficits_induced_by_mk_-n-1347",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1347,
+      "sentence": "For the social interaction test, animals were individually placed in a beaker with 200 mL of tank water (control) or taurine solution (42, 150 and 400 mg/L) for 20 minutes, and then exposed to water or MK-801 (5 \u00b5M) for another 20 minutes (n = 12 animals per group).",
+      "context_window": "n exposed to water or MK-801 (5 \u00b5M) for another 20 minutes (n = 12 animals per group). Immediately after the treatments, zebra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7234671_s218_taurine_does_not_prevent_social_deficits_induced_by_mk_-p-1921",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0289",
+      "numeric_values": [
+        0.0289
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1921,
+      "sentence": "MK-801 increased the total distance traveled (F1,88 = 4.935, p = 0.0289) and reduced the time spent in the tank zone next to the conspecifics (F1,88 = 23.14, p < 0.0001).",
+      "context_window": "K-801 increased the total distance traveled (F1,88 = 4.935, p = 0.0289) and reduced the time spent in the tank zone next to the co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7234671_s218_taurine_does_not_prevent_social_deficits_induced_by_mk_-p-2018",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2018,
+      "sentence": "MK-801 increased the total distance traveled (F1,88 = 4.935, p = 0.0289) and reduced the time spent in the tank zone next to the conspecifics (F1,88 = 23.14, p < 0.0001).",
+      "context_window": "t in the tank zone next to the conspecifics (F1,88 = 23.14, p < 0.0001). No main effects of taurine or interaction effects were ob",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t",
+  "doi": "10.1056/nejmoa1805819",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-u-366",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 366,
+      "sentence": "METHODS: From 2010 through 2014, we enrolled community-dwelling men and women in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and did not have cardiovascular disease, dementia, or disability.",
+      "context_window": "g men and women in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-u-396",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 396,
+      "sentence": "METHODS: From 2010 through 2014, we enrolled community-dwelling men and women in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and did not have cardiovascular disease, dementia, or disability.",
+      "context_window": "nd the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-u-574",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 574,
+      "sentence": "Participants were randomly assigned to receive 100 mg of enteric-coated aspirin or placebo.",
+      "context_window": "disability. Participants were randomly assigned to receive 100 mg of enteric-coated aspirin or placebo. The primary end point",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-u-1148",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1148,
+      "sentence": "After a median of 4.7 years of follow-up, the rate of cardiovascular disease was 10.7 events per 1000 person-years in the aspirin group and 11.3 events per 1000 person-years in the placebo group (hazard ratio, 0.95; 95% confidence interval [CI], 0.83 to 1.08).",
+      "context_window": "eive aspirin and 9589 to receive placebo. After a median of 4.7 years of follow-up, the rate of cardiovascular disease was 10.7 e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-pct-1346",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1346,
+      "sentence": "After a median of 4.7 years of follow-up, the rate of cardiovascular disease was 10.7 events per 1000 person-years in the aspirin group and 11.3 events per 1000 person-years in the placebo group (hazard ratio, 0.95; 95% confidence interval [CI], 0.83 to 1.08).",
+      "context_window": "1000 person-years in the placebo group (hazard ratio, 0.95; 95% confidence interval [CI], 0.83 to 1.08). The rate of major",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-pct-1529",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1529,
+      "sentence": "The rate of major hemorrhage was 8.6 events per 1000 person-years and 6.2 events per 1000 person-years, respectively (hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001).",
+      "context_window": "ts per 1000 person-years, respectively (hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001). CONCLUSIONS: The use of low-dos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1805819_effect_of_aspirin_on_cardiovascular_events_and_bleeding_in_t-p-1551",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1551,
+      "sentence": "The rate of major hemorrhage was 8.6 events per 1000 person-years and 6.2 events per 1000 person-years, respectively (hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001).",
+      "context_window": "rs, respectively (hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001). CONCLUSIONS: The use of low-dose aspirin as a primary pre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

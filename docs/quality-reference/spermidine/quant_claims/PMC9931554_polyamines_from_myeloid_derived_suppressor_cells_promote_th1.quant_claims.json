@@ -1,0 +1,932 @@
+{
+  "paper_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1",
+  "doi": "10.1016/j.ymthe.2022.10.013",
+  "extracted_at": "2026-05-08T20:12:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 16,
+    "p_value": 30,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-pct-1844",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1844,
+      "sentence": "Mice were killed via 5% isoflurane inhalation.",
+      "context_window": "he First Hospital of Jilin University. Mice were killed via 5% isoflurane inhalation. All animal experiments were approved",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-2559",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 2559,
+      "sentence": "All mice were transfected with siRNA 1 week later for 3 weeks.",
+      "context_window": "10 6 cells per mouse). All mice were transfected with siRNA 1 week later for 3 weeks. Mice were sacrificed, and blood and urin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-2576",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2576,
+      "sentence": "All mice were transfected with siRNA 1 week later for 3 weeks.",
+      "context_window": "use). All mice were transfected with siRNA 1 week later for 3 weeks. Mice were sacrificed, and blood and urine were collected f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-pct-3541",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3541,
+      "sentence": "Naive CD4 + T cells were purified from MNCs using a naive CD4 + T cell isolation kit (Miltenyi Biotec) according to the manufacturer\u2019s instructions, and the cell purity after separation was >95% (detected by FCM).",
+      "context_window": "r\u2019s instructions, and the cell purity after separation was >95% (detected by FCM). MDSCs were separated by cell sorting usi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4225",
+      "claim_type": "unit_value",
+      "raw_text": "5 ng/mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4225,
+      "sentence": "Cells collected from mice were cultured in medium containing 5 \u03bcg/mL anti-mouse CD3 mAb (17A2, BioXcell), 1 \u03bcg/mL anti-mouse CD28 mAb (37.51.1, eBioscience), 50 \u03bcM 2-mercaptoethanol (S6250, Sigma), 5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL mouse IL-6 (Peprotech), 5 \u03bcg/mL anti-mouse IFN-\u03b3 mAb (XMG1.2, BioXcell), and 5 \u03bcg/mL anti-mouse IL-4 mAb (11B11, BioXcell) for 3 days.",
+      "context_window": "51.1, eBioscience), 50 \u03bcM 2-mercaptoethanol (S6250, Sigma), 5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL mouse IL-6 (Peprotech), 5 \u03bcg/mL",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4252",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4252,
+      "sentence": "Cells collected from mice were cultured in medium containing 5 \u03bcg/mL anti-mouse CD3 mAb (17A2, BioXcell), 1 \u03bcg/mL anti-mouse CD28 mAb (37.51.1, eBioscience), 50 \u03bcM 2-mercaptoethanol (S6250, Sigma), 5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL mouse IL-6 (Peprotech), 5 \u03bcg/mL anti-mouse IFN-\u03b3 mAb (XMG1.2, BioXcell), and 5 \u03bcg/mL anti-mouse IL-4 mAb (11B11, BioXcell) for 3 days.",
+      "context_window": "-mercaptoethanol (S6250, Sigma), 5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL mouse IL-6 (Peprotech), 5 \u03bcg/mL anti-mouse IFN-\u03b3 mAb (XMG1.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4388",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4388,
+      "sentence": "Cells collected from mice were cultured in medium containing 5 \u03bcg/mL anti-mouse CD3 mAb (17A2, BioXcell), 1 \u03bcg/mL anti-mouse CD28 mAb (37.51.1, eBioscience), 50 \u03bcM 2-mercaptoethanol (S6250, Sigma), 5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL mouse IL-6 (Peprotech), 5 \u03bcg/mL anti-mouse IFN-\u03b3 mAb (XMG1.2, BioXcell), and 5 \u03bcg/mL anti-mouse IL-4 mAb (11B11, BioXcell) for 3 days.",
+      "context_window": "ell), and 5 \u03bcg/mL anti-mouse IL-4 mAb (11B11, BioXcell) for 3 days. Cells collected from humans were cultured in medium contai",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4599",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 ng/mL",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4599,
+      "sentence": "Cells collected from humans were cultured in medium containing 5 \u03bcg/mL anti-human CD3 mAb (OKT3, eBioscience), 1 \u03bcg/mL soluble anti-human CD28 mAb (CD28.2, eBioscience), 50 \u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti-human IFN-\u03b3 mAb (285-IF-100, R&D), and 5 \u03bcg/mL anti-mouse IL-4 mAb (MP4-25D2, BioXcell) for 6-7 days.",
+      "context_window": "mAb (CD28.2, eBioscience), 50 \u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL huma",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4628",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4628,
+      "sentence": "Cells collected from humans were cultured in medium containing 5 \u03bcg/mL anti-human CD3 mAb (OKT3, eBioscience), 1 \u03bcg/mL soluble anti-human CD28 mAb (CD28.2, eBioscience), 50 \u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti-human IFN-\u03b3 mAb (285-IF-100, R&D), and 5 \u03bcg/mL anti-mouse IL-4 mAb (MP4-25D2, BioXcell) for 6-7 days.",
+      "context_window": "\u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL huma",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4655",
+      "claim_type": "unit_value",
+      "raw_text": "10 ng/mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4655,
+      "sentence": "Cells collected from humans were cultured in medium containing 5 \u03bcg/mL anti-human CD3 mAb (OKT3, eBioscience), 1 \u03bcg/mL soluble anti-human CD28 mAb (CD28.2, eBioscience), 50 \u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti-human IFN-\u03b3 mAb (285-IF-100, R&D), and 5 \u03bcg/mL anti-mouse IL-4 mAb (MP4-25D2, BioXcell) for 6-7 days.",
+      "context_window": "a), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4683",
+      "claim_type": "unit_value",
+      "raw_text": "10 ng/mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4683,
+      "sentence": "Cells collected from humans were cultured in medium containing 5 \u03bcg/mL anti-human CD3 mAb (OKT3, eBioscience), 1 \u03bcg/mL soluble anti-human CD28 mAb (CD28.2, eBioscience), 50 \u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti-human IFN-\u03b3 mAb (285-IF-100, R&D), and 5 \u03bcg/mL anti-mouse IL-4 mAb (MP4-25D2, BioXcell) for 6-7 days.",
+      "context_window": "&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti-human IFN-\u03b3 mAb (285-IF-100",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-4818",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4818,
+      "sentence": "Cells collected from humans were cultured in medium containing 5 \u03bcg/mL anti-human CD3 mAb (OKT3, eBioscience), 1 \u03bcg/mL soluble anti-human CD28 mAb (CD28.2, eBioscience), 50 \u03bcM 2-mercaptoethanol (Sigma), 2.5 ng/mL human TGF-\u03b2 (R&D), 20 ng/mL human IL-6 (R&D), 10 ng/mL human IL-23 (R&D), 10 ng/mL human IL-1\u03b2 (R&D), 5 \u03bcg/mL anti-human IFN-\u03b3 mAb (285-IF-100, R&D), and 5 \u03bcg/mL anti-mouse IL-4 mAb (MP4-25D2, BioXcell) for 6-7 days.",
+      "context_window": "and 5 \u03bcg/mL anti-mouse IL-4 mAb (MP4-25D2, BioXcell) for 6-7 days. To determine the role of MDSCs and polyamines in Th17 cel",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-8039",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8039,
+      "sentence": "The siRNA primer sequences were as follows:\n\nInvivofectamine 3.0 reagent (Invitrogen) and hsa-miR542-5p agomir, antagomir, or control (GenePharma) were used for in vivo transfection according to the manufacturer\u2019s instructions and intravenously injected into NSG mice, which were transfected for 3 weeks.",
+      "context_window": "venously injected into NSG mice, which were transfected for 3 weeks. The siRNA primer sequences were as follows: Cell culture",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-pct-9050",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9050,
+      "sentence": "Renal tissues from humanized SLE model mice were fixed in 10% buffered formalin before they were embedded in paraffin and sectioned.",
+      "context_window": "Renal tissues from humanized SLE model mice were fixed in 10% buffered formalin before they were embedded in paraffin and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-9583",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9583,
+      "sentence": "Differences in variables between groups were analyzed using the independent samples, Student\u2019s t test, correlation analyzed using the Spearman rank test, and p < 0.05 was used to indicate statistical significance.",
+      "context_window": "est, correlation analyzed using the Spearman rank test, and p < 0.05 was used to indicate statistical significance.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-2739",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2739,
+      "sentence": "DFMO inhibits ORN metabolism. (B) Representative dot plot of IL-17A expression in live CD4 + T cells by FCM. (C) Statistical analysis of intracellular IL-17A staining in live CD4 + T cells. (D) Relative expression of IL-17A in the Th17 group in differentiated human Th17 cells in vitro by qPCR. (E) IL-17A concentrations in supernatants from differentiated human Th17 cells in vitro . (F) Representative dot plot of ROR\u03b3t + live CD4 + T cells by qPCR. (G) Statistical analysis of intracellular ROR\u03b3t staining in live CD4 + T cells. (H) Statistical analysis of the intracellular MFI of ROR\u03b3t staining in live CD4 + T cells. (I) Relative expression of ROR\u03b3t in the Th17 group in differentiated human Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "group in differentiated human Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-2751",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2751,
+      "sentence": "DFMO inhibits ORN metabolism. (B) Representative dot plot of IL-17A expression in live CD4 + T cells by FCM. (C) Statistical analysis of intracellular IL-17A staining in live CD4 + T cells. (D) Relative expression of IL-17A in the Th17 group in differentiated human Th17 cells in vitro by qPCR. (E) IL-17A concentrations in supernatants from differentiated human Th17 cells in vitro . (F) Representative dot plot of ROR\u03b3t + live CD4 + T cells by qPCR. (G) Statistical analysis of intracellular ROR\u03b3t staining in live CD4 + T cells. (H) Statistical analysis of the intracellular MFI of ROR\u03b3t staining in live CD4 + T cells. (I) Relative expression of ROR\u03b3t in the Th17 group in differentiated human Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "ferentiated human Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are from one experi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-2764",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2764,
+      "sentence": "DFMO inhibits ORN metabolism. (B) Representative dot plot of IL-17A expression in live CD4 + T cells by FCM. (C) Statistical analysis of intracellular IL-17A staining in live CD4 + T cells. (D) Relative expression of IL-17A in the Th17 group in differentiated human Th17 cells in vitro by qPCR. (E) IL-17A concentrations in supernatants from differentiated human Th17 cells in vitro . (F) Representative dot plot of ROR\u03b3t + live CD4 + T cells by qPCR. (G) Statistical analysis of intracellular ROR\u03b3t staining in live CD4 + T cells. (H) Statistical analysis of the intracellular MFI of ROR\u03b3t staining in live CD4 + T cells. (I) Relative expression of ROR\u03b3t in the Th17 group in differentiated human Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "uman Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are from one experiment represent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-2779",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2779,
+      "sentence": "DFMO inhibits ORN metabolism. (B) Representative dot plot of IL-17A expression in live CD4 + T cells by FCM. (C) Statistical analysis of intracellular IL-17A staining in live CD4 + T cells. (D) Relative expression of IL-17A in the Th17 group in differentiated human Th17 cells in vitro by qPCR. (E) IL-17A concentrations in supernatants from differentiated human Th17 cells in vitro . (F) Representative dot plot of ROR\u03b3t + live CD4 + T cells by qPCR. (G) Statistical analysis of intracellular ROR\u03b3t staining in live CD4 + T cells. (H) Statistical analysis of the intracellular MFI of ROR\u03b3t staining in live CD4 + T cells. (I) Relative expression of ROR\u03b3t in the Th17 group in differentiated human Th17 cells in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "in vitro by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are from one experiment representative of three (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-3370",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3370,
+      "sentence": "To elucidate the effect of polyamine on Th17 polarization, we performed Th17 polarization assay using Th17 polarizing medium with or without three different polyamines (PUT, SPD, or SPM, 2.5 \u03bcM) (containing anti-human CD3 mAb, anti-human CD28 mAb, 2-mercaptoethanol, TGF-\u03b2, IL-6, IL-23, IL-1\u03b2, anti-human IFN-\u03b3 mAb, and anti-mouse IL-4 mAb culture for 6-7 days).",
+      "context_window": "anti-human IFN-\u03b3 mAb, and anti-mouse IL-4 mAb culture for 6-7 days). The results showed that polyamine supplementation in the",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-6288",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6288,
+      "sentence": "Polyamines activate Th17 cell polarization\n\nHuman naive CD4 + T cell polarization to Th17 cells in a standard medium (where not specified) or a medium with PUT (2.5 \u03bcM), SPD (2.5 \u03bcM), or SPM (2.5 \u03bcM). (A) Representative dot plot of IL-17A by FCM. (B) Statistical analysis of intracellular IL-17A staining. (C) Relative expression of IL-17A in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. (D) IL-17A concentrations in supernatants. (E) Representative dot plot of ROR\u03b3t by FCM. (F) Statistical analysis of ROR\u03b3t intracellular staining. (G) Statistical analysis of the MFI of ROR\u03b3t intracellular staining. (H) Relative expression of ROR\u03b3t in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "nd Th17 + SPM groups compared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-6300",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6300,
+      "sentence": "Polyamines activate Th17 cell polarization\n\nHuman naive CD4 + T cell polarization to Th17 cells in a standard medium (where not specified) or a medium with PUT (2.5 \u03bcM), SPD (2.5 \u03bcM), or SPM (2.5 \u03bcM). (A) Representative dot plot of IL-17A by FCM. (B) Statistical analysis of intracellular IL-17A staining. (C) Relative expression of IL-17A in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. (D) IL-17A concentrations in supernatants. (E) Representative dot plot of ROR\u03b3t by FCM. (F) Statistical analysis of ROR\u03b3t intracellular staining. (G) Statistical analysis of the MFI of ROR\u03b3t intracellular staining. (H) Relative expression of ROR\u03b3t in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "M groups compared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are from one experi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-6313",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6313,
+      "sentence": "Polyamines activate Th17 cell polarization\n\nHuman naive CD4 + T cell polarization to Th17 cells in a standard medium (where not specified) or a medium with PUT (2.5 \u03bcM), SPD (2.5 \u03bcM), or SPM (2.5 \u03bcM). (A) Representative dot plot of IL-17A by FCM. (B) Statistical analysis of intracellular IL-17A staining. (C) Relative expression of IL-17A in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. (D) IL-17A concentrations in supernatants. (E) Representative dot plot of ROR\u03b3t by FCM. (F) Statistical analysis of ROR\u03b3t intracellular staining. (G) Statistical analysis of the MFI of ROR\u03b3t intracellular staining. (H) Relative expression of ROR\u03b3t in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "ared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are from one experiment represent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-6328",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6328,
+      "sentence": "Polyamines activate Th17 cell polarization\n\nHuman naive CD4 + T cell polarization to Th17 cells in a standard medium (where not specified) or a medium with PUT (2.5 \u03bcM), SPD (2.5 \u03bcM), or SPM (2.5 \u03bcM). (A) Representative dot plot of IL-17A by FCM. (B) Statistical analysis of intracellular IL-17A staining. (C) Relative expression of IL-17A in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. (D) IL-17A concentrations in supernatants. (E) Representative dot plot of ROR\u03b3t by FCM. (F) Statistical analysis of ROR\u03b3t intracellular staining. (G) Statistical analysis of the MFI of ROR\u03b3t intracellular staining. (H) Relative expression of ROR\u03b3t in the Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001.",
+      "context_window": "h17 group by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001; \u2217\u2217\u2217\u2217p < 0.0001. All data are from one experiment representative of three (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-9984",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9984,
+      "sentence": "Polyamines produced by MDSCs elevated miR-542-5p expression and promoted Th17 polarization\n\n(A) Relative expression of miR-542-5p in the human Th17 + MDSC, Th17 + MDSC + DFMO, and Th17 + ORN groups compared with the Th17 group by qPCR. (B) Relative expression of miR-542-5p in the mouse Th17 + MDSC, Th17 + MDSC + DFMO, and Th17 + ORN groups compared with the Th17 group by qPCR. (C) Relative expression of miR-542-5p in the human Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. (D) Representative dot plot of IL-17A by FCM. (E) Statistical analysis of intracellular IL-17A staining. (F) Relative expression of IL-17A in the posttransfection group compared with the control by qPCR. (G) Representative dot plot of ROR\u03b3t by FCM. (H) Statistical analysis of ROR\u03b3t intracellular staining. (I) Relative expression of ROR\u03b3t in the posttransfection group compared with the control by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01.",
+      "context_window": "posttransfection group compared with the control by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01. All data are from one experiment representativ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-9996",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9996,
+      "sentence": "Polyamines produced by MDSCs elevated miR-542-5p expression and promoted Th17 polarization\n\n(A) Relative expression of miR-542-5p in the human Th17 + MDSC, Th17 + MDSC + DFMO, and Th17 + ORN groups compared with the Th17 group by qPCR. (B) Relative expression of miR-542-5p in the mouse Th17 + MDSC, Th17 + MDSC + DFMO, and Th17 + ORN groups compared with the Th17 group by qPCR. (C) Relative expression of miR-542-5p in the human Th17 + PUT, Th17 + SPD, and Th17 + SPM groups compared with the Th17 group by qPCR. (D) Representative dot plot of IL-17A by FCM. (E) Statistical analysis of intracellular IL-17A staining. (F) Relative expression of IL-17A in the posttransfection group compared with the control by qPCR. (G) Representative dot plot of ROR\u03b3t by FCM. (H) Statistical analysis of ROR\u03b3t intracellular staining. (I) Relative expression of ROR\u03b3t in the posttransfection group compared with the control by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01.",
+      "context_window": "ction group compared with the control by qPCR. \u2217p < 0.05; \u2217\u2217p < 0.01. All data are from one experiment representative of three (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-12605",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.1159",
+      "numeric_values": [
+        0.1159
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12605,
+      "sentence": "MDSCs facilitated Th17 cell differentiation in vitro in a miR-542-5p -dependent manner via TGF-\u03b2/SMAD3 signaling\n\n(A) Schematic representation showing the organization of the SMAD3, SMAD7, and SMURF1 3\u2032 UTRs and the corresponding luciferase reporter constructs psicheck2-SMAD3 3\u2032 UTR (1,011 to 1,377), psicheck2-SMAD7 3\u2032 UTR (307 to 1,012) and psicheck2-SMURF1 3\u2032 UTR (bp 1,983 to 2,341). (B) Luciferase activity of vector, Smad3, Smad7, and Smurf1 constructs in the negative control and miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test).",
+      "context_window": "the negative control and miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-12617",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0328",
+      "numeric_values": [
+        0.0328
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12617,
+      "sentence": "MDSCs facilitated Th17 cell differentiation in vitro in a miR-542-5p -dependent manner via TGF-\u03b2/SMAD3 signaling\n\n(A) Schematic representation showing the organization of the SMAD3, SMAD7, and SMURF1 3\u2032 UTRs and the corresponding luciferase reporter constructs psicheck2-SMAD3 3\u2032 UTR (1,011 to 1,377), psicheck2-SMAD7 3\u2032 UTR (307 to 1,012) and psicheck2-SMURF1 3\u2032 UTR (bp 1,983 to 2,341). (B) Luciferase activity of vector, Smad3, Smad7, and Smurf1 constructs in the negative control and miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test).",
+      "context_window": "e control and miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test). UTR, un",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-12629",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.6518",
+      "numeric_values": [
+        0.6518
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12629,
+      "sentence": "MDSCs facilitated Th17 cell differentiation in vitro in a miR-542-5p -dependent manner via TGF-\u03b2/SMAD3 signaling\n\n(A) Schematic representation showing the organization of the SMAD3, SMAD7, and SMURF1 3\u2032 UTRs and the corresponding luciferase reporter constructs psicheck2-SMAD3 3\u2032 UTR (1,011 to 1,377), psicheck2-SMAD7 3\u2032 UTR (307 to 1,012) and psicheck2-SMURF1 3\u2032 UTR (bp 1,983 to 2,341). (B) Luciferase activity of vector, Smad3, Smad7, and Smurf1 constructs in the negative control and miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test).",
+      "context_window": "d miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test). UTR, untranslated r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-12645",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0384",
+      "numeric_values": [
+        0.0384
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12645,
+      "sentence": "MDSCs facilitated Th17 cell differentiation in vitro in a miR-542-5p -dependent manner via TGF-\u03b2/SMAD3 signaling\n\n(A) Schematic representation showing the organization of the SMAD3, SMAD7, and SMURF1 3\u2032 UTRs and the corresponding luciferase reporter constructs psicheck2-SMAD3 3\u2032 UTR (1,011 to 1,377), psicheck2-SMAD7 3\u2032 UTR (307 to 1,012) and psicheck2-SMURF1 3\u2032 UTR (bp 1,983 to 2,341). (B) Luciferase activity of vector, Smad3, Smad7, and Smurf1 constructs in the negative control and miR-542-5p overexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test).",
+      "context_window": "rexpression groups (p = 0.1159, p = 0.0328, p = 0.6518, and p = 0.0384, respectively; t test). UTR, untranslated region; TSS, tran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-14073",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14073,
+      "sentence": "Then, the cultures were polarized to Th17 cells and harvested 72 h later. mRNA expression of SMAD3 , SMAD7 , and SMURF1 in the mimics and NC groups by qPCR. (D) Protein expression of pSMAD2/3 levels by FCM analysis and statistical analysis of the pSMAD2/3 MFI in the mimics and NC groups. (E) Protein expression of tSMAD2/3 by FCM analysis and statistical analysis of the relative MFI of pSMAD2/3 and total (t) SMAD2/3 in the mimics and NC groups. (F) Protein expression of SMURF1 by FCM analysis and statistical analysis of the relative MFI of SMURF1 expression in the mimic and NC groups. (G) mRNA expression of SMAD3 , SMAD7 , and SMURF1 in the inhibitor and NC groups by qPCR. (H) Protein expression of pSMAD2/3 by FCM analysis and statistical analysis of the pSMAD2/3 MFI in the inhibitor and NC groups. (I) Protein expression of tSMAD2/3 by FCM analysis and statistical analysis of the relative MFI of pSMAD2/3 and tSMAD2/3 expression in the mimics and NC groups. (J) Protein expression of SMURF1 by FCM and statistical analysis of the relative MFI of SMURF1 in the inhibitor and NC groups. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001.",
+      "context_window": "the relative MFI of SMURF1 in the inhibitor and NC groups. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001. To determine the role of miR-54",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-14085",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14085,
+      "sentence": "Then, the cultures were polarized to Th17 cells and harvested 72 h later. mRNA expression of SMAD3 , SMAD7 , and SMURF1 in the mimics and NC groups by qPCR. (D) Protein expression of pSMAD2/3 levels by FCM analysis and statistical analysis of the pSMAD2/3 MFI in the mimics and NC groups. (E) Protein expression of tSMAD2/3 by FCM analysis and statistical analysis of the relative MFI of pSMAD2/3 and total (t) SMAD2/3 in the mimics and NC groups. (F) Protein expression of SMURF1 by FCM analysis and statistical analysis of the relative MFI of SMURF1 expression in the mimic and NC groups. (G) mRNA expression of SMAD3 , SMAD7 , and SMURF1 in the inhibitor and NC groups by qPCR. (H) Protein expression of pSMAD2/3 by FCM analysis and statistical analysis of the pSMAD2/3 MFI in the inhibitor and NC groups. (I) Protein expression of tSMAD2/3 by FCM analysis and statistical analysis of the relative MFI of pSMAD2/3 and tSMAD2/3 expression in the mimics and NC groups. (J) Protein expression of SMURF1 by FCM and statistical analysis of the relative MFI of SMURF1 in the inhibitor and NC groups. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001.",
+      "context_window": "MFI of SMURF1 in the inhibitor and NC groups. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001. To determine the role of miR-542-5p in Th17",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-14098",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14098,
+      "sentence": "Then, the cultures were polarized to Th17 cells and harvested 72 h later. mRNA expression of SMAD3 , SMAD7 , and SMURF1 in the mimics and NC groups by qPCR. (D) Protein expression of pSMAD2/3 levels by FCM analysis and statistical analysis of the pSMAD2/3 MFI in the mimics and NC groups. (E) Protein expression of tSMAD2/3 by FCM analysis and statistical analysis of the relative MFI of pSMAD2/3 and total (t) SMAD2/3 in the mimics and NC groups. (F) Protein expression of SMURF1 by FCM analysis and statistical analysis of the relative MFI of SMURF1 expression in the mimic and NC groups. (G) mRNA expression of SMAD3 , SMAD7 , and SMURF1 in the inhibitor and NC groups by qPCR. (H) Protein expression of pSMAD2/3 by FCM analysis and statistical analysis of the pSMAD2/3 MFI in the inhibitor and NC groups. (I) Protein expression of tSMAD2/3 by FCM analysis and statistical analysis of the relative MFI of pSMAD2/3 and tSMAD2/3 expression in the mimics and NC groups. (J) Protein expression of SMURF1 by FCM and statistical analysis of the relative MFI of SMURF1 in the inhibitor and NC groups. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001.",
+      "context_window": "1 in the inhibitor and NC groups. \u2217p < 0.05; \u2217\u2217p < 0.01; \u2217\u2217\u2217p < 0.001. To determine the role of miR-542-5p in Th17 differentiati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-16299",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 16299,
+      "sentence": "We next isolated peripheral blood mononuclear cells (PBMCs) from a total of 18 SLE patients (3 males and 15 females, aged 19 to 64 years) and 18 HCs (three males and 15 females, aged 17 to 65 years, Table S2 ).",
+      "context_window": "otal of 18 SLE patients (3 males and 15 females, aged 19 to 64 years) and 18 HCs (three males and 15 females, aged 17 to 65 year",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-16360",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 16360,
+      "sentence": "We next isolated peripheral blood mononuclear cells (PBMCs) from a total of 18 SLE patients (3 males and 15 females, aged 19 to 64 years) and 18 HCs (three males and 15 females, aged 17 to 65 years, Table S2 ).",
+      "context_window": "4 years) and 18 HCs (three males and 15 females, aged 17 to 65 years, Table S2 ). All patients were diagnosed with active SLE ac",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-17342",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17342,
+      "sentence": "Polyamine synthetase and miR-542-5p expression were upregulated in PBMCs from SLE patients\n\n(A) Relative RNA expression of ODC1 in HCs and SLE patients (p = 0.0003; t test).",
+      "context_window": "A) Relative RNA expression of ODC1 in HCs and SLE patients (p = 0.0003; t test). Correlation analysis between the relative RNA exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-17501",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0024",
+      "numeric_values": [
+        0.0024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17501,
+      "sentence": "Correlation analysis between the relative RNA expression of ODC1 and SLEDAI (indicating disease activity) in SLE patients ( r 2 = 0.4476, p = 0.0024; Spearman rank tests). (B) Relative RNA expression of SRM in HCs and SLE patients (p = 0.0073; t test).",
+      "context_window": "ndicating disease activity) in SLE patients ( r 2 = 0.4476, p = 0.0024; Spearman rank tests). (B) Relative RNA expression of SRM i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-17595",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0073",
+      "numeric_values": [
+        0.0073
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17595,
+      "sentence": "Correlation analysis between the relative RNA expression of ODC1 and SLEDAI (indicating disease activity) in SLE patients ( r 2 = 0.4476, p = 0.0024; Spearman rank tests). (B) Relative RNA expression of SRM in HCs and SLE patients (p = 0.0073; t test).",
+      "context_window": "(B) Relative RNA expression of SRM in HCs and SLE patients (p = 0.0073; t test). Correlation analysis between the relative RNA exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-17723",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0129",
+      "numeric_values": [
+        0.0129
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17723,
+      "sentence": "Correlation analysis between the relative RNA expression of SRM and SLEDAI in SLE patients ( r 2 = 0.3288, p = 0.0129; Spearman rank tests). (C) Relative RNA expression of SRS in HCs and SLE patients (p = 0.0009; t test).",
+      "context_window": "xpression of SRM and SLEDAI in SLE patients ( r 2 = 0.3288, p = 0.0129; Spearman rank tests). (C) Relative RNA expression of SRS i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-17817",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0009",
+      "numeric_values": [
+        0.0009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17817,
+      "sentence": "Correlation analysis between the relative RNA expression of SRM and SLEDAI in SLE patients ( r 2 = 0.3288, p = 0.0129; Spearman rank tests). (C) Relative RNA expression of SRS in HCs and SLE patients (p = 0.0009; t test).",
+      "context_window": "(C) Relative RNA expression of SRS in HCs and SLE patients (p = 0.0009; t test). Correlation analysis between the relative RNA exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-17945",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0265",
+      "numeric_values": [
+        0.0265
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17945,
+      "sentence": "Correlation analysis between the relative RNA expression of SRS and SLEDAI in SLE patients ( r 2 = 0.2717, p = 0.0265; Spearman rank tests). (D) Relative RNA expression of hsa-miR-542-5p in HCs and SLE patients (p = 0.0285; t test).",
+      "context_window": "xpression of SRS and SLEDAI in SLE patients ( r 2 = 0.2717, p = 0.0265; Spearman rank tests). (D) Relative RNA expression of hsa-m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-18050",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0285",
+      "numeric_values": [
+        0.0285
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18050,
+      "sentence": "Correlation analysis between the relative RNA expression of SRS and SLEDAI in SLE patients ( r 2 = 0.2717, p = 0.0265; Spearman rank tests). (D) Relative RNA expression of hsa-miR-542-5p in HCs and SLE patients (p = 0.0285; t test).",
+      "context_window": "e RNA expression of hsa-miR-542-5p in HCs and SLE patients (p = 0.0285; t test). Correlation analysis between the relative RNA exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-18189",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0012",
+      "numeric_values": [
+        0.0012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18189,
+      "sentence": "Correlation analysis between the relative RNA expression of hsa-miR-542-5p and SLEDAI in SLE patients ( r 2 = 0.4903, p = 0.0012; Spearman rank tests). (E-G) Correlation analysis between the relative RNA expression of ODC1, SRM, SMS and hsa-miR-542-5p in SLE patients (rho = 0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respectively; Spearman rank tests).",
+      "context_window": "f hsa-miR-542-5p and SLEDAI in SLE patients ( r 2 = 0.4903, p = 0.0012; Spearman rank tests). (E-G) Correlation analysis between t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-18354",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0014",
+      "numeric_values": [
+        0.0014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18354,
+      "sentence": "Correlation analysis between the relative RNA expression of hsa-miR-542-5p and SLEDAI in SLE patients ( r 2 = 0.4903, p = 0.0012; Spearman rank tests). (E-G) Correlation analysis between the relative RNA expression of ODC1, SRM, SMS and hsa-miR-542-5p in SLE patients (rho = 0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respectively; Spearman rank tests).",
+      "context_window": "SRM, SMS and hsa-miR-542-5p in SLE patients (rho = 0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-18380",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0439",
+      "numeric_values": [
+        0.0439
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18380,
+      "sentence": "Correlation analysis between the relative RNA expression of hsa-miR-542-5p and SLEDAI in SLE patients ( r 2 = 0.4903, p = 0.0012; Spearman rank tests). (E-G) Correlation analysis between the relative RNA expression of ODC1, SRM, SMS and hsa-miR-542-5p in SLE patients (rho = 0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respectively; Spearman rank tests).",
+      "context_window": "5p in SLE patients (rho = 0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respectively; Spearman rank tes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-18406",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0037",
+      "numeric_values": [
+        0.0037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18406,
+      "sentence": "Correlation analysis between the relative RNA expression of hsa-miR-542-5p and SLEDAI in SLE patients ( r 2 = 0.4903, p = 0.0012; Spearman rank tests). (E-G) Correlation analysis between the relative RNA expression of ODC1, SRM, SMS and hsa-miR-542-5p in SLE patients (rho = 0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respectively; Spearman rank tests).",
+      "context_window": "0.6542, p = 0.0014; rho = 0.4799, p = 0.0439; rho = 0.6471, p = 0.0037 , respectively; Spearman rank tests). Each symbol represent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-n-18506",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18506,
+      "sentence": "HCs, n = 18; SLE patients, n = 18. \u2217p < 0.05.",
+      "context_window": "tests). Each symbol represents an individual patient. HCs, n = 18; SLE patients, n = 18. \u2217p < 0.05. To determine the role of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-n-18528",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18528,
+      "sentence": "HCs, n = 18; SLE patients, n = 18. \u2217p < 0.05.",
+      "context_window": "epresents an individual patient. HCs, n = 18; SLE patients, n = 18. \u2217p < 0.05. To determine the role of polyamines and miR-54",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-p-18537",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18537,
+      "sentence": "HCs, n = 18; SLE patients, n = 18. \u2217p < 0.05.",
+      "context_window": "an individual patient. HCs, n = 18; SLE patients, n = 18. \u2217p < 0.05. To determine the role of polyamines and miR-542-5p in SLE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-18981",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 18981,
+      "sentence": "Within 4 to 5 weeks, all mice developed LN-like symptoms indicated by elevation of urine albumin ( Figure 6 B).",
+      "context_window": "ted PBMCs plus miR-542-5p mimics ( Figure 6 A). Within 4 to 5 weeks, all mice developed LN-like symptoms indicated by elevation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9931554_polyamines_from_myeloid_derived_suppressor_cells_promote_th1-u-21458",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 21458,
+      "sentence": "Four groups of mice received unmanipulated PBMCs or MDSC-depleted PBMCs and were transfected with miR-542-5p control, mimics, or inhibitor (intravenous injection 1 week after PBMC transfer). (B) Levels of urine albumin. (C) Relative RNA expression of ODC1 , SRM , SMS , and hsa-miR-542-5p in humanized SLE mouse kidneys. (D) H&E staining of kidney sections from representative humanized SLE mice (black arrowhead indicates inflammatory cell infiltration; white arrowhead indicates the vacuolar degeneration of renal tubules). (E) Relative RNA expression of hIL-17A in humanized SLE mouse kidneys. (F) Relative RNA expression of hROR\u03b3t in humanized SLE mouse kidneys.",
+      "context_window": "542-5p control, mimics, or inhibitor (intravenous injection 1 week after PBMC transfer). (B) Levels of urine albumin. (C) Rela",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

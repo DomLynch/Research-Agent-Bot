@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1002_jnr_490380410_serotonin_inhibits_outgrowth_of_goldfish_retina_and_impairs",
+  "doi": "10.1002/jnr.490380410",
+  "extracted_at": "2026-05-08T20:10:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_jnr_490380410_serotonin_inhibits_outgrowth_of_goldfish_retina_and_impairs-u-800",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 800,
+      "sentence": "Imipramine favoured the inhibitory effect of serotonin at 10 days in culture.",
+      "context_window": ". Imipramine favoured the inhibitory effect of serotonin at 10 days in culture. The concentration of serotonin and its metaboli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_jnr_490380410_serotonin_inhibits_outgrowth_of_goldfish_retina_and_impairs-u-932",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 932,
+      "sentence": "The concentration of serotonin and its metabolite, 5\u2010hydroxyindoleacetic acid, decreased in the retina at 3 and 5 days after the crush of the optic nerve.",
+      "context_window": "\u2010hydroxyindoleacetic acid, decreased in the retina at 3 and 5 days after the crush of the optic nerve. Serotonin levels starte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_jnr_490380410_serotonin_inhibits_outgrowth_of_goldfish_retina_and_impairs-u-1017",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1017,
+      "sentence": "Serotonin levels started to recover after 5 days post\u2010lesion, and the metabolite also increased.",
+      "context_window": "the optic nerve. Serotonin levels started to recover after 5 days post\u2010lesion, and the metabolite also increased. This indica",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

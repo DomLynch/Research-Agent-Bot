@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1111_j_1365_2648_2004_03281_x_music_improves_sleep_quality_in_older_adults",
+  "doi": "10.1111/j.1365-2648.2004.03281.x",
+  "extracted_at": "2026-05-08T20:05:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1365_2648_2004_03281_x_music_improves_sleep_quality_in_older_adults-u-487",
+      "claim_type": "unit_value",
+      "raw_text": "83 years",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 487,
+      "sentence": "Sixty people aged 60-83 years with difficulty in sleeping were recruited through community leaders and screened using the Pittsburgh Sleep Quality Index (PSQI) and Epworth Sleepiness Scale.",
+      "context_window": "a two-group repeated measures design. Sixty people aged 60-83 years with difficulty in sleeping were recruited through communit",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2648_2004_03281_x_music_improves_sleep_quality_in_older_adults-u-958",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 958,
+      "sentence": "Participants listened to their choice among six 45-minute sedative music tapes at bedtime for 3 weeks.",
+      "context_window": "ice among six 45-minute sedative music tapes at bedtime for 3 weeks. There were five types of Western and one of Chinese music.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2648_2004_03281_x_music_improves_sleep_quality_in_older_adults-p-1604",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1604,
+      "sentence": "RESULTS: Music resulted in significantly better sleep quality in the experimental group, as well as significantly better components of sleep quality: better perceived sleep quality, longer sleep duration, greater sleep efficiency, shorter sleep latency, less sleep disturbance and less daytime dysfunction (P = 0.04-0.001).",
+      "context_window": "tency, less sleep disturbance and less daytime dysfunction (P = 0.04-0.001). Sleep improved weekly, indicating a cumulative dose",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

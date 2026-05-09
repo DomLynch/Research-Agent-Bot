@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1111_bjh_12321_cytoreduction_plus_low_dose_aspirin_versus_cytoreduction_alo",
+  "doi": "10.1111/bjh.12321",
+  "extracted_at": "2026-05-08T20:05:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_bjh_12321_cytoreduction_plus_low_dose_aspirin_versus_cytoreduction_alo-u-972",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 972,
+      "sentence": "However, in the subgroup of patients older than 60 years, the addition of low\u2010dose aspirin was associated with a significantly lower rate of thrombosis (8.6 vs.",
+      "context_window": "ic> = 0.2). However, in the subgroup of patients older than 60 years, the addition of low\u2010dose aspirin was associated with a sig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_bjh_12321_cytoreduction_plus_low_dose_aspirin_versus_cytoreduction_alo-u-1504",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1504,
+      "sentence": "1.4 haemorrhagic events per 1000 person\u2010years, respectively, <jats:italic>P</jats:italic> = 0.006) and in the subgroup of patients older than 60 years.",
+      "context_window": "italic> = 0.006) and in the subgroup of patients older than 60 years. In conclusion, low\u2010dose aspirin benefits high\u2010risk <jats:s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_bjh_12321_cytoreduction_plus_low_dose_aspirin_versus_cytoreduction_alo-u-1650",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1650,
+      "sentence": "In conclusion, low\u2010dose aspirin benefits high\u2010risk <jats:styled-content style=\"fixed-case\">ET</jats:styled-content> patients older than 60 years receiving cytoreductive therapy as primary prophylaxis of thrombosis.</jats:p>",
+      "context_window": "e=\"fixed-case\">ET</jats:styled-content> patients older than 60 years receiving cytoreductive therapy as primary prophylaxis of t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

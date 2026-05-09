@@ -1,0 +1,214 @@
+{
+  "paper_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a",
+  "doi": "10.1093/sleep/33.5.585",
+  "extracted_at": "2026-05-08T20:06:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1,
+    "risk_ratio": 1,
+    "confidence_interval": 1,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-u-627",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 627,
+      "sentence": "We included studies if they were prospective, had follow-up >3 years, had duration of sleep at baseline, and all-cause mortality prospectively.",
+      "context_window": "e included studies if they were prospective, had follow-up >3 years, had duration of sleep at baseline, and all-cause mortality",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-pct-747",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 747,
+      "sentence": "We extracted relative risks (RR) and 95% confidence intervals (CI) and pooled them using a random effect model.",
+      "context_window": "rtality prospectively. We extracted relative risks (RR) and 95% confidence intervals (CI) and pooled them using a random ef",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-u-1063",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1063,
+      "sentence": "They included 1,382,999 male and female participants (followup range 4 to 25 years), and 112,566 deaths.",
+      "context_window": "1,382,999 male and female participants (followup range 4 to 25 years), and 112,566 deaths. Sleep duration was assessed by questi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-rr-a-1273",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR: 1.12",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1273,
+      "sentence": "In the pooled analysis, short duration of sleep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but heterogeneity between studies (P = 0.02).",
+      "context_window": "ation of sleep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publica",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-ci-1283",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.06 to 1.18",
+      "numeric_values": [
+        1.06,
+        1.18
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "In the pooled analysis, short duration of sleep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but heterogeneity between studies (P = 0.02).",
+      "context_window": "leep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74)",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-p-1304",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1304,
+      "sentence": "In the pooled analysis, short duration of sleep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but heterogeneity between studies (P = 0.02).",
+      "context_window": "ith a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but hetero",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-p-1352",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1352,
+      "sentence": "In the pooled analysis, short duration of sleep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but heterogeneity between studies (P = 0.02).",
+      "context_window": "06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but heterogeneity between studies (P = 0.02). Long duratio",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-p-1397",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "In the pooled analysis, short duration of sleep was associated with a greater risk of death (RR: 1.12; 95% CI 1.06 to 1.18; P < 0.01) with no evidence of publication bias (P = 0.74) but heterogeneity between studies (P = 0.02).",
+      "context_window": "lication bias (P = 0.74) but heterogeneity between studies (P = 0.02). Long duration of sleep was also associated with a greater",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-p-1503",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1503,
+      "sentence": "Long duration of sleep was also associated with a greater risk of death (1.30; [1.22 to 1.38]; P < 0.0001) with no evidence of publication bias (P = 0.18) but significant heterogeneity between studies (P < 0.0001).",
+      "context_window": "ociated with a greater risk of death (1.30; [1.22 to 1.38]; P < 0.0001) with no evidence of publication bias (P = 0.18) but signif",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-p-1553",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1553,
+      "sentence": "Long duration of sleep was also associated with a greater risk of death (1.30; [1.22 to 1.38]; P < 0.0001) with no evidence of publication bias (P = 0.18) but significant heterogeneity between studies (P < 0.0001).",
+      "context_window": "to 1.38]; P < 0.0001) with no evidence of publication bias (P = 0.18) but significant heterogeneity between studies (P < 0.0001)",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_33_5_585_sleep_duration_and_all_cause_mortality_a_systematic_review_a-p-1610",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1610,
+      "sentence": "Long duration of sleep was also associated with a greater risk of death (1.30; [1.22 to 1.38]; P < 0.0001) with no evidence of publication bias (P = 0.18) but significant heterogeneity between studies (P < 0.0001).",
+      "context_window": "s (P = 0.18) but significant heterogeneity between studies (P < 0.0001). CONCLUSION: Both short and long duration of sleep are sig",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "paper_id": "PMC11645871_o063_cognitive_behavioural_therapy_for_insomnia_improves_obs",
+  "doi": "10.1093/sleepadvances/zpae070.063",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "confidence_interval": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11645871_o063_cognitive_behavioural_therapy_for_insomnia_improves_obs-u-588",
+      "claim_type": "unit_value",
+      "raw_text": "9.42 years",
+      "numeric_values": [
+        9.42
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 588,
+      "sentence": "In a single-arm trial, we recruited 20 patients (11M:9F; Mage = 53.48, SDage = 9.42 years) with comorbid insomnia and OSA defined by an apnoea hypopnea index (AHI) \u2265 10 events per hour.",
+      "context_window": "al, we recruited 20 patients (11M:9F; Mage = 53.48, SDage = 9.42 years) with comorbid insomnia and OSA defined by an apnoea hypopn",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11645871_o063_cognitive_behavioural_therapy_for_insomnia_improves_obs-ci-1056",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI[3.48, 14.49",
+      "numeric_values": [
+        3.48,
+        14.49
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "There was a significant 8.9 event/h reduction in the AHI following CBT-I 95%CI[3.48, 14.49], p =.003, to a moderate effect (d = 0.52).",
+      "context_window": "ignificant 8.9 event/h reduction in the AHI following CBT-I 95%CI[3.48, 14.49], p =.003, to a moderate effect (d = 0.52). There was no ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11645871_o063_cognitive_behavioural_therapy_for_insomnia_improves_obs-p-1076",
+      "claim_type": "p_value",
+      "raw_text": "p =.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1076,
+      "sentence": "There was a significant 8.9 event/h reduction in the AHI following CBT-I 95%CI[3.48, 14.49], p =.003, to a moderate effect (d = 0.52).",
+      "context_window": "/h reduction in the AHI following CBT-I 95%CI[3.48, 14.49], p =.003, to a moderate effect (d = 0.52). There was no change in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11645871_o063_cognitive_behavioural_therapy_for_insomnia_improves_obs-p-1270",
+      "claim_type": "p_value",
+      "raw_text": "p >.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1270,
+      "sentence": "There was no change in the arousal threshold, the other endotype traits, nor was the change in arousal threshold associated with the change in the AHI (p >.05).",
+      "context_window": "in arousal threshold associated with the change in the AHI (p >.05). In these preliminary findings, we provide further suppor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

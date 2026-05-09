@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte",
+  "doi": "10.1097/00004872-200211000-00031",
+  "extracted_at": "2026-05-08T20:06:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-u-219",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 219,
+      "sentence": "In the intensively treated patients of the Hypertension Optimal Treatment (HOT) Study, randomization to low-dose aspirin (75 mg daily) versus placebo significantly reduced cardiovascular events (-15%) and myocardial infarction (-36%), but increased major bleedings (+65%).",
+      "context_window": "l Treatment (HOT) Study, randomization to low-dose aspirin (75 mg daily) versus placebo significantly reduced cardiovascular",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 293,
+      "sentence": "In the intensively treated patients of the Hypertension Optimal Treatment (HOT) Study, randomization to low-dose aspirin (75 mg daily) versus placebo significantly reduced cardiovascular events (-15%) and myocardial infarction (-36%), but increased major bleedings (+65%).",
+      "context_window": "ersus placebo significantly reduced cardiovascular events (-15%) and myocardial infarction (-36%), but increased major blee",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-pct-326",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 326,
+      "sentence": "In the intensively treated patients of the Hypertension Optimal Treatment (HOT) Study, randomization to low-dose aspirin (75 mg daily) versus placebo significantly reduced cardiovascular events (-15%) and myocardial infarction (-36%), but increased major bleedings (+65%).",
+      "context_window": "ed cardiovascular events (-15%) and myocardial infarction (-36%), but increased major bleedings (+65%). The present analyse",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-pct-364",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 364,
+      "sentence": "In the intensively treated patients of the Hypertension Optimal Treatment (HOT) Study, randomization to low-dose aspirin (75 mg daily) versus placebo significantly reduced cardiovascular events (-15%) and myocardial infarction (-36%), but increased major bleedings (+65%).",
+      "context_window": "ocardial infarction (-36%), but increased major bleedings (+65%). The present analyses of HOT Study data aim at identifying",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-u-683",
+      "claim_type": "unit_value",
+      "raw_text": "3.8 years",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 683,
+      "sentence": "METHODS: The 18 790 hypertensive patients (aspirin 9399, placebo 9391; average treatment duration 3.8 years) were stratified for global cardiovascular risk and for individual risk factors.",
+      "context_window": "nts (aspirin 9399, placebo 9391; average treatment duration 3.8 years) were stratified for global cardiovascular risk and for ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-u-1100",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mg",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1100,
+      "sentence": "RESULTS: Interaction analyses indicated that of all subgroups, only patients with serum creatinine > 1.3 mg/dl had a significantly greater reduction of cardiovascular events and myocardial infarction (-13 and -7/1000 patient-years), while risk of bleeding was not significantly different between subgroups.",
+      "context_window": "hat of all subgroups, only patients with serum creatinine > 1.3 mg/dl had a significantly greater reduction of cardiovascular",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_00004872_200211000_00031_benefit_and_harm_of_low_dose_aspirin_in_well_treated_hyperte-u-1548",
+      "claim_type": "unit_value",
+      "raw_text": "107 mmHg",
+      "numeric_values": [
+        107.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1548,
+      "sentence": "In addition to patients with higher creatinine, a favourable balance between benefit and harm of aspirin was found in subgroups of patients at higher global baseline risk and baseline systolic pressure > or = 180 or diastolic pressure > or = 107 mmHg.",
+      "context_window": "e systolic pressure > or = 180 or diastolic pressure > or = 107 mmHg. CONCLUSIONS: Low-dose aspirin should be recommended to wel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

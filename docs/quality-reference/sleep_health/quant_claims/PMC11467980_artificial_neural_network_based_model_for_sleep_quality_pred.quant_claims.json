@@ -1,0 +1,1287 @@
+{
+  "paper_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred",
+  "doi": "10.1177/20552076241287363",
+  "extracted_at": "2026-05-08T20:06:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 7,
+    "percentage": 43,
+    "mean_sd": 12,
+    "unit_value": 3,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-903",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1061",
+      "numeric_values": [
+        1061.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 903,
+      "sentence": "Stratified sampling was used to divide the data into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "ling was used to divide the data into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%). Si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-913",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 913,
+      "sentence": "Stratified sampling was used to divide the data into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "sed to divide the data into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%). Six mod",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-954",
+      "claim_type": "sample_size",
+      "raw_text": "n = 265",
+      "numeric_values": [
+        265.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 954,
+      "sentence": "Stratified sampling was used to divide the data into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "st set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%). Six models were developed and validated using logist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-963",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 963,
+      "sentence": "Stratified sampling was used to divide the data into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "n = 1061, 80%) and an independent validation set ( n = 265, 20%). Six models were developed and validated using logistic re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1246",
+      "claim_type": "mean_sd",
+      "raw_text": "11.354 \u00b1 4.051",
+      "numeric_values": [
+        11.354,
+        4.051
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "Results: A total of 1326 frontline medical staff were included in this survey, with a mean PSQI score of 11.354 \u00b1 4.051.",
+      "context_window": "aff were included in this survey, with a mean PSQI score of 11.354 \u00b1 4.051. The prevalence of poor sleep quality was 80.8% ( n = 1072,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1303",
+      "claim_type": "percentage",
+      "raw_text": "80.8%",
+      "numeric_values": [
+        80.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1303,
+      "sentence": "The prevalence of poor sleep quality was 80.8% ( n = 1072, PSQI >7).",
+      "context_window": "of 11.354 \u00b1 4.051. The prevalence of poor sleep quality was 80.8% ( n = 1072, PSQI >7). Six variables related to sleep qualit",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-1311",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1072",
+      "numeric_values": [
+        1072.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1311,
+      "sentence": "The prevalence of poor sleep quality was 80.8% ( n = 1072, PSQI >7).",
+      "context_window": "4 \u00b1 4.051. The prevalence of poor sleep quality was 80.8% ( n = 1072, PSQI >7). Six variables related to sleep quality were used",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1726",
+      "claim_type": "percentage",
+      "raw_text": "71.6%",
+      "numeric_values": [
+        71.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1726,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": "sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1733",
+      "claim_type": "percentage",
+      "raw_text": "68.7%",
+      "numeric_values": [
+        68.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1733,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": "vity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively. Conclu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1740",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1740,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": "pecificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively. Conclusions:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1747",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1747,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": "ity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively. Conclusions: In this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1754",
+      "claim_type": "percentage",
+      "raw_text": "34.0%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1754,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": "ecision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively. Conclusions: In this study,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1761",
+      "claim_type": "percentage",
+      "raw_text": "45.0%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1761,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": ", F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively. Conclusions: In this study, the AN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-1772",
+      "claim_type": "percentage",
+      "raw_text": "26.2%",
+      "numeric_values": [
+        26.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1772,
+      "sentence": "The artificial neural network (ANN) model produced the best overall performance with area under the curve, accuracy, sensitivity, specificity, precision, F1 score, and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively.",
+      "context_window": "and kappa of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2% respectively. Conclusions: In this study, the ANN model, wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-u-1807",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1807,
+      "sentence": "The study inclusion criteria were (1) administrators, nurses, clinicians, and other (medical technology, pharmacy, and testing) personnel who participated in frontline medical work against COVID-19; (2) those working on the clinical frontline for \u22651 week; (3) those located in cities throughout Fujian Province; and (4) those who completed the questionnaire within 10 min.",
+      "context_window": "COVID-19; (2) those working on the clinical frontline for \u22651 week; (3) those located in cities throughout Fujian Province; an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-p-3230",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3230,
+      "sentence": "Multiple comparisons using ANOVA and the Bonferroni method were used for multiple comparisons to explore the differences among frontline medical staff in Fujian Province during the Shanghai COVID-19 period, compared with univariate analysis at p < 0.05 and multivariate analysis at p < 0.05 considered statistically significant.",
+      "context_window": "nghai COVID-19 period, compared with univariate analysis at p < 0.05 and multivariate analysis at p < 0.05 considered statistica",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-p-3268",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3268,
+      "sentence": "Multiple comparisons using ANOVA and the Bonferroni method were used for multiple comparisons to explore the differences among frontline medical staff in Fujian Province during the Shanghai COVID-19 period, compared with univariate analysis at p < 0.05 and multivariate analysis at p < 0.05 considered statistically significant.",
+      "context_window": "nivariate analysis at p < 0.05 and multivariate analysis at p < 0.05 considered statistically significant. All statistical data",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-p-6867",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6867,
+      "sentence": "Regarding feature selection for the six predictive models, we chose variables that were statistically significant based on single-factor and multi-factor logistic analyses ( p < 0.05).",
+      "context_window": "based on single-factor and multi-factor logistic analyses ( p < 0.05). We conducted data splitting using a random split method w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-7011",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1061",
+      "numeric_values": [
+        1061.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7011,
+      "sentence": "The included data were divided into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": ". The included data were divided into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%). St",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-7021",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7021,
+      "sentence": "The included data were divided into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "uded data were divided into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%). Stratif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-7062",
+      "claim_type": "sample_size",
+      "raw_text": "n = 265",
+      "numeric_values": [
+        265.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7062,
+      "sentence": "The included data were divided into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "st set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%). Stratified sampling was performed based on the resul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-7071",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7071,
+      "sentence": "The included data were divided into a training test set ( n = 1061, 80%) and an independent validation set ( n = 265, 20%).",
+      "context_window": "n = 1061, 80%) and an independent validation set ( n = 265, 20%). Stratified sampling was performed based on the results of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-159",
+      "claim_type": "percentage",
+      "raw_text": "65.96%",
+      "numeric_values": [
+        65.96
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 159,
+      "sentence": "This study was conducted on 2024 medical staff in Fujian Province supporting Shanghai, and a total of 1326 valid questionnaires were collected, accounting for 65.96% of the medical staff in Fujian Province supporting Shanghai at this time.",
+      "context_window": "of 1326 valid questionnaires were collected, accounting for 65.96% of the medical staff in Fujian Province supporting Shanghai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-436",
+      "claim_type": "percentage",
+      "raw_text": "75.8%",
+      "numeric_values": [
+        75.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 436,
+      "sentence": "Most of the medical staff involved in Shanghai aid were women (75.8%); mainly from Fuzhou, Xiamen, and other regions; most of them were married; their education was at the bachelor degree level and above; and the numbers of those above and below 35 years of age were similar.",
+      "context_window": "t of the medical staff involved in Shanghai aid were women (75.8%); mainly from Fuzhou, Xiamen, and other regions; most of th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-u-619",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 619,
+      "sentence": "Most of the medical staff involved in Shanghai aid were women (75.8%); mainly from Fuzhou, Xiamen, and other regions; most of them were married; their education was at the bachelor degree level and above; and the numbers of those above and below 35 years of age were similar.",
+      "context_window": "e level and above; and the numbers of those above and below 35 years of age were similar. Demographic characteristics of survey",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-702",
+      "claim_type": "sample_size",
+      "raw_text": "N = 1326",
+      "numeric_values": [
+        1326.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 702,
+      "sentence": "Demographic characteristics of survey participant ( N = 1326).",
+      "context_window": "milar. Demographic characteristics of survey participant ( N = 1326). The results of the statistical analysis showed that the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-810",
+      "claim_type": "mean_sd",
+      "raw_text": "11.354 \u00b1 4.051",
+      "numeric_values": [
+        11.354,
+        4.051
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 810,
+      "sentence": "The results of the statistical analysis showed that the mean PSQI score of the participants was 11.354 \u00b1 4.051.",
+      "context_window": "sis showed that the mean PSQI score of the participants was 11.354 \u00b1 4.051. Of the 1326 participants included in the sample, 254 front",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-999",
+      "claim_type": "percentage",
+      "raw_text": "80.8%",
+      "numeric_values": [
+        80.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 999,
+      "sentence": "Of the 1326 participants included in the sample, 254 frontline medical staff had high sleep quality and 1072 had poor sleep quality, with a sleep disorder detection rate of 80.8% ( n = 1072).",
+      "context_window": "poor sleep quality, with a sleep disorder detection rate of 80.8% ( n = 1072). Among the seven dimensions of the PSQI, we fo",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-n-1007",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1072",
+      "numeric_values": [
+        1072.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1007,
+      "sentence": "Of the 1326 participants included in the sample, 254 frontline medical staff had high sleep quality and 1072 had poor sleep quality, with a sleep disorder detection rate of 80.8% ( n = 1072).",
+      "context_window": "ep quality, with a sleep disorder detection rate of 80.8% ( n = 1072). Among the seven dimensions of the PSQI, we found no stat",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-p-1180",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.804",
+      "numeric_values": [
+        0.804
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1180,
+      "sentence": "Among the seven dimensions of the PSQI, we found no statistical significance in the use of time to fall asleep, sleep duration, or use of hypnotic medications ( p = 0.804, 0.184, and 0.136, respectively).",
+      "context_window": "ll asleep, sleep duration, or use of hypnotic medications ( p = 0.804, 0.184, and 0.136, respectively). The medical staff support",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1315",
+      "claim_type": "mean_sd",
+      "raw_text": "1.402 \u00b1 0.792",
+      "numeric_values": [
+        1.402,
+        0.792
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1315,
+      "sentence": "The medical staff supporting the fever clinic had the lowest scores for sleep disturbance (1.402 \u00b1 0.792), daytime dysfunction (1.566 \u00b1 1.029), and total PSQI score (10.665 \u00b1 4.249), which indicated that this group of medical staff encountered the fewest barriers to sleep and the experienced the highest functional activity during the day.",
+      "context_window": "e fever clinic had the lowest scores for sleep disturbance (1.402 \u00b1 0.792), daytime dysfunction (1.566 \u00b1 1.029), and total PSQI score",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1352",
+      "claim_type": "mean_sd",
+      "raw_text": "1.566 \u00b1 1.029",
+      "numeric_values": [
+        1.566,
+        1.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1352,
+      "sentence": "The medical staff supporting the fever clinic had the lowest scores for sleep disturbance (1.402 \u00b1 0.792), daytime dysfunction (1.566 \u00b1 1.029), and total PSQI score (10.665 \u00b1 4.249), which indicated that this group of medical staff encountered the fewest barriers to sleep and the experienced the highest functional activity during the day.",
+      "context_window": "for sleep disturbance (1.402 \u00b1 0.792), daytime dysfunction (1.566 \u00b1 1.029), and total PSQI score (10.665 \u00b1 4.249), which indicated th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1390",
+      "claim_type": "mean_sd",
+      "raw_text": "10.665 \u00b1 4.249",
+      "numeric_values": [
+        10.665,
+        4.249
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1390,
+      "sentence": "The medical staff supporting the fever clinic had the lowest scores for sleep disturbance (1.402 \u00b1 0.792), daytime dysfunction (1.566 \u00b1 1.029), and total PSQI score (10.665 \u00b1 4.249), which indicated that this group of medical staff encountered the fewest barriers to sleep and the experienced the highest functional activity during the day.",
+      "context_window": "daytime dysfunction (1.566 \u00b1 1.029), and total PSQI score (10.665 \u00b1 4.249), which indicated that this group of medical staff encounte",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1695",
+      "claim_type": "mean_sd",
+      "raw_text": "1.984 \u00b1 0.833",
+      "numeric_values": [
+        1.984,
+        0.833
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1695,
+      "sentence": "In contrast, the medical staff responsible for nucleic acid specimen testing had the highest scores for subjective sleep quality (1.984 \u00b1 0.833), sleep disturbance (1.961 \u00b1 0.853), and daytime functional impairment (2.058 \u00b1 0.908), which indicated that they had the worst sleep quality, encountered the most barriers to falling asleep, which had the most impact on their functional activities during the day.",
+      "context_window": "esting had the highest scores for subjective sleep quality (1.984 \u00b1 0.833), sleep disturbance (1.961 \u00b1 0.853), and daytime functional",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1730",
+      "claim_type": "mean_sd",
+      "raw_text": "1.961 \u00b1 0.853",
+      "numeric_values": [
+        1.961,
+        0.853
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1730,
+      "sentence": "In contrast, the medical staff responsible for nucleic acid specimen testing had the highest scores for subjective sleep quality (1.984 \u00b1 0.833), sleep disturbance (1.961 \u00b1 0.853), and daytime functional impairment (2.058 \u00b1 0.908), which indicated that they had the worst sleep quality, encountered the most barriers to falling asleep, which had the most impact on their functional activities during the day.",
+      "context_window": "ubjective sleep quality (1.984 \u00b1 0.833), sleep disturbance (1.961 \u00b1 0.853), and daytime functional impairment (2.058 \u00b1 0.908), which",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-1781",
+      "claim_type": "mean_sd",
+      "raw_text": "2.058 \u00b1 0.908",
+      "numeric_values": [
+        2.058,
+        0.908
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1781,
+      "sentence": "In contrast, the medical staff responsible for nucleic acid specimen testing had the highest scores for subjective sleep quality (1.984 \u00b1 0.833), sleep disturbance (1.961 \u00b1 0.853), and daytime functional impairment (2.058 \u00b1 0.908), which indicated that they had the worst sleep quality, encountered the most barriers to falling asleep, which had the most impact on their functional activities during the day.",
+      "context_window": "urbance (1.961 \u00b1 0.853), and daytime functional impairment (2.058 \u00b1 0.908), which indicated that they had the worst sleep quality, en",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-2094",
+      "claim_type": "mean_sd",
+      "raw_text": "10.665 \u00b1 4.249",
+      "numeric_values": [
+        10.665,
+        4.249
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2094,
+      "sentence": "The overall PSQI score showed that the medical staff supporting the fever clinic had a better overall quality of sleep (10.665 \u00b1 4.249), whereas the medical staff responsible for nucleic acid specimen testing had the worst overall quality of sleep (12.708 \u00b1 3.892).",
+      "context_window": "ing the fever clinic had a better overall quality of sleep (10.665 \u00b1 4.249), whereas the medical staff responsible for nucleic acid sp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-2223",
+      "claim_type": "mean_sd",
+      "raw_text": "12.708 \u00b1 3.892",
+      "numeric_values": [
+        12.708,
+        3.892
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2223,
+      "sentence": "The overall PSQI score showed that the medical staff supporting the fever clinic had a better overall quality of sleep (10.665 \u00b1 4.249), whereas the medical staff responsible for nucleic acid specimen testing had the worst overall quality of sleep (12.708 \u00b1 3.892).",
+      "context_window": "id specimen testing had the worst overall quality of sleep (12.708 \u00b1 3.892). However, the overall sleep quality of medical staff was p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-2836",
+      "claim_type": "mean_sd",
+      "raw_text": "9.410 \u00b1 4.778",
+      "numeric_values": [
+        9.41,
+        4.778
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2836,
+      "sentence": "The total PSQI score of the former (9.410 \u00b1 4.778) and the latter (13.094 \u00b1 4.631) indicated that the medical staff who did not have a title had the best sleep quality, whereas those at the senior level had the worst relative sleep ( Table 3 ).",
+      "context_window": "res in most categories. The total PSQI score of the former (9.410 \u00b1 4.778) and the latter (13.094 \u00b1 4.631) indicated that the medical",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-msd-2867",
+      "claim_type": "mean_sd",
+      "raw_text": "13.094 \u00b1 4.631",
+      "numeric_values": [
+        13.094,
+        4.631
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2867,
+      "sentence": "The total PSQI score of the former (9.410 \u00b1 4.778) and the latter (13.094 \u00b1 4.631) indicated that the medical staff who did not have a title had the best sleep quality, whereas those at the senior level had the worst relative sleep ( Table 3 ).",
+      "context_window": "al PSQI score of the former (9.410 \u00b1 4.778) and the latter (13.094 \u00b1 4.631) indicated that the medical staff who did not have a title",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5936",
+      "claim_type": "percentage",
+      "raw_text": "71.6%",
+      "numeric_values": [
+        71.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5936,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "vity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5943",
+      "claim_type": "percentage",
+      "raw_text": "69.7%",
+      "numeric_values": [
+        69.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5943,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "pecificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5950",
+      "claim_type": "percentage",
+      "raw_text": "68.7%",
+      "numeric_values": [
+        68.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5950,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. The s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5957",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5957,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ecision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. The sensitiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5964",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5964,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": ", F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. The sensitivity of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5971",
+      "claim_type": "percentage",
+      "raw_text": "34.0%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5971,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ore, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. The sensitivity of the NB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5978",
+      "claim_type": "percentage",
+      "raw_text": "45.0%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5978,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "d kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. The sensitivity of the NB model w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5989",
+      "claim_type": "percentage",
+      "raw_text": "26.2%",
+      "numeric_values": [
+        26.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5989,
+      "sentence": "The ANN model had AUC, AUPRC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ues of 71.6%, 69.7%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. The sensitivity of the NB model was high. P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-35",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 35,
+      "sentence": "Our findings showed that more than 80% of the frontline medical staff had poor sleep quality.",
+      "context_window": "Our findings showed that more than 80% of the frontline medical staff had poor sleep quality. Many",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-234",
+      "claim_type": "percentage",
+      "raw_text": "13.6%",
+      "numeric_values": [
+        13.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 234,
+      "sentence": "Many previous studies have found elevated rates of COVID-19-related sleep quality issues in the general population, with one study noting a 13.6% prevalence of COVID-19-related insomnia.",
+      "context_window": "y issues in the general population, with one study noting a 13.6% prevalence of COVID-19-related insomnia. 31 In another Chin",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-396",
+      "claim_type": "percentage",
+      "raw_text": "23.2%",
+      "numeric_values": [
+        23.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 396,
+      "sentence": "31 In another Chinese study of nearly 12,000 adolescents and young adults, the prevalence of insomnia symptoms was 23.2%.",
+      "context_window": "s and young adults, the prevalence of insomnia symptoms was 23.2%. 32 This suggests that the impact of the public health emer",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-p-1558",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1558,
+      "sentence": "33\n\nIn this study, we compared the sleep quality scores of medical staff in different support positions and with different job titles and found the most significant variability in daytime dysfunction scores ( p < 0.001).",
+      "context_window": "ost significant variability in daytime dysfunction scores ( p < 0.001). The worst mean sleep quality was found in those involved",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-u-4359",
+      "claim_type": "unit_value",
+      "raw_text": "23 years",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4359,
+      "sentence": "41 In addition, Yang et al. studied 463 young adult women aged 23 years, where PSQI >5 was found to be associated with a higher mean BMI.",
+      "context_window": "In addition, Yang et al. studied 463 young adult women aged 23 years, where PSQI >5 was found to be associated with a higher mea",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5060",
+      "claim_type": "percentage",
+      "raw_text": "71.6%",
+      "numeric_values": [
+        71.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5060,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "vity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5067",
+      "claim_type": "percentage",
+      "raw_text": "68.7%",
+      "numeric_values": [
+        68.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5067,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "pecificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. In ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5074",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5074,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. In addition,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5081",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5081,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ecision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. In addition, it obt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5088",
+      "claim_type": "percentage",
+      "raw_text": "34.0%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5088,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": ", F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. In addition, it obtained a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5095",
+      "claim_type": "percentage",
+      "raw_text": "45.0%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5095,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ore, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. In addition, it obtained a Brier",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5106",
+      "claim_type": "percentage",
+      "raw_text": "26.2%",
+      "numeric_values": [
+        26.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5106,
+      "sentence": "Our results also show the strong predictive power of our fitted models, with ANN being the most effective, having AUC, accuracy, sensitivity, specificity, precision, F1 score, and kappa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively.",
+      "context_window": "ppa values of 71.6%, 68.7%, 66.7%, 69.2%, 34.0%, 45.0%, and 26.2%, respectively. In addition, it obtained a Brier score of 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5522",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5522,
+      "sentence": "When the prevalence was less than 20%, especially less than 5%, the PR curve could be adopted.",
+      "context_window": "e and clinical scenarios. When the prevalence was less than 20%, especially less than 5%, the PR curve could be adopted. 47",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5548",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5548,
+      "sentence": "When the prevalence was less than 20%, especially less than 5%, the PR curve could be adopted.",
+      "context_window": "When the prevalence was less than 20%, especially less than 5%, the PR curve could be adopted. 47 However, the incidence r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-5659",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5659,
+      "sentence": "47 However, the incidence rate of poor sleep quality in our study was about 75%, the ROC curve may be more applicable than the PR curve.",
+      "context_window": "incidence rate of poor sleep quality in our study was about 75%, the ROC curve may be more applicable than the PR curve. An",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-6385",
+      "claim_type": "percentage",
+      "raw_text": "70.26%",
+      "numeric_values": [
+        70.26
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6385,
+      "sentence": "In addition, compared with some predictive models from previous studies predicting sleep problems, as selecting the prediction OSA model with six features predicting AHI cutoff value of 30/h, the sensitivity and specificity of 70.26% and 70.30%, respectively.",
+      "context_window": "HI cutoff value of 30/h, the sensitivity and specificity of 70.26% and 70.30%, respectively. 48 The ANN model developed in thi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-6396",
+      "claim_type": "percentage",
+      "raw_text": "70.30%",
+      "numeric_values": [
+        70.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6396,
+      "sentence": "In addition, compared with some predictive models from previous studies predicting sleep problems, as selecting the prediction OSA model with six features predicting AHI cutoff value of 30/h, the sensitivity and specificity of 70.26% and 70.30%, respectively.",
+      "context_window": "alue of 30/h, the sensitivity and specificity of 70.26% and 70.30%, respectively. 48 The ANN model developed in this study has",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-6604",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6604,
+      "sentence": "In terms of the specificity, in the prediction models developed in 2020 and 2022, the specificity was 59% and 57%, respectively, 21 , 49 lower than that in ANN model we developed.",
+      "context_window": "tion models developed in 2020 and 2022, the specificity was 59% and 57%, respectively, 21 , 49 lower than that in ANN model",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-6612",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6612,
+      "sentence": "In terms of the specificity, in the prediction models developed in 2020 and 2022, the specificity was 59% and 57%, respectively, 21 , 49 lower than that in ANN model we developed.",
+      "context_window": "els developed in 2020 and 2022, the specificity was 59% and 57%, respectively, 21 , 49 lower than that in ANN model we deve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-10121",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10121,
+      "sentence": "Our study population included 1326 frontline medical staff, covering over 80% of the frontline medical staff in Fujian Province who provided assistance in Shanghai between April and June 2022; moreover, the platform on which we released the questionnaire passed a rigorous system upgrade to ensure system accessibility, stability, data compatibility, and security, which makes our findings more reliable and representative and suitable for used as a reference for similar subsequent studies.",
+      "context_window": "lation included 1326 frontline medical staff, covering over 80% of the frontline medical staff in Fujian Province who provi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-136",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 136,
+      "sentence": "Our study population included 1326 frontline medical staff, covering over 80% of the frontline medical staff in Fujian Province who provided assistance in Shanghai between April and June 2022; moreover, the platform on which we released the questionnaire passed a rigorous system upgrade to ensure system accessibility, stability, data compatibility, and security, which makes our findings more reliable and representative and suitable for used as a reference for similar subsequent studies.",
+      "context_window": "lation included 1326 frontline medical staff, covering over 80% of the frontline medical staff in Fujian Province who provi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11467980_artificial_neural_network_based_model_for_sleep_quality_pred-pct-183",
+      "claim_type": "percentage",
+      "raw_text": "80.8%",
+      "numeric_values": [
+        80.8
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 183,
+      "sentence": "Sufficient evidence in this study suggested that the sleep quality of frontline medical staff in Fujian Province in Shanghai was severely affected by the pandemic, with approximately 80.8% of medical staff reporting poor sleep quality.",
+      "context_window": "i was severely affected by the pandemic, with approximately 80.8% of medical staff reporting poor sleep quality. A total of s",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

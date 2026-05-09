@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC8908636_functional_roles_of_taurine_l_theanine_l_citrulline_and_beta",
   "doi": "10.1186/s40104-022-00675-6",
-  "extracted_at": "2026-05-05T21:41:39+00:00",
+  "extracted_at": "2026-05-08T20:10:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 23,
-    "unit_value": 22,
+    "unit_value": 24,
     "mean_sd": 6
   },
   "claims": [
@@ -59,7 +59,7 @@
       "context_window": "e 1 ). It was shown that pre-feeding broilers with taurine (0.1% taurine) from 2 weeks of age, improved the final BW during",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -77,7 +77,7 @@
       "context_window": "that pre-feeding broilers with taurine (0.1% taurine) from 2 weeks of age, improved the final BW during HS (34 \u00b0C, 60% RH for",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -95,7 +95,7 @@
       "context_window": "rom 2 weeks of age, improved the final BW during HS (34 \u00b0C, 60% RH for 3-5 weeks) [ 68 ]. In contrast, some studies have re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -113,7 +113,7 @@
       "context_window": "f age, improved the final BW during HS (34 \u00b0C, 60% RH for 3-5 weeks) [ 68 ]. In contrast, some studies have reported that tauri",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "th dietary taurine (2.5 or 5 g/kg of diet) reared under HS (34 \u00b1 2 \u00b0C, HS for 8 h/d; 12 weeks) showed that higher taurine conc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "r 5 g/kg of diet) reared under HS (34 \u00b1 2 \u00b0C, HS for 8 h/d; 12 weeks) showed that higher taurine concentrations improved the fee",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": "pplementation to HS broilers (32 \u00b0C, basal diet + 5g/kg for 2 weeks) attenuated HS-induced breast muscle loss via suppressed pr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine supplementation",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -187,9 +187,9 @@
       "context_window": "plemented broilers exposed to chronic HS (consistent 32 \u00b0C, 55 \u00b1 5% RH; basal diet + 5.00 g/kg; 14 d) showed decreased ROS and",
       "claim_role": "effect",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "taurine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8908636_functional_roles_of_taurine_l_theanine_l_citrulline_and_beta-pct-17870",
@@ -205,9 +205,9 @@
       "context_window": "nted broilers exposed to chronic HS (consistent 32 \u00b0C, 55 \u00b1 5% RH; basal diet + 5.00 g/kg; 14 d) showed decreased ROS and",
       "claim_role": "effect",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "taurine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8908636_functional_roles_of_taurine_l_theanine_l_citrulline_and_beta-u-19158",
@@ -549,6 +549,42 @@
       "endpoint": "",
       "arm": "",
       "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8908636_functional_roles_of_taurine_l_theanine_l_citrulline_and_beta-u-31822",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 31822,
+      "sentence": "L-Citrulline supplementation (1 g/kg/d) to food-restricted rats restored the muscle protein synthesis, increased muscle strength, and the maximum tetanic force [ 150 ].",
+      "context_window": "oving the nutritional status. L-Citrulline supplementation (1 g/kg/d) to food-restricted rats restored the muscle protein synthe",
+      "claim_role": "effect",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8908636_functional_roles_of_taurine_l_theanine_l_citrulline_and_beta-u-32350",
+      "claim_type": "unit_value",
+      "raw_text": "5 g/kg/d",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 32350,
+      "sentence": "In aged malnourished rats, L-citrulline (5 g/kg/d) supplementation led to higher insulin, liver, and muscle protein mass, higher muscle protein synthesis rate, and improved muscle protein metabolism [ 149 ].",
+      "context_window": "ise in rat models. In aged malnourished rats, L-citrulline (5 g/kg/d) supplementation led to higher insulin, liver, and muscle p",
+      "claim_role": "effect",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
       "binding_confidence": "partial"
     },
     {

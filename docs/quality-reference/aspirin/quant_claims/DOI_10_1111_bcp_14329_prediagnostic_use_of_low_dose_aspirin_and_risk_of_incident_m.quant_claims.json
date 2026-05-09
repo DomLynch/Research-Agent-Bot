@@ -1,0 +1,87 @@
+{
+  "paper_id": "DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dose_aspirin_and_risk_of_incident_m",
+  "doi": "10.1111/bcp.14329",
+  "extracted_at": "2026-05-08T20:06:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dose_aspirin_and_risk_of_incident_m-pct-829",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 829,
+      "sentence": "Cox proportional hazards models were used to estimate adjusted hazard ratios (HRs) with 95% confidence intervals (CIs) of incident metastasis and of all\u2010cause mortality associated with prediagnostic low\u2010dose aspirin use, both overall and by duration of use.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>There were 314 incident metastatic events and 2189 deaths during a mean follow\u2010up time of 4.4 and 4.7 years, respectively.",
+      "context_window": "els were used to estimate adjusted hazard ratios (HRs) with 95% confidence intervals (CIs) of incident metastasis and of al",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dose_aspirin_and_risk_of_incident_m-u-1166",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "Cox proportional hazards models were used to estimate adjusted hazard ratios (HRs) with 95% confidence intervals (CIs) of incident metastasis and of all\u2010cause mortality associated with prediagnostic low\u2010dose aspirin use, both overall and by duration of use.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>There were 314 incident metastatic events and 2189 deaths during a mean follow\u2010up time of 4.4 and 4.7 years, respectively.",
+      "context_window": "nts and 2189 deaths during a mean follow\u2010up time of 4.4 and 4.7 years, respectively. Overall prediagnostic use of low\u2010dose aspiri",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dose_aspirin_and_risk_of_incident_m-ci-1311",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.63-1.22",
+      "numeric_values": [
+        0.63,
+        1.22
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1311,
+      "sentence": "Overall prediagnostic use of low\u2010dose aspirin was not associated with a decreased risk of incident metastasis (HR 0.88; 95% CI 0.63-1.22) or all\u2010cause mortality (HR 1.09; 95% CI 0.96-1.22) in CRC patients.",
+      "context_window": "ated with a decreased risk of incident metastasis (HR 0.88; 95% CI 0.63-1.22) or all\u2010cause mortality (HR 1.09; 95% CI 0.96-1.22) in CRC",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dose_aspirin_and_risk_of_incident_m-ci-1362",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.96-1.22",
+      "numeric_values": [
+        0.96,
+        1.22
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "Overall prediagnostic use of low\u2010dose aspirin was not associated with a decreased risk of incident metastasis (HR 0.88; 95% CI 0.63-1.22) or all\u2010cause mortality (HR 1.09; 95% CI 0.96-1.22) in CRC patients.",
+      "context_window": "HR 0.88; 95% CI 0.63-1.22) or all\u2010cause mortality (HR 1.09; 95% CI 0.96-1.22) in CRC patients. Cumulative duration of aspirin use was no",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

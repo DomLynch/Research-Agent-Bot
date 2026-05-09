@@ -1,0 +1,1076 @@
+{
+  "paper_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic",
+  "doi": "10.18632/aging.101354",
+  "extracted_at": "2026-05-08T20:12:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 12,
+    "unit_value": 27,
+    "percentage": 17,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-672",
+      "claim_type": "sample_size",
+      "raw_text": "n=30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 672,
+      "sentence": "In the human cohort (participants with subjective cognitive decline, n=30, 60 to 80 years of age), a 3-month randomized, placebo-controlled, double-blind Phase II trial was conducted with supplementation of the spermidine-rich plant extract (dosage: 1.2 mg/day).",
+      "context_window": "man cohort (participants with subjective cognitive decline, n=30, 60 to 80 years of age), a 3-month randomized, placebo-cont",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-684",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 684,
+      "sentence": "In the human cohort (participants with subjective cognitive decline, n=30, 60 to 80 years of age), a 3-month randomized, placebo-controlled, double-blind Phase II trial was conducted with supplementation of the spermidine-rich plant extract (dosage: 1.2 mg/day).",
+      "context_window": "participants with subjective cognitive decline, n=30, 60 to 80 years of age), a 3-month randomized, placebo-controlled, double-b",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-853",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 mg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "In the human cohort (participants with subjective cognitive decline, n=30, 60 to 80 years of age), a 3-month randomized, placebo-controlled, double-blind Phase II trial was conducted with supplementation of the spermidine-rich plant extract (dosage: 1.2 mg/day).",
+      "context_window": "pplementation of the spermidine-rich plant extract (dosage: 1.2 mg/day). No differences were observed between spermidine and place",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-1117",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1117,
+      "sentence": "Compliance rates above 85% indicated excellent tolerability.",
+      "context_window": "h status at the end of intervention. Compliance rates above 85% indicated excellent tolerability. The data demonstrate that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-904",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 904,
+      "sentence": "A translational study, for example, showed that higher external supply of dietary polyamines, administered via a polyamine-enriched diet in mice (26 weeks) and humans (two months), increased blood spermine concentration in both rodents and healthy middle aged males [ 7 ].",
+      "context_window": "amines, administered via a polyamine-enriched diet in mice (26 weeks) and humans (two months), increased blood spermine concentr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine-rich wheat germ",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-2308",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2308,
+      "sentence": "A recent study further demonstrated that oral spermidine administration reduced the incidence of chemically-induced hepatocellular carcinoma and liver fibrosis in mice and caused a life span extension of 25% [ 13 ].",
+      "context_window": "liver fibrosis in mice and caused a life span extension of 25% [ 13 ]. In addition, spermidine and other caloric restricti",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-3202",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 3202,
+      "sentence": "Post mortem examination of mice included macroscopic inspection of organs, organ weighing and neoplastic examination after 28 days of supplementation at various concentrations.",
+      "context_window": "of organs, organ weighing and neoplastic examination after 28 days of supplementation at various concentrations. In addition,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-3635",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 3635,
+      "sentence": "In the human cohort, a randomized, placebo-controlled, double-blind Phase II study examined safety and tolerability of polyamine supplementation over 3 months.",
+      "context_window": "d safety and tolerability of polyamine supplementation over 3 months. Older adults with subjective cognitive decline (SCD) were",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-511",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 511,
+      "sentence": "In order to examine the safety of the used extracts, a standardized OECD repeated dose oral toxicity study was conducted. [SOURCE: OECD: Guidelines for the testing of Chemicals - \"Test 407: Repeated Dose 28-day Oral Toxicity Study in Rodents\"] In brief, groups of 10 male and 10 female BALB/cAnNRj mice (Janvier Labs S.A.S.) were provided with either control chow or chow supplemented with a polyamine-rich extract corres-ponding to 0.5 g/kg, 5 g/kg or 50 g/kg animal bodyweight daily intake over the period of 28 days.",
+      "context_window": "r 50 g/kg animal bodyweight daily intake over the period of 28 days. An additional group of 5 male and 5 female mice was fed wi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-614",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 614,
+      "sentence": "An additional group of 5 male and 5 female mice was fed with control chow diet for additional 14 days (two weeks washout) after receiving the highest dosage of supplemented diet for 28 days.",
+      "context_window": "5 female mice was fed with control chow diet for additional 14 days (two weeks washout) after receiving the highest dosage of s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-702",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 702,
+      "sentence": "An additional group of 5 male and 5 female mice was fed with control chow diet for additional 14 days (two weeks washout) after receiving the highest dosage of supplemented diet for 28 days.",
+      "context_window": "after receiving the highest dosage of supplemented diet for 28 days. All experiments were started at the age of 8 weeks. Anima",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-754",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 754,
+      "sentence": "All experiments were started at the age of 8 weeks.",
+      "context_window": "iet for 28 days. All experiments were started at the age of 8 weeks. Animals were housed in a 12h light/dark cycle in type 3 I",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-2022",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2022,
+      "sentence": "At the end of the 28-day long treatment, animals were anesthetized by inhalation of 3-4% isoflurane (ForaneA(r), Baxter Healthcare Corporation) and euthanized by cervical dislocation.",
+      "context_window": "ong treatment, animals were anesthetized by inhalation of 3-4% isoflurane (ForaneA(r), Baxter Healthcare Corporation) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-2997",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2997,
+      "sentence": "In brief, polyamines were extracted on ice by incubating samples for 60 min in 5% trichloracetic acid solution.",
+      "context_window": "s were extracted on ice by incubating samples for 60 min in 5% trichloracetic acid solution. After centrifugation at 25,00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine-rich wheat germ",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-5100",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5100,
+      "sentence": "Determination of the sample size (n = 30) was based on the study of Soda and colleagues [ 7 ].",
+      "context_window": "ere repeated (follow-up). Determination of the sample size (n = 30) was based on the study of Soda and colleagues [ 7 ]. The p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-5806",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5806,
+      "sentence": "Enrolled participants were between 60 - 80 years of age, fluent German speakers, with the presence of SCD in accordance with existing guidelines [ 16 , 24 ].",
+      "context_window": "ID: NCT02755246 ). Enrolled participants were between 60 - 80 years of age, fluent German speakers, with the presence of SCD in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-6012",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6012,
+      "sentence": "In detail, all participants had to express subjective cognitive complaints for at least 6 months and related worries, report no deficits in activities of daily living, and score \u226410 in the Geriatric Depression Scale [ 25 ].",
+      "context_window": "had to express subjective cognitive complaints for at least 6 months and related worries, report no deficits in activities of da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7192",
+      "claim_type": "unit_value",
+      "raw_text": "41 mg",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7192,
+      "sentence": "As a result, doses of up to 41 mg/kg bodyweight or 2.8 g extract containing 3.4 mg spermidine for the average person weighing 70 kg were set as the expected upper safety limit for the treatment.",
+      "context_window": "and chronic application [ 30 ]. As a result, doses of up to 41 mg/kg bodyweight or 2.8 g extract containing 3.4 mg spermidine",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7240",
+      "claim_type": "unit_value",
+      "raw_text": "3.4 mg",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7240,
+      "sentence": "As a result, doses of up to 41 mg/kg bodyweight or 2.8 g extract containing 3.4 mg spermidine for the average person weighing 70 kg were set as the expected upper safety limit for the treatment.",
+      "context_window": "es of up to 41 mg/kg bodyweight or 2.8 g extract containing 3.4 mg spermidine for the average person weighing 70 kg were set a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7290",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 7290,
+      "sentence": "As a result, doses of up to 41 mg/kg bodyweight or 2.8 g extract containing 3.4 mg spermidine for the average person weighing 70 kg were set as the expected upper safety limit for the treatment.",
+      "context_window": "ontaining 3.4 mg spermidine for the average person weighing 70 kg were set as the expected upper safety limit for the treatme",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7370",
+      "claim_type": "unit_value",
+      "raw_text": "750 mg",
+      "numeric_values": [
+        750.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7370,
+      "sentence": "In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Type 00 capsules.",
+      "context_window": "e expected upper safety limit for the treatment. In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7410",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 mg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7410,
+      "sentence": "In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Type 00 capsules.",
+      "context_window": "eatment. In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7429",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7429,
+      "sentence": "In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Type 00 capsules.",
+      "context_window": "750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7446",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mg",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7446,
+      "sentence": "In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Type 00 capsules.",
+      "context_window": "ine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Ty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7469",
+      "claim_type": "unit_value",
+      "raw_text": "510 mg",
+      "numeric_values": [
+        510.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7469,
+      "sentence": "In total, 750 mg of polyamine-rich plant extract (1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Type 00 capsules.",
+      "context_window": "(1.2 mg spermidine, 0.6 mg spermine, 0.2 mg putrescine) and 510 mg cellulose were divided into three Type 00 capsules. This ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-7581",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7581,
+      "sentence": "This accounts for to an increase of approximately 10-20% of average spermidine intake in developed countries [ 31 , 32 ].",
+      "context_window": "sules. This accounts for to an increase of approximately 10-20% of average spermidine intake in developed countries [ 31 ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7705",
+      "claim_type": "unit_value",
+      "raw_text": "750 mg",
+      "numeric_values": [
+        750.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7705,
+      "sentence": "Three placebo capsules per day were filled in sum with 750 mg potato starch and 510 mg cellulose.",
+      "context_window": "2 ]. Three placebo capsules per day were filled in sum with 750 mg potato starch and 510 mg cellulose. All capsules were ident",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7730",
+      "claim_type": "unit_value",
+      "raw_text": "510 mg",
+      "numeric_values": [
+        510.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7730,
+      "sentence": "Three placebo capsules per day were filled in sum with 750 mg potato starch and 510 mg cellulose.",
+      "context_window": "es per day were filled in sum with 750 mg potato starch and 510 mg cellulose. All capsules were identical in shape, color, tas",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-p-13554",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13554,
+      "sentence": "The level of significance was set at p <0.05 and the effect size measure partial eta-squared for the factor \"ogroup\" was reported.",
+      "context_window": "measure as co-variate. The level of significance was set at p <0.05 and the effect size measure partial eta-squared for the fac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-951",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 951,
+      "sentence": "Data are given as mean \u00b1 standard deviation (SD). (n = 10 per group and gender), *equivalent of 60 mg/kg spermidine\n\nFood and water intake were not influenced by the supplementation with the polyamine-rich wheat germ extract ( Table 1 ).",
+      "context_window": "le 1 ). Data are given as mean \u00b1 standard deviation (SD). (n = 10 per group and gender), *equivalent of 60 mg/kg spermidine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 996,
+      "sentence": "Data are given as mean \u00b1 standard deviation (SD). (n = 10 per group and gender), *equivalent of 60 mg/kg spermidine\n\nFood and water intake were not influenced by the supplementation with the polyamine-rich wheat germ extract ( Table 1 ).",
+      "context_window": "viation (SD). (n = 10 per group and gender), *equivalent of 60 mg/kg spermidine Food and water intake were not influenced by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-1419",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1419,
+      "sentence": "Relative kidney weight was increased by 12% in this group compared to control animals.",
+      "context_window": "50 g/kg bodyweight. Relative kidney weight was increased by 12% in this group compared to control animals. At lower concent",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-2032",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2032,
+      "sentence": "While spermidine levels in whole blood of female mice supplemented with highest concentration of spermidine-rich extract in chow was significantly increased compared to the control group after 4 weeks, spermidine blood level in female mice at lower extract concentrations and all male mice remained unaffected by the treatment.",
+      "context_window": "significantly increased compared to the control group after 4 weeks, spermidine blood level in female mice at lower extract con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-3256",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3256,
+      "sentence": "Individual data points are marked as dots. (n = 5-10 per gender and group).",
+      "context_window": "maximum value. Individual data points are marked as dots. (n = 5-10 per gender and group). One-hundred-seventy-one adults w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-3509",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3509,
+      "sentence": "One-hundred-thirty-eight subjects were excluded, because they were not eligible (n = 100) or declined participation (n = 38).",
+      "context_window": "ght subjects were excluded, because they were not eligible (n = 100) or declined participation (n = 38). In total, 33 participa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-3545",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3545,
+      "sentence": "One-hundred-thirty-eight subjects were excluded, because they were not eligible (n = 100) or declined participation (n = 38).",
+      "context_window": "they were not eligible (n = 100) or declined participation (n = 38). In total, 33 participants were invited from January 2016",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-4058",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4058,
+      "sentence": "During this time, two participants (spermidine group: n = 1; placebo group: n = 1) dropped out due to missing motivation.",
+      "context_window": "tion. During this time, two participants (spermidine group: n = 1; placebo group: n = 1) dropped out due to missing motivatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-4080",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4080,
+      "sentence": "During this time, two participants (spermidine group: n = 1; placebo group: n = 1) dropped out due to missing motivation.",
+      "context_window": ", two participants (spermidine group: n = 1; placebo group: n = 1) dropped out due to missing motivation. Twenty-eight partic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-4317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4317,
+      "sentence": "CONSORT diagram indicating the number of participants at each stage of the study\n\nSpermidine (n = 14) and placebo group (n = 14) were comparable for age, years of education, body mass index (BMI) as well as for cognitive and mental status ( Table 2 ).",
+      "context_window": "ber of participants at each stage of the study Spermidine (n = 14) and placebo group (n = 14) were comparable for age, years",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-4344",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4344,
+      "sentence": "CONSORT diagram indicating the number of participants at each stage of the study\n\nSpermidine (n = 14) and placebo group (n = 14) were comparable for age, years of education, body mass index (BMI) as well as for cognitive and mental status ( Table 2 ).",
+      "context_window": "stage of the study Spermidine (n = 14) and placebo group (n = 14) were comparable for age, years of education, body mass ind",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-4933",
+      "claim_type": "percentage",
+      "raw_text": "98.0%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4933,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "erall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-4978",
+      "claim_type": "percentage",
+      "raw_text": "85.7%",
+      "numeric_values": [
+        85.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4978,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-4987",
+      "claim_type": "percentage",
+      "raw_text": "103.1%",
+      "numeric_values": [
+        103.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4987,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; pla",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-5013",
+      "claim_type": "percentage",
+      "raw_text": "98.8%",
+      "numeric_values": [
+        98.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5013,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "es, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-5033",
+      "claim_type": "percentage",
+      "raw_text": "91.3%",
+      "numeric_values": [
+        91.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5033,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "ange 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-5042",
+      "claim_type": "percentage",
+      "raw_text": "103.1%",
+      "numeric_values": [
+        103.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5042,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%). Bloo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-5065",
+      "claim_type": "percentage",
+      "raw_text": "97.2%",
+      "numeric_values": [
+        97.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5065,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%). Blood polyamine (spermidin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-5085",
+      "claim_type": "percentage",
+      "raw_text": "85.7%",
+      "numeric_values": [
+        85.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5085,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%). Blood polyamine (spermidine, putrescine, sperm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-5094",
+      "claim_type": "percentage",
+      "raw_text": "102.8%",
+      "numeric_values": [
+        102.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5094,
+      "sentence": "Compliance rates, measured by capsule count at follow-up, were on average high in both groups (overall mean compliance rate [Compliance rates, measured SD]: 98.0% Compliance rates, measured 13.0; range 85.7% to 103.1%; spermidine group: 98.8% \u00b1 12.7; range 91.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%).",
+      "context_window": "1.3% to 103.1%; placebo group: 97.2% \u00b1 12.1; range 85.7% to 102.8%). Blood polyamine (spermidine, putrescine, spermine) and L",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-6601",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6601,
+      "sentence": "Two participants (7.1%) reported a serious adverse event (SAE) during the intervention phase, classified by system organ classes of \"immune system disorders\" (spermidine group: n = 1) and \"infections and infestations\" (placebo group: n = 1).",
+      "context_window": "ty lipoprotein, \u03b72: partial eta-squared. Two participants (7.1%) reported a serious adverse event (SAE) during the interven",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-6760",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6760,
+      "sentence": "Two participants (7.1%) reported a serious adverse event (SAE) during the intervention phase, classified by system organ classes of \"immune system disorders\" (spermidine group: n = 1) and \"infections and infestations\" (placebo group: n = 1).",
+      "context_window": "gan classes of \"immune system disorders\" (spermidine group: n = 1) and \"infections and infestations\" (placebo group: n = 1).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-n-6817",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6817,
+      "sentence": "Two participants (7.1%) reported a serious adverse event (SAE) during the intervention phase, classified by system organ classes of \"immune system disorders\" (spermidine group: n = 1) and \"infections and infestations\" (placebo group: n = 1).",
+      "context_window": "p: n = 1) and \"infections and infestations\" (placebo group: n = 1). Both SAEs were categorized as \"omild intensity without pe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-7013",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 months",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7013,
+      "sentence": "Their relationship to intervention was rated as \"unlikely related\" (allergic reaction after animal contact, after 2.5 months of treatment) and \"not related\"\" (pneumonia), respectively.",
+      "context_window": "ely related\" (allergic reaction after animal contact, after 2.5 months of treatment) and \"not related\"\" (pneumonia), respectively.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-p-7279",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.765",
+      "numeric_values": [
+        0.765
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7279,
+      "sentence": "Self-reported mental and physical health did not differ significantly between groups at the end of intervention, indicated by mental (p = 0.765, partial eta-squared = 0.004) and physical (p = 0.672, partial eta-squared =0.007) component summary scores of the Short Form-12 (SF-12) health survey questionnaire.",
+      "context_window": "een groups at the end of intervention, indicated by mental (p = 0.765, partial eta-squared = 0.004) and physical (p = 0.672, part",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-p-7333",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.672",
+      "numeric_values": [
+        0.672
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7333,
+      "sentence": "Self-reported mental and physical health did not differ significantly between groups at the end of intervention, indicated by mental (p = 0.765, partial eta-squared = 0.004) and physical (p = 0.672, partial eta-squared =0.007) component summary scores of the Short Form-12 (SF-12) health survey questionnaire.",
+      "context_window": "ntal (p = 0.765, partial eta-squared = 0.004) and physical (p = 0.672, partial eta-squared =0.007) component summary scores of th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-730",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 730,
+      "sentence": "In the murine model, post mortem examination showed no significant changes in organ macroscopic appearance and neoplastic burden after 28 days of spermidine supplementation at various concentrations.",
+      "context_window": "in organ macroscopic appearance and neoplastic burden after 28 days of spermidine supplementation at various concentrations. An",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-pct-810",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 810,
+      "sentence": "An increase of 12% in relative kidney weight in female mice at the highest supplementation dosage (50 g/kg bodyweight) was observed.",
+      "context_window": "e supplementation at various concentrations. An increase of 12% in relative kidney weight in female mice at the highest sup",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-5474",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5474,
+      "sentence": "A possible limitation of our study is the small sample size in the human cohort in both intervention groups and short treatment duration of 3 months in humans and 28 days in mice.",
+      "context_window": "in both intervention groups and short treatment duration of 3 months in humans and 28 days in mice. However, given the nature of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5807086_safety_and_tolerability_of_spermidine_supplementation_in_mic-u-5497",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 5497,
+      "sentence": "A possible limitation of our study is the small sample size in the human cohort in both intervention groups and short treatment duration of 3 months in humans and 28 days in mice.",
+      "context_window": "oups and short treatment duration of 3 months in humans and 28 days in mice. However, given the nature of Phase II trials in hu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

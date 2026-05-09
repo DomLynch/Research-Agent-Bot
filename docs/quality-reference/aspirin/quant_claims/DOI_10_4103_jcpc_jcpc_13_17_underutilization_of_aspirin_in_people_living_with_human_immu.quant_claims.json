@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_4103_jcpc_jcpc_13_17_underutilization_of_aspirin_in_people_living_with_human_immu",
+  "doi": "10.4103/jcpc.jcpc_13_17",
+  "extracted_at": "2026-05-08T20:05:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_4103_jcpc_jcpc_13_17_underutilization_of_aspirin_in_people_living_with_human_immu-pct-557",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 557,
+      "sentence": "Multiple studies have demonstrated that PLHIV are 50% more likely to develop acute myocardial infarction (AMI), compared to the general population.",
+      "context_window": "se (CVD). Multiple studies have demonstrated that PLHIV are 50% more likely to develop acute myocardial infarction (AMI), c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_4103_jcpc_jcpc_13_17_underutilization_of_aspirin_in_people_living_with_human_immu-p-1503",
+      "claim_type": "p_value",
+      "raw_text": "P< 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1503,
+      "sentence": "Statistical tests were two-sided and P< 0.05 was considered statistically significant.",
+      "context_window": "tial publication bias. Statistical tests were two-sided and P< 0.05 was considered statistically significant. Results: A total",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_4103_jcpc_jcpc_13_17_underutilization_of_aspirin_in_people_living_with_human_immu-pct-1629",
+      "claim_type": "percentage",
+      "raw_text": "30.4%",
+      "numeric_values": [
+        30.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1629,
+      "sentence": "In these trials, 30.4% of PLHIV with increased risk for coronary heart disease (CHD) used aspirin for AMI prevention, compared to 36.9% of patients at risk of CHD in the general population.",
+      "context_window": "of 13 studies were included for analysis. In these trials, 30.4% of PLHIV with increased risk for coronary heart disease (CH",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_4103_jcpc_jcpc_13_17_underutilization_of_aspirin_in_people_living_with_human_immu-pct-1742",
+      "claim_type": "percentage",
+      "raw_text": "36.9%",
+      "numeric_values": [
+        36.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1742,
+      "sentence": "In these trials, 30.4% of PLHIV with increased risk for coronary heart disease (CHD) used aspirin for AMI prevention, compared to 36.9% of patients at risk of CHD in the general population.",
+      "context_window": "disease (CHD) used aspirin for AMI prevention, compared to 36.9% of patients at risk of CHD in the general population. Concl",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

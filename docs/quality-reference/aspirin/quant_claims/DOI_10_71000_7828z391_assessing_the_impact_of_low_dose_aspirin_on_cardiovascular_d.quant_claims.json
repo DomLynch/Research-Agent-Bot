@@ -1,0 +1,85 @@
+{
+  "paper_id": "DOI_10_71000_7828z391_assessing_the_impact_of_low_dose_aspirin_on_cardiovascular_d",
+  "doi": "10.71000/7828z391",
+  "extracted_at": "2026-05-08T20:06:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_71000_7828z391_assessing_the_impact_of_low_dose_aspirin_on_cardiovascular_d-u-569",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg/day",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 569,
+      "sentence": "Participants were randomly assigned to receive either 81 mg/day of aspirin or a placebo for one year.",
+      "context_window": "lled. Participants were randomly assigned to receive either 81 mg/day of aspirin or a placebo for one year. The primary endpoint",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_71000_7828z391_assessing_the_impact_of_low_dose_aspirin_on_cardiovascular_d-pct-817",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 817,
+      "sentence": "The incidence of MACE was 10% in the aspirin group compared to 28% in the placebo group, achieving statistical significance (p=0.03).",
+      "context_window": "parable baseline characteristics. The incidence of MACE was 10% in the aspirin group compared to 28% in the placebo group,",
+      "claim_role": "background",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_71000_7828z391_assessing_the_impact_of_low_dose_aspirin_on_cardiovascular_d-pct-854",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 854,
+      "sentence": "The incidence of MACE was 10% in the aspirin group compared to 28% in the placebo group, achieving statistical significance (p=0.03).",
+      "context_window": "incidence of MACE was 10% in the aspirin group compared to 28% in the placebo group, achieving statistical significance (p",
+      "claim_role": "background",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_71000_7828z391_assessing_the_impact_of_low_dose_aspirin_on_cardiovascular_d-p-916",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 916,
+      "sentence": "The incidence of MACE was 10% in the aspirin group compared to 28% in the placebo group, achieving statistical significance (p=0.03).",
+      "context_window": "% in the placebo group, achieving statistical significance (p=0.03). While the aspirin group also showed reductions in myocard",
+      "claim_role": "background",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "paper_id": "DOI_10_1111_jsr_70229_workplace_psychosocial_safety_climate_and_sleep_health_assoc",
+  "doi": "10.1111/jsr.70229",
+  "extracted_at": "2026-05-08T20:05:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "odds_ratio": 1,
+    "confidence_interval": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jsr_70229_workplace_psychosocial_safety_climate_and_sleep_health_assoc-or-a-1258",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1258,
+      "sentence": "Compared with the low\u2010risk PSC group, the high\u2010risk group showed increased odds of poor sleep quality (OR = 1.22, 95% CI: 1.04-1.43).",
+      "context_window": "igh\u2010risk group showed increased odds of poor sleep quality (OR = 1.22, 95% CI: 1.04-1.43). Subgroup analysis revealed that older",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_70229_workplace_psychosocial_safety_climate_and_sleep_health_assoc-ci-1269",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.04-1.43",
+      "numeric_values": [
+        1.04,
+        1.43
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1269,
+      "sentence": "Compared with the low\u2010risk PSC group, the high\u2010risk group showed increased odds of poor sleep quality (OR = 1.22, 95% CI: 1.04-1.43).",
+      "context_window": "oup showed increased odds of poor sleep quality (OR = 1.22, 95% CI: 1.04-1.43). Subgroup analysis revealed that older adults (\u2265 60 years)",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_70229_workplace_psychosocial_safety_climate_and_sleep_health_assoc-u-1337",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1337,
+      "sentence": "Subgroup analysis revealed that older adults (\u2265 60 years), highly educated workers, full\u2010time employees, and non\u2010unionised workers were particularly vulnerable to poor sleep health in low PSC environments.",
+      "context_window": "1.04-1.43). Subgroup analysis revealed that older adults (\u2265 60 years), highly educated workers, full\u2010time employees, and non\u2010uni",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

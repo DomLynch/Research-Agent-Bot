@@ -1,0 +1,1278 @@
+{
+  "paper_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl",
+  "doi": "10.1186/s12905-024-03241-6",
+  "extracted_at": "2026-05-08T20:07:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 6,
+    "confidence_interval": 14,
+    "p_value": 17,
+    "percentage": 16,
+    "unit_value": 11,
+    "sample_size": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-msd-1023",
+      "claim_type": "mean_sd",
+      "raw_text": "8.86 \u00b1 2.34",
+      "numeric_values": [
+        8.86,
+        2.34
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1023,
+      "sentence": "The mean sleep quality score of the breast cancer patients who received chemotherapy after a radical mastectomy (baseline) was 8.86 \u00b1 2.34.",
+      "context_window": "ived chemotherapy after a radical mastectomy (baseline) was 8.86 \u00b1 2.34. The intervention group had a significantly lower mean glob",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1213",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -1.86, -0.24",
+      "numeric_values": [
+        -1.86,
+        -0.24
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1213,
+      "sentence": "The intervention group had a significantly lower mean global PSQI score than the control group from the first test to the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1234",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "The intervention group had a significantly lower mean global PSQI score than the control group from the first test to the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1252",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -3.70, -2.08",
+      "numeric_values": [
+        -3.7,
+        -2.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1252,
+      "sentence": "The intervention group had a significantly lower mean global PSQI score than the control group from the first test to the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1273",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1273,
+      "sentence": "The intervention group had a significantly lower mean global PSQI score than the control group from the first test to the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1296",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -5.65, -4.03",
+      "numeric_values": [
+        -5.65,
+        -4.03
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "The intervention group had a significantly lower mean global PSQI score than the control group from the first test to the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "= 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively. A change in the global PSQI scor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1317",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1317,
+      "sentence": "The intervention group had a significantly lower mean global PSQI score than the control group from the first test to the third test, with an adjusted mean difference of -1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": ": -3.70, -2.08; P < 0.001) and - 4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively. A change in the global PSQI score from base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1433",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -0.24, 1.34",
+      "numeric_values": [
+        -0.24,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1433,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "ore from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1453",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.171",
+      "numeric_values": [
+        0.171
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1453,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "r the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1491",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.96, 3.53",
+      "numeric_values": [
+        1.96,
+        3.53
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1491,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "(95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1510",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "4; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1582",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -1.31, 0.29",
+      "numeric_values": [
+        -1.31,
+        0.29
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1582,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "t the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1602",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.213",
+      "numeric_values": [
+        0.213
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1602,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-1640",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -2.91, -1.30",
+      "numeric_values": [
+        -2.91,
+        -1.3
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1640,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "(95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test. An intervention of music the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1661",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1661,
+      "sentence": "A change in the global PSQI score from baseline for the intervention group was from 0.55 (95%CI: -0.24, 1.34; P = 0.171) at the first test to 2.75 (95%CI: 1.96, 3.53; P < 0.001) at the last test, and for the control group was from - 0.51 (95%CI: -1.31, 0.29; P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test.",
+      "context_window": "P = 0.213 at the first test to -2.10 (95%CI: -2.91, -1.30; P < 0.001) at the last test. An intervention of music therapy combin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-62",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 62,
+      "sentence": "Breast cancer is the most common cancer in the vast majority (83%) of countries and the leading cause of cancer deaths in more than 100 countries [ 1 ].",
+      "context_window": "east cancer is the most common cancer in the vast majority (83%) of countries and the leading cause of cancer deaths in mor",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-530",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 530,
+      "sentence": "The target population was female breast cancer patients who received chemotherapy about 10-15 days after a modified radical mastectomy or an extensive radical mastectomy.",
+      "context_window": "e breast cancer patients who received chemotherapy about 10-15 days after a modified radical mastectomy or an extensive radical",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-1025",
+      "claim_type": "unit_value",
+      "raw_text": "8 days",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1025,
+      "sentence": "All included patients received 6-8 complete treatment cycles, with each cycle consisting of 8 days of treatment followed by 21 days of no treatment.",
+      "context_window": "-8 complete treatment cycles, with each cycle consisting of 8 days of treatment followed by 21 days of no treatment. The pati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-1057",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1057,
+      "sentence": "All included patients received 6-8 complete treatment cycles, with each cycle consisting of 8 days of treatment followed by 21 days of no treatment.",
+      "context_window": "th each cycle consisting of 8 days of treatment followed by 21 days of no treatment. The patients were recruited in this study",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-1271",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1271,
+      "sentence": "The patients were recruited in this study by the convenient sampling method if they met the following inclusion criteria: [ 1 ] they were willing to join the study voluntarily; [ 2 ] aged 18 years or order; [ 3 ] they were diagnosed with breast cancer by tumor, lymph node, metastasis (TNM) staging based on the fast pathology slide and paraffin section; [ 4 ] they were undergoing chemotherapy after a radical mastectomy.",
+      "context_window": "they were willing to join the study voluntarily; [ 2 ] aged 18 years or order; [ 3 ] they were diagnosed with breast cancer by t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-5630",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5630,
+      "sentence": "The practical exercise intensity of the whole exercise session was controlled within the range of the target heart rate of the patients, with the target heart rate = (220 - age - resting heart rate) \u00d7 (45-60%) + resting heart rate [ 3 ].",
+      "context_window": "target heart rate = (220 - age - resting heart rate) \u00d7 (45-60%) + resting heart rate [ 3 ]. Cool-down: Cool-down activitie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-9606",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9606,
+      "sentence": "Considering a 20-25% drop-out rate, we defined the target sample size as 110.",
+      "context_window": "to be 90 participants (45 for each group). Considering a 20-25% drop-out rate, we defined the target sample size as 110. A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-10071",
+      "claim_type": "unit_value",
+      "raw_text": "39 years",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10071,
+      "sentence": "In this study, the explanatory variables included the following: (i) age (20-39 years old, 40-59 years old, or \u2265 60 years old); (ii) marital status (unmarried, married, divorced, or widowed), (iii) education level (primary school or lower, junior school, high school, or college and above), (iv) household income per month (\u2264 2000 RMB, 2000-5000 RMB, or \u2265 5000 RMB), (v) medical insurance (none, rural cooperation medical service, or other insurance), (vi) work status (unemployed, employed, or retired), (vii) clinical TNM stage (I stage, II stage, or III stage), (viii) chemotherapy regimen (AC sequential paclitaxel or docetaxel, TEC, or TC), and (ix) side effects of chemotherapy (mild, moderate, or severe).",
+      "context_window": "e explanatory variables included the following: (i) age (20-39 years old, 40-59 years old, or \u2265 60 years old); (ii) marital stat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-10088",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10088,
+      "sentence": "In this study, the explanatory variables included the following: (i) age (20-39 years old, 40-59 years old, or \u2265 60 years old); (ii) marital status (unmarried, married, divorced, or widowed), (iii) education level (primary school or lower, junior school, high school, or college and above), (iv) household income per month (\u2264 2000 RMB, 2000-5000 RMB, or \u2265 5000 RMB), (v) medical insurance (none, rural cooperation medical service, or other insurance), (vi) work status (unemployed, employed, or retired), (vii) clinical TNM stage (I stage, II stage, or III stage), (viii) chemotherapy regimen (AC sequential paclitaxel or docetaxel, TEC, or TC), and (ix) side effects of chemotherapy (mild, moderate, or severe).",
+      "context_window": "iables included the following: (i) age (20-39 years old, 40-59 years old, or \u2265 60 years old); (ii) marital status (unmarried, ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-10107",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10107,
+      "sentence": "In this study, the explanatory variables included the following: (i) age (20-39 years old, 40-59 years old, or \u2265 60 years old); (ii) marital status (unmarried, married, divorced, or widowed), (iii) education level (primary school or lower, junior school, high school, or college and above), (iv) household income per month (\u2264 2000 RMB, 2000-5000 RMB, or \u2265 5000 RMB), (v) medical insurance (none, rural cooperation medical service, or other insurance), (vi) work status (unemployed, employed, or retired), (vii) clinical TNM stage (I stage, II stage, or III stage), (viii) chemotherapy regimen (AC sequential paclitaxel or docetaxel, TEC, or TC), and (ix) side effects of chemotherapy (mild, moderate, or severe).",
+      "context_window": "following: (i) age (20-39 years old, 40-59 years old, or \u2265 60 years old); (ii) marital status (unmarried, married, divorced, or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-11450",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11450,
+      "sentence": "The statistical significance was achieved from statistical tests when P < 0.05.",
+      "context_window": "tical significance was achieved from statistical tests when P < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-n-493",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 493,
+      "sentence": "Reasons for dropping out were severe adverse reactions during chemotherapy ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), and personal reasons ( n = 4).",
+      "context_window": "ing out were severe adverse reactions during chemotherapy ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-n-524",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 524,
+      "sentence": "Reasons for dropping out were severe adverse reactions during chemotherapy ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), and personal reasons ( n = 4).",
+      "context_window": "ctions during chemotherapy ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), and personal reasons ( n = 4). Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-n-548",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 548,
+      "sentence": "Reasons for dropping out were severe adverse reactions during chemotherapy ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), and personal reasons ( n = 4).",
+      "context_window": "py ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), and personal reasons ( n = 4). Finally, 51 patients in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-n-579",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 579,
+      "sentence": "Reasons for dropping out were severe adverse reactions during chemotherapy ( n = 2), disease exacerbation ( n = 2), not answering ( n = 2), and personal reasons ( n = 4).",
+      "context_window": "on ( n = 2), not answering ( n = 2), and personal reasons ( n = 4). Finally, 51 patients in the intervention group and 49 pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-msd-809",
+      "claim_type": "mean_sd",
+      "raw_text": "44.73 \u00b1 11.697",
+      "numeric_values": [
+        44.73,
+        11.697
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 809,
+      "sentence": "Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old.",
+      "context_window": "pants were involved in data analysis. Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-817",
+      "claim_type": "unit_value",
+      "raw_text": "11.697 years",
+      "numeric_values": [
+        11.697
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 817,
+      "sentence": "Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old.",
+      "context_window": "re involved in data analysis. Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 ye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-845",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 845,
+      "sentence": "Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old.",
+      "context_window": ". Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old. Married partici",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-864",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old.",
+      "context_window": "was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old. Married participants accounte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-884",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 884,
+      "sentence": "Their average age was 44.73 \u00b1 11.697 years old (range: 25-71 years old), and 51% of them were 40-59 years old.",
+      "context_window": "years old (range: 25-71 years old), and 51% of them were 40-59 years old. Married participants accounted for 86% of the particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-933",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 933,
+      "sentence": "Married participants accounted for 86% of the participants.",
+      "context_window": "em were 40-59 years old. Married participants accounted for 86% of the participants. In addition, the income of roughly 21%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-993",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 993,
+      "sentence": "In addition, the income of roughly 21% of the households was more than 5000 RMB each month.",
+      "context_window": "86% of the participants. In addition, the income of roughly 21% of the households was more than 5000 RMB each month. Medica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1173,
+      "sentence": "Medical insurance, including rural cooperative medical service as well as urban, social, and commercial insurance, covered 99% of patients.",
+      "context_window": "as well as urban, social, and commercial insurance, covered 99% of patients. Moreover, approximately 63% of the patients ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-1214",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1214,
+      "sentence": "Moreover, approximately 63% of the patients had permanent jobs, 66% of the patients had stage II breast cancer, and 88% of the patients experienced moderate side effects during chemotherapy (Table 1 ).",
+      "context_window": "insurance, covered 99% of patients. Moreover, approximately 63% of the patients had permanent jobs, 66% of the patients had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-1254",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1254,
+      "sentence": "Moreover, approximately 63% of the patients had permanent jobs, 66% of the patients had stage II breast cancer, and 88% of the patients experienced moderate side effects during chemotherapy (Table 1 ).",
+      "context_window": "over, approximately 63% of the patients had permanent jobs, 66% of the patients had stage II breast cancer, and 88% of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-1306",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1306,
+      "sentence": "Moreover, approximately 63% of the patients had permanent jobs, 66% of the patients had stage II breast cancer, and 88% of the patients experienced moderate side effects during chemotherapy (Table 1 ).",
+      "context_window": "t jobs, 66% of the patients had stage II breast cancer, and 88% of the patients experienced moderate side effects during ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-1793",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1793,
+      "sentence": "Baseline characteristics of patients with breast cancer\n\nAccording to the analysis, there were no significant differences between the intervention group and the control group in terms of patient age, marital status, education level, household income, employment status, medical insurance, cancer clinical TNM stage, course of chemotherapy treatment, or severity of side effects due to chemotherapy ( P > 0.05) (Table 1 ).",
+      "context_window": "reatment, or severity of side effects due to chemotherapy ( P > 0.05) (Table 1 ). The mean sleep quality score of the 100 patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-msd-1888",
+      "claim_type": "mean_sd",
+      "raw_text": "8.86 \u00b1 2.34",
+      "numeric_values": [
+        8.86,
+        2.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1888,
+      "sentence": "The mean sleep quality score of the 100 patients with breast cancer was 8.86 \u00b1 2.34 on the 10th day after their radical mastectomy.",
+      "context_window": "ep quality score of the 100 patients with breast cancer was 8.86 \u00b1 2.34 on the 10th day after their radical mastectomy. According t",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-1988",
+      "claim_type": "percentage",
+      "raw_text": "76.0%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1988,
+      "sentence": "According to our records, approximately 76.0% of the patients suffered from sleep problems (a total PSQI score of > 7) on the 10th day after their radical mastectomy.",
+      "context_window": "radical mastectomy. According to our records, approximately 76.0% of the patients suffered from sleep problems (a total PSQI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-2155",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2155,
+      "sentence": "According to the results of this study, 56% of the patients had a poor subjective sleep quality, 42.0% of the patients had trouble falling asleep, and 34% of the patients had sleep disturbance (e.g., easy to get up, get up early, frequently to go the toilet at night).",
+      "context_window": "radical mastectomy. According to the results of this study, 56% of the patients had a poor subjective sleep quality, 42.0%",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-2212",
+      "claim_type": "percentage",
+      "raw_text": "42.0%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2212,
+      "sentence": "According to the results of this study, 56% of the patients had a poor subjective sleep quality, 42.0% of the patients had trouble falling asleep, and 34% of the patients had sleep disturbance (e.g., easy to get up, get up early, frequently to go the toilet at night).",
+      "context_window": "y, 56% of the patients had a poor subjective sleep quality, 42.0% of the patients had trouble falling asleep, and 34% of the",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-2266",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2266,
+      "sentence": "According to the results of this study, 56% of the patients had a poor subjective sleep quality, 42.0% of the patients had trouble falling asleep, and 34% of the patients had sleep disturbance (e.g., easy to get up, get up early, frequently to go the toilet at night).",
+      "context_window": "lity, 42.0% of the patients had trouble falling asleep, and 34% of the patients had sleep disturbance (e.g., easy to get up",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-2403",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2403,
+      "sentence": "In addition, about 34% of the patients slept < 6 h per night and had daytime dysfunction such as a shortage of energy and fatigue (Table 2 ).",
+      "context_window": ", frequently to go the toilet at night). In addition, about 34% of the patients slept < 6 h per night and had daytime dysfu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-n-2588",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2588,
+      "sentence": "The score of pittsburgh sleep quality index among patients ( n = 100)\n\nA linear mixed model was used to explore the effect of the intervention of music therapy combined with aerobic exercise on sleep quality after adjusting for age, marital status, education level, employment status, household income, medical insurance, cancer clinical TNM stage, and severity of side effects due to chemotherapy.",
+      "context_window": "he score of pittsburgh sleep quality index among patients ( n = 100) A linear mixed model was used to explore the effect of th",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-3336",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -1.86, -0.24",
+      "numeric_values": [
+        -1.86,
+        -0.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3336,
+      "sentence": "From the first test to the third test, the intervention group had a significantly lower mean global PSQI score than the control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "he control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-3357",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3357,
+      "sentence": "From the first test to the third test, the intervention group had a significantly lower mean global PSQI score than the control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-3375",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -3.70, -2.08",
+      "numeric_values": [
+        -3.7,
+        -2.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3375,
+      "sentence": "From the first test to the third test, the intervention group had a significantly lower mean global PSQI score than the control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "ferences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-3396",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3396,
+      "sentence": "From the first test to the third test, the intervention group had a significantly lower mean global PSQI score than the control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively. Exc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-3415",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -5.65, -4.03",
+      "numeric_values": [
+        -5.65,
+        -4.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3415,
+      "sentence": "From the first test to the third test, the intervention group had a significantly lower mean global PSQI score than the control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively. Except for the use of sleep medi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-3436",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3436,
+      "sentence": "From the first test to the third test, the intervention group had a significantly lower mean global PSQI score than the control group, the adjusted mean differences was - 1.05 (95%CI: -1.86, -0.24; P = 0.01), -2.89 (95%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively.",
+      "context_window": "5%CI: -3.70, -2.08; P < 0.001), -4.84 (95%CI: -5.65, -4.03; P < 0.001), respectively. Except for the use of sleep medication, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-3634",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3634,
+      "sentence": "Except for the use of sleep medication, the mean score of other components in intervention group was significantly lower than that in the control group at the third test ( P < 0.001).",
+      "context_window": "ly lower than that in the control group at the third test ( P < 0.001). Summary results from mixed model analysis of difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-4281",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -0.24, 1.34",
+      "numeric_values": [
+        -0.24,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4281,
+      "sentence": "However, the global PSQI score from the first test to the third test gradually decreased in the intervention group, with an adjusted change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001).",
+      "context_window": "the intervention group, with an adjusted change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001). On the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-4301",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.171",
+      "numeric_values": [
+        0.171
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4301,
+      "sentence": "However, the global PSQI score from the first test to the third test gradually decreased in the intervention group, with an adjusted change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001).",
+      "context_window": "oup, with an adjusted change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001). On the contrary, i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-4321",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.96, 3.53",
+      "numeric_values": [
+        1.96,
+        3.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4321,
+      "sentence": "However, the global PSQI score from the first test to the third test gradually decreased in the intervention group, with an adjusted change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001).",
+      "context_window": "d change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001). On the contrary, in the control group from the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-4340",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4340,
+      "sentence": "However, the global PSQI score from the first test to the third test gradually decreased in the intervention group, with an adjusted change from 0.55 (95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001).",
+      "context_window": "(95%CI: -0.24, 1.34; P = 0.171) to 2.75 (95%CI: 1.96, 3.53; P < 0.001). On the contrary, in the control group from the first test",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-4513",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -1.31, 0.29",
+      "numeric_values": [
+        -1.31,
+        0.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4513,
+      "sentence": "On the contrary, in the control group from the first test to the third test, the global PSQI score significantly increased, with an adjusted change from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001).",
+      "context_window": "gnificantly increased, with an adjusted change from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001). With",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-4533",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.213",
+      "numeric_values": [
+        0.213
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4533,
+      "sentence": "On the contrary, in the control group from the first test to the third test, the global PSQI score significantly increased, with an adjusted change from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001).",
+      "context_window": "d, with an adjusted change from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001). With prolongati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-ci-4554",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -2.91, -1.30",
+      "numeric_values": [
+        -2.91,
+        -1.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4554,
+      "sentence": "On the contrary, in the control group from the first test to the third test, the global PSQI score significantly increased, with an adjusted change from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001).",
+      "context_window": "hange from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001). With prolongation of the chemotherapy cycles,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-p-4575",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4575,
+      "sentence": "On the contrary, in the control group from the first test to the third test, the global PSQI score significantly increased, with an adjusted change from - 0.51 (95%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001).",
+      "context_window": "%CI: -1.31, 0.29; P = 0.213) to -2.10 (95%CI: -2.91, -1.30; P < 0.001). With prolongation of the chemotherapy cycles, the global",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-msd-1198",
+      "claim_type": "mean_sd",
+      "raw_text": "8.86 \u00b1 2.34",
+      "numeric_values": [
+        8.86,
+        2.34
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1198,
+      "sentence": "In this study, the mean total PSQI score of the participants was 8.86 \u00b1 2.34, which is higher than the general population in China (3.88 \u00b1 2.52) [ 32 ] and the level of breast cancer patients reported by Fortner et al. (6.8 \u00b1 4.0) [ 36 , 37 ].",
+      "context_window": "is study, the mean total PSQI score of the participants was 8.86 \u00b1 2.34, which is higher than the general population in China (3.88",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-msd-1265",
+      "claim_type": "mean_sd",
+      "raw_text": "3.88 \u00b1 2.52",
+      "numeric_values": [
+        3.88,
+        2.52
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1265,
+      "sentence": "In this study, the mean total PSQI score of the participants was 8.86 \u00b1 2.34, which is higher than the general population in China (3.88 \u00b1 2.52) [ 32 ] and the level of breast cancer patients reported by Fortner et al. (6.8 \u00b1 4.0) [ 36 , 37 ].",
+      "context_window": "2.34, which is higher than the general population in China (3.88 \u00b1 2.52) [ 32 ] and the level of breast cancer patients reported by",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-msd-1353",
+      "claim_type": "mean_sd",
+      "raw_text": "6.8 \u00b1 4.0",
+      "numeric_values": [
+        6.8,
+        4.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1353,
+      "sentence": "In this study, the mean total PSQI score of the participants was 8.86 \u00b1 2.34, which is higher than the general population in China (3.88 \u00b1 2.52) [ 32 ] and the level of breast cancer patients reported by Fortner et al. (6.8 \u00b1 4.0) [ 36 , 37 ].",
+      "context_window": "level of breast cancer patients reported by Fortner et al. (6.8 \u00b1 4.0) [ 36 , 37 ]. Sleep disorders are one of the most common sy",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-pct-1812",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1812,
+      "sentence": "Our study showed that 76% of the patients suffered from sleep problems, suggesting that they are common in breast cancer patients undergoing chemotherapy after a radical mastectomy.",
+      "context_window": "and the quality of life of patients. Our study showed that 76% of the patients suffered from sleep problems, suggesting th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11256659_effect_of_music_therapy_combined_with_aerobic_exercise_on_sl-u-4925",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4925,
+      "sentence": "Besides, aerobic exercise has been reported to have a positive impact on promoting sleep outcomes in cancer patients with poor sleep quality, and the benefits are sustained 3-6 months after the intervention [ 17 ].",
+      "context_window": "s with poor sleep quality, and the benefits are sustained 3-6 months after the intervention [ 17 ]. However, the effects of phys",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1814 @@
+{
+  "paper_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_",
+  "doi": "10.18632/oncotarget.1015",
+  "extracted_at": "2026-05-08T19:55:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 44,
+    "percentage": 38,
+    "sample_size": 8,
+    "p_value": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-404",
+      "claim_type": "unit_value",
+      "raw_text": "52 years",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 404,
+      "sentence": "We retrospectively reviewed the medical records of consecutive referred patients with advanced/metastatic thymoma or thymic carcinoma\n\nTwenty-one patients were identified (median age 52 years; 10 women; median number of prior systemic therapies = 2).",
+      "context_window": "carcinoma Twenty-one patients were identified (median age 52 years; 10 women; median number of prior systemic therapies = 2).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-492",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 492,
+      "sentence": "Six of 10 patients (60%) treated with mTOR inhibitor combination regimens achieved stable disease (SD) \u226512 months or a partial response (PR).",
+      "context_window": "umber of prior systemic therapies = 2). Six of 10 patients (60%) treated with mTOR inhibitor combination regimens achieved",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-576",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 576,
+      "sentence": "Six of 10 patients (60%) treated with mTOR inhibitor combination regimens achieved stable disease (SD) \u226512 months or a partial response (PR).",
+      "context_window": "nhibitor combination regimens achieved stable disease (SD) \u226512 months or a partial response (PR). For patients treated on mTOR in",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-663",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 663,
+      "sentence": "For patients treated on mTOR inhibitor regimens (N = 10), median time to treatment failure (TTF) was 11.6 months versus 2.3 months on last conventional regimen prior to referral (p=0.024).",
+      "context_window": "onse (PR). For patients treated on mTOR inhibitor regimens (N = 10), median time to treatment failure (TTF) was 11.6 months ve",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-715",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 months",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "For patients treated on mTOR inhibitor regimens (N = 10), median time to treatment failure (TTF) was 11.6 months versus 2.3 months on last conventional regimen prior to referral (p=0.024).",
+      "context_window": "gimens (N = 10), median time to treatment failure (TTF) was 11.6 months versus 2.3 months on last conventional regimen prior to ref",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-734",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 months",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 734,
+      "sentence": "For patients treated on mTOR inhibitor regimens (N = 10), median time to treatment failure (TTF) was 11.6 months versus 2.3 months on last conventional regimen prior to referral (p=0.024).",
+      "context_window": "dian time to treatment failure (TTF) was 11.6 months versus 2.3 months on last conventional regimen prior to referral (p=0.024). M",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-793",
+      "claim_type": "p_value",
+      "raw_text": "p=0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 793,
+      "sentence": "For patients treated on mTOR inhibitor regimens (N = 10), median time to treatment failure (TTF) was 11.6 months versus 2.3 months on last conventional regimen prior to referral (p=0.024).",
+      "context_window": "2.3 months on last conventional regimen prior to referral (p=0.024). Molecular analyses (performed by next generation sequenci",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1029",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1029,
+      "sentence": "Molecular analyses (performed by next generation sequencing in seven patients and single polymerase chain reaction (PCR)-based assays in an additional six patients) showed diverse actionable mutations: PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "howed diverse actionable mutations: PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1049",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "Molecular analyses (performed by next generation sequencing in seven patients and single polymerase chain reaction (PCR)-based assays in an additional six patients) showed diverse actionable mutations: PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "able mutations: PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%). Of two patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1067",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1067,
+      "sentence": "Molecular analyses (performed by next generation sequencing in seven patients and single polymerase chain reaction (PCR)-based assays in an additional six patients) showed diverse actionable mutations: PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "K3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%). Of two patients with PIK3CA or AK",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1091",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1091,
+      "sentence": "Molecular analyses (performed by next generation sequencing in seven patients and single polymerase chain reaction (PCR)-based assays in an additional six patients) showed diverse actionable mutations: PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%). Of two patients with PIK3CA or AKT1 mutations, one was tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1210,
+      "sentence": "Of two patients with PIK3CA or AKT1 mutations, one was treated with an mTOR inhibitor-based regimen and achieved 26% regression with a TTF of 17 months.",
+      "context_window": "s treated with an mTOR inhibitor-based regimen and achieved 26% regression with a TTF of 17 months. Patients with advanced",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-1239",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1239,
+      "sentence": "Of two patients with PIK3CA or AKT1 mutations, one was treated with an mTOR inhibitor-based regimen and achieved 26% regression with a TTF of 17 months.",
+      "context_window": "tor-based regimen and achieved 26% regression with a TTF of 17 months. Patients with advanced/metastatic thymoma or thymic carci",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-82",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 82,
+      "sentence": "Though rare (0.2-1.5% of all malignancies)[ 1 ], they represent the most common tumor of the anterior mediastinum[ 2 ].",
+      "context_window": "rs include thymomas and thymic carcinomas. Though rare (0.2-1.5% of all malignancies)[ 1 ], they represent the most common t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-2235",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2235,
+      "sentence": "Genomic libraries were captured for 3230 exons in 182 cancer-related genes plus 37 introns from 14 genes often rearranged in cancer and sequenced to average median depth of 734X with 99% of bases covered >100X.",
+      "context_window": "n cancer and sequenced to average median depth of 734X with 99% of bases covered >100X. Descriptive statistics were used t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-3521",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3521,
+      "sentence": "All tests were 2-sided, and P <0.05 was considered statistically significant.",
+      "context_window": "compare subgroups of patients. All tests were 2-sided, and P <0.05 was considered statistically significant. All statistical a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-185",
+      "claim_type": "unit_value",
+      "raw_text": "52 years",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 185,
+      "sentence": "Their median age was 52 years (range, 26-73 years) (Table 1 ).",
+      "context_window": "for Targeted Therapy (Phase I Clinic). Their median age was 52 years (range, 26-73 years) (Table 1 ). Ten patients (48%) were wo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-205",
+      "claim_type": "unit_value",
+      "raw_text": "73 years",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 205,
+      "sentence": "Their median age was 52 years (range, 26-73 years) (Table 1 ).",
+      "context_window": "(Phase I Clinic). Their median age was 52 years (range, 26-73 years) (Table 1 ). Ten patients (48%) were women. The median numb",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-241",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 241,
+      "sentence": "Ten patients (48%) were women.",
+      "context_window": "was 52 years (range, 26-73 years) (Table 1 ). Ten patients (48%) were women. The median number of prior therapies in the me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-501",
+      "claim_type": "unit_value",
+      "raw_text": "618 IU/L",
+      "numeric_values": [
+        618.0
+      ],
+      "units": "IU/L",
+      "source_section": "results",
+      "source_offset": 501,
+      "sentence": "Abbreviations: ECOG, Eastern Cooperative Oncology Group; LDH, lactate dehydrogenase *LDH, 618 IU/L is reported as upper limit of normal in our institution\n\nOf 12 patients assessed for a PIK3CA mutation (7 by NGS; 6 by single gene PCR sequencing, including one of whom was also assessed by NGS), one patient (8%; case #16, Table 2 ) had a PIK3CA mutation (S553T) in exon 9.",
+      "context_window": "ooperative Oncology Group; LDH, lactate dehydrogenase *LDH, 618 IU/L is reported as upper limit of normal in our institution Of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-719",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 719,
+      "sentence": "Abbreviations: ECOG, Eastern Cooperative Oncology Group; LDH, lactate dehydrogenase *LDH, 618 IU/L is reported as upper limit of normal in our institution\n\nOf 12 patients assessed for a PIK3CA mutation (7 by NGS; 6 by single gene PCR sequencing, including one of whom was also assessed by NGS), one patient (8%; case #16, Table 2 ) had a PIK3CA mutation (S553T) in exon 9.",
+      "context_window": "cluding one of whom was also assessed by NGS), one patient (8%; case #16, Table 2 ) had a PIK3CA mutation (S553T) in exon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-808",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 808,
+      "sentence": "One of the 13 patients (8%) assessed for an EGFR mutation (7 by NGS; 8 by single gene PCR-based sequencing including 2 who also had NGS) had a mutation (case #4, Table 2 ; T785I in exon 20) in the sample obtained five years prior to referral.",
+      "context_window": "PIK3CA mutation (S553T) in exon 9. One of the 13 patients (8%) assessed for an EGFR mutation (7 by NGS; 8 by single gene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-3565",
+      "claim_type": "sample_size",
+      "raw_text": "n=17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3565,
+      "sentence": "Most patients (n=17, 81%) received treatment with regimens that included at least one targeted agent, including 10 patients who received treatment with mTOR inhibitor combination therapies.",
+      "context_window": "trials (Table 2 and Supplemental Table 1 ). Most patients (n=17, 81%) received treatment with regimens that included at lea",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-3571",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3571,
+      "sentence": "Most patients (n=17, 81%) received treatment with regimens that included at least one targeted agent, including 10 patients who received treatment with mTOR inhibitor combination therapies.",
+      "context_window": "s (Table 2 and Supplemental Table 1 ). Most patients (n=17, 81%) received treatment with regimens that included at least on",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-4099",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4099,
+      "sentence": "Of the 19 patients evaluable for response, nine patients (47%) attained either a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; cases #2, 4, 6, 8, 12, and 17; Table 2 ).",
+      "context_window": ". Of the 19 patients evaluable for response, nine patients (47%) attained either a PR (n=3; cases #5, 11 and 19; Table 2 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-4126",
+      "claim_type": "sample_size",
+      "raw_text": "n=3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4126,
+      "sentence": "Of the 19 patients evaluable for response, nine patients (47%) attained either a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; cases #2, 4, 6, 8, 12, and 17; Table 2 ).",
+      "context_window": "ble for response, nine patients (47%) attained either a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; case",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-4169",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4169,
+      "sentence": "Of the 19 patients evaluable for response, nine patients (47%) attained either a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; cases #2, 4, 6, 8, 12, and 17; Table 2 ).",
+      "context_window": "ned either a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; cases #2, 4, 6, 8, 12, and 17; Table 2 ). Four patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-4180",
+      "claim_type": "sample_size",
+      "raw_text": "n=6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4180,
+      "sentence": "Of the 19 patients evaluable for response, nine patients (47%) attained either a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; cases #2, 4, 6, 8, 12, and 17; Table 2 ).",
+      "context_window": "a PR (n=3; cases #5, 11 and 19; Table 2 ) or SD \u226512 months (n=6; cases #2, 4, 6, 8, 12, and 17; Table 2 ). Four patients ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-4368",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4368,
+      "sentence": "Four patients came off study prior to post-treatment imaging evaluation due to clinical progression (all of whom were arbitrarily graphed as 20% progression in Figure 1 ).",
+      "context_window": "inical progression (all of whom were arbitrarily graphed as 20% progression in Figure 1 ). Six of 10 patients (60%; cases #",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-4419",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4419,
+      "sentence": "Six of 10 patients (60%; cases #4, 6, 8, 12, 17, and 19; Table 2 ) treated with an mTOR inhibitor containing regimen achieved SD \u226512 months/PR.",
+      "context_window": "aphed as 20% progression in Figure 1 ). Six of 10 patients (60%; cases #4, 6, 8, 12, 17, and 19; Table 2 ) treated with an",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-4529",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4529,
+      "sentence": "Six of 10 patients (60%; cases #4, 6, 8, 12, 17, and 19; Table 2 ) treated with an mTOR inhibitor containing regimen achieved SD \u226512 months/PR.",
+      "context_window": "ated with an mTOR inhibitor containing regimen achieved SD \u226512 months/PR. Three of nine evaluable patients (33%; cases #2, 5, and",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-4577",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4577,
+      "sentence": "Three of nine evaluable patients (33%; cases #2, 5, and 11, Table 2 ) treated with other agents achieved SD \u226512 months/PR.",
+      "context_window": "chieved SD \u226512 months/PR. Three of nine evaluable patients (33%; cases #2, 5, and 11, Table 2 ) treated with other agents a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-4652",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4652,
+      "sentence": "Three of nine evaluable patients (33%; cases #2, 5, and 11, Table 2 ) treated with other agents achieved SD \u226512 months/PR.",
+      "context_window": "5, and 11, Table 2 ) treated with other agents achieved SD \u226512 months/PR. TTF of \u226512 months was achieved by six of 10 patients on",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-4674",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4674,
+      "sentence": "TTF of \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-containing regimen (cases #4, 6, 8, 12, 17, and 19; Table 2 ; TTF = 12, 18+, 12+, 14, 17, and 12+ months, respectively) versus one of 10 patients treated with other agents (case #2; Table 2 ; TTF = 25 months) (p = 0.057).",
+      "context_window": "reated with other agents achieved SD \u226512 months/PR. TTF of \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-con",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-4938",
+      "claim_type": "unit_value",
+      "raw_text": "25 months",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4938,
+      "sentence": "TTF of \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-containing regimen (cases #4, 6, 8, 12, 17, and 19; Table 2 ; TTF = 12, 18+, 12+, 14, 17, and 12+ months, respectively) versus one of 10 patients treated with other agents (case #2; Table 2 ; TTF = 25 months) (p = 0.057).",
+      "context_window": "atients treated with other agents (case #2; Table 2 ; TTF = 25 months) (p = 0.057). One of two patients (cases #16 and 17, Table",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-4950",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.057",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4950,
+      "sentence": "TTF of \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-containing regimen (cases #4, 6, 8, 12, 17, and 19; Table 2 ; TTF = 12, 18+, 12+, 14, 17, and 12+ months, respectively) versus one of 10 patients treated with other agents (case #2; Table 2 ; TTF = 25 months) (p = 0.057).",
+      "context_window": "ted with other agents (case #2; Table 2 ; TTF = 25 months) (p = 0.057). One of two patients (cases #16 and 17, Table 2 ) with a m",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5105",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5105,
+      "sentence": "One of two patients (cases #16 and 17, Table 2 ) with a mutation in the PI3K/AKT/mTOR axis was treated with an mTOR-based regimen and achieved 26% regression with a TTF of 17 months (case #17, Table 2 ).",
+      "context_window": "OR axis was treated with an mTOR-based regimen and achieved 26% regression with a TTF of 17 months (case #17, Table 2 ). B",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-5134",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5134,
+      "sentence": "One of two patients (cases #16 and 17, Table 2 ) with a mutation in the PI3K/AKT/mTOR axis was treated with an mTOR-based regimen and achieved 26% regression with a TTF of 17 months (case #17, Table 2 ).",
+      "context_window": "TOR-based regimen and achieved 26% regression with a TTF of 17 months (case #17, Table 2 ). Best response by RECIST of 19 patien",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5593",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5593,
+      "sentence": "Patients with clinical progression or with new lesions were graphed as 20% progression.",
+      "context_window": "th clinical progression or with new lesions were graphed as 20% progression. Dotted horizontal line at -30% indicates borde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5637",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5637,
+      "sentence": "Dotted horizontal line at -30% indicates border for partial response.",
+      "context_window": "were graphed as 20% progression. Dotted horizontal line at -30% indicates border for partial response. A comprehensive list",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6167",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 months",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6167,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-6179",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6179,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "TF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6191",
+      "claim_type": "unit_value",
+      "raw_text": "8.7 months",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6191,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "ficantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6274",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6274,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ). We also anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-6286",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6286,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ). We also analyzed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6298",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 months",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6298,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ). We also analyzed the median TTF in a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-6310",
+      "claim_type": "p_value",
+      "raw_text": "p=0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6310,
+      "sentence": "The median TTF was significantly longer on a phase I trial (4.5 months, 95% CI, 0.3-8.7 months) compared to median TTF on the last therapy before referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ).",
+      "context_window": "re referral to phase I (3.0 months, 95% CI, 1.3-4.7 months; p=0.008; Figure 2A ). We also analyzed the median TTF in a sub-grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6677",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 months",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6677,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "or advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their l",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-6690",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6690,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "ancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last s",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6702",
+      "claim_type": "unit_value",
+      "raw_text": "30.9 months",
+      "numeric_values": [
+        30.9
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6702,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "ed on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prio",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6810",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 months",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6810,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "t standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ). Tick marks",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-6822",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6822,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "herapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ). Tick marks repre",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-6834",
+      "claim_type": "unit_value",
+      "raw_text": "2.9 months",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6834,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ). Tick marks represent patients still",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-6846",
+      "claim_type": "p_value",
+      "raw_text": "p=0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6846,
+      "sentence": "The median TTF was significantly longer in nine patients (one patient [case # 17 ; Table 2 ] was not included in the paired analysis as the patient did not receive prior systemic therapy for advanced cancer) treated on mTOR inhibitor combinations (11.6 months, 95% CI, 0.0-30.9 months) compared to median TTF on their last standard therapy prior to referral to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ).",
+      "context_window": "to the phase I clinic (2.3 months, 95% CI, 1.7-2.9 months; p=0.024; Figure 2B ). Tick marks represent patients still continui",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7020",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 months",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7020,
+      "sentence": "Comparison of TTF in 19 patients (median of 4.5 months in phase I program vs. median of 3.0 months on their last conventional therapy before referral to phase I; p=0.008).",
+      "context_window": "ow up. Panel A. Comparison of TTF in 19 patients (median of 4.5 months in phase I program vs. median of 3.0 months on their last c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7064",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7064,
+      "sentence": "Comparison of TTF in 19 patients (median of 4.5 months in phase I program vs. median of 3.0 months on their last conventional therapy before referral to phase I; p=0.008).",
+      "context_window": "ents (median of 4.5 months in phase I program vs. median of 3.0 months on their last conventional therapy before referral to phase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-7138",
+      "claim_type": "p_value",
+      "raw_text": "p=0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7138,
+      "sentence": "Comparison of TTF in 19 patients (median of 4.5 months in phase I program vs. median of 3.0 months on their last conventional therapy before referral to phase I; p=0.008).",
+      "context_window": "their last conventional therapy before referral to phase I; p=0.008). Two patients were not included in this paired analysis as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7476",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 months",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7476,
+      "sentence": "Comparison of TTF in nine patients treated on mTOR inhibitor combination therapies (median of 11.6 months on mTOR inhibitor combinations in phase I clinic vs. median of 2.3 months on last conventional therapy; p=0.024).",
+      "context_window": "treated on mTOR inhibitor combination therapies (median of 11.6 months on mTOR inhibitor combinations in phase I clinic vs. median",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7551",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 months",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7551,
+      "sentence": "Comparison of TTF in nine patients treated on mTOR inhibitor combination therapies (median of 11.6 months on mTOR inhibitor combinations in phase I clinic vs. median of 2.3 months on last conventional therapy; p=0.024).",
+      "context_window": "mTOR inhibitor combinations in phase I clinic vs. median of 2.3 months on last conventional therapy; p=0.024). The median follow-",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-7592",
+      "claim_type": "p_value",
+      "raw_text": "p=0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7592,
+      "sentence": "Comparison of TTF in nine patients treated on mTOR inhibitor combination therapies (median of 11.6 months on mTOR inhibitor combinations in phase I clinic vs. median of 2.3 months on last conventional therapy; p=0.024).",
+      "context_window": "inic vs. median of 2.3 months on last conventional therapy; p=0.024). The median follow-up duration of surviving patients from",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7711",
+      "claim_type": "unit_value",
+      "raw_text": "21.4 months",
+      "numeric_values": [
+        21.4
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7711,
+      "sentence": "The median follow-up duration of surviving patients from the date of presentation to the phase I clinic was 21.4 months (range, 9.6 - 59.5 months).",
+      "context_window": "nts from the date of presentation to the phase I clinic was 21.4 months (range, 9.6 - 59.5 months). The median OS from the time of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7737",
+      "claim_type": "unit_value",
+      "raw_text": "59.5 months",
+      "numeric_values": [
+        59.5
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7737,
+      "sentence": "The median follow-up duration of surviving patients from the date of presentation to the phase I clinic was 21.4 months (range, 9.6 - 59.5 months).",
+      "context_window": "ntation to the phase I clinic was 21.4 months (range, 9.6 - 59.5 months). The median OS from the time of diagnosis of advanced/meta",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7874",
+      "claim_type": "unit_value",
+      "raw_text": "85.7 months",
+      "numeric_values": [
+        85.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7874,
+      "sentence": "The median OS from the time of diagnosis of advanced/metastatic thymoma or thymic carcinoma to death or last follow up was 85.7 months (95% CI, 40.8 - 130.6 months).",
+      "context_window": "thymoma or thymic carcinoma to death or last follow up was 85.7 months (95% CI, 40.8 - 130.6 months). The median OS from the date",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-7887",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7887,
+      "sentence": "The median OS from the time of diagnosis of advanced/metastatic thymoma or thymic carcinoma to death or last follow up was 85.7 months (95% CI, 40.8 - 130.6 months).",
+      "context_window": "hymic carcinoma to death or last follow up was 85.7 months (95% CI, 40.8 - 130.6 months). The median OS from the date of pr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7902",
+      "claim_type": "unit_value",
+      "raw_text": "130.6 months",
+      "numeric_values": [
+        130.6
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7902,
+      "sentence": "The median OS from the time of diagnosis of advanced/metastatic thymoma or thymic carcinoma to death or last follow up was 85.7 months (95% CI, 40.8 - 130.6 months).",
+      "context_window": "to death or last follow up was 85.7 months (95% CI, 40.8 - 130.6 months). The median OS from the date of presentation to the phase",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-7988",
+      "claim_type": "unit_value",
+      "raw_text": "29.2 months",
+      "numeric_values": [
+        29.2
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7988,
+      "sentence": "The median OS from the date of presentation to the phase I program was 29.2 months (95% CI, 18.7-39.7 months).",
+      "context_window": "OS from the date of presentation to the phase I program was 29.2 months (95% CI, 18.7-39.7 months). At the time of analysis, 15 pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-8001",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8001,
+      "sentence": "The median OS from the date of presentation to the phase I program was 29.2 months (95% CI, 18.7-39.7 months).",
+      "context_window": "ate of presentation to the phase I program was 29.2 months (95% CI, 18.7-39.7 months). At the time of analysis, 15 patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-8014",
+      "claim_type": "unit_value",
+      "raw_text": "39.7 months",
+      "numeric_values": [
+        39.7
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8014,
+      "sentence": "The median OS from the date of presentation to the phase I program was 29.2 months (95% CI, 18.7-39.7 months).",
+      "context_window": "tation to the phase I program was 29.2 months (95% CI, 18.7-39.7 months). At the time of analysis, 15 patients were dead.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-510",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 510,
+      "sentence": "In this analysis, we observed that 9 of 19 patients (47%) evaluable for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ).",
+      "context_window": "inic. In this analysis, we observed that 9 of 19 patients (47%) evaluable for response achieved either SD \u226512 months (n=6)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-558",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 558,
+      "sentence": "In this analysis, we observed that 9 of 19 patients (47%) evaluable for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ).",
+      "context_window": "9 patients (47%) evaluable for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ). This includes si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-569",
+      "claim_type": "sample_size",
+      "raw_text": "n=6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 569,
+      "sentence": "In this analysis, we observed that 9 of 19 patients (47%) evaluable for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ).",
+      "context_window": "(47%) evaluable for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ). This includes six of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-583",
+      "claim_type": "sample_size",
+      "raw_text": "n=3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 583,
+      "sentence": "In this analysis, we observed that 9 of 19 patients (47%) evaluable for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ).",
+      "context_window": "e for response achieved either SD \u226512 months (n=6) or a PR (n=3) (Table 2 ; Figure 1 ). This includes six of 10 patients (6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-645",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 645,
+      "sentence": "This includes six of 10 patients (60%) treated on mTOR inhibitor combination therapies.",
+      "context_window": "3) (Table 2 ; Figure 1 ). This includes six of 10 patients (60%) treated on mTOR inhibitor combination therapies. TTF \u226512 m",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-704",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 704,
+      "sentence": "TTF \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-containing regimen versus one of 10 patients treated with other agents (p=0.057).",
+      "context_window": "(60%) treated on mTOR inhibitor combination therapies. TTF \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-con",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-842",
+      "claim_type": "p_value",
+      "raw_text": "p=0.057",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 842,
+      "sentence": "TTF \u226512 months was achieved by six of 10 patients on an mTOR inhibitor-containing regimen versus one of 10 patients treated with other agents (p=0.057).",
+      "context_window": "egimen versus one of 10 patients treated with other agents (p=0.057). Patients treated on mTOR inhibitor-containing phase I reg",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-968",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 months",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 968,
+      "sentence": "Patients treated on mTOR inhibitor-containing phase I regimens also demonstrated a significantly longer TTF (median=11.6 months) compared to the TTF on the therapy they received prior to referral to phase I (median=2.3 months) (p=0.024; Figure 2B ).",
+      "context_window": "gimens also demonstrated a significantly longer TTF (median=11.6 months) compared to the TTF on the therapy they received prior to",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-1067",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 months",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1067,
+      "sentence": "Patients treated on mTOR inhibitor-containing phase I regimens also demonstrated a significantly longer TTF (median=11.6 months) compared to the TTF on the therapy they received prior to referral to phase I (median=2.3 months) (p=0.024; Figure 2B ).",
+      "context_window": "therapy they received prior to referral to phase I (median=2.3 months) (p=0.024; Figure 2B ). Prior anecdotal responses to mTOR i",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-1080",
+      "claim_type": "p_value",
+      "raw_text": "p=0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1080,
+      "sentence": "Patients treated on mTOR inhibitor-containing phase I regimens also demonstrated a significantly longer TTF (median=11.6 months) compared to the TTF on the therapy they received prior to referral to phase I (median=2.3 months) (p=0.024; Figure 2B ).",
+      "context_window": "received prior to referral to phase I (median=2.3 months) (p=0.024; Figure 2B ). Prior anecdotal responses to mTOR inhibitors",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1618",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1618,
+      "sentence": "For instance, one of 12 patients (8%) harbored a PIK3CA mutation; one of 13 (8%), an EGFR mutation; one of seven (14%), a RET mutation; and one of seven (14%), an AKT1 mutation.",
+      "context_window": "molecular abnormalities. For instance, one of 12 patients (8%) harbored a PIK3CA mutation; one of 13 (8%), an EGFR mutati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1661",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1661,
+      "sentence": "For instance, one of 12 patients (8%) harbored a PIK3CA mutation; one of 13 (8%), an EGFR mutation; one of seven (14%), a RET mutation; and one of seven (14%), an AKT1 mutation.",
+      "context_window": "of 12 patients (8%) harbored a PIK3CA mutation; one of 13 (8%), an EGFR mutation; one of seven (14%), a RET mutation; and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1698",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1698,
+      "sentence": "For instance, one of 12 patients (8%) harbored a PIK3CA mutation; one of 13 (8%), an EGFR mutation; one of seven (14%), a RET mutation; and one of seven (14%), an AKT1 mutation.",
+      "context_window": "A mutation; one of 13 (8%), an EGFR mutation; one of seven (14%), a RET mutation; and one of seven (14%), an AKT1 mutation.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-1738",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1738,
+      "sentence": "For instance, one of 12 patients (8%) harbored a PIK3CA mutation; one of 13 (8%), an EGFR mutation; one of seven (14%), a RET mutation; and one of seven (14%), an AKT1 mutation.",
+      "context_window": "tion; one of seven (14%), a RET mutation; and one of seven (14%), an AKT1 mutation. While each of these aberrations is pote",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-2203",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2203,
+      "sentence": "In our analysis of patients treated on targeted therapies, however, six of 10 individuals (60%) who received mTOR inhibitor combination therapies attained either SD \u226512 months (n=5) or a PR (n=1).",
+      "context_window": "ated on targeted therapies, however, six of 10 individuals (60%) who received mTOR inhibitor combination therapies attained",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-2278",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2278,
+      "sentence": "In our analysis of patients treated on targeted therapies, however, six of 10 individuals (60%) who received mTOR inhibitor combination therapies attained either SD \u226512 months (n=5) or a PR (n=1).",
+      "context_window": "ed mTOR inhibitor combination therapies attained either SD \u226512 months (n=5) or a PR (n=1). Results of molecular analyses were ava",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-2289",
+      "claim_type": "sample_size",
+      "raw_text": "n=5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2289,
+      "sentence": "In our analysis of patients treated on targeted therapies, however, six of 10 individuals (60%) who received mTOR inhibitor combination therapies attained either SD \u226512 months (n=5) or a PR (n=1).",
+      "context_window": "ibitor combination therapies attained either SD \u226512 months (n=5) or a PR (n=1). Results of molecular analyses were availabl",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-n-2303",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2303,
+      "sentence": "In our analysis of patients treated on targeted therapies, however, six of 10 individuals (60%) who received mTOR inhibitor combination therapies attained either SD \u226512 months (n=5) or a PR (n=1).",
+      "context_window": "tion therapies attained either SD \u226512 months (n=5) or a PR (n=1). Results of molecular analyses were available for five of",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-2521",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2521,
+      "sentence": "One of the five patients (case #17, Table 2 ) had an AKT1 mutation, and achieved tumor regression of 26% that lasted 17 months.",
+      "context_window": "2 ) had an AKT1 mutation, and achieved tumor regression of 26% that lasted 17 months. The underlying basis of response of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-2537",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2537,
+      "sentence": "One of the five patients (case #17, Table 2 ) had an AKT1 mutation, and achieved tumor regression of 26% that lasted 17 months.",
+      "context_window": "mutation, and achieved tumor regression of 26% that lasted 17 months. The underlying basis of response of the other patients is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-2975",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2975,
+      "sentence": "Three of the nine evaluable patients treated with agents that did not include an mTOR inhibitor achieved SD \u226512 months/PR.",
+      "context_window": "agents that did not include an mTOR inhibitor achieved SD \u226512 months/PR. Of interest, one patient (case #2; Table 2 ) treated wi",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-3091",
+      "claim_type": "unit_value",
+      "raw_text": "25 months",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3091,
+      "sentence": "Of interest, one patient (case #2; Table 2 ) treated with a TRAIL receptor-2 agonist, attained SD for 25 months versus TTF of four months on last therapy before referral to the phase I clinic.",
+      "context_window": ") treated with a TRAIL receptor-2 agonist, attained SD for 25 months versus TTF of four months on last therapy before referral t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-3494",
+      "claim_type": "unit_value",
+      "raw_text": "7 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3494,
+      "sentence": "Two other patients (cases #5 and 11, Table 2 ) achieved a PR, albeit of shorter duration (5 and 7 months), on decitabine (hypomethylating agent) and patupilone (microtubule inhibitor), respectively.",
+      "context_window": "Table 2 ) achieved a PR, albeit of shorter duration (5 and 7 months), on decitabine (hypomethylating agent) and patupilone (mic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-4667",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4667,
+      "sentence": "However, three of the five patients with TTF \u226512 months who were treated with a regimen that contained both an mTOR inhibitor and an anthracycline had received a prior anthracycline containing regimen.",
+      "context_window": "er[ 4 , 22 ]. However, three of the five patients with TTF \u226512 months who were treated with a regimen that contained both an mTOR",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5047",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5047,
+      "sentence": "Our study showed that six of 10 patients (60%) treated on mTOR inhibitor-containing regimen attained a SD \u226512 months/PR.",
+      "context_window": "for these tumors. Our study showed that six of 10 patients (60%) treated on mTOR inhibitor-containing regimen attained a SD",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-5112",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5112,
+      "sentence": "Our study showed that six of 10 patients (60%) treated on mTOR inhibitor-containing regimen attained a SD \u226512 months/PR.",
+      "context_window": "treated on mTOR inhibitor-containing regimen attained a SD \u226512 months/PR. The TTF on mTOR inhibitor combination therapies was sig",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-u-5305",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 months",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5305,
+      "sentence": "2.3 months; p=0.024; Figure 2B ).",
+      "context_window": "prior to referral to the phase I clinic (median of 11.6 vs. 2.3 months; p=0.024; Figure 2B ). Diverse actionable molecular aberrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-p-5317",
+      "claim_type": "p_value",
+      "raw_text": "p=0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5317,
+      "sentence": "2.3 months; p=0.024; Figure 2B ).",
+      "context_window": "erral to the phase I clinic (median of 11.6 vs. 2.3 months; p=0.024; Figure 2B ). Diverse actionable molecular aberrations were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5474",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5474,
+      "sentence": "Diverse actionable molecular aberrations were seen in our patients including, but not limited to, mutations in PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "g, but not limited to, mutations in PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5494",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5494,
+      "sentence": "Diverse actionable molecular aberrations were seen in our patients including, but not limited to, mutations in PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "o, mutations in PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%). Other aberrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5512",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5512,
+      "sentence": "Diverse actionable molecular aberrations were seen in our patients including, but not limited to, mutations in PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "K3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%). Other aberrations were also obser",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3757246_thymoma_patients_treated_in_a_phase_i_clinic_at_md_anderson_-pct-5536",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5536,
+      "sentence": "Diverse actionable molecular aberrations were seen in our patients including, but not limited to, mutations in PIK3CA (1 of 12 tested; 8%); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%).",
+      "context_window": "); EGFR (1 of 13; 8%); RET (1 of 7; 14%); and AKT1 (1 of 7; 14%). Other aberrations were also observed: TP53 mutation, APC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

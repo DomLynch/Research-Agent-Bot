@@ -1,0 +1,486 @@
+{
+  "paper_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_",
+  "doi": "10.1111/jdi.14134",
+  "extracted_at": "2026-05-08T20:05:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "p_value": 7,
+    "confidence_interval": 3,
+    "unit_value": 10,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-pct-1254",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1254,
+      "sentence": "Following propensity score adjustment, aspirin use exhibited a comparable risk of cardiovascular death compared with nonaspirin users (adjusted hazard ratio [aHR] 1.12; 95% confidence interval [CI] 0.65-1.95; P = 0.681).",
+      "context_window": "ed with nonaspirin users (adjusted hazard ratio [aHR] 1.12; 95% confidence interval [CI] 0.65-1.95; P = 0.681). The risk of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-1294",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.681",
+      "numeric_values": [
+        0.681
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1294,
+      "sentence": "Following propensity score adjustment, aspirin use exhibited a comparable risk of cardiovascular death compared with nonaspirin users (adjusted hazard ratio [aHR] 1.12; 95% confidence interval [CI] 0.65-1.95; P = 0.681).",
+      "context_window": "d ratio [aHR] 1.12; 95% confidence interval [CI] 0.65-1.95; P = 0.681). The risk of all\u2010cause mortality was similar between the t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-ci-1384",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.92-1.24",
+      "numeric_values": [
+        0.92,
+        1.24
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1384,
+      "sentence": "The risk of all\u2010cause mortality was similar between the two groups (aHR 1.07; 95% CI 0.92-1.24; P = 0.385).",
+      "context_window": "use mortality was similar between the two groups (aHR 1.07; 95% CI 0.92-1.24; P = 0.385). Similar risks were observed in terms of major",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-1402",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.385",
+      "numeric_values": [
+        0.385
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "The risk of all\u2010cause mortality was similar between the two groups (aHR 1.07; 95% CI 0.92-1.24; P = 0.385).",
+      "context_window": "similar between the two groups (aHR 1.07; 95% CI 0.92-1.24; P = 0.385). Similar risks were observed in terms of major bleeding an",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-pct-395",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 395,
+      "sentence": "The NHIRD represents an extensive nationwide repository of insurance claim\u2010related information encompassing demographics, diagnostic details, inpatient and ambulatory records, as well as prescription claims data for 99% of the resident population.",
+      "context_window": "ambulatory records, as well as prescription claims data for 99% of the resident population. The data period used in this st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-2925",
+      "claim_type": "unit_value",
+      "raw_text": "162 mg",
+      "numeric_values": [
+        162.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2925,
+      "sentence": "We chose low\u2010dose aspirin (75-162 mg) as our study drug based on guidelines for the primary prevention of cardiovascular disease 12 .",
+      "context_window": "odes and reimbursement codes. We chose low\u2010dose aspirin (75-162 mg) as our study drug based on guidelines for the primary prev",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-5231",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5231,
+      "sentence": "Otherwise, patients were followed up to 3 years.",
+      "context_window": "or switched groups. Otherwise, patients were followed up to 3 years. For statistical analysis, the propensity score was used t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-6381",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6381,
+      "sentence": "A value of P < 0.05 indicated significance.",
+      "context_window": "roup served as the reference group for analyses. A value of P < 0.05 indicated significance. Analyses were performed using SAS/S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-pct-692",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 692,
+      "sentence": "Most patients (96%) had stage 3b or 4 CKD, and the average diabetes complications severity index was 2.6.",
+      "context_window": "\u2010balanced between the two groups after SMRW. Most patients (96%) had stage 3b or 4 CKD, and the average diabetes complicati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-821",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 years",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 821,
+      "sentence": "The mean follow\u2010up period was 2.8 and 2.3 years in the nonaspirin users and aspirin group, respectively.",
+      "context_window": "verity index was 2.6. The mean follow\u2010up period was 2.8 and 2.3 years in the nonaspirin users and aspirin group, respectively. B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-pct-2214",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2214,
+      "sentence": "The risk of cardiovascular death was similar between the two groups, with an adjusted hazard ratio (aHR) of 1.12 (95% confidence interval [CI]: 0.65-1.95; P = 0.681).",
+      "context_window": "he two groups, with an adjusted hazard ratio (aHR) of 1.12 (95% confidence interval [CI]: 0.65-1.95; P = 0.681). All\u2010cause",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-2255",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.681",
+      "numeric_values": [
+        0.681
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2255,
+      "sentence": "The risk of cardiovascular death was similar between the two groups, with an adjusted hazard ratio (aHR) of 1.12 (95% confidence interval [CI]: 0.65-1.95; P = 0.681).",
+      "context_window": "tio (aHR) of 1.12 (95% confidence interval [CI]: 0.65-1.95; P = 0.681). All\u2010cause mortality rates were high but similar between t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-hr-a-2339",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR: 1.07",
+      "numeric_values": [
+        1.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2339,
+      "sentence": "All\u2010cause mortality rates were high but similar between the two groups (aHR: 1.07; 95% CI: 0.92-1.24; P = 0.385).",
+      "context_window": "rtality rates were high but similar between the two groups (aHR: 1.07; 95% CI: 0.92-1.24; P = 0.385). Subgroup analysis was perfo",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-ci-2350",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.92-1.24",
+      "numeric_values": [
+        0.92,
+        1.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2350,
+      "sentence": "All\u2010cause mortality rates were high but similar between the two groups (aHR: 1.07; 95% CI: 0.92-1.24; P = 0.385).",
+      "context_window": "es were high but similar between the two groups (aHR: 1.07; 95% CI: 0.92-1.24; P = 0.385). Subgroup analysis was performed based on age,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-2369",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.385",
+      "numeric_values": [
+        0.385
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2369,
+      "sentence": "All\u2010cause mortality rates were high but similar between the two groups (aHR: 1.07; 95% CI: 0.92-1.24; P = 0.385).",
+      "context_window": "milar between the two groups (aHR: 1.07; 95% CI: 0.92-1.24; P = 0.385). Subgroup analysis was performed based on age, gender, com",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-hr-a-3390",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR: 0.85",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3390,
+      "sentence": "The incidence of major bleeding was high in the study population (26.96 and 31.53 per 1,000 patient\u2010years for low\u2010dose aspirin users and nonaspirin users, respectively) without a significant difference between the two groups (aHR: 0.85; 95% CI: 0.69-1.04; P = 0.116).",
+      "context_window": "y) without a significant difference between the two groups (aHR: 0.85; 95% CI: 0.69-1.04; P = 0.116). In addition, the risk of re",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-ci-3401",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.69-1.04",
+      "numeric_values": [
+        0.69,
+        1.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3401,
+      "sentence": "The incidence of major bleeding was high in the study population (26.96 and 31.53 per 1,000 patient\u2010years for low\u2010dose aspirin users and nonaspirin users, respectively) without a significant difference between the two groups (aHR: 0.85; 95% CI: 0.69-1.04; P = 0.116).",
+      "context_window": "a significant difference between the two groups (aHR: 0.85; 95% CI: 0.69-1.04; P = 0.116). In addition, the risk of renal disease progres",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-3420",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.116",
+      "numeric_values": [
+        0.116
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3420,
+      "sentence": "The incidence of major bleeding was high in the study population (26.96 and 31.53 per 1,000 patient\u2010years for low\u2010dose aspirin users and nonaspirin users, respectively) without a significant difference between the two groups (aHR: 0.85; 95% CI: 0.69-1.04; P = 0.116).",
+      "context_window": "rence between the two groups (aHR: 0.85; 95% CI: 0.69-1.04; P = 0.116). In addition, the risk of renal disease progression was no",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-p-3706",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.073",
+      "numeric_values": [
+        0.073
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3706,
+      "sentence": "In addition, the risk of renal disease progression was not significantly different between the two groups despite the high incidence of renal events in this study cohort (75.97 and 84.68 per 1,000 patient\u2010years for low\u2010dose aspirin users and nonaspirin users, respectively; P = 0.073).",
+      "context_window": "low\u2010dose aspirin users and nonaspirin users, respectively; P = 0.073). Safety outcomes: low\u2010dose aspirin vs nonaspirin. Low\u2010dos",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-347",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 347,
+      "sentence": "A prospective cohort study evaluated the effect of aspirin (100 mg/day) on primary prevention in 564 patients with diabetic nephropathy.",
+      "context_window": "A prospective cohort study evaluated the effect of aspirin (100 mg/day) on primary prevention in 564 patients with diabetic nephro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-549",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 549,
+      "sentence": "The study found that aspirin neither reduced the risk of cardiovascular death nor increased the risk of major bleeding after 8 years of follow\u2010up 16 .",
+      "context_window": "scular death nor increased the risk of major bleeding after 8 years of follow\u2010up 16 . Another post\u2010hoc subgroup analysis from a",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-806",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 806,
+      "sentence": "This post\u2010hoc analysis investigated the efficacy of 81-100 mg/day of aspirin on primary atherosclerosis prevention in patients with type 2 diabetes and coexisting renal dysfunction.",
+      "context_window": "17 . This post\u2010hoc analysis investigated the efficacy of 81-100 mg/day of aspirin on primary atherosclerosis prevention in patient",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-1001",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 1001,
+      "sentence": "In patients with an estimated glomerular filtration rate (eGFR) of <60 mL/min/1.73 m 2 , low\u2010dose aspirin did not reduce the risk of atherosclerotic events, although some benefit was seen in patients with eGFRs of 60-89 mL/min/1.73 m 2 .",
+      "context_window": "nts with an estimated glomerular filtration rate (eGFR) of <60 mL/min/1.73 m 2 , low\u2010dose aspirin did not reduce the risk of athe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-1150",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 1150,
+      "sentence": "In patients with an estimated glomerular filtration rate (eGFR) of <60 mL/min/1.73 m 2 , low\u2010dose aspirin did not reduce the risk of atherosclerotic events, although some benefit was seen in patients with eGFRs of 60-89 mL/min/1.73 m 2 .",
+      "context_window": "although some benefit was seen in patients with eGFRs of 60-89 mL/min/1.73 m 2 . On the contrary, a randomized controlled trial,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-1638",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 1638,
+      "sentence": "While aspirin did not reduce major adverse cardiovascular events compared with placebo in subjects with a baseline eGFR \u226560 mL/min/1.73 m 2 , the risk of major adverse cardiovascular events was lower among aspirin users in subjects with baseline eGFR <60 mL/min/1.73 m 2 18 .",
+      "context_window": "nts compared with placebo in subjects with a baseline eGFR \u226560 mL/min/1.73 m 2 , the risk of major adverse cardiovascular events",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10981149_low_dose_aspirin_for_prevention_of_cardiovascular_mortality_-u-1769",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 1769,
+      "sentence": "While aspirin did not reduce major adverse cardiovascular events compared with placebo in subjects with a baseline eGFR \u226560 mL/min/1.73 m 2 , the risk of major adverse cardiovascular events was lower among aspirin users in subjects with baseline eGFR <60 mL/min/1.73 m 2 18 .",
+      "context_window": "s lower among aspirin users in subjects with baseline eGFR <60 mL/min/1.73 m 2 18 . However, the interaction of eGFR and the trea",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

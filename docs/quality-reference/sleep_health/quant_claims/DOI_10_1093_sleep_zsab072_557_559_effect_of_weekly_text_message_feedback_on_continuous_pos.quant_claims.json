@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsab072_557_559_effect_of_weekly_text_message_feedback_on_continuous_pos",
+  "doi": "10.1093/sleep/zsab072.557",
+  "extracted_at": "2026-05-08T20:05:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_557_559_effect_of_weekly_text_message_feedback_on_continuous_pos-pct-1853",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1853,
+      "sentence": "No participant, before or after intervention, met the Medicare definition of compliance (\u22654hr nightly use for \u2265 70% of nights) and average adherence declined following intervention.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>In a small pilot study, weekly feedback text messaging did not improve CPAP adherence in pediatric patients with OSA.",
+      "context_window": "e Medicare definition of compliance (\u22654hr nightly use for \u2265 70% of nights) and average adherence declined following interve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

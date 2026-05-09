@@ -1,0 +1,290 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia",
+  "doi": "10.1093/sleep/zsab072.212",
+  "extracted_at": "2026-05-08T20:05:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 2,
+    "confidence_interval": 6,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-n-453",
+      "claim_type": "sample_size",
+      "raw_text": "N=100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 453,
+      "sentence": "Diabetes and obesity are common among Hispanics/Latinos, and studies are needed to better clarify the role of sleep for health among this group.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Data were collected from N=100 adults (age 18-60, 47% female) of Mexican descent in the city of Nogales, AZ (34% not born in the US).",
+      "context_window": "title>Methods</jats:title> <jats:p>Data were collected from N=100 adults (age 18-60, 47% female) of Mexican descent in the ci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-pct-478",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 478,
+      "sentence": "Diabetes and obesity are common among Hispanics/Latinos, and studies are needed to better clarify the role of sleep for health among this group.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Data were collected from N=100 adults (age 18-60, 47% female) of Mexican descent in the city of Nogales, AZ (34% not born in the US).",
+      "context_window": "> <jats:p>Data were collected from N=100 adults (age 18-60, 47% female) of Mexican descent in the city of Nogales, AZ (34%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-pct-537",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 537,
+      "sentence": "Diabetes and obesity are common among Hispanics/Latinos, and studies are needed to better clarify the role of sleep for health among this group.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Data were collected from N=100 adults (age 18-60, 47% female) of Mexican descent in the city of Nogales, AZ (34% not born in the US).",
+      "context_window": "47% female) of Mexican descent in the city of Nogales, AZ (34% not born in the US). Surveys were presented in English or S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-ci-1384",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:[0.066,1.095",
+      "numeric_values": [
+        0.066,
+        1.095
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1384,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.01",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-p-1404",
+      "claim_type": "p_value",
+      "raw_text": "p=0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1404,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleep",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-ci-1436",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:[0.170,1.456",
+      "numeric_values": [
+        0.17,
+        1.456
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1436,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "somnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and wee",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-p-1456",
+      "claim_type": "p_value",
+      "raw_text": "p=0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1456,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": ",1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-ci-1478",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI[0.032,1.026",
+      "numeric_values": [
+        0.032,
+        1.026
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1478,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "er sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-p-1497",
+      "claim_type": "p_value",
+      "raw_text": "p=0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1497,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "5%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.0",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-ci-1553",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:[-0.031,0.003",
+      "numeric_values": [
+        -0.031,
+        0.003
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1553,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "26];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015). Further adjustment for education (model-2) revea",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-p-1574",
+      "claim_type": "p_value",
+      "raw_text": "p=0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1574,
+      "sentence": "Covariates included: age, sex, Body Mass Index (BMI), education and immigrant status.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>When adjusted for age, sex and immigrant status (model-1), eating patterns were associated with greater insomnia (95%CI:[0.066,1.095];p=0.027), poorer sleep quality (95%CI:[0.170,1.456];p=0.014), sleepiness (95%CI[0.032,1.026];p=0.037), and weekend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015).",
+      "context_window": "kend (but not weekday) sleep duration (95%CI:[-0.031,0.003];p=0.015). Further adjustment for education (model-2) revealed simil",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-ci-1782",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:[-0.202,0.805",
+      "numeric_values": [
+        -0.202,
+        0.805
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1782,
+      "sentence": "Additional adjustment for BMI (model-3) revealed a change in daytime sleepiness, where no association was seen (95%CI:[-0.202,0.805];p=0.238).",
+      "context_window": "hange in daytime sleepiness, where no association was seen (95%CI:[-0.202,0.805];p=0.238). Regarding subscale scores, relationships were ge",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-p-1803",
+      "claim_type": "p_value",
+      "raw_text": "p=0.238",
+      "numeric_values": [
+        0.238
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1803,
+      "sentence": "Additional adjustment for BMI (model-3) revealed a change in daytime sleepiness, where no association was seen (95%CI:[-0.202,0.805];p=0.238).",
+      "context_window": "piness, where no association was seen (95%CI:[-0.202,0.805];p=0.238). Regarding subscale scores, relationships were generally s",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-ci-2095",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:[-0.015,-0.001",
+      "numeric_values": [
+        -0.015,
+        -0.001
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2095,
+      "sentence": "However, after adjustment for BMI, there was a significant association between cognitive restraint and weekend sleep duration (95%CI:[-0.015,-0.001];p=0.030).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Greater insomnia, poorer sleep quality, increased daytime sleepiness and decreased weekend sleep duration were associated with eating patterns at the US Mexico border, particularly in terms of uncontrolled eating and emotional eating.",
+      "context_window": "ion between cognitive restraint and weekend sleep duration (95%CI:[-0.015,-0.001];p=0.030).</jats:p> </jats:sec> <jats:sec> <jats:title>Conc",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_212_213_eating_patterns_associated_with_sleep_duration_insomnia-p-2117",
+      "claim_type": "p_value",
+      "raw_text": "p=0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2117,
+      "sentence": "However, after adjustment for BMI, there was a significant association between cognitive restraint and weekend sleep duration (95%CI:[-0.015,-0.001];p=0.030).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Greater insomnia, poorer sleep quality, increased daytime sleepiness and decreased weekend sleep duration were associated with eating patterns at the US Mexico border, particularly in terms of uncontrolled eating and emotional eating.",
+      "context_window": "restraint and weekend sleep duration (95%CI:[-0.015,-0.001];p=0.030).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

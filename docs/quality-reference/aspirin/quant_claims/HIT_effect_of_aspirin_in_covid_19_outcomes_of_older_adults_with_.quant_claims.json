@@ -1,0 +1,338 @@
+{
+  "paper_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "risk_ratio": 5,
+    "percentage": 5,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-u-723",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 723,
+      "sentence": "The use of LDA for 1 month before the index event was used to split the cohort into two matched groups by age, gender, ECI, and other cardiovascular diseases.",
+      "context_window": "D admitted for COVID-19 were identified. The use of LDA for 1 month before the index event was used to split the cohort into tw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-u-917",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 917,
+      "sentence": "Records of groups were reviewed for multiple outcomes 30 days after admission.",
+      "context_window": "ases. Records of groups were reviewed for multiple outcomes 30 days after admission. Pearson\u2019s chi-squared test was used to com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-rr-a-1219",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR=1.04",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1219,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "up. No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-pct-1230",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1230,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "erences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-p-1246",
+      "claim_type": "p_value",
+      "raw_text": "p=0.49",
+      "numeric_values": [
+        0.49
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admissio",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-rr-a-1265",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR=0.63",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1265,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "e readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.8",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-pct-1276",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1276,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "on(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-p-1291",
+      "claim_type": "p_value",
+      "raw_text": "p=0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1291,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "5% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastroin",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-rr-a-1314",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR=1.01",
+      "numeric_values": [
+        1.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1314,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-pct-1325",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1325,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-p-1340",
+      "claim_type": "p_value",
+      "raw_text": "p=0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1340,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-rr-a-1375",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR=1.09",
+      "numeric_values": [
+        1.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1375,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "R=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-pct-1386",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1386,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "5%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69,",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-p-1403",
+      "claim_type": "p_value",
+      "raw_text": "p=0.51",
+      "numeric_values": [
+        0.51
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": ".79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-rr-a-1440",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR=0.69",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups. Conclusion LDA di",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-pct-1451",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1451,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": "0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups. Conclusion LDA didn\u2019t im",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-p-1466",
+      "claim_type": "p_value",
+      "raw_text": "p=0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1466,
+      "sentence": "No differences present in 30-days all-cause readmission(RR=1.04, CI95% =0.92-1.17, p=0.49), mortality(RR=0.63, CI95%=0.30-1.29, p=0.28), ICU admission(RR=1.01, CI95%=0.89-1.15, p=0.79), gastrointestinal bleeding(RR=1.09, CI95% = 0.85-1.40, p=0.51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups.",
+      "context_window": ".51), and intracranial hemorrhage(RR=0.69, CI95%=0.26-1.83, p=0.62) between groups. Conclusion LDA didn\u2019t improve the evaluate",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_aspirin_in_covid_19_outcomes_of_older_adults_with_-u-1560",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1560,
+      "sentence": "Conclusion LDA didn\u2019t improve the evaluated outcomes in older persons 30 days after admission.",
+      "context_window": "LDA didn\u2019t improve the evaluated outcomes in older persons 30 days after admission. A plausible explanation is that COVID-19\u2019s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

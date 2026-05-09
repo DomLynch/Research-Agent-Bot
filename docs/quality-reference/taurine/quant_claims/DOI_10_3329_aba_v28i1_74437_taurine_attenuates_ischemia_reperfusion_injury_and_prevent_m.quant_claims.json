@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_3329_aba_v28i1_74437_taurine_attenuates_ischemia_reperfusion_injury_and_prevent_m",
+  "doi": "10.3329/aba.v28i1.74437",
+  "extracted_at": "2026-05-08T20:10:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3329_aba_v28i1_74437_taurine_attenuates_ischemia_reperfusion_injury_and_prevent_m-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "20mmol",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "Livers were treated with taurine (20mmol/L) 5 min before (BT-isc) and after (AT-isc) ischemia.",
+      "context_window": "ing perfusion for 30 min. Livers were treated with taurine (20mmol/L) 5 min before (BT-isc) and after (AT-isc) ischemia. The l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_aba_v28i1_74437_taurine_attenuates_ischemia_reperfusion_injury_and_prevent_m-p-1209",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1209,
+      "sentence": "Mg2+ efflux, LDH, SOD, total and phospho ERK1/2, Bax and Bcl increased significantly (p < 0.05) during reperfusion in the non-treated control (NT-isc) livers.",
+      "context_window": "al and phospho ERK1/2, Bax and Bcl increased significantly (p < 0.05) during reperfusion in the non-treated control (NT-isc) liv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

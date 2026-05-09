@@ -1,0 +1,2463 @@
+{
+  "paper_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p",
+  "doi": "10.1097/MS9.0000000000000366",
+  "extracted_at": "2026-05-08T20:06:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 70,
+    "percentage": 44,
+    "p_value": 16,
+    "sample_size": 4,
+    "odds_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-459",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 459,
+      "sentence": "This study aimed to compare the rates of 90-day symptomatic VTE following THA and total knee arthroplasty in healthy patients taking LD Aspirin vs. high-dose (HD) Aspirin for 6 weeks postoperatively.",
+      "context_window": "y patients taking LD Aspirin vs. high-dose (HD) Aspirin for 6 weeks postoperatively. A prospective cohort of patients with THA",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-617",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 617,
+      "sentence": "Symptomatic VTE within 90 days of index arthroplasty was the primary outcome; gastrointestinal bleeding (GIB) and mortality were secondary outcomes.",
+      "context_window": "s conducted at two tertiary centres. Symptomatic VTE within 90 days of index arthroplasty was the primary outcome; gastrointest",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1037",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1037,
+      "sentence": "The LD group had one deep vein thrombosis (0.6%), and the HD group had two (1.3%) ( P =0.62).",
+      "context_window": "type of surgery. The LD group had one deep vein thrombosis (0.6%), and the HD group had two (1.3%) ( P =0.62). Neither group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1070",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1070,
+      "sentence": "The LD group had one deep vein thrombosis (0.6%), and the HD group had two (1.3%) ( P =0.62).",
+      "context_window": "one deep vein thrombosis (0.6%), and the HD group had two (1.3%) ( P =0.62). Neither group had PTE. Therefore, VTE rates ar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-1078",
+      "claim_type": "p_value",
+      "raw_text": "P =0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "The LD group had one deep vein thrombosis (0.6%), and the HD group had two (1.3%) ( P =0.62).",
+      "context_window": "p vein thrombosis (0.6%), and the HD group had two (1.3%) ( P =0.62). Neither group had PTE. Therefore, VTE rates are the same",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1207",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1207,
+      "sentence": "Therefore, VTE rates are the same as deep vein thrombosis rates and similar between the groups (0.6% vs.",
+      "context_window": "deep vein thrombosis rates and similar between the groups (0.6% vs. 1.3%, P =0.62) Regarding GIB due to anticoagulant ther",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1216",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1216,
+      "sentence": "1.3%, P =0.62)\n\nRegarding GIB due to anticoagulant therapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty.",
+      "context_window": "n thrombosis rates and similar between the groups (0.6% vs. 1.3%, P =0.62) Regarding GIB due to anticoagulant therapy, no p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-1222",
+      "claim_type": "p_value",
+      "raw_text": "P =0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1222,
+      "sentence": "1.3%, P =0.62)\n\nRegarding GIB due to anticoagulant therapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty.",
+      "context_window": "mbosis rates and similar between the groups (0.6% vs. 1.3%, P =0.62) Regarding GIB due to anticoagulant therapy, no patient in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1330",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1330,
+      "sentence": "1.3%, P =0.62)\n\nRegarding GIB due to anticoagulant therapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty.",
+      "context_window": "rapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of ar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1381",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1381,
+      "sentence": "1.3%, P =0.62)\n\nRegarding GIB due to anticoagulant therapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty.",
+      "context_window": "eas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty. GIB rates did not differ significantly bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-1462",
+      "claim_type": "p_value",
+      "raw_text": "P =0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "GIB rates did not differ significantly between groups ( P =0.24).",
+      "context_window": "ty. GIB rates did not differ significantly between groups ( P =0.24). Considering VTE + GIB combined, the HD groups showed a hi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-n-1558",
+      "claim_type": "sample_size",
+      "raw_text": "N =4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1558,
+      "sentence": "Considering VTE + GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21).",
+      "context_window": "ined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1564",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1564,
+      "sentence": "Considering VTE + GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21).",
+      "context_window": "the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-n-1591",
+      "claim_type": "sample_size",
+      "raw_text": "N =1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1591,
+      "sentence": "Considering VTE + GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21).",
+      "context_window": "er rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21). Proph",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1597",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1597,
+      "sentence": "Considering VTE + GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21).",
+      "context_window": "e of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21). Prophylacti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-1639",
+      "claim_type": "p_value",
+      "raw_text": "P =0.21",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1639,
+      "sentence": "Considering VTE + GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21).",
+      "context_window": "LD groups ( N =1, 0.6%) but not statistically significant ( P =0.21). Prophylactic administration of Aspirin with low doses (8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1705",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1705,
+      "sentence": "Prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for six weeks is equally effective at reducing VTE in total joint arthroplasty patients and had similar adverse effects.",
+      "context_window": "1). Prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for six weeks is equally e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1732",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1732,
+      "sentence": "Prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for six weeks is equally effective at reducing VTE in total joint arthroplasty patients and had similar adverse effects.",
+      "context_window": "ation of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for six weeks is equally effective at reducing VTE in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-36",
+      "claim_type": "unit_value",
+      "raw_text": "162 mg",
+      "numeric_values": [
+        162.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 36,
+      "sentence": "Highlights\n\nAspirin with low doses (162 mg) and high doses (650 mg) is equally effective.",
+      "context_window": "Highlights Aspirin with low doses (162 mg) and high doses (650 mg) is equally effective. Both doses",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-60",
+      "claim_type": "unit_value",
+      "raw_text": "650 mg",
+      "numeric_values": [
+        650.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 60,
+      "sentence": "Highlights\n\nAspirin with low doses (162 mg) and high doses (650 mg) is equally effective.",
+      "context_window": "Highlights Aspirin with low doses (162 mg) and high doses (650 mg) is equally effective. Both doses showed similar adverse e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-794",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 794,
+      "sentence": "Thus, anticoagulation is administered up to 5-6 weeks after surgery to reduce VTE risk 3 .",
+      "context_window": "risk for VTE. Thus, anticoagulation is administered up to 5-6 weeks after surgery to reduce VTE risk 3 . Among people who are a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-931",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 931,
+      "sentence": "Among people who are anticoagulated, rates of VTE are variable following THA and TKA: up to 5% for DVT and 2% for PTE 4 .",
+      "context_window": "ted, rates of VTE are variable following THA and TKA: up to 5% for DVT and 2% for PTE 4 . Various anticoagulants can be u",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-946",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 946,
+      "sentence": "Among people who are anticoagulated, rates of VTE are variable following THA and TKA: up to 5% for DVT and 2% for PTE 4 .",
+      "context_window": "TE are variable following THA and TKA: up to 5% for DVT and 2% for PTE 4 . Various anticoagulants can be used to prevent",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2536",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2536,
+      "sentence": "The American College of Chest Physicians (ACCP) and American Association of Orthopedic Surgeons (AAOS) have recommended Aspirin alone as a single agent for the prophylaxis of VTE after joint replacement surgery and a dose of 325 mg BID for six weeks following surgery 22 , 23 .",
+      "context_window": "ylaxis of VTE after joint replacement surgery and a dose of 325 mg BID for six weeks following surgery 22 , 23 . On the other",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-2608",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2608,
+      "sentence": "On the other hand, 77% of the participants in the International Consensus Meeting (ICM) 2022 agreed that low-dose (LD) Aspirin is the most effective and safest prophylaxis for VTE 24 .",
+      "context_window": "or six weeks following surgery 22 , 23 . On the other hand, 77% of the participants in the International Consensus Meeting",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2920",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2920,
+      "sentence": "Few studies suggest that twice-daily (BID) LD Aspirin (81 mg), compared with high-dose (HD) Aspirin (325 mg) for 4-6 weeks, does not differ regarding VTE events after TJA 9 , 25 - 27 .",
+      "context_window": "25 . Few studies suggest that twice-daily (BID) LD Aspirin (81 mg), compared with high-dose (HD) Aspirin (325 mg) for 4-6 wee",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2966",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2966,
+      "sentence": "Few studies suggest that twice-daily (BID) LD Aspirin (81 mg), compared with high-dose (HD) Aspirin (325 mg) for 4-6 weeks, does not differ regarding VTE events after TJA 9 , 25 - 27 .",
+      "context_window": ") LD Aspirin (81 mg), compared with high-dose (HD) Aspirin (325 mg) for 4-6 weeks, does not differ regarding VTE events after",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2980",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2980,
+      "sentence": "Few studies suggest that twice-daily (BID) LD Aspirin (81 mg), compared with high-dose (HD) Aspirin (325 mg) for 4-6 weeks, does not differ regarding VTE events after TJA 9 , 25 - 27 .",
+      "context_window": "81 mg), compared with high-dose (HD) Aspirin (325 mg) for 4-6 weeks, does not differ regarding VTE events after TJA 9 , 25 - 27",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3496",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3496,
+      "sentence": "This study compared the 90-day symptomatic VTE rates among healthy patients following THAs and TKAs with 81 mg BID of Aspirin vs.",
+      "context_window": "E rates among healthy patients following THAs and TKAs with 81 mg BID of Aspirin vs. 325 mg BID of Aspirin for 6 weeks postop",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3521",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3521,
+      "sentence": "325 mg BID of Aspirin for 6 weeks postoperatively.",
+      "context_window": "ients following THAs and TKAs with 81 mg BID of Aspirin vs. 325 mg BID of Aspirin for 6 weeks postoperatively. We aimed to sec",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3547",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3547,
+      "sentence": "325 mg BID of Aspirin for 6 weeks postoperatively.",
+      "context_window": "KAs with 81 mg BID of Aspirin vs. 325 mg BID of Aspirin for 6 weeks postoperatively. We aimed to secondarily investigate differ",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-290",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 290,
+      "sentence": "The patients were given Aspirin in two different doses to prevent VTE for 6 weeks: 325 mg BID or 81 mg BID.",
+      "context_window": "ere given Aspirin in two different doses to prevent VTE for 6 weeks: 325 mg BID or 81 mg BID. Our university institutional revi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-299",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 299,
+      "sentence": "The patients were given Aspirin in two different doses to prevent VTE for 6 weeks: 325 mg BID or 81 mg BID.",
+      "context_window": "Aspirin in two different doses to prevent VTE for 6 weeks: 325 mg BID or 81 mg BID. Our university institutional review board",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-313",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 313,
+      "sentence": "The patients were given Aspirin in two different doses to prevent VTE for 6 weeks: 325 mg BID or 81 mg BID.",
+      "context_window": "o different doses to prevent VTE for 6 weeks: 325 mg BID or 81 mg BID. Our university institutional review board (IRB) has ap",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2683",
+      "claim_type": "unit_value",
+      "raw_text": "250 mmHg",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2683,
+      "sentence": "We applied a tourniquet (250 mmHg) and did not employ suction drains.",
+      "context_window": "re according to the same protocol. We applied a tourniquet (250 mmHg) and did not employ suction drains. Aspirin (325 or 81 mg/B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2744",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2744,
+      "sentence": "Aspirin (325 or 81 mg/BID) was used postoperatively as a VTE chemoprophylaxis (begin on POD 1).",
+      "context_window": "50 mmHg) and did not employ suction drains. Aspirin (325 or 81 mg/BID) was used postoperatively as a VTE chemoprophylaxis (be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2873",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2873,
+      "sentence": "The pain management protocol includes Celecoxib (400 mg) + Pregabalin (75 mg) + Acetaminophen (1g) + Omeprazole (40 mg), taken orally one hour before surgery for all patients.",
+      "context_window": "on POD 1). The pain management protocol includes Celecoxib (400 mg) + Pregabalin (75 mg) + Acetaminophen (1g) + Omeprazole (40",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2895",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2895,
+      "sentence": "The pain management protocol includes Celecoxib (400 mg) + Pregabalin (75 mg) + Acetaminophen (1g) + Omeprazole (40 mg), taken orally one hour before surgery for all patients.",
+      "context_window": "nagement protocol includes Celecoxib (400 mg) + Pregabalin (75 mg) + Acetaminophen (1g) + Omeprazole (40 mg), taken orally on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2937",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2937,
+      "sentence": "The pain management protocol includes Celecoxib (400 mg) + Pregabalin (75 mg) + Acetaminophen (1g) + Omeprazole (40 mg), taken orally one hour before surgery for all patients.",
+      "context_window": "mg) + Pregabalin (75 mg) + Acetaminophen (1g) + Omeprazole (40 mg), taken orally one hour before surgery for all patients. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3261",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3261,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "as injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3281",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3281,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "ticularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3300",
+      "claim_type": "unit_value",
+      "raw_text": "4 mL",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3300,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "ng of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid. Dur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3306",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3306,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid. During th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3325",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3325,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "L) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid. During the postoperative per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3331",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3331,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "etorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid. During the postoperative period, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3339",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3339,
+      "sentence": "Following the closure of the articular capsule, a cocktail was injected intra-articularly, consisting of normal saline (90 mL) + ketorolac (60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid.",
+      "context_window": "(60 mg) + Marcaine (4 mL, 0.5%) + Lidocaine (5 mL, 2.0%) + 3 mg tranexamic acid. During the postoperative period, the follo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3449",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3449,
+      "sentence": "During the postoperative period, the following analgesics were administered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g), and oxycodone (PRN, maximum 15 mg per day).",
+      "context_window": "iod, the following analgesics were administered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3470",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3470,
+      "sentence": "During the postoperative period, the following analgesics were administered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g), and oxycodone (PRN, maximum 15 mg per day).",
+      "context_window": "algesics were administered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g), and oxycodone (PR",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3490",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3490,
+      "sentence": "During the postoperative period, the following analgesics were administered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g), and oxycodone (PRN, maximum 15 mg per day).",
+      "context_window": "stered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g), and oxycodone (PRN, maximum 15 mg per",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3546",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3546,
+      "sentence": "During the postoperative period, the following analgesics were administered: celecoxib (400 mg), omeprazole (20 mg), pregabalin (75 mg), acetaminophen (2g), and oxycodone (PRN, maximum 15 mg per day).",
+      "context_window": "in (75 mg), acetaminophen (2g), and oxycodone (PRN, maximum 15 mg per day). Patients were mobilized by a walker within 6-8 h",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3737",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3737,
+      "sentence": "We allowed patients to walk partial weight-bearing using crutches for 4-6 weeks.",
+      "context_window": "atients to walk partial weight-bearing using crutches for 4-6 weeks. Brace was not used on any patients. There were no compress",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4668",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4668,
+      "sentence": "The study\u2019s primary outcome was symptomatic VTE (DVT and PTE) within 90 days of index arthroplasty.",
+      "context_window": "\u2019s primary outcome was symptomatic VTE (DVT and PTE) within 90 days of index arthroplasty. In addition, the secondary outcomes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4765",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4765,
+      "sentence": "In addition, the secondary outcomes were GIB and mortality within 90 days.",
+      "context_window": "ition, the secondary outcomes were GIB and mortality within 90 days. The routine follow-up for TJA patients at our centre consi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4839",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 4839,
+      "sentence": "The routine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually.",
+      "context_window": "outine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surg",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4847",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4847,
+      "sentence": "The routine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually.",
+      "context_window": "ollow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4856",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4856,
+      "sentence": "The routine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually.",
+      "context_window": "for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4865",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4865,
+      "sentence": "The routine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually.",
+      "context_window": "atients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually. Clin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4875",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4875,
+      "sentence": "The routine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually.",
+      "context_window": "our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually. Clinical manif",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4885",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4885,
+      "sentence": "The routine follow-up for TJA patients at our centre consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually.",
+      "context_window": "e consists of 1 week, 3 weeks, 6 weeks, 3 months, 6 months, 12 months after surgery, and then annually. Clinical manifestations o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-5992",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5992,
+      "sentence": "Finally, all parameters were compared between the two groups under prophylactic Aspirin doses of 81 mg and 325 mg.",
+      "context_window": "between the two groups under prophylactic Aspirin doses of 81 mg and 325 mg. Data were analyzed by SPSS 23.0 (IBM SPSS Inc.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-6002",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6002,
+      "sentence": "Finally, all parameters were compared between the two groups under prophylactic Aspirin doses of 81 mg and 325 mg.",
+      "context_window": "he two groups under prophylactic Aspirin doses of 81 mg and 325 mg. Data were analyzed by SPSS 23.0 (IBM SPSS Inc.). Normalit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-75",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 75,
+      "sentence": "The final analysis included 312 consecutive patients: 158 in the LD group (81 mg Aspirin BID) and 154 in the HD group (325 mg Aspirin BID) [Figure 1 ].",
+      "context_window": "sis included 312 consecutive patients: 158 in the LD group (81 mg Aspirin BID) and 154 in the HD group (325 mg Aspirin BID) [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-119",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 119,
+      "sentence": "The final analysis included 312 consecutive patients: 158 in the LD group (81 mg Aspirin BID) and 154 in the HD group (325 mg Aspirin BID) [Figure 1 ].",
+      "context_window": "n the LD group (81 mg Aspirin BID) and 154 in the HD group (325 mg Aspirin BID) [Figure 1 ]. Two groups were similar regarding",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-479",
+      "claim_type": "percentage",
+      "raw_text": "75.4%",
+      "numeric_values": [
+        75.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 479,
+      "sentence": "In the LD groups, direct anterior approach was predominant (75.4%), while in the HD groups, a more lateral approach was prevalent (50.8%, P <0.001).",
+      "context_window": "In the LD groups, direct anterior approach was predominant (75.4%), while in the HD groups, a more lateral approach was preva",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-550",
+      "claim_type": "percentage",
+      "raw_text": "50.8%",
+      "numeric_values": [
+        50.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 550,
+      "sentence": "In the LD groups, direct anterior approach was predominant (75.4%), while in the HD groups, a more lateral approach was prevalent (50.8%, P <0.001).",
+      "context_window": "le in the HD groups, a more lateral approach was prevalent (50.8%, P <0.001). Patients\u2019 demographic and data THA, total hip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-557",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 557,
+      "sentence": "In the LD groups, direct anterior approach was predominant (75.4%), while in the HD groups, a more lateral approach was prevalent (50.8%, P <0.001).",
+      "context_window": "he HD groups, a more lateral approach was prevalent (50.8%, P <0.001). Patients\u2019 demographic and data THA, total hip arthropla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-689",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 689,
+      "sentence": "The LD group had one DVT (0.6%), and the HD group had two (1.3%) ( P =0.62) [Table 2 ].",
+      "context_window": "Indicates significant P value. The LD group had one DVT (0.6%), and the HD group had two (1.3%) ( P =0.62) [Table 2 ]. Ne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-722",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 722,
+      "sentence": "The LD group had one DVT (0.6%), and the HD group had two (1.3%) ( P =0.62) [Table 2 ].",
+      "context_window": "The LD group had one DVT (0.6%), and the HD group had two (1.3%) ( P =0.62) [Table 2 ]. Neither group had PTE. Therefore, V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-730",
+      "claim_type": "p_value",
+      "raw_text": "P =0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 730,
+      "sentence": "The LD group had one DVT (0.6%), and the HD group had two (1.3%) ( P =0.62) [Table 2 ].",
+      "context_window": "group had one DVT (0.6%), and the HD group had two (1.3%) ( P =0.62) [Table 2 ]. Neither group had PTE. Therefore, VTE rates ar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-853",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 853,
+      "sentence": "Therefore, VTE rates are the same as DVT rates and similar between the groups (0.6% vs.",
+      "context_window": "s are the same as DVT rates and similar between the groups (0.6% vs. 1.3%, P =0.62) [Figure 2 ]. Study results (90 days fol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-862",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 862,
+      "sentence": "1.3%, P =0.62) [Figure 2 ].",
+      "context_window": "same as DVT rates and similar between the groups (0.6% vs. 1.3%, P =0.62) [Figure 2 ]. Study results (90 days follow-up)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-868",
+      "claim_type": "p_value",
+      "raw_text": "P =0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 868,
+      "sentence": "1.3%, P =0.62) [Figure 2 ].",
+      "context_window": "as DVT rates and similar between the groups (0.6% vs. 1.3%, P =0.62) [Figure 2 ]. Study results (90 days follow-up) DVT, deep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-906",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 906,
+      "sentence": "Study results (90 days follow-up)\n\nDVT, deep vein thrombosis; GIB, gastrointestinal bleeding; PTE, pulmonary thromboembolism; VTE, venous thromboembolic.",
+      "context_window": "roups (0.6% vs. 1.3%, P =0.62) [Figure 2 ]. Study results (90 days follow-up) DVT, deep vein thrombosis; GIB, gastrointestina",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1217",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1217,
+      "sentence": "Regarding GIB due to anticoagulant therapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty.",
+      "context_window": "rapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of ar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1268",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1268,
+      "sentence": "Regarding GIB due to anticoagulant therapy, no patient in the LD group reported GIB, whereas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty.",
+      "context_window": "eas two (1.3%) patients in the HD group reported GIB within 90 days of arthroplasty. GIB rates did not differ significantly bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-1349",
+      "claim_type": "p_value",
+      "raw_text": "P =0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1349,
+      "sentence": "GIB rates did not differ significantly between groups ( P =0.24).",
+      "context_window": "ty. GIB rates did not differ significantly between groups ( P =0.24). Considering VTE+GIB combined, the HD groups showed a high",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-n-1443",
+      "claim_type": "sample_size",
+      "raw_text": "N =4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1443,
+      "sentence": "Considering VTE+GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant (0.21).",
+      "context_window": "ined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1449",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1449,
+      "sentence": "Considering VTE+GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant (0.21).",
+      "context_window": "the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-n-1476",
+      "claim_type": "sample_size",
+      "raw_text": "N =1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1476,
+      "sentence": "Considering VTE+GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant (0.21).",
+      "context_window": "er rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant (0.21). During the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1482",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1482,
+      "sentence": "Considering VTE+GIB combined, the HD groups showed a higher rate of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant (0.21).",
+      "context_window": "e of complications ( N =4, 2.6%) than the LD groups ( N =1, 0.6%) but not statistically significant (0.21). During the study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1630",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1630,
+      "sentence": "Details on the five patients who had VTE or GIB within 90 days following their arthroplasty are provided in [Table 3 ].",
+      "context_window": "ed. Details on the five patients who had VTE or GIB within 90 days following their arthroplasty are provided in [Table 3 ]. I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-71",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 71,
+      "sentence": "The main finding of this study was that the administration of both LD (81 mg BID) and HD (325 mg BID) Aspirin for 6 weeks was effective and safe for patients undergoing joint replacement surgery.",
+      "context_window": "nding of this study was that the administration of both LD (81 mg BID) and HD (325 mg BID) Aspirin for 6 weeks was effective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-90",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 90,
+      "sentence": "The main finding of this study was that the administration of both LD (81 mg BID) and HD (325 mg BID) Aspirin for 6 weeks was effective and safe for patients undergoing joint replacement surgery.",
+      "context_window": "was that the administration of both LD (81 mg BID) and HD (325 mg BID) Aspirin for 6 weeks was effective and safe for patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-114",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 114,
+      "sentence": "The main finding of this study was that the administration of both LD (81 mg BID) and HD (325 mg BID) Aspirin for 6 weeks was effective and safe for patients undergoing joint replacement surgery.",
+      "context_window": "tion of both LD (81 mg BID) and HD (325 mg BID) Aspirin for 6 weeks was effective and safe for patients undergoing joint replac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-362",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 362,
+      "sentence": "Thus, we considered it reasonable to take LD Aspirin (81 mg BID) into account for the routine practice of TJA.",
+      "context_window": "GIB. Thus, we considered it reasonable to take LD Aspirin (81 mg BID) into account for the routine practice of TJA. It is im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1227",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1227,
+      "sentence": "The network meta-analysis by Tarabichi and colleagues of all levels of evidence studies 24 showed that the lowest risk of VTE development was seen with LD Aspirin (100 mg).",
+      "context_window": "he lowest risk of VTE development was seen with LD Aspirin (100 mg). There was no significant difference between low molecular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-1400",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1400,
+      "sentence": "There was no significant difference between low molecular weight heparin and rivaroxaban when compared to LD Aspirin in their risk of causing VTE [Odds ratio (OR), 95% CI=1.11 (0.33, 3.76) and 1.38 (0.55, 3.45)].",
+      "context_window": "o LD Aspirin in their risk of causing VTE [Odds ratio (OR), 95% CI=1.11 (0.33, 3.76) and 1.38 (0.55, 3.45)]. In contrast, V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1507",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1507,
+      "sentence": "In contrast, VTE is more likely to occur when HD Aspirin (325 mg) is taken [OR = 7.9 (2.60, 24.05)] followed by heparin (OR=5.94 (2.28, 15.47)) as compared to LD Aspirin.",
+      "context_window": ". In contrast, VTE is more likely to occur when HD Aspirin (325 mg) is taken [OR = 7.9 (2.60, 24.05)] followed by heparin (OR=",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-or-a-1525",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 7.9",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1525,
+      "sentence": "In contrast, VTE is more likely to occur when HD Aspirin (325 mg) is taken [OR = 7.9 (2.60, 24.05)] followed by heparin (OR=5.94 (2.28, 15.47)) as compared to LD Aspirin.",
+      "context_window": "is more likely to occur when HD Aspirin (325 mg) is taken [OR = 7.9 (2.60, 24.05)] followed by heparin (OR=5.94 (2.28, 15.47))",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-or-a-1570",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR=5.94",
+      "numeric_values": [
+        5.94
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1570,
+      "sentence": "In contrast, VTE is more likely to occur when HD Aspirin (325 mg) is taken [OR = 7.9 (2.60, 24.05)] followed by heparin (OR=5.94 (2.28, 15.47)) as compared to LD Aspirin.",
+      "context_window": "mg) is taken [OR = 7.9 (2.60, 24.05)] followed by heparin (OR=5.94 (2.28, 15.47)) as compared to LD Aspirin. Furthermore, when",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1707",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1707,
+      "sentence": "Furthermore, when the risk of bleeding events was assessed in all studies, LD Aspirin (81 mg) had the lowest risk estimate.",
+      "context_window": "of bleeding events was assessed in all studies, LD Aspirin (81 mg) had the lowest risk estimate. In sum, they found that LD A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-1998",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1998,
+      "sentence": "Despite previous research findings, recent literature now disproves the notion that HD Aspirin (325 mg BID) offers greater protection against cardiovascular and cerebrovascular issues than LD Aspirin (75-100 mg BID) 36 - 38 .",
+      "context_window": "recent literature now disproves the notion that HD Aspirin (325 mg BID) offers greater protection against cardiovascular and c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2106",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2106,
+      "sentence": "Despite previous research findings, recent literature now disproves the notion that HD Aspirin (325 mg BID) offers greater protection against cardiovascular and cerebrovascular issues than LD Aspirin (75-100 mg BID) 36 - 38 .",
+      "context_window": "rdiovascular and cerebrovascular issues than LD Aspirin (75-100 mg BID) 36 - 38 . In the Pulmonary Embolism Prevention (PEP) s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2198",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2198,
+      "sentence": "In the Pulmonary Embolism Prevention (PEP) study in 2001, LD Aspirin (80 mg BID) significantly lowered the incidence of DVT and PTE in patients undergoing TJA by at least one-third of place controls 39 .",
+      "context_window": "monary Embolism Prevention (PEP) study in 2001, LD Aspirin (80 mg BID) significantly lowered the incidence of DVT and PTE in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2386",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2386,
+      "sentence": "Still, the AAOS guidelines recommend that HD Aspirin (325 mg BID) be used to prevent VTE following TJA 40 .",
+      "context_window": "39 . Still, the AAOS guidelines recommend that HD Aspirin (325 mg BID) be used to prevent VTE following TJA 40 . There has b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2503",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2503,
+      "sentence": "There has been evidence that if taken at doses between 30 and 150 mg, Aspirin inhibits the activity of the platelet COX-1 enzyme 36 .",
+      "context_window": "ere has been evidence that if taken at doses between 30 and 150 mg, Aspirin inhibits the activity of the platelet COX-1 enzyme",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2802",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2802,
+      "sentence": "Uvodich and colleagues. compared 90-day incidence of symptomatic VTE on 3512 patients treated with either LD (81 mg BID) or HD (325 mg BID) Aspirin 4-6 weeks after surgery.",
+      "context_window": "of symptomatic VTE on 3512 patients treated with either LD (81 mg BID) or HD (325 mg BID) Aspirin 4-6 weeks after surgery. Ne",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2820",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2820,
+      "sentence": "Uvodich and colleagues. compared 90-day incidence of symptomatic VTE on 3512 patients treated with either LD (81 mg BID) or HD (325 mg BID) Aspirin 4-6 weeks after surgery.",
+      "context_window": "on 3512 patients treated with either LD (81 mg BID) or HD (325 mg BID) Aspirin 4-6 weeks after surgery. Neither group showed",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-2842",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2842,
+      "sentence": "Uvodich and colleagues. compared 90-day incidence of symptomatic VTE on 3512 patients treated with either LD (81 mg BID) or HD (325 mg BID) Aspirin 4-6 weeks after surgery.",
+      "context_window": "ted with either LD (81 mg BID) or HD (325 mg BID) Aspirin 4-6 weeks after surgery. Neither group showed a difference in symptom",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-2929",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2929,
+      "sentence": "Neither group showed a difference in symptomatic VTE incidence (0% vs.",
+      "context_window": "her group showed a difference in symptomatic VTE incidence (0% vs. 0.1%, P =0.79), GIB events (no cases), and mortality (0",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-2936",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2936,
+      "sentence": "0.1%, P =0.79), GIB events (no cases), and mortality (0.3% vs.",
+      "context_window": "up showed a difference in symptomatic VTE incidence (0% vs. 0.1%, P =0.79), GIB events (no cases), and mortality (0.3% vs. 0",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-2942",
+      "claim_type": "p_value",
+      "raw_text": "P =0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2942,
+      "sentence": "0.1%, P =0.79), GIB events (no cases), and mortality (0.3% vs.",
+      "context_window": "wed a difference in symptomatic VTE incidence (0% vs. 0.1%, P =0.79), GIB events (no cases), and mortality (0.3% vs. 0.1%, P =0",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-2990",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2990,
+      "sentence": "0.1%, P =0.79), GIB events (no cases), and mortality (0.3% vs.",
+      "context_window": "% vs. 0.1%, P =0.79), GIB events (no cases), and mortality (0.3% vs. 0.1%, P =0.24) 25 . According to Parvizi et al. 27 , th",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-2999",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2999,
+      "sentence": "0.1%, P =0.24) 25 .",
+      "context_window": "%, P =0.79), GIB events (no cases), and mortality (0.3% vs. 0.1%, P =0.24) 25 . According to Parvizi et al. 27 , their prosp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-3005",
+      "claim_type": "p_value",
+      "raw_text": "P =0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3005,
+      "sentence": "0.1%, P =0.24) 25 .",
+      "context_window": "0.79), GIB events (no cases), and mortality (0.3% vs. 0.1%, P =0.24) 25 . According to Parvizi et al. 27 , their prospective cr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3171",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3171,
+      "sentence": "27 , their prospective cross-over study on 4651 primary TJA did not reveal any differences in VTE between LD and HD groups (0.1% vs.",
+      "context_window": "not reveal any differences in VTE between LD and HD groups (0.1% vs. 0.3%, P =0.35). The rates of GIB and ulceration (0.3% v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3180",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3180,
+      "sentence": "0.3%, P =0.35).",
+      "context_window": "l any differences in VTE between LD and HD groups (0.1% vs. 0.3%, P =0.35). The rates of GIB and ulceration (0.3% vs. 0.4%,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-3186",
+      "claim_type": "p_value",
+      "raw_text": "P =0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3186,
+      "sentence": "0.3%, P =0.35).",
+      "context_window": "differences in VTE between LD and HD groups (0.1% vs. 0.3%, P =0.35). The rates of GIB and ulceration (0.3% vs. 0.4%, P =0.66),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3229",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3229,
+      "sentence": "The rates of GIB and ulceration (0.3% vs.",
+      "context_window": "(0.1% vs. 0.3%, P =0.35). The rates of GIB and ulceration (0.3% vs. 0.4%, P =0.66), as well as acute periprosthetic joint i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3238",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3238,
+      "sentence": "0.4%, P =0.66), as well as acute periprosthetic joint infection (PJI) (0.2% vs.",
+      "context_window": ". 0.3%, P =0.35). The rates of GIB and ulceration (0.3% vs. 0.4%, P =0.66), as well as acute periprosthetic joint infection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-3244",
+      "claim_type": "p_value",
+      "raw_text": "P =0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3244,
+      "sentence": "0.4%, P =0.66), as well as acute periprosthetic joint infection (PJI) (0.2% vs.",
+      "context_window": ", P =0.35). The rates of GIB and ulceration (0.3% vs. 0.4%, P =0.66), as well as acute periprosthetic joint infection (PJI) (0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3309",
+      "claim_type": "percentage",
+      "raw_text": "0.2%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3309,
+      "sentence": "0.4%, P =0.66), as well as acute periprosthetic joint infection (PJI) (0.2% vs.",
+      "context_window": "66), as well as acute periprosthetic joint infection (PJI) (0.2% vs. 0.5%, P =0.28), were modestly higher in the HD group, b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3318",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3318,
+      "sentence": "0.5%, P =0.28), were modestly higher in the HD group, but statistically not significant 27 .",
+      "context_window": "ell as acute periprosthetic joint infection (PJI) (0.2% vs. 0.5%, P =0.28), were modestly higher in the HD group, but statis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-3324",
+      "claim_type": "p_value",
+      "raw_text": "P =0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3324,
+      "sentence": "0.5%, P =0.28), were modestly higher in the HD group, but statistically not significant 27 .",
+      "context_window": "acute periprosthetic joint infection (PJI) (0.2% vs. 0.5%, P =0.28), were modestly higher in the HD group, but statistically n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3796",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3796,
+      "sentence": "On HD Aspirin (325 mg BID), 133 VTE cases were reported among the 9413 TKA compared with 8 cases among the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs.",
+      "context_window": "ur of LD Aspirin, that of Merkow et al. 44 . On HD Aspirin (325 mg BID), 133 VTE cases were reported among the 9413 TKA compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-3912",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3912,
+      "sentence": "On HD Aspirin (325 mg BID), 133 VTE cases were reported among the 9413 TKA compared with 8 cases among the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs.",
+      "context_window": "TKA compared with 8 cases among the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs. 0.23%, P <0.001) 44 . The only systematic r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3924",
+      "claim_type": "percentage",
+      "raw_text": "1.41%",
+      "numeric_values": [
+        1.41
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3924,
+      "sentence": "On HD Aspirin (325 mg BID), 133 VTE cases were reported among the 9413 TKA compared with 8 cases among the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs.",
+      "context_window": "with 8 cases among the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs. 0.23%, P <0.001) 44 . The only systematic review compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-3934",
+      "claim_type": "percentage",
+      "raw_text": "0.23%",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3934,
+      "sentence": "0.23%, P <0.001) 44 .",
+      "context_window": "ses among the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs. 0.23%, P <0.001) 44 . The only systematic review comparing the lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-3941",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3941,
+      "sentence": "0.23%, P <0.001) 44 .",
+      "context_window": "ng the 3453 TKA on HD Aspirin (81 mg BID) (1.41% vs. 0.23%, P <0.001) 44 . The only systematic review comparing the low and HD A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4138",
+      "claim_type": "percentage",
+      "raw_text": "0.33%",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4138,
+      "sentence": "The only systematic review comparing the low and HD Aspirin found that in patients receiving LD or HD Aspirin, there were no significant differences in the rates of symptomatic PTE (0.33% vs.",
+      "context_window": "no significant differences in the rates of symptomatic PTE (0.33% vs. 0.65%, P =0.16), symptomatic DVT (0.52 vs. 0.99%, P =0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4148",
+      "claim_type": "percentage",
+      "raw_text": "0.65%",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4148,
+      "sentence": "0.65%, P =0.16), symptomatic DVT (0.52 vs.",
+      "context_window": "cant differences in the rates of symptomatic PTE (0.33% vs. 0.65%, P =0.16), symptomatic DVT (0.52 vs. 0.99%, P =0.23), 90-da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-4155",
+      "claim_type": "p_value",
+      "raw_text": "P =0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4155,
+      "sentence": "0.65%, P =0.16), symptomatic DVT (0.52 vs.",
+      "context_window": "fferences in the rates of symptomatic PTE (0.33% vs. 0.65%, P =0.16), symptomatic DVT (0.52 vs. 0.99%, P =0.23), 90-day mortali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4191",
+      "claim_type": "percentage",
+      "raw_text": "0.99%",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4191,
+      "sentence": "0.99%, P =0.23), 90-day mortality (0.33 vs.",
+      "context_window": "c PTE (0.33% vs. 0.65%, P =0.16), symptomatic DVT (0.52 vs. 0.99%, P =0.23), 90-day mortality (0.33 vs. 21%, P =19), or major",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-p-4198",
+      "claim_type": "p_value",
+      "raw_text": "P =0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4198,
+      "sentence": "0.99%, P =0.23), 90-day mortality (0.33 vs.",
+      "context_window": "0.33% vs. 0.65%, P =0.16), symptomatic DVT (0.52 vs. 0.99%, P =0.23), 90-day mortality (0.33 vs. 21%, P =19), or major bleeding",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4235",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4235,
+      "sentence": "21%, P =19), or major bleeding (54% vs.",
+      "context_window": "c DVT (0.52 vs. 0.99%, P =0.23), 90-day mortality (0.33 vs. 21%, P =19), or major bleeding (54% vs. 29%, P =38) 26 . LD As",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4267",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4267,
+      "sentence": "21%, P =19), or major bleeding (54% vs.",
+      "context_window": "90-day mortality (0.33 vs. 21%, P =19), or major bleeding (54% vs. 29%, P =38) 26 . LD Aspirin also showed comparable eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4275",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4275,
+      "sentence": "29%, P =38) 26 .",
+      "context_window": "mortality (0.33 vs. 21%, P =19), or major bleeding (54% vs. 29%, P =38) 26 . LD Aspirin also showed comparable effects to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4541",
+      "claim_type": "percentage",
+      "raw_text": "34.8%",
+      "numeric_values": [
+        34.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4541,
+      "sentence": "Van Nest and colleagues revealed that Aspirin-treated patients were less prone to develop HO following THA (34.8% vs.",
+      "context_window": "eated patients were less prone to develop HO following THA (34.8% vs. 45.5%) and HO following TKA (13.4% vs. 18.4%) compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4551",
+      "claim_type": "percentage",
+      "raw_text": "45.5%",
+      "numeric_values": [
+        45.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4551,
+      "sentence": "45.5%) and HO following TKA (13.4% vs.",
+      "context_window": "ents were less prone to develop HO following THA (34.8% vs. 45.5%) and HO following TKA (13.4% vs. 18.4%) compared with non-A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4580",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4580,
+      "sentence": "45.5%) and HO following TKA (13.4% vs.",
+      "context_window": "op HO following THA (34.8% vs. 45.5%) and HO following TKA (13.4% vs. 18.4%) compared with non-Aspirin VTE prophylaxis. When",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-pct-4590",
+      "claim_type": "percentage",
+      "raw_text": "18.4%",
+      "numeric_values": [
+        18.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4590,
+      "sentence": "18.4%) compared with non-Aspirin VTE prophylaxis.",
+      "context_window": "owing THA (34.8% vs. 45.5%) and HO following TKA (13.4% vs. 18.4%) compared with non-Aspirin VTE prophylaxis. When comparing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4722",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4722,
+      "sentence": "When comparing low and HD Aspirin, HO formation was lower in LD Aspirin patients (81 mg) vs.",
+      "context_window": "HD Aspirin, HO formation was lower in LD Aspirin patients (81 mg) vs. HD Aspirin patients (325 mg), although not significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-4754",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4754,
+      "sentence": "HD Aspirin patients (325 mg), although not significantly 41 .",
+      "context_window": "wer in LD Aspirin patients (81 mg) vs. HD Aspirin patients (325 mg), although not significantly 41 . It could show that LD Asp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-104",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 104,
+      "sentence": "According to this prospective comparative study, prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for 6 weeks is equally effective at reducing VTE in TJA patients.",
+      "context_window": "udy, prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for 6 weeks is equally eff",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-131",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 131,
+      "sentence": "According to this prospective comparative study, prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for 6 weeks is equally effective at reducing VTE in TJA patients.",
+      "context_window": "ation of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for 6 weeks is equally effective at reducing VTE in TJ",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10205192_comparison_of_low_dose_162_mg_and_high_dose_650_mg_aspirin_p-u-147",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 147,
+      "sentence": "According to this prospective comparative study, prophylactic administration of Aspirin with low doses (81 mg BID) and high doses (325 mg BID) for 6 weeks is equally effective at reducing VTE in TJA patients.",
+      "context_window": "with low doses (81 mg BID) and high doses (325 mg BID) for 6 weeks is equally effective at reducing VTE in TJA patients. In ad",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

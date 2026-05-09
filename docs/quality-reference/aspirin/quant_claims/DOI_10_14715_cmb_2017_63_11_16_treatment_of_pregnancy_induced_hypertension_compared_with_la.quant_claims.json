@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_14715_cmb_2017_63_11_16_treatment_of_pregnancy_induced_hypertension_compared_with_la",
+  "doi": "10.14715/cmb/2017.63.11.16",
+  "extracted_at": "2026-05-08T20:06:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_14715_cmb_2017_63_11_16_treatment_of_pregnancy_induced_hypertension_compared_with_la-n-477",
+      "claim_type": "sample_size",
+      "raw_text": "n = 129",
+      "numeric_values": [
+        129.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 477,
+      "sentence": "From the beginning of the pregnancy to the end of the puerperium, the low dosage aspirin group (n = 129), the labetalol group (n = 127), and the drug-free or control group (n = 126) reported both mother and child results.",
+      "context_window": "to the end of the puerperium, the low dosage aspirin group (n = 129), the labetalol group (n = 127), and the drug-free or contr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_14715_cmb_2017_63_11_16_treatment_of_pregnancy_induced_hypertension_compared_with_la-n-508",
+      "claim_type": "sample_size",
+      "raw_text": "n = 127",
+      "numeric_values": [
+        127.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 508,
+      "sentence": "From the beginning of the pregnancy to the end of the puerperium, the low dosage aspirin group (n = 129), the labetalol group (n = 127), and the drug-free or control group (n = 126) reported both mother and child results.",
+      "context_window": "he low dosage aspirin group (n = 129), the labetalol group (n = 127), and the drug-free or control group (n = 126) reported bot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_14715_cmb_2017_63_11_16_treatment_of_pregnancy_induced_hypertension_compared_with_la-n-554",
+      "claim_type": "sample_size",
+      "raw_text": "n = 126",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 554,
+      "sentence": "From the beginning of the pregnancy to the end of the puerperium, the low dosage aspirin group (n = 129), the labetalol group (n = 127), and the drug-free or control group (n = 126) reported both mother and child results.",
+      "context_window": "etalol group (n = 127), and the drug-free or control group (n = 126) reported both mother and child results. Major variations i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_14715_cmb_2017_63_11_16_treatment_of_pregnancy_induced_hypertension_compared_with_la-p-897",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "Repeated placenta and blood pressure control hospitalizations. (P<0.001) in the control group more often (untreated).",
+      "context_window": "ated placenta and blood pressure control hospitalizations. (P<0.001) in the control group more often (untreated). The new babie",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_14715_cmb_2017_63_11_16_treatment_of_pregnancy_induced_hypertension_compared_with_la-p-1073",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1073,
+      "sentence": "The new babies were more vulnerable to gestational age (SGA), neonatal hypotension, neonatal Hyperbilirubinemia, and ICU (p <0.001 in contrast with the low-dose aspirin and control groups).",
+      "context_window": "neonatal hypotension, neonatal Hyperbilirubinemia, and ICU (p <0.001 in contrast with the low-dose aspirin and control groups).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re",
   "doi": "10.1016/j.ebiom.2019.08.069",
-  "extracted_at": "2026-05-05T21:22:31+00:00",
+  "extracted_at": "2026-05-08T20:01:16+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 61,
@@ -208,9 +208,9 @@
       "context_window": "tissue, skin biopsies, and blood were collected before and 11 days after completing senolytic treatment. Senescent cell and ma",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-1218",
@@ -225,10 +225,10 @@
       "sentence": "D + Q reduced adipose tissue senescent cell burden within 11 days, with decreases in p16 INK4A -and p21 CIP1 -expressing cells, cells with senescence-associated \u03b2-galactosidase activity, and adipocyte progenitors with limited replicative potential.",
       "context_window": "D + Q reduced adipose tissue senescent cell burden within 11 days, with decreases in p16 INK4A -and p21 CIP1 -expressing cell",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "d + q",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-pct-4886",
@@ -244,9 +244,9 @@
       "context_window": "evelop and do not divide, and because even eliminating only 30% of senescent cells can be sufficient to alleviate dysfuncti",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-5131",
@@ -262,9 +262,9 @@
       "context_window": "e in mice if administered intermittently, for example every 2 weeks to a month, as continuously, even though D and Q have elimi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-5950",
@@ -280,7 +280,7 @@
       "context_window": "the experience gained from the use of D in humans for over 20 years, and the fact that Q is a natural product present in many f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -297,10 +297,10 @@
       "sentence": "To test whether intermittent D + Q is effective in targeting senescent cells in humans, we administered a single 3 day course of oral D + Q and assayed senescent cell abundance 11 days after the last dose in subjects with DKD, the most common cause of end-stage kidney failure and which is characterized by increased senescent cell burden [ 18 , [42] , [43] , [44] ].",
       "context_window": "rgeting senescent cells in humans, we administered a single 3 day course of oral D + Q and assayed senescent cell abundance 1",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "d + q",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-7040",
@@ -315,10 +315,10 @@
       "sentence": "To test whether intermittent D + Q is effective in targeting senescent cells in humans, we administered a single 3 day course of oral D + Q and assayed senescent cell abundance 11 days after the last dose in subjects with DKD, the most common cause of end-stage kidney failure and which is characterized by increased senescent cell burden [ 18 , [42] , [43] , [44] ].",
       "context_window": "y course of oral D + Q and assayed senescent cell abundance 11 days after the last dose in subjects with DKD, the most common c",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "d + q",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-202",
@@ -370,7 +370,7 @@
       "context_window": "y, active infection, morbid obesity (body mass index [BMI] >50 kg/m 2 ), solid organ transplantation, or taking drugs known t",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -442,7 +442,7 @@
       "context_window": "of D + Q. Table 1 Variable Participants Treated with D + Q (N = 9 a ) Age, years 68.7 (1.0) Male sex 7 (77.8%) White race 8 (",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -460,7 +460,7 @@
       "context_window": "ted with D + Q (N = 9 a ) Age, years 68.7 (1.0) Male sex 7 (77.8%) White race 8 (88.9%) BMI, kg/m 2 33.9 (0.8) eGFR, mL/min/1",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -478,7 +478,7 @@
       "context_window": "a ) Age, years 68.7 (1.0) Male sex 7 (77.8%) White race 8 (88.9%) BMI, kg/m 2 33.9 (0.8) eGFR, mL/min/1.73m 2 27.0 (0.7) Dia",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -676,9 +676,9 @@
       "context_window": "quantified as above from adipose tissue biopsies collected 15 days apart from 15 obese, premenopausal women who were not takin",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-pct-6679",
@@ -820,9 +820,9 @@
       "context_window": "nal adipose tissue biopsies were acquired from 9 subjects ( N = 9; mean age: 69, range 55-79 years; 7 males and 2 females) wi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-120",
@@ -838,9 +838,9 @@
       "context_window": "re acquired from 9 subjects ( N = 9; mean age: 69, range 55-79 years; 7 males and 2 females) with drug-controlled diabetes and C",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-214",
@@ -856,9 +856,9 @@
       "context_window": "ith drug-controlled diabetes and CKD ( Table 1 ) before and 11 days after completion of a single 3-day course of oral D + Q (D:",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-282",
@@ -874,9 +874,9 @@
       "context_window": "after completion of a single 3-day course of oral D + Q (D: 100 mg/day, Q: 500 mg twice daily). During the course of this study, n",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-297",
@@ -892,9 +892,9 @@
       "context_window": "n of a single 3-day course of oral D + Q (D: 100 mg/day, Q: 500 mg twice daily). During the course of this study, no serious a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-p-649",
@@ -910,7 +910,7 @@
       "context_window": "SA\u03b2gal activity [ 50 , 51 ]. D + Q significantly reduced ( p = 0.001) adipose tissue p16 INK4A+ cells. Raw values were reduced b",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -946,7 +946,7 @@
       "context_window": "uced by 35% ( Fig. 1 a). Senolytics significantly reduced ( p = 0.009) adipose tissue p21 CIP1+ cells, with raw values being decr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -964,7 +964,7 @@
       "context_window": "tissue p21 CIP1+ cells, with raw values being decreased by 17% ( Fig. 1 b). D + Q also reduced ( p = 0.005) SA\u03b2gal + cells",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -982,7 +982,7 @@
       "context_window": "es being decreased by 17% ( Fig. 1 b). D + Q also reduced ( p = 0.005) SA\u03b2gal + cells; raw values were reduced by 62% ( Fig. 1 c)",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1000,7 +1000,7 @@
       "context_window": "ced ( p = 0.005) SA\u03b2gal + cells; raw values were reduced by 62% ( Fig. 1 c). To exclude the possibility that SA\u03b2gal + cells",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1018,9 +1018,9 @@
       "context_window": "from the first, we assayed adipose tissue biopsies obtained 15 days apart from women with obesity who were not treated with sen",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-p-1501",
@@ -1036,7 +1036,7 @@
       "context_window": "tissue senescent cells. (a). D + Q significantly reduced ( p = 0.001) abdominal subcutaneous adipose tissue p16 INK4A+ cells. Ra",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1054,7 +1054,7 @@
       "context_window": "adipose tissue p16 INK4A+ cells. Raw values were reduced by 35% in sections of adipose tissue biopsied at Day 14 (11 days a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1072,7 +1072,7 @@
       "context_window": "ed by 35% in sections of adipose tissue biopsied at Day 14 (11 days after the last dose of a 3-day course of the senolytics) vs",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1127,7 +1127,7 @@
       "context_window": "Days 0 and 14 are shown. (b). D + Q significantly reduced (p = 0.009) adipose tissue p21 CIP1+ cells. Raw values were decreased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1145,7 +1145,7 @@
       "context_window": ") adipose tissue p21 CIP1+ cells. Raw values were decreased 17% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1163,7 +1163,7 @@
       "context_window": "se tissue p21 CIP1+ cells. Raw values were decreased 17% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1218,7 +1218,7 @@
       "context_window": "ntative images are shown. (c). D + Q significantly reduced (p = 0.005) adipose tissue SA-\u03b2gal-expressing cells. Raw values were d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1236,7 +1236,7 @@
       "context_window": "ssue SA-\u03b2gal-expressing cells. Raw values were decreased by 62% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1254,7 +1254,7 @@
       "context_window": "-\u03b2gal-expressing cells. Raw values were decreased by 62% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1309,7 +1309,7 @@
       "context_window": "tissue senescent cells. (a). D + Q significantly reduced ( p = 0.001) abdominal subcutaneous adipose tissue p16 INK4A+ cells. Ra",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1327,7 +1327,7 @@
       "context_window": "adipose tissue p16 INK4A+ cells. Raw values were reduced by 35% in sections of adipose tissue biopsied at Day 14 (11 days a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1345,7 +1345,7 @@
       "context_window": "ed by 35% in sections of adipose tissue biopsied at Day 14 (11 days after the last dose of a 3-day course of the senolytics) vs",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1400,7 +1400,7 @@
       "context_window": "Days 0 and 14 are shown. (b). D + Q significantly reduced (p = 0.009) adipose tissue p21 CIP1+ cells. Raw values were decreased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1418,7 +1418,7 @@
       "context_window": ") adipose tissue p21 CIP1+ cells. Raw values were decreased 17% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1436,7 +1436,7 @@
       "context_window": "se tissue p21 CIP1+ cells. Raw values were decreased 17% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1491,7 +1491,7 @@
       "context_window": "ntative images are shown. (c). D + Q significantly reduced (p = 0.005) adipose tissue SA-\u03b2gal-expressing cells. Raw values were d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1509,7 +1509,7 @@
       "context_window": "ssue SA-\u03b2gal-expressing cells. Raw values were decreased by 62% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1527,7 +1527,7 @@
       "context_window": "-\u03b2gal-expressing cells. Raw values were decreased by 62% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1582,9 +1582,9 @@
       "context_window": "ells were counted in the adipose tissue biopsies before vs. 11 days after completion of D + Q treatment ( Fig. 2 a). There were",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-p-4810",
@@ -1618,7 +1618,7 @@
       "context_window": "+ Q lowered the raw numbers of macrophages per adipocyte by 28%. Senescent cells and macrophages contribute to formation of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1635,10 +1635,10 @@
       "sentence": "Consistent with the decreases in senescent cell burden and coupled decreases in adipose tissue macrophages from humans with diabetes and CKD reported here, we found that D + Q significantly decreases CLS in abdominal subcutaneous adipose tissue ( p = 0.001).",
       "context_window": "ly decreases CLS in abdominal subcutaneous adipose tissue ( p = 0.001). The raw number of CLS per adipocyte decreased by 86% ( Fi",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-pct-5621",
@@ -1672,7 +1672,7 @@
       "context_window": "d crown-like structures. (a). D + Q significantly reduced ( p = 0.0001) adipose tissue CD68 + macrophages relative to adipocytes.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1690,7 +1690,7 @@
       "context_window": "rophages relative to adipocytes. Raw numbers were decreased 28% by 11 days after completing D + Q treatment. At baseline, t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1708,7 +1708,7 @@
       "context_window": "s relative to adipocytes. Raw numbers were decreased 28% by 11 days after completing D + Q treatment. At baseline, there were 8",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1763,7 +1763,7 @@
       "context_window": "Days 0 and 14 are shown. (b). D + Q significantly reduced ( p = 0.001) adipose tissue crown-like structures. Raw values were decr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1781,7 +1781,7 @@
       "context_window": "tissue crown-like structures. Raw values were decreased by 11 days after D + Q treatment. At baseline (Day 0), there were 0.27",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1836,7 +1836,7 @@
       "context_window": "d crown-like structures. (a). D + Q significantly reduced ( p = 0.0001) adipose tissue CD68 + macrophages relative to adipocytes.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1854,7 +1854,7 @@
       "context_window": "rophages relative to adipocytes. Raw numbers were decreased 28% by 11 days after completing D + Q treatment. At baseline, t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1872,7 +1872,7 @@
       "context_window": "s relative to adipocytes. Raw numbers were decreased 28% by 11 days after completing D + Q treatment. At baseline, there were 8",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1927,7 +1927,7 @@
       "context_window": "Days 0 and 14 are shown. (b). D + Q significantly reduced ( p = 0.001) adipose tissue crown-like structures. Raw values were decr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1945,7 +1945,7 @@
       "context_window": "tissue crown-like structures. Raw values were decreased by 11 days after D + Q treatment. At baseline (Day 0), there were 0.27",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2000,9 +2000,9 @@
       "context_window": "isolated from adipose biopsies acquired before (Day 0) and 14 days after the first dose of the 3-day course of D + Q (Day 14)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-pct-9280",
@@ -2018,7 +2018,7 @@
       "context_window": "ipocyte progenitors isolated after senolytic treatment were 8% greater than in adipocyte progenitors isolated before treat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2036,7 +2036,7 @@
       "context_window": "r than in adipocyte progenitors isolated before treatment ( N = 11 subjects; Table 1 ). Exact p value is indicated. Colours in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2054,9 +2054,9 @@
       "context_window": "isolated from adipose biopsies acquired before (Day 0) and 14 days after the first dose of the 3-day course of D + Q (Day 14)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-pct-10023",
@@ -2072,7 +2072,7 @@
       "context_window": "ipocyte progenitors isolated after senolytic treatment were 8% greater than in adipocyte progenitors isolated before treat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2090,7 +2090,7 @@
       "context_window": "r than in adipocyte progenitors isolated before treatment ( N = 11 subjects; Table 1 ). Exact p value is indicated. Colours in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2108,7 +2108,7 @@
       "context_window": "21 CIP1+ cells in the epidermis decreased after treatment ( p = 0.026 and p = 0.016, respectively). p16 INK4A+ cells as a functio",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2126,7 +2126,7 @@
       "context_window": "in the epidermis decreased after treatment ( p = 0.026 and p = 0.016, respectively). p16 INK4A+ cells as a function of epidermal",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2144,7 +2144,7 @@
       "context_window": "y). p16 INK4A+ cells as a function of epidermal length were 20% less abundant 11 days after completing 3 days of treatment",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2162,7 +2162,7 @@
       "context_window": "ls as a function of epidermal length were 20% less abundant 11 days after completing 3 days of treatment with D + Q than at bas",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2180,7 +2180,7 @@
       "context_window": "rmal length were 20% less abundant 11 days after completing 3 days of treatment with D + Q than at baseline ( Fig. 4 a) and p2",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2216,7 +2216,7 @@
       "context_window": "CD1a did not significantly decrease after D + Q treatment ( p = .8; Fig. 4 c). Resident macrophages expressing CD68 have not b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2234,9 +2234,9 @@
       "context_window": "e in the epidermis either before or after D + Q treatment ( N = 9 subjects; 18 biopsies; full length of epidermis scanned wit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-p-11648",
@@ -2252,7 +2252,7 @@
       "context_window": "pidermal senescent cells. (a). D + Q significantly reduced (p = 0.026) human epidermal basal layer p16 INK4A+ cells. Raw values w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2270,7 +2270,7 @@
       "context_window": "mal basal layer p16 INK4A+ cells. Raw values were decreased 20% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2288,7 +2288,7 @@
       "context_window": "al layer p16 INK4A+ cells. Raw values were decreased 20% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2343,7 +2343,7 @@
       "context_window": "Days 0 and 14 are shown. (b). D + Q significantly reduced (p = 0.016) human epidermal basal layer p21 CIP1+ cells. Raw values we",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2361,7 +2361,7 @@
       "context_window": "rmal basal layer p21 CIP1+ cells. Raw values were decreased 31% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2379,7 +2379,7 @@
       "context_window": "sal layer p21 CIP1+ cells. Raw values were decreased 31% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2416,9 +2416,9 @@
       "context_window": "images are shown. (c). D + Q did not substantially change ( p = .803) antigen-presenting CD1a + epidermal Langerhans immune cell",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-msd-12371",
@@ -2471,7 +2471,7 @@
       "context_window": "pidermal senescent cells. (a). D + Q significantly reduced (p = 0.026) human epidermal basal layer p16 INK4A+ cells. Raw values w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2489,7 +2489,7 @@
       "context_window": "mal basal layer p16 INK4A+ cells. Raw values were decreased 20% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2507,7 +2507,7 @@
       "context_window": "al layer p16 INK4A+ cells. Raw values were decreased 20% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2562,7 +2562,7 @@
       "context_window": "Days 0 and 14 are shown. (b). D + Q significantly reduced (p = 0.016) human epidermal basal layer p21 CIP1+ cells. Raw values we",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2580,7 +2580,7 @@
       "context_window": "rmal basal layer p21 CIP1+ cells. Raw values were decreased 31% by 11 days after completing D + Q treatment. At baseline (D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2598,7 +2598,7 @@
       "context_window": "sal layer p21 CIP1+ cells. Raw values were decreased 31% by 11 days after completing D + Q treatment. At baseline (Day 0), ther",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2635,9 +2635,9 @@
       "context_window": "images are shown. (c). D + Q did not substantially change ( p = .803) antigen-presenting CD1a + epidermal Langerhans immune cell",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-msd-13359",
@@ -2690,7 +2690,7 @@
       "context_window": "loproteinases (MMP)-2, -9, and -12 were significantly lower 11 days after than before the 3 days of D + Q administration ( Fig.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2708,7 +2708,7 @@
       "context_window": "-12 were significantly lower 11 days after than before the 3 days of D + Q administration ( Fig. 5 ) and IL1-RA, Fibroblast G",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "d + q",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2833,10 +2833,10 @@
       "sentence": "Key markers of senescent cell burden were decreased in adipose tissue and skin biopsied from subjects 11 days after completing the 3-day course of D + Q, as were key circulating SASP factors, compared to before administration of these senolytic drugs.",
       "context_window": "decreased in adipose tissue and skin biopsied from subjects 11 days after completing the 3-day course of D + Q, as were key cir",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-4618",
@@ -2852,7 +2852,7 @@
       "context_window": "al of adipocyte progenitors isolated from biopsies obtained 11 days after completion of senolytic treatment and passaged three",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2870,9 +2870,9 @@
       "context_window": "nce and the decreases in systemic SASP factors were evident 11 days after the last of 3 daily oral doses of D + Q is indicative",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-7313",
@@ -2923,10 +2923,10 @@
       "sentence": "These changes were found in comparing skin biopsies from a subset of patients with systemic sclerosis who had an initially high senescent cell burden before being treated with D (no Q) continuously for ~6 months vs. after treatment [ 41 ].",
       "context_window": "burden before being treated with D (no Q) continuously for ~6 months vs. after treatment [ 41 ]. Now, in the third peer-reviewed",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6796530_senolytics_decrease_senescent_cells_in_humans_preliminary_re-u-8791",
@@ -2942,7 +2942,7 @@
       "context_window": "ermal senescent cell abundance and circulating SASP factors 11 days following a single 3-day course of D + Q. Much remains to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2960,7 +2960,7 @@
       "context_window": "iseases as a group and extended their remaining lifespan by 36% [ 28 ]. In mouse models of age- and senescence-related chro",
       "claim_role": "unknown",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "d + q",
       "direction": "increase",
       "binding_confidence": "partial"
     },

@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1093_toxres_tfaf076_the_ameliorative_effects_of_metformin_and_taurine_against_th",
+  "doi": "10.1093/toxres/tfaf076",
+  "extracted_at": "2026-05-08T20:10:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_toxres_tfaf076_the_ameliorative_effects_of_metformin_and_taurine_against_th-u-457",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 457,
+      "sentence": "Group II (TAA group) rats received injections of TAA (200 mg/kg b.wt /3 times/week, i.p.) for six weeks.",
+      "context_window": "roup. Group II (TAA group) rats received injections of TAA (200 mg/kg b.wt /3 times/week, i.p.) for six weeks. Group III (TAA",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_toxres_tfaf076_the_ameliorative_effects_of_metformin_and_taurine_against_th-u-579",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg/kg/day",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "Group III (TAA + metformin) rats received administration of metformin (200 mg/kg/day, p.o.) for five weeks.",
+      "context_window": "TAA + metformin) rats received administration of metformin (200 mg/kg/day, p.o.) for five weeks. Group IV (TAA + taurine) rats receiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_toxres_tfaf076_the_ameliorative_effects_of_metformin_and_taurine_against_th-u-678",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/kg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 678,
+      "sentence": "Group IV (TAA + taurine) rats received injections of taurine (100 mg/kg/day, i.p.) for five weeks, while Group V (TAA + metformin + taurine) rats received daily intraperitoneal injections and oral administration of the medication for five weeks.",
+      "context_window": "oup IV (TAA + taurine) rats received injections of taurine (100 mg/kg/day, i.p.) for five weeks, while Group V (TAA + metformin + tau",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

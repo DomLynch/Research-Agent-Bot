@@ -1,0 +1,49 @@
+{
+  "paper_id": "DOI_10_4103_nsn_nsn_126_24_sleep_related_quality_of_life_in_patients_with_myasthenia_gr",
+  "doi": "10.4103/nsn.nsn_126_24",
+  "extracted_at": "2026-05-08T20:05:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_4103_nsn_nsn_126_24_sleep_related_quality_of_life_in_patients_with_myasthenia_gr-msd-732",
+      "claim_type": "mean_sd",
+      "raw_text": "5.83 \u00b1 3.51",
+      "numeric_values": [
+        5.83,
+        3.51
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 732,
+      "sentence": "The mean PSQI score was 5.83 \u00b1 3.51.",
+      "context_window": "sease was 36 (range, 1-264) months. The mean PSQI score was 5.83 \u00b1 3.51. A significant relationship was found between sleep quality",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_4103_nsn_nsn_126_24_sleep_related_quality_of_life_in_patients_with_myasthenia_gr-pct-1232",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "Approximately 50% of the study participants experienced poor sleep quality.",
+      "context_window": "ty, depression, fatigue, and quality of life. Approximately 50% of the study participants experienced poor sleep quality. A",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

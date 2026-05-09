@@ -1,0 +1,247 @@
+{
+  "paper_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th",
+  "doi": "10.1182/blood-2011-06-359224",
+  "extracted_at": "2026-05-08T20:05:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3,
+    "unit_value": 4,
+    "percentage": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-p-614",
+      "claim_type": "p_value",
+      "raw_text": "P = .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 614,
+      "sentence": "In 41 aspirin-treated ET patients, the immature platelet count predicted serum TXB(2) independently of platelet count, age, JAK-2 V617F mutation, or cytoreduction (\u03b2 = 3.53, P = .001).",
+      "context_window": "unt, age, JAK-2 V617F mutation, or cytoreduction (\u03b2 = 3.53, P = .001). Twenty-one aspirin-treated patients with serum TXB(2) \u2265 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-u-681",
+      "claim_type": "unit_value",
+      "raw_text": "4 ng/mL",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "ng/mL",
+      "source_section": "abstract",
+      "source_offset": 681,
+      "sentence": "Twenty-one aspirin-treated patients with serum TXB(2) \u2265 4 ng/mL at 24 hours after dosing were randomized to the following 7-day regimens in a crossover design: enteric-coated aspirin 100 mg twice daily, enteric-coated aspirin 200 mg once daily, or plain aspirin 100 mg once daily.",
+      "context_window": "1). Twenty-one aspirin-treated patients with serum TXB(2) \u2265 4 ng/mL at 24 hours after dosing were randomized to the following 7",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-u-808",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "Twenty-one aspirin-treated patients with serum TXB(2) \u2265 4 ng/mL at 24 hours after dosing were randomized to the following 7-day regimens in a crossover design: enteric-coated aspirin 100 mg twice daily, enteric-coated aspirin 200 mg once daily, or plain aspirin 100 mg once daily.",
+      "context_window": "-day regimens in a crossover design: enteric-coated aspirin 100 mg twice daily, enteric-coated aspirin 200 mg once daily, or p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-u-851",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 851,
+      "sentence": "Twenty-one aspirin-treated patients with serum TXB(2) \u2265 4 ng/mL at 24 hours after dosing were randomized to the following 7-day regimens in a crossover design: enteric-coated aspirin 100 mg twice daily, enteric-coated aspirin 200 mg once daily, or plain aspirin 100 mg once daily.",
+      "context_window": "c-coated aspirin 100 mg twice daily, enteric-coated aspirin 200 mg once daily, or plain aspirin 100 mg once daily. A twice-dai",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-u-887",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 887,
+      "sentence": "Twenty-one aspirin-treated patients with serum TXB(2) \u2265 4 ng/mL at 24 hours after dosing were randomized to the following 7-day regimens in a crossover design: enteric-coated aspirin 100 mg twice daily, enteric-coated aspirin 200 mg once daily, or plain aspirin 100 mg once daily.",
+      "context_window": "enteric-coated aspirin 200 mg once daily, or plain aspirin 100 mg once daily. A twice-daily regimen caused a further 88% medi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-pct-945",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the functional platelet response to aspirin, as assessed by urinary 11-dehydro-TXB(2) excretion and the VerifyNow Aspirin assay.",
+      "context_window": "n 100 mg once daily. A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-pct-962",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 962,
+      "sentence": "A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the functional platelet response to aspirin, as assessed by urinary 11-dehydro-TXB(2) excretion and the VerifyNow Aspirin assay.",
+      "context_window": "ly. A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the function",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-pct-966",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 966,
+      "sentence": "A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the functional platelet response to aspirin, as assessed by urinary 11-dehydro-TXB(2) excretion and the VerifyNow Aspirin assay.",
+      "context_window": "A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the functional p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-p-971",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 971,
+      "sentence": "A twice-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the functional platelet response to aspirin, as assessed by urinary 11-dehydro-TXB(2) excretion and the VerifyNow Aspirin assay.",
+      "context_window": "ce-daily regimen caused a further 88% median (IQR, 78%-92%, P < .001) TXB(2) reduction and normalized the functional platelet re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-pct-1207",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1207,
+      "sentence": "Doubling the aspirin dose reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05).",
+      "context_window": "ing the aspirin dose reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05). We conclude that the abnorm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-pct-1224",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1224,
+      "sentence": "Doubling the aspirin dose reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05).",
+      "context_window": "ose reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05). We conclude that the abnormal megakaryopoies",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-pct-1228",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1228,
+      "sentence": "Doubling the aspirin dose reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05).",
+      "context_window": "reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05). We conclude that the abnormal megakaryopoiesis c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2011_06_359224_aspirin_insensitive_thromboxane_biosynthesis_in_essential_th-p-1233",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1233,
+      "sentence": "Doubling the aspirin dose reduced serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05).",
+      "context_window": "ed serum TXB(2) only partially by 39% median (IQR, 29%-54%, P < .05). We conclude that the abnormal megakaryopoiesis characteri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

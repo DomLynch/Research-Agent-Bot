@@ -1,0 +1,1496 @@
+{
+  "paper_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an",
+  "doi": "10.2337/dc10-1615",
+  "extracted_at": "2026-05-08T20:05:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 58,
+    "hazard_ratio": 1,
+    "confidence_interval": 5,
+    "p_value": 12,
+    "percentage": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-600",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg/day",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 600,
+      "sentence": "Patients were assigned to the aspirin group (81 mg/day or 100 mg/day) or the nonaspirin group and followed for a median of 4.37 years.",
+      "context_window": "otic diseases. Patients were assigned to the aspirin group (81 mg/day or 100 mg/day) or the nonaspirin group and followed for a m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-613",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 613,
+      "sentence": "Patients were assigned to the aspirin group (81 mg/day or 100 mg/day) or the nonaspirin group and followed for a median of 4.37 years.",
+      "context_window": ". Patients were assigned to the aspirin group (81 mg/day or 100 mg/day) or the nonaspirin group and followed for a median of 4.37",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-678",
+      "claim_type": "unit_value",
+      "raw_text": "4.37 years",
+      "numeric_values": [
+        4.37
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 678,
+      "sentence": "Patients were assigned to the aspirin group (81 mg/day or 100 mg/day) or the nonaspirin group and followed for a median of 4.37 years.",
+      "context_window": "g/day) or the nonaspirin group and followed for a median of 4.37 years. The primary end points were atherosclerotic events of fata",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-980",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 980,
+      "sentence": "In 1,373 patients with baseline estimated glomerular filtration rate (eGFR) 60-89 mL/min/1.73 m 2 , the incidence of primary end points was significantly lower in the aspirin group than in the nonaspirin group (aspirin, 30/661; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011).",
+      "context_window": "ith baseline estimated glomerular filtration rate (eGFR) 60-89 mL/min/1.73 m 2 , the incidence of primary end points was signific",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-hr-l-1149",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1149,
+      "sentence": "In 1,373 patients with baseline estimated glomerular filtration rate (eGFR) 60-89 mL/min/1.73 m 2 , the incidence of primary end points was significantly lower in the aspirin group than in the nonaspirin group (aspirin, 30/661; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011).",
+      "context_window": "the nonaspirin group (aspirin, 30/661; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011). Low-dose aspirin therapy di",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-ci-1168",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.36-0.88",
+      "numeric_values": [
+        0.36,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "In 1,373 patients with baseline estimated glomerular filtration rate (eGFR) 60-89 mL/min/1.73 m 2 , the incidence of primary end points was significantly lower in the aspirin group than in the nonaspirin group (aspirin, 30/661; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011).",
+      "context_window": "up (aspirin, 30/661; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011). Low-dose aspirin therapy did not reduce prima",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-1187",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1187,
+      "sentence": "In 1,373 patients with baseline estimated glomerular filtration rate (eGFR) 60-89 mL/min/1.73 m 2 , the incidence of primary end points was significantly lower in the aspirin group than in the nonaspirin group (aspirin, 30/661; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011).",
+      "context_window": "; nonaspirin, 55/712; hazard ratio 0.57 [95% CI 0.36-0.88]; P = 0.011). Low-dose aspirin therapy did not reduce primary end point",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1281",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "Low-dose aspirin therapy did not reduce primary end points in patients with eGFR \u226590 mL/min/1.73 m 2 (aspirin, 9/248; nonaspirin, 11/270; 0.94 [0.38-2.3]) or those with eGFR <60 mL/min/1.73 m 2 (aspirin, 29/342; nonaspirin, 19/290; 1.3 [0.76-2.4]).",
+      "context_window": "py did not reduce primary end points in patients with eGFR \u226590 mL/min/1.73 m 2 (aspirin, 9/248; nonaspirin, 11/270; 0.94 [0.38-2.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1374",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 1374,
+      "sentence": "Low-dose aspirin therapy did not reduce primary end points in patients with eGFR \u226590 mL/min/1.73 m 2 (aspirin, 9/248; nonaspirin, 11/270; 0.94 [0.38-2.3]) or those with eGFR <60 mL/min/1.73 m 2 (aspirin, 29/342; nonaspirin, 19/290; 1.3 [0.76-2.4]).",
+      "context_window": "8; nonaspirin, 11/270; 0.94 [0.38-2.3]) or those with eGFR <60 mL/min/1.73 m 2 (aspirin, 29/342; nonaspirin, 19/290; 1.3 [0.76-2.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1561",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 1561,
+      "sentence": "The Cox proportional hazard model demonstrated a significant interaction between mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin ( P = 0.02).",
+      "context_window": "ificant interaction between mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin ( P = 0.02). These results suggest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-1596",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "The Cox proportional hazard model demonstrated a significant interaction between mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin ( P = 0.02).",
+      "context_window": "nal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin ( P = 0.02). These results suggest a differential effect of low-dose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1714",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 1714,
+      "sentence": "These results suggest a differential effect of low-dose aspirin therapy in diabetic patients with eGFR 60-89 mL/min/1.73 m 2 .",
+      "context_window": "low-dose aspirin therapy in diabetic patients with eGFR 60-89 mL/min/1.73 m 2 .",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-238",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 238,
+      "sentence": "In brief, the JPAD trial randomly assigned 2,539 patients with type 2 diabetes without any history of atherosclerotic diseases between the ages of 30 and 85 years to the aspirin or nonaspirin group.",
+      "context_window": "tory of atherosclerotic diseases between the ages of 30 and 85 years to the aspirin or nonaspirin group. Patients in the aspirin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-335",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 335,
+      "sentence": "Patients in the aspirin group were assigned to take 81 mg or 100 mg of aspirin once daily.",
+      "context_window": "group. Patients in the aspirin group were assigned to take 81 mg or 100 mg of aspirin once daily. The dosage of aspirin (81",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-344",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 344,
+      "sentence": "Patients in the aspirin group were assigned to take 81 mg or 100 mg of aspirin once daily.",
+      "context_window": "atients in the aspirin group were assigned to take 81 mg or 100 mg of aspirin once daily. The dosage of aspirin (81 mg or 100",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-397",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 397,
+      "sentence": "The dosage of aspirin (81 mg or 100 mg) was chosen by each physician.",
+      "context_window": "mg or 100 mg of aspirin once daily. The dosage of aspirin (81 mg or 100 mg) was chosen by each physician. JPAD was a prospec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-406",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 406,
+      "sentence": "The dosage of aspirin (81 mg or 100 mg) was chosen by each physician.",
+      "context_window": "0 mg of aspirin once daily. The dosage of aspirin (81 mg or 100 mg) was chosen by each physician. JPAD was a prospective, nonb",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2707",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 2707,
+      "sentence": "We first divided all patients into three groups based on eGFR (\u226590, 60-89, <60 mL/min/1.73 m 2 ), according to the guidelines of the National Kidney Foundation ( 5 ).",
+      "context_window": "all patients into three groups based on eGFR (\u226590, 60-89, <60 mL/min/1.73 m 2 ), according to the guidelines of the National Kid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3651",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3651,
+      "sentence": "On the basis of the hypothesis that mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) has an interaction with aspirin, we developed a Cox proportional hazard model with the interaction variable between aspirin and eGFR 60-89 mL/min/1.73 m 2 variable.",
+      "context_window": "asis of the hypothesis that mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) has an interaction with aspirin, we developed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3808",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3808,
+      "sentence": "On the basis of the hypothesis that mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) has an interaction with aspirin, we developed a Cox proportional hazard model with the interaction variable between aspirin and eGFR 60-89 mL/min/1.73 m 2 variable.",
+      "context_window": "l with the interaction variable between aspirin and eGFR 60-89 mL/min/1.73 m 2 variable. The included variables were aspirin, dum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3901",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3901,
+      "sentence": "The included variables were aspirin, dummy variable for eGFR 60-89 mL/min/1.73 m 2 (relative to eGFR \u226590 mL/min/1.73 m 2 ), dummy variable for eGFR <60 mL/min/1.73 m 2 (relative to eGFR \u226590), interaction variable between eGFR 60-89 mL/min/1.73 m 2 and aspirin.",
+      "context_window": "included variables were aspirin, dummy variable for eGFR 60-89 mL/min/1.73 m 2 (relative to eGFR \u226590 mL/min/1.73 m 2 ), dummy var",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3939",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3939,
+      "sentence": "The included variables were aspirin, dummy variable for eGFR 60-89 mL/min/1.73 m 2 (relative to eGFR \u226590 mL/min/1.73 m 2 ), dummy variable for eGFR <60 mL/min/1.73 m 2 (relative to eGFR \u226590), interaction variable between eGFR 60-89 mL/min/1.73 m 2 and aspirin.",
+      "context_window": "variable for eGFR 60-89 mL/min/1.73 m 2 (relative to eGFR \u226590 mL/min/1.73 m 2 ), dummy variable for eGFR <60 mL/min/1.73 m 2 (re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3986",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3986,
+      "sentence": "The included variables were aspirin, dummy variable for eGFR 60-89 mL/min/1.73 m 2 (relative to eGFR \u226590 mL/min/1.73 m 2 ), dummy variable for eGFR <60 mL/min/1.73 m 2 (relative to eGFR \u226590), interaction variable between eGFR 60-89 mL/min/1.73 m 2 and aspirin.",
+      "context_window": "ive to eGFR \u226590 mL/min/1.73 m 2 ), dummy variable for eGFR <60 mL/min/1.73 m 2 (relative to eGFR \u226590), interaction variable betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-4066",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 4066,
+      "sentence": "The included variables were aspirin, dummy variable for eGFR 60-89 mL/min/1.73 m 2 (relative to eGFR \u226590 mL/min/1.73 m 2 ), dummy variable for eGFR <60 mL/min/1.73 m 2 (relative to eGFR \u226590), interaction variable between eGFR 60-89 mL/min/1.73 m 2 and aspirin.",
+      "context_window": "relative to eGFR \u226590), interaction variable between eGFR 60-89 mL/min/1.73 m 2 and aspirin. We also developed multivariable Cox p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-718",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 718,
+      "sentence": "There were also no significant differences in each category of patients stratified by eGFR, except in the group with eGFR \u226590 mL/min/1.73 m 2 patients, who were significantly older in the aspirin group than in the nonaspirin group, and in the group with eGFR 60-89 mL/min/1.73 m 2 , whose diastolic blood pressure was slightly but significantly higher in the aspirin group than in the nonaspirin group and whose incidence of history of smoking was significantly higher in the aspirin group than in the nonaspirin group.",
+      "context_window": "patients stratified by eGFR, except in the group with eGFR \u226590 mL/min/1.73 m 2 patients, who were significantly older in the aspi",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-857",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 857,
+      "sentence": "There were also no significant differences in each category of patients stratified by eGFR, except in the group with eGFR \u226590 mL/min/1.73 m 2 patients, who were significantly older in the aspirin group than in the nonaspirin group, and in the group with eGFR 60-89 mL/min/1.73 m 2 , whose diastolic blood pressure was slightly but significantly higher in the aspirin group than in the nonaspirin group and whose incidence of history of smoking was significantly higher in the aspirin group than in the nonaspirin group.",
+      "context_window": "than in the nonaspirin group, and in the group with eGFR 60-89 mL/min/1.73 m 2 , whose diastolic blood pressure was slightly but",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-1230",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1230,
+      "sentence": "Baseline demographics by treatment\n\nIncidence of primary end points significantly increased with declining eGFR ( P = 0.03), as shown in Supplementary Fig.",
+      "context_window": "ry end points significantly increased with declining eGFR ( P = 0.03), as shown in Supplementary Fig. 2 . The group of patients",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1309",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1309,
+      "sentence": "The group of patients with eGFR \u226590 mL/min/1.73 m 2 was used as the reference group in the analysis of the association between the level of eGFR and primary end points.",
+      "context_window": "in Supplementary Fig. 2 . The group of patients with eGFR \u226590 mL/min/1.73 m 2 was used as the reference group in the analysis of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1546",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1546,
+      "sentence": "The incidence of primary end points was significantly higher in patients with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066).",
+      "context_window": "ignificantly higher in patients with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patien",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-ci-1574",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.0-2.7",
+      "numeric_values": [
+        1.0,
+        2.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1574,
+      "sentence": "The incidence of primary end points was significantly higher in patients with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066).",
+      "context_window": "nts with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-1591",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1591,
+      "sentence": "The incidence of primary end points was significantly higher in patients with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066).",
+      "context_window": "educed eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1629",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1629,
+      "sentence": "The incidence of primary end points was significantly higher in patients with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066).",
+      "context_window": "1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066). In 1,373 patients wi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-1664",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0066",
+      "numeric_values": [
+        0.0066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1664,
+      "sentence": "The incidence of primary end points was significantly higher in patients with mildly reduced eGFR 60-89 mL/min/1.73 m 2 (HR 1.6 [95% CI 1.0-2.7]; P = 0.048) and in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066).",
+      "context_window": "d in patients with eGFR <60 mL/min/1.73 m 2 (2.0 [1.2-3.5]; P = 0.0066). In 1,373 patients with eGFR 60-89 mL/min/1.73 m 2 (661 p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-1709",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 1709,
+      "sentence": "In 1,373 patients with eGFR 60-89 mL/min/1.73 m 2 (661 patients in the aspirin group and 712 patients in the nonaspirin group), a total of 85 primary end points (any atherosclerotic event) occurred: 30 in the aspirin group and 55 in the nonaspirin group (HR 0.57 [95% CI 0.36-0.88]; P = 0.011) ( Fig.",
+      "context_window": "2.0 [1.2-3.5]; P = 0.0066). In 1,373 patients with eGFR 60-89 mL/min/1.73 m 2 (661 patients in the aspirin group and 712 patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-ci-1942",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.36-0.88",
+      "numeric_values": [
+        0.36,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1942,
+      "sentence": "In 1,373 patients with eGFR 60-89 mL/min/1.73 m 2 (661 patients in the aspirin group and 712 patients in the nonaspirin group), a total of 85 primary end points (any atherosclerotic event) occurred: 30 in the aspirin group and 55 in the nonaspirin group (HR 0.57 [95% CI 0.36-0.88]; P = 0.011) ( Fig.",
+      "context_window": "the aspirin group and 55 in the nonaspirin group (HR 0.57 [95% CI 0.36-0.88]; P = 0.011) ( Fig. 1 B ). The Cox proportional hazard mode",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-1961",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1961,
+      "sentence": "In 1,373 patients with eGFR 60-89 mL/min/1.73 m 2 (661 patients in the aspirin group and 712 patients in the nonaspirin group), a total of 85 primary end points (any atherosclerotic event) occurred: 30 in the aspirin group and 55 in the nonaspirin group (HR 0.57 [95% CI 0.36-0.88]; P = 0.011) ( Fig.",
+      "context_window": "and 55 in the nonaspirin group (HR 0.57 [95% CI 0.36-0.88]; P = 0.011) ( Fig. 1 B ). The Cox proportional hazard model demonstrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2097",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2097,
+      "sentence": "The Cox proportional hazard model demonstrated significant interaction between mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin use ( P = 0.02).",
+      "context_window": "ificant interaction between mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin use ( P = 0.02). However, there was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-2136",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2136,
+      "sentence": "The Cox proportional hazard model demonstrated significant interaction between mild renal dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin use ( P = 0.02).",
+      "context_window": "dysfunction (eGFR 60-89 mL/min/1.73 m 2 ) and aspirin use ( P = 0.02). However, there was no significant difference in the incid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2254",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2254,
+      "sentence": "However, there was no significant difference in the incidence of primary end points in patients with eGFR \u226590 mL/min/1.73 m 2 (nine events in the aspirin group and 11 events in the nonaspirin group; 0.94 [0.38-2.3]) ( Fig.",
+      "context_window": "the incidence of primary end points in patients with eGFR \u226590 mL/min/1.73 m 2 (nine events in the aspirin group and 11 events in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2397",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2397,
+      "sentence": "1 A ), or those with eGFR <60 mL/min/1.73 m 2 (29 events in the aspirin group and 19 in the nonaspirin group; 1.3 [0.76-2.4]) ( Fig.",
+      "context_window": "n group; 0.94 [0.38-2.3]) ( Fig. 1 A ), or those with eGFR <60 mL/min/1.73 m 2 (29 events in the aspirin group and 19 in the nona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2664",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2664,
+      "sentence": "Adjusting for age, hypertension, dyslipidemia, and history of smoking, low-dose aspirin significantly reduced primary end points in patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.24 [0.69-2.23]).",
+      "context_window": "icantly reduced primary end points in patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patient",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-2702",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0052",
+      "numeric_values": [
+        0.0052
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2702,
+      "sentence": "Adjusting for age, hypertension, dyslipidemia, and history of smoking, low-dose aspirin significantly reduced primary end points in patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.24 [0.69-2.23]).",
+      "context_window": "patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2753",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2753,
+      "sentence": "Adjusting for age, hypertension, dyslipidemia, and history of smoking, low-dose aspirin significantly reduced primary end points in patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.24 [0.69-2.23]).",
+      "context_window": "4-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2779",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2779,
+      "sentence": "Adjusting for age, hypertension, dyslipidemia, and history of smoking, low-dose aspirin significantly reduced primary end points in patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.24 [0.69-2.23]).",
+      "context_window": "not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2824",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2824,
+      "sentence": "Adjusting for age, hypertension, dyslipidemia, and history of smoking, low-dose aspirin significantly reduced primary end points in patients with eGFR 60-89 mL/min/1.73 m 2 (0.53 [0.34-0.83]; P = 0.0052), and not in patients with eGFR \u226590 or <60 mL/min/1.73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.24 [0.69-2.23]).",
+      "context_window": ".73 m 2 (eGFR \u226590 mL/min/1.73 m 2 : 0.87 [0.36-2.14]; eGFR <60 mL/min/1.73 m 2 : 1.24 [0.69-2.23]). Percentage of primary end po",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2944",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2944,
+      "sentence": "Percentage of primary end points by category of patients with eGFR of at least 90 mL/min/1.73 m 2 ( A ), 60-89 mL/min/1.73 m 2 ( B ), or <60 mL/min/1.73 m 2 ( C ).",
+      "context_window": "ry end points by category of patients with eGFR of at least 90 mL/min/1.73 m 2 ( A ), 60-89 mL/min/1.73 m 2 ( B ), or <60 mL/min/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2973",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2973,
+      "sentence": "Percentage of primary end points by category of patients with eGFR of at least 90 mL/min/1.73 m 2 ( A ), 60-89 mL/min/1.73 m 2 ( B ), or <60 mL/min/1.73 m 2 ( C ).",
+      "context_window": "patients with eGFR of at least 90 mL/min/1.73 m 2 ( A ), 60-89 mL/min/1.73 m 2 ( B ), or <60 mL/min/1.73 m 2 ( C ). The secondar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3003",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3003,
+      "sentence": "Percentage of primary end points by category of patients with eGFR of at least 90 mL/min/1.73 m 2 ( A ), 60-89 mL/min/1.73 m 2 ( B ), or <60 mL/min/1.73 m 2 ( C ).",
+      "context_window": "90 mL/min/1.73 m 2 ( A ), 60-89 mL/min/1.73 m 2 ( B ), or <60 mL/min/1.73 m 2 ( C ). The secondary end point of atherosclerotic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3210",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3210,
+      "sentence": "The secondary end point of atherosclerotic/ischemic events occurred in 26 patients in the aspirin group and in 50 patients in the nonaspirin group, among the patients with eGFR 60-89 mL/min/1.73 m 2 (HR 0.54 [0.33-0.86]; P = 0.010) ( Supplementary Table 2 ).",
+      "context_window": "ts in the nonaspirin group, among the patients with eGFR 60-89 mL/min/1.73 m 2 (HR 0.54 [0.33-0.86]; P = 0.010) ( Supplementary T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-3251",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3251,
+      "sentence": "The secondary end point of atherosclerotic/ischemic events occurred in 26 patients in the aspirin group and in 50 patients in the nonaspirin group, among the patients with eGFR 60-89 mL/min/1.73 m 2 (HR 0.54 [0.33-0.86]; P = 0.010) ( Supplementary Table 2 ).",
+      "context_window": "ients with eGFR 60-89 mL/min/1.73 m 2 (HR 0.54 [0.33-0.86]; P = 0.010) ( Supplementary Table 2 ). The incidence of atheroscleroti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3445",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3445,
+      "sentence": "The incidence of atherosclerotic/ischemic events was similar between the aspirin and nonaspirin groups in both categories of patients with eGFR of at least 90 mL/min/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43]; P = 0.42) ( Supplementary Table 2 ).",
+      "context_window": "groups in both categories of patients with eGFR of at least 90 mL/min/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-3483",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3483,
+      "sentence": "The incidence of atherosclerotic/ischemic events was similar between the aspirin and nonaspirin groups in both categories of patients with eGFR of at least 90 mL/min/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43]; P = 0.42) ( Supplementary Table 2 ).",
+      "context_window": "with eGFR of at least 90 mL/min/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43];",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3514",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3514,
+      "sentence": "The incidence of atherosclerotic/ischemic events was similar between the aspirin and nonaspirin groups in both categories of patients with eGFR of at least 90 mL/min/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43]; P = 0.42) ( Supplementary Table 2 ).",
+      "context_window": "/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43]; P = 0.42) ( Supplementary Table",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-3552",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3552,
+      "sentence": "The incidence of atherosclerotic/ischemic events was similar between the aspirin and nonaspirin groups in both categories of patients with eGFR of at least 90 mL/min/1.73 m 2 (1.15 [0.45-2.95]; P = 0.76) and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43]; P = 0.42) ( Supplementary Table 2 ).",
+      "context_window": "and those with eGFR <60 mL/min/1.73 m 2 (1.29 [0.70-2.43]; P = 0.42) ( Supplementary Table 2 ). In the structural and hemorrhag",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3887",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3887,
+      "sentence": "As reported previously, the incidence of primary end points was significantly lower in the aspirin group than in the nonaspirin group in the subgroup of patients aged 65 years or older ( Fig.",
+      "context_window": "an in the nonaspirin group in the subgroup of patients aged 65 years or older ( Fig. 2 ) ( 10 ). In the subgroups of patients ag",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3958",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3958,
+      "sentence": "In the subgroups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig.",
+      "context_window": "older ( Fig. 2 ) ( 10 ). In the subgroups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose as",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3994",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3994,
+      "sentence": "In the subgroups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig.",
+      "context_window": "groups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose aspirin therapy reduced primary end poi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-pct-4070",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4070,
+      "sentence": "In the subgroups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig.",
+      "context_window": "2 , low-dose aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig. 2 ). In the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-ci-4084",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.27-0.82",
+      "numeric_values": [
+        0.27,
+        0.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4084,
+      "sentence": "In the subgroups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig.",
+      "context_window": "aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig. 2 ). In the subgroups of male or female",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-p-4103",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4103,
+      "sentence": "In the subgroups of patients aged 65 years or older whose eGFR was 60-89 mL/min/1.73 m 2 , low-dose aspirin therapy reduced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig.",
+      "context_window": "uced primary end points by 52% (HR 0.48 [95% CI 0.27-0.82]; P = 0.007) ( Fig. 2 ). In the subgroups of male or female, there was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-4673",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 4673,
+      "sentence": "Incidence of the composite of gastrointestinal bleeding and cerebral bleeding was very low and was similar between the aspirin (three gastrointestinal bleeding events and four cerebral bleeding events) and nonaspirin (two gastrointestinal bleeding events and four cerebral bleeding events) groups in the group of patients with eGFR 60-89 mL/min/1.73 m 2 .",
+      "context_window": "eeding events) groups in the group of patients with eGFR 60-89 mL/min/1.73 m 2 .",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-302",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 302,
+      "sentence": "In the present subgroup analysis of JPAD, a prospective, randomized, clinical trial of low-dose aspirin versus nonaspirin groups for primary prevention in Japanese type 2 patients with diabetes, low-dose aspirin therapy reduced the incidence of atherosclerotic events in diabetic patients with eGFR 60-89 mL/min/1.73 m 2 , but not in those with either eGFR <60 mL/min/1.73 m 2 or at least 90 mL/min/1.73 m 2 .",
+      "context_window": "of atherosclerotic events in diabetic patients with eGFR 60-89 mL/min/1.73 m 2 , but not in those with either eGFR <60 mL/min/1.7",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-358",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 358,
+      "sentence": "In the present subgroup analysis of JPAD, a prospective, randomized, clinical trial of low-dose aspirin versus nonaspirin groups for primary prevention in Japanese type 2 patients with diabetes, low-dose aspirin therapy reduced the incidence of atherosclerotic events in diabetic patients with eGFR 60-89 mL/min/1.73 m 2 , but not in those with either eGFR <60 mL/min/1.73 m 2 or at least 90 mL/min/1.73 m 2 .",
+      "context_window": "60-89 mL/min/1.73 m 2 , but not in those with either eGFR <60 mL/min/1.73 m 2 or at least 90 mL/min/1.73 m 2 . In the subgroup o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-389",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 389,
+      "sentence": "In the present subgroup analysis of JPAD, a prospective, randomized, clinical trial of low-dose aspirin versus nonaspirin groups for primary prevention in Japanese type 2 patients with diabetes, low-dose aspirin therapy reduced the incidence of atherosclerotic events in diabetic patients with eGFR 60-89 mL/min/1.73 m 2 , but not in those with either eGFR <60 mL/min/1.73 m 2 or at least 90 mL/min/1.73 m 2 .",
+      "context_window": "t in those with either eGFR <60 mL/min/1.73 m 2 or at least 90 mL/min/1.73 m 2 . In the subgroup of patients with eGFR 60-89 mL/m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-451",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 451,
+      "sentence": "In the subgroup of patients with eGFR 60-89 mL/min/1.73 m 2 , there was no increase in serious gastrointestinal and cerebral bleeding in the aspirin group compared with the nonaspirin group.",
+      "context_window": "mL/min/1.73 m 2 . In the subgroup of patients with eGFR 60-89 mL/min/1.73 m 2 , there was no increase in serious gastrointestina",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2369",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 2369,
+      "sentence": "The possible mechanism for the beneficial effect of low-dose aspirin therapy on the prevention of atherosclerotic events in the subgroup of patients with eGFR 60-89 mL/min/1.73 m 2 , is inhibition of thrombus formation via blocking thromboxane-dependent platelet activation.",
+      "context_window": "rosclerotic events in the subgroup of patients with eGFR 60-89 mL/min/1.73 m 2 , is inhibition of thrombus formation via blocking",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2821",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 2821,
+      "sentence": "However, it is not clear why low-dose aspirin therapy could not prevent atherosclerotic events in the subgroup of patients with eGFR <60 mL/min/1.73 m 2 .",
+      "context_window": "herosclerotic events in the subgroup of patients with eGFR <60 mL/min/1.73 m 2 . Given that aspirin in a daily dose of 100 mg or",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-2880",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 2880,
+      "sentence": "Given that aspirin in a daily dose of 100 mg or less is associated with a higher incidence of aspirin resistance in patients with diabetes or renal dysfunction ( 21 , 22 ), one possible explanation is that the dose of aspirin is too low to inhibit platelet activation in these patients.",
+      "context_window": "<60 mL/min/1.73 m 2 . Given that aspirin in a daily dose of 100 mg or less is associated with a higher incidence of aspirin re",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3754",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 3754,
+      "sentence": "This study showed that low-dose aspirin is beneficial for preventing major CV disease in patients with eGFR <45 mL/min/1.73m 2 (aspirin, 11/264; placebo 32/272; HR 0.34 [95% CI 0.17-0.67]), and not in those with eGFR \u226560 mL/min/1.73m 2 (aspirin, 233/7517; placebo, 252/7461; 0.91 [0.76-1.09]) ( 23 ).",
+      "context_window": "cial for preventing major CV disease in patients with eGFR <45 mL/min/1.73m 2 (aspirin, 11/264; placebo 32/272; HR 0.34 [95% CI 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-ci-3815",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.17-0.67",
+      "numeric_values": [
+        0.17,
+        0.67
+      ],
+      "units": "95%CI",
+      "source_section": "conclusion",
+      "source_offset": 3815,
+      "sentence": "This study showed that low-dose aspirin is beneficial for preventing major CV disease in patients with eGFR <45 mL/min/1.73m 2 (aspirin, 11/264; placebo 32/272; HR 0.34 [95% CI 0.17-0.67]), and not in those with eGFR \u226560 mL/min/1.73m 2 (aspirin, 233/7517; placebo, 252/7461; 0.91 [0.76-1.09]) ( 23 ).",
+      "context_window": "5 mL/min/1.73m 2 (aspirin, 11/264; placebo 32/272; HR 0.34 [95% CI 0.17-0.67]), and not in those with eGFR \u226560 mL/min/1.73m 2 (aspirin,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-3863",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 3863,
+      "sentence": "This study showed that low-dose aspirin is beneficial for preventing major CV disease in patients with eGFR <45 mL/min/1.73m 2 (aspirin, 11/264; placebo 32/272; HR 0.34 [95% CI 0.17-0.67]), and not in those with eGFR \u226560 mL/min/1.73m 2 (aspirin, 233/7517; placebo, 252/7461; 0.91 [0.76-1.09]) ( 23 ).",
+      "context_window": "2; HR 0.34 [95% CI 0.17-0.67]), and not in those with eGFR \u226560 mL/min/1.73m 2 (aspirin, 233/7517; placebo, 252/7461; 0.91 [0.76-1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-pct-4106",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 4106,
+      "sentence": "The result seems inconsistent with our result; however, the HOT study enrolled patients with diastolic hypertension, and the rate of diabetic patients was only 8%.",
+      "context_window": "ic hypertension, and the rate of diabetic patients was only 8%. The underlying mechanisms were unclear, but the difference",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-4474",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 4474,
+      "sentence": "The proportion of patients with eGFR of at least 90 mL/min/1.73 m 2 in the JPAD trial was 21% of the total patients enrolled, which was higher than the 13% prevalence for this eGFR category observed in the general Japanese population ( 15 ).",
+      "context_window": "decreases. The proportion of patients with eGFR of at least 90 mL/min/1.73 m 2 in the JPAD trial was 21% of the total patients en",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-pct-4515",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 4515,
+      "sentence": "The proportion of patients with eGFR of at least 90 mL/min/1.73 m 2 in the JPAD trial was 21% of the total patients enrolled, which was higher than the 13% prevalence for this eGFR category observed in the general Japanese population ( 15 ).",
+      "context_window": "h eGFR of at least 90 mL/min/1.73 m 2 in the JPAD trial was 21% of the total patients enrolled, which was higher than the 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-pct-4577",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 4577,
+      "sentence": "The proportion of patients with eGFR of at least 90 mL/min/1.73 m 2 in the JPAD trial was 21% of the total patients enrolled, which was higher than the 13% prevalence for this eGFR category observed in the general Japanese population ( 15 ).",
+      "context_window": "% of the total patients enrolled, which was higher than the 13% prevalence for this eGFR category observed in the general J",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-4693",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 4693,
+      "sentence": "The proportion with eGFR <60 mL/min/1.73 m 2 in the JPAD trial was 25%, which was also higher than the 16% prevalence in the general population ( 15 ).",
+      "context_window": "neral Japanese population ( 15 ). The proportion with eGFR <60 mL/min/1.73 m 2 in the JPAD trial was 25%, which was also higher t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-pct-4734",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 4734,
+      "sentence": "The proportion with eGFR <60 mL/min/1.73 m 2 in the JPAD trial was 25%, which was also higher than the 16% prevalence in the general population ( 15 ).",
+      "context_window": "portion with eGFR <60 mL/min/1.73 m 2 in the JPAD trial was 25%, which was also higher than the 16% prevalence in the gener",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-pct-4770",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 4770,
+      "sentence": "The proportion with eGFR <60 mL/min/1.73 m 2 in the JPAD trial was 25%, which was also higher than the 16% prevalence in the general population ( 15 ).",
+      "context_window": "2 in the JPAD trial was 25%, which was also higher than the 16% prevalence in the general population ( 15 ). This distribut",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-4976",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 4976,
+      "sentence": "In the current study, eGFR <60 mL/min/1.73 m 2 -a usual cutoff value-was associated with increased atherosclerotic risk, but in addition, eGFR 60-89 mL/min/1.73 m 2 was also associated with increased risk for any atherosclerotic events.",
+      "context_window": "ttern of diabetic renal damage. In the current study, eGFR <60 mL/min/1.73 m 2 -a usual cutoff value-was associated with increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-5094",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 5094,
+      "sentence": "In the current study, eGFR <60 mL/min/1.73 m 2 -a usual cutoff value-was associated with increased atherosclerotic risk, but in addition, eGFR 60-89 mL/min/1.73 m 2 was also associated with increased risk for any atherosclerotic events.",
+      "context_window": "th increased atherosclerotic risk, but in addition, eGFR 60-89 mL/min/1.73 m 2 was also associated with increased risk for any at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-5827",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 5827,
+      "sentence": "Third, our population enrolled only 20 patients with eGFR <30 mL/min/1.73 m 2 and no patients receiving hemodialysis, so we could not analyze the effect of aspirin in these categories of patients.",
+      "context_window": "Third, our population enrolled only 20 patients with eGFR <30 mL/min/1.73 m 2 and no patients receiving hemodialysis, so we coul",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3024334_low_dose_aspirin_therapy_in_patients_with_type_2_diabetes_an-u-6288",
+      "claim_type": "unit_value",
+      "raw_text": "89 mL/min",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "mL/min",
+      "source_section": "conclusion",
+      "source_offset": 6288,
+      "sentence": "In conclusion, the current study demonstrated that low-dose aspirin therapy reduced the risk of atherosclerotic events in type 2 diabetic patients with eGFR 60-89 mL/min/1.73 m 2 .",
+      "context_window": "rosclerotic events in type 2 diabetic patients with eGFR 60-89 mL/min/1.73 m 2 . The results suggest that eGFR may be useful for",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

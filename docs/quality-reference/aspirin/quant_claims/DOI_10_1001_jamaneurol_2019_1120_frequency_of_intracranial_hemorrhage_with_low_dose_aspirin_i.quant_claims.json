@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1001_jamaneurol_2019_1120_frequency_of_intracranial_hemorrhage_with_low_dose_aspirin_i",
+  "doi": "10.1001/jamaneurol.2019.1120",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jamaneurol_2019_1120_frequency_of_intracranial_hemorrhage_with_low_dose_aspirin_i-u-695",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 695,
+      "sentence": "STUDY SELECTION: Randomized clinical trials that compared low-dose aspirin (daily dose \u2264100 mg) vs control and recorded the end points of intracranial hemorrhage separately for active treatment and control groups were included.",
+      "context_window": "clinical trials that compared low-dose aspirin (daily dose \u2264100 mg) vs control and recorded the end points of intracranial hem",
+      "claim_role": "dose",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamaneurol_2019_1120_frequency_of_intracranial_hemorrhage_with_low_dose_aspirin_i-pct-960",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Relative risk with 95% CI was used as a measure of aspirin vs control on risk of intracranial hemorrhage.",
+      "context_window": "ted based on the Mantel-Haenszel method. Relative risk with 95% CI was used as a measure of aspirin vs control on risk of i",
+      "claim_role": "unknown",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamaneurol_2019_1120_frequency_of_intracranial_hemorrhage_with_low_dose_aspirin_i-pct-1580",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1580,
+      "sentence": "Pooling the results from the random-effects model showed that low-dose aspirin, compared with control, was associated with an increased risk of any intracranial bleeding (8 trials; relative risk, 1.37; 95% CI, 1.13-1.66; 2 additional intracranial hemorrhages in 1000 people), with potentially the greatest relative risk increase for subdural or extradural hemorrhage (4 trials; relative risk, 1.53; 95% CI, 1.08-2.18) and less for intracerebral hemorrhage and subarachnoid hemorrhage.",
+      "context_window": "f any intracranial bleeding (8 trials; relative risk, 1.37; 95% CI, 1.13-1.66; 2 additional intracranial hemorrhages in 100",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamaneurol_2019_1120_frequency_of_intracranial_hemorrhage_with_low_dose_aspirin_i-pct-1777",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1777,
+      "sentence": "Pooling the results from the random-effects model showed that low-dose aspirin, compared with control, was associated with an increased risk of any intracranial bleeding (8 trials; relative risk, 1.37; 95% CI, 1.13-1.66; 2 additional intracranial hemorrhages in 1000 people), with potentially the greatest relative risk increase for subdural or extradural hemorrhage (4 trials; relative risk, 1.53; 95% CI, 1.08-2.18) and less for intracerebral hemorrhage and subarachnoid hemorrhage.",
+      "context_window": "al or extradural hemorrhage (4 trials; relative risk, 1.53; 95% CI, 1.08-2.18) and less for intracerebral hemorrhage and su",
+      "claim_role": "effect",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

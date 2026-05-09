@@ -1,0 +1,84 @@
+{
+  "paper_id": "PMID28118062_retracted_article_taurine_supplementation_improves_functiona",
+  "doi": "10.1080/19390211.2016.1267059",
+  "extracted_at": "2026-05-08T20:10:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID28118062_retracted_article_taurine_supplementation_improves_functiona-n-691",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 691,
+      "sentence": "METHODS: In a double-blind and randomly designed study, 16 patients with heart failure were assigned to two groups: taurine (TG, n = 8) and placebo (PG, n = 8).",
+      "context_window": "ith heart failure were assigned to two groups: taurine (TG, n = 8) and placebo (PG, n = 8). TG received 500-mg taurine supple",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28118062_retracted_article_taurine_supplementation_improves_functiona-n-715",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "METHODS: In a double-blind and randomly designed study, 16 patients with heart failure were assigned to two groups: taurine (TG, n = 8) and placebo (PG, n = 8).",
+      "context_window": "ssigned to two groups: taurine (TG, n = 8) and placebo (PG, n = 8). TG received 500-mg taurine supplementation three times pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28118062_retracted_article_taurine_supplementation_improves_functiona-p-862",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 862,
+      "sentence": "RESULTS: Significant decrease in the values of Q-T segments (p < 0.01) and significant increase in the values of P-R segments (p < 0.01) were detected following exercise post-supplementation in TG rather than in PG.",
+      "context_window": "ESULTS: Significant decrease in the values of Q-T segments (p < 0.01) and significant increase in the values of P-R segments (p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28118062_retracted_article_taurine_supplementation_improves_functiona-p-928",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "RESULTS: Significant decrease in the values of Q-T segments (p < 0.01) and significant increase in the values of P-R segments (p < 0.01) were detected following exercise post-supplementation in TG rather than in PG.",
+      "context_window": "01) and significant increase in the values of P-R segments (p < 0.01) were detected following exercise post-supplementation in T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

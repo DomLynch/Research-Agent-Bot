@@ -1,0 +1,374 @@
+{
+  "paper_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar",
+  "doi": "10.21518/2079-701x-2018-16-94-99",
+  "extracted_at": "2026-05-08T20:10:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "sample_size": 1,
+    "percentage": 13,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-u-573",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 573,
+      "sentence": "The 1st group included 30 patients who received, in addition to basic therapy, taurine at a dose of 500 mg 2 times a day.",
+      "context_window": "eceived, in addition to basic therapy, taurine at a dose of 500 mg 2 times a day. In group 2 (n = 23) - patients who received",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-n-607",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 607,
+      "sentence": "In group 2 (n = 23) - patients who received only basic therapy of ischemic heart disease and diabetes.",
+      "context_window": "apy, taurine at a dose of 500 mg 2 times a day. In group 2 (n = 23) - patients who received only basic therapy of ischemic hea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1081",
+      "claim_type": "percentage",
+      "raw_text": "29.67%",
+      "numeric_values": [
+        29.67
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1081,
+      "sentence": "At the end of 16-week therapy, physical tolerance according toVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05).",
+      "context_window": "physical tolerance according toVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05). The distance during",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-p-1089",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1089,
+      "sentence": "At the end of 16-week therapy, physical tolerance according toVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05).",
+      "context_window": "l tolerance according toVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05). The distance during the 6-m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1112",
+      "claim_type": "percentage",
+      "raw_text": "9.14%",
+      "numeric_values": [
+        9.14
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "At the end of 16-week therapy, physical tolerance according toVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05).",
+      "context_window": "oVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05). The distance during the 6-minute walk test was si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-p-1119",
+      "claim_type": "p_value",
+      "raw_text": "p>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1119,
+      "sentence": "At the end of 16-week therapy, physical tolerance according toVEM in group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05).",
+      "context_window": "group 1 increased by 29.67% (p<0.01), in group 2-by 9.14% (p>0.05). The distance during the 6-minute walk test was significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1218",
+      "claim_type": "percentage",
+      "raw_text": "34.37%",
+      "numeric_values": [
+        34.37
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1218,
+      "sentence": "The distance during the 6-minute walk test was significantly increased in both groups: by 34.37% and by 25.80%, respectively.",
+      "context_window": "te walk test was significantly increased in both groups: by 34.37% and by 25.80%, respectively. Patients of group 1 had a sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1232",
+      "claim_type": "percentage",
+      "raw_text": "25.80%",
+      "numeric_values": [
+        25.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "The distance during the 6-minute walk test was significantly increased in both groups: by 34.37% and by 25.80%, respectively.",
+      "context_window": "as significantly increased in both groups: by 34.37% and by 25.80%, respectively. Patients of group 1 had a significant decrea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1311",
+      "claim_type": "percentage",
+      "raw_text": "11.52%",
+      "numeric_values": [
+        11.52
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1311,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "y. Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1349",
+      "claim_type": "percentage",
+      "raw_text": "19.38%",
+      "numeric_values": [
+        19.38
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1349,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "nt decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-p-1357",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1357,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "ase in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1380",
+      "claim_type": "percentage",
+      "raw_text": "18.90%",
+      "numeric_values": [
+        18.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1380,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "ostprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1420",
+      "claim_type": "percentage",
+      "raw_text": "13.21%",
+      "numeric_values": [
+        13.21
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1420,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14%",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1456",
+      "claim_type": "percentage",
+      "raw_text": "17.65%",
+      "numeric_values": [
+        17.65
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1456,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "d hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein c",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1480",
+      "claim_type": "percentage",
+      "raw_text": "14.14%",
+      "numeric_values": [
+        14.14
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-p-1488",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1488,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).),",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1536",
+      "claim_type": "percentage",
+      "raw_text": "16.05%",
+      "numeric_values": [
+        16.05
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1536,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotr",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-p-1544",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1544,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "4% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferas",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1618",
+      "claim_type": "percentage",
+      "raw_text": "27.75%",
+      "numeric_values": [
+        27.75
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "artate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclu",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2018_16_94_99_evaluation_of_the_effect_of_taurine_on_the_course_of_coronar-pct-1629",
+      "claim_type": "percentage",
+      "raw_text": "16.52%",
+      "numeric_values": [
+        16.52
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1629,
+      "sentence": "Patients of group 1 had a significant decrease in BMI by 11.52%, postprandial glucose level by 19.38% (p = 0.018), insulin by 18.90%, glyca ted hemoglobin (HbA1c) by 13.21%, insulin resistance index by 17.65%, triglyceride by 14.14% (p<0.05), low density lipoprotein cholesterol by 16.05% (p<0.01).), aspartate aminotransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:bold>.",
+      "context_window": "otransferases and alanine aminotransferases - by 27.75% and 16.52%, respectively.</jats:p><jats:p><jats:bold>Conclusion</jats:",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

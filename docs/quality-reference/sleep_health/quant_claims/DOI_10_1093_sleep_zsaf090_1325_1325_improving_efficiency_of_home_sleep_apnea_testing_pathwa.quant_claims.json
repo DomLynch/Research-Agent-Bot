@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_1325_1325_improving_efficiency_of_home_sleep_apnea_testing_pathwa",
+  "doi": "10.1093/sleep/zsaf090.1325",
+  "extracted_at": "2026-05-08T20:06:58+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1325_1325_improving_efficiency_of_home_sleep_apnea_testing_pathwa-u-1429",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1429,
+      "sentence": "In addition to this, the wait time for patients to complete an HST was reduced from 6-8 months to 4-6 weeks, despite the same FTE resources in the sleep clinic.",
+      "context_window": "ait time for patients to complete an HST was reduced from 6-8 months to 4-6 weeks, despite the same FTE resources in the sleep c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1325_1325_improving_efficiency_of_home_sleep_apnea_testing_pathwa-u-1443",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1443,
+      "sentence": "In addition to this, the wait time for patients to complete an HST was reduced from 6-8 months to 4-6 weeks, despite the same FTE resources in the sleep clinic.",
+      "context_window": "atients to complete an HST was reduced from 6-8 months to 4-6 weeks, despite the same FTE resources in the sleep clinic. The pr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

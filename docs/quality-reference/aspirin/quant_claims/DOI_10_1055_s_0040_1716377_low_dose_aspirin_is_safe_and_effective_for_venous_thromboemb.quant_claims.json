@@ -1,0 +1,193 @@
+{
+  "paper_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb",
+  "doi": "10.1055/s-0040-1716377",
+  "extracted_at": "2026-05-08T20:05:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-u-744",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 744,
+      "sentence": "Patients initially received 325-mg ASA BID for 1 month and then changed to a lower dose of 81-mg BID.",
+      "context_window": "ty patients. Patients initially received 325-mg ASA BID for 1 month and then changed to a lower dose of 81-mg BID. A retrospect",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-u-1059",
+      "claim_type": "unit_value",
+      "raw_text": "74 months",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1059,
+      "sentence": "In the 74 months prior to protocol implementation, 1,003 rTKAs were performed and nine VTE cases were diagnosed (0.90%).",
+      "context_window": "acute periprosthetic joint infection, and mortality. In the 74 months prior to protocol implementation, 1,003 rTKAs were performe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-pct-1165",
+      "claim_type": "percentage",
+      "raw_text": "0.90%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1165,
+      "sentence": "In the 74 months prior to protocol implementation, 1,003 rTKAs were performed and nine VTE cases were diagnosed (0.90%).",
+      "context_window": "003 rTKAs were performed and nine VTE cases were diagnosed (0.90%). After 26 months of the protocol change, 435 rTKAs were pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-u-1179",
+      "claim_type": "unit_value",
+      "raw_text": "26 months",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "After 26 months of the protocol change, 435 rTKAs were performed with one VTE case identified (0.23%).",
+      "context_window": "performed and nine VTE cases were diagnosed (0.90%). After 26 months of the protocol change, 435 rTKAs were performed with one V",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-pct-1268",
+      "claim_type": "percentage",
+      "raw_text": "0.23%",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1268,
+      "sentence": "After 26 months of the protocol change, 435 rTKAs were performed with one VTE case identified (0.23%).",
+      "context_window": "nge, 435 rTKAs were performed with one VTE case identified (0.23%). There was no significant difference in rates or odds in p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-p-1370",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1370,
+      "sentence": "There was no significant difference in rates or odds in postoperative pulmonary embolism (PE; p = 0.27), DVT (p = 0.35), and total VTE rates (p = 0.16) among patients using either protocol.",
+      "context_window": "e in rates or odds in postoperative pulmonary embolism (PE; p = 0.27), DVT (p = 0.35), and total VTE rates (p = 0.16) among pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-p-1386",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1386,
+      "sentence": "There was no significant difference in rates or odds in postoperative pulmonary embolism (PE; p = 0.27), DVT (p = 0.35), and total VTE rates (p = 0.16) among patients using either protocol.",
+      "context_window": "ds in postoperative pulmonary embolism (PE; p = 0.27), DVT (p = 0.35), and total VTE rates (p = 0.16) among patients using eithe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-p-1418",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1418,
+      "sentence": "There was no significant difference in rates or odds in postoperative pulmonary embolism (PE; p = 0.27), DVT (p = 0.35), and total VTE rates (p = 0.16) among patients using either protocol.",
+      "context_window": "bolism (PE; p = 0.27), DVT (p = 0.35), and total VTE rates (p = 0.16) among patients using either protocol. There were also no d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-p-1524",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1524,
+      "sentence": "There were also no differences in bleeding complications (p = 0.15) or infection rate (p = 0.36).",
+      "context_window": ". There were also no differences in bleeding complications (p = 0.15) or infection rate (p = 0.36). No mortalities were observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0040_1716377_low_dose_aspirin_is_safe_and_effective_for_venous_thromboemb-p-1553",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.36",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1553,
+      "sentence": "There were also no differences in bleeding complications (p = 0.15) or infection rate (p = 0.36).",
+      "context_window": "ces in bleeding complications (p = 0.15) or infection rate (p = 0.36). No mortalities were observed. In the conclusion, 81-mg AS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

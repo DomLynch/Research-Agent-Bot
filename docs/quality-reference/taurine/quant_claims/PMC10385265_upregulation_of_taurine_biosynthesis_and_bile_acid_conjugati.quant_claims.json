@@ -1,0 +1,910 @@
+{
+  "paper_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati",
+  "doi": "10.3390/metabo13070824",
+  "extracted_at": "2026-05-08T20:10:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 12,
+    "sample_size": 2,
+    "unit_value": 4,
+    "percentage": 20,
+    "correlation": 1,
+    "p_value": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-1727",
+      "claim_type": "mean_sd",
+      "raw_text": "26.9 \u00b1 0.6",
+      "numeric_values": [
+        26.9,
+        0.6
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1727,
+      "sentence": "Wild-type C57BL/6J mice (male, body weight 26.9 \u00b1 0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g, n = 8) mice were used according to our previous studies [ 28 , 32 , 33 ].",
+      "context_window": "heim, Germany). Wild-type C57BL/6J mice (male, body weight 26.9 \u00b1 0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-n-1741",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1741,
+      "sentence": "Wild-type C57BL/6J mice (male, body weight 26.9 \u00b1 0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g, n = 8) mice were used according to our previous studies [ 28 , 32 , 33 ].",
+      "context_window": ". Wild-type C57BL/6J mice (male, body weight 26.9 \u00b1 0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-1794",
+      "claim_type": "mean_sd",
+      "raw_text": "28.3 \u00b1 0.5",
+      "numeric_values": [
+        28.3,
+        0.5
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1794,
+      "sentence": "Wild-type C57BL/6J mice (male, body weight 26.9 \u00b1 0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g, n = 8) mice were used according to our previous studies [ 28 , 32 , 33 ].",
+      "context_window": "0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g, n = 8) mice were used according to our previous studies",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-n-1808",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1808,
+      "sentence": "Wild-type C57BL/6J mice (male, body weight 26.9 \u00b1 0.6 g, n = 8) and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g, n = 8) mice were used according to our previous studies [ 28 , 32 , 33 ].",
+      "context_window": "and DKO ( Cyp2a12 -/- and Cyp2c70 -/- ; male, 28.3 \u00b1 0.5 g, n = 8) mice were used according to our previous studies [ 28 , 32",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-u-1916",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1916,
+      "sentence": "The mice were bred and kept until 20 weeks of age at the Jackson Laboratory Japan, Inc. (Ishioka, Japan) under a regular 12 h light-dark cycle (6:00-18:00) with regular food (CRF-1, Oriental Yeast Co., Ltd., Tokyo, Japan) and water ad libitum in pathogen-free conditions.",
+      "context_window": "studies [ 28 , 32 , 33 ]. The mice were bred and kept until 20 weeks of age at the Jackson Laboratory Japan, Inc. (Ishioka, Japa",
+      "claim_role": "protocol",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-u-3042",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3042,
+      "sentence": "In brief, 200 \u00b5L of the supernatant was mixed with 20 \u00b5L of IS mixture (41.6 ng of [ 2 H 4 ]CA, 57.5 ng of [ 2 H 4 ]CDCA, 32.8 ng of [ 2 H 4 ]DCA, 22.4 ng of [ 2 H 4 ]LCA, 34.4 ng of [ 2 H 4 ]UDCA, 34.4 ng of [ 2 H 4 ]TUDCA, 100 ng of [ 2 H 3 ]TCA in acetonitrile), and 2 mL of 0.5 M potassium phosphate buffer (pH 7.4).",
+      "context_window": "2 H 4 ]TUDCA, 100 ng of [ 2 H 3 ]TCA in acetonitrile), and 2 mL of 0.5 M potassium phosphate buffer (pH 7.4). The sample wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-u-3147",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3147,
+      "sentence": "The sample was eluted using Bond Elut C18 cartridges (200 mg; Agilent Technologies, Santa Clara, CA, USA) and was evaporated at 100 \u00b0C under a nitrogen stream.",
+      "context_window": "7.4). The sample was eluted using Bond Elut C18 cartridges (200 mg; Agilent Technologies, Santa Clara, CA, USA) and was evapor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-u-4064",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4064,
+      "sentence": "After centrifugation at 20,000\u00d7 g for 10 min, 20 \u00b5L of the supernatant was mixed with an equal volume of APDS-acetonitrile solution (20 mg/mL) and three-times volume of 0.2 M sodium borate buffer (pH 8.8), and then incubated at 55 \u00b0C for 10 min.",
+      "context_window": "s mixed with an equal volume of APDS-acetonitrile solution (20 mg/mL) and three-times volume of 0.2 M sodium borate buffer (p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-4249",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4249,
+      "sentence": "Next, the reaction mixture was added to 100 \u03bcL of formic acid solution (0.1% in water), and 5 \u03bcL was used for injection into the HPLC-ESI-MS/MS system.",
+      "context_window": "action mixture was added to 100 \u03bcL of formic acid solution (0.1% in water), and 5 \u03bcL was used for injection into the HPLC-ES",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-corr-5569",
+      "claim_type": "correlation",
+      "raw_text": "(r = -1.00)",
+      "numeric_values": [
+        -1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5569,
+      "sentence": "The concentration of target molecules in each sample was then calculated automatically with reference to this curve (r = -1.00), and the specificity of each PCR product was assessed by melting curve analysis.",
+      "context_window": "then calculated automatically with reference to this curve (r = -1.00), and the specificity of each PCR product was assessed by me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-1092",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1092,
+      "sentence": "The white circle in the column shows the individual value. * p < 0.05, \u2021 p < 0.0001 compared to the respective BA in the WT group by two-way ANOVA post hoc Bonferroni\u2019s multiple comparison test.",
+      "context_window": "he white circle in the column shows the individual value. * p < 0.05, \u2021 p < 0.0001 compared to the respective BA in the WT group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-1104",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1104,
+      "sentence": "The white circle in the column shows the individual value. * p < 0.05, \u2021 p < 0.0001 compared to the respective BA in the WT group by two-way ANOVA post hoc Bonferroni\u2019s multiple comparison test.",
+      "context_window": "cle in the column shows the individual value. * p < 0.05, \u2021 p < 0.0001 compared to the respective BA in the WT group by two-way AN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-1448",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1448,
+      "sentence": "Data are the mean \u00b1 SE. ** p < 0.01 according to unpaired Student\u2019s t -test. ( C ) BA composition (the sum of unconjugated and taurine-conjugated forms).",
+      "context_window": "d and taurine-conjugated forms). Data are the mean \u00b1 SE. ** p < 0.01 according to unpaired Student\u2019s t -test. ( C ) BA compositi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-1630",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1630,
+      "sentence": "Pie graph was constructed using the mean of each BA. \u2021 p < 0.0001 according to chi-square test. ( D ) The ratio of taurine-conjugated BAs.",
+      "context_window": "ms). Pie graph was constructed using the mean of each BA. \u2021 p < 0.0001 according to chi-square test. ( D ) The ratio of taurine-co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-1740",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1740,
+      "sentence": "Data are the mean \u00b1 SE. \u2021 p < 0.0001 according to unpaired Student\u2019s t -test.",
+      "context_window": "ratio of taurine-conjugated BAs. Data are the mean \u00b1 SE. \u2021 p < 0.0001 according to unpaired Student\u2019s t -test. Total BA (TBA) co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2375",
+      "claim_type": "mean_sd",
+      "raw_text": "59.7 \u00b1 1.6",
+      "numeric_values": [
+        59.7,
+        1.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2375,
+      "sentence": "In the WT group, the ratios of MCAs (the sum of \u03b1MCA, \u03b2MCA, and \u03c9MCA) and human-type BAs (the sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively.",
+      "context_window": "man-type BAs (the sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively. On the other hand, all of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2382",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2382,
+      "sentence": "In the WT group, the ratios of MCAs (the sum of \u03b1MCA, \u03b2MCA, and \u03c9MCA) and human-type BAs (the sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively.",
+      "context_window": "e BAs (the sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively. On the other hand, all of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2391",
+      "claim_type": "mean_sd",
+      "raw_text": "40.3 \u00b1 1.7",
+      "numeric_values": [
+        40.3,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2391,
+      "sentence": "In the WT group, the ratios of MCAs (the sum of \u03b1MCA, \u03b2MCA, and \u03c9MCA) and human-type BAs (the sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively.",
+      "context_window": "e sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively. On the other hand, all of the BA compositio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2398",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2398,
+      "sentence": "In the WT group, the ratios of MCAs (the sum of \u03b1MCA, \u03b2MCA, and \u03c9MCA) and human-type BAs (the sum of CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively.",
+      "context_window": "f CA, CDCA, DCA, LCA, and UDCA) were 59.7 \u00b1 1.6% and 40.3 \u00b1 1.7%, respectively. On the other hand, all of the BA composition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2569",
+      "claim_type": "mean_sd",
+      "raw_text": "8.0 \u00b1 0.8",
+      "numeric_values": [
+        8.0,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2569,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "group. Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT gro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2575",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2575,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": ". Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2581",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 0.2",
+      "numeric_values": [
+        1.3,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2581,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "icularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2587",
+      "claim_type": "percentage",
+      "raw_text": "0.2%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2587,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "ly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2597",
+      "claim_type": "mean_sd",
+      "raw_text": "0.05 \u00b1 0.01",
+      "numeric_values": [
+        0.05,
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2597,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "tios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2604",
+      "claim_type": "percentage",
+      "raw_text": "0.01%",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2604,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2671",
+      "claim_type": "mean_sd",
+      "raw_text": "38.6 \u00b1 0.9",
+      "numeric_values": [
+        38.6,
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2671,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2678",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2678,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "ively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2684",
+      "claim_type": "mean_sd",
+      "raw_text": "35.7 \u00b1 0.7",
+      "numeric_values": [
+        35.7,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2684,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2691",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2691,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearanc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-2701",
+      "claim_type": "mean_sd",
+      "raw_text": "14.2 \u00b1 0.9",
+      "numeric_values": [
+        14.2,
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2701,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2708",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2708,
+      "sentence": "Particularly, the ratios of DCA, CDCA, and LCA were 8.0 \u00b1 0.8%, 1.3 \u00b1 0.2%, and 0.05 \u00b1 0.01%, respectively, in the WT group, while they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the DKO group ( Figure 2 C).",
+      "context_window": "they were increased to 38.6 \u00b1 0.9%, 35.7 \u00b1 0.7%, and 14.2 \u00b1 0.9%, respectively, instead of the disappearance of MCAs, in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2930",
+      "claim_type": "percentage",
+      "raw_text": "28.7%",
+      "numeric_values": [
+        28.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2930,
+      "sentence": "The BA compositions in the DKO liver ( Figure 2 C) became similar to those of normal liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ].",
+      "context_window": "se of normal liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ]. A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2942",
+      "claim_type": "percentage",
+      "raw_text": "46.4%",
+      "numeric_values": [
+        46.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2942,
+      "sentence": "The BA compositions in the DKO liver ( Figure 2 C) became similar to those of normal liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ].",
+      "context_window": "liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ]. As shown in F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2953",
+      "claim_type": "percentage",
+      "raw_text": "15.7%",
+      "numeric_values": [
+        15.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2953,
+      "sentence": "The BA compositions in the DKO liver ( Figure 2 C) became similar to those of normal liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ].",
+      "context_window": "ue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ]. As shown in Figure 2 D,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2964",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2964,
+      "sentence": "The BA compositions in the DKO liver ( Figure 2 C) became similar to those of normal liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ].",
+      "context_window": "s previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ]. As shown in Figure 2 D, the propor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-2979",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2979,
+      "sentence": "The BA compositions in the DKO liver ( Figure 2 C) became similar to those of normal liver tissue in humans previously reported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ].",
+      "context_window": "ported (CA 28.7%, CDCA 46.4%, DCA 15.7%, LCA 4.5%, and UDCA 4.6%) [ 42 ]. As shown in Figure 2 D, the proportion of taurine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-3102",
+      "claim_type": "mean_sd",
+      "raw_text": "69.3 \u00b1 2.1",
+      "numeric_values": [
+        69.3,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3102,
+      "sentence": "As shown in Figure 2 D, the proportion of taurine-conjugated BAs (the sum of all BA types) in the liver was 69.3 \u00b1 2.1% in the WT group; on the other hand, the proportion was significantly increased to 93.7 \u00b1 0.7% in the DKO group.",
+      "context_window": "e-conjugated BAs (the sum of all BA types) in the liver was 69.3 \u00b1 2.1% in the WT group; on the other hand, the proportion was sig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-3109",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3109,
+      "sentence": "As shown in Figure 2 D, the proportion of taurine-conjugated BAs (the sum of all BA types) in the liver was 69.3 \u00b1 2.1% in the WT group; on the other hand, the proportion was significantly increased to 93.7 \u00b1 0.7% in the DKO group.",
+      "context_window": "gated BAs (the sum of all BA types) in the liver was 69.3 \u00b1 2.1% in the WT group; on the other hand, the proportion was sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-msd-3196",
+      "claim_type": "mean_sd",
+      "raw_text": "93.7 \u00b1 0.7",
+      "numeric_values": [
+        93.7,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3196,
+      "sentence": "As shown in Figure 2 D, the proportion of taurine-conjugated BAs (the sum of all BA types) in the liver was 69.3 \u00b1 2.1% in the WT group; on the other hand, the proportion was significantly increased to 93.7 \u00b1 0.7% in the DKO group.",
+      "context_window": "e other hand, the proportion was significantly increased to 93.7 \u00b1 0.7% in the DKO group. Figure 3 shows taurine and its precurso",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-3203",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3203,
+      "sentence": "As shown in Figure 2 D, the proportion of taurine-conjugated BAs (the sum of all BA types) in the liver was 69.3 \u00b1 2.1% in the WT group; on the other hand, the proportion was significantly increased to 93.7 \u00b1 0.7% in the DKO group.",
+      "context_window": "hand, the proportion was significantly increased to 93.7 \u00b1 0.7% in the DKO group. Figure 3 shows taurine and its precursor",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-3969",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3969,
+      "sentence": "The white circle in the column shows the individual value. ** p < 0.01, and \u2021 p < 0.0001 by unpaired Student\u2019s t -test.",
+      "context_window": "e white circle in the column shows the individual value. ** p < 0.01, and \u2021 p < 0.0001 by unpaired Student\u2019s t -test. The mRNA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-3985",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3985,
+      "sentence": "The white circle in the column shows the individual value. ** p < 0.01, and \u2021 p < 0.0001 by unpaired Student\u2019s t -test.",
+      "context_window": "n the column shows the individual value. ** p < 0.01, and \u2021 p < 0.0001 by unpaired Student\u2019s t -test. The mRNA expressions of Fxr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-5539",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5539,
+      "sentence": "The white circle in the column shows the individual value. * p < 0.05, ** p < 0.01, and \u2020 p < 0.001 according to unpaired Student\u2019s t -test.",
+      "context_window": "he white circle in the column shows the individual value. * p < 0.05, ** p < 0.01, and \u2020 p < 0.001 according to unpaired Student",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-5552",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5552,
+      "sentence": "The white circle in the column shows the individual value. * p < 0.05, ** p < 0.01, and \u2020 p < 0.001 according to unpaired Student\u2019s t -test.",
+      "context_window": "le in the column shows the individual value. * p < 0.05, ** p < 0.01, and \u2020 p < 0.001 according to unpaired Student\u2019s t -test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-p-5568",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5568,
+      "sentence": "The white circle in the column shows the individual value. * p < 0.05, ** p < 0.01, and \u2020 p < 0.001 according to unpaired Student\u2019s t -test.",
+      "context_window": "shows the individual value. * p < 0.05, ** p < 0.01, and \u2020 p < 0.001 according to unpaired Student\u2019s t -test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-624",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 624,
+      "sentence": "In the DKO liver, the ratio of CDCA and DCA, which have the most and second highest FXR agonist activity, was increased up to approximately 40%, while the WT liver was occupied by MCAs, which are the endogenous FXR antagonist, and CA, which has little activity as an FXR agonist.",
+      "context_window": "est FXR agonist activity, was increased up to approximately 40%, while the WT liver was occupied by MCAs, which are the end",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-882",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 882,
+      "sentence": "Upon the change to a human-like BA composition, the proportion of taurine-conjugated BA in the DKO liver reached over 90%, a 20% point increase compared to the WT liver.",
+      "context_window": "tion of taurine-conjugated BA in the DKO liver reached over 90%, a 20% point increase compared to the WT liver. Furthermore",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-889",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 889,
+      "sentence": "Upon the change to a human-like BA composition, the proportion of taurine-conjugated BA in the DKO liver reached over 90%, a 20% point increase compared to the WT liver.",
+      "context_window": "taurine-conjugated BA in the DKO liver reached over 90%, a 20% point increase compared to the WT liver. Furthermore, the t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10385265_upregulation_of_taurine_biosynthesis_and_bile_acid_conjugati-pct-1004",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1004,
+      "sentence": "Furthermore, the taurine concentration was significantly increased by 25% in the DKO liver compared to the WT liver.",
+      "context_window": "e, the taurine concentration was significantly increased by 25% in the DKO liver compared to the WT liver. In the evaluati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

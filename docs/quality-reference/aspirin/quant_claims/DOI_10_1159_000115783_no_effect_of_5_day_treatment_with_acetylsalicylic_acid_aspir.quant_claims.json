@@ -1,0 +1,158 @@
+{
+  "paper_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir",
+  "doi": "10.1159/000115783",
+  "extracted_at": "2026-05-08T20:06:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "mean_sd": 1,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-u-891",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 891,
+      "sentence": "Therefore, in this randomized double-blind placebo-controlled study, we investigated the effect of treatment with two popular and clinically used pharmaceuticals on stress-related cortisol responses, namely acetylsalicylic acid (aspirin), a known prostaglandin synthesis inhibitor, and the beta-blocker propranolol (Inderal), a nonselective beta-receptor antagonist. <i>Methods:</i> For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol, or placebo.",
+      "context_window": "nonselective beta-receptor antagonist. <i>Methods:</i> For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-msd-947",
+      "claim_type": "mean_sd",
+      "raw_text": "47.3 \u00b1 7.7",
+      "numeric_values": [
+        47.3,
+        7.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 947,
+      "sentence": "Therefore, in this randomized double-blind placebo-controlled study, we investigated the effect of treatment with two popular and clinically used pharmaceuticals on stress-related cortisol responses, namely acetylsalicylic acid (aspirin), a known prostaglandin synthesis inhibitor, and the beta-blocker propranolol (Inderal), a nonselective beta-receptor antagonist. <i>Methods:</i> For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol, or placebo.",
+      "context_window": "For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-u-954",
+      "claim_type": "unit_value",
+      "raw_text": "7.7 years",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 954,
+      "sentence": "Therefore, in this randomized double-blind placebo-controlled study, we investigated the effect of treatment with two popular and clinically used pharmaceuticals on stress-related cortisol responses, namely acetylsalicylic acid (aspirin), a known prostaglandin synthesis inhibitor, and the beta-blocker propranolol (Inderal), a nonselective beta-receptor antagonist. <i>Methods:</i> For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol, or placebo.",
+      "context_window": "ays, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-u-1002",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1002,
+      "sentence": "Therefore, in this randomized double-blind placebo-controlled study, we investigated the effect of treatment with two popular and clinically used pharmaceuticals on stress-related cortisol responses, namely acetylsalicylic acid (aspirin), a known prostaglandin synthesis inhibitor, and the beta-blocker propranolol (Inderal), a nonselective beta-receptor antagonist. <i>Methods:</i> For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol, or placebo.",
+      "context_window": "age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-u-1018",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1018,
+      "sentence": "Therefore, in this randomized double-blind placebo-controlled study, we investigated the effect of treatment with two popular and clinically used pharmaceuticals on stress-related cortisol responses, namely acetylsalicylic acid (aspirin), a known prostaglandin synthesis inhibitor, and the beta-blocker propranolol (Inderal), a nonselective beta-receptor antagonist. <i>Methods:</i> For 5 days, 73 healthy subjects (50 men, 23 women; mean age 47.3 \u00b1 7.7 years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol, or placebo.",
+      "context_window": "years) received either a daily oral dose of 100 mg aspirin, 80 mg propranolol (Inderal), aspirin + propranolol, or placebo. A",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-p-1393",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1393,
+      "sentence": "Cortisol responses were measured by six saliva samples taken before and after the stress exposure. <i>Results:</i> Subjects showed a significant cortisol increase after stress (p < 0.0001).",
+      "context_window": "bjects showed a significant cortisol increase after stress (p < 0.0001). The four treatment groups did not differ in their cortiso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-p-1489",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1489,
+      "sentence": "The four treatment groups did not differ in their cortisol responses (group effect p > 0.44; interaction p > 0.97).",
+      "context_window": "ps did not differ in their cortisol responses (group effect p > 0.44; interaction p > 0.97). Additionally, controlling for gende",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000115783_no_effect_of_5_day_treatment_with_acetylsalicylic_acid_aspir-p-1511",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "The four treatment groups did not differ in their cortisol responses (group effect p > 0.44; interaction p > 0.97).",
+      "context_window": "heir cortisol responses (group effect p > 0.44; interaction p > 0.97). Additionally, controlling for gender, age, smoking status",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

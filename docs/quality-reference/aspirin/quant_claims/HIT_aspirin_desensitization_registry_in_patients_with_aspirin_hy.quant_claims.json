@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_aspirin_desensitization_registry_in_patients_with_aspirin_hy",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_aspirin_desensitization_registry_in_patients_with_aspirin_hy-u-579",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "Patients with history of aspirin sensitivity undergoing coronary angiography are prospectively enrolled.All patients underwent the desensitization procedure with six sequential doses of aspirin (1, 5, 10, 20, 40, and 100 mg) administered orally at predefined intervals, with the procedure lasting 5.5 hours.All patients are followed for desensitization procedure success, description of reactions due to the desensitization procedure, and in hospital major adverse cardiac events (MACE).",
+      "context_window": "with six sequential doses of aspirin (1, 5, 10, 20, 40, and 100 mg) administered orally at predefined intervals, with the proc",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_aspirin_desensitization_registry_in_patients_with_aspirin_hy-u-888",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 888,
+      "sentence": "All patients are also followed-up for 12 months in order to assess their long-term risk of MACE, compliance with ASA therapy, and late occurrence of side reactions due to ASA sensitivity.",
+      "context_window": "ardiac events (MACE). All patients are also followed-up for 12 months in order to assess their long-term risk of MACE, compliance",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

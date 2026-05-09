@@ -1,0 +1,230 @@
+{
+  "paper_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal",
+  "doi": "10.1164/rccm.200808-1341oc",
+  "extracted_at": "2026-05-08T20:06:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 3,
+    "sample_size": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "Patients were followed-up for 5 years to analyze the risk of mortality.",
+      "context_window": "of moderate to severe cases. Patients were followed-up for 5 years to analyze the risk of mortality. MEASUREMENTS AND MAIN RES",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-u-992",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "Patients were followed up in our outpatient clinic at 1, 3, and 6 months, and for every 6 months thereafter for 5 years (prospective observational study).",
+      "context_window": "ents were followed up in our outpatient clinic at 1, 3, and 6 months, and for every 6 months thereafter for 5 years (prospective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-u-1016",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "Patients were followed up in our outpatient clinic at 1, 3, and 6 months, and for every 6 months thereafter for 5 years (prospective observational study).",
+      "context_window": "our outpatient clinic at 1, 3, and 6 months, and for every 6 months thereafter for 5 years (prospective observational study). M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-u-1040",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "Patients were followed up in our outpatient clinic at 1, 3, and 6 months, and for every 6 months thereafter for 5 years (prospective observational study).",
+      "context_window": "t 1, 3, and 6 months, and for every 6 months thereafter for 5 years (prospective observational study). Mortality data were reco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-u-1210",
+      "claim_type": "unit_value",
+      "raw_text": "11 years",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1210,
+      "sentence": "The mean age of subjects was 73.3 +/- 11 years (59% males), and the mean AHI was 26 (for all patients with a predominance of obstructive events).",
+      "context_window": "l death certificates. The mean age of subjects was 73.3 +/- 11 years (59% males), and the mean AHI was 26 (for all patients with",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-pct-1220",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1220,
+      "sentence": "The mean age of subjects was 73.3 +/- 11 years (59% males), and the mean AHI was 26 (for all patients with a predominance of obstructive events).",
+      "context_window": "rtificates. The mean age of subjects was 73.3 +/- 11 years (59% males), and the mean AHI was 26 (for all patients with a pr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-n-1383",
+      "claim_type": "sample_size",
+      "raw_text": "n = 68",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1383,
+      "sentence": "Patients with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tolerated CPAP (n = 28).",
+      "context_window": "nts with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards rat",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-pct-1464",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1464,
+      "sentence": "Patients with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tolerated CPAP (n = 28).",
+      "context_window": "rease adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-n-1557",
+      "claim_type": "sample_size",
+      "raw_text": "n = 70",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1557,
+      "sentence": "Patients with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tolerated CPAP (n = 28).",
+      "context_window": "2-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-pct-1621",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1621,
+      "sentence": "Patients with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tolerated CPAP (n = 28).",
+      "context_window": "70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with modera",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-p-1640",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1640,
+      "sentence": "Patients with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tolerated CPAP (n = 28).",
+      "context_window": "ed adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tol",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200808_1341oc_continuous_positive_airway_pressure_treatment_reduces_mortal-n-1721",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1721,
+      "sentence": "Patients with an AHI of 20 or greater who did not tolerate CPAP (n = 68) showed an increase adjusted risk of mortality (hazards ratio [HR], 2.69; 95% confidence interval [CI], 1.32-5.61) compared with patients with an AHI of less than 20 (n = 70), and an increased adjusted risk of mortality (HR, 1.58; 95% CI, 1.01-2.49; P = 0.04) compared with patients with moderate to severe OSA who tolerated CPAP (n = 28).",
+      "context_window": "th patients with moderate to severe OSA who tolerated CPAP (n = 28). There were no differences in mortality among patients wit",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

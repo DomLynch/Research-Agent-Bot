@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_saves_ibd_safety_efficacy_of_aspirin_vs_standard_of_care_for",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_saves_ibd_safety_efficacy_of_aspirin_vs_standard_of_care_for-u-28",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 28,
+      "sentence": "Aim to determine if aspirin 81 mg orally twice daily is effective and safe as an extended VTE chemoprophylaxis agent after major abdominal surgery for IBD patients.",
+      "context_window": "Aim to determine if aspirin 81 mg orally twice daily is effective and safe as an extended VTE",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

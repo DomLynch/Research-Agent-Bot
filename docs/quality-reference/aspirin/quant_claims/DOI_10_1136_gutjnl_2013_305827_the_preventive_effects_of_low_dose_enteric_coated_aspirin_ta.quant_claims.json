@@ -1,0 +1,105 @@
+{
+  "paper_id": "DOI_10_1136_gutjnl_2013_305827_the_preventive_effects_of_low_dose_enteric_coated_aspirin_ta",
+  "doi": "10.1136/gutjnl-2013-305827",
+  "extracted_at": "2026-05-08T20:06:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 1,
+    "confidence_interval": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2013_305827_the_preventive_effects_of_low_dose_enteric_coated_aspirin_ta-u-125",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 125,
+      "sentence": "<jats:sec> <jats:title>Objective</jats:title> <jats:p>To evaluate the influence of low-dose, enteric-coated aspirin tablets (100 mg/day for 2 years) on colorectal tumour recurrence in Asian patients with single/multiple colorectal tumours excised by endoscopy.</jats:p> </jats:sec> <jats:sec> <jats:title>Design</jats:title> <jats:p>A double-blinded, randomised, placebo-controlled multicentre clinical trial was conducted.</jats:p> </jats:sec> <jats:sec> <jats:title>Participants</jats:title> <jats:p>311 subjects with single/multiple colorectal adenomas and adenocarcinomas excised by endoscopy were enrolled in the study (152 patients in the aspirin group and 159 patients in the placebo group).",
+      "context_window": "the influence of low-dose, enteric-coated aspirin tablets (100 mg/day for 2 years) on colorectal tumour recurrence in Asian patie",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2013_305827_the_preventive_effects_of_low_dose_enteric_coated_aspirin_ta-u-140",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 140,
+      "sentence": "<jats:sec> <jats:title>Objective</jats:title> <jats:p>To evaluate the influence of low-dose, enteric-coated aspirin tablets (100 mg/day for 2 years) on colorectal tumour recurrence in Asian patients with single/multiple colorectal tumours excised by endoscopy.</jats:p> </jats:sec> <jats:sec> <jats:title>Design</jats:title> <jats:p>A double-blinded, randomised, placebo-controlled multicentre clinical trial was conducted.</jats:p> </jats:sec> <jats:sec> <jats:title>Participants</jats:title> <jats:p>311 subjects with single/multiple colorectal adenomas and adenocarcinomas excised by endoscopy were enrolled in the study (152 patients in the aspirin group and 159 patients in the placebo group).",
+      "context_window": "of low-dose, enteric-coated aspirin tablets (100 mg/day for 2 years) on colorectal tumour recurrence in Asian patients with sin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2013_305827_the_preventive_effects_of_low_dose_enteric_coated_aspirin_ta-n-733",
+      "claim_type": "sample_size",
+      "raw_text": "n=19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 733,
+      "sentence": "Enrolment began at the hospitals (n=19) in 2007 and was completed in 2009.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The subjects treated with aspirin displayed reduced colorectal tumourigenesis and primary endpoints with an adjusted OR of 0.60 (95% CI 0.36 to 0.98) compared with the subjects in the placebo group.",
+      "context_window": "ts in the placebo group). Enrolment began at the hospitals (n=19) in 2007 and was completed in 2009.</jats:p> </jats:sec> <j",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2013_305827_the_preventive_effects_of_low_dose_enteric_coated_aspirin_ta-ci-976",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.36 to 0.98",
+      "numeric_values": [
+        0.36,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 976,
+      "sentence": "Enrolment began at the hospitals (n=19) in 2007 and was completed in 2009.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The subjects treated with aspirin displayed reduced colorectal tumourigenesis and primary endpoints with an adjusted OR of 0.60 (95% CI 0.36 to 0.98) compared with the subjects in the placebo group.",
+      "context_window": "igenesis and primary endpoints with an adjusted OR of 0.60 (95% CI 0.36 to 0.98) compared with the subjects in the placebo group. Subgroup",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2013_305827_the_preventive_effects_of_low_dose_enteric_coated_aspirin_ta-p-1346",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1346,
+      "sentence": "The adjusted OR for aspirin treatment in non-smokers was 0.37 (CI 0.21 to 0.68, p<0.05).",
+      "context_window": "aspirin treatment in non-smokers was 0.37 (CI 0.21 to 0.68, p<0.05). Interestingly, the use of aspirin in smokers resulted in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

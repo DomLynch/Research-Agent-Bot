@@ -1,0 +1,123 @@
+{
+  "paper_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst",
+  "doi": "10.1101/2025.01.15.25320565",
+  "extracted_at": "2026-05-08T20:06:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "confidence_interval": 1,
+    "p_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst-u-738",
+      "claim_type": "unit_value",
+      "raw_text": "80mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 738,
+      "sentence": "Study design and methods Following baseline polysomnography , 18 OSA participants (AHI>15events/h) took pimavanserin-plus-atomoxetine (34/80mg; 34/40mg for the first 3 days) or placebo for one-week; follow-up polysomnography was performed to provide study outcomes.",
+      "context_window": "nts (AHI>15events/h) took pimavanserin-plus-atomoxetine (34/80mg; 34/40mg for the first 3 days) or placebo for one-week; fol",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst-u-747",
+      "claim_type": "unit_value",
+      "raw_text": "40mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 747,
+      "sentence": "Study design and methods Following baseline polysomnography , 18 OSA participants (AHI>15events/h) took pimavanserin-plus-atomoxetine (34/80mg; 34/40mg for the first 3 days) or placebo for one-week; follow-up polysomnography was performed to provide study outcomes.",
+      "context_window": "15events/h) took pimavanserin-plus-atomoxetine (34/80mg; 34/40mg for the first 3 days) or placebo for one-week; follow-up po",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Study design and methods Following baseline polysomnography , 18 OSA participants (AHI>15events/h) took pimavanserin-plus-atomoxetine (34/80mg; 34/40mg for the first 3 days) or placebo for one-week; follow-up polysomnography was performed to provide study outcomes.",
+      "context_window": "mavanserin-plus-atomoxetine (34/80mg; 34/40mg for the first 3 days) or placebo for one-week; follow-up polysomnography was per",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst-ci-1152",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 18, 60",
+      "numeric_values": [
+        18.0,
+        60.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "The combination reduced AHI by 42 [95%CI: 18, 60] % vs. placebo, meeting the primary outcome (P<0.001).",
+      "context_window": "ebo first, respectively. The combination reduced AHI by 42 [95%CI: 18, 60] % vs. placebo, meeting the primary outcome (P<0.001). Abso",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst-p-1211",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1211,
+      "sentence": "The combination reduced AHI by 42 [95%CI: 18, 60] % vs. placebo, meeting the primary outcome (P<0.001).",
+      "context_window": "[95%CI: 18, 60] % vs. placebo, meeting the primary outcome (P<0.001). Absolute AHI reduction was 16.9 [8.1, 23.6] events/h grea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_15_25320565_the_combination_of_pimavanserin_and_atomoxetine_reduces_obst-pct-1733",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1733,
+      "sentence": "Treatment vs. placebo improved pharyngeal collapsibility (+7.9 [1.6, 14.1]%V EUPNEA ), reduced loop gain by 20% (0.15 [-0.23, -0.07]), and did not reduce the arousal threshold.",
+      "context_window": "sibility (+7.9 [1.6, 14.1]%V EUPNEA ), reduced loop gain by 20% (0.15 [-0.23, -0.07]), and did not reduce the arousal thres",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

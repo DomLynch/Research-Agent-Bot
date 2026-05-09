@@ -1,0 +1,210 @@
+{
+  "paper_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under",
+  "doi": "10.1161/circinterventions.125.015229",
+  "extracted_at": "2026-05-08T20:05:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 8
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-u-299",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 299,
+      "sentence": "The VOYAGER-PAD trial demonstrated that rivaroxaban 2.5 mg twice daily on top of antiplatelet therapy significantly reduced this risk.",
+      "context_window": "events. The VOYAGER-PAD trial demonstrated that rivaroxaban 2.5 mg twice daily on top of antiplatelet therapy significantly re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-u-734",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 734,
+      "sentence": "Whether the risk of major adverse cardiovascular events and MALE and the effect of rivaroxaban are consistent in patients with a history of prior LER versus those without has not been described.</jats:p> </jats:sec> <jats:sec> <jats:title>METHODS:</jats:title> <jats:p>VOYAGER-PAD randomized patients with symptomatic PAD undergoing LER to rivaroxaban 2.5 mg twice daily or placebo on a background of aspirin 100 mg daily.",
+      "context_window": "patients with symptomatic PAD undergoing LER to rivaroxaban 2.5 mg twice daily or placebo on a background of aspirin 100 mg da",
+      "claim_role": "background",
+      "endpoint": "cardiovascular outcome",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-u-791",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 791,
+      "sentence": "Whether the risk of major adverse cardiovascular events and MALE and the effect of rivaroxaban are consistent in patients with a history of prior LER versus those without has not been described.</jats:p> </jats:sec> <jats:sec> <jats:title>METHODS:</jats:title> <jats:p>VOYAGER-PAD randomized patients with symptomatic PAD undergoing LER to rivaroxaban 2.5 mg twice daily or placebo on a background of aspirin 100 mg daily.",
+      "context_window": "an 2.5 mg twice daily or placebo on a background of aspirin 100 mg daily. The history of prior LER was collected at baseline.",
+      "claim_role": "background",
+      "endpoint": "cardiovascular outcome",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1234",
+      "claim_type": "percentage",
+      "raw_text": "35.5%",
+      "numeric_values": [
+        35.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "The principal safety outcome was Thrombolysis in Myocardial Infarction major bleeding.</jats:p> </jats:sec> <jats:sec> <jats:title>RESULTS:</jats:title> <jats:p> A total of 6564 patients were enrolled with 2336 (35.5%) having a prior history of LER.",
+      "context_window": "<jats:p> A total of 6564 patients were enrolled with 2336 (35.5%) having a prior history of LER. Patients with a history of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1410",
+      "claim_type": "percentage",
+      "raw_text": "12.9%",
+      "numeric_values": [
+        12.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1410,
+      "sentence": "Patients with a history of prior LER had a higher rate of MALE relative to those without prior LER (3-year Kaplan-Meier cumulative rates, 12.9% versus 8.0%; hazard ratio [HR], 1.58 [95% CI, 1.25-1.99]).",
+      "context_window": "se without prior LER (3-year Kaplan-Meier cumulative rates, 12.9% versus 8.0%; hazard ratio [HR], 1.58 [95% CI, 1.25-1.99]).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1423",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1423,
+      "sentence": "Patients with a history of prior LER had a higher rate of MALE relative to those without prior LER (3-year Kaplan-Meier cumulative rates, 12.9% versus 8.0%; hazard ratio [HR], 1.58 [95% CI, 1.25-1.99]).",
+      "context_window": "ior LER (3-year Kaplan-Meier cumulative rates, 12.9% versus 8.0%; hazard ratio [HR], 1.58 [95% CI, 1.25-1.99]). Compared wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1454",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1454,
+      "sentence": "Patients with a history of prior LER had a higher rate of MALE relative to those without prior LER (3-year Kaplan-Meier cumulative rates, 12.9% versus 8.0%; hazard ratio [HR], 1.58 [95% CI, 1.25-1.99]).",
+      "context_window": "mulative rates, 12.9% versus 8.0%; hazard ratio [HR], 1.58 [95% CI, 1.25-1.99]). Compared with placebo, rivaroxaban reduced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1618",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "Compared with placebo, rivaroxaban reduced the primary efficacy end point with a numerically greater relative benefit in those with (HR, 0.73 [95% CI, 0.60-0.88]) versus without prior LER (HR, 0.94 [95% CI, 0.81-1.10]; <jats:italic toggle=\"yes\">P</jats:italic> <jats:sub>interaction</jats:sub> =0.036).",
+      "context_window": "merically greater relative benefit in those with (HR, 0.73 [95% CI, 0.60-0.88]) versus without prior LER (HR, 0.94 [95% CI,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1674",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1674,
+      "sentence": "Compared with placebo, rivaroxaban reduced the primary efficacy end point with a numerically greater relative benefit in those with (HR, 0.73 [95% CI, 0.60-0.88]) versus without prior LER (HR, 0.94 [95% CI, 0.81-1.10]; <jats:italic toggle=\"yes\">P</jats:italic> <jats:sub>interaction</jats:sub> =0.036).",
+      "context_window": "73 [95% CI, 0.60-0.88]) versus without prior LER (HR, 0.94 [95% CI, 0.81-1.10]; <jats:italic toggle=\"yes\">P</jats:italic> <",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1941",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1941,
+      "sentence": "The relative increase in Thrombolysis in Myocardial Infarction major bleeding with rivaroxaban was consistent regardless of prior LER status (prior LER: HR, 1.08 [95% CI, 0.62-1.89]; no prior LER: HR, 1.88 [95% CI, 1.09-3.25]; <jats:italic toggle=\"yes\">P</jats:italic> <jats:sub>interaction</jats:sub> =0.16). </jats:p> </jats:sec> <jats:sec> <jats:title>CONCLUSIONS:</jats:title> <jats:p>Patients with PAD with prior LER are at particularly high risk of MALE relative to those presenting without prior LER.",
+      "context_window": "istent regardless of prior LER status (prior LER: HR, 1.08 [95% CI, 0.62-1.89]; no prior LER: HR, 1.88 [95% CI, 1.09-3.25];",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circinterventions_125_015229_low_dose_rivaroxaban_plus_aspirin_in_patients_with_pad_under-pct-1985",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1985,
+      "sentence": "The relative increase in Thrombolysis in Myocardial Infarction major bleeding with rivaroxaban was consistent regardless of prior LER status (prior LER: HR, 1.08 [95% CI, 0.62-1.89]; no prior LER: HR, 1.88 [95% CI, 1.09-3.25]; <jats:italic toggle=\"yes\">P</jats:italic> <jats:sub>interaction</jats:sub> =0.16). </jats:p> </jats:sec> <jats:sec> <jats:title>CONCLUSIONS:</jats:title> <jats:p>Patients with PAD with prior LER are at particularly high risk of MALE relative to those presenting without prior LER.",
+      "context_window": "LER: HR, 1.08 [95% CI, 0.62-1.89]; no prior LER: HR, 1.88 [95% CI, 1.09-3.25]; <jats:italic toggle=\"yes\">P</jats:italic> <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

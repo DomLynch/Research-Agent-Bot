@@ -1,0 +1,265 @@
+{
+  "paper_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta",
+  "doi": "10.1111/jgh.14261",
+  "extracted_at": "2026-05-08T20:06:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 10,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-u-727",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 727,
+      "sentence": "A total of 204 170 aspirin users taking aspirin for at least 6 months and 408 339 nonusers were analyzed.",
+      "context_window": "total of 204 170 aspirin users taking aspirin for at least 6 months and 408 339 nonusers were analyzed. Patients' clinical outc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-u-826",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 826,
+      "sentence": "Patients' clinical outcomes were documented for up to 14 years or until death.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>A total of 612 509 patients were included; 5118 (2.51%) out of 204 170 aspirin users were diagnosed with CRC; and 2073 (1.02%) died of the malignancy.",
+      "context_window": "yzed. Patients' clinical outcomes were documented for up to 14 years or until death.</jats:p></jats:sec><jats:sec><jats:title>Re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-969",
+      "claim_type": "percentage",
+      "raw_text": "2.51%",
+      "numeric_values": [
+        2.51
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "Patients' clinical outcomes were documented for up to 14 years or until death.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>A total of 612 509 patients were included; 5118 (2.51%) out of 204 170 aspirin users were diagnosed with CRC; and 2073 (1.02%) died of the malignancy.",
+      "context_window": "le><jats:p>A total of 612 509 patients were included; 5118 (2.51%) out of 204 170 aspirin users were diagnosed with CRC; and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1040",
+      "claim_type": "percentage",
+      "raw_text": "1.02%",
+      "numeric_values": [
+        1.02
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "Patients' clinical outcomes were documented for up to 14 years or until death.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>A total of 612 509 patients were included; 5118 (2.51%) out of 204 170 aspirin users were diagnosed with CRC; and 2073 (1.02%) died of the malignancy.",
+      "context_window": "of 204 170 aspirin users were diagnosed with CRC; and 2073 (1.02%) died of the malignancy. On the other hand, 13 336 (3.27%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1098",
+      "claim_type": "percentage",
+      "raw_text": "3.27%",
+      "numeric_values": [
+        3.27
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "On the other hand, 13 336 (3.27%) out of 408 339 non\u2010aspirin users were diagnosed with CRC, and 6953 (1.70%) died.",
+      "context_window": "(1.02%) died of the malignancy. On the other hand, 13 336 (3.27%) out of 408 339 non\u2010aspirin users were diagnosed with CRC,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "1.70%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "On the other hand, 13 336 (3.27%) out of 408 339 non\u2010aspirin users were diagnosed with CRC, and 6953 (1.70%) died.",
+      "context_window": "08 339 non\u2010aspirin users were diagnosed with CRC, and 6953 (1.70%) died. Using the competing risk regression, aspirin usage s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-hr-l-1290",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1290,
+      "sentence": "Using the competing risk regression, aspirin usage significantly reduced CRC mortality (subdistribution hazard ratio = 0.59; 95% confidence interval = 0.56 to 0.62).",
+      "context_window": "usage significantly reduced CRC mortality (subdistribution hazard ratio = 0.59; 95% confidence interval = 0.56 to 0.62). A total of 9483 (",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1311",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1311,
+      "sentence": "Using the competing risk regression, aspirin usage significantly reduced CRC mortality (subdistribution hazard ratio = 0.59; 95% confidence interval = 0.56 to 0.62).",
+      "context_window": "reduced CRC mortality (subdistribution hazard ratio = 0.59; 95% confidence interval = 0.56 to 0.62). A total of 9483 (4.64%",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1369",
+      "claim_type": "percentage",
+      "raw_text": "4.64%",
+      "numeric_values": [
+        4.64
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1369,
+      "sentence": "A total of 9483 (4.64%) aspirin users developed GIB, and 820 (0.40%) died, while 11 198 (2.74%) nonusers developed GIB, and 1488 (0.36%) died.",
+      "context_window": "; 95% confidence interval = 0.56 to 0.62). A total of 9483 (4.64%) aspirin users developed GIB, and 820 (0.40%) died, while 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1414",
+      "claim_type": "percentage",
+      "raw_text": "0.40%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1414,
+      "sentence": "A total of 9483 (4.64%) aspirin users developed GIB, and 820 (0.40%) died, while 11 198 (2.74%) nonusers developed GIB, and 1488 (0.36%) died.",
+      "context_window": "total of 9483 (4.64%) aspirin users developed GIB, and 820 (0.40%) died, while 11 198 (2.74%) nonusers developed GIB, and 148",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1441",
+      "claim_type": "percentage",
+      "raw_text": "2.74%",
+      "numeric_values": [
+        2.74
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1441,
+      "sentence": "A total of 9483 (4.64%) aspirin users developed GIB, and 820 (0.40%) died, while 11 198 (2.74%) nonusers developed GIB, and 1488 (0.36%) died.",
+      "context_window": "in users developed GIB, and 820 (0.40%) died, while 11 198 (2.74%) nonusers developed GIB, and 1488 (0.36%) died. Aspirin usa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1482",
+      "claim_type": "percentage",
+      "raw_text": "0.36%",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1482,
+      "sentence": "A total of 9483 (4.64%) aspirin users developed GIB, and 820 (0.40%) died, while 11 198 (2.74%) nonusers developed GIB, and 1488 (0.36%) died.",
+      "context_window": "ied, while 11 198 (2.74%) nonusers developed GIB, and 1488 (0.36%) died. Aspirin usage marginally increased risk of bleeding\u2010",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-hr-l-1582",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio = 1.09",
+      "numeric_values": [
+        1.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1582,
+      "sentence": "Aspirin usage marginally increased risk of bleeding\u2010related mortality (subdistribution hazard ratio = 1.09; 95% confidence interval = 1.00 to 1.19).",
+      "context_window": "creased risk of bleeding\u2010related mortality (subdistribution hazard ratio = 1.09; 95% confidence interval = 1.00 to 1.19). Subgroup analyses",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14261_risk_of_gastrointestinal_bleeding_and_benefit_from_colorecta-pct-1603",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1603,
+      "sentence": "Aspirin usage marginally increased risk of bleeding\u2010related mortality (subdistribution hazard ratio = 1.09; 95% confidence interval = 1.00 to 1.19).",
+      "context_window": "ing\u2010related mortality (subdistribution hazard ratio = 1.09; 95% confidence interval = 1.00 to 1.19). Subgroup analyses show",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

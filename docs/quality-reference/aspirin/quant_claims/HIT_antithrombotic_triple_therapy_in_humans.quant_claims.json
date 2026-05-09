@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_antithrombotic_triple_therapy_in_humans",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_antithrombotic_triple_therapy_in_humans-n-2650",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2650,
+      "sentence": "Study population: A total of 60 healthy, non-smoking and drug-free male volunteers will be enrolled in this trial and randomized into one of three balanced groups (treatment A, B and C; n = 20 per group).",
+      "context_window": "ed into one of three balanced groups (treatment A, B and C; n = 20 per group). Main outcome variables: \u03b2-TG, F1+2 and TAT in s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_antithrombotic_triple_therapy_in_humans-u-3094",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 3094,
+      "sentence": "Main outcome variables: \u03b2-TG, F1+2 and TAT in shed blood Additional outcome variables: * D-Dimer, TxB2, CD40L and p-Selectin in shed blood * \u03b2-TG, F1+2, TAT, D-Dimer, TxB2, CD40L, p-Selectin, ETP, aPTT, PT, inhibition of factor Xa, Biophen\u00ae and Hemoclot\u00ae in venous blood Risk/ benefit assessment:Total blood loss will be, dependent on treatment allocation, between 330 ml and 510 ml throughout the entire study period of 4 - 5 weeks.",
+      "context_window": "330 ml and 510 ml throughout the entire study period of 4 - 5 weeks. This amount of venous blood is considered to be acceptable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_antithrombotic_triple_therapy_in_humans-u-3446",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 3446,
+      "sentence": "Administration of the study drugs, in particular as triple combination for 5 days, results in transient hypocoagulability and may cause overt or occult bleeding.",
+      "context_window": "of the study drugs, in particular as triple combination for 5 days, results in transient hypocoagulability and may cause overt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

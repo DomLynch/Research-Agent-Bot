@@ -1,0 +1,246 @@
+{
+  "paper_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble",
+  "doi": "10.7326/0003-4819-152-1-201001050-00179",
+  "extracted_at": "2026-05-08T20:06:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-u-894",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/d",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 894,
+      "sentence": "INTERVENTION: 78 patients received aspirin, 80 mg/d, and 78 received placebo for 8 weeks immediately after endoscopic therapy.",
+      "context_window": "ulcer bleeding. INTERVENTION: 78 patients received aspirin, 80 mg/d, and 78 received placebo for 8 weeks immediately after endo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-u-931",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 931,
+      "sentence": "INTERVENTION: 78 patients received aspirin, 80 mg/d, and 78 received placebo for 8 weeks immediately after endoscopic therapy.",
+      "context_window": "ents received aspirin, 80 mg/d, and 78 received placebo for 8 weeks immediately after endoscopic therapy. All patients received",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-u-1171",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1171,
+      "sentence": "MEASUREMENTS: The primary end point was recurrent ulcer bleeding within 30 days confirmed by endoscopy.",
+      "context_window": ": The primary end point was recurrent ulcer bleeding within 30 days confirmed by endoscopy. Secondary end points were all-cause",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-u-1271",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1271,
+      "sentence": "Secondary end points were all-cause and specific-cause mortality in 8 weeks.",
+      "context_window": "y end points were all-cause and specific-cause mortality in 8 weeks. RESULTS: 156 patients were included in an intention-to-tre",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-u-1450",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "Recurrent ulcer bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo group (difference, 4.9 percentage points [95% CI, -3.6 to 13.4 percentage points]).",
+      "context_window": "before finishing follow-up. Recurrent ulcer bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1462",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "Recurrent ulcer bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo group (difference, 4.9 percentage points [95% CI, -3.6 to 13.4 percentage points]).",
+      "context_window": "hing follow-up. Recurrent ulcer bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo group (differe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1493",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1493,
+      "sentence": "Recurrent ulcer bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo group (difference, 4.9 percentage points [95% CI, -3.6 to 13.4 percentage points]).",
+      "context_window": "bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo group (difference, 4.9 percentage points [95",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1555",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1555,
+      "sentence": "Recurrent ulcer bleeding within 30 days was 10.3% in the aspirin group and 5.4% in the placebo group (difference, 4.9 percentage points [95% CI, -3.6 to 13.4 percentage points]).",
+      "context_window": "4% in the placebo group (difference, 4.9 percentage points [95% CI, -3.6 to 13.4 percentage points]). Patients who received",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1699",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1699,
+      "sentence": "Patients who received aspirin had lower all-cause mortality rates than patients who received placebo (1.3% vs.",
+      "context_window": "l-cause mortality rates than patients who received placebo (1.3% vs. 12.9%; difference, 11.6 percentage points [CI, 3.7 to 1",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1708",
+      "claim_type": "percentage",
+      "raw_text": "12.9%",
+      "numeric_values": [
+        12.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1708,
+      "sentence": "12.9%; difference, 11.6 percentage points [CI, 3.7 to 19.5 percentage points]).",
+      "context_window": "ortality rates than patients who received placebo (1.3% vs. 12.9%; difference, 11.6 percentage points [CI, 3.7 to 19.5 percen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1963",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1963,
+      "sentence": "Patients in the aspirin group had lower mortality rates attributable to cardiovascular, cerebrovascular, or gastrointestinal complications than patients in the placebo group (1.3% vs.",
+      "context_window": "ntestinal complications than patients in the placebo group (1.3% vs. 10.3%; difference, 9 percentage points [CI, 1.7 to 16.3",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-pct-1972",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1972,
+      "sentence": "10.3%; difference, 9 percentage points [CI, 1.7 to 16.3 percentage points]).",
+      "context_window": "complications than patients in the placebo group (1.3% vs. 10.3%; difference, 9 percentage points [CI, 1.7 to 16.3 percentag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_152_1_201001050_00179_continuation_of_low_dose_aspirin_therapy_in_peptic_ulcer_ble-u-2126",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2126,
+      "sentence": "LIMITATIONS: The sample size is relatively small, and only low-dose aspirin, 80 mg, was used.",
+      "context_window": "sample size is relatively small, and only low-dose aspirin, 80 mg, was used. Two patients with recurrent bleeding in the plac",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_multiple_giant_succular_and_fusiform_right_and_left_coronary",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_multiple_giant_succular_and_fusiform_right_and_left_coronary-pct-117",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 117,
+      "sentence": "It occurs in approximately 15-25% of untreated children with Kawasaki Disease.",
+      "context_window": "tery dilatation and aneurysm. It occurs in approximately 15-25% of untreated children with Kawasaki Disease. Early diagnosi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_multiple_giant_succular_and_fusiform_right_and_left_coronary-pct-313",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 313,
+      "sentence": "Early diagnosis and treatment with Intravenous immune globulin (IVIG) and aspirin (ASA) can reduce the incidence of coronary artery abnormality to 2%-5%.",
+      "context_window": "can reduce the incidence of coronary artery abnormality to 2%-5%. We report one case of Atypical Kawasaki Disease with Mu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_multiple_giant_succular_and_fusiform_right_and_left_coronary-pct-316",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 316,
+      "sentence": "Early diagnosis and treatment with Intravenous immune globulin (IVIG) and aspirin (ASA) can reduce the incidence of coronary artery abnormality to 2%-5%.",
+      "context_window": "n reduce the incidence of coronary artery abnormality to 2%-5%. We report one case of Atypical Kawasaki Disease with Multi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

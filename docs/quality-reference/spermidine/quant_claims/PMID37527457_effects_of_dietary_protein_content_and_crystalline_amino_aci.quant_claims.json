@@ -1,0 +1,141 @@
+{
+  "paper_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci",
+  "doi": "10.1093/jas/skad252",
+  "extracted_at": "2026-05-08T20:11:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 1,
+    "percentage": 2,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-msd-338",
+      "claim_type": "mean_sd",
+      "raw_text": "6.35 \u00b1 0.63",
+      "numeric_values": [
+        6.35,
+        0.63
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 338,
+      "sentence": "One hundred forty-four piglets (6.35 \u00b1 0.63 kg) were assigned to one of six treatments in a 3 \u00d7 2 factorial arrangement based on CP content and sanitary conditions in a randomized complete block design to give eight replicates with three pigs per pen over a 21-d period.",
+      "context_window": "sanitary conditions (USC). One hundred forty-four piglets (6.35 \u00b1 0.63 kg) were assigned to one of six treatments in a 3 \u00d7 2 facto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-u-345",
+      "claim_type": "unit_value",
+      "raw_text": "0.63 kg",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 345,
+      "sentence": "One hundred forty-four piglets (6.35 \u00b1 0.63 kg) were assigned to one of six treatments in a 3 \u00d7 2 factorial arrangement based on CP content and sanitary conditions in a randomized complete block design to give eight replicates with three pigs per pen over a 21-d period.",
+      "context_window": "ry conditions (USC). One hundred forty-four piglets (6.35 \u00b1 0.63 kg) were assigned to one of six treatments in a 3 \u00d7 2 factoria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-pct-612",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 612,
+      "sentence": "Diets consisted of a high CP (HCP; 21%) and two LCP (18%) diets supplemented with 9 CAA (Lys, Met, Thr, Trp, Val, Ile, Leu, His, and Phe) or only six CAA (Lys, Met, Thr, Trp, Val, and Ile) to meet the requirements.",
+      "context_window": "pen over a 21-d period. Diets consisted of a high CP (HCP; 21%) and two LCP (18%) diets supplemented with 9 CAA (Lys, Met,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-pct-630",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 630,
+      "sentence": "Diets consisted of a high CP (HCP; 21%) and two LCP (18%) diets supplemented with 9 CAA (Lys, Met, Thr, Trp, Val, Ile, Leu, His, and Phe) or only six CAA (Lys, Met, Thr, Trp, Val, and Ile) to meet the requirements.",
+      "context_window": "eriod. Diets consisted of a high CP (HCP; 21%) and two LCP (18%) diets supplemented with 9 CAA (Lys, Met, Thr, Trp, Val, Il",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-p-1491",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1491,
+      "sentence": "Pigs raised under USC had greater (P < 0.05) jejunal ammonia nitrogen concentration than those raised under CSC.",
+      "context_window": "position in weaned pigs. Pigs raised under USC had greater (P < 0.05) jejunal ammonia nitrogen concentration than those raised u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-p-1601",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1601,
+      "sentence": "Pigs fed LCP diets had reduced (P < 0.05) jejunal ammonia nitrogen concentration compared to those fed the HCP diet.",
+      "context_window": "han those raised under CSC. Pigs fed LCP diets had reduced (P < 0.05) jejunal ammonia nitrogen concentration compared to those f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37527457_effects_of_dietary_protein_content_and_crystalline_amino_aci-p-1756",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "Interactions between sanitation and dietary CP content were observed (P < 0.05) for: (1) jejunal acetate and (2) colonic spermidine and spermine, whereby (1) acetate concentrations decreased from NCP to LCP in pigs raised under the CSC but those concentrations increased under the USC, and (2) spermidine and spermine concentrations increased in LCP diets compared to HCP diet under USC, unlike CSC which did not show any difference between HCP and LCP.",
+      "context_window": "ns between sanitation and dietary CP content were observed (P < 0.05) for: (1) jejunal acetate and (2) colonic spermidine and sp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

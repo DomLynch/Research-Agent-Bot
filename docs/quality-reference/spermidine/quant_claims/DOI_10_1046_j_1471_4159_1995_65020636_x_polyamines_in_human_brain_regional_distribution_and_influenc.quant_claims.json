@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_1046_j_1471_4159_1995_65020636_x_polyamines_in_human_brain_regional_distribution_and_influenc",
+  "doi": "10.1046/j.1471-4159.1995.65020636.x",
+  "extracted_at": "2026-05-08T20:12:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1046_j_1471_4159_1995_65020636_x_polyamines_in_human_brain_regional_distribution_and_influenc-u-945",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "No statistically significant influence of aging (1 day to 103 years; n = 57) on either putrescine or spermine levels in occipital cortex was observed.",
+      "context_window": "protein). No statistically significant influence of aging (1 day to 103 years; n = 57) on either putrescine or spermine leve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1471_4159_1995_65020636_x_polyamines_in_human_brain_regional_distribution_and_influenc-u-954",
+      "claim_type": "unit_value",
+      "raw_text": "103 years",
+      "numeric_values": [
+        103.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 954,
+      "sentence": "No statistically significant influence of aging (1 day to 103 years; n = 57) on either putrescine or spermine levels in occipital cortex was observed.",
+      "context_window": ". No statistically significant influence of aging (1 day to 103 years; n = 57) on either putrescine or spermine levels in occipit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1471_4159_1995_65020636_x_polyamines_in_human_brain_regional_distribution_and_influenc-n-965",
+      "claim_type": "sample_size",
+      "raw_text": "n = 57",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "No statistically significant influence of aging (1 day to 103 years; n = 57) on either putrescine or spermine levels in occipital cortex was observed.",
+      "context_window": "tically significant influence of aging (1 day to 103 years; n = 57) on either putrescine or spermine levels in occipital corte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1471_4159_1995_65020636_x_polyamines_in_human_brain_regional_distribution_and_influenc-u-1150",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1150,
+      "sentence": "In contrast, spermidine levels increased markedly from birth, reaching maximal levels at approximately 40 years of age (+228% increase in the mean 41-year-old group vs.",
+      "context_window": "rkedly from birth, reaching maximal levels at approximately 40 years of age (+228% increase in the mean 41-year-old group vs. 6-",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1471_4159_1995_65020636_x_polyamines_in_human_brain_regional_distribution_and_influenc-pct-1168",
+      "claim_type": "percentage",
+      "raw_text": "228%",
+      "numeric_values": [
+        228.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "In contrast, spermidine levels increased markedly from birth, reaching maximal levels at approximately 40 years of age (+228% increase in the mean 41-year-old group vs.",
+      "context_window": "reaching maximal levels at approximately 40 years of age (+228% increase in the mean 41-year-old group vs. 6-week-old group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

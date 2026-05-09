@@ -1,0 +1,119 @@
+{
+  "paper_id": "HIT_everolimus_aging_study",
+  "doi": "",
+  "extracted_at": "2026-05-08T19:55:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_everolimus_aging_study-u-70",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 70,
+      "sentence": "The objective of this project is to determine if mTORC1 inhibition by 24 weeks of daily (0.5 mg/day) or weekly (5 mg/week) everolimus can safely improve physiological and molecular hallmarks of aging in humans.",
+      "context_window": "ive of this project is to determine if mTORC1 inhibition by 24 weeks of daily (0.5 mg/day) or weekly (5 mg/week) everolimus can",
+      "claim_role": "protocol",
+      "endpoint": "mTOR signaling",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_everolimus_aging_study-u-89",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg/day",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 89,
+      "sentence": "The objective of this project is to determine if mTORC1 inhibition by 24 weeks of daily (0.5 mg/day) or weekly (5 mg/week) everolimus can safely improve physiological and molecular hallmarks of aging in humans.",
+      "context_window": "is to determine if mTORC1 inhibition by 24 weeks of daily (0.5 mg/day) or weekly (5 mg/week) everolimus can safely improve physio",
+      "claim_role": "duration",
+      "endpoint": "mTOR signaling",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_everolimus_aging_study-u-112",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 112,
+      "sentence": "The objective of this project is to determine if mTORC1 inhibition by 24 weeks of daily (0.5 mg/day) or weekly (5 mg/week) everolimus can safely improve physiological and molecular hallmarks of aging in humans.",
+      "context_window": "RC1 inhibition by 24 weeks of daily (0.5 mg/day) or weekly (5 mg/week) everolimus can safely improve physiological and molec",
+      "claim_role": "duration",
+      "endpoint": "mTOR signaling",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_everolimus_aging_study-u-235",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 235,
+      "sentence": "Participants who are 55-80 years old and insulin resistant or prediabetic will be randomized to treatment and can expect to be on study for up to approximately 38 weeks.",
+      "context_window": "cular hallmarks of aging in humans. Participants who are 55-80 years old and insulin resistant or prediabetic will be randomized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_everolimus_aging_study-u-371",
+      "claim_type": "unit_value",
+      "raw_text": "38 weeks",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 371,
+      "sentence": "Participants who are 55-80 years old and insulin resistant or prediabetic will be randomized to treatment and can expect to be on study for up to approximately 38 weeks.",
+      "context_window": "tment and can expect to be on study for up to approximately 38 weeks. Participants aged 18-35 will not receive the intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_everolimus_aging_study-u-493",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 493,
+      "sentence": "Participants aged 18-35 will not receive the intervention and can expect to be on study for up to approximately 8 weeks.",
+      "context_window": "ntion and can expect to be on study for up to approximately 8 weeks.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

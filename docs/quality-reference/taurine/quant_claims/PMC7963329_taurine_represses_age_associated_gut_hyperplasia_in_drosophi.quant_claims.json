@@ -1,0 +1,842 @@
+{
+  "paper_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi",
+  "doi": "10.1111/acel.13319",
+  "extracted_at": "2026-05-08T20:10:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "p_value": 29,
+    "percentage": 9,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-5351",
+      "claim_type": "unit_value",
+      "raw_text": "40 days",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 5351,
+      "sentence": "Error bars show the standard deviation (SD) of six independent experiments. (d-g) Midguts were dissected at 14, 25, 40, and 40 days with taurine treatment and stained with Dl (red; ISC marker), and esg \u2010GFP (green; EB and ISC marker). (h, i) The average numbers of esg \u2010GFP + , Dl + , and pH3 + cells are significantly lower in 40\u2010day midguts after taurine supplementation. (j) Quantification of the content of taurine in midguts of 14\u2010day, 40\u2010day, and 40\u2010day flies fed with taurine using LC\u2010ESI\u2010MS/MS.",
+      "context_window": "xperiments. (d-g) Midguts were dissected at 14, 25, 40, and 40 days with taurine treatment and stained with Dl (red; ISC marker",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-6008",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6008,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05.",
+      "context_window": "own in blue. Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-6021",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6021,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05.",
+      "context_window": "Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) repr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-6035",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6035,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05.",
+      "context_window": "resent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-6051",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6051,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05.",
+      "context_window": "ent's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05. See also Figure",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-6096",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6096,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05.",
+      "context_window": "< 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05. See also Figure S1 In this study, we show that taurine su",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-346",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 346,
+      "sentence": "Drosophila stocks were maintained at 25\u00b0C and fed with standard cornmeal fly food (for 1 L food: cornmeal 50 g, yeast 18.75 g, sucrose 80 g, glucose 20 g, agar 5 g, and propionic acid 30 mL).",
+      "context_window": "g, sucrose 80 g, glucose 20 g, agar 5 g, and propionic acid 30 mL). Adult UAS\u2010mediated gene knockdown or overexpression was a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-2449",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2449,
+      "sentence": "Female midguts were dissected and fixed with 4% EM\u2010grade paraformaldehyde fixation buffer (100 mM glutamic acid, 25 mM KCl, 20 mM MgSO4, 4 mM Na 2 HPO 4 , 1 mM MgCl 2 , pH 7.4) for 1 h at room temperature.",
+      "context_window": "able request. Female midguts were dissected and fixed with 4% EM\u2010grade paraformaldehyde fixation buffer (100 mM glutamic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-2659",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2659,
+      "sentence": "The midguts were then washed with PBST (PBS plus 0.3% Triton X\u2010100) for 3 times, 10 min each, blocked with 5% BSA (in PBST buffer) for 30 min and incubated with primary antibody (dissolve in PBST buffer) at 4\u00b0C overnight.",
+      "context_window": "mperature. The midguts were then washed with PBST (PBS plus 0.3% Triton X\u2010100) for 3 times, 10 min each, blocked with 5% BSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-2717",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2717,
+      "sentence": "The midguts were then washed with PBST (PBS plus 0.3% Triton X\u2010100) for 3 times, 10 min each, blocked with 5% BSA (in PBST buffer) for 30 min and incubated with primary antibody (dissolve in PBST buffer) at 4\u00b0C overnight.",
+      "context_window": "s 0.3% Triton X\u2010100) for 3 times, 10 min each, blocked with 5% BSA (in PBST buffer) for 30 min and incubated with primary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-3797",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3797,
+      "sentence": "Briefly, 100 \u00b5l of 2% Bromophenol blue sodium (Sigma, B5525) was added to the food surface and several holes were poked to allow the Bromophenol blue solution completely absorbed by the food.",
+      "context_window": "previously described (Li et al., 2016 ). Briefly, 100 \u00b5l of 2% Bromophenol blue sodium (Sigma, B5525) was added to the foo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-4898",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4898,
+      "sentence": "1, Spectrum Chemical Manufacturing Corp, FD110) was prepared at a concentration of 1% (wt/vol) by using plastic feeder caps.",
+      "context_window": "nufacturing Corp, FD110) was prepared at a concentration of 1% (wt/vol) by using plastic feeder caps. Adult flies (15/vial",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-5588",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5588,
+      "sentence": "1, Spectrum Chemical Manufacturing Corp, FD110) was prepared using the standard medium with dyes added at a concentration of 2.5% (wt/vol).",
+      "context_window": "g the standard medium with dyes added at a concentration of 2.5% (wt/vol). Flies (20/vail) were maintained on Blue dye no. 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-5899",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5899,
+      "sentence": "Female flies were collected no more than 3 days after eclosion and distributed equally into vials containing taurine mixed food.",
+      "context_window": "gular food medium. Female flies were collected no more than 3 days after eclosion and distributed equally into vials containin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-6084",
+      "claim_type": "unit_value",
+      "raw_text": "5.8 cm",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6084,
+      "sentence": "Chromatography paper was cut into 3.7 \u00d7 5.8 cm strips and saturated with 10 mM paraquat (Aladdin, M106760) or 25 \u00b5g/ml bleomycin (Aladdin, B107423).",
+      "context_window": "ual volume of DMSO. Chromatography paper was cut into 3.7 \u00d7 5.8 cm strips and saturated with 10 mM paraquat (Aladdin, M106760)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-6317",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6317,
+      "sentence": "For ECC15 treatment, a concentrated bacterial pellet was centrifuged from overnight culture media and was dissolved in 1 ml 5% sucrose (to make the final OD 600 = 200).",
+      "context_window": "uged from overnight culture media and was dissolved in 1 ml 5% sucrose (to make the final OD 600 = 200). Before treatment,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-6609",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6609,
+      "sentence": "And 5% (wt/vol) sucrose without those drugs was used as controls.",
+      "context_window": "daily to new vials with paraquat, bleomycin, or ECC15 . And 5% (wt/vol) sucrose without those drugs was used as controls.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-7482",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 7482,
+      "sentence": "Mobile phase A: 10 mmol/L ammonium formate (0.05% formate).",
+      "context_window": "was used to perform liquid chromatography. Mobile phase A: 10 mmol/L ammonium formate (0.05% formate). Mobile phase B: ACN. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-pct-7510",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7510,
+      "sentence": "Mobile phase A: 10 mmol/L ammonium formate (0.05% formate).",
+      "context_window": "chromatography. Mobile phase A: 10 mmol/L ammonium formate (0.05% formate). Mobile phase B: ACN. The ratio of A: B is 1: 9. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-8067",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8067,
+      "sentence": "Flies that were still alive were counted every 2 days.",
+      "context_window": "lementation. Flies that were still alive were counted every 2 days. The viability tests were repeated as three independent exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-8917",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8917,
+      "sentence": "Student's two\u2010tailed t tests and log\u2010rank test were performed. p < 0.05 was considered to be statistically significant.",
+      "context_window": "dent's two\u2010tailed t tests and log\u2010rank test were performed. p < 0.05 was considered to be statistically significant. All experim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-5709",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5709,
+      "sentence": "For the survival test, the log\u2010rank test was used to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nPrevious studies have shown that aging\u2010associated ISC hyperproliferation in Drosophila leads to a remarkable decline in midgut digestive functions, including a decline in both food intake and excretion, and the loss of gastrointestinal acid-base homeostasis (Deshpande et al., 2014 ; Li et al., 2016 ).",
+      "context_window": "nk test was used to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-5722",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5722,
+      "sentence": "For the survival test, the log\u2010rank test was used to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nPrevious studies have shown that aging\u2010associated ISC hyperproliferation in Drosophila leads to a remarkable decline in midgut digestive functions, including a decline in both food intake and excretion, and the loss of gastrointestinal acid-base homeostasis (Deshpande et al., 2014 ; Li et al., 2016 ).",
+      "context_window": "sed to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) repr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-5736",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5736,
+      "sentence": "For the survival test, the log\u2010rank test was used to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nPrevious studies have shown that aging\u2010associated ISC hyperproliferation in Drosophila leads to a remarkable decline in midgut digestive functions, including a decline in both food intake and excretion, and the loss of gastrointestinal acid-base homeostasis (Deshpande et al., 2014 ; Li et al., 2016 ).",
+      "context_window": "the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-5752",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5752,
+      "sentence": "For the survival test, the log\u2010rank test was used to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nPrevious studies have shown that aging\u2010associated ISC hyperproliferation in Drosophila leads to a remarkable decline in midgut digestive functions, including a decline in both food intake and excretion, and the loss of gastrointestinal acid-base homeostasis (Deshpande et al., 2014 ; Li et al., 2016 ).",
+      "context_window": "significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05 Previous studie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-5797",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5797,
+      "sentence": "For the survival test, the log\u2010rank test was used to analyze the statistical significance. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nPrevious studies have shown that aging\u2010associated ISC hyperproliferation in Drosophila leads to a remarkable decline in midgut digestive functions, including a decline in both food intake and excretion, and the loss of gastrointestinal acid-base homeostasis (Deshpande et al., 2014 ; Li et al., 2016 ).",
+      "context_window": "< 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05 Previous studies have shown that aging\u2010associated ISC hype",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-n-7382",
+      "claim_type": "sample_size",
+      "raw_text": "N = 90",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7382,
+      "sentence": "N = 90 flies per group. (b) Food intake of flies measured using the CAF\u00c9 assay.",
+      "context_window": "is in flies at 14th and 40th day, with and without taurine. N = 90 flies per group. (b) Food intake of flies measured using th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-8818",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8818,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nTo identify the mechanisms by which taurine prevent ISC hyperproliferation in old flies, we performed RNA sequencing (RNA\u2010seq) on dissected midguts of flies both with and without taurine supplementation (Table S1 ).",
+      "context_window": "own in blue. Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-8831",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8831,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nTo identify the mechanisms by which taurine prevent ISC hyperproliferation in old flies, we performed RNA sequencing (RNA\u2010seq) on dissected midguts of flies both with and without taurine supplementation (Table S1 ).",
+      "context_window": "Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) repr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-8845",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8845,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nTo identify the mechanisms by which taurine prevent ISC hyperproliferation in old flies, we performed RNA sequencing (RNA\u2010seq) on dissected midguts of flies both with and without taurine supplementation (Table S1 ).",
+      "context_window": "resent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-8861",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8861,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nTo identify the mechanisms by which taurine prevent ISC hyperproliferation in old flies, we performed RNA sequencing (RNA\u2010seq) on dissected midguts of flies both with and without taurine supplementation (Table S1 ).",
+      "context_window": "ent's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05 To identify the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-8906",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8906,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nTo identify the mechanisms by which taurine prevent ISC hyperproliferation in old flies, we performed RNA sequencing (RNA\u2010seq) on dissected midguts of flies both with and without taurine supplementation (Table S1 ).",
+      "context_window": "< 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05 To identify the mechanisms by which taurine prevent ISC hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-u-9371",
+      "claim_type": "unit_value",
+      "raw_text": "40 days",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9371,
+      "sentence": "The results of the RNA\u2010seq analyses showed that a cluster of the UPR ER target genes (including Wbl , Hsp70Bbb , Hsp70Ab , Hsp70Bb , Hsp68 , Hsp70Bc , Hsp70Ba , and Hsp70Aa ) had significantly higher expression levels in the aged midguts (40 days) of Drosophila supplemented with taurine compared with those without (Figure 4a , Figure S4 c, and Table S2 ).",
+      "context_window": "significantly higher expression levels in the aged midguts (40 days) of Drosophila supplemented with taurine compared with thos",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-10986",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10986,
+      "sentence": "Red symbols indicate significantly upregulated genes (Log2 FC > 0.6 and p < 0.05).",
+      "context_window": "indicate significantly upregulated genes (Log2 FC > 0.6 and p < 0.05). Blue symbols indicate significantly downregulated genes.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-12406",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12406,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "replicates. Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Non\u2010significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-12419",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12419,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Non\u2010significance (NS) repr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-12433",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12433,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "resent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Non\u2010significance (NS) represents p > 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-12449",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12449,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "ent's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Non\u2010significance (NS) represents p > 0.05. scale bars repr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-12494",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12494,
+      "sentence": "Non\u2010significance (NS) represents p > 0.05. scale bars represent 10 \u03bcm\n\nTo confirm the results of our RNA\u2010seq analyses, esg \u2010GFP + cells were sorted to eliminate the interference from other intestinal cell types (Figure S4 d) and quantitative reverse transcription\u2010PCR (qRT\u2010PCR) analyses were performed on these sorted cells.",
+      "context_window": "< 0.001, **** p < 0.0001. Non\u2010significance (NS) represents p > 0.05. scale bars represent 10 \u03bcm To confirm the results of our",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-16759",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16759,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nSince the ER stress increases during aging (Salminen & Kaarniranta, 2010 ), we wanted to mimic this condition in young flies by depleting Xbp1 (a UPR ER sensor (Wang, Zhu, et al., 2015 ; Wang et al., 2014 )) or Ero1L (Wang, Zhu, et al., 2015 ) in ISCs to further explore the functional relationship between taurine and ER stress.",
+      "context_window": "own in blue. Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-16772",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16772,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nSince the ER stress increases during aging (Salminen & Kaarniranta, 2010 ), we wanted to mimic this condition in young flies by depleting Xbp1 (a UPR ER sensor (Wang, Zhu, et al., 2015 ; Wang et al., 2014 )) or Ero1L (Wang, Zhu, et al., 2015 ) in ISCs to further explore the functional relationship between taurine and ER stress.",
+      "context_window": "Error bars represent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) repr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-16786",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16786,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nSince the ER stress increases during aging (Salminen & Kaarniranta, 2010 ), we wanted to mimic this condition in young flies by depleting Xbp1 (a UPR ER sensor (Wang, Zhu, et al., 2015 ; Wang et al., 2014 )) or Ero1L (Wang, Zhu, et al., 2015 ) in ISCs to further explore the functional relationship between taurine and ER stress.",
+      "context_window": "resent SDs. Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-16802",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16802,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nSince the ER stress increases during aging (Salminen & Kaarniranta, 2010 ), we wanted to mimic this condition in young flies by depleting Xbp1 (a UPR ER sensor (Wang, Zhu, et al., 2015 ; Wang et al., 2014 )) or Ero1L (Wang, Zhu, et al., 2015 ) in ISCs to further explore the functional relationship between taurine and ER stress.",
+      "context_window": "ent's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05 Since the ER st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-16847",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16847,
+      "sentence": "Student's t tests, * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05\n\nSince the ER stress increases during aging (Salminen & Kaarniranta, 2010 ), we wanted to mimic this condition in young flies by depleting Xbp1 (a UPR ER sensor (Wang, Zhu, et al., 2015 ; Wang et al., 2014 )) or Ero1L (Wang, Zhu, et al., 2015 ) in ISCs to further explore the functional relationship between taurine and ER stress.",
+      "context_window": "< 0.001, **** p < 0.0001. non\u2010significance (NS) represents p > 0.05 Since the ER stress increases during aging (Salminen & Kaa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-20627",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20627,
+      "sentence": "Student's t tests, **** p < 0.0001. non\u2010significance(NS) represents p > 0.05",
+      "context_window": "in blue. Error bars represent SDs. Student's t tests, **** p < 0.0001. non\u2010significance(NS) represents p > 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7963329_taurine_represses_age_associated_gut_hyperplasia_in_drosophi-p-20671",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20671,
+      "sentence": "Student's t tests, **** p < 0.0001. non\u2010significance(NS) represents p > 0.05",
+      "context_window": "s t tests, **** p < 0.0001. non\u2010significance(NS) represents p > 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

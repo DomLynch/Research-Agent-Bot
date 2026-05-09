@@ -1,0 +1,409 @@
+{
+  "paper_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa",
+  "doi": "10.1182/blood.v85.11.3034.bloodjournal85113034",
+  "extracted_at": "2026-05-08T20:06:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 14,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-u-416",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 416,
+      "sentence": "Thirty-three patients with clinically stable coronary artery disease were treated with combined 3 mg warfarin and 80 mg aspirin daily for 8 weeks.",
+      "context_window": "y stable coronary artery disease were treated with combined 3 mg warfarin and 80 mg aspirin daily for 8 weeks. The factor VI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-u-434",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 434,
+      "sentence": "Thirty-three patients with clinically stable coronary artery disease were treated with combined 3 mg warfarin and 80 mg aspirin daily for 8 weeks.",
+      "context_window": "artery disease were treated with combined 3 mg warfarin and 80 mg aspirin daily for 8 weeks. The factor VIIa level was measur",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-u-458",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 458,
+      "sentence": "Thirty-three patients with clinically stable coronary artery disease were treated with combined 3 mg warfarin and 80 mg aspirin daily for 8 weeks.",
+      "context_window": "ted with combined 3 mg warfarin and 80 mg aspirin daily for 8 weeks. The factor VIIa level was measured before treatment, weekl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-u-549",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 549,
+      "sentence": "The factor VIIa level was measured before treatment, weekly during treatment, and 2 weeks after stopping treatment.",
+      "context_window": "was measured before treatment, weekly during treatment, and 2 weeks after stopping treatment. The mean percent of pretreatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-678",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 678,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "vels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-683",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 683,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-688",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 688,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "ctor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-693",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 693,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-698",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 698,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-703",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 703,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "eeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-708",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 708,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-717",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 717,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-p-736",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "e 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-u-805",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 805,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "ompared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-853",
+      "claim_type": "percentage",
+      "raw_text": "122%",
+      "numeric_values": [
+        122.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-859",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 859,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "ive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-889",
+      "claim_type": "percentage",
+      "raw_text": "111%",
+      "numeric_values": [
+        111.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 889,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "reatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment). The mean per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-897",
+      "claim_type": "percentage",
+      "raw_text": "133%",
+      "numeric_values": [
+        133.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": ", the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment). The mean percent lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-p-903",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 903,
+      "sentence": "The mean percent of pretreatment levels of factor VIIa for weeks 1 through 8 of treatment were 60%, 60%, 72%, 70%, 71%, 70%, 74%, and 87%, respectively (P < .05 compared with pretreatment for weeks 1 through 7 inclusive); 2 weeks after stopping treatment, the level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment).",
+      "context_window": "level was 122% (95% confidence interval [CI]; 111% to 133%; P < .001 compared with pretreatment). The mean percent level of fact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-996",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "The mean percent level of factor VIIa on-treatment was 74% (P < .001).",
+      "context_window": "nt). The mean percent level of factor VIIa on-treatment was 74% (P < .001). Factor VIIa is reduced by 26% on average during",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-p-1001",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1001,
+      "sentence": "The mean percent level of factor VIIa on-treatment was 74% (P < .001).",
+      "context_window": "The mean percent level of factor VIIa on-treatment was 74% (P < .001). Factor VIIa is reduced by 26% on average during treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v85_11_3034_bloodjournal85113034_effect_of_treatment_with_low_dose_warfarin_aspirin_on_activa-pct-1038",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "Factor VIIa is reduced by 26% on average during treatment.",
+      "context_window": "on-treatment was 74% (P < .001). Factor VIIa is reduced by 26% on average during treatment. This finding provides further",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_the_effect_of_cilostazol_compared_to_aspirin_on_endothelial_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:02+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_effect_of_cilostazol_compared_to_aspirin_on_endothelial_-n-92",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 92,
+      "sentence": "Patients presenting with acute cerebral ischemic events are randomly assigned into aspirin (n=40) or cilostazol (n=40) group in a double-blinded manner.",
+      "context_window": "erebral ischemic events are randomly assigned into aspirin (n=40) or cilostazol (n=40) group in a double-blinded manner. FMD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effect_of_cilostazol_compared_to_aspirin_on_endothelial_-n-113",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 113,
+      "sentence": "Patients presenting with acute cerebral ischemic events are randomly assigned into aspirin (n=40) or cilostazol (n=40) group in a double-blinded manner.",
+      "context_window": "ts are randomly assigned into aspirin (n=40) or cilostazol (n=40) group in a double-blinded manner. FMD is measured as a pri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effect_of_cilostazol_compared_to_aspirin_on_endothelial_-u-211",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 211,
+      "sentence": "FMD is measured as a primary outcome at baseline (T0) and 90 days (T1).",
+      "context_window": ". FMD is measured as a primary outcome at baseline (T0) and 90 days (T1). Serious and non-serious adverse events were described",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

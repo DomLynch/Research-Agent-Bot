@@ -1,0 +1,2203 @@
+{
+  "paper_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl",
+  "doi": "10.1155/2022/2590337",
+  "extracted_at": "2026-05-08T20:06:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 3,
+    "percentage": 33,
+    "p_value": 26,
+    "unit_value": 6,
+    "confidence_interval": 42,
+    "odds_ratio": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-msd-798",
+      "claim_type": "mean_sd",
+      "raw_text": "5.8 \u00b1 3.4",
+      "numeric_values": [
+        5.8,
+        3.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 798,
+      "sentence": "Seven hundred twelve children with SDB (age range: 1 to 18 yrs, mean: 5.8 \u00b1 3.4) were identified.",
+      "context_window": "red twelve children with SDB (age range: 1 to 18 yrs, mean: 5.8 \u00b1 3.4) were identified. CA events occurred in 640 of 712 (89.5%)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-860",
+      "claim_type": "percentage",
+      "raw_text": "89.5%",
+      "numeric_values": [
+        89.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "CA events occurred in 640 of 712 (89.5%) patients.",
+      "context_window": "8 \u00b1 3.4) were identified. CA events occurred in 640 of 712 (89.5%) patients. Of the 712 patients, 315 (44.2%) met the criteri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-903",
+      "claim_type": "percentage",
+      "raw_text": "44.2%",
+      "numeric_values": [
+        44.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 903,
+      "sentence": "Of the 712 patients, 315 (44.2%) met the criteria for the diagnosis of CSA.",
+      "context_window": "d in 640 of 712 (89.5%) patients. Of the 712 patients, 315 (44.2%) met the criteria for the diagnosis of CSA. CSA was more pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1007",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1007,
+      "sentence": "CSA was more prevalent in toddlers and preschoolers ( p < 0.001).",
+      "context_window": "CSA. CSA was more prevalent in toddlers and preschoolers ( p < 0.001). Obese children had a higher prevalence of CSA compared to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1097",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1097,
+      "sentence": "Obese children had a higher prevalence of CSA compared to nonobese children ( p < 0.001).",
+      "context_window": "a higher prevalence of CSA compared to nonobese children ( p < 0.001). The prevalence of CSA in patients with OSA was 45.4%. The",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1156",
+      "claim_type": "percentage",
+      "raw_text": "45.4%",
+      "numeric_values": [
+        45.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1156,
+      "sentence": "The prevalence of CSA in patients with OSA was 45.4%.",
+      "context_window": "p < 0.001). The prevalence of CSA in patients with OSA was 45.4%. The number of CA events, CAI, and OAHI after TA was less t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1245",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1245,
+      "sentence": "The number of CA events, CAI, and OAHI after TA was less than that of before TA ( p < 0.001).",
+      "context_window": "s, CAI, and OAHI after TA was less than that of before TA ( p < 0.001). Residual CSA after TA occurred in 20 children (26%). Cen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1304",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1304,
+      "sentence": "Residual CSA after TA occurred in 20 children (26%).",
+      "context_window": "p < 0.001). Residual CSA after TA occurred in 20 children (26%). Central apnea events and central sleep apnea occur in ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-836",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 836,
+      "sentence": "The prevalence of CSA in children ranged from 5.4% to 14.9% depending on the clinical setting, patient demographics, and criteria used to define CSA [ 2 - 4 ].",
+      "context_window": "lly studied. The prevalence of CSA in children ranged from 5.4% to 14.9% depending on the clinical setting, patient demogra",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-844",
+      "claim_type": "percentage",
+      "raw_text": "14.9%",
+      "numeric_values": [
+        14.9
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 844,
+      "sentence": "The prevalence of CSA in children ranged from 5.4% to 14.9% depending on the clinical setting, patient demographics, and criteria used to define CSA [ 2 - 4 ].",
+      "context_window": "ied. The prevalence of CSA in children ranged from 5.4% to 14.9% depending on the clinical setting, patient demographics, an",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-u-386",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 386,
+      "sentence": "Patients who were under the age of 18 years and underwent polysomnography (PSG) to evaluate sleep-related breathing disorder were included in the study.",
+      "context_window": "ectronic medical record. Patients who were under the age of 18 years and underwent polysomnography (PSG) to evaluate sleep-relat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-u-3382",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3382,
+      "sentence": "The effect of age on airway obstruction findings for the following age groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ].",
+      "context_window": "ngs for the following age groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), y",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-u-3407",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3407,
+      "sentence": "The effect of age on airway obstruction findings for the following age groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ].",
+      "context_window": "groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-u-3437",
+      "claim_type": "unit_value",
+      "raw_text": "11 years",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3437,
+      "sentence": "The effect of age on airway obstruction findings for the following age groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ].",
+      "context_window": "r (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-u-3464",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3464,
+      "sentence": "The effect of age on airway obstruction findings for the following age groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ].",
+      "context_window": "(3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ]. The effects of age, obes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-u-3492",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3492,
+      "sentence": "The effect of age on airway obstruction findings for the following age groups was determined: toddler (1-3 years), preschooler (3-5 years), middle childhood (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ].",
+      "context_window": "d (6-11 years), young teens (12-14 years), and teenager (15-18 years [ 6 ]. The effects of age, obesity, comorbidity, and severi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-4106",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4106,
+      "sentence": "Results included odds ratio (OR) with 95% confidence interval (CI).",
+      "context_window": "stically significant. Results included odds ratio (OR) with 95% confidence interval (CI). Data are presented as mean \u00b1 stan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-msd-70",
+      "claim_type": "mean_sd",
+      "raw_text": "5.8 \u00b1 3.4",
+      "numeric_values": [
+        5.8,
+        3.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 70,
+      "sentence": "Seven hundred twelve children with SDB (age range: 1 to 18 yrs, mean: 5.8 \u00b1 3.4) underwent PSG ( Table 1 ).",
+      "context_window": "red twelve children with SDB (age range: 1 to 18 yrs, mean: 5.8 \u00b1 3.4) underwent PSG ( Table 1 ). Central apnea (CA) events occur",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-158",
+      "claim_type": "percentage",
+      "raw_text": "89.5%",
+      "numeric_values": [
+        89.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 158,
+      "sentence": "Central apnea (CA) events occurred in 640 of 712 (89.5%) patients.",
+      "context_window": "able 1 ). Central apnea (CA) events occurred in 640 of 712 (89.5%) patients. Of the 712 patients, 315 (44.2%) met the criteri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-201",
+      "claim_type": "percentage",
+      "raw_text": "44.2%",
+      "numeric_values": [
+        44.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 201,
+      "sentence": "Of the 712 patients, 315 (44.2%) met the criteria for the diagnosis of CSA.",
+      "context_window": "d in 640 of 712 (89.5%) patients. Of the 712 patients, 315 (44.2%) met the criteria for the diagnosis of CSA. The severity of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-374",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 374,
+      "sentence": "OAH events occurred in 692 of 712 patients (97%).",
+      "context_window": "nd severe in 5. OAH events occurred in 692 of 712 patients (97%). Of the 712 patients, 602 (84.5%) met the criteria for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-406",
+      "claim_type": "percentage",
+      "raw_text": "84.5%",
+      "numeric_values": [
+        84.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 406,
+      "sentence": "Of the 712 patients, 602 (84.5%) met the criteria for the diagnosis of OSA.",
+      "context_window": "red in 692 of 712 patients (97%). Of the 712 patients, 602 (84.5%) met the criteria for the diagnosis of OSA. The severity of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-608",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.6",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 608,
+      "sentence": "CA, CSA, and OAHI were similar between male and female children ( p = 0.6) ( Table 1 ).",
+      "context_window": "A, and OAHI were similar between male and female children ( p = 0.6) ( Table 1 ). Obese children had similar CA and CSA compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-700",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.4",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 700,
+      "sentence": "Obese children had similar CA and CSA compared to nonobese children ( p = 0.4).",
+      "context_window": "dren had similar CA and CSA compared to nonobese children ( p = 0.4). OAHI in obese children was higher than that of nonobese c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-776",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.2, 8.6",
+      "numeric_values": [
+        0.2,
+        8.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 776,
+      "sentence": "OAHI in obese children was higher than that of nonobese children (95% CI: 0.2, 8.6; p = 0.005).",
+      "context_window": "n obese children was higher than that of nonobese children (95% CI: 0.2, 8.6; p = 0.005). Toddlers had a higher CA and CSA than middle c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-794",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 794,
+      "sentence": "OAHI in obese children was higher than that of nonobese children (95% CI: 0.2, 8.6; p = 0.005).",
+      "context_window": "as higher than that of nonobese children (95% CI: 0.2, 8.6; p = 0.005). Toddlers had a higher CA and CSA than middle childhood ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-871",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.47, 6.33",
+      "numeric_values": [
+        1.47,
+        6.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 871,
+      "sentence": "Toddlers had a higher CA and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001).",
+      "context_window": "ers had a higher CA and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-891",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02, 0.87",
+      "numeric_values": [
+        0.02,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 891,
+      "sentence": "Toddlers had a higher CA and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001).",
+      "context_window": "and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-940",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.74, 11.75",
+      "numeric_values": [
+        2.74,
+        11.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 940,
+      "sentence": "Toddlers had a higher CA and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001).",
+      "context_window": ".47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001). Similarly,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-961",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.33, 1.63",
+      "numeric_values": [
+        0.33,
+        1.63
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 961,
+      "sentence": "Toddlers had a higher CA and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001).",
+      "context_window": "02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001). Similarly, preschoolers had a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-997",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 997,
+      "sentence": "Toddlers had a higher CA and CSA than middle childhood children (95% CI: 1.47, 6.33; 95% CI: 0.02, 0.87, respectively) and teenagers (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001).",
+      "context_window": "s (95% CI: 2.74, 11.75; 95% CI: 0.33, 1.63, respectively) ( p < 0.001). Similarly, preschoolers had a higher CA and CSA than midd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1089",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.03, 3.6",
+      "numeric_values": [
+        0.03,
+        3.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1089,
+      "sentence": "Similarly, preschoolers had a higher CA and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001).",
+      "context_window": "ers had a higher CA and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1108",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.29, 0.49",
+      "numeric_values": [
+        0.29,
+        0.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1108,
+      "sentence": "Similarly, preschoolers had a higher CA and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001).",
+      "context_window": "and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1157",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.40, 7.5",
+      "numeric_values": [
+        2.4,
+        7.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1157,
+      "sentence": "Similarly, preschoolers had a higher CA and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001).",
+      "context_window": "0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001). CA and CSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1176",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.17, 1.04",
+      "numeric_values": [
+        0.17,
+        1.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1176,
+      "sentence": "Similarly, preschoolers had a higher CA and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001).",
+      "context_window": "0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001). CA and CSA were similar betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1212",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1212,
+      "sentence": "Similarly, preschoolers had a higher CA and CSA than middle childhood children (95% CI: 0.03, 3.6; 95% CI: 0.29, 0.49, respectively) and teenagers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001).",
+      "context_window": "ers (95% CI: 2.40, 7.5; 95% CI: 0.17, 1.04, respectively) ( p < 0.001). CA and CSA were similar between toddlers and preschoolers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1342",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1342,
+      "sentence": "OAHI was similar amongst the studied age groups ( p > 0.05).",
+      "context_window": "( p = 1). OAHI was similar amongst the studied age groups ( p > 0.05). The prevalence of CSA amongst the studied age, weight, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-1517",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.7",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1517,
+      "sentence": "CSA was more prevalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001).",
+      "context_window": "as more prevalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1526",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.18, 2.45",
+      "numeric_values": [
+        1.18,
+        2.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1526,
+      "sentence": "CSA was more prevalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001).",
+      "context_window": "revalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-1571",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 4.1",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1571,
+      "sentence": "CSA was more prevalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001).",
+      "context_window": "hood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001). Prevalence of CSA in pre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1580",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.07, 8.23",
+      "numeric_values": [
+        2.07,
+        8.23
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1580,
+      "sentence": "CSA was more prevalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001).",
+      "context_window": "1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001). Prevalence of CSA in preschoolers was higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1602",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1602,
+      "sentence": "CSA was more prevalent in toddlers compared to middle childhood (OR: 1.7, 95% CI: 1.18, 2.45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001).",
+      "context_window": "45) and teenager age groups (OR: 4.1, 95% CI: 2.07, 8.23) ( p < 0.001). Prevalence of CSA in preschoolers was higher than middle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-1682",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.68",
+      "numeric_values": [
+        1.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1682,
+      "sentence": "Prevalence of CSA in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001).",
+      "context_window": "ce of CSA in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95%",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1692",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.14, 2.47",
+      "numeric_values": [
+        1.14,
+        2.47
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1692,
+      "sentence": "Prevalence of CSA in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001).",
+      "context_window": "in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-1737",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 4.06",
+      "numeric_values": [
+        4.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1737,
+      "sentence": "Prevalence of CSA in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001).",
+      "context_window": "ood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001). Obese children had a hig",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1747",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.01, 8.20",
+      "numeric_values": [
+        2.01,
+        8.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1747,
+      "sentence": "Prevalence of CSA in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001).",
+      "context_window": ".68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001). Obese children had a higher prevalence of CS",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1769",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1769,
+      "sentence": "Prevalence of CSA in preschoolers was higher than middle childhood (OR: 1.68, 95% CI: 1.14, 2.47) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001).",
+      "context_window": "7) and teenager age groups (OR: 4.06, 95% CI: 2.01, 8.20) ( p < 0.001). Obese children had a higher prevalence of CSA compared to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-1858",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 9.69",
+      "numeric_values": [
+        9.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1858,
+      "sentence": "Obese children had a higher prevalence of CSA compared to nonobese children (OR: 9.69, 95% CI: 6.12, 15.36) ( p < 0.001).",
+      "context_window": "d a higher prevalence of CSA compared to nonobese children (OR: 9.69, 95% CI: 6.12, 15.36) ( p < 0.001). The prevalence of CSA i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-1868",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 6.12, 15.36",
+      "numeric_values": [
+        6.12,
+        15.36
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1868,
+      "sentence": "Obese children had a higher prevalence of CSA compared to nonobese children (OR: 9.69, 95% CI: 6.12, 15.36) ( p < 0.001).",
+      "context_window": "prevalence of CSA compared to nonobese children (OR: 9.69, 95% CI: 6.12, 15.36) ( p < 0.001). The prevalence of CSA in patients with OSA w",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-1891",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1891,
+      "sentence": "Obese children had a higher prevalence of CSA compared to nonobese children (OR: 9.69, 95% CI: 6.12, 15.36) ( p < 0.001).",
+      "context_window": "ared to nonobese children (OR: 9.69, 95% CI: 6.12, 15.36) ( p < 0.001). The prevalence of CSA in patients with OSA was 45.4%. The",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1950",
+      "claim_type": "percentage",
+      "raw_text": "45.4%",
+      "numeric_values": [
+        45.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1950,
+      "sentence": "The prevalence of CSA in patients with OSA was 45.4%.",
+      "context_window": "p < 0.001). The prevalence of CSA in patients with OSA was 45.4%. The prevalence of CSA in patients with moderate OSA was hi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-2047",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.96",
+      "numeric_values": [
+        1.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2047,
+      "sentence": "The prevalence of CSA in patients with moderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002).",
+      "context_window": "nts with moderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2057",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.10, 3.48",
+      "numeric_values": [
+        1.1,
+        3.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2057,
+      "sentence": "The prevalence of CSA in patients with moderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002).",
+      "context_window": "oderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-2091",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.79",
+      "numeric_values": [
+        1.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2091,
+      "sentence": "The prevalence of CSA in patients with moderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002).",
+      "context_window": "ts with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002). CSA was more prevalent i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2101",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01, 3.16",
+      "numeric_values": [
+        1.01,
+        3.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2101,
+      "sentence": "The prevalence of CSA in patients with moderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002).",
+      "context_window": "OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002). CSA was more prevalent in patients with seve",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-2123",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2123,
+      "sentence": "The prevalence of CSA in patients with moderate OSA was higher than patients with no OSA (OR: 1.96, 95% CI: 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002).",
+      "context_window": ": 1.10, 3.48) and mild OSA (OR: 1.79, 95% CI: 1.01, 3.16) ( p = 0.002). CSA was more prevalent in patients with severe OSA than p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-2213",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 2.39",
+      "numeric_values": [
+        2.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2213,
+      "sentence": "CSA was more prevalent in patients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002).",
+      "context_window": "lent in patients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2223",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.34, 4.25",
+      "numeric_values": [
+        1.34,
+        4.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2223,
+      "sentence": "CSA was more prevalent in patients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002).",
+      "context_window": "tients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-or-a-2257",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 2.18",
+      "numeric_values": [
+        2.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2257,
+      "sentence": "CSA was more prevalent in patients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002).",
+      "context_window": "ts with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002). Severity of CSA varied a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2267",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.23, 3.87",
+      "numeric_values": [
+        1.23,
+        3.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2267,
+      "sentence": "CSA was more prevalent in patients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002).",
+      "context_window": "OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002). Severity of CSA varied among the patients wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-2289",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2289,
+      "sentence": "CSA was more prevalent in patients with severe OSA than patients with no OSA (OR: 2.39, 95% CI: 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002).",
+      "context_window": ": 1.34, 4.25) and mild OSA (OR: 2.18, 95% CI: 1.23, 3.87) ( p = 0.002). Severity of CSA varied among the patients with no OSA, mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2618",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45, 1.66",
+      "numeric_values": [
+        0.45,
+        1.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2618,
+      "sentence": "The CAI in patients with severe OSA was higher than that of patients with no OSA (95% CI: 0.45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figure 3 ).",
+      "context_window": "th severe OSA was higher than that of patients with no OSA (95% CI: 0.45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2649",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.43, 1.37",
+      "numeric_values": [
+        0.43,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2649,
+      "sentence": "The CAI in patients with severe OSA was higher than that of patients with no OSA (95% CI: 0.45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figure 3 ).",
+      "context_window": "hat of patients with no OSA (95% CI: 0.45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-2688",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.05, 1.19",
+      "numeric_values": [
+        0.05,
+        1.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2688,
+      "sentence": "The CAI in patients with severe OSA was higher than that of patients with no OSA (95% CI: 0.45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figure 3 ).",
+      "context_window": "45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figure 3 ). A significant positive correlat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-2710",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2710,
+      "sentence": "The CAI in patients with severe OSA was higher than that of patients with no OSA (95% CI: 0.45, 1.66), mild OSA (95% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figure 3 ).",
+      "context_window": "5% CI: 0.43, 1.37), and moderate OSA (95% CI: 0.05, 1.19) ( p = 0.001) ( Figure 3 ). A significant positive correlation was not f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-2834",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2834,
+      "sentence": "A significant positive correlation was not found between the CAI and OAHI with an r value of 0.2 ( p < 0.05).",
+      "context_window": "not found between the CAI and OAHI with an r value of 0.2 ( p < 0.05). One hundred forty-seven patients (86 male, 61 female, ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-msd-2930",
+      "claim_type": "mean_sd",
+      "raw_text": "5.6 \u00b1 3.3",
+      "numeric_values": [
+        5.6,
+        3.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2930,
+      "sentence": "One hundred forty-seven patients (86 male, 61 female, age range: 1 to 17 yrs, mean: 5.6 \u00b1 3.3) had PSG before and after TA ( Table 2 ).",
+      "context_window": "patients (86 male, 61 female, age range: 1 to 17 yrs, mean: 5.6 \u00b1 3.3) had PSG before and after TA ( Table 2 ). Seventy-eight chi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-3281",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3281,
+      "sentence": "Residual CSA occurred in 20 children (26%).",
+      "context_window": "ll patients after TA. Residual CSA occurred in 20 children (26%). Of the 20 patients with residual CSA after TA, 17 patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-3431",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3431,
+      "sentence": "The prevalence of residual CSA was 25% in patients with severe OSA and 30% in patients with moderate OSA.",
+      "context_window": "moderate OSA before TA. The prevalence of residual CSA was 25% in patients with severe OSA and 30% in patients with modera",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-3467",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3467,
+      "sentence": "The prevalence of residual CSA was 25% in patients with severe OSA and 30% in patients with moderate OSA.",
+      "context_window": "nce of residual CSA was 25% in patients with severe OSA and 30% in patients with moderate OSA. Of the 64 patients with mil",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-3541",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3541,
+      "sentence": "Of the 64 patients with mild CSA, 17 (26%) patients continued to have mild CSA after TA.",
+      "context_window": "s with moderate OSA. Of the 64 patients with mild CSA, 17 (26%) patients continued to have mild CSA after TA. In 12 patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-3829",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.11, 8.35",
+      "numeric_values": [
+        3.11,
+        8.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3829,
+      "sentence": "The number of CA events (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21) after TA was less than that of before TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "d diminished to moderate CSA in 1. The number of CA events (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-3855",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.59, 1.49",
+      "numeric_values": [
+        0.59,
+        1.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3855,
+      "sentence": "The number of CA events (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21) after TA was less than that of before TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "SA in 1. The number of CA events (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21) after TA was less than tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-3886",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 7.24, 14.21",
+      "numeric_values": [
+        7.24,
+        14.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3886,
+      "sentence": "The number of CA events (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21) after TA was less than that of before TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "s (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21) after TA was less than that of before TA ( p < 0.001) ( Ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-3950",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3950,
+      "sentence": "The number of CA events (95% CI: 3.11, 8.35), CAI (95% CI: 0.59, 1.49), and OAHI (95% CI: 7.24, 14.21) after TA was less than that of before TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "CI: 7.24, 14.21) after TA was less than that of before TA ( p < 0.001) ( Table 2 ). Male and female children had less CA events (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4025",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.11, 8.35",
+      "numeric_values": [
+        3.11,
+        8.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4025,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "ble 2 ). Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4053",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.53, 11.31",
+      "numeric_values": [
+        2.53,
+        11.31
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4053,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "ldren had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4085",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.59, 1.49",
+      "numeric_values": [
+        0.59,
+        1.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4085,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4113",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.64, 2.18",
+      "numeric_values": [
+        0.64,
+        2.18
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4113,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4150",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 18.09, 26.49",
+      "numeric_values": [
+        18.09,
+        26.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4150,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "I: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Tabl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4180",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 20.69, 38.44",
+      "numeric_values": [
+        20.69,
+        38.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4180,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ). The toddler and middle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-4213",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4213,
+      "sentence": "Male and female children had less CA events (male, 95% CI: 3.11, 8.35; female, 95% CI: 2.53, 11.31) CAI (male, 95% CI: 0.59, 1.49; female, 95% CI: 0.64, 2.18), and OAHI (male, 95% CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "CI: 18.09, 26.49; female, 95% CI: 20.69, 38.44) after TA ( p < 0.001) ( Table 2 ). The toddler and middle childhood age groups h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4320",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.47, 13.97",
+      "numeric_values": [
+        3.47,
+        13.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4320,
+      "sentence": "The toddler and middle childhood age groups had less number of CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "childhood age groups had less number of CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4359",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.90, 8.73",
+      "numeric_values": [
+        2.9,
+        8.73
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4359,
+      "sentence": "The toddler and middle childhood age groups had less number of CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4397",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.77, 2.31",
+      "numeric_values": [
+        0.77,
+        2.31
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4397,
+      "sentence": "The toddler and middle childhood age groups had less number of CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4434",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.53, 1.88",
+      "numeric_values": [
+        0.53,
+        1.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4434,
+      "sentence": "The toddler and middle childhood age groups had less number of CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": ".73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ). The preschooler and tee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-4465",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4465,
+      "sentence": "The toddler and middle childhood age groups had less number of CA events (toddler, 95% CI: 3.47, 13.97; middle childhood, 95% CI: 2.90, 8.73) and CAI (toddler, 95% CI: 0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "0.77, 2.31; middle childhood 95% CI: 0.53, 1.88) after TA ( p < 0.001) ( Table 2 ). The preschooler and teenager age groups did n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-4586",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4586,
+      "sentence": "The preschooler and teenager age groups did not have less number of CA events and CAI after TA ( p = 0.1 and p = 0.2) ( Table 2 ).",
+      "context_window": "ps did not have less number of CA events and CAI after TA ( p = 0.1 and p = 0.2) ( Table 2 ). OAHI after TA was less than that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-4598",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.2",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4598,
+      "sentence": "The preschooler and teenager age groups did not have less number of CA events and CAI after TA ( p = 0.1 and p = 0.2) ( Table 2 ).",
+      "context_window": "ave less number of CA events and CAI after TA ( p = 0.1 and p = 0.2) ( Table 2 ). OAHI after TA was less than that of before TA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4678",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 21.2, 36.9",
+      "numeric_values": [
+        21.2,
+        36.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4678,
+      "sentence": "OAHI after TA was less than that of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ).",
+      "context_window": ". OAHI after TA was less than that of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4712",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 12.79, 32.46",
+      "numeric_values": [
+        12.79,
+        32.46
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4712,
+      "sentence": "OAHI after TA was less than that of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ).",
+      "context_window": "of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4753",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 16.16, 29.68",
+      "numeric_values": [
+        16.16,
+        29.68
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4753,
+      "sentence": "OAHI after TA was less than that of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ).",
+      "context_window": "6.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-4790",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 4.22, 47.19",
+      "numeric_values": [
+        4.22,
+        47.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4790,
+      "sentence": "OAHI after TA was less than that of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ).",
+      "context_window": "46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ). Thirty-one of the 147 patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-4813",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4813,
+      "sentence": "OAHI after TA was less than that of before TA in toddler (95% CI: 21.2, 36.9), preschooler (95% CI: 12.79, 32.46), middle childhood (95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ).",
+      "context_window": "95% CI: 16.16, 29.68), and teenager (95% CI: 4.22, 47.19) ( p < 0.001) ( Table 2 ). Thirty-one of the 147 patients who underwent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-5282",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5282,
+      "sentence": "Prior to TA, CA events, CAI, and OAHI in patients with comorbid conditions were not different than that of patients without comorbid conditions ( p > 0.05) ( Table 2 ).",
+      "context_window": "fferent than that of patients without comorbid conditions ( p > 0.05) ( Table 2 ). In patients with comorbid conditions, CA even",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-5415",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.3",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5415,
+      "sentence": "In patients with comorbid conditions, CA events and CAI before and after TA was not significantly different ( p = 0.3).",
+      "context_window": "d CAI before and after TA was not significantly different ( p = 0.3). After TA, OAHI was less than before TA in children with c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-5502",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 12.65, 27.78",
+      "numeric_values": [
+        12.65,
+        27.78
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5502,
+      "sentence": "After TA, OAHI was less than before TA in children with comorbid conditions (95% CI: 12.65, 27.78) ( p < 0.001) ( Table 2 ).",
+      "context_window": "s less than before TA in children with comorbid conditions (95% CI: 12.65, 27.78) ( p < 0.001) ( Table 2 ). In children without comorbid con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-5526",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5526,
+      "sentence": "After TA, OAHI was less than before TA in children with comorbid conditions (95% CI: 12.65, 27.78) ( p < 0.001) ( Table 2 ).",
+      "context_window": "children with comorbid conditions (95% CI: 12.65, 27.78) ( p < 0.001) ( Table 2 ). In children without comorbid conditions, CA (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-5595",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.54, 7.93",
+      "numeric_values": [
+        3.54,
+        7.93
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5595,
+      "sentence": "In children without comorbid conditions, CA (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": ") ( Table 2 ). In children without comorbid conditions, CA (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-5621",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.73, 1.59",
+      "numeric_values": [
+        0.73,
+        1.59
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5621,
+      "sentence": "In children without comorbid conditions, CA (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "without comorbid conditions, CA (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-ci-5652",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 21.42, 31.08",
+      "numeric_values": [
+        21.42,
+        31.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5652,
+      "sentence": "In children without comorbid conditions, CA (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "A (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0.001) ( Table 2 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-p-5694",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5694,
+      "sentence": "In children without comorbid conditions, CA (95% CI: 3.54, 7.93), CAI (95% CI: 0.73, 1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0.001) ( Table 2 ).",
+      "context_window": "1.59), and OAHI (95% CI: 21.42, 31.08) was less after TA ( p < 0.001) ( Table 2 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-839",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 839,
+      "sentence": "Despite the high prevalence of CA events in children with SDB, CSA criteria was met in 44% of our patients with SDB.",
+      "context_window": "of CA events in children with SDB, CSA criteria was met in 44% of our patients with SDB. The prevalence of CSA was 45.4% i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-895",
+      "claim_type": "percentage",
+      "raw_text": "45.4%",
+      "numeric_values": [
+        45.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 895,
+      "sentence": "The prevalence of CSA was 45.4% in children with PSG proven OSA.",
+      "context_window": "in 44% of our patients with SDB. The prevalence of CSA was 45.4% in children with PSG proven OSA. The prevalence of CSA in c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1131",
+      "claim_type": "percentage",
+      "raw_text": "14.9%",
+      "numeric_values": [
+        14.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1131,
+      "sentence": "The prevalence of CSA was 14.9% in children with OSA, 5.4% in children who was referred to a sleep laboratory, and 13.3% in children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics [ 2 - 4 ].",
+      "context_window": "the criteria used to define CSA. The prevalence of CSA was 14.9% in children with OSA, 5.4% in children who was referred to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1159",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1159,
+      "sentence": "The prevalence of CSA was 14.9% in children with OSA, 5.4% in children who was referred to a sleep laboratory, and 13.3% in children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics [ 2 - 4 ].",
+      "context_window": "CSA. The prevalence of CSA was 14.9% in children with OSA, 5.4% in children who was referred to a sleep laboratory, and 13.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1220",
+      "claim_type": "percentage",
+      "raw_text": "13.3%",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1220,
+      "sentence": "The prevalence of CSA was 14.9% in children with OSA, 5.4% in children who was referred to a sleep laboratory, and 13.3% in children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics [ 2 - 4 ].",
+      "context_window": ".4% in children who was referred to a sleep laboratory, and 13.3% in children who were recruited from pulmonary medicine, ped",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-1381",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1381,
+      "sentence": "The prevalence of CSA was 64% in children with OSA who had undergone tonsillectomy and adenoidectomy [ 7 ].",
+      "context_window": "otolaryngology clinics [ 2 - 4 ]. The prevalence of CSA was 64% in children with OSA who had undergone tonsillectomy and ad",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-2355",
+      "claim_type": "percentage",
+      "raw_text": "34.1%",
+      "numeric_values": [
+        34.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2355,
+      "sentence": "In a group of children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics, the prevalence of CSA declined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolescence [ 4 ].",
+      "context_window": "otolaryngology clinics, the prevalence of CSA declined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-2374",
+      "claim_type": "percentage",
+      "raw_text": "19.3%",
+      "numeric_values": [
+        19.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2374,
+      "sentence": "In a group of children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics, the prevalence of CSA declined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolescence [ 4 ].",
+      "context_window": "ics, the prevalence of CSA declined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolesc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-2402",
+      "claim_type": "percentage",
+      "raw_text": "8.9%",
+      "numeric_values": [
+        8.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2402,
+      "sentence": "In a group of children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics, the prevalence of CSA declined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolescence [ 4 ].",
+      "context_window": "eclined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolescence [ 4 ]. Our findings do",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-2424",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2424,
+      "sentence": "In a group of children who were recruited from pulmonary medicine, pediatric, psychiatric, neurology, and otolaryngology clinics, the prevalence of CSA declined from 34.1% in toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolescence [ 4 ].",
+      "context_window": "toddlers, 19.3% in preschool age, and 8.9% in school age to 1.3% in adolescence [ 4 ]. Our findings documented a similar dec",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-4636",
+      "claim_type": "percentage",
+      "raw_text": "73.3%",
+      "numeric_values": [
+        73.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4636,
+      "sentence": "In a group of 15 children, CSA was resolved in 11 children (73.3%) after TA.",
+      "context_window": "In a group of 15 children, CSA was resolved in 11 children (73.3%) after TA. While the majority of children (90%) with mild C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-4685",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4685,
+      "sentence": "While the majority of children (90%) with mild CSA had resolution of CSA after TA, 75% of children with CAI greater than 5 before TA had residual CSA following TA.",
+      "context_window": "children (73.3%) after TA. While the majority of children (90%) with mild CSA had resolution of CSA after TA, 75% of child",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-4736",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4736,
+      "sentence": "While the majority of children (90%) with mild CSA had resolution of CSA after TA, 75% of children with CAI greater than 5 before TA had residual CSA following TA.",
+      "context_window": "hildren (90%) with mild CSA had resolution of CSA after TA, 75% of children with CAI greater than 5 before TA had residual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-5214",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5214,
+      "sentence": "Residual CSA occurred in 26% of children with OSA.",
+      "context_window": "as reduced significantly after TA. Residual CSA occurred in 26% of children with OSA. The majority of our patients with CSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-5321",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5321,
+      "sentence": "The rate of residual CSA was 26% in children with mild CSA.",
+      "context_window": "atients with CSA had mild CSA. The rate of residual CSA was 26% in children with mild CSA. The higher rate of residual CSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-5657",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5657,
+      "sentence": "The prevalence of residual CSA in children with moderate and severe OSA was 30% and 25%, respectively, although the small number of children in these categories is a limitation of the study.",
+      "context_window": "f residual CSA in children with moderate and severe OSA was 30% and 25%, respectively, although the small number of childre",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9130007_assessment_of_central_sleep_apnea_events_in_children_with_sl-pct-5665",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5665,
+      "sentence": "The prevalence of residual CSA in children with moderate and severe OSA was 30% and 25%, respectively, although the small number of children in these categories is a limitation of the study.",
+      "context_window": "al CSA in children with moderate and severe OSA was 30% and 25%, respectively, although the small number of children in the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

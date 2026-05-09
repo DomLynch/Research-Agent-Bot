@@ -1,0 +1,976 @@
+{
+  "paper_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic",
+  "doi": "10.1186/s41687-022-00454-x",
+  "extracted_at": "2026-05-08T20:06:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 31,
+    "mean_sd": 8,
+    "unit_value": 3,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1031",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar characteristics except for BMI slightly lower in controls.",
+      "context_window": "\u201d (CAS) evaluated the level of anxiety. Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy cont",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-1042",
+      "claim_type": "mean_sd",
+      "raw_text": "65 \u00b1 9.6",
+      "numeric_values": [
+        65.0,
+        9.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar characteristics except for BMI slightly lower in controls.",
+      "context_window": "luated the level of anxiety. Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-u-1047",
+      "claim_type": "unit_value",
+      "raw_text": "9.6 years",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1047,
+      "sentence": "Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar characteristics except for BMI slightly lower in controls.",
+      "context_window": "d the level of anxiety. Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar chara",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-1066",
+      "claim_type": "mean_sd",
+      "raw_text": "30.5 \u00b1 3.6",
+      "numeric_values": [
+        30.5,
+        3.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar characteristics except for BMI slightly lower in controls.",
+      "context_window": "ety. Patients with OSA (61% males, 65 \u00b1 9.6 years old, BMI 30.5 \u00b1 3.6) and healthy controls had similar characteristics except fo",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1382",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1382,
+      "sentence": "During the pandemic the rate of reported sleep disturbance increased from 54 to 66% in patients with OSA and from 29 to 40% in controls.",
+      "context_window": "the rate of reported sleep disturbance increased from 54 to 66% in patients with OSA and from 29 to 40% in controls. A high",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1422",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1422,
+      "sentence": "During the pandemic the rate of reported sleep disturbance increased from 54 to 66% in patients with OSA and from 29 to 40% in controls.",
+      "context_window": "ncreased from 54 to 66% in patients with OSA and from 29 to 40% in controls. A high percentage of patients and controls rep",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1515",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1515,
+      "sentence": "A high percentage of patients and controls reported symptoms of depression (61% OSA and 65% controls), whereas lower levels of anxiety, similar in the two groups, were observed.",
+      "context_window": "e of patients and controls reported symptoms of depression (61% OSA and 65% controls), whereas lower levels of anxiety, sim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1527",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1527,
+      "sentence": "A high percentage of patients and controls reported symptoms of depression (61% OSA and 65% controls), whereas lower levels of anxiety, similar in the two groups, were observed.",
+      "context_window": "s and controls reported symptoms of depression (61% OSA and 65% controls), whereas lower levels of anxiety, similar in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-724",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 724,
+      "sentence": "A good sleep quality is essential when facing stressing situations, nevertheless one of the first complaints reported by the population, after the onset of the pandemic, has been insomnia and poor sleep quality affecting more than one third of the population across all involved countries with peaks over 50% recorded during the initial phase of the pandemic [ 3 - 6 ].",
+      "context_window": "he population across all involved countries with peaks over 50% recorded during the initial phase of the pandemic [ 3 - 6 ]",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-u-272",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 272,
+      "sentence": "During these 2 months we had a particularly high number of patients attending the Centre due to re-opening after the lock-down period.",
+      "context_window": "ersity of Catania, between June and July 2020. During these 2 months we had a particularly high number of patients attending the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1377",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1377,
+      "sentence": "It has been calculated that to find a difference in the PSQI score between groups, 45 patients are sufficient in each group, based on an expected difference of 15% between groups with a standard deviation of 25% within groups [ 18 ].",
+      "context_window": "ufficient in each group, based on an expected difference of 15% between groups with a standard deviation of 25% within grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1425",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1425,
+      "sentence": "It has been calculated that to find a difference in the PSQI score between groups, 45 patients are sufficient in each group, based on an expected difference of 15% between groups with a standard deviation of 25% within groups [ 18 ].",
+      "context_window": "fference of 15% between groups with a standard deviation of 25% within groups [ 18 ]. For PHQ-9 it has been calculated that",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1564",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1564,
+      "sentence": "For PHQ-9 it has been calculated that a sample size of 130 in two balanced groups will yield a power of at least 80% to detect standardized mean differences above 0.5 of a normally distributed variable [ 19 ].",
+      "context_window": "f 130 in two balanced groups will yield a power of at least 80% to detect standardized mean differences above 0.5 of a norm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-u-1770",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 1770,
+      "sentence": "In this study we included patients with a diagnosis of severe OSA treated with nocturnal CPAP from at least 1 year.",
+      "context_window": "sis of severe OSA treated with nocturnal CPAP from at least 1 year. Inclusion criteria were: (1) apnea-hypopnea index (AHI) >",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-5336",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5336,
+      "sentence": "In a first validation study, the optimized cut-off score of \u2265 9 (90% sensitivity and 85% specificity) discriminated between persons with and without dysfunctional anxiety [ 14 ].",
+      "context_window": "first validation study, the optimized cut-off score of \u2265 9 (90% sensitivity and 85% specificity) discriminated between pers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-5356",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5356,
+      "sentence": "In a first validation study, the optimized cut-off score of \u2265 9 (90% sensitivity and 85% specificity) discriminated between persons with and without dysfunctional anxiety [ 14 ].",
+      "context_window": "dy, the optimized cut-off score of \u2265 9 (90% sensitivity and 85% specificity) discriminated between persons with and without",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-719",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 719,
+      "sentence": "Demographic and clinical data of the study groups\n\nOSA, obstructive sleep apnea; BMI, body mass index; CPAP, continuous positive airway pressure; AHI, apnea-hypopnea index; ESS, epworth sleepiness scale; CAS, Coronavirus Anxiety Scale; PHQ-9, Patient Health Questionnaire module 9\n\n* P < 0.05 OSA versus controls\n\nDuring the first wave of the COVID-19 pandemic neither patients with OSA nor healthy subjects significantly changed their sleep habits.",
+      "context_window": "iety Scale; PHQ-9, Patient Health Questionnaire module 9 * P < 0.05 OSA versus controls During the first wave of the COVID-19",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-907",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 907,
+      "sentence": "In the group with OSA 16% delayed bedtime and 21% anticipated by about 30 min, but most of them reported no change.",
+      "context_window": "ificantly changed their sleep habits. In the group with OSA 16% delayed bedtime and 21% anticipated by about 30 min, but mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-931",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 931,
+      "sentence": "In the group with OSA 16% delayed bedtime and 21% anticipated by about 30 min, but most of them reported no change.",
+      "context_window": "sleep habits. In the group with OSA 16% delayed bedtime and 21% anticipated by about 30 min, but most of them reported no c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1027",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1027,
+      "sentence": "In the control group only 9% anticipated while 15% delayed bedtime.",
+      "context_window": "most of them reported no change. In the control group only 9% anticipated while 15% delayed bedtime. The number of hours",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1048",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1048,
+      "sentence": "In the control group only 9% anticipated while 15% delayed bedtime.",
+      "context_window": "d no change. In the control group only 9% anticipated while 15% delayed bedtime. The number of hours of sleep per night (6-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-1514",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1514,
+      "sentence": "Changes in sleep variables and CPAP use before and during the first wave of the COVID-19 pandemic\n\nOSA, obstructive sleep apnea; PSQI, Pittsburg Sleep Quality Index; CPAP, continuous positive airway pressure\n\n* P < 0.001 before versus during the pandemic\n\nThe mean PSQI score, in the pre-pandemic period was significantly higher in patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001).",
+      "context_window": "Quality Index; CPAP, continuous positive airway pressure * P < 0.001 before versus during the pandemic The mean PSQI score, in",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-1671",
+      "claim_type": "mean_sd",
+      "raw_text": "6.4 \u00b1 2.0",
+      "numeric_values": [
+        6.4,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1671,
+      "sentence": "Changes in sleep variables and CPAP use before and during the first wave of the COVID-19 pandemic\n\nOSA, obstructive sleep apnea; PSQI, Pittsburg Sleep Quality Index; CPAP, continuous positive airway pressure\n\n* P < 0.001 before versus during the pandemic\n\nThe mean PSQI score, in the pre-pandemic period was significantly higher in patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001).",
+      "context_window": "significantly higher in patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001). In both groups the mean PSQI scor",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-1684",
+      "claim_type": "mean_sd",
+      "raw_text": "4.6 \u00b1 2.0",
+      "numeric_values": [
+        4.6,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1684,
+      "sentence": "Changes in sleep variables and CPAP use before and during the first wave of the COVID-19 pandemic\n\nOSA, obstructive sleep apnea; PSQI, Pittsburg Sleep Quality Index; CPAP, continuous positive airway pressure\n\n* P < 0.001 before versus during the pandemic\n\nThe mean PSQI score, in the pre-pandemic period was significantly higher in patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001).",
+      "context_window": "higher in patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001). In both groups the mean PSQI score significant",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-1695",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1695,
+      "sentence": "Changes in sleep variables and CPAP use before and during the first wave of the COVID-19 pandemic\n\nOSA, obstructive sleep apnea; PSQI, Pittsburg Sleep Quality Index; CPAP, continuous positive airway pressure\n\n* P < 0.001 before versus during the pandemic\n\nThe mean PSQI score, in the pre-pandemic period was significantly higher in patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001).",
+      "context_window": "patients with OSA than in controls (6.4 \u00b1 2.0 vs 4.6 \u00b1 2.0, P < 0.001). In both groups the mean PSQI score significantly increase",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-1787",
+      "claim_type": "mean_sd",
+      "raw_text": "7.5 \u00b1 2.3",
+      "numeric_values": [
+        7.5,
+        2.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1787,
+      "sentence": "In both groups the mean PSQI score significantly increased during the pandemic (7.5 \u00b1 2.3 OSA and 6.0 \u00b1 2.5 controls, P < 0.001) (Table 2 ).",
+      "context_window": "ean PSQI score significantly increased during the pandemic (7.5 \u00b1 2.3 OSA and 6.0 \u00b1 2.5 controls, P < 0.001) (Table 2 ). In the g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-1805",
+      "claim_type": "mean_sd",
+      "raw_text": "6.0 \u00b1 2.5",
+      "numeric_values": [
+        6.0,
+        2.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "In both groups the mean PSQI score significantly increased during the pandemic (7.5 \u00b1 2.3 OSA and 6.0 \u00b1 2.5 controls, P < 0.001) (Table 2 ).",
+      "context_window": "nificantly increased during the pandemic (7.5 \u00b1 2.3 OSA and 6.0 \u00b1 2.5 controls, P < 0.001) (Table 2 ). In the group with OSA the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-1825",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1825,
+      "sentence": "In both groups the mean PSQI score significantly increased during the pandemic (7.5 \u00b1 2.3 OSA and 6.0 \u00b1 2.5 controls, P < 0.001) (Table 2 ).",
+      "context_window": "during the pandemic (7.5 \u00b1 2.3 OSA and 6.0 \u00b1 2.5 controls, P < 0.001) (Table 2 ). In the group with OSA the percentage of patien",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1969",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1969,
+      "sentence": "In the group with OSA the percentage of patients with a PSQI > 5, the cut-off value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig.",
+      "context_window": "> 5, the cut-off value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1984",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1984,
+      "sentence": "In the group with OSA the percentage of patients with a PSQI > 5, the cut-off value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig.",
+      "context_window": "f value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control gro",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-2010",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2010,
+      "sentence": "In the group with OSA the percentage of patients with a PSQI > 5, the cut-off value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig.",
+      "context_window": "sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control group the rate of poor sleepers in",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-2097",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2097,
+      "sentence": "In the group with OSA the percentage of patients with a PSQI > 5, the cut-off value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig.",
+      "context_window": "ontrol group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig. 1 ). Prevalence rate of poor sleepers (P",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-2103",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2103,
+      "sentence": "In the group with OSA the percentage of patients with a PSQI > 5, the cut-off value for defining poor sleep quality, was 54% before and 66% during the pandemic ( P < 0.05), whereas in the control group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig.",
+      "context_window": "group the rate of poor sleepers increased from 29 to 40% ( P < 0.05) (Fig. 1 ). Prevalence rate of poor sleepers (PSQI > 5) am",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-2475",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2475,
+      "sentence": "Twenty-eight percent of patients with OSA and 24% of the controls ( P = 0.6) reported an abnormal level of anxiety (Table 3 ).",
+      "context_window": "in Table 1 ). Twenty-eight percent of patients with OSA and 24% of the controls ( P = 0.6) reported an abnormal level of an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-2497",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.6",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2497,
+      "sentence": "Twenty-eight percent of patients with OSA and 24% of the controls ( P = 0.6) reported an abnormal level of anxiety (Table 3 ).",
+      "context_window": "ight percent of patients with OSA and 24% of the controls ( P = 0.6) reported an abnormal level of anxiety (Table 3 ). Subgrou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-2910",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2910,
+      "sentence": "Subgroups data for PSQI, CAS and PHQ-9 score during the first wave of the COVID-19 pandemic\n\nOSA, obstructive sleep apnea; PSQI, Pittsburg Sleep Quality Index; CAS, Coronavirus Anxiety Scale; PHQ-9, Patient Health Questionnaire module 9\n\nA high percentage of patients and controls showed symptoms of depression, measured trough the PHQ-9 questionnaire (61% OSA and 65% controls).",
+      "context_window": "oms of depression, measured trough the PHQ-9 questionnaire (61% OSA and 65% controls). In most of the cases symptoms of mil",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-2922",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2922,
+      "sentence": "Subgroups data for PSQI, CAS and PHQ-9 score during the first wave of the COVID-19 pandemic\n\nOSA, obstructive sleep apnea; PSQI, Pittsburg Sleep Quality Index; CAS, Coronavirus Anxiety Scale; PHQ-9, Patient Health Questionnaire module 9\n\nA high percentage of patients and controls showed symptoms of depression, measured trough the PHQ-9 questionnaire (61% OSA and 65% controls).",
+      "context_window": "ssion, measured trough the PHQ-9 questionnaire (61% OSA and 65% controls). In most of the cases symptoms of mild depression",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-3120",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3120,
+      "sentence": "In most of the cases symptoms of mild depression were complained, however a higher number of healthy subjects reported symptoms of moderate to severe depression compared to patients (29% vs 19% respectively, P < 0.05) (Table 3 ).",
+      "context_window": "toms of moderate to severe depression compared to patients (29% vs 19% respectively, P < 0.05) (Table 3 ). In order to und",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-3127",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3127,
+      "sentence": "In most of the cases symptoms of mild depression were complained, however a higher number of healthy subjects reported symptoms of moderate to severe depression compared to patients (29% vs 19% respectively, P < 0.05) (Table 3 ).",
+      "context_window": "moderate to severe depression compared to patients (29% vs 19% respectively, P < 0.05) (Table 3 ). In order to understand",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-3145",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3145,
+      "sentence": "In most of the cases symptoms of mild depression were complained, however a higher number of healthy subjects reported symptoms of moderate to severe depression compared to patients (29% vs 19% respectively, P < 0.05) (Table 3 ).",
+      "context_window": "e depression compared to patients (29% vs 19% respectively, P < 0.05) (Table 3 ). In order to understand factors affecting the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-3482",
+      "claim_type": "mean_sd",
+      "raw_text": "6.3 \u00b1 2.6",
+      "numeric_values": [
+        6.3,
+        2.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3482,
+      "sentence": "The mean ESS was significantly higher in patients with PSQI > 5 compared to those with PSQI < 5 (6.3 \u00b1 2.6 vs 4.9 \u00b1 1.9, respectively, P < 0.05).",
+      "context_window": "in patients with PSQI > 5 compared to those with PSQI < 5 (6.3 \u00b1 2.6 vs 4.9 \u00b1 1.9, respectively, P < 0.05). Linear regression an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-msd-3495",
+      "claim_type": "mean_sd",
+      "raw_text": "4.9 \u00b1 1.9",
+      "numeric_values": [
+        4.9,
+        1.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3495,
+      "sentence": "The mean ESS was significantly higher in patients with PSQI > 5 compared to those with PSQI < 5 (6.3 \u00b1 2.6 vs 4.9 \u00b1 1.9, respectively, P < 0.05).",
+      "context_window": "with PSQI > 5 compared to those with PSQI < 5 (6.3 \u00b1 2.6 vs 4.9 \u00b1 1.9, respectively, P < 0.05). Linear regression analysis showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-3520",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3520,
+      "sentence": "The mean ESS was significantly higher in patients with PSQI > 5 compared to those with PSQI < 5 (6.3 \u00b1 2.6 vs 4.9 \u00b1 1.9, respectively, P < 0.05).",
+      "context_window": "those with PSQI < 5 (6.3 \u00b1 2.6 vs 4.9 \u00b1 1.9, respectively, P < 0.05). Linear regression analysis showed that the PSQI score sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-3653",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3653,
+      "sentence": "Linear regression analysis showed that the PSQI score significantly positively correlated with the CAS score (r 2 = 0.65, P < 0.001) and the PHQ-9 score (r 2 = 0.81, P < 0.001) (Fig.",
+      "context_window": "antly positively correlated with the CAS score (r 2 = 0.65, P < 0.001) and the PHQ-9 score (r 2 = 0.81, P < 0.001) (Fig. 2 ). To",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-p-3697",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3697,
+      "sentence": "Linear regression analysis showed that the PSQI score significantly positively correlated with the CAS score (r 2 = 0.65, P < 0.001) and the PHQ-9 score (r 2 = 0.81, P < 0.001) (Fig.",
+      "context_window": "re (r 2 = 0.65, P < 0.001) and the PHQ-9 score (r 2 = 0.81, P < 0.001) (Fig. 2 ). To assess independent predictors of poor qualit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-462",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 462,
+      "sentence": "Although high rates of sleep disturbance have been reported across all countries during this dreadful event, it is noteworthy that the prevalence rate of sleep disturbance that we found among patients with OSA (66%) is exceptionally high.",
+      "context_window": "of sleep disturbance that we found among patients with OSA (66%) is exceptionally high. In these patients we showed a stric",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-1761",
+      "claim_type": "percentage",
+      "raw_text": "57.1%",
+      "numeric_values": [
+        57.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1761,
+      "sentence": "Casagrande et al. in an early study showed that, after the COVID-19 outbreak, among 2291 subjects from the general population, 57.1% complained poor sleep quality.",
+      "context_window": "outbreak, among 2291 subjects from the general population, 57.1% complained poor sleep quality. A significant relationship w",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-3010",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3010,
+      "sentence": "An altered sleep pattern is an hallmark of untreated OSA and up to 100% of the patients report a subjective sensation of poor sleep quality with a PSQI score well above the cut-off limit [ 24 ].",
+      "context_window": "red sleep pattern is an hallmark of untreated OSA and up to 100% of the patients report a subjective sensation of poor sleep",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-3545",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3545,
+      "sentence": "Our patients, well controlled and adherent to CPAP treatment, had an high score at the PSQI questionnaire referring to the pre-pandemic period, with 54% of the patients reaching the score of a poor sleeper compared to 29% of the controls.",
+      "context_window": "QI questionnaire referring to the pre-pandemic period, with 54% of the patients reaching the score of a poor sleeper compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-3614",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3614,
+      "sentence": "Our patients, well controlled and adherent to CPAP treatment, had an high score at the PSQI questionnaire referring to the pre-pandemic period, with 54% of the patients reaching the score of a poor sleeper compared to 29% of the controls.",
+      "context_window": "e patients reaching the score of a poor sleeper compared to 29% of the controls. This is not surprising, as a previous stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-4622",
+      "claim_type": "percentage",
+      "raw_text": "49.9%",
+      "numeric_values": [
+        49.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4622,
+      "sentence": "Self-reported poor sleep quality was evidenced in 49.9% of people with disability and in 39.5% of people without [ 26 ].",
+      "context_window": "sability. Self-reported poor sleep quality was evidenced in 49.9% of people with disability and in 39.5% of people without [",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-4661",
+      "claim_type": "percentage",
+      "raw_text": "39.5%",
+      "numeric_values": [
+        39.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4661,
+      "sentence": "Self-reported poor sleep quality was evidenced in 49.9% of people with disability and in 39.5% of people without [ 26 ].",
+      "context_window": "ity was evidenced in 49.9% of people with disability and in 39.5% of people without [ 26 ]. These differences were accompanie",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9079209_sleep_quality_and_mental_health_during_the_covid_19_pandemic-pct-5181",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5181,
+      "sentence": "Compared to healthy controls, people with such chronic conditions had a 36% greater chance of impaired sleep, strictly associated with a state of emotional stress [ 27 ].",
+      "context_window": "healthy controls, people with such chronic conditions had a 36% greater chance of impaired sleep, strictly associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

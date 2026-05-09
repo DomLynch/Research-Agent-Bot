@@ -1,0 +1,212 @@
+{
+  "paper_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient",
+  "doi": "10.13078/jsm.220020",
+  "extracted_at": "2026-05-08T20:05:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 1,
+    "percentage": 9
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-msd-521",
+      "claim_type": "mean_sd",
+      "raw_text": "49.94\u00b115.78",
+      "numeric_values": [
+        49.94,
+        15.78
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 521,
+      "sentence": "Subjects completed the standard BQ in the evening just before the sleep study.Results: The mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white.",
+      "context_window": "re the sleep study.Results: The mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were wh",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-u-527",
+      "claim_type": "unit_value",
+      "raw_text": "15.78 years",
+      "numeric_values": [
+        15.78
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 527,
+      "sentence": "Subjects completed the standard BQ in the evening just before the sleep study.Results: The mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white.",
+      "context_window": "sleep study.Results: The mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white. F",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-553",
+      "claim_type": "percentage",
+      "raw_text": "48.1%",
+      "numeric_values": [
+        48.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 553,
+      "sentence": "Subjects completed the standard BQ in the evening just before the sleep study.Results: The mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white.",
+      "context_window": "mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white. Forty-six subjects (5",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-578",
+      "claim_type": "percentage",
+      "raw_text": "63.7%",
+      "numeric_values": [
+        63.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 578,
+      "sentence": "Subjects completed the standard BQ in the evening just before the sleep study.Results: The mean age of 77 subjects was 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white.",
+      "context_window": "as 49.94\u00b115.78 years, of which 37 (48.1%) were male and 42 (63.7%) were white. Forty-six subjects (59.7%) were diagnosed with",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-617",
+      "claim_type": "percentage",
+      "raw_text": "59.7%",
+      "numeric_values": [
+        59.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 617,
+      "sentence": "Forty-six subjects (59.7%) were diagnosed with OSA through polysomnography.",
+      "context_window": "%) were male and 42 (63.7%) were white. Forty-six subjects (59.7%) were diagnosed with OSA through polysomnography. In the an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-750",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 750,
+      "sentence": "In the analysis of each item of the standard BQ, the sensitivity ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%.",
+      "context_window": "f each item of the standard BQ, the sensitivity ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%. F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-758",
+      "claim_type": "percentage",
+      "raw_text": "92.5%",
+      "numeric_values": [
+        92.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 758,
+      "sentence": "In the analysis of each item of the standard BQ, the sensitivity ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%.",
+      "context_window": "tem of the standard BQ, the sensitivity ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%. For item 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-797",
+      "claim_type": "percentage",
+      "raw_text": "13.3%",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 797,
+      "sentence": "In the analysis of each item of the standard BQ, the sensitivity ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%.",
+      "context_window": "ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%. For item 8, the sensitivity, specificity, positiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-806",
+      "claim_type": "percentage",
+      "raw_text": "85.7%",
+      "numeric_values": [
+        85.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "In the analysis of each item of the standard BQ, the sensitivity ranged from 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%.",
+      "context_window": "rom 4.6% to 92.5%, and the specificity ranged from 13.3% to 85.7%. For item 8, the sensitivity, specificity, positive likelih",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-917",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 917,
+      "sentence": "For item 8, the sensitivity, specificity, positive likelihood ratio, and negative likelihood ratio were 4.6%, 84.9%, 0.3, and 1.1, respectively.",
+      "context_window": "sitive likelihood ratio, and negative likelihood ratio were 4.6%, 84.9%, 0.3, and 1.1, respectively. The area under the curv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220020_usefulness_of_the_berlin_questionnaire_for_screening_patient-pct-923",
+      "claim_type": "percentage",
+      "raw_text": "84.9%",
+      "numeric_values": [
+        84.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 923,
+      "sentence": "For item 8, the sensitivity, specificity, positive likelihood ratio, and negative likelihood ratio were 4.6%, 84.9%, 0.3, and 1.1, respectively.",
+      "context_window": "likelihood ratio, and negative likelihood ratio were 4.6%, 84.9%, 0.3, and 1.1, respectively. The area under the curve value",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm",
+  "doi": "10.1093/sleep/zsae067.0528",
+  "extracted_at": "2026-05-08T20:06:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-pct-995",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "We aim to assess differences in outcomes between hospital admitted patients who undergo OSA workup during admission vs in the outpatient setting .</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>retrospective chart review with prospective component</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>65 patients included all seen by sleep medicine service while admitted to the hospital and required workup for OSA; 57 received outpatient workup- 11/57 completed their sleep study (19%), all of which were prescribed PAP therapy for OSA.",
+      "context_window": "eived outpatient workup- 11/57 completed their sleep study (19%), all of which were prescribed PAP therapy for OSA. 2/57 (3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "2/57 (3.5%) had subsequent follow up by 6 months.",
+      "context_window": "%), all of which were prescribed PAP therapy for OSA. 2/57 (3.5%) had subsequent follow up by 6 months. Average time to diag",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-u-1091",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1091,
+      "sentence": "2/57 (3.5%) had subsequent follow up by 6 months.",
+      "context_window": "AP therapy for OSA. 2/57 (3.5%) had subsequent follow up by 6 months. Average time to diagnosis was 46 +/- 48 days and time to C",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-u-1138",
+      "claim_type": "unit_value",
+      "raw_text": "48 days",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1138,
+      "sentence": "Average time to diagnosis was 46 +/- 48 days and time to CPAP prescription was 56 +/- 53 days.",
+      "context_window": "follow up by 6 months. Average time to diagnosis was 46 +/- 48 days and time to CPAP prescription was 56 +/- 53 days. 8 patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-u-1187",
+      "claim_type": "unit_value",
+      "raw_text": "53 days",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1187,
+      "sentence": "Average time to diagnosis was 46 +/- 48 days and time to CPAP prescription was 56 +/- 53 days.",
+      "context_window": "was 46 +/- 48 days and time to CPAP prescription was 56 +/- 53 days. 8 patients underwent inpatient OSA workup. All obtained a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-u-1295",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "abstract",
+      "source_offset": 1295,
+      "sentence": "All obtained a sleep study while in the hospital within 1 day of the consult; 6/8 were diagnosed with OSA all of which had the process started for CPAP set up within 2 days of sleep study.",
+      "context_window": "up. All obtained a sleep study while in the hospital within 1 day of the consult; 6/8 were diagnosed with OSA all of which ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0528_0528_use_of_inpatient_sleep_studies_decreases_time_to_treatm-u-1405",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1405,
+      "sentence": "All obtained a sleep study while in the hospital within 1 day of the consult; 6/8 were diagnosed with OSA all of which had the process started for CPAP set up within 2 days of sleep study.",
+      "context_window": "all of which had the process started for CPAP set up within 2 days of sleep study. The time to diagnosis and start to treatmen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

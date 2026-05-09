@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_dasatinib_plus_radiation_therapy_temozolomide_in_newly_diagn",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_dasatinib_plus_radiation_therapy_temozolomide_in_newly_diagn-u-123",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 123,
+      "sentence": "Phase I: Primary Objectives: -To define the maximum tolerated dose (MTD) of dasatinib (Sprycel) with radiotherapy (RT) and 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^2/day in patients with newly-diagnosed glioblastoma (GBM).",
+      "context_window": "ose (MTD) of dasatinib (Sprycel) with radiotherapy (RT) and 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_dasatinib_plus_radiation_therapy_temozolomide_in_newly_diagn-u-181",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 181,
+      "sentence": "Phase I: Primary Objectives: -To define the maximum tolerated dose (MTD) of dasatinib (Sprycel) with radiotherapy (RT) and 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^2/day in patients with newly-diagnosed glioblastoma (GBM).",
+      "context_window": "d 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^2/day in patients with newly-diagnosed glioblastoma (GBM",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_dasatinib_plus_radiation_therapy_temozolomide_in_newly_diagn-u-716",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 716,
+      "sentence": "Phase II: Primary Objectives: -To determine the effectiveness of dasatinib (Sprycel) with radiotherapy (RT) and 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^2/day followed by adjuvant temozolomide with concurrent dasatinib in patients with newly-diagnosed glioblastoma (GBM) as measured by overall survival.",
+      "context_window": "ctiveness of dasatinib (Sprycel) with radiotherapy (RT) and 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_dasatinib_plus_radiation_therapy_temozolomide_in_newly_diagn-u-774",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 774,
+      "sentence": "Phase II: Primary Objectives: -To determine the effectiveness of dasatinib (Sprycel) with radiotherapy (RT) and 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^2/day followed by adjuvant temozolomide with concurrent dasatinib in patients with newly-diagnosed glioblastoma (GBM) as measured by overall survival.",
+      "context_window": "d 6 weeks of concomitant temozolomide (TMZ) administered at 75 mg/m\\^2/day followed by adjuvant temozolomide with concurrent",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

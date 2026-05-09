@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for",
+  "doi": "10.26442/20795696.2023.2.202231",
+  "extracted_at": "2026-05-08T20:05:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 3,
+    "correlation": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for-pct-50",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 50,
+      "sentence": "Preeclampsia (PE) complicates 28% of pregnancies worldwide, negatively impacting the pregnant woman and the fetus.",
+      "context_window": "<jats:p>Background. Preeclampsia (PE) complicates 28% of pregnancies worldwide, negatively impacting the pregnant",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for-u-468",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 468,
+      "sentence": "The leadership in this matter is maintained by acetylsalicylic acid, which, according to the ASPRE study, reduced the incidence of PE at 34 weeks of pregnancy by 82%.",
+      "context_window": "ccording to the ASPRE study, reduced the incidence of PE at 34 weeks of pregnancy by 82%. The use of low molecular weight hepari",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for-pct-493",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 493,
+      "sentence": "The leadership in this matter is maintained by acetylsalicylic acid, which, according to the ASPRE study, reduced the incidence of PE at 34 weeks of pregnancy by 82%.",
+      "context_window": "dy, reduced the incidence of PE at 34 weeks of pregnancy by 82%. The use of low molecular weight heparins (LMWH), dipyridam",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for-u-1380",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1380,
+      "sentence": "Eighty-nine pregnant women received acetylsalicylic acid at a dose of 75 mg and 54 at a dose of 150 mg.",
+      "context_window": "e pregnant women received acetylsalicylic acid at a dose of 75 mg and 54 at a dose of 150 mg. In addition, 22 patients receiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for-u-1406",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1406,
+      "sentence": "Eighty-nine pregnant women received acetylsalicylic acid at a dose of 75 mg and 54 at a dose of 150 mg.",
+      "context_window": "acetylsalicylic acid at a dose of 75 mg and 54 at a dose of 150 mg. In addition, 22 patients received LMWH, 6 dipyridamole, an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_26442_20795696_2023_2_202231_acetylsalicylic_acid_as_the_only_pharmacological_method_for-corr-1760",
+      "claim_type": "correlation",
+      "raw_text": "(r=-0.31)",
+      "numeric_values": [
+        -0.31
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1760,
+      "sentence": "The resulting weak inverse correlation (r=-0.31) between the PE severity at delivery and the dose of acetylsalicylic acid indicates that an increase in the acetylsalicylic acid dose was associated with a decrease in the PE severity.",
+      "context_window": "isk groups. Results. The resulting weak inverse correlation (r=-0.31) between the PE severity at delivery and the dose of acetyls",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

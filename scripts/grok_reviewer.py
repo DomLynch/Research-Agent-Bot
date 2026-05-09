@@ -493,6 +493,7 @@ async def review_with_grok(
     paper_md: str, manifest: dict, audit: dict,
     *, model: str = "deepseek/deepseek-v4-pro",
     fallback_model: str = "mistralai/mistral-small-2603",
+    escalation_model: str | None = None,
     api_key: str | None = None,
     base_url: str = "https://openrouter.ai/api/v1",
     client: Any | None = None,
@@ -516,15 +517,48 @@ async def review_with_grok(
         raw, model_used, cost = await _call_with_fallback(
             system, user, model, fallback_model, api_key, base_url, c,
         )
+        patches: list[TypedPatch] = []
+        for i, p in enumerate(raw.get("patches", []), start=1):
+            norm = _normalize_patch(p, i)
+            if norm is not None:
+                patches.append(norm)
+        escalation_model = (
+            escalation_model
+            or os.environ.get("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", "").strip()
+            or None
+        )
+        if escalation_model and _needs_low_patch_escalation(paper_md, patches):
+            try:
+                esc_raw, in_tok, out_tok = await _call_one(
+                    system, user, escalation_model, api_key, base_url, c,
+                )
+                esc_patches: list[TypedPatch] = []
+                for i, p in enumerate(esc_raw.get("patches", []), start=1):
+                    norm = _normalize_patch(p, i)
+                    if norm is not None:
+                        esc_patches.append(norm)
+                raw = esc_raw
+                patches = esc_patches
+                model_used = f"{model_used}→{escalation_model}"
+                cost += _estimate_cost(escalation_model, in_tok, out_tok)
+            except Exception as exc:
+                raw.setdefault("low_patch_escalation_error", type(exc).__name__)
     finally:
         if own_client:
             await c.aclose()
-    patches: list[TypedPatch] = []
-    for i, p in enumerate(raw.get("patches", []), start=1):
-        norm = _normalize_patch(p, i)
-        if norm is not None:
-            patches.append(norm)
     return patches, raw, model_used, cost
+
+
+def _needs_low_patch_escalation(
+    paper_md: str,
+    patches: list[TypedPatch],
+    *,
+    word_threshold: int = 10_000,
+    patch_threshold: int = 2,
+) -> bool:
+    if len(patches) >= patch_threshold:
+        return False
+    return len(re.findall(r"\b\w+\b", paper_md)) > word_threshold
 
 
 def _format_summary(

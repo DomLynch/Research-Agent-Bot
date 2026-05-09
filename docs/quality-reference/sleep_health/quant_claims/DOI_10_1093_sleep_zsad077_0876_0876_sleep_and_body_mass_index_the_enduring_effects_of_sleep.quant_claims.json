@@ -1,0 +1,85 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0876_0876_sleep_and_body_mass_index_the_enduring_effects_of_sleep",
+  "doi": "10.1093/sleep/zsad077.0876",
+  "extracted_at": "2026-05-08T20:06:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "sample_size": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0876_0876_sleep_and_body_mass_index_the_enduring_effects_of_sleep-u-796",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 796,
+      "sentence": "It was hypothesized that poorer sleep health would be related to higher BMI.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>At three time points across the first two years of college (i.e., 8 months apart), participants (N=116) wore an Actiwatch 2 device for one week and had their height and weight measured.",
+      "context_window": "ee time points across the first two years of college (i.e., 8 months apart), participants (N=116) wore an Actiwatch 2 device for",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0876_0876_sleep_and_body_mass_index_the_enduring_effects_of_sleep-n-827",
+      "claim_type": "sample_size",
+      "raw_text": "N=116",
+      "numeric_values": [
+        116.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 827,
+      "sentence": "It was hypothesized that poorer sleep health would be related to higher BMI.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>At three time points across the first two years of college (i.e., 8 months apart), participants (N=116) wore an Actiwatch 2 device for one week and had their height and weight measured.",
+      "context_window": "two years of college (i.e., 8 months apart), participants (N=116) wore an Actiwatch 2 device for one week and had their heig",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0876_0876_sleep_and_body_mass_index_the_enduring_effects_of_sleep-pct-945",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "The sample demographics were 71% female, 72% White or Caucasian, and an average BMI of 24.07.",
+      "context_window": "ir height and weight measured. The sample demographics were 71% female, 72% White or Caucasian, and an average BMI of 24.07",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0876_0876_sleep_and_body_mass_index_the_enduring_effects_of_sleep-pct-957",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 957,
+      "sentence": "The sample demographics were 71% female, 72% White or Caucasian, and an average BMI of 24.07.",
+      "context_window": "d weight measured. The sample demographics were 71% female, 72% White or Caucasian, and an average BMI of 24.07. Sleep heal",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

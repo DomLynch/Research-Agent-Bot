@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme",
+  "doi": "10.1101/2024.06.07.24308636",
+  "extracted_at": "2026-05-08T20:06:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 1,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-n-713",
+      "claim_type": "sample_size",
+      "raw_text": "n=48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 713,
+      "sentence": "Methods We used electronic health records of the Hong Kong Hospital Authority to identify derivation (n=48,743) and validation (n=322,731) cohorts consisting of individuals diagnosed with CVD between January 1, 2015 to December 31, 2018.",
+      "context_window": "of the Hong Kong Hospital Authority to identify derivation (n=48,743) and validation (n=322,731) cohorts consisting of indiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-n-739",
+      "claim_type": "sample_size",
+      "raw_text": "n=322",
+      "numeric_values": [
+        322.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 739,
+      "sentence": "Methods We used electronic health records of the Hong Kong Hospital Authority to identify derivation (n=48,743) and validation (n=322,731) cohorts consisting of individuals diagnosed with CVD between January 1, 2015 to December 31, 2018.",
+      "context_window": "Authority to identify derivation (n=48,743) and validation (n=322,731) cohorts consisting of individuals diagnosed with CVD b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-u-1028",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "The composite outcome of recurrent CVD event included the diagnosis of coronary heart disease, ischemic stroke, and peripheral artery disease after low-dose aspirin initiation (\u2264 100 mg).",
+      "context_window": "ipheral artery disease after low-dose aspirin initiation (\u2264 100 mg). Cox proportional hazards regression with the least absolu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-pct-2103",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2103,
+      "sentence": "Compared to untreated individuals, low-dose aspirin use with no VISTA risk factors had the lowest HR for CVD (0.68, 95% CI of 0.57 to 0.81).",
+      "context_window": "with no VISTA risk factors had the lowest HR for CVD (0.68, 95% CI of 0.57 to 0.81). For low-dose aspirin user with 1-2 VIS",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-pct-2307",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2307,
+      "sentence": "The presence of 3-6 VISTA risk factors was associated with aspirin treatment failure (HR 0.99; 95% CI of 0.88 to 1.12), which occurred in approximately 20% of patients in our validation cohort.",
+      "context_window": "ors was associated with aspirin treatment failure (HR 0.99; 95% CI of 0.88 to 1.12), which occurred in approximately 20% of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-pct-2364",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2364,
+      "sentence": "The presence of 3-6 VISTA risk factors was associated with aspirin treatment failure (HR 0.99; 95% CI of 0.88 to 1.12), which occurred in approximately 20% of patients in our validation cohort.",
+      "context_window": "9; 95% CI of 0.88 to 1.12), which occurred in approximately 20% of patients in our validation cohort. Conclusions VISTA can",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_06_07_24308636_development_and_validation_of_a_tool_to_stratify_the_treatme-pct-3596",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 3596,
+      "sentence": "Estimated from a high-quality contemporary validation cohort, there are approximately 20% of patients with CVD who may experience aspirin treatment failure.",
+      "context_window": "ity contemporary validation cohort, there are approximately 20% of patients with CVD who may experience aspirin treatment f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

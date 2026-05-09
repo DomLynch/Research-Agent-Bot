@@ -1,0 +1,429 @@
+{
+  "paper_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali",
+  "doi": "10.3389/fneur.2024.1421469",
+  "extracted_at": "2026-05-08T20:06:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 18,
+    "confidence_interval": 1,
+    "unit_value": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1195",
+      "claim_type": "percentage",
+      "raw_text": "92.2%",
+      "numeric_values": [
+        92.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Our study included 41 randomized controlled trials, comprising 11 different non-pharmacological interventions (3,541 participants), the network analysis identifying Electroacupuncture as the most effective, with a SUCRA value of 92.2% in ISI, this was followed by Professionally administered Cognitive behavioral therapy for insomnia(PCBT-I) and Mindfulness-based cognitive therapy(MBCT), with SUCRA values of 78.4 and 64.1%, respectively.",
+      "context_window": "troacupuncture as the most effective, with a SUCRA value of 92.2% in ISI, this was followed by Professionally administered Co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1385",
+      "claim_type": "percentage",
+      "raw_text": "64.1%",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1385,
+      "sentence": "Our study included 41 randomized controlled trials, comprising 11 different non-pharmacological interventions (3,541 participants), the network analysis identifying Electroacupuncture as the most effective, with a SUCRA value of 92.2% in ISI, this was followed by Professionally administered Cognitive behavioral therapy for insomnia(PCBT-I) and Mindfulness-based cognitive therapy(MBCT), with SUCRA values of 78.4 and 64.1%, respectively.",
+      "context_window": "ased cognitive therapy(MBCT), with SUCRA values of 78.4 and 64.1%, respectively. Traditional Cognitive behavioral therapy for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1530",
+      "claim_type": "percentage",
+      "raw_text": "55.2%",
+      "numeric_values": [
+        55.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1530,
+      "sentence": "Traditional Cognitive behavioral therapy for insomnia(CBT-I) and VCBT-I showed lower efficacy with SUCRA values of 55.9 and 55.2%, respectively.",
+      "context_window": "VCBT-I showed lower efficacy with SUCRA values of 55.9 and 55.2%, respectively. Exercise interventions and control groups ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1648",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1648,
+      "sentence": "Exercise interventions and control groups had the lowest efficacy, with SUCRA values of 24.0 and 16.1%.",
+      "context_window": "oups had the lowest efficacy, with SUCRA values of 24.0 and 16.1%. Using PSQI as the outcome measure, Massage therapy ranked",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1770",
+      "claim_type": "percentage",
+      "raw_text": "92.2%",
+      "numeric_values": [
+        92.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1770,
+      "sentence": "Using PSQI as the outcome measure, Massage therapy ranked highest in improving sleep quality with a SUCRA value of 92.2%, followed by Professionally administered Cognitive behavioral therapy for insomnia (PCBT-I) and Electroacupuncture.",
+      "context_window": "ed highest in improving sleep quality with a SUCRA value of 92.2%, followed by Professionally administered Cognitive behavior",
+      "claim_role": "dose",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-ci-2070",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -14.45, -1.15",
+      "numeric_values": [
+        -14.45,
+        -1.15
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2070,
+      "sentence": "League tables indicated significant improvements in sleep outcomes for Electroacupuncture and MT compared to control groups, with Electroacupuncture (EA) showing an MD of -7.80 (95% CI: -14.45, -1.15) and MT an MD of -4.23 (CI: -8.00, -0.46).",
+      "context_window": "roups, with Electroacupuncture (EA) showing an MD of -7.80 (95% CI: -14.45, -1.15) and MT an MD of -4.23 (CI: -8.00, -0.46). Considering bot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-u-567",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 567,
+      "sentence": "Over 3 months, resulting in severe impairment of daily living.",
+      "context_window": "Diagnostic and Statistical Manual of Mental Disorders. Over 3 months, resulting in severe impairment of daily living. Amongst th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1291",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1291,
+      "sentence": "Surveys indicate that the rate of insomnia in cancer patients is around 60% in global, significantly higher than in the general population, with 20% of these patients experiencing recurrent episodes of insomnia ( 3-5 ).",
+      "context_window": "cate that the rate of insomnia in cancer patients is around 60% in global, significantly higher than in the general populat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-1364",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1364,
+      "sentence": "Surveys indicate that the rate of insomnia in cancer patients is around 60% in global, significantly higher than in the general population, with 20% of these patients experiencing recurrent episodes of insomnia ( 3-5 ).",
+      "context_window": ", significantly higher than in the general population, with 20% of these patients experiencing recurrent episodes of insomn",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-u-2190",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2190,
+      "sentence": "Two researchers initially identified relevant literature using the designed search strategy, the selection of studies for inclusion and the extraction of data were rigorously conducted in accordance with the PICOS (Population, Intervention, Comparison, Outcomes, and Study design) criteria, ultimately including randomized controlled trials that met these standards.\n\n\u2460 Patients aged \u226518 years old; \u2461 Participants in this study were patients diagnosed with cancer-related insomniar; \u2462 Patiens insomnia developed after the diagnosis of cancer.",
+      "context_window": "ntrolled trials that met these standards. \u2460 Patients aged \u226518 years old; \u2461 Participants in this study were patients diagnosed w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-u-2413",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2413,
+      "sentence": "Insomnia occurred at least 3 nights/week and lasted for at least 3 months, meeting the diagnostic and Statistical Manual of Mental Disorders (5th edition) diagnostic criteria for transient insomnia; \u2463 Insomnia severity index score was more than 8 points; \u2464 Pittsburgh Sleep Quality Index (PSQI) score > 6.",
+      "context_window": "nia occurred at least 3 nights/week and lasted for at least 3 months, meeting the diagnostic and Statistical Manual of Mental Di",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-p-6623",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6623,
+      "sentence": "Additionally, we employed the node-splitting method to test for consistency between direct and indirect evidence within the network, with a p < 0.05 indicating significant inconsistency.",
+      "context_window": "een direct and indirect evidence within the network, with a p < 0.05 indicating significant inconsistency. The quality assessmen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-6833",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6833,
+      "sentence": "The statistical effect size was represented by the Mean Difference (MD), accompanied by a 95% Confidence Interval (CI).",
+      "context_window": "s represented by the Mean Difference (MD), accompanied by a 95% Confidence Interval (CI). The Surface Under the Cumulative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3079",
+      "claim_type": "percentage",
+      "raw_text": "92.2%",
+      "numeric_values": [
+        92.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3079,
+      "sentence": "Electroacupuncture showed the best performance with a SUCRA value of 92.2%, indicating its significant advantage in alleviating insomnia.",
+      "context_window": "upuncture showed the best performance with a SUCRA value of 92.2%, indicating its significant advantage in alleviating insomn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3215",
+      "claim_type": "percentage",
+      "raw_text": "64.1%",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3215,
+      "sentence": "This was followed by PCBT-I and MBCT with SUCRA values of 78.4 and 64.1%, respectively, suggesting their efficacy in treating insomnia.",
+      "context_window": "s followed by PCBT-I and MBCT with SUCRA values of 78.4 and 64.1%, respectively, suggesting their efficacy in treating insomn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3342",
+      "claim_type": "percentage",
+      "raw_text": "55.2%",
+      "numeric_values": [
+        55.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3342,
+      "sentence": "Traditional CBT-I and VCBT-I had SUCRA values of 55.9 and 55.2%, respectively, which, although high, were slightly lower compared to the methods.",
+      "context_window": ". Traditional CBT-I and VCBT-I had SUCRA values of 55.9 and 55.2%, respectively, which, although high, were slightly lower co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3551",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3551,
+      "sentence": "Conversely, Exercise interventions and the Control group showed relatively lower efficacy, with SUCRA values of 24.0 and 16.1%, respectively.",
+      "context_window": "ed relatively lower efficacy, with SUCRA values of 24.0 and 16.1%, respectively. Similarly, when using the PSQI as the outcom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3686",
+      "claim_type": "percentage",
+      "raw_text": "92.2%",
+      "numeric_values": [
+        92.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3686,
+      "sentence": "Similarly, when using the PSQI as the outcome measure for SUCRA analysis, MT ranked highest with a SUCRA value of 92.2%, demonstrating its superior efficacy in improving sleep quality.",
+      "context_window": "for SUCRA analysis, MT ranked highest with a SUCRA value of 92.2%, demonstrating its superior efficacy in improving sleep qua",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3834",
+      "claim_type": "percentage",
+      "raw_text": "64.1%",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3834,
+      "sentence": "PCBT-I and Electroacupuncture followed closely with SUCRA values of 78.4 and 64.1%, respectively.",
+      "context_window": "oacupuncture followed closely with SUCRA values of 78.4 and 64.1%, respectively. MBSR and CBT-I also showed efficacy in enhan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-3948",
+      "claim_type": "percentage",
+      "raw_text": "55.2%",
+      "numeric_values": [
+        55.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3948,
+      "sentence": "MBSR and CBT-I also showed efficacy in enhancing sleep quality with SUCRA values of 55.9 and 55.2%, respectively.",
+      "context_window": "cy in enhancing sleep quality with SUCRA values of 55.9 and 55.2%, respectively. VCBT-I and the Control group had more limite",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-4054",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4054,
+      "sentence": "VCBT-I and the Control group had more limited effects, with SUCRA values of 24.0 and 16.1% ( Tables 2 , 3 and Supplementary Figures S5, S6 ).",
+      "context_window": "oup had more limited effects, with SUCRA values of 24.0 and 16.1% ( Tables 2 , 3 and Supplementary Figures S5, S6 ). Compara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-4620",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4620,
+      "sentence": "The potential impact indicators were represented with a 95% CI, with Electroacupuncture showing (MD = -7.80, CI: -14.45, -1.15), as seen in Table 2 .",
+      "context_window": "SR. The potential impact indicators were represented with a 95% CI, with Electroacupuncture showing (MD = -7.80, CI: -14.45",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11449704_efficacy_of_non_pharmacological_interventions_on_sleep_quali-pct-2461",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2461,
+      "sentence": "Additionally, about 59% of National Cancer Institutes (NCI) have incorporated acupuncture into their cancer treatment management programs ( 33-35 ), indicating widespread recognition of its efficacy.",
+      "context_window": "cancer patients have used acupuncture. Additionally, about 59% of National Cancer Institutes (NCI) have incorporated acupu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

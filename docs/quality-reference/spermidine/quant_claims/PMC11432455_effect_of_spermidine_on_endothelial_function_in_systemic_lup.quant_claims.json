@@ -1,0 +1,1821 @@
+{
+  "paper_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup",
+  "doi": "10.3390/ijms25189920",
+  "extracted_at": "2026-05-08T20:12:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 28,
+    "sample_size": 6,
+    "percentage": 23,
+    "p_value": 18,
+    "mean_sd": 24
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 680,
+      "sentence": "To address this gap, 9-week-old female lupus-prone (MRL/lpr) and healthy control (MRL/MpJ) mice were randomly assigned to spermidine treatment (lpr_Spermidine and MpJ_Spermidine) for 8 weeks or as control (lpr_Control and MpJ_Control). lpr_Control mice exhibited impaired endothelial function (e.g., decreased relaxation to acetylcholine), increased markers of inflammation, and lower protein content of parkin, a mitophagy marker, in the thoracic aorta.",
+      "context_window": "permidine treatment (lpr_Spermidine and MpJ_Spermidine) for 8 weeks or as control (lpr_Control and MpJ_Control). lpr_Control mi",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-n-298",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 298,
+      "sentence": "Female mice from strains MRL/lpr and MRL/MpJ (n = 30/strain) were purchased from Jackson Laboratories (Bar Harbor, ME, USA) and housed in the animal facility at Texas Tech University.",
+      "context_window": "guidelines. Female mice from strains MRL/lpr and MRL/MpJ (n = 30/strain) were purchased from Jackson Laboratories (Bar Harbo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-613",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 613,
+      "sentence": "All mice were received at 6 weeks of age and were allowed to acclimate for 1-2 weeks prior to use.",
+      "context_window": "compared with males [ 58 , 59 ]. All mice were received at 6 weeks of age and were allowed to acclimate for 1-2 weeks prior to",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-664",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 664,
+      "sentence": "All mice were received at 6 weeks of age and were allowed to acclimate for 1-2 weeks prior to use.",
+      "context_window": "eived at 6 weeks of age and were allowed to acclimate for 1-2 weeks prior to use. Five or six mice were housed per cage and wer",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-958",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 958,
+      "sentence": "At 8 weeks old, mice were randomly separated into two groups-treatment or control.",
+      "context_window": "tandardize Laboratory Rodent Diet) and water ad libitum. At 8 weeks old, mice were randomly separated into two groups-treatment",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1114",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1114,
+      "sentence": "The treatment group received spermidine added to their drinking water for 6-8 weeks.",
+      "context_window": "oup received spermidine added to their drinking water for 6-8 weeks. The control group received normal water. At 16 weeks of ag",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1167",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1167,
+      "sentence": "At 16 weeks of age, the mice were weighed and anesthetized by intraperitoneal injection of a cocktail of ketamine (80 mg/kg) and xylazine (5 mg/kg).",
+      "context_window": "for 6-8 weeks. The control group received normal water. At 16 weeks of age, the mice were weighed and anesthetized by intraperi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1279",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1279,
+      "sentence": "At 16 weeks of age, the mice were weighed and anesthetized by intraperitoneal injection of a cocktail of ketamine (80 mg/kg) and xylazine (5 mg/kg).",
+      "context_window": "zed by intraperitoneal injection of a cocktail of ketamine (80 mg/kg) and xylazine (5 mg/kg). Serum samples were collected by",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1303",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1303,
+      "sentence": "At 16 weeks of age, the mice were weighed and anesthetized by intraperitoneal injection of a cocktail of ketamine (80 mg/kg) and xylazine (5 mg/kg).",
+      "context_window": "njection of a cocktail of ketamine (80 mg/kg) and xylazine (5 mg/kg). Serum samples were collected by cardiac puncture. The",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1936",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1936,
+      "sentence": "Water was replaced every 3-4 days and SPD was freshly added from a 1 M SPD aqueous stock solution (pH 7.4), which was kept at -20 \u00b0C for no longer than one month.",
+      "context_window": "t a final concentration of 3 mM. Water was replaced every 3-4 days and SPD was freshly added from a 1 M SPD aqueous stock solu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2122",
+      "claim_type": "unit_value",
+      "raw_text": "3.14 mL",
+      "numeric_values": [
+        3.14
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2122,
+      "sentence": "The 1 M SPD stock solution was prepared by adding 3.14 mL of SPD to a final volume of 20 mL of H 2 O, adjusting the pH to 7.4.",
+      "context_window": "ne month. The 1 M SPD stock solution was prepared by adding 3.14 mL of SPD to a final volume of 20 mL of H 2 O, adjusting the p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2158",
+      "claim_type": "unit_value",
+      "raw_text": "20 mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2158,
+      "sentence": "The 1 M SPD stock solution was prepared by adding 3.14 mL of SPD to a final volume of 20 mL of H 2 O, adjusting the pH to 7.4.",
+      "context_window": "was prepared by adding 3.14 mL of SPD to a final volume of 20 mL of H 2 O, adjusting the pH to 7.4. Control mice were given",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2534",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/dL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2534,
+      "sentence": "Urinary protein excretion was analyzed semi-quantitatively as grade 0 (negative), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a colorimetric assay (Albustix, Siemens Healthcare, Tarrytown, NY, USA) according to the manufacturer\u2019s recommendations.",
+      "context_window": "lyzed semi-quantitatively as grade 0 (negative), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2556",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2556,
+      "sentence": "Urinary protein excretion was analyzed semi-quantitatively as grade 0 (negative), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a colorimetric assay (Albustix, Siemens Healthcare, Tarrytown, NY, USA) according to the manufacturer\u2019s recommendations.",
+      "context_window": "ely as grade 0 (negative), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2579",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2579,
+      "sentence": "Urinary protein excretion was analyzed semi-quantitatively as grade 0 (negative), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a colorimetric assay (Albustix, Siemens Healthcare, Tarrytown, NY, USA) according to the manufacturer\u2019s recommendations.",
+      "context_window": "e), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a colorimetric assay (Al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2606",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg/dL",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2606,
+      "sentence": "Urinary protein excretion was analyzed semi-quantitatively as grade 0 (negative), grade 1+ (<30 mg/dL), grade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a colorimetric assay (Albustix, Siemens Healthcare, Tarrytown, NY, USA) according to the manufacturer\u2019s recommendations.",
+      "context_window": "rade 2+ (<100 mg/dL), grade 3+ (<300 mg/dL), and grade 4+ (<2000 mg/dL) using a colorimetric assay (Albustix, Siemens Healthcare,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-2764",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2764,
+      "sentence": "Urine samples with 300 mg/dL or more were defined as proteinuria.",
+      "context_window": "g to the manufacturer\u2019s recommendations. Urine samples with 300 mg/dL or more were defined as proteinuria. Thoracic aortas (TAs)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-3157",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3157,
+      "sentence": "Vessels were cut into 2 mm ring segments of equal length, and each ring segment was suspended in an organ chamber of a 620 M Multi Chamber Myograph System (Danish Myo Technology, Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline solution and allowed to equilibrate at 37 \u00b0C for at least 30 min.",
+      "context_window": "and 5.5 glucose), under a microscope. Vessels were cut into 2 mm ring segments of equal length, and each ring segment was su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-3343",
+      "claim_type": "unit_value",
+      "raw_text": "8 mL",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3343,
+      "sentence": "Vessels were cut into 2 mm ring segments of equal length, and each ring segment was suspended in an organ chamber of a 620 M Multi Chamber Myograph System (Danish Myo Technology, Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline solution and allowed to equilibrate at 37 \u00b0C for at least 30 min.",
+      "context_window": "System (Danish Myo Technology, Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline sol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3363",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3363,
+      "sentence": "Vessels were cut into 2 mm ring segments of equal length, and each ring segment was suspended in an organ chamber of a 620 M Multi Chamber Myograph System (Danish Myo Technology, Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline solution and allowed to equilibrate at 37 \u00b0C for at least 30 min.",
+      "context_window": "echnology, Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline solution and allowed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3373",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3373,
+      "sentence": "Vessels were cut into 2 mm ring segments of equal length, and each ring segment was suspended in an organ chamber of a 620 M Multi Chamber Myograph System (Danish Myo Technology, Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline solution and allowed to equilibrate at 37 \u00b0C for at least 30 min.",
+      "context_window": "Aarhus, Denmark) filled with 8 mL of oxygenated (95% O 2 , 5% CO 2 ) physiological saline solution and allowed to equilib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-3714",
+      "claim_type": "unit_value",
+      "raw_text": "100 mmHg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 3714,
+      "sentence": "Aortic ring segments were passively stretched in an incremental manner until the calculated transmural pressure reached 13.3 kPa (100 mmHg).",
+      "context_window": "until the calculated transmural pressure reached 13.3 kPa (100 mmHg). Resting tension was set to an internal circumference of a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3795",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3795,
+      "sentence": "Resting tension was set to an internal circumference of approximately 90% of that at 13.3 kPa.",
+      "context_window": "nsion was set to an internal circumference of approximately 90% of that at 13.3 kPa. Two aortic rings from each mouse were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-4726",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4726,
+      "sentence": "Concentration-response curves to ACh and SNP were generated after each ring was pre-contracted to 70% of their maximum with PE.",
+      "context_window": "nd SNP were generated after each ring was pre-contracted to 70% of their maximum with PE. Percent contraction responses wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-5395",
+      "claim_type": "unit_value",
+      "raw_text": "25 mmol",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5395,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "es were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-5422",
+      "claim_type": "unit_value",
+      "raw_text": "150 mmol",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5422,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% No",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-5439",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5439,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-5485",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5485,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-5619",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5619,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "ce, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L Na",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-5643",
+      "claim_type": "unit_value",
+      "raw_text": "20 mmol",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5643,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "nd a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-5673",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5673,
+      "sentence": "Tissue lysates were harvested in lysis buffer containing the following: 25 mmol/L Tris-HCl pH 7.5, 150 mmol/L NaCl, 0.1% ( v / v ) sodium dodecyl sulphate (SDS), 1% Nonidet-P40 (NP-40), a protease inhibitor cocktail (Roche Applied Science, Barcelona, Spain), and a mix of phosphatase inhibitors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St.",
+      "context_window": "tors (1 mmol/L orthovanadate, 20 mmol/L \u03b2-glycerophosphate, 10 mmol/L NaF from Sigma-Aldrich, St. Louis, MO, USA). Protein cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-5948",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5948,
+      "sentence": "Lysates (15-25 \u03bcg per lane) were separated by 4-20% mini-protean TGX precast gels and transferred to polyvinylidene difluoride (PVDF) membranes (Bio-Rad Laboratories, Hercules, CA, USA).",
+      "context_window": "s standard. Lysates (15-25 \u03bcg per lane) were separated by 4-20% mini-protean TGX precast gels and transferred to polyvinyli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-6308",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6308,
+      "sentence": "After destaining the membranes, the membranes were blocked with 5% non-fat dry milk in tris buffer solution (TBS) for 1 h at room temperature.",
+      "context_window": "r destaining the membranes, the membranes were blocked with 5% non-fat dry milk in tris buffer solution (TBS) for 1 h at r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-9045",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9045,
+      "sentence": "An a priori power analysis was conducted using G*Power to detect significant differences ( p < 0.05, 1 - \u03b2 = 80%) in responses to ACh (1) between lpr and MpJ strains; and (2) between the lpr treatment and control groups.",
+      "context_window": "conducted using G*Power to detect significant differences ( p < 0.05, 1 - \u03b2 = 80%) in responses to ACh (1) between lpr and MpJ s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-9063",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9063,
+      "sentence": "An a priori power analysis was conducted using G*Power to detect significant differences ( p < 0.05, 1 - \u03b2 = 80%) in responses to ACh (1) between lpr and MpJ strains; and (2) between the lpr treatment and control groups.",
+      "context_window": "Power to detect significant differences ( p < 0.05, 1 - \u03b2 = 80%) in responses to ACh (1) between lpr and MpJ strains; and (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-n-9221",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9221,
+      "sentence": "Based on preliminary data and the literature, n = 4 mice/strain are needed to detect a 30% difference between MRL/lpr and MRL/MpJ, and n = 13 mice/group are needed to detect a 15% difference between the treatment and control groups.",
+      "context_window": "ntrol groups. Based on preliminary data and the literature, n = 4 mice/strain are needed to detect a 30% difference between M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-9262",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9262,
+      "sentence": "Based on preliminary data and the literature, n = 4 mice/strain are needed to detect a 30% difference between MRL/lpr and MRL/MpJ, and n = 13 mice/group are needed to detect a 15% difference between the treatment and control groups.",
+      "context_window": "nd the literature, n = 4 mice/strain are needed to detect a 30% difference between MRL/lpr and MRL/MpJ, and n = 13 mice/gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-n-9310",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9310,
+      "sentence": "Based on preliminary data and the literature, n = 4 mice/strain are needed to detect a 30% difference between MRL/lpr and MRL/MpJ, and n = 13 mice/group are needed to detect a 15% difference between the treatment and control groups.",
+      "context_window": "to detect a 30% difference between MRL/lpr and MRL/MpJ, and n = 13 mice/group are needed to detect a 15% difference between th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-9351",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9351,
+      "sentence": "Based on preliminary data and the literature, n = 4 mice/strain are needed to detect a 30% difference between MRL/lpr and MRL/MpJ, and n = 13 mice/group are needed to detect a 15% difference between the treatment and control groups.",
+      "context_window": "r and MRL/MpJ, and n = 13 mice/group are needed to detect a 15% difference between the treatment and control groups. Concen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-9894",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9894,
+      "sentence": "Outliers were detected using the ROUT method (Q = 1%) and removed if identified.",
+      "context_window": "reatment. Outliers were detected using the ROUT method (Q = 1%) and removed if identified. All statistics were performed u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-10082",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10082,
+      "sentence": "Statistical significance was set at p < 0.05.",
+      "context_window": "6 (SAS, Cary, NC, USA). Statistical significance was set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-162",
+      "claim_type": "unit_value",
+      "raw_text": "9 weeks",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 162,
+      "sentence": "To assess if spermidine treatment can prevent the development of SLE phenotypes, both MRL/lpr and MRL/MpJ mice received spermidine via drinking water starting at 9 weeks of age when they had no overt lupus manifestations ( Table 1 ).",
+      "context_window": "MpJ mice received spermidine via drinking water starting at 9 weeks of age when they had no overt lupus manifestations ( Table",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-240",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 240,
+      "sentence": "After 8 weeks of spermidine treatment, no significant difference was found in body weight or heart weight-to-body weight (HW/BW) across the groups ( Table 1 ).",
+      "context_window": "n they had no overt lupus manifestations ( Table 1 ). After 8 weeks of spermidine treatment, no significant difference was foun",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "spermidine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-560",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 560,
+      "sentence": "The spleen was significantly longer in the lpr_Control mice compared to the healthy MpJ_Control mice ( p < 0.0001).",
+      "context_window": "lpr_Control mice compared to the healthy MpJ_Control mice ( p < 0.0001). Spleen weight was also significantly greater in the lpr_C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-727",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 727,
+      "sentence": "Spleen weight was also significantly greater in the lpr_Control mice compared with the MpJ_Control mice when expressed in absolute values (e.g., in mg) ( p < 0.0001) or relative to body weight (SW/BW, p < 0.0001) ( Table 1 ).",
+      "context_window": "trol mice when expressed in absolute values (e.g., in mg) ( p < 0.0001) or relative to body weight (SW/BW, p < 0.0001) ( Table 1 )",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-774",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 774,
+      "sentence": "Spleen weight was also significantly greater in the lpr_Control mice compared with the MpJ_Control mice when expressed in absolute values (e.g., in mg) ( p < 0.0001) or relative to body weight (SW/BW, p < 0.0001) ( Table 1 ).",
+      "context_window": "g., in mg) ( p < 0.0001) or relative to body weight (SW/BW, p < 0.0001) ( Table 1 ). The result indicates that SLE mice develop sp",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1247",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1247,
+      "sentence": "The number of mice with urinary protein over 300 mg/dL was six in the lpr_Control mice, while the number was reduced to three in the lpr_Spermidine group.",
+      "context_window": "inflammation. The number of mice with urinary protein over 300 mg/dL was six in the lpr_Control mice, while the number was reduc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-u-1375",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1375,
+      "sentence": "No mouse had over 300 mg/dL of urinary protein in either the MpJ_control or MpJ_Spermidine groups.",
+      "context_window": "ced to three in the lpr_Spermidine group. No mouse had over 300 mg/dL of urinary protein in either the MpJ_control or MpJ_Spermid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-1597",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1597,
+      "sentence": "The serum levels of anti-cardiolipin antibodies from lpr_Control were significantly higher than the serum antibody level from MpJ_Control ( p < 0.0001) ( Table 1 ).",
+      "context_window": "tly higher than the serum antibody level from MpJ_Control ( p < 0.0001) ( Table 1 ). The serum anti-dsDNA level was significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-1722",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1722,
+      "sentence": "The serum anti-dsDNA level was significantly higher in lpr_Control when compared with MpJ_Control ( p = 0.007), which is consistent with the result of the anti-cardiolipin antibodies.",
+      "context_window": "ntly higher in lpr_Control when compared with MpJ_Control ( p = 0.007), which is consistent with the result of the anti-cardiolip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-2080",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0022",
+      "numeric_values": [
+        0.0022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2080,
+      "sentence": "SLE phenotypes were significantly correlated with the anti-cardiolipin antibodies, with correlation coefficients from 0.62 to 0.87, p = 0.0022 to <0.0001 ( Table 2 ).",
+      "context_window": "ntibodies, with correlation coefficients from 0.62 to 0.87, p = 0.0022 to <0.0001 ( Table 2 ). They were also significantly correl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-2210",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0013",
+      "numeric_values": [
+        0.0013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2210,
+      "sentence": "They were also significantly correlated with the anti-dsDNA antibody levels (r = 0.43 to 0.64, p = 0.0013 to 0.038).",
+      "context_window": "ated with the anti-dsDNA antibody levels (r = 0.43 to 0.64, p = 0.0013 to 0.038). Body weight and heart weight-to-body weight (HW/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-2661",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2661,
+      "sentence": "Thoracic aortas from each group were contracted to 70% of their maximum and were given increasing concentrations of ACh to assess their endothelial function.",
+      "context_window": "rmidine. Thoracic aortas from each group were contracted to 70% of their maximum and were given increasing concentrations o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-2995",
+      "claim_type": "mean_sd",
+      "raw_text": "67.1 \u00b1 8.7",
+      "numeric_values": [
+        67.1,
+        8.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2995,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "esponses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3002",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3002,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "s to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-n-3008",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3008,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "Ch were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-3041",
+      "claim_type": "mean_sd",
+      "raw_text": "90.3 \u00b1 3.1",
+      "numeric_values": [
+        90.3,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3041,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3048",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3048,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "ntrol (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had imp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-n-3054",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3054,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "(67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired en",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-3064",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3064,
+      "sentence": "Maximal responses to ACh were significantly impaired in lpr_Control (67.1 \u00b1 8.7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial function.",
+      "context_window": "7%, n = 11) compared to MpJ_Control (90.3 \u00b1 3.1%, n = 13) ( p = 0.01), demonstrating that lupus mice had impaired endothelial fu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-3223",
+      "claim_type": "mean_sd",
+      "raw_text": "90.3 \u00b1 2.8",
+      "numeric_values": [
+        90.3,
+        2.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3223,
+      "sentence": "Spermidine improved endothelial function in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03).",
+      "context_window": "othelial function in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03). Maximal resp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3230",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3230,
+      "sentence": "Spermidine improved endothelial function in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03).",
+      "context_window": "l function in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03). Maximal respo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-n-3236",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3236,
+      "sentence": "Spermidine improved endothelial function in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03).",
+      "context_window": "tion in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03). Maximal responses to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-3270",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3270,
+      "sentence": "Spermidine improved endothelial function in the thoracic aortas of lpr_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03).",
+      "context_window": "_Spermidine (90.3 \u00b1 2.8%, n = 13) compared to lpr_Control ( p = 0.03). Maximal responses to SNP were not significantly different",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-3867",
+      "claim_type": "mean_sd",
+      "raw_text": "0.45 \u00b1 0.09",
+      "numeric_values": [
+        0.45,
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3867,
+      "sentence": "Phosphorylation of eNOS at ser 1177 in the aorta from lpr_Control (0.45 \u00b1 0.09 a.u.) relative to the total eNOS was approximately 50% lower than the aortas from MpJ_Control (1.00 \u00b1 0.16 a.u.) ( Figure 2 A,D), suggesting the potential mechanism of endothelial dysfunction in SLE.",
+      "context_window": "rylation of eNOS at ser 1177 in the aorta from lpr_Control (0.45 \u00b1 0.09 a.u.) relative to the total eNOS was approximately 50% lowe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-3930",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3930,
+      "sentence": "Phosphorylation of eNOS at ser 1177 in the aorta from lpr_Control (0.45 \u00b1 0.09 a.u.) relative to the total eNOS was approximately 50% lower than the aortas from MpJ_Control (1.00 \u00b1 0.16 a.u.) ( Figure 2 A,D), suggesting the potential mechanism of endothelial dysfunction in SLE.",
+      "context_window": "5 \u00b1 0.09 a.u.) relative to the total eNOS was approximately 50% lower than the aortas from MpJ_Control (1.00 \u00b1 0.16 a.u.) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-3974",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.16",
+      "numeric_values": [
+        1.0,
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3974,
+      "sentence": "Phosphorylation of eNOS at ser 1177 in the aorta from lpr_Control (0.45 \u00b1 0.09 a.u.) relative to the total eNOS was approximately 50% lower than the aortas from MpJ_Control (1.00 \u00b1 0.16 a.u.) ( Figure 2 A,D), suggesting the potential mechanism of endothelial dysfunction in SLE.",
+      "context_window": "s approximately 50% lower than the aortas from MpJ_Control (1.00 \u00b1 0.16 a.u.) ( Figure 2 A,D), suggesting the potential mechanism o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-4307",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4307,
+      "sentence": "Relative gene expression of Nos3 was 35% lower in lpr_Control (0.65 \u00b1 0.07 a.u.) than in MpJ_Control (1.00 \u00b1 0.07 a.u.), which was consistent with the differences shown in the eNOS phosphorylation in the thoracic aortas.",
+      "context_window": "groups ( Figure 2 C). Relative gene expression of Nos3 was 35% lower in lpr_Control (0.65 \u00b1 0.07 a.u.) than in MpJ_Control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-4333",
+      "claim_type": "mean_sd",
+      "raw_text": "0.65 \u00b1 0.07",
+      "numeric_values": [
+        0.65,
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4333,
+      "sentence": "Relative gene expression of Nos3 was 35% lower in lpr_Control (0.65 \u00b1 0.07 a.u.) than in MpJ_Control (1.00 \u00b1 0.07 a.u.), which was consistent with the differences shown in the eNOS phosphorylation in the thoracic aortas.",
+      "context_window": "ative gene expression of Nos3 was 35% lower in lpr_Control (0.65 \u00b1 0.07 a.u.) than in MpJ_Control (1.00 \u00b1 0.07 a.u.), which was con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-4372",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.07",
+      "numeric_values": [
+        1.0,
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4372,
+      "sentence": "Relative gene expression of Nos3 was 35% lower in lpr_Control (0.65 \u00b1 0.07 a.u.) than in MpJ_Control (1.00 \u00b1 0.07 a.u.), which was consistent with the differences shown in the eNOS phosphorylation in the thoracic aortas.",
+      "context_window": "ower in lpr_Control (0.65 \u00b1 0.07 a.u.) than in MpJ_Control (1.00 \u00b1 0.07 a.u.), which was consistent with the differences shown in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-4597",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4597,
+      "sentence": "Maximal vasorelaxation responses to ACh were negatively correlated with anti-dsDNA antibodies (r: -0.71, p = 0.0003) ( Figure 3 ).",
+      "context_window": "negatively correlated with anti-dsDNA antibodies (r: -0.71, p = 0.0003) ( Figure 3 ). The correlation between maximal vasorelaxati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-5528",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5528,
+      "sentence": "Parkin protein expression from the thoracic aorta was 62% lower in lpr_Control (0.38 \u00b1 0.34 a.u.) compared to MpJ_Control (1.00 \u00b1 0.05 a.u.), suggesting a potential impaired mitophagy in the aortas of SLE mice ( Figure 4 A,E).",
+      "context_window": "e 4 . Parkin protein expression from the thoracic aorta was 62% lower in lpr_Control (0.38 \u00b1 0.34 a.u.) compared to MpJ_Con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-5554",
+      "claim_type": "mean_sd",
+      "raw_text": "0.38 \u00b1 0.34",
+      "numeric_values": [
+        0.38,
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5554,
+      "sentence": "Parkin protein expression from the thoracic aorta was 62% lower in lpr_Control (0.38 \u00b1 0.34 a.u.) compared to MpJ_Control (1.00 \u00b1 0.05 a.u.), suggesting a potential impaired mitophagy in the aortas of SLE mice ( Figure 4 A,E).",
+      "context_window": "ssion from the thoracic aorta was 62% lower in lpr_Control (0.38 \u00b1 0.34 a.u.) compared to MpJ_Control (1.00 \u00b1 0.05 a.u.), suggestin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-5597",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.05",
+      "numeric_values": [
+        1.0,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5597,
+      "sentence": "Parkin protein expression from the thoracic aorta was 62% lower in lpr_Control (0.38 \u00b1 0.34 a.u.) compared to MpJ_Control (1.00 \u00b1 0.05 a.u.), suggesting a potential impaired mitophagy in the aortas of SLE mice ( Figure 4 A,E).",
+      "context_window": "in lpr_Control (0.38 \u00b1 0.34 a.u.) compared to MpJ_Control (1.00 \u00b1 0.05 a.u.), suggesting a potential impaired mitophagy in the aor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-5787",
+      "claim_type": "mean_sd",
+      "raw_text": "0.50 \u00b1 0.11",
+      "numeric_values": [
+        0.5,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5787,
+      "sentence": "The protein level of parkin was significantly lower in the liver of lpr_Control mice (0.50 \u00b1 0.11 a.u.) compared to healthy control mice, MpJ_Control (1.00 \u00b1 0.03 a.u., p = 0.005) ( Figure 4 B,E).",
+      "context_window": "n was significantly lower in the liver of lpr_Control mice (0.50 \u00b1 0.11 a.u.) compared to healthy control mice, MpJ_Control (1.00 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-5852",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.03",
+      "numeric_values": [
+        1.0,
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5852,
+      "sentence": "The protein level of parkin was significantly lower in the liver of lpr_Control mice (0.50 \u00b1 0.11 a.u.) compared to healthy control mice, MpJ_Control (1.00 \u00b1 0.03 a.u., p = 0.005) ( Figure 4 B,E).",
+      "context_window": "\u00b1 0.11 a.u.) compared to healthy control mice, MpJ_Control (1.00 \u00b1 0.03 a.u., p = 0.005) ( Figure 4 B,E). Although the protein leve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-5870",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5870,
+      "sentence": "The protein level of parkin was significantly lower in the liver of lpr_Control mice (0.50 \u00b1 0.11 a.u.) compared to healthy control mice, MpJ_Control (1.00 \u00b1 0.03 a.u., p = 0.005) ( Figure 4 B,E).",
+      "context_window": "red to healthy control mice, MpJ_Control (1.00 \u00b1 0.03 a.u., p = 0.005) ( Figure 4 B,E). Although the protein levels of parkin in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-5972",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5972,
+      "sentence": "Although the protein levels of parkin in the aorta increased by more than 50% after the spermidine treatment, the treatment did not have a significant impact on the parkin levels in either the aorta or liver of lupus mice.",
+      "context_window": "rotein levels of parkin in the aorta increased by more than 50% after the spermidine treatment, the treatment did not have",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-6623",
+      "claim_type": "mean_sd",
+      "raw_text": "0.33 \u00b1 0.07",
+      "numeric_values": [
+        0.33,
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6623,
+      "sentence": "LC3II/LC3I was significantly lower in lpr_Spermidine (0.33 \u00b1 0.07 a.u.) compared to the lpr_Control group (2.53 \u00b1 0.99 a.u.), which would suggest that spermidine may have increased the mitophagic influx, thus reducing the amount of LC3II/I remaining.",
+      "context_window": "trol. LC3II/LC3I was significantly lower in lpr_Spermidine (0.33 \u00b1 0.07 a.u.) compared to the lpr_Control group (2.53 \u00b1 0.99 a.u.),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-6676",
+      "claim_type": "mean_sd",
+      "raw_text": "2.53 \u00b1 0.99",
+      "numeric_values": [
+        2.53,
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6676,
+      "sentence": "LC3II/LC3I was significantly lower in lpr_Spermidine (0.33 \u00b1 0.07 a.u.) compared to the lpr_Control group (2.53 \u00b1 0.99 a.u.), which would suggest that spermidine may have increased the mitophagic influx, thus reducing the amount of LC3II/I remaining.",
+      "context_window": "idine (0.33 \u00b1 0.07 a.u.) compared to the lpr_Control group (2.53 \u00b1 0.99 a.u.), which would suggest that spermidine may have increas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7066",
+      "claim_type": "mean_sd",
+      "raw_text": "6.55 \u00b1 1.88",
+      "numeric_values": [
+        6.55,
+        1.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7066,
+      "sentence": "The protein level of Vcam1 from the thoracic aorta was significantly higher in the lupus-prone mice (lpr_Control, 6.55 \u00b1 1.88 a.u., p = 0.003) when compared to the healthy control mice (MpJ_Control) (1.00 \u00b1 0.11 a.u.) ( Figure 5 A,C).",
+      "context_window": "significantly higher in the lupus-prone mice (lpr_Control, 6.55 \u00b1 1.88 a.u., p = 0.003) when compared to the healthy control mice",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-7084",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7084,
+      "sentence": "The protein level of Vcam1 from the thoracic aorta was significantly higher in the lupus-prone mice (lpr_Control, 6.55 \u00b1 1.88 a.u., p = 0.003) when compared to the healthy control mice (MpJ_Control) (1.00 \u00b1 0.11 a.u.) ( Figure 5 A,C).",
+      "context_window": "her in the lupus-prone mice (lpr_Control, 6.55 \u00b1 1.88 a.u., p = 0.003) when compared to the healthy control mice (MpJ_Control) (1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7152",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.11",
+      "numeric_values": [
+        1.0,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7152,
+      "sentence": "The protein level of Vcam1 from the thoracic aorta was significantly higher in the lupus-prone mice (lpr_Control, 6.55 \u00b1 1.88 a.u., p = 0.003) when compared to the healthy control mice (MpJ_Control) (1.00 \u00b1 0.11 a.u.) ( Figure 5 A,C).",
+      "context_window": "3) when compared to the healthy control mice (MpJ_Control) (1.00 \u00b1 0.11 a.u.) ( Figure 5 A,C). The protein content of Vcam1 in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-7242",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7242,
+      "sentence": "The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of spermidine on SLE. mRNA expression of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "context_window": ",C). The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7296",
+      "claim_type": "mean_sd",
+      "raw_text": "3.38 \u00b1 0.50",
+      "numeric_values": [
+        3.38,
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7296,
+      "sentence": "The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of spermidine on SLE. mRNA expression of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "context_window": "a was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-7314",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7314,
+      "sentence": "The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of spermidine on SLE. mRNA expression of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "context_window": "n lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of sper",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7468",
+      "claim_type": "mean_sd",
+      "raw_text": "1.48 \u00b1 0.45",
+      "numeric_values": [
+        1.48,
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7468,
+      "sentence": "The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of spermidine on SLE. mRNA expression of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "context_window": "sion of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Sp",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7511",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.11",
+      "numeric_values": [
+        1.0,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7511,
+      "sentence": "The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of spermidine on SLE. mRNA expression of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "context_window": "in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7549",
+      "claim_type": "mean_sd",
+      "raw_text": "0.95 \u00b1 0.08",
+      "numeric_values": [
+        0.95,
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7549,
+      "sentence": "The protein content of Vcam1 in the thoracic aorta was 49% higher in lpr_Control compared to lpr_Spermidine (3.38 \u00b1 0.50 a.u., p = 0.08), suggesting the potential anti-inflammatory effect of spermidine on SLE. mRNA expression of Vcam1 in abdominal aorta was higher in lpr_Control (1.48 \u00b1 0.45 a.u.) compared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B).",
+      "context_window": "pared to MpJ_Control (1.00 \u00b1 0.11 a.u.) and lpr_Spermidine (0.95 \u00b1 0.08 a.u.) ( Figure 5 B). The protective effect of spermidine r",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-7941",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7941,
+      "sentence": "Statistically, there were no differences between the Irf1 levels in the spleen samples from the lupus-treated and untreated groups, but Irf1 was 50% lower in the spleen from lpr_Spermidine (0.82 \u00b1 0.56 a.u.) compared to the spleen from lpr_Control (1.79 \u00b1 0.32 a.u.) ( Figure 6 A).",
+      "context_window": "s from the lupus-treated and untreated groups, but Irf1 was 50% lower in the spleen from lpr_Spermidine (0.82 \u00b1 0.56 a.u.)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-7986",
+      "claim_type": "mean_sd",
+      "raw_text": "0.82 \u00b1 0.56",
+      "numeric_values": [
+        0.82,
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7986,
+      "sentence": "Statistically, there were no differences between the Irf1 levels in the spleen samples from the lupus-treated and untreated groups, but Irf1 was 50% lower in the spleen from lpr_Spermidine (0.82 \u00b1 0.56 a.u.) compared to the spleen from lpr_Control (1.79 \u00b1 0.32 a.u.) ( Figure 6 A).",
+      "context_window": ", but Irf1 was 50% lower in the spleen from lpr_Spermidine (0.82 \u00b1 0.56 a.u.) compared to the spleen from lpr_Control (1.79 \u00b1 0.32",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-8045",
+      "claim_type": "mean_sd",
+      "raw_text": "1.79 \u00b1 0.32",
+      "numeric_values": [
+        1.79,
+        0.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8045,
+      "sentence": "Statistically, there were no differences between the Irf1 levels in the spleen samples from the lupus-treated and untreated groups, but Irf1 was 50% lower in the spleen from lpr_Spermidine (0.82 \u00b1 0.56 a.u.) compared to the spleen from lpr_Control (1.79 \u00b1 0.32 a.u.) ( Figure 6 A).",
+      "context_window": "(0.82 \u00b1 0.56 a.u.) compared to the spleen from lpr_Control (1.79 \u00b1 0.32 a.u.) ( Figure 6 A). The liver from the lpr_Control group e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-8168",
+      "claim_type": "mean_sd",
+      "raw_text": "2.25 \u00b1 0.34",
+      "numeric_values": [
+        2.25,
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8168,
+      "sentence": "The liver from the lpr_Control group expressed a significantly higher level of Irf1 mRNA (2.25 \u00b1 0.34 a.u.) compared to the healthy control group, MpJ_Control (1.00 \u00b1 0.06 a.u.) ( p = 0.002) ( Figure 6 B).",
+      "context_window": "group expressed a significantly higher level of Irf1 mRNA (2.25 \u00b1 0.34 a.u.) compared to the healthy control group, MpJ_Control (1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-8238",
+      "claim_type": "mean_sd",
+      "raw_text": "1.00 \u00b1 0.06",
+      "numeric_values": [
+        1.0,
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8238,
+      "sentence": "The liver from the lpr_Control group expressed a significantly higher level of Irf1 mRNA (2.25 \u00b1 0.34 a.u.) compared to the healthy control group, MpJ_Control (1.00 \u00b1 0.06 a.u.) ( p = 0.002) ( Figure 6 B).",
+      "context_window": "4 a.u.) compared to the healthy control group, MpJ_Control (1.00 \u00b1 0.06 a.u.) ( p = 0.002) ( Figure 6 B). The Irf1 mRNA level was l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-8258",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8258,
+      "sentence": "The liver from the lpr_Control group expressed a significantly higher level of Irf1 mRNA (2.25 \u00b1 0.34 a.u.) compared to the healthy control group, MpJ_Control (1.00 \u00b1 0.06 a.u.) ( p = 0.002) ( Figure 6 B).",
+      "context_window": "the healthy control group, MpJ_Control (1.00 \u00b1 0.06 a.u.) ( p = 0.002) ( Figure 6 B). The Irf1 mRNA level was lower in lpr_Spermi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-msd-8333",
+      "claim_type": "mean_sd",
+      "raw_text": "1.99 \u00b1 0.05",
+      "numeric_values": [
+        1.99,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8333,
+      "sentence": "The Irf1 mRNA level was lower in lpr_Spermidine (1.99 \u00b1 0.05 a.u.) compared to lpr_Control.",
+      "context_window": "gure 6 B). The Irf1 mRNA level was lower in lpr_Spermidine (1.99 \u00b1 0.05 a.u.) compared to lpr_Control.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-823",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 823,
+      "sentence": "In the current study, we observed a significant strain effect ( p = 0.007) on maximal endothelium-dependent vasorelaxation.",
+      "context_window": "he current study, we observed a significant strain effect ( p = 0.007) on maximal endothelium-dependent vasorelaxation. The lupus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-p-1084",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0075",
+      "numeric_values": [
+        0.0075
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1084,
+      "sentence": "Two-way ANOVA identified significant effects of intervention with the oral spermidine supplementation ( p = 0.0075).",
+      "context_window": "of intervention with the oral spermidine supplementation ( p = 0.0075). Eight weeks of treatment with spermidine prevented a decl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11432455_effect_of_spermidine_on_endothelial_function_in_systemic_lup-pct-1869",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1869,
+      "sentence": "Phosphorylation of eNOS was 50% lower in lpr_Control when compared to MpJ_Control.",
+      "context_window": "ed endothelial function in SLE. Phosphorylation of eNOS was 50% lower in lpr_Control when compared to MpJ_Control. However,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

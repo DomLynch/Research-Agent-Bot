@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa043104_obstructive_sleep_apnea_as_a_risk_factor_for_stroke_and_deat",
+  "doi": "10.1056/nejmoa043104",
+  "extracted_at": "2026-05-08T20:05:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa043104_obstructive_sleep_apnea_as_a_risk_factor_for_stroke_and_deat-p-1313",
+      "claim_type": "p_value",
+      "raw_text": "P=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1313,
+      "sentence": "In an unadjusted analysis, the obstructive sleep apnea syndrome was associated with stroke or death from any cause (hazard ratio, 2.24; 95 percent confidence interval, 1.30 to 3.86; P=0.004).",
+      "context_window": "ratio, 2.24; 95 percent confidence interval, 1.30 to 3.86; P=0.004). After adjustment for age, sex, race, smoking status, alco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa043104_obstructive_sleep_apnea_as_a_risk_factor_for_stroke_and_deat-p-1700",
+      "claim_type": "p_value",
+      "raw_text": "P=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1700,
+      "sentence": "After adjustment for age, sex, race, smoking status, alcohol-consumption status, body-mass index, and the presence or absence of diabetes mellitus, hyperlipidemia, atrial fibrillation, and hypertension, the obstructive sleep apnea syndrome retained a statistically significant association with stroke or death (hazard ratio, 1.97; 95 percent confidence interval, 1.12 to 3.48; P=0.01).",
+      "context_window": "ratio, 1.97; 95 percent confidence interval, 1.12 to 3.48; P=0.01). In a trend analysis, increased severity of sleep apnea at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa043104_obstructive_sleep_apnea_as_a_risk_factor_for_stroke_and_deat-p-1861",
+      "claim_type": "p_value",
+      "raw_text": "P=0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1861,
+      "sentence": "In a trend analysis, increased severity of sleep apnea at baseline was associated with an increased risk of the development of the composite end point (P=0.005).",
+      "context_window": "creased risk of the development of the composite end point (P=0.005). CONCLUSIONS: The obstructive sleep apnea syndrome signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

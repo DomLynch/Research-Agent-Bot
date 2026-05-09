@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_aspirin_attenuates_inflammation_in_human_cerebral_aneurysms",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_aspirin_attenuates_inflammation_in_human_cerebral_aneurysms-u-464",
+      "claim_type": "unit_value",
+      "raw_text": "7 mm",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 464,
+      "sentence": "Fifteen patients with cerebral aneurysms \\> 7 mm will be selected to enroll in this pilot study.",
+      "context_window": "aneurysm wall. Fifteen patients with cerebral aneurysms \\> 7 mm will be selected to enroll in this pilot study. 10 patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_aspirin_attenuates_inflammation_in_human_cerebral_aneurysms-u-627",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 627,
+      "sentence": "Following that, they will take aspirin 81 mg daily and then re-imaged again at three months.",
+      "context_window": "oxytol-enhanced MRI. Following that, they will take aspirin 81 mg daily and then re-imaged again at three months. This group",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

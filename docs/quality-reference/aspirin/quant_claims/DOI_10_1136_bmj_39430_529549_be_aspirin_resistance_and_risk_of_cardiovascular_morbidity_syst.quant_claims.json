@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst",
+  "doi": "10.1136/bmj.39430.529549.be",
+  "extracted_at": "2026-05-08T20:05:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 5,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-u-658",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 658,
+      "sentence": "Most studies used aspirin regimens, ranging from 75-325 mg daily, and six studies included adjunct antiplatelet therapy.",
+      "context_window": "tified. Most studies used aspirin regimens, ranging from 75-325 mg daily, and six studies included adjunct antiplatelet therap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-pct-907",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "Overall, 810 patients (28%) were classified as aspirin resistant.",
+      "context_window": "assess compliance in three studies. Overall, 810 patients (28%) were classified as aspirin resistant. A cardiovascular rel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-pct-993",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 993,
+      "sentence": "A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39.4% (4.06, 2.96 to 5.56).",
+      "context_window": "pirin resistant. A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-or-l-1010",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 3.85",
+      "numeric_values": [
+        3.85
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39.4% (4.06, 2.96 to 5.56).",
+      "context_window": "A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-pct-1027",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1027,
+      "sentence": "A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39.4% (4.06, 2.96 to 5.56).",
+      "context_window": "related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-pct-1075",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1075,
+      "sentence": "A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39.4% (4.06, 2.96 to 5.56).",
+      "context_window": "ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1136_bmj_39430_529549_be_aspirin_resistance_and_risk_of_cardiovascular_morbidity_syst-pct-1137",
+      "claim_type": "percentage",
+      "raw_text": "39.4%",
+      "numeric_values": [
+        39.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1137,
+      "sentence": "A cardiovascular related event occurred in 41% of patients (odds ratio 3.85, 95% confidence interval 3.08 to 4.80), death in 5.7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39.4% (4.06, 2.96 to 5.56).",
+      "context_window": "7% (5.99, 2.28 to 15.72), and an acute coronary syndrome in 39.4% (4.06, 2.96 to 5.56). Aspirin resistant patients did not be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

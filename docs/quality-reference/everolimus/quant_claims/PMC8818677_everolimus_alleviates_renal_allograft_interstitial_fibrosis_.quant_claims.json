@@ -1,0 +1,1798 @@
+{
+  "paper_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_",
+  "doi": "10.3389/fimmu.2021.753412",
+  "extracted_at": "2026-05-08T19:55:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 14,
+    "mean_sd": 1,
+    "percentage": 17,
+    "sample_size": 27,
+    "p_value": 40
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-430",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 430,
+      "sentence": "Thus, adult male Lewis (LEW/Crl; LEW) inbred rats and F344 (F344/DuCrl; CDF) inbred rats (Age 6 to 8 weeks, weight 250 \u00b1 10.3 g) were purchased from Charles River Laboratories (Beijing, China).",
+      "context_window": "nbred rats and F344 (F344/DuCrl; CDF) inbred rats (Age 6 to 8 weeks, weight 250 \u00b1 10.3 g) were purchased from Charles River Lab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-msd-446",
+      "claim_type": "mean_sd",
+      "raw_text": "250 \u00b1 10.3",
+      "numeric_values": [
+        250.0,
+        10.3
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 446,
+      "sentence": "Thus, adult male Lewis (LEW/Crl; LEW) inbred rats and F344 (F344/DuCrl; CDF) inbred rats (Age 6 to 8 weeks, weight 250 \u00b1 10.3 g) were purchased from Charles River Laboratories (Beijing, China).",
+      "context_window": "344 (F344/DuCrl; CDF) inbred rats (Age 6 to 8 weeks, weight 250 \u00b1 10.3 g) were purchased from Charles River Laboratories (Beijing,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-1493",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1493,
+      "sentence": "A low dose of cyclosporine A (5 mg/kg, qd, ip; Neoral, Novartis, Switzerland) was administered for 10 days after kidney transplantation surgery to prevent acute rejection.",
+      "context_window": "hemia, it was less than 10 s. A low dose of cyclosporine A (5 mg/kg, qd, ip; Neoral, Novartis, Switzerland) was administered",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-1562",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1562,
+      "sentence": "A low dose of cyclosporine A (5 mg/kg, qd, ip; Neoral, Novartis, Switzerland) was administered for 10 days after kidney transplantation surgery to prevent acute rejection.",
+      "context_window": "qd, ip; Neoral, Novartis, Switzerland) was administered for 10 days after kidney transplantation surgery to prevent acute rejec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-1938",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1938,
+      "sentence": "Rats were randomly divided into four groups of 6 rats each before kidney transplantation: Lewis rats used as syngeneic donors were defined as the Syn group (Lewis to Lewis), Lewis rats used as recipients were defined as the Allo group (F344 to Lewis), and the Syn and Allo group rats treated with EVR (1.5 mg/kg body weight, Novartis, Basel, Switzerland) were defined as the Syn+EVR group and the Allo+EVR group.",
+      "context_window": "o Lewis), and the Syn and Allo group rats treated with EVR (1.5 mg/kg body weight, Novartis, Basel, Switzerland) were defined",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-2128",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2128,
+      "sentence": "Both groups were treated with EVR or a matched vehicle by oral gavage once per 2 days, continuing for 8 to 20 weeks.",
+      "context_window": "eated with EVR or a matched vehicle by oral gavage once per 2 days, continuing for 8 to 20 weeks. Kidneys, serum, and urine sa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-2156",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2156,
+      "sentence": "Both groups were treated with EVR or a matched vehicle by oral gavage once per 2 days, continuing for 8 to 20 weeks.",
+      "context_window": "vehicle by oral gavage once per 2 days, continuing for 8 to 20 weeks. Kidneys, serum, and urine samples were collected at 8, 12,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-2233",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2233,
+      "sentence": "Kidneys, serum, and urine samples were collected at 8, 12, 16, and 20 weeks after kidney transplantation.",
+      "context_window": ", serum, and urine samples were collected at 8, 12, 16, and 20 weeks after kidney transplantation. The levels of blood urea nitr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-3211",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3211,
+      "sentence": "Kidney samples were fixed in 10% neutral formalin and embedded in paraffin.",
+      "context_window": "of the transplanted kidneys. Kidney samples were fixed in 10% neutral formalin and embedded in paraffin. Three-micrometer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-3487",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3487,
+      "sentence": "Simply, paraffin-embedded kidney sections were deparaffinized, hydrated, and antigen-retrieved, and endogenous peroxidase activity was quenched by 3% H 2 O 2 .",
+      "context_window": "trieved, and endogenous peroxidase activity was quenched by 3% H 2 O 2 . Sections were then blocked with 10% normal donkey",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-3532",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3532,
+      "sentence": "Sections were then blocked with 10% normal donkey serum, followed by incubation with anti-FN (Abcam, USA), anti-\u03b1-SMA (Abcam, USA), anti-E-cadherin (Abcam, USA), anti-LC3 (CST, USA), anti-p-p65 (CST, USA), and anti-Skp2 (CST, USA) overnight at 4\u00b0C.",
+      "context_window": "as quenched by 3% H 2 O 2 . Sections were then blocked with 10% normal donkey serum, followed by incubation with anti-FN (A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-5188",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5188,
+      "sentence": "For the wound-healing experiment, a straight scratch was made in the cell monolayer with a 200-\u03bcl pipette tip when the cells were 90% confluent.",
+      "context_window": "ell monolayer with a 200-\u03bcl pipette tip when the cells were 90% confluent. DMEM/F12 with 10% fetal bovine serum (FBS) was c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-5217",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5217,
+      "sentence": "DMEM/F12 with 10% fetal bovine serum (FBS) was changed to serum-free DMEM/F12 (DFSF) for 24 h.",
+      "context_window": "ipette tip when the cells were 90% confluent. DMEM/F12 with 10% fetal bovine serum (FBS) was changed to serum-free DMEM/F12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-5613",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5613,
+      "sentence": "Then, the lower chamber was filled with 600 \u03bcl of 10% FBS-supplemented DFSF, and the HK2 cells were cultured for 12 h.",
+      "context_window": "f medium. Then, the lower chamber was filled with 600 \u03bcl of 10% FBS-supplemented DFSF, and the HK2 cells were cultured for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-5822",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5822,
+      "sentence": "The cells on the bottom surface were fixed in 4% paraformaldehyde (PFA) for 30 min and stained with 0.1% crystal violet for 10 min.",
+      "context_window": "cotton swab. The cells on the bottom surface were fixed in 4% paraformaldehyde (PFA) for 30 min and stained with 0.1% cry",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-5876",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5876,
+      "sentence": "The cells on the bottom surface were fixed in 4% paraformaldehyde (PFA) for 30 min and stained with 0.1% crystal violet for 10 min.",
+      "context_window": "ed in 4% paraformaldehyde (PFA) for 30 min and stained with 0.1% crystal violet for 10 min. The migrated cells were photogra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-6135",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6135,
+      "sentence": "The cells were cultured in DFSF medium containing 10% FBS (Gibco, Carlsbad, CA, USA) at 37\u00b0C with 5% CO 2 , supplemented with 1% penicillin-streptomycin.",
+      "context_window": ", China). The cells were cultured in DFSF medium containing 10% FBS (Gibco, Carlsbad, CA, USA) at 37\u00b0C with 5% CO 2 , suppl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-6183",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6183,
+      "sentence": "The cells were cultured in DFSF medium containing 10% FBS (Gibco, Carlsbad, CA, USA) at 37\u00b0C with 5% CO 2 , supplemented with 1% penicillin-streptomycin.",
+      "context_window": "containing 10% FBS (Gibco, Carlsbad, CA, USA) at 37\u00b0C with 5% CO 2 , supplemented with 1% penicillin-streptomycin. HK2 ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-6211",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6211,
+      "sentence": "The cells were cultured in DFSF medium containing 10% FBS (Gibco, Carlsbad, CA, USA) at 37\u00b0C with 5% CO 2 , supplemented with 1% penicillin-streptomycin.",
+      "context_window": "Carlsbad, CA, USA) at 37\u00b0C with 5% CO 2 , supplemented with 1% penicillin-streptomycin. HK2 cells were seeded on six-well",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-6327",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6327,
+      "sentence": "HK2 cells were seeded on six-well culture plates for 24 h in complete medium containing 10% FBS.",
+      "context_window": "-well culture plates for 24 h in complete medium containing 10% FBS. After starvation with DFSF for 16 h, the cells were mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-6900",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6900,
+      "sentence": "For small interfering RNA (siRNA) transfection assay, HK-2 cells at 80% confluence were transfected with Skp2-specific siRNA by using Lipofectamine 2000 (Invitrogen, Carlsbad, CA, USA) according to the instructions.",
+      "context_window": "l interfering RNA (siRNA) transfection assay, HK-2 cells at 80% confluence were transfected with Skp2-specific siRNA by usi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-7636",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7636,
+      "sentence": "Proteins from HK-2 cells and rat tissues were fractionated by electrophoresis on 8%-12% sodium dodecyl sulfate-polyacrylamide gel electrophoresis, electroblotted to polyvinylidene fluoride filter membranes, and incubated with the primary antibody at 4\u00b0C.",
+      "context_window": "lls and rat tissues were fractionated by electrophoresis on 8%-12% sodium dodecyl sulfate-polyacrylamide gel electrophores",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-7639",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7639,
+      "sentence": "Proteins from HK-2 cells and rat tissues were fractionated by electrophoresis on 8%-12% sodium dodecyl sulfate-polyacrylamide gel electrophoresis, electroblotted to polyvinylidene fluoride filter membranes, and incubated with the primary antibody at 4\u00b0C.",
+      "context_window": "and rat tissues were fractionated by electrophoresis on 8%-12% sodium dodecyl sulfate-polyacrylamide gel electrophoresis,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-10197",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10197,
+      "sentence": "The specific primers used were as follows:\n\nNFKBIA: 5\u2032\u2010CTCCGAGACTTTCGAGGAAATAC\u20103\u2032 (F)\n\n5\u2032\u2010GCCATTGTAGTTGGTAGCCTTCA\u20103\u2032 (R)\n\nThe samples were fixed with ice-cold glutaraldehyde (3% in 0.1 M cacodylate buffer, pH 7.4) and further processed by the Core Facility (Servicebio, Wuhan, China).",
+      "context_window": "\u2032 (R) The samples were fixed with ice-cold glutaraldehyde (3% in 0.1 M cacodylate buffer, pH 7.4) and further processed b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-144",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 144,
+      "sentence": "In order to explore the effect of EVR on renal allograft function and renal interstitial fibrosis progression in CAD rat model, we applied EVR (1.5 mg/kg, i.g., qod) to the syngeneic (syn) recipient rats and allogeneic (allo) recipient rats for different times.",
+      "context_window": "tial fibrosis progression in CAD rat model, we applied EVR (1.5 mg/kg, i.g., qod) to the syngeneic (syn) recipient rats and al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-605",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 605,
+      "sentence": "Masson\u2019s trichrome staining results of transplanted kidney samples showed that the Syn group had no renal interstitial fibrosis, while renal interstitial fibrosis was found in the Allo group at 4 weeks, and aggravated after 8 weeks.",
+      "context_window": "renal interstitial fibrosis was found in the Allo group at 4 weeks, and aggravated after 8 weeks. The results of Masson\u2019s tric",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-635",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 635,
+      "sentence": "Masson\u2019s trichrome staining results of transplanted kidney samples showed that the Syn group had no renal interstitial fibrosis, while renal interstitial fibrosis was found in the Allo group at 4 weeks, and aggravated after 8 weeks.",
+      "context_window": "as found in the Allo group at 4 weeks, and aggravated after 8 weeks. The results of Masson\u2019s trichrome staining also showed tha",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-776",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 776,
+      "sentence": "The results of Masson\u2019s trichrome staining also showed that the blue-colored collagen fibers were gradually increased at 8, 14, and 20 weeks after kidney transplantation, compared with the Syn group.",
+      "context_window": "ored collagen fibers were gradually increased at 8, 14, and 20 weeks after kidney transplantation, compared with the Syn group.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-1635",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1635,
+      "sentence": "EVR prevented allograft renal function impairment and renal interstitial fibrosis in CAD rat model. (A, B) Representative images ( n = 6) of Masson\u2019s trichrome staining and PAS staining (scale bar: 25 \u03bcm) from kidneys of different treatment group rats. (C) Semi-quantitative analyses results of Masson\u2019s trichrome staining positive area that represented the area of the renal interstitial fibrosis from kidneys of different treatment group rats.",
+      "context_window": "l fibrosis in CAD rat model. (A, B) Representative images ( n = 6) of Masson\u2019s trichrome staining and PAS staining (scale bar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-1985",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1985,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (D) The statistical analyses of tubulointerstitial damage scores in different treatment group rats.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (D) The statistical analyses of tubulointe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-1996",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1996,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (D) The statistical analyses of tubulointerstitial damage scores in different treatment group rats.",
+      "context_window": "t group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (D) The statistical analyses of tubulointerstitial damage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-2143",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2143,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal function parameters-serum Cr, BUN, and 24-h urine protein of different treatment group rats.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2152",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2152,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal function parameters-serum Cr, BUN, and 24-h urine protein of different treatment group rats.",
+      "context_window": "ent group rats. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal functi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2165",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2165,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal function parameters-serum Cr, BUN, and 24-h urine protein of different treatment group rats.",
+      "context_window": "s. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal function parameters",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2179",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2179,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal function parameters-serum Cr, BUN, and 24-h urine protein of different treatment group rats.",
+      "context_window": "esented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). (E-G) Changes of renal function parameters-serum Cr, BUN,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-2342",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2342,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus; PAS, periodic acid-Schiff; Cr, creatinine; BUN, blood urea nitrogen.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ##",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2353",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2353,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus; PAS, periodic acid-Schiff; Cr, creatinine; BUN, blood urea nitrogen.",
+      "context_window": "t group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2394",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2394,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus; PAS, periodic acid-Schiff; Cr, creatinine; BUN, blood urea nitrogen.",
+      "context_window": "\u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2407",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2407,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus; PAS, periodic acid-Schiff; Cr, creatinine; BUN, blood urea nitrogen.",
+      "context_window": ", *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-2421",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2421,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus; PAS, periodic acid-Schiff; Cr, creatinine; BUN, blood urea nitrogen.",
+      "context_window": "1 compared with control group, # P < 0.05, ## P < 0.01, ### p < 0.001 compared with Allo group); EVR, everolimus; PAS, periodic a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-4499",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4499,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative Western blotting results of EMT markers (E-cadherin, \u03b1-SMA, and FN) in kidney tissues from different treatment group rats. (D) Semi-quantitative analyses results of relative protein abundances of E-cadherin, \u03b1-SMA, and FN in kidney tissues from different treatment group rats.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative Western bl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-4509",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4509,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative Western blotting results of EMT markers (E-cadherin, \u03b1-SMA, and FN) in kidney tissues from different treatment group rats. (D) Semi-quantitative analyses results of relative protein abundances of E-cadherin, \u03b1-SMA, and FN in kidney tissues from different treatment group rats.",
+      "context_window": "nt group rats. Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative Western blotting result",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-4523",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4523,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative Western blotting results of EMT markers (E-cadherin, \u03b1-SMA, and FN) in kidney tissues from different treatment group rats. (D) Semi-quantitative analyses results of relative protein abundances of E-cadherin, \u03b1-SMA, and FN in kidney tissues from different treatment group rats.",
+      "context_window": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative Western blotting results of EMT marker",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-4866",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4866,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001); IHC, immunohistochemistry; \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epithelial-mesenchymal transition; FN, fibronectin.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001); IHC, immunohistochemistry; \u03b1-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-4876",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4876,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001); IHC, immunohistochemistry; \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epithelial-mesenchymal transition; FN, fibronectin.",
+      "context_window": "nt group rats. Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001); IHC, immunohistochemistry; \u03b1-SMA, \u03b1-smooth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-4890",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4890,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001); IHC, immunohistochemistry; \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epithelial-mesenchymal transition; FN, fibronectin.",
+      "context_window": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001); IHC, immunohistochemistry; \u03b1-SMA, \u03b1-smooth muscle actin;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-5807",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5807,
+      "sentence": "Again, WB assay results confirmed the accuracy of IHC assays and demonstrated that EVR could retard the impaired autophagic flux from 8 to 20 weeks ( Figures 3C, D ).",
+      "context_window": "hat EVR could retard the impaired autophagic flux from 8 to 20 weeks ( Figures 3C, D ). EVR activated autophagy in CAD rat mode",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-6144",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6144,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative Western blotting results of autophagy markers (SQSTM1 and LC3-II) in kidney sections from different treatment group rats at 8 and 20 weeks. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in kidney sections from different treatment group rats at 8 and 20 weeks.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative Western blotting result",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-6155",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6155,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative Western blotting results of autophagy markers (SQSTM1 and LC3-II) in kidney sections from different treatment group rats at 8 and 20 weeks. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in kidney sections from different treatment group rats at 8 and 20 weeks.",
+      "context_window": "t group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative Western blotting results of autophagy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-6316",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6316,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative Western blotting results of autophagy markers (SQSTM1 and LC3-II) in kidney sections from different treatment group rats at 8 and 20 weeks. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in kidney sections from different treatment group rats at 8 and 20 weeks.",
+      "context_window": "idney sections from different treatment group rats at 8 and 20 weeks. (D) Semi-quantitative analyses results of relative protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-u-6481",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6481,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative Western blotting results of autophagy markers (SQSTM1 and LC3-II) in kidney sections from different treatment group rats at 8 and 20 weeks. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in kidney sections from different treatment group rats at 8 and 20 weeks.",
+      "context_window": "idney sections from different treatment group rats at 8 and 20 weeks. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-6526",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6526,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "context_window": "rats at 8 and 20 weeks. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). EVR, everolimus. We hypothesized that EVR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-6537",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6537,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "context_window": "and 20 weeks. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). EVR, everolimus. We hypothesized that EVR might affect a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-8555",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8555,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). (C) Representative Western blotting results of the expressions of SQSTM1 and LC3-II in HK2 cells after EVR treatment for different times. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in HK2 cells after EVR treatment for different times.",
+      "context_window": "nt for different dosage. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). (C) Representative Western blo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-8564",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8564,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). (C) Representative Western blotting results of the expressions of SQSTM1 and LC3-II in HK2 cells after EVR treatment for different times. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in HK2 cells after EVR treatment for different times.",
+      "context_window": "fferent dosage. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). (C) Representative Western blotting result",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-8578",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8578,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). (C) Representative Western blotting results of the expressions of SQSTM1 and LC3-II in HK2 cells after EVR treatment for different times. (D) Semi-quantitative analyses results of relative protein abundances of SQSTM1 and LC3-II in HK2 cells after EVR treatment for different times.",
+      "context_window": ". Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). (C) Representative Western blotting results of the expres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-8908",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8908,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative TEM images of autophagosomes (red double arrow) and autolysosomes (red single arrow) in HK2 cells treated with or without EVR (10 nM) for 24 h (scale bar: 2 and 500 \u03bcm). (F) Qualitative analyses results of the number of autophagic vacuoles in control and EVR treatment groups under TEM.",
+      "context_window": "ent for different times. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative TEM images of autophago",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-8919",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8919,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative TEM images of autophagosomes (red double arrow) and autolysosomes (red single arrow) in HK2 cells treated with or without EVR (10 nM) for 24 h (scale bar: 2 and 500 \u03bcm). (F) Qualitative analyses results of the number of autophagic vacuoles in control and EVR treatment groups under TEM.",
+      "context_window": "ferent times. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative TEM images of autophagosomes (red doub",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-9272",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9272,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative Western blotting results of the expression of LC3-II in HK2 cells treated with EVR (10 nM) and/or CQ (20 \u03bcM) for 24 h. (H) Semi-quantitative analyses results of relative protein abundance of LC3-II in HK2 cells treated with EVR and/or CQ for 24 h.",
+      "context_window": "atment groups under TEM. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative Western blotting result",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-9283",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9283,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative Western blotting results of the expression of LC3-II in HK2 cells treated with EVR (10 nM) and/or CQ (20 \u03bcM) for 24 h. (H) Semi-quantitative analyses results of relative protein abundance of LC3-II in HK2 cells treated with EVR and/or CQ for 24 h.",
+      "context_window": "ps under TEM. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative Western blotting results of the expres",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-9597",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9597,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (I) Representative Western blotting results of the expressions of p-mTOR, mTOR, p-70S6K, 70S6K, p-4E-BP1, 4E-BP1, and ULK1 in HK2 cells after EVR treatment for different times. (J) Semi-quantitative analyses results of relative protein abundances of p-mTOR, mTOR, p-70S6K, 70S6K, p-4E-BP1, 4E-BP1, and ULK1 in HK2 cells after EVR treatment for different times.",
+      "context_window": "EVR and/or CQ for 24 h. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (I) Representative Western blotting result",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-9608",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9608,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (I) Representative Western blotting results of the expressions of p-mTOR, mTOR, p-70S6K, 70S6K, p-4E-BP1, 4E-BP1, and ULK1 in HK2 cells after EVR treatment for different times. (J) Semi-quantitative analyses results of relative protein abundances of p-mTOR, mTOR, p-70S6K, 70S6K, p-4E-BP1, 4E-BP1, and ULK1 in HK2 cells after EVR treatment for different times.",
+      "context_window": "CQ for 24 h. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (I) Representative Western blotting results of the expres",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-10016",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10016,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001).",
+      "context_window": "ent for different times. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). TEM, transmission",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-10025",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10025,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001).",
+      "context_window": "ifferent times. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). TEM, transmission electron mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-10038",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10038,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001).",
+      "context_window": "s. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). TEM, transmission electron microscope; IF,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-10052",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10052,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001).",
+      "context_window": "esented the mean \u00b1 SD ( n = 6, * p < 0.05, ** p < 0.01, *** p < 0.001). TEM, transmission electron microscope; IF, immunofluoresc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-11872",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11872,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative IF staining images of E-cadherin and FN in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h (scale bar: 20 \u03bcm). (D) Representative wound healing test images on HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 48 h (scale bar: 20 \u03bcm). (E) Representative transwell assay images on HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 48 h (scale bar: 20 \u03bcm). (F) Semi-quantitative analyses results of relative IF staining intensity of E-cadherin and FN in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h.",
+      "context_window": "F-\u03b1 and/or EVR for 48 h. Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative IF stainin",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-11882",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11882,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative IF staining images of E-cadherin and FN in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h (scale bar: 20 \u03bcm). (D) Representative wound healing test images on HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 48 h (scale bar: 20 \u03bcm). (E) Representative transwell assay images on HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 48 h (scale bar: 20 \u03bcm). (F) Semi-quantitative analyses results of relative IF staining intensity of E-cadherin and FN in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h.",
+      "context_window": "EVR for 48 h. Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative IF staining images of E",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-11896",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11896,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative IF staining images of E-cadherin and FN in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h (scale bar: 20 \u03bcm). (D) Representative wound healing test images on HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 48 h (scale bar: 20 \u03bcm). (E) Representative transwell assay images on HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 48 h (scale bar: 20 \u03bcm). (F) Semi-quantitative analyses results of relative IF staining intensity of E-cadherin and FN in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h.",
+      "context_window": "Values represented the mean \u00b1 SD ( n = 6, ** p < 0.01, *** p < 0.001). (C) Representative IF staining images of E-cadherin and F",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-12532",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12532,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, ** p < 0.01, *** p < 0.001). (G) Quantitative analyses results of the motility index of HK-2 cells treated with TNF-\u03b1 and/or EVR for 48 h; the motility index has determined by the formula \u201cmigration cell number of control group/migration cell number of the other treatment group\u201d.",
+      "context_window": "or EVR (10 nM) for 24 h. Values represented the mean \u00b1 SD ( n = 3, ** p < 0.01, *** p < 0.001). (G) Quantitative analyses res",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-12542",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12542,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, ** p < 0.01, *** p < 0.001). (G) Quantitative analyses results of the motility index of HK-2 cells treated with TNF-\u03b1 and/or EVR for 48 h; the motility index has determined by the formula \u201cmigration cell number of control group/migration cell number of the other treatment group\u201d.",
+      "context_window": "nM) for 24 h. Values represented the mean \u00b1 SD ( n = 3, ** p < 0.01, *** p < 0.001). (G) Quantitative analyses results of the m",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-12556",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12556,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, ** p < 0.01, *** p < 0.001). (G) Quantitative analyses results of the motility index of HK-2 cells treated with TNF-\u03b1 and/or EVR for 48 h; the motility index has determined by the formula \u201cmigration cell number of control group/migration cell number of the other treatment group\u201d.",
+      "context_window": "Values represented the mean \u00b1 SD ( n = 3, ** p < 0.01, *** p < 0.001). (G) Quantitative analyses results of the motility index o",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-12855",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12855,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, * p < 0.05). (H) Quantitative analyses results of the migration index of HK-2 cells treated with TNF-\u03b1 and/or EVR for 48 h; the migration index as determined by the formula \u201cmigration cell number of the other treatment group/migration cell number of control group\u201d.",
+      "context_window": "other treatment group\u201d. Values represented the mean \u00b1 SD ( n = 3, * p < 0.05). (H) Quantitative analyses results of the migr",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-12864",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12864,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, * p < 0.05). (H) Quantitative analyses results of the migration index of HK-2 cells treated with TNF-\u03b1 and/or EVR for 48 h; the migration index as determined by the formula \u201cmigration cell number of the other treatment group/migration cell number of control group\u201d.",
+      "context_window": "eatment group\u201d. Values represented the mean \u00b1 SD ( n = 3, * p < 0.05). (H) Quantitative analyses results of the migration index",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-13163",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13163,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, * p < 0.05, *** p < 0.001). \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epithelial-mesenchymal transition; FN, fibronectin; TNF-\u03b1, tumor necrosis factor-\u03b1.",
+      "context_window": "umber of control group\u201d. Values represented the mean \u00b1 SD ( n = 3, * p < 0.05, *** p < 0.001). \u03b1-SMA, \u03b1-smooth muscle actin;",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-13172",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13172,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, * p < 0.05, *** p < 0.001). \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epithelial-mesenchymal transition; FN, fibronectin; TNF-\u03b1, tumor necrosis factor-\u03b1.",
+      "context_window": "control group\u201d. Values represented the mean \u00b1 SD ( n = 3, * p < 0.05, *** p < 0.001). \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everoli",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-13186",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13186,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 3, * p < 0.05, *** p < 0.001). \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epithelial-mesenchymal transition; FN, fibronectin; TNF-\u03b1, tumor necrosis factor-\u03b1.",
+      "context_window": ". Values represented the mean \u00b1 SD ( n = 3, * p < 0.05, *** p < 0.001). \u03b1-SMA, \u03b1-smooth muscle actin; EVR, everolimus; EMT, epith",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-15816",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15816,
+      "sentence": "EVR suppressed TNF-\u03b1-mediated EMT via blocking NF-\u03baB instead of Akt signaling pathway in HK-2 cells. (A) The RNA sequencing results of differential genes in HK-2 cells treated with or without TNF-\u03b1 (50 ng/ml) for 24 h ( n = 5). (B) KEGG pathway analyses results of the top 20 KEGG enriched gene pathways base on RNA sequencing results. (C) Representative Western blotting results of the expression of p-p65 in HK2 cells after TNF-\u03b1 (50 ng/ml) treatment for different times. (D) Semi-quantitative analyses results of relative protein abundance of p-p65 in HK2 cells after TNF-\u03b1 treatment for different times.",
+      "context_window": "2 cells treated with or without TNF-\u03b1 (50 ng/ml) for 24 h ( n = 5). (B) KEGG pathway analyses results of the top 20 KEGG enri",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-16239",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16239,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative Western blotting results of the expressions of p-p65 and FN in HK2 cells treated with TNF-\u03b1 (50 ng/ml) and/or QNZ (20 nM) for 24 h. (F) Semi-quantitative analyses results of relative protein abundances of p-p65 and FN in HK2 cells treated with TNF-\u03b1 and/or QNZ for 24 h.",
+      "context_window": "ent for different times. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative Western blotting result",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-16250",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16250,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative Western blotting results of the expressions of p-p65 and FN in HK2 cells treated with TNF-\u03b1 (50 ng/ml) and/or QNZ (20 nM) for 24 h. (F) Semi-quantitative analyses results of relative protein abundances of p-p65 and FN in HK2 cells treated with TNF-\u03b1 and/or QNZ for 24 h.",
+      "context_window": "ferent times. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (E) Representative Western blotting results of the expres",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-16587",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16587,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative IF staining images of p65 in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h (scale bar: 50 \u03bcm). (H) Representative Western blotting results of p65 in cytoplasmic and nuclear fractions of HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h. (I) Semi-quantitative analyses results of relative protein abundance of p65 in HK-2 cells treated with TNF-\u03b1 and/or EVR for 24 h.",
+      "context_window": "F-\u03b1 and/or QNZ for 24 h. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative IF staining images of p",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-16598",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16598,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative IF staining images of p65 in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h (scale bar: 50 \u03bcm). (H) Representative Western blotting results of p65 in cytoplasmic and nuclear fractions of HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h. (I) Semi-quantitative analyses results of relative protein abundance of p65 in HK-2 cells treated with TNF-\u03b1 and/or EVR for 24 h.",
+      "context_window": "QNZ for 24 h. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (G) Representative IF staining images of p65 in HK-2 cell",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-17073",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17073,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001).",
+      "context_window": "F-\u03b1 and/or EVR for 24 h. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). TNF-\u03b1, tumor necrosis factor-\u03b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-17082",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17082,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001).",
+      "context_window": "r EVR for 24 h. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). TNF-\u03b1, tumor necrosis factor-\u03b1; KEGG, Kyot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-17096",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17096,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001).",
+      "context_window": ". Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). TNF-\u03b1, tumor necrosis factor-\u03b1; KEGG, Kyoto Encyclopedia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-22540",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22540,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (C) Relative expression of the NFKBIA in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h.",
+      "context_window": "F-\u03b1 and/or EVR for 24 h. Values represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (C) Relative expressi",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-22572",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22572,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (C) Relative expression of the NFKBIA in HK-2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h.",
+      "context_window": "represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (C) Relative expression of the NFKBIA in HK-2 cells treat",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-22730",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22730,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ns, not significant, ** p < 0.01). (D) Representative Western blotting results of I\u03baB-\u03b1 in HK2 cells treated with TNF-\u03b1 (50 ng/ml) and different concentrations of CQ (20 and 40 \u03bcM)/MG132 (10 and 20 \u03bcM) for 24 h. (E) Semi-quantitative analyses results of relative protein abundance of I\u03baB-\u03b1 in HK-2 cells treated with TNF-\u03b1 and CQ/MG132 for 24 h.",
+      "context_window": "or EVR (10 nM) for 24 h. Values represented the mean \u00b1 SD ( n = 6, ns, not significant, ** p < 0.01). (D) Representative West",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-22761",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22761,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ns, not significant, ** p < 0.01). (D) Representative Western blotting results of I\u03baB-\u03b1 in HK2 cells treated with TNF-\u03b1 (50 ng/ml) and different concentrations of CQ (20 and 40 \u03bcM)/MG132 (10 and 20 \u03bcM) for 24 h. (E) Semi-quantitative analyses results of relative protein abundance of I\u03baB-\u03b1 in HK-2 cells treated with TNF-\u03b1 and CQ/MG132 for 24 h.",
+      "context_window": "represented the mean \u00b1 SD ( n = 6, ns, not significant, ** p < 0.01). (D) Representative Western blotting results of I\u03baB-\u03b1 in H",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-23118",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23118,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (F) Representative IF co-localization staining images of I\u03baB-\u03b1 and ubiquitin in HK-2 cells treated with TNF-\u03b1 for 4 or 8 h (scale bar: 50 \u03bcm). (G) The network map of E3 ubiquitin ligase related to I\u03baB-\u03b1 predicted by UbiBrowser. (H) Representative Western blotting results of Skp2, Smurf1, and Smurf2 in HK2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h. (I, J) Representative Western blotting results of negative control (NC) and small interfering RNA (si-Skp2) transfection efficiency in HK2 cells. (K, L) Representative Western blotting results of I\u03baB-\u03b1, E-cadherin, \u03b1-SMA and FN in WCL of HK-2 cells treated with TNF-\u03b1 (50 ng/ml) after transfecting si-Skp2 or si-NC.",
+      "context_window": "\u03b1 and CQ/MG132 for 24 h. Values represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (F) Representative IF",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-23150",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23150,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (F) Representative IF co-localization staining images of I\u03baB-\u03b1 and ubiquitin in HK-2 cells treated with TNF-\u03b1 for 4 or 8 h (scale bar: 50 \u03bcm). (G) The network map of E3 ubiquitin ligase related to I\u03baB-\u03b1 predicted by UbiBrowser. (H) Representative Western blotting results of Skp2, Smurf1, and Smurf2 in HK2 cells treated with TNF-\u03b1 (50 ng/ml) and/or EVR (10 nM) for 24 h. (I, J) Representative Western blotting results of negative control (NC) and small interfering RNA (si-Skp2) transfection efficiency in HK2 cells. (K, L) Representative Western blotting results of I\u03baB-\u03b1, E-cadherin, \u03b1-SMA and FN in WCL of HK-2 cells treated with TNF-\u03b1 (50 ng/ml) after transfecting si-Skp2 or si-NC.",
+      "context_window": "represented the mean \u00b1 SD ( n = 6, ns, not significant, *** p < 0.001). (F) Representative IF co-localization staining images of",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-24047",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24047,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001).",
+      "context_window": "ng the indicated groups. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). WCL, whole-cell lysates; IF, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-24056",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24056,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001).",
+      "context_window": "dicated groups. Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). WCL, whole-cell lysates; IF, immunofluores",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-24070",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24070,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001).",
+      "context_window": ". Values represented the mean \u00b1 SD ( n = 6, * p < 0.05, *** p < 0.001). WCL, whole-cell lysates; IF, immunofluorescence; EVR, eve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-26086",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26086,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative IHC images of Skp2, I\u03baB-\u03b1, and p-p65 in kidney sections from different treatment group rats (scale bar: 10 \u03bcm). (D) Semi-quantitative analyses results of IHC positive staining of Skp2, I\u03baB-\u03b1, and p-p65 in kidney sections from different treatment group rats.",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative IHC images of Skp2, I\u03baB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-26097",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26097,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative IHC images of Skp2, I\u03baB-\u03b1, and p-p65 in kidney sections from different treatment group rats (scale bar: 10 \u03bcm). (D) Semi-quantitative analyses results of IHC positive staining of Skp2, I\u03baB-\u03b1, and p-p65 in kidney sections from different treatment group rats.",
+      "context_window": "t group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001). (C) Representative IHC images of Skp2, I\u03baB-\u03b1, and p-p65 i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-n-26421",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26421,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "context_window": "nt treatment group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-p-26432",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26432,
+      "sentence": "Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "context_window": "t group rats. Values represented the mean \u00b1 SD ( n = 6, *** p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8818677_everolimus_alleviates_renal_allograft_interstitial_fibrosis_-pct-2668",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2668,
+      "sentence": "EMT is the initial stage of irreversible tubular injury and interstitial fibrosis, which is followed by increasing loss of renal function and eventually results in an annual loss of approximately 5% of allograft function.",
+      "context_window": "n and eventually results in an annual loss of approximately 5% of allograft function. Unfortunately, while numerous studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

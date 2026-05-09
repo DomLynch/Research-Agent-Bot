@@ -1,0 +1,967 @@
+{
+  "paper_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol",
+  "doi": "10.3390/cells13121036",
+  "extracted_at": "2026-05-08T20:11:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 24,
+    "unit_value": 18,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-93",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 93,
+      "sentence": "Hepatitis C virus (HCV) is an oncogenic virus that causes chronic liver disease in more than 80% of patients.",
+      "context_window": "ogenic virus that causes chronic liver disease in more than 80% of patients. During the last decade, efficient direct-actin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-43",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 43,
+      "sentence": "Hepatitis C virus (HCV) is responsible for 9% of chronic liver disease cases worldwide [ 1 ].",
+      "context_window": "Hepatitis C virus (HCV) is responsible for 9% of chronic liver disease cases worldwide [ 1 ]. Currently,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-356",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 356,
+      "sentence": "As a result, 10-30% of CHC patients will progress to liver cirrhosis within a 20-30-year period [ 2 , 3 , 4 ].",
+      "context_window": "the gradual development of fibrosis [ 3 ]. As a result, 10-30% of CHC patients will progress to liver cirrhosis within a 2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-1060",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1060,
+      "sentence": "While the high price of anti-HCV drugs still limits access to therapy in some parts of the world, insufficient screening allows between 68 and 94% of chronic hepatitis C cases to remain undiagnosed [ 7 ].",
+      "context_window": "of the world, insufficient screening allows between 68 and 94% of chronic hepatitis C cases to remain undiagnosed [ 7 ]. M",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-1696",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1696,
+      "sentence": "Huh7.5 cells were cultivated in a high-glucose Dulbecco\u2019s modified Eagle\u2019s medium (DMEM) with GlutaMax supplemented with 10% foetal bovine serum (Biosera, Cholet, France) in a humid atmosphere at 37 \u00b0C and split every three days.",
+      "context_window": "ified Eagle\u2019s medium (DMEM) with GlutaMax supplemented with 10% foetal bovine serum (Biosera, Cholet, France) in a humid at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-2077",
+      "claim_type": "unit_value",
+      "raw_text": "6 cm",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2077,
+      "sentence": "Huh7.5 cells were seeded in DMEM-F12 medium on 6- or 12-well plates or 6 cm dishes 24 h before infection at a density of 4 \u00d7 10 5 cells/well of a 6-well plate.",
+      "context_window": "s were seeded in DMEM-F12 medium on 6- or 12-well plates or 6 cm dishes 24 h before infection at a density of 4 \u00d7 10 5 cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-2189",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2189,
+      "sentence": "When the cells reached 70% confluency, they were infected at 0.1 MOI.",
+      "context_window": "\u00d7 10 5 cells/well of a 6-well plate. When the cells reached 70% confluency, they were infected at 0.1 MOI. Four hours post-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-2332",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2332,
+      "sentence": "Four hours post-infection, the medium was changed to a fresh one, and the cells were kept for 3-10 days (as specified in the figure legends).",
+      "context_window": "m was changed to a fresh one, and the cells were kept for 3-10 days (as specified in the figure legends). The cells were harves",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-2864",
+      "claim_type": "unit_value",
+      "raw_text": "500 ng/mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 2864,
+      "sentence": "The cells were maintained in DMEM-F12 supplemented with G418 (500 ng/mL) for ten passages prior to analysis.",
+      "context_window": "e cells were maintained in DMEM-F12 supplemented with G418 (500 ng/mL) for ten passages prior to analysis. Later, when required,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-3416",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3416,
+      "sentence": "After removal of the culture medium, cells were washed twice with 1 mL PBS at 0 \u00b0C.",
+      "context_window": "removal of the culture medium, cells were washed twice with 1 mL PBS at 0 \u00b0C. Then, 0.1 mL mQ was added per well, and the pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-3440",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mL",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3440,
+      "sentence": "Then, 0.1 mL mQ was added per well, and the plate was subjected to three cycles of freezing (-196 \u00b0C) and thawing at +4 \u00b0C.",
+      "context_window": "edium, cells were washed twice with 1 mL PBS at 0 \u00b0C. Then, 0.1 mL mQ was added per well, and the plate was subjected to three",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-3608",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3608,
+      "sentence": "After the final thaw, samples were transferred to 0.5 mL polyethylene tubes.",
+      "context_window": "at +4 \u00b0C. After the final thaw, samples were transferred to 0.5 mL polyethylene tubes. Each well was washed up with an additio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-3678",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mL",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3678,
+      "sentence": "Each well was washed up with an additional 0.1 mL mQ, combined with the crude cell lysates and subjected to ultrasound treatment for 3 min at 0-4 \u00b0C.",
+      "context_window": "yethylene tubes. Each well was washed up with an additional 0.1 mL mQ, combined with the crude cell lysates and subjected to u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-4030",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4030,
+      "sentence": "Total protein content in supernatants was measured using the Pierce\u2122 BCA Protein Assay Kit (Thermo Scientific, Waltham, MA, USA) prior to precipitation of protein by the addition of 60% perchloric acid to the final 3% concentration, followed by clarification by centrifugation for 10 min at 14,000\u00d7 g .",
+      "context_window": ", USA) prior to precipitation of protein by the addition of 60% perchloric acid to the final 3% concentration, followed by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-4063",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4063,
+      "sentence": "Total protein content in supernatants was measured using the Pierce\u2122 BCA Protein Assay Kit (Thermo Scientific, Waltham, MA, USA) prior to precipitation of protein by the addition of 60% perchloric acid to the final 3% concentration, followed by clarification by centrifugation for 10 min at 14,000\u00d7 g .",
+      "context_window": "protein by the addition of 60% perchloric acid to the final 3% concentration, followed by clarification by centrifugation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-4877",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 mm",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4877,
+      "sentence": "The solution of the dansylated polyamines in toluene (after 2-step extraction with 200 \u00b5L of toluene) was vacuum dried, and the residue was dissolved in 200 \u00b5L of methanol and applied on a reversed-phase column (Cosmosil C18-MS-II, 250 \u00d7 4.6 mm, 5 \u00b5m, 100 \u00c5).",
+      "context_window": "plied on a reversed-phase column (Cosmosil C18-MS-II, 250 \u00d7 4.6 mm, 5 \u00b5m, 100 \u00c5). The column was eluted (1 mL/min) with the fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-4922",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL/min",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 4922,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "8-MS-II, 250 \u00d7 4.6 mm, 5 \u00b5m, 100 \u00c5). The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-4967",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4967,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "mn was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-4979",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4979,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "d (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-4992",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4992,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B. System A-30% ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5007",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5007,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "ing gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B. System A-30% acetonitrile, 69.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5022",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5022,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B. System A-30% acetonitrile, 69.5% H 2 O, 0.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5035",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5035,
+      "sentence": "The column was eluted (1 mL/min) with the following gradient: 0 min-0% B; 5 min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B.",
+      "context_window": "min-0% B; 60 min-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B. System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5050",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5050,
+      "sentence": "System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic acid.",
+      "context_window": "n-100% B; 65 min-100% B, 70 min-0% B, 75 min-0% B. System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic acid. System B-79",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5068",
+      "claim_type": "percentage",
+      "raw_text": "69.5%",
+      "numeric_values": [
+        69.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5068,
+      "sentence": "System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic acid.",
+      "context_window": "00% B, 70 min-0% B, 75 min-0% B. System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic acid. System B-79.5% acetonitrile, 20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5081",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5081,
+      "sentence": "System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic acid.",
+      "context_window": "-0% B, 75 min-0% B. System A-30% acetonitrile, 69.5% H 2 O, 0.5% propionic acid. System B-79.5% acetonitrile, 20% tetrahydro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5111",
+      "claim_type": "percentage",
+      "raw_text": "79.5%",
+      "numeric_values": [
+        79.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5111,
+      "sentence": "System B-79.5% acetonitrile, 20% tetrahydrofuran, 0.5% propionic acid.",
+      "context_window": "0% acetonitrile, 69.5% H 2 O, 0.5% propionic acid. System B-79.5% acetonitrile, 20% tetrahydrofuran, 0.5% propionic acid. Col",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5131",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5131,
+      "sentence": "System B-79.5% acetonitrile, 20% tetrahydrofuran, 0.5% propionic acid.",
+      "context_window": "5% H 2 O, 0.5% propionic acid. System B-79.5% acetonitrile, 20% tetrahydrofuran, 0.5% propionic acid. Column temperature 40",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-5152",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5152,
+      "sentence": "System B-79.5% acetonitrile, 20% tetrahydrofuran, 0.5% propionic acid.",
+      "context_window": "nic acid. System B-79.5% acetonitrile, 20% tetrahydrofuran, 0.5% propionic acid. Column temperature 40 \u00b0C, pressure 80-120 b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-6346",
+      "claim_type": "unit_value",
+      "raw_text": "6 cm",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6346,
+      "sentence": "The cells were grown on 6-well plates or 6 cm dishes, harvested by scraping, lysed in RIPA buffer, and protein concentrations in lysates were measured using a BCA kit (Thermo Fischer Scientific, Waltham, MA, USA).",
+      "context_window": "ne et al. [ 40 ]. The cells were grown on 6-well plates or 6 cm dishes, harvested by scraping, lysed in RIPA buffer, and pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-6570",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6570,
+      "sentence": "Ten micrograms of total protein were applied on 10-12% sodium dodecyl sulphate-polyacrylamide gel, and immunoblotting was further carried out as described previously [ 41 ].",
+      "context_window": "A, USA). Ten micrograms of total protein were applied on 10-12% sodium dodecyl sulphate-polyacrylamide gel, and immunoblott",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-7449",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7449,
+      "sentence": "All antibodies were used in 1% non-fat dry milk (BioRad, Hercules, CA, USA) in PBS with 0.05% Tween 20 (PBS-T).",
+      "context_window": "from Santa Cruz Biotechnology. All antibodies were used in 1% non-fat dry milk (BioRad, Hercules, CA, USA) in PBS with 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-7509",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7509,
+      "sentence": "All antibodies were used in 1% non-fat dry milk (BioRad, Hercules, CA, USA) in PBS with 0.05% Tween 20 (PBS-T).",
+      "context_window": "1% non-fat dry milk (BioRad, Hercules, CA, USA) in PBS with 0.05% Tween 20 (PBS-T). Huh7.5 cells were seeded on 24-well plat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 680,
+      "sentence": "Huh7.5 cells were infected with HCV at a multiplicity of infection (MOI) of 0.1, and mRNA levels of most polyamine-metabolizing enzymes and regulatory proteins were assessed 3-10 days post-infection.",
+      "context_window": "etabolizing enzymes and regulatory proteins were assessed 3-10 days post-infection. The results shown in Figure 1 B,C clearly s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-1509",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1509,
+      "sentence": "Quantification of polyamines revealed that HCV induces a time-dependent decrease in spermidine levels but an increase in spermine concentrations in a period of up to 6 days ( Figure 1 F).",
+      "context_window": "an increase in spermine concentrations in a period of up to 6 days ( Figure 1 F). This correlates with down-regulation of poly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-2677",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2677,
+      "sentence": "The yellow scale bar corresponds to 25 \u00b5m; the red bars correspond to 50 \u00b5m. ( B - D ) Expression of polyamine-metabolizing proteins was assessed 3-10 days post-infection (dpi) by RT-qPCR ( B , C ) or Western blotting ( D ).",
+      "context_window": "xpression of polyamine-metabolizing proteins was assessed 3-10 days post-infection (dpi) by RT-qPCR ( B , C ) or Western blotti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-3042",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3042,
+      "sentence": "Graphs represent means \u00b1 SEM of four ( B ) or three ( C , E , F ) independent experiments. * p < 0.05, ** p < 0.01, # p < 0.1 compared to mock-infected cells by ANOVA with Dunnett\u2019s post hoc test ( B , C , F ) or paired t -test ( E ).",
+      "context_window": "our ( B ) or three ( C , E , F ) independent experiments. * p < 0.05, ** p < 0.01, # p < 0.1 compared to mock-infected cells by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-3055",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3055,
+      "sentence": "Graphs represent means \u00b1 SEM of four ( B ) or three ( C , E , F ) independent experiments. * p < 0.05, ** p < 0.01, # p < 0.1 compared to mock-infected cells by ANOVA with Dunnett\u2019s post hoc test ( B , C , F ) or paired t -test ( E ).",
+      "context_window": "three ( C , E , F ) independent experiments. * p < 0.05, ** p < 0.01, # p < 0.1 compared to mock-infected cells by ANOVA with Du",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-3067",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3067,
+      "sentence": "Graphs represent means \u00b1 SEM of four ( B ) or three ( C , E , F ) independent experiments. * p < 0.05, ** p < 0.01, # p < 0.1 compared to mock-infected cells by ANOVA with Dunnett\u2019s post hoc test ( B , C , F ) or paired t -test ( E ).",
+      "context_window": "E , F ) independent experiments. * p < 0.05, ** p < 0.01, # p < 0.1 compared to mock-infected cells by ANOVA with Dunnett\u2019s pos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-4424",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4424,
+      "sentence": "HCV interferes with the urea cycle by inhibiting the expression of arginase 1. ( A - C ) Huh7.5 cells were infected with an HCV inoculum at MOI 0.1 in DMEM-F12 media and harvested 3-6 days post-infection (d.p.i). ( D - F ) Alternatively, Huh7.5 cells stably transfected with subgenomic HCV RNA (replicon as equivalent for a chronic infection) or na\u00efve Huh7.5 cells were maintained in DMEM-F12 ( D , E ) or Plasmax ( F ) media.",
+      "context_window": "n HCV inoculum at MOI 0.1 in DMEM-F12 media and harvested 3-6 days post-infection (d.p.i). ( D - F ) Alternatively, Huh7.5 cel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-5274",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5274,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments, with the exception of ( A ), which shows the results of four independent experiments, and ( F ), which shows cells cultured for three passages in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by ANOVA with Dunnett\u2019s post hoc test ( A , C ) or paired t -test ( D , F ).",
+      "context_window": "d for three passages in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-5287",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5287,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments, with the exception of ( A ), which shows the results of four independent experiments, and ( F ), which shows cells cultured for three passages in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by ANOVA with Dunnett\u2019s post hoc test ( A , C ) or paired t -test ( D , F ).",
+      "context_window": "assages in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-5301",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5301,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments, with the exception of ( A ), which shows the results of four independent experiments, and ( F ), which shows cells cultured for three passages in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by ANOVA with Dunnett\u2019s post hoc test ( A , C ) or paired t -test ( D , F ).",
+      "context_window": "smax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by AN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-6957",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6957,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments, with the exception of ( F ) cells in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by ANOVA with Dunnett\u2019s post hoc test ( A ) or paired t -test ( D , F ).",
+      "context_window": "ption of ( F ) cells in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-6970",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6970,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments, with the exception of ( F ) cells in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by ANOVA with Dunnett\u2019s post hoc test ( A ) or paired t -test ( D , F ).",
+      "context_window": ") cells in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-6984",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6984,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments, with the exception of ( F ) cells in Plasmax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by ANOVA with Dunnett\u2019s post hoc test ( A ) or paired t -test ( D , F ).",
+      "context_window": "smax medium (two experiments). * p < 0.05, ** p < 0.01, *** p < 0.001 compared to mock-infected cells or na\u00efve Huh7.5 cells by AN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-8937",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8937,
+      "sentence": "The expression of PYCR that catalyses the reverse reaction was generally unaltered with the exception of decreased protein level at 3 days post-infection ( Figure 3 A,B).",
+      "context_window": "unaltered with the exception of decreased protein level at 3 days post-infection ( Figure 3 A,B). We also observed a moderate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-pct-10009",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10009,
+      "sentence": "30%) reduction in replication levels in the subgenomic replicon model ( Figure 3 G), indicating that reduction of the proline pool in infected cells is dispensable for the virus.",
+      "context_window": "i.e., to 2.5 mM. However, this led only to a moderate (ap. 30%) reduction in replication levels in the subgenomic replicon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-12940",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 12940,
+      "sentence": "Inhibitors of ornithine decarboxylase and polyamine oxidases inhibit HCV replication. ( A ) Huh7.5 cells harbouring a subgenomic HCV replicon were treated with 20 \u00b5M DENSpm, CPENSpm, CHENSpm, or MDL72.527 for 3 days. ( B ) Huh7.5 subgenomic replicon-harbouring cells were cultivated in DMEM with standard (DMEM) or dialysed (dDMEM) FBS supplemented with 1 mM aminoguanidine alone or with a mixture of spermine and spermidine (100 \u00b5M each). ( C , D ) HCV-infected Huh7.5 cells were treated with DFMO, MDL72.527, DENSpm, or with GC7 (10 and 30 \u00b5M), deferiprone (DFP, 200 and 600 \u00b5M), ciclopirox (25 and 75 \u00b5M), trans-4-methyl-cyclohecylamine (4MCHA), N-(3-aminopropyl)cyclohexylamine (APCHA) or L-canaline (30 and 100 \u00b5M), or SAM486A (1 and 3 \u00b5M) for 6 days. ( E ) The subgenomic HCV replicon cell line was treated similarly for 3 days.",
+      "context_window": "eated with 20 \u00b5M DENSpm, CPENSpm, CHENSpm, or MDL72.527 for 3 days. ( B ) Huh7.5 subgenomic replicon-harbouring cells were cul",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-13480",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 13480,
+      "sentence": "Inhibitors of ornithine decarboxylase and polyamine oxidases inhibit HCV replication. ( A ) Huh7.5 cells harbouring a subgenomic HCV replicon were treated with 20 \u00b5M DENSpm, CPENSpm, CHENSpm, or MDL72.527 for 3 days. ( B ) Huh7.5 subgenomic replicon-harbouring cells were cultivated in DMEM with standard (DMEM) or dialysed (dDMEM) FBS supplemented with 1 mM aminoguanidine alone or with a mixture of spermine and spermidine (100 \u00b5M each). ( C , D ) HCV-infected Huh7.5 cells were treated with DFMO, MDL72.527, DENSpm, or with GC7 (10 and 30 \u00b5M), deferiprone (DFP, 200 and 600 \u00b5M), ciclopirox (25 and 75 \u00b5M), trans-4-methyl-cyclohecylamine (4MCHA), N-(3-aminopropyl)cyclohexylamine (APCHA) or L-canaline (30 and 100 \u00b5M), or SAM486A (1 and 3 \u00b5M) for 6 days. ( E ) The subgenomic HCV replicon cell line was treated similarly for 3 days.",
+      "context_window": "or L-canaline (30 and 100 \u00b5M), or SAM486A (1 and 3 \u00b5M) for 6 days. ( E ) The subgenomic HCV replicon cell line was treated si",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-u-13558",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 13558,
+      "sentence": "Inhibitors of ornithine decarboxylase and polyamine oxidases inhibit HCV replication. ( A ) Huh7.5 cells harbouring a subgenomic HCV replicon were treated with 20 \u00b5M DENSpm, CPENSpm, CHENSpm, or MDL72.527 for 3 days. ( B ) Huh7.5 subgenomic replicon-harbouring cells were cultivated in DMEM with standard (DMEM) or dialysed (dDMEM) FBS supplemented with 1 mM aminoguanidine alone or with a mixture of spermine and spermidine (100 \u00b5M each). ( C , D ) HCV-infected Huh7.5 cells were treated with DFMO, MDL72.527, DENSpm, or with GC7 (10 and 30 \u00b5M), deferiprone (DFP, 200 and 600 \u00b5M), ciclopirox (25 and 75 \u00b5M), trans-4-methyl-cyclohecylamine (4MCHA), N-(3-aminopropyl)cyclohexylamine (APCHA) or L-canaline (30 and 100 \u00b5M), or SAM486A (1 and 3 \u00b5M) for 6 days. ( E ) The subgenomic HCV replicon cell line was treated similarly for 3 days.",
+      "context_window": "subgenomic HCV replicon cell line was treated similarly for 3 days. HCV RNA levels were quantified by RT-qPCR. Graphs represen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-13675",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13675,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments. ** p < 0.01 and *** p < 0.001 by ANOVA with Dunnett\u2019s post hoc test ( A ) or Tukey\u2019s test ( B ).",
+      "context_window": "represent means \u00b1 SEM of three independent experiments. ** p < 0.01 and *** p < 0.001 by ANOVA with Dunnett\u2019s post hoc test ( A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11201506_hepatitis_c_virus_dysregulates_polyamine_and_proline_metabol-p-13692",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13692,
+      "sentence": "Graphs represent means \u00b1 SEM of three independent experiments. ** p < 0.01 and *** p < 0.001 by ANOVA with Dunnett\u2019s post hoc test ( A ) or Tukey\u2019s test ( B ).",
+      "context_window": "\u00b1 SEM of three independent experiments. ** p < 0.01 and *** p < 0.001 by ANOVA with Dunnett\u2019s post hoc test ( A ) or Tukey\u2019s test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

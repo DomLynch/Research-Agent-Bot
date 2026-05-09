@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_predictive_factors_for_occlusal_changes_in_obstructive_sleep",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_predictive_factors_for_occlusal_changes_in_obstructive_sleep-pct-77",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 77,
+      "sentence": "This research addresses obstructive sleep apnea syndrome (OSAS), affecting 6-12% of French adults, often treated with mandibular advancement devices (MADs).",
+      "context_window": "resses obstructive sleep apnea syndrome (OSAS), affecting 6-12% of French adults, often treated with mandibular advancement",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_predictive_factors_for_occlusal_changes_in_obstructive_sleep-pct-208",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 208,
+      "sentence": "MADs may lead to occlusal modifications, causing a 50% treatment abandonment rate.",
+      "context_window": "(MADs). MADs may lead to occlusal modifications, causing a 50% treatment abandonment rate. The study employs surface elect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_predictive_factors_for_occlusal_changes_in_obstructive_sleep-u-391",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 391,
+      "sentence": "The study employs surface electromyography to assess masticatory muscle activity before and during MAD use, correlating it with occlusal changes after 6 months.",
+      "context_window": "during MAD use, correlating it with occlusal changes after 6 months. The primary goal is to determine dental displacement profi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

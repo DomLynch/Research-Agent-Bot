@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_nutritional_rehabilitation_and_sleep_apnea_in_the_obese",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_nutritional_rehabilitation_and_sleep_apnea_in_the_obese-pct-77",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 77,
+      "sentence": "In obese patients, the prevalence of obstructive sleep apnea (OSA) is around 40% in men and 30% in women.",
+      "context_window": ", the prevalence of obstructive sleep apnea (OSA) is around 40% in men and 30% in women. Weight loss after bariatric surger",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_nutritional_rehabilitation_and_sleep_apnea_in_the_obese-pct-92",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 92,
+      "sentence": "In obese patients, the prevalence of obstructive sleep apnea (OSA) is around 40% in men and 30% in women.",
+      "context_window": "e of obstructive sleep apnea (OSA) is around 40% in men and 30% in women. Weight loss after bariatric surgery significantly",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_nutritional_rehabilitation_and_sleep_apnea_in_the_obese-pct-175",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 175,
+      "sentence": "Weight loss after bariatric surgery significantly improves OSA, with 75% of patients having a reduction in OSA severity or becoming non-apneic.",
+      "context_window": "ss after bariatric surgery significantly improves OSA, with 75% of patients having a reduction in OSA severity or becoming",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

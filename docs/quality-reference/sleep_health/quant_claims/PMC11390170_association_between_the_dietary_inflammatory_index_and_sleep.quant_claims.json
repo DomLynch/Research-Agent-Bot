@@ -1,0 +1,922 @@
+{
+  "paper_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep",
+  "doi": "10.1055/s-0044-1780501",
+  "extracted_at": "2026-05-08T20:06:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 8,
+    "percentage": 21,
+    "odds_ratio": 7,
+    "confidence_interval": 7,
+    "p_value": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-584",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 584,
+      "sentence": "A total of 270 students aged between 17 and 25 years were randomly selected.",
+      "context_window": "rab University. A total of 270 students aged between 17 and 25 years were randomly selected. All students filled out a multicomp",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "Results Individuals in the highest (most proinflammatory) quartile of the E-DII were at an increased risk of having poor overall sleep quality compared with the lowest quartile (odds ratio [OR] = 2.86; 95% confidence interval [95%CI]: 1.27-6.44).",
+      "context_window": "compared with the lowest quartile (odds ratio [OR] = 2.86; 95% confidence interval [95%CI]: 1.27-6.44). Regarding the indi",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-1198",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1198,
+      "sentence": "Results Individuals in the highest (most proinflammatory) quartile of the E-DII were at an increased risk of having poor overall sleep quality compared with the lowest quartile (odds ratio [OR] = 2.86; 95% confidence interval [95%CI]: 1.27-6.44).",
+      "context_window": "quartile (odds ratio [OR] = 2.86; 95% confidence interval [95%CI]: 1.27-6.44). Regarding the individual domains of sleep q",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1405",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.49",
+      "numeric_values": [
+        2.49
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1405,
+      "sentence": "Regarding the individual domains of sleep quality, subjects in quartiles 3 and 4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively).",
+      "context_window": "ng poor sleep efficiency compared with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respecti",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1416",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.12-5.54",
+      "numeric_values": [
+        1.12,
+        5.54
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1416,
+      "sentence": "Regarding the individual domains of sleep quality, subjects in quartiles 3 and 4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively).",
+      "context_window": "ep efficiency compared with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively). However, in",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1438",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.52",
+      "numeric_values": [
+        2.52
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "Regarding the individual domains of sleep quality, subjects in quartiles 3 and 4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively).",
+      "context_window": "with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively). However, individuals in qu",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1449",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.13-5.62",
+      "numeric_values": [
+        1.13,
+        5.62
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "Regarding the individual domains of sleep quality, subjects in quartiles 3 and 4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively).",
+      "context_window": "in quartile 1 (OR = 2.49; 95%CI: 1.12-5.54; and OR = 2.52, 95%CI: 1.13-5.62 respectively). However, individuals in quartile 3 were at a",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1613",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1613,
+      "sentence": "However, individuals in quartile 3 were at a reduced risk of having daytime dysfunction compared with those in the lowest quartile (OR = 0.44; 95%CI: 0.23-0.83).",
+      "context_window": "ime dysfunction compared with those in the lowest quartile (OR = 0.44; 95%CI: 0.23-0.83). Conclusion The inflammatory potential",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1624",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 0.23-0.83",
+      "numeric_values": [
+        0.23,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1624,
+      "sentence": "However, individuals in quartile 3 were at a reduced risk of having daytime dysfunction compared with those in the lowest quartile (OR = 0.44; 95%CI: 0.23-0.83).",
+      "context_window": "tion compared with those in the lowest quartile (OR = 0.44; 95%CI: 0.23-0.83). Conclusion The inflammatory potential of the diet seems",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-2349",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2349,
+      "sentence": "21 Sleep disturbances, irregular sleeping patterns, and poor sleep quality are experienced by 63% of American college students.",
+      "context_window": "leeping patterns, and poor sleep quality are experienced by 63% of American college students. 22 Additionally, due to stres",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-197",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 197,
+      "sentence": "All students aged between 17 and 25 years and registered during the fall 2018-2019 semester in one of the 5 BAU faculties (Architecture, Business, Health Sciences, Engineering, and Science) were eligible to participate.",
+      "context_window": "ending the Tripoli campus. All students aged between 17 and 25 years and registered during the fall 2018-2019 semester in one of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-571",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 571,
+      "sentence": "The sample size was calculated based on a prevalence of bad sleep quality of 0.527 using the following formula: n = z 2 pq/d 2 (in which n = sample size; z = 1.96, which corresponds to a 95% confidence level; p = 52.7%, corresponding to the prevalence of the primary outcome, which is sleep quality, taken from previous studies 26 ; q = 0.473, which corresponds to 1 - p ; and d = 0.06, corresponding to the margin of error).",
+      "context_window": "(in which n = sample size; z = 1.96, which corresponds to a 95% confidence level; p = 52.7%, corresponding to the prevalenc",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-597",
+      "claim_type": "percentage",
+      "raw_text": "52.7%",
+      "numeric_values": [
+        52.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 597,
+      "sentence": "The sample size was calculated based on a prevalence of bad sleep quality of 0.527 using the following formula: n = z 2 pq/d 2 (in which n = sample size; z = 1.96, which corresponds to a 95% confidence level; p = 52.7%, corresponding to the prevalence of the primary outcome, which is sleep quality, taken from previous studies 26 ; q = 0.473, which corresponds to 1 - p ; and d = 0.06, corresponding to the margin of error).",
+      "context_window": "z = 1.96, which corresponds to a 95% confidence level; p = 52.7%, corresponding to the prevalence of the primary outcome, wh",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-1920",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1920,
+      "sentence": "29 Height was assessed in a standing position without shoes to the nearest 0.1 cm using a wall-mounted height rod (Tanita Corporation of America, Inc, Arlington Heights, IL, United States).",
+      "context_window": "ssessed in a standing position without shoes to the nearest 0.1 cm using a wall-mounted height rod (Tanita Corporation of Amer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-2070",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2070,
+      "sentence": "Weight was measured to the nearest 0.1 kg wearing light indoor clothing using an electronic digital scale HN286 Digital Personal Scale, Omron, Japan that was calibrated.",
+      "context_window": "hts, IL, United States). Weight was measured to the nearest 0.1 kg wearing light indoor clothing using an electronic digital s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-2258",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2258,
+      "sentence": "Waist circumference (WC) was measured to the nearest 0.1 cm with a non-stretchable flexible tape with the participant in a standing position.",
+      "context_window": "rated. Waist circumference (WC) was measured to the nearest 0.1 cm with a non-stretchable flexible tape with the participant i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-2368",
+      "claim_type": "unit_value",
+      "raw_text": "80 cm",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2368,
+      "sentence": "For the WC, values > 80 cm and > 94 cm were considered as elevated for female and male subjects respectively.",
+      "context_window": "he participant in a standing position. For the WC, values > 80 cm and > 94 cm were considered as elevated for female and male",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-2380",
+      "claim_type": "unit_value",
+      "raw_text": "94 cm",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2380,
+      "sentence": "For the WC, values > 80 cm and > 94 cm were considered as elevated for female and male subjects respectively.",
+      "context_window": "nt in a standing position. For the WC, values > 80 cm and > 94 cm were considered as elevated for female and male subjects re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-u-2818",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2818,
+      "sentence": "31\n\nA previously validated food frequency questionnaire (FFQ) consisting of 83 food items was used to assess dietary intake over the last 6 months.",
+      "context_window": "food items was used to assess dietary intake over the last 6 months. 32 The FFQ included three sections: food list, portion siz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-5260",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5260,
+      "sentence": "Each of the 7 components is evaluated equally on a scale ranging from 0 to 3, with a higher score reflecting progressively worsening problems, as follows: 1) subjective sleep quality (very good to very bad); 2) sleep latency (15 to > 60 minutes); 3) sleep duration (7 to < 5 hours); 4) sleep efficiency (\u2265 85% to < 65% of hours slept/hours in bed); 5) sleep disturbances (not during the past month to 3 times per week); 6) use of sleeping medications (none to 3 times a week); and 7) daytime dysfunction (not a problem to a very big problem).",
+      "context_window": "3) sleep duration (7 to < 5 hours); 4) sleep efficiency (\u2265 85% to < 65% of hours slept/hours in bed); 5) sleep disturbance",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-5269",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5269,
+      "sentence": "Each of the 7 components is evaluated equally on a scale ranging from 0 to 3, with a higher score reflecting progressively worsening problems, as follows: 1) subjective sleep quality (very good to very bad); 2) sleep latency (15 to > 60 minutes); 3) sleep duration (7 to < 5 hours); 4) sleep efficiency (\u2265 85% to < 65% of hours slept/hours in bed); 5) sleep disturbances (not during the past month to 3 times per week); 6) use of sleeping medications (none to 3 times a week); and 7) daytime dysfunction (not a problem to a very big problem).",
+      "context_window": "duration (7 to < 5 hours); 4) sleep efficiency (\u2265 85% to < 65% of hours slept/hours in bed); 5) sleep disturbances (not du",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-6108",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6108,
+      "sentence": "The first quartile (Q1) corresponds to the lowest 25% of the E-DII (the least inflammatory diets in our dataset).",
+      "context_window": "uartiles. The first quartile (Q1) corresponds to the lowest 25% of the E-DII (the least inflammatory diets in our dataset).",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-6188",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6188,
+      "sentence": "The next lowest 25% of the E-DII are categorized as the second quartile (Q2).",
+      "context_window": "e least inflammatory diets in our dataset). The next lowest 25% of the E-DII are categorized as the second quartile (Q2). T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-6302",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6302,
+      "sentence": "The third quartile (Q3) includes the second highest 25% of the E-DII.",
+      "context_window": "e (Q2). The third quartile (Q3) includes the second highest 25% of the E-DII. Finally, the highest 25% of the E-DII (the mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-6341",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6341,
+      "sentence": "Finally, the highest 25% of the E-DII (the most proinflammatory diets in our dataset) are included in the fourth quartile (Q4).",
+      "context_window": "s the second highest 25% of the E-DII. Finally, the highest 25% of the E-DII (the most proinflammatory diets in our dataset",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-7066",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7066,
+      "sentence": "For the association between the overall sleep quality and E-DII quartiles, odds ratios (ORs) with 95% confidence intervals (95%CIs) were estimated using binary logistic regression; and, for the association between the individual PSQI components and the E-DII, ORs with 95%CIs were estimated using ordinal regression.",
+      "context_window": "l sleep quality and E-DII quartiles, odds ratios (ORs) with 95% confidence intervals (95%CIs) were estimated using binary l",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-7092",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7092,
+      "sentence": "For the association between the overall sleep quality and E-DII quartiles, odds ratios (ORs) with 95% confidence intervals (95%CIs) were estimated using binary logistic regression; and, for the association between the individual PSQI components and the E-DII, ORs with 95%CIs were estimated using ordinal regression.",
+      "context_window": "quartiles, odds ratios (ORs) with 95% confidence intervals (95%CIs) were estimated using binary logistic regression; and, f",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-7237",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7237,
+      "sentence": "For the association between the overall sleep quality and E-DII quartiles, odds ratios (ORs) with 95% confidence intervals (95%CIs) were estimated using binary logistic regression; and, for the association between the individual PSQI components and the E-DII, ORs with 95%CIs were estimated using ordinal regression.",
+      "context_window": "ween the individual PSQI components and the E-DII, ORs with 95%CIs were estimated using ordinal regression.",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-228",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 228,
+      "sentence": "There were no significant differences in the baseline characteristics of the participants according to the E-DII quartiles ( p > 0.05).",
+      "context_window": "tics of the participants according to the E-DII quartiles ( p > 0.05). Abbreviations: BMI, Body Mass Index; E-DII, Energy-Adjus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-592",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 592,
+      "sentence": "Higher rates of poor overall sleep quality were found in the highest E-DII quartiles, with 66% and 78% of participants in Q3 and Q4 respectively, having poor sleep quality versus 52% in Q1 ( p = 0.02).",
+      "context_window": "eep quality were found in the highest E-DII quartiles, with 66% and 78% of participants in Q3 and Q4 respectively, having p",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-600",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 600,
+      "sentence": "Higher rates of poor overall sleep quality were found in the highest E-DII quartiles, with 66% and 78% of participants in Q3 and Q4 respectively, having poor sleep quality versus 52% in Q1 ( p = 0.02).",
+      "context_window": "ity were found in the highest E-DII quartiles, with 66% and 78% of participants in Q3 and Q4 respectively, having poor slee",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-680",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 680,
+      "sentence": "Higher rates of poor overall sleep quality were found in the highest E-DII quartiles, with 66% and 78% of participants in Q3 and Q4 respectively, having poor sleep quality versus 52% in Q1 ( p = 0.02).",
+      "context_window": "in Q3 and Q4 respectively, having poor sleep quality versus 52% in Q1 ( p = 0.02). Despite the overall significant associat",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-692",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 692,
+      "sentence": "Higher rates of poor overall sleep quality were found in the highest E-DII quartiles, with 66% and 78% of participants in Q3 and Q4 respectively, having poor sleep quality versus 52% in Q1 ( p = 0.02).",
+      "context_window": "respectively, having poor sleep quality versus 52% in Q1 ( p = 0.02). Despite the overall significant association between the E",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-909",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 909,
+      "sentence": "Despite the overall significant association between the E-DII and sleep quality, there were no significant differences in the sleep outcomes of the individual PSQI domains according to the E-DII quartiles (p > 0.05) ( Table 2 ).",
+      "context_window": "e individual PSQI domains according to the E-DII quartiles (p > 0.05) ( Table 2 ). Abbreviations: E-DII, Energy-Adjusted Dietar",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1298",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR =2.86",
+      "numeric_values": [
+        2.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1298,
+      "sentence": "Individuals in Q4 were at an increased risk of having poor overall sleep quality compared with those in Q1 (OR =2.86; 95%CI: 1.27-6.44; p = 0.01).",
+      "context_window": "aving poor overall sleep quality compared with those in Q1 (OR =2.86; 95%CI: 1.27-6.44; p = 0.01). As for the individual domains",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1308",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.27-6.44",
+      "numeric_values": [
+        1.27,
+        6.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1308,
+      "sentence": "Individuals in Q4 were at an increased risk of having poor overall sleep quality compared with those in Q1 (OR =2.86; 95%CI: 1.27-6.44; p = 0.01).",
+      "context_window": "overall sleep quality compared with those in Q1 (OR =2.86; 95%CI: 1.27-6.44; p = 0.01). As for the individual domains, an association w",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-1326",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1326,
+      "sentence": "Individuals in Q4 were at an increased risk of having poor overall sleep quality compared with those in Q1 (OR =2.86; 95%CI: 1.27-6.44; p = 0.01).",
+      "context_window": "lity compared with those in Q1 (OR =2.86; 95%CI: 1.27-6.44; p = 0.01). As for the individual domains, an association was found r",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1588",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.40",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1588,
+      "sentence": "Individuals in Q3 and Q4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively).",
+      "context_window": "of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1599",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.12-5.54",
+      "numeric_values": [
+        1.12,
+        5.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1599,
+      "sentence": "Individuals in Q3 and Q4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively).",
+      "context_window": "poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-1617",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1617,
+      "sentence": "Individuals in Q3 and Q4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively).",
+      "context_window": "ncy compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively). H",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1631",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.52",
+      "numeric_values": [
+        2.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1631,
+      "sentence": "Individuals in Q3 and Q4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively).",
+      "context_window": "ith those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively). However, individ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1642",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.13-5.62",
+      "numeric_values": [
+        1.13,
+        5.62
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1642,
+      "sentence": "Individuals in Q3 and Q4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively).",
+      "context_window": "n Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively). However, individuals in Q3 were at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-1660",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1660,
+      "sentence": "Individuals in Q3 and Q4 of the E-DII were at an increased risk of having poor sleep efficiency compared with those in Q1 (OR = 2.40; 95%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively).",
+      "context_window": "5%CI: 1.12-5.54; p = 0.03; and OR = 2.52; 95%CI: 1.13-5.62; p = 0.02 respectively). However, individuals in Q3 were at a reduced",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-or-a-1791",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1791,
+      "sentence": "However, individuals in Q3 were at a reduced risk of having daytime dysfunction compared with those in Q1 (OR = 0.44; 95%CI: 0.23-0.83; p = 0.01).",
+      "context_window": "sk of having daytime dysfunction compared with those in Q1 (OR = 0.44; 95%CI: 0.23-0.83; p = 0.01). No significant association wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-ci-1802",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 0.23-0.83",
+      "numeric_values": [
+        0.23,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1802,
+      "sentence": "However, individuals in Q3 were at a reduced risk of having daytime dysfunction compared with those in Q1 (OR = 0.44; 95%CI: 0.23-0.83; p = 0.01).",
+      "context_window": "g daytime dysfunction compared with those in Q1 (OR = 0.44; 95%CI: 0.23-0.83; p = 0.01). No significant association was found between th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-p-1820",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1820,
+      "sentence": "However, individuals in Q3 were at a reduced risk of having daytime dysfunction compared with those in Q1 (OR = 0.44; 95%CI: 0.23-0.83; p = 0.01).",
+      "context_window": "ion compared with those in Q1 (OR = 0.44; 95%CI: 0.23-0.83; p = 0.01). No significant association was found between the other PS",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-1278",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1278,
+      "sentence": "23 Thus, as in other countries and cultural contexts, poor sleep quality is very common among university students in Arab countries, with previous studies indicating that around 2/3 of college students attending the university of Sharjah, in United Arab Emirates (UAE), and 76% of medical students attending King Khaled University in Saudi Arabia have poor sleep quality.",
+      "context_window": "e university of Sharjah, in United Arab Emirates (UAE), and 76% of medical students attending King Khaled University in Sau",
+      "claim_role": "background",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-1630",
+      "claim_type": "percentage",
+      "raw_text": "52.7%",
+      "numeric_values": [
+        52.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1630,
+      "sentence": "A previous study 26 conducted on students from 6 universities across Lebanon, for example, revealed that more than half of them (52.7%) had poor sleep quality.",
+      "context_window": "Lebanon, for example, revealed that more than half of them (52.7%) had poor sleep quality. Our results support these findings",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-1700",
+      "claim_type": "percentage",
+      "raw_text": "64.2%",
+      "numeric_values": [
+        64.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1700,
+      "sentence": "Our results support these findings, as 64.2% of our population had poor sleep quality.",
+      "context_window": "poor sleep quality. Our results support these findings, as 64.2% of our population had poor sleep quality. Due to the compl",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11390170_association_between_the_dietary_inflammatory_index_and_sleep-pct-6193",
+      "claim_type": "percentage",
+      "raw_text": "31.5%",
+      "numeric_values": [
+        31.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6193,
+      "sentence": "Third, the smoking levels were higher in our sample compared with the Emirati study (almost 31.5%; results not shown).",
+      "context_window": "igher in our sample compared with the Emirati study (almost 31.5%; results not shown). Fourth, the use of regression models a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

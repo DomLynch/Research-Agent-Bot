@@ -1,0 +1,2861 @@
+{
+  "paper_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_",
+  "doi": "10.3390/nu11092212",
+  "extracted_at": "2026-05-08T20:11:02+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 16,
+    "mean_sd": 20,
+    "unit_value": 22,
+    "p_value": 93,
+    "hazard_ratio": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-646",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/24 h) was significantly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001).",
+      "context_window": "ned as the start of dialysis or re-transplantation. In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-656",
+      "claim_type": "mean_sd",
+      "raw_text": "53 \u00b1 13",
+      "numeric_values": [
+        53.0,
+        13.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 656,
+      "sentence": "In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/24 h) was significantly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001).",
+      "context_window": "start of dialysis or re-transplantation. In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-661",
+      "claim_type": "unit_value",
+      "raw_text": "13 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 661,
+      "sentence": "In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/24 h) was significantly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001).",
+      "context_window": "t of dialysis or re-transplantation. In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-719",
+      "claim_type": "mean_sd",
+      "raw_text": "45 \u00b1 19",
+      "numeric_values": [
+        45.0,
+        19.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 719,
+      "sentence": "In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/24 h) was significantly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001).",
+      "context_window": "\u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-724",
+      "claim_type": "unit_value",
+      "raw_text": "19 mL/min",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 724,
+      "sentence": "In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/24 h) was significantly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001).",
+      "context_window": "years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-873",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 873,
+      "sentence": "In RTR (58% male, 53 \u00b1 13 years old, estimated glomerular filtration rate (eGFR) 45 \u00b1 19 mL/min/1.73 m 2 ), urinary taurine excretion (533 (210-946) \u00b5mol/24 h) was significantly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001).",
+      "context_window": "ly associated with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001). During median follow-up for 5.3 (4.5-6.0) years, 83 (12%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-938",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 938,
+      "sentence": "During median follow-up for 5.3 (4.5-6.0) years, 83 (12%) patients developed graft failure.",
+      "context_window": ".001). During median follow-up for 5.3 (4.5-6.0) years, 83 (12%) patients developed graft failure. In Cox regression analys",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-hr-l-1076",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio: 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1076,
+      "sentence": "In Cox regression analyses, urinary taurine excretion was inversely associated with graft failure (hazard ratio: 0.74 (0.67-0.82); P < 0.001).",
+      "context_window": "rine excretion was inversely associated with graft failure (hazard ratio: 0.74 (0.67-0.82); P < 0.001). This association remained signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1108",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1108,
+      "sentence": "In Cox regression analyses, urinary taurine excretion was inversely associated with graft failure (hazard ratio: 0.74 (0.67-0.82); P < 0.001).",
+      "context_window": "ociated with graft failure (hazard ratio: 0.74 (0.67-0.82); P < 0.001). This association remained significant independent of pote",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-177",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 177,
+      "sentence": "In short, all adult (\u226518 years old) RTR without known or apparent systemic illnesses (i.e., malignancies, opportunistic infections) who visited the outpatient clinic of the University Medical Center Groningen between November 2008 and June 2011 were invited to participate in this prospective cohort study.",
+      "context_window": "as previously described [ 20 , 21 ]. In short, all adult (\u226518 years old) RTR without known or apparent systemic illnesses (i.e.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-619",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 619,
+      "sentence": "Of the 817 initially invited RTR, 706 (87%) signed written informed consent to participate in this study.",
+      "context_window": "r alcohol addiction. Of the 817 initially invited RTR, 706 (87%) signed written informed consent to participate in this stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-2397",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 2397,
+      "sentence": "Diabetes mellitus was diagnosed according to American Diabetes Association criteria (2017) as having a fasting plasma glucose concentration \u22657.0 mmol/L or the use of an antidiabetic medication [ 24 , 25 ].",
+      "context_window": "ia (2017) as having a fasting plasma glucose concentration \u22657.0 mmol/L or the use of an antidiabetic medication [ 24 , 25 ]. Hyp",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-2527",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2527,
+      "sentence": "Hypertension was defined as predialysis systolic blood pressure >140 mmHg and/or diastolic blood pressure >90 mmHg or use of antihypertensive drugs.",
+      "context_window": "tension was defined as predialysis systolic blood pressure >140 mmHg and/or diastolic blood pressure >90 mmHg or use of antihype",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-2569",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2569,
+      "sentence": "Hypertension was defined as predialysis systolic blood pressure >140 mmHg and/or diastolic blood pressure >90 mmHg or use of antihypertensive drugs.",
+      "context_window": "c blood pressure >140 mmHg and/or diastolic blood pressure >90 mmHg or use of antihypertensive drugs. Information on dietary i",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-4557",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 mm",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4557,
+      "sentence": "In short, samples were derivatized using AccQ\u2022Tag derivatization reagent according to the manufacturer\u2019s protocol (Waters Corporation, Milford, MA, USA) and separated using a Cortecs UPLC C18 (1.6 \u00b5m pore size, 150 \u00d7 2.1 mm) analytical column.",
+      "context_window": "separated using a Cortecs UPLC C18 (1.6 \u00b5m pore size, 150 \u00d7 2.1 mm) analytical column. Taurine was detected using positive-ion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-4978",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4978,
+      "sentence": "The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L.",
+      "context_window": "g three urine pool samples. The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-4986",
+      "claim_type": "unit_value",
+      "raw_text": "270.4 \u00b5mol",
+      "numeric_values": [
+        270.4
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 4986,
+      "sentence": "The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L.",
+      "context_window": "urine pool samples. The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L. The upper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-5000",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5000,
+      "sentence": "The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L.",
+      "context_window": "ples. The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L. The upper limit o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-5008",
+      "claim_type": "unit_value",
+      "raw_text": "594.7 \u00b5mol",
+      "numeric_values": [
+        594.7
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 5008,
+      "sentence": "The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L.",
+      "context_window": "e inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L. The upper limit of detection wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-5025",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5025,
+      "sentence": "The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L.",
+      "context_window": "cisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L. The upper limit of detection was 1200 \u00b5mol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-5033",
+      "claim_type": "unit_value",
+      "raw_text": "762.0 \u00b5mol",
+      "numeric_values": [
+        762.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 5033,
+      "sentence": "The inter-assay precisions were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L.",
+      "context_window": "were 8.5% at 270.4 \u00b5mol/L, 9.8% at 594.7 \u00b5mol/L and 7.9% at 762.0 \u00b5mol/L. The upper limit of detection was 1200 \u00b5mol/L and values",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-5080",
+      "claim_type": "unit_value",
+      "raw_text": "1200 \u00b5mol",
+      "numeric_values": [
+        1200.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 5080,
+      "sentence": "The upper limit of detection was 1200 \u00b5mol/L and values above 1200 \u00b5mol/L were reported as 1201 \u00b5mol/L.",
+      "context_window": "and 7.9% at 762.0 \u00b5mol/L. The upper limit of detection was 1200 \u00b5mol/L and values above 1200 \u00b5mol/L were reported as 1201 \u00b5mol/L",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-5109",
+      "claim_type": "unit_value",
+      "raw_text": "1200 \u00b5mol",
+      "numeric_values": [
+        1200.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 5109,
+      "sentence": "The upper limit of detection was 1200 \u00b5mol/L and values above 1200 \u00b5mol/L were reported as 1201 \u00b5mol/L.",
+      "context_window": "e upper limit of detection was 1200 \u00b5mol/L and values above 1200 \u00b5mol/L were reported as 1201 \u00b5mol/L. Urinary protein concentrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-5138",
+      "claim_type": "unit_value",
+      "raw_text": "1201 \u00b5mol",
+      "numeric_values": [
+        1201.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 5138,
+      "sentence": "The upper limit of detection was 1200 \u00b5mol/L and values above 1200 \u00b5mol/L were reported as 1201 \u00b5mol/L.",
+      "context_window": "s 1200 \u00b5mol/L and values above 1200 \u00b5mol/L were reported as 1201 \u00b5mol/L. Urinary protein concentration was determined by means of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-7491",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7491,
+      "sentence": "A two-sided P < 0.05 was considered to indicate statistical significance.",
+      "context_window": "and as numbers (percentages) for nominal data. A two-sided P < 0.05 was considered to indicate statistical significance. Differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-10075",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10075,
+      "sentence": "Schoenfeld residuals of urinary taurine excretion, urinary taurine concentration and urinary taurine/creatinine ratio were checked in R, the assumption of proportional hazards was not violated for urinary taurine excretion, urinary taurine concentration and the urinary taurine/creatinine ratio ( P = 0.77, P = 0.65 and P = 0.55, respectively).",
+      "context_window": "ne concentration and the urinary taurine/creatinine ratio ( P = 0.77, P = 0.65 and P = 0.55, respectively). Potential interactio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-10085",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10085,
+      "sentence": "Schoenfeld residuals of urinary taurine excretion, urinary taurine concentration and urinary taurine/creatinine ratio were checked in R, the assumption of proportional hazards was not violated for urinary taurine excretion, urinary taurine concentration and the urinary taurine/creatinine ratio ( P = 0.77, P = 0.65 and P = 0.55, respectively).",
+      "context_window": "ration and the urinary taurine/creatinine ratio ( P = 0.77, P = 0.65 and P = 0.55, respectively). Potential interactions for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-10098",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10098,
+      "sentence": "Schoenfeld residuals of urinary taurine excretion, urinary taurine concentration and urinary taurine/creatinine ratio were checked in R, the assumption of proportional hazards was not violated for urinary taurine excretion, urinary taurine concentration and the urinary taurine/creatinine ratio ( P = 0.77, P = 0.65 and P = 0.55, respectively).",
+      "context_window": "e urinary taurine/creatinine ratio ( P = 0.77, P = 0.65 and P = 0.55, respectively). Potential interactions for the covariates a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-261",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 261,
+      "sentence": "Urinary taurine excretion (533 (210-946) \u00b5mol/24 h versus 477 (253-943) \u00b5mol/24 h; P = 0.92), urinary taurine concentration (216 (87-415) \u00b5mol/L versus 199 (100-394) \u00b5mol/L; P = 0.85) and urinary taurine/creatinine ratio (46 (20-80) \u00b5mol/mmol versus 41 (21-66) \u00b5mol/mmol; P = 0.21) were similar in RTR and controls, respectively.",
+      "context_window": "on (533 (210-946) \u00b5mol/24 h versus 477 (253-943) \u00b5mol/24 h; P = 0.92), urinary taurine concentration (216 (87-415) \u00b5mol/L versus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-352",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.85",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 352,
+      "sentence": "Urinary taurine excretion (533 (210-946) \u00b5mol/24 h versus 477 (253-943) \u00b5mol/24 h; P = 0.92), urinary taurine concentration (216 (87-415) \u00b5mol/L versus 199 (100-394) \u00b5mol/L; P = 0.85) and urinary taurine/creatinine ratio (46 (20-80) \u00b5mol/mmol versus 41 (21-66) \u00b5mol/mmol; P = 0.21) were similar in RTR and controls, respectively.",
+      "context_window": "entration (216 (87-415) \u00b5mol/L versus 199 (100-394) \u00b5mol/L; P = 0.85) and urinary taurine/creatinine ratio (46 (20-80) \u00b5mol/mmol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-450",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.21",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 450,
+      "sentence": "Urinary taurine excretion (533 (210-946) \u00b5mol/24 h versus 477 (253-943) \u00b5mol/24 h; P = 0.92), urinary taurine concentration (216 (87-415) \u00b5mol/L versus 199 (100-394) \u00b5mol/L; P = 0.85) and urinary taurine/creatinine ratio (46 (20-80) \u00b5mol/mmol versus 41 (21-66) \u00b5mol/mmol; P = 0.21) were similar in RTR and controls, respectively.",
+      "context_window": "ne ratio (46 (20-80) \u00b5mol/mmol versus 41 (21-66) \u00b5mol/mmol; P = 0.21) were similar in RTR and controls, respectively. The two gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-607",
+      "claim_type": "mean_sd",
+      "raw_text": "26.6 \u00b1 4.8",
+      "numeric_values": [
+        26.6,
+        4.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 607,
+      "sentence": "The two groups were also similar with respect to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02).",
+      "context_window": "espect to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02). Men were overr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-614",
+      "claim_type": "unit_value",
+      "raw_text": "4.8 kg",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 614,
+      "sentence": "The two groups were also similar with respect to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02).",
+      "context_window": "to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02). Men were overrepr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-632",
+      "claim_type": "mean_sd",
+      "raw_text": "26.0 \u00b1 3.5",
+      "numeric_values": [
+        26.0,
+        3.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 632,
+      "sentence": "The two groups were also similar with respect to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02).",
+      "context_window": "BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02). Men were overrepresented in the RTR gro",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-639",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 639,
+      "sentence": "The two groups were also similar with respect to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02).",
+      "context_window": "hough RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02). Men were overrepresented in the RTR group",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-652",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 652,
+      "sentence": "The two groups were also similar with respect to age, height and BSA, though RTR had a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02).",
+      "context_window": "a higher BMI (26.6 \u00b1 4.8 kg/m 2 versus 26.0 \u00b1 3.5 kg/m 2 ; P = 0.02). Men were overrepresented in the RTR group compared with t",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-738",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 738,
+      "sentence": "Men were overrepresented in the RTR group compared with the control group (58% male versus 47% male; P = 0.002).",
+      "context_window": "presented in the RTR group compared with the control group (58% male versus 47% male; P = 0.002). As anticipated, eGFR was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-754",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 754,
+      "sentence": "Men were overrepresented in the RTR group compared with the control group (58% male versus 47% male; P = 0.002).",
+      "context_window": "RTR group compared with the control group (58% male versus 47% male; P = 0.002). As anticipated, eGFR was significantly lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-764",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 764,
+      "sentence": "Men were overrepresented in the RTR group compared with the control group (58% male versus 47% male; P = 0.002).",
+      "context_window": "compared with the control group (58% male versus 47% male; P = 0.002). As anticipated, eGFR was significantly lower in RTR than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-846",
+      "claim_type": "mean_sd",
+      "raw_text": "45 \u00b1 19",
+      "numeric_values": [
+        45.0,
+        19.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 846,
+      "sentence": "As anticipated, eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001).",
+      "context_window": "ated, eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-851",
+      "claim_type": "unit_value",
+      "raw_text": "19 mL/min",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 851,
+      "sentence": "As anticipated, eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001).",
+      "context_window": "eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001). Anima",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-877",
+      "claim_type": "mean_sd",
+      "raw_text": "92 \u00b1 16",
+      "numeric_values": [
+        92.0,
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 877,
+      "sentence": "As anticipated, eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001).",
+      "context_window": "wer in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001). Animal-based protein intake w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-882",
+      "claim_type": "unit_value",
+      "raw_text": "16 mL/min",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 882,
+      "sentence": "As anticipated, eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001).",
+      "context_window": "n RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001). Animal-based protein intake was simi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-903",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 903,
+      "sentence": "As anticipated, eGFR was significantly lower in RTR than in controls (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001).",
+      "context_window": "s (45 \u00b1 19 mL/min/1.73 m 2 versus 92 \u00b1 16 mL/min/1.73 m 2 ; P < 0.001). Animal-based protein intake was similar in RTR and contro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-976",
+      "claim_type": "mean_sd",
+      "raw_text": "51 \u00b1 13",
+      "numeric_values": [
+        51.0,
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 976,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "nimal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-991",
+      "claim_type": "mean_sd",
+      "raw_text": "51 \u00b1 12",
+      "numeric_values": [
+        51.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 991,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "tein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1007",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1007,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1039",
+      "claim_type": "mean_sd",
+      "raw_text": "2172 \u00b1 619",
+      "numeric_values": [
+        2172.0,
+        619.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1039,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "\u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intak",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1057",
+      "claim_type": "mean_sd",
+      "raw_text": "2294 \u00b1 730",
+      "numeric_values": [
+        2294.0,
+        730.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1057,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "2 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1079",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1079,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "hile energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1112",
+      "claim_type": "mean_sd",
+      "raw_text": "82 \u00b1 12",
+      "numeric_values": [
+        82.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1112,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "rsus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1134",
+      "claim_type": "mean_sd",
+      "raw_text": "85 \u00b1 15",
+      "numeric_values": [
+        85.0,
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1134,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "4 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h ver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1150",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1150,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1184",
+      "claim_type": "mean_sd",
+      "raw_text": "31 \u00b1 6",
+      "numeric_values": [
+        31.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1184,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1205",
+      "claim_type": "mean_sd",
+      "raw_text": "33 \u00b1 8",
+      "numeric_values": [
+        33.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1205,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "4 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h ver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1220",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1220,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": ", plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1249",
+      "claim_type": "mean_sd",
+      "raw_text": "1187 \u00b1 172",
+      "numeric_values": [
+        1187.0,
+        172.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1249,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-1256",
+      "claim_type": "unit_value",
+      "raw_text": "172 mg",
+      "numeric_values": [
+        172.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1256,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intak",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1275",
+      "claim_type": "mean_sd",
+      "raw_text": "1238 \u00b1 190",
+      "numeric_values": [
+        1238.0,
+        190.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1275,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "4 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-1282",
+      "claim_type": "unit_value",
+      "raw_text": "190 mg",
+      "numeric_values": [
+        190.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1282,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "< 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1295",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1295,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "teine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1325",
+      "claim_type": "mean_sd",
+      "raw_text": "88 \u00b1 16",
+      "numeric_values": [
+        88.0,
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1325,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohyd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1347",
+      "claim_type": "mean_sd",
+      "raw_text": "94 \u00b1 20",
+      "numeric_values": [
+        94.0,
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1347,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "g/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1363",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1363,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "1), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1405",
+      "claim_type": "mean_sd",
+      "raw_text": "249 \u00b1 63",
+      "numeric_values": [
+        249.0,
+        63.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1405,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "s 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-msd-1428",
+      "claim_type": "mean_sd",
+      "raw_text": "258 \u00b1 49",
+      "numeric_values": [
+        258.0,
+        49.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1428,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": ".001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1445",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1445,
+      "sentence": "Animal-based protein intake was similar in RTR and controls (51 \u00b1 13 versus 51 \u00b1 12 g/24 h; P = 0.98), while energy intake (2172 \u00b1 619 versus 2294 \u00b1 730 kcal/24 h; P = 0.02), total protein intake (82 \u00b1 12 g/24 h versus 85 \u00b1 15 g/24 h; P = 0.007), plant protein intake (31 \u00b1 6 g/24 h versus 33 \u00b1 8 g/24 h; P < 0.001), cysteine intake (1187 \u00b1 172 mg/24 h versus 1238 \u00b1 190 mg/24 h; P = 0.001), total fat intake (88 \u00b1 16 g/24 h versus 94 \u00b1 20 g/24 h; P = 0.001) and total carbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls.",
+      "context_window": "arbohydrate intake (249 \u00b1 63 g/24 h versus 258 \u00b1 49 g/24 h; P = 0.03) were lower in RTR compared to controls. Selected baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1701",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1701,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "ly associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), uri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1755",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1755,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": ".249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1812",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1812,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "2; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1845",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1845,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "eatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1890",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1890,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "ex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1920",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1920,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "er smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1951",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "= 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibito",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-1979",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1979,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), pr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2035",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2035,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "96; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2078",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2078,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "tors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2107",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2107,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "rednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2152",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2152,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "FR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), ch",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2207",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2207,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P <",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2240",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2240,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "tion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2272",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2272,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": ".001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2308",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2308,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "1), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001). In contrast, urinar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2346",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2346,
+      "sentence": "Univariate, urinary taurine excretion was positively associated with serum free sulfhydryl groups (\u03b2 = 0.249; P < 0.001), urinary taurine concentration (\u03b2 = 0.962; P < 0.001), urinary taurine/creatinine ratio (\u03b2 = 0.969; P < 0.001), male sex (\u03b2 = 0.374; P < 0.001), never smoking status (\u03b2 = 0.083; P = 0.04), weight (\u03b2 = 0.121; P = 0.002), height (\u03b2 = 0.266; P < 0.001), BSA (\u03b2 = 0.196; P < 0.001), use of proliferation inhibitors (\u03b2 = 0.095; P = 0.01), prednisolone dosage (\u03b2 = 0.135; P < 0.001), eGFR (\u03b2 = 0.252; P < 0.001), creatinine clearance (\u03b2 = 0.361; P < 0.001) and urinary excretion of sodium (\u03b2 = 0.288; P < 0.001), chloride (\u03b2 = 0.268; P < 0.001), sulfate (\u03b2 = 0.324; P < 0.001), thiosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001).",
+      "context_window": "iosulfate (\u03b2 = 0.285; P < 0.001) and creatinine (\u03b2 = 0.397; P < 0.001). In contrast, urinary taurine excretion was inversely asso",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2463",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2463,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "versely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2541",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2541,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "nal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholestero",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2584",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2584,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "NP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2625",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2625,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "terol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2666",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2666,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "terol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2704",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2704,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "lesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabeti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2744",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2744,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "erides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2794",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2794,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "= -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2860",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2860,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2902",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2902,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "tion (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatini",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2945",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2945,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "ies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-2987",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2987,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "dies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005). Adjustment for ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3027",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3027,
+      "sentence": "In contrast, urinary taurine excretion was inversely associated with antihypertensive drugs (\u03b2 = -0.082; P = 0.03), N-terminal pro b-type natriuretic peptide (NT-proBNP) (\u03b2 = -0.196; P < 0.001), total cholesterol (\u03b2 = -0.174; P < 0.001), HDL cholesterol (\u03b2 = -0.112; P = 0.004), LDL cholesterol (\u03b2 = -0.094; P = 0.02), triglycerides (\u03b2 = -0.168; P < 0.001), use of statins (\u03b2 = -0.080; P = 0.04), use of antidiabetic drugs (\u03b2 = -0.093; P = 0.02), time between baseline and transplantation (\u03b2 = -0.169; P < 0.001), HLA-I antibodies (\u03b2 = -0.110; P = 0.004), HLA-II antibodies (\u03b2 = -0.133; P = 0.001), serum creatinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005).",
+      "context_window": "tinine (\u03b2 = -0.129; P < 0.001) and proteinuria (\u03b2 = -0.107; P = 0.005). Adjustment for age, sex and eGFR revealed an association",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3163",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3163,
+      "sentence": "Adjustment for age, sex and eGFR revealed an association of urinary taurine excretion with past smoking status (\u03b2 = -0.087; P = 0.02), polycystic kidney disease (\u03b2 = 0.081; P = 0.02) and use of calcineurin inhibitors (\u03b2 = 0.082; P = 0.02).",
+      "context_window": "ary taurine excretion with past smoking status (\u03b2 = -0.087; P = 0.02), polycystic kidney disease (\u03b2 = 0.081; P = 0.02) and use o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3212",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3212,
+      "sentence": "Adjustment for age, sex and eGFR revealed an association of urinary taurine excretion with past smoking status (\u03b2 = -0.087; P = 0.02), polycystic kidney disease (\u03b2 = 0.081; P = 0.02) and use of calcineurin inhibitors (\u03b2 = 0.082; P = 0.02).",
+      "context_window": "= -0.087; P = 0.02), polycystic kidney disease (\u03b2 = 0.081; P = 0.02) and use of calcineurin inhibitors (\u03b2 = 0.082; P = 0.02). I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3268",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3268,
+      "sentence": "Adjustment for age, sex and eGFR revealed an association of urinary taurine excretion with past smoking status (\u03b2 = -0.087; P = 0.02), polycystic kidney disease (\u03b2 = 0.081; P = 0.02) and use of calcineurin inhibitors (\u03b2 = 0.082; P = 0.02).",
+      "context_window": "81; P = 0.02) and use of calcineurin inhibitors (\u03b2 = 0.082; P = 0.02). In addition, adjustment for age, sex and eGFR strengthene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3434",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3434,
+      "sentence": "In addition, adjustment for age, sex and eGFR strengthened the associations of urinary taurine excretion with urinary taurine/creatinine ratio (\u03b2 = 0.993; P < 0.001), never smoking status (\u03b2 = 0.113; P = 0.002) and time between baseline and transplantation (\u03b2 = -0.180; P < 0.001).",
+      "context_window": "excretion with urinary taurine/creatinine ratio (\u03b2 = 0.993; P < 0.001), never smoking status (\u03b2 = 0.113; P = 0.002) and time betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3479",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3479,
+      "sentence": "In addition, adjustment for age, sex and eGFR strengthened the associations of urinary taurine excretion with urinary taurine/creatinine ratio (\u03b2 = 0.993; P < 0.001), never smoking status (\u03b2 = 0.113; P = 0.002) and time between baseline and transplantation (\u03b2 = -0.180; P < 0.001).",
+      "context_window": "io (\u03b2 = 0.993; P < 0.001), never smoking status (\u03b2 = 0.113; P = 0.002) and time between baseline and transplantation (\u03b2 = -0.180;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3549",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3549,
+      "sentence": "In addition, adjustment for age, sex and eGFR strengthened the associations of urinary taurine excretion with urinary taurine/creatinine ratio (\u03b2 = 0.993; P < 0.001), never smoking status (\u03b2 = 0.113; P = 0.002) and time between baseline and transplantation (\u03b2 = -0.180; P < 0.001).",
+      "context_window": "and time between baseline and transplantation (\u03b2 = -0.180; P < 0.001). In contrast, adjustment for age, sex and eGFR somewhat we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3717",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3717,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "ine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3760",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3760,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "oups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabeti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3799",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3799,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "esterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3850",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3850,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "-0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.31",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3876",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3876,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "f antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3921",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3921,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-3958",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3958,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4013",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4013,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4046",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4046,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "tion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4078",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4078,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": ".001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4114",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4114,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "1), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001). The associations of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4152",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4152,
+      "sentence": "In contrast, adjustment for age, sex and eGFR somewhat weakened the associations of urinary taurine excretion with serum free sulfhydryl groups (\u03b2 = 0.126; P = 0.001), total cholesterol (\u03b2 = -0.120; P < 0.001), triglycerides (\u03b2 = -0.118; P = 0.001), use of antidiabetic drugs (\u03b2 = -0.079; P = 0.03), eGFR (\u03b2 = 244; P < 0.001), creatinine clearance (\u03b2 = 0.314; P < 0.001), proteinuria (\u03b2 = -0.086; P = 0.02), and urinary excretion of sodium (\u03b2 = 0.179; P < 0.001), chloride (\u03b2 = 0.151; P < 0.001), sulfate (\u03b2 = 0.199; P < 0.001), thiosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001).",
+      "context_window": "iosulfate (\u03b2 = 0.170; P < 0.001) and creatinine (\u03b2 = 0.265; P < 0.001). The associations of urinary taurine excretion with weight",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4499",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4499,
+      "sentence": "The associations of urinary taurine excretion with weight, height, BSA, use of antihypertensive drugs, NT-proBNP, HDL cholesterol, LDL cholesterol, use of statins, use of proliferation inhibitors, prednisolone dosage, HLA-I antibodies, HLA-II antibodies and serum creatinine all disappeared after adjustment for age, sex and eGFR (all P > 0.05).",
+      "context_window": "all disappeared after adjustment for age, sex and eGFR (all P > 0.05). Univariate, urinary taurine excretion associated positiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4609",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4609,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4647",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4647,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4686",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4686,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4721",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4721,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "imal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4754",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4754,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "1), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4783",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4783,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "< 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4812",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4812,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.21",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4849",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4849,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4883",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4883,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001). In contrast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-4929",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4929,
+      "sentence": "Univariate, urinary taurine excretion associated positively with the intake of energy (\u03b2 = 0.126; P = 0.002), total protein (\u03b2 = 0.190; P < 0.001), animal protein (\u03b2 = 0.133; P = 0.001), methionine (\u03b2 = 0.176; P < 0.001), cysteine (\u03b2 = 0.238; P < 0.001), meat (\u03b2 = 0.223; P < 0.001), fish (\u03b2 = 0.104; P = 0.01), plant protein (\u03b2 = 0.110; P = 0.006), total fat (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001).",
+      "context_window": "t (\u03b2 = 0.212; P < 0.001) and total carbohydrate (\u03b2 = 0.186; P < 0.001). In contrast, urinary taurine was inversely associated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5026",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5026,
+      "sentence": "In contrast, urinary taurine was inversely associated with fruit intake (\u03b2 = -0.117; P = 0.004).",
+      "context_window": "ine was inversely associated with fruit intake (\u03b2 = -0.117; P = 0.004). After adjustment for age, sex and eGFR the associations o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5318",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5318,
+      "sentence": "After adjustment for age, sex and eGFR the associations of urinary taurine excretion with the intake of energy, total protein, cysteine, plant protein, fruit, total fat and total carbohydrate disappeared (All > 0.05), while the associations with animal protein intake (\u03b2 = 0.085; P = 0.03), methionine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0.096; P = 0.008) remained.",
+      "context_window": "ile the associations with animal protein intake (\u03b2 = 0.085; P = 0.03), methionine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5359",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5359,
+      "sentence": "After adjustment for age, sex and eGFR the associations of urinary taurine excretion with the intake of energy, total protein, cysteine, plant protein, fruit, total fat and total carbohydrate disappeared (All > 0.05), while the associations with animal protein intake (\u03b2 = 0.085; P = 0.03), methionine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0.096; P = 0.008) remained.",
+      "context_window": "intake (\u03b2 = 0.085; P = 0.03), methionine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5394",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5394,
+      "sentence": "After adjustment for age, sex and eGFR the associations of urinary taurine excretion with the intake of energy, total protein, cysteine, plant protein, fruit, total fat and total carbohydrate disappeared (All > 0.05), while the associations with animal protein intake (\u03b2 = 0.085; P = 0.03), methionine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0.096; P = 0.008) remained.",
+      "context_window": "onine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0.096; P = 0.008) remained. During m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5433",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5433,
+      "sentence": "After adjustment for age, sex and eGFR the associations of urinary taurine excretion with the intake of energy, total protein, cysteine, plant protein, fruit, total fat and total carbohydrate disappeared (All > 0.05), while the associations with animal protein intake (\u03b2 = 0.085; P = 0.03), methionine intake (\u03b2 = 0.077; P = 0.05), meat intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0.096; P = 0.008) remained.",
+      "context_window": "t intake (\u03b2 = 0.151; P < 0.001) and fish intake (\u03b2 = 0.096; P = 0.008) remained. During median follow-up for 5.3 (4.5-6.0) years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-5508",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5508,
+      "sentence": "During median follow-up for 5.3 (4.5-6.0) years, 83 (12%) patients developed graft failure.",
+      "context_window": "ined. During median follow-up for 5.3 (4.5-6.0) years, 83 (12%) patients developed graft failure. Patients experiencing gr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5691",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5691,
+      "sentence": "Patients experiencing graft failure had almost two-fold lower urinary taurine excretion (320 (57-676) \u00b5mol/24 h versus 553 (239-964) \u00b5mol/24 h; P < 0.001), urinary taurine concentration (105 (30-290) \u00b5mol/L versus 225 (101-430) \u00b5mol/L; P = 0.001) and urinary taurine/creatinine ratio (26 (7-58) \u00b5mol/mmol versus 48 (22-82) \u00b5mol/mmol; P < 0.001) compared to patients not experiencing graft failure during follow-up.",
+      "context_window": "ion (320 (57-676) \u00b5mol/24 h versus 553 (239-964) \u00b5mol/24 h; P < 0.001), urinary taurine concentration (105 (30-290) \u00b5mol/L versus",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5783",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5783,
+      "sentence": "Patients experiencing graft failure had almost two-fold lower urinary taurine excretion (320 (57-676) \u00b5mol/24 h versus 553 (239-964) \u00b5mol/24 h; P < 0.001), urinary taurine concentration (105 (30-290) \u00b5mol/L versus 225 (101-430) \u00b5mol/L; P = 0.001) and urinary taurine/creatinine ratio (26 (7-58) \u00b5mol/mmol versus 48 (22-82) \u00b5mol/mmol; P < 0.001) compared to patients not experiencing graft failure during follow-up.",
+      "context_window": "entration (105 (30-290) \u00b5mol/L versus 225 (101-430) \u00b5mol/L; P = 0.001) and urinary taurine/creatinine ratio (26 (7-58) \u00b5mol/mmol",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-5881",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5881,
+      "sentence": "Patients experiencing graft failure had almost two-fold lower urinary taurine excretion (320 (57-676) \u00b5mol/24 h versus 553 (239-964) \u00b5mol/24 h; P < 0.001), urinary taurine concentration (105 (30-290) \u00b5mol/L versus 225 (101-430) \u00b5mol/L; P = 0.001) and urinary taurine/creatinine ratio (26 (7-58) \u00b5mol/mmol versus 48 (22-82) \u00b5mol/mmol; P < 0.001) compared to patients not experiencing graft failure during follow-up.",
+      "context_window": "ine ratio (26 (7-58) \u00b5mol/mmol versus 48 (22-82) \u00b5mol/mmol; P < 0.001) compared to patients not experiencing graft failure during",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-hr-a-6226",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6226,
+      "sentence": "In Cox regression analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure.",
+      "context_window": "sion analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-6249",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6249,
+      "sentence": "In Cox regression analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure.",
+      "context_window": "ansformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-hr-a-6292",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.75",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6292,
+      "sentence": "In Cox regression analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure.",
+      "context_window": "74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine rati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-6314",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6314,
+      "sentence": "In Cox regression analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure.",
+      "context_window": ".001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-hr-a-6363",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6363,
+      "sentence": "In Cox regression analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure.",
+      "context_window": ".67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-6385",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6385,
+      "sentence": "In Cox regression analyses, log 2 transformed urinary taurine excretion (HR: 0.74 (0.67-0.082); P < 0.001), urinary taurine concentration (HR: 0.75 (0.67-0.84); P < 0.001) and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure.",
+      "context_window": "and urinary taurine/creatinine ratio (HR: 0.74 (0.66-0.83); P < 0.001) were inversely associated with graft failure. After adjust",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-hr-a-6579",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6579,
+      "sentence": "After adjustment for relevant covariates (age, sex, weight, height, eGFR and proteinuria) the associations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P = 0.01) were somewhat weakened, but remained significant.",
+      "context_window": "proteinuria) the associations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-6601",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6601,
+      "sentence": "After adjustment for relevant covariates (age, sex, weight, height, eGFR and proteinuria) the associations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P = 0.01) were somewhat weakened, but remained significant.",
+      "context_window": "iations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-hr-a-6644",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6644,
+      "sentence": "After adjustment for relevant covariates (age, sex, weight, height, eGFR and proteinuria) the associations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P = 0.01) were somewhat weakened, but remained significant.",
+      "context_window": ".83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine rati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-6666",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6666,
+      "sentence": "After adjustment for relevant covariates (age, sex, weight, height, eGFR and proteinuria) the associations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P = 0.01) were somewhat weakened, but remained significant.",
+      "context_window": ".002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-6733",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6733,
+      "sentence": "After adjustment for relevant covariates (age, sex, weight, height, eGFR and proteinuria) the associations of urinary taurine excretion (HR: 0.83 (0.74-0.93); P = 0.002), urinary taurine concentration (HR: 0.84 (0.74-0.95); P = 0.007) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P = 0.01) were somewhat weakened, but remained significant.",
+      "context_window": "07) and urinary taurine/creatinine ratio (0.85 (0.75-0.96); P = 0.01) were somewhat weakened, but remained significant. Further",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-p-7135",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7135,
+      "sentence": "No significant interactions terms were found for the selected covariates (All P > 0.05).",
+      "context_window": "eractions terms were found for the selected covariates (All P > 0.05). Analyses using creatinine clearance instead of eGFR yield",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-7341",
+      "claim_type": "unit_value",
+      "raw_text": "285.4 \u00b5mol",
+      "numeric_values": [
+        285.4
+      ],
+      "units": "\u00b5mol",
+      "source_section": "results",
+      "source_offset": 7341,
+      "sentence": "The optimal cutoff value (Youden index) of urinary taurine excretion for prediction of graft failure was 285.4 \u00b5mol/24 h.",
+      "context_window": "inary taurine excretion for prediction of graft failure was 285.4 \u00b5mol/24 h. At this cut off value, there was a sensitivity of 57%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-7408",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7408,
+      "sentence": "At this cut off value, there was a sensitivity of 57% and a specificity of 75% for prediction of graft failure.",
+      "context_window": "mol/24 h. At this cut off value, there was a sensitivity of 57% and a specificity of 75% for prediction of graft failure. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-7433",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7433,
+      "sentence": "At this cut off value, there was a sensitivity of 57% and a specificity of 75% for prediction of graft failure.",
+      "context_window": "value, there was a sensitivity of 57% and a specificity of 75% for prediction of graft failure. The associations of log 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-9497",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9497,
+      "sentence": "The black line shows the adjusted hazard ratio (HR) and the gray areas correspond to the 95% confidence interval (CI).",
+      "context_window": "sted hazard ratio (HR) and the gray areas correspond to the 95% confidence interval (CI). The adjusted association was adju",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-1799",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1799,
+      "sentence": "Taurine is a sulfonated \u03b2-amino acid, being present in very high concentrations in most mammalian cells, comprising nearly 0.1% of the total body weight in humans [ 9 , 46 ].",
+      "context_window": "h concentrations in most mammalian cells, comprising nearly 0.1% of the total body weight in humans [ 9 , 46 ]. Although tau",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-2691",
+      "claim_type": "unit_value",
+      "raw_text": "533 \u00b5mol",
+      "numeric_values": [
+        533.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "discussion",
+      "source_offset": 2691,
+      "sentence": "Both the median urinary taurine in RTR of 533 \u00b5mol/24 h and in healthy controls of 477 \u00b5mol/24 h were well in line with the median urinary excretions reported for European, North American and Oceanic Caucasian participants of the World Health Organization (WHO) Cardiovascular Diseases and Alimentary Comparison (CARDIAC) study [ 51 ].",
+      "context_window": "healthy controls. Both the median urinary taurine in RTR of 533 \u00b5mol/24 h and in healthy controls of 477 \u00b5mol/24 h were well in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-u-2732",
+      "claim_type": "unit_value",
+      "raw_text": "477 \u00b5mol",
+      "numeric_values": [
+        477.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "discussion",
+      "source_offset": 2732,
+      "sentence": "Both the median urinary taurine in RTR of 533 \u00b5mol/24 h and in healthy controls of 477 \u00b5mol/24 h were well in line with the median urinary excretions reported for European, North American and Oceanic Caucasian participants of the World Health Organization (WHO) Cardiovascular Diseases and Alimentary Comparison (CARDIAC) study [ 51 ].",
+      "context_window": "taurine in RTR of 533 \u00b5mol/24 h and in healthy controls of 477 \u00b5mol/24 h were well in line with the median urinary excretions r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-9625",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9625,
+      "sentence": "In humans, a study found that 95% of an intravenous injection of [ 35 S] taurine was recovered in urine; about 70% in the form of taurine and 25% in the form of sulfate [ 72 ].",
+      "context_window": "urine homeostasis [ 9 , 71 ]. In humans, a study found that 95% of an intravenous injection of [ 35 S] taurine was recovere",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-9706",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9706,
+      "sentence": "In humans, a study found that 95% of an intravenous injection of [ 35 S] taurine was recovered in urine; about 70% in the form of taurine and 25% in the form of sulfate [ 72 ].",
+      "context_window": "injection of [ 35 S] taurine was recovered in urine; about 70% in the form of taurine and 25% in the form of sulfate [ 72",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770760_urinary_taurine_excretion_and_risk_of_late_graft_failure_in_-pct-9737",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9737,
+      "sentence": "In humans, a study found that 95% of an intravenous injection of [ 35 S] taurine was recovered in urine; about 70% in the form of taurine and 25% in the form of sulfate [ 72 ].",
+      "context_window": "as recovered in urine; about 70% in the form of taurine and 25% in the form of sulfate [ 72 ]. After conjugation with bile",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

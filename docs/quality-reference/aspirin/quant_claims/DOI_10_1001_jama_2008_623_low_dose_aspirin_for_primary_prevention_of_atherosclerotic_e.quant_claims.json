@@ -1,0 +1,157 @@
+{
+  "paper_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e",
+  "doi": "10.1001/jama.2008.623",
+  "extracted_at": "2026-05-08T20:06:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-u-628",
+      "claim_type": "unit_value",
+      "raw_text": "4.37 years",
+      "numeric_values": [
+        4.37
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 628,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: Multicenter, prospective, randomized, open-label, blinded, end-point trial conducted from December 2002 through April 2008 at 163 institutions throughout Japan, which enrolled 2539 patients with type 2 diabetes without a history of atherosclerotic disease and had a median follow-up of 4.37 years.",
+      "context_window": "ry of atherosclerotic disease and had a median follow-up of 4.37 years. INTERVENTIONS: Patients were assigned to the low-dose aspi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-u-715",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "INTERVENTIONS: Patients were assigned to the low-dose aspirin group (81 or 100 mg per day) or the nonaspirin group.",
+      "context_window": "Patients were assigned to the low-dose aspirin group (81 or 100 mg per day) or the nonaspirin group. MAIN OUTCOME MEASURES: Pr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-pct-1259",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1259,
+      "sentence": "RESULTS: A total of 154 atherosclerotic events occurred: 68 in the aspirin group (13.6 per 1000 person-years) and 86 in the nonaspirin group (17.0 per 1000 person-years) (hazard ratio [HR], 0.80; 95% confidence interval [CI], 0.58-1.10; log-rank test, P = .16).",
+      "context_window": "roup (17.0 per 1000 person-years) (hazard ratio [HR], 0.80; 95% confidence interval [CI], 0.58-1.10; log-rank test, P = .16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-p-1315",
+      "claim_type": "p_value",
+      "raw_text": "P = .16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1315,
+      "sentence": "RESULTS: A total of 154 atherosclerotic events occurred: 68 in the aspirin group (13.6 per 1000 person-years) and 86 in the nonaspirin group (17.0 per 1000 person-years) (hazard ratio [HR], 0.80; 95% confidence interval [CI], 0.58-1.10; log-rank test, P = .16).",
+      "context_window": "80; 95% confidence interval [CI], 0.58-1.10; log-rank test, P = .16). The combined end point of fatal coronary events and fatal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-pct-1562",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1562,
+      "sentence": "The combined end point of fatal coronary events and fatal cerebrovascular events occurred in 1 patient (stroke) in the aspirin group and 10 patients (5 fatal myocardial infarctions and 5 fatal strokes) in the nonaspirin group (HR, 0.10; 95% CI, 0.01-0.79; P = .0037).",
+      "context_window": "ons and 5 fatal strokes) in the nonaspirin group (HR, 0.10; 95% CI, 0.01-0.79; P = .0037). A total of 34 patients in the as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-p-1581",
+      "claim_type": "p_value",
+      "raw_text": "P = .0037",
+      "numeric_values": [
+        0.0037
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1581,
+      "sentence": "The combined end point of fatal coronary events and fatal cerebrovascular events occurred in 1 patient (stroke) in the aspirin group and 10 patients (5 fatal myocardial infarctions and 5 fatal strokes) in the nonaspirin group (HR, 0.10; 95% CI, 0.01-0.79; P = .0037).",
+      "context_window": "okes) in the nonaspirin group (HR, 0.10; 95% CI, 0.01-0.79; P = .0037). A total of 34 patients in the aspirin group and 38 patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-pct-1708",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1708,
+      "sentence": "A total of 34 patients in the aspirin group and 38 patients in the nonaspirin group died from any cause (HR, 0.90; 95% CI, 0.57-1.14; log-rank test, P = .67).",
+      "context_window": "ents in the nonaspirin group died from any cause (HR, 0.90; 95% CI, 0.57-1.14; log-rank test, P = .67). The composite of he",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2008_623_low_dose_aspirin_for_primary_prevention_of_atherosclerotic_e-p-1742",
+      "claim_type": "p_value",
+      "raw_text": "P = .67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1742,
+      "sentence": "A total of 34 patients in the aspirin group and 38 patients in the nonaspirin group died from any cause (HR, 0.90; 95% CI, 0.57-1.14; log-rank test, P = .67).",
+      "context_window": "from any cause (HR, 0.90; 95% CI, 0.57-1.14; log-rank test, P = .67). The composite of hemorrhagic stroke and significant gastr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "paper_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a",
+  "doi": "10.1291/hypres.24.453",
+  "extracted_at": "2026-05-08T20:10:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3,
+    "correlation": 2,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-u-512",
+      "claim_type": "unit_value",
+      "raw_text": "56 years",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 512,
+      "sentence": "In each center, 100 men and 100 women aged 48-56 years were selected randomly from the local populations.",
+      "context_window": "tional study. In each center, 100 men and 100 women aged 48-56 years were selected randomly from the local populations. Twenty-f",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-pct-842",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 842,
+      "sentence": "The results indicated that (a) percentiles 25%, 50% and 75% of the distributions of 24-h taurine excretion showed large variations in the study populations.",
+      "context_window": "standard method. The results indicated that (a) percentiles 25%, 50% and 75% of the distributions of 24-h taurine excretion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-pct-847",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 847,
+      "sentence": "The results indicated that (a) percentiles 25%, 50% and 75% of the distributions of 24-h taurine excretion showed large variations in the study populations.",
+      "context_window": "ard method. The results indicated that (a) percentiles 25%, 50% and 75% of the distributions of 24-h taurine excretion show",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-pct-855",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "The results indicated that (a) percentiles 25%, 50% and 75% of the distributions of 24-h taurine excretion showed large variations in the study populations.",
+      "context_window": "od. The results indicated that (a) percentiles 25%, 50% and 75% of the distributions of 24-h taurine excretion showed large",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-corr-1632",
+      "claim_type": "correlation",
+      "raw_text": "R2=0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1632,
+      "sentence": "European, North American and oceanic Caucasians, however, had much lower median values of taurine, except in the cases of the samples from France and Spain. (b) Median values of taurine were significantly associated negatively with age-adjusted IHD mortality rates across the 24 study population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01).",
+      "context_window": "tality rates across the 24 study population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01). These negative as",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-p-1641",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1641,
+      "sentence": "European, North American and oceanic Caucasians, however, had much lower median values of taurine, except in the cases of the samples from France and Spain. (b) Median values of taurine were significantly associated negatively with age-adjusted IHD mortality rates across the 24 study population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01).",
+      "context_window": "tes across the 24 study population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01). These negative associatio",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-corr-1664",
+      "claim_type": "correlation",
+      "raw_text": "R2=0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1664,
+      "sentence": "European, North American and oceanic Caucasians, however, had much lower median values of taurine, except in the cases of the samples from France and Spain. (b) Median values of taurine were significantly associated negatively with age-adjusted IHD mortality rates across the 24 study population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01).",
+      "context_window": "population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01). These negative associations remained significant",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_24_453_distribution_of_twenty_four_hour_urinary_taurine_excretion_a-p-1673",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1673,
+      "sentence": "European, North American and oceanic Caucasians, however, had much lower median values of taurine, except in the cases of the samples from France and Spain. (b) Median values of taurine were significantly associated negatively with age-adjusted IHD mortality rates across the 24 study population samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01).",
+      "context_window": "on samples in men (R2=0.42, p<0.01), and in women (R2=0.55, p<0.01). These negative associations remained significant after ad",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsae067_0861_0861_beat_right_sleep_tight_pilot_study_of_depression_s_role",
+  "doi": "10.1093/sleep/zsae067.0861",
+  "extracted_at": "2026-05-08T20:05:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "mean_sd": 1,
+    "unit_value": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0861_0861_beat_right_sleep_tight_pilot_study_of_depression_s_role-n-1045",
+      "claim_type": "sample_size",
+      "raw_text": "N=38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1045,
+      "sentence": "This pilot study tested whether blood pressure interacted with depressive symptoms in its association with sleep in older adults with insomnia.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Older adults with insomnia disorder (DSM-5 criteria plus sleep diary confirmation of &gt;30 minutes of sleep onset latency or wake time after sleep onset 3+ nights/7; N=38, Mage=68.5\u00b16.4 years, 24 women) completed the Beck Depression Inventory-II (BDI-II), Insomnia Severity Index (ISI), and resting blood pressure reading.",
+      "context_window": "p onset latency or wake time after sleep onset 3+ nights/7; N=38, Mage=68.5\u00b16.4 years, 24 women) completed the Beck Depressi",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0861_0861_beat_right_sleep_tight_pilot_study_of_depression_s_role-msd-1056",
+      "claim_type": "mean_sd",
+      "raw_text": "68.5\u00b16.4",
+      "numeric_values": [
+        68.5,
+        6.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "This pilot study tested whether blood pressure interacted with depressive symptoms in its association with sleep in older adults with insomnia.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Older adults with insomnia disorder (DSM-5 criteria plus sleep diary confirmation of &gt;30 minutes of sleep onset latency or wake time after sleep onset 3+ nights/7; N=38, Mage=68.5\u00b16.4 years, 24 women) completed the Beck Depression Inventory-II (BDI-II), Insomnia Severity Index (ISI), and resting blood pressure reading.",
+      "context_window": "ency or wake time after sleep onset 3+ nights/7; N=38, Mage=68.5\u00b16.4 years, 24 women) completed the Beck Depression Inventory-II",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0861_0861_beat_right_sleep_tight_pilot_study_of_depression_s_role-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "6.4 years",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "This pilot study tested whether blood pressure interacted with depressive symptoms in its association with sleep in older adults with insomnia.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Older adults with insomnia disorder (DSM-5 criteria plus sleep diary confirmation of &gt;30 minutes of sleep onset latency or wake time after sleep onset 3+ nights/7; N=38, Mage=68.5\u00b16.4 years, 24 women) completed the Beck Depression Inventory-II (BDI-II), Insomnia Severity Index (ISI), and resting blood pressure reading.",
+      "context_window": "or wake time after sleep onset 3+ nights/7; N=38, Mage=68.5\u00b16.4 years, 24 women) completed the Beck Depression Inventory-II (BDI-",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0861_0861_beat_right_sleep_tight_pilot_study_of_depression_s_role-p-1640",
+      "claim_type": "p_value",
+      "raw_text": "p=.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1640,
+      "sentence": "Multiple linear regressions tested if cardiovascular activity [pulse pressure (systolic BP - diastolic BP), systolic BP, diastolic BP] interacted with depressive symptoms in its association with insomnia severity, controlling for Body Mass Index and number of medications.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Depressive symptoms interacted with systolic BP in its association with ISI (R2-change=.08, p=.02).",
+      "context_window": "ith systolic BP in its association with ISI (R2-change=.08, p=.02). Specifically, higher systolic BP was associated with wors",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0861_0861_beat_right_sleep_tight_pilot_study_of_depression_s_role-p-1790",
+      "claim_type": "p_value",
+      "raw_text": "p=.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1790,
+      "sentence": "Specifically, higher systolic BP was associated with worse insomnia severity only at highest levels of depression (BDI-II score=14.61; B=.12, p=.03).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Preliminary findings suggest higher levels of depression may exacerbate the relationship between higher systolic blood pressure and more severe insomnia symptoms in older adults.",
+      "context_window": "at highest levels of depression (BDI-II score=14.61; B=.12, p=.03).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

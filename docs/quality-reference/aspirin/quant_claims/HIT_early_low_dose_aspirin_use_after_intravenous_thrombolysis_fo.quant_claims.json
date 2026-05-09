@@ -1,0 +1,138 @@
+{
+  "paper_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-u-71",
+      "claim_type": "unit_value",
+      "raw_text": "100mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 71,
+      "sentence": "This study evaluates whether early administration of low-dose aspirin (100mg) at 2 hours post-intravenous thrombolysis, compared to the standard timing of 24 hours, improves functional outcomes in patients with acute ischemic stroke.",
+      "context_window": "evaluates whether early administration of low-dose aspirin (100mg) at 2 hours post-intravenous thrombolysis, compared to the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-pct-616",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 616,
+      "sentence": "Early re-occlusion of recanalized arteries due to platelet aggregation occurs in 14-34% of cases and is associated with poor prognosis.",
+      "context_window": "canalized arteries due to platelet aggregation occurs in 14-34% of cases and is associated with poor prognosis. The average",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-pct-701",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 701,
+      "sentence": "The average incidence of SICH is 2.4%, with fatal SICH occurring in only 0.28%.",
+      "context_window": "iated with poor prognosis. The average incidence of SICH is 2.4%, with fatal SICH occurring in only 0.28%. Thus, the impact",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-pct-741",
+      "claim_type": "percentage",
+      "raw_text": "0.28%",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 741,
+      "sentence": "The average incidence of SICH is 2.4%, with fatal SICH occurring in only 0.28%.",
+      "context_window": "ncidence of SICH is 2.4%, with fatal SICH occurring in only 0.28%. Thus, the impact of re-occlusion on poor prognosis may out",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-u-959",
+      "claim_type": "unit_value",
+      "raw_text": "100mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 959,
+      "sentence": "In this prospective, randomized, open-label trial with blinded endpoint evaluation, participants are assigned to receive aspirin 100mg either at 2 hours (early group) or at 24 hours (standard group) after thrombolysis.",
+      "context_window": "nt evaluation, participants are assigned to receive aspirin 100mg either at 2 hours (early group) or at 24 hours (standard gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-u-1193",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1193,
+      "sentence": "The primary outcome is the proportion of patients with a favorable functional outcome, defined as a modified Rankin Scale (mRS) score of 0-2 at 3 months.",
+      "context_window": "e, defined as a modified Rankin Scale (mRS) score of 0-2 at 3 months. Safety outcomes include the incidence of SICH and all-caus",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_early_low_dose_aspirin_use_after_intravenous_thrombolysis_fo-u-1276",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1276,
+      "sentence": "Safety outcomes include the incidence of SICH and all-cause mortality at 3 months.",
+      "context_window": "es include the incidence of SICH and all-cause mortality at 3 months. This study will provide clinical evidence regarding the op",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

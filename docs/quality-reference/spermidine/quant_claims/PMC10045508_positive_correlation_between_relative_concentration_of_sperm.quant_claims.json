@@ -1,0 +1,1119 @@
+{
+  "paper_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm",
+  "doi": "10.3390/biomedicines11030746",
+  "extracted_at": "2026-05-08T20:12:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 16,
+    "percentage": 7,
+    "sample_size": 4,
+    "p_value": 28,
+    "mean_sd": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-602",
+      "claim_type": "unit_value",
+      "raw_text": "70.0 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 602,
+      "sentence": "Study participants were 59 hemodialysis patients (median age: 70.0 years) at Minami-Uonuma City Hospital and 26 healthy volunteers (median age: 44.5 years).",
+      "context_window": "udy participants were 59 hemodialysis patients (median age: 70.0 years) at Minami-Uonuma City Hospital and 26 healthy volunteers (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-684",
+      "claim_type": "unit_value",
+      "raw_text": "44.5 years",
+      "numeric_values": [
+        44.5
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 684,
+      "sentence": "Study participants were 59 hemodialysis patients (median age: 70.0 years) at Minami-Uonuma City Hospital and 26 healthy volunteers (median age: 44.5 years).",
+      "context_window": "Uonuma City Hospital and 26 healthy volunteers (median age: 44.5 years). Whole-blood spermidine levels were higher and spermine/sp",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-714",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 714,
+      "sentence": "Healthy volunteers were adults over 20 years of age with no specific illnesses who were recruited through notices such as posters.",
+      "context_window": "pedance analysis (BIA). Healthy volunteers were adults over 20 years of age with no specific illnesses who were recruited throug",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-1178",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1178,
+      "sentence": "Because the presence of neoplasms has a significant impact on polyamine levels, patients with cancer and those with a history of cancer treatment within 3 months were excluded from the study.",
+      "context_window": "cancer and those with a history of cancer treatment within 3 months were excluded from the study. Medical backgrounds and othe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-4318",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4318,
+      "sentence": "To extract polyamines, whole blood was diluted five times with 5% trichloroacetic acid (TCA).",
+      "context_window": "extract polyamines, whole blood was diluted five times with 5% trichloroacetic acid (TCA). Subsequently, adjusted samples",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-4557",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4557,
+      "sentence": "After centrifugation at 13,000\u00d7 g for 20 min at 4 \u00b0C, the supernatant was collected and deproteinated by increasing the TCA concentration to 10%.",
+      "context_window": "ed and deproteinated by increasing the TCA concentration to 10%. Next, incubation was carried out at 95 \u00b0C for 45 min, foll",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-4838",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 mm",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4838,
+      "sentence": "The polyamines in 20 \u00b5L of TCA supernatant were separated with an HPLC system (Shimadzu Corporation, Kyoto, Japan) with a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan) at 50 \u00b0C.",
+      "context_window": "yoto, Japan) with a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, To",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-4850",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4850,
+      "sentence": "The polyamines in 20 \u00b5L of TCA supernatant were separated with an HPLC system (Shimadzu Corporation, Kyoto, Japan) with a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan) at 50 \u00b0C.",
+      "context_window": "with a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-5102",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5102,
+      "sentence": "The flow rate of the separation buffer (0.09 M citric acid (Nacalai Tesque, Inc., Kyoto, Japan), 2 M NaCl (Nacalai Tesque, Inc.), 0.64 mM n-capric acid (Nacalai Tesque, Inc.), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan), adjusted to pH 5.10) was 0.42 mL/min.",
+      "context_window": "esque, Inc.), 0.64 mM n-capric acid (Nacalai Tesque, Inc.), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-5152",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5152,
+      "sentence": "The flow rate of the separation buffer (0.09 M citric acid (Nacalai Tesque, Inc., Kyoto, Japan), 2 M NaCl (Nacalai Tesque, Inc.), 0.64 mM n-capric acid (Nacalai Tesque, Inc.), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan), adjusted to pH 5.10) was 0.42 mL/min.",
+      "context_window": "e, Inc.), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan), adjusted to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-5228",
+      "claim_type": "unit_value",
+      "raw_text": "0.42 mL/min",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 5228,
+      "sentence": "The flow rate of the separation buffer (0.09 M citric acid (Nacalai Tesque, Inc., Kyoto, Japan), 2 M NaCl (Nacalai Tesque, Inc.), 0.64 mM n-capric acid (Nacalai Tesque, Inc.), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan), adjusted to pH 5.10) was 0.42 mL/min.",
+      "context_window": "JIFILM Corporation, Osaka, Japan), adjusted to pH 5.10) was 0.42 mL/min. Polyamines were detected by fluorescence intensity after t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-5423",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5423,
+      "sentence": "Polyamines were detected by fluorescence intensity after the reaction of the column effluent at 50 \u00b0C with a solution containing 0.4 M boric buffer (pH 10.4) (Nacalai Tesque, Inc.), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (Nacalai Tesque, Inc.), and 0.06% o-phthalaldehyde (Nacalai Tesque, Inc.).",
+      "context_window": "aining 0.4 M boric buffer (pH 10.4) (Nacalai Tesque, Inc.), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (Nacalai Tesque, Inc.),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-5437",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5437,
+      "sentence": "Polyamines were detected by fluorescence intensity after the reaction of the column effluent at 50 \u00b0C with a solution containing 0.4 M boric buffer (pH 10.4) (Nacalai Tesque, Inc.), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (Nacalai Tesque, Inc.), and 0.06% o-phthalaldehyde (Nacalai Tesque, Inc.).",
+      "context_window": "oric buffer (pH 10.4) (Nacalai Tesque, Inc.), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (Nacalai Tesque, Inc.), and 0.06% o-pht",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-5492",
+      "claim_type": "percentage",
+      "raw_text": "0.06%",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5492,
+      "sentence": "Polyamines were detected by fluorescence intensity after the reaction of the column effluent at 50 \u00b0C with a solution containing 0.4 M boric buffer (pH 10.4) (Nacalai Tesque, Inc.), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (Nacalai Tesque, Inc.), and 0.06% o-phthalaldehyde (Nacalai Tesque, Inc.).",
+      "context_window": "-35, 2.0 mL/L 2-mercaptoethanol (Nacalai Tesque, Inc.), and 0.06% o-phthalaldehyde (Nacalai Tesque, Inc.). The flow rate of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-5590",
+      "claim_type": "unit_value",
+      "raw_text": "0.42 mL/min",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 5590,
+      "sentence": "The flow rate of the o-phthalaldehyde solution was 0.42 mL/min, and fluorescence was measured at an excitation wavelength of 340 nm and an emission wavelength of 455 nm.",
+      "context_window": ", Inc.). The flow rate of the o-phthalaldehyde solution was 0.42 mL/min, and fluorescence was measured at an excitation wavelength",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-pct-6188",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6188,
+      "sentence": "For the extraction of polyamines, dialysate containing 5% TCA was incubated at 95 \u00b0C for 45 min.",
+      "context_window": "ent. For the extraction of polyamines, dialysate containing 5% TCA was incubated at 95 \u00b0C for 45 min. The HPLC assay was p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-6485",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL/min",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 6485,
+      "sentence": "The flow rate of the dialysate was 500 mL/min.",
+      "context_window": "and 5 nM, respectively. The flow rate of the dialysate was 500 mL/min. The total volume of the dialysate was determined by the ti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-923",
+      "claim_type": "unit_value",
+      "raw_text": "70.0 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 923,
+      "sentence": "Their median age was 70.0 years (range, 62-75 years), and their median duration from the introduction of hemodialysis was 62 months (range, 29-142 months).",
+      "context_window": "lysis groups were not matched for age. Their median age was 70.0 years (range, 62-75 years), and their median duration from the in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-945",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 945,
+      "sentence": "Their median age was 70.0 years (range, 62-75 years), and their median duration from the introduction of hemodialysis was 62 months (range, 29-142 months).",
+      "context_window": "matched for age. Their median age was 70.0 years (range, 62-75 years), and their median duration from the introduction of hemodi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-1024",
+      "claim_type": "unit_value",
+      "raw_text": "62 months",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1024,
+      "sentence": "Their median age was 70.0 years (range, 62-75 years), and their median duration from the introduction of hemodialysis was 62 months (range, 29-142 months).",
+      "context_window": "r median duration from the introduction of hemodialysis was 62 months (range, 29-142 months). The causative diseases requiring di",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-1045",
+      "claim_type": "unit_value",
+      "raw_text": "142 months",
+      "numeric_values": [
+        142.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1045,
+      "sentence": "Their median age was 70.0 years (range, 62-75 years), and their median duration from the introduction of hemodialysis was 62 months (range, 29-142 months).",
+      "context_window": "m the introduction of hemodialysis was 62 months (range, 29-142 months). The causative diseases requiring dialysis were glomerulon",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-n-1126",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1126,
+      "sentence": "The causative diseases requiring dialysis were glomerulonephritis ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15).",
+      "context_window": "ative diseases requiring dialysis were glomerulonephritis ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-n-1155",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1155,
+      "sentence": "The causative diseases requiring dialysis were glomerulonephritis ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15).",
+      "context_window": "ysis were glomerulonephritis ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15). F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-n-1182",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1182,
+      "sentence": "The causative diseases requiring dialysis were glomerulonephritis ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15).",
+      "context_window": "s ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15). Forty-four patients receive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-n-1211",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1211,
+      "sentence": "The causative diseases requiring dialysis were glomerulonephritis ( n = 20), diabetes mellitus ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15).",
+      "context_window": "s ( n = 18), nephrosclerosis ( n = 6), and other diseases ( n = 15). Forty-four patients received HD, and 15 patients received",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-1434",
+      "claim_type": "unit_value",
+      "raw_text": "44.5 years",
+      "numeric_values": [
+        44.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1434,
+      "sentence": "Their median age was 44.5 years (range: 37-52 years).",
+      "context_window": "and none were excluded from the study. Their median age was 44.5 years (range: 37-52 years). There was no difference in sex ( p =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-u-1456",
+      "claim_type": "unit_value",
+      "raw_text": "52 years",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1456,
+      "sentence": "Their median age was 44.5 years (range: 37-52 years).",
+      "context_window": "from the study. Their median age was 44.5 years (range: 37-52 years). There was no difference in sex ( p = 0.149) between the d",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-1500",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.149",
+      "numeric_values": [
+        0.149
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1500,
+      "sentence": "There was no difference in sex ( p = 0.149) between the dialysis and control groups, whereas dialysis patients were significantly older in ( p < 0.001).",
+      "context_window": "ears (range: 37-52 years). There was no difference in sex ( p = 0.149) between the dialysis and control groups, whereas dialysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-1608",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1608,
+      "sentence": "There was no difference in sex ( p = 0.149) between the dialysis and control groups, whereas dialysis patients were significantly older in ( p < 0.001).",
+      "context_window": "ps, whereas dialysis patients were significantly older in ( p < 0.001). HD patients had significantly lower SMI (6.3 \u00b1 1.1 vs. 8.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-msd-1661",
+      "claim_type": "mean_sd",
+      "raw_text": "6.3 \u00b1 1.1",
+      "numeric_values": [
+        6.3,
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1661,
+      "sentence": "HD patients had significantly lower SMI (6.3 \u00b1 1.1 vs.",
+      "context_window": "r in ( p < 0.001). HD patients had significantly lower SMI (6.3 \u00b1 1.1 vs. 8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs. 35.3 \u00b1 9.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-msd-1675",
+      "claim_type": "mean_sd",
+      "raw_text": "8.0 \u00b1 1.2",
+      "numeric_values": [
+        8.0,
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1675,
+      "sentence": "8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs.",
+      "context_window": "01). HD patients had significantly lower SMI (6.3 \u00b1 1.1 vs. 8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs. 35.3 \u00b1 9.6, p < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-1686",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1686,
+      "sentence": "8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs.",
+      "context_window": "ients had significantly lower SMI (6.3 \u00b1 1.1 vs. 8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs. 35.3 \u00b1 9.6, p < 0.001) values than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-msd-1706",
+      "claim_type": "mean_sd",
+      "raw_text": "23.5 \u00b1 9.0",
+      "numeric_values": [
+        23.5,
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1706,
+      "sentence": "8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs.",
+      "context_window": "tly lower SMI (6.3 \u00b1 1.1 vs. 8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs. 35.3 \u00b1 9.6, p < 0.001) values than healthy individuals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-msd-1721",
+      "claim_type": "mean_sd",
+      "raw_text": "35.3 \u00b1 9.6",
+      "numeric_values": [
+        35.3,
+        9.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1721,
+      "sentence": "35.3 \u00b1 9.6, p < 0.001) values than healthy individuals ( Table 1 ).",
+      "context_window": "6.3 \u00b1 1.1 vs. 8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs. 35.3 \u00b1 9.6, p < 0.001) values than healthy individuals ( Table 1 ). C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-1733",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1733,
+      "sentence": "35.3 \u00b1 9.6, p < 0.001) values than healthy individuals ( Table 1 ).",
+      "context_window": ". 8.0 \u00b1 1.2, p < 0.001) and HGS (23.5 \u00b1 9.0 vs. 35.3 \u00b1 9.6, p < 0.001) values than healthy individuals ( Table 1 ). Characterist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-2191",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2191,
+      "sentence": "6.0 (4.8-7.1) \u00b5M, p < 0.001).",
+      "context_window": "lthy participants (10.1 (6.9-12.7) \u00b5M vs. 6.0 (4.8-7.1) \u00b5M, p < 0.001). The numerical values of blood SPM concentrations in HD pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-2411",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.401",
+      "numeric_values": [
+        0.401
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2411,
+      "sentence": "3.6 (2.7-4.9) \u00b5M, p = 0.401).",
+      "context_window": "erence between them (4.4 (2.6-5.8) \u00b5M vs. 3.6 (2.7-4.9) \u00b5M, p = 0.401). The blood SPM/SPD ratio in HD patients was significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-2563",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2563,
+      "sentence": "0.64 (0.48-0.79) \u00b5M; p < 0.001) ( Figure 1 ).",
+      "context_window": "thy participants (0.43 (0.34-0.59) vs. 0.64 (0.48-0.79) \u00b5M; p < 0.001) ( Figure 1 ). A box and whisker plot and scatterplot of w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-3542",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3542,
+      "sentence": "0.42 (0.32-0.54), p < 0.001).",
+      "context_window": "decreased after HD (0.43 (0.34-0.59) vs. 0.42 (0.32-0.54), p < 0.001). Box and whisker plot and scatter plot of whole-blood SPD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-msd-4451",
+      "claim_type": "mean_sd",
+      "raw_text": "0.21 \u00b1 0.13",
+      "numeric_values": [
+        0.21,
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4451,
+      "sentence": "SPD concentrations were detected in the dialysate 30 min after the start of dialysis for all six patients; the mean SPD concentration in the dialysate was 0.21 \u00b1 0.13 \u03bcM.",
+      "context_window": "x patients; the mean SPD concentration in the dialysate was 0.21 \u00b1 0.13 \u03bcM. However, only four of the six patients had detectable S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-msd-4644",
+      "claim_type": "mean_sd",
+      "raw_text": "0.14 \u00b1 0.13",
+      "numeric_values": [
+        0.14,
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4644,
+      "sentence": "The mean concentration of the four samples was 0.14 \u00b1 0.13 \u03bcM.",
+      "context_window": "of dialysis. The mean concentration of the four samples was 0.14 \u00b1 0.13 \u03bcM. SPM was not detected in any of the samples. Various co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-4864",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4864,
+      "sentence": "Patient age was negatively associated with SMI (\u03c1 = -0.493, p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.001).",
+      "context_window": "Patient age was negatively associated with SMI (\u03c1 = -0.493, p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-4893",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4893,
+      "sentence": "Patient age was negatively associated with SMI (\u03c1 = -0.493, p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.001).",
+      "context_window": "sociated with SMI (\u03c1 = -0.493, p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-4922",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4922,
+      "sentence": "Patient age was negatively associated with SMI (\u03c1 = -0.493, p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.001).",
+      "context_window": ", p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.001). HD duration was negative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-4955",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4955,
+      "sentence": "Patient age was negatively associated with SMI (\u03c1 = -0.493, p < 0.001), HGS (\u03c1 = -0.422, p = 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.001).",
+      "context_window": "= 0.001), Alb (\u03c1 = -0.276, p = 0.034), and Cre (\u03c1 = -0.427, p = 0.001). HD duration was negatively correlated with BMI (\u03c1 = -0.42",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5027",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5027,
+      "sentence": "HD duration was negatively correlated with BMI (\u03c1 = -0.420, p = 0.001) and HGS (\u03c1 = -0.293, p = 0.024), but positively correlated with Cre (\u03c1 = 0.325, p = 0.012).",
+      "context_window": "HD duration was negatively correlated with BMI (\u03c1 = -0.420, p = 0.001) and HGS (\u03c1 = -0.293, p = 0.024), but positively correlated",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5059",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5059,
+      "sentence": "HD duration was negatively correlated with BMI (\u03c1 = -0.420, p = 0.001) and HGS (\u03c1 = -0.293, p = 0.024), but positively correlated with Cre (\u03c1 = 0.325, p = 0.012).",
+      "context_window": "lated with BMI (\u03c1 = -0.420, p = 0.001) and HGS (\u03c1 = -0.293, p = 0.024), but positively correlated with Cre (\u03c1 = 0.325, p = 0.012)",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5118",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5118,
+      "sentence": "HD duration was negatively correlated with BMI (\u03c1 = -0.420, p = 0.001) and HGS (\u03c1 = -0.293, p = 0.024), but positively correlated with Cre (\u03c1 = 0.325, p = 0.012).",
+      "context_window": "p = 0.024), but positively correlated with Cre (\u03c1 = 0.325, p = 0.012). BMI and SMI were positively correlated (r = 0.377, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5181",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5181,
+      "sentence": "BMI and SMI were positively correlated (r = 0.377, p = 0.003 ).",
+      "context_window": "0.012). BMI and SMI were positively correlated (r = 0.377, p = 0.003 ). SMI was positively correlated with HGS (r = 0.629, p < 0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5245",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5245,
+      "sentence": "SMI was positively correlated with HGS (r = 0.629, p < 0.001), Alb (\u03c1 = 0.281, p = 0.031), and Cre (\u03c1 = 0.350, p = 0.007).",
+      "context_window": "0.003 ). SMI was positively correlated with HGS (r = 0.629, p < 0.001), Alb (\u03c1 = 0.281, p = 0.031), and Cre (\u03c1 = 0.350, p = 0.007",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5273",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5273,
+      "sentence": "SMI was positively correlated with HGS (r = 0.629, p < 0.001), Alb (\u03c1 = 0.281, p = 0.031), and Cre (\u03c1 = 0.350, p = 0.007).",
+      "context_window": "correlated with HGS (r = 0.629, p < 0.001), Alb (\u03c1 = 0.281, p = 0.031), and Cre (\u03c1 = 0.350, p = 0.007). HGS was positively correl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5305",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5305,
+      "sentence": "SMI was positively correlated with HGS (r = 0.629, p < 0.001), Alb (\u03c1 = 0.281, p = 0.031), and Cre (\u03c1 = 0.350, p = 0.007).",
+      "context_window": "p < 0.001), Alb (\u03c1 = 0.281, p = 0.031), and Cre (\u03c1 = 0.350, p = 0.007). HGS was positively correlated with Alb (\u03c1 = 0.372, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5368",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5368,
+      "sentence": "HGS was positively correlated with Alb (\u03c1 = 0.372, p = 0.004) and Cre (\u03c1 = 0.405, p = 0.001).",
+      "context_window": "0.007). HGS was positively correlated with Alb (\u03c1 = 0.372, p = 0.004) and Cre (\u03c1 = 0.405, p = 0.001). The Hb and CRP levels were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5399",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5399,
+      "sentence": "HGS was positively correlated with Alb (\u03c1 = 0.372, p = 0.004) and Cre (\u03c1 = 0.405, p = 0.001).",
+      "context_window": "related with Alb (\u03c1 = 0.372, p = 0.004) and Cre (\u03c1 = 0.405, p = 0.001). The Hb and CRP levels were negatively correlated (\u03c1 = -0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5473",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5473,
+      "sentence": "The Hb and CRP levels were negatively correlated (\u03c1 = -0.284, p = 0.029).",
+      "context_window": "e Hb and CRP levels were negatively correlated (\u03c1 = -0.284, p = 0.029). Alb was negatively correlated with CRP (\u03c1 = -0.480, p < 0",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5537",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5537,
+      "sentence": "Alb was negatively correlated with CRP (\u03c1 = -0.480, p < 0.001) and positively correlated with Ca (\u03c1 = 0.463, p < 0.001).",
+      "context_window": "0.029). Alb was negatively correlated with CRP (\u03c1 = -0.480, p < 0.001) and positively correlated with Ca (\u03c1 = 0.463, p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5594",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5594,
+      "sentence": "Alb was negatively correlated with CRP (\u03c1 = -0.480, p < 0.001) and positively correlated with Ca (\u03c1 = 0.463, p < 0.001).",
+      "context_window": "0, p < 0.001) and positively correlated with Ca (\u03c1 = 0.463, p < 0.001). BUN was positively correlated with Cre (\u03c1 = 0.354, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5657",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5657,
+      "sentence": "BUN was positively correlated with Cre (\u03c1 = 0.354, p = 0.006) and p levels (\u03c1 = 0.390, p = 0.002).",
+      "context_window": "0.001). BUN was positively correlated with Cre (\u03c1 = 0.354, p = 0.006) and p levels (\u03c1 = 0.390, p = 0.002). Correlations between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-5693",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5693,
+      "sentence": "BUN was positively correlated with Cre (\u03c1 = 0.354, p = 0.006) and p levels (\u03c1 = 0.390, p = 0.002).",
+      "context_window": "ed with Cre (\u03c1 = 0.354, p = 0.006) and p levels (\u03c1 = 0.390, p = 0.002). Correlations between clinical parameters (excluding poly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-6636",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6636,
+      "sentence": "The SPM/SPD ratio was significantly and positively correlated with SMI (\u03c1 = 0.309, p = 0.017) and HGS (\u03c1 = 0.260, p = 0.046) in a simple linear regression analysis ( Figure 3 ).",
+      "context_window": "ignificantly and positively correlated with SMI (\u03c1 = 0.309, p = 0.017) and HGS (\u03c1 = 0.260, p = 0.046) in a simple linear regressi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10045508_positive_correlation_between_relative_concentration_of_sperm-p-6667",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6667,
+      "sentence": "The SPM/SPD ratio was significantly and positively correlated with SMI (\u03c1 = 0.309, p = 0.017) and HGS (\u03c1 = 0.260, p = 0.046) in a simple linear regression analysis ( Figure 3 ).",
+      "context_window": "related with SMI (\u03c1 = 0.309, p = 0.017) and HGS (\u03c1 = 0.260, p = 0.046) in a simple linear regression analysis ( Figure 3 ). SMI d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,1051 @@
+{
+  "paper_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e",
+  "doi": "10.1155/2019/2748035",
+  "extracted_at": "2026-05-08T20:06:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "p_value": 18,
+    "percentage": 17,
+    "confidence_interval": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-804",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 years",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 804,
+      "sentence": "Seven hundred forty-six consecutive RA patients were enrolled and followed up for a median of 5.6 years (range 2.9-8.9 years).",
+      "context_window": "e RA patients were enrolled and followed up for a median of 5.6 years (range 2.9-8.9 years). The incidence rate (IR) of CV events",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-825",
+      "claim_type": "unit_value",
+      "raw_text": "8.9 years",
+      "numeric_values": [
+        8.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 825,
+      "sentence": "Seven hundred forty-six consecutive RA patients were enrolled and followed up for a median of 5.6 years (range 2.9-8.9 years).",
+      "context_window": "rolled and followed up for a median of 5.6 years (range 2.9-8.9 years). The incidence rate (IR) of CV events was 8/1000 person-ye",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-1067",
+      "claim_type": "p_value",
+      "raw_text": "p =0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1067,
+      "sentence": "11.8/1000 p-ys; p =0.0002).",
+      "context_window": "ct to the non-ASA-treated group (IR 1.7 vs. 11.8/1000 p-ys; p =0.0002). The CV event-free rate was longer in ASA-treated patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-1191",
+      "claim_type": "p_value",
+      "raw_text": "p =0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1191,
+      "sentence": "The CV event-free rate was longer in ASA-treated patients than in non-ASA-treated patients (log-rank test 12.8; p =0.0003).",
+      "context_window": "ients than in non-ASA-treated patients (log-rank test 12.8; p =0.0003). At multivariable analysis, arterial hypertension (HR 9.3)",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-2274",
+      "claim_type": "unit_value",
+      "raw_text": "126 mg/dL",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2274,
+      "sentence": "Each patient was investigated for arterial hypertension (prior/ongoing and/or antihypertensive therapy use), diabetes mellitus (fasting glucose level >126 mg/dL in at least two tests and/or ongoing treatment with insulin or oral hypoglycaemic agents), hypercholesterolemia (total cholesterol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or ongoing treatment for hypercholesterolemia), and obesity (body mass index (BMI) > 30 kg/m 2 ) [ 11 ].",
+      "context_window": "ive therapy use), diabetes mellitus (fasting glucose level >126 mg/dL in at least two tests and/or ongoing treatment with insulin",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-2421",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2421,
+      "sentence": "Each patient was investigated for arterial hypertension (prior/ongoing and/or antihypertensive therapy use), diabetes mellitus (fasting glucose level >126 mg/dL in at least two tests and/or ongoing treatment with insulin or oral hypoglycaemic agents), hypercholesterolemia (total cholesterol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or ongoing treatment for hypercholesterolemia), and obesity (body mass index (BMI) > 30 kg/m 2 ) [ 11 ].",
+      "context_window": "emic agents), hypercholesterolemia (total cholesterol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or h",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-2469",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2469,
+      "sentence": "Each patient was investigated for arterial hypertension (prior/ongoing and/or antihypertensive therapy use), diabetes mellitus (fasting glucose level >126 mg/dL in at least two tests and/or ongoing treatment with insulin or oral hypoglycaemic agents), hypercholesterolemia (total cholesterol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or ongoing treatment for hypercholesterolemia), and obesity (body mass index (BMI) > 30 kg/m 2 ) [ 11 ].",
+      "context_window": "terol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or o",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-2518",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2518,
+      "sentence": "Each patient was investigated for arterial hypertension (prior/ongoing and/or antihypertensive therapy use), diabetes mellitus (fasting glucose level >126 mg/dL in at least two tests and/or ongoing treatment with insulin or oral hypoglycaemic agents), hypercholesterolemia (total cholesterol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or ongoing treatment for hypercholesterolemia), and obesity (body mass index (BMI) > 30 kg/m 2 ) [ 11 ].",
+      "context_window": "ein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or ongoing treatment for hypercholesterolemia), and",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-2616",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2616,
+      "sentence": "Each patient was investigated for arterial hypertension (prior/ongoing and/or antihypertensive therapy use), diabetes mellitus (fasting glucose level >126 mg/dL in at least two tests and/or ongoing treatment with insulin or oral hypoglycaemic agents), hypercholesterolemia (total cholesterol, TC > 200 mg/dl and/or low-density lipoprotein, LDL > 130 mg/dl and/or high-density lipoprotein, HDL < 40 mg/dl and/or ongoing treatment for hypercholesterolemia), and obesity (body mass index (BMI) > 30 kg/m 2 ) [ 11 ].",
+      "context_window": "hypercholesterolemia), and obesity (body mass index (BMI) > 30 kg/m 2 ) [ 11 ]. Follow-up intervening treatments, i.e., biol",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-3392",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 3392,
+      "sentence": "Patients were then subdivided into two groups, namely, ASA- and non-ASA-treated, considering any patients undergoing \u22651 year ASA treatment as an ASA treated subject.",
+      "context_window": "- and non-ASA-treated, considering any patients undergoing \u22651 year ASA treatment as an ASA treated subject. At each visit, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-6570",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6570,
+      "sentence": "A value of p < 0.05 was considered significant.",
+      "context_window": "the relationship between ASA use and CV events. A value of p < 0.05 was considered significant. Analysis was performed with Med",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-212",
+      "claim_type": "percentage",
+      "raw_text": "84.8%",
+      "numeric_values": [
+        84.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 212,
+      "sentence": "Most patients were women (84.8%), with a mean (\u00b1standard deviation, SD) age of 59.5 (\u00b113) years and a median disease duration of 11.9 years (interquartile range, IQR 7.37-18).",
+      "context_window": "f the 746 patients of our cohort. Most patients were women (84.8%), with a mean (\u00b1standard deviation, SD) age of 59.5 (\u00b113) y",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-315",
+      "claim_type": "unit_value",
+      "raw_text": "11.9 years",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 315,
+      "sentence": "Most patients were women (84.8%), with a mean (\u00b1standard deviation, SD) age of 59.5 (\u00b113) years and a median disease duration of 11.9 years (interquartile range, IQR 7.37-18).",
+      "context_window": "D) age of 59.5 (\u00b113) years and a median disease duration of 11.9 years (interquartile range, IQR 7.37-18). As far as disease featu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-418",
+      "claim_type": "percentage",
+      "raw_text": "58.9%",
+      "numeric_values": [
+        58.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 418,
+      "sentence": "As far as disease features are concerned, 436 patients (58.9%) were positive for RF; 371 patients (52%) were positive for ACPA; 429 patients (60%) had an erosive disease, while 86 patients (11.9%) presented extra-articular manifestations.",
+      "context_window": "8). As far as disease features are concerned, 436 patients (58.9%) were positive for RF; 371 patients (52%) were positive for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-461",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 461,
+      "sentence": "As far as disease features are concerned, 436 patients (58.9%) were positive for RF; 371 patients (52%) were positive for ACPA; 429 patients (60%) had an erosive disease, while 86 patients (11.9%) presented extra-articular manifestations.",
+      "context_window": "d, 436 patients (58.9%) were positive for RF; 371 patients (52%) were positive for ACPA; 429 patients (60%) had an erosive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-504",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 504,
+      "sentence": "As far as disease features are concerned, 436 patients (58.9%) were positive for RF; 371 patients (52%) were positive for ACPA; 429 patients (60%) had an erosive disease, while 86 patients (11.9%) presented extra-articular manifestations.",
+      "context_window": "F; 371 patients (52%) were positive for ACPA; 429 patients (60%) had an erosive disease, while 86 patients (11.9%) presente",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-552",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 552,
+      "sentence": "As far as disease features are concerned, 436 patients (58.9%) were positive for RF; 371 patients (52%) were positive for ACPA; 429 patients (60%) had an erosive disease, while 86 patients (11.9%) presented extra-articular manifestations.",
+      "context_window": "9 patients (60%) had an erosive disease, while 86 patients (11.9%) presented extra-articular manifestations. As assessed at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-752",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 752,
+      "sentence": "Three-hundred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obese.",
+      "context_window": "I was 1 (IQR 0.5-1.5). Three-hundred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arteri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-785",
+      "claim_type": "percentage",
+      "raw_text": "49.5%",
+      "numeric_values": [
+        49.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 785,
+      "sentence": "Three-hundred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obese.",
+      "context_window": "dred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffere",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-836",
+      "claim_type": "percentage",
+      "raw_text": "13.5%",
+      "numeric_values": [
+        13.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 836,
+      "sentence": "Three-hundred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obese.",
+      "context_window": "atients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hyperchole",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-872",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 872,
+      "sentence": "Three-hundred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obese.",
+      "context_window": "erial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-922",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 922,
+      "sentence": "Three-hundred twenty-five patients (45%) were smokers, 367 patients (49.5%) were affected by arterial hypertension, 96 (13.5%) suffered from diabetes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obese.",
+      "context_window": "tes, 276 (38%) suffered from hypercholesterolemia, and 112 (15%) were obese. During the follow-up, all the patients had be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-1207",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1207,
+      "sentence": "During the follow-up, all the patients had been managed according to the Treat to Target Strategy; in particular, 456 patients had been treated with biological DMARDs, as we expected in a tertiary centre, with or without conventional synthetic DMARDs (cs DMARDs) and 87% of whole cohort had been treated with steroids (mean cumulative dose: 1.08 g).",
+      "context_window": "th or without conventional synthetic DMARDs (cs DMARDs) and 87% of whole cohort had been treated with steroids (mean cumula",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-1317",
+      "claim_type": "percentage",
+      "raw_text": "19.2%",
+      "numeric_values": [
+        19.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1317,
+      "sentence": "Furthermore, 149 patients (19.2%) were treated with statins.",
+      "context_window": "(mean cumulative dose: 1.08 g). Furthermore, 149 patients (19.2%) were treated with statins. Patients were followed up for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-1394",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 years",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1394,
+      "sentence": "Patients were followed up for a median of 5.6 years (IQR 2.9-8.9).",
+      "context_window": "ed with statins. Patients were followed up for a median of 5.6 years (IQR 2.9-8.9). On 31 December 2016, 33 patients were lost t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-1476",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1476,
+      "sentence": "On 31 December 2016, 33 patients were lost to follow-up (4.4%).",
+      "context_window": "). On 31 December 2016, 33 patients were lost to follow-up (4.4%). These patients were contacted by phone to ascertain vital",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-2996",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2996,
+      "sentence": "IR non-ASA group (11.8/1000) person-years; p = 0.0002).",
+      "context_window": "(1.70/1000) vs. IR non-ASA group (11.8/1000) person-years; p = 0.0002). Furthermore, at the Kaplan-Meier curve, the CV event-fre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-3162",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3162,
+      "sentence": "Furthermore, at the Kaplan-Meier curve, the CV event-free rate was higher in ASA-treated patients than in non-ASA-treated patients (log-rank test 12.8; p = 0.0003) ( Figure 1 ).",
+      "context_window": "ients than in non-ASA-treated patients (log-rank test 12.8; p = 0.0003) ( Figure 1 ). Out of the 242 patients taking ASA, four pa",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-3240",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3240,
+      "sentence": "Out of the 242 patients taking ASA, four patients (1.6%) developed menorrhagia, six (2.5%) epigastric pain, and one (0.4%) mild thrombocytopenia, but none of them discontinued ASA.",
+      "context_window": "re 1 ). Out of the 242 patients taking ASA, four patients (1.6%) developed menorrhagia, six (2.5%) epigastric pain, and one",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-3274",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3274,
+      "sentence": "Out of the 242 patients taking ASA, four patients (1.6%) developed menorrhagia, six (2.5%) epigastric pain, and one (0.4%) mild thrombocytopenia, but none of them discontinued ASA.",
+      "context_window": "aking ASA, four patients (1.6%) developed menorrhagia, six (2.5%) epigastric pain, and one (0.4%) mild thrombocytopenia, but",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-3306",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3306,
+      "sentence": "Out of the 242 patients taking ASA, four patients (1.6%) developed menorrhagia, six (2.5%) epigastric pain, and one (0.4%) mild thrombocytopenia, but none of them discontinued ASA.",
+      "context_window": "developed menorrhagia, six (2.5%) epigastric pain, and one (0.4%) mild thrombocytopenia, but none of them discontinued ASA.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-3962",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.06-7.49",
+      "numeric_values": [
+        1.06,
+        7.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3962,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "t predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemi",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-3981",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3981,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11,",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4051",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.08-39.84",
+      "numeric_values": [
+        2.08,
+        39.84
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4051,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": ", arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as po",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4071",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4071,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "ion, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive pred",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4094",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.25-7.88",
+      "numeric_values": [
+        1.25,
+        7.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4094,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "olemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ t",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4113",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4113,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4213",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02-0.37",
+      "numeric_values": [
+        0.02,
+        0.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4213,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "reatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012). Af",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4232",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0009",
+      "numeric_values": [
+        0.0009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4232,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "eatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012). After adjustme",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4256",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.06-0.71",
+      "numeric_values": [
+        0.06,
+        0.71
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4256,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "ictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012). After adjustment for propensity score, result",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4275",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4275,
+      "sentence": "At multivariable stepwise analysis the independent predictors of CV events were age at first visit (HR 2.82, 95% CI: 1.06-7.49; p = 0.004), arterial hypertension, and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) as positive predictors; ASA treatment and HCQ treatment as negative predictors (HR 0.09, 95% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012).",
+      "context_window": "% CI: 0.02-0.37, p = 0.0009 and HR 0.21, 95% CI: 0.06-0.71, p = 0.012). After adjustment for propensity score, results were very",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4381",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.02-0.39",
+      "numeric_values": [
+        0.02,
+        0.39
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4381,
+      "sentence": "After adjustment for propensity score, results were very similar for ASA treatment: HR 0.09, 95% CI 0.02-0.39, p = 0.001.",
+      "context_window": "core, results were very similar for ASA treatment: HR 0.09, 95% CI 0.02-0.39, p = 0.001. Furthermore, we included in regression models",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4399",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4399,
+      "sentence": "After adjustment for propensity score, results were very similar for ASA treatment: HR 0.09, 95% CI 0.02-0.39, p = 0.001.",
+      "context_window": "very similar for ASA treatment: HR 0.09, 95% CI 0.02-0.39, p = 0.001. Furthermore, we included in regression models the four tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4648",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.88-1.89",
+      "numeric_values": [
+        0.88,
+        1.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4648,
+      "sentence": "We could not find any significant differences at multivariable analysis (HR 1.29, 95% CI: 0.88-1.89, p = 0.188).",
+      "context_window": "significant differences at multivariable analysis (HR 1.29, 95% CI: 0.88-1.89, p = 0.188).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4667",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.188",
+      "numeric_values": [
+        0.188
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4667,
+      "sentence": "We could not find any significant differences at multivariable analysis (HR 1.29, 95% CI: 0.88-1.89, p = 0.188).",
+      "context_window": "nces at multivariable analysis (HR 1.29, 95% CI: 0.88-1.89, p = 0.188).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-370",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 370,
+      "sentence": "IR non-ASA group (11.8/1000) person-years; p = 0.0002), and CV event-free rate was higher in ASA-treated than in non-ASA-treated patients (log-rank test 12.8; p = 0.0003).",
+      "context_window": "(1.70/1000) vs. IR non-ASA group (11.8/1000) person-years; p = 0.0002), and CV event-free rate was higher in ASA-treated than in",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-486",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 486,
+      "sentence": "IR non-ASA group (11.8/1000) person-years; p = 0.0002), and CV event-free rate was higher in ASA-treated than in non-ASA-treated patients (log-rank test 12.8; p = 0.0003).",
+      "context_window": "eated than in non-ASA-treated patients (log-rank test 12.8; p = 0.0003). These results might depend on the lower disease activity",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-1086",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02-0.37",
+      "numeric_values": [
+        0.02,
+        0.37
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1086,
+      "sentence": "Actually, ASA intake resulted to be an independent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events.",
+      "context_window": "ndent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-1105",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0009",
+      "numeric_values": [
+        0.0009
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1105,
+      "sentence": "Actually, ASA intake resulted to be an independent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events.",
+      "context_window": "ctor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hyperch",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-1199",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.08-39.84",
+      "numeric_values": [
+        2.08,
+        39.84
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1199,
+      "sentence": "Actually, ASA intake resulted to be an independent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events.",
+      "context_window": "of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was i",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-1219",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1219,
+      "sentence": "Actually, ASA intake resulted to be an independent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events.",
+      "context_window": "sion and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-1242",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.25-7.88",
+      "numeric_values": [
+        1.25,
+        7.88
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1242,
+      "sentence": "Actually, ASA intake resulted to be an independent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events.",
+      "context_window": "olemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-1261",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1261,
+      "sentence": "Actually, ASA intake resulted to be an independent protective factor at multivariable analysis (HR 0.09; 95% CI: 0.02-0.37; p = 0.0009), whereas the presence of arterial hypertension and hypercholesterolemia (HR 9.11, 95% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events.",
+      "context_window": "% CI: 2.08-39.84; p = 0.003 and HR 3.15, 95% CI: 1.25-7.88; p = 0.014) was independent predictive factors of CV events. These lat",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-u-4188",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4188,
+      "sentence": "Nevertheless, in this study, they included subjects \u226560 years old (mean age 73.5), i.e., significantly older than those from our cohort (mean age 59.5) [ 24 ].",
+      "context_window": "ients. Nevertheless, in this study, they included subjects \u226560 years old (mean age 73.5), i.e., significantly older than those f",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-ci-4391",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.067-0.77",
+      "numeric_values": [
+        0.067,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4391,
+      "sentence": "We also detected a significant protective role of HCQ for CV events occurrence in RA (HR 0.23, 95% CI: 0.067-0.77; p = 0.0172).",
+      "context_window": "ective role of HCQ for CV events occurrence in RA (HR 0.23, 95% CI: 0.067-0.77; p = 0.0172). In that regard, recent evidences in the liter",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-p-4411",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0172",
+      "numeric_values": [
+        0.0172
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4411,
+      "sentence": "We also detected a significant protective role of HCQ for CV events occurrence in RA (HR 0.23, 95% CI: 0.067-0.77; p = 0.0172).",
+      "context_window": "or CV events occurrence in RA (HR 0.23, 95% CI: 0.067-0.77; p = 0.0172). In that regard, recent evidences in the literature demons",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6525948_low_dose_aspirin_as_primary_prophylaxis_for_cardiovascular_e-pct-4938",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4938,
+      "sentence": "Moreover, Sharma et al. have recently studied the association of HCQ use with incident cardiovascular disease (CVD) in a retrospective inception cohort of RA patients, reporting a 72% reduction in the risk of CVD in HCQ users [ 26 ].",
+      "context_window": "retrospective inception cohort of RA patients, reporting a 72% reduction in the risk of CVD in HCQ users [ 26 ]. We cannot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

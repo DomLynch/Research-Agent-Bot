@@ -1,0 +1,289 @@
+{
+  "paper_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou",
+  "doi": "10.1177/000992280204100807",
+  "extracted_at": "2026-05-08T20:05:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "mean_sd": 5,
+    "percentage": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-u-346",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 346,
+      "sentence": "All patients were treated with IVIG; 21 received 400 mg/kg/dose on 4 consecutive days and 51 received 2 g/kg as a single infusion.",
+      "context_window": "reviewed. All patients were treated with IVIG; 21 received 400 mg/kg/dose on 4 consecutive days and 51 received 2 g/kg as a s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-u-537",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/kg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 537,
+      "sentence": "Twenty-four of the 70 patients were started on high-dose aspirin (80-100 mg/kg/day) at the time of diagnosis.",
+      "context_window": "ur of the 70 patients were started on high-dose aspirin (80-100 mg/kg/day) at the time of diagnosis. High-dose aspirin was given for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-msd-636",
+      "claim_type": "mean_sd",
+      "raw_text": "6.1 \u00b1 0.9",
+      "numeric_values": [
+        6.1,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 636,
+      "sentence": "High-dose aspirin was given for a mean (\u00b1 SE) duration of 6.1 \u00b1 0.9 days, then switched to low-dose aspirin (3-5 mg/kg/day).",
+      "context_window": ". High-dose aspirin was given for a mean (\u00b1 SE) duration of 6.1 \u00b1 0.9 days, then switched to low-dose aspirin (3-5 mg/kg/day). Fo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-u-642",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 days",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 642,
+      "sentence": "High-dose aspirin was given for a mean (\u00b1 SE) duration of 6.1 \u00b1 0.9 days, then switched to low-dose aspirin (3-5 mg/kg/day).",
+      "context_window": "-dose aspirin was given for a mean (\u00b1 SE) duration of 6.1 \u00b1 0.9 days, then switched to low-dose aspirin (3-5 mg/kg/day). Forty-s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-u-689",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg/kg/day",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 689,
+      "sentence": "High-dose aspirin was given for a mean (\u00b1 SE) duration of 6.1 \u00b1 0.9 days, then switched to low-dose aspirin (3-5 mg/kg/day).",
+      "context_window": "ion of 6.1 \u00b1 0.9 days, then switched to low-dose aspirin (3-5 mg/kg/day). Forty-six of the 70 patients were started on low-dose asp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-pct-944",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "Coronary artery abnormalities were present at the time of diagnosis in 12 of 72 patients (17%), including 6 of 6 of patients (100%) with atypical KS and 6 of 66 patients (9%) with typical KS.",
+      "context_window": "were present at the time of diagnosis in 12 of 72 patients (17%), including 6 of 6 of patients (100%) with atypical KS and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-pct-980",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 980,
+      "sentence": "Coronary artery abnormalities were present at the time of diagnosis in 12 of 72 patients (17%), including 6 of 6 of patients (100%) with atypical KS and 6 of 66 patients (9%) with typical KS.",
+      "context_window": "s in 12 of 72 patients (17%), including 6 of 6 of patients (100%) with atypical KS and 6 of 66 patients (9%) with typical KS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-pct-1025",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1025,
+      "sentence": "Coronary artery abnormalities were present at the time of diagnosis in 12 of 72 patients (17%), including 6 of 6 of patients (100%) with atypical KS and 6 of 66 patients (9%) with typical KS.",
+      "context_window": "6 of patients (100%) with atypical KS and 6 of 66 patients (9%) with typical KS. None of the remaining 60 patients develop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-msd-1218",
+      "claim_type": "mean_sd",
+      "raw_text": "44 \u00b1 6",
+      "numeric_values": [
+        44.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1218,
+      "sentence": "The mean duration of fever after initiation of therapy was 44 \u00b1 6 hours in patients treated with IVIG 400 mg/kg/dose on 4 consecutive days and 35 \u00b1 5 hours in patients treated with 2 g/kg as a single infusion (p=0.3).",
+      "context_window": "The mean duration of fever after initiation of therapy was 44 \u00b1 6 hours in patients treated with IVIG 400 mg/kg/dose on 4 con",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-u-1261",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1261,
+      "sentence": "The mean duration of fever after initiation of therapy was 44 \u00b1 6 hours in patients treated with IVIG 400 mg/kg/dose on 4 consecutive days and 35 \u00b1 5 hours in patients treated with 2 g/kg as a single infusion (p=0.3).",
+      "context_window": "n of therapy was 44 \u00b1 6 hours in patients treated with IVIG 400 mg/kg/dose on 4 consecutive days and 35 \u00b1 5 hours in patients",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-msd-1302",
+      "claim_type": "mean_sd",
+      "raw_text": "35 \u00b1 5",
+      "numeric_values": [
+        35.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1302,
+      "sentence": "The mean duration of fever after initiation of therapy was 44 \u00b1 6 hours in patients treated with IVIG 400 mg/kg/dose on 4 consecutive days and 35 \u00b1 5 hours in patients treated with 2 g/kg as a single infusion (p=0.3).",
+      "context_window": "treated with IVIG 400 mg/kg/dose on 4 consecutive days and 35 \u00b1 5 hours in patients treated with 2 g/kg as a single infusion",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-p-1369",
+      "claim_type": "p_value",
+      "raw_text": "p=0.3",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1369,
+      "sentence": "The mean duration of fever after initiation of therapy was 44 \u00b1 6 hours in patients treated with IVIG 400 mg/kg/dose on 4 consecutive days and 35 \u00b1 5 hours in patients treated with 2 g/kg as a single infusion (p=0.3).",
+      "context_window": "hours in patients treated with 2 g/kg as a single infusion (p=0.3). The mean duration of fever after the initiation of therap",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-msd-1440",
+      "claim_type": "mean_sd",
+      "raw_text": "47 \u00b1 8",
+      "numeric_values": [
+        47.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "The mean duration of fever after the initiation of therapy was 47 \u00b1 8 hours in patients treated with high-dose aspirin compared to 34 \u00b1 5 hours in patients treated with low-dose aspirin (p=0.13).",
+      "context_window": "mean duration of fever after the initiation of therapy was 47 \u00b1 8 hours in patients treated with high-dose aspirin compared t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-msd-1508",
+      "claim_type": "mean_sd",
+      "raw_text": "34 \u00b1 5",
+      "numeric_values": [
+        34.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1508,
+      "sentence": "The mean duration of fever after the initiation of therapy was 47 \u00b1 8 hours in patients treated with high-dose aspirin compared to 34 \u00b1 5 hours in patients treated with low-dose aspirin (p=0.13).",
+      "context_window": "ours in patients treated with high-dose aspirin compared to 34 \u00b1 5 hours in patients treated with low-dose aspirin (p=0.13). T",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_000992280204100807_comparison_of_high_dose_and_low_dose_aspirin_plus_intravenou-p-1564",
+      "claim_type": "p_value",
+      "raw_text": "p=0.13",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1564,
+      "sentence": "The mean duration of fever after the initiation of therapy was 47 \u00b1 8 hours in patients treated with high-dose aspirin compared to 34 \u00b1 5 hours in patients treated with low-dose aspirin (p=0.13).",
+      "context_window": "to 34 \u00b1 5 hours in patients treated with low-dose aspirin (p=0.13). These preliminary results indicate there is no benefit to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

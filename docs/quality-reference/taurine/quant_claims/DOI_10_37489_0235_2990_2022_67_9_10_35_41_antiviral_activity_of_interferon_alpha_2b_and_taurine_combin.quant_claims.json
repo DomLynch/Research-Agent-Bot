@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_37489_0235_2990_2022_67_9_10_35_41_antiviral_activity_of_interferon_alpha_2b_and_taurine_combin",
+  "doi": "10.37489/0235-2990-2022-67-9-10-35-41",
+  "extracted_at": "2026-05-08T20:10:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_37489_0235_2990_2022_67_9_10_35_41_antiviral_activity_of_interferon_alpha_2b_and_taurine_combin-u-613",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 613,
+      "sentence": "The<jats:bold> </jats:bold>study included cytotoxicity and antiviral activity assays of IFN-a2b preparations, when stored according to the instructions<jats:bold> </jats:bold>at 2-8\u00b0C, and after 1 month storage at the temperature of 20-26\u00b0C in a pre-opened state.",
+      "context_window": "the instructions<jats:bold> </jats:bold>at 2-8\u00b0C, and after 1 month storage at the temperature of 20-26\u00b0C in a pre-opened state",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37489_0235_2990_2022_67_9_10_35_41_antiviral_activity_of_interferon_alpha_2b_and_taurine_combin-pct-837",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 837,
+      "sentence": "The combination of IFN alpha-2b<jats:bold> </jats:bold>with taurine has a higher antiviral activity compared to IFN alpha-2b mono-preparation by more than 25% at a \u00ablow\u00bb and<jats:bold> </jats:bold>85% at a \u00abhigh\u00bb multiplicity of infection.",
+      "context_window": "vity compared to IFN alpha-2b mono-preparation by more than 25% at a \u00ablow\u00bb and<jats:bold> </jats:bold>85% at a \u00abhigh\u00bb multi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37489_0235_2990_2022_67_9_10_35_41_antiviral_activity_of_interferon_alpha_2b_and_taurine_combin-pct-879",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 879,
+      "sentence": "The combination of IFN alpha-2b<jats:bold> </jats:bold>with taurine has a higher antiviral activity compared to IFN alpha-2b mono-preparation by more than 25% at a \u00ablow\u00bb and<jats:bold> </jats:bold>85% at a \u00abhigh\u00bb multiplicity of infection.",
+      "context_window": "tion by more than 25% at a \u00ablow\u00bb and<jats:bold> </jats:bold>85% at a \u00abhigh\u00bb multiplicity of infection. Selectivity index fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37489_0235_2990_2022_67_9_10_35_41_antiviral_activity_of_interferon_alpha_2b_and_taurine_combin-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "Selectivity index for combinations of IFN-a2b (50,000 IU/dose) + taurine (1 mg/ml)<jats:bold> </jats:bold>and IFN-a2b (10,000 IU/ml) + taurine (0.8 mg/ml) was more than 600 units, whereas for the IFN-a2b (10,000 IU/ml) it was<jats:bold> </jats:bold>200 units.",
+      "context_window": "dex for combinations of IFN-a2b (50,000 IU/dose) + taurine (1 mg/ml)<jats:bold> </jats:bold>and IFN-a2b (10,000 IU/ml) + tau",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37489_0235_2990_2022_67_9_10_35_41_antiviral_activity_of_interferon_alpha_2b_and_taurine_combin-u-1066",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 mg",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "Selectivity index for combinations of IFN-a2b (50,000 IU/dose) + taurine (1 mg/ml)<jats:bold> </jats:bold>and IFN-a2b (10,000 IU/ml) + taurine (0.8 mg/ml) was more than 600 units, whereas for the IFN-a2b (10,000 IU/ml) it was<jats:bold> </jats:bold>200 units.",
+      "context_window": "ats:bold> </jats:bold>and IFN-a2b (10,000 IU/ml) + taurine (0.8 mg/ml) was more than 600 units, whereas for the IFN-a2b (10,00",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

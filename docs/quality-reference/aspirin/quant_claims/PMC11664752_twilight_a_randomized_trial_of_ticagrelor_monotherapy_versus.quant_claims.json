@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11664752_twilight_a_randomized_trial_of_ticagrelor_monotherapy_versus",
   "doi": "10.15420/usc.2019.02",
-  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extracted_at": "2026-05-08T20:06:17+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 19,
@@ -24,9 +24,9 @@
       "context_window": "le-blind trial, tested this approach by dropping aspirin at 3 months and continuing with ticagrelor monotherapy for an additiona",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11664752_twilight_a_randomized_trial_of_ticagrelor_monotherapy_versus-u-493",
@@ -42,9 +42,9 @@
       "context_window": "nd continuing with ticagrelor monotherapy for an additional 12 months. The study enrolled 9,006 patients, of whom 7,119 who toler",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11664752_twilight_a_randomized_trial_of_ticagrelor_monotherapy_versus-u-567",
@@ -152,7 +152,7 @@
       "context_window": "in to ticagrelor-based monotherapy in high-risk patients at 3 months after percutaneous coronary intervention resulted in a lowe",
       "claim_role": "protocol",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -296,7 +296,7 @@
       "context_window": "dpoint, bleeding events (BARC type 2, 3, or 5), occurred in 7.1% of patients who received ticagrelor plus aspirin, and 4.0%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -314,7 +314,7 @@
       "context_window": "7.1% of patients who received ticagrelor plus aspirin, and 4.0% of those who received ticagrelor plus placebo (HR 0.56; 95%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -333,7 +333,7 @@
       "context_window": ".0% of those who received ticagrelor plus placebo (HR 0.56; 95% CI [0.45-0.68]; p<0.001; Figure 1A ). Secondary endpoints, mainly ischemi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -351,7 +351,7 @@
       "context_window": "eived ticagrelor plus placebo (HR 0.56; 95% CI [0.45-0.68]; p<0.001; Figure 1A ). Secondary endpoints, mainly ischemic events (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -496,7 +496,7 @@
       "context_window": "2, 3, or 5 bleeding). The benefits of aspirin withdrawal at 3 months extended to severe bleeding events (BARC type 3 or 5) and a",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -694,7 +694,7 @@
       "context_window": "in to ticagrelor-based monotherapy in high-risk patients at 3 months after PCI resulted in a lower bleeding events rate without",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

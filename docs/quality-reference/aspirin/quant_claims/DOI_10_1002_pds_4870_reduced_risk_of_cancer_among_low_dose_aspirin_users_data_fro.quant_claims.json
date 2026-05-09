@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1002_pds_4870_reduced_risk_of_cancer_among_low_dose_aspirin_users_data_fro",
+  "doi": "10.1002/pds.4870",
+  "extracted_at": "2026-05-08T20:06:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_pds_4870_reduced_risk_of_cancer_among_low_dose_aspirin_users_data_fro-u-642",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 642,
+      "sentence": "We used data for 111 025 individuals aged 50 to 80 years at study entry (January 1, 2006) without prevalent cancer or LDA use.",
+      "context_window": "nt\u00e9 (SNDS). We used data for 111 025 individuals aged 50 to 80 years at study entry (January 1, 2006) without prevalent cancer o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_pds_4870_reduced_risk_of_cancer_among_low_dose_aspirin_users_data_fro-pct-1225",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1225,
+      "sentence": "We estimated the effect of LDA on cancer incidence by using a dynamic model to account for the competing risk of death in the presence of time\u2010dependent exposure and risk factors.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>LDA use was associated with reduced 10\u2010year risk of cancer (subdistribution hazard ratio [SHR] 0.81 [95% CI 0.77\u20100.86]).",
+      "context_window": "ar risk of cancer (subdistribution hazard ratio [SHR] 0.81 [95% CI 0.77\u20100.86]). The SHRs were 0.88 [0.82\u20100.94] for men and",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

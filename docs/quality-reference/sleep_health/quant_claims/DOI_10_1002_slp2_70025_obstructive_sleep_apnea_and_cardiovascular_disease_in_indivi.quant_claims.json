@@ -1,0 +1,106 @@
+{
+  "paper_id": "DOI_10_1002_slp2_70025_obstructive_sleep_apnea_and_cardiovascular_disease_in_indivi",
+  "doi": "10.1002/slp2.70025",
+  "extracted_at": "2026-05-08T20:05:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "confidence_interval": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_slp2_70025_obstructive_sleep_apnea_and_cardiovascular_disease_in_indivi-u-890",
+      "claim_type": "unit_value",
+      "raw_text": "13.6 years",
+      "numeric_values": [
+        13.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 890,
+      "sentence": "Cox proportional hazards models estimated the associations between OSA risk levels and CVD events.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Over a median follow\u2010up of 13.6 years, 25,618 CVD events occurred.",
+      "context_window": "tle>Results</jats:title> <jats:p>Over a median follow\u2010up of 13.6 years, 25,618 CVD events occurred. Compared with participants at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_slp2_70025_obstructive_sleep_apnea_and_cardiovascular_disease_in_indivi-ci-1056",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.06-1.14",
+      "numeric_values": [
+        1.06,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "Compared with participants at low OSA risk, those at high OSA risk were associated with higher CHD (hazard ratios [HR], 1.10; 95% CI: 1.06-1.14) and AF (HR, 1.05; 95% CI: 1.01-1.10) after full adjustment, but not with HF (HR, 1.05; 95% CI: 0.98-1.11) or stroke (HR, 0.94; 95% CI: 0.87-1.02).",
+      "context_window": "were associated with higher CHD (hazard ratios [HR], 1.10; 95% CI: 1.06-1.14) and AF (HR, 1.05; 95% CI: 1.01-1.10) after full adjustment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_slp2_70025_obstructive_sleep_apnea_and_cardiovascular_disease_in_indivi-ci-1093",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.10",
+      "numeric_values": [
+        1.01,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "Compared with participants at low OSA risk, those at high OSA risk were associated with higher CHD (hazard ratios [HR], 1.10; 95% CI: 1.06-1.14) and AF (HR, 1.05; 95% CI: 1.01-1.10) after full adjustment, but not with HF (HR, 1.05; 95% CI: 0.98-1.11) or stroke (HR, 0.94; 95% CI: 0.87-1.02).",
+      "context_window": "ard ratios [HR], 1.10; 95% CI: 1.06-1.14) and AF (HR, 1.05; 95% CI: 1.01-1.10) after full adjustment, but not with HF (HR, 1.05; 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_slp2_70025_obstructive_sleep_apnea_and_cardiovascular_disease_in_indivi-ci-1162",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.98-1.11",
+      "numeric_values": [
+        0.98,
+        1.11
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "Compared with participants at low OSA risk, those at high OSA risk were associated with higher CHD (hazard ratios [HR], 1.10; 95% CI: 1.06-1.14) and AF (HR, 1.05; 95% CI: 1.01-1.10) after full adjustment, but not with HF (HR, 1.05; 95% CI: 0.98-1.11) or stroke (HR, 0.94; 95% CI: 0.87-1.02).",
+      "context_window": ".01-1.10) after full adjustment, but not with HF (HR, 1.05; 95% CI: 0.98-1.11) or stroke (HR, 0.94; 95% CI: 0.87-1.02). Associations were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_slp2_70025_obstructive_sleep_apnea_and_cardiovascular_disease_in_indivi-ci-1202",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.87-1.02",
+      "numeric_values": [
+        0.87,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "Compared with participants at low OSA risk, those at high OSA risk were associated with higher CHD (hazard ratios [HR], 1.10; 95% CI: 1.06-1.14) and AF (HR, 1.05; 95% CI: 1.01-1.10) after full adjustment, but not with HF (HR, 1.05; 95% CI: 0.98-1.11) or stroke (HR, 0.94; 95% CI: 0.87-1.02).",
+      "context_window": "with HF (HR, 1.05; 95% CI: 0.98-1.11) or stroke (HR, 0.94; 95% CI: 0.87-1.02). Associations were strongest in overweight individuals wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

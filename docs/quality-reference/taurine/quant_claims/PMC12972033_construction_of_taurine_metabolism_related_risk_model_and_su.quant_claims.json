@@ -1,0 +1,373 @@
+{
+  "paper_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su",
+  "doi": "10.21037/jgo-2025-638",
+  "extracted_at": "2026-05-08T20:10:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 2,
+    "p_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-n-646",
+      "claim_type": "sample_size",
+      "raw_text": "n=155",
+      "numeric_values": [
+        155.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 646,
+      "sentence": "For validation, two microarray datasets ( GSE29623 : n=155 tumors; GSE103479 : n=65 tumors) were obtained from Gene Expression Omnibus (GEO) database ( https://www.ncbi.nlm.nih.gov/geo/ ).",
+      "context_window": "luded. For validation, two microarray datasets ( GSE29623 : n=155 tumors; GSE103479 : n=65 tumors) were obtained from Gene Ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-n-672",
+      "claim_type": "sample_size",
+      "raw_text": "n=65",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 672,
+      "sentence": "For validation, two microarray datasets ( GSE29623 : n=155 tumors; GSE103479 : n=65 tumors) were obtained from Gene Expression Omnibus (GEO) database ( https://www.ncbi.nlm.nih.gov/geo/ ).",
+      "context_window": "microarray datasets ( GSE29623 : n=155 tumors; GSE103479 : n=65 tumors) were obtained from Gene Expression Omnibus (GEO) da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-u-1590",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1590,
+      "sentence": "Following clinical data integration and exclusion of cases with survival <30 days, univariate Cox regression (\u201csurvival\u201d package; P<0.05) identified prognostic DETMRGs, whose chromosomal locations were mapped using \u201cRCircos\u201d.",
+      "context_window": "ical data integration and exclusion of cases with survival <30 days, univariate Cox regression (\u201csurvival\u201d package; P<0.05) ide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-1646",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1646,
+      "sentence": "Following clinical data integration and exclusion of cases with survival <30 days, univariate Cox regression (\u201csurvival\u201d package; P<0.05) identified prognostic DETMRGs, whose chromosomal locations were mapped using \u201cRCircos\u201d.",
+      "context_window": "al <30 days, univariate Cox regression (\u201csurvival\u201d package; P<0.05) identified prognostic DETMRGs, whose chromosomal locations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-1763",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1763,
+      "sentence": "Prognostic DETMRGs (P<0.05) from univariate analysis were used to construct the model, with least absolute shrinkage and selection operator (LASSO) regression (\u201cglmnet\u201d package) employing cross-validated \u03bb-selection to eliminate correlated genes and prevent overfitting.",
+      "context_window": "locations were mapped using \u201cRCircos\u201d. Prognostic DETMRGs (P<0.05) from univariate analysis were used to construct the model,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-5943",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5943,
+      "sentence": "Correlation analyses examined variable relationships through both Pearson and Spearman approaches, with statistical significance established at P<0.05.",
+      "context_window": "an approaches, with statistical significance established at P<0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-836",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 836,
+      "sentence": "Univariate Cox regression analysis of DETMRGs identified 21 prognostic genes (P<0.05) ( Table S1 , Figure 1F ).",
+      "context_window": "ression analysis of DETMRGs identified 21 prognostic genes (P<0.05) ( Table S1 , Figure 1F ). Notably, only six genes ( GCG ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-1708",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1708,
+      "sentence": "DETMRGs identification and functional analysis. (A) PCA plot of training set sample distribution. (B) Volcano plot of DEGs between tumor and normal groups. (C) Intersection analysis of DEGs and TMRGs. (D) GO enrichment analysis of DETMRGs. (E) KEGG enrichment analysis of DETMRGs. (F) Forest plot of univariate analysis for prognostic genes. (G) Box plot of prognostic gene expression. (H) Heatmap of prognostic gene co-expression patterns. (I) Circos plot of prognostic gene genomic locations. *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "s. (I) Circos plot of prognostic gene genomic locations. *, P<0.05; **, P<0.01; ***, P<0.001. BP, biological process; CC, cell",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-1720",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1720,
+      "sentence": "DETMRGs identification and functional analysis. (A) PCA plot of training set sample distribution. (B) Volcano plot of DEGs between tumor and normal groups. (C) Intersection analysis of DEGs and TMRGs. (D) GO enrichment analysis of DETMRGs. (E) KEGG enrichment analysis of DETMRGs. (F) Forest plot of univariate analysis for prognostic genes. (G) Box plot of prognostic gene expression. (H) Heatmap of prognostic gene co-expression patterns. (I) Circos plot of prognostic gene genomic locations. *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "s plot of prognostic gene genomic locations. *, P<0.05; **, P<0.01; ***, P<0.001. BP, biological process; CC, cellular compone",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-1733",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1733,
+      "sentence": "DETMRGs identification and functional analysis. (A) PCA plot of training set sample distribution. (B) Volcano plot of DEGs between tumor and normal groups. (C) Intersection analysis of DEGs and TMRGs. (D) GO enrichment analysis of DETMRGs. (E) KEGG enrichment analysis of DETMRGs. (F) Forest plot of univariate analysis for prognostic genes. (G) Box plot of prognostic gene expression. (H) Heatmap of prognostic gene co-expression patterns. (I) Circos plot of prognostic gene genomic locations. *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "gnostic gene genomic locations. *, P<0.05; **, P<0.01; ***, P<0.001. BP, biological process; CC, cellular component; CI, confid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-3671",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3671,
+      "sentence": "Validation cohorts: (G) GSE29623 and (H) GSE103479 ROC/Kaplan-Meier/risk distributions. (I) Risk-group gene expression. (J) Tumor-normal differential expression. *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "ne expression. (J) Tumor-normal differential expression. *, P<0.05; **, P<0.01; ***, P<0.001. AIC, Akaike information criterio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-3683",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3683,
+      "sentence": "Validation cohorts: (G) GSE29623 and (H) GSE103479 ROC/Kaplan-Meier/risk distributions. (I) Risk-group gene expression. (J) Tumor-normal differential expression. *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "n. (J) Tumor-normal differential expression. *, P<0.05; **, P<0.01; ***, P<0.001. AIC, Akaike information criterion; AUC, area",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-3696",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3696,
+      "sentence": "Validation cohorts: (G) GSE29623 and (H) GSE103479 ROC/Kaplan-Meier/risk distributions. (I) Risk-group gene expression. (J) Tumor-normal differential expression. *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "normal differential expression. *, P<0.05; **, P<0.01; ***, P<0.001. AIC, Akaike information criterion; AUC, area under the ROC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-6026",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6026,
+      "sentence": "Group 1 and group 2 are two subtypes classified based on consensus clustering. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "fied based on consensus clustering. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001. CCR, C-C chemokine receptor; CDF",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-6038",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6038,
+      "sentence": "Group 1 and group 2 are two subtypes classified based on consensus clustering. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "n consensus clustering. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001. CCR, C-C chemokine receptor; CDF, cumulative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-6051",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6051,
+      "sentence": "Group 1 and group 2 are two subtypes classified based on consensus clustering. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "lustering. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001. CCR, C-C chemokine receptor; CDF, cumulative distribution",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-u-8482",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8482,
+      "sentence": "Kaplan-Meier analyses stratified by age (\u226465 vs. >65 years), gender (female vs. male), stage (stage I + II + III vs. stage IV), T stage (T1+2 vs.",
+      "context_window": "re S2A ). Kaplan-Meier analyses stratified by age (\u226465 vs. >65 years), gender (female vs. male), stage (stage I + II + III vs. s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-12062",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12062,
+      "sentence": "Immune microenvironment characterization. (A) ssGSEA immune cell (up) and immune function scores (down) for risk groups. (B) ESTIMATE analysis of tumor microenvironment components. (C) CIBERSORT immune cell fractions in high- and low-risk groups. (D) Differential immune checkpoint expression between high- and low-risk groups. (E) IPS score comparison between high- and low-risk groups. (F) Survival analysis of the IMvigor210 cohort in high- and low-risk groups. (G) Immunotherapy response rate comparison between high- and low-risk groups. (H) Risk score distribution plot between the immune response R group and NR group. (I) Correlation heatmap between signature genes and immune cell infiltration. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "genes and immune cell infiltration. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001. Corr, correlation; IPS, immunoph",
+      "claim_role": "unknown",
+      "endpoint": "vaccine response",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-12074",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12074,
+      "sentence": "Immune microenvironment characterization. (A) ssGSEA immune cell (up) and immune function scores (down) for risk groups. (B) ESTIMATE analysis of tumor microenvironment components. (C) CIBERSORT immune cell fractions in high- and low-risk groups. (D) Differential immune checkpoint expression between high- and low-risk groups. (E) IPS score comparison between high- and low-risk groups. (F) Survival analysis of the IMvigor210 cohort in high- and low-risk groups. (G) Immunotherapy response rate comparison between high- and low-risk groups. (H) Risk score distribution plot between the immune response R group and NR group. (I) Correlation heatmap between signature genes and immune cell infiltration. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "mune cell infiltration. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001. Corr, correlation; IPS, immunophenoscore; NR",
+      "claim_role": "unknown",
+      "endpoint": "vaccine response",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12972033_construction_of_taurine_metabolism_related_risk_model_and_su-p-12087",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12087,
+      "sentence": "Immune microenvironment characterization. (A) ssGSEA immune cell (up) and immune function scores (down) for risk groups. (B) ESTIMATE analysis of tumor microenvironment components. (C) CIBERSORT immune cell fractions in high- and low-risk groups. (D) Differential immune checkpoint expression between high- and low-risk groups. (E) IPS score comparison between high- and low-risk groups. (F) Survival analysis of the IMvigor210 cohort in high- and low-risk groups. (G) Immunotherapy response rate comparison between high- and low-risk groups. (H) Risk score distribution plot between the immune response R group and NR group. (I) Correlation heatmap between signature genes and immune cell infiltration. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001.",
+      "context_window": "iltration. ns, not significant; *, P<0.05; **, P<0.01; ***, P<0.001. Corr, correlation; IPS, immunophenoscore; NR, no response;",
+      "claim_role": "unknown",
+      "endpoint": "vaccine response",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

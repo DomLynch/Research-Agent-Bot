@@ -1,0 +1,49 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0254_0254_diagnosis_of_obstructive_sleep_apnea_using_koopman_spec",
+  "doi": "10.1093/sleep/zsad077.0254",
+  "extracted_at": "2026-05-08T20:06:14+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0254_0254_diagnosis_of_obstructive_sleep_apnea_using_koopman_spec-msd-1670",
+      "claim_type": "mean_sd",
+      "raw_text": "1.73\u00b10.26",
+      "numeric_values": [
+        1.73,
+        0.26
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1670,
+      "sentence": "The pooled means and standard deviations of the burst duration and the inter-burst duration across OSA patients were also calculated to be 1.73\u00b10.26 minutes and 11.71\u00b12.69 minutes.",
+      "context_window": "rst duration across OSA patients were also calculated to be 1.73\u00b10.26 minutes and 11.71\u00b12.69 minutes. Scalogram amplitude and spe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0254_0254_diagnosis_of_obstructive_sleep_apnea_using_koopman_spec-msd-1692",
+      "claim_type": "mean_sd",
+      "raw_text": "11.71\u00b12.69",
+      "numeric_values": [
+        11.71,
+        2.69
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1692,
+      "sentence": "The pooled means and standard deviations of the burst duration and the inter-burst duration across OSA patients were also calculated to be 1.73\u00b10.26 minutes and 11.71\u00b12.69 minutes.",
+      "context_window": "A patients were also calculated to be 1.73\u00b10.26 minutes and 11.71\u00b12.69 minutes. Scalogram amplitude and spectral decomposition of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

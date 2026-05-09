@@ -1,0 +1,84 @@
+{
+  "paper_id": "PMC11645696_p031_does_obstructive_sleep_apnea_severity_impact_sleep_spin",
+  "doi": "10.1093/sleepadvances/zpae070.113",
+  "extracted_at": "2026-05-08T20:06:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11645696_p031_does_obstructive_sleep_apnea_severity_impact_sleep_spin-n-405",
+      "claim_type": "sample_size",
+      "raw_text": "n=29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 405,
+      "sentence": "But whether the spindle deficits seen in schizophrenia are modified across a broad spectrum of OSA severity remains unclear\n\nWe analysed overnight electrocephalography (EEG) from schizophrenia patients with suspected OSA (n=29, mean age=44 yrs, gender (F:M) = 7:22, AHI range=0.0-123.4/hr) and a non-schizophrenia control group (n=29, mean age=44 yrs, gender (F:M) = 7:22, AHI range=8.6-106.6/hr) selected with a similar age and gender distribution.",
+      "context_window": "raphy (EEG) from schizophrenia patients with suspected OSA (n=29, mean age=44 yrs, gender (F:M) = 7:22, AHI range=0.0-123.4/",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11645696_p031_does_obstructive_sleep_apnea_severity_impact_sleep_spin-n-512",
+      "claim_type": "sample_size",
+      "raw_text": "n=29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 512,
+      "sentence": "But whether the spindle deficits seen in schizophrenia are modified across a broad spectrum of OSA severity remains unclear\n\nWe analysed overnight electrocephalography (EEG) from schizophrenia patients with suspected OSA (n=29, mean age=44 yrs, gender (F:M) = 7:22, AHI range=0.0-123.4/hr) and a non-schizophrenia control group (n=29, mean age=44 yrs, gender (F:M) = 7:22, AHI range=8.6-106.6/hr) selected with a similar age and gender distribution.",
+      "context_window": "range=0.0-123.4/hr) and a non-schizophrenia control group (n=29, mean age=44 yrs, gender (F:M) = 7:22, AHI range=8.6-106.6/",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11645696_p031_does_obstructive_sleep_apnea_severity_impact_sleep_spin-p-1076",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1076,
+      "sentence": "The schizophrenia group had lower NREM sleep spindle density compared with controls (0.6/min vs 1.8/mins; p<0.05).",
+      "context_window": "pindle density compared with controls (0.6/min vs 1.8/mins; p<0.05). Sleep apnea severity (AHI) was not associated with spindl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11645696_p031_does_obstructive_sleep_apnea_severity_impact_sleep_spin-p-1413",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "We incidentally observed that the schizophrenia group had increased N1 (58.4 vs 15.0 minutes) and N3 (85.7 vs 25.1 minutes) sleep, and reduced N2 (195.7 vs 250.8 minutes) and REM (46.5 vs 69.0 minutes) sleep (all p<0.05).",
+      "context_window": "vs 250.8 minutes) and REM (46.5 vs 69.0 minutes) sleep (all p<0.05). Our preliminary findings suggest that sleep spindle defi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

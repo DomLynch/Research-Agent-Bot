@@ -1,0 +1,66 @@
+{
+  "paper_id": "PMID42011821_senolytics_alleviate_cyclophosphamide_induced_premature_ovar",
+  "doi": "10.4081/ejh.2026.4537",
+  "extracted_at": "2026-05-08T20:01:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMID42011821_senolytics_alleviate_cyclophosphamide_induced_premature_ovar-pct-1253",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1253,
+      "sentence": "Furthermore, DQ treatment significantly normalized estrous cyclicity, restoring regular cycles in 60% of the CY+DQ mice compared to only ~15% in the CY-alone group (p<0.0001).",
+      "context_window": "y normalized estrous cyclicity, restoring regular cycles in 60% of the CY+DQ mice compared to only ~15% in the CY-alone gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dq",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID42011821_senolytics_alleviate_cyclophosphamide_induced_premature_ovar-pct-1293",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1293,
+      "sentence": "Furthermore, DQ treatment significantly normalized estrous cyclicity, restoring regular cycles in 60% of the CY+DQ mice compared to only ~15% in the CY-alone group (p<0.0001).",
+      "context_window": "g regular cycles in 60% of the CY+DQ mice compared to only ~15% in the CY-alone group (p<0.0001). RNA sequencing analysis r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dq",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID42011821_senolytics_alleviate_cyclophosphamide_induced_premature_ovar-p-1320",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1320,
+      "sentence": "Furthermore, DQ treatment significantly normalized estrous cyclicity, restoring regular cycles in 60% of the CY+DQ mice compared to only ~15% in the CY-alone group (p<0.0001).",
+      "context_window": "the CY+DQ mice compared to only ~15% in the CY-alone group (p<0.0001). RNA sequencing analysis revealed that DQ treatment upregu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dq",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

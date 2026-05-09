@@ -1,0 +1,1097 @@
+{
+  "paper_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do",
+  "doi": "10.1155/2013/313492",
+  "extracted_at": "2026-05-08T20:05:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 5,
+    "unit_value": 26,
+    "p_value": 10,
+    "mean_sd": 2,
+    "percentage": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-n-699",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 699,
+      "sentence": "Patients recruited were then randomized between a standard dose (SD, n = 58) or DD of aspirin and clopidogrel (DD, n = 58), maintained for 6 months follow-up.",
+      "context_window": "recruited were then randomized between a standard dose (SD, n = 58) or DD of aspirin and clopidogrel (DD, n = 58), maintained",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-n-745",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 745,
+      "sentence": "Patients recruited were then randomized between a standard dose (SD, n = 58) or DD of aspirin and clopidogrel (DD, n = 58), maintained for 6 months follow-up.",
+      "context_window": "ard dose (SD, n = 58) or DD of aspirin and clopidogrel (DD, n = 58), maintained for 6 months follow-up. Blood samples for PFA-",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-769",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 769,
+      "sentence": "Patients recruited were then randomized between a standard dose (SD, n = 58) or DD of aspirin and clopidogrel (DD, n = 58), maintained for 6 months follow-up.",
+      "context_window": "DD of aspirin and clopidogrel (DD, n = 58), maintained for 6 months follow-up. Blood samples for PFA-100, light transmittance a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-909",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 909,
+      "sentence": "Blood samples for PFA-100, light transmittance aggregometry, and VWF/ADAMTS-13 analysis were collected after 5, 30, and 180 days (Times 0, 1, and 2).",
+      "context_window": "and VWF/ADAMTS-13 analysis were collected after 5, 30, and 180 days (Times 0, 1, and 2). At Times 1 and 2 we observed a signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-1040",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "At Times 1 and 2 we observed a significantly higher CEPI closure times (CT) in DD as compared to SD (P < 0.001).",
+      "context_window": "tly higher CEPI closure times (CT) in DD as compared to SD (P < 0.001). Delta of CEPI-CT ( T 1 - T 0) was significantly related t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-1116",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1116,
+      "sentence": "Delta of CEPI-CT ( T 1 - T 0) was significantly related to VWF (P < 0.001) and inversely related to ADAMTS-13 (0.01).",
+      "context_window": "a of CEPI-CT ( T 1 - T 0) was significantly related to VWF (P < 0.001) and inversely related to ADAMTS-13 (0.01). Responders had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-1346",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1346,
+      "sentence": "Finally, in a multivariate model analysis, VWF and ADAMTS-13 in resulted significant predictors of CEPI-CT response (P = 0.02).",
+      "context_window": "-13 in resulted significant predictors of CEPI-CT response (P = 0.02). HRP detected by PFA-100 in acute myocardial infarction is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-n-342",
+      "claim_type": "sample_size",
+      "raw_text": "n = 116",
+      "numeric_values": [
+        116.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 342,
+      "sentence": "The study protocol was approved by the local Ethical Committee and informed consent was obtained from all subjects ( n = 116) who entered the study between July 2009 and December 2011.",
+      "context_window": "ittee and informed consent was obtained from all subjects ( n = 116) who entered the study between July 2009 and December 2011.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-msd-1138",
+      "claim_type": "mean_sd",
+      "raw_text": "110 \u00b1 8",
+      "numeric_values": [
+        110.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1138,
+      "sentence": "The patients underwent platelet function evaluation by PFA-100 with CEPI cartridges and LTA within an average of 110 \u00b1 8 hours after PCI: on the basis of PFA-100 analysis we identified 121 patients with CT <190 sec.",
+      "context_window": "y PFA-100 with CEPI cartridges and LTA within an average of 110 \u00b1 8 hours after PCI: on the basis of PFA-100 analysis we identi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-1353",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1353,
+      "sentence": "116 patients gave their approval and were then randomized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "context_window": "mized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailore",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-1378",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1378,
+      "sentence": "116 patients gave their approval and were then randomized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "context_window": "d combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-n-1399",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1399,
+      "sentence": "116 patients gave their approval and were then randomized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "context_window": "dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58),",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-n-1456",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1456,
+      "sentence": "116 patients gave their approval and were then randomized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "context_window": "0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopid",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-1504",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1504,
+      "sentence": "116 patients gave their approval and were then randomized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "context_window": "roup 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-1529",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1529,
+      "sentence": "116 patients gave their approval and were then randomized between the standard combination of low dose aspirin (100 mg) and clopidogrel (75 mg) (group 0, G0, n = 58) or a tailored antiplatelet therapy (group 1, G1, n = 58), treated with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period.",
+      "context_window": "ted with a double dose of aspirin (200 mg) and clopidogrel (150 mg), for a 6-month follow-up period. A cut-off value of CEPI-",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-1798",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1798,
+      "sentence": "Clopidogrel was given to all patients as a loading dose of 600 mg.",
+      "context_window": "Clopidogrel was given to all patients as a loading dose of 600 mg. Periprocedural GpIIb/IIIa receptor antagonist Abciximab wa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-1887",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1887,
+      "sentence": "Periprocedural GpIIb/IIIa receptor antagonist Abciximab was used in 11 patients (9%), 6 in G0, and 5 in G1 ( P = 0.56).",
+      "context_window": "IIIa receptor antagonist Abciximab was used in 11 patients (9%), 6 in G0, and 5 in G1 ( P = 0.56). Blood samples for anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-1915",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1915,
+      "sentence": "Periprocedural GpIIb/IIIa receptor antagonist Abciximab was used in 11 patients (9%), 6 in G0, and 5 in G1 ( P = 0.56).",
+      "context_window": "iximab was used in 11 patients (9%), 6 in G0, and 5 in G1 ( P = 0.56). Blood samples for analysis of platelet function were col",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-2053",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2053,
+      "sentence": "Blood samples for analysis of platelet function were collected into evacuated tubes (Vacutainer, Becton Dickinson) containing 3.8% citrate.",
+      "context_window": "o evacuated tubes (Vacutainer, Becton Dickinson) containing 3.8% citrate. Platelet function was evaluated using the Platelet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-2374",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2374,
+      "sentence": "Coefficients of variation for duplicate analysis averaged 15% with a day-to-day variability that was around 10% for both cartridges.",
+      "context_window": ". Coefficients of variation for duplicate analysis averaged 15% with a day-to-day variability that was around 10% for both",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-2424",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2424,
+      "sentence": "Coefficients of variation for duplicate analysis averaged 15% with a day-to-day variability that was around 10% for both cartridges.",
+      "context_window": "averaged 15% with a day-to-day variability that was around 10% for both cartridges. For aggregometry analysis, platelet-r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-2799",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2799,
+      "sentence": "The 100% line was set using platelet-poor plasma and the 0 baseline established with platelet-rich plasma (adjusted from 180 \u00d7 10 9 /L up to 300 \u00d7 10 9 /L).",
+      "context_window": "tance aggregometer (Helena Laboratories, Milan, Italy). The 100% line was set using platelet-poor plasma and the 0 baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-3156",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3156,
+      "sentence": "Coefficients of variation of ADP-LTA and AA-LTA were 6.8% and 5.8%, respectively.",
+      "context_window": "imuli. Coefficients of variation of ADP-LTA and AA-LTA were 6.8% and 5.8%, respectively. The VWF antigen (Ag) levels were m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-3165",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3165,
+      "sentence": "Coefficients of variation of ADP-LTA and AA-LTA were 6.8% and 5.8%, respectively.",
+      "context_window": "efficients of variation of ADP-LTA and AA-LTA were 6.8% and 5.8%, respectively. The VWF antigen (Ag) levels were measured i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4256",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4256,
+      "sentence": "The first clinical, instrumental, and laboratory evaluation was obtained 30 days after patients' discharge.",
+      "context_window": "nical, instrumental, and laboratory evaluation was obtained 30 days after patients' discharge. Patients follow-up was completed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4349",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4349,
+      "sentence": "Patients follow-up was completed by a clinical evaluation 6 months after-PCI.",
+      "context_window": ". Patients follow-up was completed by a clinical evaluation 6 months after-PCI. Major acute coronary events or MACE were define",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4738",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 4738,
+      "sentence": "Stent thrombosis was classified as acute (0 to 24 hours), subacute (>1 day and <30 days), and late (>30 days) in accordance with the Academic Research Consortium definition [ 14 ].",
+      "context_window": "ombosis was classified as acute (0 to 24 hours), subacute (>1 day and <30 days), and late (>30 days) in accordance with the A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4749",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4749,
+      "sentence": "Stent thrombosis was classified as acute (0 to 24 hours), subacute (>1 day and <30 days), and late (>30 days) in accordance with the Academic Research Consortium definition [ 14 ].",
+      "context_window": "classified as acute (0 to 24 hours), subacute (>1 day and <30 days), and late (>30 days) in accordance with the Academic Resea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4770",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4770,
+      "sentence": "Stent thrombosis was classified as acute (0 to 24 hours), subacute (>1 day and <30 days), and late (>30 days) in accordance with the Academic Research Consortium definition [ 14 ].",
+      "context_window": "(0 to 24 hours), subacute (>1 day and <30 days), and late (>30 days) in accordance with the Academic Research Consortium defini",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-374",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 374,
+      "sentence": "The prevalence of cardiovascular risk factors for thrombosis was similar, including diabetes, basal level of creatinine, left ventricular ejection fraction, and stent length/patient ( P = 0.81, 0.74, 0.86, 0.73, resp.).",
+      "context_window": "t ventricular ejection fraction, and stent length/patient ( P = 0.81, 0.74, 0.86, 0.73, resp.). Clinical, hemodynamic, and labo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-msd-826",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 18",
+      "numeric_values": [
+        100.0,
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 826,
+      "sentence": "The door-to-balloon time was 100 \u00b1 18 minutes in the overall population, without significant intergroup difference ( Table 1 ).",
+      "context_window": "tagonists, high dose statins. The door-to-balloon time was 100 \u00b1 18 minutes in the overall population, without significant inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-1044",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1044,
+      "sentence": "A total of 7 major coronary events were recorded during the 6-month follow-up, including 1 cardiovascular death after 21 days (G0), 2 subacute in-stent thrombosis (both in G0), 1 late in-stent thrombosis (G1), and 3 target lesion revascularizations (2 in G1, 1 in G0).",
+      "context_window": "e 6-month follow-up, including 1 cardiovascular death after 21 days (G0), 2 subacute in-stent thrombosis (both in G0), 1 late i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-1270",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1270,
+      "sentence": "We observed a nonsignificantly lower rate of events in the tailored group (5.2%), compared with the control group (6.9%).",
+      "context_window": "onsignificantly lower rate of events in the tailored group (5.2%), compared with the control group (6.9%). We recorded also",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-1310",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1310,
+      "sentence": "We observed a nonsignificantly lower rate of events in the tailored group (5.2%), compared with the control group (6.9%).",
+      "context_window": "the tailored group (5.2%), compared with the control group (6.9%). We recorded also 2 minor bleedings, both in G1 ( Figure 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-1652",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1652,
+      "sentence": "At Times 1 and 2, we observed a significantly higher CEPI-CT in G1 as compared to G0 ( P < 0.001): 37 of 58 patients (63%) in G1 had a significant response to CEPI-CT at Time 1, whereas only 6 of 58 patients (9%) in G0 spontaneously converted to CEPI-CT responders ( Figure 3 ).",
+      "context_window": "ed a significantly higher CEPI-CT in G1 as compared to G0 ( P < 0.001): 37 of 58 patients (63%) in G1 had a significant response",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-1683",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1683,
+      "sentence": "At Times 1 and 2, we observed a significantly higher CEPI-CT in G1 as compared to G0 ( P < 0.001): 37 of 58 patients (63%) in G1 had a significant response to CEPI-CT at Time 1, whereas only 6 of 58 patients (9%) in G0 spontaneously converted to CEPI-CT responders ( Figure 3 ).",
+      "context_window": "CT in G1 as compared to G0 ( P < 0.001): 37 of 58 patients (63%) in G1 had a significant response to CEPI-CT at Time 1, whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-1774",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1774,
+      "sentence": "At Times 1 and 2, we observed a significantly higher CEPI-CT in G1 as compared to G0 ( P < 0.001): 37 of 58 patients (63%) in G1 had a significant response to CEPI-CT at Time 1, whereas only 6 of 58 patients (9%) in G0 spontaneously converted to CEPI-CT responders ( Figure 3 ).",
+      "context_window": "sponse to CEPI-CT at Time 1, whereas only 6 of 58 patients (9%) in G0 spontaneously converted to CEPI-CT responders ( Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-1976",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1976,
+      "sentence": "Delta of CEPI-CT at T 1- T 0 was significantly related to VWF ( P < 0.001) and to ADAMTS-13 (0.01) at Time 0 ( Figure 4 ).",
+      "context_window": "a of CEPI-CT at T 1- T 0 was significantly related to VWF ( P < 0.001) and to ADAMTS-13 (0.01) at Time 0 ( Figure 4 ). In G1, res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-2251",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2251,
+      "sentence": "Finally, in a multivariate model analysis, VWF resulted in significant predictor of CEPI-CT response ( P = 0.009) ( Table 3 ).",
+      "context_window": "VWF resulted in significant predictor of CEPI-CT response ( P = 0.009) ( Table 3 ). Platelet function tests results; VWF, and AD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-2383",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2383,
+      "sentence": "Results of CEPI-CT in G0 and G1 at 5, 30, and 180 days following PCI.",
+      "context_window": "S-13 levels. Results of CEPI-CT in G0 and G1 at 5, 30, and 180 days following PCI. Results of LTA with arachidonic acid and AD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-2477",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2477,
+      "sentence": "Results of LTA with arachidonic acid and ADP G0 and G1 at 5, 30, and 180 days following PCI.",
+      "context_window": "f LTA with arachidonic acid and ADP G0 and G1 at 5, 30, and 180 days following PCI. Correlation of delta of CEPI-CT ( T 1- T 0)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-2831",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2831,
+      "sentence": "CEPI-CT values >200 sec had a significant negative predictive value (85%) in excluding VWF values >75\u00b0 percentile ( Table 4 ).",
+      "context_window": "alues >200 sec had a significant negative predictive value (85%) in excluding VWF values >75\u00b0 percentile ( Table 4 ). Nega",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-2999",
+      "claim_type": "percentage",
+      "raw_text": "84.5%",
+      "numeric_values": [
+        84.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2999,
+      "sentence": "Negative predictive value: 38/45 = 84.5%.",
+      "context_window": "r VWF > 75\u00b0 percentile. Negative predictive value: 38/45 = 84.5%.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-1746",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1746,
+      "sentence": "Moreover, HPR detected by PFA-100 does not correlate with the results of LTA-AA: none of the 116 patients with a definition of HPR at T 0 exhibited a LTA-AA >20%, the cut-off value accepted to describe a condition of aspirin resistance [ 19 ].",
+      "context_window": "atients with a definition of HPR at T 0 exhibited a LTA-AA >20%, the cut-off value accepted to describe a condition of aspi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4010",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4010,
+      "sentence": "The tailored strategy that we used (a double dose of aspirin and clopidogrel maintained for 6 months) was chosen since the proven effectiveness of a high dose of clopidogrel in the subset of high risk patients admitted for acute coronary syndromes (ACS) and treated by primary PCI in the CURRENT-OASIS-7 trial [ 31 ].",
+      "context_window": "ed (a double dose of aspirin and clopidogrel maintained for 6 months) was chosen since the proven effectiveness of a high dose o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4292",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4292,
+      "sentence": "Few studies have assessed the antiplatelet effect of a 150 mg daily MD of clopidogrel, and at least 1 study that involved patients with STEMI showed that doubling the MD of clopidogrel (to 150 mg/d) during 30 days increased the degree of platelet inhibition and decreased the rate of hyporesponders to the drug [ 32 ].",
+      "context_window": "]. Few studies have assessed the antiplatelet effect of a 150 mg daily MD of clopidogrel, and at least 1 study that involved",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4426",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg/d",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 4426,
+      "sentence": "Few studies have assessed the antiplatelet effect of a 150 mg daily MD of clopidogrel, and at least 1 study that involved patients with STEMI showed that doubling the MD of clopidogrel (to 150 mg/d) during 30 days increased the degree of platelet inhibition and decreased the rate of hyporesponders to the drug [ 32 ].",
+      "context_window": "s with STEMI showed that doubling the MD of clopidogrel (to 150 mg/d) during 30 days increased the degree of platelet inhibition",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4443",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4443,
+      "sentence": "Few studies have assessed the antiplatelet effect of a 150 mg daily MD of clopidogrel, and at least 1 study that involved patients with STEMI showed that doubling the MD of clopidogrel (to 150 mg/d) during 30 days increased the degree of platelet inhibition and decreased the rate of hyporesponders to the drug [ 32 ].",
+      "context_window": "ed that doubling the MD of clopidogrel (to 150 mg/d) during 30 days increased the degree of platelet inhibition and decreased t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4629",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4629,
+      "sentence": "There is no information available on the long-term benefit of 150 versus 75 mg of clopidogrel.",
+      "context_window": "nformation available on the long-term benefit of 150 versus 75 mg of clopidogrel. In the analysis of TRITON and PLATO, there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-4723",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4723,
+      "sentence": "In the analysis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly suggesting that there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short [ 33 ].",
+      "context_window": "sis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4787",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4787,
+      "sentence": "In the analysis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly suggesting that there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short [ 33 ].",
+      "context_window": "relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4804",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4804,
+      "sentence": "In the analysis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly suggesting that there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short [ 33 ].",
+      "context_window": "n of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-4948",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4948,
+      "sentence": "In the analysis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly suggesting that there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short [ 33 ].",
+      "context_window": "there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-5049",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 5049,
+      "sentence": "In the analysis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly suggesting that there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short [ 33 ].",
+      "context_window": "d subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have be",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-5061",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5061,
+      "sentence": "In the analysis of TRITON and PLATO, there was an exact same additional 20% relative reduction of ischemic events during the MD period (30 days to 12 or 15 months) for both trials for ticagrelor and for prasugrel, clearly suggesting that there is a benefit of a higher MD for a longer period than 7 days, at least on the ischemic side, and subsequently leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short [ 33 ].",
+      "context_window": "ly leading to the conclusion that the period of 7 days with 150 mg of clopidogrel in the CURRENT trial may have been too short",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-5231",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5231,
+      "sentence": "A double dose of clopidogrel in our study did not result in a significant decrease of ADP-MA ( P = 0.45) at T 1 and T2 ( Figure 3 ): the possible explanation is that in our study the tailoring strategy was not guided by a P2Y12-specific test; at T 0, only 11 out of 116 patients (9%) were clopidogrel resistant (5 in G0, 6 in G1), as defined by a 10 \u03bc M ADP MA >50%; at T 1, 8 patients were still clopidogrel resistant (5 in G0 and 3 in G1), without significant difference between groups ( P = 0.27).",
+      "context_window": "study did not result in a significant decrease of ADP-MA ( P = 0.45) at T 1 and T2 ( Figure 3 ): the possible explanation is th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-5416",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5416,
+      "sentence": "A double dose of clopidogrel in our study did not result in a significant decrease of ADP-MA ( P = 0.45) at T 1 and T2 ( Figure 3 ): the possible explanation is that in our study the tailoring strategy was not guided by a P2Y12-specific test; at T 0, only 11 out of 116 patients (9%) were clopidogrel resistant (5 in G0, 6 in G1), as defined by a 10 \u03bc M ADP MA >50%; at T 1, 8 patients were still clopidogrel resistant (5 in G0 and 3 in G1), without significant difference between groups ( P = 0.27).",
+      "context_window": "a P2Y12-specific test; at T 0, only 11 out of 116 patients (9%) were clopidogrel resistant (5 in G0, 6 in G1), as defined",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-pct-5498",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5498,
+      "sentence": "A double dose of clopidogrel in our study did not result in a significant decrease of ADP-MA ( P = 0.45) at T 1 and T2 ( Figure 3 ): the possible explanation is that in our study the tailoring strategy was not guided by a P2Y12-specific test; at T 0, only 11 out of 116 patients (9%) were clopidogrel resistant (5 in G0, 6 in G1), as defined by a 10 \u03bc M ADP MA >50%; at T 1, 8 patients were still clopidogrel resistant (5 in G0 and 3 in G1), without significant difference between groups ( P = 0.27).",
+      "context_window": "esistant (5 in G0, 6 in G1), as defined by a 10 \u03bc M ADP MA >50%; at T 1, 8 patients were still clopidogrel resistant (5 in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-p-5626",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5626,
+      "sentence": "A double dose of clopidogrel in our study did not result in a significant decrease of ADP-MA ( P = 0.45) at T 1 and T2 ( Figure 3 ): the possible explanation is that in our study the tailoring strategy was not guided by a P2Y12-specific test; at T 0, only 11 out of 116 patients (9%) were clopidogrel resistant (5 in G0, 6 in G1), as defined by a 10 \u03bc M ADP MA >50%; at T 1, 8 patients were still clopidogrel resistant (5 in G0 and 3 in G1), without significant difference between groups ( P = 0.27).",
+      "context_window": "d 3 in G1), without significant difference between groups ( P = 0.27). Regarding the optimal dose of aspirin in acute coronary",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3881667_von_willebrand_factor_antigen_predicts_response_to_double_do-u-6167",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6167,
+      "sentence": "Interestingly, compared with low-dose aspirin, higher aspirin doses up to 325 mg did not result in any significant difference in the primary outcome and in major bleeding.",
+      "context_window": "compared with low-dose aspirin, higher aspirin doses up to 325 mg did not result in any significant difference in the primary",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

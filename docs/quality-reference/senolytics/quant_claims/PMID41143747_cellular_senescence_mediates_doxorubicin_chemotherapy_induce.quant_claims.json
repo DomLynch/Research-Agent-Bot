@@ -1,0 +1,380 @@
+{
+  "paper_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce",
+  "doi": "10.1152/ajpheart.00712.2025",
+  "extracted_at": "2026-05-08T20:01:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 7,
+    "percentage": 7,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-835",
+      "claim_type": "mean_sd",
+      "raw_text": "75 \u00b1 3",
+      "numeric_values": [
+        75.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 835,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "ncrease flow in human arterioles. Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-840",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 840,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "se flow in human arterioles. Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-856",
+      "claim_type": "mean_sd",
+      "raw_text": "93 \u00b1 1",
+      "numeric_values": [
+        93.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 856,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "arterioles. Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-861",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 861,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "rioles. Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and A",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-p-865",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 865,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "es. Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-899",
+      "claim_type": "mean_sd",
+      "raw_text": "94 \u00b1 1",
+      "numeric_values": [
+        94.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 899,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-904",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "s. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-p-908",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 908,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "ontrol, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediat",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-930",
+      "claim_type": "mean_sd",
+      "raw_text": "95 \u00b1 2",
+      "numeric_values": [
+        95.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 930,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": ".05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitr",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-935",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 935,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitri",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-p-939",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 939,
+      "sentence": "Lower peak EDD with Doxo (75 \u00b1 3% vs. control, 93 \u00b1 1%; P < 0.05) was prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bioavailability and prevention of excess mitochondrial oxidative stress.",
+      "context_window": "prevented with GCV (94 \u00b1 1%; P < 0.05) and ABT263 (95 \u00b1 2%; P < 0.05) treatment, which was mediated by preserved nitric oxide bi",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-1146",
+      "claim_type": "mean_sd",
+      "raw_text": "32 \u00b1 10",
+      "numeric_values": [
+        32.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1146,
+      "sentence": "In human arterioles, ex vivo Doxo exposure impaired peak EDD (Doxo, 32 \u00b1 10% vs.",
+      "context_window": "arterioles, ex vivo Doxo exposure impaired peak EDD (Doxo, 32 \u00b1 10% vs. Control, 94 \u00b1 2%; P < 0.05), which was prevented with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-1151",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1151,
+      "sentence": "In human arterioles, ex vivo Doxo exposure impaired peak EDD (Doxo, 32 \u00b1 10% vs.",
+      "context_window": "rioles, ex vivo Doxo exposure impaired peak EDD (Doxo, 32 \u00b1 10% vs. Control, 94 \u00b1 2%; P < 0.05), which was prevented with c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-1168",
+      "claim_type": "mean_sd",
+      "raw_text": "94 \u00b1 2",
+      "numeric_values": [
+        94.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs.",
+      "context_window": "oxo exposure impaired peak EDD (Doxo, 32 \u00b1 10% vs. Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs.",
+      "context_window": "xposure impaired peak EDD (Doxo, 32 \u00b1 10% vs. Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-p-1177",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1177,
+      "sentence": "Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs.",
+      "context_window": "ure impaired peak EDD (Doxo, 32 \u00b1 10% vs. Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-msd-1257",
+      "claim_type": "mean_sd",
+      "raw_text": "82 \u00b1 7",
+      "numeric_values": [
+        82.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1257,
+      "sentence": "Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs.",
+      "context_window": "prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs. Doxo alone; P = 0.63 vs. Control). We provid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-pct-1262",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1262,
+      "sentence": "Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs.",
+      "context_window": "ented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs. Doxo alone; P = 0.63 vs. Control). We provide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-p-1266",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1266,
+      "sentence": "Control, 94 \u00b1 2%; P < 0.05), which was prevented with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs.",
+      "context_window": "d with concomitant incubation of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs. Doxo alone; P = 0.63 vs. Control). We provide translati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41143747_cellular_senescence_mediates_doxorubicin_chemotherapy_induce-p-1291",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.63",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1291,
+      "sentence": "Doxo alone; P = 0.63 vs.",
+      "context_window": "tion of Doxo with ABT263 (82 \u00b1 7%; P < 0.05 vs. Doxo alone; P = 0.63 vs. Control). We provide translational evidence that cellul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

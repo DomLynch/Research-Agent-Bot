@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_a_study_of_dasatinib_with_concurrent_chemoradiation_for_stag",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_study_of_dasatinib_with_concurrent_chemoradiation_for_stag-u-62",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 62,
+      "sentence": "The purpose of this study is to evaluate if a maximum dose of 100 mg of dasatinib with concurrent chemoradiation can be tolerated in patients with chemotherapy naive stage III NSCLC in separate cohorts of locally advanced and potentially resectable disease.",
+      "context_window": "e purpose of this study is to evaluate if a maximum dose of 100 mg of dasatinib with concurrent chemoradiation can be tolerate",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_of_dasatinib_with_concurrent_chemoradiation_for_stag-u-367",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 367,
+      "sentence": "Posted outcomes: Number of Patients Who Came Off Study for Toxicity Using CTC Version 3.0. timeframe=within 28 days after the last radiation treatment.",
+      "context_window": "Study for Toxicity Using CTC Version 3.0. timeframe=within 28 days after the last radiation treatment. Group 1=6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

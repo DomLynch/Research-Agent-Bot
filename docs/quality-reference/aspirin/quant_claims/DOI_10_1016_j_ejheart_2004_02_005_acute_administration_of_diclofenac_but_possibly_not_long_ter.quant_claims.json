@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1016_j_ejheart_2004_02_005_acute_administration_of_diclofenac_but_possibly_not_long_ter",
+  "doi": "10.1016/j.ejheart.2004.02.005",
+  "extracted_at": "2026-05-08T20:05:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_ejheart_2004_02_005_acute_administration_of_diclofenac_but_possibly_not_long_ter-u-772",
+      "claim_type": "unit_value",
+      "raw_text": "125 mg",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 772,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Background</jats:title> <jats:p>Non-steroidal anti-inflammatory drugs (NSAID) or high doses of aspirin (acetylsalicylic acid) can exert detrimental effects on renal function and counteract the beneficial effects of angiotensin-converting enzyme (ACE) inhibitors in patients with congestive heart failure.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims</jats:title> <jats:p>The objective of our study was to evaluate the renal effects of low dose aspirin and the NSAID diclofenac in patients with congestive heart failure treated with ACE-inhibitors.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Ten patients on their individually titrated dose of ACE-inhibitors and low dose aspirin (\u2264125 mg daily) with stable congestive heart failure from coronary artery disease, entered an open investigation while on low dose aspirin, which was then discontinued.",
+      "context_window": "ally titrated dose of ACE-inhibitors and low dose aspirin (\u2264125 mg daily) with stable congestive heart failure from coronary a",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejheart_2004_02_005_acute_administration_of_diclofenac_but_possibly_not_long_ter-u-993",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 993,
+      "sentence": "After one week wash-out they received an oral dose of 50 mg diclofenac potassium or placebo in a double-blind cross-over fashion with a one week wash-out period between treatments.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Diclofenac caused significant (P&lt;0.05) decreases in GFR, urine flow, osmolality clearance, and excretion rates of sodium and potassium compared to placebo and aspirin.",
+      "context_window": "nued. After one week wash-out they received an oral dose of 50 mg diclofenac potassium or placebo in a double-blind cross-ove",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejheart_2004_02_005_acute_administration_of_diclofenac_but_possibly_not_long_ter-pct-1471",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "At tmax for diclofenac or corresponding time for placebo diclofenac caused 40 (11-59)% (geometric mean and 95% confidence limits) reduction in GFR compared to placebo and 36 (5.4-56)% reduction to low-dose aspirin.",
+      "context_window": "r placebo diclofenac caused 40 (11-59)% (geometric mean and 95% confidence limits) reduction in GFR compared to placebo and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

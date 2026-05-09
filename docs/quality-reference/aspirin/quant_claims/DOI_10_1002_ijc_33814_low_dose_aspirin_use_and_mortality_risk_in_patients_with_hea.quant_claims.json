@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea",
+  "doi": "10.1002/ijc.33814",
+  "extracted_at": "2026-05-08T20:05:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea-u-450",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 450,
+      "sentence": "This nationwide cohort study included all patients in the Danish Cancer Registry with a primary diagnosis of head and neck squamous cell cancer (HNSCC) during 2000 to 2016, aged 30 to 84 years, without prior cancer (except nonmelanoma skin cancer) and alive 1 year after diagnosis.",
+      "context_window": "quamous cell cancer (HNSCC) during 2000 to 2016, aged 30 to 84 years, without prior cancer (except nonmelanoma skin cancer) and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea-u-524",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 524,
+      "sentence": "This nationwide cohort study included all patients in the Danish Cancer Registry with a primary diagnosis of head and neck squamous cell cancer (HNSCC) during 2000 to 2016, aged 30 to 84 years, without prior cancer (except nonmelanoma skin cancer) and alive 1 year after diagnosis.",
+      "context_window": "out prior cancer (except nonmelanoma skin cancer) and alive 1 year after diagnosis. Nationwide registries provided information",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea-pct-883",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 883,
+      "sentence": "We used Cox proportional hazards regression models to estimate adjusted hazard ratios (HRs) with 95% confidence intervals (CIs) for the association between postdiagnostic low\u2010dose aspirin use (\u22651 prescription within first year after diagnosis) and risk of cancer\u2010specific mortality.",
+      "context_window": "ession models to estimate adjusted hazard ratios (HRs) with 95% confidence intervals (CIs) for the association between post",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea-u-1139",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 years",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "We identified 10 770 patients with HNSCC during a median follow\u2010up of 3.9 years.",
+      "context_window": "ied 10 770 patients with HNSCC during a median follow\u2010up of 3.9 years. Of these, 1799 (16.7%) were low\u2010dose aspirin users. Postdi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea-pct-1166",
+      "claim_type": "percentage",
+      "raw_text": "16.7%",
+      "numeric_values": [
+        16.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "Of these, 1799 (16.7%) were low\u2010dose aspirin users.",
+      "context_window": "SCC during a median follow\u2010up of 3.9 years. Of these, 1799 (16.7%) were low\u2010dose aspirin users. Postdiagnostic use of low\u2010dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_ijc_33814_low_dose_aspirin_use_and_mortality_risk_in_patients_with_hea-pct-1275",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1275,
+      "sentence": "Postdiagnostic use of low\u2010dose aspirin was associated with a HR of 0.97 (95% CI 0.82\u20101.15) for cancer\u2010specific mortality.",
+      "context_window": "c use of low\u2010dose aspirin was associated with a HR of 0.97 (95% CI 0.82\u20101.15) for cancer\u2010specific mortality. Similar neutra",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

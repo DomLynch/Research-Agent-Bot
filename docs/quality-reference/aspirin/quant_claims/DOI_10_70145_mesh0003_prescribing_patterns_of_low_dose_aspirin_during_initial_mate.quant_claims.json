@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate",
+  "doi": "10.70145/mesh0003",
+  "extracted_at": "2026-05-08T20:06:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate-pct-715",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "In the 2022 audit, 49 patients were identified as meeting NG133 criteria for aspirin use, and only 31 (63%) were prescribed aspirin.",
+      "context_window": "ied as meeting NG133 criteria for aspirin use, and only 31 (63%) were prescribed aspirin. Of the 18 patients (37%) not pres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate-pct-765",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 765,
+      "sentence": "Of the 18 patients (37%) not prescribed aspirin, five later received aspirin, leaving 4.5% of the total cohort (13/299) untreated.",
+      "context_window": "only 31 (63%) were prescribed aspirin. Of the 18 patients (37%) not prescribed aspirin, five later received aspirin, leavi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate-pct-831",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 831,
+      "sentence": "Of the 18 patients (37%) not prescribed aspirin, five later received aspirin, leaving 4.5% of the total cohort (13/299) untreated.",
+      "context_window": "ot prescribed aspirin, five later received aspirin, leaving 4.5% of the total cohort (13/299) untreated. The 2021 audit show",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate-pct-922",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 922,
+      "sentence": "The 2021 audit showed a similar pattern, with 5.6% of patients (15/266) remaining untreated despite meeting NG133 criteria for aspirin use.",
+      "context_window": "9) untreated. The 2021 audit showed a similar pattern, with 5.6% of patients (15/266) remaining untreated despite meeting NG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate-u-1136",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1136,
+      "sentence": "Key risk factors applicable to those not prescribed aspirin included \u2018nulliparous,' 'BMI >35,' and 'pregnancy interval >10 years.' Remote consultations were linked to inadequate BMI assessment, with 35% of applicable cases not evaluated.",
+      "context_window": "included \u2018nulliparous,' 'BMI >35,' and 'pregnancy interval >10 years.' Remote consultations were linked to inadequate BMI assess",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70145_mesh0003_prescribing_patterns_of_low_dose_aspirin_during_initial_mate-pct-1215",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1215,
+      "sentence": "Key risk factors applicable to those not prescribed aspirin included \u2018nulliparous,' 'BMI >35,' and 'pregnancy interval >10 years.' Remote consultations were linked to inadequate BMI assessment, with 35% of applicable cases not evaluated.",
+      "context_window": "onsultations were linked to inadequate BMI assessment, with 35% of applicable cases not evaluated. The audit highlights the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

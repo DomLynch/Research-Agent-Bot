@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMID35100927_pharmacological_targeting_of_polyamine_and_hypusine_biosynth",
+  "doi": "10.1080/1061186x.2022.2036164",
+  "extracted_at": "2026-05-08T20:11:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID35100927_pharmacological_targeting_of_polyamine_and_hypusine_biosynth-p-910",
+      "claim_type": "p_value",
+      "raw_text": "p=.000038",
+      "numeric_values": [
+        3.8e-05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 910,
+      "sentence": "We show that eIF5A1 is significantly upregulated in EC cells compared to control cells (p=.000038) and that combined pharmacological targeting of ODC and eIF5A hypusination with cytostatic drugs DFMO and N1-guanyl-1,7-diaminoheptane (GC7), respectively, reduces eIF5A1 activation and synergistically induces apoptosis in EC cells.",
+      "context_window": "ficantly upregulated in EC cells compared to control cells (p=.000038) and that combined pharmacological targeting of ODC and eIF",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID35100927_pharmacological_targeting_of_polyamine_and_hypusine_biosynth-p-1275",
+      "claim_type": "p_value",
+      "raw_text": "p=.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1275,
+      "sentence": "In vivo, DFMO/GC7 suppressed xenografted EC tumour growth in mice more potently than each drug alone compared to control (p=.002) and decreased putrescine (p=.045) and spermidine levels in tumour tissues.",
+      "context_window": "ice more potently than each drug alone compared to control (p=.002) and decreased putrescine (p=.045) and spermidine levels in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID35100927_pharmacological_targeting_of_polyamine_and_hypusine_biosynth-p-1309",
+      "claim_type": "p_value",
+      "raw_text": "p=.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1309,
+      "sentence": "In vivo, DFMO/GC7 suppressed xenografted EC tumour growth in mice more potently than each drug alone compared to control (p=.002) and decreased putrescine (p=.045) and spermidine levels in tumour tissues.",
+      "context_window": "lone compared to control (p=.002) and decreased putrescine (p=.045) and spermidine levels in tumour tissues. Our data suggest",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

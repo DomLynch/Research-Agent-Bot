@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_4049_jimmunol_0900477_effects_of_low_dose_aspirin_on_acute_inflammatory_responses",
+  "doi": "10.4049/jimmunol.0900477",
+  "extracted_at": "2026-05-08T20:06:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_4049_jimmunol_0900477_effects_of_low_dose_aspirin_on_acute_inflammatory_responses-u-311",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 311,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:p>Aspirin is a unique nonsteroidal anti-inflammatory drug; at high doses (aspirinhigh, 1g), it is anti-inflammatory stemming from the inhibition of cyclooxygenase and proinflammatory signaling pathways including NF-\u03baB, but is cardioprotective at lower doses (aspirinlow, 75 mg).",
+      "context_window": "NF-\u03baB, but is cardioprotective at lower doses (aspirinlow, 75 mg). The latter arises from the inhibition of thromboxane (Tx)",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_4049_jimmunol_0900477_effects_of_low_dose_aspirin_on_acute_inflammatory_responses-u-992",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "Although not affecting blister fluid volume, aspirinlow (75 mg, oral, once daily/10 days) reduced polymorphonuclear leukocyte and macrophage accumulation independent of NF-\u03baB-regulated gene expression and inhibition of conventional prostanoids.",
+      "context_window": "g. Although not affecting blister fluid volume, aspirinlow (75 mg, oral, once daily/10 days) reduced polymorphonuclear leukoc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_4049_jimmunol_0900477_effects_of_low_dose_aspirin_on_acute_inflammatory_responses-u-1016",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "Although not affecting blister fluid volume, aspirinlow (75 mg, oral, once daily/10 days) reduced polymorphonuclear leukocyte and macrophage accumulation independent of NF-\u03baB-regulated gene expression and inhibition of conventional prostanoids.",
+      "context_window": "g blister fluid volume, aspirinlow (75 mg, oral, once daily/10 days) reduced polymorphonuclear leukocyte and macrophage accumul",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

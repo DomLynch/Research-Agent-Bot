@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta",
   "doi": "10.1371/journal.pone.0090286",
-  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extracted_at": "2026-05-08T20:06:42+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 86,
@@ -23,8 +23,8 @@
       "sentence": "Aspirin was associated with reductions in major cardiovascular events (risk ratio, 0.90; 95% confidence interval, 0.85-0.95), myocardial infarction (0.86; 0.75-0.93), ischemic stroke (0.86; 0.75-0.98) and all-cause mortality (0.94; 0.89-0.99).",
       "context_window": "eductions in major cardiovascular events (risk ratio, 0.90; 95% confidence interval, 0.85-0.95), myocardial infarction (0.8",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,10 +41,10 @@
       "sentence": "The number needed to treat to prevent 1 major cardiovascular event over a mean follow-up of 6.8 years was 284.",
       "context_window": "event 1 major cardiovascular event over a mean follow-up of 6.8 years was 284. By comparison, the numbers needed to harm to cause",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-u-1553",
@@ -60,7 +60,7 @@
       "context_window": "g diabetic men and risk reductions achieved with low doses (75 mg/day) were as large as those obtained with higher doses (650 mg/",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "mg/day) were as large as those obtained with higher doses (650 mg/day). The use of low-dose aspirin was beneficial for primary p",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -131,8 +131,8 @@
       "sentence": "Selection criteria included: (1) Prospective, randomized, controlled, open, or blinded trials. (2) Participants without clinical CVD (e.g., established or symptomatic) were randomly assigned to aspirin (any dose) versus placebo or control group for the primary prevention of CVD. (3) Trials carried out on a background of anticoagulation were eligible. (4) Follow-up had to exceed 90 days, because such short follow-up would not permit detection of cardiovascular outcomes related to aspirin treatment for primary prevention.",
       "context_window": "anticoagulation were eligible. (4) Follow-up had to exceed 90 days, because such short follow-up would not permit detection of",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -240,9 +240,9 @@
       "context_window": "number of persons that need to be treated with aspirin for 6.8 years (the overall mean follow-up time in our study) to avert or",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-606",
@@ -257,10 +257,10 @@
       "sentence": "Only one of the 14 studies included a small proportion (<10%) of participants with pre-existing established cardiovascular events [37] .",
       "context_window": ". Only one of the 14 studies included a small proportion (<10%) of participants with pre-existing established cardiovascul",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-2369",
@@ -276,9 +276,9 @@
       "context_window": "arfarin component [39] . Aspirin use was associated with a 10% reduction in MCEs (No. of events/No. of totals, 2392/54487",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-2457",
@@ -294,9 +294,9 @@
       "context_window": "f events/No. of totals, 2392/54487 vs 2505/52827; RR, 0.90; 95% CI, 0.85 to 0.95; P <0.01; Figure 2 , Figure S4-A in File S",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-p-2479",
@@ -312,9 +312,9 @@
       "context_window": ", 2392/54487 vs 2505/52827; RR, 0.90; 95% CI, 0.85 to 0.95; P <0.01; Figure 2 , Figure S4-A in File S1 ). The NNT to avoid 1 MC",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-u-2553",
@@ -384,9 +384,9 @@
       "context_window": "infarction; CVD = cardiovascular disease. There was also a 14% reduction in the risk of MI with aspirin (1258/54675 vs 138",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-2876",
@@ -402,9 +402,9 @@
       "context_window": "isk of MI with aspirin (1258/54675 vs 1388/53011; RR, 0.86; 95% CI, 0.75 to 0.98; P = 0.02; Figure 2 , Figure S4-B in File",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-p-2898",
@@ -420,9 +420,9 @@
       "context_window": "(1258/54675 vs 1388/53011; RR, 0.86; 95% CI, 0.75 to 0.98; P = 0.02; Figure 2 , Figure S4-B in File S1 ). The NNT to avoid 1 MI",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-u-2972",
@@ -852,7 +852,7 @@
       "context_window": "2.68, P <0.01; I 2 = 63.3%). Aspirin was associated with a 34% increase in hemorrhagic stroke (113/42999 vs 79/41350; RR,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "ase in hemorrhagic stroke (113/42999 vs 79/41350; RR, 1.34; 95% CI, 1.01 to 1.79; P = 0.05; Figure 2 , Figure S4-G in File",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -888,7 +888,7 @@
       "context_window": "oke (113/42999 vs 79/41350; RR, 1.34; 95% CI, 1.01 to 1.79; P = 0.05; Figure 2 , Figure S4-G in File S1 ). The NNH to cause 1 he",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1068,9 +1068,9 @@
       "context_window": "3 . For the endpoint of MCE, aspirin was associated with a 12% reduction (879/28575 vs 998/28643; RR, 0.88; 95% CI, 0.81 t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-5037",
@@ -1086,9 +1086,9 @@
       "context_window": "ted with a 12% reduction (879/28575 vs 998/28643; RR, 0.88; 95% CI, 0.81 to 0.96; P = 0.01) among women, and a 12% reductio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-p-5059",
@@ -1104,9 +1104,9 @@
       "context_window": "on (879/28575 vs 998/28643; RR, 0.88; 95% CI, 0.81 to 0.96; P = 0.01) among women, and a 12% reduction (1368/25426 vs 1394/23688",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-5088",
@@ -1122,9 +1122,9 @@
       "context_window": "R, 0.88; 95% CI, 0.81 to 0.96; P = 0.01) among women, and a 12% reduction (1368/25426 vs 1394/23688; RR, 0.88; 95% CI, 0.82",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-5139",
@@ -1140,9 +1140,9 @@
       "context_window": "n, and a 12% reduction (1368/25426 vs 1394/23688; RR, 0.88; 95% CI, 0.82 to 0.95; P <0.01) among men, without significant h",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-p-5161",
@@ -1158,9 +1158,9 @@
       "context_window": "(1368/25426 vs 1394/23688; RR, 0.88; 95% CI, 0.82 to 0.95; P <0.01) among men, without significant heterogeneity ( Table 2 ).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-5278",
@@ -1356,7 +1356,7 @@
       "context_window": "ed no significant increase (51/21211 vs 43/21248; RR, 1.19; 95% CI, 0.79 to 1.77; P = 0.41) among women but a 69% increase",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1374,7 +1374,7 @@
       "context_window": "ease (51/21211 vs 43/21248; RR, 1.19; 95% CI, 0.79 to 1.77; P = 0.41) among women but a 69% increase (50/17960 vs 25/16247; RR,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1392,7 +1392,7 @@
       "context_window": "RR, 1.19; 95% CI, 0.79 to 1.77; P = 0.41) among women but a 69% increase (50/17960 vs 25/16247; RR, 1.69; 95% CI, 1.05 to 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1410,7 +1410,7 @@
       "context_window": "g women but a 69% increase (50/17960 vs 25/16247; RR, 1.69; 95% CI, 1.05 to 2.72; P = 0.03) among men ( Table 2 ). There wa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1428,7 +1428,7 @@
       "context_window": "ease (50/17960 vs 25/16247; RR, 1.69; 95% CI, 1.05 to 2.72; P = 0.03) among men ( Table 2 ). There was no significant heterogene",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2329,9 +2329,9 @@
       "context_window": "n percentage of males and the effect of aspirin on stroke ( P = 0.04) ( Figure 3A ), which supported the conclusions from subgro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-p-8929",
@@ -2347,7 +2347,7 @@
       "context_window": "ween percentage of males and the effects of aspirin on MI ( P = 0.03) ( Figure 3B ) and stroke ( P = 0.02) ( Figure 3C ), sugges",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2365,7 +2365,7 @@
       "context_window": "cts of aspirin on MI ( P = 0.03) ( Figure 3B ) and stroke ( P = 0.02) ( Figure 3C ), suggesting that aspirin therapy might be as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2563,7 +2563,7 @@
       "context_window": "ention of CVD, we found significant benefits of 10, 14, and 14% risk reduction for the outcomes of MCEs, MI, and ischemic s",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2617,9 +2617,9 @@
       "context_window": "n Heart Association [51] . In addition, evidence shows that>60% of aspirin users were above 60 years of age, 4-6% had a rec",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-u-2404",
@@ -2635,9 +2635,9 @@
       "context_window": "dition, evidence shows that>60% of aspirin users were above 60 years of age, 4-6% had a recent history of peptic ulcers, and ove",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-2423",
@@ -2653,9 +2653,9 @@
       "context_window": "ows that>60% of aspirin users were above 60 years of age, 4-6% had a recent history of peptic ulcers, and over 13% used ot",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-pct-2474",
@@ -2671,9 +2671,9 @@
       "context_window": "f age, 4-6% had a recent history of peptic ulcers, and over 13% used other non-steroidal antiinflammatory drugs [52] . It i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4215843_aspirin_for_primary_prevention_of_cardiovascular_events_meta-u-8005",
@@ -2833,9 +2833,9 @@
       "context_window": "it is reported that the successive daily administration of 30 mg of aspirin is sufficient to result in virtually inactivatio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

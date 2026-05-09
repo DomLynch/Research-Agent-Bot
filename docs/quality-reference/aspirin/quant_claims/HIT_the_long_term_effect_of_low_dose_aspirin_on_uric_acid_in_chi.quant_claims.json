@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_the_long_term_effect_of_low_dose_aspirin_on_uric_acid_in_chi",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_long_term_effect_of_low_dose_aspirin_on_uric_acid_in_chi-u-288",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 288,
+      "sentence": "Only a few short-term studies in the elderly suggested low-dose aspirin, e.g., 75-100 mg/day, increases serum urate by reducing urinary uric acid excretion.",
+      "context_window": "studies in the elderly suggested low-dose aspirin, e.g., 75-100 mg/day, increases serum urate by reducing urinary uric acid excret",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_long_term_effect_of_low_dose_aspirin_on_uric_acid_in_chi-u-624",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 624,
+      "sentence": "The principal aim of this prospective cohort study therefore is to evaluate the renal effects of long-term aspirin (100 mg/d) administration in Chinese patients with coronary artery disease or other CVDs.",
+      "context_window": "fore is to evaluate the renal effects of long-term aspirin (100 mg/d) administration in Chinese patients with coronary artery di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1364 @@
+{
+  "paper_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla",
+  "doi": "10.1111/aogs.13808",
+  "extracted_at": "2026-05-08T20:06:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 14,
+    "percentage": 44,
+    "odds_ratio": 6,
+    "unit_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-908",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2614",
+      "numeric_values": [
+        2614.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 908,
+      "sentence": "Results were compared with findings in a similar cohort from a care\u2010as\u2010usual setting lacking risk\u2010based counseling (Expect Study I, n = 2614).",
+      "context_window": "sual setting lacking risk\u2010based counseling (Expect Study I, n = 2614). Netherlands Trial Register NTR4143. In total, 306 women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1098",
+      "claim_type": "percentage",
+      "raw_text": "29.4%",
+      "numeric_values": [
+        29.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "LDA usage was higher for women receiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5).",
+      "context_window": "her for women receiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1107",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "LDA usage was higher for women receiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5).",
+      "context_window": "omen receiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5). Daily",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-or-l-1113",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 19.1",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1113,
+      "sentence": "LDA usage was higher for women receiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5).",
+      "context_window": "eceiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5). Daily LDA usage was po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1130",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1130,
+      "sentence": "LDA usage was higher for women receiving risk\u2010based care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5).",
+      "context_window": "ed care than care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% confidence interval 11.2\u201032.5). Daily LDA usage was positiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-544",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg/day",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 544,
+      "sentence": "2 , 3 , 4 Reduction of PE risk has been shown at aspirin dosages between 80 and 150 mg/day.",
+      "context_window": "of PE risk has been shown at aspirin dosages between 80 and 150 mg/day. 5 The majority of publications on LDA with respect to PE f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-767",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 767,
+      "sentence": "2 , 5 Published LDA adherence rates are fairly high (66%\u201090%) but are mostly measured within clinical trials.",
+      "context_window": "group. 2 , 5 Published LDA adherence rates are fairly high (66%\u201090%) but are mostly measured within clinical trials. 2 , 6",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-771",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 771,
+      "sentence": "2 , 5 Published LDA adherence rates are fairly high (66%\u201090%) but are mostly measured within clinical trials.",
+      "context_window": "p. 2 , 5 Published LDA adherence rates are fairly high (66%\u201090%) but are mostly measured within clinical trials. 2 , 6 It i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-708",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 708,
+      "sentence": "13 , 17 In short, women with a PE risk exceeding the population average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled regarding the option of LDA prophylaxis (80\u2010100 mg daily) in a shared\u2010decisional approach.",
+      "context_window": "omen with a PE risk exceeding the population average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled rega",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-726",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 726,
+      "sentence": "13 , 17 In short, women with a PE risk exceeding the population average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled regarding the option of LDA prophylaxis (80\u2010100 mg daily) in a shared\u2010decisional approach.",
+      "context_window": "k exceeding the population average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled regarding the option",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-743",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 743,
+      "sentence": "13 , 17 In short, women with a PE risk exceeding the population average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled regarding the option of LDA prophylaxis (80\u2010100 mg daily) in a shared\u2010decisional approach.",
+      "context_window": "opulation average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled regarding the option of LDA prophylaxi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-812",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 812,
+      "sentence": "13 , 17 In short, women with a PE risk exceeding the population average risk (>3.0%; sensitivity 75%, specificity 64%) should be counseled regarding the option of LDA prophylaxis (80\u2010100 mg daily) in a shared\u2010decisional approach.",
+      "context_window": "ld be counseled regarding the option of LDA prophylaxis (80\u2010100 mg daily) in a shared\u2010decisional approach. All women \u226518 years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-870",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 870,
+      "sentence": "All women \u226518 years old with a singleton pregnancy were eligible for inclusion.",
+      "context_window": "0\u2010100 mg daily) in a shared\u2010decisional approach. All women \u226518 years old with a singleton pregnancy were eligible for inclusion.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-1010",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1010,
+      "sentence": "Women were recruited from 2017 to 2018 at their first prenatal visit (<16 weeks of pregnancy), at which time their healthcare professional used the prediction tool.",
+      "context_window": "recruited from 2017 to 2018 at their first prenatal visit (<16 weeks of pregnancy), at which time their healthcare professional",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-1652",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1652,
+      "sentence": "Enrolled women received four online surveys at intervals (at enrollment and at 24 weeks of pregnancy, 34 weeks of pregnancy, and 6 weeks after the due date).",
+      "context_window": "ived four online surveys at intervals (at enrollment and at 24 weeks of pregnancy, 34 weeks of pregnancy, and 6 weeks after the",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-1675",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1675,
+      "sentence": "Enrolled women received four online surveys at intervals (at enrollment and at 24 weeks of pregnancy, 34 weeks of pregnancy, and 6 weeks after the due date).",
+      "context_window": "s at intervals (at enrollment and at 24 weeks of pregnancy, 34 weeks of pregnancy, and 6 weeks after the due date). In the case",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-1702",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1702,
+      "sentence": "Enrolled women received four online surveys at intervals (at enrollment and at 24 weeks of pregnancy, 34 weeks of pregnancy, and 6 weeks after the due date).",
+      "context_window": "nt and at 24 weeks of pregnancy, 34 weeks of pregnancy, and 6 weeks after the due date). In the case of preterm birth, women we",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-1877",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1877,
+      "sentence": "In the case of preterm birth, women were automatically redirected to the postpartum questionnaire when completing the questionnaire sent at 24 or 34 weeks of pregnancy.",
+      "context_window": "estionnaire when completing the questionnaire sent at 24 or 34 weeks of pregnancy. In addition, medical records and discharge le",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-3279",
+      "claim_type": "unit_value",
+      "raw_text": "0 weeks",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3279,
+      "sentence": "Per protocol LDA usage was defined as the usage as described in the risk\u2010based care pathways: daily LDA usage from <16 +0 weeks of gestation up to 36 weeks of gestation or, in the case of preterm birth, up to 1 week before birth.",
+      "context_window": "in the risk\u2010based care pathways: daily LDA usage from <16 +0 weeks of gestation up to 36 weeks of gestation or, in the case of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-3306",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3306,
+      "sentence": "Per protocol LDA usage was defined as the usage as described in the risk\u2010based care pathways: daily LDA usage from <16 +0 weeks of gestation up to 36 weeks of gestation or, in the case of preterm birth, up to 1 week before birth.",
+      "context_window": "hways: daily LDA usage from <16 +0 weeks of gestation up to 36 weeks of gestation or, in the case of preterm birth, up to 1 week",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-u-3368",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 3368,
+      "sentence": "Per protocol LDA usage was defined as the usage as described in the risk\u2010based care pathways: daily LDA usage from <16 +0 weeks of gestation up to 36 weeks of gestation or, in the case of preterm birth, up to 1 week before birth.",
+      "context_window": "weeks of gestation or, in the case of preterm birth, up to 1 week before birth. We cross\u2010tabulated the proportions of women w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-3617",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2614",
+      "numeric_values": [
+        2614.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3617,
+      "sentence": "Data of the Expect Study I (n = 2614), a similar multicenter prospective cohort study conducted in the same region from 2013 to 2015, were used to represent the care\u2010as\u2010usual approach with no risk\u2010based recommendations.",
+      "context_window": "isk (low risk/increased risk). Data of the Expect Study I (n = 2614), a similar multicenter prospective cohort study conducted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-270",
+      "claim_type": "sample_size",
+      "raw_text": "n = 104",
+      "numeric_values": [
+        104.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 270,
+      "sentence": "Additionally, 121 women were excluded from the current analysis because of either incomplete data (n = 104) or a contraindication for LDA usage (n = 17).",
+      "context_window": "rom the current analysis because of either incomplete data (n = 104) or a contraindication for LDA usage (n = 17). In total, 71",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-316",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 316,
+      "sentence": "Additionally, 121 women were excluded from the current analysis because of either incomplete data (n = 104) or a contraindication for LDA usage (n = 17).",
+      "context_window": "omplete data (n = 104) or a contraindication for LDA usage (n = 17). In total, 714 women were available for the analyses. Thos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-394",
+      "claim_type": "sample_size",
+      "raw_text": "n = 121",
+      "numeric_values": [
+        121.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 394,
+      "sentence": "Those excluded (n = 121) were more likely to have a primary/secondary educational level (57.7%) than those included (n = 714) in the study (38.2%).",
+      "context_window": "714 women were available for the analyses. Those excluded (n = 121) were more likely to have a primary/secondary educational l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-467",
+      "claim_type": "percentage",
+      "raw_text": "57.7%",
+      "numeric_values": [
+        57.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 467,
+      "sentence": "Those excluded (n = 121) were more likely to have a primary/secondary educational level (57.7%) than those included (n = 714) in the study (38.2%).",
+      "context_window": "more likely to have a primary/secondary educational level (57.7%) than those included (n = 714) in the study (38.2%). Otherw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-495",
+      "claim_type": "sample_size",
+      "raw_text": "n = 714",
+      "numeric_values": [
+        714.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "Those excluded (n = 121) were more likely to have a primary/secondary educational level (57.7%) than those included (n = 714) in the study (38.2%).",
+      "context_window": "ry/secondary educational level (57.7%) than those included (n = 714) in the study (38.2%). Otherwise, no differences in charact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-518",
+      "claim_type": "percentage",
+      "raw_text": "38.2%",
+      "numeric_values": [
+        38.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 518,
+      "sentence": "Those excluded (n = 121) were more likely to have a primary/secondary educational level (57.7%) than those included (n = 714) in the study (38.2%).",
+      "context_window": "l level (57.7%) than those included (n = 714) in the study (38.2%). Otherwise, no differences in characteristics were observe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1186",
+      "claim_type": "percentage",
+      "raw_text": "37.2%",
+      "numeric_values": [
+        37.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1186,
+      "sentence": "As a result, the percentage of women identified with an increased PE risk was slightly higher (37.2% vs 42.9%).",
+      "context_window": "n identified with an increased PE risk was slightly higher (37.2% vs 42.9%). According to the recommendations of the regional",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1195",
+      "claim_type": "percentage",
+      "raw_text": "42.9%",
+      "numeric_values": [
+        42.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1195,
+      "sentence": "As a result, the percentage of women identified with an increased PE risk was slightly higher (37.2% vs 42.9%).",
+      "context_window": "ied with an increased PE risk was slightly higher (37.2% vs 42.9%). According to the recommendations of the regional consorti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1347",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1347,
+      "sentence": "According to the recommendations of the regional consortium, women in risk\u2010based care who have been identified with an increased PE risk (risk >3.0%) should be informed regarding LDA usage for the prevention of PE.",
+      "context_window": "e who have been identified with an increased PE risk (risk >3.0%) should be informed regarding LDA usage for the prevention",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1449",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1449,
+      "sentence": "A large majority of the women (79%, n = 241) reported having discussed LDA with their healthcare provider, indicating a high, but not optimal, adherence rate to regional recommendations by healthcare professionals.",
+      "context_window": "ge for the prevention of PE. A large majority of the women (79%, n = 241) reported having discussed LDA with their healthca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-1454",
+      "claim_type": "sample_size",
+      "raw_text": "n = 241",
+      "numeric_values": [
+        241.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1454,
+      "sentence": "A large majority of the women (79%, n = 241) reported having discussed LDA with their healthcare provider, indicating a high, but not optimal, adherence rate to regional recommendations by healthcare professionals.",
+      "context_window": "r the prevention of PE. A large majority of the women (79%, n = 241) reported having discussed LDA with their healthcare provid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1653",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1653,
+      "sentence": "Of these women, 94 (39%) intended to use LDA throughout the pregnancy, of which 52 eventually used LDA according to protocol, a per protocol usage rate of 22% (Figure 2 ).",
+      "context_window": "mendations by healthcare professionals. Of these women, 94 (39%) intended to use LDA throughout the pregnancy, of which 52",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-1788",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1788,
+      "sentence": "Of these women, 94 (39%) intended to use LDA throughout the pregnancy, of which 52 eventually used LDA according to protocol, a per protocol usage rate of 22% (Figure 2 ).",
+      "context_window": "sed LDA according to protocol, a per protocol usage rate of 22% (Figure 2 ). Baseline characteristics of the Expect Study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2096",
+      "claim_type": "percentage",
+      "raw_text": "15.8%",
+      "numeric_values": [
+        15.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2096,
+      "sentence": "Women\u2019s intentions regarding low\u2010dose aspirin (LDA) usage after risk\u2010based counseling and reported LDA usage\n\nPostpartum, of all enrolled women, 113 (15.8%) reported having used LDA during their pregnancy and 87 (12.2%) used it according to protocol (Table 2 ).",
+      "context_window": "reported LDA usage Postpartum, of all enrolled women, 113 (15.8%) reported having used LDA during their pregnancy and 87 (12",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2159",
+      "claim_type": "percentage",
+      "raw_text": "12.2%",
+      "numeric_values": [
+        12.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2159,
+      "sentence": "Women\u2019s intentions regarding low\u2010dose aspirin (LDA) usage after risk\u2010based counseling and reported LDA usage\n\nPostpartum, of all enrolled women, 113 (15.8%) reported having used LDA during their pregnancy and 87 (12.2%) used it according to protocol (Table 2 ).",
+      "context_window": "8%) reported having used LDA during their pregnancy and 87 (12.2%) used it according to protocol (Table 2 ). Among women with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2248",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2248,
+      "sentence": "Among women with an increased PE risk (>3%), this results in an average usage rate of 29.4% and a per protocol usage rate of 24.8%.",
+      "context_window": "rotocol (Table 2 ). Among women with an increased PE risk (>3%), this results in an average usage rate of 29.4% and a per",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2294",
+      "claim_type": "percentage",
+      "raw_text": "29.4%",
+      "numeric_values": [
+        29.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2294,
+      "sentence": "Among women with an increased PE risk (>3%), this results in an average usage rate of 29.4% and a per protocol usage rate of 24.8%.",
+      "context_window": "sed PE risk (>3%), this results in an average usage rate of 29.4% and a per protocol usage rate of 24.8%. Furthermore, a smal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2333",
+      "claim_type": "percentage",
+      "raw_text": "24.8%",
+      "numeric_values": [
+        24.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2333,
+      "sentence": "Among women with an increased PE risk (>3%), this results in an average usage rate of 29.4% and a per protocol usage rate of 24.8%.",
+      "context_window": "verage usage rate of 29.4% and a per protocol usage rate of 24.8%. Furthermore, a small amount of women (n = 11) used LDA thr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-2378",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2378,
+      "sentence": "Furthermore, a small amount of women (n = 11) used LDA throughout the pregnancy despite not being identified with an increased PE risk.",
+      "context_window": "usage rate of 24.8%. Furthermore, a small amount of women (n = 11) used LDA throughout the pregnancy despite not being identi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-2854",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2854,
+      "sentence": "Of the 26 women who used LDA, but not according to protocol, three stopped due to complaints they attributed to LDA (diarrhea n = 1, nose bleeding n = 2).",
+      "context_window": "stopped due to complaints they attributed to LDA (diarrhea n = 1, nose bleeding n = 2). Two women reported they forgot to co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-2875",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2875,
+      "sentence": "Of the 26 women who used LDA, but not according to protocol, three stopped due to complaints they attributed to LDA (diarrhea n = 1, nose bleeding n = 2).",
+      "context_window": "aints they attributed to LDA (diarrhea n = 1, nose bleeding n = 2). Two women reported they forgot to continue the LDA prophy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3286",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3286,
+      "sentence": "For the care\u2010as\u2010usual approach (Expect Study I, 2013\u20102015), LDA usage was nearly non\u2010existent, with only 23 of 2614 women reporting having used LDA (0.9%).",
+      "context_window": "tent, with only 23 of 2614 women reporting having used LDA (0.9%). We retrospectively calculated the PE risk of these women,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3430",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3430,
+      "sentence": "We retrospectively calculated the PE risk of these women, resulting in 974 women being classified with an increased PE risk of which 15 (1.5%) used LDA.",
+      "context_window": "men being classified with an increased PE risk of which 15 (1.5%) used LDA. In risk\u2010based care, women with an increased PE r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-or-l-3538",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 19.1",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3538,
+      "sentence": "In risk\u2010based care, women with an increased PE risk estimation were more likely to use LDA (odds ratio 19.1; 95% confidence interval [CI] 11.2\u201032.5).",
+      "context_window": "n increased PE risk estimation were more likely to use LDA (odds ratio 19.1; 95% confidence interval [CI] 11.2\u201032.5). This disparity ev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3555",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3555,
+      "sentence": "In risk\u2010based care, women with an increased PE risk estimation were more likely to use LDA (odds ratio 19.1; 95% confidence interval [CI] 11.2\u201032.5).",
+      "context_window": "sk estimation were more likely to use LDA (odds ratio 19.1; 95% confidence interval [CI] 11.2\u201032.5). This disparity even ri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3912",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3912,
+      "sentence": "We limited the graph to PE risk estimates of \u226415%, which constitutes 99% of the observations.",
+      "context_window": "ual approach. We limited the graph to PE risk estimates of \u226415%, which constitutes 99% of the observations. Furthermore, pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3935",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3935,
+      "sentence": "We limited the graph to PE risk estimates of \u226415%, which constitutes 99% of the observations.",
+      "context_window": "d the graph to PE risk estimates of \u226415%, which constitutes 99% of the observations. Furthermore, per protocol LDA usage ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-or-l-4487",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 2.34",
+      "numeric_values": [
+        2.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4487,
+      "sentence": "Estimated preeclampsia risks and low\u2010dose aspirin usage rates by women receiving care\u2010as\u2010usual or risk\u2010based care [Color figure can be viewed at wileyonlinelibrary.com ]\n\nThe type of healthcare professional (midwife or obstetrician) informing women about LDA was significantly correlated with per protocol LDA usage (odds ratio 2.34, indicating higher usage under obstetric\u2010gynecological care; 95% CI 1.32\u20104.18).",
+      "context_window": "A was significantly correlated with per protocol LDA usage (odds ratio 2.34, indicating higher usage under obstetric\u2010gynecological care",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-4564",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4564,
+      "sentence": "Estimated preeclampsia risks and low\u2010dose aspirin usage rates by women receiving care\u2010as\u2010usual or risk\u2010based care [Color figure can be viewed at wileyonlinelibrary.com ]\n\nThe type of healthcare professional (midwife or obstetrician) informing women about LDA was significantly correlated with per protocol LDA usage (odds ratio 2.34, indicating higher usage under obstetric\u2010gynecological care; 95% CI 1.32\u20104.18).",
+      "context_window": "indicating higher usage under obstetric\u2010gynecological care; 95% CI 1.32\u20104.18). However, this association was no longer appa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-or-l-4675",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio 1.32",
+      "numeric_values": [
+        1.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4675,
+      "sentence": "However, this association was no longer apparent when correcting for the estimated PE risk (adjusted odds ratio 1.32; 95% CI 0.66\u20102.60).",
+      "context_window": "longer apparent when correcting for the estimated PE risk (adjusted odds ratio 1.32; 95% CI 0.66\u20102.60). In the adjusted analysis (Table 3 ) onl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-4701",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4701,
+      "sentence": "However, this association was no longer apparent when correcting for the estimated PE risk (adjusted odds ratio 1.32; 95% CI 0.66\u20102.60).",
+      "context_window": "ecting for the estimated PE risk (adjusted odds ratio 1.32; 95% CI 0.66\u20102.60). In the adjusted analysis (Table 3 ) only the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-or-l-4947",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio 1.99",
+      "numeric_values": [
+        1.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4947,
+      "sentence": "In the adjusted analysis (Table 3 ) only the degree of women\u2019s concerns regarding a pregnancy complicated by PE was statistically significantly associated with per protocol LDA usage when controlling for the estimated PE risk (adjusted odds ratio 1.99; 95% CI 1.35\u20102.98).",
+      "context_window": "tocol LDA usage when controlling for the estimated PE risk (adjusted odds ratio 1.99; 95% CI 1.35\u20102.98). Multiple logistic regression of potent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-4973",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4973,
+      "sentence": "In the adjusted analysis (Table 3 ) only the degree of women\u2019s concerns regarding a pregnancy complicated by PE was statistically significantly associated with per protocol LDA usage when controlling for the estimated PE risk (adjusted odds ratio 1.99; 95% CI 1.35\u20102.98).",
+      "context_window": "olling for the estimated PE risk (adjusted odds ratio 1.99; 95% CI 1.35\u20102.98). Multiple logistic regression of potential d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-5603",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5603,
+      "sentence": "Surprisingly, despite having an increased PE risk, 92 of 216 women (43%) reported that they believed that the LDA recommendations were not applicable to their situation.",
+      "context_window": "ngly, despite having an increased PE risk, 92 of 216 women (43%) reported that they believed that the LDA recommendations w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-6173",
+      "claim_type": "sample_size",
+      "raw_text": "n = 64",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6173,
+      "sentence": "Reported reasons for not using low\u2010dose aspirin during pregnancy\n\nOther frequently mentioned reasons for not using LDA were that women felt that either the potential benefit of LDA was too low (n = 64; 30%) or that they did not want to use (preventive) medication during their pregnancy (n = 27; 13%).",
+      "context_window": "felt that either the potential benefit of LDA was too low (n = 64; 30%) or that they did not want to use (preventive) medicat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-6181",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6181,
+      "sentence": "Reported reasons for not using low\u2010dose aspirin during pregnancy\n\nOther frequently mentioned reasons for not using LDA were that women felt that either the potential benefit of LDA was too low (n = 64; 30%) or that they did not want to use (preventive) medication during their pregnancy (n = 27; 13%).",
+      "context_window": "at either the potential benefit of LDA was too low (n = 64; 30%) or that they did not want to use (preventive) medication d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-6267",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6267,
+      "sentence": "Reported reasons for not using low\u2010dose aspirin during pregnancy\n\nOther frequently mentioned reasons for not using LDA were that women felt that either the potential benefit of LDA was too low (n = 64; 30%) or that they did not want to use (preventive) medication during their pregnancy (n = 27; 13%).",
+      "context_window": "want to use (preventive) medication during their pregnancy (n = 27; 13%). In the remarks section of the questionnaire, concern",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-6275",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6275,
+      "sentence": "Reported reasons for not using low\u2010dose aspirin during pregnancy\n\nOther frequently mentioned reasons for not using LDA were that women felt that either the potential benefit of LDA was too low (n = 64; 30%) or that they did not want to use (preventive) medication during their pregnancy (n = 27; 13%).",
+      "context_window": "use (preventive) medication during their pregnancy (n = 27; 13%). In the remarks section of the questionnaire, concerns reg",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-42",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 42,
+      "sentence": "Our prediction tool identified 306 women (43%) with an increased PE risk.",
+      "context_window": "Our prediction tool identified 306 women (43%) with an increased PE risk. The majority of these women (n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-103",
+      "claim_type": "sample_size",
+      "raw_text": "n = 241",
+      "numeric_values": [
+        241.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 103,
+      "sentence": "The majority of these women (n = 241; 79%) reported that their healthcare professional discussed the option of LDA prophylaxis with them, suggesting adequate adherence of healthcare professionals to the risk\u2010based care recommendations.",
+      "context_window": "3%) with an increased PE risk. The majority of these women (n = 241; 79%) reported that their healthcare professional discussed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-112",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 112,
+      "sentence": "The majority of these women (n = 241; 79%) reported that their healthcare professional discussed the option of LDA prophylaxis with them, suggesting adequate adherence of healthcare professionals to the risk\u2010based care recommendations.",
+      "context_window": "an increased PE risk. The majority of these women (n = 241; 79%) reported that their healthcare professional discussed the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-371",
+      "claim_type": "percentage",
+      "raw_text": "29.4%",
+      "numeric_values": [
+        29.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 371,
+      "sentence": "Usage rates of LDA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5).",
+      "context_window": "sage rates of LDA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5). Daily aspirin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-380",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 380,
+      "sentence": "Usage rates of LDA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5).",
+      "context_window": "s of LDA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5). Daily aspirin usage wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-or-l-386",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 19.1",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 386,
+      "sentence": "Usage rates of LDA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5).",
+      "context_window": "DA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5). Daily aspirin usage was positively corr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-403",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 403,
+      "sentence": "Usage rates of LDA increased as compared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5).",
+      "context_window": "ompared with care\u2010as\u2010usual (29.4% vs 1.5%, odds ratio 19.1, 95% CI 11.2\u201032.5). Daily aspirin usage was positively correlate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2969",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2969,
+      "sentence": "25\n\nWomen\u2019s adherence regarding medication during pregnancy has been studied for several drugs, such as anti\u2010diabetics, medicines for chronic airway conditions and anti\u2010inflammatory drugs, with varying adherence rates from 40% to 80%.",
+      "context_window": "anti\u2010inflammatory drugs, with varying adherence rates from 40% to 80%. 21 , 24 However, these drugs are prescribed because",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-2976",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2976,
+      "sentence": "25\n\nWomen\u2019s adherence regarding medication during pregnancy has been studied for several drugs, such as anti\u2010diabetics, medicines for chronic airway conditions and anti\u2010inflammatory drugs, with varying adherence rates from 40% to 80%.",
+      "context_window": "nflammatory drugs, with varying adherence rates from 40% to 80%. 21 , 24 However, these drugs are prescribed because of an",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3552",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3552,
+      "sentence": "2 , 6 These trials indicate high adherence rates (66%\u201090%).",
+      "context_window": "l trials. 2 , 6 These trials indicate high adherence rates (66%\u201090%). However, trial\u2010based adherence rates may be seriously",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3556",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3556,
+      "sentence": "2 , 6 These trials indicate high adherence rates (66%\u201090%).",
+      "context_window": "ials. 2 , 6 These trials indicate high adherence rates (66%\u201090%). However, trial\u2010based adherence rates may be seriously bia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-3812",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3812,
+      "sentence": "We found one observational study indicating a lower adherence rate (54%) as well, but within a small cohort (n = 42) and restricted to women with high\u2010risk pregnancies.",
+      "context_window": "one observational study indicating a lower adherence rate (54%) as well, but within a small cohort (n = 42) and restricted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-n-3853",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3853,
+      "sentence": "We found one observational study indicating a lower adherence rate (54%) as well, but within a small cohort (n = 42) and restricted to women with high\u2010risk pregnancies.",
+      "context_window": "er adherence rate (54%) as well, but within a small cohort (n = 42) and restricted to women with high\u2010risk pregnancies. 7 Anot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-4084",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4084,
+      "sentence": "26 Compared with these reports, the rate of LDA usage of 25% in our cohort is low but is probably a more realistic estimation of LDA usage in daily practice.",
+      "context_window": "s. 26 Compared with these reports, the rate of LDA usage of 25% in our cohort is low but is probably a more realistic estim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7317843_low_dose_aspirin_usage_among_women_with_an_increased_preecla-pct-5140",
+      "claim_type": "percentage",
+      "raw_text": "27.9%",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5140,
+      "sentence": "Despite the lower usage rates in general, LDA usage still improved strongly with an absolute increase of 27.9%.",
+      "context_window": "usage still improved strongly with an absolute increase of 27.9%. However, during enrollment of the care\u2010as\u2010usual cohort (20",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

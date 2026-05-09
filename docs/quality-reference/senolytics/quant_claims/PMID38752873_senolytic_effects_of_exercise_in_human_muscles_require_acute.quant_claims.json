@@ -1,0 +1,139 @@
+{
+  "paper_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute",
+  "doi": "10.18632/aging.205827",
+  "extracted_at": "2026-05-08T20:01:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-u-533",
+      "claim_type": "unit_value",
+      "raw_text": "1200 mg",
+      "numeric_values": [
+        1200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 533,
+      "sentence": "In this study, inflammation was blocked using a multiple dose of ibuprofen (total dose: 1200 mg), a commonly consumed nonsteroidal anti-inflammatory drug (NSAID), in a placebo-controlled, counterbalanced crossover trial.",
+      "context_window": "was blocked using a multiple dose of ibuprofen (total dose: 1200 mg), a commonly consumed nonsteroidal anti-inflammatory drug (",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-pct-743",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "Twelve men aged 20-26 consumed ibuprofen or placebo before and after HIIE at 120% maximum aerobic power.",
+      "context_window": "0-26 consumed ibuprofen or placebo before and after HIIE at 120% maximum aerobic power. Multiple muscle biopsies were taken",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-pct-1019",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1019,
+      "sentence": "The maximum decrease in p16INK4a mRNA levels within muscle tissues occurred at 3 h post-exercise (-82%, p < 0.01), gradually recovering over the next 3-24 h.",
+      "context_window": "evels within muscle tissues occurred at 3 h post-exercise (-82%, p < 0.01), gradually recovering over the next 3-24 h. A co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-p-1024",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1024,
+      "sentence": "The maximum decrease in p16INK4a mRNA levels within muscle tissues occurred at 3 h post-exercise (-82%, p < 0.01), gradually recovering over the next 3-24 h.",
+      "context_window": "within muscle tissues occurred at 3 h post-exercise (-82%, p < 0.01), gradually recovering over the next 3-24 h. A concurrent r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1125,
+      "sentence": "A concurrent reduction pattern in CD11b mRNA (-87%, p < 0.01) was also found within the same time frame.",
+      "context_window": "next 3-24 h. A concurrent reduction pattern in CD11b mRNA (-87%, p < 0.01) was also found within the same time frame. Ibupr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-p-1130",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1130,
+      "sentence": "A concurrent reduction pattern in CD11b mRNA (-87%, p < 0.01) was also found within the same time frame.",
+      "context_window": "3-24 h. A concurrent reduction pattern in CD11b mRNA (-87%, p < 0.01) was also found within the same time frame. Ibuprofen treat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID38752873_senolytic_effects_of_exercise_in_human_muscles_require_acute-p-1314",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1314,
+      "sentence": "The strong correlation (r = 0.88, p < 0.01) between p16INK4a mRNA and CD11b mRNA in muscle tissues suggests a connection between the markers of tissue aging and pro-inflammatory myeloid differentiation.",
+      "context_window": "NK4a mRNA and CD11b mRNA. The strong correlation (r = 0.88, p < 0.01) between p16INK4a mRNA and CD11b mRNA in muscle tissues sug",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

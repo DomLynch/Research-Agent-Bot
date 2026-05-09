@@ -1,0 +1,79 @@
+{
+  "date": "2026-05-09",
+  "decision": "Keep mistralai/mistral-small-2603 as default arbitrator; do not switch to Mistral Medium or IBM Granite on current evidence.",
+  "fixture": "tests/fixtures/arbitration_benchmark.jsonl",
+  "known_limit": "Mistral Small over-rejected expected ESCALATE cases in this benchmark, so downstream apply-shape and post-apply audit guards remain mandatory.",
+  "models": {
+    "ibm_granite": {
+      "actual_distribution": {
+        "APPLY": 5,
+        "ESCALATE": 0,
+        "REJECT": 5
+      },
+      "agreement_rate": 0.4,
+      "escalate_count": 0,
+      "expected_distribution": {
+        "APPLY": 2,
+        "ESCALATE": 3,
+        "REJECT": 5
+      },
+      "model": "ibm-granite/granite-4.1-8b",
+      "passed": 4,
+      "total": 10
+    },
+    "mistral_medium": {
+      "actual_distribution": {
+        "APPLY": 9,
+        "ESCALATE": 0,
+        "REJECT": 1
+      },
+      "agreement_rate": 0.3,
+      "escalate_count": 0,
+      "expected_distribution": {
+        "APPLY": 2,
+        "ESCALATE": 3,
+        "REJECT": 5
+      },
+      "model": "mistralai/mistral-medium-3.1",
+      "passed": 3,
+      "total": 10
+    },
+    "mistral_small": {
+      "actual_distribution": {
+        "APPLY": 2,
+        "ESCALATE": 0,
+        "REJECT": 8
+      },
+      "agreement_rate": 0.7,
+      "escalate_count": 0,
+      "expected_distribution": {
+        "APPLY": 2,
+        "ESCALATE": 3,
+        "REJECT": 5
+      },
+      "model": "mistralai/mistral-small-2603",
+      "passed": 7,
+      "total": 10
+    },
+    "offline": {
+      "actual_distribution": {
+        "APPLY": 2,
+        "ESCALATE": 3,
+        "REJECT": 5
+      },
+      "agreement_rate": 1.0,
+      "escalate_count": 3,
+      "expected_distribution": {
+        "APPLY": 2,
+        "ESCALATE": 3,
+        "REJECT": 5
+      },
+      "model": "offline",
+      "passed": 10,
+      "total": 10
+    }
+  },
+  "policy": "ambiguous repeated before targets default to REJECT; semantic uncertainty remains ESCALATE",
+  "schema_version": "arbitrator_comparison.v1",
+  "winner": "mistral_small"
+}

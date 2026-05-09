@@ -1,0 +1,193 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card",
+  "doi": "10.1093/sleep/zsac079.770",
+  "extracted_at": "2026-05-08T20:06:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 6,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-u-709",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 709,
+      "sentence": "We aimed to determine the association between PAP utilization and incidence of MACE and all-cause mortality in a large sample of Medicare beneficiaries.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Medicare beneficiaries (&gt;65 years) with at least 5 years of consecutive enrollment to part A and B and \u22652 distinct OSA claims were collected from multi-state (Kansas, Missouri, Iowa, Wisconsin, Nebraska, Minnesota, Texas, Utah, North Dakota, South Dakota and Indiana), multi-year (2011-2017) Medicare fee-for-service claims data.",
+      "context_window": "le>Methods</jats:title> <jats:p>Medicare beneficiaries (&gt;65 years) with at least 5 years of consecutive enrollment to part A",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-u-733",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 733,
+      "sentence": "We aimed to determine the association between PAP utilization and incidence of MACE and all-cause mortality in a large sample of Medicare beneficiaries.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Medicare beneficiaries (&gt;65 years) with at least 5 years of consecutive enrollment to part A and B and \u22652 distinct OSA claims were collected from multi-state (Kansas, Missouri, Iowa, Wisconsin, Nebraska, Minnesota, Texas, Utah, North Dakota, South Dakota and Indiana), multi-year (2011-2017) Medicare fee-for-service claims data.",
+      "context_window": "<jats:p>Medicare beneficiaries (&gt;65 years) with at least 5 years of consecutive enrollment to part A and B and \u22652 distinct O",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-pct-1833",
+      "claim_type": "percentage",
+      "raw_text": "45.2%",
+      "numeric_values": [
+        45.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1833,
+      "sentence": "Analyses were adjusted by age at initial OSA diagnosis, sex, race and presence of hypertension, type 2 diabetes, obesity, and evidence of MACE prior to the index date.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Our sample included 212,445 eligible Medicare beneficiaries with evidence of OSA diagnosis (mean [SD] age 75 [5.7] years; 45.2% women; median [Q1, Q3] follow-up 4 [2.0, 4.9] years at censoring).",
+      "context_window": "th evidence of OSA diagnosis (mean [SD] age 75 [5.7] years; 45.2% women; median [Q1, Q3] follow-up 4 [2.0, 4.9] years at cens",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-pct-1951",
+      "claim_type": "percentage",
+      "raw_text": "59.3%",
+      "numeric_values": [
+        59.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1951,
+      "sentence": "Five-year MACE cumulative incidence rate was 59.3% and the mortality rate was 17.8%.",
+      "context_window": "at censoring). Five-year MACE cumulative incidence rate was 59.3% and the mortality rate was 17.8%. In adjusted analyses, OSA",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-pct-1984",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1984,
+      "sentence": "Five-year MACE cumulative incidence rate was 59.3% and the mortality rate was 17.8%.",
+      "context_window": "ulative incidence rate was 59.3% and the mortality rate was 17.8%. In adjusted analyses, OSA patients with evidence of PAP ut",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-pct-2060",
+      "claim_type": "percentage",
+      "raw_text": "50.8%",
+      "numeric_values": [
+        50.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2060,
+      "sentence": "In adjusted analyses, OSA patients with evidence of PAP utilization (50.8%) had significantly lower MACE incidence risk (HR=0.812; 95%CI=0.803-0.822; p&lt;0.0001) when compared to those without evidence of using PAP.",
+      "context_window": "ed analyses, OSA patients with evidence of PAP utilization (50.8%) had significantly lower MACE incidence risk (HR=0.812; 95%",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-hr-a-2112",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=0.812",
+      "numeric_values": [
+        0.812
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2112,
+      "sentence": "In adjusted analyses, OSA patients with evidence of PAP utilization (50.8%) had significantly lower MACE incidence risk (HR=0.812; 95%CI=0.803-0.822; p&lt;0.0001) when compared to those without evidence of using PAP.",
+      "context_window": "zation (50.8%) had significantly lower MACE incidence risk (HR=0.812; 95%CI=0.803-0.822; p&lt;0.0001) when compared to those wit",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-pct-2122",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2122,
+      "sentence": "In adjusted analyses, OSA patients with evidence of PAP utilization (50.8%) had significantly lower MACE incidence risk (HR=0.812; 95%CI=0.803-0.822; p&lt;0.0001) when compared to those without evidence of using PAP.",
+      "context_window": ".8%) had significantly lower MACE incidence risk (HR=0.812; 95%CI=0.803-0.822; p&lt;0.0001) when compared to those without",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-hr-a-2299",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=0.575",
+      "numeric_values": [
+        0.575
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2299,
+      "sentence": "OSA patients with evidence of PAP utilization also had significantly lower mortality risk (HR=0.575; 95%CI=0.560-0.591; p&lt;0.0001).",
+      "context_window": "AP utilization also had significantly lower mortality risk (HR=0.575; 95%CI=0.560-0.591; p&lt;0.0001). Pre-existing hypertension",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_770_0774_positive_airway_pressure_utilization_major_adverse_card-pct-2309",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2309,
+      "sentence": "OSA patients with evidence of PAP utilization also had significantly lower mortality risk (HR=0.575; 95%CI=0.560-0.591; p&lt;0.0001).",
+      "context_window": "tion also had significantly lower mortality risk (HR=0.575; 95%CI=0.560-0.591; p&lt;0.0001). Pre-existing hypertension, typ",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

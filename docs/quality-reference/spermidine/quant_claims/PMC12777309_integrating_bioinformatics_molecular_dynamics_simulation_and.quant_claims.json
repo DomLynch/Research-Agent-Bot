@@ -1,0 +1,614 @@
+{
+  "paper_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and",
+  "doi": "10.1186/s13018-025-06544-y",
+  "extracted_at": "2026-05-08T20:12:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 20,
+    "percentage": 4,
+    "confidence_interval": 1,
+    "mean_sd": 4,
+    "sample_size": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-1907",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1907,
+      "sentence": "In vitro experiments revealed that the four hub genes were significantly upregulated in OA ( p < 0.05), consistent with the bioinformatics predictions.",
+      "context_window": "t the four hub genes were significantly upregulated in OA ( p < 0.05), consistent with the bioinformatics predictions. This stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-pct-10777",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10777,
+      "sentence": "In the experiments, C-28/I2 chondrocytes were cultured in DMEM medium containing 10% fetal bovine serum.",
+      "context_window": "-28/I2 chondrocytes were cultured in DMEM medium containing 10% fetal bovine serum. Normal chondrocytes were successfully i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-pct-10932",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10932,
+      "sentence": "Normal chondrocytes were successfully induced into an OA cell model by adding 100 \u03bcM H 2 O 2 and incubating for 24 h at 37 \u00b0C in a 5% CO 2 atmosphere [ 19 ].",
+      "context_window": "adding 100 \u03bcM H 2 O 2 and incubating for 24 h at 37 \u00b0C in a 5% CO 2 atmosphere [ 19 ]. Total RNA was extracted from cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-pct-12768",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12768,
+      "sentence": "The samples underwent heat denaturation (95 \u00b0C, 5 min) before electrophoretic separation on 10% SDS-PAGE (ASPEN, AS1012).",
+      "context_window": "uration (95 \u00b0C, 5 min) before electrophoretic separation on 10% SDS-PAGE (ASPEN, AS1012). Protein transfer was performed us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-pct-12909",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12909,
+      "sentence": "Protein transfer was performed using PVDF membranes (Millipore, IPVH00010), followed by membrane blocking with 5% skim milk (ASPEN, AS1033) at room temperature for 1 h.",
+      "context_window": "(Millipore, IPVH00010), followed by membrane blocking with 5% skim milk (ASPEN, AS1033) at room temperature for 1 h. Afte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-2671",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2671,
+      "sentence": "Ultimately, modules significantly correlated with OA (|r|> 0.5, p < 0.05) were selected for downstream analysis.",
+      "context_window": "mately, modules significantly correlated with OA (|r|> 0.5, p < 0.05) were selected for downstream analysis. This identified the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-3379",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3379,
+      "sentence": "A Sample clustering and heatmap of phenotypic traits; B Soft threshold selection; C Gene clustering dendrogram with modules delineated by color; D Heatmap of correlations between gene modules and osteoarthritis phenotype; E Heatmap of variance explained by gene modules for osteoarthritis phenotypes; F Venn diagram of candidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005\n\nConstruction of WGCNA and correlation analysis of candidate genes.",
+      "context_window": "andidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005 Construction of WGCNA and corr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-3392",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3392,
+      "sentence": "A Sample clustering and heatmap of phenotypic traits; B Soft threshold selection; C Gene clustering dendrogram with modules delineated by color; D Heatmap of correlations between gene modules and osteoarthritis phenotype; E Heatmap of variance explained by gene modules for osteoarthritis phenotypes; F Venn diagram of candidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005\n\nConstruction of WGCNA and correlation analysis of candidate genes.",
+      "context_window": "s; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005 Construction of WGCNA and correlation analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-3406",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3406,
+      "sentence": "A Sample clustering and heatmap of phenotypic traits; B Soft threshold selection; C Gene clustering dendrogram with modules delineated by color; D Heatmap of correlations between gene modules and osteoarthritis phenotype; E Heatmap of variance explained by gene modules for osteoarthritis phenotypes; F Venn diagram of candidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005\n\nConstruction of WGCNA and correlation analysis of candidate genes.",
+      "context_window": "on heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005 Construction of WGCNA and correlation analysis of candidat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-3864",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3864,
+      "sentence": "A Sample clustering and heatmap of phenotypic traits; B Soft threshold selection; C Gene clustering dendrogram with modules delineated by color; D Heatmap of correlations between gene modules and osteoarthritis phenotype; E Heatmap of variance explained by gene modules for osteoarthritis phenotypes; F Venn diagram of candidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005\n\nBy analyzing the intersection of joint module genes and DEPMGs, 15 genes were finally screened out (Fig.",
+      "context_window": "andidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005 By analyzing the intersection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-3877",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3877,
+      "sentence": "A Sample clustering and heatmap of phenotypic traits; B Soft threshold selection; C Gene clustering dendrogram with modules delineated by color; D Heatmap of correlations between gene modules and osteoarthritis phenotype; E Heatmap of variance explained by gene modules for osteoarthritis phenotypes; F Venn diagram of candidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005\n\nBy analyzing the intersection of joint module genes and DEPMGs, 15 genes were finally screened out (Fig.",
+      "context_window": "s; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005 By analyzing the intersection of joint modu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-3891",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3891,
+      "sentence": "A Sample clustering and heatmap of phenotypic traits; B Soft threshold selection; C Gene clustering dendrogram with modules delineated by color; D Heatmap of correlations between gene modules and osteoarthritis phenotype; E Heatmap of variance explained by gene modules for osteoarthritis phenotypes; F Venn diagram of candidate genes; G Correlation heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005\n\nBy analyzing the intersection of joint module genes and DEPMGs, 15 genes were finally screened out (Fig.",
+      "context_window": "on heatmap of candidate genes, * p < 0.05, ** p < 0.01, *** p < 0.005 By analyzing the intersection of joint module genes and DE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-ci-6828",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.925-0.975",
+      "numeric_values": [
+        0.925,
+        0.975
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6828,
+      "sentence": "Integrating all four genes into a combined model improved performance further, with the original AUC reaching 0.967 and the Bootstrap-verified AUC being 0.948 (95% CI 0.925-0.975) (Fig.",
+      "context_window": "reaching 0.967 and the Bootstrap-verified AUC being 0.948 (95% CI 0.925-0.975) (Fig. 7 A). In the external validation cohort, the single-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-9858",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9858,
+      "sentence": "A Relative composition of immune cell types in each sample; B Differences in immune cell levels between the normal control and osteoarthritis groups; C Correlation between diagnostic genes and immune cells; D Correlation between diagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01\n\nImmune infiltration.",
+      "context_window": "ion between diagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01 Immune infiltration. A Relative composition o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-9871",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9871,
+      "sentence": "A Relative composition of immune cell types in each sample; B Differences in immune cell levels between the normal control and osteoarthritis groups; C Correlation between diagnostic genes and immune cells; D Correlation between diagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01\n\nImmune infiltration.",
+      "context_window": "iagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01 Immune infiltration. A Relative composition of immune cell",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-10179",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10179,
+      "sentence": "A Relative composition of immune cell types in each sample; B Differences in immune cell levels between the normal control and osteoarthritis groups; C Correlation between diagnostic genes and immune cells; D Correlation between diagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01\n\nTo explore the transcription factors (TFs) and miRNAs that may regulate key genes, TF and miRNA data were analyzed.",
+      "context_window": "ion between diagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01 To explore the transcription factors (TFs) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-10192",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10192,
+      "sentence": "A Relative composition of immune cell types in each sample; B Differences in immune cell levels between the normal control and osteoarthritis groups; C Correlation between diagnostic genes and immune cells; D Correlation between diagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01\n\nTo explore the transcription factors (TFs) and miRNAs that may regulate key genes, TF and miRNA data were analyzed.",
+      "context_window": "iagnostic genes and immune checkpoint genes. * p < 0.05, ** p < 0.01 To explore the transcription factors (TFs) and miRNAs that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-msd-13792",
+      "claim_type": "mean_sd",
+      "raw_text": "2.11 \u00b1 0.39",
+      "numeric_values": [
+        2.11,
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13792,
+      "sentence": "The average RMSD value for the PLOD1-triptolide complex was 2.11 \u00b1 0.39 \u212b, indicating relatively stable protein-small molecule binding with minimal deviation throughout the simulation (Fig.",
+      "context_window": "The average RMSD value for the PLOD1-triptolide complex was 2.11 \u00b1 0.39 \u212b, indicating relatively stable protein-small molecule bind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-msd-13995",
+      "claim_type": "mean_sd",
+      "raw_text": "35.27 \u00b1 0.19",
+      "numeric_values": [
+        35.27,
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13995,
+      "sentence": "The Rg value of the PLOD1-triptolide complex was determined to be 35.27 \u00b1 0.19 \u212b, reflecting its compact structure (Fig.",
+      "context_window": "value of the PLOD1-triptolide complex was determined to be 35.27 \u00b1 0.19 \u212b, reflecting its compact structure (Fig. 11 B). Additional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-msd-14148",
+      "claim_type": "mean_sd",
+      "raw_text": "037.70 \u00b1 381.09",
+      "numeric_values": [
+        37.7,
+        381.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14148,
+      "sentence": "Additionally, the SASA of the PLOD1-triptolide complex exhibited excellent stability at 32,037.70 \u00b1 381.09 \u212b 2 (Fig.",
+      "context_window": "LOD1-triptolide complex exhibited excellent stability at 32,037.70 \u00b1 381.09 \u212b 2 (Fig. 11 C). The hydrogen bonds formed within the compl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-msd-14320",
+      "claim_type": "mean_sd",
+      "raw_text": "2.08 \u00b1 0.43",
+      "numeric_values": [
+        2.08,
+        0.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14320,
+      "sentence": "The RMSF analysis yielded a value of 2.08 \u00b1 0.43 \u212b, suggesting that ligand binding did not significantly impact the protein's flexibility (Fig.",
+      "context_window": "two bonds (Fig. 11 D). The RMSF analysis yielded a value of 2.08 \u00b1 0.43 \u212b, suggesting that ligand binding did not significantly imp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-n-15863",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15863,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001\n\nLaboratory validation of hub genes.",
+      "context_window": "of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-n-15957",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15957,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001\n\nLaboratory validation of hub genes.",
+      "context_window": "vels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-15974",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15974,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001\n\nLaboratory validation of hub genes.",
+      "context_window": "PO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-15994",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15994,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001\n\nLaboratory validation of hub genes.",
+      "context_window": "by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001 Laboratory va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-16015",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16015,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001\n\nLaboratory validation of hub genes.",
+      "context_window": "(n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001 Laboratory validation of hub genes.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-16038",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16038,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001\n\nLaboratory validation of hub genes.",
+      "context_window": "0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001 Laboratory validation of hub genes. A Assessment of mRNA l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-n-16173",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16173,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "context_window": "of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-n-16267",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16267,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "context_window": "vels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-16284",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16284,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "context_window": "PO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-16304",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16304,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "context_window": "by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-16325",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16325,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "context_window": "(n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777309_integrating_bioinformatics_molecular_dynamics_simulation_and-p-16348",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16348,
+      "sentence": "A Assessment of mRNA levels of PLOD1, TSPO, SPP1, and COL6A1 by qRT-PCR in cell models (n = 3); B Assessment of protein levels of PLOD1, TSPO, SPP1, and COL6A1 by WB in cell models (n = 3). *Denotes p < 0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "context_window": "0.05, **denotes p < 0.01, ***denotes p < 0.005, ****denotes p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

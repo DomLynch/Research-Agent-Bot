@@ -1,0 +1,68 @@
+{
+  "paper_id": "DOI_10_7506_spkx1002_6630_20250926_212_effect_of_nitric_oxide_fumigation_combined_with_hypobaric_tr",
+  "doi": "10.7506/spkx1002-6630-20250926-212",
+  "extracted_at": "2026-05-08T20:12:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_7506_spkx1002_6630_20250926_212_effect_of_nitric_oxide_fumigation_combined_with_hypobaric_tr-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 377,
+      "sentence": "During 10 days of storage at (25 \u00b1 2) \u2103 and (85 \u00b1 5)% relative humidity, changes in fruit firmness, mass loss, decay incidence, antioxidant capacity, and key indicators related to glutathione and polyamine metabolism were measured.",
+      "context_window": "nt (HYT group) were used as controls for comparison. During 10 days of storage at (25 \u00b1 2) \u2103 and (85 \u00b1 5)% relative humidity, c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7506_spkx1002_6630_20250926_212_effect_of_nitric_oxide_fumigation_combined_with_hypobaric_tr-msd-400",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 2",
+      "numeric_values": [
+        25.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 400,
+      "sentence": "During 10 days of storage at (25 \u00b1 2) \u2103 and (85 \u00b1 5)% relative humidity, changes in fruit firmness, mass loss, decay incidence, antioxidant capacity, and key indicators related to glutathione and polyamine metabolism were measured.",
+      "context_window": "d as controls for comparison. During 10 days of storage at (25 \u00b1 2) \u2103 and (85 \u00b1 5)% relative humidity, changes in fruit firmne",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7506_spkx1002_6630_20250926_212_effect_of_nitric_oxide_fumigation_combined_with_hypobaric_tr-msd-415",
+      "claim_type": "mean_sd",
+      "raw_text": "85 \u00b1 5",
+      "numeric_values": [
+        85.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "During 10 days of storage at (25 \u00b1 2) \u2103 and (85 \u00b1 5)% relative humidity, changes in fruit firmness, mass loss, decay incidence, antioxidant capacity, and key indicators related to glutathione and polyamine metabolism were measured.",
+      "context_window": "or comparison. During 10 days of storage at (25 \u00b1 2) \u2103 and (85 \u00b1 5)% relative humidity, changes in fruit firmness, mass loss,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1101_2023_09_13_23295514_expanded_statistical_analysis_plan_for_legacy_and_long_term",
+  "doi": "10.1101/2023.09.13.23295514",
+  "extracted_at": "2026-05-08T20:05:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2023_09_13_23295514_expanded_statistical_analysis_plan_for_legacy_and_long_term-u-175",
+      "claim_type": "unit_value",
+      "raw_text": "100mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 175,
+      "sentence": "ABSTRACT The ASPREE randomized controlled trial (2010-2017) of 19,114 community-dwelling older adults without cardiovascular disease and significant disability compared daily 100mg aspirin to placebo.",
+      "context_window": "ovascular disease and significant disability compared daily 100mg aspirin to placebo. A total of 16,317 (93%) of 17,546 survi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2023_09_13_23295514_expanded_statistical_analysis_plan_for_legacy_and_long_term-pct-220",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 220,
+      "sentence": "A total of 16,317 (93%) of 17,546 surviving and non-withdrawn participants agreed to continue regular study follow-up visits in the post-trial phase, named ASPREE-XT (2017-2024).",
+      "context_window": "compared daily 100mg aspirin to placebo. A total of 16,317 (93%) of 17,546 surviving and non-withdrawn participants agreed",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

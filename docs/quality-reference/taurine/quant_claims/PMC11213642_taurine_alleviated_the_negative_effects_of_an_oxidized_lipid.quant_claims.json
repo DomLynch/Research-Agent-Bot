@@ -1,0 +1,2221 @@
+{
+  "paper_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid",
+  "doi": "10.1155/2024/5205506",
+  "extracted_at": "2026-05-08T20:10:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 10,
+    "unit_value": 27,
+    "p_value": 56,
+    "percentage": 18,
+    "sample_size": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-415",
+      "claim_type": "mean_sd",
+      "raw_text": "49.57 \u00b1 2.34",
+      "numeric_values": [
+        49.57,
+        2.34
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "Based on the fresh fish oil group (FO), equal amounts of oxidized fish oil (with a thiobarbituric acid-reactive substances value of 49.57 \u00b1 2.34 mg/kg) and 0 g/kg (OFO), 4 g/kg (OT4), 8 g/kg (OT8), and 12 g/kg (OT12) taurine were added to the diet, while the same composition ratio was maintained by changing the microcrystalline cellulose content.",
+      "context_window": "il (with a thiobarbituric acid-reactive substances value of 49.57 \u00b1 2.34 mg/kg) and 0 g/kg (OFO), 4 g/kg (OT4), 8 g/kg (OT8), and 12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-423",
+      "claim_type": "unit_value",
+      "raw_text": "2.34 mg",
+      "numeric_values": [
+        2.34
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 423,
+      "sentence": "Based on the fresh fish oil group (FO), equal amounts of oxidized fish oil (with a thiobarbituric acid-reactive substances value of 49.57 \u00b1 2.34 mg/kg) and 0 g/kg (OFO), 4 g/kg (OT4), 8 g/kg (OT8), and 12 g/kg (OT12) taurine were added to the diet, while the same composition ratio was maintained by changing the microcrystalline cellulose content.",
+      "context_window": "a thiobarbituric acid-reactive substances value of 49.57 \u00b1 2.34 mg/kg) and 0 g/kg (OFO), 4 g/kg (OT4), 8 g/kg (OT8), and 12 g/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-820",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 820,
+      "sentence": "Compared to the FO group, the feed conversion ratio, weight gain rate, muscle crude lipid, and n-3/n-6 polyunsaturated fatty acids (PUFA) ratio were significantly lower in the group OFO ( P < 0.05).",
+      "context_window": "ds (PUFA) ratio were significantly lower in the group OFO ( P < 0.05). In addition, compared to the FO group, OFO fish showed an",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-1050",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1050,
+      "sentence": "In addition, compared to the FO group, OFO fish showed an increased content of malondialdehyde and protein carbonylation and decreased hardness, brightness, pH, superoxide dismutase, and catalase levels in the muscle ( P < 0.05).",
+      "context_window": ", superoxide dismutase, and catalase levels in the muscle ( P < 0.05). Notably, the growth index significantly improved in the O",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-1163",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "Notably, the growth index significantly improved in the OT4 group compared to that in the OFO group ( P < 0.05).",
+      "context_window": "proved in the OT4 group compared to that in the OFO group ( P < 0.05). In addition, dietary taurine increased the crude lipid co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-1373",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1373,
+      "sentence": "In addition, dietary taurine increased the crude lipid content, n-3/n-6 PUFA, antioxidant capacity, hardness, springiness, brightness, pH, and collagen content in the muscle compared with OFO fish ( P < 0.05).",
+      "context_window": "and collagen content in the muscle compared with OFO fish ( P < 0.05). Moreover, taurine supplementation significantly reduced m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-1491",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1491,
+      "sentence": "Moreover, taurine supplementation significantly reduced myofiber diameter and increased myofiber density ( P < 0.05) and enhanced the expression levels of paired box 7 ( pax7 ), myogenic factor 5 ( myf5 ), myogenic differentiation antigen ( myod ), and myogenic regulatory factor 4 ( mrf4 ) compared with that of the OFO group ( P < 0.05).",
+      "context_window": "reduced myofiber diameter and increased myofiber density ( P < 0.05) and enhanced the expression levels of paired box 7 ( pax7",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-1713",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1713,
+      "sentence": "Moreover, taurine supplementation significantly reduced myofiber diameter and increased myofiber density ( P < 0.05) and enhanced the expression levels of paired box 7 ( pax7 ), myogenic factor 5 ( myf5 ), myogenic differentiation antigen ( myod ), and myogenic regulatory factor 4 ( mrf4 ) compared with that of the OFO group ( P < 0.05).",
+      "context_window": "ory factor 4 ( mrf4 ) compared with that of the OFO group ( P < 0.05). Considering growth performance and muscle quality, the op",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-1165",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1165,
+      "sentence": "In addition, feeding blunt snout bream ( Megalobrama amblycephala ) oxidized lipids for 12 weeks resulted in growth inhibition, oxidative stress induction, and intestinal integrity disruption [ 6 ].",
+      "context_window": "nout bream ( Megalobrama amblycephala ) oxidized lipids for 12 weeks resulted in growth inhibition, oxidative stress induction,",
+      "claim_role": "background",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-2865",
+      "claim_type": "unit_value",
+      "raw_text": "000 years",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2865,
+      "sentence": "The common carp ( Cyprinus carpio L.) is an omnivorous freshwater fish with important economic and edible value, and its rich historical and cultural background can be traced back to 8,000 years ago [ 11 ].",
+      "context_window": "historical and cultural background can be traced back to 8,000 years ago [ 11 ]. Muscle is the most nutrient-dense and tasteful",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-408",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 408,
+      "sentence": "Oxidized fish oil was prepared by inserting an air pump tube into fresh fish oil and continuously stirring the oil while incubating it in a water bath at 55\u00b0C for 5 days [ 15 ].",
+      "context_window": "ing the oil while incubating it in a water bath at 55\u00b0C for 5 days [ 15 ]. After oxidation, the peroxide values were measured",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-656",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 656,
+      "sentence": "The peroxide value was determined according to the Chinese National Standard for Food Safety (GB/T 5009.37-2003): The sample was weighed (about 3 g) and dissolved in 30 mL mixed solution (trichloromethane and glacial acetic acid).",
+      "context_window": "-2003): The sample was weighed (about 3 g) and dissolved in 30 mL mixed solution (trichloromethane and glacial acetic acid).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-735",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 735,
+      "sentence": "Subsequently, 1 mL of saturated potassium iodide solution was added, and the reaction was carried out in the dark for 3 min.",
+      "context_window": "n (trichloromethane and glacial acetic acid). Subsequently, 1 mL of saturated potassium iodide solution was added, and the r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-859",
+      "claim_type": "unit_value",
+      "raw_text": "100 mL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 859,
+      "sentence": "After adding 100 mL of water, the mixture was titrated against a standard solution of sodium thiosulfate using starch as an indicator.",
+      "context_window": "eaction was carried out in the dark for 3 min. After adding 100 mL of water, the mixture was titrated against a standard solut",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-1022",
+      "claim_type": "mean_sd",
+      "raw_text": "2.51 \u00b1 0.11",
+      "numeric_values": [
+        2.51,
+        0.11
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1022,
+      "sentence": "The peroxide value of fresh fish oil was 2.51 \u00b1 0.11 meqO 2 /kg, whereas the value of oxidized fish oil was 175.39 \u00b1 3.83 meqO 2 /kg [ 16 , 17 ].",
+      "context_window": "h as an indicator. The peroxide value of fresh fish oil was 2.51 \u00b1 0.11 meqO 2 /kg, whereas the value of oxidized fish oil was 175.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-1089",
+      "claim_type": "mean_sd",
+      "raw_text": "175.39 \u00b1 3.83",
+      "numeric_values": [
+        175.39,
+        3.83
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1089,
+      "sentence": "The peroxide value of fresh fish oil was 2.51 \u00b1 0.11 meqO 2 /kg, whereas the value of oxidized fish oil was 175.39 \u00b1 3.83 meqO 2 /kg [ 16 , 17 ].",
+      "context_window": "0.11 meqO 2 /kg, whereas the value of oxidized fish oil was 175.39 \u00b1 3.83 meqO 2 /kg [ 16 , 17 ]. Five isonitrogenous and isolipidic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-2094",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2094,
+      "sentence": "Considering that cellulose improves diet pellet durability and reduces pellet expansion [ 19 ], we added about 10% of cellulose to the diet without affecting the nutrient digestibility of the fish [ 20 ].",
+      "context_window": "ability and reduces pellet expansion [ 19 ], we added about 10% of cellulose to the diet without affecting the nutrient dig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-2381",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2381,
+      "sentence": "All plant ingredients were crushed to a fine powder with particle size <177 \u03bc m, then thoroughly mixed with other fine ingredients and trace components, followed by lipids and distilled water (30%, w/w).",
+      "context_window": "d trace components, followed by lipids and distilled water (30%, w/w). The mixed ingredients were cold-extruded into pellet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-2465",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2465,
+      "sentence": "The mixed ingredients were cold-extruded into pellets with a diameter of 2 mm and length of 3-4 mm using a pellet machine (South China University of Technology, Guangzhou, China).",
+      "context_window": "redients were cold-extruded into pellets with a diameter of 2 mm and length of 3-4 mm using a pellet machine (South China Un",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-2486",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2486,
+      "sentence": "The mixed ingredients were cold-extruded into pellets with a diameter of 2 mm and length of 3-4 mm using a pellet machine (South China University of Technology, Guangzhou, China).",
+      "context_window": "truded into pellets with a diameter of 2 mm and length of 3-4 mm using a pellet machine (South China University of Technolog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-2631",
+      "claim_type": "percentage",
+      "raw_text": "12.5%",
+      "numeric_values": [
+        12.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2631,
+      "sentence": "The material temperature was 27-30\u00b0C, and the moisture was 12.5%-13.5% during the pelleting process.",
+      "context_window": "The material temperature was 27-30\u00b0C, and the moisture was 12.5%-13.5% during the pelleting process. Finally, the pellets we",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-2637",
+      "claim_type": "percentage",
+      "raw_text": "13.5%",
+      "numeric_values": [
+        13.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2637,
+      "sentence": "The material temperature was 27-30\u00b0C, and the moisture was 12.5%-13.5% during the pelleting process.",
+      "context_window": "aterial temperature was 27-30\u00b0C, and the moisture was 12.5%-13.5% during the pelleting process. Finally, the pellets were air",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-2763",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2763,
+      "sentence": "Finally, the pellets were air-dried in the shade until the moisture content was less than 10% and stored in sealed vacuum bags at 4\u00b0C for later use.",
+      "context_window": "dried in the shade until the moisture content was less than 10% and stored in sealed vacuum bags at 4\u00b0C for later use. Ing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-2948",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2948,
+      "sentence": "64% crude protein. b Provided by Henan Tongwei Co., Ltd., Tangshan, China.",
+      "context_window": "s. a Provided by Henan Tongwei Co., Ltd., Tangshan, China. 64% crude protein. b Provided by Henan Tongwei Co., Ltd., Tangs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-3023",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3023,
+      "sentence": "47% crude protein. c Provided by Henan Hefeng Co., Ltd., Tangshan, China.",
+      "context_window": "in. b Provided by Henan Tongwei Co., Ltd., Tangshan, China. 47% crude protein. c Provided by Henan Hefeng Co., Ltd., Tangsh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-3097",
+      "claim_type": "percentage",
+      "raw_text": "44.2%",
+      "numeric_values": [
+        44.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3097,
+      "sentence": "44.2% crude protein. d Provided by Henan Tongwei Co., Ltd., Xinxiang, China.",
+      "context_window": "ein. c Provided by Henan Hefeng Co., Ltd., Tangshan, China. 44.2% crude protein. d Provided by Henan Tongwei Co., Ltd., Xinxi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-3174",
+      "claim_type": "percentage",
+      "raw_text": "35.7%",
+      "numeric_values": [
+        35.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3174,
+      "sentence": "35.7% crude protein. e Provided by Henan Wudeli Co., Ltd., 13.4% crude protein. f Provided by Dongxiang Chemical Co., Ltd., Xinxiang, China. g Provided by Henan Tongwei Co., Ltd., Xinxiang, China. h Provided by Zhuhai Weinuo Breeding Co., Ltd., Zhuhai, China.",
+      "context_window": "in. d Provided by Henan Tongwei Co., Ltd., Xinxiang, China. 35.7% crude protein. e Provided by Henan Wudeli Co., Ltd., 13.4%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-3233",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3233,
+      "sentence": "35.7% crude protein. e Provided by Henan Wudeli Co., Ltd., 13.4% crude protein. f Provided by Dongxiang Chemical Co., Ltd., Xinxiang, China. g Provided by Henan Tongwei Co., Ltd., Xinxiang, China. h Provided by Zhuhai Weinuo Breeding Co., Ltd., Zhuhai, China.",
+      "context_window": "35.7% crude protein. e Provided by Henan Wudeli Co., Ltd., 13.4% crude protein. f Provided by Dongxiang Chemical Co., Ltd.,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-4447",
+      "claim_type": "mean_sd",
+      "raw_text": "8.84 \u00b1 0.02",
+      "numeric_values": [
+        8.84,
+        0.02
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4447,
+      "sentence": "In this experiment, 225 healthy common carp (8.84 \u00b1 0.02 g) were randomly assigned into 15 square cages (2 m \u00d7 2 m \u00d7 1.5 m) with 15 fish in each cage and divided into five treatment groups with three replicates in each group.",
+      "context_window": "e substances. In this experiment, 225 healthy common carp (8.84 \u00b1 0.02 g) were randomly assigned into 15 square cages (2 m \u00d7 2 m \u00d7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-4748",
+      "claim_type": "unit_value",
+      "raw_text": "667 cm",
+      "numeric_values": [
+        667.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4748,
+      "sentence": "The farming experiment was conducted at an experimental base (Luohe, Henan Province) consisting of an open fish pond (6,667 cm 2 ) with three large oxygenators and a water-changing system.",
+      "context_window": "(Luohe, Henan Province) consisting of an open fish pond (6,667 cm 2 ) with three large oxygenators and a water-changing syste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-4873",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4873,
+      "sentence": "The experimental fish were acclimated on an FO diet for 2 weeks before the formal trial.",
+      "context_window": "em. The experimental fish were acclimated on an FO diet for 2 weeks before the formal trial. During the experiment, all fish we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-4994",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4994,
+      "sentence": "During the experiment, all fish were fed three times a day (07:30, 11:30, and 17:30) at 3%-5% of their body weight, while feed intake was modified once a week for 10-weeks.",
+      "context_window": "ish were fed three times a day (07:30, 11:30, and 17:30) at 3%-5% of their body weight, while feed intake was modified onc",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-4997",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4997,
+      "sentence": "During the experiment, all fish were fed three times a day (07:30, 11:30, and 17:30) at 3%-5% of their body weight, while feed intake was modified once a week for 10-weeks.",
+      "context_window": "were fed three times a day (07:30, 11:30, and 17:30) at 3%-5% of their body weight, while feed intake was modified once a",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-5096",
+      "claim_type": "mean_sd",
+      "raw_text": "25.7 \u00b1 0.70",
+      "numeric_values": [
+        25.7,
+        0.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5096,
+      "sentence": "The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the feeding period to meet the standards of farmed carp.",
+      "context_window": "ake was modified once a week for 10-weeks. The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-5116",
+      "claim_type": "mean_sd",
+      "raw_text": "7.4 \u00b1 0.2",
+      "numeric_values": [
+        7.4,
+        0.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5116,
+      "sentence": "The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the feeding period to meet the standards of farmed carp.",
+      "context_window": "e a week for 10-weeks. The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-5154",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 0.2",
+      "numeric_values": [
+        0.4,
+        0.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5154,
+      "sentence": "The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the feeding period to meet the standards of farmed carp.",
+      "context_window": "(25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond wate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-5160",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mg",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5160,
+      "sentence": "The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the feeding period to meet the standards of farmed carp.",
+      "context_window": "\u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-5193",
+      "claim_type": "mean_sd",
+      "raw_text": "9.0 \u00b1 1",
+      "numeric_values": [
+        9.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5193,
+      "sentence": "The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the feeding period to meet the standards of farmed carp.",
+      "context_window": "ia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-5199",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5199,
+      "sentence": "The temperature (25.7 \u00b1 0.70\u00b0C), pH (7.4 \u00b1 0.2), ammonia nitrogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the feeding period to meet the standards of farmed carp.",
+      "context_window": "rogen content (0.4 \u00b1 0.2 mg/L), and dissolved oxygen (9.0 \u00b1 1 mg/L) of the pond water were measured daily throughout the fee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-5597",
+      "claim_type": "unit_value",
+      "raw_text": "2 cm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5597,
+      "sentence": "Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraformaldehyde solution for morphological analysis.",
+      "context_window": "length, viscera, and hepatopancreas weights. Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-5604",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5604,
+      "sentence": "Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraformaldehyde solution for morphological analysis.",
+      "context_window": "viscera, and hepatopancreas weights. Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-5611",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5611,
+      "sentence": "Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraformaldehyde solution for morphological analysis.",
+      "context_window": "a, and hepatopancreas weights. Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraformaldehyd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-5657",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5657,
+      "sentence": "Muscle blocks (2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraformaldehyde solution for morphological analysis.",
+      "context_window": "2 cm \u00d7 1 cm \u00d7 1 cm) above the lateral line were placed in a 4% paraformaldehyde solution for morphological analysis. White",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-5777",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5777,
+      "sentence": "White muscles and hepatopancreas were immediately deposited in 1.5 mL centrifuge tubes containing no DNase or RNase, briefly frozen in liquid nitrogen, and preserved at -80\u00b0C for real-time PCR and biochemical detection.",
+      "context_window": "te muscles and hepatopancreas were immediately deposited in 1.5 mL centrifuge tubes containing no DNase or RNase, briefly froz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-6903",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6903,
+      "sentence": "The TBARS was expressed as mg of malondialdehyde (MDA)/kg of the sample and calculated using the following equation:\n\nwhere A 532 is the absorbance (532 nm) of the supernatant, Ws is the weight of feed or fish oil (g), and \u201c9.48\u201d is a constant derived from the dilution factor and molar extinction coefficient (152,000 M -1 cm -1 ) of the red TBA reaction product.",
+      "context_window": "ilution factor and molar extinction coefficient (152,000 M -1 cm -1 ) of the red TBA reaction product. All samples were test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-7050",
+      "claim_type": "mean_sd",
+      "raw_text": "32.73 \u00b1 1.24",
+      "numeric_values": [
+        32.73,
+        1.24
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7050,
+      "sentence": "The TBAR (in oil) of normal fish oil and oxidized fish oil were 32.73 \u00b1 1.24 and 49.57 \u00b1 2.34 mg/kg, respectively.",
+      "context_window": "TBAR (in oil) of normal fish oil and oxidized fish oil were 32.73 \u00b1 1.24 and 49.57 \u00b1 2.34 mg/kg, respectively. The contents of MDA,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-msd-7067",
+      "claim_type": "mean_sd",
+      "raw_text": "49.57 \u00b1 2.34",
+      "numeric_values": [
+        49.57,
+        2.34
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7067,
+      "sentence": "The TBAR (in oil) of normal fish oil and oxidized fish oil were 32.73 \u00b1 1.24 and 49.57 \u00b1 2.34 mg/kg, respectively.",
+      "context_window": "normal fish oil and oxidized fish oil were 32.73 \u00b1 1.24 and 49.57 \u00b1 2.34 mg/kg, respectively. The contents of MDA, SOD, and CAT in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-7075",
+      "claim_type": "unit_value",
+      "raw_text": "2.34 mg",
+      "numeric_values": [
+        2.34
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7075,
+      "sentence": "The TBAR (in oil) of normal fish oil and oxidized fish oil were 32.73 \u00b1 1.24 and 49.57 \u00b1 2.34 mg/kg, respectively.",
+      "context_window": "ish oil and oxidized fish oil were 32.73 \u00b1 1.24 and 49.57 \u00b1 2.34 mg/kg, respectively. The contents of MDA, SOD, and CAT in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-8634",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8634,
+      "sentence": "Four muscle blocks from both sides of the fish were cut to the same thickness and size (1.0 cm \u00d7 1.0 cm \u00d7 0.5 cm) for texture analysis.",
+      "context_window": "sides of the fish were cut to the same thickness and size (1.0 cm \u00d7 1.0 cm \u00d7 0.5 cm) for texture analysis. The muscle samples",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-8643",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8643,
+      "sentence": "Four muscle blocks from both sides of the fish were cut to the same thickness and size (1.0 cm \u00d7 1.0 cm \u00d7 0.5 cm) for texture analysis.",
+      "context_window": "the fish were cut to the same thickness and size (1.0 cm \u00d7 1.0 cm \u00d7 0.5 cm) for texture analysis. The muscle samples on one s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-8652",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8652,
+      "sentence": "Four muscle blocks from both sides of the fish were cut to the same thickness and size (1.0 cm \u00d7 1.0 cm \u00d7 0.5 cm) for texture analysis.",
+      "context_window": "were cut to the same thickness and size (1.0 cm \u00d7 1.0 cm \u00d7 0.5 cm) for texture analysis. The muscle samples on one side were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-8921",
+      "claim_type": "unit_value",
+      "raw_text": "8 mm",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 8921,
+      "sentence": "A texture analyzer (Brookfield, Middleboro, USA) fitted with an 8 mm flat-end cylindrical plunger was used to determine the textural properties.",
+      "context_window": "xture analyzer (Brookfield, Middleboro, USA) fitted with an 8 mm flat-end cylindrical plunger was used to determine the text",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-9080",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9080,
+      "sentence": "The piston compressed the sample with a trigger force of 5 g until it reached 60% of the sample length at a pretest speed of 5 mm/s and a test speed of 2 mm/s.",
+      "context_window": "sed the sample with a trigger force of 5 g until it reached 60% of the sample length at a pretest speed of 5 mm/s and a tes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-9127",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9127,
+      "sentence": "The piston compressed the sample with a trigger force of 5 g until it reached 60% of the sample length at a pretest speed of 5 mm/s and a test speed of 2 mm/s.",
+      "context_window": "l it reached 60% of the sample length at a pretest speed of 5 mm/s and a test speed of 2 mm/s. A shear fixture (TA-SBA-WB-l)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-9154",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9154,
+      "sentence": "The piston compressed the sample with a trigger force of 5 g until it reached 60% of the sample length at a pretest speed of 5 mm/s and a test speed of 2 mm/s.",
+      "context_window": "ple length at a pretest speed of 5 mm/s and a test speed of 2 mm/s. A shear fixture (TA-SBA-WB-l) was used to measure the sh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-9438",
+      "claim_type": "unit_value",
+      "raw_text": "50 mL",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9438,
+      "sentence": "The LHC was measured using the gravimetric method [ 26 ], and the specific operation method is as follows: 1 g of boneless muscle (S) was wrapped in filter paper with a constant weight (V1) and placed into a 50 mL tube for centrifugation.",
+      "context_window": "filter paper with a constant weight (V1) and placed into a 50 mL tube for centrifugation. Muscleless moist filtering paper (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-u-9877",
+      "claim_type": "unit_value",
+      "raw_text": "9 mL",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9877,
+      "sentence": "Fresh muscle (1 g) was homogenized with 9 mL of distilled water.",
+      "context_window": "M2) after cooling. Fresh muscle (1 g) was homogenized with 9 mL of distilled water. The pH of the muscle homogenates was me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-11969",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11969,
+      "sentence": "RNA concentration was determined using a spectrophotometer (Thermo, Massachusetts, USA), and RNA quality was determined using 1% agarose gel electrophoresis.",
+      "context_window": ", Massachusetts, USA), and RNA quality was determined using 1% agarose gel electrophoresis. HIScript II Reverse Transcript",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-12578",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12578,
+      "sentence": "All primers had an amplification efficiency between 90% and 105%, as calculated using the following formula: E = 10 (-1/slope) -1.",
+      "context_window": "ulated. All primers had an amplification efficiency between 90% and 105%, as calculated using the following formula: E = 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-12586",
+      "claim_type": "percentage",
+      "raw_text": "105%",
+      "numeric_values": [
+        105.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12586,
+      "sentence": "All primers had an amplification efficiency between 90% and 105%, as calculated using the following formula: E = 10 (-1/slope) -1.",
+      "context_window": "All primers had an amplification efficiency between 90% and 105%, as calculated using the following formula: E = 10 (-1/slop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-13659",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13659,
+      "sentence": "One-way analysis of variance was used for data with similar variances, and Duncan's multiple comparison test was used for post hoc tests when the difference was significant ( P < 0.05).",
+      "context_window": "ed for post hoc tests when the difference was significant ( P < 0.05). The nonparametric Mann-Whitney U test was applied when th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-13856",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13856,
+      "sentence": "The nonparametric Mann-Whitney U test was applied when there was no homogeneous variance in the data, and pairwise multiple comparisons were used when the differences were significant ( P < 0.05).",
+      "context_window": "mparisons were used when the differences were significant ( P < 0.05). All data are presented as the mean and standard error (SE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-301",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 301,
+      "sentence": "Compared to the FO group, the final body weight (FBW), specific growth rate (SGR), weight gain rate (WGR), and feed efficiency (FE) were significantly reduced in the OFO group ( P < 0.05).",
+      "context_window": "ficiency (FE) were significantly reduced in the OFO group ( P < 0.05). Compared with the OFO group, the FBW, SGR, WGR, and FE in",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-412",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 412,
+      "sentence": "Compared with the OFO group, the FBW, SGR, WGR, and FE in the OT4 group were significantly higher ( P < 0.05), but there was no significant difference between the OT4 and FO groups ( P > 0.05).",
+      "context_window": "R, WGR, and FE in the OT4 group were significantly higher ( P < 0.05), but there was no significant difference between the OT4 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-495",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "Compared with the OFO group, the FBW, SGR, WGR, and FE in the OT4 group were significantly higher ( P < 0.05), but there was no significant difference between the OT4 and FO groups ( P > 0.05).",
+      "context_window": "s no significant difference between the OT4 and FO groups ( P > 0.05). However, the FR and FCR trends were opposite to those of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-pct-615",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 615,
+      "sentence": "The survival rate of carp was 100% after the 70-day feeding trial.",
+      "context_window": "hose of the above indicators. The survival rate of carp was 100% after the 70-day feeding trial. There were no significant d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-799",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 799,
+      "sentence": "There were no significant differences between the groups in the condition factor (CF), viscerosomatic index (VSI), and hepatosomatic index (HSI) ( P > 0.05).",
+      "context_window": "viscerosomatic index (VSI), and hepatosomatic index (HSI) ( P > 0.05). The optimal taurine supplementation level was 4 g/kg. Gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-1795",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1795,
+      "sentence": "Growth performance of the common carp ( C. carpio L.).\n\na IBW, initial body weight; b FBW, final body weight; c WGR (weight gain rate, %) = 100 \u00d7 (final body weight - initial body weight)/initial body weight; d SR, (survival rate, %) = 100 \u00d7 final number of fish/initial number of fish; e SGR (specific growth rate, %/day) = 100 \u00d7 [ln (final body weight) - ln (initial body weight)]/experiment days; f FE (feed efficiency, %) = 100 \u00d7 (final body weight - initial body weight)/food intake; g FCR (feed conversion ratio) = average individual dry matter feed intake/average individual weight gain; h FR (feeding rate, % body weight/day) = 100 \u00d7 average feed intake/[(IBW + FBW) /2]/days; i CF (condition factor) = 100 \u00d7 body weight/body length 3 ; j VSI (viscerosomatic index, %) = 100 \u00d7 viscera weight/fish body weight; k HSI (hepatosomatic index, %) = 100 \u00d7 wet hepatopancreas weight/fish body weight. a-h Values are means \u00b1 SEM ( n = 3); i-k Values are means \u00b1 SEM ( n = 9).",
+      "context_window": "creas weight/fish body weight. a-h Values are means \u00b1 SEM ( n = 3); i-k Values are means \u00b1 SEM ( n = 9). Values in the same r",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-1832",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1832,
+      "sentence": "Growth performance of the common carp ( C. carpio L.).\n\na IBW, initial body weight; b FBW, final body weight; c WGR (weight gain rate, %) = 100 \u00d7 (final body weight - initial body weight)/initial body weight; d SR, (survival rate, %) = 100 \u00d7 final number of fish/initial number of fish; e SGR (specific growth rate, %/day) = 100 \u00d7 [ln (final body weight) - ln (initial body weight)]/experiment days; f FE (feed efficiency, %) = 100 \u00d7 (final body weight - initial body weight)/food intake; g FCR (feed conversion ratio) = average individual dry matter feed intake/average individual weight gain; h FR (feeding rate, % body weight/day) = 100 \u00d7 average feed intake/[(IBW + FBW) /2]/days; i CF (condition factor) = 100 \u00d7 body weight/body length 3 ; j VSI (viscerosomatic index, %) = 100 \u00d7 viscera weight/fish body weight; k HSI (hepatosomatic index, %) = 100 \u00d7 wet hepatopancreas weight/fish body weight. a-h Values are means \u00b1 SEM ( n = 3); i-k Values are means \u00b1 SEM ( n = 9).",
+      "context_window": "lues are means \u00b1 SEM ( n = 3); i-k Values are means \u00b1 SEM ( n = 9). Values in the same row with different superscripts repres",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-1940",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1940,
+      "sentence": "Values in the same row with different superscripts represent statistically significant difference ( P < 0.05).",
+      "context_window": "perscripts represent statistically significant difference ( P < 0.05). We measured the concentration of MDA in the muscle and h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2250",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2250,
+      "sentence": "As illustrated in Figure 1 , fish fed the OFO diet exhibited increased MDA levels in the hepatopancreas and muscles ( P < 0.05), although both parameters significantly decreased after taurine administration ( P < 0.05).",
+      "context_window": "ed increased MDA levels in the hepatopancreas and muscles ( P < 0.05), although both parameters significantly decreased after ta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2341",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2341,
+      "sentence": "As illustrated in Figure 1 , fish fed the OFO diet exhibited increased MDA levels in the hepatopancreas and muscles ( P < 0.05), although both parameters significantly decreased after taurine administration ( P < 0.05).",
+      "context_window": "ters significantly decreased after taurine administration ( P < 0.05). The PCO in the muscle showed the same trend as that of MD",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2413",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2413,
+      "sentence": "The PCO in the muscle showed the same trend as that of MDA ( P < 0.05).",
+      "context_window": "he PCO in the muscle showed the same trend as that of MDA ( P < 0.05). Compared to fish in the FO group, OFO-fed fish showed low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2523",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2523,
+      "sentence": "Compared to fish in the FO group, OFO-fed fish showed lower CAT and SOD activities in the muscle ( P < 0.05) but no significant difference in CAT and SOD activities in the hepatopancreas ( P > 0.05).",
+      "context_window": "ed fish showed lower CAT and SOD activities in the muscle ( P < 0.05) but no significant difference in CAT and SOD activities in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2613",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2613,
+      "sentence": "Compared to fish in the FO group, OFO-fed fish showed lower CAT and SOD activities in the muscle ( P < 0.05) but no significant difference in CAT and SOD activities in the hepatopancreas ( P > 0.05).",
+      "context_window": "ifference in CAT and SOD activities in the hepatopancreas ( P > 0.05). Compared to the OFO group, taurine supplementation did no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2822",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2822,
+      "sentence": "Compared to the OFO group, taurine supplementation did not change SOD activity in the muscle or hepatopancreas, but supplementation with 4 g/kg taurine increased CAT enzyme activity in the muscle ( P < 0.05), whereas supplementation with 8-12 g/kg taurine increased CAT enzyme activity in the hepatopancreas ( P < 0.05).",
+      "context_window": "g/kg taurine increased CAT enzyme activity in the muscle ( P < 0.05), whereas supplementation with 8-12 g/kg taurine increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-2934",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2934,
+      "sentence": "Compared to the OFO group, taurine supplementation did not change SOD activity in the muscle or hepatopancreas, but supplementation with 4 g/kg taurine increased CAT enzyme activity in the muscle ( P < 0.05), whereas supplementation with 8-12 g/kg taurine increased CAT enzyme activity in the hepatopancreas ( P < 0.05).",
+      "context_window": "urine increased CAT enzyme activity in the hepatopancreas ( P < 0.05). Antioxidant enzyme activity and peroxide levels in muscl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-3144",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3144,
+      "sentence": "Data in the figures are mean, and standard errors are represented by vertical bars ( n = 9).",
+      "context_window": "ean, and standard errors are represented by vertical bars ( n = 9). Different symbols denote significant differences ( P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-3203",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3203,
+      "sentence": "Different symbols denote significant differences ( P < 0.05).",
+      "context_window": "n = 9). Different symbols denote significant differences ( P < 0.05). As illustrated in Table 4 , fish fed the OFO diet exhibi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-3332",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3332,
+      "sentence": "As illustrated in Table 4 , fish fed the OFO diet exhibited decreased muscle pH, lightness, and crude lipid levels ( P < 0.05), although these three parameters significantly increased after 4-12 g/kg taurine administration ( P < 0.05).",
+      "context_window": "ed decreased muscle pH, lightness, and crude lipid levels ( P < 0.05), although these three parameters significantly increased a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-3440",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3440,
+      "sentence": "As illustrated in Table 4 , fish fed the OFO diet exhibited decreased muscle pH, lightness, and crude lipid levels ( P < 0.05), although these three parameters significantly increased after 4-12 g/kg taurine administration ( P < 0.05).",
+      "context_window": "ficantly increased after 4-12 g/kg taurine administration ( P < 0.05). Liquid loss and water loss were significantly decreased w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-3582",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3582,
+      "sentence": "Liquid loss and water loss were significantly decreased with 4-12 g/kg taurine supplementation compared to that of the OFO group ( P < 0.05).",
+      "context_window": "taurine supplementation compared to that of the OFO group ( P < 0.05). Muscle composition, liquid holding capacity (LHC), cooki",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-3917",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3917,
+      "sentence": "Values are means \u00b1 SEM ( n = 9).",
+      "context_window": "= 100 \u00d7 (M1-M2)/M1 WM, wet muscle. Values are means \u00b1 SEM ( n = 9). Values in the same row with different superscripts repres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-4025",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4025,
+      "sentence": "Values in the same row with different superscripts represent statistically significant difference ( P < 0.05).",
+      "context_window": "perscripts represent statistically significant difference ( P < 0.05). As shown in Figure 2(a) , dietary oxidized fish oil and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-4258",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4258,
+      "sentence": "Compared to the FO group, the hardness of raw muscle in the OFO group was significantly lower ( P < 0.05), although cohesiveness and resilience were considerably higher ( P < 0.05).",
+      "context_window": "ss of raw muscle in the OFO group was significantly lower ( P < 0.05), although cohesiveness and resilience were considerably hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-4333",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4333,
+      "sentence": "Compared to the FO group, the hardness of raw muscle in the OFO group was significantly lower ( P < 0.05), although cohesiveness and resilience were considerably higher ( P < 0.05).",
+      "context_window": "ough cohesiveness and resilience were considerably higher ( P < 0.05). It is worth mentioning that taurine supplementation consi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-4488",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4488,
+      "sentence": "It is worth mentioning that taurine supplementation considerably enhanced the hardness, shear force, chewiness, and springiness of raw muscle ( P < 0.05).",
+      "context_window": "ss, shear force, chewiness, and springiness of raw muscle ( P < 0.05). Cooked muscle springiness and shear force in the OT4 grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-4611",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4611,
+      "sentence": "Cooked muscle springiness and shear force in the OT4 group were substantially higher than in the other groups ( P < 0.05).",
+      "context_window": "group were substantially higher than in the other groups ( P < 0.05). The optimal taurine supplementation levels were 6.84, 7.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-4998",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4998,
+      "sentence": "The muscle texture properties and histological sections of the common carp ( C. carpio L.): (a) the raw and cooked muscle texture in the common carp ( n = 9); (b) histological sections of cross-sectional myofibers of white myofibers on the back of the common carp were examined by H&E ( n = 3).",
+      "context_window": "(a) the raw and cooked muscle texture in the common carp ( n = 9); (b) histological sections of cross-sectional myofibers of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-5134",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5134,
+      "sentence": "The muscle texture properties and histological sections of the common carp ( C. carpio L.): (a) the raw and cooked muscle texture in the common carp ( n = 9); (b) histological sections of cross-sectional myofibers of white myofibers on the back of the common carp were examined by H&E ( n = 3).",
+      "context_window": "ibers on the back of the common carp were examined by H&E ( n = 3). Different symbols denote significant differences ( P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-5193",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5193,
+      "sentence": "Different symbols denote significant differences ( P < 0.05).",
+      "context_window": "n = 3). Different symbols denote significant differences ( P < 0.05). Quadratic regression analysis of muscle hardness (a), mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-5767",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5767,
+      "sentence": "Myofiber density in the OFO group was lower than that in the FO group ( P > 0.05), whereas myofiber diameter showed the opposite trend ( P > 0.05).",
+      "context_window": "sity in the OFO group was lower than that in the FO group ( P > 0.05), whereas myofiber diameter showed the opposite trend ( P >",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-5832",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5832,
+      "sentence": "Myofiber density in the OFO group was lower than that in the FO group ( P > 0.05), whereas myofiber diameter showed the opposite trend ( P > 0.05).",
+      "context_window": ".05), whereas myofiber diameter showed the opposite trend ( P > 0.05). Compared with the OFO group, dietary supplementation with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-5946",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5946,
+      "sentence": "Compared with the OFO group, dietary supplementation with 4-8 g/kg taurine reduced myofiber diameter ( P < 0.05) and increased myofiber density ( P < 0.05).",
+      "context_window": "mentation with 4-8 g/kg taurine reduced myofiber diameter ( P < 0.05) and increased myofiber density ( P < 0.05). Taurine supple",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-5989",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5989,
+      "sentence": "Compared with the OFO group, dietary supplementation with 4-8 g/kg taurine reduced myofiber diameter ( P < 0.05) and increased myofiber density ( P < 0.05).",
+      "context_window": "fiber diameter ( P < 0.05) and increased myofiber density ( P < 0.05). Taurine supplementation increased the percentage of small",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-6214",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6214,
+      "sentence": "Taurine supplementation increased the percentage of small-diameter myofibers (<25 \u03bc m) and decreased the percentage of middle-diameter myofibers (25-50 \u03bc m) in a dose-dependent manner compared with the OFO group ( P < 0.05).",
+      "context_window": "m) in a dose-dependent manner compared with the OFO group ( P < 0.05). Meanwhile, the taurine group had fewer large-diameter myo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-6320",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6320,
+      "sentence": "Meanwhile, the taurine group had fewer large-diameter myofibers (>50 \u03bc m) than the OFO group ( P > 0.05).",
+      "context_window": "wer large-diameter myofibers (>50 \u03bc m) than the OFO group ( P > 0.05). The myofiber density, diameter, and diameter distributio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-6453",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6453,
+      "sentence": "Values are means \u00b1 SEM ( n = 3).",
+      "context_window": "the common carp ( C. carpio . L). Values are means \u00b1 SEM ( n = 3). Values in the same row with different superscripts repres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-6561",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6561,
+      "sentence": "Values in the same row with different superscripts represent statistically significant difference ( P < 0.05).",
+      "context_window": "perscripts represent statistically significant difference ( P < 0.05). We evaluated the expression of muscle fiber development",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-7034",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7034,
+      "sentence": "Figure 4 illustrates that supplementation with 12 g/kg taurine increased the relative mRNA expression levels of paired box 7 ( pax7 ), myogenic factor 5 ( myf5 ), myogenic differentiation antigen ( myod ), and myogenic regulatory factor 4 ( mrf4 ) in the muscle compared to those in the OFO group ( P < 0.05).",
+      "context_window": "( mrf4 ) in the muscle compared to those in the OFO group ( P < 0.05). In addition, compared with the FO, the relative mRNA expr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-7161",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7161,
+      "sentence": "In addition, compared with the FO, the relative mRNA expression level of myostatin ( mstnb ) was increased in OFO ( P > 0.05).",
+      "context_window": "ression level of myostatin ( mstnb ) was increased in OFO ( P > 0.05). Effects on the expression of genes related to myofiber d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-7291",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7291,
+      "sentence": "Effects on the expression of genes related to myofiber development in the muscle of the common carp ( C. carpio L.) ( n = 9).",
+      "context_window": "elopment in the muscle of the common carp ( C. carpio L.) ( n = 9). Different symbols denote significant differences ( P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-7350",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7350,
+      "sentence": "Different symbols denote significant differences ( P < 0.05).",
+      "context_window": "n = 9). Different symbols denote significant differences ( P < 0.05). Table 6 shows that the muscle collagen in each experimen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-7654",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7654,
+      "sentence": "Compared with the OFO group, taurine supplementation did not change the content of heat-soluble collagen ( P > 0.05) but increased the content of heat-insoluble collagen and total collagen in a dose-dependent manner ( P < 0.05).",
+      "context_window": "ation did not change the content of heat-soluble collagen ( P > 0.05) but increased the content of heat-insoluble collagen and t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-7765",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7765,
+      "sentence": "Compared with the OFO group, taurine supplementation did not change the content of heat-soluble collagen ( P > 0.05) but increased the content of heat-insoluble collagen and total collagen in a dose-dependent manner ( P < 0.05).",
+      "context_window": "le collagen and total collagen in a dose-dependent manner ( P < 0.05). Hydroxyproline and collagen content in the muscle of the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-7889",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7889,
+      "sentence": "Values are means \u00b1 SEM ( n = 9).",
+      "context_window": "the common carp ( C. carpio L.). Values are means \u00b1 SEM ( n = 9). Values in the same row with different superscripts repres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-7997",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7997,
+      "sentence": "Values in the same row with different superscripts represent statistically significant difference ( P < 0.05).",
+      "context_window": "perscripts represent statistically significant difference ( P < 0.05). In total, 19 fatty acids were identified in the diet and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-8224",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8224,
+      "sentence": "Compared to the FO group, the muscle content of saturated fatty acids (SFAs) in the OFO group increased significantly ( P < 0.05; Table 8 ), mostly palmitic acid (PA, C16 : 0).",
+      "context_window": "tty acids (SFAs) in the OFO group increased significantly ( P < 0.05; Table 8 ), mostly palmitic acid (PA, C16 : 0). Compared to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-8437",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8437,
+      "sentence": "Compared to the FO group, fish fed the OFO diet exhibited a decreased n-3 polyunsaturated fatty acids (PUFA) content and n-3/n-6 PUFA ratio in the muscle ( P < 0.05).",
+      "context_window": "acids (PUFA) content and n-3/n-6 PUFA ratio in the muscle ( P < 0.05). Compared with the OFO group, the OT8 and OT12 groups had",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-8560",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8560,
+      "sentence": "Compared with the OFO group, the OT8 and OT12 groups had a significantly increased n-6 PUFA content in muscle ( P < 0.05).",
+      "context_window": "had a significantly increased n-6 PUFA content in muscle ( P < 0.05). However, the SFA, monounsaturated fatty acid (MUFA), and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-8731",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8731,
+      "sentence": "However, the SFA, monounsaturated fatty acid (MUFA), and n-3 PUFA contents in the taurine groups were not significantly different from those in the OFO group ( P > 0.05).",
+      "context_window": "e not significantly different from those in the OFO group ( P > 0.05). Fatty acid composition of the experimental diets for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-9139",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9139,
+      "sentence": "Values are means \u00b1 SEM ( n = 3).",
+      "context_window": "ega 6 polyunsaturated fatty acids. Values are means \u00b1 SEM ( n = 3). Values in the same row with different superscripts repres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-9247",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9247,
+      "sentence": "Values in the same row with different superscripts represent statistically significant difference ( P < 0.05).",
+      "context_window": "perscripts represent statistically significant difference ( P < 0.05). Fatty acid composition of the white muscle of the common",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-n-9647",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9647,
+      "sentence": "Values are means \u00b1 SEM ( n = 9).",
+      "context_window": "ega 6 polyunsaturated fatty acids. Values are means \u00b1 SEM ( n = 9). Values in the same row with different superscripts repres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-9755",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9755,
+      "sentence": "Values in the same row with different superscripts represent statistically significant difference ( P < 0.05).",
+      "context_window": "perscripts represent statistically significant difference ( P < 0.05). The association between fatty acid content in the muscle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-10086",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10086,
+      "sentence": "The SFA content of the muscle was positively linked with the SFA content of the diet, particularly the myristic acid triglyceride (C14 : 0) and palmitic acid triglyceride (C16 : 0) ( P < 0.001, Mantel's r \u2265 0.8).",
+      "context_window": "ceride (C14 : 0) and palmitic acid triglyceride (C16 : 0) ( P < 0.001, Mantel's r \u2265 0.8). The corresponding components in muscle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-10222",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10222,
+      "sentence": "The corresponding components in muscle rose as dietary DHA, n-3 PUFA, and n-3/n-6 PUFA levels increased ( P < 0.001, Mantel's r \u2265 0.8).",
+      "context_window": "dietary DHA, n-3 PUFA, and n-3/n-6 PUFA levels increased ( P < 0.001, Mantel's r \u2265 0.8). Not surprisingly, the n-3/n-6 PUFA rati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-10471",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10471,
+      "sentence": "Not surprisingly, the n-3/n-6 PUFA ratio in the diet was actively connected with the n-3/n-6 PUFA ratio and n-3 PUFAs content (mostly C20 : 3n-3, docosahexaenoic acid (DHA), and eicosapentaenoic acid (EPA) in muscles ( P < 0.001, Mantel's r \u2265 0.8).",
+      "context_window": "ic acid (DHA), and eicosapentaenoic acid (EPA) in muscles ( P < 0.001, Mantel's r \u2265 0.8). Unlike DHA, there was a negative correl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-10651",
+      "claim_type": "p_value",
+      "raw_text": "P =0.94",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10651,
+      "sentence": "Unlike DHA, there was a negative correlation between EPA levels in feed and muscle, although the correlation was not significant (Mantel's r = -0.02, P =0.94).",
+      "context_window": "gh the correlation was not significant (Mantel's r = -0.02, P =0.94). Heat map of the correlation between diet and muscle fatt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-11107",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11107,
+      "sentence": "The asterisks represent the significance of the correlation values ( \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001).",
+      "context_window": "ks represent the significance of the correlation values ( \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-11120",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11120,
+      "sentence": "The asterisks represent the significance of the correlation values ( \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001).",
+      "context_window": "the significance of the correlation values ( \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11213642_taurine_alleviated_the_negative_effects_of_an_oxidized_lipid-p-11138",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11138,
+      "sentence": "The asterisks represent the significance of the correlation values ( \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001).",
+      "context_window": "f the correlation values ( \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "paper_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with",
+  "doi": "10.1200/jco.2014.58.3401",
+  "extracted_at": "2026-05-08T19:55:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-u-609",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 609,
+      "sentence": "Everolimus was administered orally at 10 mg daily and letrozole was administered orally at 2.5 mg daily.",
+      "context_window": "r cytotoxic regimens. Everolimus was administered orally at 10 mg daily and letrozole was administered orally at 2.5 mg daily",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "Everolimus was administered orally at 10 mg daily and letrozole was administered orally at 2.5 mg daily.",
+      "context_window": "lly at 10 mg daily and letrozole was administered orally at 2.5 mg daily. Each cycle consisted of 4 weeks of therapy. Patients",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-u-700",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 700,
+      "sentence": "Each cycle consisted of 4 weeks of therapy.",
+      "context_window": "dministered orally at 2.5 mg daily. Each cycle consisted of 4 weeks of therapy. Patients were treated until progression, toxici",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-u-921",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 921,
+      "sentence": "The primary end point was the clinical benefit rate (CBR), which was defined as CR, partial response, or stable disease (\u2265 16 weeks) by RECIST 1.0 criteria.",
+      "context_window": "h was defined as CR, partial response, or stable disease (\u2265 16 weeks) by RECIST 1.0 criteria. Translational studies were perform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-u-1089",
+      "claim_type": "unit_value",
+      "raw_text": "62 years",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1089,
+      "sentence": "RESULTS: Thirty-eight patients were enrolled (median age, 62 years; range, 24 to 82 years).",
+      "context_window": ". RESULTS: Thirty-eight patients were enrolled (median age, 62 years; range, 24 to 82 years). Thirty-five patients were evaluabl",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-u-1112",
+      "claim_type": "unit_value",
+      "raw_text": "82 years",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "RESULTS: Thirty-eight patients were enrolled (median age, 62 years; range, 24 to 82 years).",
+      "context_window": "patients were enrolled (median age, 62 years; range, 24 to 82 years). Thirty-five patients were evaluable for response. The CBR",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-pct-1185",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "The CBR was 40% (14 of 35 patients); the median number of cycles among responders was 15 (range, seven to 29 cycles).",
+      "context_window": "irty-five patients were evaluable for response. The CBR was 40% (14 of 35 patients); the median number of cycles among resp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2014_58_3401_phase_ii_study_of_everolimus_and_letrozole_in_patients_with-pct-1338",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1338,
+      "sentence": "The confirmed objective response rate (RR) was 32% (11 of 35 patients; nine CRs and two partial responses; median, 15 cycles; range, eight to 29 cycles).",
+      "context_window": "29 cycles). The confirmed objective response rate (RR) was 32% (11 of 35 patients; nine CRs and two partial responses; med",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,1428 @@
+{
+  "paper_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat",
+  "doi": "10.1097/MD.0000000000043997",
+  "extracted_at": "2026-05-08T20:05:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "odds_ratio": 13,
+    "percentage": 13,
+    "p_value": 23,
+    "confidence_interval": 28
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-1454",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1454,
+      "sentence": "For sleep apnea, cholesterol levels exhibited a protective effect (OR = 0.96), whereas specific phosphatidylcholines (16:1_18:0) and triacylglycerols (52:2, 52:3, 58:8) were associated with increased risk.",
+      "context_window": "ep apnea, cholesterol levels exhibited a protective effect (OR = 0.96), whereas specific phosphatidylcholines (16:1_18:0) and tri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-4341",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4341,
+      "sentence": "All reported effect estimates are presented as odds ratios (OR) with 95% confidence intervals (CI), and statistical significance was defined as P < .05.",
+      "context_window": "ted effect estimates are presented as odds ratios (OR) with 95% confidence intervals (CI), and statistical significance was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4416",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4416,
+      "sentence": "All reported effect estimates are presented as odds ratios (OR) with 95% confidence intervals (CI), and statistical significance was defined as P < .05.",
+      "context_window": "intervals (CI), and statistical significance was defined as P < .05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-221",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.852-0.972",
+      "numeric_values": [
+        0.852,
+        0.972
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 221,
+      "sentence": "For sterol esters, sterol ester (27:1/20:3) levels showed a potential protective effect against insomnia, with an OR of 0.911 (95% CI: 0.852-0.972, P = .005).",
+      "context_window": "al protective effect against insomnia, with an OR of 0.911 (95% CI: 0.852-0.972, P = .005). Among ceramides, ceramide (d40:1) had an OR of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-242",
+      "claim_type": "p_value",
+      "raw_text": "P = .005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 242,
+      "sentence": "For sterol esters, sterol ester (27:1/20:3) levels showed a potential protective effect against insomnia, with an OR of 0.911 (95% CI: 0.852-0.972, P = .005).",
+      "context_window": "against insomnia, with an OR of 0.911 (95% CI: 0.852-0.972, P = .005). Among ceramides, ceramide (d40:1) had an OR of 0.931 (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-307",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.869-0.997",
+      "numeric_values": [
+        0.869,
+        0.997
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 307,
+      "sentence": "Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles.",
+      "context_window": "005). Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-328",
+      "claim_type": "p_value",
+      "raw_text": "P = .042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 328,
+      "sentence": "Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles.",
+      "context_window": ", ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-376",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.859-0.994",
+      "numeric_values": [
+        0.859,
+        0.994
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 376,
+      "sentence": "Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles.",
+      "context_window": ".869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-397",
+      "claim_type": "p_value",
+      "raw_text": "P = .034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 397,
+      "sentence": "Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles.",
+      "context_window": ", ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-449",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.872-0.992",
+      "numeric_values": [
+        0.872,
+        0.992
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 449,
+      "sentence": "Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles.",
+      "context_window": "-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles. Phosp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-470",
+      "claim_type": "p_value",
+      "raw_text": "P = .027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 470,
+      "sentence": "Among ceramides, ceramide (d40:1) had an OR of 0.931 (95% CI: 0.869-0.997, P = .042), ceramide (d42:1) had an OR of 0.924 (95% CI: 0.859-0.994, P = .034), and ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles.",
+      "context_window": "d ceramide (d42:2) had an OR of 0.930 (95% CI: 0.872-0.992, P = .027), all suggesting possible protective roles. Phosphatidylcho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-622",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.884-0.999",
+      "numeric_values": [
+        0.884,
+        0.999
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 622,
+      "sentence": "Phosphatidylcholine (15:0_18:2) also exhibited a potential protective effect, with an OR of 0.940 (95% CI: 0.884-0.999, P = .048).",
+      "context_window": "hibited a potential protective effect, with an OR of 0.940 (95% CI: 0.884-0.999, P = .048). Sphingomyelin (d40:1) had an OR of 0.920 (95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-643",
+      "claim_type": "p_value",
+      "raw_text": "P = .048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 643,
+      "sentence": "Phosphatidylcholine (15:0_18:2) also exhibited a potential protective effect, with an OR of 0.940 (95% CI: 0.884-0.999, P = .048).",
+      "context_window": "rotective effect, with an OR of 0.940 (95% CI: 0.884-0.999, P = .048). Sphingomyelin (d40:1) had an OR of 0.920 (95% CI: 0.871-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-696",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.871-0.972",
+      "numeric_values": [
+        0.871,
+        0.972
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 696,
+      "sentence": "Sphingomyelin (d40:1) had an OR of 0.920 (95% CI: 0.871-0.972, P = .003), indicating it might also play a protective role in reducing the risk of insomnia (Fig.",
+      "context_window": "0.999, P = .048). Sphingomyelin (d40:1) had an OR of 0.920 (95% CI: 0.871-0.972, P = .003), indicating it might also play a protective role",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-717",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 717,
+      "sentence": "Sphingomyelin (d40:1) had an OR of 0.920 (95% CI: 0.871-0.972, P = .003), indicating it might also play a protective role in reducing the risk of insomnia (Fig.",
+      "context_window": "ingomyelin (d40:1) had an OR of 0.920 (95% CI: 0.871-0.972, P = .003), indicating it might also play a protective role in reduci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-1104",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1104,
+      "sentence": "The alignment of results across the other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality.",
+      "context_window": "e other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality. Evaluat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-1630",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1630,
+      "sentence": "The OR and 95% CI are shown for sterol esters, ceramides, phosphatidylcholines, and sphingomyelins.",
+      "context_window": "f various lipid species on the risk of insomnia. The OR and 95% CI are shown for sterol esters, ceramides, phosphatidylchol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-1819",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1819,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "protective effect, while OR > 1 suggests an increased risk. 95% CI = 95% confidence interval, OR = odds ratio. TSMR analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-1828",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1828,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "e effect, while OR > 1 suggests an increased risk. 95% CI = 95% confidence interval, OR = odds ratio. TSMR analysis elucid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-2178",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.269-4.255",
+      "numeric_values": [
+        1.269,
+        4.255
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2178,
+      "sentence": "Phosphatidylcholine (16:0_22:4) had an OR of 2.324 (95% CI: 1.269-4.255), phosphatidylcholine (O-16:0_16:1) had an OR of 3.275 (95% CI: 1.449-7.404), and phosphatidylcholine (O-16:0_18:2) had an OR of 2.473 (95% CI: 1.142-5.356).",
+      "context_window": "links. Phosphatidylcholine (16:0_22:4) had an OR of 2.324 (95% CI: 1.269-4.255), phosphatidylcholine (O-16:0_16:1) had an OR of 3.275 (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-2254",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.449-7.404",
+      "numeric_values": [
+        1.449,
+        7.404
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2254,
+      "sentence": "Phosphatidylcholine (16:0_22:4) had an OR of 2.324 (95% CI: 1.269-4.255), phosphatidylcholine (O-16:0_16:1) had an OR of 3.275 (95% CI: 1.449-7.404), and phosphatidylcholine (O-16:0_18:2) had an OR of 2.473 (95% CI: 1.142-5.356).",
+      "context_window": "255), phosphatidylcholine (O-16:0_16:1) had an OR of 3.275 (95% CI: 1.449-7.404), and phosphatidylcholine (O-16:0_18:2) had an OR of 2.473",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-2334",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.142-5.356",
+      "numeric_values": [
+        1.142,
+        5.356
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2334,
+      "sentence": "Phosphatidylcholine (16:0_22:4) had an OR of 2.324 (95% CI: 1.269-4.255), phosphatidylcholine (O-16:0_16:1) had an OR of 3.275 (95% CI: 1.449-7.404), and phosphatidylcholine (O-16:0_18:2) had an OR of 2.473 (95% CI: 1.142-5.356).",
+      "context_window": ", and phosphatidylcholine (O-16:0_18:2) had an OR of 2.473 (95% CI: 1.142-5.356). These values suggest that these phosphatidylcholines migh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-2552",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.104-3.608",
+      "numeric_values": [
+        1.104,
+        3.608
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2552,
+      "sentence": "Sphingomyelin (d34:0) also showed a significant association with sleep terrors, with an OR of 1.996 (95% CI: 1.104-3.608), indicating that it could be a potential risk factor.",
+      "context_window": "ficant association with sleep terrors, with an OR of 1.996 (95% CI: 1.104-3.608), indicating that it could be a potential risk factor. Rega",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-2778",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.205-0.875",
+      "numeric_values": [
+        0.205,
+        0.875
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2778,
+      "sentence": "Triacylglycerol (46:2) had an OR of 0.423 (95% CI: 0.205-0.875), suggesting a possible protective effect against sleep terrors.",
+      "context_window": "ferent outcomes. Triacylglycerol (46:2) had an OR of 0.423 (95% CI: 0.205-0.875), suggesting a possible protective effect against sleep ter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-2919",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.010-5.756",
+      "numeric_values": [
+        1.01,
+        5.756
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2919,
+      "sentence": "In contrast, triacylglycerol (49:2) had an OR of 2.411 (95% CI: 1.010-5.756), implying that it might enhance the risk of sleep terrors (Fig.",
+      "context_window": "rs. In contrast, triacylglycerol (49:2) had an OR of 2.411 (95% CI: 1.010-5.756), implying that it might enhance the risk of sleep terrors",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-3293",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3293,
+      "sentence": "The alignment of results across the other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality.",
+      "context_window": "e other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality. Evaluat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-3813",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3813,
+      "sentence": "The OR and 95% CI are presented for phosphatidylcholines, sphingomyelins, and triacylglycerols.",
+      "context_window": "iations between lipid species and sleep terrors. The OR and 95% CI are presented for phosphatidylcholines, sphingomyelins,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-4018",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4018,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "as those with OR < 1 indicate potential protective effects. 95% CI = 95% confidence interval, OR = odds ratio. TSMR analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-4027",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4027,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "with OR < 1 indicate potential protective effects. 95% CI = 95% confidence interval, OR = odds ratio. TSMR analysis reveal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4241",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4241,
+      "sentence": "Cholesterol levels demonstrated a protective effect against sleep apnea (OR = 0.96, 95% CI: 0.931-0.997, P = .031).",
+      "context_window": "evels demonstrated a protective effect against sleep apnea (OR = 0.96, 95% CI: 0.931-0.997, P = .031). Among glycerophospholipids",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4252",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.931-0.997",
+      "numeric_values": [
+        0.931,
+        0.997
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4252,
+      "sentence": "Cholesterol levels demonstrated a protective effect against sleep apnea (OR = 0.96, 95% CI: 0.931-0.997, P = .031).",
+      "context_window": "strated a protective effect against sleep apnea (OR = 0.96, 95% CI: 0.931-0.997, P = .031). Among glycerophospholipids, phosphatidylcholine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4273",
+      "claim_type": "p_value",
+      "raw_text": "P = .031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4273,
+      "sentence": "Cholesterol levels demonstrated a protective effect against sleep apnea (OR = 0.96, 95% CI: 0.931-0.997, P = .031).",
+      "context_window": "effect against sleep apnea (OR = 0.96, 95% CI: 0.931-0.997, P = .031). Among glycerophospholipids, phosphatidylcholine (16:0_16:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4345",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4345,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "mong glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4356",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.92-0.97",
+      "numeric_values": [
+        0.92,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4356,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "ophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4375",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4375,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "sphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4421",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4421,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "I: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4432",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.93-0.99",
+      "numeric_values": [
+        0.93,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4432,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "7, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4451",
+      "claim_type": "p_value",
+      "raw_text": "P = .016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4451,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "hatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4501",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4501,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": ".93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4512",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.94-1.00",
+      "numeric_values": [
+        0.94,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4512,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "= .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4531",
+      "claim_type": "p_value",
+      "raw_text": "P = .034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4531,
+      "sentence": "Among glycerophospholipids, phosphatidylcholine (16:0_16:0) (OR = 0.95, 95% CI: 0.92-0.97, P < .001), phosphatidylcholine (O-16:0_22:5) (OR = 0.96, 95% CI: 0.93-0.99, P = .016), and phosphatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk.",
+      "context_window": "hatidylcholine (O-18:2_20:4) (OR = 0.97, 95% CI: 0.94-1.00, P = .034) were inversely associated with sleep apnea risk. Conversel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4670",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.05",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4670,
+      "sentence": "Conversely, phosphatidylcholine (16:1_18:0) exhibited a risk-increasing effect (OR = 1.05, 95% CI: 1.01-1.08, P = .013).",
+      "context_window": "idylcholine (16:1_18:0) exhibited a risk-increasing effect (OR = 1.05, 95% CI: 1.01-1.08, P = .013). Within the sphingomyelin cat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4681",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.08",
+      "numeric_values": [
+        1.01,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4681,
+      "sentence": "Conversely, phosphatidylcholine (16:1_18:0) exhibited a risk-increasing effect (OR = 1.05, 95% CI: 1.01-1.08, P = .013).",
+      "context_window": "(16:1_18:0) exhibited a risk-increasing effect (OR = 1.05, 95% CI: 1.01-1.08, P = .013). Within the sphingomyelin category, sphingomyeli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4700",
+      "claim_type": "p_value",
+      "raw_text": "P = .013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4700,
+      "sentence": "Conversely, phosphatidylcholine (16:1_18:0) exhibited a risk-increasing effect (OR = 1.05, 95% CI: 1.01-1.08, P = .013).",
+      "context_window": "ted a risk-increasing effect (OR = 1.05, 95% CI: 1.01-1.08, P = .013). Within the sphingomyelin category, sphingomyelin (d36:2)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4769",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4769,
+      "sentence": "Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects.",
+      "context_window": ". Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4780",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.91-0.99",
+      "numeric_values": [
+        0.91,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4780,
+      "sentence": "Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects.",
+      "context_window": "e sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4799",
+      "claim_type": "p_value",
+      "raw_text": "P = .011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4799,
+      "sentence": "Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects.",
+      "context_window": "egory, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4836",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4836,
+      "sentence": "Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects.",
+      "context_window": "95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4847",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.94-0.99",
+      "numeric_values": [
+        0.94,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4847,
+      "sentence": "Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects.",
+      "context_window": "0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects. Notably, triacy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-4866",
+      "claim_type": "p_value",
+      "raw_text": "P = .007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4866,
+      "sentence": "Within the sphingomyelin category, sphingomyelin (d36:2) (OR = 0.95, 95% CI: 0.91-0.99, P = .011) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects.",
+      "context_window": "1) and sphingomyelin (d40:2) (OR = 0.97, 95% CI: 0.94-0.99, P = .007) demonstrated protective effects. Notably, triacylglycerols",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-4970",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4970,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": "otably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-4981",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00-1.07",
+      "numeric_values": [
+        1.0,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4981,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": "acylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-5000",
+      "claim_type": "p_value",
+      "raw_text": "P = .024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5000,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": "uding triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-5035",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5035,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": "1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-5046",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.06",
+      "numeric_values": [
+        1.01,
+        1.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5046,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": "I: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-5065",
+      "claim_type": "p_value",
+      "raw_text": "P = .020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5065,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": "024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-5104",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.04",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5104,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": ", 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-5115",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.07",
+      "numeric_values": [
+        1.01,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5115,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": ".01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-5134",
+      "claim_type": "p_value",
+      "raw_text": "P = .005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5134,
+      "sentence": "Notably, triacylglycerols, including triacylglycerol (52:2) (OR = 1.03, 95% CI: 1.00-1.07, P = .024), triacylglycerol (52:3) (OR = 1.03, 95% CI: 1.01-1.06, P = .020), and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep apnea.",
+      "context_window": ", and triacylglycerol (58:8) (OR = 1.04, 95% CI: 1.01-1.07, P = .005), were consistently associated with elevated risk of sleep",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-5243",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5243,
+      "sentence": "Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig.",
+      "context_window": "ated risk of sleep apnea. Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-5254",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00-1.06",
+      "numeric_values": [
+        1.0,
+        1.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5254,
+      "sentence": "Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig.",
+      "context_window": "f sleep apnea. Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-5273",
+      "claim_type": "p_value",
+      "raw_text": "P = .037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5273,
+      "sentence": "Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig.",
+      "context_window": "phatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-or-a-5321",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5321,
+      "sentence": "Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig.",
+      "context_window": "1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-5332",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.04",
+      "numeric_values": [
+        1.01,
+        1.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5332,
+      "sentence": "Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig.",
+      "context_window": "P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig. 4 ). Figure S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-5351",
+      "claim_type": "p_value",
+      "raw_text": "P = .008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5351,
+      "sentence": "Phosphatidylinositol (18:0_18:1) (OR = 1.03, 95% CI: 1.00-1.06, P = .037) and phosphatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig.",
+      "context_window": "phatidylinositol (18:0_18:2) (OR = 1.03, 95% CI: 1.01-1.04, P = .008) also emerged as risk factors (Fig. 4 ). Figure S5 (Supplem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-5685",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5685,
+      "sentence": "The alignment of results across the other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality.",
+      "context_window": "e other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality. Evaluat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-6206",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6206,
+      "sentence": "The OR and 95% CI are displayed for sterol esters, ceramides, phosphatidylcholines, phosphatidylinositols, sphingomyelins, and triacylglycerols.",
+      "context_window": "ffects of multiple lipid species on sleep apnea. The OR and 95% CI are displayed for sterol esters, ceramides, phosphatidyl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-6426",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6426,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "protective effects, while OR > 1 indicates increased risk. 95% CI = 95% confidence interval, OR = odds ratio. Multiple li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-6435",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6435,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "ve effects, while OR > 1 indicates increased risk. 95% CI = 95% confidence interval, OR = odds ratio. Multiple lipid speci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-6662",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.001-1.757",
+      "numeric_values": [
+        1.001,
+        1.757
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6662,
+      "sentence": "Diacylglycerol (18:1_18:3) and Phosphatidylcholine (16:1_18:0) have OR of 1.326 (95% CI: 1.001-1.757) and 1.395 (95% CI: 1.036-1.877) respectively, indicating a potential risk - increasing effect on the disorder.",
+      "context_window": "18:3) and Phosphatidylcholine (16:1_18:0) have OR of 1.326 (95% CI: 1.001-1.757) and 1.395 (95% CI: 1.036-1.877) respectively, indicating a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-6694",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.036-1.877",
+      "numeric_values": [
+        1.036,
+        1.877
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6694,
+      "sentence": "Diacylglycerol (18:1_18:3) and Phosphatidylcholine (16:1_18:0) have OR of 1.326 (95% CI: 1.001-1.757) and 1.395 (95% CI: 1.036-1.877) respectively, indicating a potential risk - increasing effect on the disorder.",
+      "context_window": "6:1_18:0) have OR of 1.326 (95% CI: 1.001-1.757) and 1.395 (95% CI: 1.036-1.877) respectively, indicating a potential risk - increasing eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-6908",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.596-0.999",
+      "numeric_values": [
+        0.596,
+        0.999
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6908,
+      "sentence": "In contrast, Phosphatidylethanolamine (O-16:1_20:4) and Phosphatidylethanolamine (O-18:1_20:4) have ORs of 0.772 (95% CI: 0.596-0.999) and 0.743 (95% CI: 0.590-0.935), suggesting a possible protective effect.",
+      "context_window": "d Phosphatidylethanolamine (O-18:1_20:4) have ORs of 0.772 (95% CI: 0.596-0.999) and 0.743 (95% CI: 0.590-0.935), suggesting a possible pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-ci-6940",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.590-0.935",
+      "numeric_values": [
+        0.59,
+        0.935
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6940,
+      "sentence": "In contrast, Phosphatidylethanolamine (O-16:1_20:4) and Phosphatidylethanolamine (O-18:1_20:4) have ORs of 0.772 (95% CI: 0.596-0.999) and 0.743 (95% CI: 0.590-0.935), suggesting a possible protective effect.",
+      "context_window": ":1_20:4) have ORs of 0.772 (95% CI: 0.596-0.999) and 0.743 (95% CI: 0.590-0.935), suggesting a possible protective effect. Other lipids lik",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-p-7591",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7591,
+      "sentence": "The alignment of results across the other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality.",
+      "context_window": "e other 4 methods, coupled with a significance threshold of P < .05, bolsters the confidence in establishing causality. Evaluat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-8136",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8136,
+      "sentence": "The OR and 95% CI are shown for sterol esters, ceramides, diacylglycerols, phosphatidylcholines, phosphatidylethanolamines, phosphatidylinositols, sphingomyelins, and triacylglycerols.",
+      "context_window": "pecies and disorders of the sleep-wake schedule. The OR and 95% CI are shown for sterol esters, ceramides, diacylglycerols,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-8408",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8408,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "protective effects, whereas OR > 1 suggests increased risk. 95% CI = 95% confidence interval, OR = odds ratio.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12401233_lipidome_profiles_and_sleep_disorders_a_mendelian_randomizat-pct-8417",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8417,
+      "sentence": "95% CI = 95% confidence interval, OR = odds ratio.",
+      "context_window": "e effects, whereas OR > 1 suggests increased risk. 95% CI = 95% confidence interval, OR = odds ratio.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_spermine_and_l_name_pretreatment_effects_on_polyamine_and_ni",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:11:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_spermine_and_l_name_pretreatment_effects_on_polyamine_and_ni-u-947",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 947,
+      "sentence": "Seizures were induced by i.p. application of pentazol (100 mg/kg b.w).",
+      "context_window": "ted. Seizures were induced by i.p. application of pentazol (100 mg/kg b.w). Spermine and L-NAME were administered i.p. before",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_spermine_and_l_name_pretreatment_effects_on_polyamine_and_ni-p-1093",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "In the striatum and hippocampus, spermine induced increased NO production (p<0.001) related to values in the group treated by PTZ.",
+      "context_window": "and hippocampus, spermine induced increased NO production (p<0.001) related to values in the group treated by PTZ. Application",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1016_j_smrv_2022_101597_cognitive_behavioral_therapy_for_insomnia_in_patients_with_m",
+  "doi": "10.1016/j.smrv.2022.101597",
+  "extracted_at": "2026-05-08T20:06:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_smrv_2022_101597_cognitive_behavioral_therapy_for_insomnia_in_patients_with_m-pct-7",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 7,
+      "sentence": "Almost 70% of patients with mental disorders report sleep difficulties and 30% fulfill the criteria for insomnia disorder.",
+      "context_window": "Almost 70% of patients with mental disorders report sleep difficulties",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_smrv_2022_101597_cognitive_behavioral_therapy_for_insomnia_in_patients_with_m-pct-75",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 75,
+      "sentence": "Almost 70% of patients with mental disorders report sleep difficulties and 30% fulfill the criteria for insomnia disorder.",
+      "context_window": "atients with mental disorders report sleep difficulties and 30% fulfill the criteria for insomnia disorder. Cognitive behav",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

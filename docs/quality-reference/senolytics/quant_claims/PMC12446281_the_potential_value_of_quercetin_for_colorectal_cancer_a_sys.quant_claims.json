@@ -1,0 +1,539 @@
+{
+  "paper_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys",
+  "doi": "10.3389/fphar.2025.1642957",
+  "extracted_at": "2026-05-08T20:01:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 3,
+    "p_value": 3,
+    "percentage": 19,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-ci-957",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.26 to -0.38",
+      "numeric_values": [
+        -0.26,
+        -0.38
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 957,
+      "sentence": "The results of our meta-analysis showed that quercetin treatment not only significantly reduced the incidence of CRC (SMD-1.22, 95% CI: -0.26 to -0.38, p = 0.004), but also alleviated inflammation and oxidative stress compared with the control group.",
+      "context_window": "only significantly reduced the incidence of CRC (SMD-1.22, 95% CI: -0.26 to -0.38, p = 0.004), but also alleviated inflammation and oxidative",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-p-981",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 981,
+      "sentence": "The results of our meta-analysis showed that quercetin treatment not only significantly reduced the incidence of CRC (SMD-1.22, 95% CI: -0.26 to -0.38, p = 0.004), but also alleviated inflammation and oxidative stress compared with the control group.",
+      "context_window": "ced the incidence of CRC (SMD-1.22, 95% CI: -0.26 to -0.38, p = 0.004), but also alleviated inflammation and oxidative stress com",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-ci-1160",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: -2.53 to -0.26",
+      "numeric_values": [
+        -2.53,
+        -0.26
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "Quercetin treatment effectively improved the degree of crypt lesions (SMD-1.40, 95%CI: -2.53 to -0.26, p = 0.02) and alleviated precancerous lesions in the animal model of CRC.",
+      "context_window": "effectively improved the degree of crypt lesions (SMD-1.40, 95%CI: -2.53 to -0.26, p = 0.02) and alleviated precancerous lesions in the anima",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-p-1183",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "Quercetin treatment effectively improved the degree of crypt lesions (SMD-1.40, 95%CI: -2.53 to -0.26, p = 0.02) and alleviated precancerous lesions in the animal model of CRC.",
+      "context_window": "e degree of crypt lesions (SMD-1.40, 95%CI: -2.53 to -0.26, p = 0.02) and alleviated precancerous lesions in the animal model of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-ci-1424",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -10.48 to -5.95",
+      "numeric_values": [
+        -10.48,
+        -5.95
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1424,
+      "sentence": "In terms of tumor cell proliferation, quercetin had a significant inhibitory effect on cell proliferation during treatment, as determined by PCNA analysis (SMD -8.22, 95% CI: -10.48 to -5.95, p < 0.00001).",
+      "context_window": "uring treatment, as determined by PCNA analysis (SMD -8.22, 95% CI: -10.48 to -5.95, p < 0.00001). Quercetin may promote apoptosis during treat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-p-1449",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "In terms of tumor cell proliferation, quercetin had a significant inhibitory effect on cell proliferation during treatment, as determined by PCNA analysis (SMD -8.22, 95% CI: -10.48 to -5.95, p < 0.00001).",
+      "context_window": "mined by PCNA analysis (SMD -8.22, 95% CI: -10.48 to -5.95, p < 0.00001). Quercetin may promote apoptosis during treatment, but thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-90",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 90,
+      "sentence": "Colorectal cancer ranks as the third most common cancer worldwide, accounting for roughly 10% of all cancer cases ( Klimeck et al., 2023 ).",
+      "context_window": "third most common cancer worldwide, accounting for roughly 10% of all cancer cases ( Klimeck et al., 2023 ). Meanwhile, co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-222",
+      "claim_type": "percentage",
+      "raw_text": "9.4%",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 222,
+      "sentence": "Meanwhile, colorectal cancer claims around 940,000 lives annually, accounting for 9.4% of all cancer-related deaths and placing it as the second most common cause of cancer-related mortality ( Roshandel et al., 2024 ; Hossain et al., 2022 ).",
+      "context_window": "cancer claims around 940,000 lives annually, accounting for 9.4% of all cancer-related deaths and placing it as the second m",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-3757",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3757,
+      "sentence": "The 95% confidence interval (95% CI) was determined using either the mean difference (MD) or the standardized mean difference (SMD).",
+      "context_window": "5.4. The forest plot was generated using this software. The 95% confidence interval (95% CI) was determined using either th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-3782",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3782,
+      "sentence": "The 95% confidence interval (95% CI) was determined using either the mean difference (MD) or the standardized mean difference (SMD).",
+      "context_window": "generated using this software. The 95% confidence interval (95% CI) was determined using either the mean difference (MD) or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4159",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4159,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "eterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4175",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4175,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "th its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%). S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4179",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4179,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "ts values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%). Sensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4198",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4198,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "ed as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%). Sensitivity analyses, in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4202",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4202,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "s follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%). Sensitivity analyses, includ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4226",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4226,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "oderate (30%-60%), substantial (50%-90%), and considerable (75%-100%). Sensitivity analyses, including elimination-by-exclu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-4230",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4230,
+      "sentence": "In our analysis, the I 2 statistic was employed to assess heterogeneity, with its values interpreted as follows: low (<30%), moderate (30%-60%), substantial (50%-90%), and considerable (75%-100%).",
+      "context_window": "ate (30%-60%), substantial (50%-90%), and considerable (75%-100%). Sensitivity analyses, including elimination-by-exclusion,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-14434",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 14434,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "nces in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Su",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-14438",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 14438,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Such h",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-14462",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 14462,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Such high heterogeneity implie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-14489",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 14489,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "each 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Such high heterogeneity implies that the studies may not",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-u-15724",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 15724,
+      "sentence": "Doses ranged from 50 to 200 mg/kg, and administration methods included oral gavage, intraperitoneal injection, and dietary incorporation.",
+      "context_window": "ntal groups showed wide variations. Doses ranged from 50 to 200 mg/kg, and administration methods included oral gavage, intrap",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-u-16425",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 16425,
+      "sentence": "The study periods in the included studies also varied from 4 to 24 weeks, which may lead to inadequate representation of changes in outcome indicators.",
+      "context_window": "study periods in the included studies also varied from 4 to 24 weeks, which may lead to inadequate representation of changes in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-244",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 244,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "nces in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Su",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-248",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 248,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Such h",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-272",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 272,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Such high heterogeneity implie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-pct-299",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 299,
+      "sentence": "The 17 included animal studies showed marked differences in key aspects, causing I 2 values to frequently reach 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%).",
+      "context_window": "each 75%-97% (ACF analysis I 2 = 85%, tumor incidence I 2 = 82%). Such high heterogeneity implies that the studies may not",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-u-1534",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "limitations",
+      "source_offset": 1534,
+      "sentence": "Doses ranged from 50 to 200 mg/kg, and administration methods included oral gavage, intraperitoneal injection, and dietary incorporation.",
+      "context_window": "ntal groups showed wide variations. Doses ranged from 50 to 200 mg/kg, and administration methods included oral gavage, intrap",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12446281_the_potential_value_of_quercetin_for_colorectal_cancer_a_sys-u-2235",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 2235,
+      "sentence": "The study periods in the included studies also varied from 4 to 24 weeks, which may lead to inadequate representation of changes in outcome indicators.",
+      "context_window": "study periods in the included studies also varied from 4 to 24 weeks, which may lead to inadequate representation of changes in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

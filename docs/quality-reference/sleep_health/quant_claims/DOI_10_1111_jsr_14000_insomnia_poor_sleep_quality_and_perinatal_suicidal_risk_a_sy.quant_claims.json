@@ -1,0 +1,87 @@
+{
+  "paper_id": "DOI_10_1111_jsr_14000_insomnia_poor_sleep_quality_and_perinatal_suicidal_risk_a_sy",
+  "doi": "10.1111/jsr.14000",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "odds_ratio": 1,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jsr_14000_insomnia_poor_sleep_quality_and_perinatal_suicidal_risk_a_sy-or-a-898",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.47",
+      "numeric_values": [
+        3.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 898,
+      "sentence": "The results of the meta\u2010analysis indicated that insomnia and poor sleep quality increase the odds of suicidal risk in pregnant women by more than threefold (OR = 3.47; 95% CI: 2.63-4.57).",
+      "context_window": "of suicidal risk in pregnant women by more than threefold (OR = 3.47; 95% CI: 2.63-4.57). Specifically, the odds ratio (OR) for",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_14000_insomnia_poor_sleep_quality_and_perinatal_suicidal_risk_a_sy-ci-909",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.63-4.57",
+      "numeric_values": [
+        2.63,
+        4.57
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 909,
+      "sentence": "The results of the meta\u2010analysis indicated that insomnia and poor sleep quality increase the odds of suicidal risk in pregnant women by more than threefold (OR = 3.47; 95% CI: 2.63-4.57).",
+      "context_window": "l risk in pregnant women by more than threefold (OR = 3.47; 95% CI: 2.63-4.57). Specifically, the odds ratio (OR) for poor sleep quality",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_14000_insomnia_poor_sleep_quality_and_perinatal_suicidal_risk_a_sy-ci-996",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.58-5.34",
+      "numeric_values": [
+        2.58,
+        5.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "Specifically, the odds ratio (OR) for poor sleep quality was 3.72 (95% CI: 2.58-5.34; <jats:italic>p</jats:italic> < 0.001), and for insomnia symptoms, after taking into account perinatal depression, was 4.76 (95% CI: 1.83-12.34; <jats:italic>p</jats:italic> < 0.001).",
+      "context_window": "cally, the odds ratio (OR) for poor sleep quality was 3.72 (95% CI: 2.58-5.34; <jats:italic>p</jats:italic> < 0.001), and for insomnia sy",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jsr_14000_insomnia_poor_sleep_quality_and_perinatal_suicidal_risk_a_sy-ci-1139",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.83-12.34",
+      "numeric_values": [
+        1.83,
+        12.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "Specifically, the odds ratio (OR) for poor sleep quality was 3.72 (95% CI: 2.58-5.34; <jats:italic>p</jats:italic> < 0.001), and for insomnia symptoms, after taking into account perinatal depression, was 4.76 (95% CI: 1.83-12.34; <jats:italic>p</jats:italic> < 0.001).",
+      "context_window": ", after taking into account perinatal depression, was 4.76 (95% CI: 1.83-12.34; <jats:italic>p</jats:italic> < 0.001). These findings emph",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

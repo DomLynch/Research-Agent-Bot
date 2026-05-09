@@ -1,0 +1,319 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie",
+  "doi": "10.1093/sleep/zsac079.640",
+  "extracted_at": "2026-05-08T20:05:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 11,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-n-997",
+      "claim_type": "sample_size",
+      "raw_text": "n=117",
+      "numeric_values": [
+        117.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 997,
+      "sentence": "T-tests and chi-squared were utilized for analysis of statistical significance.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Of the preliminary sample (n=117), 45% were male with mean age of 53 and mean BMI of 30.3.",
+      "context_window": "tle>Results</jats:title> <jats:p>Of the preliminary sample (n=117), 45% were male with mean age of 53 and mean BMI of 30.3. T",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1005",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1005,
+      "sentence": "T-tests and chi-squared were utilized for analysis of statistical significance.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Of the preliminary sample (n=117), 45% were male with mean age of 53 and mean BMI of 30.3.",
+      "context_window": "lts</jats:title> <jats:p>Of the preliminary sample (n=117), 45% were male with mean age of 53 and mean BMI of 30.3. The top",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1102",
+      "claim_type": "percentage",
+      "raw_text": "35.0%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "The top primary diagnoses were seizures (35.0%) and acute strokes (27.4%).",
+      "context_window": "mean BMI of 30.3. The top primary diagnoses were seizures (35.0%) and acute strokes (27.4%). Seventeen patients had known OS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1128",
+      "claim_type": "percentage",
+      "raw_text": "27.4%",
+      "numeric_values": [
+        27.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1128,
+      "sentence": "The top primary diagnoses were seizures (35.0%) and acute strokes (27.4%).",
+      "context_window": "primary diagnoses were seizures (35.0%) and acute strokes (27.4%). Seventeen patients had known OSA, and 30% had an Epworth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1174,
+      "sentence": "Seventeen patients had known OSA, and 30% had an Epworth Sleepiness Scale score greater than 10 prior to admission, indicating daytime sleepiness.",
+      "context_window": "cute strokes (27.4%). Seventeen patients had known OSA, and 30% had an Epworth Sleepiness Scale score greater than 10 prior",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1283",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "37% screened high-risk for OSA without a known diagnosis - 46.9% of these patients presented with an acute stroke, and 32% with seizures.",
+      "context_window": "than 10 prior to admission, indicating daytime sleepiness. 37% screened high-risk for OSA without a known diagnosis - 46.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1342",
+      "claim_type": "percentage",
+      "raw_text": "46.9%",
+      "numeric_values": [
+        46.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1342,
+      "sentence": "37% screened high-risk for OSA without a known diagnosis - 46.9% of these patients presented with an acute stroke, and 32% with seizures.",
+      "context_window": "37% screened high-risk for OSA without a known diagnosis - 46.9% of these patients presented with an acute stroke, and 32% w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1402",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "37% screened high-risk for OSA without a known diagnosis - 46.9% of these patients presented with an acute stroke, and 32% with seizures.",
+      "context_window": "46.9% of these patients presented with an acute stroke, and 32% with seizures. The mean (SD) total sleep time across 129 co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1540",
+      "claim_type": "percentage",
+      "raw_text": "83.0%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1540,
+      "sentence": "The mean (SD) total sleep time across 129 completed surveys was 7.02 hours (2.43), with an average sleep efficiency of 83.0% (18%), wake after sleep onset of 52.6 minutes (63.12), and 2.69 (2.66) awakenings a night.",
+      "context_window": "was 7.02 hours (2.43), with an average sleep efficiency of 83.0% (18%), wake after sleep onset of 52.6 minutes (63.12), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-1547",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1547,
+      "sentence": "The mean (SD) total sleep time across 129 completed surveys was 7.02 hours (2.43), with an average sleep efficiency of 83.0% (18%), wake after sleep onset of 52.6 minutes (63.12), and 2.69 (2.66) awakenings a night.",
+      "context_window": "02 hours (2.43), with an average sleep efficiency of 83.0% (18%), wake after sleep onset of 52.6 minutes (63.12), and 2.69",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-p-1739",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1739,
+      "sentence": "26 minutes, p=0.04) and increased awakenings (2.8 vs.",
+      "context_window": "icantly increased sleep latency (43 minutes vs. 26 minutes, p=0.04) and increased awakenings (2.8 vs. 1.6, p=0.039). There was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-p-1786",
+      "claim_type": "p_value",
+      "raw_text": "p=0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1786,
+      "sentence": "1.6, p=0.039).",
+      "context_window": "26 minutes, p=0.04) and increased awakenings (2.8 vs. 1.6, p=0.039). There was no statistical significance in sleep logs betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-p-2000",
+      "claim_type": "p_value",
+      "raw_text": "p=0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2000,
+      "sentence": "23 minutes, p=0.08).Between high and low-risk patients, there was no statistically significant difference in sleep aid ordering (p=0.48).",
+      "context_window": "p latency in high-risk patients (32 minutes vs. 23 minutes, p=0.08).Between high and low-risk patients, there was no statistic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-p-2117",
+      "claim_type": "p_value",
+      "raw_text": "p=0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2117,
+      "sentence": "23 minutes, p=0.08).Between high and low-risk patients, there was no statistically significant difference in sleep aid ordering (p=0.48).",
+      "context_window": "statistically significant difference in sleep aid ordering (p=0.48). Sleep aids were more likely to be ordered for patients in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-2211",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2211,
+      "sentence": "Sleep aids were more likely to be ordered for patients in shared rooms than private (75% vs.",
+      "context_window": "ly to be ordered for patients in shared rooms than private (75% vs. 25%, p= 0.0025).</jats:p> </jats:sec> <jats:sec> <jats:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-pct-2219",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2219,
+      "sentence": "25%, p= 0.0025).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>This study demonstrated that underlying sleep apnea significantly affected sleep latency and awakenings; preliminary data shows that Berlin risk may affect sleep latency.",
+      "context_window": "ordered for patients in shared rooms than private (75% vs. 25%, p= 0.0025).</jats:p> </jats:sec> <jats:sec> <jats:title>Co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_640_0643_sleep_quantity_quality_and_sleep_apnea_risk_for_inpatie-p-2224",
+      "claim_type": "p_value",
+      "raw_text": "p= 0.0025",
+      "numeric_values": [
+        0.0025
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2224,
+      "sentence": "25%, p= 0.0025).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>This study demonstrated that underlying sleep apnea significantly affected sleep latency and awakenings; preliminary data shows that Berlin risk may affect sleep latency.",
+      "context_window": "red for patients in shared rooms than private (75% vs. 25%, p= 0.0025).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

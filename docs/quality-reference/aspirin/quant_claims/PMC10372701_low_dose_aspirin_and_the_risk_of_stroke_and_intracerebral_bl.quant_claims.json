@@ -1,0 +1,1075 @@
+{
+  "paper_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl",
+  "doi": "10.1001/jamanetworkopen.2023.25803",
+  "extracted_at": "2026-05-08T20:06:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 16,
+    "percentage": 39,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-69",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "introduction",
+      "source_offset": 69,
+      "sentence": "Aspirin is an antiplatelet agent that has been used in low doses (75-100 mg/d) for the prevention of cardiovascular events.",
+      "context_window": "s an antiplatelet agent that has been used in low doses (75-100 mg/d) for the prevention of cardiovascular events. Despite some",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-560",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 560,
+      "sentence": "4 , 5 , 6 , 7\n\nInformation about the efficacy of low-dose aspirin in the primary prevention of stroke is derived from meta-analyses and results of recent major trials, most of which have been conducted in populations with mean ages younger than 70 years.",
+      "context_window": "e been conducted in populations with mean ages younger than 70 years. 7 , 8 , 9 , 10 Despite some inconsistency, these reports s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-2177",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2177,
+      "sentence": "In this study, we provide a comprehensive report on the incidence of first stroke and bleeding events occurring during the median 4.7 years of follow-up of the trial.",
+      "context_window": "irst stroke and bleeding events occurring during the median 4.7 years of follow-up of the trial.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-773",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 773,
+      "sentence": "18\n\nPeople aged 70 years or older (\u226565 years for US individuals who self-reported their race or ethnicity as African American or Hispanic) without a history of atrial fibrillation, stroke, transient ischemic attack, or myocardial infarction were included.",
+      "context_window": "cal analysis plan was described previously. 18 People aged 70 years or older (\u226565 years for US individuals who self-reported th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-793",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 793,
+      "sentence": "18\n\nPeople aged 70 years or older (\u226565 years for US individuals who self-reported their race or ethnicity as African American or Hispanic) without a history of atrial fibrillation, stroke, transient ischemic attack, or myocardial infarction were included.",
+      "context_window": "s described previously. 18 People aged 70 years or older (\u226565 years for US individuals who self-reported their race or ethnicit",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-1832",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1832,
+      "sentence": "US members of racial or ethnic minority groups aged 65 to 70 years were included owing to their higher risk of cardiovascular diseases.",
+      "context_window": ". US members of racial or ethnic minority groups aged 65 to 70 years were included owing to their higher risk of cardiovascular",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-1976",
+      "claim_type": "unit_value",
+      "raw_text": "180 mm",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1976,
+      "sentence": "Other eligibility criteria included systolic blood pressure below 180 mm Hg at entry.",
+      "context_window": "eligibility criteria included systolic blood pressure below 180 mm Hg at entry. All participants were free from dementia and p",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3424",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3424,
+      "sentence": "22 These were cardioembolic (ischemic stroke with a clear cardiac cause, typically atrial fibrillation), large-vessel atherosclerosis (ipsilateral ischemic stroke with a \u226550% extra or intracranial stenosis seen on vascular imaging), small-vessel occlusion (ischemic stroke with a clinical lacunar stroke syndrome and evidence on imaging of a lacunar infarction [subcortical infarct of <15-mm maximal diameter]), and undetermined etiology (reported when \u22652 causes were identified, the evaluation was complete and no cause found, or etiological investigations were incomplete).",
+      "context_window": "vessel atherosclerosis (ipsilateral ischemic stroke with a \u226550% extra or intracranial stenosis seen on vascular imaging), s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-4972",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4972,
+      "sentence": "With ischemic stroke and first intracranial bleed, we assessed the consistency of treatment effect across several subgroups, including age (65-74, 75-84, and \u226585 years), sex (male and female), smoking status (current and former or never), diabetes, hypertension, dyslipidemia, frailty category, and country (Australia and US).",
+      "context_window": "across several subgroups, including age (65-74, 75-84, and \u226585 years), sex (male and female), smoking status (current and former",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-40",
+      "claim_type": "percentage",
+      "raw_text": "56.4%",
+      "numeric_values": [
+        56.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 40,
+      "sentence": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up, 4.7 [3.6-5.7] years), 16 703 participants were recruited from Australia and 2411 participants from the US (eTable in Supplement 2 ).",
+      "context_window": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African Ameri",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-110",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 110,
+      "sentence": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up, 4.7 [3.6-5.7] years), 16 703 participants were recruited from Australia and 2411 participants from the US (eTable in Supplement 2 ).",
+      "context_window": "dian [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-128",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 128,
+      "sentence": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up, 4.7 [3.6-5.7] years), 16 703 participants were recruited from Australia and 2411 participants from the US (eTable in Supplement 2 ).",
+      "context_window": "[71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-149",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 149,
+      "sentence": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up, 4.7 [3.6-5.7] years), 16 703 participants were recruited from Australia and 2411 participants from the US (eTable in Supplement 2 ).",
+      "context_window": "01 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-170",
+      "claim_type": "percentage",
+      "raw_text": "91.3%",
+      "numeric_values": [
+        91.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 170,
+      "sentence": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up, 4.7 [3.6-5.7] years), 16 703 participants were recruited from Australia and 2411 participants from the US (eTable in Supplement 2 ).",
+      "context_window": "4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-211",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 211,
+      "sentence": "Of 19 114 participants (10 782 females [56.4%]; median [IQR] age, 74 [71.6-77.7] years; 901 African American [4.7%], 164 Asian [0.9%], 488 Hispanic [2.6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up, 4.7 [3.6-5.7] years), 16 703 participants were recruited from Australia and 2411 participants from the US (eTable in Supplement 2 ).",
+      "context_window": "6%], 17 450 White [91.3%], and 111 other race or ethnicity [0.6%]) recruited between 2010 and 2014 (median [IQR] follow-up,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-773",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 773,
+      "sentence": "21\n\nDuring follow-up, the rate of intracranial events including stroke was low, at 5.8 per 1000 person-years of follow-up A first stroke was experienced by 398 individuals (4.7%), including 203 individuals (4.7%) receiving placebo and 195 individuals (4.6%) receiving aspirin (hazard ratio [HR], 0.97; 95% CI, 0.79-1.18) ( Table ).",
+      "context_window": "ollow-up A first stroke was experienced by 398 individuals (4.7%), including 203 individuals (4.7%) receiving placebo and 19",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-807",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 807,
+      "sentence": "21\n\nDuring follow-up, the rate of intracranial events including stroke was low, at 5.8 per 1000 person-years of follow-up A first stroke was experienced by 398 individuals (4.7%), including 203 individuals (4.7%) receiving placebo and 195 individuals (4.6%) receiving aspirin (hazard ratio [HR], 0.97; 95% CI, 0.79-1.18) ( Table ).",
+      "context_window": "enced by 398 individuals (4.7%), including 203 individuals (4.7%) receiving placebo and 195 individuals (4.6%) receiving asp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-852",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 852,
+      "sentence": "21\n\nDuring follow-up, the rate of intracranial events including stroke was low, at 5.8 per 1000 person-years of follow-up A first stroke was experienced by 398 individuals (4.7%), including 203 individuals (4.7%) receiving placebo and 195 individuals (4.6%) receiving aspirin (hazard ratio [HR], 0.97; 95% CI, 0.79-1.18) ( Table ).",
+      "context_window": "3 individuals (4.7%) receiving placebo and 195 individuals (4.6%) receiving aspirin (hazard ratio [HR], 0.97; 95% CI, 0.79-1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-902",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 902,
+      "sentence": "21\n\nDuring follow-up, the rate of intracranial events including stroke was low, at 5.8 per 1000 person-years of follow-up A first stroke was experienced by 398 individuals (4.7%), including 203 individuals (4.7%) receiving placebo and 195 individuals (4.6%) receiving aspirin (hazard ratio [HR], 0.97; 95% CI, 0.79-1.18) ( Table ).",
+      "context_window": "ividuals (4.6%) receiving aspirin (hazard ratio [HR], 0.97; 95% CI, 0.79-1.18) ( Table ). Of these events, 53 strokes were",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 994,
+      "sentence": "Of these events, 53 strokes were fatal, including 22 strokes (0.5%) among individuals receiving placebo and 31 strokes (0.7%) among those receiving aspirin (HR, 1.42; 95% CI, 0.82-2.45).",
+      "context_window": "these events, 53 strokes were fatal, including 22 strokes (0.5%) among individuals receiving placebo and 31 strokes (0.7%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-1052",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1052,
+      "sentence": "Of these events, 53 strokes were fatal, including 22 strokes (0.5%) among individuals receiving placebo and 31 strokes (0.7%) among those receiving aspirin (HR, 1.42; 95% CI, 0.82-2.45).",
+      "context_window": "(0.5%) among individuals receiving placebo and 31 strokes (0.7%) among those receiving aspirin (HR, 1.42; 95% CI, 0.82-2.45",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-1099",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1099,
+      "sentence": "Of these events, 53 strokes were fatal, including 22 strokes (0.5%) among individuals receiving placebo and 31 strokes (0.7%) among those receiving aspirin (HR, 1.42; 95% CI, 0.82-2.45).",
+      "context_window": "31 strokes (0.7%) among those receiving aspirin (HR, 1.42; 95% CI, 0.82-2.45). For comparison, there were 91 deaths from c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-1365",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1365,
+      "sentence": "Fatal events were defined as events followed by death within 30 days.",
+      "context_window": "atal events were defined as events followed by death within 30 days. There were 312 participants with a first ischemic stroke",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-1433",
+      "claim_type": "percentage",
+      "raw_text": "78.4%",
+      "numeric_values": [
+        78.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1433,
+      "sentence": "There were 312 participants with a first ischemic stroke (78.4% of all strokes), of which 24 strokes were fatal (10 individuals with placebo and 14 individuals with aspirin).",
+      "context_window": "There were 312 participants with a first ischemic stroke (78.4% of all strokes), of which 24 strokes were fatal (10 individ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-1605",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1605,
+      "sentence": "Among participants receiving aspirin, 146 individuals (1.5%) sustained an ischemic stroke, compared with 166 individuals (1.7%) assigned to placebo.",
+      "context_window": "in). Among participants receiving aspirin, 146 individuals (1.5%) sustained an ischemic stroke, compared with 166 individual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-1672",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1672,
+      "sentence": "Among participants receiving aspirin, 146 individuals (1.5%) sustained an ischemic stroke, compared with 166 individuals (1.7%) assigned to placebo.",
+      "context_window": "ustained an ischemic stroke, compared with 166 individuals (1.7%) assigned to placebo. The corresponding event rate was 3.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-2011",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2011,
+      "sentence": "Overall, aspirin did not result in a statistically significant reduction in the risk of ischemic stroke (HR, 0.89; 95% CI, 0.71-1.11).",
+      "context_window": "ificant reduction in the risk of ischemic stroke (HR, 0.89; 95% CI, 0.71-1.11). In subgroup analysis (eFigure in Supplemen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-2329",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2329,
+      "sentence": "The suggestive beneficial effect of aspirin in the subgroup aged 85 years and older was discounted because of small numbers (14 individuals with aspirin and 24 individuals with placebo) and a negative statistical test for heterogeneity (HR, 0.51; 95% CI, 0.25-0.99; P = .15).",
+      "context_window": "uggestive beneficial effect of aspirin in the subgroup aged 85 years and older was discounted because of small numbers (14 indiv",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-2511",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2511,
+      "sentence": "The suggestive beneficial effect of aspirin in the subgroup aged 85 years and older was discounted because of small numbers (14 individuals with aspirin and 24 individuals with placebo) and a negative statistical test for heterogeneity (HR, 0.51; 95% CI, 0.25-0.99; P = .15).",
+      "context_window": "nd a negative statistical test for heterogeneity (HR, 0.51; 95% CI, 0.25-0.99; P = .15). The Table shows the frequency of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-p-2530",
+      "claim_type": "p_value",
+      "raw_text": "P = .15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2530,
+      "sentence": "The suggestive beneficial effect of aspirin in the subgroup aged 85 years and older was discounted because of small numbers (14 individuals with aspirin and 24 individuals with placebo) and a negative statistical test for heterogeneity (HR, 0.51; 95% CI, 0.25-0.99; P = .15).",
+      "context_window": "stical test for heterogeneity (HR, 0.51; 95% CI, 0.25-0.99; P = .15). The Table shows the frequency of ischemic stroke subtype",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-2919",
+      "claim_type": "percentage",
+      "raw_text": "72.5%",
+      "numeric_values": [
+        72.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2919,
+      "sentence": "Of 91 individuals with an undetermined etiology, this was due to incomplete evaluation, as is common in this age group, among 66 individuals (72.5%).",
+      "context_window": "tion, as is common in this age group, among 66 individuals (72.5%). There were no associations between aspirin and ischemic s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3169",
+      "claim_type": "percentage",
+      "raw_text": "21.6%",
+      "numeric_values": [
+        21.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3169,
+      "sentence": "Overall, there were 86 hemorrhagic strokes (21.6% of all strokes).",
+      "context_window": "in the Table . Overall, there were 86 hemorrhagic strokes (21.6% of all strokes). Strokes resulting from intracerebral hemor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3354",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3354,
+      "sentence": "Strokes resulting from intracerebral hemorrhage were less common than ischemic strokes, and the rate of hemorrhagic stroke recorded with aspirin (49 individuals [0.5%]) was not statistically significantly greater than that with placebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19).",
+      "context_window": "f hemorrhagic stroke recorded with aspirin (49 individuals [0.5%]) was not statistically significantly greater than that wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3445",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3445,
+      "sentence": "Strokes resulting from intracerebral hemorrhage were less common than ischemic strokes, and the rate of hemorrhagic stroke recorded with aspirin (49 individuals [0.5%]) was not statistically significantly greater than that with placebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19).",
+      "context_window": "gnificantly greater than that with placebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19). There were more lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3462",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3462,
+      "sentence": "Strokes resulting from intracerebral hemorrhage were less common than ischemic strokes, and the rate of hemorrhagic stroke recorded with aspirin (49 individuals [0.5%]) was not statistically significantly greater than that with placebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19).",
+      "context_window": "er than that with placebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19). There were more lobar hemorrhagic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-p-3481",
+      "claim_type": "p_value",
+      "raw_text": "P = .19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3481,
+      "sentence": "Strokes resulting from intracerebral hemorrhage were less common than ischemic strokes, and the rate of hemorrhagic stroke recorded with aspirin (49 individuals [0.5%]) was not statistically significantly greater than that with placebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19).",
+      "context_window": "lacebo (37 individuals [0.4%]; HR, 1.33; 95% CI, 0.87-2.04; P = .19). There were more lobar hemorrhagic strokes (40 strokes) th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3994",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3994,
+      "sentence": "The difference in rates of other intracranial bleeding ( Table ) between individuals assigned to aspirin or placebo was not statistically significant (59 individuals [0.6%] v.",
+      "context_window": "placebo was not statistically significant (59 individuals [0.6%] v. 41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-4019",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4019,
+      "sentence": "41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P = .07).",
+      "context_window": "cally significant (59 individuals [0.6%] v. 41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P = .07). Subdural hematoma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-4036",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4036,
+      "sentence": "41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P = .07).",
+      "context_window": "(59 individuals [0.6%] v. 41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P = .07). Subdural hematoma and subarachnoid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-p-4055",
+      "claim_type": "p_value",
+      "raw_text": "P = .07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4055,
+      "sentence": "41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P = .07).",
+      "context_window": ".6%] v. 41 individuals [0.4%]; HR, 1.45; 95% CI, 0.98-2.16; P = .07). Subdural hematoma and subarachnoid hemorrhage, whether oc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-4558",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4558,
+      "sentence": "The totals of stroke and other categories of intracranial bleeding were significantly greater among individuals treated with aspirin (108 individuals [1.1%]) compared with those receiving placebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2 ).",
+      "context_window": "er among individuals treated with aspirin (108 individuals [1.1%]) compared with those receiving placebo (79 individuals [0.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-4620",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4620,
+      "sentence": "The totals of stroke and other categories of intracranial bleeding were significantly greater among individuals treated with aspirin (108 individuals [1.1%]) compared with those receiving placebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2 ).",
+      "context_window": "1%]) compared with those receiving placebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-4637",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4637,
+      "sentence": "The totals of stroke and other categories of intracranial bleeding were significantly greater among individuals treated with aspirin (108 individuals [1.1%]) compared with those receiving placebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2 ).",
+      "context_window": "h those receiving placebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2 ). In absolute t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-p-4656",
+      "claim_type": "p_value",
+      "raw_text": "P = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4656,
+      "sentence": "The totals of stroke and other categories of intracranial bleeding were significantly greater among individuals treated with aspirin (108 individuals [1.1%]) compared with those receiving placebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2 ).",
+      "context_window": "lacebo (79 individuals [0.8%]; HR, 1.38; 95% CI, 1.03-1.84; P = .03) ( Table , Figure 2 ). In absolute terms, this resulted fro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-5093",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5093,
+      "sentence": "Error bars indicate 95% CIs.",
+      "context_window": "cluding frailty category ( Figure 3 ). Error bars indicate 95% CIs. HR indicates hazard ratio. Figure 4 shows the unadju",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-5310",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5310,
+      "sentence": "For first ischemic stroke, the model yielded an HR of 0.89 (95% CI, 0.71-1.11) for the aspirin treatment effect.",
+      "context_window": "For first ischemic stroke, the model yielded an HR of 0.89 (95% CI, 0.71-1.11) for the aspirin treatment effect. For intrac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-5421",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5421,
+      "sentence": "For intracranial bleeding, the corresponding HR was 1.38 (95% CI, 1.03-1.84).",
+      "context_window": ". For intracranial bleeding, the corresponding HR was 1.38 (95% CI, 1.03-1.84). There was a suggestion of divergence as the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-5584",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5584,
+      "sentence": "There was a suggestion of divergence as the follow-up continued, largely due to other nonstroke categories of intracranial bleeding (HR, 1.45; 95% CI, 0.98-2.16).",
+      "context_window": "er nonstroke categories of intracranial bleeding (HR, 1.45; 95% CI, 0.98-2.16). HR indicates hazard ratio. Absolute numbe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-5733",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "results",
+      "source_offset": 5733,
+      "sentence": "Among 1000 individuals taking 100 mg/d of low-dose aspirin over 5 years, there were 2.5 fewer ischemic strokes at the expense of 3.5 cases of intracranial hemorrhage, a finding that did not meet the threshold for statistical significance.",
+      "context_window": "emorrhagic events were small. Among 1000 individuals taking 100 mg/d of low-dose aspirin over 5 years, there were 2.5 fewer isch",
+      "claim_role": "dose",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-5767",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5767,
+      "sentence": "Among 1000 individuals taking 100 mg/d of low-dose aspirin over 5 years, there were 2.5 fewer ischemic strokes at the expense of 3.5 cases of intracranial hemorrhage, a finding that did not meet the threshold for statistical significance.",
+      "context_window": "g 1000 individuals taking 100 mg/d of low-dose aspirin over 5 years, there were 2.5 fewer ischemic strokes at the expense of 3.",
+      "claim_role": "dose",
+      "endpoint": "intracranial hemorrhage",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-6202",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6202,
+      "sentence": "Major extracranial hemorrhage ( Figure 2 ) was driven by the increased risk of upper gastrointestinal bleeding with aspirin compared with placebo, as previously found (HR, 1.87; 95% CI, 1.32-2.66).",
+      "context_window": "pirin compared with placebo, as previously found (HR, 1.87; 95% CI, 1.32-2.66). 6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-2121",
+      "claim_type": "percentage",
+      "raw_text": "78.4%",
+      "numeric_values": [
+        78.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2121,
+      "sentence": "9 , 27 , 28 Of strokes occurring in the trial, 78.4% were adjudicated as ischemic in origin, and among etiological subtypes, the largest differences between individuals assigned to aspirin or placebo were in strokes caused by small vessel occlusion (11 cases fewer) and those of presumed cardioembolic origin (9 cases fewer).",
+      "context_window": "prevention. 9 , 27 , 28 Of strokes occurring in the trial, 78.4% were adjudicated as ischemic in origin, and among etiologic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-2749",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/d",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/d",
+      "source_section": "discussion",
+      "source_offset": 2749,
+      "sentence": "However, the finding is in keeping with the results of an early randomized placebo-controlled trial of aspirin (325 mg/d) in 372 individuals with a 50% or greater asymptomatic internal carotid artery stenosis, which showed no evidence of benefit over 2 years of follow-up.",
+      "context_window": "of an early randomized placebo-controlled trial of aspirin (325 mg/d) in 372 individuals with a 50% or greater asymptomatic inte",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-2785",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2785,
+      "sentence": "However, the finding is in keeping with the results of an early randomized placebo-controlled trial of aspirin (325 mg/d) in 372 individuals with a 50% or greater asymptomatic internal carotid artery stenosis, which showed no evidence of benefit over 2 years of follow-up.",
+      "context_window": "olled trial of aspirin (325 mg/d) in 372 individuals with a 50% or greater asymptomatic internal carotid artery stenosis, w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-2888",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2888,
+      "sentence": "However, the finding is in keeping with the results of an early randomized placebo-controlled trial of aspirin (325 mg/d) in 372 individuals with a 50% or greater asymptomatic internal carotid artery stenosis, which showed no evidence of benefit over 2 years of follow-up.",
+      "context_window": "d artery stenosis, which showed no evidence of benefit over 2 years of follow-up. 29 Among individuals randomized to aspirin,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-3962",
+      "claim_type": "percentage",
+      "raw_text": "21.6%",
+      "numeric_values": [
+        21.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3962,
+      "sentence": "Although intracerebral hemorrhage constituted 21.6% of strokes, one-third of these (29/86 strokes) were fatal compared with 7.7% of ischemic strokes (24/312 strokes).",
+      "context_window": "tality rates. Although intracerebral hemorrhage constituted 21.6% of strokes, one-third of these (29/86 strokes) were fatal c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-pct-4040",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4040,
+      "sentence": "Although intracerebral hemorrhage constituted 21.6% of strokes, one-third of these (29/86 strokes) were fatal compared with 7.7% of ischemic strokes (24/312 strokes).",
+      "context_window": "one-third of these (29/86 strokes) were fatal compared with 7.7% of ischemic strokes (24/312 strokes). The fatality rate aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-6442",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6442,
+      "sentence": "Results are mainly generalizable to a White population (participation by individuals in racial and ethnic minority groups was largely limited to the US, where Black and Hispanic people aged \u226565 years were purposively recruited) with routine access to optimal blood pressure and lipid control.",
+      "context_window": "ly limited to the US, where Black and Hispanic people aged \u226565 years were purposively recruited) with routine access to optimal",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10372701_low_dose_aspirin_and_the_risk_of_stroke_and_intracerebral_bl-u-559",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 559,
+      "sentence": "Results are mainly generalizable to a White population (participation by individuals in racial and ethnic minority groups was largely limited to the US, where Black and Hispanic people aged \u226565 years were purposively recruited) with routine access to optimal blood pressure and lipid control.",
+      "context_window": "ly limited to the US, where Black and Hispanic people aged \u226565 years were purposively recruited) with routine access to optimal",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

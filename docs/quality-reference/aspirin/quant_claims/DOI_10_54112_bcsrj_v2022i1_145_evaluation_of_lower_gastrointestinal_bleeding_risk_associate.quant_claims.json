@@ -1,0 +1,122 @@
+{
+  "paper_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate",
+  "doi": "10.54112/bcsrj.v2022i1.145",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 2,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate-pct-658",
+      "claim_type": "percentage",
+      "raw_text": "32.3%",
+      "numeric_values": [
+        32.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 658,
+      "sentence": "The study was conducted on 372 patients, 120 (32.3%) were female while 252 (67.7 %) were male.",
+      "context_window": "was recorded. The study was conducted on 372 patients, 120 (32.3%) were female while 252 (67.7 %) were male. Mean age of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate-pct-688",
+      "claim_type": "percentage",
+      "raw_text": "67.7 %",
+      "numeric_values": [
+        67.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 688,
+      "sentence": "The study was conducted on 372 patients, 120 (32.3%) were female while 252 (67.7 %) were male.",
+      "context_window": "nducted on 372 patients, 120 (32.3%) were female while 252 (67.7 %) were male. Mean age of the patients was 40 years. Mean dur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate-u-736",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "Mean age of the patients was 40 years.",
+      "context_window": "while 252 (67.7 %) were male. Mean age of the patients was 40 years. Mean duration of use of low dose aspirin was 22.23 \u00b1 16.59",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate-msd-791",
+      "claim_type": "mean_sd",
+      "raw_text": "22.23 \u00b1 16.59",
+      "numeric_values": [
+        22.23,
+        16.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 791,
+      "sentence": "Mean duration of use of low dose aspirin was 22.23 \u00b1 16.59 months.",
+      "context_window": "was 40 years. Mean duration of use of low dose aspirin was 22.23 \u00b1 16.59 months. Lower gastrointestinal bleeding was noted in 81 (21",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate-u-799",
+      "claim_type": "unit_value",
+      "raw_text": "16.59 months",
+      "numeric_values": [
+        16.59
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 799,
+      "sentence": "Mean duration of use of low dose aspirin was 22.23 \u00b1 16.59 months.",
+      "context_window": "years. Mean duration of use of low dose aspirin was 22.23 \u00b1 16.59 months. Lower gastrointestinal bleeding was noted in 81 (21.8%). U",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v2022i1_145_evaluation_of_lower_gastrointestinal_bleeding_risk_associate-pct-862",
+      "claim_type": "percentage",
+      "raw_text": "21.8%",
+      "numeric_values": [
+        21.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 862,
+      "sentence": "Lower gastrointestinal bleeding was noted in 81 (21.8%).",
+      "context_window": "59 months. Lower gastrointestinal bleeding was noted in 81 (21.8%). Use of dose aspirin is significantly associated with lowe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,647 @@
+{
+  "paper_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_",
+  "doi": "10.1371/journal.pone.0270095",
+  "extracted_at": "2026-05-08T20:05:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 3,
+    "unit_value": 7,
+    "percentage": 8,
+    "p_value": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-msd-558",
+      "claim_type": "mean_sd",
+      "raw_text": "74 \u00b1 0.3",
+      "numeric_values": [
+        74.0,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 558,
+      "sentence": "We studied 32 cognitively healthy community-dwelling older adults (age 74 \u00b1 0.3 years) who completed an at-home sleep assessment (Zeo, Inc.) and the PSQI.",
+      "context_window": "32 cognitively healthy community-dwelling older adults (age 74 \u00b1 0.3 years) who completed an at-home sleep assessment (Zeo, Inc.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-563",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 years",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 563,
+      "sentence": "We studied 32 cognitively healthy community-dwelling older adults (age 74 \u00b1 0.3 years) who completed an at-home sleep assessment (Zeo, Inc.) and the PSQI.",
+      "context_window": "gnitively healthy community-dwelling older adults (age 74 \u00b1 0.3 years) who completed an at-home sleep assessment (Zeo, Inc.) and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-230",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 230,
+      "sentence": "The National Sleep Foundation\u2019s 2003 Sleep in America Poll confirmed that 46% of adults aged 65-74 reported insomnia symptoms, while 39% napped.",
+      "context_window": "leep Foundation\u2019s 2003 Sleep in America Poll confirmed that 46% of adults aged 65-74 reported insomnia symptoms, while 39%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-289",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 289,
+      "sentence": "The National Sleep Foundation\u2019s 2003 Sleep in America Poll confirmed that 46% of adults aged 65-74 reported insomnia symptoms, while 39% napped.",
+      "context_window": "46% of adults aged 65-74 reported insomnia symptoms, while 39% napped. These rates increased to 50% and 46%, respectively,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-326",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 326,
+      "sentence": "These rates increased to 50% and 46%, respectively, in participants aged 75-84 years [ 2 ].",
+      "context_window": "somnia symptoms, while 39% napped. These rates increased to 50% and 46%, respectively, in participants aged 75-84 years [ 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-334",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 334,
+      "sentence": "These rates increased to 50% and 46%, respectively, in participants aged 75-84 years [ 2 ].",
+      "context_window": "ymptoms, while 39% napped. These rates increased to 50% and 46%, respectively, in participants aged 75-84 years [ 2 ]. Othe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 377,
+      "sentence": "These rates increased to 50% and 46%, respectively, in participants aged 75-84 years [ 2 ].",
+      "context_window": "eased to 50% and 46%, respectively, in participants aged 75-84 years [ 2 ]. Others have shown higher rates, with approximately 6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-444",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 444,
+      "sentence": "Others have shown higher rates, with approximately 65% of adults over 65 years old reporting insomnia symptoms [ 3 ].",
+      "context_window": "s [ 2 ]. Others have shown higher rates, with approximately 65% of adults over 65 years old reporting insomnia symptoms [ 3",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-463",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 463,
+      "sentence": "Others have shown higher rates, with approximately 65% of adults over 65 years old reporting insomnia symptoms [ 3 ].",
+      "context_window": "e shown higher rates, with approximately 65% of adults over 65 years old reporting insomnia symptoms [ 3 ]. These sleep disturba",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-msd-48",
+      "claim_type": "mean_sd",
+      "raw_text": "74\u00b10.3",
+      "numeric_values": [
+        74.0,
+        0.3
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 48,
+      "sentence": "Thirty-two community-dwelling older adults (age 74\u00b10.3) were recruited from the longitudinal Hillblom Healthy Aging Network at the University of California, San Francisco Memory and Aging Center.",
+      "context_window": "Thirty-two community-dwelling older adults (age 74\u00b10.3) were recruited from the longitudinal Hillblom Healthy Agin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-msd-2227",
+      "claim_type": "mean_sd",
+      "raw_text": "6.8 \u00b1 2.2",
+      "numeric_values": [
+        6.8,
+        2.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2227,
+      "sentence": "Participants wore a wireless sleep-monitoring device (Zeo, Inc.) for up to 10 nights (6.8 \u00b1 2.2, range 3-10 nights) during their attempted sleep period.",
+      "context_window": "ss sleep-monitoring device (Zeo, Inc.) for up to 10 nights (6.8 \u00b1 2.2, range 3-10 nights) during their attempted sleep period. Th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "The sample had a mean age of 74 (67-84 years old) and was predominantly female (59.4%).",
+      "context_window": "are shown in Table 1 . The sample had a mean age of 74 (67-84 years old) and was predominantly female (59.4%). All subjects wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-908",
+      "claim_type": "percentage",
+      "raw_text": "59.4%",
+      "numeric_values": [
+        59.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 908,
+      "sentence": "The sample had a mean age of 74 (67-84 years old) and was predominantly female (59.4%).",
+      "context_window": "n age of 74 (67-84 years old) and was predominantly female (59.4%). All subjects were cognitively healthy (MMSE \u2265 27) and wel",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-991",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 991,
+      "sentence": "All subjects were cognitively healthy (MMSE \u2265 27) and well-educated (14 to 20 years of education).",
+      "context_window": "re cognitively healthy (MMSE \u2265 27) and well-educated (14 to 20 years of education). The PSQI total score ranged from 0 to 13 (<5",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-1113",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1113,
+      "sentence": "The PSQI total score ranged from 0 to 13 (<5 \u2018Good sleep quality\u2019, \u22655 \u2018Poor sleep quality\u2019), with 78% of the sample (25/32) reporting good sleep quality.",
+      "context_window": "13 (<5 \u2018Good sleep quality\u2019, \u22655 \u2018Poor sleep quality\u2019), with 78% of the sample (25/32) reporting good sleep quality. Most of",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-pct-1270",
+      "claim_type": "percentage",
+      "raw_text": "81.25%",
+      "numeric_values": [
+        81.25
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1270,
+      "sentence": "Most of the sample showed low risk for sleep apnea as assessed using the Berlin Sleep Questionnaire (81.25%).",
+      "context_window": "eep apnea as assessed using the Berlin Sleep Questionnaire (81.25%). Demographics and subjective sleep data are presented as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-1987",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.827",
+      "numeric_values": [
+        0.827
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1987,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2005",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.711",
+      "numeric_values": [
+        0.711
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2005,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2023",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.458",
+      "numeric_values": [
+        0.458
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2023,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "SQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2043",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.515",
+      "numeric_values": [
+        0.515
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2043,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "(%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2063",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.470",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2063,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": ") p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2083",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.203",
+      "numeric_values": [
+        0.203
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2083,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2103",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.997",
+      "numeric_values": [
+        0.997
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2103,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2125",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.545",
+      "numeric_values": [
+        0.545
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2125,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "= 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2139",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.370",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2139,
+      "sentence": "None of the objective sleep measures had a significant association with PSQI total score (RS (%) p = 0.827, DS (%) p = 0.711, LS (%) p = 0.458, WASO (%) p = 0.515, RS (min) p = 0.470, DS (min) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQI components.",
+      "context_window": "in) p = 0.203, LS (min) p = 0.997, WASO (min) p = 0.545, SE p = 0.370, TST = 0.833) but showed significant relationships with PSQ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2659",
+      "claim_type": "p_value",
+      "raw_text": "p <0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2659,
+      "sentence": "Among the PSQI components, objective SE and PSQI SE (\u03b2 = 0.67, p <0.047) were positively associated.",
+      "context_window": "ng the PSQI components, objective SE and PSQI SE (\u03b2 = 0.67, p <0.047) were positively associated. Objective WASO (% and min) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2869",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2869,
+      "sentence": "Objective WASO (% and min) and PSQI sleep disturbance were positively associated, where the greater the WASO, the higher the PSQI sleep disturbance score (WASO % \u03b2 = 1.06, p = 0.005; WASO Min \u03b2 = 0.69, p = 0.01).",
+      "context_window": "e higher the PSQI sleep disturbance score (WASO % \u03b2 = 1.06, p = 0.005; WASO Min \u03b2 = 0.69, p = 0.01). We also found that objective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2899",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2899,
+      "sentence": "Objective WASO (% and min) and PSQI sleep disturbance were positively associated, where the greater the WASO, the higher the PSQI sleep disturbance score (WASO % \u03b2 = 1.06, p = 0.005; WASO Min \u03b2 = 0.69, p = 0.01).",
+      "context_window": "bance score (WASO % \u03b2 = 1.06, p = 0.005; WASO Min \u03b2 = 0.69, p = 0.01). We also found that objective SE (% \u03b2 = -0.82, p = 0.016)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-2956",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2956,
+      "sentence": "We also found that objective SE (% \u03b2 = -0.82, p = 0.016) was negatively associated with PSQI sleep disturbance, where the less efficient the sleep, the greater the sleep disturbance.",
+      "context_window": "9, p = 0.01). We also found that objective SE (% \u03b2 = -0.82, p = 0.016) was negatively associated with PSQI sleep disturbance, whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-3134",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3134,
+      "sentence": "Similarly, objective TST (Min \u03b2 = -0.40, p = 0.03) was negatively associated with PSQI sleep disturbance, where the less time the participant slept, the greater the sleep disturbance.",
+      "context_window": "sleep disturbance. Similarly, objective TST (Min \u03b2 = -0.40, p = 0.03) was negatively associated with PSQI sleep disturbance, whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-3480",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3480,
+      "sentence": "Lastly, we found a significant negative association between objective Deep Sleep (min) and PSQI Daytime dysfunction (\u03b2 = -0.43, p = 0.027), where the less Deep Sleep the more Daytime dysfunction.",
+      "context_window": "e Deep Sleep (min) and PSQI Daytime dysfunction (\u03b2 = -0.43, p = 0.027), where the less Deep Sleep the more Daytime dysfunction. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-3717",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3717,
+      "sentence": "The standard deviation (SD) of objective sleep parameters was significant only in two models: 1.- when evaluating the WASO effect on PSQI Sleep Disturbances (\u03b2 = -0.72, p = 0.042) and 2.- when looking at the objective SE effect on PSQI SE (\u03b2 = 0.69, p = 0.036).",
+      "context_window": "ting the WASO effect on PSQI Sleep Disturbances (\u03b2 = -0.72, p = 0.042) and 2.- when looking at the objective SE effect on PSQI SE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-p-3798",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3798,
+      "sentence": "The standard deviation (SD) of objective sleep parameters was significant only in two models: 1.- when evaluating the WASO effect on PSQI Sleep Disturbances (\u03b2 = -0.72, p = 0.042) and 2.- when looking at the objective SE effect on PSQI SE (\u03b2 = 0.69, p = 0.036).",
+      "context_window": "en looking at the objective SE effect on PSQI SE (\u03b2 = 0.69, p = 0.036). In other words, the WASO variability across nights was ne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-2660",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2660,
+      "sentence": "However, we used an objective sleep measure that spans 10 days, as opposed to the 1-2 usually measured by the laboratory PSGs, which allowed us to address such concerns.",
+      "context_window": "1 ]. However, we used an objective sleep measure that spans 10 days, as opposed to the 1-2 usually measured by the laboratory P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9232154_pittsburgh_sleep_quality_index_psqi_responses_are_modulated_-u-7000",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 7000,
+      "sentence": "First, we were able to perform the sleep study in a real-life setting (home environment) for 10 days, enabling analysis of sleep variability.",
+      "context_window": "e sleep study in a real-life setting (home environment) for 10 days, enabling analysis of sleep variability. Second, we were ab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

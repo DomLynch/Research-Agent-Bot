@@ -1,0 +1,551 @@
+{
+  "paper_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute",
+  "doi": "10.1093/europace/euab116.533",
+  "extracted_at": "2026-05-08T20:10:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10,
+    "percentage": 3,
+    "mean_sd": 16
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-502",
+      "claim_type": "unit_value",
+      "raw_text": "16 mg",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 502,
+      "sentence": "Doxorubicin (Dx) cardiotoxicity manifested by heart failure development was reproduced classically by anthracycline i/p administration in rats in cumulative dose of 16 mg/kg (4 mg/kg four times during 2 weeks) - Dx series.",
+      "context_window": "hracycline i/p administration in rats in cumulative dose of 16 mg/kg (4 mg/kg four times during 2 weeks) - Dx series. Series",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-512",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 512,
+      "sentence": "Doxorubicin (Dx) cardiotoxicity manifested by heart failure development was reproduced classically by anthracycline i/p administration in rats in cumulative dose of 16 mg/kg (4 mg/kg four times during 2 weeks) - Dx series.",
+      "context_window": "i/p administration in rats in cumulative dose of 16 mg/kg (4 mg/kg four times during 2 weeks) - Dx series. Series with chro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-538",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 538,
+      "sentence": "Doxorubicin (Dx) cardiotoxicity manifested by heart failure development was reproduced classically by anthracycline i/p administration in rats in cumulative dose of 16 mg/kg (4 mg/kg four times during 2 weeks) - Dx series.",
+      "context_window": "s in cumulative dose of 16 mg/kg (4 mg/kg four times during 2 weeks) - Dx series. Series with chronic action of taurine (Tr) in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-681",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 681,
+      "sentence": "Series with chronic action of taurine (Tr) included rats receiving this aminoacid daily per os during Dx administration (100 mg/kg) - Dx + Tr series.",
+      "context_window": "iving this aminoacid daily per os during Dx administration (100 mg/kg) - Dx + Tr series. Rats of both series were sacrificed b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-pct-1545",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1545,
+      "sentence": "The first, taurine reversed the negative inotropic effect of isolated heart on endothelin-1 (ET-1) action (10-7 M), detected in Dx series and manifested by both systolic pressure of left ventricle (LV) and cardiac output fall by about 9,1%.",
+      "context_window": "e of left ventricle (LV) and cardiac output fall by about 9,1%. Taurine assured increase of these indices during ET-1 stim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-1764",
+      "claim_type": "mean_sd",
+      "raw_text": "6 \u00b1 9",
+      "numeric_values": [
+        6.0,
+        9.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1764,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-1778",
+      "claim_type": "mean_sd",
+      "raw_text": "8 \u00b1 6",
+      "numeric_values": [
+        8.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1778,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-1805",
+      "claim_type": "mean_sd",
+      "raw_text": "8389 \u00b1 445",
+      "numeric_values": [
+        8389.0,
+        445.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1805,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-1819",
+      "claim_type": "mean_sd",
+      "raw_text": "7216 \u00b1 363",
+      "numeric_values": [
+        7216.0,
+        363.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1819,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "(118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/se",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-1826",
+      "claim_type": "unit_value",
+      "raw_text": "363 mm",
+      "numeric_values": [
+        363.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1826,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "\u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-1856",
+      "claim_type": "mean_sd",
+      "raw_text": "7526 \u00b1 378",
+      "numeric_values": [
+        7526.0,
+        378.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1856,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "P/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-1870",
+      "claim_type": "mean_sd",
+      "raw_text": "5684 \u00b1 322",
+      "numeric_values": [
+        5684.0,
+        322.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1870,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "\u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance. The t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-1877",
+      "claim_type": "unit_value",
+      "raw_text": "322 mm",
+      "numeric_values": [
+        322.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1877,
+      "sentence": "The second, Tr notably improved both isovolumic relaxation and contraction of myocardium exhibited by significant enhancement of Veragut index (118,6 \u00b1 9,6 vs 94,8 \u00b1 6,5 1/sec), +dP/dPmax (8389 \u00b1 445 vs 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance.",
+      "context_window": "s 7216 \u00b1 363 mm Hg/sec) and -dP/dTmax (7526 \u00b1 378 vs 5684 \u00b1 322 mm Hg/sec) during efforts with volume and resistance. The thir",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-pct-2062",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2062,
+      "sentence": "The third, Tr significantly decreased LV end diastolic pressure (LVSDP) when coronary pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg.",
+      "context_window": "SDP) when coronary pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-2081",
+      "claim_type": "unit_value",
+      "raw_text": "120 cm",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 2081,
+      "sentence": "The third, Tr significantly decreased LV end diastolic pressure (LVSDP) when coronary pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg.",
+      "context_window": "pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg. Acute Tr actio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2104",
+      "claim_type": "mean_sd",
+      "raw_text": "2 \u00b1 1",
+      "numeric_values": [
+        2.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2104,
+      "sentence": "The third, Tr significantly decreased LV end diastolic pressure (LVSDP) when coronary pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg.",
+      "context_window": "heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg. Acute Tr action manifested by: (i) s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2118",
+      "claim_type": "mean_sd",
+      "raw_text": "8 \u00b1 1",
+      "numeric_values": [
+        8.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2118,
+      "sentence": "The third, Tr significantly decreased LV end diastolic pressure (LVSDP) when coronary pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg.",
+      "context_window": "by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg. Acute Tr action manifested by: (i) significant LVS",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-2124",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 2124,
+      "sentence": "The third, Tr significantly decreased LV end diastolic pressure (LVSDP) when coronary pressure of isovolumic heart elevated by 50% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg.",
+      "context_window": "% (from 80 up to 120 cm H20 column): 16,2 \u00b1 1,2 vs 18,8 \u00b1 1,4 mm Hg. Acute Tr action manifested by: (i) significant LVSDP di",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2227",
+      "claim_type": "mean_sd",
+      "raw_text": "4 \u00b1 3",
+      "numeric_values": [
+        4.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2227,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2241",
+      "claim_type": "mean_sd",
+      "raw_text": "7 \u00b1 4",
+      "numeric_values": [
+        7.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2241,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "VSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-2247",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 2247,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "iminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2291",
+      "claim_type": "mean_sd",
+      "raw_text": "3 \u00b1 1",
+      "numeric_values": [
+        3.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2291,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasyst",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2305",
+      "claim_type": "mean_sd",
+      "raw_text": "8 \u00b1 1",
+      "numeric_values": [
+        8.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2305,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-u-2311",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 2311,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-pct-2429",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2429,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "e when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2437",
+      "claim_type": "mean_sd",
+      "raw_text": "6 \u00b1 2",
+      "numeric_values": [
+        6.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2437,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "he glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachya",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2451",
+      "claim_type": "mean_sd",
+      "raw_text": "5 \u00b1 2",
+      "numeric_values": [
+        5.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2451,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "tent of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2594",
+      "claim_type": "mean_sd",
+      "raw_text": "2 \u00b1 0",
+      "numeric_values": [
+        2.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2594,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "tassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion. Taurine,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_europace_euab116_533_taurine_blunts_doxorubicin_cardiotoxicity_chronic_and_acute-msd-2607",
+      "claim_type": "mean_sd",
+      "raw_text": "9 \u00b1 0",
+      "numeric_values": [
+        9.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2607,
+      "sentence": "Acute Tr action manifested by: (i) significant LVSDP diminution during 30 min of ischemia (52,4 \u00b1 3,1 vs 63,7 \u00b1 4,4 mm Hg) and on 45th min of reperfusion (18,3 \u00b1 1,3 vs 22,8 \u00b1 1,4 mm Hg), (ii) increased time of LV extrasystole appearance when the glucose content of Krebs solution was reduced by 50% (28,6 \u00b1 2,8 vs 22,5 \u00b1 2,4 min), and (iii) increased time of LV tachyarrhythmia appearance when the potassium content of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion.",
+      "context_window": "nt of Krebs solution raised up to 6,5 meq/L (9,2 \u00b1 0,5 vs 6,9 \u00b1 0,3 min).</jats:p> <jats:p>Conclusion. Taurine, a natural cal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

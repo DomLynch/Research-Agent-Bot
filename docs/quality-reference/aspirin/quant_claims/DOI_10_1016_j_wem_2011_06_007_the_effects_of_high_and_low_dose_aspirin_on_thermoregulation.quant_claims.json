@@ -1,0 +1,104 @@
+{
+  "paper_id": "DOI_10_1016_j_wem_2011_06_007_the_effects_of_high_and_low_dose_aspirin_on_thermoregulation",
+  "doi": "10.1016/j.wem.2011.06.007",
+  "extracted_at": "2026-05-08T20:06:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_wem_2011_06_007_the_effects_of_high_and_low_dose_aspirin_on_thermoregulation-msd-351",
+      "claim_type": "mean_sd",
+      "raw_text": "26.1 \u00b1 2.4",
+      "numeric_values": [
+        26.1,
+        2.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 351,
+      "sentence": "<jats:sec><jats:title>Objective</jats:title><jats:p> To explore the effect of aspirin on the thermoregulatory responses of men during exposure to 12\u00b0C air (acute cold exposure) for a period of 120 minutes and recovery in 25\u00b0C air (rewarming) for 120 minutes. </jats:p></jats:sec><jats:sec><jats:title>Methods</jats:title><jats:p> Seven male subjects (26.1 \u00b1 2.4 yr) underwent pre-experimental testing to determine peak VO<jats:sub>2</jats:sub> and body composition.",
+      "context_window": "ats:title>Methods</jats:title><jats:p> Seven male subjects (26.1 \u00b1 2.4 yr) underwent pre-experimental testing to determine peak VO",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_wem_2011_06_007_the_effects_of_high_and_low_dose_aspirin_on_thermoregulation-u-539",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 539,
+      "sentence": "Participants underwent 3 trials in which they ingested the following for 1 week prior to each experimental trial: a capsule filled with cellulose (placebo), 81 mg . day<jats:sup>-1</jats:sup> of aspirin (low-dose aspirin), or 650 mg . day<jats:sup>-1</jats:sup> of aspirin (high-dose aspirin).",
+      "context_window": "underwent 3 trials in which they ingested the following for 1 week prior to each experimental trial: a capsule filled with cel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_wem_2011_06_007_the_effects_of_high_and_low_dose_aspirin_on_thermoregulation-u-623",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 623,
+      "sentence": "Participants underwent 3 trials in which they ingested the following for 1 week prior to each experimental trial: a capsule filled with cellulose (placebo), 81 mg . day<jats:sup>-1</jats:sup> of aspirin (low-dose aspirin), or 650 mg . day<jats:sup>-1</jats:sup> of aspirin (high-dose aspirin).",
+      "context_window": "erimental trial: a capsule filled with cellulose (placebo), 81 mg . day<jats:sup>-1</jats:sup> of aspirin (low-dose aspirin),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_wem_2011_06_007_the_effects_of_high_and_low_dose_aspirin_on_thermoregulation-u-692",
+      "claim_type": "unit_value",
+      "raw_text": "650 mg",
+      "numeric_values": [
+        650.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 692,
+      "sentence": "Participants underwent 3 trials in which they ingested the following for 1 week prior to each experimental trial: a capsule filled with cellulose (placebo), 81 mg . day<jats:sup>-1</jats:sup> of aspirin (low-dose aspirin), or 650 mg . day<jats:sup>-1</jats:sup> of aspirin (high-dose aspirin).",
+      "context_window": "ay<jats:sup>-1</jats:sup> of aspirin (low-dose aspirin), or 650 mg . day<jats:sup>-1</jats:sup> of aspirin (high-dose aspirin)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_wem_2011_06_007_the_effects_of_high_and_low_dose_aspirin_on_thermoregulation-p-1187",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1187,
+      "sentence": "Mean skin temperature and rectal temperature (T<jats:sub>re</jats:sub>) were measured, and heat production was calculated. </jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p> During both acute cold exposure and rewarming, analysis of variance revealed a main effect for time ( P < .05) with respect to T<jats:sub>re</jats:sub>, mean skin temperature, and heat production.",
+      "context_window": "ing, analysis of variance revealed a main effect for time ( P < .05) with respect to T<jats:sub>re</jats:sub>, mean skin temper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

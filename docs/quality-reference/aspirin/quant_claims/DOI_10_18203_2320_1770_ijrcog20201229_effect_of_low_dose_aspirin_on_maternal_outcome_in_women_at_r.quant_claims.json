@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_18203_2320_1770_ijrcog20201229_effect_of_low_dose_aspirin_on_maternal_outcome_in_women_at_r",
+  "doi": "10.18203/2320-1770.ijrcog20201229",
+  "extracted_at": "2026-05-08T20:06:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_18203_2320_1770_ijrcog20201229_effect_of_low_dose_aspirin_on_maternal_outcome_in_women_at_r-u-1037",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1037,
+      "sentence": "Low dose aspirin of 60 mg daily till delivery was given to pregnant women who consented to be a part of study randomly with the other group having placebo.Results: Protienuric hypertension was high in control group who did not receive aspirin.",
+      "context_window": "isk factors and included in this study. Low dose aspirin of 60 mg daily till delivery was given to pregnant women who consent",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18203_2320_1770_ijrcog20201229_effect_of_low_dose_aspirin_on_maternal_outcome_in_women_at_r-pct-1324",
+      "claim_type": "percentage",
+      "raw_text": "3.48%",
+      "numeric_values": [
+        3.48
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1324,
+      "sentence": "Low dose aspirin significantly reduces PIH in high-risk group (3.48% in case versus 23.52% in control).",
+      "context_window": "dose aspirin significantly reduces PIH in high-risk group (3.48% in case versus 23.52% in control). Low dose aspirin was not",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18203_2320_1770_ijrcog20201229_effect_of_low_dose_aspirin_on_maternal_outcome_in_women_at_r-pct-1345",
+      "claim_type": "percentage",
+      "raw_text": "23.52%",
+      "numeric_values": [
+        23.52
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1345,
+      "sentence": "Low dose aspirin significantly reduces PIH in high-risk group (3.48% in case versus 23.52% in control).",
+      "context_window": "cantly reduces PIH in high-risk group (3.48% in case versus 23.52% in control). Low dose aspirin was not associated with signi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

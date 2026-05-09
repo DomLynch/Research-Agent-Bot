@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1161_01_str_19_6_700_individual_variation_in_platelet_aggregability_and_serum_thr",
+  "doi": "10.1161/01.str.19.6.700",
+  "extracted_at": "2026-05-08T20:06:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_str_19_6_700_individual_variation_in_platelet_aggregability_and_serum_thr-u-56",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 56,
+      "sentence": "<jats:p>The effects of low daily oral doses of aspirin (40 mg/day) on platelet aggregability and serum thromboxane B2 concentrations were studied in 19 poststroke patients.",
+      "context_window": "<jats:p>The effects of low daily oral doses of aspirin (40 mg/day) on platelet aggregability and serum thromboxane B2 concent",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_19_6_700_individual_variation_in_platelet_aggregability_and_serum_thr-u-235",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 235,
+      "sentence": "Although platelet aggregation was reduced significantly after 1 week, there was wide individual variation in the inhibition of platelet function in spite of marked decreases of serum thromboxane B2 concentrations by greater than 90% (from 224 +/- 58 to 8 +/- 8 ng/ml).",
+      "context_window": "though platelet aggregation was reduced significantly after 1 week, there was wide individual variation in the inhibition of p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_19_6_700_individual_variation_in_platelet_aggregability_and_serum_thr-pct-402",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 402,
+      "sentence": "Although platelet aggregation was reduced significantly after 1 week, there was wide individual variation in the inhibition of platelet function in spite of marked decreases of serum thromboxane B2 concentrations by greater than 90% (from 224 +/- 58 to 8 +/- 8 ng/ml).",
+      "context_window": "ases of serum thromboxane B2 concentrations by greater than 90% (from 224 +/- 58 to 8 +/- 8 ng/ml). There was no correlatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_19_6_700_individual_variation_in_platelet_aggregability_and_serum_thr-u-622",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 622,
+      "sentence": "There was no correlation between collagen-induced platelet aggregability and serum thromboxane B2 concentration before aspirin administration in the range 100-350 ng/ml, but after 1 week of repeated administration of aspirin, there was a correlation between platelet aggregability and serum thromboxane B2 concentrations of less than 25 ng/ml (r = 0.68, p less than 0.01).",
+      "context_window": "spirin administration in the range 100-350 ng/ml, but after 1 week of repeated administration of aspirin, there was a correlat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

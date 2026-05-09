@@ -1,0 +1,2410 @@
+{
+  "paper_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari",
+  "doi": "10.3390/antiox14111294",
+  "extracted_at": "2026-05-08T20:12:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "unit_value": 23,
+    "p_value": 98,
+    "percentage": 8,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-n-501",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 501,
+      "sentence": "Methods: Thirty adult female Wistar rats were randomly divided into three groups ( n = 10 each): Control, Diabetes, and Diabetes + Spermidine.",
+      "context_window": "emale Wistar rats were randomly divided into three groups ( n = 10 each): Control, Diabetes, and Diabetes + Spermidine. Diabet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-603",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 603,
+      "sentence": "Diabetes was induced with streptozotocin (60 mg/kg, i.p.).",
+      "context_window": "tes + Spermidine. Diabetes was induced with streptozotocin (60 mg/kg, i.p.). After confirmation of hyperglycemia (\u2265250 mg/dL)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-658",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 658,
+      "sentence": "After confirmation of hyperglycemia (\u2265250 mg/dL), rats received either saline or spermidine (40 mg/kg/day, oral gavage) for four weeks.",
+      "context_window": "cin (60 mg/kg, i.p.). After confirmation of hyperglycemia (\u2265250 mg/dL), rats received either saline or spermidine (40 mg/kg/day,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-713",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/kg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 713,
+      "sentence": "After confirmation of hyperglycemia (\u2265250 mg/dL), rats received either saline or spermidine (40 mg/kg/day, oral gavage) for four weeks.",
+      "context_window": "ia (\u2265250 mg/dL), rats received either saline or spermidine (40 mg/kg/day, oral gavage) for four weeks. At sacrifice, plasma anti-M\u00fcl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1251",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1251,
+      "sentence": "Results: Diabetic rats exhibited severe hyperglycemia, pronounced follicular and endometrial degeneration, increased fibrosis, reduced plasma AMH, depleted GSH, SOD, CAT, GPx and Nrf2, and elevated MDA ( p < 0.001).",
+      "context_window": "H, depleted GSH, SOD, CAT, GPx and Nrf2, and elevated MDA ( p < 0.001). Spermidine treatment significantly mitigated these altera",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1504",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1504,
+      "sentence": "Spermidine treatment significantly mitigated these alterations, lowering glucose levels, alleviating histopathological injury, elevating the antioxidant defense (GSH, SOD, CAT, GPx) and the Nrf2 and decreasing MDA and TGF-\u03b2 concentrations ( p < 0.05 vs.",
+      "context_window": "and the Nrf2 and decreasing MDA and TGF-\u03b2 concentrations ( p < 0.05 vs. Diabetes). Moreover, spermidine supplementation enhance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-80",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 80,
+      "sentence": "Nearly 40% of diabetic women develop reproductive disorders such as delayed menarche, menstrual irregularities, infertility, polycystic ovary syndrome features, and premature menopause, at higher rates than in non-diabetic women [ 1 ].",
+      "context_window": "M) adversely affects the female reproductive system. Nearly 40% of diabetic women develop reproductive disorders such as de",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-50",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 50,
+      "sentence": "A total of 30 adult female Wistar albino rats (10-12 weeks old, 150-200 g) were included in the present study.",
+      "context_window": "A total of 30 adult female Wistar albino rats (10-12 weeks old, 150-200 g) were included in the present study. All pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-msd-548",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 2",
+      "numeric_values": [
+        22.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 548,
+      "sentence": "During the experimental period, rats were kept in pairs in stainless steel cages under controlled environmental conditions (22 \u00b1 2 \u00b0C; 12 h light/dark cycle) with free access to standard laboratory chow and water.",
+      "context_window": "less steel cages under controlled environmental conditions (22 \u00b1 2 \u00b0C; 12 h light/dark cycle) with free access to standard lab",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-753",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 753,
+      "sentence": "Experimental diabetes was induced in 20 female rats by a single intraperitoneal injection of streptozotocin (STZ, 60 mg/kg; prepared in 0.9% NaCl and buffered to pH 4.0 with 0.2 M sodium citrate; Sigma-Aldrich, St.",
+      "context_window": "a single intraperitoneal injection of streptozotocin (STZ, 60 mg/kg; prepared in 0.9% NaCl and buffered to pH 4.0 with 0.2 M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-775",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 775,
+      "sentence": "Experimental diabetes was induced in 20 female rats by a single intraperitoneal injection of streptozotocin (STZ, 60 mg/kg; prepared in 0.9% NaCl and buffered to pH 4.0 with 0.2 M sodium citrate; Sigma-Aldrich, St.",
+      "context_window": "eal injection of streptozotocin (STZ, 60 mg/kg; prepared in 0.9% NaCl and buffered to pH 4.0 with 0.2 M sodium citrate; Sigm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-1258",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1258,
+      "sentence": "Animals with fasting blood glucose \u2265 250 mg/dL were considered diabetic and included in the study, while those with levels < 120 mg/dL were assigned to the control group.",
+      "context_window": "ndianapolis, IN, USA). Animals with fasting blood glucose \u2265 250 mg/dL were considered diabetic and included in the study, while t",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-1346",
+      "claim_type": "unit_value",
+      "raw_text": "120 mg/dL",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1346,
+      "sentence": "Animals with fasting blood glucose \u2265 250 mg/dL were considered diabetic and included in the study, while those with levels < 120 mg/dL were assigned to the control group.",
+      "context_window": "abetic and included in the study, while those with levels < 120 mg/dL were assigned to the control group. Once diabetes was conf",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-n-1490",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1490,
+      "sentence": "Once diabetes was confirmed, the animals were randomly assigned into three experimental groups ( n = 10 per group):\n\nGroup 1 (Control): Non-diabetic rats that received 1 mL/kg/day saline by oral gavage for four consecutive weeks.",
+      "context_window": "als were randomly assigned into three experimental groups ( n = 10 per group): Group 1 (Control): Non-diabetic rats that rece",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-1561",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1561,
+      "sentence": "Once diabetes was confirmed, the animals were randomly assigned into three experimental groups ( n = 10 per group):\n\nGroup 1 (Control): Non-diabetic rats that received 1 mL/kg/day saline by oral gavage for four consecutive weeks.",
+      "context_window": "group): Group 1 (Control): Non-diabetic rats that received 1 mL/kg/day saline by oral gavage for four consecutive weeks. G",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-1681",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1681,
+      "sentence": "Group 2 (Diabetes + Vehicle): Diabetic rats administered 1 mL/kg/day saline by oral gavage for four consecutive weeks.",
+      "context_window": ". Group 2 (Diabetes + Vehicle): Diabetic rats administered 1 mL/kg/day saline by oral gavage for four consecutive weeks. G",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-1816",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/kg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 1816,
+      "sentence": "Group 3 (Diabetes + Spermidine): Diabetic rats treated with spermidine (40 mg/kg/day) by oral gavage for four consecutive weeks. ( Figure 1 )\n\nExperimental design of the study.",
+      "context_window": "betes + Spermidine): Diabetic rats treated with spermidine (40 mg/kg/day) by oral gavage for four consecutive weeks. ( Figure 1 ) E",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-2065",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2065,
+      "sentence": "At the end of the four-week treatment period, all animals were euthanized by cervical dislocation under deep anesthesia induced with ketamine (100 mg/kg; Ketasol, Richterpharma AG, Wels, Austria) and xylazine (50 mg/kg; Rompun, Bayer, Germany).",
+      "context_window": "al dislocation under deep anesthesia induced with ketamine (100 mg/kg; Ketasol, Richterpharma AG, Wels, Austria) and xylazine",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-2132",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2132,
+      "sentence": "At the end of the four-week treatment period, all animals were euthanized by cervical dislocation under deep anesthesia induced with ketamine (100 mg/kg; Ketasol, Richterpharma AG, Wels, Austria) and xylazine (50 mg/kg; Rompun, Bayer, Germany).",
+      "context_window": "kg; Ketasol, Richterpharma AG, Wels, Austria) and xylazine (50 mg/kg; Rompun, Bayer, Germany). Blood samples were obtained vi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-2752",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2752,
+      "sentence": "Animals with fasting glucose levels \u2265250 mg/dL were classified as diabetic and included in the study, whereas those with values below 120 mg/dL were designated as controls.",
+      "context_window": "induction of diabetes. Animals with fasting glucose levels \u2265250 mg/dL were classified as diabetic and included in the study, wher",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-2849",
+      "claim_type": "unit_value",
+      "raw_text": "120 mg/dL",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2849,
+      "sentence": "Animals with fasting glucose levels \u2265250 mg/dL were classified as diabetic and included in the study, whereas those with values below 120 mg/dL were designated as controls.",
+      "context_window": "and included in the study, whereas those with values below 120 mg/dL were designated as controls. Thirty female Wistar rats ( n",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-n-2917",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2917,
+      "sentence": "Thirty female Wistar rats ( n = 10/group) were allocated to Control, Diabetes, and Diabetes + Spermidine groups.",
+      "context_window": "L were designated as controls. Thirty female Wistar rats ( n = 10/group) were allocated to Control, Diabetes, and Diabetes +",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-3057",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3057,
+      "sentence": "On Day 0, diabetes was induced in Groups 2-3 with STZ (60 mg/kg, i.p.); Group 1 served as non-diabetic controls.",
+      "context_window": "ups. On Day 0, diabetes was induced in Groups 2-3 with STZ (60 mg/kg, i.p.); Group 1 served as non-diabetic controls. Blood g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-3174",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 3174,
+      "sentence": "Blood glucose was measured at baseline and 24 h post-STZ (\u2265250 mg/dL = diabetic).",
+      "context_window": "Blood glucose was measured at baseline and 24 h post-STZ (\u2265250 mg/dL = diabetic). For 4 weeks, Group 1 received saline, Group 2",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-3201",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3201,
+      "sentence": "For 4 weeks, Group 1 received saline, Group 2 remained untreated, and Group 3 received spermidine (40 mg/kg/day, oral).",
+      "context_window": "at baseline and 24 h post-STZ (\u2265250 mg/dL = diabetic). For 4 weeks, Group 1 received saline, Group 2 remained untreated, and G",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-3296",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/kg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 3296,
+      "sentence": "For 4 weeks, Group 1 received saline, Group 2 remained untreated, and Group 3 received spermidine (40 mg/kg/day, oral).",
+      "context_window": "roup 2 remained untreated, and Group 3 received spermidine (40 mg/kg/day, oral). At Week 4, blood was collected for plasma AMH, and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-3561",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3561,
+      "sentence": "For histological examination, uterine and ovarian tissues were fixed in 10% buffered neutral formalin, processed through paraffin embedding, and cut into 4-\u03bcm thick sections.",
+      "context_window": "ical examination, uterine and ovarian tissues were fixed in 10% buffered neutral formalin, processed through paraffin embed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-4009",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4009,
+      "sentence": "Uterus: Endometrial gland degeneration and stromal fibrosis were graded semi-quantitatively on a 0-3 scale, where 0 indicated normal histology, 1 represented mild alterations (<33% of the section), 2 denoted moderate involvement (33-66%), and 3 reflected severe injury (>66%).",
+      "context_window": "ndicated normal histology, 1 represented mild alterations (<33% of the section), 2 denoted moderate involvement (33-66%), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-4065",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4065,
+      "sentence": "Uterus: Endometrial gland degeneration and stromal fibrosis were graded semi-quantitatively on a 0-3 scale, where 0 indicated normal histology, 1 represented mild alterations (<33% of the section), 2 denoted moderate involvement (33-66%), and 3 reflected severe injury (>66%).",
+      "context_window": "s (<33% of the section), 2 denoted moderate involvement (33-66%), and 3 reflected severe injury (>66%). Ovary: Follicular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-4103",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4103,
+      "sentence": "Uterus: Endometrial gland degeneration and stromal fibrosis were graded semi-quantitatively on a 0-3 scale, where 0 indicated normal histology, 1 represented mild alterations (<33% of the section), 2 denoted moderate involvement (33-66%), and 3 reflected severe injury (>66%).",
+      "context_window": "erate involvement (33-66%), and 3 reflected severe injury (>66%). Ovary: Follicular degeneration and stromal fibrosis were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-4264",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4264,
+      "sentence": "Ovary: Follicular degeneration and stromal fibrosis were similarly assessed on a 0-3 scale, with 0 defined as intact morphology, 1 as mild degeneration (<33%), 2 as moderate alterations (33-66%), and 3 as severe damage involving more than two-thirds of the section.",
+      "context_window": "th 0 defined as intact morphology, 1 as mild degeneration (<33%), 2 as moderate alterations (33-66%), and 3 as severe damag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-pct-4300",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4300,
+      "sentence": "Ovary: Follicular degeneration and stromal fibrosis were similarly assessed on a 0-3 scale, with 0 defined as intact morphology, 1 as mild degeneration (<33%), 2 as moderate alterations (33-66%), and 3 as severe damage involving more than two-thirds of the section.",
+      "context_window": "as mild degeneration (<33%), 2 as moderate alterations (33-66%), and 3 as severe damage involving more than two-thirds of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-4675",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4675,
+      "sentence": "Inter-observer agreement was assessed using Cohen\u2019s weighted kappa (0-3 scale), which demonstrated substantial concordance (\u03ba = 0.85, p < 0.001).",
+      "context_window": "ale), which demonstrated substantial concordance (\u03ba = 0.85, p < 0.001). Following cardiac puncture at sacrifice, whole blood sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-125",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 125,
+      "sentence": "At baseline (Day 0), blood glucose values were comparable among the three groups, with no significant differences observed ( p > 0.05), confirming similar metabolic status prior to diabetes induction ( Table 1 , Figure 2 ).",
+      "context_window": "he three groups, with no significant differences observed ( p > 0.05), confirming similar metabolic status prior to diabetes ind",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-345",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 345,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ### p < 0.01 versus Diabetes group.",
+      "context_window": "eated diabetic rats. Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ### p < 0.01 versus Diabetes group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-381",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 381,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ### p < 0.01 versus Diabetes group.",
+      "context_window": "ressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ### p < 0.01 versus Diabetes group. Comparative blood glucose concentra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-812",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 812,
+      "sentence": "Statistical evaluation was performed using one-way ANOVA followed by appropriate post hoc tests. * p < 0.001; ns: not significant.",
+      "context_window": "ing one-way ANOVA followed by appropriate post hoc tests. * p < 0.001; ns: not significant. Twenty-four hours after STZ injectio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1011",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1011,
+      "sentence": "Twenty-four hours after STZ injection, both the Diabetes and Diabetes + Spermidine groups exhibited a sharp increase in blood glucose compared to the Control group ( p < 0.001), confirming successful induction of diabetes.",
+      "context_window": "p increase in blood glucose compared to the Control group ( p < 0.001), confirming successful induction of diabetes. Glucose leve",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1182",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1182,
+      "sentence": "Glucose levels did not differ between diabetic animals receiving vehicle or spermidine at this early time point ( p > 0.05) ( Table 2 , Figure 1 ).",
+      "context_window": "receiving vehicle or spermidine at this early time point ( p > 0.05) ( Table 2 , Figure 1 ). Histopathological degeneration an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1459",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1459,
+      "sentence": "Variables are expressed using the median and interquartile range for histopathological scores and as mean \u00b1 SEM for plasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group.",
+      "context_window": "istopathological scores and as mean \u00b1 SEM for plasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1493",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1493,
+      "sentence": "Variables are expressed using the median and interquartile range for histopathological scores and as mean \u00b1 SEM for plasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group.",
+      "context_window": "n \u00b1 SEM for plasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group. At the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1506",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1506,
+      "sentence": "Variables are expressed using the median and interquartile range for histopathological scores and as mean \u00b1 SEM for plasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group.",
+      "context_window": "lasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group. At the end of the 4-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1520",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1520,
+      "sentence": "Variables are expressed using the median and interquartile range for histopathological scores and as mean \u00b1 SEM for plasma AMH. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group.",
+      "context_window": "< 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.001 versus Diabetes group. At the end of the 4-week treatment,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1672",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1672,
+      "sentence": "At the end of the 4-week treatment, glucose levels remained markedly elevated in diabetic rats compared to controls ( p < 0.001).",
+      "context_window": "d markedly elevated in diabetic rats compared to controls ( p < 0.001). However, spermidine administration significantly reduced",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1789",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1789,
+      "sentence": "However, spermidine administration significantly reduced hyperglycemia relative to untreated diabetics ( p < 0.001), although values did not fully normalize to control levels ( p < 0.001) ( Table 2 , Figure 1 ).",
+      "context_window": "tly reduced hyperglycemia relative to untreated diabetics ( p < 0.001), although values did not fully normalize to control levels",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-1861",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1861,
+      "sentence": "However, spermidine administration significantly reduced hyperglycemia relative to untreated diabetics ( p < 0.001), although values did not fully normalize to control levels ( p < 0.001) ( Table 2 , Figure 1 ).",
+      "context_window": "although values did not fully normalize to control levels ( p < 0.001) ( Table 2 , Figure 1 ). Histopathological evaluation reve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2046",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2046,
+      "sentence": "Histopathological evaluation revealed that endometrial gland degeneration was significantly increased in the Diabetes group compared with Controls ( p < 0.001).",
+      "context_window": "ly increased in the Diabetes group compared with Controls ( p < 0.001). Spermidine treatment markedly reduced degeneration ( p <",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2111",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2111,
+      "sentence": "Spermidine treatment markedly reduced degeneration ( p < 0.001), although values remained higher than in Controls ( p < 0.01).",
+      "context_window": ".001). Spermidine treatment markedly reduced degeneration ( p < 0.001), although values remained higher than in Controls ( p < 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2174",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2174,
+      "sentence": "Spermidine treatment markedly reduced degeneration ( p < 0.001), although values remained higher than in Controls ( p < 0.01).",
+      "context_window": "0.001), although values remained higher than in Controls ( p < 0.01). Endometrial stromal fibrosis showed a similar pattern, be",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2304",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2304,
+      "sentence": "Endometrial stromal fibrosis showed a similar pattern, being significantly elevated in diabetic rats versus Controls ( p < 0.001), while spermidine treatment effectively reduced fibrosis ( p < 0.001) to levels not different from Controls ( p > 0.05) ( Figure 3 , Table 2 ).",
+      "context_window": "g significantly elevated in diabetic rats versus Controls ( p < 0.001), while spermidine treatment effectively reduced fibrosis (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2374",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2374,
+      "sentence": "Endometrial stromal fibrosis showed a similar pattern, being significantly elevated in diabetic rats versus Controls ( p < 0.001), while spermidine treatment effectively reduced fibrosis ( p < 0.001) to levels not different from Controls ( p > 0.05) ( Figure 3 , Table 2 ).",
+      "context_window": ", while spermidine treatment effectively reduced fibrosis ( p < 0.001) to levels not different from Controls ( p > 0.05) ( Figure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2425",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2425,
+      "sentence": "Endometrial stromal fibrosis showed a similar pattern, being significantly elevated in diabetic rats versus Controls ( p < 0.001), while spermidine treatment effectively reduced fibrosis ( p < 0.001) to levels not different from Controls ( p > 0.05) ( Figure 3 , Table 2 ).",
+      "context_window": "brosis ( p < 0.001) to levels not different from Controls ( p > 0.05) ( Figure 3 , Table 2 ). Histopathological degeneration sc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2814",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2814,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. ns: not significant.",
+      "context_window": "sma AMH concentrations. Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. ns: not significant. Ovarian",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2827",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2827,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. ns: not significant.",
+      "context_window": "ntrations. Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. ns: not significant. Ovarian follicle dege",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2841",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2841,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. ns: not significant.",
+      "context_window": "a are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. ns: not significant. Ovarian follicle degeneration was al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-2971",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2971,
+      "sentence": "Ovarian follicle degeneration was also significantly higher in Diabetes compared with Controls ( p < 0.001).",
+      "context_window": "o significantly higher in Diabetes compared with Controls ( p < 0.001). Spermidine administration significantly reduced this dege",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3051",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3051,
+      "sentence": "Spermidine administration significantly reduced this degeneration ( p < 0.05), although values did not fully return to Control levels ( p < 0.01).",
+      "context_window": "ne administration significantly reduced this degeneration ( p < 0.05), although values did not fully return to Control levels (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3119",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3119,
+      "sentence": "Spermidine administration significantly reduced this degeneration ( p < 0.05), although values did not fully return to Control levels ( p < 0.01).",
+      "context_window": "), although values did not fully return to Control levels ( p < 0.01). Likewise, ovarian stromal fibrosis was elevated in the Di",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3225",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3225,
+      "sentence": "Likewise, ovarian stromal fibrosis was elevated in the Diabetes group compared with Controls ( p < 0.001).",
+      "context_window": "was elevated in the Diabetes group compared with Controls ( p < 0.001). Remarkably, spermidine treatment led to a pronounced redu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3314",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3314,
+      "sentence": "Remarkably, spermidine treatment led to a pronounced reduction in fibrosis ( p < 0.05), with values no longer significantly different from those of the Control group ( p > 0.05) suggesting a near-complete restoration of stromal architecture ( Figure 3 , Table 2 ).",
+      "context_window": "idine treatment led to a pronounced reduction in fibrosis ( p < 0.05), with values no longer significantly different from those",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3405",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3405,
+      "sentence": "Remarkably, spermidine treatment led to a pronounced reduction in fibrosis ( p < 0.05), with values no longer significantly different from those of the Control group ( p > 0.05) suggesting a near-complete restoration of stromal architecture ( Figure 3 , Table 2 ).",
+      "context_window": "r significantly different from those of the Control group ( p > 0.05) suggesting a near-complete restoration of stromal architec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3634",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3634,
+      "sentence": "Consistent with these morphological findings, plasma AMH levels were significantly reduced in the Diabetes group versus Controls ( p < 0.001).",
+      "context_window": "gnificantly reduced in the Diabetes group versus Controls ( p < 0.001). Spermidine treatment increased AMH compared with Diabetes",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3706",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3706,
+      "sentence": "Spermidine treatment increased AMH compared with Diabetes ( p < 0.01), although levels remained lower than Controls ( p < 0.01) ( Figure 3 , Table 2 ).",
+      "context_window": "Spermidine treatment increased AMH compared with Diabetes ( p < 0.01), although levels remained lower than Controls ( p < 0.01)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-3764",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3764,
+      "sentence": "Spermidine treatment increased AMH compared with Diabetes ( p < 0.01), although levels remained lower than Controls ( p < 0.01) ( Figure 3 , Table 2 ).",
+      "context_window": "( p < 0.01), although levels remained lower than Controls ( p < 0.01) ( Figure 3 , Table 2 ). Histological examination of ovari",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-5353",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 5353,
+      "sentence": "For digital scale calibration, 1 cm in the image corresponds to 25 \u00b5m at 10\u00d7 and 12.5 \u00b5m at 20\u00d7 magnification.",
+      "context_window": "20\u00d7 ( C - F ) magnification. For digital scale calibration, 1 cm in the image corresponds to 25 \u00b5m at 10\u00d7 and 12.5 \u00b5m at 20\u00d7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-6890",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 6890,
+      "sentence": "For digital scale calibration, 1 cm in the image corresponds to 25 \u00b5m at 10\u00d7 and 12.5 \u00b5m at 20\u00d7 magnification.",
+      "context_window": "20\u00d7 ( C - F ) magnification. For digital scale calibration, 1 cm in the image corresponds to 25 \u00b5m at 10\u00d7 and 12.5 \u00b5m at 20\u00d7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7186",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7186,
+      "sentence": "Nrf2 and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05, p < 0.001, respectively).",
+      "context_window": "y reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7292",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7292,
+      "sentence": "Nrf2 and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05, p < 0.001, respectively).",
+      "context_window": "ficantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7302",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7302,
+      "sentence": "Nrf2 and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05, p < 0.001, respectively).",
+      "context_window": "ncreased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7379",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7379,
+      "sentence": "Nrf2 and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05, p < 0.001, respectively).",
+      "context_window": "tively), although values remained below those of Controls ( p < 0.05, p < 0.001, respectively). Ovarian oxidative stress parame",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7389",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7389,
+      "sentence": "Nrf2 and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05, p < 0.001, respectively).",
+      "context_window": "lthough values remained below those of Controls ( p < 0.05, p < 0.001, respectively). Ovarian oxidative stress parameters in Con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7635",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7635,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "nd ( F ) GPx are shown. Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. Similarly, SOD, CAT, and GPx",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7648",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7648,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "are shown. Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. Similarly, SOD, CAT, and GPx activities we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7662",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7662,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "a are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. Similarly, SOD, CAT, and GPx activities were significantl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7783",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7783,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "ificantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme acti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7892",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7892,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "ed these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7902",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7902,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "nzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not complete",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-7913",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7913,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "ities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8001",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8001,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "though values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively). By contrast, MDA leve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8011",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8011,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "ues did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively). By contrast, MDA levels were sig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8022",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8022,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the Diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively).",
+      "context_window": "completely return to Control levels ( p < 0.01; p < 0.001; p < 0.01, respectively). By contrast, MDA levels were significantly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8145",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8145,
+      "sentence": "By contrast, MDA levels were significantly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values ( p < 0.001), yet they still remained higher than in Controls ( p < 0.001) ( Figure 6 , Table 3 ).",
+      "context_window": "antly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values ( p < 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8209",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8209,
+      "sentence": "By contrast, MDA levels were significantly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values ( p < 0.001), yet they still remained higher than in Controls ( p < 0.001) ( Figure 6 , Table 3 ).",
+      "context_window": "0.001), and spermidine significantly reduced these values ( p < 0.001), yet they still remained higher than in Controls ( p < 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8271",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8271,
+      "sentence": "By contrast, MDA levels were significantly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values ( p < 0.001), yet they still remained higher than in Controls ( p < 0.001) ( Figure 6 , Table 3 ).",
+      "context_window": "< 0.001), yet they still remained higher than in Controls ( p < 0.001) ( Figure 6 , Table 3 ). Effects of diabetes and spermidin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8452",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8452,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "GPx levels in rats. Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8487",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8487,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "pressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group. The results of the an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8501",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8501,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "n \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group. The results of the analyses of oxid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8760",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8760,
+      "sentence": "Nrf2 expression and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05; p < 0.01, respectively).",
+      "context_window": "y reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8866",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8866,
+      "sentence": "Nrf2 expression and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05; p < 0.01, respectively).",
+      "context_window": "ficantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8876",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8876,
+      "sentence": "Nrf2 expression and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05; p < 0.01, respectively).",
+      "context_window": "ncreased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8953",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8953,
+      "sentence": "Nrf2 expression and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05; p < 0.01, respectively).",
+      "context_window": "tively), although values remained below those of Controls ( p < 0.05; p < 0.01, respectively). Uterine oxidative stress paramet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-8963",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8963,
+      "sentence": "Nrf2 expression and GSH concentrations were significantly reduced in the Diabetes group compared with Controls (all p < 0.001), whereas spermidine treatment significantly increased both parameters compared with Diabetes ( p < 0.01; p < 0.001, respectively), although values remained below those of Controls ( p < 0.05; p < 0.01, respectively).",
+      "context_window": "lthough values remained below those of Controls ( p < 0.05; p < 0.01, respectively). Uterine oxidative stress parameters in Con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9208",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9208,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "nd ( F ) GPx are shown. Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. Similarly, SOD, CAT, and GPx",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9221",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9221,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "are shown. Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. Similarly, SOD, CAT, and GPx activities we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9235",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9235,
+      "sentence": "Data are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "a are expressed as mean \u00b1 SEM. * p < 0.05, ** p < 0.01, *** p < 0.001. Similarly, SOD, CAT, and GPx activities were significantl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9356",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9356,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "ificantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme acti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9475",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9475,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "nzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9485",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9485,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "vities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not complete",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9496",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9496,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "tive to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9584",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9584,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "though values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively). By contrast, MDA lev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9594",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9594,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "ues did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively). By contrast, MDA levels were si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9605",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9605,
+      "sentence": "Similarly, SOD, CAT, and GPx activities were significantly decreased in Diabetes compared with Controls (all p < 0.001), while spermidine significantly improved these enzyme activities relative to the untreated diabetic group ( p < 0.01; p < 0.001; p < 0.001, respectively), although values did not completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively).",
+      "context_window": "completely return to control levels ( p < 0.01; p < 0.001; p < 0.001, respectively). By contrast, MDA levels were significantly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9729",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9729,
+      "sentence": "By contrast, MDA levels were significantly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values compared with Diabetes ( p < 0.01), yet they still remained higher than in Controls ( p < 0.001) ( Figure 7 , Table 4 ).",
+      "context_window": "antly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values compare",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9816",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9816,
+      "sentence": "By contrast, MDA levels were significantly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values compared with Diabetes ( p < 0.01), yet they still remained higher than in Controls ( p < 0.001) ( Figure 7 , Table 4 ).",
+      "context_window": "significantly reduced these values compared with Diabetes ( p < 0.01), yet they still remained higher than in Controls ( p < 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-9877",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9877,
+      "sentence": "By contrast, MDA levels were significantly elevated in the Diabetes group relative to Controls ( p < 0.001), and spermidine significantly reduced these values compared with Diabetes ( p < 0.01), yet they still remained higher than in Controls ( p < 0.001) ( Figure 7 , Table 4 ).",
+      "context_window": "< 0.01), yet they still remained higher than in Controls ( p < 0.001) ( Figure 7 , Table 4 ). Effects of diabetes and spermidin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10058",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10058,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "GPx levels in rats. Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10093",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10093,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "pressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group. The results of the an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10107",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10107,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "n \u00b1 SEM. * p < 0.001 versus Control group; ## p < 0.01, ### p < 0.01 versus Diabetes group. The results of the analyses of auto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10368",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10368,
+      "sentence": "Both LC3 and Beclin-1 levels were significantly reduced in the Diabetes group compared with Controls ( p < 0.001 for both), indicating impaired autophagic activity.",
+      "context_window": "ntly reduced in the Diabetes group compared with Controls ( p < 0.001 for both), indicating impaired autophagic activity. Spermid",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10481",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10481,
+      "sentence": "Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.05) compared with the Diabetes group, yet values for both markers remained lower than in Controls ( p < 0.01 for each).",
+      "context_window": "ctivity. Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.05) compared with the Diabetes group,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10506",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10506,
+      "sentence": "Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.05) compared with the Diabetes group, yet values for both markers remained lower than in Controls ( p < 0.01 for each).",
+      "context_window": "ment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.05) compared with the Diabetes group, yet values for both mark",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10612",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10612,
+      "sentence": "Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.05) compared with the Diabetes group, yet values for both markers remained lower than in Controls ( p < 0.01 for each).",
+      "context_window": "t values for both markers remained lower than in Controls ( p < 0.01 for each). Effects of spermidine treatment on autophagy- a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10945",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10945,
+      "sentence": "Data are presented as mean \u00b1 SEM. ns = not significant. * p < 0.05, ** p < 0.01, *** p < 0.001 versus indicated groups.",
+      "context_window": ". Data are presented as mean \u00b1 SEM. ns = not significant. * p < 0.05, ** p < 0.01, *** p < 0.001 versus indicated groups. By co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10958",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10958,
+      "sentence": "Data are presented as mean \u00b1 SEM. ns = not significant. * p < 0.05, ** p < 0.01, *** p < 0.001 versus indicated groups.",
+      "context_window": "esented as mean \u00b1 SEM. ns = not significant. * p < 0.05, ** p < 0.01, *** p < 0.001 versus indicated groups. By contrast, TGF-\u03b2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-10972",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10972,
+      "sentence": "Data are presented as mean \u00b1 SEM. ns = not significant. * p < 0.05, ** p < 0.01, *** p < 0.001 versus indicated groups.",
+      "context_window": "n \u00b1 SEM. ns = not significant. * p < 0.05, ** p < 0.01, *** p < 0.001 versus indicated groups. By contrast, TGF-\u03b2 levels were si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11109",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11109,
+      "sentence": "By contrast, TGF-\u03b2 levels were significantly elevated in the Diabetes group compared with Controls ( p < 0.001), reflecting enhanced profibrotic signaling, and spermidine significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), although values remained higher than in Controls ( p < 0.01), indicating an incomplete attenuation of fibrosis ( Figure 8 , Table 5 ).",
+      "context_window": "tly elevated in the Diabetes group compared with Controls ( p < 0.001), reflecting enhanced profibrotic signaling, and spermidine",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11232",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11232,
+      "sentence": "By contrast, TGF-\u03b2 levels were significantly elevated in the Diabetes group compared with Controls ( p < 0.001), reflecting enhanced profibrotic signaling, and spermidine significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), although values remained higher than in Controls ( p < 0.01), indicating an incomplete attenuation of fibrosis ( Figure 8 , Table 5 ).",
+      "context_window": "midine significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), although values remained higher than in Controls ( p < 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11294",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11294,
+      "sentence": "By contrast, TGF-\u03b2 levels were significantly elevated in the Diabetes group compared with Controls ( p < 0.001), reflecting enhanced profibrotic signaling, and spermidine significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), although values remained higher than in Controls ( p < 0.01), indicating an incomplete attenuation of fibrosis ( Figure 8 , Table 5 ).",
+      "context_window": "< 0.01), although values remained higher than in Controls ( p < 0.01), indicating an incomplete attenuation of fibrosis ( Figure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11527",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11527,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "GF-\u03b2 levels in rats. Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11561",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11561,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "xpressed as mean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group. The resu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11574",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11574,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "ean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group. The results of the an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11588",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11588,
+      "sentence": "Values are expressed as mean \u00b1 SEM. * p < 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group.",
+      "context_window": "< 0.001 versus Control group; # p < 0.05, ## p < 0.01, ### p < 0.01 versus Diabetes group. The results of the analyses of auto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11885",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11885,
+      "sentence": "LC3 and Beclin-1, the key indicators of autophagic activity, were significantly reduced in the Diabetes group compared with Controls (both p < 0.001), indicating a reduction in autophagic activity.",
+      "context_window": "reduced in the Diabetes group compared with Controls (both p < 0.001), indicating a reduction in autophagic activity. Spermidine",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-11995",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11995,
+      "sentence": "Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.001) compared with the untreated Diabetic group, suggesting a partial reactivation of the autophagic process.",
+      "context_window": "ctivity. Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.001) compared with the untreated Diab",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-12020",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12020,
+      "sentence": "Spermidine treatment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.001) compared with the untreated Diabetic group, suggesting a partial reactivation of the autophagic process.",
+      "context_window": "ment significantly increased LC3 ( p < 0.01) and Beclin-1 ( p < 0.001) compared with the untreated Diabetic group, suggesting a p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-12195",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12195,
+      "sentence": "After treatment, LC3 levels did not differ from Controls ( p > 0.05), pointing to near normalization, whereas Beclin-1 remained significantly lower ( p < 0.05).",
+      "context_window": "After treatment, LC3 levels did not differ from Controls ( p > 0.05), pointing to near normalization, whereas Beclin-1 remained",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-12286",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12286,
+      "sentence": "After treatment, LC3 levels did not differ from Controls ( p > 0.05), pointing to near normalization, whereas Beclin-1 remained significantly lower ( p < 0.05).",
+      "context_window": "malization, whereas Beclin-1 remained significantly lower ( p < 0.05). By contrast, TGF-\u03b2 levels were significantly elevated in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-12399",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12399,
+      "sentence": "By contrast, TGF-\u03b2 levels were significantly elevated in the Diabetes group compared with Controls ( p < 0.001), consistent with enhanced profibrotic signaling.",
+      "context_window": "tly elevated in the Diabetes group compared with Controls ( p < 0.001), consistent with enhanced profibrotic signaling. Spermidin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-12538",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12538,
+      "sentence": "Spermidine administration significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), yet levels did not differ significantly from Controls ( p > 0.05) ( Figure 8 , Table 5 ).",
+      "context_window": "ration significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), yet levels did not differ significantly from Controls ( p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-p-12605",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12605,
+      "sentence": "Spermidine administration significantly reduced TGF-\u03b2 compared with Diabetes ( p < 0.01), yet levels did not differ significantly from Controls ( p > 0.05) ( Figure 8 , Table 5 ).",
+      "context_window": "1), yet levels did not differ significantly from Controls ( p > 0.05) ( Figure 8 , Table 5 ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-722",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/dL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 722,
+      "sentence": "STZ administration induced severe hyperglycemia in female rats (fasting glucose > 500 vs. ~90-100 mg/dL baseline), consistent with previous models [ 14 , 15 ].",
+      "context_window": "hyperglycemia in female rats (fasting glucose > 500 vs. ~90-100 mg/dL baseline), consistent with previous models [ 14 , 15 ]. Spe",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-7821",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7821,
+      "sentence": "In STZ-induced diabetes models, the autophagic response exhibits a biphasic pattern; it increases adaptively during the early phase [ 42 , 43 , 44 ] but becomes markedly suppressed in metabolically active organs such as the kidney, heart, and ovary after 2-4 weeks [ 31 , 45 ].",
+      "context_window": "active organs such as the kidney, heart, and ovary after 2-4 weeks [ 31 , 45 ]. In our study, the decrease in LC3 and Beclin-1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12649195_protective_role_of_spermidine_against_diabetes_induced_ovari-u-8868",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 years",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8868,
+      "sentence": "Furthermore, considering that four weeks of hyperglycemia in rats roughly corresponds to approximately 2.5 years of human life [ 49 , 50 ], these findings suggest that spermidine may also exert beneficial effects during the transition to a chronic-like phase of diabetes.",
+      "context_window": "hyperglycemia in rats roughly corresponds to approximately 2.5 years of human life [ 49 , 50 ], these findings suggest that sper",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

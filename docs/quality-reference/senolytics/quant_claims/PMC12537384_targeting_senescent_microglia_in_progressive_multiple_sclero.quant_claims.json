@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC12537384_targeting_senescent_microglia_in_progressive_multiple_sclero",
+  "doi": "10.3389/fimmu.2025.1681724",
+  "extracted_at": "2026-05-08T20:01:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12537384_targeting_senescent_microglia_in_progressive_multiple_sclero-u-1290",
+      "claim_type": "unit_value",
+      "raw_text": "44 weeks",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1290,
+      "sentence": "Specifically, here we show that middle-aged mice (40-44 weeks) with EAE exhibit improved clinical outcomes and survival following treatment with either dasatinib plus quercetin (D+Q) or navitoclax.",
+      "context_window": "anner. Specifically, here we show that middle-aged mice (40-44 weeks) with EAE exhibit improved clinical outcomes and survival f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12537384_targeting_senescent_microglia_in_progressive_multiple_sclero-pct-717",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 717,
+      "sentence": "As people with RRMS age, up to 90% transition to a progressive form of the disease, defined by the gradual accrual of irreversible neurological disability ( 6 , 7 ).",
+      "context_window": "scular space and parenchyma. As people with RRMS age, up to 90% transition to a progressive form of the disease, defined by",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

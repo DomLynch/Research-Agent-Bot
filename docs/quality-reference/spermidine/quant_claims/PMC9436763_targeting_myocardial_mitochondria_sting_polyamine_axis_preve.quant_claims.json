@@ -1,0 +1,1670 @@
+{
+  "paper_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve",
+  "doi": "10.1016/j.jacbts.2022.03.006",
+  "extracted_at": "2026-05-08T20:12:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 14,
+    "percentage": 20,
+    "sample_size": 16,
+    "p_value": 42
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-626",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 626,
+      "sentence": "7 Briefly, male C57BL/6 mice at 8 weeks of age were first inflicted with two-thirds electrocoagulation of the right renal cortex and then underwent left total nephrectomy 2 weeks later.",
+      "context_window": "ed as previously described. 7 Briefly, male C57BL/6 mice at 8 weeks of age were first inflicted with two-thirds electrocoagulat",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-765",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 765,
+      "sentence": "7 Briefly, male C57BL/6 mice at 8 weeks of age were first inflicted with two-thirds electrocoagulation of the right renal cortex and then underwent left total nephrectomy 2 weeks later.",
+      "context_window": "ight renal cortex and then underwent left total nephrectomy 2 weeks later. To pharmacologically inhibit ODC1, mice were admini",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-884",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 884,
+      "sentence": "To pharmacologically inhibit ODC1, mice were administered difluoromethylornithine (MedChem Express) at 2% final concentration in their drinking water.",
+      "context_window": "e administered difluoromethylornithine (MedChem Express) at 2% final concentration in their drinking water. For VBIT-4 (Se",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-1296",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mg",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1296,
+      "sentence": "Then, VBIT-4 dissolved in dimethyl sulfoxide was added in a dropwise manner into the acidic water to reach a final concentration of 0.3 mg mL -1 .",
+      "context_window": "ner into the acidic water to reach a final concentration of 0.3 mg mL -1 . For PUT (MedChem Express) supplementation, mice wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-1435",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1435,
+      "sentence": "As one mouse consumes about 60 mL kg -1 water per day, 18 the daily doses of difluoromethylornithine, VBIT-4, and PUT were approximately 1.2 g kg -1 , 20 mg kg -1 , and 10.58 mg kg -1 , respectively.",
+      "context_window": "n their drinking water at 2 mM. As one mouse consumes about 60 mL kg -1 water per day, 18 the daily doses of difluoromethylor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-1558",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1558,
+      "sentence": "As one mouse consumes about 60 mL kg -1 water per day, 18 the daily doses of difluoromethylornithine, VBIT-4, and PUT were approximately 1.2 g kg -1 , 20 mg kg -1 , and 10.58 mg kg -1 , respectively.",
+      "context_window": "ornithine, VBIT-4, and PUT were approximately 1.2 g kg -1 , 20 mg kg -1 , and 10.58 mg kg -1 , respectively. To pharmacologic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-1576",
+      "claim_type": "unit_value",
+      "raw_text": "10.58 mg",
+      "numeric_values": [
+        10.58
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1576,
+      "sentence": "As one mouse consumes about 60 mL kg -1 water per day, 18 the daily doses of difluoromethylornithine, VBIT-4, and PUT were approximately 1.2 g kg -1 , 20 mg kg -1 , and 10.58 mg kg -1 , respectively.",
+      "context_window": "and PUT were approximately 1.2 g kg -1 , 20 mg kg -1 , and 10.58 mg kg -1 , respectively. To pharmacologically inhibit NF\u03baB, mi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-1796",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1796,
+      "sentence": "To pharmacologically inhibit NF\u03baB, mice were given ammonium pyrrolidinedithiocarbamate (MedChem Express), which is a preclinically available oral drug, in their drinking water at a dose of 100 mg kg -1 .",
+      "context_window": "y available oral drug, in their drinking water at a dose of 100 mg kg -1 . Fluid consumption was verified, and the drinking wa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-1964",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1964,
+      "sentence": "C-176 (MedChem Express) was reconstituted in dimethyl sulfoxide at 10 mg mL -1 and diluted in 5% Tween-80 (Sigma-Aldrich) and 5% PEG-400 (Sangon Biotech).",
+      "context_window": "MedChem Express) was reconstituted in dimethyl sulfoxide at 10 mg mL -1 and diluted in 5% Tween-80 (Sigma-Aldrich) and 5% PEG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-1991",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1991,
+      "sentence": "C-176 (MedChem Express) was reconstituted in dimethyl sulfoxide at 10 mg mL -1 and diluted in 5% Tween-80 (Sigma-Aldrich) and 5% PEG-400 (Sangon Biotech).",
+      "context_window": "tituted in dimethyl sulfoxide at 10 mg mL -1 and diluted in 5% Tween-80 (Sigma-Aldrich) and 5% PEG-400 (Sangon Biotech). T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-2023",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2023,
+      "sentence": "C-176 (MedChem Express) was reconstituted in dimethyl sulfoxide at 10 mg mL -1 and diluted in 5% Tween-80 (Sigma-Aldrich) and 5% PEG-400 (Sangon Biotech).",
+      "context_window": "10 mg mL -1 and diluted in 5% Tween-80 (Sigma-Aldrich) and 5% PEG-400 (Sangon Biotech). To pharmacologically inhibit STIN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-2129",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2129,
+      "sentence": "To pharmacologically inhibit STING in vivo, mice were treated with a dose of 4 mg kg -1 intraperitoneally every other day.",
+      "context_window": "lly inhibit STING in vivo, mice were treated with a dose of 4 mg kg -1 intraperitoneally every other day. All mice were age",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-3298",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3298,
+      "sentence": "Blood urea nitrogen, creatinine, and glucose were assayed in all patients, and normal sera were excluded if creatinine was >1.0 mg dL -1 .",
+      "context_window": "patients, and normal sera were excluded if creatinine was >1.0 mg dL -1 . The study protocol was approved by the Ethics Commi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-3695",
+      "claim_type": "percentage",
+      "raw_text": "1.25%",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3695,
+      "sentence": "7 Briefly, the left ventricles of 1-day-old neonatal Sprague-Dawley rats (Beijing HFK Bioscience) were harvested and digested with 1.25% trypsin (Thermo Fisher Scientific) at room temperature, then incubated with 0.08% collagenase II (Solarbio Life Sciences) at 37\u00b0C.",
+      "context_window": "s (Beijing HFK Bioscience) were harvested and digested with 1.25% trypsin (Thermo Fisher Scientific) at room temperature, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-3777",
+      "claim_type": "percentage",
+      "raw_text": "0.08%",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3777,
+      "sentence": "7 Briefly, the left ventricles of 1-day-old neonatal Sprague-Dawley rats (Beijing HFK Bioscience) were harvested and digested with 1.25% trypsin (Thermo Fisher Scientific) at room temperature, then incubated with 0.08% collagenase II (Solarbio Life Sciences) at 37\u00b0C.",
+      "context_window": "Fisher Scientific) at room temperature, then incubated with 0.08% collagenase II (Solarbio Life Sciences) at 37\u00b0C. Cells were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-4078",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4078,
+      "sentence": "After being washed with PBS, the precipitate was resuspended in Dulbecco\u2019s modified Eagle\u2019s medium-high glucose (Gibco) with 15% fetal bovine serum (Gibco) and 0.1 mM bromodeoxyuridine for 48 hours.",
+      "context_window": "ulbecco\u2019s modified Eagle\u2019s medium-high glucose (Gibco) with 15% fetal bovine serum (Gibco) and 0.1 mM bromodeoxyuridine for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-4250",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4250,
+      "sentence": "Finally, NRCMs were cultured in Dulbecco\u2019s modified Eagle\u2019s medium-high glucose supplemented with 20% healthy or CKD serum and 1% (vol/vol) penicillin/streptomycin for 48 hours.",
+      "context_window": "co\u2019s modified Eagle\u2019s medium-high glucose supplemented with 20% healthy or CKD serum and 1% (vol/vol) penicillin/streptomyc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-4279",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4279,
+      "sentence": "Finally, NRCMs were cultured in Dulbecco\u2019s modified Eagle\u2019s medium-high glucose supplemented with 20% healthy or CKD serum and 1% (vol/vol) penicillin/streptomycin for 48 hours.",
+      "context_window": "high glucose supplemented with 20% healthy or CKD serum and 1% (vol/vol) penicillin/streptomycin for 48 hours. To inhibit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-4731",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4731,
+      "sentence": "Mice were lightly anesthetized with 0.5% isoflurane and 99.5% O 2 and imaged in the supine position using a high-resolution microimaging system equipped with a 30-MHz linear-array transducer (Vevo 2100 Imaging System, VisualSonics).",
+      "context_window": "a-Aldrich) for 1 hour. Mice were lightly anesthetized with 0.5% isoflurane and 99.5% O 2 and imaged in the supine position",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-4751",
+      "claim_type": "percentage",
+      "raw_text": "99.5%",
+      "numeric_values": [
+        99.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4751,
+      "sentence": "Mice were lightly anesthetized with 0.5% isoflurane and 99.5% O 2 and imaged in the supine position using a high-resolution microimaging system equipped with a 30-MHz linear-array transducer (Vevo 2100 Imaging System, VisualSonics).",
+      "context_window": "r. Mice were lightly anesthetized with 0.5% isoflurane and 99.5% O 2 and imaged in the supine position using a high-resoluti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-5158",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5158,
+      "sentence": "The percentage of fractional shortening was calculated using the equation: 100% \u00d7 [(LV internal diameter at diastole - LV internal diameter at systole)/LV internal diameter at diastole].",
+      "context_window": "of fractional shortening was calculated using the equation: 100% \u00d7 [(LV internal diameter at diastole - LV internal diameter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-14828",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14828,
+      "sentence": "NRCMs were fixed in 2.5% glutaraldehyde and sent to the Biomedical Analysis Center of Army Medical University (Third Military Medical University) for standard transmission electron microscopic ultrastructural analysis.",
+      "context_window": "es is listed in Supplemental Table 4 . NRCMs were fixed in 2.5% glutaraldehyde and sent to the Biomedical Analysis Center o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-15146",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15146,
+      "sentence": "Isolated hearts were fixed using 4% paraformaldehyde, dehydrated, and embedded in paraffin.",
+      "context_window": "ectron microscope (JEOL). Isolated hearts were fixed using 4% paraformaldehyde, dehydrated, and embedded in paraffin. Hea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-15530",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15530,
+      "sentence": "Frozen sections and cells were fixed with 4% paraformaldehyde, followed by permeabilization and blocking using 0.25% Triton X-100 and 5% goat serum (all Santa Cruz Biotechnology), respectively.",
+      "context_window": "o 4-\u03bcm thickness. Frozen sections and cells were fixed with 4% paraformaldehyde, followed by permeabilization and blocking",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-15599",
+      "claim_type": "percentage",
+      "raw_text": "0.25%",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15599,
+      "sentence": "Frozen sections and cells were fixed with 4% paraformaldehyde, followed by permeabilization and blocking using 0.25% Triton X-100 and 5% goat serum (all Santa Cruz Biotechnology), respectively.",
+      "context_window": "rmaldehyde, followed by permeabilization and blocking using 0.25% Triton X-100 and 5% goat serum (all Santa Cruz Biotechnolog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-15622",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15622,
+      "sentence": "Frozen sections and cells were fixed with 4% paraformaldehyde, followed by permeabilization and blocking using 0.25% Triton X-100 and 5% goat serum (all Santa Cruz Biotechnology), respectively.",
+      "context_window": "permeabilization and blocking using 0.25% Triton X-100 and 5% goat serum (all Santa Cruz Biotechnology), respectively. Se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-16519",
+      "claim_type": "unit_value",
+      "raw_text": "10 \u03bcmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 16519,
+      "sentence": "Myocardia or NRCMs were homogenized in RIPA lysis buffer with 1 \u03bcL internal standard (hexamethylenediamine, 10 \u03bcmol mL -1 ), and protein concentrations were measured using a BCA protein assay kit.",
+      "context_window": "s buffer with 1 \u03bcL internal standard (hexamethylenediamine, 10 \u03bcmol mL -1 ), and protein concentrations were measured using a B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-16640",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16640,
+      "sentence": "Then, 1,000 \u03bcL perchloric acid (5%) was added to precipitate proteins.",
+      "context_window": "ng a BCA protein assay kit. Then, 1,000 \u03bcL perchloric acid (5%) was added to precipitate proteins. After incubating for 30",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-16941",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 16941,
+      "sentence": "Subsequently, 2 mL chloroform and equivalent 0.9% normal saline were added and vortexed for 1 minutes.",
+      "context_window": "mM) and 8 \u03bcL benzoyl chloride for 20 minutes. Subsequently, 2 mL chloroform and equivalent 0.9% normal saline were added and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-16972",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16972,
+      "sentence": "Subsequently, 2 mL chloroform and equivalent 0.9% normal saline were added and vortexed for 1 minutes.",
+      "context_window": "or 20 minutes. Subsequently, 2 mL chloroform and equivalent 0.9% normal saline were added and vortexed for 1 minutes. The li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-17273",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 17273,
+      "sentence": "Subsequently, 2 mL chloroform and 200 \u03bcL NaOH were added for further purification.",
+      "context_window": "before incubating in 50\u00b0C water for 8 hours. Subsequently, 2 mL chloroform and 200 \u03bcL NaOH were added for further purificat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-u-17446",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 mm",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 17446,
+      "sentence": "The polyamine derivatives were detected using C18 high-performance liquid chromatography columns (250 \u00d7 4.6 mm, 5 \u03bcM) with a Waters e2489 UV/Visible detector.",
+      "context_window": "g C18 high-performance liquid chromatography columns (250 \u00d7 4.6 mm, 5 \u03bcM) with a Waters e2489 UV/Visible detector. The excitat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-17611",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17611,
+      "sentence": "The solvent flow was 1 ml min -1 (5% methanol:95% methanol, 45:55 vol/vol).",
+      "context_window": "ector were set at 229 nm. The solvent flow was 1 ml min -1 (5% methanol:95% methanol, 45:55 vol/vol). The runtime was 50 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-pct-17623",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17623,
+      "sentence": "The solvent flow was 1 ml min -1 (5% methanol:95% methanol, 45:55 vol/vol).",
+      "context_window": "et at 229 nm. The solvent flow was 1 ml min -1 (5% methanol:95% methanol, 45:55 vol/vol). The runtime was 50 minutes for ea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-3137",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3137,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001. JC-1 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-3185",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3185,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001. JC-1 = 5,5\u2032,6,6\u2032-tetrachloro-1,1\u2032,3,3\u2032-tetraethylbenzimida",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-5181",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5181,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001. JC-1 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-5229",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5229,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "s t -tests. n = 3 biologically independent experiments. \u2217\u2217\u2217 P < 0.001. JC-1 = 5,5\u2032,6,6\u2032-tetrachloro-1,1\u2032,3,3\u2032-tetraethylbenzimida",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-9737",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9737,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "(A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-9783",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9783,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-9796",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9796,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-9814",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9814,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-11372",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11372,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "(A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-11418",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11418,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-11431",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11431,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-11449",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11449,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -tests (A to C) or 1-way analysis of variance (D, E, G to I, K) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations as in Figure 1 .",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. n.s. = not significant; VEH = vehicle; other abbreviations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-13896",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13896,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "d Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-13943",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13943,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "riance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001. DAPI = 4\u2032,6-diamidino-2-phenylindole; FD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-13960",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13960,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001. DAPI = 4\u2032,6-diamidino-2-phenylindole; FDR = false discover",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-15636",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15636,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "d Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-15683",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15683,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "riance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001. DAPI = 4\u2032,6-diamidino-2-phenylindole; FD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-15700",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15700,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (B) or 1-way analysis of variance (E) . n = 3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "3 biologically independent experiments. \u2217\u2217 P < 0.01 and \u2217\u2217\u2217 P < 0.001. DAPI = 4\u2032,6-diamidino-2-phenylindole; FDR = false discover",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-17856",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17856,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "an \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-17902",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17902,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-17915",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17915,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 and 2 .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-17933",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17933,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 and 2 . Activation of the M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-18857",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18857,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "an \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-18903",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18903,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-18916",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18916,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 and 2 .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-18934",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18934,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 and 2 . Interferon regulato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-21278",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21278,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "dent\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-21324",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21324,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "ce (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. WT = wild-type; other abbr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-21337",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21337,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. WT = wild-type; other abbreviations as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-21355",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21355,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. WT = wild-type; other abbreviations as in Figures 1 , 2 ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-22434",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22434,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "dent\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-22480",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22480,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "ce (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. WT = wild-type; other abbr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-22493",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22493,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. WT = wild-type; other abbreviations as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-22511",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22511,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 2-tailed Student\u2019s t -test (C) or 1-way analysis of variance (D to F) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. WT = wild-type; other abbreviations as in Figures 1 , 2 ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-25491",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25491,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "(B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-25537",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25537,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-25550",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25550,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-25568",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25568,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and 5 . Activation of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-26955",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26955,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "(B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-27001",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27001,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-27014",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27014,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-27032",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27032,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed by 2-tailed Student\u2019s t -tests (B, C) or 1-way analysis of variance (D, F to H, J to N) . n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and 5 . Further study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-29078",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29078,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "an \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-29125",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29125,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-29138",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29138,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-29156",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29156,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and 6 . Table 1 Putati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-30274",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 30274,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "an \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-30321",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 30321,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-30334",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 30334,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-30352",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 30352,
+      "sentence": "Data are represented as mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "independent experiments. n\u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. Abbreviations as in Figures 1 , 2 , and 6 . Putative Bind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-32465",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 32465,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "an \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-32511",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 32511,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. DFMO = difluoromethylornit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-32524",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 32524,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. DFMO = difluoromethylornithine; other a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-32542",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 32542,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. DFMO = difluoromethylornithine; other abbreviations as in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-n-33692",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 33692,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "an \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-33738",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 33738,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. DFMO = difluoromethylornit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-33751",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 33751,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. DFMO = difluoromethylornithine; other a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9436763_targeting_myocardial_mitochondria_sting_polyamine_axis_preve-p-33769",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 33769,
+      "sentence": "Data represent mean \u00b1 SD and were analyzed using 1-way analysis of variance. n = 3 biologically independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001.",
+      "context_window": "y independent experiments. \u2217 P < 0.05, \u2217\u2217 P < 0.01, and \u2217\u2217\u2217 P < 0.001. DFMO = difluoromethylornithine; other abbreviations as in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

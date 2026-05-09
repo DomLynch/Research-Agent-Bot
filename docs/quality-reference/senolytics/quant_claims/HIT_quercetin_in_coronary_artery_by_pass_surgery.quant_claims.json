@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_quercetin_in_coronary_artery_by_pass_surgery",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_quercetin_in_coronary_artery_by_pass_surgery-u-248",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "abstract",
+      "source_offset": 248,
+      "sentence": "Posted outcomes: Quercetin-associated Change in Surgery-associated Inflammation. timeframe=Baseline, 1 day and 4 days post-surgery.",
+      "context_window": "nge in Surgery-associated Inflammation. timeframe=Baseline, 1 day and 4 days post-surgery. Placebo=9 (\u00b15); Quercetin=3 (\u00b11)",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_quercetin_in_coronary_artery_by_pass_surgery-u-258",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 258,
+      "sentence": "Posted outcomes: Quercetin-associated Change in Surgery-associated Inflammation. timeframe=Baseline, 1 day and 4 days post-surgery.",
+      "context_window": "gery-associated Inflammation. timeframe=Baseline, 1 day and 4 days post-surgery. Placebo=9 (\u00b15); Quercetin=3 (\u00b11)",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

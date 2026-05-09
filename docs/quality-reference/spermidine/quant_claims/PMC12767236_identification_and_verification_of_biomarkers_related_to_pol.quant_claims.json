@@ -1,0 +1,337 @@
+{
+  "paper_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol",
+  "doi": "10.1155/jdr/9539734",
+  "extracted_at": "2026-05-08T20:11:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "p_value": 13,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-pct-1450",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1450,
+      "sentence": "Both datasets were filtered to remove low\u2010expression genes according to the criterion of \u201cretaining genes with an expression level > 0 in \u2265 50% of samples,\u201d resulting in the final gene expression matrices for subsequent analysis.",
+      "context_window": "erion of \u201cretaining genes with an expression level > 0 in \u2265 50% of samples,\u201d resulting in the final gene expression matrice",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-2877",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2877,
+      "sentence": "Furthermore, to identify DEG 3 of DN and control samples in the GSE185011 dataset, differential expression analysis was processed via the limma package with the criteria of p < 0.05 and |log2FC| = 0.",
+      "context_window": "is was processed via the limma package with the criteria of p < 0.05 and |log2FC| = 0. The intersection of DEGs 1 and 2 yielded",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5151",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5151,
+      "sentence": "In detail, Spearman\u2032s correlation analysis between biomarkers and all genes in the GSE142153 dataset was processed by the psych package (v 2.4.1) [ 21 ], and their correlation coefficients were ranked for GSEA (adj. p < 0.05).",
+      "context_window": "d their correlation coefficients were ranked for GSEA (adj. p < 0.05). In addition, SPEED2 ( https://speed2.sys-bio.net/ ) was u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5576",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5576,
+      "sentence": "The Wilcoxon test ( p < 0.05) was used to compare the abundance of immune infiltration between the DN and control groups.",
+      "context_window": "4 types of immune cells in the samples. The Wilcoxon test ( p < 0.05) was used to compare the abundance of immune infiltration b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5865",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5865,
+      "sentence": "Furthermore, the Spearman correlation of immune cells with biomarkers was analyzed by the pheatmap package (v 1.0.12) [ 22 ]( p < 0.05).",
+      "context_window": "ers was analyzed by the pheatmap package (v 1.0.12) [ 22 ]( p < 0.05). To identify potential regulatory mechanisms, microRNA (m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-n-7680",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7680,
+      "sentence": "According to the Ethics Committee-approved protocol, paraffin\u2010embedded kidney tissue sections were obtained from The First Hospital of Lanzhou University, including samples from DN tissue ( n = 5) and paracancerous tissue ( n = 5), with informed consent obtained from all patients.",
+      "context_window": "l of Lanzhou University, including samples from DN tissue ( n = 5) and paracancerous tissue ( n = 5), with informed consent o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-n-7714",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7714,
+      "sentence": "According to the Ethics Committee-approved protocol, paraffin\u2010embedded kidney tissue sections were obtained from The First Hospital of Lanzhou University, including samples from DN tissue ( n = 5) and paracancerous tissue ( n = 5), with informed consent obtained from all patients.",
+      "context_window": "samples from DN tissue ( n = 5) and paracancerous tissue ( n = 5), with informed consent obtained from all patients. Immunoh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-pct-8151",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8151,
+      "sentence": "Antigen retrieval was performed, and endogenous peroxidase activity was blocked using 3% hydrogen peroxide for 25 min.",
+      "context_window": "ormed, and endogenous peroxidase activity was blocked using 3% hydrogen peroxide for 25 min. Following a 3% BSA block, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-pct-8196",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8196,
+      "sentence": "Following a 3% BSA block, the primary antibodies were left to incubate overnight at 4\u00b0C.",
+      "context_window": "blocked using 3% hydrogen peroxide for 25 min. Following a 3% BSA block, the primary antibodies were left to incubate ove",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-2450",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2450,
+      "sentence": "Low expression in green, high expression in red. (f) Venn diagram for the intersection of DEG 1 and DEG 2. (g) GO enrichment analysis of intersection genes. (h) KEGG enrichment analysis of intersection genes.\n\n(a)\n\n(b)\n\n(c)\n\n(d)\n\n(e)\n\n(f)\n\n(g)\n\n(h)\n\nTotally 1593 DEG 3 (1179 upregulated and 414 downregulated) were selected between the DN and control groups in the GSE185011 dataset ( p < 0.05).",
+      "context_window": "etween the DN and control groups in the GSE185011 dataset ( p < 0.05). The co\u2010upregulated and co\u2010downregulated genes in DEG 1 an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-4883",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4883,
+      "sentence": "Out of these, there were notable variations in infiltration between the two groups for 19 immune cell types, including adipocytes, B cells, and naive CD4 T cells ( p < 0.05) (Figure 4b ).",
+      "context_window": "pes, including adipocytes, B cells, and naive CD4 T cells ( p < 0.05) (Figure 4b ). Importantly, the expression of KAZALD1 and R",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5061",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5061,
+      "sentence": "Importantly, the expression of KAZALD1 and RPRD1B exhibited positive correlations with na\u00efve CD8 T cells, M1 macrophages, and other immune cells ( r > 0, p < 0.05) while showing a negative correlation with CD8 T cells, B cells, and so on ( r < 0, p < 0.05).",
+      "context_window": "D8 T cells, M1 macrophages, and other immune cells ( r > 0, p < 0.05) while showing a negative correlation with CD8 T cells, B c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5154",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5154,
+      "sentence": "Importantly, the expression of KAZALD1 and RPRD1B exhibited positive correlations with na\u00efve CD8 T cells, M1 macrophages, and other immune cells ( r > 0, p < 0.05) while showing a negative correlation with CD8 T cells, B cells, and so on ( r < 0, p < 0.05).",
+      "context_window": "e correlation with CD8 T cells, B cells, and so on ( r < 0, p < 0.05). In contrast, the relationship between GLCE and immune cel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5457",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5457,
+      "sentence": "Immune cells showed a correlation with biomarkers. (a) Stacked plot of immune cell abundance. (b) Differential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biomarkers and differential immune cells.\n\n(a)\n\n(b)\n\n(c)\n\nA lncRNA-miRNA-biomarker regulatory network was constructed, consisting of three biomarkers, 30 miRNAs, and 27 lncRNAs (Figure 5a , Table S3 ).",
+      "context_window": ". (b) Differential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5469",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5469,
+      "sentence": "Immune cells showed a correlation with biomarkers. (a) Stacked plot of immune cell abundance. (b) Differential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biomarkers and differential immune cells.\n\n(a)\n\n(b)\n\n(c)\n\nA lncRNA-miRNA-biomarker regulatory network was constructed, consisting of three biomarkers, 30 miRNAs, and 27 lncRNAs (Figure 5a , Table S3 ).",
+      "context_window": "ential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Corre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5482",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5482,
+      "sentence": "Immune cells showed a correlation with biomarkers. (a) Stacked plot of immune cell abundance. (b) Differential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biomarkers and differential immune cells.\n\n(a)\n\n(b)\n\n(c)\n\nA lncRNA-miRNA-biomarker regulatory network was constructed, consisting of three biomarkers, 30 miRNAs, and 27 lncRNAs (Figure 5a , Table S3 ).",
+      "context_window": "sion of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5496",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5496,
+      "sentence": "Immune cells showed a correlation with biomarkers. (a) Stacked plot of immune cell abundance. (b) Differential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biomarkers and differential immune cells.\n\n(a)\n\n(b)\n\n(c)\n\nA lncRNA-miRNA-biomarker regulatory network was constructed, consisting of three biomarkers, 30 miRNAs, and 27 lncRNAs (Figure 5a , Table S3 ).",
+      "context_window": "cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12767236_identification_and_verification_of_biomarkers_related_to_pol-p-5516",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5516,
+      "sentence": "Immune cells showed a correlation with biomarkers. (a) Stacked plot of immune cell abundance. (b) Differential expression of immune cells. ns indicates p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biomarkers and differential immune cells.\n\n(a)\n\n(b)\n\n(c)\n\nA lncRNA-miRNA-biomarker regulatory network was constructed, consisting of three biomarkers, 30 miRNAs, and 27 lncRNAs (Figure 5a , Table S3 ).",
+      "context_window": "p > 0.05, \u2217 p < 0.05, \u2217\u2217 p < 0.01, \u2217\u2217\u2217 p < 0.001, and \u2217\u2217\u2217\u2217 p < 0.0001. (c) Correlation analysis between biomarkers and differenti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

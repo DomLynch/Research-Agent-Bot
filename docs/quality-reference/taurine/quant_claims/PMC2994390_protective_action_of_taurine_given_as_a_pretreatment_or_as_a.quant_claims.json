@@ -1,0 +1,2213 @@
+{
+  "paper_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a",
+  "doi": "10.1186/1423-0127-17-S1-S19",
+  "extracted_at": "2026-05-08T20:10:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 29,
+    "percentage": 30,
+    "mean_sd": 2,
+    "sample_size": 12,
+    "p_value": 49
+  },
+  "claims": [
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-200",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 200,
+      "sentence": "To assess the effect of taurine on lipopolysaccharide (LPS)-induced lung inflammation, oxidative stress and apoptosis, female Golden Syrian hamsters were intratracheally instilled with bacterial LPS (0.02 mg in phosphate buffered saline (PBS) pH 7.4), before or after a 3-day intraperitoneal treatment with a single dose of taurine (50 mg/kg/day in PBS pH 7.4), and bronchoalveolar lavage fluid (BALF) and lung tissue samples were collected at 24 hr after the last treatment.",
+      "context_window": "hamsters were intratracheally instilled with bacterial LPS (0.02 mg in phosphate buffered saline (PBS) pH 7.4), before or after",
+      "claim_role": "dose",
+      "endpoint": "oxidative stress",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-333",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/kg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 333,
+      "sentence": "To assess the effect of taurine on lipopolysaccharide (LPS)-induced lung inflammation, oxidative stress and apoptosis, female Golden Syrian hamsters were intratracheally instilled with bacterial LPS (0.02 mg in phosphate buffered saline (PBS) pH 7.4), before or after a 3-day intraperitoneal treatment with a single dose of taurine (50 mg/kg/day in PBS pH 7.4), and bronchoalveolar lavage fluid (BALF) and lung tissue samples were collected at 24 hr after the last treatment.",
+      "context_window": "ay intraperitoneal treatment with a single dose of taurine (50 mg/kg/day in PBS pH 7.4), and bronchoalveolar lavage fluid (BALF) and",
+      "claim_role": "dose",
+      "endpoint": "oxidative stress",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-2727",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2727,
+      "sentence": "For example, the addition of this compound to cultured pneumocytes was found to reduce the LPS-induced generation of ROS and the activation of mitogen-activated protein kinases and Bax [ 29 ]; and the pretreatment of rats with 5% TAU in the drinking water resulted in a lower number of inflammatory leukocytes infiltrating the lung and in attenuation of the focal bronchiolar hyperplasia that developed from a short contact with ozone [ 30 ].",
+      "context_window": "n kinases and Bax [ 29 ]; and the pretreatment of rats with 5% TAU in the drinking water resulted in a lower number of inf",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-121",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 121,
+      "sentence": "H 2 O 2 (30% w/w), LPS (serotype: O26:B6 obtained from American Type Culture Collection no.",
+      "context_window": "were purchased from commercial sources in the USA. H 2 O 2 (30% w/w), LPS (serotype: O26:B6 obtained from American Type Cul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-542",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 542,
+      "sentence": "Female Golden Syrian hamsters (5-6 weeks old, 100\u00b115 g in weight, 6 per group) were purchased from Harlan, Indianapolis, IN, USA.",
+      "context_window": "Co., Inc., Milwaukee, WI. Female Golden Syrian hamsters (5-6 weeks old, 100\u00b115 g in weight, 6 per group) were purchased from H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-msd-555",
+      "claim_type": "mean_sd",
+      "raw_text": "100\u00b115",
+      "numeric_values": [
+        100.0,
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 555,
+      "sentence": "Female Golden Syrian hamsters (5-6 weeks old, 100\u00b115 g in weight, 6 per group) were purchased from Harlan, Indianapolis, IN, USA.",
+      "context_window": "lwaukee, WI. Female Golden Syrian hamsters (5-6 weeks old, 100\u00b115 g in weight, 6 per group) were purchased from Harlan, India",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-msd-697",
+      "claim_type": "mean_sd",
+      "raw_text": "21\u00b11",
+      "numeric_values": [
+        21.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 697,
+      "sentence": "The animals were housed in a temperature-controlled room (21\u00b11\u00b0C) with a 12 hr light-12 hr dark cycle; and had free access to a standard hamster chow and filtered tap water for at least 7 days.",
+      "context_window": ". The animals were housed in a temperature-controlled room (21\u00b11\u00b0C) with a 12 hr light-12 hr dark cycle; and had free access",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-825",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 825,
+      "sentence": "The animals were housed in a temperature-controlled room (21\u00b11\u00b0C) with a 12 hr light-12 hr dark cycle; and had free access to a standard hamster chow and filtered tap water for at least 7 days.",
+      "context_window": "a standard hamster chow and filtered tap water for at least 7 days. The study received the approval of the Institutional Anima",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1237",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1237,
+      "sentence": "To determine the effects of a pretreatment with taurine on LPS-induced lung injury, hamsters were treated with TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by the intraperitoneal (i.p.) route for 3 days, followed successively by an i.p. dose of pentobarbital sodium (90 mg/kg/0.4 ml) to induce anesthesia, and an intratracheal (i.t.) instillation of LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) on day 4.",
+      "context_window": "U (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by the intraperitoneal (i.p.) route for 3 da",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1298",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1298,
+      "sentence": "To determine the effects of a pretreatment with taurine on LPS-induced lung injury, hamsters were treated with TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by the intraperitoneal (i.p.) route for 3 days, followed successively by an i.p. dose of pentobarbital sodium (90 mg/kg/0.4 ml) to induce anesthesia, and an intratracheal (i.t.) instillation of LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) on day 4.",
+      "context_window": "0 mg/kg/0.5 ml/day) by the intraperitoneal (i.p.) route for 3 days, followed successively by an i.p. dose of pentobarbital sod",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1369",
+      "claim_type": "unit_value",
+      "raw_text": "90 mg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1369,
+      "sentence": "To determine the effects of a pretreatment with taurine on LPS-induced lung injury, hamsters were treated with TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by the intraperitoneal (i.p.) route for 3 days, followed successively by an i.p. dose of pentobarbital sodium (90 mg/kg/0.4 ml) to induce anesthesia, and an intratracheal (i.t.) instillation of LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) on day 4.",
+      "context_window": "lowed successively by an i.p. dose of pentobarbital sodium (90 mg/kg/0.4 ml) to induce anesthesia, and an intratracheal (i.t.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1467",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1467,
+      "sentence": "To determine the effects of a pretreatment with taurine on LPS-induced lung injury, hamsters were treated with TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by the intraperitoneal (i.p.) route for 3 days, followed successively by an i.p. dose of pentobarbital sodium (90 mg/kg/0.4 ml) to induce anesthesia, and an intratracheal (i.t.) instillation of LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) on day 4.",
+      "context_window": "and an intratracheal (i.t.) instillation of LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) on day 4. Controls were treated with: (a)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1554",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1554,
+      "sentence": "PBS pH 7.4 for 3 days followed by i.t.",
+      "context_window": "day 4. Controls were treated with: (a) i.p. PBS pH 7.4 for 3 days followed by i.t. LPS on day 4 (positive control), and (b) o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1787",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1787,
+      "sentence": "To determine the effects of a posttreatment with TAU on LPS-induced lung injury, the hamsters received LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) by i.t. instillation on day 1, followed by TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by i.p. route for 3 days.",
+      "context_window": "S-induced lung injury, the hamsters received LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) by i.t. instillation on day 1, followed b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1917",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1917,
+      "sentence": "To determine the effects of a posttreatment with TAU on LPS-induced lung injury, the hamsters received LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) by i.t. instillation on day 1, followed by TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by i.p. route for 3 days.",
+      "context_window": "U (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by i.p. route for 3 days. Control animals we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-1956",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1956,
+      "sentence": "To determine the effects of a posttreatment with TAU on LPS-induced lung injury, the hamsters received LPS (0.2 ml of 0.1 mg/ml in PBS pH 7.4) by i.t. instillation on day 1, followed by TAU (as a solution in phosphate buffered saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by i.p. route for 3 days.",
+      "context_window": "saline (PBS) pH 7.4, 50 mg/kg/0.5 ml/day) by i.p. route for 3 days. Control animals were treated with (a) i.t. LPS on day 1 fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-2431",
+      "claim_type": "unit_value",
+      "raw_text": "240 mg",
+      "numeric_values": [
+        240.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2431,
+      "sentence": "On day 5, 24 h after a LPS instillation or a TAU treatment, the animals were sacrificed using a high dose of pentobarbital sodium (240 mg/kg/0.7 ml, i.p.), and BALF samples were collected by rinsing the bronchoalveolar surface with PBS pH 7.4, and bringing the volume of the pooled washings to 10 ml with additional PBS pH 7.4.",
+      "context_window": "were sacrificed using a high dose of pentobarbital sodium (240 mg/kg/0.7 ml, i.p.), and BALF samples were collected by rinsin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-3607",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3607,
+      "sentence": "An aliquot of lung homogenate was mixed with a reagent containing 15% TCA (w/v)-0.375% TBA (w/v)-0.25 N HCl, and the mixture heated at 90 o C for 1 hr.",
+      "context_window": "quot of lung homogenate was mixed with a reagent containing 15% TCA (w/v)-0.375% TBA (w/v)-0.25 N HCl, and the mixture heat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-3621",
+      "claim_type": "percentage",
+      "raw_text": "0.375%",
+      "numeric_values": [
+        0.375
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3621,
+      "sentence": "An aliquot of lung homogenate was mixed with a reagent containing 15% TCA (w/v)-0.375% TBA (w/v)-0.25 N HCl, and the mixture heated at 90 o C for 1 hr.",
+      "context_window": "omogenate was mixed with a reagent containing 15% TCA (w/v)-0.375% TBA (w/v)-0.25 N HCl, and the mixture heated at 90 o C for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-4310",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4310,
+      "sentence": "An aliquot of lung homogenate was mixed with 5% metaphosphoric acid, the mixture centrifuged at 2000 x g for 5 min, and an aliquot of the clear supernatant was mixed with 1.9 ml of 0.1 M phosphate buffer pH 8.0 and 20 \u00b5l of 0.02 M DTNB in 0.1 M phosphate buffer pH 8.0, and the absorbance of the resulting product read at 412 nm on a spectrophotometer.",
+      "context_window": "Ellman [ 33 ]. An aliquot of lung homogenate was mixed with 5% metaphosphoric acid, the mixture centrifuged at 2000 x g fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-6417",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6417,
+      "sentence": "For this purpose, an aliquot of lung homogenate was mixed with 15% bovine serum albumin in PBS pH 8.0, 3 mM xanthine, 3 mM EDTA, 0.75 mM NBT, and 56 U/ml of xanthine oxidase.",
+      "context_window": "this purpose, an aliquot of lung homogenate was mixed with 15% bovine serum albumin in PBS pH 8.0, 3 mM xanthine, 3 mM EDT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-6791",
+      "claim_type": "unit_value",
+      "raw_text": "240 mg",
+      "numeric_values": [
+        240.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6791,
+      "sentence": "Following euthanasia of the animals with a high dose of pentobarbital (240 mg/kg/0.7 ml, i.p.), the lungs were fixed in situ with 10% neutral-buffered formalin for about 2 hr at a pressure of 20 mm of water.",
+      "context_window": "uthanasia of the animals with a high dose of pentobarbital (240 mg/kg/0.7 ml, i.p.), the lungs were fixed in situ with 10% neu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-6850",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6850,
+      "sentence": "Following euthanasia of the animals with a high dose of pentobarbital (240 mg/kg/0.7 ml, i.p.), the lungs were fixed in situ with 10% neutral-buffered formalin for about 2 hr at a pressure of 20 mm of water.",
+      "context_window": "(240 mg/kg/0.7 ml, i.p.), the lungs were fixed in situ with 10% neutral-buffered formalin for about 2 hr at a pressure of 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-6912",
+      "claim_type": "unit_value",
+      "raw_text": "20 mm",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6912,
+      "sentence": "Following euthanasia of the animals with a high dose of pentobarbital (240 mg/kg/0.7 ml, i.p.), the lungs were fixed in situ with 10% neutral-buffered formalin for about 2 hr at a pressure of 20 mm of water.",
+      "context_window": "% neutral-buffered formalin for about 2 hr at a pressure of 20 mm of water. The lungs, along with the attached heart, were su",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-7053",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7053,
+      "sentence": "The lungs, along with the attached heart, were surgically removed through a vertical incision along the thorax, and fixed in 10% neutral-buffered formalin for an additional 48 hr.",
+      "context_window": "through a vertical incision along the thorax, and fixed in 10% neutral-buffered formalin for an additional 48 hr. After ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-8270",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8270,
+      "sentence": "Endogenous peroxidase activity was quenched with 0.3% H 2 O 2 and nonspecific binding was blocked with goat serum (Vector Laboratories, Inc., Burlingame, CA).",
+      "context_window": ") mixture. Endogenous peroxidase activity was quenched with 0.3% H 2 O 2 and nonspecific binding was blocked with goat serum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-9556",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9556,
+      "sentence": "Louis, MO) at room temperature, washed with distilled water, and treated with 0.3% H 2 O 2 in PBS pH 7.4 to quench endogenous peroxidase.",
+      "context_window": "temperature, washed with distilled water, and treated with 0.3% H 2 O 2 in PBS pH 7.4 to quench endogenous peroxidase. Afte",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-10255",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10255,
+      "sentence": "The experimental results are expressed as mean \u00b1 standard error of the mean (S.E.M.) for n = 6.",
+      "context_window": "expressed as mean \u00b1 standard error of the mean (S.E.M.) for n = 6. A significant difference between control and treatment gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-372",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 372,
+      "sentence": "As shown in Figure 1 , LPS stimulated LPO in lung tissue since it markedly and significantly increased the formation of MDA (by >100%, P<0.001 vs. control).",
+      "context_window": "kedly and significantly increased the formation of MDA (by >100%, P<0.001 vs. control). The administration of TAU for 3 days",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-378",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 378,
+      "sentence": "As shown in Figure 1 , LPS stimulated LPO in lung tissue since it markedly and significantly increased the formation of MDA (by >100%, P<0.001 vs. control).",
+      "context_window": "and significantly increased the formation of MDA (by >100%, P<0.001 vs. control). The administration of TAU for 3 days, either",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-430",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 430,
+      "sentence": "The administration of TAU for 3 days, either before or after LPS, resulted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS.",
+      "context_window": ">100%, P<0.001 vs. control). The administration of TAU for 3 days, either before or after LPS, resulted, in both instances, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-526",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 526,
+      "sentence": "The administration of TAU for 3 days, either before or after LPS, resulted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS.",
+      "context_window": "resulted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-531",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 531,
+      "sentence": "The administration of TAU for 3 days, either before or after LPS, resulted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS.",
+      "context_window": "ted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-542",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 542,
+      "sentence": "The administration of TAU for 3 days, either before or after LPS, resulted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS.",
+      "context_window": "h instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS. TA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-547",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 547,
+      "sentence": "The administration of TAU for 3 days, either before or after LPS, resulted, in both instances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS.",
+      "context_window": "tances, in a significant reduction (by 46%, P<0.01 and 31%, P<0.05, respectively) in MDA formation induced by LPS. TAU attenu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-733",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 733,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-741",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 741,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs.",
+      "context_window": "fter LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs. LPS.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-755",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 755,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs.",
+      "context_window": "bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs. LPS. The results p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-778",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 778,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs.",
+      "context_window": "n \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs. LPS. The results presented in Figure 2 i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-792",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 792,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs.",
+      "context_window": "n = 6. *P<0.05 and ***P<0.001 vs. control; + P<0.05 and ++ P<0.01 vs. LPS. The results presented in Figure 2 indicate that,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-956",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 956,
+      "sentence": "The results presented in Figure 2 indicate that, in comparison to control values, LPS was able to reduce the lung GSH to a significant extent (by \u226520%, P<0.05).",
+      "context_window": "as able to reduce the lung GSH to a significant extent (by \u226520%, P<0.05). However, in the presence of TAU, diverging result",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-961",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 961,
+      "sentence": "The results presented in Figure 2 indicate that, in comparison to control values, LPS was able to reduce the lung GSH to a significant extent (by \u226520%, P<0.05).",
+      "context_window": "le to reduce the lung GSH to a significant extent (by \u226520%, P<0.05). However, in the presence of TAU, diverging results were o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-1180",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1180,
+      "sentence": "While a pretreatment with this amino acid virtually abolished the effect of LPS on lung GSH (only 6% decrease), a post-treatment was without an obvious effect.",
+      "context_window": "cid virtually abolished the effect of LPS on lung GSH (only 6% decrease), a post-treatment was without an obvious effect.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-1376",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1376,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. + P<0.05 vs. control; + P<0.05 vs.",
+      "context_window": "t not after, LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. + P<0.05 vs. control; + P<0.05 vs. LPS. From the results",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-1385",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1385,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. + P<0.05 vs. control; + P<0.05 vs.",
+      "context_window": "er, LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. + P<0.05 vs. control; + P<0.05 vs. LPS. From the results summarized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-1407",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1407,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. + P<0.05 vs. control; + P<0.05 vs.",
+      "context_window": "esents the mean \u00b1 S.E.M. for n = 6. + P<0.05 vs. control; + P<0.05 vs. LPS. From the results summarized in Figures 3 , 4 , 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-1648",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1648,
+      "sentence": "On the one hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values.",
+      "context_window": "hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-1653",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1653,
+      "sentence": "On the one hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values.",
+      "context_window": ", it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and eleva",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-1685",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1685,
+      "sentence": "On the one hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values.",
+      "context_window": "alues of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-1690",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1690,
+      "sentence": "On the one hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values.",
+      "context_window": "of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (F",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-1740",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1740,
+      "sentence": "On the one hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values.",
+      "context_window": "(by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective contr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-1745",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1745,
+      "sentence": "On the one hand, it lowered the mean activity values of both CAT (by ~15%, P<0.05) (Figure 3 ) and SOD (by 27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values.",
+      "context_window": "27%, P<0.05) (Figure 4 ) and elevated that of GPX (by ~98%, P<0.001) (Figure 4 ) in comparison to the respective control values",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-1983",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1983,
+      "sentence": "Thus, in the case of CAT the activities were 75% and ~46% greater than control when given along with LPS as a pretreatment and posttreatment, respectively (both at P<0.001 vs.",
+      "context_window": "ns throughout. Thus, in the case of CAT the activities were 75% and ~46% greater than control when given along with LPS as",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-1992",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1992,
+      "sentence": "Thus, in the case of CAT the activities were 75% and ~46% greater than control when given along with LPS as a pretreatment and posttreatment, respectively (both at P<0.001 vs.",
+      "context_window": "hout. Thus, in the case of CAT the activities were 75% and ~46% greater than control when given along with LPS as a pretrea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2102",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2102,
+      "sentence": "Thus, in the case of CAT the activities were 75% and ~46% greater than control when given along with LPS as a pretreatment and posttreatment, respectively (both at P<0.001 vs.",
+      "context_window": "as a pretreatment and posttreatment, respectively (both at P<0.001 vs. LPS). Likewise, TAU lowered the increase in SOD activit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-2230",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2230,
+      "sentence": "Likewise, TAU lowered the increase in SOD activity induced by LPS by about the same extent when given before (31% reduction) or after (34% reduction) LPS (both at P<0.01 vs.",
+      "context_window": "induced by LPS by about the same extent when given before (31% reduction) or after (34% reduction) LPS (both at P<0.01 vs.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-2255",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2255,
+      "sentence": "Likewise, TAU lowered the increase in SOD activity induced by LPS by about the same extent when given before (31% reduction) or after (34% reduction) LPS (both at P<0.01 vs.",
+      "context_window": "the same extent when given before (31% reduction) or after (34% reduction) LPS (both at P<0.01 vs. LPS). In contrast, while",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2283",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2283,
+      "sentence": "Likewise, TAU lowered the increase in SOD activity induced by LPS by about the same extent when given before (31% reduction) or after (34% reduction) LPS (both at P<0.01 vs.",
+      "context_window": "efore (31% reduction) or after (34% reduction) LPS (both at P<0.01 vs. LPS). In contrast, while TAU attenuated the elevation i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-2445",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2445,
+      "sentence": "In contrast, while TAU attenuated the elevation in GPx activity caused by LPS, it was somewhat more effective when given as a posttreatment (by ~49%) than as a pretreatment (by 43%) to LPS (both at P<0.01 vs.",
+      "context_window": "somewhat more effective when given as a posttreatment (by ~49%) than as a pretreatment (by 43%) to LPS (both at P<0.01 vs.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-2477",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2477,
+      "sentence": "In contrast, while TAU attenuated the elevation in GPx activity caused by LPS, it was somewhat more effective when given as a posttreatment (by ~49%) than as a pretreatment (by 43%) to LPS (both at P<0.01 vs.",
+      "context_window": "ven as a posttreatment (by ~49%) than as a pretreatment (by 43%) to LPS (both at P<0.01 vs. LPS) (Figure 5 ). TAU attenuat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2498",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2498,
+      "sentence": "In contrast, while TAU attenuated the elevation in GPx activity caused by LPS, it was somewhat more effective when given as a posttreatment (by ~49%) than as a pretreatment (by 43%) to LPS (both at P<0.01 vs.",
+      "context_window": "t (by ~49%) than as a pretreatment (by 43%) to LPS (both at P<0.01 vs. LPS) (Figure 5 ). TAU attenuated the LPS-induced decre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-2663",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2663,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 vs. LPS. TAU attenuat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2673",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2673,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 vs. LPS. TAU attenuated the LPS-i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2698",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2698,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 vs.",
+      "context_window": "ts the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 vs. LPS. TAU attenuated the LPS-induced increase in lung G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-2851",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2851,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 vs. LPS. TAU attenuated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2861",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2861,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 vs. LPS. TAU attenuated the LPS-ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-2885",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2885,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 vs.",
+      "context_window": "nts the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 vs. LPS. TAU attenuated the LPS-induced decrease in lung S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-3037",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3037,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 vs. control; ++ P<0.01 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 vs. control; ++ P<0.01 vs. LPS. As shown in Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-3045",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3045,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 vs. control; ++ P<0.01 vs.",
+      "context_window": "fter LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 vs. control; ++ P<0.01 vs. LPS. As shown in Figure 6 , an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-3068",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3068,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. *P<0.05 vs. control; ++ P<0.01 vs.",
+      "context_window": "esents the mean \u00b1 S.E.M. for n = 6. *P<0.05 vs. control; ++ P<0.01 vs. LPS. As shown in Figure 6 , an acute exposure to LPS l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-3231",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3231,
+      "sentence": "As shown in Figure 6 , an acute exposure to LPS led to a profound increase in the total number of leukocytes infiltrating the lung (by 12.5-fold, P<0.001) relative to the number observed in control samples.",
+      "context_window": "l number of leukocytes infiltrating the lung (by 12.5-fold, P<0.001) relative to the number observed in control samples. From t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-3522",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3522,
+      "sentence": "From the results presented in Figure 7 , it is apparent that the administration of TAU, either before or after LPS, led to a small reduction in the number of neutrophils that entered the lung as a result of an exposure to LPS (by 15%, P<0.05, and 11%, respectively).",
+      "context_window": "that entered the lung as a result of an exposure to LPS (by 15%, P<0.05, and 11%, respectively). Moreover, as shown in Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-3527",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3527,
+      "sentence": "From the results presented in Figure 7 , it is apparent that the administration of TAU, either before or after LPS, led to a small reduction in the number of neutrophils that entered the lung as a result of an exposure to LPS (by 15%, P<0.05, and 11%, respectively).",
+      "context_window": "entered the lung as a result of an exposure to LPS (by 15%, P<0.05, and 11%, respectively). Moreover, as shown in Figures 8 an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-3539",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3539,
+      "sentence": "From the results presented in Figure 7 , it is apparent that the administration of TAU, either before or after LPS, led to a small reduction in the number of neutrophils that entered the lung as a result of an exposure to LPS (by 15%, P<0.05, and 11%, respectively).",
+      "context_window": "lung as a result of an exposure to LPS (by 15%, P<0.05, and 11%, respectively). Moreover, as shown in Figures 8 and 9 , it",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-3797",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3797,
+      "sentence": "Moreover, as shown in Figures 8 and 9 , it is evident that a treatment with TAU resulted in a significant attenuation of the enhancing action of LPS on the total number of lung neutrophils, with a pretreatment providing a greater effect (85% decrease at P<0.001 vs.",
+      "context_window": "eutrophils, with a pretreatment providing a greater effect (85% decrease at P<0.001 vs. LPS) than a post-treatment (53% dec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-3813",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3813,
+      "sentence": "Moreover, as shown in Figures 8 and 9 , it is evident that a treatment with TAU resulted in a significant attenuation of the enhancing action of LPS on the total number of lung neutrophils, with a pretreatment providing a greater effect (85% decrease at P<0.001 vs.",
+      "context_window": "a pretreatment providing a greater effect (85% decrease at P<0.001 vs. LPS) than a post-treatment (53% decrease at P<0.01 vs.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-3853",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3853,
+      "sentence": "LPS) than a post-treatment (53% decrease at P<0.01 vs.",
+      "context_window": "ct (85% decrease at P<0.001 vs. LPS) than a post-treatment (53% decrease at P<0.01 vs. LPS). TAU attenuated the LPS-induce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-3869",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3869,
+      "sentence": "LPS) than a post-treatment (53% decrease at P<0.01 vs.",
+      "context_window": "at P<0.001 vs. LPS) than a post-treatment (53% decrease at P<0.01 vs. LPS). TAU attenuated the LPS-induced influx of total l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-4029",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4029,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4039",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4039,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. TAU attenu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4063",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4063,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "nts the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. TAU attenuated the LPS-induced in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4078",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4078,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. TAU attenuated the LPS-induced influx of neutroph",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-4233",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4233,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; + P<0.05 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; + P<0.05 vs. LPS. TAU attenuated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4243",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4243,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; + P<0.05 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; + P<0.05 vs. LPS. TAU attenuated the LPS-indu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4266",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4266,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; + P<0.05 vs.",
+      "context_window": "ents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; + P<0.05 vs. LPS. TAU attenuated the LPS-induced influx of total ne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-4426",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4426,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4436",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4436,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. Photomicro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4460",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4460,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "nts the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. Photomicrographs showing cells in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-4475",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4475,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. Photomicrographs showing cells in BALF samples af",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-4607",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4607,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "staining with Wright\u2019s solution. The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-4616",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 4616,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "with Wright\u2019s solution. The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Cells fr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-4664",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4664,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "U (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Cells from control (PBS pH 7.4) animals exhibited a norma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-5263",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5263,
+      "sentence": "An acute exposure to LPS led to a marked increase in the expression of TNFR1 by BALF macrophages (by ~47-fold, P<0.001 vs. control).",
+      "context_window": "n the expression of TNFR1 by BALF macrophages (by ~47-fold, P<0.001 vs. control). This change was significantly attenuated by a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-5460",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5460,
+      "sentence": "This change was significantly attenuated by a 3-day treatment with TAU, with the attenuation being greater when TAU was given ahead rather than after LPS (reductions equal to 59% and 39% respectively, P<0.01 for both vs.",
+      "context_window": "was given ahead rather than after LPS (reductions equal to 59% and 39% respectively, P<0.01 for both vs. LPS alone) (Figur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-pct-5468",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5468,
+      "sentence": "This change was significantly attenuated by a 3-day treatment with TAU, with the attenuation being greater when TAU was given ahead rather than after LPS (reductions equal to 59% and 39% respectively, P<0.01 for both vs.",
+      "context_window": "en ahead rather than after LPS (reductions equal to 59% and 39% respectively, P<0.01 for both vs. LPS alone) (Figures 10 an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-5486",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5486,
+      "sentence": "This change was significantly attenuated by a 3-day treatment with TAU, with the attenuation being greater when TAU was given ahead rather than after LPS (reductions equal to 59% and 39% respectively, P<0.01 for both vs.",
+      "context_window": "an after LPS (reductions equal to 59% and 39% respectively, P<0.01 for both vs. LPS alone) (Figures 10 and 11 ). TAU attenuat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-5694",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5694,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++P<0.01 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++P<0.01 vs. LPS. Photomicrograph",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-5704",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5704,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++P<0.01 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++P<0.01 vs. LPS. Photomicrographs of cells f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-5727",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5727,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++P<0.01 vs.",
+      "context_window": "ents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++P<0.01 vs. LPS. Photomicrographs of cells from BALF samples stain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-5855",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5855,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "with Vectastain\u00ae Elite ABC kit . The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-5864",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 5864,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "tastain\u00ae Elite ABC kit . The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Cells fr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-5912",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5912,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "U (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Cells from control (PBS pH 7.4) animals lacked TNFR1 posi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-6735",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6735,
+      "sentence": "Based on the results of a TUNEL assay, it was determined that a pretreatment with TAU was more effective in curtailing apoptosis (0.4 labeled cells per HPF, P<0.001) than a posttreatment (0.5 labeled cells per HPF, P<0.01) when compared to the number of apoptotic cells seen with LPS alone (0.8 labeled cells per HPF, P<0.001 vs. control).",
+      "context_window": "fective in curtailing apoptosis (0.4 labeled cells per HPF, P<0.001) than a posttreatment (0.5 labeled cells per HPF, P<0.01) w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-6793",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6793,
+      "sentence": "Based on the results of a TUNEL assay, it was determined that a pretreatment with TAU was more effective in curtailing apoptosis (0.4 labeled cells per HPF, P<0.001) than a posttreatment (0.5 labeled cells per HPF, P<0.01) when compared to the number of apoptotic cells seen with LPS alone (0.8 labeled cells per HPF, P<0.001 vs. control).",
+      "context_window": ", P<0.001) than a posttreatment (0.5 labeled cells per HPF, P<0.01) when compared to the number of apoptotic cells seen with L",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-6896",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6896,
+      "sentence": "Based on the results of a TUNEL assay, it was determined that a pretreatment with TAU was more effective in curtailing apoptosis (0.4 labeled cells per HPF, P<0.001) than a posttreatment (0.5 labeled cells per HPF, P<0.01) when compared to the number of apoptotic cells seen with LPS alone (0.8 labeled cells per HPF, P<0.001 vs. control).",
+      "context_window": "totic cells seen with LPS alone (0.8 labeled cells per HPF, P<0.001 vs. control). Because of the limitations imposed by the pro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-7209",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7209,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-7219",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7219,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. Photomicro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-7243",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7243,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "nts the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. Photomicrographs of lung sections",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-7258",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7258,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs.",
+      "context_window": "S.E.M. for n = 6. ***P<0.001 vs. control; ++ P<0.01 and +++ P<0.001 vs. LPS. Photomicrographs of lung sections stained with Ap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-7406",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7406,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "In Situ Apoptosis Detection kit. The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-7415",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 7415,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "Apoptosis Detection kit. The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Sections",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-7463",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7463,
+      "sentence": "The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "U (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Sections from control (PBS pH 7.4) animals showed no TUNE",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-8253",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8253,
+      "sentence": "The results presented in Figure 14 suggest that the increase in the value of this parameter by LPS could be significantly attenuated by a pre- or post-treatment with TAU (from 3.0 to 1.8, P<0.001 or from 3.0 to 2.4, P<0.01. respectively).",
+      "context_window": "ated by a pre- or post-treatment with TAU (from 3.0 to 1.8, P<0.001 or from 3.0 to 2.4, P<0.01. respectively). The mean inflamm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-8281",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8281,
+      "sentence": "The results presented in Figure 14 suggest that the increase in the value of this parameter by LPS could be significantly attenuated by a pre- or post-treatment with TAU (from 3.0 to 1.8, P<0.001 or from 3.0 to 2.4, P<0.01. respectively).",
+      "context_window": "ment with TAU (from 3.0 to 1.8, P<0.001 or from 3.0 to 2.4, P<0.01. respectively). The mean inflammatory index of animals rece",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-n-8772",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8772,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs.",
+      "context_window": "ore or after LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs. LPS.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-8782",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8782,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs.",
+      "context_window": "er LPS. Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs. LPS. Photomicro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-8807",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8807,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs.",
+      "context_window": "ts the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs. LPS. Photomicrographs of lung sections s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-p-8822",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8822,
+      "sentence": "Each bar represents the mean \u00b1 S.E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs.",
+      "context_window": ".E.M. for n = 6. ***P<0.001 vs. control; +++ P<0.001 and ++ P<0.01 vs. LPS. Photomicrographs of lung sections stained with H&",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-8954",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8954,
+      "sentence": "Photomicrographs of lung sections stained with H&E. (A-C) and (D-F) show the results for The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "C) and (D-F) show the results for The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-8963",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 8963,
+      "sentence": "Photomicrographs of lung sections stained with H&E. (A-C) and (D-F) show the results for The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "-F) show the results for The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Sections",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-9011",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9011,
+      "sentence": "Photomicrographs of lung sections stained with H&E. (A-C) and (D-F) show the results for The animals received TAU (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg).",
+      "context_window": "U (50 mg/kg/0.5 mL, i.p.) before (A-C) and after (D-F) LPS (0.02 mg). Sections from control (PBS pH 7.4) animals showed no sign",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2994390_protective_action_of_taurine_given_as_a_pretreatment_or_as_a-u-4798",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4798,
+      "sentence": "For example, it has been reported that LPS reduced the activity of CAT, GPx and SOD in the lung of mice inhaling a solution of LPS in physiological saline for 5 days within an inhalation chamber [ 11 ]; had no effect on the GPx activity [ 55 ], and increased the CAT activity while decreasing that of SOD activity [ 25 ] in the lung.",
+      "context_window": "mice inhaling a solution of LPS in physiological saline for 5 days within an inhalation chamber [ 11 ]; had no effect on the G",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

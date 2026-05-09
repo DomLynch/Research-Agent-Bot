@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1101_2025_08_27_672709_senolytic_resistant_senescent_cells_have_a_distinct_sasp_pro",
+  "doi": "10.1101/2025.08.27.672709",
+  "extracted_at": "2026-05-08T20:01:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_08_27_672709_senolytic_resistant_senescent_cells_have_a_distinct_sasp_pro-pct-157",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 157,
+      "sentence": "Senolytics, agents that selectively eliminate 30-70% of SCs, act by transiently disabling the senescent cell anti-apoptotic pathways (SCAPs), which defend those SCs that are pro-apoptotic and pro-inflammatory from their own senescence-associated secretory phenotype (SASP).",
+      "context_window": "sfunction. Senolytics, agents that selectively eliminate 30-70% of SCs, act by transiently disabling the senescent cell ant",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_08_27_672709_senolytic_resistant_senescent_cells_have_a_distinct_sasp_pro-pct-704",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 704,
+      "sentence": "In cell cultures, the 30-70% of human senescent preadipocytes or human umbilical vein endothelial cells (HUVECs) that are senolytic-resistant (to Dasatinib or Quercetin, respectively) had increased p16 INK4a , p21 CIP1 , senescence-associated \u03b2-galactosidase (SA\u03b2gal), \u03b3H2AX, and proliferative arrest similarly to the total SC population (comprising senolytic-sensitive plus -resistant SCs).",
+      "context_window": "t of SCs that is pro-inflammatory. In cell cultures, the 30-70% of human senescent preadipocytes or human umbilical vein en",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

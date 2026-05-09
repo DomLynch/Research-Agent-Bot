@@ -1,0 +1,86 @@
+{
+  "paper_id": "DOI_10_1111_joim_13590_low_dose_aspirin_does_not_lower_the_risk_of_colorectal_cance",
+  "doi": "10.1111/joim.13590",
+  "extracted_at": "2026-05-08T20:05:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "hazard_ratio": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_joim_13590_low_dose_aspirin_does_not_lower_the_risk_of_colorectal_cance-pct-1162",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "Cox proportional hazards regression was used to estimate hazard ratios (HRs) and 95% confidence intervals (CI).",
+      "context_window": "rds regression was used to estimate hazard ratios (HRs) and 95% confidence intervals (CI). Estimates were pooled using an i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_joim_13590_low_dose_aspirin_does_not_lower_the_risk_of_colorectal_cance-hr-a-1747",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1747,
+      "sentence": "The concurrent use of low\u2010dose aspirin and metformin was not associated with a lower risk of CRC compared to metformin only (HR = 0.89, 95% CI 0.75-1.05, <jats:italic>I</jats:italic><jats:sup>2</jats:sup> = 0%).</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Low\u2010dose aspirin was not associated with a lower risk of CRC in patients with T2DM taking metformin.",
+      "context_window": "ciated with a lower risk of CRC compared to metformin only (HR = 0.89, 95% CI 0.75-1.05, <jats:italic>I</jats:italic><jats:sup>2<",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_joim_13590_low_dose_aspirin_does_not_lower_the_risk_of_colorectal_cance-ci-1758",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.75-1.05",
+      "numeric_values": [
+        0.75,
+        1.05
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1758,
+      "sentence": "The concurrent use of low\u2010dose aspirin and metformin was not associated with a lower risk of CRC compared to metformin only (HR = 0.89, 95% CI 0.75-1.05, <jats:italic>I</jats:italic><jats:sup>2</jats:sup> = 0%).</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Low\u2010dose aspirin was not associated with a lower risk of CRC in patients with T2DM taking metformin.",
+      "context_window": "a lower risk of CRC compared to metformin only (HR = 0.89, 95% CI 0.75-1.05, <jats:italic>I</jats:italic><jats:sup>2</jats:sup> = 0%).<",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_joim_13590_low_dose_aspirin_does_not_lower_the_risk_of_colorectal_cance-pct-1829",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1829,
+      "sentence": "The concurrent use of low\u2010dose aspirin and metformin was not associated with a lower risk of CRC compared to metformin only (HR = 0.89, 95% CI 0.75-1.05, <jats:italic>I</jats:italic><jats:sup>2</jats:sup> = 0%).</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Low\u2010dose aspirin was not associated with a lower risk of CRC in patients with T2DM taking metformin.",
+      "context_window": "-1.05, <jats:italic>I</jats:italic><jats:sup>2</jats:sup> = 0%).</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

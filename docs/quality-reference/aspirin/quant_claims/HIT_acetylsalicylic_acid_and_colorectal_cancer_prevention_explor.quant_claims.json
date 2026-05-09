@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_acetylsalicylic_acid_and_colorectal_cancer_prevention_explor",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_acetylsalicylic_acid_and_colorectal_cancer_prevention_explor-u-165",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 165,
+      "sentence": "In a preliminary study in healthy subjects, the investigators determined the pharmacokinetic and pharmacodynamic of enteric-coated acetylsalicylic acid (ASA) (Adiro 100 mg, Bayer), and the variability (coefficient of variation), accuracy and precision of a novel biomarker of ASA action, i.e., quantification of the extent of COX-1 acetylation at serine-529, using a stable isotope dilution liquid chromatography multiple reaction monitoring/mass spectrometry (LC-MS) technique.",
+      "context_window": "dynamic of enteric-coated acetylsalicylic acid (ASA) (Adiro 100 mg, Bayer), and the variability (coefficient of variation), ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_acetylsalicylic_acid_and_colorectal_cancer_prevention_explor-pct-1306",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1306,
+      "sentence": "These patients will be stratified into individuals with adenomas/carcinomas (20 to 30%) and patients without clinically detected adenomas/carcinomas (about 70 to 80%).",
+      "context_window": "stratified into individuals with adenomas/carcinomas (20 to 30%) and patients without clinically detected adenomas/carcinom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_acetylsalicylic_acid_and_colorectal_cancer_prevention_explor-pct-1385",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1385,
+      "sentence": "These patients will be stratified into individuals with adenomas/carcinomas (20 to 30%) and patients without clinically detected adenomas/carcinomas (about 70 to 80%).",
+      "context_window": "ithout clinically detected adenomas/carcinomas (about 70 to 80%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

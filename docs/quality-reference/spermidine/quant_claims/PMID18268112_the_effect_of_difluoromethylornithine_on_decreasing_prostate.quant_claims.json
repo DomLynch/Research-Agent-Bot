@@ -1,0 +1,193 @@
+{
+  "paper_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate",
+  "doi": "10.1158/1055-9965.epi-07-0658",
+  "extracted_at": "2026-05-08T20:11:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "p_value": 4,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "Prostate volume determination and biopsy of the prostate for histology and polyamine content were done at baseline and after 12 months.",
+      "context_window": "ology and polyamine content were done at baseline and after 12 months. Other biomarker variables were assessed, including total a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-u-907",
+      "claim_type": "unit_value",
+      "raw_text": "0.14 cm",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "Results Compared with baseline, men receiving DFMO had a smaller increase in prostate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year.",
+      "context_window": "n receiving DFMO had a smaller increase in prostate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 yea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-u-942",
+      "claim_type": "unit_value",
+      "raw_text": "2.95 cm",
+      "numeric_values": [
+        2.95
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 942,
+      "sentence": "Results Compared with baseline, men receiving DFMO had a smaller increase in prostate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year.",
+      "context_window": "ease in prostate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year. In addition, DFMO caused a 60.8%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-p-954",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0301",
+      "numeric_values": [
+        0.0301
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 954,
+      "sentence": "Results Compared with baseline, men receiving DFMO had a smaller increase in prostate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year.",
+      "context_window": "tate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year. In addition, DFMO caused a 60.8% reduction of p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-u-969",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "Results Compared with baseline, men receiving DFMO had a smaller increase in prostate volume (0.14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year.",
+      "context_window": "14 cm(3)) than those on placebo (2.95 cm(3); P = 0.0301) at 1 year. In addition, DFMO caused a 60.8% reduction of prostate put",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-pct-1004",
+      "claim_type": "percentage",
+      "raw_text": "60.8%",
+      "numeric_values": [
+        60.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1004,
+      "sentence": "In addition, DFMO caused a 60.8% reduction of prostate putrescine levels compared with a 139.5% increase in the placebo arm (P = 0.0014).",
+      "context_window": "95 cm(3); P = 0.0301) at 1 year. In addition, DFMO caused a 60.8% reduction of prostate putrescine levels compared with a 139",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-pct-1066",
+      "claim_type": "percentage",
+      "raw_text": "139.5%",
+      "numeric_values": [
+        139.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "In addition, DFMO caused a 60.8% reduction of prostate putrescine levels compared with a 139.5% increase in the placebo arm (P = 0.0014).",
+      "context_window": ".8% reduction of prostate putrescine levels compared with a 139.5% increase in the placebo arm (P = 0.0014). Stratification by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-p-1102",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0014",
+      "numeric_values": [
+        0.0014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "In addition, DFMO caused a 60.8% reduction of prostate putrescine levels compared with a 139.5% increase in the placebo arm (P = 0.0014).",
+      "context_window": "levels compared with a 139.5% increase in the placebo arm (P = 0.0014). Stratification by ornithine decarboxylase genotype showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-p-1208",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1208,
+      "sentence": "Stratification by ornithine decarboxylase genotype showed that DFMO reduced prostate volume (P = 0.029) and putrescine levels (P = 0.0053) in the AA + GA group but not in the GG group.",
+      "context_window": "boxylase genotype showed that DFMO reduced prostate volume (P = 0.029) and putrescine levels (P = 0.0053) in the AA + GA group bu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID18268112_the_effect_of_difluoromethylornithine_on_decreasing_prostate-p-1242",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0053",
+      "numeric_values": [
+        0.0053
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1242,
+      "sentence": "Stratification by ornithine decarboxylase genotype showed that DFMO reduced prostate volume (P = 0.029) and putrescine levels (P = 0.0053) in the AA + GA group but not in the GG group.",
+      "context_window": "reduced prostate volume (P = 0.029) and putrescine levels (P = 0.0053) in the AA + GA group but not in the GG group. There were n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

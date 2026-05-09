@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit",
   "doi": "10.1016/j.ebiom.2025.105612",
-  "extracted_at": "2026-05-05T21:22:31+00:00",
+  "extracted_at": "2026-05-08T20:01:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 27,
@@ -26,9 +26,9 @@
       "context_window": "r adults at risk of Alzheimer\u2019s disease. Participants took 100 mg of Dasatinib and 1250 mg of Quercetin for two days every tw",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-227",
@@ -44,9 +44,9 @@
       "context_window": "eimer\u2019s disease. Participants took 100 mg of Dasatinib and 1250 mg of Quercetin for two days every two weeks over 12 weeks. Re",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-282",
@@ -62,9 +62,9 @@
       "context_window": "and 1250 mg of Quercetin for two days every two weeks over 12 weeks. Recruitment rate, adverse events, absolute changes in func",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-513",
@@ -117,7 +117,7 @@
       "context_window": "ores non-significantly increased following DQ by 1.0 point (95% CI: -0.7, 2.7), but increased significantly by 2.0 points (95% CI: 0.1, 4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -136,7 +136,7 @@
       "context_window": "CI: -0.7, 2.7), but increased significantly by 2.0 points (95% CI: 0.1, 4.0) in those with lowest baseline MoCA scores. Mean percent ch",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -154,9 +154,9 @@
       "context_window": "notype (SASP), non-significantly decreased following DQ by -3.0% (95% CI: -13.0, 7.1). Changes in TNF-\u03b1 were significantly a",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-ci-1065",
@@ -173,9 +173,9 @@
       "context_window": "(SASP), non-significantly decreased following DQ by -3.0% (95% CI: -13.0, 7.1). Changes in TNF-\u03b1 were significantly and inversely correla",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-p-1187",
@@ -209,7 +209,7 @@
       "context_window": "lementing intermittent doses of DQ in 12 older adults aged \u226565 years with slow gait speed and MCI, which are both precursors to",
       "claim_role": "dose",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -227,9 +227,9 @@
       "context_window": "provided informed consent. Participants were asked to take 100 mg of Dasatinib and 1250 mg of Quercetin orally once a day for",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-540",
@@ -245,9 +245,9 @@
       "context_window": "nt. Participants were asked to take 100 mg of Dasatinib and 1250 mg of Quercetin orally once a day for two consecutive days eve",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-641",
@@ -263,9 +263,9 @@
       "context_window": "r two consecutive days every two weeks, for six cycles over 12 weeks. DQ was administered under Investigational New Drug (IND) 1",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-914",
@@ -407,9 +407,9 @@
       "context_window": "ted to participate in a control biomarker assessment (total n = 10, referred to as Biomarker Control) described below. A full",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-3999",
@@ -443,9 +443,9 @@
       "context_window": "their visit. Functional outcomes were measured after 6 and 12 weeks of DQ. However, to minimise participant burden, urine and b",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-4192",
@@ -461,9 +461,9 @@
       "context_window": "e and blood were only collected at screening (approximately 2 weeks prior to baseline) and 2 weeks after all 12 doses of DQ, fo",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-4223",
@@ -479,9 +479,9 @@
       "context_window": "at screening (approximately 2 weeks prior to baseline) and 2 weeks after all 12 doses of DQ, for a total time of 14 weeks betw",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-4277",
@@ -497,9 +497,9 @@
       "context_window": ") and 2 weeks after all 12 doses of DQ, for a total time of 14 weeks between blood draws. Throughout the study, the ratio of th",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-5912",
@@ -569,9 +569,9 @@
       "context_window": "e assessments. Blood draws were conducted at screening and 2 weeks after their last dose of DQ ( i.e., a total of 14 weeks in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-u-8446",
@@ -587,9 +587,9 @@
       "context_window": "and 2 weeks after their last dose of DQ ( i.e., a total of 14 weeks in between blood draws). T cell populations expressing CD3",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-8765",
@@ -641,9 +641,9 @@
       "context_window": "n serum separator, EDTA, and heparin tubes before and after 14 weeks in the STAMINA and Biomarker Control groups. Blood was cent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-11595",
@@ -694,8 +694,8 @@
       "sentence": "Subgroup analyses were also performed based on stratifications by age (pre-specified: < and \u2265 median age of the study population; data not shown), lower MoCA scores at baseline ( i.e., 18-25 points on MoCA, n = 8), and the median expression of the senescent cell marker p16 INK4a at baseline in the study population ( i.e., \u201cLow Senescent Cell Burden\u201d vs. \u201cHigh Senescent Cell Burden,\u201d respectively).",
       "context_window": "lower MoCA scores at baseline ( i.e., 18-25 points on MoCA, n = 8), and the median expression of the senescent cell marker p1",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -947,9 +947,9 @@
       "context_window": "of study eligibility, one individual was lost to follow-up (n = 1) before starting DQ, while two participants withdrew consen",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-1052",
@@ -965,9 +965,9 @@
       "context_window": "ring medication administration due to pre-existing anxiety (n = 1) and concerns about taking study medications (n = 1). Thus,",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-1104",
@@ -983,9 +983,9 @@
       "context_window": "nxiety (n = 1) and concerns about taking study medications (n = 1). Thus, 12 participants completed the intervention. Fig. 1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-1399",
@@ -1616,9 +1616,9 @@
       "context_window": "e 12 individuals who completed the study, participants were 99% compliant with Dasatinib and 100% compliant with Quercetin.",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-4505",
@@ -1634,9 +1634,9 @@
       "context_window": "e study, participants were 99% compliant with Dasatinib and 100% compliant with Quercetin. Table 2 Feasibility outcomes of t",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-4818",
@@ -1688,9 +1688,9 @@
       "context_window": "ib Medication Compliance of Completed STAMINA Participants (n = 12) (% of intended doses consumed) Compliance with Dasatinib m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-6219",
@@ -1706,9 +1706,9 @@
       "context_window": "ded pills over the period of study participation. 143/144 = 99% Quercetin Medication Compliance of Completed STAMINA Partic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "quercetin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-6290",
@@ -1724,9 +1724,9 @@
       "context_window": "in Medication Compliance of Completed STAMINA Participants (n = 12) (% of intended doses consumed) Compliance with Quercetin m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "quercetin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-6608",
@@ -2871,7 +2871,7 @@
       "context_window": "ments in dual task costs of stride length at the mid-point (p = 0.08) and dual task gait speed at follow-up (p = 0.07; Supplemen",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2889,7 +2889,7 @@
       "context_window": "mid-point (p = 0.08) and dual task gait speed at follow-up (p = 0.07; Supplementary Table S5 ). The Low Senescent Cell Burden su",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2906,10 +2906,10 @@
       "sentence": "The Low Senescent Cell Burden sub-group demonstrated a non-significant improvement in the TMT at mid-point (p = 0.07), particularly on the B portion (p = 0.06; Supplementary Table S5 ).",
       "context_window": "ated a non-significant improvement in the TMT at mid-point (p = 0.07), particularly on the B portion (p = 0.06; Supplementary Ta",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-p-12580",
@@ -2924,10 +2924,10 @@
       "sentence": "The Low Senescent Cell Burden sub-group demonstrated a non-significant improvement in the TMT at mid-point (p = 0.07), particularly on the B portion (p = 0.06; Supplementary Table S5 ).",
       "context_window": "TMT at mid-point (p = 0.07), particularly on the B portion (p = 0.06; Supplementary Table S5 ). The sub-group analyses by age di",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-msd-13128",
@@ -2981,9 +2981,9 @@
       "context_window": "\u03b1, which have prominent roles in inflammation, declined by -15.5% (95% CI: -39.8, 8.8) and -3.0% (95% CI: -13.0, 7.1), respec",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "dq",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-ci-13376",
@@ -3000,9 +3000,9 @@
       "context_window": "h have prominent roles in inflammation, declined by -15.5% (95% CI: -39.8, 8.8) and -3.0% (95% CI: -13.0, 7.1), respectively. The mean per",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "dq",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-13401",
@@ -3018,9 +3018,9 @@
       "context_window": "inflammation, declined by -15.5% (95% CI: -39.8, 8.8) and -3.0% (95% CI: -13.0, 7.1), respectively. The mean percent reduct",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "dq",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-ci-13407",
@@ -3037,9 +3037,9 @@
       "context_window": "mmation, declined by -15.5% (95% CI: -39.8, 8.8) and -3.0% (95% CI: -13.0, 7.1), respectively. The mean percent reduction in TNF-\u03b1 was sig",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "dq",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-p-13507",
@@ -3091,8 +3091,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "senescence. Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burde",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3109,8 +3109,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "an % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burd",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3127,8 +3127,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "ow Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n =",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3145,8 +3145,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "gh senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3164,7 +3164,7 @@
       "context_window": "= 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3183,7 +3183,7 @@
       "context_window": "= 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3202,7 +3202,7 @@
       "context_window": "ammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3221,7 +3221,7 @@
       "context_window": "ers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3240,7 +3240,7 @@
       "context_window": "ro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3259,7 +3259,7 @@
       "context_window": "ry cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3278,7 +3278,7 @@
       "context_window": "2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Cent",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3297,7 +3297,7 @@
       "context_window": "-8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in i",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3316,7 +3316,7 @@
       "context_window": "IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inf",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3335,7 +3335,7 @@
       "context_window": "flammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory re",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3354,7 +3354,7 @@
       "context_window": "cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3373,7 +3373,7 @@
       "context_window": ".0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix me",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3392,7 +3392,7 @@
       "context_window": "al role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteina",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3411,7 +3411,7 @@
       "context_window": "mune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degra",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3430,7 +3430,7 @@
       "context_window": "flammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extrace",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3449,7 +3449,7 @@
       "context_window": "responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matri",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3468,7 +3468,7 @@
       "context_window": "alloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrad",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3487,7 +3487,7 @@
       "context_window": "ases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM prote",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3506,7 +3506,7 @@
       "context_window": "grades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is u",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3525,7 +3525,7 @@
       "context_window": "cellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated d",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3544,7 +3544,7 @@
       "context_window": "ix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflam",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3563,7 +3563,7 @@
       "context_window": "egrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other marke",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3582,7 +3582,7 @@
       "context_window": "proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senesc",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3601,7 +3601,7 @@
       "context_window": "is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Re",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3620,7 +3620,7 @@
       "context_window": "ed during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immu",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3639,7 +3639,7 @@
       "context_window": "flammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune response",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3657,8 +3657,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "tes immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Ma",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3676,8 +3676,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of sene",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3695,8 +3695,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "d triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cell",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3714,8 +3714,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3733,8 +3733,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "is/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 2",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3752,8 +3752,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interl",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3771,8 +3771,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, m",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3790,8 +3790,8 @@
       "sentence": "Biomarker Function Mean % change \u00b1 SD STAMINA (n = 12) Low Baseline MoCA Scores (n = 8) High senescent cell burden (n = 5) Low senescent cell burden (n = 5) Biomarker controls (n = 10) Inflammatory markers IL-1\u03b1 Pro-inflammatory cytokine 7.0 \u00b1 31.6 13.0 \u00b1 36.6 -4.8 \u00b1 40.2 20.2 \u00b1 25.1 -8.7 \u00b1 34.7 IL-6 a Pro-inflammatory cytokine -15.5 \u00b1 38.3 -24.6 \u00b1 38.0 -22.5 \u00b1 33.4 -8.7 \u00b1 43.2 1.6 \u00b1 35.0 TNF-\u03b1 Central role in immune and inflammatory responses -3.0 \u00b1 15.8 b -7.4 \u00b1 9.6 b -4.8 \u00b1 11.2 1.5 \u00b1 22.6 16.8 \u00b1 25.9 Matrix metalloproteinases MMP3 Degrades extracellular matrix proteins 9.4 \u00b1 44.8 17.6 \u00b1 53.2 0.50 \u00b1 20.8 22.2 \u00b1 68.7 -5.9 \u00b1 25.7 MMP9 Degrades ECM proteins and is upregulated during inflammation 14.3 \u00b1 62.0 16.0 \u00b1 73.3 -16.1 \u00b1 24.7 37.5 \u00b1 89.3 1.1 \u00b1 33.1 Other markers of senescence PDL-2 Regulates immune responses and triggers tumorigenesis/progression 2.9 \u00b1 10.9 0.97 \u00b1 10.8 1.7 \u00b1 4.7 4.8 \u00b1 15.9 -7.5 \u00b1 21.8 p16 INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a , a genetic marker of senescent cells; PDL-2, programmed cell death-ligand 2; TNF-\u03b1, tumour necrosis factor alpha. a Individuals with extreme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0.05 when compared to the Biomarker Control group.",
       "context_window": "INK4a a Marker of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metallo",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "control",
+      "endpoint": "vaccine response",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3810,7 +3810,7 @@
       "context_window": "er of senescent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase;",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3829,7 +3829,7 @@
       "context_window": "ent cells -4.1 \u00b1 25.9 -13.7 \u00b1 27.1 -14.2 \u00b1 21.0 6.0 \u00b1 28.4 -6.6 \u00b1 24.5 IL, interleukin; MMP, matrix metalloproteinase; p16 INK4a ,",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3847,7 +3847,7 @@
       "context_window": "treme percent changes were excluded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change =",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3865,7 +3865,7 @@
       "context_window": "ded from this table ( i.e., n = 1 for IL-6, % change = 600; n = 1 for p16 INK4a , % change = 1306). b Indicates a p-value < 0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3883,9 +3883,9 @@
       "context_window": "rcent change between screening and final follow-up values (\u223c14 weeks) was calculated for each biomarker in STAMINA (n = 12, blue",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-15573",
@@ -3901,9 +3901,9 @@
       "context_window": "s (\u223c14 weeks) was calculated for each biomarker in STAMINA (n = 12, blue circle) and Biomarker Control (n = 10, red square) pa",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-15617",
@@ -3919,9 +3919,9 @@
       "context_window": "ker in STAMINA (n = 12, blue circle) and Biomarker Control (n = 10, red square) participants. All data points are displayed on",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-15743",
@@ -3991,9 +3991,9 @@
       "context_window": "rcent change between screening and final follow-up values (\u223c14 weeks) was calculated for each biomarker in STAMINA (n = 12, blue",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-16590",
@@ -4009,9 +4009,9 @@
       "context_window": "s (\u223c14 weeks) was calculated for each biomarker in STAMINA (n = 12, blue circle) and Biomarker Control (n = 10, red square) pa",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-n-16634",
@@ -4027,9 +4027,9 @@
       "context_window": "ker in STAMINA (n = 12, blue circle) and Biomarker Control (n = 10, red square) participants. All data points are displayed on",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11907475_a_pilot_study_of_senolytics_to_improve_cognition_and_mobilit-pct-16760",
@@ -4210,7 +4210,7 @@
       "context_window": "sk gait speed appeared to improve after DQ by approximately 0.02 m/s. However, changes of 0.05 m/s are reported to represent cli",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "dq",
       "direction": "increase",
       "binding_confidence": "partial"
     },

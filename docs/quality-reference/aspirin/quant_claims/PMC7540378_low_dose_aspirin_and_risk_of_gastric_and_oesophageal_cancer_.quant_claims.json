@@ -1,0 +1,1471 @@
+{
+  "paper_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_",
+  "doi": "10.1002/ijc.33022",
+  "extracted_at": "2026-05-08T20:05:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 40,
+    "percentage": 37,
+    "sample_size": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-404",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 404,
+      "sentence": "Between January 2005 and December 2015, we identified a cohort of 223 640 new users of low\u2010dose aspirin (75\u2010300 mg/day) and a matched cohort of nonusers at the start of follow\u2010up from The Health Improvement Network.",
+      "context_window": "ified a cohort of 223 640 new users of low\u2010dose aspirin (75\u2010300 mg/day) and a matched cohort of nonusers at the start of follow\u2010up",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-672",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 672,
+      "sentence": "Nested case\u2010control analyses were conducted and adjusted odds ratios (ORs) with 95% confidence intervals (CIs) were calculated for current vs nonuse of low\u2010dose aspirin using logistic regression.",
+      "context_window": "analyses were conducted and adjusted odds ratios (ORs) with 95% confidence intervals (CIs) were calculated for current vs n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-849",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 849,
+      "sentence": "Current use was defined as when low\u2010dose aspirin lasted 0 to 90 days before the index date (event date for cases, random date for controls) and previous duration was \u22651 year.",
+      "context_window": "urrent use was defined as when low\u2010dose aspirin lasted 0 to 90 days before the index date (event date for cases, random date fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-955",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 955,
+      "sentence": "Current use was defined as when low\u2010dose aspirin lasted 0 to 90 days before the index date (event date for cases, random date for controls) and previous duration was \u22651 year.",
+      "context_window": "cases, random date for controls) and previous duration was \u22651 year. We identified 727 incident cases of gastric cancer and 139",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1066",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "ORs (95% CIs) were 0.46 (0.38\u20100.57) for gastric cancer and 0.59 (0.51\u20100.69) for oesophageal cancer.",
+      "context_window": "cancer and 1394 incident cases of oesophageal cancer. ORs (95% CIs) were 0.46 (0.38\u20100.57) for gastric cancer and 0.59 (0.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-1284",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1284,
+      "sentence": "The effect remained consistent with no clear change seen between previous duration of low\u2010dose aspirin use of 1\u20103, 3\u20105 or >5 years.",
+      "context_window": "n previous duration of low\u2010dose aspirin use of 1\u20103, 3\u20105 or >5 years. The reduced risks was seen with 75 mg/day, and effects wer",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-1325",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg/day",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1325,
+      "sentence": "The reduced risks was seen with 75 mg/day, and effects were consistent in lag\u2010time analyses.",
+      "context_window": "se of 1\u20103, 3\u20105 or >5 years. The reduced risks was seen with 75 mg/day, and effects were consistent in lag\u2010time analyses. In concl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1472",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1472,
+      "sentence": "In conclusion, our results indicate that use of low\u2010dose aspirin is associated with a 54% reduced risk of gastric cancer and a 41% reduced risk of oesophageal cancer as supported by mechanistic data.",
+      "context_window": "indicate that use of low\u2010dose aspirin is associated with a 54% reduced risk of gastric cancer and a 41% reduced risk of oe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1513",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1513,
+      "sentence": "In conclusion, our results indicate that use of low\u2010dose aspirin is associated with a 54% reduced risk of gastric cancer and a 41% reduced risk of oesophageal cancer as supported by mechanistic data.",
+      "context_window": "associated with a 54% reduced risk of gastric cancer and a 41% reduced risk of oesophageal cancer as supported by mechanis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-305",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 305,
+      "sentence": "In addition to the benefits of daily low\u2010dose aspirin for the prevention of cardiovascular disease (CVD), there is strong evidence from meta\u2010analysis of CVD randomised controlled trials (RCTs) and from observational studies that daily low\u2010dose aspirin reduces the risk of colorectal cancer (CRC) by about 30% to 40%.",
+      "context_window": "spirin reduces the risk of colorectal cancer (CRC) by about 30% to 40%. 1 , 2 , 3 , 4 , 5 , 6 , 7 Several lines of evidence",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-312",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 312,
+      "sentence": "In addition to the benefits of daily low\u2010dose aspirin for the prevention of cardiovascular disease (CVD), there is strong evidence from meta\u2010analysis of CVD randomised controlled trials (RCTs) and from observational studies that daily low\u2010dose aspirin reduces the risk of colorectal cancer (CRC) by about 30% to 40%.",
+      "context_window": "reduces the risk of colorectal cancer (CRC) by about 30% to 40%. 1 , 2 , 3 , 4 , 5 , 6 , 7 Several lines of evidence indica",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-1402",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 1402,
+      "sentence": "In the United Kingdom (UK), over half of patients have stage III or IV disease at diagnosis 15 , 16 and only around half are still alive 1 year postdiagnosis.",
+      "context_window": "e at diagnosis 15 , 16 and only around half are still alive 1 year postdiagnosis. 12 , 13 Further chemoprotective benefits of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1845",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1845,
+      "sentence": "In an analysis of three aspirin CVD trials with 20\u2010year posttrial follow\u2010up, 17 , 18 , 19 Rothwell et al 20 found that low\u2010dose aspirin use at baseline was associated with a 60% reduction in death from oesophageal cancer and a 30% reduction in death from gastric cancer.",
+      "context_window": "that low\u2010dose aspirin use at baseline was associated with a 60% reduction in death from oesophageal cancer and a 30% reduct",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1898",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1898,
+      "sentence": "In an analysis of three aspirin CVD trials with 20\u2010year posttrial follow\u2010up, 17 , 18 , 19 Rothwell et al 20 found that low\u2010dose aspirin use at baseline was associated with a 60% reduction in death from oesophageal cancer and a 30% reduction in death from gastric cancer.",
+      "context_window": "with a 60% reduction in death from oesophageal cancer and a 30% reduction in death from gastric cancer. The majority of ob",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-155",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 155,
+      "sentence": "Using primary care data from the UK, we conducted a population\u2010based cohort study involving the follow\u2010up of a cohort of new\u2010users of low\u2010dose aspirin (75\u2010300 mg/day) and a matched cohort of nonusers of low\u2010dose aspirin at the start of follow\u2010up to identify incident cases of gastric and oesophageal cancer.",
+      "context_window": "follow\u2010up of a cohort of new\u2010users of low\u2010dose aspirin (75\u2010300 mg/day) and a matched cohort of nonusers of low\u2010dose aspirin at th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1044",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1044,
+      "sentence": "28 , 29 The database contains the longitudinal electronic health records (EHRs) of approximately 6% of the UK population, with approximately 3 million individuals currently alive and registered with a participating general practice.",
+      "context_window": "gitudinal electronic health records (EHRs) of approximately 6% of the UK population, with approximately 3 million individu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-2490",
+      "claim_type": "unit_value",
+      "raw_text": "89 years",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2490,
+      "sentence": "We identified all individuals aged 40 to 89 years in THIN between January 1, 2005 and December 31, 2015 (study entry period) with at least 2 years\u2019 registration with their GP and at least 1 year of recorded prescription history.",
+      "context_window": "own in Figure S1 . We identified all individuals aged 40 to 89 years in THIN between January 1, 2005 and December 31, 2015 (stud",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-2588",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2588,
+      "sentence": "We identified all individuals aged 40 to 89 years in THIN between January 1, 2005 and December 31, 2015 (study entry period) with at least 2 years\u2019 registration with their GP and at least 1 year of recorded prescription history.",
+      "context_window": "05 and December 31, 2015 (study entry period) with at least 2 years\u2019 registration with their GP and at least 1 year of recorded",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-2637",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 2637,
+      "sentence": "We identified all individuals aged 40 to 89 years in THIN between January 1, 2005 and December 31, 2015 (study entry period) with at least 2 years\u2019 registration with their GP and at least 1 year of recorded prescription history.",
+      "context_window": "h at least 2 years\u2019 registration with their GP and at least 1 year of recorded prescription history. The date an individual me",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-n-2812",
+      "claim_type": "sample_size",
+      "raw_text": "n = 417",
+      "numeric_values": [
+        417.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2812,
+      "sentence": "Individuals with a prescription for low\u2010dose aspirin (n = 417 256) or with a record of cancer before this date (n = 223 274) were excluded.",
+      "context_window": "date. Individuals with a prescription for low\u2010dose aspirin (n = 417 256) or with a record of cancer before this date (n = 223 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-n-2870",
+      "claim_type": "sample_size",
+      "raw_text": "n = 223",
+      "numeric_values": [
+        223.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2870,
+      "sentence": "Individuals with a prescription for low\u2010dose aspirin (n = 417 256) or with a record of cancer before this date (n = 223 274) were excluded.",
+      "context_window": "(n = 417 256) or with a record of cancer before this date (n = 223 274) were excluded. We subsequently identified patients (n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-n-2935",
+      "claim_type": "sample_size",
+      "raw_text": "n = 223",
+      "numeric_values": [
+        223.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2935,
+      "sentence": "We subsequently identified patients (n = 223 640) with a first prescription for low\u2010dose aspirin (75\u2010300 mg/day; start date) and matched each 1:1 to a nonuser of low\u2010dose aspirin on their start date by age, sex, time since study entry, and number of GP visits in the previous year.",
+      "context_window": "23 274) were excluded. We subsequently identified patients (n = 223 640) with a first prescription for low\u2010dose aspirin (75\u2010300",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-2999",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 2999,
+      "sentence": "We subsequently identified patients (n = 223 640) with a first prescription for low\u2010dose aspirin (75\u2010300 mg/day; start date) and matched each 1:1 to a nonuser of low\u2010dose aspirin on their start date by age, sex, time since study entry, and number of GP visits in the previous year.",
+      "context_window": "223 640) with a first prescription for low\u2010dose aspirin (75\u2010300 mg/day; start date) and matched each 1:1 to a nonuser of low\u2010dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-4307",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 4307,
+      "sentence": "A fatal case was defined as death from any cause within 1 year after the index date.",
+      "context_window": "ds. A fatal case was defined as death from any cause within 1 year after the index date. The index date for all confirmed case",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-n-4634",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5000",
+      "numeric_values": [
+        5000.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4634,
+      "sentence": "Controls were selected from both the low\u2010dose aspirin and matched nonuser study cohorts using incidence density sampling and were frequency matched to cases by age, sex and calendar year (n = 5000 each for cases of both cancers).",
+      "context_window": "e frequency matched to cases by age, sex and calendar year (n = 5000 each for cases of both cancers). The index date for control",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5241",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5241,
+      "sentence": "Current use of low\u2010dose aspirin among cases and controls was defined as when supply of the most recent prescription before the index date lasted until/over the index date or ended 0 to 30 days before the index date.",
+      "context_window": "e index date lasted until/over the index date or ended 0 to 30 days before the index date. In our analysis of \u201ccurrent use\u201d, we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5349",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5349,
+      "sentence": "In our analysis of \u201ccurrent use\u201d, we required current users to have at least 1 year of low\u2010dose aspirin use because those with short durations (ie, those who recently initiated low\u2010dose aspirin) of use may be prone to confounding by contraindication; early signs of gastric cancer manifesting as gastrointestinal symptoms that may cause the GP to withhold prescribing low\u2010dose aspirin.",
+      "context_window": "f \u201ccurrent use\u201d, we required current users to have at least 1 year of low\u2010dose aspirin use because those with short durations",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5732",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5732,
+      "sentence": "Remaining current users were those with a treatment duration of less than 1 year.",
+      "context_window": "ent users were those with a treatment duration of less than 1 year. Other categories of low\u2010dose aspirin exposure were recent",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5860",
+      "claim_type": "unit_value",
+      "raw_text": "365 days",
+      "numeric_values": [
+        365.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5860,
+      "sentence": "Other categories of low\u2010dose aspirin exposure were recent use , when supply of the most recent prescription ended 31 to 365 days before the index date; past use was when supply of the most recent prescription ended \u2265365 days before the index date, and nonuse , when there was no recorded use at any time before the index date.",
+      "context_window": "e , when supply of the most recent prescription ended 31 to 365 days before the index date; past use was when supply of the most",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5956",
+      "claim_type": "unit_value",
+      "raw_text": "365 days",
+      "numeric_values": [
+        365.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5956,
+      "sentence": "Other categories of low\u2010dose aspirin exposure were recent use , when supply of the most recent prescription ended 31 to 365 days before the index date; past use was when supply of the most recent prescription ended \u2265365 days before the index date, and nonuse , when there was no recorded use at any time before the index date.",
+      "context_window": "use was when supply of the most recent prescription ended \u2265365 days before the index date, and nonuse , when there was no recor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-7958",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7958,
+      "sentence": "Odds ratios (ORs) with 95% confidence intervals (CIs) were calculated using unconditional logistic regression adjusted for confounders (smoking, number of GP visits in the year before the index date and low\u2010dose aspirin [in analyses of all other variables] in addition to the matching factors of age, sex and calendar year).",
+      "context_window": "risk of gastric/oesophageal cancer. Odds ratios (ORs) with 95% confidence intervals (CIs) were calculated using unconditio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-8396",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8396,
+      "sentence": "We used a stepwise approach adding potential confounders to the unadjusted model, retaining those that changed the estimate by at least 10%.",
+      "context_window": "odel, retaining those that changed the estimate by at least 10%. As controls were selected using incidence density sampling",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-8935",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 8935,
+      "sentence": "We also analysed concomitant use of low\u2010dose aspirin with clopidogrel, with nonsteroidal anti\u2010inflammatory drugs, and with proton pump inhibitors (PPIs), and undertook lag\u2010time analyses backdating the index date by 1 year to account for the cancer latency periods.",
+      "context_window": "nd undertook lag\u2010time analyses backdating the index date by 1 year to account for the cancer latency periods. STATA version 12",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-193",
+      "claim_type": "unit_value",
+      "raw_text": "5.47 years",
+      "numeric_values": [
+        5.47
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 193,
+      "sentence": "A total of 826 individuals were identified with a first diagnosis of gastric cancer and 1523 individuals were identified with a first diagnosis of oesophageal cancer during a mean follow\u2010up of 5.47 years (both follow\u2010ups).",
+      "context_window": "diagnosis of oesophageal cancer during a mean follow\u2010up of 5.47 years (both follow\u2010ups). After the multistep case confirmation pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-387",
+      "claim_type": "percentage",
+      "raw_text": "88.0%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 387,
+      "sentence": "After the multistep case confirmation process, there were 727 incident cases of gastric cancer and 1394 incident cases of oesophageal cancer (confirmation rates of 88.0% and 78.7%, respectively).",
+      "context_window": "incident cases of oesophageal cancer (confirmation rates of 88.0% and 78.7%, respectively). Among cases of gastric cancer, 68",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-397",
+      "claim_type": "percentage",
+      "raw_text": "78.7%",
+      "numeric_values": [
+        78.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 397,
+      "sentence": "After the multistep case confirmation process, there were 727 incident cases of gastric cancer and 1394 incident cases of oesophageal cancer (confirmation rates of 88.0% and 78.7%, respectively).",
+      "context_window": "ases of oesophageal cancer (confirmation rates of 88.0% and 78.7%, respectively). Among cases of gastric cancer, 68.0% were a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-450",
+      "claim_type": "percentage",
+      "raw_text": "68.0%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 450,
+      "sentence": "Among cases of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal.",
+      "context_window": "0% and 78.7%, respectively). Among cases of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quarti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-491",
+      "claim_type": "unit_value",
+      "raw_text": "74.0 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 491,
+      "sentence": "Among cases of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal.",
+      "context_window": "of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-559",
+      "claim_type": "unit_value",
+      "raw_text": "73.4 years",
+      "numeric_values": [
+        73.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 559,
+      "sentence": "Among cases of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal.",
+      "context_window": "rs (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal. Among cases of oesopha",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-574",
+      "claim_type": "unit_value",
+      "raw_text": "9.6 years",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 574,
+      "sentence": "Among cases of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal.",
+      "context_window": "ile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal. Among cases of oesophageal cancer, 7",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-589",
+      "claim_type": "percentage",
+      "raw_text": "58.3%",
+      "numeric_values": [
+        58.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 589,
+      "sentence": "Among cases of gastric cancer, 68.0% were among men, the median age was 74.0 years (inter\u2010quartile range [IQR] 67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal.",
+      "context_window": "67.0\u201080.0), the mean age was 73.4 years (SD 9.6 years) and 58.3% were fatal. Among cases of oesophageal cancer, 73.7% were a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-642",
+      "claim_type": "percentage",
+      "raw_text": "73.7%",
+      "numeric_values": [
+        73.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 642,
+      "sentence": "Among cases of oesophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal.",
+      "context_window": "s) and 58.3% were fatal. Among cases of oesophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-683",
+      "claim_type": "unit_value",
+      "raw_text": "71.0 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 683,
+      "sentence": "Among cases of oesophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal.",
+      "context_window": "esophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-728",
+      "claim_type": "unit_value",
+      "raw_text": "70.9 years",
+      "numeric_values": [
+        70.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 728,
+      "sentence": "Among cases of oesophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal.",
+      "context_window": "median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal. Baseline characteris",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-743",
+      "claim_type": "unit_value",
+      "raw_text": "10.0 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 743,
+      "sentence": "Among cases of oesophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal.",
+      "context_window": "71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal. Baseline characteristics of cases a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-759",
+      "claim_type": "percentage",
+      "raw_text": "53.7%",
+      "numeric_values": [
+        53.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 759,
+      "sentence": "Among cases of oesophageal cancer, 73.7% were among men, the median age was 71.0 years (IQR 64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal.",
+      "context_window": "64.0\u201078.0), the mean age was 70.9 years (SD 10.0 years) and 53.7% were fatal. Baseline characteristics of cases and controls",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-1751",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1751,
+      "sentence": "Odds ratios (95% CIs) for the association between patient characteristics and the risk of gastric cancer\n\nNote: Comorbidities were identified any time before the index date except for anaemia, where we included recorded diagnoses in the year before the index date, and pernicious anaemia, where we included recorded diagnoses in the 5 years before the index date.",
+      "context_window": "ed with a reduced risk of oesophageal cancer. Odds ratios (95% CIs) for the association between patient characteristics an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-2071",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2071,
+      "sentence": "Odds ratios (95% CIs) for the association between patient characteristics and the risk of gastric cancer\n\nNote: Comorbidities were identified any time before the index date except for anaemia, where we included recorded diagnoses in the year before the index date, and pernicious anaemia, where we included recorded diagnoses in the 5 years before the index date.",
+      "context_window": "icious anaemia, where we included recorded diagnoses in the 5 years before the index date. Abbreviations: BMI, body mass index",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-3023",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3023,
+      "sentence": "Odds ratio (95% CIs) for the association between patient characteristics and the risk of oesophageal cancer\n\nNote: Comorbidities were identified any time before the index date except for anaemia, where we included recorded diagnoses in the year before the index date, and pernicious anaemia, where we included recorded diagnoses in the 5 years before the index date.",
+      "context_window": "th complicated and uncomplicated peptic ulcer. Odds ratio (95% CIs) for the association between patient characteristics an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-3347",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3347,
+      "sentence": "Odds ratio (95% CIs) for the association between patient characteristics and the risk of oesophageal cancer\n\nNote: Comorbidities were identified any time before the index date except for anaemia, where we included recorded diagnoses in the year before the index date, and pernicious anaemia, where we included recorded diagnoses in the 5 years before the index date.",
+      "context_window": "icious anaemia, where we included recorded diagnoses in the 5 years before the index date. Abbreviations: BMI, body mass index",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-4410",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4410,
+      "sentence": "Compared to nonuse of low\u2010dose aspirin, current use of low\u2010dose aspirin was associated with a 54% reduced risk of gastric cancer (OR 0.46, 95% CI: 0.38\u20100.57), with estimates similar when stratified by primary/secondary CVD prevention.",
+      "context_window": "irin, current use of low\u2010dose aspirin was associated with a 54% reduced risk of gastric cancer (OR 0.46, 95% CI: 0.38\u20100.57)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-4455",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4455,
+      "sentence": "Compared to nonuse of low\u2010dose aspirin, current use of low\u2010dose aspirin was associated with a 54% reduced risk of gastric cancer (OR 0.46, 95% CI: 0.38\u20100.57), with estimates similar when stratified by primary/secondary CVD prevention.",
+      "context_window": "ociated with a 54% reduced risk of gastric cancer (OR 0.46, 95% CI: 0.38\u20100.57), with estimates similar when stratified by p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-4700",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg/day",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 4700,
+      "sentence": "The reduced risk remained consistent with no clear change with increasing durations of use, and was evident at the lowest dose of aspirin evaluated (75 mg/day), which was the dose used by the vast majority of cases and controls.",
+      "context_window": "e, and was evident at the lowest dose of aspirin evaluated (75 mg/day), which was the dose used by the vast majority of cases and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-4957",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4957,
+      "sentence": "The reduced risk was also seen when low\u2010dose aspirin was used concomitantly with clopidogrel (OR 0.62, 95% CI: 0.27\u20101.42) or NSAIDs (OR 0.27, 95% CI: 0.12\u20100.58) vs nonuse of both drugs in each analysis.",
+      "context_window": "e aspirin was used concomitantly with clopidogrel (OR 0.62, 95% CI: 0.27\u20101.42) or NSAIDs (OR 0.27, 95% CI: 0.12\u20100.58) vs no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-4996",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4996,
+      "sentence": "The reduced risk was also seen when low\u2010dose aspirin was used concomitantly with clopidogrel (OR 0.62, 95% CI: 0.27\u20101.42) or NSAIDs (OR 0.27, 95% CI: 0.12\u20100.58) vs nonuse of both drugs in each analysis.",
+      "context_window": "lopidogrel (OR 0.62, 95% CI: 0.27\u20101.42) or NSAIDs (OR 0.27, 95% CI: 0.12\u20100.58) vs nonuse of both drugs in each analysis. Co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-5179",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5179,
+      "sentence": "Concomitant use of low\u2010dose aspirin and a PPI, however, was associated with an increased risk of gastric cancer (OR 1.94, 95% CI: 1.45\u20102.60).",
+      "context_window": "sociated with an increased risk of gastric cancer (OR 1.94, 95% CI: 1.45\u20102.60). Odds ratios (95% CIs) for the association",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-5213",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5213,
+      "sentence": "Odds ratios (95% CIs) for the association between low\u2010dose aspirin use and the risk of gastric cancer\n\nAbbreviations: CI, confidence interval; CVD, cardiovascular disease; GP, general practitioner; OR, odds ratio; PPI, proton pump inhibitor; NSAID, nonsteroidal anti\u2010inflammatory drug.",
+      "context_window": "gastric cancer (OR 1.94, 95% CI: 1.45\u20102.60). Odds ratios (95% CIs) for the association between low\u2010dose aspirin use and t",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5724",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5724,
+      "sentence": "Current users of low\u2010dose aspirin with less than 1 year duration of use.",
+      "context_window": "ous year. Current users of low\u2010dose aspirin with less than 1 year duration of use. Among current users of low\u2010dose aspirin w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-5795",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5795,
+      "sentence": "Among current users of low\u2010dose aspirin with \u22651 year duration of use.",
+      "context_window": "tion of use. Among current users of low\u2010dose aspirin with \u22651 year duration of use. Compared to no use of either drug in the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-6076",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6076,
+      "sentence": "Compared to nonuse of low\u2010dose aspirin, current use of low\u2010dose aspirin was associated with a 41% reduced risk of oesophageal cancer (OR 0.59, 95% CI: 0.51\u20100.69).",
+      "context_window": "irin, current use of low\u2010dose aspirin was associated with a 41% reduced risk of oesophageal cancer (OR 0.59, 95% CI: 0.51\u20100",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-6125",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6125,
+      "sentence": "Compared to nonuse of low\u2010dose aspirin, current use of low\u2010dose aspirin was associated with a 41% reduced risk of oesophageal cancer (OR 0.59, 95% CI: 0.51\u20100.69).",
+      "context_window": "ted with a 41% reduced risk of oesophageal cancer (OR 0.59, 95% CI: 0.51\u20100.69). Findings relating to dose, duration and pri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-6538",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6538,
+      "sentence": "Also, as seen with gastric cancer, a reduced risk of oesophageal cancer was seen when low\u2010dose aspirin was used concomitantly with clopidogrel (OR 0.23, 95% CI: 0.10\u20100.56 vs nonuse of both drugs) or with NSAIDs (OR 0.58, 95% CI: 0.36\u20100.96 vs nonuse of both drugs), and an increased risk of oesophageal cancer was seen with concomitant of a PPI (OR 3.18, 95% CI: 2.55\u20103.95).",
+      "context_window": "e aspirin was used concomitantly with clopidogrel (OR 0.23, 95% CI: 0.10\u20100.56 vs nonuse of both drugs) or with NSAIDs (OR 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-6606",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6606,
+      "sentence": "Also, as seen with gastric cancer, a reduced risk of oesophageal cancer was seen when low\u2010dose aspirin was used concomitantly with clopidogrel (OR 0.23, 95% CI: 0.10\u20100.56 vs nonuse of both drugs) or with NSAIDs (OR 0.58, 95% CI: 0.36\u20100.96 vs nonuse of both drugs), and an increased risk of oesophageal cancer was seen with concomitant of a PPI (OR 3.18, 95% CI: 2.55\u20103.95).",
+      "context_window": "0.10\u20100.56 vs nonuse of both drugs) or with NSAIDs (OR 0.58, 95% CI: 0.36\u20100.96 vs nonuse of both drugs), and an increased ri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-6739",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6739,
+      "sentence": "Also, as seen with gastric cancer, a reduced risk of oesophageal cancer was seen when low\u2010dose aspirin was used concomitantly with clopidogrel (OR 0.23, 95% CI: 0.10\u20100.56 vs nonuse of both drugs) or with NSAIDs (OR 0.58, 95% CI: 0.36\u20100.96 vs nonuse of both drugs), and an increased risk of oesophageal cancer was seen with concomitant of a PPI (OR 3.18, 95% CI: 2.55\u20103.95).",
+      "context_window": "phageal cancer was seen with concomitant of a PPI (OR 3.18, 95% CI: 2.55\u20103.95). Odds ratio (95% CIs) for the association b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-6772",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6772,
+      "sentence": "Odds ratio (95% CIs) for the association between low\u2010dose aspirin and the risk of oesophageal cancer\n\nAbbreviations: CI, confidence interval; CVD, cardiovascular disease; GP, general practitioner; OR, odds ratio; PPI, proton pump inhibitor; NSAID, nonsteroidal anti\u2010inflammatory drug.",
+      "context_window": "omitant of a PPI (OR 3.18, 95% CI: 2.55\u20103.95). Odds ratio (95% CIs) for the association between low\u2010dose aspirin and the r",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-7283",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7283,
+      "sentence": "Current users of low\u2010dose aspirin with less than 1 year duration of use.",
+      "context_window": "ous year. Current users of low\u2010dose aspirin with less than 1 year duration of use. Among current users of low\u2010dose aspirin w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-7354",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7354,
+      "sentence": "Among current users of low\u2010dose aspirin with \u22651 year duration of use.",
+      "context_window": "tion of use. Among current users of low\u2010dose aspirin with \u22651 year duration of use. Compared to no use of either drug in the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-95",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 95,
+      "sentence": "Our large population\u2010based observational study found that use of low\u2010dose aspirin for at least 1 year was associated with a significant 54% reduction in the risk of gastric cancer and a 41% reduced risk of oesophageal cancer when compared to nonuse of low\u2010dose aspirin, consistent with the substantial reductions in risk of these two cancers seen in previous studies.",
+      "context_window": "ional study found that use of low\u2010dose aspirin for at least 1 year was associated with a significant 54% reduction in the risk",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-136",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 136,
+      "sentence": "Our large population\u2010based observational study found that use of low\u2010dose aspirin for at least 1 year was associated with a significant 54% reduction in the risk of gastric cancer and a 41% reduced risk of oesophageal cancer when compared to nonuse of low\u2010dose aspirin, consistent with the substantial reductions in risk of these two cancers seen in previous studies.",
+      "context_window": "pirin for at least 1 year was associated with a significant 54% reduction in the risk of gastric cancer and a 41% reduced r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-186",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 186,
+      "sentence": "Our large population\u2010based observational study found that use of low\u2010dose aspirin for at least 1 year was associated with a significant 54% reduction in the risk of gastric cancer and a 41% reduced risk of oesophageal cancer when compared to nonuse of low\u2010dose aspirin, consistent with the substantial reductions in risk of these two cancers seen in previous studies.",
+      "context_window": "gnificant 54% reduction in the risk of gastric cancer and a 41% reduced risk of oesophageal cancer when compared to nonuse",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-474",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 474,
+      "sentence": "3 , 20 , 21 , 22 , 23 , 24 , 25 The reductions in risk were seen at the lowest dose of aspirin evaluated (75 mg), and effect sizes were broadly consistent with increasing lengths of low\u2010dose aspirin use with no clear change seen between durations of 1\u20103, 3\u20105 or >5 years.",
+      "context_window": "in risk were seen at the lowest dose of aspirin evaluated (75 mg), and effect sizes were broadly consistent with increasing",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-631",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 631,
+      "sentence": "3 , 20 , 21 , 22 , 23 , 24 , 25 The reductions in risk were seen at the lowest dose of aspirin evaluated (75 mg), and effect sizes were broadly consistent with increasing lengths of low\u2010dose aspirin use with no clear change seen between durations of 1\u20103, 3\u20105 or >5 years.",
+      "context_window": "with no clear change seen between durations of 1\u20103, 3\u20105 or >5 years. This beneficial effect of low\u2010dose aspirin after a few ye",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-1749",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1749,
+      "sentence": "35 In Rothwell's meta\u2010analysis of three aspirin CVD trials, the statistical evidence of an effect of low\u2010dose aspirin in reducing gastric and oesophageal cancer risk was strongest after 10 to 20 years follow\u2010up.",
+      "context_window": "stric and oesophageal cancer risk was strongest after 10 to 20 years follow\u2010up. The shorter follow\u2010up duration in our study limi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-2716",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2716,
+      "sentence": "Ye et al 21 reported that significant reductions in risk were only seen after at least 5 years of use, while Huang et al 23 observed a 5% risk reduction with every 2\u2010year increment in duration.",
+      "context_window": "ignificant reductions in risk were only seen after at least 5 years of use, while Huang et al 23 observed a 5% risk reduction w",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-2764",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2764,
+      "sentence": "Ye et al 21 reported that significant reductions in risk were only seen after at least 5 years of use, while Huang et al 23 observed a 5% risk reduction with every 2\u2010year increment in duration.",
+      "context_window": "er at least 5 years of use, while Huang et al 23 observed a 5% risk reduction with every 2\u2010year increment in duration. Yet",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-3025",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg/day",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 3025,
+      "sentence": "Our finding that a dose of aspirin of 75 mg/day was sufficient to observe the substantial reductions in gastric/oesophageal cancer risk is in line with the low doses shown to be beneficial in reducing the risk of gastrointestinal cancers in clinical trials and previous observational studies.",
+      "context_window": "l cancer are lacking. Our finding that a dose of aspirin of 75 mg/day was sufficient to observe the substantial reductions in gas",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-4251",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4251,
+      "sentence": "Interestingly, the ASCEND RCT of 100 mg daily aspirin vs placebo among individuals with diabetes but no evident CVD found no significant difference in the incidence of gastrointestinal cancers as a group after 7.4 years\u2019 follow\u2010up.",
+      "context_window": "would also be beneficial. Interestingly, the ASCEND RCT of 100 mg daily aspirin vs placebo among individuals with diabetes bu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-u-4428",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 years",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4428,
+      "sentence": "Interestingly, the ASCEND RCT of 100 mg daily aspirin vs placebo among individuals with diabetes but no evident CVD found no significant difference in the incidence of gastrointestinal cancers as a group after 7.4 years\u2019 follow\u2010up.",
+      "context_window": "the incidence of gastrointestinal cancers as a group after 7.4 years\u2019 follow\u2010up. However, the trial only had 60% power to detect",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-4478",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4478,
+      "sentence": "However, the trial only had 60% power to detect the 30% hypothesised difference between study arms, 41 and results from longer\u2010term follow\u2010up are awaited.",
+      "context_window": "oup after 7.4 years\u2019 follow\u2010up. However, the trial only had 60% power to detect the 30% hypothesised difference between stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-4502",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4502,
+      "sentence": "However, the trial only had 60% power to detect the 30% hypothesised difference between study arms, 41 and results from longer\u2010term follow\u2010up are awaited.",
+      "context_window": "low\u2010up. However, the trial only had 60% power to detect the 30% hypothesised difference between study arms, 41 and results",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7540378_low_dose_aspirin_and_risk_of_gastric_and_oesophageal_cancer_-pct-5802",
+      "claim_type": "percentage",
+      "raw_text": "6.1%",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5802,
+      "sentence": "The stepwise process for case confirmation involved manual review of patients\u2019 EHRs, and although we did not validate our cases of gastric/oesophageal cancer through linkage to hospital data, in a previous study for CRC restricted to individuals also in the Hospital Episode Statistics (HES) database, the false negative rate for CRC (using HES as gold standard) was only 6.1%.",
+      "context_window": "negative rate for CRC (using HES as gold standard) was only 6.1%. 4 Hence, it is likely that THIN is also a valid data sourc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

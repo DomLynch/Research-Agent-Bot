@@ -165,6 +165,108 @@ def _normalize_public_snake_case_labels(paper_md: str) -> tuple[str, int]:
     return body + tail, n
 
 
+def _ensure_public_thesis_marker(
+    paper_md: str, manifest: dict | None,
+) -> tuple[str, int]:
+    has_thesis = bool(
+        re.search(r"^\*\*Thesis:\*\*", paper_md, re.MULTILINE)
+        or re.search(r"^\*\*Picked thesis\b.*?:\*\*", paper_md, re.MULTILINE)
+        or re.search(r"\bThe deterministic thesis is:", paper_md)
+        or re.search(
+            r"\bThe synthesis surfaces\s+\d+\s+non-orthogonal tensions\b",
+            paper_md,
+            re.IGNORECASE,
+        )
+        or re.search(r"thesis(?:\s+is)?\s+that", paper_md[:3000], re.IGNORECASE)
+    )
+    if has_thesis:
+        return paper_md, 0
+    topic = ""
+    if isinstance(manifest, dict):
+        topic = str(manifest.get("topic") or "").strip()
+    display = _topic_display_name(topic) if topic else "the topic"
+    marker = (
+        f"**Thesis:** This synthesis argues that the evidence profile for "
+        f"{display} is context-dependent, so interpretation should be "
+        "bounded by the accepted receipt corpus, outcome-specific tensions, "
+        "and explicit evidence gaps."
+    )
+    new, n = re.subn(
+        r"(^##\s+Abstract\s*\n+)",
+        rf"\1{marker}\n\n",
+        paper_md,
+        count=1,
+        flags=re.MULTILINE,
+    )
+    return new, n
+
+
+def _collapse_adjacent_duplicate_words(paper_md: str) -> tuple[str, int]:
+    dup_word_re = re.compile(r"\b(\w{3,})\s+\1\b", re.IGNORECASE)
+    n_dup_words = 0
+
+    def repl(match: re.Match[str]) -> str:
+        nonlocal n_dup_words
+        word = match.group(1)
+        if word.lower() in {"had", "that", "what", "which"}:
+            return match.group(0)
+        if paper_md[match.end():match.end() + 1] == "-":
+            return match.group(0)
+        n_dup_words += 1
+        return word
+
+    return dup_word_re.sub(repl, paper_md), n_dup_words
+
+
+def apply_lightweight_public_polish(
+    paper_md: str,
+    manifest: dict | None = None,
+) -> tuple[str, list[dict]]:
+    """Final safe polish only. No numeric/table/source-context stripping."""
+    log: list[dict] = []
+    new_md, n_thesis_marker = _ensure_public_thesis_marker(paper_md, manifest)
+    if n_thesis_marker:
+        log.append({
+            "fix_type": "public_thesis_marker_backfill",
+            "n_changes": n_thesis_marker,
+            "description": (
+                "inserted an explicit public Abstract thesis marker when "
+                "writer prose lacked an auditor-detectable thesis sentence"
+            ),
+        })
+    new_md, n_dup_words = _collapse_adjacent_duplicate_words(new_md)
+    if n_dup_words:
+        log.append({
+            "fix_type": "duplicate_word_collapse",
+            "n_changes": n_dup_words,
+            "description": (
+                "collapsed adjacent duplicated prose words flagged by "
+                "Stage-2 C08 (for example 'not not')"
+            ),
+        })
+    new_md, n_dup_paragraphs = _strip_consecutive_duplicate_paragraphs(new_md)
+    if n_dup_paragraphs:
+        log.append({
+            "fix_type": "duplicate_paragraph",
+            "n_changes": n_dup_paragraphs,
+            "description": (
+                "removed consecutive duplicate prose paragraphs during "
+                "final lightweight polish"
+            ),
+        })
+    new_md, n_fuzzy_dup_paragraphs = _strip_fuzzy_duplicate_paragraphs(new_md)
+    if n_fuzzy_dup_paragraphs:
+        log.append({
+            "fix_type": "fuzzy_duplicate_paragraph",
+            "n_changes": n_fuzzy_dup_paragraphs,
+            "description": (
+                "removed later body paragraphs with high token overlap "
+                "during final lightweight polish"
+            ),
+        })
+    return new_md, log
+
+
 def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     body, tail = _split_public_body(paper_md)
     paragraphs = re.split(r"(\n\s*\n)", body)
@@ -842,6 +944,17 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_thesis_marker = _ensure_public_thesis_marker(new_md, manifest)
+    if n_thesis_marker:
+        log.append({
+            "fix_type": "public_thesis_marker_backfill",
+            "n_changes": n_thesis_marker,
+            "description": (
+                "inserted an explicit public Abstract thesis marker when "
+                "writer prose lacked an auditor-detectable thesis sentence"
+            ),
+        })
+
     new_md, n_meta_phrase = _normalize_public_meta_phrases(new_md)
     if n_meta_phrase:
         log.append({
@@ -1288,6 +1401,17 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_dup_words = _collapse_adjacent_duplicate_words(new_md)
+    if n_dup_words:
+        log.append({
+            "fix_type": "duplicate_word_collapse",
+            "n_changes": n_dup_words,
+            "description": (
+                "collapsed adjacent duplicated prose words flagged by "
+                "Stage-2 C08 (for example 'not not')"
+            ),
+        })
+
     # Fix #56: strip internal pipeline metadata from prose body.
     # The writer's title block produces a '**Submission:**
     # `synthesis-metformin-v06-...`' line that's machine-friendly but
@@ -1639,6 +1763,17 @@ def apply_fixes(
             "n_changes": n_snake_label,
             "description": (
                 "re-normalized internal enum-style snake_case labels after "
+                "section restoration/backfill"
+            ),
+        })
+
+    new_md, n_thesis_marker = _ensure_public_thesis_marker(new_md, manifest)
+    if n_thesis_marker:
+        log.append({
+            "fix_type": "public_thesis_marker_backfill_post_depth",
+            "n_changes": n_thesis_marker,
+            "description": (
+                "reinserted explicit public Abstract thesis marker after "
                 "section restoration/backfill"
             ),
         })

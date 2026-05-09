@@ -1,0 +1,210 @@
+{
+  "paper_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_",
+  "doi": "10.7150/ijms.99659",
+  "extracted_at": "2026-05-08T20:10:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 9,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-210",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 210,
+      "sentence": "Often occurring without warning, AAA ruptures result in a mortality rate of up to 90%, making it one of the deadliest vascular diseases.",
+      "context_window": "t warning, AAA ruptures result in a mortality rate of up to 90%, making it one of the deadliest vascular diseases. Epidemio",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-u-364",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 364,
+      "sentence": "Epidemiological studies indicate that the positive detection rate of AAA among the population over 60 years old is close to 1%, with the incidence rising annually as the population ages 2 , 3 .",
+      "context_window": "he positive detection rate of AAA among the population over 60 years old is close to 1%, with the incidence rising annually as t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-389",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 389,
+      "sentence": "Epidemiological studies indicate that the positive detection rate of AAA among the population over 60 years old is close to 1%, with the incidence rising annually as the population ages 2 , 3 .",
+      "context_window": "e of AAA among the population over 60 years old is close to 1%, with the incidence rising annually as the population ages",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-u-647",
+      "claim_type": "unit_value",
+      "raw_text": "50mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "introduction",
+      "source_offset": 647,
+      "sentence": "Due to its invasive nature and high risk, surgery is typically reserved for cases where the aneurysm diameter exceeds 50mm and the risk of rupture significantly increases.",
+      "context_window": "ally reserved for cases where the aneurysm diameter exceeds 50mm and the risk of rupture significantly increases. However, m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-737",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 737,
+      "sentence": "Initially, we downloaded the GSE152583 dataset from the Gene Expression Omnibus (GEO; https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi ) [8]and conducted data preprocessing using Seurat, which included filtering cells based on gene expression and mitochondrial content (minimum of 500 genes, maximum of 5000 genes, and mitochondrial gene percentage capped at 15%) 9 .",
+      "context_window": "of 5000 genes, and mitochondrial gene percentage capped at 15%) 9 . To reduce batch effects and variability in expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-2216",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2216,
+      "sentence": "For the WGCNA, we focused on the top 25% most variable genes, correlating their expression profiles with clinical features to construct a network 12 .",
+      "context_window": "scriptomic variations. For the WGCNA, we focused on the top 25% most variable genes, correlating their expression profiles",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-9241",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9241,
+      "sentence": "The RandomForest Classifier exhibited the highest predictive accuracy in the training dataset with an exemplary AUC of 1.000 (95% CI: 0.000), sensitivity of 1.000 (0.000), and specificity of 1.000 (0.000).",
+      "context_window": "acy in the training dataset with an exemplary AUC of 1.000 (95% CI: 0.000), sensitivity of 1.000 (0.000), and specificity o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-9671",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9671,
+      "sentence": "In contrast, the Gaussian Naive Bayes (GNB) Classifier demonstrated the best performance on the validation dataset, with an AUC of 0.973 (95% CI: 0.058).",
+      "context_window": "erformance on the validation dataset, with an AUC of 0.973 (95% CI: 0.058). The cutoff value for GNB was 0.401 with a varia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-10344",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10344,
+      "sentence": "Of the adventitia samples, the RandomForest Classifier exhibited the highest predictive accuracy in the training dataset with an exemplary AUC of 1.000 (95% CI: 0.000), sensitivity of 1.000 (0.000), and specificity of 1.000 (0.000).",
+      "context_window": "acy in the training dataset with an exemplary AUC of 1.000 (95% CI: 0.000), sensitivity of 1.000 (0.000), and specificity o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-10774",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10774,
+      "sentence": "In contrast, the Gaussian Naive Bayes (GNB) Classifier demonstrated the best performance on the validation dataset, with an AUC of 0.973 (95% CI: 0.058).",
+      "context_window": "erformance on the validation dataset, with an AUC of 0.973 (95% CI: 0.058). The cutoff value for GNB was 0.401 with a varia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11373551_ms4a1_ptgs2_axis_induces_taurine_metabolic_reprogramming_to_-pct-27",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 27,
+      "sentence": "Taurine constitutes nearly 50% of the free amino acid content in the heart, underscoring its vital role in cardiac biochemistry 32 .",
+      "context_window": "Taurine constitutes nearly 50% of the free amino acid content in the heart, underscoring i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

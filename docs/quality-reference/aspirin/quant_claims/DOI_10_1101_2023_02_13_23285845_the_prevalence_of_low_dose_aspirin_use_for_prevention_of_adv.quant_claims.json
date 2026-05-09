@@ -1,0 +1,119 @@
+{
+  "paper_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv",
+  "doi": "10.1101/2023.02.13.23285845",
+  "extracted_at": "2026-05-08T20:05:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv-pct-1150",
+      "claim_type": "percentage",
+      "raw_text": "35.8%",
+      "numeric_values": [
+        35.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1150,
+      "sentence": "Result Out of the total 388 diabetic patients interviewed, Most of the patients were in the age group of 50-54 (35.8%) with the mean age of 48.8 [48.2, 51.4] years old.",
+      "context_window": "iewed, Most of the patients were in the age group of 50-54 (35.8%) with the mean age of 48.8 [48.2, 51.4] years old. About ha",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv-pct-1219",
+      "claim_type": "percentage",
+      "raw_text": "48.7%",
+      "numeric_values": [
+        48.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1219,
+      "sentence": "About half (48.7%) of them had a history of hypertension.",
+      "context_window": "th the mean age of 48.8 [48.2, 51.4] years old. About half (48.7%) of them had a history of hypertension. Nearly double of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv-pct-1306",
+      "claim_type": "percentage",
+      "raw_text": "47.2%",
+      "numeric_values": [
+        47.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1306,
+      "sentence": "Nearly double of the study participants (47.2%) were utilizing a low dose aspirin.",
+      "context_window": "y of hypertension. Nearly double of the study participants (47.2%) were utilizing a low dose aspirin. Aspirin was indicated f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv-pct-1378",
+      "claim_type": "percentage",
+      "raw_text": "20.6%",
+      "numeric_values": [
+        20.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1378,
+      "sentence": "Aspirin was indicated for 80 (20.6%) of the patients despite 21 (26.2%) of them were not using it.",
+      "context_window": "utilizing a low dose aspirin. Aspirin was indicated for 80 (20.6%) of the patients despite 21 (26.2%) of them were not using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv-pct-1413",
+      "claim_type": "percentage",
+      "raw_text": "26.2%",
+      "numeric_values": [
+        26.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "Aspirin was indicated for 80 (20.6%) of the patients despite 21 (26.2%) of them were not using it.",
+      "context_window": "in was indicated for 80 (20.6%) of the patients despite 21 (26.2%) of them were not using it. It was both indicated and presc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2023_02_13_23285845_the_prevalence_of_low_dose_aspirin_use_for_prevention_of_adv-pct-1491",
+      "claim_type": "percentage",
+      "raw_text": "15.2%",
+      "numeric_values": [
+        15.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1491,
+      "sentence": "It was both indicated and prescribed in 59 (15.2%) of the cases.",
+      "context_window": "e not using it. It was both indicated and prescribed in 59 (15.2%) of the cases. Older age, longer duration of DM, dyslipidem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

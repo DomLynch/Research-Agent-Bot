@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_resistance_to_aspirin_and_clopidogrel_in_acute_myocardial_in",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_resistance_to_aspirin_and_clopidogrel_in_acute_myocardial_in-u-426",
+      "claim_type": "unit_value",
+      "raw_text": "200mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 426,
+      "sentence": "If two methods (PFA-100, VerifyNOW,Multiplate or LTA) will indicate insufficient antiplatelet blockade/high residual reactivity for aspirin, clopidogrel or both, the dose of aspirin will be increased to 200mg qd and the dose of clopidogrel will be increased to 2x75mg qd.In addition genotyping of CYP2C19 (6 alleles) will be performed.",
+      "context_window": "opidogrel or both, the dose of aspirin will be increased to 200mg qd and the dose of clopidogrel will be increased to 2x75mg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_resistance_to_aspirin_and_clopidogrel_in_acute_myocardial_in-u-486",
+      "claim_type": "unit_value",
+      "raw_text": "75mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 486,
+      "sentence": "If two methods (PFA-100, VerifyNOW,Multiplate or LTA) will indicate insufficient antiplatelet blockade/high residual reactivity for aspirin, clopidogrel or both, the dose of aspirin will be increased to 200mg qd and the dose of clopidogrel will be increased to 2x75mg qd.In addition genotyping of CYP2C19 (6 alleles) will be performed.",
+      "context_window": "200mg qd and the dose of clopidogrel will be increased to 2x75mg qd.In addition genotyping of CYP2C19 (6 alleles) will be pe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

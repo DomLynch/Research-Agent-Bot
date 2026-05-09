@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_does_discontinuation_of_aspirin_treatment_following_head_tra",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_does_discontinuation_of_aspirin_treatment_following_head_tra-u-459",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 459,
+      "sentence": "The investigators aim to assess whether continued aspirin treatment increases the risk of CSDH in mild head trauma patients 50 years and older who present with negative head CT.",
+      "context_window": "ent increases the risk of CSDH in mild head trauma patients 50 years and older who present with negative head CT. The investigat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_does_discontinuation_of_aspirin_treatment_following_head_tra-u-730",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 730,
+      "sentence": "Over a 12-month period, approximately 100 patients \u226550 years of age on LDA prophylaxis presenting to Hadassah's Emergency Department after sustaining mild head injury, will be examined by the neurosurgeon on call.",
+      "context_window": "future. Over a 12-month period, approximately 100 patients \u226550 years of age on LDA prophylaxis presenting to Hadassah's Emergenc",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_does_discontinuation_of_aspirin_treatment_following_head_tra-u-1250",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1250,
+      "sentence": "Follow-up CT and clinical examination will be performed 3-5 weeks after trauma.",
+      "context_window": ". Follow-up CT and clinical examination will be performed 3-5 weeks after trauma. The two-proportions test will be used to asse",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

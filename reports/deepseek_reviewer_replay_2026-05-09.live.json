@@ -1,0 +1,187 @@
+{
+  "cases": [
+    {
+      "defect_class": "broken_public_citation",
+      "id": "metformin_broken_citation_token",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "metformin"
+    },
+    {
+      "defect_class": "duplicate_public_citation",
+      "id": "metformin_duplicate_citation_construction",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "metformin"
+    },
+    {
+      "defect_class": "malformed_qei_row",
+      "id": "metformin_malformed_qei_row",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "metformin"
+    },
+    {
+      "defect_class": "unsupported_numeric_claim",
+      "id": "glp1_unsupported_numeric_effect",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "glp1"
+    },
+    {
+      "defect_class": "placeholder_prose",
+      "id": "glp1_placeholder_backfill",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "glp1"
+    },
+    {
+      "cost_usd": 0.0013898250000000001,
+      "defect_class": "duplicate_paragraph",
+      "expected_min_severity": "P1",
+      "expected_patch_types": [
+        "formatting",
+        "structure"
+      ],
+      "expected_recall": true,
+      "id": "glp1_duplicate_background_stutter",
+      "model_used": "deepseek/deepseek-v4-pro",
+      "passed": false,
+      "patch_count": 1,
+      "patches": [
+        {
+          "after": "",
+          "auto_applicable": true,
+          "before": "\nGLP-1 receptor agonists have emerged as potent tools for glycemic control and weight reduction. Their relevance to aging depends on cardiometabolic and inflammatory pathways.",
+          "id": "P01",
+          "location": "Background",
+          "patch_type": "formatting",
+          "reason": "Duplicate paragraph in Background section; removing the repeated text.",
+          "requires_trace": false,
+          "severity": "P2"
+        }
+      ],
+      "recall_pass": true,
+      "severity_hit": false,
+      "topic": "glp1",
+      "type_hit": true,
+      "unsafe_miss": false
+    },
+    {
+      "cost_usd": 0.001018335,
+      "defect_class": "duplicate_paragraph",
+      "expected_min_severity": "P1",
+      "expected_patch_types": [
+        "formatting",
+        "structure"
+      ],
+      "expected_recall": true,
+      "id": "omega3_duplicate_backstop_paragraph",
+      "model_used": "deepseek/deepseek-v4-pro",
+      "passed": false,
+      "patch_count": 1,
+      "patches": [
+        {
+          "after": "",
+          "auto_applicable": true,
+          "before": "Omega-3 fatty acids sit at the boundary between nutrition, cardiometabolic risk modification, and inflammatory biology.\n",
+          "id": "P01",
+          "location": "Introduction",
+          "patch_type": "formatting",
+          "reason": "Removed duplicate sentence that appeared twice verbatim.",
+          "requires_trace": false,
+          "severity": "P3"
+        }
+      ],
+      "recall_pass": true,
+      "severity_hit": false,
+      "topic": "omega3",
+      "type_hit": true,
+      "unsafe_miss": false
+    },
+    {
+      "defect_class": "untraceable_numeric",
+      "id": "urolithin_untraceable_percent_57",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "urolithin_a"
+    },
+    {
+      "defect_class": "malformed_numeric_artifact",
+      "id": "urolithin_zero_mg_artifact",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "urolithin_a"
+    },
+    {
+      "defect_class": "topic_slug_public_leak",
+      "id": "urolithin_slug_heading",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "urolithin_a"
+    },
+    {
+      "defect_class": "placeholder_prose",
+      "id": "senolytics_placeholder_conclusion",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "senolytics"
+    },
+    {
+      "defect_class": "untraceable_numeric",
+      "id": "senolytics_unanchored_duration_row",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "senolytics"
+    },
+    {
+      "defect_class": "unauthorized_external_citation",
+      "id": "vitamin_d_external_review_citation",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "vitamin_d"
+    },
+    {
+      "defect_class": "semantic_numeric_unit_error",
+      "id": "vitamin_d_nonsense_body_weight_unit",
+      "skip_reason": "review timed out after 30s",
+      "skipped": true,
+      "topic": "vitamin_d"
+    },
+    {
+      "cost_usd": 0.000972225,
+      "defect_class": "metadata_leak",
+      "expected_min_severity": "P1",
+      "expected_patch_types": [
+        "formatting",
+        "structure"
+      ],
+      "expected_recall": true,
+      "id": "rapamycin_bracketed_metadata_leak",
+      "model_used": "deepseek/deepseek-v4-pro",
+      "passed": false,
+      "patch_count": 0,
+      "patches": [],
+      "recall_pass": false,
+      "severity_hit": false,
+      "topic": "rapamycin",
+      "type_hit": false,
+      "unsafe_miss": false
+    }
+  ],
+  "evaluated": 3,
+  "fallback_model": "mistralai/mistral-small-2603",
+  "metrics": {
+    "pass_rate": 0.0,
+    "recall_rate": 0.6666666666666666,
+    "severity_hit_rate": 0.0,
+    "skipped_count": 12,
+    "type_hit_rate": 0.6666666666666666,
+    "unsafe_miss_count": 0
+  },
+  "model": "deepseek/deepseek-v4-pro",
+  "passed": 0,
+  "provider": "live",
+  "schema_version": "reviewer_replay_result.v1",
+  "total": 15
+}

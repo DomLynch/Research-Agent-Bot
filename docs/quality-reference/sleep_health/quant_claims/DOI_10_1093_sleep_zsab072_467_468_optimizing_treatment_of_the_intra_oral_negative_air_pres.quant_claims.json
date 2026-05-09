@@ -1,0 +1,197 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres",
+  "doi": "10.1093/sleep/zsab072.467",
+  "extracted_at": "2026-05-08T20:05:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 4,
+    "mean_sd": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-pct-407",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 407,
+      "sentence": "Previous works show the treatment response rate of intra-oral pressure therapy varying between 25-79%.",
+      "context_window": "onse rate of intra-oral pressure therapy varying between 25-79%. However, for those OSA patients with very high BMI or AHI,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-u-880",
+      "claim_type": "unit_value",
+      "raw_text": "40mmHg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 880,
+      "sentence": "When conducting the iNAP titration PSG, the initial treatment pressure is 40mmHg. iNAP pressure should be increased by at least 10mmHg an interval no shorter than 15 min.",
+      "context_window": "g the iNAP titration PSG, the initial treatment pressure is 40mmHg. iNAP pressure should be increased by at least 10mmHg an in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-u-934",
+      "claim_type": "unit_value",
+      "raw_text": "10mmHg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 934,
+      "sentence": "When conducting the iNAP titration PSG, the initial treatment pressure is 40mmHg. iNAP pressure should be increased by at least 10mmHg an interval no shorter than 15 min.",
+      "context_window": "re is 40mmHg. iNAP pressure should be increased by at least 10mmHg an interval no shorter than 15 min. In order to eliminate o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-msd-1315",
+      "claim_type": "mean_sd",
+      "raw_text": "51.2 \u00b1 13.97",
+      "numeric_values": [
+        51.2,
+        13.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1315,
+      "sentence": "The mean age of the patients was 51.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m2.",
+      "context_window": "participate in this study. The mean age of the patients was 51.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.4",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-u-1322",
+      "claim_type": "unit_value",
+      "raw_text": "13.97 years",
+      "numeric_values": [
+        13.97
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1322,
+      "sentence": "The mean age of the patients was 51.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m2.",
+      "context_window": "pate in this study. The mean age of the patients was 51.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-msd-1376",
+      "claim_type": "mean_sd",
+      "raw_text": "25.87 \u00b1 3.41",
+      "numeric_values": [
+        25.87,
+        3.41
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1376,
+      "sentence": "The mean age of the patients was 51.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m2.",
+      "context_window": "1.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m2. The mean baseline AHI was 39.59 \u00b1 20.05 events/h, wh",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-u-1384",
+      "claim_type": "unit_value",
+      "raw_text": "3.41 kg/m2",
+      "numeric_values": [
+        3.41
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 1384,
+      "sentence": "The mean age of the patients was 51.2 \u00b1 13.97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m2.",
+      "context_window": ".97 years, and their mean body mass index (BMI) was 25.87 \u00b1 3.41 kg/m2. The mean baseline AHI was 39.59 \u00b1 20.05 events/h, which de",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-msd-1422",
+      "claim_type": "mean_sd",
+      "raw_text": "39.59 \u00b1 20.05",
+      "numeric_values": [
+        39.59,
+        20.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1422,
+      "sentence": "The mean baseline AHI was 39.59 \u00b1 20.05 events/h, which decreased significantly to 8.17 \u00b1 8.11 events/h.",
+      "context_window": "dex (BMI) was 25.87 \u00b1 3.41 kg/m2. The mean baseline AHI was 39.59 \u00b1 20.05 events/h, which decreased significantly to 8.17 \u00b1 8.11 even",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-msd-1479",
+      "claim_type": "mean_sd",
+      "raw_text": "8.17 \u00b1 8.11",
+      "numeric_values": [
+        8.17,
+        8.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "The mean baseline AHI was 39.59 \u00b1 20.05 events/h, which decreased significantly to 8.17 \u00b1 8.11 events/h.",
+      "context_window": "as 39.59 \u00b1 20.05 events/h, which decreased significantly to 8.17 \u00b1 8.11 events/h. No significant change in sleep efficacy, and perc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_467_468_optimizing_treatment_of_the_intra_oral_negative_air_pres-pct-1886",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1886,
+      "sentence": "However, significant improvements in the percentage of N3 stage, Min SpO2, and arousal index were observed in the treatment PSG.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>In this study, the clinical response rate, as defined by the Sher criteria, was 86% (26/30 patients), when the Tx PSG response was compared with the baseline values.",
+      "context_window": "linical response rate, as defined by the Sher criteria, was 86% (26/30 patients), when the Tx PSG response was compared wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

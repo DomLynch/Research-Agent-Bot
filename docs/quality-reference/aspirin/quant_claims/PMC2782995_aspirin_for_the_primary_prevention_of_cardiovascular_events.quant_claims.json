@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2782995_aspirin_for_the_primary_prevention_of_cardiovascular_events",
   "doi": "10.2337/dc09-1297",
-  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extracted_at": "2026-05-08T20:06:11+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 24,
@@ -22,9 +22,9 @@
       "context_window": "mes of interest among patients with and without diabetes. A 95% CI that crosses 1.00 indicates that the effect of aspirin d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2782995_aspirin_for_the_primary_prevention_of_cardiovascular_events-ci-1246",
@@ -41,7 +41,7 @@
       "context_window": "lity, myocardial infarction, and ischemic stroke were 1.12 (95% CI 0.92-1.35), 1.19 (0.82-1.17), and 0.70 (0.25-1.97), respectively. Wh",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -58,7 +58,7 @@
       "sentence": "Random-effects meta-analyses estimated the pooled treatment effects (relative risks [RRs] and their 95% CIs) of aspirin in preventing cardiovascular events and all-cause death in patients with diabetes and without diabetes.",
       "context_window": "he pooled treatment effects (relative risks [RRs] and their 95% CIs) of aspirin in preventing cardiovascular events and all",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -95,9 +95,9 @@
       "context_window": "erm of these two was also applied to the included trials. A 95% credible interval of the regression coefficient of the inte",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2782995_aspirin_for_the_primary_prevention_of_cardiovascular_events-pct-335",
@@ -474,7 +474,7 @@
       "context_window": "art disease ( 23 , 24 ). Multiplying this estimate by 0.88 (12% relative risk reduction with the use of aspirin based on da",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     }

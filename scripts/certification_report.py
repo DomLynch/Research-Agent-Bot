@@ -49,7 +49,7 @@ import sys
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 from agent.topic_maturity import format_maturity_label
 
@@ -366,9 +366,10 @@ def certify_consecutive(
     sorted_runs = sorted(
         zip(paper_md_paths, per_run), key=lambda x: _run_sort_key(x[0])
     )
-    selected = [r for _, r in sorted_runs[-2:]]
+    chronological = [r for _, r in sorted_runs]
+    selected = chronological[-2:]
     blockers.extend(_pair_blockers(selected))
-    return _consecutive_result(per_run, selected, blockers)
+    return _consecutive_result(chronological, selected, blockers)
 
 
 def _consecutive_result(
@@ -387,20 +388,37 @@ def _consecutive_result(
     )
     l6_ready = bool(pair) and not blockers and all(r.l6_eligible for r in pair)
     maturity_level = 6 if l6_ready else 5 if all_pass else 0
+    consecutive_aaa = _trailing_streak(per_run, lambda r: r.aaa_certified)
+    consecutive_l5 = _trailing_streak(per_run, lambda r: r.l5_certified)
     failures = [
         {"run_id": r.run_id, "reason": _failure_reasons(r)}
         for r in pair if not r.aaa_certified
     ]
     gate_version = _common_gate_version(pair or per_run)
+    l6_evidence = {
+        "gate": gate_version,
+        "selected_pair": [r.run_id for r in pair],
+        "consecutive_aaa_count": len(consecutive_aaa),
+        "consecutive_aaa_run_ids": [r.run_id for r in consecutive_aaa],
+        "consecutive_l5_count": len(consecutive_l5),
+        "consecutive_l5_run_ids": [r.run_id for r in consecutive_l5],
+        "selected_pair_clean_l5": bool(pair) and all(r.l6_eligible for r in pair),
+        "blockers": blockers,
+    }
     return {
         "certified": all_pass,
         "n_runs": len(per_run),
         "reason": blockers[0] if blockers else "",
         "n_aaa_certified": sum(r.aaa_certified for r in per_run),
         "n_l5_certified": sum(r.l5_certified for r in per_run),
+        "consecutive_aaa_count": len(consecutive_aaa),
+        "consecutive_aaa_run_ids": [r.run_id for r in consecutive_aaa],
+        "consecutive_l5_count": len(consecutive_l5),
+        "consecutive_l5_run_ids": [r.run_id for r in consecutive_l5],
         "all_aaa_consecutive": all_pass,
         "l6_reproducibly_journal_ready": l6_ready,
         "selected_pair": [r.run_id for r in pair],
+        "l6_evidence": l6_evidence,
         "l6_blockers": blockers,
         "certification_gate_version": gate_version,
         "maturity_level": maturity_level,
@@ -412,6 +430,18 @@ def _consecutive_result(
         "failures": failures,
         "runs": [asdict(r) for r in per_run],
     }
+
+
+def _trailing_streak(
+    runs: list[CertificationVerdict],
+    predicate: Callable[[CertificationVerdict], bool],
+) -> list[CertificationVerdict]:
+    streak: list[CertificationVerdict] = []
+    for run in reversed(runs):
+        if not predicate(run):
+            break
+        streak.append(run)
+    return list(reversed(streak))
 
 
 def _l6_blockers(runs: list[CertificationVerdict]) -> list[str]:

@@ -1,0 +1,1739 @@
+{
+  "paper_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti",
+  "doi": "10.3389/fpubh.2025.1596965",
+  "extracted_at": "2026-05-08T20:05:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 9,
+    "percentage": 34,
+    "confidence_interval": 13,
+    "odds_ratio": 12,
+    "p_value": 24,
+    "sample_size": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-195",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 195,
+      "sentence": "A total of 9,970 participates were screened in China over the past 9 years.",
+      "context_window": "of 9,970 participates were screened in China over the past 9 years. They were divided into cognitive frailty group and non-cog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-529",
+      "claim_type": "percentage",
+      "raw_text": "16.89%",
+      "numeric_values": [
+        16.89
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 529,
+      "sentence": "One thousand six hundred eighty-four participants (16.89%) were diagnosed with cognitive frailty.",
+      "context_window": "ducted. One thousand six hundred eighty-four participants (16.89%) were diagnosed with cognitive frailty. Participants with c",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1022",
+      "claim_type": "percentage",
+      "raw_text": "123%",
+      "numeric_values": [
+        123.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1022,
+      "sentence": "Among participants with good sleep quality, those who took excessive naps had a 123% increased risk of developing cognitive frailty, with an OR of 2.23 (95% CI: 1.72, 2.86).",
+      "context_window": "ith good sleep quality, those who took excessive naps had a 123% increased risk of developing cognitive frailty, with an OR",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-1095",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.72, 2.86",
+      "numeric_values": [
+        1.72,
+        2.86
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "Among participants with good sleep quality, those who took excessive naps had a 123% increased risk of developing cognitive frailty, with an OR of 2.23 (95% CI: 1.72, 2.86).",
+      "context_window": "d risk of developing cognitive frailty, with an OR of 2.23 (95% CI: 1.72, 2.86). In the subgroup with sleep duration > 9 h, participants w",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-1252",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.62",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1252,
+      "sentence": "In the subgroup with sleep duration > 9 h, participants who napped excessively had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI 1.14-2.30, p < 0.001).",
+      "context_window": "ly had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI 1.14-2.30, p < 0.001). Chinese older adults with p",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-1263",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.14-2.30",
+      "numeric_values": [
+        1.14,
+        2.3
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "In the subgroup with sleep duration > 9 h, participants who napped excessively had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI 1.14-2.30, p < 0.001).",
+      "context_window": "gnificantly increased risk of cognitive frailty (OR = 1.62, 95% CI 1.14-2.30, p < 0.001). Chinese older adults with poor sleep quality",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-1281",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "In the subgroup with sleep duration > 9 h, participants who napped excessively had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI 1.14-2.30, p < 0.001).",
+      "context_window": "sed risk of cognitive frailty (OR = 1.62, 95% CI 1.14-2.30, p < 0.001). Chinese older adults with poor sleep quality are at a 67",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1348",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1348,
+      "sentence": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive napping, the risk of cognitive debilitation increased by 23 and 69%, respectively.",
+      "context_window": "01). Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with les",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1440",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive napping, the risk of cognitive debilitation increased by 23 and 69%, respectively.",
+      "context_window": "kness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1568",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1568,
+      "sentence": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive napping, the risk of cognitive debilitation increased by 23 and 69%, respectively.",
+      "context_window": "ing, the risk of cognitive debilitation increased by 23 and 69%, respectively. There is an additive interaction between sle",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-493",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 493,
+      "sentence": "The project was evaluated every 2 years, and the latest round of data was released on 2023-11-16.",
+      "context_window": "old income and expenditure. The project was evaluated every 2 years, and the latest round of data was released on 2023-11-16. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 766,
+      "sentence": "The enrollment criteria were: (1) seniors aged 60 years and above; (2) The data items required by the research subjects are complete and accurate.",
+      "context_window": "he analysis. The enrollment criteria were: (1) seniors aged 60 years and above; (2) The data items required by the research subj",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-2112",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2112,
+      "sentence": "Sleep quality was also self-reported by participants, determined by their response to the question, \u201cHow many days of restless sleep did you have in the last week?\u201d The response options encompassed four categories: (1) rarely or none of the time (<1 d/week); (2) some or a little of the time (1-2 days/week); (3) occasionally or a moderate amount of the time (3-4 days/week); and (4) most or all of the time (5-7 days/week).",
+      "context_window": "f the time (<1 d/week); (2) some or a little of the time (1-2 days/week); (3) occasionally or a moderate amount of the time (3",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-2179",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2179,
+      "sentence": "Sleep quality was also self-reported by participants, determined by their response to the question, \u201cHow many days of restless sleep did you have in the last week?\u201d The response options encompassed four categories: (1) rarely or none of the time (<1 d/week); (2) some or a little of the time (1-2 days/week); (3) occasionally or a moderate amount of the time (3-4 days/week); and (4) most or all of the time (5-7 days/week).",
+      "context_window": "week); (3) occasionally or a moderate amount of the time (3-4 days/week); and (4) most or all of the time (5-7 days/week). We",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-2228",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2228,
+      "sentence": "Sleep quality was also self-reported by participants, determined by their response to the question, \u201cHow many days of restless sleep did you have in the last week?\u201d The response options encompassed four categories: (1) rarely or none of the time (<1 d/week); (2) some or a little of the time (1-2 days/week); (3) occasionally or a moderate amount of the time (3-4 days/week); and (4) most or all of the time (5-7 days/week).",
+      "context_window": "he time (3-4 days/week); and (4) most or all of the time (5-7 days/week). We classified (1) as good sleep quality, (2) and (3)",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-4048",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4048,
+      "sentence": "The cutoff value was set at 18 for illiterate individuals, 21 for individuals with 1-6 years of education, and 25 for individuals with seven or more years of education, and cognitive impairment was defined as those whose score was lower than the cutoff value according to their education level.",
+      "context_window": "at 18 for illiterate individuals, 21 for individuals with 1-6 years of education, and 25 for individuals with seven or more yea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5717",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5717,
+      "sentence": "The results are presented as odds ratios (OR) with 95% confidence intervals (95% CI).",
+      "context_window": "factors. The results are presented as odds ratios (OR) with 95% confidence intervals (95% CI). Subgroup analyses stratified",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5743",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5743,
+      "sentence": "The results are presented as odds ratios (OR) with 95% confidence intervals (95% CI).",
+      "context_window": "resented as odds ratios (OR) with 95% confidence intervals (95% CI). Subgroup analyses stratified by interaction analyses w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-6010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6010,
+      "sentence": "The significance level of the statistical tests was set as p < 0.05.",
+      "context_window": "The significance level of the statistical tests was set as p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-84",
+      "claim_type": "percentage",
+      "raw_text": "16.89%",
+      "numeric_values": [
+        16.89
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 84,
+      "sentence": "In this study, 1,684 participants were defined as cognitive frailty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were male and 51.44% were female.",
+      "context_window": "ticipants were defined as cognitive frailty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-113",
+      "claim_type": "unit_value",
+      "raw_text": "68 years",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 113,
+      "sentence": "In this study, 1,684 participants were defined as cognitive frailty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were male and 51.44% were female.",
+      "context_window": "nitive frailty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were male and 51.44% were female. P",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-123",
+      "claim_type": "percentage",
+      "raw_text": "48.56%",
+      "numeric_values": [
+        48.56
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 123,
+      "sentence": "In this study, 1,684 participants were defined as cognitive frailty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were male and 51.44% were female.",
+      "context_window": "ilty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were male and 51.44% were female. Participa",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-160",
+      "claim_type": "percentage",
+      "raw_text": "51.44%",
+      "numeric_values": [
+        51.44
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 160,
+      "sentence": "In this study, 1,684 participants were defined as cognitive frailty, accounting for 16.89%, with a median age of 68 years, 48.56% of participants were male and 51.44% were female.",
+      "context_window": "edian age of 68 years, 48.56% of participants were male and 51.44% were female. Participants with cognitive frailty were more",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-665",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 665,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "ecifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-754",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.55",
+      "numeric_values": [
+        1.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 754,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "ing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-765",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.36, 1.77",
+      "numeric_values": [
+        1.36,
+        1.77
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 765,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "ve frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-849",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 849,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48,",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-901",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.48",
+      "numeric_values": [
+        1.48
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 901,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjuste",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-912",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.25, 1.64",
+      "numeric_values": [
+        1.25,
+        1.64
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 912,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1046",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1046,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "ity or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27,",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-1098",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.27",
+      "numeric_values": [
+        1.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1098,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant difference",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-1109",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.13, 1.49",
+      "numeric_values": [
+        1.13,
+        1.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1109,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in p",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-1251",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1251,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "cipants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19;",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-1262",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.88, 1.29",
+      "numeric_values": [
+        0.88,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1262,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,9",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-1291",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1291,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "he models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-1301",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.76,1.19",
+      "numeric_values": [
+        0.76,
+        1.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1301,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "(model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17). Prevalence and adj",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-1329",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.27",
+      "numeric_values": [
+        1.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1329,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17). Prevalence and adjusted OR (95% CI) of",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-1339",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.68,1.17",
+      "numeric_values": [
+        0.68,
+        1.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1339,
+      "sentence": "Specifically, in Model 1, those who slept less than 6 h had a 55% increased risk of developing cognitive frailty compared to those who slept 6 to 9 h (OR = 1.55, 95% CI: 1.36, 1.77); In fully adjusted model 2, those who slept less than 6 h had a 48% increased risk of developing cognitive frailty (OR = 1.48, 95% CI: 1.25, 1.64); In Model 3, which was further adjusted for sleep quality or daytime napping, those who slept less than 6 h had a 27% increased risk of developing cognitive frailty (OR = 1.27, 95% CI: 1.13, 1.49); Conversely, no significant differences were observed in participants who slept more than 9 h across the models (model 1: OR = 1.03, 95% CI: 0.88, 1.29; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17).",
+      "context_window": "9; model 2: OR = 0.98,95% CI: 0.76,1.19; model 3: OR = 1.27,95% CI: 0.68,1.17). Prevalence and adjusted OR (95% CI) of cognitive frailty",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1388",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1388,
+      "sentence": "Prevalence and adjusted OR (95% CI) of cognitive frailty by groups of napping time, sleep duration and quality.",
+      "context_window": "OR = 1.27,95% CI: 0.68,1.17). Prevalence and adjusted OR (95% CI) of cognitive frailty by groups of napping time, sleep d",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-1784",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1784,
+      "sentence": "Model 1: adjusting for sex, age, education level, residence, current marital status, personal income, smoking status, alcohol consumption, social interaction; Model 2: additionally adjusting for BMI, numbers of chronic diseases; Model 3: additionally adjusting for daytime napping or nighttime sleep quality. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "adjusting for daytime napping or nighttime sleep quality. * p < 0.05, ** p < 0.01, *** p < 0.001. Regarding sleep quality, in M",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-1797",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1797,
+      "sentence": "Model 1: adjusting for sex, age, education level, residence, current marital status, personal income, smoking status, alcohol consumption, social interaction; Model 2: additionally adjusting for BMI, numbers of chronic diseases; Model 3: additionally adjusting for daytime napping or nighttime sleep quality. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "daytime napping or nighttime sleep quality. * p < 0.05, ** p < 0.01, *** p < 0.001. Regarding sleep quality, in Model 1, indiv",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-1811",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1811,
+      "sentence": "Model 1: adjusting for sex, age, education level, residence, current marital status, personal income, smoking status, alcohol consumption, social interaction; Model 2: additionally adjusting for BMI, numbers of chronic diseases; Model 3: additionally adjusting for daytime napping or nighttime sleep quality. * p < 0.05, ** p < 0.01, *** p < 0.001.",
+      "context_window": "ng or nighttime sleep quality. * p < 0.05, ** p < 0.01, *** p < 0.001. Regarding sleep quality, in Model 1, individuals with poo",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1902",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1902,
+      "sentence": "Regarding sleep quality, in Model 1, individuals with poor sleep quality had a 38% increased risk of developing cognitive frailty compared to those with good sleep quality (OR = 1.38, 95%CI: 1.14, 1.57).",
+      "context_window": "lity, in Model 1, individuals with poor sleep quality had a 38% increased risk of developing cognitive frailty compared to",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-1996",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.38",
+      "numeric_values": [
+        1.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1996,
+      "sentence": "Regarding sleep quality, in Model 1, individuals with poor sleep quality had a 38% increased risk of developing cognitive frailty compared to those with good sleep quality (OR = 1.38, 95%CI: 1.14, 1.57).",
+      "context_window": "ognitive frailty compared to those with good sleep quality (OR = 1.38, 95%CI: 1.14, 1.57). This trend was further confirmed by ad",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-2007",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.14, 1.57",
+      "numeric_values": [
+        1.14,
+        1.57
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2007,
+      "sentence": "Regarding sleep quality, in Model 1, individuals with poor sleep quality had a 38% increased risk of developing cognitive frailty compared to those with good sleep quality (OR = 1.38, 95%CI: 1.14, 1.57).",
+      "context_window": "ailty compared to those with good sleep quality (OR = 1.38, 95%CI: 1.14, 1.57). This trend was further confirmed by adjusting for all cov",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-2275",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.58, 2.19",
+      "numeric_values": [
+        1.58,
+        2.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2275,
+      "sentence": "In addition, after adjusting for potential confounders and napping (model 3), people with poor sleep quality had a higher chance of developing cognitive frailty [OR 1.88 (95% CI: 1.58, 2.19)].",
+      "context_window": "d a higher chance of developing cognitive frailty [OR 1.88 (95% CI: 1.58, 2.19)]. About the nap aspect, after further adjustment for slee",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-2497",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2497,
+      "sentence": "About the nap aspect, after further adjustment for sleep quality (Model 3), participants who did not nap and who took excessive naps for > 90 min/day had high rates of cognitive frailty, with an OR (95% CI) of 1.23 (1.04 to 1.46) and 1.69 (1.38 to 2.19), respectively.",
+      "context_window": "90 min/day had high rates of cognitive frailty, with an OR (95% CI) of 1.23 (1.04 to 1.46) and 1.69 (1.38 to 2.19), respect",
+      "claim_role": "dose",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-3231",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3231,
+      "sentence": "Specifically, the coefficient for the interaction between sleep duration and sleep quality was 0.728 (SE = 0.793, p = 0.035), suggesting a significant interaction between sleep duration and sleep quality on depression (95% CI: 0.631, 2.585).",
+      "context_window": "een sleep duration and sleep quality was 0.728 (SE = 0.793, p = 0.035), suggesting a significant interaction between sleep durati",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-3336",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.631, 2.585",
+      "numeric_values": [
+        0.631,
+        2.585
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3336,
+      "sentence": "Specifically, the coefficient for the interaction between sleep duration and sleep quality was 0.728 (SE = 0.793, p = 0.035), suggesting a significant interaction between sleep duration and sleep quality on depression (95% CI: 0.631, 2.585).",
+      "context_window": "ion between sleep duration and sleep quality on depression (95% CI: 0.631, 2.585). The coefficient of the interaction between sleep quality",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-3451",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3451,
+      "sentence": "The coefficient of the interaction between sleep quality and napping was 0.896 (SE = 1.485, p = 0.042), suggesting that there was a significant interaction between sleep quality and napping on cognitive frailty (95% CI: 0.802, 2.248).",
+      "context_window": "on between sleep quality and napping was 0.896 (SE = 1.485, p = 0.042), suggesting that there was a significant interaction betwe",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-3571",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.802, 2.248",
+      "numeric_values": [
+        0.802,
+        2.248
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3571,
+      "sentence": "The coefficient of the interaction between sleep quality and napping was 0.896 (SE = 1.485, p = 0.042), suggesting that there was a significant interaction between sleep quality and napping on cognitive frailty (95% CI: 0.802, 2.248).",
+      "context_window": "ion between sleep quality and napping on cognitive frailty (95% CI: 0.802, 2.248). The coefficient of the interaction between sleep duration",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-3686",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3686,
+      "sentence": "The coefficient of the interaction between sleep duration and napping is 0.963 (SE = 1.129, p = 0.005), suggesting a significant interaction between sleep quality and napping on cognitive frailty (95%CI: 1.022, 2.748).",
+      "context_window": "on between sleep duration and napping is 0.963 (SE = 1.129, p = 0.005), suggesting a significant interaction between sleep qualit",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-ci-3791",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.022, 2.748",
+      "numeric_values": [
+        1.022,
+        2.748
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3791,
+      "sentence": "The coefficient of the interaction between sleep duration and napping is 0.963 (SE = 1.129, p = 0.005), suggesting a significant interaction between sleep quality and napping on cognitive frailty (95%CI: 1.022, 2.748).",
+      "context_window": "ion between sleep quality and napping on cognitive frailty (95%CI: 1.022, 2.748). Co-linearity diagnosis: VIF of all variables is less than",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-4495",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4495,
+      "sentence": "Table 4 displays that due to the interaction between sleep duration and sleep quality on cognitive weakness in the older adults ( \u03b2 = 0.728, 95% CI: 0.631 ~ 2.583, p = 0.035).",
+      "context_window": "lity on cognitive weakness in the older adults ( \u03b2 = 0.728, 95% CI: 0.631 ~ 2.583, p = 0.035). When the sleep quality is po",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-4518",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4518,
+      "sentence": "Table 4 displays that due to the interaction between sleep duration and sleep quality on cognitive weakness in the older adults ( \u03b2 = 0.728, 95% CI: 0.631 ~ 2.583, p = 0.035).",
+      "context_window": "ess in the older adults ( \u03b2 = 0.728, 95% CI: 0.631 ~ 2.583, p = 0.035). When the sleep quality is poor, the protective effect of",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-4894",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4894,
+      "sentence": "However, people with short sleep duration and poor sleep quality have a 65% increased risk of cognitive frailty.",
+      "context_window": "ple with short sleep duration and poor sleep quality have a 65% increased risk of cognitive frailty. The individuals who sl",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-n-5098",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5098,
+      "sentence": "Joint effect of sleep duration and sleep quality on cognitive frailty ( n = 1,684).",
+      "context_window": "of sleep duration and sleep quality on cognitive frailty ( n = 1,684). Model 1: adjusting for sex, age, education level, re",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-5423",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5423,
+      "sentence": "Model 1: adjusting for sex, age, education level, residence, current marital status, personal income, smoking stat-us, alcohol consumption, social interaction; Model 2: additionally adjusting for BMI, numbers of chronic diseases; Model 3: additionally adjusting for daytime napping or nighttime sleep quality. * P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "adjusting for daytime napping or nighttime sleep quality. * P < 0.05, ** P < 0.01, *** P < 0.001. Since we found a significant",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-5436",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5436,
+      "sentence": "Model 1: adjusting for sex, age, education level, residence, current marital status, personal income, smoking stat-us, alcohol consumption, social interaction; Model 2: additionally adjusting for BMI, numbers of chronic diseases; Model 3: additionally adjusting for daytime napping or nighttime sleep quality. * P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "daytime napping or nighttime sleep quality. * P < 0.05, ** P < 0.01, *** P < 0.001. Since we found a significant interaction b",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-5450",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5450,
+      "sentence": "Model 1: adjusting for sex, age, education level, residence, current marital status, personal income, smoking stat-us, alcohol consumption, social interaction; Model 2: additionally adjusting for BMI, numbers of chronic diseases; Model 3: additionally adjusting for daytime napping or nighttime sleep quality. * P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "ng or nighttime sleep quality. * P < 0.05, ** P < 0.01, *** P < 0.001. Since we found a significant interaction between daytime",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5558",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5558,
+      "sentence": "Since we found a significant interaction between daytime napping and sleep quality ( \u03b2 = 0.896, 95% CI: 0.802 ~ 2.248, p = 0.042), a stratified analysis by sleep quality ( Table 5 ) showed a 123% increased risk of developing cognitive frailty in participants with good sleep quality who napped for more than 90 min, with an OR of 2.23 (95% CI: 1.72 ~ 2.86).",
+      "context_window": "tion between daytime napping and sleep quality ( \u03b2 = 0.896, 95% CI: 0.802 ~ 2.248, p = 0.042), a stratified analysis by sle",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-5581",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5581,
+      "sentence": "Since we found a significant interaction between daytime napping and sleep quality ( \u03b2 = 0.896, 95% CI: 0.802 ~ 2.248, p = 0.042), a stratified analysis by sleep quality ( Table 5 ) showed a 123% increased risk of developing cognitive frailty in participants with good sleep quality who napped for more than 90 min, with an OR of 2.23 (95% CI: 1.72 ~ 2.86).",
+      "context_window": "pping and sleep quality ( \u03b2 = 0.896, 95% CI: 0.802 ~ 2.248, p = 0.042), a stratified analysis by sleep quality ( Table 5 ) showed",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5653",
+      "claim_type": "percentage",
+      "raw_text": "123%",
+      "numeric_values": [
+        123.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5653,
+      "sentence": "Since we found a significant interaction between daytime napping and sleep quality ( \u03b2 = 0.896, 95% CI: 0.802 ~ 2.248, p = 0.042), a stratified analysis by sleep quality ( Table 5 ) showed a 123% increased risk of developing cognitive frailty in participants with good sleep quality who napped for more than 90 min, with an OR of 2.23 (95% CI: 1.72 ~ 2.86).",
+      "context_window": "a stratified analysis by sleep quality ( Table 5 ) showed a 123% increased risk of developing cognitive frailty in participa",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5798",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5798,
+      "sentence": "Since we found a significant interaction between daytime napping and sleep quality ( \u03b2 = 0.896, 95% CI: 0.802 ~ 2.248, p = 0.042), a stratified analysis by sleep quality ( Table 5 ) showed a 123% increased risk of developing cognitive frailty in participants with good sleep quality who napped for more than 90 min, with an OR of 2.23 (95% CI: 1.72 ~ 2.86).",
+      "context_window": "uality who napped for more than 90 min, with an OR of 2.23 (95% CI: 1.72 ~ 2.86). No association was found between napping",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-n-6062",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6062,
+      "sentence": "Joint effect of daytime napping duration and sleep quality on cognitive frailty ( n = 1,684).",
+      "context_window": "e napping duration and sleep quality on cognitive frailty ( n = 1,684). Model 1: adjusting for sex, age, education level, re",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-6280",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6280,
+      "sentence": "P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "dditionally adjusting for BMI, numbers of chronic diseases. P < 0.05, ** P < 0.01, *** P < 0.001. The relationship between slee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-6293",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6293,
+      "sentence": "P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "djusting for BMI, numbers of chronic diseases. P < 0.05, ** P < 0.01, *** P < 0.001. The relationship between sleep duration, n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-6307",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6307,
+      "sentence": "P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "MI, numbers of chronic diseases. P < 0.05, ** P < 0.01, *** P < 0.001. The relationship between sleep duration, napping duration",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-6432",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6432,
+      "sentence": "The relationship between sleep duration, napping duration and cognitive frailty is shown in Table 6 ( \u03b2 = 0.963, 95% CI: 1.022 ~ 2.874, p = 0.005).",
+      "context_window": "tion and cognitive frailty is shown in Table 6 ( \u03b2 = 0.963, 95% CI: 1.022 ~ 2.874, p = 0.005). No significant association w",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-6455",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6455,
+      "sentence": "The relationship between sleep duration, napping duration and cognitive frailty is shown in Table 6 ( \u03b2 = 0.963, 95% CI: 1.022 ~ 2.874, p = 0.005).",
+      "context_window": "lty is shown in Table 6 ( \u03b2 = 0.963, 95% CI: 1.022 ~ 2.874, p = 0.005). No significant association was found between daytime naps",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-6740",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.62",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6740,
+      "sentence": "In the subgroup with longer sleep duration, participants who took excessive naps had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI: 1.14 ~ 2.30, p < 0.001), i.e., excessive napping (> 90 min) was associated with cognitive frailty in participants who slept 9 h or more at night.",
+      "context_window": "ps had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI: 1.14 ~ 2.30, p < 0.001), i.e., excessive napping (",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-6751",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6751,
+      "sentence": "In the subgroup with longer sleep duration, participants who took excessive naps had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI: 1.14 ~ 2.30, p < 0.001), i.e., excessive napping (> 90 min) was associated with cognitive frailty in participants who slept 9 h or more at night.",
+      "context_window": "gnificantly increased risk of cognitive frailty (OR = 1.62, 95% CI: 1.14 ~ 2.30, p < 0.001), i.e., excessive napping (> 90",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-6772",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6772,
+      "sentence": "In the subgroup with longer sleep duration, participants who took excessive naps had a significantly increased risk of cognitive frailty (OR = 1.62, 95% CI: 1.14 ~ 2.30, p < 0.001), i.e., excessive napping (> 90 min) was associated with cognitive frailty in participants who slept 9 h or more at night.",
+      "context_window": "risk of cognitive frailty (OR = 1.62, 95% CI: 1.14 ~ 2.30, p < 0.001), i.e., excessive napping (> 90 min) was associated with co",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-n-7054",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7054,
+      "sentence": "Joint effect of daytime napping duration and nighttime sleep duration on cognitive frailty ( n = 1,684).",
+      "context_window": "uration and nighttime sleep duration on cognitive frailty ( n = 1,684). Model 1: adjusting for sex, age, education level, re",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-7353",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7353,
+      "sentence": "P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "y adjusting for daytime napping or nighttime sleep quality. P < 0.05, ** P < 0.01, *** P < 0.001. The study revealed a linear r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-7366",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7366,
+      "sentence": "P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "or daytime napping or nighttime sleep quality. P < 0.05, ** P < 0.01, *** P < 0.001. The study revealed a linear relationship b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-7380",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7380,
+      "sentence": "P < 0.05, ** P < 0.01, *** P < 0.001.",
+      "context_window": "ping or nighttime sleep quality. P < 0.05, ** P < 0.01, *** P < 0.001. The study revealed a linear relationship between sleep du",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-9505",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.995",
+      "numeric_values": [
+        0.995
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9505,
+      "sentence": "After adjusting for potential confounding factors, depression completely mediated the sleep disorder-cognitive frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278).",
+      "context_window": "ve frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant dir",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-9517",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9517,
+      "sentence": "After adjusting for potential confounding factors, depression completely mediated the sleep disorder-cognitive frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278).",
+      "context_window": "ssociation, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct e",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-9539",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9539,
+      "sentence": "After adjusting for potential confounding factors, depression completely mediated the sleep disorder-cognitive frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278).",
+      "context_window": "nificant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-9587",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.004",
+      "numeric_values": [
+        1.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9587,
+      "sentence": "After adjusting for potential confounding factors, depression completely mediated the sleep disorder-cognitive frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278).",
+      "context_window": "93 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278). It can be seen from the",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-9599",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9599,
+      "sentence": "After adjusting for potential confounding factors, depression completely mediated the sleep disorder-cognitive frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278).",
+      "context_window": "p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278). It can be seen from the medi",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-9622",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.278",
+      "numeric_values": [
+        0.278
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9622,
+      "sentence": "After adjusting for potential confounding factors, depression completely mediated the sleep disorder-cognitive frailty association, with a significant indirect effect (OR = 0.995, 95%CI: 0.993 ~ 0.997, p < 0.001) but a non-significant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278).",
+      "context_window": "gnificant direct effect (OR = 1.004, 95% CI: 0.998 ~ 1.012, p = 0.278). It can be seen from the mediation analysis revealed that",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-9984",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9984,
+      "sentence": "Path ab coefficient represents 5,000 bootstrapped samples and BCa 95% CIs.",
+      "context_window": "b coefficient represents 5,000 bootstrapped samples and BCa 95% CIs. Path c\u2019: the direct effect of the exposure variable (s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-61",
+      "claim_type": "percentage",
+      "raw_text": "16.89%",
+      "numeric_values": [
+        16.89
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 61,
+      "sentence": "This study indicated the prevalence of cognitive frailty was 16.89%.",
+      "context_window": "his study indicated the prevalence of cognitive frailty was 16.89%. Participants with cognitive frailty were more likely to be",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-364",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 364,
+      "sentence": "Previously, a study of 7,338 older adults people in the community by Aliberti et al. ( 58 ). reported a 5% prevalence of cognitive frailty.",
+      "context_window": "ople in the community by Aliberti et al. ( 58 ). reported a 5% prevalence of cognitive frailty. In a study of 1,620 older",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-u-440",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 440,
+      "sentence": "In a study of 1,620 older patients over 65 years of age at the Toulouse Frailty Day Hospital, the prevalence of cognitive frailty was as high as 26.7 percent ( 59 ).",
+      "context_window": "cognitive frailty. In a study of 1,620 older patients over 65 years of age at the Toulouse Frailty Day Hospital, the prevalence",
+      "claim_role": "protocol",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-1405",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1405,
+      "sentence": "In contrast, the Leng report showed that men who took excessive naps per day were 66% more likely to have cognitive impairment than those who took 30-min nap ( 61 ).",
+      "context_window": "report showed that men who took excessive naps per day were 66% more likely to have cognitive impairment than those who too",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-p-5491",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5491,
+      "sentence": "For example, the interaction effect analysis of \u2018sleep quality \u00d7nap duration\u2019 ( p = 0.042) revealed the moderating effect of the temporal distribution of sleep behavior on cognitive frailty.",
+      "context_window": "eraction effect analysis of \u2018sleep quality \u00d7nap duration\u2019 ( p = 0.042) revealed the moderating effect of the temporal distributio",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5680",
+      "claim_type": "percentage",
+      "raw_text": "123%",
+      "numeric_values": [
+        123.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5680,
+      "sentence": "Participants with good sleep quality who took naps for more than 90 min had a 123% increased risk of cognitive frailty and an OR of 2.23 (95% CI: 1.72 ~ 2.86).",
+      "context_window": "good sleep quality who took naps for more than 90 min had a 123% increased risk of cognitive frailty and an OR of 2.23 (95%",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-5740",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5740,
+      "sentence": "Participants with good sleep quality who took naps for more than 90 min had a 123% increased risk of cognitive frailty and an OR of 2.23 (95% CI: 1.72 ~ 2.86).",
+      "context_window": "123% increased risk of cognitive frailty and an OR of 2.23 (95% CI: 1.72 ~ 2.86). These results suggest that a holistic ass",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-or-a-6411",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6411,
+      "sentence": "In contrast to the public health recommendation that napping is universally beneficial, this study highlighted the \u2018double-edged sword\u2019 effect of napping, with a significant cognitive protection effect at nighttime sleeps for 6-9 h and naps for 61-90 min (OR = 0.65).",
+      "context_window": "ffect at nighttime sleeps for 6-9 h and naps for 61-90 min (OR = 0.65). This calls for a re-examination of the universality of sl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-54",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 54,
+      "sentence": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive napping, the risk of cognitive debilitation increased by 23 and 69%, respectively.",
+      "context_window": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with les",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-146",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 146,
+      "sentence": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive napping, the risk of cognitive debilitation increased by 23 and 69%, respectively.",
+      "context_window": "kness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12178879_association_of_sleep_duration_and_sleep_quality_with_cogniti-pct-274",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 274,
+      "sentence": "Chinese older adults with poor sleep quality are at a 67% higher risk of cognitive weakness, and individuals with less than 6 h of sleep are at a 48% higher risk of cognitive weakness; No napping and excessive napping, the risk of cognitive debilitation increased by 23 and 69%, respectively.",
+      "context_window": "ing, the risk of cognitive debilitation increased by 23 and 69%, respectively. There is an additive interaction between sle",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

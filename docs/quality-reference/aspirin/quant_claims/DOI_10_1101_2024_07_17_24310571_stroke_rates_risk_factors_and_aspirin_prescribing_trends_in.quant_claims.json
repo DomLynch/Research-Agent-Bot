@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1101_2024_07_17_24310571_stroke_rates_risk_factors_and_aspirin_prescribing_trends_in",
+  "doi": "10.1101/2024.07.17.24310571",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_07_17_24310571_stroke_rates_risk_factors_and_aspirin_prescribing_trends_in-u-1624",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1624,
+      "sentence": "No patients under 60 years at their incident stroke/TIA had high (\u226510%) calculated 10-year ASCVD risk.",
+      "context_window": "variants (males: 0.011, females: 0.0088). No patients under 60 years at their incident stroke/TIA had high (\u226510%) calculated 10-",
+      "claim_role": "unknown",
+      "endpoint": "incident stroke",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_07_17_24310571_stroke_rates_risk_factors_and_aspirin_prescribing_trends_in-pct-1673",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1673,
+      "sentence": "No patients under 60 years at their incident stroke/TIA had high (\u226510%) calculated 10-year ASCVD risk.",
+      "context_window": "ents under 60 years at their incident stroke/TIA had high (\u226510%) calculated 10-year ASCVD risk. Fewer patients were prescri",
+      "claim_role": "unknown",
+      "endpoint": "incident stroke",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

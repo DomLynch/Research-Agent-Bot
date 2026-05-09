@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e",
+  "doi": "10.1093/sleep/zsaf090.0968",
+  "extracted_at": "2026-05-08T20:07:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e-pct-1381",
+      "claim_type": "percentage",
+      "raw_text": "56.8%",
+      "numeric_values": [
+        56.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1381,
+      "sentence": "Cognitive function with the Mood and Symptom Questionnaire (MASQ) Cognition control.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Participants were middle-aged (mean 57.32) female (56.8%) recruited from three sites.",
+      "context_window": "<jats:p>Participants were middle-aged (mean 57.32) female (56.8%) recruited from three sites. The random forest regression m",
+      "claim_role": "population",
+      "endpoint": "cognition",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e-pct-1476",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1476,
+      "sentence": "The random forest regression model (RFRM) accuracy explains 23% variability of HOMA-IR (R-squared= 0.23, mean square error=12.32).",
+      "context_window": "The random forest regression model (RFRM) accuracy explains 23% variability of HOMA-IR (R-squared= 0.23, mean square error=",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e-pct-1739",
+      "claim_type": "percentage",
+      "raw_text": "6.52%",
+      "numeric_values": [
+        6.52
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1739,
+      "sentence": "The importance of each predictor was assessed using % Mean Decrease in Accuracy (%IncMSE) with a higher value indicating a higher impact of the covariate on model accuracy.) Sleep efficiency (6.52%IncMSE), Sleep duration (5.28%IncMSE), and Sleep quality (3.21%IncMSE) were the most important covariates.",
+      "context_window": "pact of the covariate on model accuracy.) Sleep efficiency (6.52%IncMSE), Sleep duration (5.28%IncMSE), and Sleep quality (3.",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e-pct-1769",
+      "claim_type": "percentage",
+      "raw_text": "5.28%",
+      "numeric_values": [
+        5.28
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1769,
+      "sentence": "The importance of each predictor was assessed using % Mean Decrease in Accuracy (%IncMSE) with a higher value indicating a higher impact of the covariate on model accuracy.) Sleep efficiency (6.52%IncMSE), Sleep duration (5.28%IncMSE), and Sleep quality (3.21%IncMSE) were the most important covariates.",
+      "context_window": "accuracy.) Sleep efficiency (6.52%IncMSE), Sleep duration (5.28%IncMSE), and Sleep quality (3.21%IncMSE) were the most impor",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e-pct-1802",
+      "claim_type": "percentage",
+      "raw_text": "3.21%",
+      "numeric_values": [
+        3.21
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1802,
+      "sentence": "The importance of each predictor was assessed using % Mean Decrease in Accuracy (%IncMSE) with a higher value indicating a higher impact of the covariate on model accuracy.) Sleep efficiency (6.52%IncMSE), Sleep duration (5.28%IncMSE), and Sleep quality (3.21%IncMSE) were the most important covariates.",
+      "context_window": "2%IncMSE), Sleep duration (5.28%IncMSE), and Sleep quality (3.21%IncMSE) were the most important covariates. Sleep quality ha",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0968_0968_sleep_health_composite_score_for_quality_duration_and_e-p-1954",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1954,
+      "sentence": "Sleep quality had a significant negative correlation with HOMA-IR (p&lt; 0.001) and Cognitive Control (p=0.04) in linear regression model.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Poor scores in sleep health components efficiency, duration, and quality significantly predicted the biomarker HOMA-IR in a sample of middle-aged adults.",
+      "context_window": "rrelation with HOMA-IR (p&lt; 0.001) and Cognitive Control (p=0.04) in linear regression model.</jats:p> </jats:sec> <jats:sec",
+      "claim_role": "population",
+      "endpoint": "insulin sensitivity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

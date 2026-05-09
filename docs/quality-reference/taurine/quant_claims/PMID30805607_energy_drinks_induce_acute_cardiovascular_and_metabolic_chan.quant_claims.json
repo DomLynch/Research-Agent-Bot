@@ -1,0 +1,234 @@
+{
+  "paper_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan",
+  "doi": "10.1093/jn/nxy303",
+  "extracted_at": "2026-05-08T20:10:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2,
+    "mean_sd": 4,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-u-384",
+      "claim_type": "unit_value",
+      "raw_text": "23 kg/m2",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 384,
+      "sentence": "Methods This randomized, crossover trial comprised 38 adults (19 women, mean BMI 23 kg/m2, mean age 22 y).",
+      "context_window": "ed, crossover trial comprised 38 adults (19 women, mean BMI 23 kg/m2, mean age 22 y). We examined effects of a single administra",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-u-634",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mL",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 634,
+      "sentence": "The study products were administered at 2 volumes, 750 or 1000 mL.",
+      "context_window": ". The study products were administered at 2 volumes, 750 or 1000 mL. Results Both volumes of the study products were acceptably",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-pct-925",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 925,
+      "sentence": "After ED consumption, 11% of the participants reported symptoms, in contrast to 0-3% caused by other study products.",
+      "context_window": "Tc interval), and glucose metabolism. After ED consumption, 11% of the participants reported symptoms, in contrast to 0-3%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-pct-985",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 985,
+      "sentence": "After ED consumption, 11% of the participants reported symptoms, in contrast to 0-3% caused by other study products.",
+      "context_window": "11% of the participants reported symptoms, in contrast to 0-3% caused by other study products. After 1 h, administration o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-msd-1090",
+      "claim_type": "mean_sd",
+      "raw_text": "116.9 \u00b1 10.4",
+      "numeric_values": [
+        116.9,
+        10.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1090,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolon",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-msd-1106",
+      "claim_type": "mean_sd",
+      "raw_text": "120.7 \u00b1 10.7",
+      "numeric_values": [
+        120.7,
+        10.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1106,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-u-1114",
+      "claim_type": "unit_value",
+      "raw_text": "10.7 mmHg",
+      "numeric_values": [
+        10.7
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1114,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-p-1136",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1136,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-msd-1170",
+      "claim_type": "mean_sd",
+      "raw_text": "393.3 \u00b1 20.6",
+      "numeric_values": [
+        393.3,
+        20.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1170,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01). Also caffeine, but not tauri",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-msd-1186",
+      "claim_type": "mean_sd",
+      "raw_text": "400.8 \u00b1 24.1",
+      "numeric_values": [
+        400.8,
+        24.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1186,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "ean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01). Also caffeine, but not taurine or glucuronol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-p-1203",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1203,
+      "sentence": "After 1 h, administration of an ED caused an increase in systolic BP (116.9 \u00b1 10.4 to 120.7 \u00b1 10.7 mmHg, mean \u00b1 SD, P < 0.01) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01).",
+      "context_window": "1) and a QTc prolongation (393.3 \u00b1 20.6 to 400.8 \u00b1 24.1 ms, P < 0.01). Also caffeine, but not taurine or glucuronolactone, cause",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30805607_energy_drinks_induce_acute_cardiovascular_and_metabolic_chan-p-1626",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1626,
+      "sentence": "All study products caused a decrease in serum glucose and an increase in insulin concentrations after 1 h compared to baseline values, corresponding to an elevation in the HOMA-IR (ED + 4.0, other products + 1.0-2.8, all P < 0.001).",
+      "context_window": "ion in the HOMA-IR (ED + 4.0, other products + 1.0-2.8, all P < 0.001). Conclusion A single high-volume intake of ED caused adver",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

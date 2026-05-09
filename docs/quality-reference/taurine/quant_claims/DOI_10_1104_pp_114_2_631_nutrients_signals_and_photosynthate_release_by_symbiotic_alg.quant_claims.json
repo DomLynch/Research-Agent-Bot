@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1104_pp_114_2_631_nutrients_signals_and_photosynthate_release_by_symbiotic_alg",
+  "doi": "10.1104/pp.114.2.631",
+  "extracted_at": "2026-05-08T20:10:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1104_pp_114_2_631_nutrients_signals_and_photosynthate_release_by_symbiotic_alg-pct-657",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 657,
+      "sentence": "A complex mixture of amino acids at 75 mM also promoted photosynthate release, but the release rate was reduced by 34% after the omission of taurine (3 mM) from the mixture, suggesting that much of the effect of amino acids was largely attributable to taurine.",
+      "context_window": "photosynthate release, but the release rate was reduced by 34% after the omission of taurine (3 mM) from the mixture, sugg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1104_pp_114_2_631_nutrients_signals_and_photosynthate_release_by_symbiotic_alg-pct-874",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 874,
+      "sentence": "Exogenous 14C-labeled taurine was taken up by the cells, and more than 95% of the internalized 14C was recovered as taurine, indicating that taurine-induced photosynthate release was not dependent on taurine metabolism.",
+      "context_window": "4C-labeled taurine was taken up by the cells, and more than 95% of the internalized 14C was recovered as taurine, indicatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

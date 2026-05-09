@@ -282,6 +282,71 @@ def test_tiered_mechanistic_track_can_clear_as_mech_not_clin() -> None:
     assert v.evidence_weight_mechanistic >= 6.0
 
 
+def test_scoping_track_can_certify_thin_direct_a1_corpus() -> None:
+    s1 = _stage1_report(p1_pass=True, n_pass=14, n_total=14)
+    receipts = [{
+        "receipt_id": "direct-a1",
+        "evidence_tier": "A1",
+        "directness": "direct",
+        "outcome_class": "clinical",
+    }, {
+        "receipt_id": "support-1",
+        "evidence_tier": "B2",
+        "directness": "indirect",
+        "outcome_class": "adjacent",
+    }]
+    manifest = {
+        "n_receipts": len(receipts),
+        "n_high_confidence_claims_total": 12,
+        "n_non_orthogonal_tensions": 2,
+        "receipts": receipts,
+    }
+
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=len(receipts), n_high_conf_claims=12,
+        n_non_orthogonal_tensions=2, manifest=manifest,
+    )
+
+    assert v.verdict == "AAA"
+    assert v.certification_track == "AAA-SCOP"
+    assert v.maturity_level == 5
+    assert v.maturity_label == "L5-SCOPING-JOURNAL-READY"
+    assert v.journal_ready is True
+
+
+def test_scoping_track_stays_l4_when_surgery_was_needed() -> None:
+    s1 = _stage1_report(p1_pass=True, n_pass=14, n_total=14)
+    receipts = [{
+        "receipt_id": "direct-a1",
+        "evidence_tier": "A1",
+        "directness": "direct",
+    }, {
+        "receipt_id": "support-1",
+        "evidence_tier": "B2",
+        "directness": "indirect",
+    }]
+    manifest = {
+        "n_receipts": len(receipts),
+        "n_high_confidence_claims_total": 12,
+        "n_non_orthogonal_tensions": 2,
+        "receipts": receipts,
+    }
+
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=len(receipts), n_high_conf_claims=12,
+        n_non_orthogonal_tensions=2, manifest=manifest,
+        auto_stripped_count=1,
+    )
+
+    assert v.verdict == "AAA"
+    assert v.certification_track == "AAA-SCOP"
+    assert v.maturity_level == 4
+    assert v.maturity_label == "L4-SCOPING-CERTIFIED"
+    assert v.journal_ready is False
+
+
 def test_tiered_floor_does_not_override_p1_blocker() -> None:
     """Evidence weight is a substance floor only; P1 safety still wins."""
     s1 = _stage1_report_with_d1_claims(3)
@@ -541,7 +606,9 @@ def test_unified_verdict_exposes_arbitration_provenance() -> None:
         arbitration_log="full_paper.arbitration_log.json",
     )
     assert v.n_arbitrated == 3
+    assert v.arbitration_count == 3
     assert v.arbitration_log == "full_paper.arbitration_log.json"
+    assert v.arbitration_log_path == "full_paper.arbitration_log.json"
     md = orch._format_unified_verdict(v)
     assert "Third-layer arbitration: 3 decision(s)" in md
     assert "log=full_paper.arbitration_log.json" in md

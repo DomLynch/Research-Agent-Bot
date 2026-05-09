@@ -1,0 +1,156 @@
+{
+  "paper_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of",
+  "doi": "10.2106/jbjs.23.01158",
+  "extracted_at": "2026-05-08T20:05:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 7,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-1040",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "The odds ratios (ORs) and 95% confidence intervals (CIs) between various classes of thromboprophylaxis in patients with high and low risk of VTE were calculated.",
+      "context_window": "ities established in the ICM-VTE. The odds ratios (ORs) and 95% confidence intervals (CIs) between various classes of throm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-u-1406",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1406,
+      "sentence": "The odds of deep-vein thrombosis (DVT), pulmonary embolus (PE), bleeding events, infections, mortality, and hospitalizations were also assessed in the 90-day postoperative period for propensity-matched cohorts receiving low-dose (81 mg) aspirin only versus other prophylaxis, segregating patients by VTE risk profile.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>A total of 126,692 patients undergoing TKA across 60 health-care organizations were included.",
+      "context_window": "e period for propensity-matched cohorts receiving low-dose (81 mg) aspirin only versus other prophylaxis, segregating patient",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-1731",
+      "claim_type": "percentage",
+      "raw_text": "7.65%",
+      "numeric_values": [
+        7.65
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1731,
+      "sentence": "The proportion of patients receiving low-dose aspirin increased from 7.65% to 55.29% between 2012 and 2022, whereas the proportion of patients receiving other chemoprophylaxis decreased from 96.25% to 42.98%.",
+      "context_window": "rtion of patients receiving low-dose aspirin increased from 7.65% to 55.29% between 2012 and 2022, whereas the proportion of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-1740",
+      "claim_type": "percentage",
+      "raw_text": "55.29%",
+      "numeric_values": [
+        55.29
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1740,
+      "sentence": "The proportion of patients receiving low-dose aspirin increased from 7.65% to 55.29% between 2012 and 2022, whereas the proportion of patients receiving other chemoprophylaxis decreased from 96.25% to 42.98%.",
+      "context_window": "patients receiving low-dose aspirin increased from 7.65% to 55.29% between 2012 and 2022, whereas the proportion of patients r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-1853",
+      "claim_type": "percentage",
+      "raw_text": "96.25%",
+      "numeric_values": [
+        96.25
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1853,
+      "sentence": "The proportion of patients receiving low-dose aspirin increased from 7.65% to 55.29% between 2012 and 2022, whereas the proportion of patients receiving other chemoprophylaxis decreased from 96.25% to 42.98%.",
+      "context_window": "of patients receiving other chemoprophylaxis decreased from 96.25% to 42.98%. Low-dose-aspirin-only use increased to approxima",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-1863",
+      "claim_type": "percentage",
+      "raw_text": "42.98%",
+      "numeric_values": [
+        42.98
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1863,
+      "sentence": "The proportion of patients receiving low-dose aspirin increased from 7.65% to 55.29% between 2012 and 2022, whereas the proportion of patients receiving other chemoprophylaxis decreased from 96.25% to 42.98%.",
+      "context_window": "s receiving other chemoprophylaxis decreased from 96.25% to 42.98%. Low-dose-aspirin-only use increased to approximately 50% i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-1924",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1924,
+      "sentence": "Low-dose-aspirin-only use increased to approximately 50% in both high-risk and low-risk populations but was more likely in low-risk populations (OR, 1.17; 95% CI, 1.15 to 1.20) relative to high-risk populations.",
+      "context_window": "2.98%. Low-dose-aspirin-only use increased to approximately 50% in both high-risk and low-risk populations but was more lik",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2106_jbjs_23_01158_low_dose_aspirin_is_the_safest_prophylaxis_for_prevention_of-pct-2026",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2026,
+      "sentence": "Low-dose-aspirin-only use increased to approximately 50% in both high-risk and low-risk populations but was more likely in low-risk populations (OR, 1.17; 95% CI, 1.15 to 1.20) relative to high-risk populations.",
+      "context_window": "ions but was more likely in low-risk populations (OR, 1.17; 95% CI, 1.15 to 1.20) relative to high-risk populations. Both l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

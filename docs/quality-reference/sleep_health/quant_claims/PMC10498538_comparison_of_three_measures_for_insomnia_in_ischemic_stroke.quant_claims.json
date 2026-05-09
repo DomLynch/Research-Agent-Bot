@@ -1,0 +1,1035 @@
+{
+  "paper_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke",
+  "doi": "10.3389/fneur.2023.1118322",
+  "extracted_at": "2026-05-08T20:06:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 11,
+    "percentage": 31,
+    "unit_value": 7,
+    "p_value": 2,
+    "sample_size": 4,
+    "hazard_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-1103",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.946, 0.974",
+      "numeric_values": [
+        0.946,
+        0.974
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1103,
+      "sentence": "The PSQI, ISI, and AIS showed outstanding diagnostic ability with an AUC of 0.960 (95% CI: 0.946, 0.974), 0.911 (95% CI: 0.882, 0.941), and 0.876 (95% CI:0.837, 0.916).",
+      "context_window": "showed outstanding diagnostic ability with an AUC of 0.960 (95% CI: 0.946, 0.974), 0.911 (95% CI: 0.882, 0.941), and 0.876 (95% CI:0.837, 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-1133",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.882, 0.941",
+      "numeric_values": [
+        0.882,
+        0.941
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1133,
+      "sentence": "The PSQI, ISI, and AIS showed outstanding diagnostic ability with an AUC of 0.960 (95% CI: 0.946, 0.974), 0.911 (95% CI: 0.882, 0.941), and 0.876 (95% CI:0.837, 0.916).",
+      "context_window": "ability with an AUC of 0.960 (95% CI: 0.946, 0.974), 0.911 (95% CI: 0.882, 0.941), and 0.876 (95% CI:0.837, 0.916). The best diagnostic cuto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-1167",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:0.837, 0.916",
+      "numeric_values": [
+        0.837,
+        0.916
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "The PSQI, ISI, and AIS showed outstanding diagnostic ability with an AUC of 0.960 (95% CI: 0.946, 0.974), 0.911 (95% CI: 0.882, 0.941), and 0.876 (95% CI:0.837, 0.916).",
+      "context_window": "CI: 0.946, 0.974), 0.911 (95% CI: 0.882, 0.941), and 0.876 (95% CI:0.837, 0.916). The best diagnostic cutoffs for PSQI, ISI, and AIS are \u22659",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-1172",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1172,
+      "sentence": "According to reports published 30 ~ 68% of poststroke patients were burdened with insomnia ( 6-8 ).",
+      "context_window": "criteria for insomnia. According to reports published 30 ~ 68% of poststroke patients were burdened with insomnia ( 6-8 ).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-1942",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 1942,
+      "sentence": "According to a prospective clinical cohort study of stroke patients, insomnia patients were more likely to be depressed, anxious, disabled, and have difficulty returning to work than stroke patients without insomnia after 1 year after stroke ( 12 ).",
+      "context_window": "turning to work than stroke patients without insomnia after 1 year after stroke ( 12 ). Surveys such as that conducted by Huan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-2531",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2531,
+      "sentence": "Also, insomnia IS patients have a higher recurrence stroke rate in the first year and a higher mortality rate within 6 years compared with no-insomnia IS patients ( 15 ).",
+      "context_window": "e rate in the first year and a higher mortality rate within 6 years compared with no-insomnia IS patients ( 15 ). Although the",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-2336",
+      "claim_type": "unit_value",
+      "raw_text": "5.79 days",
+      "numeric_values": [
+        5.79
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2336,
+      "sentence": "The questionnaires of basic patient information, neurological function, three sleep assessment were applied at a mean of 5.79 days ( SD = 2.34) after admission to the hospital.",
+      "context_window": "function, three sleep assessment were applied at a mean of 5.79 days ( SD = 2.34) after admission to the hospital. All 569 patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-3258",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3258,
+      "sentence": "In this study, \u201csmoke\u201d was operationally defined as \u201ccurrent smokers\u201d who had smoked within 30 days before the survey. \u201cDrink\u201d was operationally defined as consuming more than 15 g of alcohol per day within 30 days before the survey.",
+      "context_window": "tionally defined as \u201ccurrent smokers\u201d who had smoked within 30 days before the survey. \u201cDrink\u201d was operationally defined as con",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-3373",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3373,
+      "sentence": "In this study, \u201csmoke\u201d was operationally defined as \u201ccurrent smokers\u201d who had smoked within 30 days before the survey. \u201cDrink\u201d was operationally defined as consuming more than 15 g of alcohol per day within 30 days before the survey.",
+      "context_window": "fined as consuming more than 15 g of alcohol per day within 30 days before the survey. Each patient was assessed on the Nation",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-6011",
+      "claim_type": "percentage",
+      "raw_text": "98.3%",
+      "numeric_values": [
+        98.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6011,
+      "sentence": "When the total PSQI score over 7, the sensitivity of distinguishing between normal and sleep-disordered populations was 98.3% and the specificity was 90.2% ( 35 ).",
+      "context_window": "uishing between normal and sleep-disordered populations was 98.3% and the specificity was 90.2% ( 35 ). The time to complete",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-6041",
+      "claim_type": "percentage",
+      "raw_text": "90.2%",
+      "numeric_values": [
+        90.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6041,
+      "sentence": "When the total PSQI score over 7, the sensitivity of distinguishing between normal and sleep-disordered populations was 98.3% and the specificity was 90.2% ( 35 ).",
+      "context_window": "ep-disordered populations was 98.3% and the specificity was 90.2% ( 35 ). The time to complete the PSQI assessment is approxi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-6435",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 6435,
+      "sentence": "The ISI is a seven-item, subjective assessment and screening tool that primarily assesses the character, gravity, and influence of insomnia over the previous 4 weeks ( 37 ).",
+      "context_window": "acter, gravity, and influence of insomnia over the previous 4 weeks ( 37 ). The items evaluate (i) difficulty falling asleep (i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-7324",
+      "claim_type": "percentage",
+      "raw_text": "94.7%",
+      "numeric_values": [
+        94.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7324,
+      "sentence": "A cutoff score of 8 was suggested by Savard et al. ( 40 ) for identifying sleep difficulties in cancer patients, which produced 94.7% sensitivity and 47.4% specificity in cancer patients according to the DSM-IV criteria.",
+      "context_window": "fying sleep difficulties in cancer patients, which produced 94.7% sensitivity and 47.4% specificity in cancer patients accord",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-7346",
+      "claim_type": "percentage",
+      "raw_text": "47.4%",
+      "numeric_values": [
+        47.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7346,
+      "sentence": "A cutoff score of 8 was suggested by Savard et al. ( 40 ) for identifying sleep difficulties in cancer patients, which produced 94.7% sensitivity and 47.4% specificity in cancer patients according to the DSM-IV criteria.",
+      "context_window": "es in cancer patients, which produced 94.7% sensitivity and 47.4% specificity in cancer patients according to the DSM-IV crit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-8540",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8540,
+      "sentence": "With a cut-off score of 6, AIS can be used for insomnia screening with the sensitivity of 93% and the specificity of 85% in Taiwanese cancer patients ( 42 ).",
+      "context_window": "can be used for insomnia screening with the sensitivity of 93% and the specificity of 85% in Taiwanese cancer patients ( 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-8567",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8567,
+      "sentence": "With a cut-off score of 6, AIS can be used for insomnia screening with the sensitivity of 93% and the specificity of 85% in Taiwanese cancer patients ( 42 ).",
+      "context_window": "creening with the sensitivity of 93% and the specificity of 85% in Taiwanese cancer patients ( 42 ). A score of 6 was found",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-p-9465",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9465,
+      "sentence": "Kolmogorov-Smirnov test was used to test the normality of the data distribution, with p > 0.05 considered as normal distribution.",
+      "context_window": "s used to test the normality of the data distribution, with p > 0.05 considered as normal distribution. Descriptive statistics w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-n-174",
+      "claim_type": "sample_size",
+      "raw_text": "n = 89",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 174,
+      "sentence": "A total of 569 patients were separated into insomnia group ( n = 89) and no-insomnia group ( n = 480) in accordance with the diagnostic criteria of insomnia in IS patients.",
+      "context_window": "total of 569 patients were separated into insomnia group ( n = 89) and no-insomnia group ( n = 480) in accordance with the di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-n-206",
+      "claim_type": "sample_size",
+      "raw_text": "n = 480",
+      "numeric_values": [
+        480.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 206,
+      "sentence": "A total of 569 patients were separated into insomnia group ( n = 89) and no-insomnia group ( n = 480) in accordance with the diagnostic criteria of insomnia in IS patients.",
+      "context_window": "rated into insomnia group ( n = 89) and no-insomnia group ( n = 480) in accordance with the diagnostic criteria of insomnia in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-306",
+      "claim_type": "percentage",
+      "raw_text": "59.23%",
+      "numeric_values": [
+        59.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 306,
+      "sentence": "In this study, 337 (59.23%) patients were male and 232 (40.77%) were female.",
+      "context_window": "ic criteria of insomnia in IS patients. In this study, 337 (59.23%) patients were male and 232 (40.77%) were female. The avera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-342",
+      "claim_type": "percentage",
+      "raw_text": "40.77%",
+      "numeric_values": [
+        40.77
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 342,
+      "sentence": "In this study, 337 (59.23%) patients were male and 232 (40.77%) were female.",
+      "context_window": "ts. In this study, 337 (59.23%) patients were male and 232 (40.77%) were female. The average age was 63.25 ( SD = 10.34) and t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-475",
+      "claim_type": "percentage",
+      "raw_text": "27.59%",
+      "numeric_values": [
+        27.59
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 475,
+      "sentence": "Additionally, 157 patients (27.59%) were employed before stroke.",
+      "context_window": "age BMI was 24.27 ( SD = 2.92). Additionally, 157 patients (27.59%) were employed before stroke. The median (IQR) of NIHSS and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-597",
+      "claim_type": "percentage",
+      "raw_text": "72.93%",
+      "numeric_values": [
+        72.93
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 597,
+      "sentence": "415 (72.93%) IS patients have hypertension and 251 (44.11%) IS patients have diabetes.",
+      "context_window": "and ADL scores of IS patients were 3 (3) and 55 (25). 415 (72.93%) IS patients have hypertension and 251 (44.11%) IS patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-644",
+      "claim_type": "percentage",
+      "raw_text": "44.11%",
+      "numeric_values": [
+        44.11
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 644,
+      "sentence": "415 (72.93%) IS patients have hypertension and 251 (44.11%) IS patients have diabetes.",
+      "context_window": "5 (25). 415 (72.93%) IS patients have hypertension and 251 (44.11%) IS patients have diabetes. A comparative analysis of the i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-n-1138",
+      "claim_type": "sample_size",
+      "raw_text": "n = 569",
+      "numeric_values": [
+        569.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1138,
+      "sentence": "Demographics of IS patients in the insomnia group and no-insomnia group ( n = 569).",
+      "context_window": "f IS patients in the insomnia group and no-insomnia group ( n = 569). SD, Standard deviation; n, number of patients; M, IQR, M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-p-1982",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1982,
+      "sentence": "The results of the Mann-Whitney U test showed there were significant differences in scores of PSQI, ISI, and AIS between the insomnia group and the no-insomnia group ( p < 0.001).",
+      "context_window": "AIS between the insomnia group and the no-insomnia group ( p < 0.001). The scores of PSQI, ISI, and AIS for insomnia group and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-n-2071",
+      "claim_type": "sample_size",
+      "raw_text": "N = 569",
+      "numeric_values": [
+        569.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2071,
+      "sentence": "The scores of PSQI, ISI, and AIS for insomnia group and no-insomnia group ( N = 569).",
+      "context_window": "QI, ISI, and AIS for insomnia group and no-insomnia group ( N = 569). M, IQR, median, interquartile range. The PSQI and ISI s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-2696",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.946, 0.974",
+      "numeric_values": [
+        0.946,
+        0.974
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2696,
+      "sentence": "The AUCs of PSQI and ISI were 0.960 (95% CI: 0.946, 0.974) and 0.911 (95% CI: 0.882, 0.941), which were greater than 0.9, showing outstanding diagnostic ability of insomnia in IS patients.",
+      "context_window": "e showed in Figure 1 . The AUCs of PSQI and ISI were 0.960 (95% CI: 0.946, 0.974) and 0.911 (95% CI: 0.882, 0.941), which were greater than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-2729",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.882, 0.941",
+      "numeric_values": [
+        0.882,
+        0.941
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2729,
+      "sentence": "The AUCs of PSQI and ISI were 0.960 (95% CI: 0.946, 0.974) and 0.911 (95% CI: 0.882, 0.941), which were greater than 0.9, showing outstanding diagnostic ability of insomnia in IS patients.",
+      "context_window": "f PSQI and ISI were 0.960 (95% CI: 0.946, 0.974) and 0.911 (95% CI: 0.882, 0.941), which were greater than 0.9, showing outstanding diagnost",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-2874",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.837, 0.916",
+      "numeric_values": [
+        0.837,
+        0.916
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2874,
+      "sentence": "The AUC of AIS was 0.876 (95% CI: 0.837, 0.916), which ranged from 0.8 to 0.9, showing excellent diagnostic ability with PSQI and ISI in IS patients.",
+      "context_window": "ility of insomnia in IS patients. The AUC of AIS was 0.876 (95% CI: 0.837, 0.916), which ranged from 0.8 to 0.9, showing excellent diagnosti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-4509",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.570, 0.716",
+      "numeric_values": [
+        0.57,
+        0.716
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4509,
+      "sentence": "Comparing PSQI with the clinician-based insomnia diagnosis revealed that Cohen\u2019s kappa was 0.643 (95% CI: 0.570, 0.716).",
+      "context_window": "d insomnia diagnosis revealed that Cohen\u2019s kappa was 0.643 (95% CI: 0.570, 0.716). However, comparing ISI and AIS with insomnia diagnosis re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-4626",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.385, 0.533",
+      "numeric_values": [
+        0.385,
+        0.533
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4626,
+      "sentence": "However, comparing ISI and AIS with insomnia diagnosis revealed that Cohen\u2019s kappa was 0.459 (95% CI: 0.385, 0.533) and 0.539 (95% CI: 0.451, 0.627).",
+      "context_window": "h insomnia diagnosis revealed that Cohen\u2019s kappa was 0.459 (95% CI: 0.385, 0.533) and 0.539 (95% CI: 0.451, 0.627). PSQI can be considered t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-4659",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.451, 0.627",
+      "numeric_values": [
+        0.451,
+        0.627
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4659,
+      "sentence": "However, comparing ISI and AIS with insomnia diagnosis revealed that Cohen\u2019s kappa was 0.459 (95% CI: 0.385, 0.533) and 0.539 (95% CI: 0.451, 0.627).",
+      "context_window": "t Cohen\u2019s kappa was 0.459 (95% CI: 0.385, 0.533) and 0.539 (95% CI: 0.451, 0.627). PSQI can be considered to have more diagnostic concordanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-354",
+      "claim_type": "percentage",
+      "raw_text": "15.64%",
+      "numeric_values": [
+        15.64
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 354,
+      "sentence": "The prevalence of pre-stroke insomnia in IS patients was found to be 15.64% in this study, lower than that of previously reported levels.",
+      "context_window": "lence of pre-stroke insomnia in IS patients was found to be 15.64% in this study, lower than that of previously reported level",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-498",
+      "claim_type": "percentage",
+      "raw_text": "38.6%",
+      "numeric_values": [
+        38.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 498,
+      "sentence": "Surveys such as that conducted by Lepp\u00e4vuori et al. ( 49 ) have shown that 38.6% had insomnia before the stroke and 18.1% had insomnia after the stroke.",
+      "context_window": "that conducted by Lepp\u00e4vuori et al. ( 49 ) have shown that 38.6% had insomnia before the stroke and 18.1% had insomnia after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-539",
+      "claim_type": "percentage",
+      "raw_text": "18.1%",
+      "numeric_values": [
+        18.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 539,
+      "sentence": "Surveys such as that conducted by Lepp\u00e4vuori et al. ( 49 ) have shown that 38.6% had insomnia before the stroke and 18.1% had insomnia after the stroke.",
+      "context_window": ") have shown that 38.6% had insomnia before the stroke and 18.1% had insomnia after the stroke. Another study found a 12% ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-598",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 598,
+      "sentence": "Another study found a 12% rate of new-onset insomnia after stroke when excluding patients who had insomnia before stroke ( 50 ).",
+      "context_window": "18.1% had insomnia after the stroke. Another study found a 12% rate of new-onset insomnia after stroke when excluding pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-785",
+      "claim_type": "percentage",
+      "raw_text": "57.9%",
+      "numeric_values": [
+        57.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 785,
+      "sentence": "A study from China found that the prevalence of insomnia in stroke patients was 57.9%, of which 32.2% had insomnia before the stroke and 25.7% had new insomnia after the stroke ( 51 ).",
+      "context_window": "ound that the prevalence of insomnia in stroke patients was 57.9%, of which 32.2% had insomnia before the stroke and 25.7% ha",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-801",
+      "claim_type": "percentage",
+      "raw_text": "32.2%",
+      "numeric_values": [
+        32.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 801,
+      "sentence": "A study from China found that the prevalence of insomnia in stroke patients was 57.9%, of which 32.2% had insomnia before the stroke and 25.7% had new insomnia after the stroke ( 51 ).",
+      "context_window": "evalence of insomnia in stroke patients was 57.9%, of which 32.2% had insomnia before the stroke and 25.7% had new insomnia a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-842",
+      "claim_type": "percentage",
+      "raw_text": "25.7%",
+      "numeric_values": [
+        25.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 842,
+      "sentence": "A study from China found that the prevalence of insomnia in stroke patients was 57.9%, of which 32.2% had insomnia before the stroke and 25.7% had new insomnia after the stroke ( 51 ).",
+      "context_window": "as 57.9%, of which 32.2% had insomnia before the stroke and 25.7% had new insomnia after the stroke ( 51 ). A 4-year follow-u",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-1089",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.7, 2.05",
+      "numeric_values": [
+        0.7,
+        2.05
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1089,
+      "sentence": "A 4-year follow-up study of 21,438 insomniacs and 64,314 non-insomniacs found that the incidence of stroke was significantly higher in insomniacs than in non-insomniacs (incidence rate ratio = 1.85; 95% CI: 0.7, 2.05) and those insomniacs had 54% higher risk of developing stroke compared with non-insomniacs (adjusted hazard ratio = 1.54; 95% CI: 1.38, 1.72) ( 3 ).",
+      "context_window": "mniacs than in non-insomniacs (incidence rate ratio = 1.85; 95% CI: 0.7, 2.05) and those insomniacs had 54% higher risk of developing str",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-1133",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1133,
+      "sentence": "A 4-year follow-up study of 21,438 insomniacs and 64,314 non-insomniacs found that the incidence of stroke was significantly higher in insomniacs than in non-insomniacs (incidence rate ratio = 1.85; 95% CI: 0.7, 2.05) and those insomniacs had 54% higher risk of developing stroke compared with non-insomniacs (adjusted hazard ratio = 1.54; 95% CI: 1.38, 1.72) ( 3 ).",
+      "context_window": "e ratio = 1.85; 95% CI: 0.7, 2.05) and those insomniacs had 54% higher risk of developing stroke compared with non-insomnia",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-hr-l-1200",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio = 1.54",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1200,
+      "sentence": "A 4-year follow-up study of 21,438 insomniacs and 64,314 non-insomniacs found that the incidence of stroke was significantly higher in insomniacs than in non-insomniacs (incidence rate ratio = 1.85; 95% CI: 0.7, 2.05) and those insomniacs had 54% higher risk of developing stroke compared with non-insomniacs (adjusted hazard ratio = 1.54; 95% CI: 1.38, 1.72) ( 3 ).",
+      "context_window": "her risk of developing stroke compared with non-insomniacs (adjusted hazard ratio = 1.54; 95% CI: 1.38, 1.72) ( 3 ). There is mounting clinical evid",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-ci-1230",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.38, 1.72",
+      "numeric_values": [
+        1.38,
+        1.72
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1230,
+      "sentence": "A 4-year follow-up study of 21,438 insomniacs and 64,314 non-insomniacs found that the incidence of stroke was significantly higher in insomniacs than in non-insomniacs (incidence rate ratio = 1.85; 95% CI: 0.7, 2.05) and those insomniacs had 54% higher risk of developing stroke compared with non-insomniacs (adjusted hazard ratio = 1.54; 95% CI: 1.38, 1.72) ( 3 ).",
+      "context_window": "compared with non-insomniacs (adjusted hazard ratio = 1.54; 95% CI: 1.38, 1.72) ( 3 ). There is mounting clinical evidence to support a bi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-1769",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1769,
+      "sentence": "It was discovered that the PSQI scale was the most sensitive (identifying insomnia in 100% of the IS patients when the cutoff value is 9), while DeLong\u2019s test indicated that ISI and ASI were less but similarly sensitive, with ISI identifying insomnia in 91.01% of the IS patients when the cutoff value is 15, and AIS identifying insomnia in 75.28% of the IS patients when the cutoff value is 8.",
+      "context_window": "PSQI scale was the most sensitive (identifying insomnia in 100% of the IS patients when the cutoff value is 9), while DeLon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-1937",
+      "claim_type": "percentage",
+      "raw_text": "91.01%",
+      "numeric_values": [
+        91.01
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1937,
+      "sentence": "It was discovered that the PSQI scale was the most sensitive (identifying insomnia in 100% of the IS patients when the cutoff value is 9), while DeLong\u2019s test indicated that ISI and ASI were less but similarly sensitive, with ISI identifying insomnia in 91.01% of the IS patients when the cutoff value is 15, and AIS identifying insomnia in 75.28% of the IS patients when the cutoff value is 8.",
+      "context_window": "s but similarly sensitive, with ISI identifying insomnia in 91.01% of the IS patients when the cutoff value is 15, and AIS ide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2024",
+      "claim_type": "percentage",
+      "raw_text": "75.28%",
+      "numeric_values": [
+        75.28
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2024,
+      "sentence": "It was discovered that the PSQI scale was the most sensitive (identifying insomnia in 100% of the IS patients when the cutoff value is 9), while DeLong\u2019s test indicated that ISI and ASI were less but similarly sensitive, with ISI identifying insomnia in 91.01% of the IS patients when the cutoff value is 15, and AIS identifying insomnia in 75.28% of the IS patients when the cutoff value is 8.",
+      "context_window": "hen the cutoff value is 15, and AIS identifying insomnia in 75.28% of the IS patients when the cutoff value is 8. Some studies",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2177",
+      "claim_type": "percentage",
+      "raw_text": "89.6%",
+      "numeric_values": [
+        89.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2177,
+      "sentence": "Some studies suggest that the diagnostic sensitivity to distinguish good sleep from poor sleep was 89.6% and the specificity was 86.5% when the total PSQI score > 5 ( 52 ).",
+      "context_window": "c sensitivity to distinguish good sleep from poor sleep was 89.6% and the specificity was 86.5% when the total PSQI score > 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2207",
+      "claim_type": "percentage",
+      "raw_text": "86.5%",
+      "numeric_values": [
+        86.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2207,
+      "sentence": "Some studies suggest that the diagnostic sensitivity to distinguish good sleep from poor sleep was 89.6% and the specificity was 86.5% when the total PSQI score > 5 ( 52 ).",
+      "context_window": "ood sleep from poor sleep was 89.6% and the specificity was 86.5% when the total PSQI score > 5 ( 52 ). The Youden index of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2643",
+      "claim_type": "percentage",
+      "raw_text": "86.1%",
+      "numeric_values": [
+        86.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2643,
+      "sentence": "Also, according to Charles, the ISI cutoff of 10 was the optimal score for identifying insomnia cases in the community people, with an 86.1% sensitivity and 87.7% specificity ( 36 ).",
+      "context_window": "identifying insomnia cases in the community people, with an 86.1% sensitivity and 87.7% specificity ( 36 ). When diagnosing i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2665",
+      "claim_type": "percentage",
+      "raw_text": "87.7%",
+      "numeric_values": [
+        87.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2665,
+      "sentence": "Also, according to Charles, the ISI cutoff of 10 was the optimal score for identifying insomnia cases in the community people, with an 86.1% sensitivity and 87.7% specificity ( 36 ).",
+      "context_window": "ases in the community people, with an 86.1% sensitivity and 87.7% specificity ( 36 ). When diagnosing insomnia on a score of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2769",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2769,
+      "sentence": "When diagnosing insomnia on a score of \u22656, the AIS scale had a sensitivity of 93%, and a specificity of 85%, and the overall correct case identification rate is 90% ( 44 ).",
+      "context_window": "somnia on a score of \u22656, the AIS scale had a sensitivity of 93%, and a specificity of 85%, and the overall correct case ide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2795",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2795,
+      "sentence": "When diagnosing insomnia on a score of \u22656, the AIS scale had a sensitivity of 93%, and a specificity of 85%, and the overall correct case identification rate is 90% ( 44 ).",
+      "context_window": "he AIS scale had a sensitivity of 93%, and a specificity of 85%, and the overall correct case identification rate is 90% (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-2852",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2852,
+      "sentence": "When diagnosing insomnia on a score of \u22656, the AIS scale had a sensitivity of 93%, and a specificity of 85%, and the overall correct case identification rate is 90% ( 44 ).",
+      "context_window": "of 85%, and the overall correct case identification rate is 90% ( 44 ). This confirmed the findings of these scales have ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-pct-3733",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3733,
+      "sentence": "The kappa coefficient of PSQI, ISI, and AIS were 0.643, 0.459, and 0.539 and the asymptotic 95% confidence interval were (0.570, 0.716), (0.385, 0.533), and (0.451, 0.627).",
+      "context_window": "SI, and AIS were 0.643, 0.459, and 0.539 and the asymptotic 95% confidence interval were (0.570, 0.716), (0.385, 0.533), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10498538_comparison_of_three_measures_for_insomnia_in_ischemic_stroke-u-4326",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4326,
+      "sentence": "The PSQI focuses on the sleep status of patients in the past 4 weeks.",
+      "context_window": "he PSQI focuses on the sleep status of patients in the past 4 weeks. Also, there are four types of responses (\u201cnot during the l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

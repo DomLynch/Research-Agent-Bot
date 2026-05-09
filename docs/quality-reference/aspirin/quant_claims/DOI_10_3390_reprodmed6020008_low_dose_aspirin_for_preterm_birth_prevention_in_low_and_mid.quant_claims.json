@@ -1,0 +1,86 @@
+{
+  "paper_id": "DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_preterm_birth_prevention_in_low_and_mid",
+  "doi": "10.3390/reprodmed6020008",
+  "extracted_at": "2026-05-08T20:05:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 2,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_preterm_birth_prevention_in_low_and_mid-ci-1330",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.84-0.98",
+      "numeric_values": [
+        0.84,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1330,
+      "sentence": "Results: Low-dose aspirin therapy significantly lowered the risks of preterm births (RR 0.91, 95% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.01) in at-risk pregnant women from LMICs.",
+      "context_window": "significantly lowered the risks of preterm births (RR 0.91, 95% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_preterm_birth_prevention_in_low_and_mid-p-1348",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1348,
+      "sentence": "Results: Low-dose aspirin therapy significantly lowered the risks of preterm births (RR 0.91, 95% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.01) in at-risk pregnant women from LMICs.",
+      "context_window": "red the risks of preterm births (RR 0.91, 95% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_preterm_birth_prevention_in_low_and_mid-ci-1392",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.73-0.94",
+      "numeric_values": [
+        0.73,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1392,
+      "sentence": "Results: Low-dose aspirin therapy significantly lowered the risks of preterm births (RR 0.91, 95% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.01) in at-risk pregnant women from LMICs.",
+      "context_window": "% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.01) in at-risk pregnant women from LMICs. Its effect",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_preterm_birth_prevention_in_low_and_mid-p-1410",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1410,
+      "sentence": "Results: Low-dose aspirin therapy significantly lowered the risks of preterm births (RR 0.91, 95% CI 0.84-0.98, p = 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.01) in at-risk pregnant women from LMICs.",
+      "context_window": "= 0.02) and perinatal mortality (RR 0.83, 95% CI 0.73-0.94, p < 0.01) in at-risk pregnant women from LMICs. Its effects on low b",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

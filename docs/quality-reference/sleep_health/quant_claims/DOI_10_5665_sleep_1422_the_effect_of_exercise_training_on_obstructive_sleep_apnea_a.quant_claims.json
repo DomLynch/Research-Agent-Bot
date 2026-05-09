@@ -1,0 +1,252 @@
+{
+  "paper_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a",
+  "doi": "10.5665/sleep.1422",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "sample_size": 2,
+    "mean_sd": 4,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-u-414",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 414,
+      "sentence": "PARTICIPANTS: Forty-three sedentary and overweight/obese adults aged 18-55 years with at least moderate-severity untreated OSA (screening apnea-hypopnea index [AHI] \u2265 15).",
+      "context_window": ": Forty-three sedentary and overweight/obese adults aged 18-55 years with at least moderate-severity untreated OSA (screening ap",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-n-575",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 575,
+      "sentence": "INTERVENTIONS: Participants randomized to exercise training (n = 27) met 4 times/week for 12 weeks and performed 150 min/week of moderate-intensity aerobic activity, followed by resistance training twice/week.",
+      "context_window": "NTERVENTIONS: Participants randomized to exercise training (n = 27) met 4 times/week for 12 weeks and performed 150 min/week o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-u-604",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 604,
+      "sentence": "INTERVENTIONS: Participants randomized to exercise training (n = 27) met 4 times/week for 12 weeks and performed 150 min/week of moderate-intensity aerobic activity, followed by resistance training twice/week.",
+      "context_window": "ndomized to exercise training (n = 27) met 4 times/week for 12 weeks and performed 150 min/week of moderate-intensity aerobic ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-n-773",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 773,
+      "sentence": "Participants randomized to a stretching control (n = 16) met twice weekly for 12 weeks to perform low-intensity exercises designed to increase whole-body flexibility.",
+      "context_window": "wice/week. Participants randomized to a stretching control (n = 16) met twice weekly for 12 weeks to perform low-intensity exe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-u-802",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 802,
+      "sentence": "Participants randomized to a stretching control (n = 16) met twice weekly for 12 weeks to perform low-intensity exercises designed to increase whole-body flexibility.",
+      "context_window": "mized to a stretching control (n = 16) met twice weekly for 12 weeks to perform low-intensity exercises designed to increase who",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-u-1095",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "Measures of sleep quality included PSG, actigraphy (7-10 days), and the Pittsburgh Sleep Quality Index.",
+      "context_window": "tion. Measures of sleep quality included PSG, actigraphy (7-10 days), and the Pittsburgh Sleep Quality Index. Compared with str",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-msd-1231",
+      "claim_type": "mean_sd",
+      "raw_text": "32.2 \u00b1 5.6",
+      "numeric_values": [
+        32.2,
+        5.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1231,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-msd-1245",
+      "claim_type": "mean_sd",
+      "raw_text": "24.6 \u00b1 4.4",
+      "numeric_values": [
+        24.6,
+        4.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1245,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "ted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-msd-1269",
+      "claim_type": "mean_sd",
+      "raw_text": "24.4 \u00b1 5.6",
+      "numeric_values": [
+        24.4,
+        5.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1269,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-msd-1283",
+      "claim_type": "mean_sd",
+      "raw_text": "28.9 \u00b1 6.4",
+      "numeric_values": [
+        28.9,
+        6.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "ercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desatur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-p-1295",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1295,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "\u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation inde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-p-1371",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1371,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "l as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03). Reductions in AHI and ODI w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_5665_sleep_1422_the_effect_of_exercise_training_on_obstructive_sleep_apnea_a-p-1401",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1401,
+      "sentence": "Compared with stretching, exercise resulted in a significant AHI reduction (exercise: 32.2 \u00b1 5.6 to 24.6 \u00b1 4.4, stretching: 24.4 \u00b1 5.6 to 28.9 \u00b1 6.4; P < 0.01) as well as significant changes in oxygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03).",
+      "context_window": "ygen desaturation index (ODI; P = 0.03) and stage N3 sleep (P = 0.03). Reductions in AHI and ODI were achieved without a signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

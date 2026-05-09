@@ -1,0 +1,174 @@
+{
+  "paper_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a",
+  "doi": "10.1007/s12672-025-03915-z",
+  "extracted_at": "2026-05-08T20:11:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 8,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-116",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 116,
+      "sentence": "Esophageal squamous cell carcinoma, the most common histological type of esophageal cancer (EC), constitutes nearly 80% of all EC cases globally and continues to pose a significant challenge to public health worldwide [ 1 ].",
+      "context_window": "ological type of esophageal cancer (EC), constitutes nearly 80% of all EC cases globally and continues to pose a significan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-558",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 558,
+      "sentence": "The incidence of ESCA is particularly high in East Asia, especially in China, where it accounts for over 95% of EC cases and causes an estimated 350,000 deaths annually [ 3 ].",
+      "context_window": "East Asia, especially in China, where it accounts for over 95% of EC cases and causes an estimated 350,000 deaths annually",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-790",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 790,
+      "sentence": "Despite advances in surgical techniques, endoscopic detection, and multimodal therapies, the prognosis of ESCA remains dismal, with a 5-year survival rate below 30% and as low as 15.3% in advanced stages [ 4 , 5 ].",
+      "context_window": "s of ESCA remains dismal, with a 5-year survival rate below 30% and as low as 15.3% in advanced stages [ 4 , 5 ]. The insid",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-808",
+      "claim_type": "percentage",
+      "raw_text": "15.3%",
+      "numeric_values": [
+        15.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 808,
+      "sentence": "Despite advances in surgical techniques, endoscopic detection, and multimodal therapies, the prognosis of ESCA remains dismal, with a 5-year survival rate below 30% and as low as 15.3% in advanced stages [ 4 , 5 ].",
+      "context_window": "dismal, with a 5-year survival rate below 30% and as low as 15.3% in advanced stages [ 4 , 5 ]. The insidious onset and lack",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-2118",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2118,
+      "sentence": "Quality control involved removing cells expressing fewer than 200 or more than 10,000 unique genes via nFeature_RNA, as well as cells with mitochondrial gene content exceeding 10% of total UMI counts (percent.mt >10%), to exclude low-quality or apoptotic cells.",
+      "context_window": "as well as cells with mitochondrial gene content exceeding 10% of total UMI counts (percent.mt >10%), to exclude low-quali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-2155",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2155,
+      "sentence": "Quality control involved removing cells expressing fewer than 200 or more than 10,000 unique genes via nFeature_RNA, as well as cells with mitochondrial gene content exceeding 10% of total UMI counts (percent.mt >10%), to exclude low-quality or apoptotic cells.",
+      "context_window": "gene content exceeding 10% of total UMI counts (percent.mt >10%), to exclude low-quality or apoptotic cells. Gene expressio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-9372",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9372,
+      "sentence": "Both cell lines were maintained in RPMI-1640 medium supplemented with 10% FBS and incubated at 37 \u00b0C in a humidified atmosphere containing 5% CO\u2082.",
+      "context_window": "lines were maintained in RPMI-1640 medium supplemented with 10% FBS and incubated at 37 \u00b0C in a humidified atmosphere conta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-pct-9441",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9441,
+      "sentence": "Both cell lines were maintained in RPMI-1640 medium supplemented with 10% FBS and incubated at 37 \u00b0C in a humidified atmosphere containing 5% CO\u2082.",
+      "context_window": "nd incubated at 37 \u00b0C in a humidified atmosphere containing 5% CO\u2082. Total RNA was isolated using TRIzol reagent (Takara,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13022145_integrative_analysis_of_polyamine_associated_genes_reveals_a-p-10027",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10027,
+      "sentence": "Univariate and multivariate Cox proportional hazards regression analyses were performed using the survival and survminer packages, with a significance cutoff of p < 0.05.",
+      "context_window": "vival and survminer packages, with a significance cutoff of p < 0.05. Kaplan-Meier curves were generated to assess survival diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

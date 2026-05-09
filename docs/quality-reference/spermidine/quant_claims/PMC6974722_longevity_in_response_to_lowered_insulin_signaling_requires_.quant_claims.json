@@ -1,0 +1,428 @@
+{
+  "paper_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_",
+  "doi": "10.1111/acel.13043",
+  "extracted_at": "2026-05-08T20:12:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 15,
+    "percentage": 4,
+    "p_value": 3,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-1117",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1117,
+      "sentence": "Western blot analysis of whole fly ( n = 3) or fat body\u2010specific ( n = 6) Gnmt protein levels from w Dah (control) and dilp 2\u20103,5 mutant flies (significance determined by t test p \u2010value *< .05, **< .01)\n\nTo determine whether increasing the level of Gnmt in the fat body was sufficient to extend lifespan, we over\u2010expressed Gnmt using a UAS\u2010Gnmt construct (Obata & Miura, 2015 ) and two independent, constitutive, fat body drivers, Fat Body\u2010Gal4 ( FB\u2010Gal4 ) (Gr\u00f6nke et al., 2003 ) and Pumpless\u2010Gal4 (Zinke, Kirchner, Chao, Tetzlaff, & Pankratz, 1999 ).",
+      "context_window": "sponse to reduced IIS. Western blot analysis of whole fly ( n = 3) or fat body\u2010specific ( n = 6) Gnmt protein levels from w D",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-1147",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1147,
+      "sentence": "Western blot analysis of whole fly ( n = 3) or fat body\u2010specific ( n = 6) Gnmt protein levels from w Dah (control) and dilp 2\u20103,5 mutant flies (significance determined by t test p \u2010value *< .05, **< .01)\n\nTo determine whether increasing the level of Gnmt in the fat body was sufficient to extend lifespan, we over\u2010expressed Gnmt using a UAS\u2010Gnmt construct (Obata & Miura, 2015 ) and two independent, constitutive, fat body drivers, Fat Body\u2010Gal4 ( FB\u2010Gal4 ) (Gr\u00f6nke et al., 2003 ) and Pumpless\u2010Gal4 (Zinke, Kirchner, Chao, Tetzlaff, & Pankratz, 1999 ).",
+      "context_window": "blot analysis of whole fly ( n = 3) or fat body\u2010specific ( n = 6) Gnmt protein levels from w Dah (control) and dilp 2\u20103,5 mu",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-pct-1769",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1769,
+      "sentence": "Both FB\u2010Gal4 and Pumpless\u2010Gal4 drivers led to increased Gnmt transcript levels in the fat body (Figure S2a,b) and extended lifespan, by 10% and 8%, respectively, compared to controls (Figure 2 a,b).",
+      "context_window": "ls in the fat body (Figure S2a,b) and extended lifespan, by 10% and 8%, respectively, compared to controls (Figure 2 a,b).",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-pct-1777",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1777,
+      "sentence": "Both FB\u2010Gal4 and Pumpless\u2010Gal4 drivers led to increased Gnmt transcript levels in the fat body (Figure S2a,b) and extended lifespan, by 10% and 8%, respectively, compared to controls (Figure 2 a,b).",
+      "context_window": "e fat body (Figure S2a,b) and extended lifespan, by 10% and 8%, respectively, compared to controls (Figure 2 a,b). To prev",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-pct-2251",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2251,
+      "sentence": "Inducing expression of UAS\u2010Gnmt with the S106GS driver increased Gnmt levels ~ 3\u2010fold in the fat body compared to uninduced controls (Figure S2d) and significantly extended lifespan by 9% (Figure 2 c, Figure S2e).",
+      "context_window": "ontrols (Figure S2d) and significantly extended lifespan by 9% (Figure 2 c, Figure S2e). To determine whether the over\u2010exp",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-3209",
+      "claim_type": "sample_size",
+      "raw_text": "n = 150",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3209,
+      "sentence": "Survival analysis of flies ectopically expressing UAS\u2010 Gnmt driven by two independent constitutive fat body GAL4 driver lines (a) FB\u2010GAL4 ( FB\u2010GAL4/UAS\u2010Gnmt ), (b) Pumpless\u2010GAL4 ( pumpless\u2010GAL4/UAS\u2010Gnmt ), and (c) adult\u2010specific over\u2010expression of UAS\u2010Gnmt using the GeneSwitch driver S106 induced by RU486 (200 \u03bcM) compared to uninduced controls (ETOH) ( n = 150 flies per condition, p < .001, log\u2010rank test).",
+      "context_window": "d by RU486 (200 \u03bcM) compared to uninduced controls (ETOH) ( n = 150 flies per condition, p < .001, log\u2010rank test). Lifespan ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-p-3238",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3238,
+      "sentence": "Survival analysis of flies ectopically expressing UAS\u2010 Gnmt driven by two independent constitutive fat body GAL4 driver lines (a) FB\u2010GAL4 ( FB\u2010GAL4/UAS\u2010Gnmt ), (b) Pumpless\u2010GAL4 ( pumpless\u2010GAL4/UAS\u2010Gnmt ), and (c) adult\u2010specific over\u2010expression of UAS\u2010Gnmt using the GeneSwitch driver S106 induced by RU486 (200 \u03bcM) compared to uninduced controls (ETOH) ( n = 150 flies per condition, p < .001, log\u2010rank test).",
+      "context_window": "to uninduced controls (ETOH) ( n = 150 flies per condition, p < .001, log\u2010rank test). Lifespan analyses of genetic controls are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-pct-3873",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3873,
+      "sentence": "However, the extended lifespan of dilp2\u20103,5 mutants was significantly diminished in the absence of Gnmt ( Gnmt Mi ,dilp2\u20103,5 ), with the double mutants living 33% less long than the dilp2\u20103,5 mutants alone (Figure 3 ).",
+      "context_window": "Gnmt ( Gnmt Mi ,dilp2\u20103,5 ), with the double mutants living 33% less long than the dilp2\u20103,5 mutants alone (Figure 3 ). Gnm",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-4198",
+      "claim_type": "sample_size",
+      "raw_text": "n = 150",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4198,
+      "sentence": "Survival analysis of w Dah control (black), Gnmt Mi mutant (green), dilp2\u20103,5 mutant (red), and Gnmt Mi ;dilp2\u20103,5 (blue) double mutants ( n = 150 flies per condition, p < .001)\n\nGnmt is a key enzyme in methionine metabolism, catabolizing SAM into SAH.",
+      "context_window": "utant (red), and Gnmt Mi ;dilp2\u20103,5 (blue) double mutants ( n = 150 flies per condition, p < .001) Gnmt is a key enzyme in met",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-p-4227",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4227,
+      "sentence": "Survival analysis of w Dah control (black), Gnmt Mi mutant (green), dilp2\u20103,5 mutant (red), and Gnmt Mi ;dilp2\u20103,5 (blue) double mutants ( n = 150 flies per condition, p < .001)\n\nGnmt is a key enzyme in methionine metabolism, catabolizing SAM into SAH.",
+      "context_window": "p2\u20103,5 (blue) double mutants ( n = 150 flies per condition, p < .001) Gnmt is a key enzyme in methionine metabolism, catabolizi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-5038",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5038,
+      "sentence": "Gnmt influences longevity via polyamine pathway. (a) Methionine, TSP, glutathione, and polyamine pathway schematic. (b) UPLC\u2010MS/MS analysis of SAM, SAH, methionine, spermidine, putrescine, and ornithine in 10\u2010d\u2010old female w Dah , Gnmt Mi , dilp2\u20103,5 , and Gnmt Mi ;dilp2\u20103,5 flies in spermidine\u2010treated and untreated (SYA) conditions ( n = 5, significance determined by one\u2010way ANOVA for control fed comparisons, and by 2\u2010way ANOVA for genotype and spermidine treatment interaction tests, p \u2010value *< .05, **< .01, ***< .001).",
+      "context_window": "lies in spermidine\u2010treated and untreated (SYA) conditions ( n = 5, significance determined by one\u2010way ANOVA for control fed c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-5465",
+      "claim_type": "sample_size",
+      "raw_text": "n = 150",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5465,
+      "sentence": "TSP and glutathione metabolite quantification are shown in Figure S4b. (c) Survival analysis of wild\u2010type w Dah , Gnmt Mi mutant, dilp2\u20103,5 , and Gnmt Mi ;dilp2\u20103,5 double mutants fed control (SYA) food or fed 1mM of spermidine (Spd) ( n = 150 flies per condition, p < .001, log\u2010rank test)\n\nUbiquitous, or fat body\u2010specific, over\u2010expression of Gnmt increases SAM catabolism (Obata & Miura, 2015 ), possibly converting it into sarcosine and S\u2010adenosyl homocysteine (SAH).",
+      "context_window": "nts fed control (SYA) food or fed 1mM of spermidine (Spd) ( n = 150 flies per condition, p < .001, log\u2010rank test) Ubiquitous,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-p-5494",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5494,
+      "sentence": "TSP and glutathione metabolite quantification are shown in Figure S4b. (c) Survival analysis of wild\u2010type w Dah , Gnmt Mi mutant, dilp2\u20103,5 , and Gnmt Mi ;dilp2\u20103,5 double mutants fed control (SYA) food or fed 1mM of spermidine (Spd) ( n = 150 flies per condition, p < .001, log\u2010rank test)\n\nUbiquitous, or fat body\u2010specific, over\u2010expression of Gnmt increases SAM catabolism (Obata & Miura, 2015 ), possibly converting it into sarcosine and S\u2010adenosyl homocysteine (SAH).",
+      "context_window": "fed 1mM of spermidine (Spd) ( n = 150 flies per condition, p < .001, log\u2010rank test) Ubiquitous, or fat body\u2010specific, over\u2010exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14229",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14229,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "art shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Sp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14250",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14250,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "ror bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14277",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14277,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "h control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u2010",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14299",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14299,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14327",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14327,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14352",
+      "claim_type": "sample_size",
+      "raw_text": "n = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14352,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14390",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14390,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14). Significance determined",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-14424",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14424,
+      "sentence": "Chart shows mean and error bars represent SEM w Dah control ( n = 11), w Dah Spd ( n = 17), Gnmt Mi control ( n = 9), Gnmt Mi Spd ( n = 5), dilp2\u20103,5 control ( n = 16), dilp2\u20103,5 Spd ( n = 21), Gnmt Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14).",
+      "context_window": "t Mi ;dilp2\u20103,5 control ( n = 14), Gnmt Mi ;dilp2\u20103,5 Spd ( n = 14). Significance determined by two\u2010way ANOVA and pairwise pos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-u-18668",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 18668,
+      "sentence": "Evolutionarily conserved response of Gnmt in long\u2010lived mouse models. (a) Western blot quantification of Gnmt protein in the liver of liver\u2010specific IRS1 KO mice (Alfp\u2010Cre:: IRS 1fl/fl) compared to control mice (3 months) siblings ( n = 4, p \u2010value **< .01, ***< .001; Student's t test)",
+      "context_window": "1 KO mice (Alfp\u2010Cre:: IRS 1fl/fl) compared to control mice (3 months) siblings ( n = 4, p \u2010value **< .01, ***< .001; Student's t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6974722_longevity_in_response_to_lowered_insulin_signaling_requires_-n-18689",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18689,
+      "sentence": "Evolutionarily conserved response of Gnmt in long\u2010lived mouse models. (a) Western blot quantification of Gnmt protein in the liver of liver\u2010specific IRS1 KO mice (Alfp\u2010Cre:: IRS 1fl/fl) compared to control mice (3 months) siblings ( n = 4, p \u2010value **< .01, ***< .001; Student's t test)",
+      "context_window": "IRS 1fl/fl) compared to control mice (3 months) siblings ( n = 4, p \u2010value **< .01, ***< .001; Student's t test)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

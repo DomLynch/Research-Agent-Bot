@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_effect_of_hypnosis_on_adherence_to_continuous_positive_airwa",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_hypnosis_on_adherence_to_continuous_positive_airwa-pct-112",
+      "claim_type": "percentage",
+      "raw_text": "49.7%",
+      "numeric_values": [
+        49.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 112,
+      "sentence": "The prevalence of sleep-disordered breathing is high, with an apnea-hypopnea index of over 15 per hour found in 49.7% of men and 23.4% of women in the general population (1).",
+      "context_window": ", with an apnea-hypopnea index of over 15 per hour found in 49.7% of men and 23.4% of women in the general population (1). Th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_hypnosis_on_adherence_to_continuous_positive_airwa-pct-129",
+      "claim_type": "percentage",
+      "raw_text": "23.4%",
+      "numeric_values": [
+        23.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 129,
+      "sentence": "The prevalence of sleep-disordered breathing is high, with an apnea-hypopnea index of over 15 per hour found in 49.7% of men and 23.4% of women in the general population (1).",
+      "context_window": "ypopnea index of over 15 per hour found in 49.7% of men and 23.4% of women in the general population (1). The gold standard t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_hypnosis_on_adherence_to_continuous_positive_airwa-pct-309",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 309,
+      "sentence": "However, nearly 30% of patients are considered non-adherent to CPAP treatment (3).",
+      "context_window": "ositive airway pressure (CPAP) therapy (2). However, nearly 30% of patients are considered non-adherent to CPAP treatment (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_hypnosis_on_adherence_to_continuous_positive_airwa-pct-2245",
+      "claim_type": "percentage",
+      "raw_text": "58.4%",
+      "numeric_values": [
+        58.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2245,
+      "sentence": "A recent literature review focusing on the impact of medical hypnosis on sleep disorders in adult patients found an improvement in various sleep parameters (sleep quality, insomnia complaints, frequency and/or intensity of parasomnias) in 58.4% of patients.",
+      "context_window": "a complaints, frequency and/or intensity of parasomnias) in 58.4% of patients. However, in this systematic review of 24 studi",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

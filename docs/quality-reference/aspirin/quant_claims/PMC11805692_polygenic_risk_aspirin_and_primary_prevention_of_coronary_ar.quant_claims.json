@@ -1,0 +1,1527 @@
+{
+  "paper_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar",
+  "doi": "10.1093/ehjcvp/pvae085",
+  "extracted_at": "2026-05-08T20:06:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "percentage": 24,
+    "p_value": 29,
+    "hazard_ratio": 16,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-833",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 833,
+      "sentence": "During a median 4.6 years of follow-up with randomization to 100 mg/day aspirin vs. placebo, 234 (1.9%) participants had CAD and 373 (3.1%) had bleeding events.",
+      "context_window": "eath) and bleeding events using Cox models. During a median 4.6 years of follow-up with randomization to 100 mg/day aspirin vs. p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-878",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 878,
+      "sentence": "During a median 4.6 years of follow-up with randomization to 100 mg/day aspirin vs. placebo, 234 (1.9%) participants had CAD and 373 (3.1%) had bleeding events.",
+      "context_window": "uring a median 4.6 years of follow-up with randomization to 100 mg/day aspirin vs. placebo, 234 (1.9%) participants had CAD and 37",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-915",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 915,
+      "sentence": "During a median 4.6 years of follow-up with randomization to 100 mg/day aspirin vs. placebo, 234 (1.9%) participants had CAD and 373 (3.1%) had bleeding events.",
+      "context_window": "with randomization to 100 mg/day aspirin vs. placebo, 234 (1.9%) participants had CAD and 373 (3.1%) had bleeding events. I",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-951",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "During a median 4.6 years of follow-up with randomization to 100 mg/day aspirin vs. placebo, 234 (1.9%) participants had CAD and 373 (3.1%) had bleeding events.",
+      "context_window": "pirin vs. placebo, 234 (1.9%) participants had CAD and 373 (3.1%) had bleeding events. In the overall cohort, aspirin result",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1091",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1091,
+      "sentence": "In the overall cohort, aspirin resulted in higher bleeding risk [adjusted Hazard ratio (aHR) = 1.30 (1.06-1.61), P = 0.01] but no significant CAD reduction [aHR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "eding risk [adjusted Hazard ratio (aHR) = 1.30 (1.06-1.61), P = 0.01] but no significant CAD reduction [aHR = 0.84 (0.64-1.09),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-1135",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1135,
+      "sentence": "In the overall cohort, aspirin resulted in higher bleeding risk [adjusted Hazard ratio (aHR) = 1.30 (1.06-1.61), P = 0.01] but no significant CAD reduction [aHR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "30 (1.06-1.61), P = 0.01] but no significant CAD reduction [aHR = 0.84 (0.64-1.09), P = 0.19]. However, among the highest quintile",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1159",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1159,
+      "sentence": "In the overall cohort, aspirin resulted in higher bleeding risk [adjusted Hazard ratio (aHR) = 1.30 (1.06-1.61), P = 0.01] but no significant CAD reduction [aHR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "] but no significant CAD reduction [aHR = 0.84 (0.64-1.09), P = 0.19]. However, among the highest quintile of polygenic risk (q5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-1233",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1233,
+      "sentence": "However, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88].",
+      "context_window": "ever, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-1280",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1280,
+      "sentence": "However, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88].",
+      "context_window": "isk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-1330",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1330,
+      "sentence": "However, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88].",
+      "context_window": "ere was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1354",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1354,
+      "sentence": "However, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88].",
+      "context_window": "in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-1397",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR = 1.05",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "However, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88].",
+      "context_window": ".53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88]. Interaction between the GPS Mult an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1421",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "However, among the highest quintile of polygenic risk (q5, top 20% of the GPS Mult distribution), there was a 47% reduction in risk of CAD events with aspirin [aHR = 0.53 (0.31-0.90), P = 0.02] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88].",
+      "context_window": "2] without increased bleeding risk [aHR = 1.05 (0.60-1.82), P = 0.88]. Interaction between the GPS Mult and aspirin was signific",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1513",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1513,
+      "sentence": "Interaction between the GPS Mult and aspirin was significant for CAD (q5 vs. q1, P = 0.02) but not bleeding ( P = 0.80).",
+      "context_window": "he GPS Mult and aspirin was significant for CAD (q5 vs. q1, P = 0.02) but not bleeding ( P = 0.80). The balance between net ben",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1542",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1542,
+      "sentence": "Interaction between the GPS Mult and aspirin was significant for CAD (q5 vs. q1, P = 0.02) but not bleeding ( P = 0.80).",
+      "context_window": "ignificant for CAD (q5 vs. q1, P = 0.02) but not bleeding ( P = 0.80). The balance between net benefit and harm on aspirin in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-840",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 840,
+      "sentence": "4 In the ASPREE trial-a randomized, placebo-controlled trial investigating the effect of daily 100 mg aspirin on disability-free survival in 19 114 healthy older adults-there was no statistically significant reduction in CVD events in the aspirin arm, but a higher risk of major haemorrhage.",
+      "context_window": "placebo-controlled trial investigating the effect of daily 100 mg aspirin on disability-free survival in 19 114 healthy older",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-332",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 332,
+      "sentence": "3 , 13 The trial was undertaken in 19 114 healthy older adults aged 70 years or older (\u226565 years among participants in US minority race or ethnic groups) who had no prior atherothrombotic CVD, dementia, physical disability, or other known life-limiting illness (based on their medical records at the clinics and confirmed with general practitioners) at enrolment.",
+      "context_window": "he trial was undertaken in 19 114 healthy older adults aged 70 years or older (\u226565 years among participants in US minority race",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-352",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 352,
+      "sentence": "3 , 13 The trial was undertaken in 19 114 healthy older adults aged 70 years or older (\u226565 years among participants in US minority race or ethnic groups) who had no prior atherothrombotic CVD, dementia, physical disability, or other known life-limiting illness (based on their medical records at the clinics and confirmed with general practitioners) at enrolment.",
+      "context_window": "ken in 19 114 healthy older adults aged 70 years or older (\u226565 years among participants in US minority race or ethnic groups) wh",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-n-1494",
+      "claim_type": "sample_size",
+      "raw_text": "N = 534",
+      "numeric_values": [
+        534.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1494,
+      "sentence": "15 Furthermore, for the non-European ancestry samples ( N = 534, 4% of all genotyped participants), there was insufficient power to test the performance of GPS Mult or undertake subgroup analyses in an ancestry-specific manner.",
+      "context_window": "on. 15 Furthermore, for the non-European ancestry samples ( N = 534, 4% of all genotyped participants), there was insufficient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-1503",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1503,
+      "sentence": "15 Furthermore, for the non-European ancestry samples ( N = 534, 4% of all genotyped participants), there was insufficient power to test the performance of GPS Mult or undertake subgroup analyses in an ancestry-specific manner.",
+      "context_window": "rthermore, for the non-European ancestry samples ( N = 534, 4% of all genotyped participants), there was insufficient powe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-1696",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1696,
+      "sentence": "In addition, age younger than 70 years old at enrolment and close relatives (coefficient of relatedness >0.05) were also excluded, as previously described.",
+      "context_window": "an ancestry-specific manner. In addition, age younger than 70 years old at enrolment and close relatives (coefficient of relate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-n-1960",
+      "claim_type": "sample_size",
+      "raw_text": "N = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1960,
+      "sentence": "The ASPirin in Reducing Events in the Elderly (ASPREE) trial enrolled N = 19 114 individuals aged \u226570 years (\u226565 years for US minorities), with no prior history of cardiovascular disease events.",
+      "context_window": "n in Reducing Events in the Elderly (ASPREE) trial enrolled N = 19 114 individuals aged \u226570 years (\u226565 years for US minorities",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-1989",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1989,
+      "sentence": "The ASPirin in Reducing Events in the Elderly (ASPREE) trial enrolled N = 19 114 individuals aged \u226570 years (\u226565 years for US minorities), with no prior history of cardiovascular disease events.",
+      "context_window": "lderly (ASPREE) trial enrolled N = 19 114 individuals aged \u226570 years (\u226565 years for US minorities), with no prior history of car",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-2000",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2000,
+      "sentence": "The ASPirin in Reducing Events in the Elderly (ASPREE) trial enrolled N = 19 114 individuals aged \u226570 years (\u226565 years for US minorities), with no prior history of cardiovascular disease events.",
+      "context_window": "REE) trial enrolled N = 19 114 individuals aged \u226570 years (\u226565 years for US minorities), with no prior history of cardiovascular",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-2158",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 years",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2158,
+      "sentence": "The end points for this longitudinal analysis, with a mean follow-up of 4.5 years, were: (i) CAD, defined as a composite of myocardial infarction (MI) and coronary heart disease death [including death from MI, sudden cardiac death, rapid cardiac death (death shortly after possible MI), cardiac failure death with a coronary cause, and other coronary deaths], 17 and (ii) major haemorrhage (bleeding), defined as a composite of haemorrhagic stroke, symptomatic intracranial bleeding, or clinically significant extracranial bleeding (leading to transfusion, hospitalization, prolongation of hospitalization, surgery, or death).",
+      "context_window": "ts for this longitudinal analysis, with a mean follow-up of 4.5 years, were: (i) CAD, defined as a composite of myocardial infarc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-4880",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4880,
+      "sentence": "20\n\nWe used Cox proportional hazard (PH) regression models to estimate the association [hazard ratio (HR) and 95% confidence interval (CI)] between the GPS Mult as a continuous variable (per standard deviation, SD) and the risk of incident CAD and bleeding events.",
+      "context_window": "n models to estimate the association [hazard ratio (HR) and 95% confidence interval (CI)] between the GPS Mult as a continu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-5904",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5904,
+      "sentence": "The GPS Mult was further investigated as a categorical variable, by dividing the GPS Mult distribution into quintile groups (q1-q5) then comprising risk of CAD and bleeding events between the lowest quintile group (q1, 0-20%) as a reference, vs. the highest quintile group (q5, 80-100%).",
+      "context_window": "nd bleeding events between the lowest quintile group (q1, 0-20%) as a reference, vs. the highest quintile group (q5, 80-100",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-5964",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5964,
+      "sentence": "The GPS Mult was further investigated as a categorical variable, by dividing the GPS Mult distribution into quintile groups (q1-q5) then comprising risk of CAD and bleeding events between the lowest quintile group (q1, 0-20%) as a reference, vs. the highest quintile group (q5, 80-100%).",
+      "context_window": "20%) as a reference, vs. the highest quintile group (q5, 80-100%). Baseline characteristics of ASPREE participants included",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-146",
+      "claim_type": "percentage",
+      "raw_text": "54.9%",
+      "numeric_values": [
+        54.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 146,
+      "sentence": "The mean (SD) age of the participants was 75.1 (4.2) years, and 6606 (54.9%) of the participants were female.",
+      "context_window": "SD) age of the participants was 75.1 (4.2) years, and 6606 (54.9%) of the participants were female. Only a small number of pa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-244",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 244,
+      "sentence": "Only a small number of participants were current smokers (3.1%) and 41.5% were former smokers.",
+      "context_window": ". Only a small number of participants were current smokers (3.1%) and 41.5% were former smokers. After genetic stratificatio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-254",
+      "claim_type": "percentage",
+      "raw_text": "41.5%",
+      "numeric_values": [
+        41.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 254,
+      "sentence": "Only a small number of participants were current smokers (3.1%) and 41.5% were former smokers.",
+      "context_window": "mall number of participants were current smokers (3.1%) and 41.5% were former smokers. After genetic stratification into PRS",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-423",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 423,
+      "sentence": "After genetic stratification into PRS quintiles (q1-5) using the GPS Mult , we observed significant differences in baseline characteristics ( P < 0.001), including for age, sex, HDL-C, diabetes, BMI, and family history of MI between quintiles ( Table 1 ).",
+      "context_window": "erved significant differences in baseline characteristics ( P < 0.001), including for age, sex, HDL-C, diabetes, BMI, and family",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-551",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 551,
+      "sentence": "For instance, 7.4% of the participants in the lowest GPS Mult quintile (q1) had diabetes at baseline, compared with 11.6% in the highest quintile (q5).",
+      "context_window": "history of MI between quintiles ( Table 1 ). For instance, 7.4% of the participants in the lowest GPS Mult quintile (q1) ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-653",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 653,
+      "sentence": "For instance, 7.4% of the participants in the lowest GPS Mult quintile (q1) had diabetes at baseline, compared with 11.6% in the highest quintile (q5).",
+      "context_window": "Mult quintile (q1) had diabetes at baseline, compared with 11.6% in the highest quintile (q5). During a median 4.6 years (i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-706",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 706,
+      "sentence": "During a median 4.6 years (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9%) of the participants had incident CAD events (207 incident MI cases and 45 coronary heart disease deaths) and 373 (3.1%) had major bleeding events.",
+      "context_window": "d with 11.6% in the highest quintile (q5). During a median 4.6 years (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9",
+      "claim_role": "duration",
+      "endpoint": "incident mi",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-742",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 years",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 742,
+      "sentence": "During a median 4.6 years (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9%) of the participants had incident CAD events (207 incident MI cases and 45 coronary heart disease deaths) and 373 (3.1%) had major bleeding events.",
+      "context_window": "(q5). During a median 4.6 years (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9%) of the participants had incident",
+      "claim_role": "duration",
+      "endpoint": "incident mi",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-772",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 772,
+      "sentence": "During a median 4.6 years (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9%) of the participants had incident CAD events (207 incident MI cases and 45 coronary heart disease deaths) and 373 (3.1%) had major bleeding events.",
+      "context_window": "ars (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9%) of the participants had incident CAD events (207 incident",
+      "claim_role": "duration",
+      "endpoint": "incident mi",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-892",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 892,
+      "sentence": "During a median 4.6 years (interquartile range: 3.5-5.6 years) of follow-up, 234 (1.9%) of the participants had incident CAD events (207 incident MI cases and 45 coronary heart disease deaths) and 373 (3.1%) had major bleeding events.",
+      "context_window": "ent MI cases and 45 coronary heart disease deaths) and 373 (3.1%) had major bleeding events. In the overall cohort, 5974 par",
+      "claim_role": "duration",
+      "endpoint": "incident mi",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-967",
+      "claim_type": "percentage",
+      "raw_text": "49.7%",
+      "numeric_values": [
+        49.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 967,
+      "sentence": "In the overall cohort, 5974 participants (49.7%) were assigned to receive aspirin, and 6057 participants (50.3%) were assigned to receive placebo.",
+      "context_window": "bleeding events. In the overall cohort, 5974 participants (49.7%) were assigned to receive aspirin, and 6057 participants (5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-1031",
+      "claim_type": "percentage",
+      "raw_text": "50.3%",
+      "numeric_values": [
+        50.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1031,
+      "sentence": "In the overall cohort, 5974 participants (49.7%) were assigned to receive aspirin, and 6057 participants (50.3%) were assigned to receive placebo.",
+      "context_window": "%) were assigned to receive aspirin, and 6057 participants (50.3%) were assigned to receive placebo. Aspirin was associated w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-1122",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.30",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1122,
+      "sentence": "Aspirin was associated with higher bleeding risk [HR = 1.30 (1.06-1.61), P = 0.01] but no significant reduction in CAD risk [HR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "placebo. Aspirin was associated with higher bleeding risk [HR = 1.30 (1.06-1.61), P = 0.01] but no significant reduction in CAD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1145",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1145,
+      "sentence": "Aspirin was associated with higher bleeding risk [HR = 1.30 (1.06-1.61), P = 0.01] but no significant reduction in CAD risk [HR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "ssociated with higher bleeding risk [HR = 1.30 (1.06-1.61), P = 0.01] but no significant reduction in CAD risk [HR = 0.84 (0.64-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-1197",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1197,
+      "sentence": "Aspirin was associated with higher bleeding risk [HR = 1.30 (1.06-1.61), P = 0.01] but no significant reduction in CAD risk [HR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "-1.61), P = 0.01] but no significant reduction in CAD risk [HR = 0.84 (0.64-1.09), P = 0.19]. When analysed as a continuous vari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1220",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1220,
+      "sentence": "Aspirin was associated with higher bleeding risk [HR = 1.30 (1.06-1.61), P = 0.01] but no significant reduction in CAD risk [HR = 0.84 (0.64-1.09), P = 0.19].",
+      "context_window": "o significant reduction in CAD risk [HR = 0.84 (0.64-1.09), P = 0.19]. When analysed as a continuous variable, the GPS Mult was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-1637",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1637,
+      "sentence": "The GPS Mult was not associated with incident bleeding risk when analysed as a continuous variable in the overall population [full adjusted HR 0.92 per SD (0.82-1.02), P = 0.11] ( Supplementary material online, Table S1 ).",
+      "context_window": "erall population [full adjusted HR 0.92 per SD (0.82-1.02), P = 0.11] ( Supplementary material online, Table S1 ). Association",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-1869",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1869,
+      "sentence": "Association of the GPS Mult with incident CAD events in the overall trial population\n\nCox PH regression models were used to estimate the hazard ratio (HR) of the GPS Mult with 95% confidence intervals (CI).",
+      "context_window": "used to estimate the hazard ratio (HR) of the GPS Mult with 95% confidence intervals (CI). Model 1 was adjusted for age at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-2515",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2515,
+      "sentence": "When analysed as a categorical variable, stratifying the cohort into quintiles of the GPS Mult distribution, we observed an over three-fold higher risk of incident CAD in the highest vs. lowest GPS Mult quintiles [full adjusted HR 3.12 (1.90-5.12), P < 0.001], irrespective of aspirin allocation ( Table 2 ).",
+      "context_window": "west GPS Mult quintiles [full adjusted HR 3.12 (1.90-5.12), P < 0.001], irrespective of aspirin allocation ( Table 2 ). We observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-2737",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2737,
+      "sentence": "We observed no statistically significant difference in bleeding risk between the highest vs. lowest GPS Mult quintiles [full adjusted HR 0.78 per SD (0.54-1.12), P = 0.18] ( Supplementary material online, Table S1 ).",
+      "context_window": "S Mult quintiles [full adjusted HR 0.78 per SD (0.54-1.12), P = 0.18] ( Supplementary material online, Table S1 ). The C-index",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-3632",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.22",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3632,
+      "sentence": "When analysed as a continuous variable, there was no significant interaction detected for GPS Mult and aspirin for CAD [interaction HR = 1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P = 0.71].",
+      "context_window": "tion detected for GPS Mult and aspirin for CAD [interaction HR = 1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-3655",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.13",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3655,
+      "sentence": "When analysed as a continuous variable, there was no significant interaction detected for GPS Mult and aspirin for CAD [interaction HR = 1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P = 0.71].",
+      "context_window": "ult and aspirin for CAD [interaction HR = 1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-3697",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.04",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3697,
+      "sentence": "When analysed as a continuous variable, there was no significant interaction detected for GPS Mult and aspirin for CAD [interaction HR = 1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P = 0.71].",
+      "context_window": "1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P = 0.71]. However, when the GPS Mult was anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-3720",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3720,
+      "sentence": "When analysed as a continuous variable, there was no significant interaction detected for GPS Mult and aspirin for CAD [interaction HR = 1.22 (0.94-1.60), P = 0.13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P = 0.71].",
+      "context_window": ".13] or bleeding events [interaction HR = 1.04 (0.84-1.28), P = 0.71]. However, when the GPS Mult was analysed as a categorical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-3964",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 3.51",
+      "numeric_values": [
+        3.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3964,
+      "sentence": "However, when the GPS Mult was analysed as a categorical variable (stratifying the cohort into quintiles and comparing q1 vs. q5) we observed a significant interaction between the GPS Mult and aspirin allocation for CAD [interaction HR = 3.51 (1.24-9.91), P = 0.02).",
+      "context_window": "en the GPS Mult and aspirin allocation for CAD [interaction HR = 3.51 (1.24-9.91), P = 0.02). For this same categorical compariso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-3987",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3987,
+      "sentence": "However, when the GPS Mult was analysed as a categorical variable (stratifying the cohort into quintiles and comparing q1 vs. q5) we observed a significant interaction between the GPS Mult and aspirin allocation for CAD [interaction HR = 3.51 (1.24-9.91), P = 0.02).",
+      "context_window": "irin allocation for CAD [interaction HR = 3.51 (1.24-9.91), P = 0.02). For this same categorical comparison between q1 vs. q5 fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-4134",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.10",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4134,
+      "sentence": "For this same categorical comparison between q1 vs. q5 for major bleeding events, there was no interaction effect observed [interaction HR = 1.10 (0.53-2.25), P = 0.80] ( Supplementary material online, Table S3 ).",
+      "context_window": "ents, there was no interaction effect observed [interaction HR = 1.10 (0.53-2.25), P = 0.80] ( Supplementary material online, Tab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-4157",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4157,
+      "sentence": "For this same categorical comparison between q1 vs. q5 for major bleeding events, there was no interaction effect observed [interaction HR = 1.10 (0.53-2.25), P = 0.80] ( Supplementary material online, Table S3 ).",
+      "context_window": "raction effect observed [interaction HR = 1.10 (0.53-2.25), P = 0.80] ( Supplementary material online, Table S3 ). We analysed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-4490",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.45",
+      "numeric_values": [
+        1.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4490,
+      "sentence": "The GPS Mult as a continuous variable was associated with incident CAD risk in the placebo group [HR = 1.45 (1.21-1.73), P < 0.001] but the effect was attenuated in the aspirin group but still significant [HR = 1.25 (1.02-1.53), P = 0.03] ( Figure 2 A ).",
+      "context_window": "was associated with incident CAD risk in the placebo group [HR = 1.45 (1.21-1.73), P < 0.001] but the effect was attenuated in th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-4513",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4513,
+      "sentence": "The GPS Mult as a continuous variable was associated with incident CAD risk in the placebo group [HR = 1.45 (1.21-1.73), P < 0.001] but the effect was attenuated in the aspirin group but still significant [HR = 1.25 (1.02-1.53), P = 0.03] ( Figure 2 A ).",
+      "context_window": "ident CAD risk in the placebo group [HR = 1.45 (1.21-1.73), P < 0.001] but the effect was attenuated in the aspirin group but sti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-4598",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.25",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4598,
+      "sentence": "The GPS Mult as a continuous variable was associated with incident CAD risk in the placebo group [HR = 1.45 (1.21-1.73), P < 0.001] but the effect was attenuated in the aspirin group but still significant [HR = 1.25 (1.02-1.53), P = 0.03] ( Figure 2 A ).",
+      "context_window": "was attenuated in the aspirin group but still significant [HR = 1.25 (1.02-1.53), P = 0.03] ( Figure 2 A ). Association of aspi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-4621",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4621,
+      "sentence": "The GPS Mult as a continuous variable was associated with incident CAD risk in the placebo group [HR = 1.45 (1.21-1.73), P < 0.001] but the effect was attenuated in the aspirin group but still significant [HR = 1.25 (1.02-1.53), P = 0.03] ( Figure 2 A ).",
+      "context_window": "aspirin group but still significant [HR = 1.25 (1.02-1.53), P = 0.03] ( Figure 2 A ). Association of aspirin treatment and inci",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-4985",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 5.87",
+      "numeric_values": [
+        5.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4985,
+      "sentence": "5 in the placebo arm [q1 vs. q5, HR = 5.87 (2.60-13.30), P < 0.001].",
+      "context_window": "isk between quintile 1 vs. 5 in the placebo arm [q1 vs. q5, HR = 5.87 (2.60-13.30), P < 0.001]. For this same categorical compari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-5009",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5009,
+      "sentence": "5 in the placebo arm [q1 vs. q5, HR = 5.87 (2.60-13.30), P < 0.001].",
+      "context_window": "s. 5 in the placebo arm [q1 vs. q5, HR = 5.87 (2.60-13.30), P < 0.001]. For this same categorical comparison in the aspirin arm,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-5143",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.89",
+      "numeric_values": [
+        1.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5143,
+      "sentence": "For this same categorical comparison in the aspirin arm, the difference in CAD risk was attenuated to less than two-fold [HR = 1.89 (0.97-3.68), P = 0.06] ( Figure 2 A ).",
+      "context_window": "ifference in CAD risk was attenuated to less than two-fold [HR = 1.89 (0.97-3.68), P = 0.06] ( Figure 2 A ). There was no signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-5166",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5166,
+      "sentence": "For this same categorical comparison in the aspirin arm, the difference in CAD risk was attenuated to less than two-fold [HR = 1.89 (0.97-3.68), P = 0.06] ( Figure 2 A ).",
+      "context_window": "as attenuated to less than two-fold [HR = 1.89 (0.97-3.68), P = 0.06] ( Figure 2 A ). There was no significant interaction signa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-5551",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5551,
+      "sentence": "Among quintile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ).",
+      "context_window": "00 person-years ( Figure 3 ). Among quintile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-5592",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5592,
+      "sentence": "Among quintile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ).",
+      "context_window": "ile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major ble",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-5615",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5615,
+      "sentence": "Among quintile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ).",
+      "context_window": "reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-5668",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.05",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5668,
+      "sentence": "Among quintile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ).",
+      "context_window": "0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ). Effect of aspirin on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-5691",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5691,
+      "sentence": "Among quintile 5, there was a 47% reduction in risk of CAD on aspirin [HR = 0.53 (0.31-0.90), P = 0.02] but with no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ).",
+      "context_window": "th no higher risk of major bleeding [HR = 1.05 (0.60-1.82), P = 0.88] ( Figure 3 ). Effect of aspirin on CAD and bleeding event",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-241",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 241,
+      "sentence": "We observed that in the highest GPS Mult quintile (top 20% of the GPS Mult distribution), the benefits of aspirin outweighed the harms (when weighting CAD and bleeding events equally), with 2.5 CAD events reduced per 1000 person-years on aspirin, vs. an increase of 0.4 bleeding events.",
+      "context_window": "ase. We observed that in the highest GPS Mult quintile (top 20% of the GPS Mult distribution), the benefits of aspirin outw",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-630",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 630,
+      "sentence": "This improved balance was not favourable in the overall genotyped cohort (-0.8 CAD; +2.0 bleeding events on aspirin) or the lowest GPS Mult quintile (bottom 20%) (+1.5 CAD; +1.6 bleeding events).",
+      "context_window": "events on aspirin) or the lowest GPS Mult quintile (bottom 20%) (+1.5 CAD; +1.6 bleeding events). Interaction between the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-758",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 758,
+      "sentence": "Interaction between the GPS Mult and aspirin allocation was observed for CAD (q1 vs. q5, P = 0.02), but not for bleeding events ( P = 0.80).",
+      "context_window": "ult and aspirin allocation was observed for CAD (q1 vs. q5, P = 0.02), but not for bleeding events ( P = 0.80). Our study sugges",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-799",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 799,
+      "sentence": "Interaction between the GPS Mult and aspirin allocation was observed for CAD (q1 vs. q5, P = 0.02), but not for bleeding events ( P = 0.80).",
+      "context_window": "or CAD (q1 vs. q5, P = 0.02), but not for bleeding events ( P = 0.80). Our study suggests a potential benefit to a more personal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-1930",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1930,
+      "sentence": "However, after genetic stratification, we observed a 47% reduction in CAD risk on aspirin in the highest GPS Mult quintile ( P = 0.02) with no change in bleeding risk ( P = 0.88).",
+      "context_window": "risk. However, after genetic stratification, we observed a 47% reduction in CAD risk on aspirin in the highest GPS Mult qu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-2002",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2002,
+      "sentence": "However, after genetic stratification, we observed a 47% reduction in CAD risk on aspirin in the highest GPS Mult quintile ( P = 0.02) with no change in bleeding risk ( P = 0.88).",
+      "context_window": "n in CAD risk on aspirin in the highest GPS Mult quintile ( P = 0.02) with no change in bleeding risk ( P = 0.88). This finding",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-2046",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2046,
+      "sentence": "However, after genetic stratification, we observed a 47% reduction in CAD risk on aspirin in the highest GPS Mult quintile ( P = 0.02) with no change in bleeding risk ( P = 0.88).",
+      "context_window": "Mult quintile ( P = 0.02) with no change in bleeding risk ( P = 0.88). This finding suggests that genetic stratification prior t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-2688",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2688,
+      "sentence": "We observed no evidence of a relationship between polygenic CAD risk and major bleeding events in the ASPREE trial and found no interaction between the GPS Mult and aspirin arm bleeding events in any of our analyses ( P > 0.05).",
+      "context_window": "lt and aspirin arm bleeding events in any of our analyses ( P > 0.05). This suggests that increasing polygenic CAD risk does not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-3397",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3397,
+      "sentence": "Our study used an arbitrary threshold of 80% of the GPS Mult distribution (quintile 5) to define genetic high risk.",
+      "context_window": "risk assessment. Our study used an arbitrary threshold of 80% of the GPS Mult distribution (quintile 5) to define genetic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-4260",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.13",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4260,
+      "sentence": "Interaction with aspirin for CAD was also not significant when analysing the GPS Mult as a continuous variable ( P = 0.13).",
+      "context_window": "cant when analysing the GPS Mult as a continuous variable ( P = 0.13). Further studies are required to optimize appropriate thre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-pct-5207",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5207,
+      "sentence": "This is illustrated by a recent analysis of the UK Biobank reporting that variation in the LPA gene region only contributes modestly to overall PRS-mediated CAD risk (7.2% of overall) .",
+      "context_window": "only contributes modestly to overall PRS-mediated CAD risk (7.2% of overall) . 22 This modest contribution from the LPA gene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-hr-a-7015",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.24",
+      "numeric_values": [
+        1.24
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7015,
+      "sentence": "24 In that study, we found that the older PRS was associated with CAD risk and incident events in the ASPREE population (HR = 1.24 per SD when analysed as a continuous variable) but did not interact with aspirin allocation for CAD ( P = 0.58).",
+      "context_window": "with CAD risk and incident events in the ASPREE population (HR = 1.24 per SD when analysed as a continuous variable) but did not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-p-7127",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7127,
+      "sentence": "24 In that study, we found that the older PRS was associated with CAD risk and incident events in the ASPREE population (HR = 1.24 per SD when analysed as a continuous variable) but did not interact with aspirin allocation for CAD ( P = 0.58).",
+      "context_window": "ble) but did not interact with aspirin allocation for CAD ( P = 0.58). Our current analysis using a newer CAD PRS (GPS Mult ), w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-8081",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 years",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8081,
+      "sentence": "The strengths of the study included a large genotyped study population randomized to aspirin and mean 4.5 years of follow-up.",
+      "context_window": "e genotyped study population randomized to aspirin and mean 4.5 years of follow-up. The analysis included adjudicated outcomes fo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11805692_polygenic_risk_aspirin_and_primary_prevention_of_coronary_ar-u-9055",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 9055,
+      "sentence": "The analysis also included only individuals aged 70 years and older, which limits generalizability to other age groups.",
+      "context_window": "-life CAD. The analysis also included only individuals aged 70 years and older, which limits generalizability to other age group",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

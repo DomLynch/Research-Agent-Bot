@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_1072_1072_impact_of_pediatric_sleep_problems_on_parental_sleep_qu",
+  "doi": "10.1093/sleep/zsaf090.1072",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1072_1072_impact_of_pediatric_sleep_problems_on_parental_sleep_qu-n-904",
+      "claim_type": "sample_size",
+      "raw_text": "N=34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "Chart review (N=34) included documentation of parental global Pittsburgh Sleep Quality Index (PSQI) scores, reported frequency of parental sleep disturbance attributed to the child\u2019s sleep problem, and active-duty status of the parent.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Both active-duty and dependent-spouse parents reported poor sleep quality (M: 7.94 and 11.41 respectively), but dependent spouses had significantly worse global PSQI scores (p&lt; 0.01).",
+      "context_window": "ge 0-12) referred to a military sleep center. Chart review (N=34) included documentation of parental global Pittsburgh Sleep",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1072_1072_impact_of_pediatric_sleep_problems_on_parental_sleep_qu-p-1982",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1982,
+      "sentence": "Additionally, frequency of parental sleep disturbance attributed to the child\u2019s sleep problem significantly decreased to less than once a week (p=0.02).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>The presence of pediatric sleep problems contributes to poor sleep quality for both active-duty and dependent-spouse parents.",
+      "context_window": "p problem significantly decreased to less than once a week (p=0.02).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1072_1072_impact_of_pediatric_sleep_problems_on_parental_sleep_qu-n-2574",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2574,
+      "sentence": "Limitations included small follow-up sample size (n=8) and inability to determine further demographic information of parents.",
+      "context_window": "quality. Limitations included small follow-up sample size (n=8) and inability to determine further demographic information",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

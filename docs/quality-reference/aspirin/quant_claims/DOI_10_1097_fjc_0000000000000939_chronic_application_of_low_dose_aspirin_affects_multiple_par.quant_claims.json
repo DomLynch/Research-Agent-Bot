@@ -1,0 +1,159 @@
+{
+  "paper_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par",
+  "doi": "10.1097/fjc.0000000000000939",
+  "extracted_at": "2026-05-08T20:05:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "mean_sd": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-u-386",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/d",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 386,
+      "sentence": "A total of 530 subjects were classified into 3 groups, including 40 patients without aspirin use, 24 patients taking 25-50 mg/d aspirin, and 466 patients taking 75-100 mg/d aspirin over 1 month.",
+      "context_window": "ding 40 patients without aspirin use, 24 patients taking 25-50 mg/d aspirin, and 466 patients taking 75-100 mg/d aspirin over 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-u-430",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 430,
+      "sentence": "A total of 530 subjects were classified into 3 groups, including 40 patients without aspirin use, 24 patients taking 25-50 mg/d aspirin, and 466 patients taking 75-100 mg/d aspirin over 1 month.",
+      "context_window": "ients taking 25-50 mg/d aspirin, and 466 patients taking 75-100 mg/d aspirin over 1 month. By 1:1:1 propensity score matching ad",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-u-452",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 452,
+      "sentence": "A total of 530 subjects were classified into 3 groups, including 40 patients without aspirin use, 24 patients taking 25-50 mg/d aspirin, and 466 patients taking 75-100 mg/d aspirin over 1 month.",
+      "context_window": "d aspirin, and 466 patients taking 75-100 mg/d aspirin over 1 month. By 1:1:1 propensity score matching adjusting 15 primary cl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-u-1296",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/d",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "Aspirin at 25-50 mg/d is related to the lowest red blood cell (RBC) count, whereas 75-100 mg/d aspirin showed the highest RBC count among the 3 groups (4.52 \u00b1 0.35 \u00d7 101<jats:sup>2</jats:sup>/L vs.",
+      "context_window": ":italic toggle=\"yes\">P</jats:italic> < 0.05). Aspirin at 25-50 mg/d is related to the lowest red blood cell (RBC) count, wherea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-u-1368",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1368,
+      "sentence": "Aspirin at 25-50 mg/d is related to the lowest red blood cell (RBC) count, whereas 75-100 mg/d aspirin showed the highest RBC count among the 3 groups (4.52 \u00b1 0.35 \u00d7 101<jats:sup>2</jats:sup>/L vs.",
+      "context_window": "elated to the lowest red blood cell (RBC) count, whereas 75-100 mg/d aspirin showed the highest RBC count among the 3 groups (4.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-msd-1434",
+      "claim_type": "mean_sd",
+      "raw_text": "4.52 \u00b1 0.35",
+      "numeric_values": [
+        4.52,
+        0.35
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1434,
+      "sentence": "Aspirin at 25-50 mg/d is related to the lowest red blood cell (RBC) count, whereas 75-100 mg/d aspirin showed the highest RBC count among the 3 groups (4.52 \u00b1 0.35 \u00d7 101<jats:sup>2</jats:sup>/L vs.",
+      "context_window": "/d aspirin showed the highest RBC count among the 3 groups (4.52 \u00b1 0.35 \u00d7 101<jats:sup>2</jats:sup>/L vs. 4.35 \u00b1 0.57 \u00d7 10<jats:sup",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-msd-1480",
+      "claim_type": "mean_sd",
+      "raw_text": "4.35 \u00b1 0.57",
+      "numeric_values": [
+        4.35,
+        0.57
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "4.35 \u00b1 0.57 \u00d7 10<jats:sup>12</jats:sup>/L vs.",
+      "context_window": "the 3 groups (4.52 \u00b1 0.35 \u00d7 101<jats:sup>2</jats:sup>/L vs. 4.35 \u00b1 0.57 \u00d7 10<jats:sup>12</jats:sup>/L vs. 4.80 \u00b1 0.59 \u00d7 10<jats:sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_fjc_0000000000000939_chronic_application_of_low_dose_aspirin_affects_multiple_par-msd-1526",
+      "claim_type": "mean_sd",
+      "raw_text": "4.80 \u00b1 0.59",
+      "numeric_values": [
+        4.8,
+        0.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1526,
+      "sentence": "4.80 \u00b1 0.59 \u00d7 10<jats:sup>12</jats:sup>/L, <jats:italic toggle=\"yes\">P</jats:italic> = 0.046).",
+      "context_window": "ts:sup>/L vs. 4.35 \u00b1 0.57 \u00d7 10<jats:sup>12</jats:sup>/L vs. 4.80 \u00b1 0.59 \u00d7 10<jats:sup>12</jats:sup>/L, <jats:italic toggle=\"yes\">P<",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

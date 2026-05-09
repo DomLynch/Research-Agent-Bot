@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC12899922_beneficial_effects_of_fisetin_a_senotherapeutic_compound_in_",
+  "doi": "10.3390/nu18030393",
+  "extracted_at": "2026-05-08T20:01:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12899922_beneficial_effects_of_fisetin_a_senotherapeutic_compound_in_-pct-379",
+      "claim_type": "percentage",
+      "raw_text": "31.7%",
+      "numeric_values": [
+        31.7
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 379,
+      "sentence": "In contrast, fisetin exhibits low oral bioavailability (approximately 7.8-31.7%) due to extensive phase II conjugation and rapid systemic metabolism [ 34 , 36 ].",
+      "context_window": "isetin exhibits low oral bioavailability (approximately 7.8-31.7%) due to extensive phase II conjugation and rapid systemic m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12899922_beneficial_effects_of_fisetin_a_senotherapeutic_compound_in_-u-666",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "limitations",
+      "source_offset": 666,
+      "sentence": "Pharmacokinetic studies in rodents demonstrate that peak plasma concentrations of fisetin and its major metabolite, geraldol, remain in the low to mid-micromolar range even at high oral doses (up to 200 mg/kg) [ 36 ], indicating a critical pharmacokinetic gap between experimental and physiologically achievable concentrations.",
+      "context_window": "low to mid-micromolar range even at high oral doses (up to 200 mg/kg) [ 36 ], indicating a critical pharmacokinetic gap betwe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

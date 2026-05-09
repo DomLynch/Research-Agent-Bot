@@ -1,0 +1,337 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy",
+  "doi": "10.1056/nejmoa1800722",
+  "extracted_at": "2026-05-08T20:06:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 9,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-125",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 125,
+      "sentence": "Whether 5 years of daily low-dose aspirin therapy would extend disability-free life in healthy seniors is unclear.",
+      "context_window": "independent life span in older persons is limited. Whether 5 years of daily low-dose aspirin therapy would extend disability-f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-348",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 348,
+      "sentence": "METHODS: From 2010 through 2014, we enrolled community-dwelling persons in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and did not have cardiovascular disease, dementia, or physical disability.",
+      "context_window": "welling persons in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-378",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 378,
+      "sentence": "METHODS: From 2010 through 2014, we enrolled community-dwelling persons in Australia and the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and did not have cardiovascular disease, dementia, or physical disability.",
+      "context_window": "nd the United States who were 70 years of age or older (or \u226565 years of age among blacks and Hispanics in the United States) and",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-565",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 565,
+      "sentence": "Participants were randomly assigned to receive 100 mg per day of enteric-coated aspirin or placebo orally.",
+      "context_window": "disability. Participants were randomly assigned to receive 100 mg per day of enteric-coated aspirin or placebo orally. The pr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-902",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 902,
+      "sentence": "RESULTS: A total of 19,114 persons with a median age of 74 years were enrolled, of whom 9525 were randomly assigned to receive aspirin and 9589 to receive placebo.",
+      "context_window": "ge. RESULTS: A total of 19,114 persons with a median age of 74 years were enrolled, of whom 9525 were randomly assigned to recei",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-1021",
+      "claim_type": "percentage",
+      "raw_text": "56.4%",
+      "numeric_values": [
+        56.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "A total of 56.4% of the participants were women, 8.7% were nonwhite, and 11.0% reported previous regular aspirin use.",
+      "context_window": "to receive aspirin and 9589 to receive placebo. A total of 56.4% of the participants were women, 8.7% were nonwhite, and 11.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-1059",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1059,
+      "sentence": "A total of 56.4% of the participants were women, 8.7% were nonwhite, and 11.0% reported previous regular aspirin use.",
+      "context_window": "e placebo. A total of 56.4% of the participants were women, 8.7% were nonwhite, and 11.0% reported previous regular aspirin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-1083",
+      "claim_type": "percentage",
+      "raw_text": "11.0%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1083,
+      "sentence": "A total of 56.4% of the participants were women, 8.7% were nonwhite, and 11.0% reported previous regular aspirin use.",
+      "context_window": ".4% of the participants were women, 8.7% were nonwhite, and 11.0% reported previous regular aspirin use. The trial was termin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-1168",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "The trial was terminated at a median of 4.7 years of follow-up after a determination was made that there would be no benefit with continued aspirin use with regard to the primary end point.",
+      "context_window": "egular aspirin use. The trial was terminated at a median of 4.7 years of follow-up after a determination was made that there woul",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-1530",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1530,
+      "sentence": "The rate of the composite of death, dementia, or persistent physical disability was 21.5 events per 1000 person-years in the aspirin group and 21.2 per 1000 person-years in the placebo group (hazard ratio, 1.01; 95% confidence interval [CI], 0.92 to 1.11; P=0.79).",
+      "context_window": "1000 person-years in the placebo group (hazard ratio, 1.01; 95% confidence interval [CI], 0.92 to 1.11; P=0.79). The rate o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-p-1574",
+      "claim_type": "p_value",
+      "raw_text": "P=0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1574,
+      "sentence": "The rate of the composite of death, dementia, or persistent physical disability was 21.5 events per 1000 person-years in the aspirin group and 21.2 per 1000 person-years in the placebo group (hazard ratio, 1.01; 95% confidence interval [CI], 0.92 to 1.11; P=0.79).",
+      "context_window": "rd ratio, 1.01; 95% confidence interval [CI], 0.92 to 1.11; P=0.79). The rate of adherence to the assigned intervention was 62",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-1638",
+      "claim_type": "percentage",
+      "raw_text": "62.1%",
+      "numeric_values": [
+        62.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1638,
+      "sentence": "The rate of adherence to the assigned intervention was 62.1% in the aspirin group and 64.1% in the placebo group in the final year of trial participation.",
+      "context_window": "79). The rate of adherence to the assigned intervention was 62.1% in the aspirin group and 64.1% in the placebo group in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-1669",
+      "claim_type": "percentage",
+      "raw_text": "64.1%",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1669,
+      "sentence": "The rate of adherence to the assigned intervention was 62.1% in the aspirin group and 64.1% in the placebo group in the final year of trial participation.",
+      "context_window": "he assigned intervention was 62.1% in the aspirin group and 64.1% in the placebo group in the final year of trial participati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-2144",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2144,
+      "sentence": "The rate of major hemorrhage was higher in the aspirin group than in the placebo group (3.8% vs.",
+      "context_window": "was higher in the aspirin group than in the placebo group (3.8% vs. 2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-2153",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2153,
+      "sentence": "2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001).",
+      "context_window": "er in the aspirin group than in the placebo group (3.8% vs. 2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001). CONCLU",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-pct-2179",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2179,
+      "sentence": "2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001).",
+      "context_window": "an in the placebo group (3.8% vs. 2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001). CONCLUSIONS: Aspirin use in hea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-p-2201",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2201,
+      "sentence": "2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001).",
+      "context_window": "p (3.8% vs. 2.8%; hazard ratio, 1.38; 95% CI, 1.18 to 1.62; P<0.001). CONCLUSIONS: Aspirin use in healthy elderly persons did n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1800722_effect_of_aspirin_on_disability_free_survival_in_the_healthy-u-2321",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2321,
+      "sentence": "CONCLUSIONS: Aspirin use in healthy elderly persons did not prolong disability-free survival over a period of 5 years but led to a higher rate of major hemorrhage than placebo. (Funded by the National Institute on Aging and others; ASPREE ClinicalTrials.gov number, NCT01038583 .).",
+      "context_window": "s did not prolong disability-free survival over a period of 5 years but led to a higher rate of major hemorrhage than placebo.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

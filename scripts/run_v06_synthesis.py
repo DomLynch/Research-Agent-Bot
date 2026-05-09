@@ -2379,6 +2379,12 @@ async def _run_post_paper_pipeline(
             ),
         )
         _refix_log.extend(_post_surface_floor_log)
+    paper_md, _final_polish_log = (
+        _consistency_fixer.apply_lightweight_public_polish(
+            paper_md, manifest=manifest,
+        )
+    )
+    _refix_log.extend(_final_polish_log)
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
@@ -3113,6 +3119,7 @@ def _evidence_certification_profile(manifest: dict[str, Any] | None) -> dict[str
         "mechanistic": 0.0,
         "direct": 0.0,
         "a_tier": 0.0,
+        "a1_direct_count": 0.0,
         "n_mechanistic": 0.0,
     }
     for receipt in (manifest or {}).get("receipts", ()):
@@ -3124,6 +3131,8 @@ def _evidence_certification_profile(manifest: dict[str, Any] | None) -> dict[str
             profile["a_tier"] += weight
         if directness == "direct":
             profile["direct"] += weight
+            if tier == "A1":
+                profile["a1_direct_count"] += 1
         if directness == "mechanistic" or tier.startswith("C"):
             profile["mechanistic"] += weight
             profile["n_mechanistic"] += 1
@@ -3153,6 +3162,12 @@ def _select_certification_track(
         if profile["mechanistic"] > profile["clinical"] and profile["direct"] < 1.0:
             return "AAA-MECH", True
         return "AAA-CLIN", True
+    if (
+        2 <= n_receipts < min_receipts
+        and n_high_conf_claims > 0
+        and profile.get("a1_direct_count", 0.0) >= 1
+    ):
+        return "AAA-SCOP", True
     if n_receipts < min_receipts or n_high_conf_claims < min_claims:
         return "SCOP", False
     min_inf_weight = float(cert_floors.get("min_inferential_weight", 8.0))
@@ -3219,6 +3234,8 @@ class UnifiedVerdict:
     n_arbitration_reject: int = 0
     n_arbitration_escalate: int = 0
     arbitration_log: str | None = None
+    arbitration_count: int = 0
+    arbitration_log_path: str | None = None
     corpus_gaps: tuple[str, ...] = ()
     expansion_targets: tuple[str, ...] = ()
     maturity_level: int = 0
@@ -3481,6 +3498,11 @@ def _compute_unified_verdict(
             )
         maturity_label = format_maturity_label(maturity_level)
         journal_ready = is_journal_ready(maturity_level)
+        if verdict == "AAA" and certification_track == "AAA-SCOP":
+            maturity_label = (
+                "L5-SCOPING-JOURNAL-READY"
+                if journal_ready else "L4-SCOPING-CERTIFIED"
+            )
     except ImportError:
         pass
 
@@ -3502,6 +3524,8 @@ def _compute_unified_verdict(
         n_arbitration_reject=n_arbitration_reject,
         n_arbitration_escalate=n_arbitration_escalate,
         arbitration_log=arbitration_log,
+        arbitration_count=n_arbitrated,
+        arbitration_log_path=arbitration_log,
         corpus_gaps=corpus_gaps,
         expansion_targets=expansion_targets,
         maturity_level=maturity_level,

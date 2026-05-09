@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1093_hmg_ddz303_taurine_treatment_of_retinal_degeneration_and_cardiomyopathy",
+  "doi": "10.1093/hmg/ddz303",
+  "extracted_at": "2026-05-08T20:10:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_hmg_ddz303_taurine_treatment_of_retinal_degeneration_and_cardiomyopathy-pct-276",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 276,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:p>In a consanguineous Pakistani family with two affected individuals, a homozygous variant Gly399Val in the eighth transmembrane domain of the taurine transporter SLC6A6 was identified resulting in a hypomorph transporting capacity of ~15% compared with normal.",
+      "context_window": "entified resulting in a hypomorph transporting capacity of ~15% compared with normal. Three-dimensional modeling of this va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_hmg_ddz303_taurine_treatment_of_retinal_degeneration_and_cardiomyopathy-u-648",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/kg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 648,
+      "sentence": "Oral taurine supplementation of 100 mg/kg/day resulted in maintenance of normal blood taurine levels.",
+      "context_window": "able plasma taurine levels. Oral taurine supplementation of 100 mg/kg/day resulted in maintenance of normal blood taurine levels. Fol",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

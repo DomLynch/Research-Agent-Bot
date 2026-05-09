@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa035572_efficacy_and_safety_of_low_dose_aspirin_in_polycythemia_vera",
+  "doi": "10.1056/nejmoa035572",
+  "extracted_at": "2026-05-08T20:06:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa035572_efficacy_and_safety_of_low_dose_aspirin_in_polycythemia_vera-u-388",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 388,
+      "sentence": "METHODS: We enrolled 518 patients with polycythemia vera, no clear indication for aspirin treatment, and no contraindication to such treatment in a double-blind, placebo-controlled, randomized trial to assess the safety and efficacy of prophylaxis with low-dose aspirin (100 mg daily).",
+      "context_window": "e safety and efficacy of prophylaxis with low-dose aspirin (100 mg daily). The two primary end points were the cumulative rate",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa035572_efficacy_and_safety_of_low_dose_aspirin_in_polycythemia_vera-p-1013",
+      "claim_type": "p_value",
+      "raw_text": "P=0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1013,
+      "sentence": "RESULTS: Treatment with aspirin, as compared with placebo, reduced the risk of the combined end point of nonfatal myocardial infarction, nonfatal stroke, or death from cardiovascular causes (relative risk, 0.41; 95 percent confidence interval, 0.15 to 1.15; P=0.09) and the risk of the combined end point of nonfatal myocardial infarction, nonfatal stroke, pulmonary embolism, major venous thrombosis, or death from cardiovascular causes (relative risk, 0.40; 95 percent confidence interval, 0.18 to 0.91; P=0.03).",
+      "context_window": "e risk, 0.41; 95 percent confidence interval, 0.15 to 1.15; P=0.09) and the risk of the combined end point of nonfatal myocard",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa035572_efficacy_and_safety_of_low_dose_aspirin_in_polycythemia_vera-p-1261",
+      "claim_type": "p_value",
+      "raw_text": "P=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1261,
+      "sentence": "RESULTS: Treatment with aspirin, as compared with placebo, reduced the risk of the combined end point of nonfatal myocardial infarction, nonfatal stroke, or death from cardiovascular causes (relative risk, 0.41; 95 percent confidence interval, 0.15 to 1.15; P=0.09) and the risk of the combined end point of nonfatal myocardial infarction, nonfatal stroke, pulmonary embolism, major venous thrombosis, or death from cardiovascular causes (relative risk, 0.40; 95 percent confidence interval, 0.18 to 0.91; P=0.03).",
+      "context_window": "e risk, 0.40; 95 percent confidence interval, 0.18 to 0.91; P=0.03). Overall mortality and cardiovascular mortality were not r",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

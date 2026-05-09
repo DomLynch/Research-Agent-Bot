@@ -1,0 +1,137 @@
+{
+  "paper_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth",
+  "doi": "10.1291/hypres.23.277",
+  "extracted_at": "2026-05-08T20:10:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-673",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 673,
+      "sentence": "In Study 1, systolic blood pressure and intraplatelet free calcium were significantly higher in rats who received 15% ethanol in drinking water than in control rats.",
+      "context_window": "free calcium were significantly higher in rats who received 15% ethanol in drinking water than in control rats. Oral taurin",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-755",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 755,
+      "sentence": "Oral taurine supplementation (1% taurine and 15% ethanol in drinking water) completely prevented the development of ethanol-induced hypertension.",
+      "context_window": "g water than in control rats. Oral taurine supplementation (1% taurine and 15% ethanol in drinking water) completely preve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-770",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "Oral taurine supplementation (1% taurine and 15% ethanol in drinking water) completely prevented the development of ethanol-induced hypertension.",
+      "context_window": "control rats. Oral taurine supplementation (1% taurine and 15% ethanol in drinking water) completely prevented the develop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-1019",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1019,
+      "sentence": "Intraerythrocyte sodium and intraplatelet free calcium were significantly decreased in taurine-supplemented rats as compared with rats who received 15% ethanol only.",
+      "context_window": "aurine-supplemented rats as compared with rats who received 15% ethanol only. In Study 2, hemoglobin-associated acetaldehyd",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-1200",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1200,
+      "sentence": "HbAA was significantly elevated in rats who received 5% ethanol in drinking water as compared with control rats.",
+      "context_window": "ehyde. HbAA was significantly elevated in rats who received 5% ethanol in drinking water as compared with control rats. Ta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-1285",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1285,
+      "sentence": "Taurine supplementation (1% taurine and 5% ethanol in drinking water) significantly decreased HbAA.",
+      "context_window": "ter as compared with control rats. Taurine supplementation (1% taurine and 5% ethanol in drinking water) significantly dec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1291_hypres_23_277_oral_taurine_supplementation_prevents_the_development_of_eth-pct-1300",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1300,
+      "sentence": "Taurine supplementation (1% taurine and 5% ethanol in drinking water) significantly decreased HbAA.",
+      "context_window": "with control rats. Taurine supplementation (1% taurine and 5% ethanol in drinking water) significantly decreased HbAA. Ou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

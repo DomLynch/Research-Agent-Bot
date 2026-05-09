@@ -1,0 +1,934 @@
+{
+  "paper_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_",
+  "doi": "10.5114/ceh.2020.99513",
+  "extracted_at": "2026-05-08T20:10:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 24,
+    "mean_sd": 1,
+    "percentage": 22,
+    "p_value": 1,
+    "sample_size": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-845",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 845,
+      "sentence": "BDL animals received Tau (50, 100, and 500 mg/kg, i.p.) for 42 consecutive days.",
+      "context_window": "derwent BDL surgery. BDL animals received Tau (50, 100, and 500 mg/kg, i.p.) for 42 consecutive days. A significant increase i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-msd-1344",
+      "claim_type": "mean_sd",
+      "raw_text": "23 \u00b11",
+      "numeric_values": [
+        23.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1344,
+      "sentence": "The ambient temperature was 23 \u00b11\u00baC, with \u224840% relative humidity.",
+      "context_window": "tic cages on wood-chip bedding. The ambient temperature was 23 \u00b11\u00baC, with \u224840% relative humidity. Animals were allowed to acc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-1359",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1359,
+      "sentence": "The ambient temperature was 23 \u00b11\u00baC, with \u224840% relative humidity.",
+      "context_window": "od-chip bedding. The ambient temperature was 23 \u00b11\u00baC, with \u224840% relative humidity. Animals were allowed to access tap water",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-1821",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1821,
+      "sentence": "For this purpose, animals were anesthetized (10 mg/kg of xylazine and 70 mg/kg of ketamine, i.p.), a midline incision was made along the linea alba , and the common bile duct was localized, and doubly ligated (3/0 silk suture).",
+      "context_window": "(BDL) surgery. For this purpose, animals were anesthetized (10 mg/kg of xylazine and 70 mg/kg of ketamine, i.p.), a midline i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-1846",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1846,
+      "sentence": "For this purpose, animals were anesthetized (10 mg/kg of xylazine and 70 mg/kg of ketamine, i.p.), a midline incision was made along the linea alba , and the common bile duct was localized, and doubly ligated (3/0 silk suture).",
+      "context_window": "urpose, animals were anesthetized (10 mg/kg of xylazine and 70 mg/kg of ketamine, i.p.), a midline incision was made along th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-2206",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/kg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 2206,
+      "sentence": "Animals were randomly allotted to sham-operated, BDL, and BDL + taurine (50, 100, and 500 mg/kg/day).",
+      "context_window": "tted to sham-operated, BDL, and BDL + taurine (50, 100, and 500 mg/kg/day). Tau was administered by intraperitoneal injection for 42",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-2334",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2334,
+      "sentence": "Rats were anesthetized (thiopental, 50 mg/kg, i.p.), and their blood, liver, and heart samples were collected.",
+      "context_window": "r 42 consecutive days. Rats were anesthetized (thiopental, 50 mg/kg, i.p.), and their blood, liver, and heart samples were c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-3063",
+      "claim_type": "percentage",
+      "raw_text": "0.64%",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3063,
+      "sentence": "For histopathological assessments, samples of heart and liver tissue were fixed in buffered formalin solution (0.64% sodium phosphate dibasic, 0.4% sodium phosphate monobasic, and 10% formaldehyde in double distilled water; pH = 7.4).",
+      "context_window": "and liver tissue were fixed in buffered formalin solution (0.64% sodium phosphate dibasic, 0.4% sodium phosphate monobasic,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-3095",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3095,
+      "sentence": "For histopathological assessments, samples of heart and liver tissue were fixed in buffered formalin solution (0.64% sodium phosphate dibasic, 0.4% sodium phosphate monobasic, and 10% formaldehyde in double distilled water; pH = 7.4).",
+      "context_window": "buffered formalin solution (0.64% sodium phosphate dibasic, 0.4% sodium phosphate monobasic, and 10% formaldehyde in double",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-3132",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3132,
+      "sentence": "For histopathological assessments, samples of heart and liver tissue were fixed in buffered formalin solution (0.64% sodium phosphate dibasic, 0.4% sodium phosphate monobasic, and 10% formaldehyde in double distilled water; pH = 7.4).",
+      "context_window": "ium phosphate dibasic, 0.4% sodium phosphate monobasic, and 10% formaldehyde in double distilled water; pH = 7.4). Finally,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-3459",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3459,
+      "sentence": "Heart tissue samples (200 mg) were homogenized in 5 ml of Tris-HCl buffer (40 mM, pH = 7.4, 4\u00b0C).",
+      "context_window": "ht microscope (Olympus CX21, Japan). Heart tissue samples (200 mg) were homogenized in 5 ml of Tris-HCl buffer (40 mM, pH = 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-4135",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4135,
+      "sentence": "Briefly, 1 ml of heart tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 3 ml of TBARS assay reaction mixture (1 ml of thiobarbituric acid 0.375%, w/v, 2 ml of trichloroacetic acid 15%; w/v, and 1 ml of hydrochloric acid 12 N, pH = 2).",
+      "context_window": "BDL rats [ 47 ]. Briefly, 1 ml of heart tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 3 ml",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-4259",
+      "claim_type": "percentage",
+      "raw_text": "0.375%",
+      "numeric_values": [
+        0.375
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4259,
+      "sentence": "Briefly, 1 ml of heart tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 3 ml of TBARS assay reaction mixture (1 ml of thiobarbituric acid 0.375%, w/v, 2 ml of trichloroacetic acid 15%; w/v, and 1 ml of hydrochloric acid 12 N, pH = 2).",
+      "context_window": "f TBARS assay reaction mixture (1 ml of thiobarbituric acid 0.375%, w/v, 2 ml of trichloroacetic acid 15%; w/v, and 1 ml of hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-4301",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4301,
+      "sentence": "Briefly, 1 ml of heart tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 3 ml of TBARS assay reaction mixture (1 ml of thiobarbituric acid 0.375%, w/v, 2 ml of trichloroacetic acid 15%; w/v, and 1 ml of hydrochloric acid 12 N, pH = 2).",
+      "context_window": "iobarbituric acid 0.375%, w/v, 2 ml of trichloroacetic acid 15%; w/v, and 1 ml of hydrochloric acid 12 N, pH = 2). Samples",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-4883",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4883,
+      "sentence": "Briefly, 100 \u00b5l of tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 1 ml of the freshly prepared FRAP reagent (10 volumes of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20 mmol/l in deionized water) [ 58 ].",
+      "context_window": "by FRAP assay [ 57 ]. Briefly, 100 \u00b5l of tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 1 ml",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-5013",
+      "claim_type": "unit_value",
+      "raw_text": "300 mmol",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5013,
+      "sentence": "Briefly, 100 \u00b5l of tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 1 ml of the freshly prepared FRAP reagent (10 volumes of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20 mmol/l in deionized water) [ 58 ].",
+      "context_window": "freshly prepared FRAP reagent (10 volumes of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydroc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-5052",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5052,
+      "sentence": "Briefly, 100 \u00b5l of tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 1 ml of the freshly prepared FRAP reagent (10 volumes of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20 mmol/l in deionized water) [ 58 ].",
+      "context_window": "es of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-5065",
+      "claim_type": "unit_value",
+      "raw_text": "40 mmol",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5065,
+      "sentence": "Briefly, 100 \u00b5l of tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 1 ml of the freshly prepared FRAP reagent (10 volumes of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20 mmol/l in deionized water) [ 58 ].",
+      "context_window": "buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-5130",
+      "claim_type": "unit_value",
+      "raw_text": "20 mmol",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5130,
+      "sentence": "Briefly, 100 \u00b5l of tissue homogenate (10% w/v in Tris-HCl buffer, 40 mM, pH = 7.4) was added to 1 ml of the freshly prepared FRAP reagent (10 volumes of acetate buffer 300 mmol/l, pH = 3.6, 1 volume of TPTZ 10 mmol/l in 40 mmol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20 mmol/l in deionized water) [ 58 ].",
+      "context_window": "ol/l hydrochloric acid 6 N; and 1 volume of ferric chloride 20 mmol/l in deionized water) [ 58 ]. Samples were incubated at 37\u00ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-5548",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5548,
+      "sentence": "Briefly, 100 \u00b5l of TCA (20% w/v, 4\u00baC) was added to 1 ml of the heart tissue homogenate and centrifuged (700 g, 15 min).",
+      "context_window": "phenylhydrazine (DNPH) [ 60 , 61 ]. Briefly, 100 \u00b5l of TCA (20% w/v, 4\u00baC) was added to 1 ml of the heart tissue homogenate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-5854",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5854,
+      "sentence": "Afterward, 100 \u00b5l of TCA (20% w/v) was added, and the tubes were centrifuged (12,000 \u03b3 for 5 min).",
+      "context_window": "with vortexing every 10 minutes. Afterward, 100 \u00b5l of TCA (20% w/v) was added, and the tubes were centrifuged (12,000 \u03b3 fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-6479",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6479,
+      "sentence": "Rat heart was excised, washed, and minced in an ice-cold (4\u00b0C) isolation buffer medium (70 mM mannitol, 2 mM HEPES, 220 mM sucrose, 0.5 mM EGTA and 0.1% BSA dissolved in ion-free double distilled water, pH = 7.4) containing trypsin (0.1% w/v) [ 62 , 63 ].",
+      "context_window": "70 mM mannitol, 2 mM HEPES, 220 mM sucrose, 0.5 mM EGTA and 0.1% BSA dissolved in ion-free double distilled water, pH = 7.4)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-6564",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6564,
+      "sentence": "Rat heart was excised, washed, and minced in an ice-cold (4\u00b0C) isolation buffer medium (70 mM mannitol, 2 mM HEPES, 220 mM sucrose, 0.5 mM EGTA and 0.1% BSA dissolved in ion-free double distilled water, pH = 7.4) containing trypsin (0.1% w/v) [ 62 , 63 ].",
+      "context_window": "-free double distilled water, pH = 7.4) containing trypsin (0.1% w/v) [ 62 , 63 ]. Samples were incubated on ice for 15 minu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-8151",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 8151,
+      "sentence": "Briefly, a mitochondrial suspension (1 mg protein/ml) was incubated with 40 \u00b5l of MTT (0.4% w/v, 37\u00b0C, 30 min, in the dark).",
+      "context_window": "etermined [ 66 - 68 ]. Briefly, a mitochondrial suspension (1 mg protein/ml) was incubated with 40 \u00b5l of MTT (0.4% w/v, 37\u00b0C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-8201",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8201,
+      "sentence": "Briefly, a mitochondrial suspension (1 mg protein/ml) was incubated with 40 \u00b5l of MTT (0.4% w/v, 37\u00b0C, 30 min, in the dark).",
+      "context_window": "spension (1 mg protein/ml) was incubated with 40 \u00b5l of MTT (0.4% w/v, 37\u00b0C, 30 min, in the dark). Then, samples were centrif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-9000",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 9000,
+      "sentence": "In the current study, the mitochondrial fractions (1 mg protein/ml) were incubated with rhodamine 123 (final concentration of 10 \u00b5M, 15 min, in the dark, with continuous shaking) [ 48 , 75 ].",
+      "context_window": "- 73 ]. In the current study, the mitochondrial fractions (1 mg protein/ml) were incubated with rhodamine 123 (final concen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-9659",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 9659,
+      "sentence": "Briefly, isolated heart mitochondria (0.5 mg protein/ml) were suspended in swelling buffer (250 mM sucrose, 2 mM HEPES, 0.5 mM KH 2 PO 4 , pH = 7.2) [ 77 ].",
+      "context_window": "ion [ 47 , 62 , 76 ]. Briefly, isolated heart mitochondria (0.5 mg protein/ml) were suspended in swelling buffer (250 mM sucro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-10406",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10406,
+      "sentence": "The reduced (GSH) and oxidized (GSSG) glutathione levels in the heart tissue and isolated mitochondria samples were assessed by the HPLC analysis of deproteinized samples (TCA 50% w/v) after derivatization with iodoacetic acid and fluoro-2,4-dinitrobenzene, using a 25 cm NH 2 column (Bischoff chromatography, Leonberg, Germany), and the flow rate 1 ml/min [ 79 ].",
+      "context_window": "assessed by the HPLC analysis of deproteinized samples (TCA 50% w/v) after derivatization with iodoacetic acid and fluoro-2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-10496",
+      "claim_type": "unit_value",
+      "raw_text": "25 cm",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 10496,
+      "sentence": "The reduced (GSH) and oxidized (GSSG) glutathione levels in the heart tissue and isolated mitochondria samples were assessed by the HPLC analysis of deproteinized samples (TCA 50% w/v) after derivatization with iodoacetic acid and fluoro-2,4-dinitrobenzene, using a 25 cm NH 2 column (Bischoff chromatography, Leonberg, Germany), and the flow rate 1 ml/min [ 79 ].",
+      "context_window": "with iodoacetic acid and fluoro-2,4-dinitrobenzene, using a 25 cm NH 2 column (Bischoff chromatography, Leonberg, Germany), a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-10777",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10777,
+      "sentence": "The mobile phases consisted of buffer A (water : methanol, 1 : 4 v/v) and buffer B (acetate buffer : methanol, 1 : 4 v/v) and a gradient method with a steady increase of buffer B to 95% in 20 minutes [ 77 , 79 , 80 ].",
+      "context_window": "and a gradient method with a steady increase of buffer B to 95% in 20 minutes [ 77 , 79 , 80 ]. Nanomole levels of GSH and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-10952",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 10952,
+      "sentence": "Heart tissue samples (200 mg) were homogenized in Tris-HCl buffer (250 mM, pH = 7.4, 4\u00b0C), and 500 \u00b5l of TCA (50% w/v, 4\u00b0C) was added.",
+      "context_window": "GSH were used as external standards. Heart tissue samples (200 mg) were homogenized in Tris-HCl buffer (250 mM, pH = 7.4, 4\u00b0C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-11040",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11040,
+      "sentence": "Heart tissue samples (200 mg) were homogenized in Tris-HCl buffer (250 mM, pH = 7.4, 4\u00b0C), and 500 \u00b5l of TCA (50% w/v, 4\u00b0C) was added.",
+      "context_window": "Tris-HCl buffer (250 mM, pH = 7.4, 4\u00b0C), and 500 \u00b5l of TCA (50% w/v, 4\u00b0C) was added. Mitochondria samples (500 \u00b5l, 1 mg pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-11095",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 11095,
+      "sentence": "Mitochondria samples (500 \u00b5l, 1 mg protein/ml) were also treated with 50 \u00b5l of TCA (50% w/v, 4\u00b0C) and incubated for 15 minutes on ice.",
+      "context_window": "TCA (50% w/v, 4\u00b0C) was added. Mitochondria samples (500 \u00b5l, 1 mg protein/ml) were also treated with 50 \u00b5l of TCA (50% w/v, 4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-11149",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11149,
+      "sentence": "Mitochondria samples (500 \u00b5l, 1 mg protein/ml) were also treated with 50 \u00b5l of TCA (50% w/v, 4\u00b0C) and incubated for 15 minutes on ice.",
+      "context_window": "0 \u00b5l, 1 mg protein/ml) were also treated with 50 \u00b5l of TCA (50% w/v, 4\u00b0C) and incubated for 15 minutes on ice. Afterward, s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-11449",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11449,
+      "sentence": "Afterward, 100 \u00b5l of iodoacetic acid (1.5% w/v in water) was added, and samples were incubated for one hour (4\u00b0C, in the dark).",
+      "context_window": "production subsided. Afterward, 100 \u00b5l of iodoacetic acid (1.5% w/v in water) was added, and samples were incubated for one",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-11610",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11610,
+      "sentence": "After the incubation period, 500 \u00b5l of 2,4-dinitrofluorobenzene (DNFB, 1.5% w/v in absolute ethanol) was added and incubated in the dark (25\u00b0C, at least for 48 hours).",
+      "context_window": "ncubation period, 500 \u00b5l of 2,4-dinitrofluorobenzene (DNFB, 1.5% w/v in absolute ethanol) was added and incubated in the dar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-12073",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 12073,
+      "sentence": "Briefly, 500 \u00b5l of mitochondrial samples (1 mg protein/ml) were treated with 100 \u00b5l of ice-cooled TCA solution (0.5% w/v in double-distilled water) and centrifuged (15,000 g, 15 min, 4\u00b0C).",
+      "context_window": "kit instructions. Briefly, 500 \u00b5l of mitochondrial samples (1 mg protein/ml) were treated with 100 \u00b5l of ice-cooled TCA solu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-12143",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12143,
+      "sentence": "Briefly, 500 \u00b5l of mitochondrial samples (1 mg protein/ml) were treated with 100 \u00b5l of ice-cooled TCA solution (0.5% w/v in double-distilled water) and centrifuged (15,000 g, 15 min, 4\u00b0C).",
+      "context_window": "in/ml) were treated with 100 \u00b5l of ice-cooled TCA solution (0.5% w/v in double-distilled water) and centrifuged (15,000 g, 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-12987",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12987,
+      "sentence": "Then, the mitochondrial suspension was mixed with twice its volume of a mixture containing trichloroacetic acid (TCA 15% w/v), thiobarbituric acid (TBA 0.375% w/v), 100 \u00b5l of 0.24 N HCl, plus 0.5 mM Trolox.",
+      "context_window": "ts volume of a mixture containing trichloroacetic acid (TCA 15% w/v), thiobarbituric acid (TBA 0.375% w/v), 100 \u00b5l of 0.24",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-pct-13022",
+      "claim_type": "percentage",
+      "raw_text": "0.375%",
+      "numeric_values": [
+        0.375
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13022,
+      "sentence": "Then, the mitochondrial suspension was mixed with twice its volume of a mixture containing trichloroacetic acid (TCA 15% w/v), thiobarbituric acid (TBA 0.375% w/v), 100 \u00b5l of 0.24 N HCl, plus 0.5 mM Trolox.",
+      "context_window": "richloroacetic acid (TCA 15% w/v), thiobarbituric acid (TBA 0.375% w/v), 100 \u00b5l of 0.24 N HCl, plus 0.5 mM Trolox. Samples wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-p-13484",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13484,
+      "sentence": "P < 0.05 was considered to indicate a statistically significant difference between groups.",
+      "context_window": "with Tukey\u2019s multiple comparison test as the post hoc test. P < 0.05 was considered to indicate a statistically significant diff",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-339",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 339,
+      "sentence": "On the other hand, it was found that Tau supplementation (50, 100, and 500 mg/kg) significantly decreased serum biomarkers of organ injury in BDL animals.",
+      "context_window": "r hand, it was found that Tau supplementation (50, 100, and 500 mg/kg) significantly decreased serum biomarkers of organ injur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-n-732",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 732,
+      "sentence": "Data are given as mean \u00b1SD ( n = 8)\n\nIt was found that biomarkers of oxidative stress were significantly increased in the heart tissue of BDL animals ( Fig.",
+      "context_window": "bile duct ligated (BDL) rats. Data are given as mean \u00b1SD ( n = 8) It was found that biomarkers of oxidative stress were sig",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-1225",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1225,
+      "sentence": "It was found that Tau treatment (50, 100, and 500 mg/kg) significantly ameliorated biomarkers of oxidative stress in the heart tissue of BDL animals ( Fig.",
+      "context_window": "he BDL group. It was found that Tau treatment (50, 100, and 500 mg/kg) significantly ameliorated biomarkers of oxidative stres",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-n-1454",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1454,
+      "sentence": "Data are given as mean \u00b1SD ( n = 8)\n\nSignificant deterioration of mitochondrial indices of functionality was detected in the heart mitochondria isolated from BDL animals ( Fig.",
+      "context_window": "bile duct ligated (BDL) rats. Data are given as mean \u00b1SD ( n = 8) Significant deterioration of mitochondrial indices of fun",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-1948",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1948,
+      "sentence": "It was found that Tau treatment (50, 100, and 500 mg/kg) positively improved different indices of the heart mitochondria of BDL rats ( Fig.",
+      "context_window": "cantly lower. It was found that Tau treatment (50, 100, and 500 mg/kg) positively improved different indices of the heart mito",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-n-2169",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2169,
+      "sentence": "Data are given as mean \u00b1SD ( n = 8)\n\nSignificant tissue necrosis, inflammatory cell infiltration, and bile duct proliferation, in addition to hepatic fibrotic changes, confirmed the occurrence of cirrhosis in BDL rats ( Fig.",
+      "context_window": "bile duct ligated (BDL) rats. Data are given as mean \u00b1SD ( n = 8) Significant tissue necrosis, inflammatory cell infiltrati",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-2369",
+      "claim_type": "unit_value",
+      "raw_text": "42 days",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2369,
+      "sentence": "4 ; 42 days after BDL surgery).",
+      "context_window": "onfirmed the occurrence of cirrhosis in BDL rats ( Fig. 4 ; 42 days after BDL surgery). On the other hand, heart tissue inflamm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-2562",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2562,
+      "sentence": "It was found that Tau supplementation (50, 100, and 500 mg/kg) significantly decreased heart tissue inflammation in BDL rats ( Fig.",
+      "context_window": "nimals. It was found that Tau supplementation (50, 100, and 500 mg/kg) significantly decreased heart tissue inflammation in BD",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-3100",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3100,
+      "sentence": "Taurine treatment (50, 100, and 500 mg/kg) decreased heart tissue inflammation in BDL rats",
+      "context_window": "ical change in BDL animals. Taurine treatment (50, 100, and 500 mg/kg) decreased heart tissue inflammation in BDL rats",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7592093_taurine_mitigates_cirrhosis_associated_heart_injury_through_-u-636",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 636,
+      "sentence": "It was found that Tau treatment (50, 100, and 500 mg/kg) improved mitochondrial indices of functionality and mitigated oxidative stress in the heart tissue of cirrhotic rats.",
+      "context_window": "otic animals. It was found that Tau treatment (50, 100, and 500 mg/kg) improved mitochondrial indices of functionality and mit",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "paper_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease",
+  "doi": "10.1093/eurjpc/zwab132",
+  "extracted_at": "2026-05-08T20:05:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "percentage": 8,
+    "p_value": 5,
+    "confidence_interval": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-n-1034",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7852",
+      "numeric_values": [
+        7852.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "Five trials were identified (n = 7852 total, n = 3935 aspirin, n = 3917 placebo).",
+      "context_window": "jor and minor bleeding events. Five trials were identified (n = 7852 total, n = 3935 aspirin, n = 3917 placebo). Overall, 434 CV",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-n-1050",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3935",
+      "numeric_values": [
+        3935.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1050,
+      "sentence": "Five trials were identified (n = 7852 total, n = 3935 aspirin, n = 3917 placebo).",
+      "context_window": "eeding events. Five trials were identified (n = 7852 total, n = 3935 aspirin, n = 3917 placebo). Overall, 434 CVD events occurre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-n-1068",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3917",
+      "numeric_values": [
+        3917.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1068,
+      "sentence": "Five trials were identified (n = 7852 total, n = 3935 aspirin, n = 3917 placebo).",
+      "context_window": "e trials were identified (n = 7852 total, n = 3935 aspirin, n = 3917 placebo). Overall, 434 CVD events occurred. There was no st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1194",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1194,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), al",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-p-1234",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.13",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "VD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19;",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1249",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1249,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": ".76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-ci-1285",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.74-1.19",
+      "numeric_values": [
+        0.74,
+        1.19
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1285,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.6",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-p-1303",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1303,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1318",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1318,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63;",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-ci-1364",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.27-1.63",
+      "numeric_values": [
+        0.27,
+        1.63
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1364,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "= 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-p-1382",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1382,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": ", coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1397",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "t disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) f",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-ci-1422",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.6-1.27",
+      "numeric_values": [
+        0.6,
+        1.27
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1422,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": ", 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy. The risk of majo",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-p-1439",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1439,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "3; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy. The risk of major bleeding",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1454",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1454,
+      "sentence": "There was no statistically significant reduction in CVD events (HR 0.76, 95% confidence interval (CI) 0.54-1.08; P = 0.13, I2 = 63%), all-cause mortality (HR 0.94, 95% CI 0.74-1.19; P = 0.60, I2 = 21%), coronary heart disease events (HR 0.66, 95% CI 0.27-1.63; P = 0.37, I2 = 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy.",
+      "context_window": "= 64%) or stroke (HR 0.87, 95% CI 0.6-1.27; P = 0.48, I2 = 24%) from aspirin therapy. The risk of major bleeding events we",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1547",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1547,
+      "sentence": "The risk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Aspirin cannot be routinely recommended for the primary prevention of CVD in individuals with CKD as there is no evidence for its benefit but there is an increased risk of bleeding.</jats:p> </jats:sec>",
+      "context_window": "sk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-ci-1561",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.13-2.05",
+      "numeric_values": [
+        1.13,
+        2.05
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1561,
+      "sentence": "The risk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Aspirin cannot be routinely recommended for the primary prevention of CVD in individuals with CKD as there is no evidence for its benefit but there is an increased risk of bleeding.</jats:p> </jats:sec>",
+      "context_window": "eeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-p-1579",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1579,
+      "sentence": "The risk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Aspirin cannot be routinely recommended for the primary prevention of CVD in individuals with CKD as there is no evidence for its benefit but there is an increased risk of bleeding.</jats:p> </jats:sec>",
+      "context_window": "increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1594",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1594,
+      "sentence": "The risk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Aspirin cannot be routinely recommended for the primary prevention of CVD in individuals with CKD as there is no evidence for its benefit but there is an increased risk of bleeding.</jats:p> </jats:sec>",
+      "context_window": "pproximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-ci-1657",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.64-4.23",
+      "numeric_values": [
+        1.64,
+        4.23
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "The risk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Aspirin cannot be routinely recommended for the primary prevention of CVD in individuals with CKD as there is no evidence for its benefit but there is an increased risk of bleeding.</jats:p> </jats:sec>",
+      "context_window": "and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <ja",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwab132_aspirin_for_the_primary_prevention_of_cardiovascular_disease-pct-1693",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1693,
+      "sentence": "The risk of major bleeding events were increased by approximately 50% (HR 1.53, 95% CI 1.13-2.05; P = 0.01, I2 = 0%) and minor bleeding events were more than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Aspirin cannot be routinely recommended for the primary prevention of CVD in individuals with CKD as there is no evidence for its benefit but there is an increased risk of bleeding.</jats:p> </jats:sec>",
+      "context_window": "than doubled (HR 2.64, 95% CI 1.64-4.23; P &lt; 0.01, I2 = 0%).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

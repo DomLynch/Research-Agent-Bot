@@ -1,0 +1,426 @@
+{
+  "paper_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi",
+  "doi": "10.1002/clc.20938",
+  "extracted_at": "2026-05-08T20:06:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 9,
+    "percentage": 14
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-571",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 571,
+      "sentence": "However, the optimal dose of aspirin following PCI has not been established.</jats:p></jats:sec><jats:sec><jats:title>Hypothesis:</jats:title><jats:p>There is no difference for definite stent thrombosis in patients taking low dose versus standard aspirin.</jats:p></jats:sec><jats:sec><jats:title>Methods:</jats:title><jats:p>Low\u2010dose (81 mg) aspirin was used as part of a standard dual antiplatelet therapy in patients receiving bare\u2010metal stents (BMS) or drug\u2010eluting stents (DES) at a large tertiary medical center.",
+      "context_window": "jats:sec><jats:title>Methods:</jats:title><jats:p>Low\u2010dose (81 mg) aspirin was used as part of a standard dual antiplatelet t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1065",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "We stratified DST events into early (<30 days) and late (>30 days) timing and also stratified by stent type.",
+      "context_window": "s and 12973 patients. We stratified DST events into early (<30 days) and late (>30 days) timing and also stratified by stent ty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1085",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "We stratified DST events into early (<30 days) and late (>30 days) timing and also stratified by stent type.",
+      "context_window": ". We stratified DST events into early (<30 days) and late (>30 days) timing and also stratified by stent type. The effect of as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1478",
+      "claim_type": "percentage",
+      "raw_text": "0.60%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1478,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "uring the study period. The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1485",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1485,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "he study period. The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76%",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1515",
+      "claim_type": "percentage",
+      "raw_text": "0.42%",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1515,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "e incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1521",
+      "claim_type": "percentage",
+      "raw_text": "0.84%",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1521,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "dence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1531",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1531,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "ST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The overall inci",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1543",
+      "claim_type": "percentage",
+      "raw_text": "0.76%",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "(95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The overall incidence of D",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1550",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1550,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "onfidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The overall incidence of DST du",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1558",
+      "claim_type": "percentage",
+      "raw_text": "0.56%",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1558,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "e interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The overall incidence of DST during the s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1564",
+      "claim_type": "percentage",
+      "raw_text": "1.03%",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1564,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "rval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The overall incidence of DST during the study p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1574",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1574,
+      "sentence": "The cumulative incidence of DST was 0.60% (95% confidence interval [CI], 0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year.",
+      "context_window": "0.42%-0.84%) at 30 days and 0.76% (95% CI, 0.56%-1.03%) at 1 year. The overall incidence of DST during the study period was n",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1677",
+      "claim_type": "percentage",
+      "raw_text": "0.53%",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1677,
+      "sentence": "The overall incidence of DST during the study period was not different based on type of stent (0.53% for DES and 0.75% for BMS, <jats:italic>P</jats:italic> = 0.36).",
+      "context_window": "the study period was not different based on type of stent (0.53% for DES and 0.75% for BMS, <jats:italic>P</jats:italic> = 0",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1695",
+      "claim_type": "percentage",
+      "raw_text": "0.75%",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1695,
+      "sentence": "The overall incidence of DST during the study period was not different based on type of stent (0.53% for DES and 0.75% for BMS, <jats:italic>P</jats:italic> = 0.36).",
+      "context_window": "was not different based on type of stent (0.53% for DES and 0.75% for BMS, <jats:italic>P</jats:italic> = 0.36). Compared to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1801",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1801,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "0.36). Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1846",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1846,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "e aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1902",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1902,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "in (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1911",
+      "claim_type": "percentage",
+      "raw_text": "0.72%",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1911,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": ") cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1920",
+      "claim_type": "percentage",
+      "raw_text": "0.60%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1920,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% v",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-u-1970",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1970,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "(0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07). Ther",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1978",
+      "claim_type": "percentage",
+      "raw_text": "1.08%",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1978,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "s 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07). There was n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_clc_20938_influence_of_low_dose_aspirin_81_mg_on_the_incidence_of_defi-pct-1987",
+      "claim_type": "percentage",
+      "raw_text": "0.76%",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1987,
+      "sentence": "Compared to the historic, standard\u2010dose aspirin (162-325 mg) cohort, DST in our low\u2010dose aspirin (81 mg) cohort was not significantly different at either 30 days (0.72% vs 0.60%, <jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07).",
+      "context_window": "<jats:italic>P</jats:italic> = 0.39) or at 1 year (1.08% vs 0.76%, <jats:italic>P</jats:italic> = 0.07). There was no appreci",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

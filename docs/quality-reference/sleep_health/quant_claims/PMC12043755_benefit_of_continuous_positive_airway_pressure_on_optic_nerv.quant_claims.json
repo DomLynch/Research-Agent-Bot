@@ -1,0 +1,1320 @@
+{
+  "paper_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv",
+  "doi": "10.1007/s11325-025-03336-w",
+  "extracted_at": "2026-05-08T20:06:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 25,
+    "odds_ratio": 4,
+    "p_value": 4,
+    "percentage": 30,
+    "mean_sd": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-563",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 563,
+      "sentence": "Optical Coherence Tomography (OCT) was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of CPAP treatment.",
+      "context_window": "ed. Optical Coherence Tomography (OCT) was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-601",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 601,
+      "sentence": "Optical Coherence Tomography (OCT) was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of CPAP treatment.",
+      "context_window": "was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of CPAP treatment. Data from 37 patients w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-699",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 699,
+      "sentence": "After 12 months of CPAP treatment, there was a significant improvement in the thickness of the superotemporal Bruch\u2019s membrane opening-minimum rim width (BMO-MRW) (316.54 to 318.23 \u03bcm, p-value = 0.08).",
+      "context_window": "tment. Data from 37 patients with OSA were analysed. After 12 months of CPAP treatment, there was a significant improvement in t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-or-a-1170",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.58",
+      "numeric_values": [
+        3.58
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1170,
+      "sentence": "In a multivariate analysis, HB and Type 2 diabetes mellitus have been associated with an increased odds ratio (OR) of retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively).",
+      "context_window": "reased odds ratio (OR) of retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively). BMO-MR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-p-1181",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1181,
+      "sentence": "In a multivariate analysis, HB and Type 2 diabetes mellitus have been associated with an increased odds ratio (OR) of retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively).",
+      "context_window": "ratio (OR) of retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively). BMO-MRW thicknes",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-or-a-1194",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 4.344",
+      "numeric_values": [
+        4.344
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1194,
+      "sentence": "In a multivariate analysis, HB and Type 2 diabetes mellitus have been associated with an increased odds ratio (OR) of retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively).",
+      "context_window": "f retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively). BMO-MRW thickness may assess ea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-p-1206",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1206,
+      "sentence": "In a multivariate analysis, HB and Type 2 diabetes mellitus have been associated with an increased odds ratio (OR) of retinal and optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively).",
+      "context_window": "d optical nerve damage (OR = 3.58, p = 0.03 and OR = 4.344, p = 0.042, respectively). BMO-MRW thickness may assess early damage",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-494",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 494,
+      "sentence": "It is estimated that the prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ].",
+      "context_window": "2 ]. It is estimated that the prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-512",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 512,
+      "sentence": "It is estimated that the prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ].",
+      "context_window": "ated that the prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ]",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-525",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 525,
+      "sentence": "It is estimated that the prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ].",
+      "context_window": "prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ]. In Sp",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 545,
+      "sentence": "It is estimated that the prevalence of OSA is around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ].",
+      "context_window": "s around 4% in men aged 30-60 years and 2% in women aged 30-60 years in western countries [ 3 ]. In Spain, the prevalence betwee",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-634",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 634,
+      "sentence": "In Spain, the prevalence between the ages of 30 and 70 years is estimated at 19% in men and 15% in women [ 4 ].",
+      "context_window": "[ 3 ]. In Spain, the prevalence between the ages of 30 and 70 years is estimated at 19% in men and 15% in women [ 4 ]. Apnea-Hy",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-659",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 659,
+      "sentence": "In Spain, the prevalence between the ages of 30 and 70 years is estimated at 19% in men and 15% in women [ 4 ].",
+      "context_window": "valence between the ages of 30 and 70 years is estimated at 19% in men and 15% in women [ 4 ]. Apnea-Hypopnea Index (AHI) i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-674",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 674,
+      "sentence": "In Spain, the prevalence between the ages of 30 and 70 years is estimated at 19% in men and 15% in women [ 4 ].",
+      "context_window": "the ages of 30 and 70 years is estimated at 19% in men and 15% in women [ 4 ]. Apnea-Hypopnea Index (AHI) is the measure m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-427",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 427,
+      "sentence": "The study lasted 2 years.",
+      "context_window": "Pneumology- SEPAR [ 18 ]) were recruited. The study lasted 2 years. OSA was diagnosed according to the AASM criteria [ 19 ] ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-1009",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1009,
+      "sentence": "OCT was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of CPAP treatment.",
+      "context_window": "mask, over 3 consecutive nights). OCT was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-1047",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1047,
+      "sentence": "OCT was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of CPAP treatment.",
+      "context_window": "was performed within 3 days of the patient\u2019s inclusion and 12 months after the start of CPAP treatment. Demographic variables r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-1375",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1375,
+      "sentence": "Polygraphic variables analysed were AHI, cumulative percentage of time spent with oxygen saturation < 90% (CT90), mean oxygen saturation (SpO2), ODI, nocturnal respiratory failure (NRF), defined as CT90 \u2265 30% or mean SpO2 \u2264 90%, and HB, which was considered to be high when it was greater than p50 of the study population (> 100%min/h).",
+      "context_window": "umulative percentage of time spent with oxygen saturation < 90% (CT90), mean oxygen saturation (SpO2), ODI, nocturnal respi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-1478",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1478,
+      "sentence": "Polygraphic variables analysed were AHI, cumulative percentage of time spent with oxygen saturation < 90% (CT90), mean oxygen saturation (SpO2), ODI, nocturnal respiratory failure (NRF), defined as CT90 \u2265 30% or mean SpO2 \u2264 90%, and HB, which was considered to be high when it was greater than p50 of the study population (> 100%min/h).",
+      "context_window": "ODI, nocturnal respiratory failure (NRF), defined as CT90 \u2265 30% or mean SpO2 \u2264 90%, and HB, which was considered to be high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-1497",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1497,
+      "sentence": "Polygraphic variables analysed were AHI, cumulative percentage of time spent with oxygen saturation < 90% (CT90), mean oxygen saturation (SpO2), ODI, nocturnal respiratory failure (NRF), defined as CT90 \u2265 30% or mean SpO2 \u2264 90%, and HB, which was considered to be high when it was greater than p50 of the study population (> 100%min/h).",
+      "context_window": "iratory failure (NRF), defined as CT90 \u2265 30% or mean SpO2 \u2264 90%, and HB, which was considered to be high when it was greate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-1598",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1598,
+      "sentence": "Polygraphic variables analysed were AHI, cumulative percentage of time spent with oxygen saturation < 90% (CT90), mean oxygen saturation (SpO2), ODI, nocturnal respiratory failure (NRF), defined as CT90 \u2265 30% or mean SpO2 \u2264 90%, and HB, which was considered to be high when it was greater than p50 of the study population (> 100%min/h).",
+      "context_window": "igh when it was greater than p50 of the study population (> 100%min/h). The study protocol and the informed consent form we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-1928",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1928,
+      "sentence": "Patients between 18 and 75 years of age diagnosed with moderate-severe OSA (AHI \u2265 15) based on a respiratory polygraph with indication for CPAP treatment were included consecutively.",
+      "context_window": "articipants prior to examinations. Patients between 18 and 75 years of age diagnosed with moderate-severe OSA (AHI \u2265 15) based",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-2884",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2884,
+      "sentence": "Exclusion criteria included previous CPAP treatment, the presence of respiratory failure (defined as SpO2 < 90% or PaO2 < 60 mmHg) or home oxygen therapy, an unstable situation, uncontrolled or acute psychiatric illnesses, heart failure (NYHA grades III or IV), central apnea (> 50% of the register with central apneas), a refractive error > 6.0 or < -6.0 diopters (D) of spherical equivalent or 3.0 D of astigmatism, any history of ocular surgery, ocular disease such as central serous chorioretinopathy, pachychoroid spectrum, uveitis and related macular degeneration, best corrected visual acuity as poor as 20/40, IOP \u2265 18 mmHg, past history of elevated IOP, neuroretinal rim notching, or optic disc hemorrhages.",
+      "context_window": "ent, the presence of respiratory failure (defined as SpO2 < 90% or PaO2 < 60 mmHg) or home oxygen therapy, an unstable situ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-2898",
+      "claim_type": "unit_value",
+      "raw_text": "60 mmHg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2898,
+      "sentence": "Exclusion criteria included previous CPAP treatment, the presence of respiratory failure (defined as SpO2 < 90% or PaO2 < 60 mmHg) or home oxygen therapy, an unstable situation, uncontrolled or acute psychiatric illnesses, heart failure (NYHA grades III or IV), central apnea (> 50% of the register with central apneas), a refractive error > 6.0 or < -6.0 diopters (D) of spherical equivalent or 3.0 D of astigmatism, any history of ocular surgery, ocular disease such as central serous chorioretinopathy, pachychoroid spectrum, uveitis and related macular degeneration, best corrected visual acuity as poor as 20/40, IOP \u2265 18 mmHg, past history of elevated IOP, neuroretinal rim notching, or optic disc hemorrhages.",
+      "context_window": "nce of respiratory failure (defined as SpO2 < 90% or PaO2 < 60 mmHg) or home oxygen therapy, an unstable situation, uncontrolle",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-3055",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3055,
+      "sentence": "Exclusion criteria included previous CPAP treatment, the presence of respiratory failure (defined as SpO2 < 90% or PaO2 < 60 mmHg) or home oxygen therapy, an unstable situation, uncontrolled or acute psychiatric illnesses, heart failure (NYHA grades III or IV), central apnea (> 50% of the register with central apneas), a refractive error > 6.0 or < -6.0 diopters (D) of spherical equivalent or 3.0 D of astigmatism, any history of ocular surgery, ocular disease such as central serous chorioretinopathy, pachychoroid spectrum, uveitis and related macular degeneration, best corrected visual acuity as poor as 20/40, IOP \u2265 18 mmHg, past history of elevated IOP, neuroretinal rim notching, or optic disc hemorrhages.",
+      "context_window": "es, heart failure (NYHA grades III or IV), central apnea (> 50% of the register with central apneas), a refractive error >",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-3400",
+      "claim_type": "unit_value",
+      "raw_text": "18 mmHg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 3400,
+      "sentence": "Exclusion criteria included previous CPAP treatment, the presence of respiratory failure (defined as SpO2 < 90% or PaO2 < 60 mmHg) or home oxygen therapy, an unstable situation, uncontrolled or acute psychiatric illnesses, heart failure (NYHA grades III or IV), central apnea (> 50% of the register with central apneas), a refractive error > 6.0 or < -6.0 diopters (D) of spherical equivalent or 3.0 D of astigmatism, any history of ocular surgery, ocular disease such as central serous chorioretinopathy, pachychoroid spectrum, uveitis and related macular degeneration, best corrected visual acuity as poor as 20/40, IOP \u2265 18 mmHg, past history of elevated IOP, neuroretinal rim notching, or optic disc hemorrhages.",
+      "context_window": "ation, best corrected visual acuity as poor as 20/40, IOP \u2265 18 mmHg, past history of elevated IOP, neuroretinal rim notching, o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-5436",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mm",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5436,
+      "sentence": "Although the module includes 3 circle scans (inner circle: 3.5 mm, middle circle: 4.1 mm, and outer circle: 4.7 mm), we only recorded the figures provided by the inner circle scan (standard) (Fig.",
+      "context_window": "Although the module includes 3 circle scans (inner circle: 3.5 mm, middle circle: 4.1 mm, and outer circle: 4.7 mm), we only",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-5459",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 mm",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5459,
+      "sentence": "Although the module includes 3 circle scans (inner circle: 3.5 mm, middle circle: 4.1 mm, and outer circle: 4.7 mm), we only recorded the figures provided by the inner circle scan (standard) (Fig.",
+      "context_window": "cludes 3 circle scans (inner circle: 3.5 mm, middle circle: 4.1 mm, and outer circle: 4.7 mm), we only recorded the figures pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-5485",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 mm",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5485,
+      "sentence": "Although the module includes 3 circle scans (inner circle: 3.5 mm, middle circle: 4.1 mm, and outer circle: 4.7 mm), we only recorded the figures provided by the inner circle scan (standard) (Fig.",
+      "context_window": "er circle: 3.5 mm, middle circle: 4.1 mm, and outer circle: 4.7 mm), we only recorded the figures provided by the inner circle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-6909",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6909,
+      "sentence": "A loss to follow-up rate of 0% is estimated.",
+      "context_window": "assuming a correlation of 0.2). A loss to follow-up rate of 0% is estimated. The sample size was calculated using Granmo v",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-21",
+      "claim_type": "percentage",
+      "raw_text": "59.4%",
+      "numeric_values": [
+        59.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21,
+      "sentence": "Twenty-two patients (59.4%) were male and 15 (40.6%) were female.",
+      "context_window": "Twenty-two patients (59.4%) were male and 15 (40.6%) were female. Seventy-two eyes fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-46",
+      "claim_type": "percentage",
+      "raw_text": "40.6%",
+      "numeric_values": [
+        40.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 46,
+      "sentence": "Twenty-two patients (59.4%) were male and 15 (40.6%) were female.",
+      "context_window": "Twenty-two patients (59.4%) were male and 15 (40.6%) were female. Seventy-two eyes from 37 OSA patients were en",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-298",
+      "claim_type": "mean_sd",
+      "raw_text": "59 \u00b1 8",
+      "numeric_values": [
+        59.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 298,
+      "sentence": "The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively.",
+      "context_window": "efractive error less than - 6 DP. The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively. 25% of patient",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-303",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 303,
+      "sentence": "The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively.",
+      "context_window": "tive error less than - 6 DP. The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively. 25% of patients were",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-315",
+      "claim_type": "mean_sd",
+      "raw_text": "34.39 \u00b1 6.1",
+      "numeric_values": [
+        34.39,
+        6.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 315,
+      "sentence": "The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively.",
+      "context_window": "ess than - 6 DP. The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively. 25% of patients were diabetic, 61% h",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-323",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 kg",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 323,
+      "sentence": "The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively.",
+      "context_window": "- 6 DP. The mean age and BMI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively. 25% of patients were diabetic, 61% hype",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-350",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 350,
+      "sentence": "25% of patients were diabetic, 61% hypertensive, and 44.4% dyslipidemic.",
+      "context_window": "MI were 59 \u00b1 8 years and 34.39 \u00b1 6.1 kg/m 2 , respectively. 25% of patients were diabetic, 61% hypertensive, and 44.4% dysl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-381",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 381,
+      "sentence": "25% of patients were diabetic, 61% hypertensive, and 44.4% dyslipidemic.",
+      "context_window": "\u00b1 6.1 kg/m 2 , respectively. 25% of patients were diabetic, 61% hypertensive, and 44.4% dyslipidemic. In terms of smoking h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-403",
+      "claim_type": "percentage",
+      "raw_text": "44.4%",
+      "numeric_values": [
+        44.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 403,
+      "sentence": "25% of patients were diabetic, 61% hypertensive, and 44.4% dyslipidemic.",
+      "context_window": "ively. 25% of patients were diabetic, 61% hypertensive, and 44.4% dyslipidemic. In terms of smoking habits, 63.9% of patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-451",
+      "claim_type": "percentage",
+      "raw_text": "63.9%",
+      "numeric_values": [
+        63.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 451,
+      "sentence": "In terms of smoking habits, 63.9% of patients had never smoked, 11.1% were active smokers and 25% ex-smokers.",
+      "context_window": "ensive, and 44.4% dyslipidemic. In terms of smoking habits, 63.9% of patients had never smoked, 11.1% were active smokers and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "11.1%",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 487,
+      "sentence": "In terms of smoking habits, 63.9% of patients had never smoked, 11.1% were active smokers and 25% ex-smokers.",
+      "context_window": "erms of smoking habits, 63.9% of patients had never smoked, 11.1% were active smokers and 25% ex-smokers. Regarding the polyg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-517",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 517,
+      "sentence": "In terms of smoking habits, 63.9% of patients had never smoked, 11.1% were active smokers and 25% ex-smokers.",
+      "context_window": "of patients had never smoked, 11.1% were active smokers and 25% ex-smokers. Regarding the polygraphic variables, the mean A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-587",
+      "claim_type": "mean_sd",
+      "raw_text": "46.30 \u00b1 19.08",
+      "numeric_values": [
+        46.3,
+        19.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 587,
+      "sentence": "Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138.",
+      "context_window": "kers. Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-613",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 613,
+      "sentence": "Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138.",
+      "context_window": "aphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-621",
+      "claim_type": "mean_sd",
+      "raw_text": "21.4 \u00b1 21.9",
+      "numeric_values": [
+        21.4,
+        21.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 621,
+      "sentence": "Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138.",
+      "context_window": "riables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138. 16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-628",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 628,
+      "sentence": "Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138.",
+      "context_window": ", the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138. 16 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-654",
+      "claim_type": "mean_sd",
+      "raw_text": "91.2 \u00b1 3",
+      "numeric_values": [
+        91.2,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 654,
+      "sentence": "Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138.",
+      "context_window": "19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138. 16 \u00b1 139.7%min/h (range: 13.6-588",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-661",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 661,
+      "sentence": "Regarding the polygraphic variables, the mean AHI was 46.30 \u00b1 19.08, the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138.",
+      "context_window": "the mean CT90% was 21.4 \u00b1 21.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138. 16 \u00b1 139.7%min/h (range: 13.6-588.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-689",
+      "claim_type": "mean_sd",
+      "raw_text": "16 \u00b1 139.7",
+      "numeric_values": [
+        16.0,
+        139.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 689,
+      "sentence": "16 \u00b1 139.7%min/h (range: 13.6-588.5%min/h).",
+      "context_window": "1.9%, the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138. 16 \u00b1 139.7%min/h (range: 13.6-588.5%min/h). The mean Epworth scale was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-694",
+      "claim_type": "percentage",
+      "raw_text": "139.7%",
+      "numeric_values": [
+        139.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 694,
+      "sentence": "16 \u00b1 139.7%min/h (range: 13.6-588.5%min/h).",
+      "context_window": "the mean Sat02 was 91.2 \u00b1 3% and the mean HB was 138. 16 \u00b1 139.7%min/h (range: 13.6-588.5%min/h). The mean Epworth scale was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-719",
+      "claim_type": "percentage",
+      "raw_text": "588.5%",
+      "numeric_values": [
+        588.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 719,
+      "sentence": "16 \u00b1 139.7%min/h (range: 13.6-588.5%min/h).",
+      "context_window": "\u00b1 3% and the mean HB was 138. 16 \u00b1 139.7%min/h (range: 13.6-588.5%min/h). The mean Epworth scale was 9.83 \u00b1 3.94. When compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-760",
+      "claim_type": "mean_sd",
+      "raw_text": "9.83 \u00b1 3.94",
+      "numeric_values": [
+        9.83,
+        3.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 760,
+      "sentence": "The mean Epworth scale was 9.83 \u00b1 3.94.",
+      "context_window": "min/h (range: 13.6-588.5%min/h). The mean Epworth scale was 9.83 \u00b1 3.94. When comparing the measurements before starting CPAP ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-849",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 849,
+      "sentence": "When comparing the measurements before starting CPAP therapy with those at 12 months, no improvement was observed in any of the lamina cribrosa (LC) and GCL measurements.",
+      "context_window": "the measurements before starting CPAP therapy with those at 12 months, no improvement was observed in any of the lamina cribrosa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-1315",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1315,
+      "sentence": "The BMO-MRW analysis revealed a significant increase in superotemporal BMO-MRW thickness after 12 months of CPAP treatment (316.54 to 318.23 \u03bcm, p-value = 0.008) (Table 1 ).",
+      "context_window": "nificant increase in superotemporal BMO-MRW thickness after 12 months of CPAP treatment (316.54 to 318.23 \u03bcm, p-value = 0.008) (T",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-1512",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1512,
+      "sentence": "Comparison of thickness of retinal nerve fibre layer (RNFL) and Bruch\u2019s membrane opening-minimum rim width (BMO-MRW) 12 months after the start of CPAP treatment.",
+      "context_window": "L) and Bruch\u2019s membrane opening-minimum rim width (BMO-MRW) 12 months after the start of CPAP treatment. SD: standard deviation.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-1917",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1917,
+      "sentence": "When a multivariate analysis was performed, it was determined that increased HB (> 100%min/h) was the variable associated with a significantly increased odds ratio (OR) of retinal and optic nerve damage (OR = 3.58, p = 0.03), with this being a predictor of retinal and optic nerve damage.",
+      "context_window": "lysis was performed, it was determined that increased HB (> 100%min/h) was the variable associated with a significantly incr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-or-a-2038",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.58",
+      "numeric_values": [
+        3.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2038,
+      "sentence": "When a multivariate analysis was performed, it was determined that increased HB (> 100%min/h) was the variable associated with a significantly increased odds ratio (OR) of retinal and optic nerve damage (OR = 3.58, p = 0.03), with this being a predictor of retinal and optic nerve damage.",
+      "context_window": "ncreased odds ratio (OR) of retinal and optic nerve damage (OR = 3.58, p = 0.03), with this being a predictor of retinal and opti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-p-2049",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2049,
+      "sentence": "When a multivariate analysis was performed, it was determined that increased HB (> 100%min/h) was the variable associated with a significantly increased odds ratio (OR) of retinal and optic nerve damage (OR = 3.58, p = 0.03), with this being a predictor of retinal and optic nerve damage.",
+      "context_window": "ds ratio (OR) of retinal and optic nerve damage (OR = 3.58, p = 0.03), with this being a predictor of retinal and optic nerve da",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-2379",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2379,
+      "sentence": "BMI: body mass index, AHI: Apnea-Hypopnea index, CT90: cumulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturation index, T2DM: type 2 diabetes mellitus, AH: arterial hypertension\n\nIn a univariate analysis taking RNFL as a dependent variable (Table 3 ), age, respiratory insufficiency, T2DM, AHT and HB were significant.",
+      "context_window": "umulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturati",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-or-a-2767",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 4.344",
+      "numeric_values": [
+        4.344
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2767,
+      "sentence": "When a multivariate analysis was performed, the T2DM was found to be a predictor of retinal and optic nerve damage (OR = 4.344, p = 0.042).",
+      "context_window": "found to be a predictor of retinal and optic nerve damage (OR = 4.344, p = 0.042). Logistic regression analysis for assessment o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-p-2779",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2779,
+      "sentence": "When a multivariate analysis was performed, the T2DM was found to be a predictor of retinal and optic nerve damage (OR = 4.344, p = 0.042).",
+      "context_window": "a predictor of retinal and optic nerve damage (OR = 4.344, p = 0.042). Logistic regression analysis for assessment of predictor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-3044",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3044,
+      "sentence": "BMI: body mass index, AHI: Apnea-Hypopnea index, CT90: cumulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturation index, T2DM: type 2 diabetes mellitus, AH: arterial hypertension\n\nLogistic regression analysis was performed using differences in BMO-MRW thickness after 12 months of CPAP treatment as a dependent variable (Table 4 ).",
+      "context_window": "umulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturati",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-3264",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3264,
+      "sentence": "BMI: body mass index, AHI: Apnea-Hypopnea index, CT90: cumulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturation index, T2DM: type 2 diabetes mellitus, AH: arterial hypertension\n\nLogistic regression analysis was performed using differences in BMO-MRW thickness after 12 months of CPAP treatment as a dependent variable (Table 4 ).",
+      "context_window": "was performed using differences in BMO-MRW thickness after 12 months of CPAP treatment as a dependent variable (Table 4 ). An un",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-3648",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3648,
+      "sentence": "Logistic regression analysis for assesament of predictors of poor response to CPAP treatment considering the difference in BMO-MRW thickness 12 months after CPAP treatment as the dependent variable.",
+      "context_window": "P treatment considering the difference in BMO-MRW thickness 12 months after CPAP treatment as the dependent variable. OR: odds ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-3838",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3838,
+      "sentence": "BMI: body mass index, AHI: Apnea-Hypopnea index, CT90: cumulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturation index, T2DM: type 2 diabetes mellitus, AH: arterial hypertension\n\nRegarding the difference in RNFL thickness (Table 5 ), in the univariate analysis none of the variables were significant.",
+      "context_window": "umulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturati",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-4231",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4231,
+      "sentence": "Logistic regression analysis for assessment of predictors of poor response to CPAP treatment considering the difference in RNFL thickness 12 months after treatment with CPAP as the dependent variable.",
+      "context_window": "CPAP treatment considering the difference in RNFL thickness 12 months after treatment with CPAP as the dependent variable. OR: od",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-4426",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4426,
+      "sentence": "BMI: body mass index, AHI: Apnea-Hypopnea index, CT90: cumulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturation index, T2DM: type 2 diabetes mellitus, AH: arterial hypertension",
+      "context_window": "umulative percentage of time spent with oxygen saturation < 90%, NRF: nocturnal respiratory failure, ODI: oxygen desaturati",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-pct-574",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 574,
+      "sentence": "In our case, we observed that patients with high HB (> 100%min/h) were 3.6-times more likely to suffer a superotemporal BMO-MRW thinning, which indicates that HB may be a predictor of retinal and optic nerve damage.",
+      "context_window": "age. In our case, we observed that patients with high HB (> 100%min/h) were 3.6-times more likely to suffer a superotemporal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-1773",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1773,
+      "sentence": "There has only been one study that has assessed changes at 6 months after treatment and this measured RNF [ 8 ].",
+      "context_window": "There has only been one study that has assessed changes at 6 months after treatment and this measured RNF [ 8 ]. In this study,",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-1887",
+      "claim_type": "mean_sd",
+      "raw_text": "55.4 \u00b1 21.12",
+      "numeric_values": [
+        55.4,
+        21.12
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1887,
+      "sentence": "In this study, the patients had severe OSA with mean AHI of 55.4 \u00b1 21.12/h, which is a limitation in the application of results as it does not represent usual clinical practice in the population.",
+      "context_window": "In this study, the patients had severe OSA with mean AHI of 55.4 \u00b1 21.12/h, which is a limitation in the application of results as i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-msd-2103",
+      "claim_type": "mean_sd",
+      "raw_text": "46.30 \u00b1 19.08",
+      "numeric_values": [
+        46.3,
+        19.08
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2103,
+      "sentence": "In our case, we assessed patients with moderate and severe OSA with mean AHI of 46.30 \u00b1 19.08 which is a strength of the work.",
+      "context_window": "ssed patients with moderate and severe OSA with mean AHI of 46.30 \u00b1 19.08 which is a strength of the work. CPAP therapy reduces uppe",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12043755_benefit_of_continuous_positive_airway_pressure_on_optic_nerv-u-2720",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2720,
+      "sentence": "This increase in thickness agrees with the study by Batum et al. [ 8 ], in which they reported a significant thickening of several sectors of the RNFL and the foveal macular layer 6 months after the start of CPAP treatment in patients with severe OSA.",
+      "context_window": "of several sectors of the RNFL and the foveal macular layer 6 months after the start of CPAP treatment in patients with severe O",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

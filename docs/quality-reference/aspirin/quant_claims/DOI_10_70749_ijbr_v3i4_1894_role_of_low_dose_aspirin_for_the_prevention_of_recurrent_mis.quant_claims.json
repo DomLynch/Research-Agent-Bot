@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_70749_ijbr_v3i4_1894_role_of_low_dose_aspirin_for_the_prevention_of_recurrent_mis",
+  "doi": "10.70749/ijbr.v3i4.1894",
+  "extracted_at": "2026-05-08T20:06:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i4_1894_role_of_low_dose_aspirin_for_the_prevention_of_recurrent_mis-pct-803",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 803,
+      "sentence": "Findings: 66.7% of the 120 women took low-dose aspirin.",
+      "context_window": ", which were then subjected to thematic analysis. Findings: 66.7% of the 120 women took low-dose aspirin. Of these, 70.8% wen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i4_1894_role_of_low_dose_aspirin_for_the_prevention_of_recurrent_mis-pct-859",
+      "claim_type": "percentage",
+      "raw_text": "70.8%",
+      "numeric_values": [
+        70.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 859,
+      "sentence": "Of these, 70.8% went on to have healthy, continuing pregnancies.",
+      "context_window": "gs: 66.7% of the 120 women took low-dose aspirin. Of these, 70.8% went on to have healthy, continuing pregnancies. Better res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

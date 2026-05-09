@@ -1563,6 +1563,64 @@ def test_auto_fixer_does_not_collapse_indentation() -> None:
     assert not ds_logs, f"unexpected double_space_collapse: {ds_logs}"
 
 
+def test_auto_fixer_collapses_adjacent_duplicate_words() -> None:
+    """Stage-2 C08 duplicated-word issues should not survive when
+    the deterministic fixer can safely collapse the adjacent token."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = "## Discussion\n\nAspirin does not not associate cleanly.\n"
+    fixed, log = fixer.apply_fixes(paper, [])
+
+    assert "not not" not in fixed
+    assert "does not associate" in fixed
+    assert any(
+        e.get("fix_type") == "duplicate_word_collapse" for e in log
+    )
+
+
+def test_auto_fixer_preserves_valid_duplicate_words() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = "## Discussion\n\nParticipants had had prior exposure.\n"
+    fixed, log = fixer.apply_fixes(paper, [])
+
+    assert "had had" in fixed
+    assert not any(
+        e.get("fix_type") == "duplicate_word_collapse" for e in log
+    )
+
+
+def test_apply_fixes_backfills_public_thesis_marker() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+    import audit_v06_paper as audit
+
+    paper = "## Abstract\n\nThis synthesis examined accepted receipts.\n"
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "aspirin"})
+
+    ok, msg = audit._check_thesis_present(fixed)
+    assert ok, msg
+    assert "**Thesis:**" in fixed
+    assert "evidence profile for" in fixed
+    assert any(
+        e.get("fix_type") == "public_thesis_marker_backfill" for e in log
+    )
+
+
 # ============ Fix #29 — stale SPAR language outside Methods ===========
 
 
@@ -1728,3 +1786,35 @@ def test_apply_fixes_restores_depth_after_final_public_dedupe(monkeypatch) -> No
     assert "exact_public_duplicate_paragraph_post_depth" in {
         x["fix_type"] for x in log
     }
+
+
+def test_lightweight_public_polish_strips_duplicate_paragraphs_pre_final_audit() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    para = (
+        "This paragraph states a specific interpretive boundary for the "
+        "paper across clinical receipts, mechanistic receipts, and indirect "
+        "evidence classes while preserving the scientific claim, the "
+        "population context, comparator context, endpoint context, and "
+        "follow-up context."
+    )
+    near_dup = para.replace("scientific claim", "scientific conclusion")
+    paper = (
+        "## Abstract\n\n"
+        f"{para}\n\n"
+        "## Discussion\n\n"
+        f"{near_dup}\n\n"
+        "A distinct discussion paragraph remains available for readers.\n"
+    )
+
+    fixed, log = fixer.apply_lightweight_public_polish(
+        paper,
+        manifest={"topic": "demo"},
+    )
+
+    assert fixed.count("specific interpretive boundary") == 1
+    assert "distinct discussion paragraph" in fixed
+    assert any(item["fix_type"] == "fuzzy_duplicate_paragraph" for item in log)

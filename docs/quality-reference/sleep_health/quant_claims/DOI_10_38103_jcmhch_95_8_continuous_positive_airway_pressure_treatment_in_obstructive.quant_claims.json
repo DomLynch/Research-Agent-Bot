@@ -1,0 +1,397 @@
+{
+  "paper_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive",
+  "doi": "10.38103/jcmhch.95.8",
+  "extracted_at": "2026-05-08T20:05:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 8,
+    "percentage": 1,
+    "mean_sd": 5,
+    "p_value": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-306",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 306,
+      "sentence": "<jats:p>Aims: To assess the prevalence and general characteristics of obstructive sleep apnea syndrome in patients with hypertension, investigate the relationship between obstructive sleep apnea syndrome and blood pressure, and the effectiveness of continuous positive pressure ventilation treatment after 1 month in hypertensive patients with obstructive sleep apnea.",
+      "context_window": "of continuous positive pressure ventilation treatment after 1 month in hypertensive patients with obstructive sleep apnea. Meth",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-433",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 433,
+      "sentence": "Methods: Cross-sectional descriptive study with follow-up after 1 month in hypertensive patients treated at the Hue University of Medicine and Pharmacy Hospital with respiratory polygraphy from January 2021 to June 2023.",
+      "context_window": "ods: Cross-sectional descriptive study with follow-up after 1 month in hypertensive patients treated at the Hue University of M",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-775",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 775,
+      "sentence": "Patients were given history, clinical examination, anthropometric measurements, Lipid profile test, intravenous glucose, Epworth scale assessment, CPAP treatment and re-evaluated after 1 month.",
+      "context_window": "rth scale assessment, CPAP treatment and re-evaluated after 1 month. Results: 134 patients were registered for the study from 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-pct-898",
+      "claim_type": "percentage",
+      "raw_text": "73.13%",
+      "numeric_values": [
+        73.13
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 898,
+      "sentence": "Hypertensive patients with OSAS were 73.13%.",
+      "context_window": "om 01/2021 to 06/2023. Hypertensive patients with OSAS were 73.13%. BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-msd-936",
+      "claim_type": "mean_sd",
+      "raw_text": "22.84 \u00b1 3.04",
+      "numeric_values": [
+        22.84,
+        3.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 936,
+      "sentence": "BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05).",
+      "context_window": "tients with OSAS were 73.13%. BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-944",
+      "claim_type": "unit_value",
+      "raw_text": "3.04 kg/m2",
+      "numeric_values": [
+        3.04
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05).",
+      "context_window": "ith OSAS were 73.13%. BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the OSAS (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-msd-1024",
+      "claim_type": "mean_sd",
+      "raw_text": "22.79 \u00b1 3.07",
+      "numeric_values": [
+        22.79,
+        3.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1024,
+      "sentence": "BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05).",
+      "context_window": "tatistically significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05). Neck circumference in the OSAS (+) group wa",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-1032",
+      "claim_type": "unit_value",
+      "raw_text": "3.07 kg/m2",
+      "numeric_values": [
+        3.07
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 1032,
+      "sentence": "BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05).",
+      "context_window": "ally significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05). Neck circumference in the OSAS (+) group was 37.4",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1044",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1044,
+      "sentence": "BMI in the OSAS (+) group was 22.84 \u00b1 3.04 kg/m2 and was statistically significantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05).",
+      "context_window": "cantly greater than the OSAS (-) group: 22.79 \u00b1 3.07 kg/m2 (p<0.05). Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-msd-1098",
+      "claim_type": "mean_sd",
+      "raw_text": "37.45 \u00b1 2.44",
+      "numeric_values": [
+        37.45,
+        2.44
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05).",
+      "context_window": "g/m2 (p<0.05). Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the O",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-1106",
+      "claim_type": "unit_value",
+      "raw_text": "2.44 cm",
+      "numeric_values": [
+        2.44
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1106,
+      "sentence": "Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05).",
+      "context_window": "0.05). Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the OSAS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-msd-1185",
+      "claim_type": "mean_sd",
+      "raw_text": "36.36 \u00b1 1.57",
+      "numeric_values": [
+        36.36,
+        1.57
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05).",
+      "context_window": "statistically significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05). The rate of loud snoring during sleep and exce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-1193",
+      "claim_type": "unit_value",
+      "raw_text": "1.57 cm",
+      "numeric_values": [
+        1.57
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1193,
+      "sentence": "Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05).",
+      "context_window": "cally significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05). The rate of loud snoring during sleep and excessi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1202",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "Neck circumference in the OSAS (+) group was 37.45 \u00b1 2.44 cm, which was statistically significantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05).",
+      "context_window": "nificantly larger than the OSAS (-) group: 36.36 \u00b1 1.57 cm (p<0.05). The rate of loud snoring during sleep and excessive dayti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1388",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1388,
+      "sentence": "The rate of loud snoring during sleep and excessive daytime sleepiness in the OSAS patient group was statistically significantly higher than in the group without this syndrome (p<0.05 and p<0.01).",
+      "context_window": "gnificantly higher than in the group without this syndrome (p<0.05 and p<0.01). The average systolic blood pressure in the OSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1399",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1399,
+      "sentence": "The rate of loud snoring during sleep and excessive daytime sleepiness in the OSAS patient group was statistically significantly higher than in the group without this syndrome (p<0.05 and p<0.01).",
+      "context_window": "higher than in the group without this syndrome (p<0.05 and p<0.01). The average systolic blood pressure in the OSAS (+) group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-msd-1470",
+      "claim_type": "mean_sd",
+      "raw_text": "154.79 \u00b1 13.32",
+      "numeric_values": [
+        154.79,
+        13.32
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1470,
+      "sentence": "The average systolic blood pressure in the OSAS (+) group was 154.79 \u00b1 13.32 mm Hg and was statistically significantly higher than the OSAS (-) group (p<0.01).",
+      "context_window": "e average systolic blood pressure in the OSAS (+) group was 154.79 \u00b1 13.32 mm Hg and was statistically significantly higher than the O",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-u-1479",
+      "claim_type": "unit_value",
+      "raw_text": "13.32 mm",
+      "numeric_values": [
+        13.32
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "The average systolic blood pressure in the OSAS (+) group was 154.79 \u00b1 13.32 mm Hg and was statistically significantly higher than the OSAS (-) group (p<0.01).",
+      "context_window": "systolic blood pressure in the OSAS (+) group was 154.79 \u00b1 13.32 mm Hg and was statistically significantly higher than the OSAS",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1559",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1559,
+      "sentence": "The average systolic blood pressure in the OSAS (+) group was 154.79 \u00b1 13.32 mm Hg and was statistically significantly higher than the OSAS (-) group (p<0.01).",
+      "context_window": "statistically significantly higher than the OSAS (-) group (p<0.01). AHI has a moderate positive correlation with systolic blo",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1648",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1648,
+      "sentence": "AHI has a moderate positive correlation with systolic blood pressure (r = 0.45, p<0.01) and diastolic blood pressure (r = 0.34, p<0.01).",
+      "context_window": "ositive correlation with systolic blood pressure (r = 0.45, p<0.01) and diastolic blood pressure (r = 0.34, p<0.01). CPAP trea",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_38103_jcmhch_95_8_continuous_positive_airway_pressure_treatment_in_obstructive-p-1696",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1696,
+      "sentence": "AHI has a moderate positive correlation with systolic blood pressure (r = 0.45, p<0.01) and diastolic blood pressure (r = 0.34, p<0.01).",
+      "context_window": "(r = 0.45, p<0.01) and diastolic blood pressure (r = 0.34, p<0.01). CPAP treatment improved systolic and diastolic blood pres",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

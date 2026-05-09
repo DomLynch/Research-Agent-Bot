@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_1001_jamainternmed_2014_8081_mindfulness_meditation_and_improvement_in_sleep_quality_and",
+  "doi": "10.1001/jamainternmed.2014.8081",
+  "extracted_at": "2026-05-08T20:06:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2014_8081_mindfulness_meditation_and_improvement_in_sleep_quality_and-n-787",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 787,
+      "sentence": "INTERVENTIONS: A standardized mindful awareness practices (MAPs) intervention (n = 24) or a sleep hygiene education (SHE) intervention (n = 25) was randomized to participants, who received a 6-week intervention (2 hours per week) with assigned homework.",
+      "context_window": "andardized mindful awareness practices (MAPs) intervention (n = 24) or a sleep hygiene education (SHE) intervention (n = 25) w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "sleep hygiene",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2014_8081_mindfulness_meditation_and_improvement_in_sleep_quality_and-n-844",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 844,
+      "sentence": "INTERVENTIONS: A standardized mindful awareness practices (MAPs) intervention (n = 24) or a sleep hygiene education (SHE) intervention (n = 25) was randomized to participants, who received a 6-week intervention (2 hours per week) with assigned homework.",
+      "context_window": "n (n = 24) or a sleep hygiene education (SHE) intervention (n = 25) was randomized to participants, who received a 6-week inte",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "sleep hygiene",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2014_8081_mindfulness_meditation_and_improvement_in_sleep_quality_and-pct-1762",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1762,
+      "sentence": "The between-group mean difference was 1.8 (95% CI, 0.6-2.9), with an effect size of 0.89.",
+      "context_window": "ostintervention. The between-group mean difference was 1.8 (95% CI, 0.6-2.9), with an effect size of 0.89. The MAPs group s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2014_8081_mindfulness_meditation_and_improvement_in_sleep_quality_and-p-1997",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1997,
+      "sentence": "The MAPs group showed significant improvement relative to the SHE group on secondary health outcomes of insomnia symptoms, depression symptoms, fatigue interference, and fatigue severity (P < .05 for all).",
+      "context_window": "ssion symptoms, fatigue interference, and fatigue severity (P < .05 for all). Between-group differences were not observed for a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2014_8081_mindfulness_meditation_and_improvement_in_sleep_quality_and-p-2169",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2169,
+      "sentence": "Between-group differences were not observed for anxiety, stress, or NF-\u03baB, although NF-\u03baB concentrations significantly declined over time in both groups (P < .05).",
+      "context_window": "entrations significantly declined over time in both groups (P < .05). CONCLUSIONS AND RELEVANCE: The use of a community-accessi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

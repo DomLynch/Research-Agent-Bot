@@ -1,0 +1,378 @@
+{
+  "paper_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized",
+  "doi": "10.3329/bjog.v40i2.89732",
+  "extracted_at": "2026-05-08T20:06:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "sample_size": 2,
+    "percentage": 7,
+    "risk_ratio": 1,
+    "confidence_interval": 2,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-u-87",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 87,
+      "sentence": "<jats:p>Objective: To assess the efficacy and safety of prophylactic low-dose aspirin (75 mg daily) started at 12-19 weeks of gestation for preventing preeclampsia in high-risk pregnant women in Bangladesh.",
+      "context_window": "s the efficacy and safety of prophylactic low-dose aspirin (75 mg daily) started at 12-19 weeks of gestation for preventing p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-u-114",
+      "claim_type": "unit_value",
+      "raw_text": "19 weeks",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 114,
+      "sentence": "<jats:p>Objective: To assess the efficacy and safety of prophylactic low-dose aspirin (75 mg daily) started at 12-19 weeks of gestation for preventing preeclampsia in high-risk pregnant women in Bangladesh.",
+      "context_window": "f prophylactic low-dose aspirin (75 mg daily) started at 12-19 weeks of gestation for preventing preeclampsia in high-risk pregn",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-n-315",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 315,
+      "sentence": "Methods: In this open-label randomized controlled trial, 200 high-risk women were allocated 1:1 to aspirin (n = 100) or standard care (n = 100) at BIRDEM-2 Hospital, Dhaka.",
+      "context_window": "d trial, 200 high-risk women were allocated 1:1 to aspirin (n = 100) or standard care (n = 100) at BIRDEM-2 Hospital, Dhaka. As",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-n-342",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 342,
+      "sentence": "Methods: In this open-label randomized controlled trial, 200 high-risk women were allocated 1:1 to aspirin (n = 100) or standard care (n = 100) at BIRDEM-2 Hospital, Dhaka.",
+      "context_window": "n were allocated 1:1 to aspirin (n = 100) or standard care (n = 100) at BIRDEM-2 Hospital, Dhaka. Aspirin was continued until 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-u-408",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 408,
+      "sentence": "Aspirin was continued until 36 weeks or delivery.",
+      "context_window": "0) at BIRDEM-2 Hospital, Dhaka. Aspirin was continued until 36 weeks or delivery. The primary outcome was preeclampsia (blood pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-u-488",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 488,
+      "sentence": "The primary outcome was preeclampsia (blood pressure \u2265140/90 mmHg with proteinuria \u22652+).",
+      "context_window": ". The primary outcome was preeclampsia (blood pressure \u2265140/90 mmHg with proteinuria \u22652+). Secondary outcomes included blood pr",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-829",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 829,
+      "sentence": "Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001).",
+      "context_window": "e characteristics were comparable. Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-856",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 856,
+      "sentence": "Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001).",
+      "context_window": "arable. Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-rr-l-873",
+      "claim_type": "risk_ratio",
+      "raw_text": "relative risk 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 873,
+      "sentence": "Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001).",
+      "context_window": "sia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001). Mean systolic and diastolic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-ci-893",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.12-0.43",
+      "numeric_values": [
+        0.12,
+        0.43
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 893,
+      "sentence": "Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001).",
+      "context_window": "f aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001). Mean systolic and diastolic pressures at deliv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-p-911",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "Preeclampsia occurred in 8% of aspirin users versus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001).",
+      "context_window": "rsus 48% of controls (relative risk 0.22, 95% CI 0.12-0.43; p = 0.001). Mean systolic and diastolic pressures at delivery were lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-u-987",
+      "claim_type": "unit_value",
+      "raw_text": "19.9 mmHg",
+      "numeric_values": [
+        19.9
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 987,
+      "sentence": "Mean systolic and diastolic pressures at delivery were lower by 19.9 mmHg and 11.4 mmHg, respectively (both p = 0.001).",
+      "context_window": "systolic and diastolic pressures at delivery were lower by 19.9 mmHg and 11.4 mmHg, respectively (both p = 0.001). Significant p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-u-1001",
+      "claim_type": "unit_value",
+      "raw_text": "11.4 mmHg",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1001,
+      "sentence": "Mean systolic and diastolic pressures at delivery were lower by 19.9 mmHg and 11.4 mmHg, respectively (both p = 0.001).",
+      "context_window": "diastolic pressures at delivery were lower by 19.9 mmHg and 11.4 mmHg, respectively (both p = 0.001). Significant proteinuria (e\u201d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-p-1031",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Mean systolic and diastolic pressures at delivery were lower by 19.9 mmHg and 11.4 mmHg, respectively (both p = 0.001).",
+      "context_window": "y were lower by 19.9 mmHg and 11.4 mmHg, respectively (both p = 0.001). Significant proteinuria (e\u201d2+) was observed in 6% versus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-1090",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1090,
+      "sentence": "Significant proteinuria (e\u201d2+) was observed in 6% versus 46% (RR 0.44; 95% CI 0.31-0.61).",
+      "context_window": "p = 0.001). Significant proteinuria (e\u201d2+) was observed in 6% versus 46% (RR 0.44; 95% CI 0.31-0.61). Gestational hyperte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-1100",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1100,
+      "sentence": "Significant proteinuria (e\u201d2+) was observed in 6% versus 46% (RR 0.44; 95% CI 0.31-0.61).",
+      "context_window": "). Significant proteinuria (e\u201d2+) was observed in 6% versus 46% (RR 0.44; 95% CI 0.31-0.61). Gestational hypertension decli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-ci-1114",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.31-0.61",
+      "numeric_values": [
+        0.31,
+        0.61
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1114,
+      "sentence": "Significant proteinuria (e\u201d2+) was observed in 6% versus 46% (RR 0.44; 95% CI 0.31-0.61).",
+      "context_window": "proteinuria (e\u201d2+) was observed in 6% versus 46% (RR 0.44; 95% CI 0.31-0.61). Gestational hypertension declined non-significantly (21%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-1186",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1186,
+      "sentence": "Gestational hypertension declined non-significantly (21% vs 31%).",
+      "context_window": "0.61). Gestational hypertension declined non-significantly (21% vs 31%). Maternal and fetal complications, including preter",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-1193",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1193,
+      "sentence": "Gestational hypertension declined non-significantly (21% vs 31%).",
+      "context_window": "Gestational hypertension declined non-significantly (21% vs 31%). Maternal and fetal complications, including preterm birth",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3329_bjog_v40i2_89732_low_dose_aspirin_in_prevention_of_pre_eclampsia_a_randomized-pct-1428",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1428,
+      "sentence": "Conclusions: Prophylactic low-dose aspirin initiated early in pregnancy reduced preeclampsia risk by 78% without adverse effects, demonstrating a safe, low-cost preventive strategy for high-risk women in resource-limited settings.",
+      "context_window": "n initiated early in pregnancy reduced preeclampsia risk by 78% without adverse effects, demonstrating a safe, low-cost pre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

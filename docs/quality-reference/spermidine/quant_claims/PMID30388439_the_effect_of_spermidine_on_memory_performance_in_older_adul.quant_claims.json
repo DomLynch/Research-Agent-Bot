@@ -1,0 +1,159 @@
+{
+  "paper_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul",
+  "doi": "10.1016/j.cortex.2018.09.014",
+  "extracted_at": "2026-05-08T20:12:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 1,
+    "percentage": 5,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-n-405",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 405,
+      "sentence": "Methods Cognitively intact participants with subjective cognitive decline (n = 30, 60-80 years of age) were included in this three-months, randomized, placebo-controlled, double-blind Phase IIa pilot trial with a spermidine-rich plant extract supplement.",
+      "context_window": "vely intact participants with subjective cognitive decline (n = 30, 60-80 years of age) were included in this three-months, ra",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-u-416",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 416,
+      "sentence": "Methods Cognitively intact participants with subjective cognitive decline (n = 30, 60-80 years of age) were included in this three-months, randomized, placebo-controlled, double-blind Phase IIa pilot trial with a spermidine-rich plant extract supplement.",
+      "context_window": "participants with subjective cognitive decline (n = 30, 60-80 years of age) were included in this three-months, randomized, pla",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-pct-960",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Results Memory performance was moderately enhanced in the spermidine group compared with placebo at the end of intervention [contrast mean = .17, 95% confidence interval (CI): -.01, .35, Cohen's d = .77, 95% CI: 0, 1.53].",
+      "context_window": "th placebo at the end of intervention [contrast mean = .17, 95% confidence interval (CI): -.01, .35, Cohen's d = .77, 95% C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-ci-1018",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0, 1.53",
+      "numeric_values": [
+        0.0,
+        1.53
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1018,
+      "sentence": "Results Memory performance was moderately enhanced in the spermidine group compared with placebo at the end of intervention [contrast mean = .17, 95% confidence interval (CI): -.01, .35, Cohen's d = .77, 95% CI: 0, 1.53].",
+      "context_window": ", 95% confidence interval (CI): -.01, .35, Cohen's d = .77, 95% CI: 0, 1.53]. Mnemonic discrimination ability improved in the spermidin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-pct-1160",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "Mnemonic discrimination ability improved in the spermidine-treated group with a medium effect size (mean difference = -.11, 95% CI: -.19, -.03, Cohen's d = .79, 95% CI: .01, 1.55).",
+      "context_window": "ed group with a medium effect size (mean difference = -.11, 95% CI: -.19, -.03, Cohen's d = .79, 95% CI: .01, 1.55). A simi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-pct-1197",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1197,
+      "sentence": "Mnemonic discrimination ability improved in the spermidine-treated group with a medium effect size (mean difference = -.11, 95% CI: -.19, -.03, Cohen's d = .79, 95% CI: .01, 1.55).",
+      "context_window": "ean difference = -.11, 95% CI: -.19, -.03, Cohen's d = .79, 95% CI: .01, 1.55). A similar effect was not found in the place",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-pct-1301",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1301,
+      "sentence": "A similar effect was not found in the placebo-treated group (mean difference = .07, 95% CI: -.13, .27, Cohen's d = -.20, 95% CI: -.94, .54).",
+      "context_window": "found in the placebo-treated group (mean difference = .07, 95% CI: -.13, .27, Cohen's d = -.20, 95% CI: -.94, .54). Discus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30388439_the_effect_of_spermidine_on_memory_performance_in_older_adul-pct-1338",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1338,
+      "sentence": "A similar effect was not found in the placebo-treated group (mean difference = .07, 95% CI: -.13, .27, Cohen's d = -.20, 95% CI: -.94, .54).",
+      "context_window": "mean difference = .07, 95% CI: -.13, .27, Cohen's d = -.20, 95% CI: -.94, .54). Discussion In this pilot trial, nutritional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

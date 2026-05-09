@@ -1,0 +1,87 @@
+{
+  "paper_id": "DOI_10_1161_circ_144_suppl_1_11022_abstract_11022_aspirin_with_ticagrelor_or_with_low_dose_riva",
+  "doi": "10.1161/circ.144.suppl_1.11022",
+  "extracted_at": "2026-05-08T20:05:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circ_144_suppl_1_11022_abstract_11022_aspirin_with_ticagrelor_or_with_low_dose_riva-pct-1256",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1256,
+      "sentence": "Secondary outcomes analysis was performed for myocardial infarction (MI), stroke, and CV death as separate outcomes. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> The aNNTs to prevent MACE with Ticagrelor and with LD-Rivaroxaban were 207 [95% confidence interval (CI):138-553] and 147 (95%CI:104-252), respectively.",
+      "context_window": "vent MACE with Ticagrelor and with LD-Rivaroxaban were 207 [95% confidence interval (CI):138-553] and 147 (95%CI:104-252),",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_144_suppl_1_11022_abstract_11022_aspirin_with_ticagrelor_or_with_low_dose_riva-ci-1303",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:104-252",
+      "numeric_values": [
+        104.0,
+        252.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1303,
+      "sentence": "Secondary outcomes analysis was performed for myocardial infarction (MI), stroke, and CV death as separate outcomes. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> The aNNTs to prevent MACE with Ticagrelor and with LD-Rivaroxaban were 207 [95% confidence interval (CI):138-553] and 147 (95%CI:104-252), respectively.",
+      "context_window": "an were 207 [95% confidence interval (CI):138-553] and 147 (95%CI:104-252), respectively. At an annual cost of $3,541 versus $4,308,",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_144_suppl_1_11022_abstract_11022_aspirin_with_ticagrelor_or_with_low_dose_riva-ci-1414",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:489,619",
+      "numeric_values": [
+        489.0,
+        619.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1414,
+      "sentence": "At an annual cost of $3,541 versus $4,308, the corresponding CNTs were 734,429$ (95%CI:489,619$-1,958,478$) with ticagrelor and 633,003$ (95%CI:446,826$-1,085,149$) with LD-Rivaroxaban.",
+      "context_window": "$3,541 versus $4,308, the corresponding CNTs were 734,429$ (95%CI:489,619$-1,958,478$) with ticagrelor and 633,003$ (95%CI:446,826$-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_144_suppl_1_11022_abstract_11022_aspirin_with_ticagrelor_or_with_low_dose_riva-ci-1471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:446,826",
+      "numeric_values": [
+        446.0,
+        826.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "At an annual cost of $3,541 versus $4,308, the corresponding CNTs were 734,429$ (95%CI:489,619$-1,958,478$) with ticagrelor and 633,003$ (95%CI:446,826$-1,085,149$) with LD-Rivaroxaban.",
+      "context_window": "$ (95%CI:489,619$-1,958,478$) with ticagrelor and 633,003$ (95%CI:446,826$-1,085,149$) with LD-Rivaroxaban. Results of the scenario a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

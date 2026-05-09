@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1200_jco_2017_35_15_suppl_tps1591_asamet_a_randomized_2x2_biomarker_prevention_trial_of_low_do",
+  "doi": "10.1200/jco.2017.35.15_suppl.tps1591",
+  "extracted_at": "2026-05-08T20:05:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1200_jco_2017_35_15_suppl_tps1591_asamet_a_randomized_2x2_biomarker_prevention_trial_of_low_do-pct-427",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 427,
+      "sentence": "Metformin (MET) has also been associated with decreased CRC incidence and mortality in meta-analyses of epidemiological studies in diabetics and has been shown to decrease by 40% colorectal adenoma recurrence in a randomized trial.",
+      "context_window": "ical studies in diabetics and has been shown to decrease by 40% colorectal adenoma recurrence in a randomized trial. Recent",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2017_35_15_suppl_tps1591_asamet_a_randomized_2x2_biomarker_prevention_trial_of_low_do-u-1344",
+      "claim_type": "unit_value",
+      "raw_text": "100mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1344,
+      "sentence": "After surgery, 160 patients with stage I-III CRC will randomly be assigned in a 4-arm trial to either ASA, 100mg qd, MET 850mg bid, their combination, or placebo for 1 year.",
+      "context_window": "C will randomly be assigned in a 4-arm trial to either ASA, 100mg qd, MET 850mg bid, their combination, or placebo for 1 year",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2017_35_15_suppl_tps1591_asamet_a_randomized_2x2_biomarker_prevention_trial_of_low_do-u-1358",
+      "claim_type": "unit_value",
+      "raw_text": "850mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1358,
+      "sentence": "After surgery, 160 patients with stage I-III CRC will randomly be assigned in a 4-arm trial to either ASA, 100mg qd, MET 850mg bid, their combination, or placebo for 1 year.",
+      "context_window": "y be assigned in a 4-arm trial to either ASA, 100mg qd, MET 850mg bid, their combination, or placebo for 1 year. The primary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2017_35_15_suppl_tps1591_asamet_a_randomized_2x2_biomarker_prevention_trial_of_low_do-u-1403",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "After surgery, 160 patients with stage I-III CRC will randomly be assigned in a 4-arm trial to either ASA, 100mg qd, MET 850mg bid, their combination, or placebo for 1 year.",
+      "context_window": "100mg qd, MET 850mg bid, their combination, or placebo for 1 year. The primary endpoint is the change, defined as the differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

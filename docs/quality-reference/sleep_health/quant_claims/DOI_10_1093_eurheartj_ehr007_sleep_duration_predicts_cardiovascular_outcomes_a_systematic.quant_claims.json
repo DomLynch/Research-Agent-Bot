@@ -1,0 +1,303 @@
+{
+  "paper_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic",
+  "doi": "10.1093/eurheartj/ehr007",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1,
+    "confidence_interval": 1,
+    "p_value": 12
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-u-417",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 417,
+      "sentence": "Studies were included if they were prospective, follow-up >3 years, had duration of sleep at baseline, and incident cases of CHD, stroke, or CVD.",
+      "context_window": "Studies were included if they were prospective, follow-up >3 years, had duration of sleep at baseline, and incident cases of C",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-pct-528",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 528,
+      "sentence": "Relative risks (RR) and 95% confidence interval (CI) were pooled using a random-effect model.",
+      "context_window": "ident cases of CHD, stroke, or CVD. Relative risks (RR) and 95% confidence interval (CI) were pooled using a random-effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-u-699",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 699,
+      "sentence": "Overall, 15 studies (24 cohort samples) included 474 684 male and female participants (follow-up 6.9-25 years), and 16 067 events (4169 for CHD, 3478 for stroke, and 8420 for total CVD).",
+      "context_window": "ncluded 474 684 male and female participants (follow-up 6.9-25 years), and 16 067 events (4169 for CHD, 3478 for stroke, and 842",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-ci-991",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.22-1.80",
+      "numeric_values": [
+        1.22,
+        1.8
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": "with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1009",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": "k of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1047",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1047,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": "48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1095",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": "1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1143",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1143,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": "0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively). Long duration of sl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1153",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.30",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1153,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": ", P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively). Long duration of sleep was al",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1167",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.46",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "Short duration of sleep was associated with a greater risk of developing or dying of CHD (RR 1.48, 95% CI 1.22-1.80, P < 0.0001), stroke (1.15, 1.00-1.31, P = 0.047), but not total CVD (1.03, 0.93-1.15, P = 0.52) with no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively).",
+      "context_window": "th no evidence of publication bias (P = 0.95, P = 0.30, and P = 0.46, respectively). Long duration of sleep was also associated",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1280",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0005",
+      "numeric_values": [
+        0.0005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1280,
+      "sentence": "Long duration of sleep was also associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively).",
+      "context_window": "lso associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1318",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1318,
+      "sentence": "Long duration of sleep was also associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively).",
+      "context_window": "CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evide",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1363",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "Long duration of sleep was also associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively).",
+      "context_window": "65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1413",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "Long duration of sleep was also associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively).",
+      "context_window": ".19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively). Conclusion Both sho",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1423",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1423,
+      "sentence": "Long duration of sleep was also associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively).",
+      "context_window": "P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively). Conclusion Both short and lon",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehr007_sleep_duration_predicts_cardiovascular_outcomes_a_systematic-p-1437",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1437,
+      "sentence": "Long duration of sleep was also associated with a greater risk of CHD (1.38, 1.15-1.66, P = 0.0005), stroke (1.65, 1.45-1.87, P < 0.0001), and total CVD (1.41, 1.19-1.68, P < 0.0001) with no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively).",
+      "context_window": "th no evidence of publication bias (P = 0.92, P = 0.96, and P = 0.79, respectively). Conclusion Both short and long duration of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

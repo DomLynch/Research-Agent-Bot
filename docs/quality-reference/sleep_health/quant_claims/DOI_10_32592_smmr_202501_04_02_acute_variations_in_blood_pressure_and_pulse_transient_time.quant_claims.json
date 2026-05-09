@@ -1,0 +1,291 @@
+{
+  "paper_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time",
+  "doi": "10.32592/smmr.202501.04.02",
+  "extracted_at": "2026-05-08T20:07:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 7,
+    "unit_value": 4,
+    "percentage": 1,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-441",
+      "claim_type": "mean_sd",
+      "raw_text": "55\u00b115.24",
+      "numeric_values": [
+        55.0,
+        15.24
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 441,
+      "sentence": "This cross-sectional study at Bamdad Respiratory Research Center (2020) enrolled 33 adults (mean age 55\u00b115.24 years; 42.4% female) with moderate-to-severe OSA (AHI>15).",
+      "context_window": "iratory Research Center (2020) enrolled 33 adults (mean age 55\u00b115.24 years; 42.4% female) with moderate-to-severe OSA (AHI>15).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-u-444",
+      "claim_type": "unit_value",
+      "raw_text": "15.24 years",
+      "numeric_values": [
+        15.24
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 444,
+      "sentence": "This cross-sectional study at Bamdad Respiratory Research Center (2020) enrolled 33 adults (mean age 55\u00b115.24 years; 42.4% female) with moderate-to-severe OSA (AHI>15).",
+      "context_window": "tory Research Center (2020) enrolled 33 adults (mean age 55\u00b115.24 years; 42.4% female) with moderate-to-severe OSA (AHI>15). Partic",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-pct-457",
+      "claim_type": "percentage",
+      "raw_text": "42.4%",
+      "numeric_values": [
+        42.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 457,
+      "sentence": "This cross-sectional study at Bamdad Respiratory Research Center (2020) enrolled 33 adults (mean age 55\u00b115.24 years; 42.4% female) with moderate-to-severe OSA (AHI>15).",
+      "context_window": "Center (2020) enrolled 33 adults (mean age 55\u00b115.24 years; 42.4% female) with moderate-to-severe OSA (AHI>15). Participants",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-857",
+      "claim_type": "mean_sd",
+      "raw_text": "130.64\u00b14.13",
+      "numeric_values": [
+        130.64,
+        4.13
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 857,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "rrection. CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DB",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "4.13 mmHg",
+      "numeric_values": [
+        4.13
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "n. CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) ch",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-877",
+      "claim_type": "mean_sd",
+      "raw_text": "121.23\u00b13.29",
+      "numeric_values": [
+        121.23,
+        3.29
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 877,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "ficantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-u-884",
+      "claim_type": "unit_value",
+      "raw_text": "3.29 mmHg",
+      "numeric_values": [
+        3.29
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 884,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "y reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-p-895",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "ystolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-940",
+      "claim_type": "mean_sd",
+      "raw_text": "78.11\u00b11.69",
+      "numeric_values": [
+        78.11,
+        1.69
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 940,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": ".23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05). PTT valu",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-954",
+      "claim_type": "mean_sd",
+      "raw_text": "75.39\u00b11.97",
+      "numeric_values": [
+        75.39,
+        1.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 954,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "(p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05). PTT values increased d",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-u-960",
+      "claim_type": "unit_value",
+      "raw_text": "1.97 mmHg",
+      "numeric_values": [
+        1.97
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "01), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05). PTT values increased during",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-p-993",
+      "claim_type": "p_value",
+      "raw_text": "p>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 993,
+      "sentence": "CPAP significantly reduced systolic BP (SBP) from 130.64\u00b14.13 mmHg to 121.23\u00b13.29 mmHg (p<0.001), though diastolic BP (DBP) changes (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05).",
+      "context_window": "anges (78.11\u00b11.69 to 75.39\u00b11.97 mmHg) were non-significant (p>0.05). PTT values increased during CPAP (baseline: 243.54\u00b16.79 m",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-1046",
+      "claim_type": "mean_sd",
+      "raw_text": "243.54\u00b16.79",
+      "numeric_values": [
+        243.54,
+        6.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1046,
+      "sentence": "PTT values increased during CPAP (baseline: 243.54\u00b16.79 ms; post-CPAP: 245.31\u00b18.69 ms), correlating with BP reductions but without statistical significance in pairwise comparisons (p>0.05).",
+      "context_window": "icant (p>0.05). PTT values increased during CPAP (baseline: 243.54\u00b16.79 ms; post-CPAP: 245.31\u00b18.69 ms), correlating with BP reducti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-msd-1073",
+      "claim_type": "mean_sd",
+      "raw_text": "245.31\u00b18.69",
+      "numeric_values": [
+        245.31,
+        8.69
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1073,
+      "sentence": "PTT values increased during CPAP (baseline: 243.54\u00b16.79 ms; post-CPAP: 245.31\u00b18.69 ms), correlating with BP reductions but without statistical significance in pairwise comparisons (p>0.05).",
+      "context_window": "increased during CPAP (baseline: 243.54\u00b16.79 ms; post-CPAP: 245.31\u00b18.69 ms), correlating with BP reductions but without statistical",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_32592_smmr_202501_04_02_acute_variations_in_blood_pressure_and_pulse_transient_time-p-1183",
+      "claim_type": "p_value",
+      "raw_text": "p>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "PTT values increased during CPAP (baseline: 243.54\u00b16.79 ms; post-CPAP: 245.31\u00b18.69 ms), correlating with BP reductions but without statistical significance in pairwise comparisons (p>0.05).",
+      "context_window": "t without statistical significance in pairwise comparisons (p>0.05). CPAP effectively lowers SBP in OSA patients, with PTT sho",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,554 @@
+{
+  "paper_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po",
+  "doi": "10.1111/jsr.70105",
+  "extracted_at": "2026-05-08T20:06:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 17,
+    "p_value": 3,
+    "percentage": 8,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-378",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 378,
+      "sentence": "Data were collected from 306 female and 177 male adults, aged 18-79 years.",
+      "context_window": "were collected from 306 female and 177 male adults, aged 18-79 years. Hair cortisol was analysed from 3\u2010cm proximal hair segment",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-516",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 516,
+      "sentence": "Hair cortisol was analysed from 3\u2010cm proximal hair segments from the head to represent cortisol accumulation over approximately 90 days.",
+      "context_window": "head to represent cortisol accumulation over approximately 90 days. Sleep quality measures included Pittsburgh Sleep Quality I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-p-890",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 890,
+      "sentence": "In the fully adjusted multiple regression model, higher hair cortisol concentrations were associated with poor self\u2010reported sleep quality (i.e., PSQI > 5; p = 0.020), and higher mean PSQI scores ( p = 0.027).",
+      "context_window": "ated with poor self\u2010reported sleep quality (i.e., PSQI > 5; p = 0.020), and higher mean PSQI scores ( p = 0.027). No significant",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-p-932",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 932,
+      "sentence": "In the fully adjusted multiple regression model, higher hair cortisol concentrations were associated with poor self\u2010reported sleep quality (i.e., PSQI > 5; p = 0.020), and higher mean PSQI scores ( p = 0.027).",
+      "context_window": "(i.e., PSQI > 5; p = 0.020), and higher mean PSQI scores ( p = 0.027). No significant relationships were observed with actigraph",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2154",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "introduction",
+      "source_offset": 2154,
+      "sentence": "As human scalp hair has a predictable average growth rate of ~1 cm/month (Wennig 2000 ), cortisol in hair can be noninvasively measured and used to retrospectively characterise cortisol levels over several months, particularly in situations where the stressor is sustained (Michaud et al.",
+      "context_window": "human scalp hair has a predictable average growth rate of ~1 cm/month (Wennig 2000 ), cortisol in hair can be noninvasively",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-3943",
+      "claim_type": "unit_value",
+      "raw_text": "65.8 years",
+      "numeric_values": [
+        65.8
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3943,
+      "sentence": "Feller et al. ( 2014 ) reported higher hair cortisol levels among older individuals (mean age 65.8 years) who slept during the day, but this was no longer significant after adjusting for age and sex, and Lanfear et al. ( 2020 ) found no relation between day sleep and hair cortisol.",
+      "context_window": "gher hair cortisol levels among older individuals (mean age 65.8 years) who slept during the day, but this was no longer significa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-213",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 213,
+      "sentence": "One adult between the ages of 18 and 79 years was randomly selected from each household.",
+      "context_window": "ce Edward Island (PE). One adult between the ages of 18 and 79 years was randomly selected from each household. The questionnair",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-763",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 763,
+      "sentence": "As part of the questionnaire, participants completed the PSQI, which provided an assessment of self\u2010reported sleep quality over the previous 30 days.",
+      "context_window": "assessment of self\u2010reported sleep quality over the previous 30 days. The seven components of the PSQI are scored on a scale fro",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-1361",
+      "claim_type": "unit_value",
+      "raw_text": "3 cm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1361,
+      "sentence": "In participants from whom a length of 3 cm or more of hair was collected, the 3 cm portion most proximal to the scalp was analysed.",
+      "context_window": "he scalp as possible. In participants from whom a length of 3 cm or more of hair was collected, the 3 cm portion most proxim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-1401",
+      "claim_type": "unit_value",
+      "raw_text": "3 cm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1401,
+      "sentence": "In participants from whom a length of 3 cm or more of hair was collected, the 3 cm portion most proximal to the scalp was analysed.",
+      "context_window": "om whom a length of 3 cm or more of hair was collected, the 3 cm portion most proximal to the scalp was analysed. Hair sampl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-1757",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1757,
+      "sentence": "All consenting and eligible participants aged 18-79 years who were expected to sleep at their current address for a minimum of three of the seven nights following the interview were provided with an Actiwatch2 (Philips Healthcare, Andover, MA) wrist\u2010worn actimeter.",
+      "context_window": "r (ng/g). All consenting and eligible participants aged 18-79 years who were expected to sleep at their current address for a m",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-2968",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2968,
+      "sentence": "There was 100% agreement on which rest intervals needed to be adjusted.",
+      "context_window": "thodology to determine inaccurate rest intervals. There was 100% agreement on which rest intervals needed to be adjusted. On",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-n-3335",
+      "claim_type": "sample_size",
+      "raw_text": "n = 244",
+      "numeric_values": [
+        244.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3335,
+      "sentence": "Interrater reliability was tested by selecting a random sample of sleep nights ( n = 244).",
+      "context_window": "y was tested by selecting a random sample of sleep nights ( n = 244). Agreement was defined as both raters reaching an agreemen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-3523",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3523,
+      "sentence": "An overall agreement rate of 88% was achieved with the consensus reached across all sleep nights following further scrutiny of the timing of the rest interval for sleep nights where there were initial differences.",
+      "context_window": "r a particular night (\u00b15 min). An overall agreement rate of 88% was achieved with the consensus reached across all sleep ni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-5827",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5827,
+      "sentence": "A 5% statistical significance level was implemented throughout.",
+      "context_window": "oftware, version 9.4 (SAS Institute Inc., Cary, NC, USA). A 5% statistical significance level was implemented throughout.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-n-903",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 903,
+      "sentence": "Observations with missing values for covariates were excluded, with 19 respondents removed from further analysis mainly owing to missing BMI information ( n = 18).",
+      "context_window": "further analysis mainly owing to missing BMI information ( n = 18). The majority of respondents were between 45 and 64 years",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-960",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 960,
+      "sentence": "The majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a household income of less than $60,000 (46.6%).",
+      "context_window": "( n = 18). The majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-974",
+      "claim_type": "percentage",
+      "raw_text": "48.7%",
+      "numeric_values": [
+        48.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 974,
+      "sentence": "The majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a household income of less than $60,000 (46.6%).",
+      "context_window": "e majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-990",
+      "claim_type": "percentage",
+      "raw_text": "63.4%",
+      "numeric_values": [
+        63.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 990,
+      "sentence": "The majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a household income of less than $60,000 (46.6%).",
+      "context_window": "spondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a house",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "52.2%",
+      "numeric_values": [
+        52.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1033,
+      "sentence": "The majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a household income of less than $60,000 (46.6%).",
+      "context_window": "(48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a household income of less than $60,000 (46.6%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-1089",
+      "claim_type": "percentage",
+      "raw_text": "46.6%",
+      "numeric_values": [
+        46.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1089,
+      "sentence": "The majority of respondents were between 45 and 64 years old (48.7%), female (63.4%), had a high school diploma or less (52.2%) and had a household income of less than $60,000 (46.6%).",
+      "context_window": "ss (52.2%) and had a household income of less than $60,000 (46.6%). Description of sample characteristics. Abbreviations: B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2314",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2314,
+      "sentence": "Unadjusted concentrations highlighted higher levels in males, those with an educational attainment of high school or less, those with a BMI of 30 or more, and those that did not report having a cosmetic hair treatment within the previous 3 months.",
+      "context_window": "report having a cosmetic hair treatment within the previous 3 months. Geometric mean of hair cortisol concentration by responde",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-pct-4841",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4841,
+      "sentence": "When transformed back to the original scale, a regression coefficient of 0.21 for the dichotomised PSQI on the log\u2010transformed scale can be interpreted as an expected increase of 23% in the geometric mean of hair cortisol levels when transitioning from a PSQI score below 5 to one above 5.",
+      "context_window": "sformed scale can be interpreted as an expected increase of 23% in the geometric mean of hair cortisol levels when transiti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-p-1487",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.057",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1487,
+      "sentence": "The authors reported statistically positive associations between self\u2010reported habitual sleep duration and the proinflammatory biomarkers, C\u2010reactive protein (CRP) and interleukin\u20106 (IL\u20106), and tumour necrosis factor\u2010alpha (TNF\u2010\u03b1, p = 0.057).",
+      "context_window": "erleukin\u20106 (IL\u20106), and tumour necrosis factor\u2010alpha (TNF\u2010\u03b1, p = 0.057). However, neither CRP nor IL\u20106 was related to PSG\u2010measured",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2323",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2323,
+      "sentence": "It is noteworthy that Eythorsdottir et al. ( 2020 ) also showed no association with actigraphy\u2010measured sleep patterns over 5 days among a younger sample of children, aged 2-6 years.",
+      "context_window": "no association with actigraphy\u2010measured sleep patterns over 5 days among a younger sample of children, aged 2-6 years. One pos",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2373",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2373,
+      "sentence": "It is noteworthy that Eythorsdottir et al. ( 2020 ) also showed no association with actigraphy\u2010measured sleep patterns over 5 days among a younger sample of children, aged 2-6 years.",
+      "context_window": "erns over 5 days among a younger sample of children, aged 2-6 years. One possible explanation may be the mismatch between hair",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2737",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2737,
+      "sentence": "Cortisol was quantified from a 3\u2010cm hair sample taken from the apex of the scalp, which more or less reflects changes in cortisol integrated into the hair shaft over the previous 90 days (Russell et al.",
+      "context_window": "n cortisol integrated into the hair shaft over the previous 90 days (Russell et al. 2012 ; Wennig 2000 ). This time period is m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2832",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2832,
+      "sentence": "This time period is more aligned to the previous 30 days evaluated with the PSQI than to the 7 days of actigraphy.",
+      "context_window": "ig 2000 ). This time period is more aligned to the previous 30 days evaluated with the PSQI than to the 7 days of actigraphy. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-2876",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2876,
+      "sentence": "This time period is more aligned to the previous 30 days evaluated with the PSQI than to the 7 days of actigraphy.",
+      "context_window": "to the previous 30 days evaluated with the PSQI than to the 7 days of actigraphy. The strength of the association for both sel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12856103_elevated_hair_cortisol_concentrations_are_associated_with_po-u-3175",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3175,
+      "sentence": "More research is needed to test this possibility because Zhu et al. ( 2022 ) sampled hair that reflected approximately 30 days of growth and found that poor sleep quality on the PSQI was associated with the cortisol metabolite, cortisone, but not cortisol.",
+      "context_window": "u et al. ( 2022 ) sampled hair that reflected approximately 30 days of growth and found that poor sleep quality on the PSQI was",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

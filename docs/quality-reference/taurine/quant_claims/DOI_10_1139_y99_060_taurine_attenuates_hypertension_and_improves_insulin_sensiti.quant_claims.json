@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1139_y99_060_taurine_attenuates_hypertension_and_improves_insulin_sensiti",
+  "doi": "10.1139/cjpp-77-10-749",
+  "extracted_at": "2026-05-08T20:10:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1139_y99_060_taurine_attenuates_hypertension_and_improves_insulin_sensiti-pct-862",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 862,
+      "sentence": "Treatment with 2% taurine in drinking water prevented the blood pressure elevation and attenuated the hyperinsulinemia in fructose-fed rats.",
+      "context_window": "30, and 60 min after the oral glucose load. Treatment with 2% taurine in drinking water prevented the blood pressure elev",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "paper_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as",
+  "doi": "10.1111/j.1365-2141.1985.tb07467.x",
+  "extracted_at": "2026-05-08T20:06:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 3,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-u-104",
+      "claim_type": "unit_value",
+      "raw_text": "1300 mg",
+      "numeric_values": [
+        1300.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 104,
+      "sentence": "<jats:title>S<jats:sc>ummary</jats:sc></jats:title><jats:p>Enteric coated aspirin (ECA) at doses of 325-1300 mg is an effective alternative to regular aspirin for inhibition of platelet activity while avoiding gastric irritation.",
+      "context_window": ":title><jats:p>Enteric coated aspirin (ECA) at doses of 325-1300 mg is an effective alternative to regular aspirin for inhibiti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-u-539",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 539,
+      "sentence": "Seven subjects were studied before and after seven daily doses of 40-325 mg ECA.",
+      "context_window": "jects were studied before and after seven daily doses of 40-325 mg ECA. Serum thromboxane (TX) B<jats:sub>2</jats:sub> levels",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-pct-669",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 669,
+      "sentence": "Serum thromboxane (TX) B<jats:sub>2</jats:sub> levels indicated that the lowest dose of ECA resulting in greater than 90% inhibition of platelet cyclo\u2010oxygenase was 80 mg/d.",
+      "context_window": "cated that the lowest dose of ECA resulting in greater than 90% inhibition of platelet cyclo\u2010oxygenase was 80 mg/d. Platele",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-u-716",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/d",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 716,
+      "sentence": "Serum thromboxane (TX) B<jats:sub>2</jats:sub> levels indicated that the lowest dose of ECA resulting in greater than 90% inhibition of platelet cyclo\u2010oxygenase was 80 mg/d.",
+      "context_window": "greater than 90% inhibition of platelet cyclo\u2010oxygenase was 80 mg/d. Platelet aggregation and ATP release in response to collag",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-msd-905",
+      "claim_type": "mean_sd",
+      "raw_text": "6.1 \u00b1 1.5",
+      "numeric_values": [
+        6.1,
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 905,
+      "sentence": "Platelet aggregation and ATP release in response to collagen (1 <jats:italic>\u03bc</jats:italic>g/ml) and arachidonic acid (1 mM) were abolished and bleeding times were prolonged from 6.1 \u00b1 1.5 min to 9.7 \u00b1 2.8 min (mean \u00b1 SD, <jats:italic>P</jats:italic><0.01).",
+      "context_window": "1 mM) were abolished and bleeding times were prolonged from 6.1 \u00b1 1.5 min to 9.7 \u00b1 2.8 min (mean \u00b1 SD, <jats:italic>P</jats:itali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-msd-922",
+      "claim_type": "mean_sd",
+      "raw_text": "9.7 \u00b1 2.8",
+      "numeric_values": [
+        9.7,
+        2.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 922,
+      "sentence": "Platelet aggregation and ATP release in response to collagen (1 <jats:italic>\u03bc</jats:italic>g/ml) and arachidonic acid (1 mM) were abolished and bleeding times were prolonged from 6.1 \u00b1 1.5 min to 9.7 \u00b1 2.8 min (mean \u00b1 SD, <jats:italic>P</jats:italic><0.01).",
+      "context_window": "hed and bleeding times were prolonged from 6.1 \u00b1 1.5 min to 9.7 \u00b1 2.8 min (mean \u00b1 SD, <jats:italic>P</jats:italic><0.01). Examina",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-u-1085",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "Examination of platelet cyclo\u2010oxygenase activity on a daily basis revealed that 24 h after the first 80 mg dose serum TXB<jats:sub>2</jats:sub> had decreased by approximately 60% and was suppressed by more than 90% after four doses.",
+      "context_window": "ctivity on a daily basis revealed that 24 h after the first 80 mg dose serum TXB<jats:sub>2</jats:sub> had decreased by appro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-pct-1159",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1159,
+      "sentence": "Examination of platelet cyclo\u2010oxygenase activity on a daily basis revealed that 24 h after the first 80 mg dose serum TXB<jats:sub>2</jats:sub> had decreased by approximately 60% and was suppressed by more than 90% after four doses.",
+      "context_window": "um TXB<jats:sub>2</jats:sub> had decreased by approximately 60% and was suppressed by more than 90% after four doses. Recov",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-pct-1195",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Examination of platelet cyclo\u2010oxygenase activity on a daily basis revealed that 24 h after the first 80 mg dose serum TXB<jats:sub>2</jats:sub> had decreased by approximately 60% and was suppressed by more than 90% after four doses.",
+      "context_window": "reased by approximately 60% and was suppressed by more than 90% after four doses. Recovery of platelet cyclo\u2010oxygenase acti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-u-1278",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1278,
+      "sentence": "Recovery of platelet cyclo\u2010oxygenase activity after a single 80 mg dose of ECA was delayed for 48-72 h indicating that aspirin reached the systemic circulation.",
+      "context_window": "ecovery of platelet cyclo\u2010oxygenase activity after a single 80 mg dose of ECA was delayed for 48-72 h indicating that aspirin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2141_1985_tb07467_x_cumulative_antiplatelet_effect_of_low_dose_enteric_coated_as-u-1479",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "We conclude that chronic inhibition of platelet activity may be achieved in a cumulative manner with 80 mg ECA/d.</jats:p>",
+      "context_window": "atelet activity may be achieved in a cumulative manner with 80 mg ECA/d.</jats:p>",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

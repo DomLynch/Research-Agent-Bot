@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_a_trial_of_omeprazole_and_low_dose_aspirin_to_identify_color",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_trial_of_omeprazole_and_low_dose_aspirin_to_identify_color-u-532",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 532,
+      "sentence": "Once enrolled, participants will take two 20 mg omeprazole tablets and two 81 mg aspirin tablets each day before the first meal each day for 25-45 days.",
+      "context_window": "your eligibility. Once enrolled, participants will take two 20 mg omeprazole tablets and two 81 mg aspirin tablets each day b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_trial_of_omeprazole_and_low_dose_aspirin_to_identify_color-u-565",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 565,
+      "sentence": "Once enrolled, participants will take two 20 mg omeprazole tablets and two 81 mg aspirin tablets each day before the first meal each day for 25-45 days.",
+      "context_window": "participants will take two 20 mg omeprazole tablets and two 81 mg aspirin tablets each day before the first meal each day for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_trial_of_omeprazole_and_low_dose_aspirin_to_identify_color-u-634",
+      "claim_type": "unit_value",
+      "raw_text": "45 days",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 634,
+      "sentence": "Once enrolled, participants will take two 20 mg omeprazole tablets and two 81 mg aspirin tablets each day before the first meal each day for 25-45 days.",
+      "context_window": "irin tablets each day before the first meal each day for 25-45 days. The study does involve biopsies of the colorectal tissue b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

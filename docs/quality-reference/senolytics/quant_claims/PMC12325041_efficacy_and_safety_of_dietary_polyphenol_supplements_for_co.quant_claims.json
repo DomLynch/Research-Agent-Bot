@@ -1,0 +1,555 @@
+{
+  "paper_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co",
+  "doi": "10.3389/fimmu.2025.1617694",
+  "extracted_at": "2026-05-08T20:01:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 8,
+    "confidence_interval": 1,
+    "p_value": 4,
+    "unit_value": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-584",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 584,
+      "sentence": "As bioactive compounds exhibiting dual antioxidant and anti-inflammatory properties, polyphenolic derivatives demonstrate significant therapeutic potential through multimodal mechanisms targeting COPD pathophysiology - particularly in modulating redox homeostasis (GSH/GSSG ratio elevation), attenuating NF-\u03baB-mediated inflammatory cascades, and enhancing respiratory function parameters (FEV1 improvement \u226512% from baseline).",
+      "context_window": "nhancing respiratory function parameters (FEV1 improvement \u226512% from baseline). However, current clinical evidence remains",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-ci-1961",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI -1.53 to -0.11",
+      "numeric_values": [
+        -1.53,
+        -0.11
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1961,
+      "sentence": "This systematic review and meta-analysis revealed that, compared to a placebo; \u2460 Curcumin significantly reduced systolic blood pressure (SBP) and improved FEV1(SMD=-0.82, 95%CI -1.53 to -0.11); \u2461 Salidroside was effective in reducing thrombotic markers (TT, D-D), inflammatory factors (TNF-\u03b1) and symptom scores (CAT) (p<0.01); \u2462 Resveratrol significantly downregulates serum TNF-\u03b1 and IL-8 levels (p=0.003); \u2463 Anthocyanins may accelerate lung function decline (decreased FEV1/FVC, which needs to be interpreted with caution); \u2464 Other polyphenols (quercetin, pomegranate juice, AKL1, etc.) did not show significant efficacy or insufficient evidence.",
+      "context_window": "systolic blood pressure (SBP) and improved FEV1(SMD=-0.82, 95%CI -1.53 to -0.11); \u2461 Salidroside was effective in reducing thrombotic marker",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-p-2109",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2109,
+      "sentence": "This systematic review and meta-analysis revealed that, compared to a placebo; \u2460 Curcumin significantly reduced systolic blood pressure (SBP) and improved FEV1(SMD=-0.82, 95%CI -1.53 to -0.11); \u2461 Salidroside was effective in reducing thrombotic markers (TT, D-D), inflammatory factors (TNF-\u03b1) and symptom scores (CAT) (p<0.01); \u2462 Resveratrol significantly downregulates serum TNF-\u03b1 and IL-8 levels (p=0.003); \u2463 Anthocyanins may accelerate lung function decline (decreased FEV1/FVC, which needs to be interpreted with caution); \u2464 Other polyphenols (quercetin, pomegranate juice, AKL1, etc.) did not show significant efficacy or insufficient evidence.",
+      "context_window": "-D), inflammatory factors (TNF-\u03b1) and symptom scores (CAT) (p<0.01); \u2462 Resveratrol significantly downregulates serum TNF-\u03b1 and",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-p-2189",
+      "claim_type": "p_value",
+      "raw_text": "p=0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2189,
+      "sentence": "This systematic review and meta-analysis revealed that, compared to a placebo; \u2460 Curcumin significantly reduced systolic blood pressure (SBP) and improved FEV1(SMD=-0.82, 95%CI -1.53 to -0.11); \u2461 Salidroside was effective in reducing thrombotic markers (TT, D-D), inflammatory factors (TNF-\u03b1) and symptom scores (CAT) (p<0.01); \u2462 Resveratrol significantly downregulates serum TNF-\u03b1 and IL-8 levels (p=0.003); \u2463 Anthocyanins may accelerate lung function decline (decreased FEV1/FVC, which needs to be interpreted with caution); \u2464 Other polyphenols (quercetin, pomegranate juice, AKL1, etc.) did not show significant efficacy or insufficient evidence.",
+      "context_window": "ol significantly downregulates serum TNF-\u03b1 and IL-8 levels (p=0.003); \u2463 Anthocyanins may accelerate lung function decline (decr",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-3106",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 3106,
+      "sentence": "Clinical significance: Curcumin (200-500 mg/day) and tanshinone are recommended as adjuvant treatment options for COPD, but blind combination should be avoided; the safety of ingredients such as quercetin needs to be further verified.",
+      "context_window": "redient heterogeneity. Clinical significance: Curcumin (200-500 mg/day) and tanshinone are recommended as adjuvant treatment optio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-878",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 878,
+      "sentence": "Epidemiological studies show that COPD is the fourth leading cause of death worldwide, causing 3.5 million deaths in 2021, approximately 5% of all global deaths ( 8 ).",
+      "context_window": "orldwide, causing 3.5 million deaths in 2021, approximately 5% of all global deaths ( 8 ). COPD represents a significant",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-4729",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4729,
+      "sentence": "To characterise the heterogeneity between the original studies, quantitative assessment was carried out by the I\u00b2 index and H-statistic before the implementation of Meta-analysis: when the heterogeneity threshold criteria were met (I\u00b2<50% and P>0.1), parameter estimation was carried out by a fixed-effects model based on the Mantel-Haenszel method, and in the case of significant heterogeneity (I\u00b2 \u226550% or P \u22640.1), the model was switched to aDerSimonian-Laird random effects model to complete the integration of effect sizes.",
+      "context_window": "sis: when the heterogeneity threshold criteria were met (I\u00b2<50% and P>0.1), parameter estimation was carried out by a fixed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-p-4737",
+      "claim_type": "p_value",
+      "raw_text": "P>0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4737,
+      "sentence": "To characterise the heterogeneity between the original studies, quantitative assessment was carried out by the I\u00b2 index and H-statistic before the implementation of Meta-analysis: when the heterogeneity threshold criteria were met (I\u00b2<50% and P>0.1), parameter estimation was carried out by a fixed-effects model based on the Mantel-Haenszel method, and in the case of significant heterogeneity (I\u00b2 \u226550% or P \u22640.1), the model was switched to aDerSimonian-Laird random effects model to complete the integration of effect sizes.",
+      "context_window": "n the heterogeneity threshold criteria were met (I\u00b2<50% and P>0.1), parameter estimation was carried out by a fixed-effects m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-4894",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4894,
+      "sentence": "To characterise the heterogeneity between the original studies, quantitative assessment was carried out by the I\u00b2 index and H-statistic before the implementation of Meta-analysis: when the heterogeneity threshold criteria were met (I\u00b2<50% and P>0.1), parameter estimation was carried out by a fixed-effects model based on the Mantel-Haenszel method, and in the case of significant heterogeneity (I\u00b2 \u226550% or P \u22640.1), the model was switched to aDerSimonian-Laird random effects model to complete the integration of effect sizes.",
+      "context_window": "l method, and in the case of significant heterogeneity (I\u00b2 \u226550% or P \u22640.1), the model was switched to aDerSimonian-Laird ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-p-4901",
+      "claim_type": "p_value",
+      "raw_text": "P \u22640.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4901,
+      "sentence": "To characterise the heterogeneity between the original studies, quantitative assessment was carried out by the I\u00b2 index and H-statistic before the implementation of Meta-analysis: when the heterogeneity threshold criteria were met (I\u00b2<50% and P>0.1), parameter estimation was carried out by a fixed-effects model based on the Mantel-Haenszel method, and in the case of significant heterogeneity (I\u00b2 \u226550% or P \u22640.1), the model was switched to aDerSimonian-Laird random effects model to complete the integration of effect sizes.",
+      "context_window": "d, and in the case of significant heterogeneity (I\u00b2 \u226550% or P \u22640.1), the model was switched to aDerSimonian-Laird random effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-5179",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5179,
+      "sentence": "The standardised mean difference (SMD) was used as the core indicator for the effect size calculation of continuous variables, while the confidence interval (95% CI) of 95% probability density was constructed for statistical inference, where the effect line of the forest plot crossing the null line was used as the significance of the difference criterion ( 27 ).",
+      "context_window": "ion of continuous variables, while the confidence interval (95% CI) of 95% probability density was constructed for statisti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-5190",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5190,
+      "sentence": "The standardised mean difference (SMD) was used as the core indicator for the effect size calculation of continuous variables, while the confidence interval (95% CI) of 95% probability density was constructed for statistical inference, where the effect line of the forest plot crossing the null line was used as the significance of the difference criterion ( 27 ).",
+      "context_window": "inuous variables, while the confidence interval (95% CI) of 95% probability density was constructed for statistical inferen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-5416",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5416,
+      "sentence": "Experimental studies have shown that Sal-B can significantly inhibit pulmonary cell apoptosis, improve the oxidative stress level of lung tissue, and reduce lipid peroxide activity by 68% in animal experiments ( 59 , 60 ).",
+      "context_window": "level of lung tissue, and reduce lipid peroxide activity by 68% in animal experiments ( 59 , 60 ). By inhibiting microthrom",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-6773",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6773,
+      "sentence": "Mahdieh Z et al. found that 80 mg of nano-curcumin per day significantly reduced IL-6 levels and improved lung function ( 34 ); however, Masafumi F et al. found in a 24-week trial that 90 mg of Theracurmin \u00ae per day improved blood lipid levels but had a limited effect on the respiratory function and inflammatory state of COPD patients.",
+      "context_window": "lung function of COPD patients. Mahdieh Z et al. found that 80 mg of nano-curcumin per day significantly reduced IL-6 levels",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-6930",
+      "claim_type": "unit_value",
+      "raw_text": "90 mg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6930,
+      "sentence": "Mahdieh Z et al. found that 80 mg of nano-curcumin per day significantly reduced IL-6 levels and improved lung function ( 34 ); however, Masafumi F et al. found in a 24-week trial that 90 mg of Theracurmin \u00ae per day improved blood lipid levels but had a limited effect on the respiratory function and inflammatory state of COPD patients.",
+      "context_window": "); however, Masafumi F et al. found in a 24-week trial that 90 mg of Theracurmin \u00ae per day improved blood lipid levels but ha",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-7386",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7386,
+      "sentence": "The existing literature shows that curcumin is relatively safe at doses ranging from 4,000 to 8,000 mg per day ( 31 ).",
+      "context_window": "urcumin is relatively safe at doses ranging from 4,000 to 8,000 mg per day ( 31 ). Anthocyanins are flavonoid polyphenols wid",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-8096",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 8096,
+      "sentence": "However, Study showed that after 8 weeks of oligomeric proanthocyanidin supplementation, there was no significant improvement in lung function or inflammatory markers ( 33 ).",
+      "context_window": "nflammation levels ( 40 ). However, Study showed that after 8 weeks of oligomeric proanthocyanidin supplementation, there was n",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-9568",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 9568,
+      "sentence": "In a study by Meilan K Han and others, nine subjects were intervened at doses of 500 mg, 1000 mg, and 2000 mg, with two subjects in each group and the remaining three in the placebo control group ( 32 ).",
+      "context_window": "K Han and others, nine subjects were intervened at doses of 500 mg, 1000 mg, and 2000 mg, with two subjects in each group and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-9576",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 9576,
+      "sentence": "In a study by Meilan K Han and others, nine subjects were intervened at doses of 500 mg, 1000 mg, and 2000 mg, with two subjects in each group and the remaining three in the placebo control group ( 32 ).",
+      "context_window": "d others, nine subjects were intervened at doses of 500 mg, 1000 mg, and 2000 mg, with two subjects in each group and the remai",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-9589",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 9589,
+      "sentence": "In a study by Meilan K Han and others, nine subjects were intervened at doses of 500 mg, 1000 mg, and 2000 mg, with two subjects in each group and the remaining three in the placebo control group ( 32 ).",
+      "context_window": "e subjects were intervened at doses of 500 mg, 1000 mg, and 2000 mg, with two subjects in each group and the remaining three in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-pct-10808",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10808,
+      "sentence": "One study revealed that resveratrol can suppress the release of IL-8 and granulocyte-macrophage colony-stimulating factor (GM-CSF) by more than 50% in alveolar macrophages from smokers with COPD under in vitro conditions, highlighting its potent anti-inflammatory effects in the context of COPD ( 72 ).",
+      "context_window": "-macrophage colony-stimulating factor (GM-CSF) by more than 50% in alveolar macrophages from smokers with COPD under in vit",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-11083",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 11083,
+      "sentence": "The intervention period of this experiment was 8 months.",
+      "context_window": "resveratrol. The intervention period of this experiment was 8 months. The observation indicators were the measurement of serum T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-14620",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 14620,
+      "sentence": "3) The 15 RCTs analyzed in this study featured short follow-up periods and lacked long-term intervention trials (\u22653 months), which may restrict the applicability of the results to real-world clinical settings.",
+      "context_window": "ollow-up periods and lacked long-term intervention trials (\u22653 months), which may restrict the applicability of the results to re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-1338",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 1338,
+      "sentence": "3) The 15 RCTs analyzed in this study featured short follow-up periods and lacked long-term intervention trials (\u22653 months), which may restrict the applicability of the results to real-world clinical settings.",
+      "context_window": "ollow-up periods and lacked long-term intervention trials (\u22653 months), which may restrict the applicability of the results to re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-551",
+      "claim_type": "unit_value",
+      "raw_text": "180 mg",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 551,
+      "sentence": "The therapeutic effects of different types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC.",
+      "context_window": "t types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-561",
+      "claim_type": "unit_value",
+      "raw_text": "23 months",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 561,
+      "sentence": "The therapeutic effects of different types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC.",
+      "context_window": "dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-618",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 618,
+      "sentence": "The therapeutic effects of different types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC.",
+      "context_window": "3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT s",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-628",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 628,
+      "sentence": "The therapeutic effects of different types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC.",
+      "context_window": "hs) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-724",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 724,
+      "sentence": "The therapeutic effects of different types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC.",
+      "context_window": "D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC. These findings suggest tha",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12325041_efficacy_and_safety_of_dietary_polyphenol_supplements_for_co-u-734",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 734,
+      "sentence": "The therapeutic effects of different types of dietary polyphenols were different: curcumin (80-180 mg, 3-23 months) can reduce FEV1/FVC and SBP; salidroside (100-200 mg, 2-4 weeks) can effectively reduce TT, D-D, FEV1/FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC.",
+      "context_window": "FVC, CAT score table and TNF-\u03b1; anthocyanins (150-200 mg, 4-8 weeks) can reduce FEV1/FVC. These findings suggest that dietary p",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_effect_of_dietary_arginine_restriction_upon_ornithine_and_po",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:12:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_dietary_arginine_restriction_upon_ornithine_and_po-pct-1341",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "However, when the mice were fed the isocaloric arginine-free diet for a 2-week period, the levels of epidermal ornithine and arginine decreased by 40% (P less than 0.01).",
+      "context_window": "the levels of epidermal ornithine and arginine decreased by 40% (P less than 0.01). This reduction was blocked by the addit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_dietary_arginine_restriction_upon_ornithine_and_po-pct-1411",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1411,
+      "sentence": "This reduction was blocked by the addition of 2% ornithine to the drinking water of the arginine-restricted animals.",
+      "context_window": "s than 0.01). This reduction was blocked by the addition of 2% ornithine to the drinking water of the arginine-restricted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effect_of_dietary_arginine_restriction_upon_ornithine_and_po-pct-1783",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1783,
+      "sentence": "The animals fed the special arginine-free diet exhibited a 40-50% reduction in tumor multiplicity or papillomas/mouse (P less than 0.05) and had a significantly lower tumor incidence or percentage of animals with tumour throughout a 19-week promotion period (P less than 0.02).",
+      "context_window": "e animals fed the special arginine-free diet exhibited a 40-50% reduction in tumor multiplicity or papillomas/mouse (P less",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_dietary_arginine_restriction_upon_ornithine_and_po-pct-2521",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2521,
+      "sentence": "The papillomas or tumors from the animals deprived of arginine had markedly reduced (less than 35%) levels of putrescine compared to the tumors from control animals, and appeared to be more sensitive to dietary arginine restriction than was the chronically promoted but untransformed epidermis.(ABSTRACT TRUNCATED AT 400 WORDS)",
+      "context_window": "nimals deprived of arginine had markedly reduced (less than 35%) levels of putrescine compared to the tumors from control a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

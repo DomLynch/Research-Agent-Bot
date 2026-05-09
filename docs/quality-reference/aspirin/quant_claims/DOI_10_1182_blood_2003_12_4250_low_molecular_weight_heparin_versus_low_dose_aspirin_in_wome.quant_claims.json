@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_1182_blood_2003_12_4250_low_molecular_weight_heparin_versus_low_dose_aspirin_in_wome",
+  "doi": "10.1182/blood-2003-12-4250",
+  "extracted_at": "2026-05-08T20:06:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1182_blood_2003_12_4250_low_molecular_weight_heparin_versus_low_dose_aspirin_in_wome-u-289",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 289,
+      "sentence": "A total of 160 patients with heterozygous factor V Leiden mutation, prothrombin G20210A mutation, or protein S deficiency were given 5 mg folic acid daily before conception, to be continued during pregnancy, and low-dose aspirin 100 mg daily or low-molecular-weight heparin enoxaparin 40 mg was taken from the 8th week.",
+      "context_window": "rombin G20210A mutation, or protein S deficiency were given 5 mg folic acid daily before conception, to be continued during",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2003_12_4250_low_molecular_weight_heparin_versus_low_dose_aspirin_in_wome-u-385",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 385,
+      "sentence": "A total of 160 patients with heterozygous factor V Leiden mutation, prothrombin G20210A mutation, or protein S deficiency were given 5 mg folic acid daily before conception, to be continued during pregnancy, and low-dose aspirin 100 mg daily or low-molecular-weight heparin enoxaparin 40 mg was taken from the 8th week.",
+      "context_window": "ion, to be continued during pregnancy, and low-dose aspirin 100 mg daily or low-molecular-weight heparin enoxaparin 40 mg was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2003_12_4250_low_molecular_weight_heparin_versus_low_dose_aspirin_in_wome-u-441",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 441,
+      "sentence": "A total of 160 patients with heterozygous factor V Leiden mutation, prothrombin G20210A mutation, or protein S deficiency were given 5 mg folic acid daily before conception, to be continued during pregnancy, and low-dose aspirin 100 mg daily or low-molecular-weight heparin enoxaparin 40 mg was taken from the 8th week.",
+      "context_window": "rin 100 mg daily or low-molecular-weight heparin enoxaparin 40 mg was taken from the 8th week. Twenty-three of the 80 patient",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2003_12_4250_low_molecular_weight_heparin_versus_low_dose_aspirin_in_wome-pct-637",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 637,
+      "sentence": "Twenty-three of the 80 patients treated with low-dose aspirin and 69 of the 80 patients treated with enoxaparin had a healthy live birth (odds ratio [OR], 15.5; 95% confidence interval [CI], 7-34, P <.0001).",
+      "context_window": "enoxaparin had a healthy live birth (odds ratio [OR], 15.5; 95% confidence interval [CI], 7-34, P <.0001). Enoxaparin was s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_2003_12_4250_low_molecular_weight_heparin_versus_low_dose_aspirin_in_wome-p-673",
+      "claim_type": "p_value",
+      "raw_text": "P <.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 673,
+      "sentence": "Twenty-three of the 80 patients treated with low-dose aspirin and 69 of the 80 patients treated with enoxaparin had a healthy live birth (odds ratio [OR], 15.5; 95% confidence interval [CI], 7-34, P <.0001).",
+      "context_window": "(odds ratio [OR], 15.5; 95% confidence interval [CI], 7-34, P <.0001). Enoxaparin was superior to low-dose aspirin in each subgr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

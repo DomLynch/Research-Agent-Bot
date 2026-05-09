@@ -1,0 +1,544 @@
+{
+  "paper_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h",
+  "doi": "10.70749/ijbr.v3i1.560",
+  "extracted_at": "2026-05-08T20:06:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 7,
+    "unit_value": 9,
+    "mean_sd": 8,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-158",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 158,
+      "sentence": "<jats:p>Introduction: Preeclampsia is a major cause of illness and death for pregnant women and newborns worldwide, with an estimated prevalence ranging from 2% to 15% of all pregnancies, with an average of approximately 4.6%.",
+      "context_window": "wborns worldwide, with an estimated prevalence ranging from 2% to 15% of all pregnancies, with an average of approximately",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-164",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 164,
+      "sentence": "<jats:p>Introduction: Preeclampsia is a major cause of illness and death for pregnant women and newborns worldwide, with an estimated prevalence ranging from 2% to 15% of all pregnancies, with an average of approximately 4.6%.",
+      "context_window": "worldwide, with an estimated prevalence ranging from 2% to 15% of all pregnancies, with an average of approximately 4.6%.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-221",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 221,
+      "sentence": "<jats:p>Introduction: Preeclampsia is a major cause of illness and death for pregnant women and newborns worldwide, with an estimated prevalence ranging from 2% to 15% of all pregnancies, with an average of approximately 4.6%.",
+      "context_window": "to 15% of all pregnancies, with an average of approximately 4.6%. Objective: The study's main objective is to find the effic",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-635",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 635,
+      "sentence": "Participants were randomly assigned into two groups: the aspirin group, which received a daily dose of 81 mg low-dose aspirin, and the placebo group, which received an identical-looking placebo.",
+      "context_window": "o groups: the aspirin group, which received a daily dose of 81 mg low-dose aspirin, and the placebo group, which received an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-792",
+      "claim_type": "mean_sd",
+      "raw_text": "30.5 \u00b1 4.2",
+      "numeric_values": [
+        30.5,
+        4.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 792,
+      "sentence": "Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48).",
+      "context_window": "ts: Data were collected from 165 patients. Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the plac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-799",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 years",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 799,
+      "sentence": "Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48).",
+      "context_window": "a were collected from 165 patients. Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-834",
+      "claim_type": "mean_sd",
+      "raw_text": "31.0 \u00b1 4.0",
+      "numeric_values": [
+        31.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 834,
+      "sentence": "Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48).",
+      "context_window": "Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48). Gestational age at e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-841",
+      "claim_type": "unit_value",
+      "raw_text": "4.0 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 841,
+      "sentence": "Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48).",
+      "context_window": "al age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48). Gestational age at enrolme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-p-873",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 873,
+      "sentence": "Maternal age was 30.5 \u00b1 4.2 years in the aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48).",
+      "context_window": "he aspirin group and 31.0 \u00b1 4.0 years in the placebo group (p = 0.48). Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-922",
+      "claim_type": "mean_sd",
+      "raw_text": "13.8 \u00b1 1.2",
+      "numeric_values": [
+        13.8,
+        1.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 922,
+      "sentence": "Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65).",
+      "context_window": "ebo group (p = 0.48). Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-929",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 weeks",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 929,
+      "sentence": "Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65).",
+      "context_window": "up (p = 0.48). Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-943",
+      "claim_type": "mean_sd",
+      "raw_text": "13.7 \u00b1 1.3",
+      "numeric_values": [
+        13.7,
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 943,
+      "sentence": "Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65).",
+      "context_window": "Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-950",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 weeks",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 950,
+      "sentence": "Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65).",
+      "context_window": "ional age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-p-1010",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "Gestational age at enrolment averaged 13.8 \u00b1 1.2 weeks and 13.7 \u00b1 1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65).",
+      "context_window": "1.3 weeks for the aspirin and placebo groups, respectively (p = 0.65). BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-1029",
+      "claim_type": "mean_sd",
+      "raw_text": "29.5 \u00b1 3.8",
+      "numeric_values": [
+        29.5,
+        3.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1029,
+      "sentence": "BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72).",
+      "context_window": "spirin and placebo groups, respectively (p = 0.65). BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the plac",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-1036",
+      "claim_type": "unit_value",
+      "raw_text": "3.8 kg",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1036,
+      "sentence": "BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72).",
+      "context_window": "and placebo groups, respectively (p = 0.65). BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-1071",
+      "claim_type": "mean_sd",
+      "raw_text": "29.8 \u00b1 3.5",
+      "numeric_values": [
+        29.8,
+        3.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72).",
+      "context_window": "= 0.65). BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72). Key risk factors, su",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-1078",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72).",
+      "context_window": "). BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72). Key risk factors, such",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-p-1110",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "BMI was 29.5 \u00b1 3.8 kg/m\u00b2 in the aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72).",
+      "context_window": "he aspirin group and 29.8 \u00b1 3.5 kg/m\u00b2 in the placebo group (p = 0.72). Key risk factors, such as chronic hypertension (20% vs. 2",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-1169",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1169,
+      "sentence": "Key risk factors, such as chronic hypertension (20% vs.",
+      "context_window": "(p = 0.72). Key risk factors, such as chronic hypertension (20% vs. 22%, p = 0.76) and history of preeclampsia (18% vs. 20%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-1177",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1177,
+      "sentence": "22%, p = 0.76) and history of preeclampsia (18% vs.",
+      "context_window": "2). Key risk factors, such as chronic hypertension (20% vs. 22%, p = 0.76) and history of preeclampsia (18% vs. 20%, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-p-1182",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1182,
+      "sentence": "22%, p = 0.76) and history of preeclampsia (18% vs.",
+      "context_window": "ey risk factors, such as chronic hypertension (20% vs. 22%, p = 0.76) and history of preeclampsia (18% vs. 20%, p = 0.68), were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-1221",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1221,
+      "sentence": "22%, p = 0.76) and history of preeclampsia (18% vs.",
+      "context_window": "ension (20% vs. 22%, p = 0.76) and history of preeclampsia (18% vs. 20%, p = 0.68), were evenly distributed. The mean gesta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-pct-1229",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1229,
+      "sentence": "20%, p = 0.68), were evenly distributed.",
+      "context_window": "20% vs. 22%, p = 0.76) and history of preeclampsia (18% vs. 20%, p = 0.68), were evenly distributed. The mean gestational a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-p-1234",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.68",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "20%, p = 0.68), were evenly distributed.",
+      "context_window": "s. 22%, p = 0.76) and history of preeclampsia (18% vs. 20%, p = 0.68), were evenly distributed. The mean gestational age at deli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-1354",
+      "claim_type": "mean_sd",
+      "raw_text": "38.2 \u00b1 1.5",
+      "numeric_values": [
+        38.2,
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1354,
+      "sentence": "The mean gestational age at delivery was significantly higher in the aspirin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks).",
+      "context_window": "at delivery was significantly higher in the aspirin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks). Co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-1361",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 weeks",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1361,
+      "sentence": "The mean gestational age at delivery was significantly higher in the aspirin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks).",
+      "context_window": "ivery was significantly higher in the aspirin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks). Conclusi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-msd-1403",
+      "claim_type": "mean_sd",
+      "raw_text": "36.8 \u00b1 2.0",
+      "numeric_values": [
+        36.8,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "The mean gestational age at delivery was significantly higher in the aspirin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks).",
+      "context_window": "rin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks). Conclusion: It is concluded that low-dose aspirin i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_70749_ijbr_v3i1_560_efficacy_of_low_dose_aspirin_in_preventing_preeclampsia_in_h-u-1410",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1410,
+      "sentence": "The mean gestational age at delivery was significantly higher in the aspirin group (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks).",
+      "context_window": "up (38.2 \u00b1 1.5 weeks) compared to the placebo group (36.8 \u00b1 2.0 weeks). Conclusion: It is concluded that low-dose aspirin is an e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1226 @@
+{
+  "paper_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica",
+  "doi": "10.1371/journal.pone.0304522",
+  "extracted_at": "2026-05-08T20:10:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 10,
+    "confidence_interval": 4,
+    "p_value": 43,
+    "unit_value": 5,
+    "sample_size": 3,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-28",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 28,
+      "sentence": "A subset of individuals (10-20%) experience post-COVID condition (PCC) subsequent to initial SARS-CoV-2 infection, which lacks effective treatment.",
+      "context_window": "A subset of individuals (10-20%) experience post-COVID condition (PCC) subsequent to initia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-ci-1319",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.05-0.35",
+      "numeric_values": [
+        0.05,
+        0.35
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1319,
+      "sentence": "In a multivariate analysis, increased plasma taurine level between acute and convalescence phase was associated with marked protection from adverse clinical events with a hazard ratio of 0.13 (95% CI: 0.05-0.35; p<0.001).",
+      "context_window": "n from adverse clinical events with a hazard ratio of 0.13 (95% CI: 0.05-0.35; p<0.001). Taurine emerges as a promising predictive bioma",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-1338",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1338,
+      "sentence": "In a multivariate analysis, increased plasma taurine level between acute and convalescence phase was associated with marked protection from adverse clinical events with a hazard ratio of 0.13 (95% CI: 0.05-0.35; p<0.001).",
+      "context_window": "ical events with a hazard ratio of 0.13 (95% CI: 0.05-0.35; p<0.001). Taurine emerges as a promising predictive biomarker and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-12",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 12,
+      "sentence": "At least 10-20% of patients with prior SARS-CoV-2 infection continue to experience a variety of persistent or episodic symptoms, including fatigue, sleep disturbance, confusion, and dyspnea beyond three months from their initial infection, collectively known as the post-COVID condition (PCC) [ 1 , 2 ].",
+      "context_window": "At least 10-20% of patients with prior SARS-CoV-2 infection continue to exp",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-u-431",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 431,
+      "sentence": "All enrolled patients were \u2265 18 years of age with a laboratory-confirmed COVID-19 diagnosis based on a positive SARS-CoV-2 real-time PCR (PCR) assay from nasopharyngeal swabs or lower respiratory samples.",
+      "context_window": "lled prospectively ( Fig 1A ). All enrolled patients were \u2265 18 years of age with a laboratory-confirmed COVID-19 diagnosis based",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-n-675",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 675,
+      "sentence": "Comparisons were made against age and sex-matched healthy controls (n = 28) enrolled during the same period ( Table 1 ).\n\n(A) Schematic of study design. (B) Differentially expressed metabolites between convalescence samples with age and sex-matched healthy controls. (C) Box and whisker plot showing taurine levels between cohorts.",
+      "context_window": "ons were made against age and sex-matched healthy controls (n = 28) enrolled during the same period ( Table 1 ). (A) Schemati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-1140",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1140,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction was performed for pairwise comparison. (D) Schematic representation of taurine mediated effects on various pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "d effects on various pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. 1 Median (IQR); n (%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-1150",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1150,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction was performed for pairwise comparison. (D) Schematic representation of taurine mediated effects on various pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "on various pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. 1 Median (IQR); n (%) 2 Kruska",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-1161",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1161,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction was performed for pairwise comparison. (D) Schematic representation of taurine mediated effects on various pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. 1 Median (IQR); n (%) 2 Kruskal-Wallis ran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-1174",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1174,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction was performed for pairwise comparison. (D) Schematic representation of taurine mediated effects on various pathways and physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "physiological processes. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. 1 Median (IQR); n (%) 2 Kruskal-Wallis rank sum test; Pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-5414",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5414,
+      "sentence": "Features (i.e., molecules) with >50% missing values were removed from all omic datasets.",
+      "context_window": "d Analyst 1.6.2 software. Features (i.e., molecules) with >50% missing values were removed from all omic datasets. The rem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7038",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7038,
+      "sentence": "Statistical analyses were performed using R 4.2.3 (Vienna, Austria), with statistical significance considered based on 2-tailed p<0.05.",
+      "context_window": "with statistical significance considered based on 2-tailed p<0.05. This study was conducted under the ethical principles of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-u-41",
+      "claim_type": "unit_value",
+      "raw_text": "62 years",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 41,
+      "sentence": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a marked prevalence of diabetes (42%), and predominance of infection by the ancestral SARS-CoV-2 strain (73%) ( Tables 1 and 2 ).",
+      "context_window": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-u-59",
+      "claim_type": "unit_value",
+      "raw_text": "73 years",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 59,
+      "sentence": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a marked prevalence of diabetes (42%), and predominance of infection by the ancestral SARS-CoV-2 strain (73%) ( Tables 1 and 2 ).",
+      "context_window": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-111",
+      "claim_type": "percentage",
+      "raw_text": "56.4%",
+      "numeric_values": [
+        56.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 111,
+      "sentence": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a marked prevalence of diabetes (42%), and predominance of infection by the ancestral SARS-CoV-2 strain (73%) ( Tables 1 and 2 ).",
+      "context_window": "IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a marked prevalence of diabetes (42%), and predomina",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-157",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 157,
+      "sentence": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a marked prevalence of diabetes (42%), and predominance of infection by the ancestral SARS-CoV-2 strain (73%) ( Tables 1 and 2 ).",
+      "context_window": "distribution (56.4% male), a marked prevalence of diabetes (42%), and predominance of infection by the ancestral SARS-CoV-2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-229",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 229,
+      "sentence": "The median age of the overall cohort was 62 years (IQR: 53-73 years), with a near equivalent sex distribution (56.4% male), a marked prevalence of diabetes (42%), and predominance of infection by the ancestral SARS-CoV-2 strain (73%) ( Tables 1 and 2 ).",
+      "context_window": "edominance of infection by the ancestral SARS-CoV-2 strain (73%) ( Tables 1 and 2 ). Patients were classified as event-free",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-n-294",
+      "claim_type": "sample_size",
+      "raw_text": "n = 81",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 294,
+      "sentence": "Patients were classified as event-free (n = 81) or with-event (n = 36) based on experience of adverse clinical outcomes following discharge from acute COVID-19 hospitalization.",
+      "context_window": "( Tables 1 and 2 ). Patients were classified as event-free (n = 81) or with-event (n = 36) based on experience of adverse clin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-n-317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 317,
+      "sentence": "Patients were classified as event-free (n = 81) or with-event (n = 36) based on experience of adverse clinical outcomes following discharge from acute COVID-19 hospitalization.",
+      "context_window": "ients were classified as event-free (n = 81) or with-event (n = 36) based on experience of adverse clinical outcomes following",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-520",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 520,
+      "sentence": "Patients with chronic kidney disease (CKD) were overrepresented in the with-event group (28%, p = 0.01) ( Table 2 ).",
+      "context_window": "disease (CKD) were overrepresented in the with-event group (28%, p = 0.01) ( Table 2 ). 1 n (%) 2 Kruskal-Wallis rank sum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-525",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 525,
+      "sentence": "Patients with chronic kidney disease (CKD) were overrepresented in the with-event group (28%, p = 0.01) ( Table 2 ).",
+      "context_window": "se (CKD) were overrepresented in the with-event group (28%, p = 0.01) ( Table 2 ). 1 n (%) 2 Kruskal-Wallis rank sum test; Pea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-1192",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1192,
+      "sentence": "Metabolomic analysis of plasma samples in the convalescence phase identified 50 differentially expressed metabolites compared to age and sex-matched healthy controls, with the amino acid taurine as one of the top upregulated metabolites (fold-change = 5.7, p<0.0001) ( Fig 1B ).",
+      "context_window": "one of the top upregulated metabolites (fold-change = 5.7, p<0.0001) ( Fig 1B ). Additionally, plasma taurine levels were signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2081",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2081,
+      "sentence": "We found that plasma levels of taurine negatively correlated with markers of inflammation, such as C-reactive protein (R = -0.22, p = 0.019), interleukin-10 (R = -0.23, p = 0.014), and interleukin-6 (R = -0.28, p = 0.002) ( Fig 2A-2C ).",
+      "context_window": "ers of inflammation, such as C-reactive protein (R = -0.22, p = 0.019), interleukin-10 (R = -0.23, p = 0.014), and interleukin-6",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2120",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2120,
+      "sentence": "We found that plasma levels of taurine negatively correlated with markers of inflammation, such as C-reactive protein (R = -0.22, p = 0.019), interleukin-10 (R = -0.23, p = 0.014), and interleukin-6 (R = -0.28, p = 0.002) ( Fig 2A-2C ).",
+      "context_window": "protein (R = -0.22, p = 0.019), interleukin-10 (R = -0.23, p = 0.014), and interleukin-6 (R = -0.28, p = 0.002) ( Fig 2A-2C ). I",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2162",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2162,
+      "sentence": "We found that plasma levels of taurine negatively correlated with markers of inflammation, such as C-reactive protein (R = -0.22, p = 0.019), interleukin-10 (R = -0.23, p = 0.014), and interleukin-6 (R = -0.28, p = 0.002) ( Fig 2A-2C ).",
+      "context_window": "in-10 (R = -0.23, p = 0.014), and interleukin-6 (R = -0.28, p = 0.002) ( Fig 2A-2C ). In contrast, there was a positive correlati",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2284",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2284,
+      "sentence": "In contrast, there was a positive correlation between taurine levels with tryptophan (R = 0.29, p = 0.001) and serotonin (R = 0.4, p = 8.8e-6), while demonstrating a strong negative correlation with quinolinic acid (r = -0.4, p<0.001), a byproduct of tryptophan metabolism with neurotoxic effects ( Fig 2D-2F ).",
+      "context_window": "rrelation between taurine levels with tryptophan (R = 0.29, p = 0.001) and serotonin (R = 0.4, p = 8.8e-6), while demonstrating a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2414",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2414,
+      "sentence": "In contrast, there was a positive correlation between taurine levels with tryptophan (R = 0.29, p = 0.001) and serotonin (R = 0.4, p = 8.8e-6), while demonstrating a strong negative correlation with quinolinic acid (r = -0.4, p<0.001), a byproduct of tryptophan metabolism with neurotoxic effects ( Fig 2D-2F ).",
+      "context_window": "strong negative correlation with quinolinic acid (r = -0.4, p<0.001), a byproduct of tryptophan metabolism with neurotoxic effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2634",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2634,
+      "sentence": "Lastly, taurine was negatively correlated with biomarkers related to gut dysbiosis, such as trimethylamine N-oxide (TMAO) (R = -0.27, p = 0.003), phenylacetic acid (R = -0.22, p = 0.016), and lipopolysaccharide binding protein (R = -0.27, p = 0.0031), suggesting a possible role of taurine in modulating microbial ecology in PCC ( Fig 2G-2I ).",
+      "context_window": "ysbiosis, such as trimethylamine N-oxide (TMAO) (R = -0.27, p = 0.003), phenylacetic acid (R = -0.22, p = 0.016), and lipopolysac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2676",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2676,
+      "sentence": "Lastly, taurine was negatively correlated with biomarkers related to gut dysbiosis, such as trimethylamine N-oxide (TMAO) (R = -0.27, p = 0.003), phenylacetic acid (R = -0.22, p = 0.016), and lipopolysaccharide binding protein (R = -0.27, p = 0.0031), suggesting a possible role of taurine in modulating microbial ecology in PCC ( Fig 2G-2I ).",
+      "context_window": "TMAO) (R = -0.27, p = 0.003), phenylacetic acid (R = -0.22, p = 0.016), and lipopolysaccharide binding protein (R = -0.27, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-2739",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0031",
+      "numeric_values": [
+        0.0031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2739,
+      "sentence": "Lastly, taurine was negatively correlated with biomarkers related to gut dysbiosis, such as trimethylamine N-oxide (TMAO) (R = -0.27, p = 0.003), phenylacetic acid (R = -0.22, p = 0.016), and lipopolysaccharide binding protein (R = -0.27, p = 0.0031), suggesting a possible role of taurine in modulating microbial ecology in PCC ( Fig 2G-2I ).",
+      "context_window": "0.016), and lipopolysaccharide binding protein (R = -0.27, p = 0.0031), suggesting a possible role of taurine in modulating micro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-3468",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3468,
+      "sentence": "Taurine levels were lower in patients with-event compared to those without event during convalescence (p = 0.001, Fig 3B ).",
+      "context_window": "event compared to those without event during convalescence (p = 0.001, Fig 3B ). Concomitantly, patients who experienced adverse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-3675",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0048",
+      "numeric_values": [
+        0.0048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3675,
+      "sentence": "Concomitantly, patients who experienced adverse clinical events during follow-up were less likely to have a substantial rise in taurine levels from the acute phase (fold-change = 1.259, p = 0.0048) compared to event-free patients (fold-change = 1.616, p = 1.4E-12) ( Fig 3C ).",
+      "context_window": "n taurine levels from the acute phase (fold-change = 1.259, p = 0.0048) compared to event-free patients (fold-change = 1.616, p =",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-5330",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5330,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "ini-Hochberg correction performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Patients were hence s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-5340",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5340,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "rg correction performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Patients were hence stratified",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-5351",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5351,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "on performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Patients were hence stratified based on the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-5364",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5364,
+      "sentence": "Mann-Whitney U test with Benjamini-Hochberg correction performed for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "for pairwise comparison. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Patients were hence stratified based on the trajectories",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-5900",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0066",
+      "numeric_values": [
+        0.0066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5900,
+      "sentence": "The Kaplan-Meier survival analysis revealed a significant elevation in the cumulative hazard for patients with reduction in taurine levels compared to those with increase in taurine levels from the acute to convalescence phase (log-rank p = 0.0066) ( Fig 4B ).",
+      "context_window": "rine levels from the acute to convalescence phase (log-rank p = 0.0066) ( Fig 4B ). A greater proportion of patients whose taurine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-6070",
+      "claim_type": "percentage",
+      "raw_text": "55.0%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6070,
+      "sentence": "A greater proportion of patients whose taurine levels decreased during the convalescence period eventually encountered an adverse clinical event (55.0%) compared to those with increased taurine levels (25.8%) (p = 0.02) ( Fig 4C ).",
+      "context_window": "ce period eventually encountered an adverse clinical event (55.0%) compared to those with increased taurine levels (25.8%) (p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-6126",
+      "claim_type": "percentage",
+      "raw_text": "25.8%",
+      "numeric_values": [
+        25.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6126,
+      "sentence": "A greater proportion of patients whose taurine levels decreased during the convalescence period eventually encountered an adverse clinical event (55.0%) compared to those with increased taurine levels (25.8%) (p = 0.02) ( Fig 4C ).",
+      "context_window": "nt (55.0%) compared to those with increased taurine levels (25.8%) (p = 0.02) ( Fig 4C ). In the multivariate time-to-event a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-6134",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6134,
+      "sentence": "A greater proportion of patients whose taurine levels decreased during the convalescence period eventually encountered an adverse clinical event (55.0%) compared to those with increased taurine levels (25.8%) (p = 0.02) ( Fig 4C ).",
+      "context_window": "%) compared to those with increased taurine levels (25.8%) (p = 0.02) ( Fig 4C ). In the multivariate time-to-event analysis, in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-6366",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6366,
+      "sentence": "In the multivariate time-to-event analysis, increased taurine levels between the acute and convalescence phase was significantly associated with a reduction in event risk with an adjusted hazard ratio of 0.13 (p<0.001, 95% CI:0.05-0.35) ( Fig 5 ).",
+      "context_window": "uction in event risk with an adjusted hazard ratio of 0.13 (p<0.001, 95% CI:0.05-0.35) ( Fig 5 ). In comparison, presence of ch",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-ci-6375",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:0.05-0.35",
+      "numeric_values": [
+        0.05,
+        0.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6375,
+      "sentence": "In the multivariate time-to-event analysis, increased taurine levels between the acute and convalescence phase was significantly associated with a reduction in event risk with an adjusted hazard ratio of 0.13 (p<0.001, 95% CI:0.05-0.35) ( Fig 5 ).",
+      "context_window": "event risk with an adjusted hazard ratio of 0.13 (p<0.001, 95% CI:0.05-0.35) ( Fig 5 ). In comparison, presence of chronic kidney disea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-hr-a-6461",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR:4.15",
+      "numeric_values": [
+        4.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6461,
+      "sentence": "In comparison, presence of chronic kidney disease (CKD) (aHR:4.15, 95% CI:1.71-10.07) and greater acute COVID-19 severity according to the WHO scale (aHR:1.96, 95% CI:1.24-3.08) were associated with a higher risk of adverse clinical events during convalescence ( Fig 5 ).\n\n(A) Paired box and whisker plots illustrating the trajectory of plasma taurine level from acute to convalescence phase.",
+      "context_window": "). In comparison, presence of chronic kidney disease (CKD) (aHR:4.15, 95% CI:1.71-10.07) and greater acute COVID-19 severity acc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-ci-6471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:1.71-10.07",
+      "numeric_values": [
+        1.71,
+        10.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6471,
+      "sentence": "In comparison, presence of chronic kidney disease (CKD) (aHR:4.15, 95% CI:1.71-10.07) and greater acute COVID-19 severity according to the WHO scale (aHR:1.96, 95% CI:1.24-3.08) were associated with a higher risk of adverse clinical events during convalescence ( Fig 5 ).\n\n(A) Paired box and whisker plots illustrating the trajectory of plasma taurine level from acute to convalescence phase.",
+      "context_window": "arison, presence of chronic kidney disease (CKD) (aHR:4.15, 95% CI:1.71-10.07) and greater acute COVID-19 severity according to the WHO s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-hr-a-6554",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR:1.96",
+      "numeric_values": [
+        1.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6554,
+      "sentence": "In comparison, presence of chronic kidney disease (CKD) (aHR:4.15, 95% CI:1.71-10.07) and greater acute COVID-19 severity according to the WHO scale (aHR:1.96, 95% CI:1.24-3.08) were associated with a higher risk of adverse clinical events during convalescence ( Fig 5 ).\n\n(A) Paired box and whisker plots illustrating the trajectory of plasma taurine level from acute to convalescence phase.",
+      "context_window": "greater acute COVID-19 severity according to the WHO scale (aHR:1.96, 95% CI:1.24-3.08) were associated with a higher risk of ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-ci-6564",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:1.24-3.08",
+      "numeric_values": [
+        1.24,
+        3.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6564,
+      "sentence": "In comparison, presence of chronic kidney disease (CKD) (aHR:4.15, 95% CI:1.71-10.07) and greater acute COVID-19 severity according to the WHO scale (aHR:1.96, 95% CI:1.24-3.08) were associated with a higher risk of adverse clinical events during convalescence ( Fig 5 ).\n\n(A) Paired box and whisker plots illustrating the trajectory of plasma taurine level from acute to convalescence phase.",
+      "context_window": "ute COVID-19 severity according to the WHO scale (aHR:1.96, 95% CI:1.24-3.08) were associated with a higher risk of adverse clinical eve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7075",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0066",
+      "numeric_values": [
+        0.0066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7075,
+      "sentence": "Log-rank p = 0.0066. (C) Stack bar plot showing the proportion of event-free and with-event individuals between patients with either reduced or increased taurine levels from acute to convalescence phase.",
+      "context_window": "ing discharge from acute COVID-19 hospitalization. Log-rank p = 0.0066. (C) Stack bar plot showing the proportion of event-free an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7287",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7287,
+      "sentence": "P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "levels from acute to convalescence phase. Chi-square test. P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Forest plot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7298",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7298,
+      "sentence": "P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "m acute to convalescence phase. Chi-square test. P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Forest plot showing t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7308",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7308,
+      "sentence": "P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "convalescence phase. Chi-square test. P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Forest plot showing the adjuste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7319",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7319,
+      "sentence": "P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "nce phase. Chi-square test. P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Forest plot showing the adjusted hazard rat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7332",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7332,
+      "sentence": "P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "i-square test. P = 0.02. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001. Forest plot showing the adjusted hazard ratios, confidenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-7899",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7899,
+      "sentence": "Notably, PCC patients with diabetes exhibited reduced plasma taurine concentrations compared to PCC patients without diabetes (p<0.05) ( Fig 6A ).",
+      "context_window": "e concentrations compared to PCC patients without diabetes (p<0.05) ( Fig 6A ). Further exploration of plasma samples from PCC",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-8213",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8213,
+      "sentence": "Plasma taurine levels were positively correlated with anti-inflammatory cytokines, namely interleukin-4 (R = 0.51, p<0.001) and interleukin-13 (R = 0.4, p = 0.0046) ( Fig 6B and 6C ).",
+      "context_window": "nti-inflammatory cytokines, namely interleukin-4 (R = 0.51, p<0.001) and interleukin-13 (R = 0.4, p = 0.0046) ( Fig 6B and 6C )",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-8251",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0046",
+      "numeric_values": [
+        0.0046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8251,
+      "sentence": "Plasma taurine levels were positively correlated with anti-inflammatory cytokines, namely interleukin-4 (R = 0.51, p<0.001) and interleukin-13 (R = 0.4, p = 0.0046) ( Fig 6B and 6C ).",
+      "context_window": "erleukin-4 (R = 0.51, p<0.001) and interleukin-13 (R = 0.4, p = 0.0046) ( Fig 6B and 6C ). Similarly, plasma taurine levels positi",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-8368",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0064",
+      "numeric_values": [
+        0.0064
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8368,
+      "sentence": "Similarly, plasma taurine levels positively correlated with antithrombin-3 (R = 0.38, p = 0.0064) and peroxiredoxin-1 (R = 0.62, p<0.001), which are involved in the inhibition of coagulation and oxidative stress, respectively ( Fig 6D and 6E ).",
+      "context_window": "levels positively correlated with antithrombin-3 (R = 0.38, p = 0.0064) and peroxiredoxin-1 (R = 0.62, p<0.001), which are involve",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-8411",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8411,
+      "sentence": "Similarly, plasma taurine levels positively correlated with antithrombin-3 (R = 0.38, p = 0.0064) and peroxiredoxin-1 (R = 0.62, p<0.001), which are involved in the inhibition of coagulation and oxidative stress, respectively ( Fig 6D and 6E ).",
+      "context_window": "bin-3 (R = 0.38, p = 0.0064) and peroxiredoxin-1 (R = 0.62, p<0.001), which are involved in the inhibition of coagulation and o",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-8633",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8633,
+      "sentence": "Moreover, plasma taurine levels showed a positive correlation with apolipoprotein A1 (APO A-I) (R = 0.29, p = 0.043) in PCC patients with diabetes, which illustrates a potential role for taurine in lipid metabolism and cholesterol balance ( Fig 6F ).",
+      "context_window": "ive correlation with apolipoprotein A1 (APO A-I) (R = 0.29, p = 0.043) in PCC patients with diabetes, which illustrates a potenti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-8876",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8876,
+      "sentence": "Moreover, we found that plasma taurine levels were positively associated with creatine (R = 0.32, p = 0.026), a source of energy in the body ( Fig 6G ).",
+      "context_window": "levels were positively associated with creatine (R = 0.32, p = 0.026), a source of energy in the body ( Fig 6G ). Lastly, taurin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-9013",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9013,
+      "sentence": "Lastly, taurine levels were negatively correlated with quinolinic acid (R = -0.3, p = 0.038), a neurotoxic breakdown metabolite of tryptophan ( Fig 6H ).\n\n(A) Box and whisker plot illustrating the level of taurine in PCC patients with and without diabetes during the convalescence phase compared with healthy controls.",
+      "context_window": "were negatively correlated with quinolinic acid (R = -0.3, p = 0.038), a neurotoxic breakdown metabolite of tryptophan ( Fig 6H",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-9641",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9641,
+      "sentence": "IL-4, Interleukin-4; IL-13, Interleukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "eukin-4; IL-13, Interleukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-9651",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9651,
+      "sentence": "IL-4, Interleukin-4; IL-13, Interleukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "L-13, Interleukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-9662",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9662,
+      "sentence": "IL-4, Interleukin-4; IL-13, Interleukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "leukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-p-9675",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9675,
+      "sentence": "IL-4, Interleukin-4; IL-13, Interleukin-13; APOA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "context_window": "OA-I, apolipoprotein A1. *p<0.05, **p<0.01, ***p<0.001, ****p<0.0001.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-u-640",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 months",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 640,
+      "sentence": "In the repeat sampling at 6.3 months (IQR: 6.0-7.1) months, 74% of participants had at least one symptom related to PCC.",
+      "context_window": "B.1.1.7 variant [ 1 , 10 , 17 ]. In the repeat sampling at 6.3 months (IQR: 6.0-7.1) months, 74% of participants had at least one",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-pct-674",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 674,
+      "sentence": "In the repeat sampling at 6.3 months (IQR: 6.0-7.1) months, 74% of participants had at least one symptom related to PCC.",
+      "context_window": "In the repeat sampling at 6.3 months (IQR: 6.0-7.1) months, 74% of participants had at least one symptom related to PCC. Ou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11152273_plasma_taurine_level_is_linked_to_symptom_burden_and_clinica-u-4868",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4868,
+      "sentence": "Other studies have also reported reduced taurine levels in patients with severe PCC symptoms up to 20 months after the initial infection [ 12 , 44 ].",
+      "context_window": "d taurine levels in patients with severe PCC symptoms up to 20 months after the initial infection [ 12 , 44 ]. Similarly, in pati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

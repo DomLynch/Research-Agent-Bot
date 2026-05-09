@@ -1,0 +1,426 @@
+{
+  "paper_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis",
+  "doi": "10.3390/molecules30122653",
+  "extracted_at": "2026-05-08T20:01:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 18,
+    "unit_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-9668",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9668,
+      "sentence": "For plotting the precision-recall curve, we refer to the method of Wong et al. [ 26 ], and used the precision_recall_curve module in scikit-learn to calculate the value of auPRC [ 85 ], and through the bootstrap method, we performed 100 bootstraps to plot the precision-recall curve and calculate the 95% confidence interval.",
+      "context_window": "straps to plot the precision-recall curve and calculate the 95% confidence interval. For the t-SNE analyses shown in Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-12890",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12890,
+      "sentence": "Cells were routinely cultured in complete Dulbecco\u2019s Modified Eagle Medium (DMEM; Gibco, Thermo Fisher Scientific, Waltham, MA, USA) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin solution (Thermo Fisher, Waltham, MA, USA) at 37 \u00b0C in a 5% CO 2 humidified incubator, with fresh medium replaced every 48 h.",
+      "context_window": "ermo Fisher Scientific, Waltham, MA, USA) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin solution",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-12917",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12917,
+      "sentence": "Cells were routinely cultured in complete Dulbecco\u2019s Modified Eagle Medium (DMEM; Gibco, Thermo Fisher Scientific, Waltham, MA, USA) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin solution (Thermo Fisher, Waltham, MA, USA) at 37 \u00b0C in a 5% CO 2 humidified incubator, with fresh medium replaced every 48 h.",
+      "context_window": "tham, MA, USA) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin solution (Thermo Fisher, Waltham, M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-13001",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13001,
+      "sentence": "Cells were routinely cultured in complete Dulbecco\u2019s Modified Eagle Medium (DMEM; Gibco, Thermo Fisher Scientific, Waltham, MA, USA) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin solution (Thermo Fisher, Waltham, MA, USA) at 37 \u00b0C in a 5% CO 2 humidified incubator, with fresh medium replaced every 48 h.",
+      "context_window": "in solution (Thermo Fisher, Waltham, MA, USA) at 37 \u00b0C in a 5% CO 2 humidified incubator, with fresh medium replaced every",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-13328",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13328,
+      "sentence": "Following passaging, when cells reached 30-50% confluency, the 10 mM etoposide solution was added to the culture medium at a dilution of 1:200, achieving a final working concentration of 50 \u03bcM.",
+      "context_window": "ing concentrate. Following passaging, when cells reached 30-50% confluency, the 10 mM etoposide solution was added to the c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-13719",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13719,
+      "sentence": "In parallel, control cells were treated with 0.5% DMSO for 48 h, following the same protocol, to serve as the normally proliferating control group.",
+      "context_window": "cence-induced. In parallel, control cells were treated with 0.5% DMSO for 48 h, following the same protocol, to serve as the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-u-14024",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 14024,
+      "sentence": "Subsequently, 1 mL of \u03b2-Gal fixation solution was added per well, and the cells were fixed at room temperature for 15 min.",
+      "context_window": "ed in 6-well plates and washed once with PBS. Subsequently, 1 mL of \u03b2-Gal fixation solution was added per well, and the cell",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-u-14193",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 14193,
+      "sentence": "After fixation, cells were washed three times with PBS, and 1 mL of staining solution was added to each well.",
+      "context_window": "After fixation, cells were washed three times with PBS, and 1 mL of staining solution was added to each well. The plates wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-u-14398",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 14398,
+      "sentence": "Following incubation, the staining solution was removed and 2 mL of PBS was added per well.",
+      "context_window": "Following incubation, the staining solution was removed and 2 mL of PBS was added per well. The stained cells were immediate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-u-14639",
+      "claim_type": "unit_value",
+      "raw_text": "10 cm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 14639,
+      "sentence": "For the cell viability assay, cells were seeded in 10 cm culture dishes and allowed to grow until reaching 80-90% confluency.",
+      "context_window": "ptured. For the cell viability assay, cells were seeded in 10 cm culture dishes and allowed to grow until reaching 80-90% co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-14698",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14698,
+      "sentence": "For the cell viability assay, cells were seeded in 10 cm culture dishes and allowed to grow until reaching 80-90% confluency.",
+      "context_window": "10 cm culture dishes and allowed to grow until reaching 80-90% confluency. Cells were then detached using trypsin, resuspe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-15495",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15495,
+      "sentence": "The negative control group received 0.1% DMSO.",
+      "context_window": "e) for the experiments. The negative control group received 0.1% DMSO. Each treatment group was performed in triplicate. Fol",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-16460",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16460,
+      "sentence": "The bleach (0.5 M NaOH, 5% NaClO) was used to separate the fertilized egg from the mother and to keep the offspring in the same lifetime.",
+      "context_window": "P50 as food and incubated at 20 \u00b0C. The bleach (0.5 M NaOH, 5% NaClO) was used to separate the fertilized egg from the mot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-958",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 958,
+      "sentence": "To ensure the reliability of the negative dataset, we compared the molecular fingerprint similarity between compounds in the negative and positive datasets and excluded those with more than 90% similarity to known senolytics.",
+      "context_window": "ive and positive datasets and excluded those with more than 90% similarity to known senolytics. Finally, the training set c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-17341",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17341,
+      "sentence": "In validation studies ( Figure 6 f), treatment with 10 \u03bcM ABT-263 resulted in approximately 50% elimination of senescent cells, while about 80% of proliferating cells were preserved.",
+      "context_window": "f), treatment with 10 \u03bcM ABT-263 resulted in approximately 50% elimination of senescent cells, while about 80% of prolifer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-17389",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17389,
+      "sentence": "In validation studies ( Figure 6 f), treatment with 10 \u03bcM ABT-263 resulted in approximately 50% elimination of senescent cells, while about 80% of proliferating cells were preserved.",
+      "context_window": "proximately 50% elimination of senescent cells, while about 80% of proliferating cells were preserved. These results are co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-17793",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17793,
+      "sentence": "The control group received 0.1% DMSO, while the positive control was treated with 10 \u03bcM ABT-263.",
+      "context_window": "ere chosen as negative controls. The control group received 0.1% DMSO, while the positive control was treated with 10 \u03bcM ABT",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-18050",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18050,
+      "sentence": "For panaxatriol, preliminary experiments indicated that 10 \u03bcM was capable of killing approximately 10% of senescent cells without toxicity to normal cells; therefore, its activity was further examined at both 10 \u03bcM and 100 \u03bcM.",
+      "context_window": "s indicated that 10 \u03bcM was capable of killing approximately 10% of senescent cells without toxicity to normal cells; theref",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-18496",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18496,
+      "sentence": "Among the 10 compounds tested, panaxatriol demonstrated notable senolytic activity at 100 \u03bcM, clearing about 45% of senescent cells, while only approximately 12% of the proliferating cells were eliminated.",
+      "context_window": "trated notable senolytic activity at 100 \u03bcM, clearing about 45% of senescent cells, while only approximately 12% of the pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-18545",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18545,
+      "sentence": "Among the 10 compounds tested, panaxatriol demonstrated notable senolytic activity at 100 \u03bcM, clearing about 45% of senescent cells, while only approximately 12% of the proliferating cells were eliminated.",
+      "context_window": "ring about 45% of senescent cells, while only approximately 12% of the proliferating cells were eliminated. The remaining c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-19613",
+      "claim_type": "percentage",
+      "raw_text": "19.1%",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19613,
+      "sentence": "As shown in Table 4 , the predicted active compound voclosporin markedly extended the lifespan of C. elegans , achieving a lifespan extension rate of 19.1%, which is better than that of the well-known anti-aging drug metformin (11.3%).",
+      "context_window": "span of C. elegans , achieving a lifespan extension rate of 19.1%, which is better than that of the well-known anti-aging dru",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-pct-19691",
+      "claim_type": "percentage",
+      "raw_text": "11.3%",
+      "numeric_values": [
+        11.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19691,
+      "sentence": "As shown in Table 4 , the predicted active compound voclosporin markedly extended the lifespan of C. elegans , achieving a lifespan extension rate of 19.1%, which is better than that of the well-known anti-aging drug metformin (11.3%).",
+      "context_window": "tter than that of the well-known anti-aging drug metformin (11.3%). Although voclosporin did not extend the lifespan of the l",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12196162_development_and_application_of_a_senolytic_predictor_for_dis-u-19869",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 19869,
+      "sentence": "Although voclosporin did not extend the lifespan of the longest-lived C. elegans , it significantly reduced C. elegans mortality at the onset of senescence and at around 30 days ( Figure 7 ).",
+      "context_window": "elegans mortality at the onset of senescence and at around 30 days ( Figure 7 ). The other four compounds (simeprevir, belinos",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_sleep_quality_and_mechanisms_of_cardiovascular_risks_in_adul",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_sleep_quality_and_mechanisms_of_cardiovascular_risks_in_adul-u-284",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 284,
+      "sentence": "Posted outcomes: Change in Blood Pressure During the Nighttime Sleep Period. timeframe=Baseline, 6 months post-intervention.",
+      "context_window": "sure During the Nighttime Sleep Period. timeframe=Baseline, 6 months post-intervention. Cognitive Behavioral Therapy for Insomni",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_sleep_quality_and_mechanisms_of_cardiovascular_risks_in_adul-p-361",
+      "claim_type": "p_value",
+      "raw_text": "p=0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 361,
+      "sentence": "Cognitive Behavioral Therapy for Insomnia=-2.48. p=0.002",
+      "context_window": "ervention. Cognitive Behavioral Therapy for Insomnia=-2.48. p=0.002",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

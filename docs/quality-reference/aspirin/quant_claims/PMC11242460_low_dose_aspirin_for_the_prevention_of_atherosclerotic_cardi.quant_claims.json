@@ -1,0 +1,2060 @@
+{
+  "paper_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi",
+  "doi": "10.1093/eurheartj/ehae324",
+  "extracted_at": "2026-05-08T20:06:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 40,
+    "unit_value": 43,
+    "sample_size": 11,
+    "p_value": 8,
+    "confidence_interval": 10,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-835",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 835,
+      "sentence": "Arg-120, arginine-120; ID 50 = 50% inhibitory dose; MI, myocardial infarction; NNT, number needed to treat; RR, rate ratio; UGIC, upper gastrointestinal complication.",
+      "context_window": "tal (CR) adenoma recurrence. Arg-120, arginine-120; ID 50 = 50% inhibitory dose; MI, myocardial infarction; NNT, number nee",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-367",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 367,
+      "sentence": "1 The most widely tested antiplatelet regimen was \u2018medium dose\u2019 (75-325 mg/day) aspirin, and the Antiplatelet Trialists\u2019 Collaboration found no evidence that either a higher aspirin dose or any other antiplatelet regimen was more effective than medium-dose aspirin in preventing vascular events.",
+      "context_window": "st widely tested antiplatelet regimen was \u2018medium dose\u2019 (75-325 mg/day) aspirin, and the Antiplatelet Trialists\u2019 Collaboration fou",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-763",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 763,
+      "sentence": "1 At about the same time, I published a review article on aspirin as an antiplatelet drug that concluded \u2018The present recommendation of a single loading dose of 200 to 300 mg followed by a daily dose of 75 to 100 mg is based on findings that this dose is as clinically efficacious as higher doses and is safer than higher doses\u2019.",
+      "context_window": "e present recommendation of a single loading dose of 200 to 300 mg followed by a daily dose of 75 to 100 mg is based on findin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-804",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 804,
+      "sentence": "1 At about the same time, I published a review article on aspirin as an antiplatelet drug that concluded \u2018The present recommendation of a single loading dose of 200 to 300 mg followed by a daily dose of 75 to 100 mg is based on findings that this dose is as clinically efficacious as higher doses and is safer than higher doses\u2019.",
+      "context_window": "ing dose of 200 to 300 mg followed by a daily dose of 75 to 100 mg is based on findings that this dose is as clinically effica",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-1299",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1299,
+      "sentence": "2\n\nDuring the past 30 years, we have witnessed several developments in the antiplatelet field, including (i) a large number of trials exploring the role of aspirin in primary prevention of atherosclerotic cardiovascular disease; 3 (ii) several attempts by the pharmaceutical industry to develop antiplatelet drugs, more effective and safer than aspirin; 4 (iii) a shift in emphasis from efficacy to safety leading to a strong opinion movement favouring aspirin-free antiplatelet regimens after percutaneous coronary intervention; 5 and (iv) an IPD meta-analysis comparing P2Y 12 inhibitor monotherapy with aspirin monotherapy for secondary prevention of coronary events.",
+      "context_window": "ur despite currently available therapy\u2019. 2 During the past 30 years, we have witnessed several developments in the antiplatelet",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-2618",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2618,
+      "sentence": "75 to 100 mg once daily) aspirin in preventing atherothrombosis is related to permanent inactivation of a bifunctional enzyme, prostaglandin (PG)G/H synthase-1, that catalyses the first committed step in prostanoid biosynthesis, i.e. the sequential conversion of arachidonic acid into PGG 2 and PGH 2 through its cyclooxygenase (COX) and peroxidase activities ( Figure 1 ).",
+      "context_window": "rized molecular mechanism of action of low-dose (i.e. 75 to 100 mg once daily) aspirin in preventing atherothrombosis is relat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-8632",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 8632,
+      "sentence": "11 The former is reflected by the fact that the dose of aspirin required to inhibit platelet COX-1 by 50% (i.e. its ID 50 ) is shifted from 26 mg after single oral dosing to approximately 3 mg upon repeated daily dosing.",
+      "context_window": "t the dose of aspirin required to inhibit platelet COX-1 by 50% (i.e. its ID 50 ) is shifted from 26 mg after single oral d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-8670",
+      "claim_type": "unit_value",
+      "raw_text": "26 mg",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 8670,
+      "sentence": "11 The former is reflected by the fact that the dose of aspirin required to inhibit platelet COX-1 by 50% (i.e. its ID 50 ) is shifted from 26 mg after single oral dosing to approximately 3 mg upon repeated daily dosing.",
+      "context_window": "bit platelet COX-1 by 50% (i.e. its ID 50 ) is shifted from 26 mg after single oral dosing to approximately 3 mg upon repeate",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-8718",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 8718,
+      "sentence": "11 The former is reflected by the fact that the dose of aspirin required to inhibit platelet COX-1 by 50% (i.e. its ID 50 ) is shifted from 26 mg after single oral dosing to approximately 3 mg upon repeated daily dosing.",
+      "context_window": "hifted from 26 mg after single oral dosing to approximately 3 mg upon repeated daily dosing. 10 The latter implies that, whe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-9993",
+      "claim_type": "unit_value",
+      "raw_text": "0.45 mg",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 9993,
+      "sentence": "Reproduced from Patrignani et al., J Clin Invest 1982, with permission from the American Society for Clinical Investigation. ( C ) Long-term effects of low-dose (0.45 mg/kg per day) aspirin on platelet thromboxane A 2 and renal PGI 2 synthesis.",
+      "context_window": "linical Investigation. ( C ) Long-term effects of low-dose (0.45 mg/kg per day) aspirin on platelet thromboxane A 2 and renal P",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-10799",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 10799,
+      "sentence": "ID 50 = 50% inhibitory dose.",
+      "context_window": "t measurements obtained at steady-state inhibition. ID 50 = 50% inhibitory dose. Reproduced from Patrono et al., 10 with pe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-10936",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 10936,
+      "sentence": "SD, standard deviation; ID 50 , 50% inhibitory dose; TXB 2 , thromboxane B 2\n\nWhile P2Y 12 inhibitors permanently modify (clopidogrel and prasugrel) or reversibly inhibit (ticagrelor) the platelet ADP receptor and consequently block ADP signalling, with no specific biochemical or functional changes that can be detected in vivo (though measurable ex vivo ), aspirin inhibits the production of a platelet product, TXA 2 , that can be measured both ex vivo and in vivo .",
+      "context_window": "Wolters Kluwer Health, Inc. SD, standard deviation; ID 50 , 50% inhibitory dose; TXB 2 , thromboxane B 2 While P2Y 12 inhi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-11791",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 11791,
+      "sentence": "12\n\nAspirin has a relatively simple pharmacokinetics, with no requirement for metabolic activation, \u223c50% oral bioavailability, and 15 to 20 min half-life.",
+      "context_window": "acokinetics, with no requirement for metabolic activation, \u223c50% oral bioavailability, and 15 to 20 min half-life. 4 The dru",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-14319",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 14319,
+      "sentence": "18 Therefore, plain rather than enteric-coated aspirin formulation should be preferred when used as monotherapy in patients with body mass index >35 kg/m 2 or body weight >120 kg.",
+      "context_window": "when used as monotherapy in patients with body mass index >35 kg/m 2 or body weight >120 kg. 18 In a post hoc secondary anal",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-14345",
+      "claim_type": "unit_value",
+      "raw_text": "120 kg",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 14345,
+      "sentence": "18 Therefore, plain rather than enteric-coated aspirin formulation should be preferred when used as monotherapy in patients with body mass index >35 kg/m 2 or body weight >120 kg.",
+      "context_window": "in patients with body mass index >35 kg/m 2 or body weight >120 kg. 18 In a post hoc secondary analysis of the ADAPTABLE secon",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-15600",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 15600,
+      "sentence": "22 In a study of 48 healthy volunteers randomized to receive aspirin 100 mg daily for 1 to 8 weeks, with weekly measurements of 6 functional and biochemical assays, serum TXB 2 had the highest signal-to-noise ratio and the lowest interindividual and intraindividual variabilities ( Figure 4 ).",
+      "context_window": "tudy of 48 healthy volunteers randomized to receive aspirin 100 mg daily for 1 to 8 weeks, with weekly measurements of 6 funct",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-15622",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 15622,
+      "sentence": "22 In a study of 48 healthy volunteers randomized to receive aspirin 100 mg daily for 1 to 8 weeks, with weekly measurements of 6 functional and biochemical assays, serum TXB 2 had the highest signal-to-noise ratio and the lowest interindividual and intraindividual variabilities ( Figure 4 ).",
+      "context_window": "unteers randomized to receive aspirin 100 mg daily for 1 to 8 weeks, with weekly measurements of 6 functional and biochemical a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16312",
+      "claim_type": "sample_size",
+      "raw_text": "n = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16312,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), wee",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16330",
+      "claim_type": "sample_size",
+      "raw_text": "n = 47",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16330,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), wee",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16348",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16348,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "n of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), wee",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16366",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16366,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "k 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), wee",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16384",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16384,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "k 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16402",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16402,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "k 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)].",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16420",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16420,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "k 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. bas",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16438",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16438,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "k 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-16460",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16460,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline. Reprodu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-16471",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16471,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline. Reproduced from Sant",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-16495",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 16495,
+      "sentence": "Values are mean \u00b1 standard deviation of baseline [week 0 ( n = 48), week 1 ( n = 47), week 2 ( n = 42), week 3 ( n = 34), week 4 ( n = 28), week 5 ( n = 23), week 6 ( n = 17), week 7 ( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline.",
+      "context_window": "( n = 11), and week 8 ( n = 6)]. * P < .01 vs. baseline. # P < .001 vs. baseline. Reproduced from Santilli et al., 23 with perm",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-16754",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 16754,
+      "sentence": "Reproduced from Santilli et al., 23 with permission from Elsevier\n\nBased on measurements of serum TXB 2 , aspirin is a potent (i.e. acting at very low doses) and highly effective (i.e. virtually inhibiting platelet TXA 2 production by >99%) inhibitor of platelet COX-1 activity.",
+      "context_window": "ve (i.e. virtually inhibiting platelet TXA 2 production by >99%) inhibitor of platelet COX-1 activity. However, it is often",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-17316",
+      "claim_type": "unit_value",
+      "raw_text": "1300 mg",
+      "numeric_values": [
+        1300.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 17316,
+      "sentence": "9\n\nWhile initial evaluation of aspirin as an antiplatelet agent was based on functional assays predicting the requirement of relatively high doses (975-1300 mg) and repeated daily dosing (e.g. t.i.d. or q.i.d.) regimens, 24 , 25 further development of low-dose aspirin was largely guided by biochemical assays reflecting its mechanism of action.",
+      "context_window": "ys predicting the requirement of relatively high doses (975-1300 mg) and repeated daily dosing (e.g. t.i.d. or q.i.d.) regimens",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-21426",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 21426,
+      "sentence": "Moreover, aspirin trials have used variable follow-up, from as short as a few weeks to as long as 10 years.",
+      "context_window": "iable follow-up, from as short as a few weeks to as long as 10 years. 8 , 34 In the Second International Study of Infarct Survi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-21540",
+      "claim_type": "unit_value",
+      "raw_text": "162.5 mg",
+      "numeric_values": [
+        162.5
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 21540,
+      "sentence": "8 , 34\n\nIn the Second International Study of Infarct Survival, once-daily dosing with low-dose aspirin (162.5 mg) started within 24 h of the onset of symptoms of a suspected MI produced highly significant reductions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients.",
+      "context_window": "Infarct Survival, once-daily dosing with low-dose aspirin (162.5 mg) started within 24 h of the onset of symptoms of a suspecte",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-21655",
+      "claim_type": "unit_value",
+      "raw_text": "5 week",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "week",
+      "source_section": "introduction",
+      "source_offset": 21655,
+      "sentence": "8 , 34\n\nIn the Second International Study of Infarct Survival, once-daily dosing with low-dose aspirin (162.5 mg) started within 24 h of the onset of symptoms of a suspected MI produced highly significant reductions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients.",
+      "context_window": "of a suspected MI produced highly significant reductions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-21707",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 21707,
+      "sentence": "8 , 34\n\nIn the Second International Study of Infarct Survival, once-daily dosing with low-dose aspirin (162.5 mg) started within 24 h of the onset of symptoms of a suspected MI produced highly significant reductions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients.",
+      "context_window": "ions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46%",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-21738",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 21738,
+      "sentence": "8 , 34\n\nIn the Second International Study of Infarct Survival, once-daily dosing with low-dose aspirin (162.5 mg) started within 24 h of the onset of symptoms of a suspected MI produced highly significant reductions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients.",
+      "context_window": "ty (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients. 35 Th",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-21767",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 21767,
+      "sentence": "8 , 34\n\nIn the Second International Study of Infarct Survival, once-daily dosing with low-dose aspirin (162.5 mg) started within 24 h of the onset of symptoms of a suspected MI produced highly significant reductions in 5 week vascular mortality (the primary endpoint) by 23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients.",
+      "context_window": "23%, non-fatal reinfarction by 49%, and non-fatal stroke by 46% in over 17 000 patients. 35 Three smaller but longer-term (",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-21830",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 21830,
+      "sentence": "35 Three smaller but longer-term (12 weeks to 2 years) placebo-controlled RCTs in \u223c2600 patients with unstable coronary artery disease consistently showed that aspirin therapy (75 to 1300 mg daily) halved the probability of death or MI, independent of the aspirin dose.",
+      "context_window": "in over 17 000 patients. 35 Three smaller but longer-term (12 weeks to 2 years) placebo-controlled RCTs in \u223c2600 patients with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-21842",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 21842,
+      "sentence": "35 Three smaller but longer-term (12 weeks to 2 years) placebo-controlled RCTs in \u223c2600 patients with unstable coronary artery disease consistently showed that aspirin therapy (75 to 1300 mg daily) halved the probability of death or MI, independent of the aspirin dose.",
+      "context_window": "000 patients. 35 Three smaller but longer-term (12 weeks to 2 years) placebo-controlled RCTs in \u223c2600 patients with unstable co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-21979",
+      "claim_type": "unit_value",
+      "raw_text": "1300 mg",
+      "numeric_values": [
+        1300.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 21979,
+      "sentence": "35 Three smaller but longer-term (12 weeks to 2 years) placebo-controlled RCTs in \u223c2600 patients with unstable coronary artery disease consistently showed that aspirin therapy (75 to 1300 mg daily) halved the probability of death or MI, independent of the aspirin dose.",
+      "context_window": "ery disease consistently showed that aspirin therapy (75 to 1300 mg daily) halved the probability of death or MI, independent o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-22294",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 22294,
+      "sentence": "36-38 Two RCTs with a similar protocol, the International Stroke Trial 39 and the Chinese Acute Stroke Trial, 40 randomized approximately 40 000 patients within 48 h of the onset of symptoms of an acute ischaemic stroke to 2 to 4 weeks of daily aspirin therapy (300 and 160 mg, respectively) or placebo and showed more modest reductions in death or non-fatal stroke than reported in acute MI ( Figure 6 ).",
+      "context_window": "the onset of symptoms of an acute ischaemic stroke to 2 to 4 weeks of daily aspirin therapy (300 and 160 mg, respectively) or",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-22336",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 22336,
+      "sentence": "36-38 Two RCTs with a similar protocol, the International Stroke Trial 39 and the Chinese Acute Stroke Trial, 40 randomized approximately 40 000 patients within 48 h of the onset of symptoms of an acute ischaemic stroke to 2 to 4 weeks of daily aspirin therapy (300 and 160 mg, respectively) or placebo and showed more modest reductions in death or non-fatal stroke than reported in acute MI ( Figure 6 ).",
+      "context_window": "ic stroke to 2 to 4 weeks of daily aspirin therapy (300 and 160 mg, respectively) or placebo and showed more modest reductions",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-22933",
+      "claim_type": "unit_value",
+      "raw_text": "3 year",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 22933,
+      "sentence": "34 Reproduced from Patrono et al., 8 with permission from the Massachusetts Medical Society\n\nBased on a large number of placebo-controlled RCTs, long-term (2 to 3 year) aspirin therapy confers conclusive net benefit on the risk of subsequent MI, stroke, or vascular death among subjects at high risk of vascular complications ( Figure 6 ).",
+      "context_window": "a large number of placebo-controlled RCTs, long-term (2 to 3 year) aspirin therapy confers conclusive net benefit on the risk",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-23269",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 23269,
+      "sentence": "8 , 34 The proportional effects of long-term aspirin therapy on vascular events in these different clinical settings are rather homogeneous, ranging between 20% and 25% odds reduction based on an overview of all RCTs.",
+      "context_window": "t clinical settings are rather homogeneous, ranging between 20% and 25% odds reduction based on an overview of all RCTs. 34",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-23277",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 23277,
+      "sentence": "8 , 34 The proportional effects of long-term aspirin therapy on vascular events in these different clinical settings are rather homogeneous, ranging between 20% and 25% odds reduction based on an overview of all RCTs.",
+      "context_window": "al settings are rather homogeneous, ranging between 20% and 25% odds reduction based on an overview of all RCTs. 34 The abs",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-23553",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 23553,
+      "sentence": "8\n\nThe lowest effective daily dose of aspirin for long-term antiplatelet prophylaxis ranges between 50 and 100 mg, with no evidence that higher doses are more effective, consistent with saturability of platelet COX-1 inactivation at low doses.",
+      "context_window": "or long-term antiplatelet prophylaxis ranges between 50 and 100 mg, with no evidence that higher doses are more effective, con",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-24441",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 24441,
+      "sentence": "In the ASPREE trial involving 19 114 healthy elderly persons (median age, 74 years) who did not have known cardiovascular disease (CVD), the use of low-dose aspirin did not result in a significantly lower risk of CVD than placebo [hazard ratio (HR) 0.95; 95% confidence interval (CI) 0.83-1.08].",
+      "context_window": "trial involving 19 114 healthy elderly persons (median age, 74 years) who did not have known cardiovascular disease (CVD), the u",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-24622",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 24622,
+      "sentence": "In the ASPREE trial involving 19 114 healthy elderly persons (median age, 74 years) who did not have known cardiovascular disease (CVD), the use of low-dose aspirin did not result in a significantly lower risk of CVD than placebo [hazard ratio (HR) 0.95; 95% confidence interval (CI) 0.83-1.08].",
+      "context_window": "tly lower risk of CVD than placebo [hazard ratio (HR) 0.95; 95% confidence interval (CI) 0.83-1.08]. 43 However, the widely",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-25409",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.77-1.03",
+      "numeric_values": [
+        0.77,
+        1.03
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 25409,
+      "sentence": "43 However, the widely cited message from ASPREE that low-dose aspirin is ineffective in old age is potentially misleading, for the following reasons: (i) CVD was not the primary endpoint of ASPREE; (ii) CVD, a pre-specified secondary endpoint, was a composite of platelet-dependent as well as platelet-independent events, i.e. fatal coronary heart disease, non-fatal MI, fatal or non-fatal stroke, or hospitalization for heart failure; and (iii) when the analysis was restricted to a traditional composite of fatal coronary heart disease, non-fatal MI, or fatal or non-fatal ischaemic stroke, the rate of this endpoint was 7.8 events per 1000 person-years in the aspirin group and 8.8 events per 1000 person-years in the placebo group (HR 0.89; 95% CI 0.77-1.03).",
+      "context_window": "events per 1000 person-years in the placebo group (HR 0.89; 95% CI 0.77-1.03). 43 Such a moderate treatment effect is identical to that",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-25517",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 25517,
+      "sentence": "43 Such a moderate treatment effect is identical to that reported for younger subjects (<65 years) in a setting of primary prevention, 44 an effect that ASPREE failed to detect as statistically significant in a population at low cardiovascular risk (<1.0% per year) because it was largely underpowered.",
+      "context_window": "effect is identical to that reported for younger subjects (<65 years) in a setting of primary prevention, 44 an effect that ASPR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-25679",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 25679,
+      "sentence": "43 Such a moderate treatment effect is identical to that reported for younger subjects (<65 years) in a setting of primary prevention, 44 an effect that ASPREE failed to detect as statistically significant in a population at low cardiovascular risk (<1.0% per year) because it was largely underpowered.",
+      "context_window": "ly significant in a population at low cardiovascular risk (<1.0% per year) because it was largely underpowered. Despite seri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-26011",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26011,
+      "sentence": "The apparent numerical difference in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medication.",
+      "context_window": "in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% redu",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-26018",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26018,
+      "sentence": "The apparent numerical difference in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medication.",
+      "context_window": "tive risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction)",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-26059",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26059,
+      "sentence": "The apparent numerical difference in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medication.",
+      "context_window": "(typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explaine",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-26066",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26066,
+      "sentence": "The apparent numerical difference in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medication.",
+      "context_window": "lly, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by th",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-26167",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 years",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 26167,
+      "sentence": "The apparent numerical difference in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medication.",
+      "context_window": "likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-26195",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 years",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 26195,
+      "sentence": "The apparent numerical difference in relative risk reductions observed in primary (typically, 10% to 12% reduction) and secondary (typically, 20% to 25% reduction) prevention trials is most likely explained by the much longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medication.",
+      "context_window": "longer duration of the former (6.9 years) than the latter (2.5 years) 44 and time-dependent loss of compliance with trial medica",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-27384",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 27384,
+      "sentence": "Additional evidence for the efficacy (and safety) of aspirin can be derived from a number of head-to-head RCTs in over 80 000 high-risk patients, which were designed to test the superiority of novel antiplatelet drugs developed during the past 30 years to replace aspirin as the mainstay of antithrombotic therapy ( Table 1 ).",
+      "context_window": "ority of novel antiplatelet drugs developed during the past 30 years to replace aspirin as the mainstay of antithrombotic therap",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-or-l-28795",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 28795,
+      "sentence": "Patients who received a P2Y 12 inhibitor had a borderline reduction in the risk of MI compared with those who received aspirin (odds ratio 0.81; 95% CI 0.66-0.99).",
+      "context_window": "in the risk of MI compared with those who received aspirin (odds ratio 0.81; 95% CI 0.66-0.99). Risks of stroke, all-cause death, and v",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-28812",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.66-0.99",
+      "numeric_values": [
+        0.66,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 28812,
+      "sentence": "Patients who received a P2Y 12 inhibitor had a borderline reduction in the risk of MI compared with those who received aspirin (odds ratio 0.81; 95% CI 0.66-0.99).",
+      "context_window": "compared with those who received aspirin (odds ratio 0.81; 95% CI 0.66-0.99). Risks of stroke, all-cause death, and vascular death did",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-29494",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 29494,
+      "sentence": "In both meta-analyses, a single trial published 30 years ago, i.e.",
+      "context_window": "e excluded. In both meta-analyses, a single trial published 30 years ago, i.e. CAPRIE ( Table 1 ), 45 accounted for \u223c60% of the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-29551",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 29551,
+      "sentence": "CAPRIE ( Table 1 ), 45 accounted for \u223c60% of the total weight.",
+      "context_window": "ed 30 years ago, i.e. CAPRIE ( Table 1 ), 45 accounted for \u223c60% of the total weight. However, the PANTHER meta-analysis inc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-29741",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6302",
+      "numeric_values": [
+        6302.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 29741,
+      "sentence": "However, the PANTHER meta-analysis included a sub-group of the CAPRIE trial [8446 patients with previous MI, including the original category of recent MI patients ( n = 6302) plus patients with recent stroke or symptomatic atherosclerotic peripheral arterial disease with a previous MI at any time ( n = 2144)] and a sub-group of the GLOBAL LEADERS trial ( Table 1 ), 49 published as GLASSY, 52 represented by 7585 patients (out of 15 968) from the 20 top-enrolling participating sites.",
+      "context_window": "MI, including the original category of recent MI patients ( n = 6302) plus patients with recent stroke or symptomatic atheroscle",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-n-29876",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2144",
+      "numeric_values": [
+        2144.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 29876,
+      "sentence": "However, the PANTHER meta-analysis included a sub-group of the CAPRIE trial [8446 patients with previous MI, including the original category of recent MI patients ( n = 6302) plus patients with recent stroke or symptomatic atherosclerotic peripheral arterial disease with a previous MI at any time ( n = 2144)] and a sub-group of the GLOBAL LEADERS trial ( Table 1 ), 49 published as GLASSY, 52 represented by 7585 patients (out of 15 968) from the 20 top-enrolling participating sites.",
+      "context_window": "eripheral arterial disease with a previous MI at any time ( n = 2144)] and a sub-group of the GLOBAL LEADERS trial ( Table 1 ),",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-30225",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 30225,
+      "sentence": "6 The primary outcome (a composite of cardiovascular death, MI, and stroke) occurred less frequently with P2Y 12 inhibitor monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-cause death.",
+      "context_window": "ith P2Y 12 inhibitor monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less M",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-30243",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.79-0.97",
+      "numeric_values": [
+        0.79,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 30243,
+      "sentence": "6 The primary outcome (a composite of cardiovascular death, MI, and stroke) occurred less frequently with P2Y 12 inhibitor monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-cause death.",
+      "context_window": "or monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.9",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-30261",
+      "claim_type": "p_value",
+      "raw_text": "P = .012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 30261,
+      "sentence": "6 The primary outcome (a composite of cardiovascular death, MI, and stroke) occurred less frequently with P2Y 12 inhibitor monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-cause death.",
+      "context_window": "pared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .00",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-30304",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.66-0.90",
+      "numeric_values": [
+        0.66,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 30304,
+      "sentence": "6 The primary outcome (a composite of cardiovascular death, MI, and stroke) occurred less frequently with P2Y 12 inhibitor monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-cause death.",
+      "context_window": "5% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-30322",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 30322,
+      "sentence": "6 The primary outcome (a composite of cardiovascular death, MI, and stroke) occurred less frequently with P2Y 12 inhibitor monotherapy compared with aspirin over 2 years (HR 0.88; 95% CI 0.79-0.97; P = .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-cause death.",
+      "context_window": "= .012), mainly due to less MI (HR 0.77; 95% CI 0.66-0.90; P < .001), with identical rates of cardiovascular and all-cause deat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-30550",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 30550,
+      "sentence": "6 This difference was largely driven by the HOST-EXAM trial ( Table 1 ), 50 the only one among the seven studies included in the PANTHER meta-analysis whose 95% CI did not cross the identity line for the comparison vs. aspirin.",
+      "context_window": "e seven studies included in the PANTHER meta-analysis whose 95% CI did not cross the identity line for the comparison vs. a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-30694",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.46-0.87",
+      "numeric_values": [
+        0.46,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 30694,
+      "sentence": "6 In fact, the substantially lower point estimate of HOST-EXAM (HR 0.63; 95% CI 0.46-0.87), a trial exclusively conducted in South Korea, as compared with the other trials in non-Asian countries (HR 0.91; 95% CI 0.82-1.02) resulted in a treatment-by-sub-group interaction with geographical regions ( P interaction = .034), suggesting that the difference between P2Y 12 inhibitor and aspirin monotherapy was confined to an Asian population.",
+      "context_window": "e substantially lower point estimate of HOST-EXAM (HR 0.63; 95% CI 0.46-0.87), a trial exclusively conducted in South Korea, as compared",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-30826",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82-1.02",
+      "numeric_values": [
+        0.82,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 30826,
+      "sentence": "6 In fact, the substantially lower point estimate of HOST-EXAM (HR 0.63; 95% CI 0.46-0.87), a trial exclusively conducted in South Korea, as compared with the other trials in non-Asian countries (HR 0.91; 95% CI 0.82-1.02) resulted in a treatment-by-sub-group interaction with geographical regions ( P interaction = .034), suggesting that the difference between P2Y 12 inhibitor and aspirin monotherapy was confined to an Asian population.",
+      "context_window": "ared with the other trials in non-Asian countries (HR 0.91; 95% CI 0.82-1.02) resulted in a treatment-by-sub-group interaction with geog",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-31141",
+      "claim_type": "percentage",
+      "raw_text": "3.58%",
+      "numeric_values": [
+        3.58
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 31141,
+      "sentence": "6 The absolute difference in the calculated annual rate of the primary outcome (3.58% vs.",
+      "context_window": "rence in the calculated annual rate of the primary outcome (3.58% vs. 4.07%) would correspond to an NNT value of 204 patients",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-31151",
+      "claim_type": "percentage",
+      "raw_text": "4.07%",
+      "numeric_values": [
+        4.07
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 31151,
+      "sentence": "4.07%) would correspond to an NNT value of 204 patients to prevent 1 vascular event.",
+      "context_window": "he calculated annual rate of the primary outcome (3.58% vs. 4.07%) would correspond to an NNT value of 204 patients to preven",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-31739",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 31739,
+      "sentence": "54\n\nTraditional NSAIDs, including aspirin at analgesic-antipyretic doses (325 to 1000 mg every 4 to 6 h), cause GI lesions, such as mucosal erosions and ulcers, which are endoscopically detectable in 30% to 50% of tNSAID users ( Figure 7 ).",
+      "context_window": "s, including aspirin at analgesic-antipyretic doses (325 to 1000 mg every 4 to 6 h), cause GI lesions, such as mucosal erosions",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-31858",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 31858,
+      "sentence": "54\n\nTraditional NSAIDs, including aspirin at analgesic-antipyretic doses (325 to 1000 mg every 4 to 6 h), cause GI lesions, such as mucosal erosions and ulcers, which are endoscopically detectable in 30% to 50% of tNSAID users ( Figure 7 ).",
+      "context_window": "erosions and ulcers, which are endoscopically detectable in 30% to 50% of tNSAID users ( Figure 7 ). 55 These lesions devel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-31865",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 31865,
+      "sentence": "54\n\nTraditional NSAIDs, including aspirin at analgesic-antipyretic doses (325 to 1000 mg every 4 to 6 h), cause GI lesions, such as mucosal erosions and ulcers, which are endoscopically detectable in 30% to 50% of tNSAID users ( Figure 7 ).",
+      "context_window": "s and ulcers, which are endoscopically detectable in 30% to 50% of tNSAID users ( Figure 7 ). 55 These lesions develop rapi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-32514",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 32514,
+      "sentence": "55 Serious complications (bleeding, perforation, and obstruction) occur in 1% to 2% of tNSAID users ( Figure 7 ).",
+      "context_window": "lications (bleeding, perforation, and obstruction) occur in 1% to 2% of tNSAID users ( Figure 7 ). 55 The major risk facto",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-32520",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 32520,
+      "sentence": "55 Serious complications (bleeding, perforation, and obstruction) occur in 1% to 2% of tNSAID users ( Figure 7 ).",
+      "context_window": "ons (bleeding, perforation, and obstruction) occur in 1% to 2% of tNSAID users ( Figure 7 ). 55 The major risk factors for",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-33796",
+      "claim_type": "unit_value",
+      "raw_text": "12 week",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "week",
+      "source_section": "introduction",
+      "source_offset": 33796,
+      "sentence": "This is reflected by a 12 week cumulative ulcer incidence of 7% associated with low-dose (81 mg daily) aspirin, which was not significantly higher than the 6% placebo incidence in a large endoscopic RCT of elderly osteoarthritic patients ( Figure 7 ).",
+      "context_window": "zymes in nucleated epithelial cells. This is reflected by a 12 week cumulative ulcer incidence of 7% associated with low-dose (",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-33834",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 33834,
+      "sentence": "This is reflected by a 12 week cumulative ulcer incidence of 7% associated with low-dose (81 mg daily) aspirin, which was not significantly higher than the 6% placebo incidence in a large endoscopic RCT of elderly osteoarthritic patients ( Figure 7 ).",
+      "context_window": "his is reflected by a 12 week cumulative ulcer incidence of 7% associated with low-dose (81 mg daily) aspirin, which was n",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-33863",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 33863,
+      "sentence": "This is reflected by a 12 week cumulative ulcer incidence of 7% associated with low-dose (81 mg daily) aspirin, which was not significantly higher than the 6% placebo incidence in a large endoscopic RCT of elderly osteoarthritic patients ( Figure 7 ).",
+      "context_window": "cumulative ulcer incidence of 7% associated with low-dose (81 mg daily) aspirin, which was not significantly higher than the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-33929",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 33929,
+      "sentence": "This is reflected by a 12 week cumulative ulcer incidence of 7% associated with low-dose (81 mg daily) aspirin, which was not significantly higher than the 6% placebo incidence in a large endoscopic RCT of elderly osteoarthritic patients ( Figure 7 ).",
+      "context_window": "daily) aspirin, which was not significantly higher than the 6% placebo incidence in a large endoscopic RCT of elderly oste",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-35528",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 35528,
+      "sentence": "In the CURRENT-OASIS 7 trial of 25 086 patients with acute coronary syndrome randomly assigned to either higher-dose (300 to 325 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 days, there was a significant increase in the incidence of major GI bleeding among patients who received higher-dose aspirin, as compared with those who received lower-dose aspirin [47 patients (0.4%) vs.",
+      "context_window": "ry syndrome randomly assigned to either higher-dose (300 to 325 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 da",
+      "claim_role": "background",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-35563",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 35563,
+      "sentence": "In the CURRENT-OASIS 7 trial of 25 086 patients with acute coronary syndrome randomly assigned to either higher-dose (300 to 325 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 days, there was a significant increase in the incidence of major GI bleeding among patients who received higher-dose aspirin, as compared with those who received lower-dose aspirin [47 patients (0.4%) vs.",
+      "context_window": "ther higher-dose (300 to 325 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 days, there was a significant increas",
+      "claim_role": "background",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-35589",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 35589,
+      "sentence": "In the CURRENT-OASIS 7 trial of 25 086 patients with acute coronary syndrome randomly assigned to either higher-dose (300 to 325 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 days, there was a significant increase in the incidence of major GI bleeding among patients who received higher-dose aspirin, as compared with those who received lower-dose aspirin [47 patients (0.4%) vs.",
+      "context_window": "25 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 days, there was a significant increase in the incidence of major",
+      "claim_role": "background",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-35787",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 35787,
+      "sentence": "In the CURRENT-OASIS 7 trial of 25 086 patients with acute coronary syndrome randomly assigned to either higher-dose (300 to 325 mg daily) or lower-dose (75 to 100 mg daily) aspirin for 30 days, there was a significant increase in the incidence of major GI bleeding among patients who received higher-dose aspirin, as compared with those who received lower-dose aspirin [47 patients (0.4%) vs.",
+      "context_window": "ed with those who received lower-dose aspirin [47 patients (0.4%) vs. 29 patients (0.2%); P = .04], with no detectable diffe",
+      "claim_role": "background",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-35810",
+      "claim_type": "percentage",
+      "raw_text": "0.2%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 35810,
+      "sentence": "29 patients (0.2%); P = .04], with no detectable difference in less frequent intracranial bleeding.",
+      "context_window": "ved lower-dose aspirin [47 patients (0.4%) vs. 29 patients (0.2%); P = .04], with no detectable difference in less frequent",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-35817",
+      "claim_type": "p_value",
+      "raw_text": "P = .04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 35817,
+      "sentence": "29 patients (0.2%); P = .04], with no detectable difference in less frequent intracranial bleeding.",
+      "context_window": "er-dose aspirin [47 patients (0.4%) vs. 29 patients (0.2%); P = .04], with no detectable difference in less frequent intracrani",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-36240",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 36240,
+      "sentence": "However, the risk for GI bleeding was 40% lower in patients who received a P2Y 12 inhibitor than those who received aspirin, a difference largely driven by the CAPRIE trial.",
+      "context_window": "who received aspirin. However, the risk for GI bleeding was 40% lower in patients who received a P2Y 12 inhibitor than thos",
+      "claim_role": "dose",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-36468",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 36468,
+      "sentence": "45 It should be emphasized that CAPRIE compared a standard dose of clopidogrel with aspirin 325 mg daily and reported rates of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolute excess of 2 per 1000 that was found in the CURRENT-OASIS 7 trial when comparing a higher with a lower dose of aspirin.",
+      "context_window": "CAPRIE compared a standard dose of clopidogrel with aspirin 325 mg daily and reported rates of severe GI haemorrhage of 0.5% a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-36528",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 36528,
+      "sentence": "45 It should be emphasized that CAPRIE compared a standard dose of clopidogrel with aspirin 325 mg daily and reported rates of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolute excess of 2 per 1000 that was found in the CURRENT-OASIS 7 trial when comparing a higher with a lower dose of aspirin.",
+      "context_window": "325 mg daily and reported rates of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolut",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-36537",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 36537,
+      "sentence": "45 It should be emphasized that CAPRIE compared a standard dose of clopidogrel with aspirin 325 mg daily and reported rates of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolute excess of 2 per 1000 that was found in the CURRENT-OASIS 7 trial when comparing a higher with a lower dose of aspirin.",
+      "context_window": "ily and reported rates of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolute excess",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-36558",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 36558,
+      "sentence": "45 It should be emphasized that CAPRIE compared a standard dose of clopidogrel with aspirin 325 mg daily and reported rates of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolute excess of 2 per 1000 that was found in the CURRENT-OASIS 7 trial when comparing a higher with a lower dose of aspirin.",
+      "context_window": "s of severe GI haemorrhage of 0.5% and 0.7%, respectively ( P < .05), 45 i.e. the same absolute excess of 2 per 1000 that was f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-37379",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 37379,
+      "sentence": "The overall risk of bleeding was reduced by \u223c50% in these trials, 5 a figure quite similar to the 40% reduction associated with earlier discontinuation of clopidogrel in older trials.",
+      "context_window": "dioprotection. The overall risk of bleeding was reduced by \u223c50% in these trials, 5 a figure quite similar to the 40% reduct",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-37432",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 37432,
+      "sentence": "The overall risk of bleeding was reduced by \u223c50% in these trials, 5 a figure quite similar to the 40% reduction associated with earlier discontinuation of clopidogrel in older trials.",
+      "context_window": "ed by \u223c50% in these trials, 5 a figure quite similar to the 40% reduction associated with earlier discontinuation of clopid",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-38308",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 38308,
+      "sentence": "Antagonism of the platelet TXA 2 receptor by terutroban yielded no significant difference in major or life-threatening bleedings vs. inactivation of platelet COX-1 by aspirin 100 mg daily.",
+      "context_window": "ing bleedings vs. inactivation of platelet COX-1 by aspirin 100 mg daily. Intracranial haemorrhage occurred in <2% of the 19 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-38360",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 38360,
+      "sentence": "Intracranial haemorrhage occurred in <2% of the 19 100 patients with cerebral ischaemic events, with no statistically significant difference between groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53).",
+      "context_window": "aspirin 100 mg daily. Intracranial haemorrhage occurred in <2% of the 19 100 patients with cerebral ischaemic events, with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-38490",
+      "claim_type": "percentage",
+      "raw_text": "1.54%",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 38490,
+      "sentence": "Intracranial haemorrhage occurred in <2% of the 19 100 patients with cerebral ischaemic events, with no statistically significant difference between groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53).",
+      "context_window": "istically significant difference between groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53). Most importa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-38508",
+      "claim_type": "percentage",
+      "raw_text": "1.28%",
+      "numeric_values": [
+        1.28
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 38508,
+      "sentence": "Intracranial haemorrhage occurred in <2% of the 19 100 patients with cerebral ischaemic events, with no statistically significant difference between groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53).",
+      "context_window": "ant difference between groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53). Most importantly, no differenc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-38524",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.94-1.53",
+      "numeric_values": [
+        0.94,
+        1.53
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 38524,
+      "sentence": "Intracranial haemorrhage occurred in <2% of the 19 100 patients with cerebral ischaemic events, with no statistically significant difference between groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53).",
+      "context_window": "etween groups (terutroban 1.54% vs. aspirin 1.28%; HR 1.20; 95% CI 0.94-1.53). Most importantly, no difference in the occurrence of GI b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-38652",
+      "claim_type": "unit_value",
+      "raw_text": "28 month",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "month",
+      "source_section": "introduction",
+      "source_offset": 38652,
+      "sentence": "Most importantly, no difference in the occurrence of GI bleedings was reported, based on 621 events during a 28 month follow-up (3.2% vs.",
+      "context_window": "of GI bleedings was reported, based on 621 events during a 28 month follow-up (3.2% vs. 3.3%; HR 0.97; 95% CI 0.83-1.13). 47 A",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-38672",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 38672,
+      "sentence": "Most importantly, no difference in the occurrence of GI bleedings was reported, based on 621 events during a 28 month follow-up (3.2% vs.",
+      "context_window": "reported, based on 621 events during a 28 month follow-up (3.2% vs. 3.3%; HR 0.97; 95% CI 0.83-1.13). 47 Although gastropr",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-38681",
+      "claim_type": "percentage",
+      "raw_text": "3.3%",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 38681,
+      "sentence": "3.3%; HR 0.97; 95% CI 0.83-1.13).",
+      "context_window": ", based on 621 events during a 28 month follow-up (3.2% vs. 3.3%; HR 0.97; 95% CI 0.83-1.13). 47 Although gastroprotectant",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-38696",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-1.13",
+      "numeric_values": [
+        0.83,
+        1.13
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 38696,
+      "sentence": "3.3%; HR 0.97; 95% CI 0.83-1.13).",
+      "context_window": "events during a 28 month follow-up (3.2% vs. 3.3%; HR 0.97; 95% CI 0.83-1.13). 47 Although gastroprotectant agents, in particular proto",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-40182",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 years",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 40182,
+      "sentence": "65 However, in the ASCEND trial, allocation to low-dose aspirin for a mean of 7.4 years was not associated with any statistically significant differences vs. placebo in the risk of dementia (rate ratio 0.91; 95% CI 0.81-1.02; P = .11).",
+      "context_window": "ASCEND trial, allocation to low-dose aspirin for a mean of 7.4 years was not associated with any statistically significant diffe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-40312",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81-1.02",
+      "numeric_values": [
+        0.81,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 40312,
+      "sentence": "65 However, in the ASCEND trial, allocation to low-dose aspirin for a mean of 7.4 years was not associated with any statistically significant differences vs. placebo in the risk of dementia (rate ratio 0.91; 95% CI 0.81-1.02; P = .11).",
+      "context_window": "ences vs. placebo in the risk of dementia (rate ratio 0.91; 95% CI 0.81-1.02; P = .11). 65 A tabular data meta-analysis of three primary",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-40330",
+      "claim_type": "p_value",
+      "raw_text": "P = .11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 40330,
+      "sentence": "65 However, in the ASCEND trial, allocation to low-dose aspirin for a mean of 7.4 years was not associated with any statistically significant differences vs. placebo in the risk of dementia (rate ratio 0.91; 95% CI 0.81-1.02; P = .11).",
+      "context_window": "in the risk of dementia (rate ratio 0.91; 95% CI 0.81-1.02; P = .11). 65 A tabular data meta-analysis of three primary preventi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-ci-40487",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.84-1.01",
+      "numeric_values": [
+        0.84,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 40487,
+      "sentence": "65 A tabular data meta-analysis of three primary prevention trials, which included ASCEND 65 and ASPREE, 66 yielded a combined rate ratio of 0.92 (95% CI 0.84-1.01; P = .09).",
+      "context_window": "ND 65 and ASPREE, 66 yielded a combined rate ratio of 0.92 (95% CI 0.84-1.01; P = .09). 65 Traditional NSAIDs and coxibs share COX-2-de",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-p-40505",
+      "claim_type": "p_value",
+      "raw_text": "P = .09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 40505,
+      "sentence": "65 A tabular data meta-analysis of three primary prevention trials, which included ASCEND 65 and ASPREE, 66 yielded a combined rate ratio of 0.92 (95% CI 0.84-1.01; P = .09).",
+      "context_window": "66 yielded a combined rate ratio of 0.92 (95% CI 0.84-1.01; P = .09). 65 Traditional NSAIDs and coxibs share COX-2-dependent r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-pct-42646",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 42646,
+      "sentence": "70 Moreover, a review of this evidence suggested that even a 10% reduction in overall cancer incidence beginning during the first 10 years of treatment could tip the balance of benefits and risks in favour of using aspirin in average-risk populations.",
+      "context_window": "0 Moreover, a review of this evidence suggested that even a 10% reduction in overall cancer incidence beginning during the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-42715",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 42715,
+      "sentence": "70 Moreover, a review of this evidence suggested that even a 10% reduction in overall cancer incidence beginning during the first 10 years of treatment could tip the balance of benefits and risks in favour of using aspirin in average-risk populations.",
+      "context_window": "tion in overall cancer incidence beginning during the first 10 years of treatment could tip the balance of benefits and risks in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-43540",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 43540,
+      "sentence": "7\n\nBasic and clinical research during the last 30 years has provided considerable insight in the role of TXA 2 -dependent platelet activation in primary haemostasis, tissue repair, 57 atherothrombosis, 9 intestinal inflammation, 72 and colorectal cancer, 7 through manipulation of the COX-1 gene, 72 , 73 measurement of TXA 2 biosynthesis in murine 72 , 73 and human models, 74 , 75 and use of low-dose aspirin.",
+      "context_window": "lid cancers. 7 Basic and clinical research during the last 30 years has provided considerable insight in the role of TXA 2 -dep",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11242460_low_dose_aspirin_for_the_prevention_of_atherosclerotic_cardi-u-44",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 44,
+      "sentence": "Basic and clinical research during the last 30 years has provided considerable insight in the role of TXA 2 -dependent platelet activation in primary haemostasis, tissue repair, 57 atherothrombosis, 9 intestinal inflammation, 72 and colorectal cancer, 7 through manipulation of the COX-1 gene, 72 , 73 measurement of TXA 2 biosynthesis in murine 72 , 73 and human models, 74 , 75 and use of low-dose aspirin.",
+      "context_window": "Basic and clinical research during the last 30 years has provided considerable insight in the role of TXA 2 -dep",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1097_brs_0000000000005330_perioperative_safety_of_lumbar_decompression_surgery_perform",
+  "doi": "10.1097/brs.0000000000005330",
+  "extracted_at": "2026-05-08T20:06:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_brs_0000000000005330_perioperative_safety_of_lumbar_decompression_surgery_perform-u-1402",
+      "claim_type": "unit_value",
+      "raw_text": "70.3 mL",
+      "numeric_values": [
+        70.3
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "The study assessed variables such as operative time, intraoperative blood loss, postoperative drain volume, and hemoglobin level changes up to 1-week postsurgery.</jats:p> </jats:sec> <jats:sec> <jats:title>Results.</jats:title> <jats:p> The LDA-treated group (L group) experienced significantly higher intraoperative blood loss (70.3 mL) compared with the non-LDA-treated group (N group; 46.4 mL, <jats:italic toggle=\"yes\">P</jats:italic> = 0.003).",
+      "context_window": "experienced significantly higher intraoperative blood loss (70.3 mL) compared with the non-LDA-treated group (N group; 46.4 mL,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_brs_0000000000005330_perioperative_safety_of_lumbar_decompression_surgery_perform-u-1461",
+      "claim_type": "unit_value",
+      "raw_text": "46.4 mL",
+      "numeric_values": [
+        46.4
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 1461,
+      "sentence": "The study assessed variables such as operative time, intraoperative blood loss, postoperative drain volume, and hemoglobin level changes up to 1-week postsurgery.</jats:p> </jats:sec> <jats:sec> <jats:title>Results.</jats:title> <jats:p> The LDA-treated group (L group) experienced significantly higher intraoperative blood loss (70.3 mL) compared with the non-LDA-treated group (N group; 46.4 mL, <jats:italic toggle=\"yes\">P</jats:italic> = 0.003).",
+      "context_window": "(70.3 mL) compared with the non-LDA-treated group (N group; 46.4 mL, <jats:italic toggle=\"yes\">P</jats:italic> = 0.003). Postop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_brs_0000000000005330_perioperative_safety_of_lumbar_decompression_surgery_perform-u-1693",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 1693,
+      "sentence": "Postoperative drain volumes did not differ significantly, but postoperatively, hemoglobin levels decreased by 2.2 g/dL in the L group and by 1.9 g/dL in the N group after 1 week ( <jats:italic toggle=\"yes\">P</jats:italic> = 0.04).",
+      "context_window": ".2 g/dL in the L group and by 1.9 g/dL in the N group after 1 week ( <jats:italic toggle=\"yes\">P</jats:italic> = 0.04). There",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

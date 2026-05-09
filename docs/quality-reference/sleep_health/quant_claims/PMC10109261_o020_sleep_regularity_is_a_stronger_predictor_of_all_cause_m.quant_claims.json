@@ -1,0 +1,345 @@
+{
+  "paper_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m",
+  "doi": "10.1093/sleepadvances/zpac029.019",
+  "extracted_at": "2026-05-08T20:07:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 7,
+    "unit_value": 2,
+    "percentage": 7,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-436",
+      "claim_type": "mean_sd",
+      "raw_text": "62.8\u00b17.8",
+      "numeric_values": [
+        62.8,
+        7.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 436,
+      "sentence": "We extracted Sleep Regularity Index (SRI) scores, sleep duration, and sleep efficiency from one week of actigraphy in 60,997 UK Biobank participants (62.8\u00b17.8 years, 55.6% female).",
+      "context_window": "m one week of actigraphy in 60,997 UK Biobank participants (62.8\u00b17.8 years, 55.6% female). Using Cox Proportional Hazards models",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-u-441",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 years",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 441,
+      "sentence": "We extracted Sleep Regularity Index (SRI) scores, sleep duration, and sleep efficiency from one week of actigraphy in 60,997 UK Biobank participants (62.8\u00b17.8 years, 55.6% female).",
+      "context_window": "week of actigraphy in 60,997 UK Biobank participants (62.8\u00b17.8 years, 55.6% female). Using Cox Proportional Hazards models, we a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-452",
+      "claim_type": "percentage",
+      "raw_text": "55.6%",
+      "numeric_values": [
+        55.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 452,
+      "sentence": "We extracted Sleep Regularity Index (SRI) scores, sleep duration, and sleep efficiency from one week of actigraphy in 60,997 UK Biobank participants (62.8\u00b17.8 years, 55.6% female).",
+      "context_window": "tigraphy in 60,997 UK Biobank participants (62.8\u00b17.8 years, 55.6% female). Using Cox Proportional Hazards models, we assessed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-u-604",
+      "claim_type": "unit_value",
+      "raw_text": "7.6 years",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 604,
+      "sentence": "Using Cox Proportional Hazards models, we assessed whether SRI, sleep duration, and sleep efficiency predicted all-cause mortality up to 7.6 years post-actigraphy.",
+      "context_window": "n, and sleep efficiency predicted all-cause mortality up to 7.6 years post-actigraphy. A one standard deviation increase in SRI s",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-739",
+      "claim_type": "mean_sd",
+      "raw_text": "20.4\u00b12.0",
+      "numeric_values": [
+        20.4,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 739,
+      "sentence": "A one standard deviation increase in SRI score (+10.7), indicating more regular sleep patterns, predicted a 20.4\u00b12.0% reduced hazard of all-cause mortality (p < .0001).",
+      "context_window": "+10.7), indicating more regular sleep patterns, predicted a 20.4\u00b12.0% reduced hazard of all-cause mortality (p < .0001). This re",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-744",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 744,
+      "sentence": "A one standard deviation increase in SRI score (+10.7), indicating more regular sleep patterns, predicted a 20.4\u00b12.0% reduced hazard of all-cause mortality (p < .0001).",
+      "context_window": "), indicating more regular sleep patterns, predicted a 20.4\u00b12.0% reduced hazard of all-cause mortality (p < .0001). This rel",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-p-788",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 788,
+      "sentence": "A one standard deviation increase in SRI score (+10.7), indicating more regular sleep patterns, predicted a 20.4\u00b12.0% reduced hazard of all-cause mortality (p < .0001).",
+      "context_window": "redicted a 20.4\u00b12.0% reduced hazard of all-cause mortality (p < .0001). This relationship remained robust after controlling for a",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-944",
+      "claim_type": "mean_sd",
+      "raw_text": "18.7\u00b12.4",
+      "numeric_values": [
+        18.7,
+        2.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "This relationship remained robust after controlling for age, sex, ethnicity, education, income, and employment status (+1SD in SRI predicted an 18.7\u00b12.4% hazard reduction, p < .0001).",
+      "context_window": "on, income, and employment status (+1SD in SRI predicted an 18.7\u00b12.4% hazard reduction, p < .0001). SRI was a relatively stronge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-949",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 949,
+      "sentence": "This relationship remained robust after controlling for age, sex, ethnicity, education, income, and employment status (+1SD in SRI predicted an 18.7\u00b12.4% hazard reduction, p < .0001).",
+      "context_window": "ncome, and employment status (+1SD in SRI predicted an 18.7\u00b12.4% hazard reduction, p < .0001). SRI was a relatively stronger",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-p-972",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 972,
+      "sentence": "This relationship remained robust after controlling for age, sex, ethnicity, education, income, and employment status (+1SD in SRI predicted an 18.7\u00b12.4% hazard reduction, p < .0001).",
+      "context_window": "tatus (+1SD in SRI predicted an 18.7\u00b12.4% hazard reduction, p < .0001). SRI was a relatively stronger predictor of mortality haza",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-1076",
+      "claim_type": "mean_sd",
+      "raw_text": "19.0\u00b12.1",
+      "numeric_values": [
+        19.0,
+        2.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1076,
+      "sentence": "SRI was a relatively stronger predictor of mortality hazard than sleep duration (explaining 19.0\u00b12.1% vs.",
+      "context_window": "edictor of mortality hazard than sleep duration (explaining 19.0\u00b12.1% vs. 12.4\u00b12.6% of hazard reduction) or sleep efficiency (19",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-1081",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1081,
+      "sentence": "SRI was a relatively stronger predictor of mortality hazard than sleep duration (explaining 19.0\u00b12.1% vs.",
+      "context_window": "or of mortality hazard than sleep duration (explaining 19.0\u00b12.1% vs. 12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-1090",
+      "claim_type": "mean_sd",
+      "raw_text": "12.4\u00b12.6",
+      "numeric_values": [
+        12.4,
+        2.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1090,
+      "sentence": "12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs.",
+      "context_window": "tality hazard than sleep duration (explaining 19.0\u00b12.1% vs. 12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs. 13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-1095",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs.",
+      "context_window": "y hazard than sleep duration (explaining 19.0\u00b12.1% vs. 12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs. 13.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-1142",
+      "claim_type": "mean_sd",
+      "raw_text": "19.0\u00b12.1",
+      "numeric_values": [
+        19.0,
+        2.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1142,
+      "sentence": "12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs.",
+      "context_window": ".1% vs. 12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs. 13.1\u00b12.6%) in two additional Cox models. Sleep regular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-1147",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1147,
+      "sentence": "12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs.",
+      "context_window": "s. 12.4\u00b12.6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs. 13.1\u00b12.6%) in two additional Cox models. Sleep regulari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-msd-1156",
+      "claim_type": "mean_sd",
+      "raw_text": "13.1\u00b12.6",
+      "numeric_values": [
+        13.1,
+        2.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1156,
+      "sentence": "13.1\u00b12.6%) in two additional Cox models.",
+      "context_window": ".6% of hazard reduction) or sleep efficiency (19.0\u00b12.1% vs. 13.1\u00b12.6%) in two additional Cox models. Sleep regularity may play a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10109261_o020_sleep_regularity_is_a_stronger_predictor_of_all_cause_m-pct-1161",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1161,
+      "sentence": "13.1\u00b12.6%) in two additional Cox models.",
+      "context_window": "f hazard reduction) or sleep efficiency (19.0\u00b12.1% vs. 13.1\u00b12.6%) in two additional Cox models. Sleep regularity may play a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

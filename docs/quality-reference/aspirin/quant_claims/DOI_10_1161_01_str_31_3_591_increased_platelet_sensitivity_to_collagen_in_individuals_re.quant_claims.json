@@ -1,0 +1,269 @@
+{
+  "paper_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re",
+  "doi": "10.1161/01.str.31.3.591",
+  "extracted_at": "2026-05-08T20:05:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "mean_sd": 4,
+    "percentage": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-u-487",
+      "claim_type": "unit_value",
+      "raw_text": "324 mg",
+      "numeric_values": [
+        324.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 487,
+      "sentence": "<jats:p> <jats:italic>Background and Purpose</jats:italic> -The purpose of this study was to assess individual differences in the pharmacological effects of acetylsalicylic acid (ASA) on bleeding time as measured by in vitro platelet aggregation and to examine the consistency of responses over time. </jats:p> <jats:p> <jats:italic>Methods</jats:italic> -We measured template IIR bleeding time and platelet aggregation in 8 healthy male volunteers before and 2 hours after ingestion of 324 mg of ASA.",
+      "context_window": "althy male volunteers before and 2 hours after ingestion of 324 mg of ASA. An individual was considered a nonresponder if his",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-msd-955",
+      "claim_type": "mean_sd",
+      "raw_text": "408\u00b1121",
+      "numeric_values": [
+        408.0,
+        121.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 955,
+      "sentence": "Bleeding time before and after ingestion of ASA was 408\u00b1121 seconds (mean\u00b1SD) and 720\u00b1225 seconds, respectively, in ASA responders and 330\u00b130 seconds and 330\u00b152 seconds, respectively, in ASA nonresponders.",
+      "context_window": "onders. Bleeding time before and after ingestion of ASA was 408\u00b1121 seconds (mean\u00b1SD) and 720\u00b1225 seconds, respectively, in ASA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-msd-985",
+      "claim_type": "mean_sd",
+      "raw_text": "720\u00b1225",
+      "numeric_values": [
+        720.0,
+        225.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 985,
+      "sentence": "Bleeding time before and after ingestion of ASA was 408\u00b1121 seconds (mean\u00b1SD) and 720\u00b1225 seconds, respectively, in ASA responders and 330\u00b130 seconds and 330\u00b152 seconds, respectively, in ASA nonresponders.",
+      "context_window": "nd after ingestion of ASA was 408\u00b1121 seconds (mean\u00b1SD) and 720\u00b1225 seconds, respectively, in ASA responders and 330\u00b130 seconds",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-msd-1038",
+      "claim_type": "mean_sd",
+      "raw_text": "330\u00b130",
+      "numeric_values": [
+        330.0,
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "Bleeding time before and after ingestion of ASA was 408\u00b1121 seconds (mean\u00b1SD) and 720\u00b1225 seconds, respectively, in ASA responders and 330\u00b130 seconds and 330\u00b152 seconds, respectively, in ASA nonresponders.",
+      "context_window": "D) and 720\u00b1225 seconds, respectively, in ASA responders and 330\u00b130 seconds and 330\u00b152 seconds, respectively, in ASA nonrespond",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-msd-1057",
+      "claim_type": "mean_sd",
+      "raw_text": "330\u00b152",
+      "numeric_values": [
+        330.0,
+        52.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "Bleeding time before and after ingestion of ASA was 408\u00b1121 seconds (mean\u00b1SD) and 720\u00b1225 seconds, respectively, in ASA responders and 330\u00b130 seconds and 330\u00b152 seconds, respectively, in ASA nonresponders.",
+      "context_window": "nds, respectively, in ASA responders and 330\u00b130 seconds and 330\u00b152 seconds, respectively, in ASA nonresponders. The mean ED <j",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1258",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1258,
+      "sentence": "The mean ED <jats:sub>50</jats:sub> for collagen-induced platelet aggregation, that is, the mean concentration of collagen that caused a response at 50% of maximum, was 0.91 \u03bcg/mL (95% CI, 0.73 to 1.14) in ASA responders and 0.48 \u03bcg/mL (95% CI, 0.38 to 0.60) in nonresponders.",
+      "context_window": "he mean concentration of collagen that caused a response at 50% of maximum, was 0.91 \u03bcg/mL (95% CI, 0.73 to 1.14) in ASA re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1290",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1290,
+      "sentence": "The mean ED <jats:sub>50</jats:sub> for collagen-induced platelet aggregation, that is, the mean concentration of collagen that caused a response at 50% of maximum, was 0.91 \u03bcg/mL (95% CI, 0.73 to 1.14) in ASA responders and 0.48 \u03bcg/mL (95% CI, 0.38 to 0.60) in nonresponders.",
+      "context_window": "n that caused a response at 50% of maximum, was 0.91 \u03bcg/mL (95% CI, 0.73 to 1.14) in ASA responders and 0.48 \u03bcg/mL (95% CI,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1346",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1346,
+      "sentence": "The mean ED <jats:sub>50</jats:sub> for collagen-induced platelet aggregation, that is, the mean concentration of collagen that caused a response at 50% of maximum, was 0.91 \u03bcg/mL (95% CI, 0.73 to 1.14) in ASA responders and 0.48 \u03bcg/mL (95% CI, 0.38 to 0.60) in nonresponders.",
+      "context_window": "mL (95% CI, 0.73 to 1.14) in ASA responders and 0.48 \u03bcg/mL (95% CI, 0.38 to 0.60) in nonresponders. When optimum concentrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1459",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1459,
+      "sentence": "When optimum concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jats:sub>50</jats:sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders.",
+      "context_window": "concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1596",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "When optimum concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jats:sub>50</jats:sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders.",
+      "context_window": ":sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in AS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-u-1616",
+      "claim_type": "unit_value",
+      "raw_text": "322.5 \u03bcmol",
+      "numeric_values": [
+        322.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "abstract",
+      "source_offset": 1616,
+      "sentence": "When optimum concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jats:sub>50</jats:sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders.",
+      "context_window": "is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1630",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1630,
+      "sentence": "When optimum concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jats:sub>50</jats:sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders.",
+      "context_window": "oncentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-u-1676",
+      "claim_type": "unit_value",
+      "raw_text": "336.1 \u03bcmol",
+      "numeric_values": [
+        336.1
+      ],
+      "units": "\u03bcmol",
+      "source_section": "abstract",
+      "source_offset": 1676,
+      "sentence": "When optimum concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jats:sub>50</jats:sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders.",
+      "context_window": "322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders. The variabilit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_31_3_591_increased_platelet_sensitivity_to_collagen_in_individuals_re-pct-1690",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1690,
+      "sentence": "When optimum concentrations of collagen, ie, concentrations that yielded 90% maximum aggregation, were used as stimuli, the mean IC <jats:sub>50</jats:sub> for ASA, that is, the mean concentration that yielded 50% inhibition, was 322.5 \u03bcmol/L (95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders.",
+      "context_window": "95% CI, 264.8 to 392.6) in ASA responders and 336.1 \u03bcmol/L (95% CI, 261.0 to 432.8) in nonresponders. The variability in in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

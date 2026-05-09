@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_ruxolitinib_phosphate_or_dasatinib_with_chemotherapy_in_trea",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:00:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_ruxolitinib_phosphate_or_dasatinib_with_chemotherapy_in_trea-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "42 days",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "Posted outcomes: Maximal Tolerated Dose (MTD) of Ruxolitinib in Combination With Chemotherapy Defined as the Highest Dose Level at Which no More Than 1 Out of 6 Patients Experie. timeframe=42 days.",
+      "context_window": "t Which no More Than 1 Out of 6 Patients Experie. timeframe=42 days. Phase I Ruxolitinib 15mg=25",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_ruxolitinib_phosphate_or_dasatinib_with_chemotherapy_in_trea-u-1025",
+      "claim_type": "unit_value",
+      "raw_text": "15mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1025,
+      "sentence": "Phase I Ruxolitinib 15mg=25",
+      "context_window": "6 Patients Experie. timeframe=42 days. Phase I Ruxolitinib 15mg=25",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

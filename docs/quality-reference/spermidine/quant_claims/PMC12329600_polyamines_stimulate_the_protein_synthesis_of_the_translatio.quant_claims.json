@@ -1,0 +1,1238 @@
+{
+  "paper_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio",
+  "doi": "10.1016/j.jbc.2025.110453",
+  "extracted_at": "2026-05-08T20:11:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 9,
+    "sample_size": 32,
+    "p_value": 22,
+    "unit_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-243",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "After HeLa S3 cells were treated with 5 mM DFMO for 72 h, PUT and SPD contents reached a minimal level, and the cell number decreased to approximately 40% of that in the control on day 3 ( Fig.",
+      "context_window": "nimal level, and the cell number decreased to approximately 40% of that in the control on day 3 ( Fig. S1 ). When 25 \u03bcM of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-1249",
+      "claim_type": "percentage",
+      "raw_text": "5.34%",
+      "numeric_values": [
+        5.34
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1249,
+      "sentence": "A volcano plot of the geometric means of fold-changes and combined Stouffer\u2019s p -values of the 5585 proteins (except for unnamed proteins) revealed 300 (5.34%) proteins of which expression levels were altered by DFMO treatment ( Fig.",
+      "context_window": "e 5585 proteins (except for unnamed proteins) revealed 300 (5.34%) proteins of which expression levels were altered by DFMO t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-2943",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2943,
+      "sentence": "C , effects of DFMO and SPD on the expression levels of upregulated proteins (>2.0) mediated by polyamines ( n = 3).",
+      "context_window": "els of upregulated proteins (>2.0) mediated by polyamines ( n = 3). 20 micrograms of cell-lysate protein was loaded for Weste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-3226",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3226,
+      "sentence": "D , effect of polyamines on oxygen consumption rate (OCR) and extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6).",
+      "context_window": "extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6). OCRs and ECARs of 4.0 \u00d7 10 4 cells/well were measured aft",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-3479",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3479,
+      "sentence": "Data are expressed as the mean \u00b1 S.D. (error bars ). \u2217\u2217 p < 0.01; ns, not significant.",
+      "context_window": "Rs. Data are expressed as the mean \u00b1 S.D. (error bars ). \u2217\u2217 p < 0.01; ns, not significant. F , volcano plot of 16,567 RNA ratios",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-3685",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3685,
+      "sentence": "G and H , volcano plots of proteins in ( G ) and mRNAs of 5553 genes in ( H ) of the None versus DFMO ( n = 3) comparison.",
+      "context_window": "and mRNAs of 5553 genes in ( H ) of the None versus DFMO ( n = 3) comparison. I , scatter plots of the comparison between pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-3899",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3899,
+      "sentence": "J , volcano plots of the protein/mRNA ratios in the None versus DFMO comparison ( n = 3).",
+      "context_window": "he protein/mRNA ratios in the None versus DFMO comparison ( n = 3). Altered gene expression mediated by polyamines results i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-4518",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4518,
+      "sentence": "C , effects of DFMO and SPD on the expression levels of upregulated proteins (>2.0) mediated by polyamines ( n = 3).",
+      "context_window": "els of upregulated proteins (>2.0) mediated by polyamines ( n = 3). 20 micrograms of cell-lysate protein was loaded for Weste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-4801",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4801,
+      "sentence": "D , effect of polyamines on oxygen consumption rate (OCR) and extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6).",
+      "context_window": "extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6). OCRs and ECARs of 4.0 \u00d7 10 4 cells/well were measured aft",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-5054",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5054,
+      "sentence": "Data are expressed as the mean \u00b1 S.D. (error bars ). \u2217\u2217 p < 0.01; ns, not significant.",
+      "context_window": "Rs. Data are expressed as the mean \u00b1 S.D. (error bars ). \u2217\u2217 p < 0.01; ns, not significant. F , volcano plot of 16,567 RNA ratios",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-5260",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5260,
+      "sentence": "G and H , volcano plots of proteins in ( G ) and mRNAs of 5553 genes in ( H ) of the None versus DFMO ( n = 3) comparison.",
+      "context_window": "and mRNAs of 5553 genes in ( H ) of the None versus DFMO ( n = 3) comparison. I , scatter plots of the comparison between pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-5474",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5474,
+      "sentence": "J , volcano plots of the protein/mRNA ratios in the None versus DFMO comparison ( n = 3).",
+      "context_window": "he protein/mRNA ratios in the None versus DFMO comparison ( n = 3). Altered eIF5A2, PDK1, PKM2, ACSS2, cerebellar degenerati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-7210",
+      "claim_type": "percentage",
+      "raw_text": "2.97%",
+      "numeric_values": [
+        2.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7210,
+      "sentence": "Unexpectedly, the expression levels of only 492 (2.97%) of the RNAs were altered by polyamines ( Fig.",
+      "context_window": "cano plot. Unexpectedly, the expression levels of only 492 (2.97%) of the RNAs were altered by polyamines ( Fig. 1 F ). Among",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-u-8495",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8495,
+      "sentence": "Silencing eIF5As in HeLa S3 cells was successfully accomplished 3 days after transfection with siRNA ( 43 , 44 ) ( Fig.",
+      "context_window": "ncing eIF5As in HeLa S3 cells was successfully accomplished 3 days after transfection with siRNA ( 43 , 44 ) ( Fig. 2 , A - C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-u-8620",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8620,
+      "sentence": "Growth inhibition mediated by eIF5A2 silencing occurred 3 days after transfection, whereas decreased cell growth mediated by eIF5A1 silencing was not observed until 5 days ( Fig.",
+      "context_window": "). Growth inhibition mediated by eIF5A2 silencing occurred 3 days after transfection, whereas decreased cell growth mediated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-u-8729",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8729,
+      "sentence": "Growth inhibition mediated by eIF5A2 silencing occurred 3 days after transfection, whereas decreased cell growth mediated by eIF5A1 silencing was not observed until 5 days ( Fig.",
+      "context_window": "growth mediated by eIF5A1 silencing was not observed until 5 days ( Fig. 2 D ). Growth inhibition induced by eIF5A2 silencing",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-u-9056",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9056,
+      "sentence": "Moreover, no decrease in intracellular polyamine levels in cells with eIF5As knocked down was observed at 3 and 5 days after transfection ( Fig.",
+      "context_window": "els in cells with eIF5As knocked down was observed at 3 and 5 days after transfection ( Fig. 2 , E and F ). Based on these fin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-9586",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9586,
+      "sentence": "After 24 h of transfection with siRNA, transfected cells (1.0 \u00d7 10 4 cells/ml) were inoculated again and cultured ( n = 3).",
+      "context_window": "(1.0 \u00d7 10 4 cells/ml) were inoculated again and cultured ( n = 3). C , expression levels of two eIF5A mRNAs in HeLa S3 cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-9673",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9673,
+      "sentence": "C , expression levels of two eIF5A mRNAs in HeLa S3 cells treated with siRNA ( n = 3).",
+      "context_window": "ls of two eIF5A mRNAs in HeLa S3 cells treated with siRNA ( n = 3). D , effect of silencing the expression of two eIF5As on H",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-9766",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9766,
+      "sentence": "D , effect of silencing the expression of two eIF5As on HeLa S3 cell proliferation ( n = 3).",
+      "context_window": "he expression of two eIF5As on HeLa S3 cell proliferation ( n = 3). E and F , effect of eIF5A silencing on intracellular poly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-9896",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9896,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-9906",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9906,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-9919",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9919,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-9933",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9933,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": ") after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-9949",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9949,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "tion ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were repeated three times",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-10377",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10377,
+      "sentence": "After 24 h of transfection with siRNA, transfected cells (1.0 \u00d7 10 4 cells/ml) were inoculated again and cultured ( n = 3).",
+      "context_window": "(1.0 \u00d7 10 4 cells/ml) were inoculated again and cultured ( n = 3). C , expression levels of two eIF5A mRNAs in HeLa S3 cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-10464",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10464,
+      "sentence": "C , expression levels of two eIF5A mRNAs in HeLa S3 cells treated with siRNA ( n = 3).",
+      "context_window": "ls of two eIF5A mRNAs in HeLa S3 cells treated with siRNA ( n = 3). D , effect of silencing the expression of two eIF5As on H",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-10557",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10557,
+      "sentence": "D , effect of silencing the expression of two eIF5As on HeLa S3 cell proliferation ( n = 3).",
+      "context_window": "he expression of two eIF5As on HeLa S3 cell proliferation ( n = 3). E and F , effect of eIF5A silencing on intracellular poly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-10687",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10687,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-10697",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10697,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-10710",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10710,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-10724",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10724,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": ") after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-10740",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10740,
+      "sentence": "E and F , effect of eIF5A silencing on intracellular polyamine levels on Day 3 ( E ) and Day 5 ( F ) after transfection ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "tion ( n = 3). \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were repeated three times",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-12336",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12336,
+      "sentence": "A , Western blot analysis of the two eIF5As in five cancer cell lines treated with or without 5 mM \u03b1-difluoromethylornithine (DFMO) ( n = 3).",
+      "context_window": "ted with or without 5 mM \u03b1-difluoromethylornithine (DFMO) ( n = 3). 20 micrograms of cell lysate protein was used. B , quanti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-12595",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12595,
+      "sentence": "C , effect of eIF5A1 or eIF5A2 on the proliferation of MCF-7, MDA-MB-231, and MDA-MB-468 cells ( n = 3).",
+      "context_window": "proliferation of MCF-7, MDA-MB-231, and MDA-MB-468 cells ( n = 3). After 24 h of transfection with siRNA, transfected HeLa S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-12713",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12713,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-12724",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12724,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "lls were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-12738",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12738,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "lated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-12754",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12754,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were repeated three times",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-13100",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13100,
+      "sentence": "A , Western blot analysis of the two eIF5As in five cancer cell lines treated with or without 5 mM \u03b1-difluoromethylornithine (DFMO) ( n = 3).",
+      "context_window": "ted with or without 5 mM \u03b1-difluoromethylornithine (DFMO) ( n = 3). 20 micrograms of cell lysate protein was used. B , quanti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-13359",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13359,
+      "sentence": "C , effect of eIF5A1 or eIF5A2 on the proliferation of MCF-7, MDA-MB-231, and MDA-MB-468 cells ( n = 3).",
+      "context_window": "proliferation of MCF-7, MDA-MB-231, and MDA-MB-468 cells ( n = 3). After 24 h of transfection with siRNA, transfected HeLa S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-13477",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13477,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-13488",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13488,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "lls were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-13502",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13502,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "lated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-13518",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13518,
+      "sentence": "After 24 h of transfection with siRNA, transfected HeLa S3 cells were inoculated again and further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant.",
+      "context_window": "further cultured ( n = 3). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001; ns, not significant. Experiments were repeated three times",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-u-13728",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 13728,
+      "sentence": "We next examined the effect of eIF5A silencing on the OCR and ECAR in HeLa S3 cells cultured for 2 days after siRNA transfection.",
+      "context_window": "silencing on the OCR and ECAR in HeLa S3 cells cultured for 2 days after siRNA transfection. Silencing eIF5A2, but not eIF5A1,",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-15219",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15219,
+      "sentence": "A , effect of eIF5A silencing on the oxygen consumption rate (OCR) and extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6).",
+      "context_window": "extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6). The OCR and ECAR of 4.0 \u00d7 10 4 cells/well were measured a",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-15448",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15448,
+      "sentence": "B , the ATP production rate was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. C , amino acid sequences o",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-15462",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15462,
+      "sentence": "B , the ATP production rate was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. C , amino acid sequences of human MTFR1 a",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-15478",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15478,
+      "sentence": "B , the ATP production rate was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "nd ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. C , amino acid sequences of human MTFR1 and MTFR2. Polypro",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-16298",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16298,
+      "sentence": "After 24 h of transfection with siRNA, transfected cells (1.0 \u00d7 10 4 cells/ml) were inoculated again and cultured for 72 h ( n = 3).",
+      "context_window": "0 4 cells/ml) were inoculated again and cultured for 72 h ( n = 3). 20 micrograms of cell lysate protein was used. D-G ,exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-16664",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16664,
+      "sentence": "A , effect of eIF5A silencing on the oxygen consumption rate (OCR) and extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6).",
+      "context_window": "extracellular acidification rate (ECAR) in HeLa S3 cells ( n = 6). The OCR and ECAR of 4.0 \u00d7 10 4 cells/well were measured a",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-16893",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16893,
+      "sentence": "B , the ATP production rate was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. C , amino acid sequences o",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-16907",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16907,
+      "sentence": "B , the ATP production rate was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. C , amino acid sequences of human MTFR1 a",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-p-16923",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16923,
+      "sentence": "B , the ATP production rate was calculated using the OCR and ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "nd ECAR measured in ( A ). \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. C , amino acid sequences of human MTFR1 and MTFR2. Polypro",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-17743",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17743,
+      "sentence": "After 24 h of transfection with siRNA, transfected cells (1.0 \u00d7 10 4 cells/ml) were inoculated again and cultured for 72 h ( n = 3).",
+      "context_window": "0 4 cells/ml) were inoculated again and cultured for 72 h ( n = 3). 20 micrograms of cell lysate protein was used. D-G ,exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-18736",
+      "claim_type": "percentage",
+      "raw_text": "3.99%",
+      "numeric_values": [
+        3.99
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18736,
+      "sentence": "A volcano plot of the geometric means of the fold-changes and the combined Stouffer\u2019s p -values of 5412 proteins in the scramble versus si EIF5A1 comparison and 5414 proteins in the scramble versus si EIF5A2 (except for unnamed proteins) comparison showed 215 (3.99%) and 283 (5.23%) proteins (excluding eIF5A1 and eIF5A2) of which expression levels were altered by silencing eIF5A1 and eIF5A2, respectively ( Fig.",
+      "context_window": "EIF5A2 (except for unnamed proteins) comparison showed 215 (3.99%) and 283 (5.23%) proteins (excluding eIF5A1 and eIF5A2) of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-18752",
+      "claim_type": "percentage",
+      "raw_text": "5.23%",
+      "numeric_values": [
+        5.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18752,
+      "sentence": "A volcano plot of the geometric means of the fold-changes and the combined Stouffer\u2019s p -values of 5412 proteins in the scramble versus si EIF5A1 comparison and 5414 proteins in the scramble versus si EIF5A2 (except for unnamed proteins) comparison showed 215 (3.99%) and 283 (5.23%) proteins (excluding eIF5A1 and eIF5A2) of which expression levels were altered by silencing eIF5A1 and eIF5A2, respectively ( Fig.",
+      "context_window": "or unnamed proteins) comparison showed 215 (3.99%) and 283 (5.23%) proteins (excluding eIF5A1 and eIF5A2) of which expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-19475",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19475,
+      "sentence": "Although 84 (77%) of the 109 proteins upregulated by eIF5A1 and 135 (67%) of the 202 proteins upregulated by eIF5A2 had these tripeptide motifs, the Venn diagram showed that the number of proteins with tripeptide motifs upregulated by both eIF5A1 and eIF5A2 was small ( Fig.",
+      "context_window": "ed (>2.0) by eIF5As were further investigated. Although 84 (77%) of the 109 proteins upregulated by eIF5A1 and 135 (67%) of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-19531",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19531,
+      "sentence": "Although 84 (77%) of the 109 proteins upregulated by eIF5A1 and 135 (67%) of the 202 proteins upregulated by eIF5A2 had these tripeptide motifs, the Venn diagram showed that the number of proteins with tripeptide motifs upregulated by both eIF5A1 and eIF5A2 was small ( Fig.",
+      "context_window": "84 (77%) of the 109 proteins upregulated by eIF5A1 and 135 (67%) of the 202 proteins upregulated by eIF5A2 had these tripep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-20846",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20846,
+      "sentence": "A and B , Volcano plot of 5412 proteins in scramble siRNA vs. si EIF5A1 groups ( A ) and of 5414 proteins in scramble vs. si EIF5A2 groups ( B ) ( n = 3).",
+      "context_window": "d of 5414 proteins in scramble vs. si EIF5A2 groups ( B ) ( n = 3). C , uncorrelated fold-changes in individual proteins betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-21691",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21691,
+      "sentence": "A and B , Volcano plot of 5412 proteins in scramble siRNA vs. si EIF5A1 groups ( A ) and of 5414 proteins in scramble vs. si EIF5A2 groups ( B ) ( n = 3).",
+      "context_window": "d of 5414 proteins in scramble vs. si EIF5A2 groups ( B ) ( n = 3). C , uncorrelated fold-changes in individual proteins betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-22738",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22738,
+      "sentence": "The expression levels of 5 proteins (7.0%), including RPL36AL, among 71 cytosolic ribosomal proteins, and MRPS21, among 76 mitochondrial ribosomal proteins, were altered by polyamines ( Fig.",
+      "context_window": "analysis ( Table S1 ). The expression levels of 5 proteins (7.0%), including RPL36AL, among 71 cytosolic ribosomal proteins,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-28613",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 28613,
+      "sentence": "B and C , The effect of a 5\u2032-UTR mutation on polyamine-induced stimulation of eIF5A2-EGFP synthesis was examined via Western blot analysis ( n = 3) ( B ) and qPCR ( C ).",
+      "context_window": "5A2-EGFP synthesis was examined via Western blot analysis ( n = 3) ( B ) and qPCR ( C ). Notably, the stimulation of eIF5A2 s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-28919",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 28919,
+      "sentence": "D , effect of anti-miRNA on the expression level of eIF5A2 ( n = 3).",
+      "context_window": ", effect of anti-miRNA on the expression level of eIF5A2 ( n = 3). Note that when anti-hsa-miR-6514-5p was transfected into",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-29688",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29688,
+      "sentence": "B and C , The effect of a 5\u2032-UTR mutation on polyamine-induced stimulation of eIF5A2-EGFP synthesis was examined via Western blot analysis ( n = 3) ( B ) and qPCR ( C ).",
+      "context_window": "5A2-EGFP synthesis was examined via Western blot analysis ( n = 3) ( B ) and qPCR ( C ). Notably, the stimulation of eIF5A2 s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-n-29994",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29994,
+      "sentence": "D , effect of anti-miRNA on the expression level of eIF5A2 ( n = 3).",
+      "context_window": ", effect of anti-miRNA on the expression level of eIF5A2 ( n = 3). Note that when anti-hsa-miR-6514-5p was transfected into",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12329600_polyamines_stimulate_the_protein_synthesis_of_the_translatio-pct-1383",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1383,
+      "sentence": "However, it remains unclear why despite being 84% identical, eIF5A2 participates in mRNA decoding in a distinct manner compared to eIF5A1.",
+      "context_window": "oliferation. However, it remains unclear why despite being 84% identical, eIF5A2 participates in mRNA decoding in a distin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

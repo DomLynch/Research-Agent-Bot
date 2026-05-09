@@ -1,0 +1,380 @@
+{
+  "paper_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde",
+  "doi": "10.13078/jsm.220008",
+  "extracted_at": "2026-05-08T20:06:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "mean_sd": 6,
+    "unit_value": 6,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-pct-609",
+      "claim_type": "percentage",
+      "raw_text": "53.1%",
+      "numeric_values": [
+        53.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 609,
+      "sentence": "Patients were categorized into two groups based on the apnea-hypopnea index (AHI) cut-off value of 15/hour.Results: Overall, 52 (53.1%) of the patients showed an AHI \u226515/hour.",
+      "context_window": "index (AHI) cut-off value of 15/hour.Results: Overall, 52 (53.1%) of the patients showed an AHI \u226515/hour. The neck circumfer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-msd-691",
+      "claim_type": "mean_sd",
+      "raw_text": "43.0\u00b14.7",
+      "numeric_values": [
+        43.0,
+        4.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 691,
+      "sentence": "The neck circumference was larger (43.0\u00b14.7 cm vs.",
+      "context_window": "showed an AHI \u226515/hour. The neck circumference was larger (43.0\u00b14.7 cm vs. 40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-u-696",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 cm",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 696,
+      "sentence": "The neck circumference was larger (43.0\u00b14.7 cm vs.",
+      "context_window": "ed an AHI \u226515/hour. The neck circumference was larger (43.0\u00b14.7 cm vs. 40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-msd-707",
+      "claim_type": "mean_sd",
+      "raw_text": "40.5\u00b13.6",
+      "numeric_values": [
+        40.5,
+        3.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 707,
+      "sentence": "40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs.",
+      "context_window": "15/hour. The neck circumference was larger (43.0\u00b14.7 cm vs. 40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% v",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-u-712",
+      "claim_type": "unit_value",
+      "raw_text": "3.6 cm",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 712,
+      "sentence": "40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs.",
+      "context_window": "ur. The neck circumference was larger (43.0\u00b14.7 cm vs. 40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-p-720",
+      "claim_type": "p_value",
+      "raw_text": "p=0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 720,
+      "sentence": "40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs.",
+      "context_window": "neck circumference was larger (43.0\u00b14.7 cm vs. 40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs. 45.7%, p=",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-pct-768",
+      "claim_type": "percentage",
+      "raw_text": "65.4%",
+      "numeric_values": [
+        65.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 768,
+      "sentence": "40.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs.",
+      "context_window": "0.5\u00b13.6 cm, p=0.005) and prevalence of diabetes was higher (65.4% vs. 45.7%, p=0.049) in patients with AHI \u226515/hour than in t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-pct-778",
+      "claim_type": "percentage",
+      "raw_text": "45.7%",
+      "numeric_values": [
+        45.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 778,
+      "sentence": "45.7%, p=0.049) in patients with AHI \u226515/hour than in those with AHI <15/hour.",
+      "context_window": ", p=0.005) and prevalence of diabetes was higher (65.4% vs. 45.7%, p=0.049) in patients with AHI \u226515/hour than in those with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-p-785",
+      "claim_type": "p_value",
+      "raw_text": "p=0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 785,
+      "sentence": "45.7%, p=0.049) in patients with AHI \u226515/hour than in those with AHI <15/hour.",
+      "context_window": "05) and prevalence of diabetes was higher (65.4% vs. 45.7%, p=0.049) in patients with AHI \u226515/hour than in those with AHI <15/h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-msd-912",
+      "claim_type": "mean_sd",
+      "raw_text": "134.7\u00b150.5",
+      "numeric_values": [
+        134.7,
+        50.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 912,
+      "sentence": "Furthermore, fasting blood glucose levels were higher (134.7\u00b150.5 mg/dL vs.",
+      "context_window": "our. Furthermore, fasting blood glucose levels were higher (134.7\u00b150.5 mg/dL vs. 114.8\u00b134.3 mg/dL , p= 0.028) and serum high-densi",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-u-918",
+      "claim_type": "unit_value",
+      "raw_text": "50.5 mg/dL",
+      "numeric_values": [
+        50.5
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 918,
+      "sentence": "Furthermore, fasting blood glucose levels were higher (134.7\u00b150.5 mg/dL vs.",
+      "context_window": "urthermore, fasting blood glucose levels were higher (134.7\u00b150.5 mg/dL vs. 114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lip",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-msd-933",
+      "claim_type": "mean_sd",
+      "raw_text": "114.8\u00b134.3",
+      "numeric_values": [
+        114.8,
+        34.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs.",
+      "context_window": "ting blood glucose levels were higher (134.7\u00b150.5 mg/dL vs. 114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-u-939",
+      "claim_type": "unit_value",
+      "raw_text": "34.3 mg/dL",
+      "numeric_values": [
+        34.3
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 939,
+      "sentence": "114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs.",
+      "context_window": "lood glucose levels were higher (134.7\u00b150.5 mg/dL vs. 114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-p-952",
+      "claim_type": "p_value",
+      "raw_text": "p= 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 952,
+      "sentence": "114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs.",
+      "context_window": "levels were higher (134.7\u00b150.5 mg/dL vs. 114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were lower (46.8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-msd-1016",
+      "claim_type": "mean_sd",
+      "raw_text": "46.8\u00b19.9",
+      "numeric_values": [
+        46.8,
+        9.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs.",
+      "context_window": ".028) and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs. 52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-u-1021",
+      "claim_type": "unit_value",
+      "raw_text": "9.9 mg/dL",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "114.8\u00b134.3 mg/dL , p= 0.028) and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs.",
+      "context_window": "and serum high-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs. 52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-msd-1035",
+      "claim_type": "mean_sd",
+      "raw_text": "52.8\u00b113.3",
+      "numeric_values": [
+        52.8,
+        13.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hour group.Conclusions: More than 50% of patients who underwent bariatric surgery had moderate-to-severe OSA.",
+      "context_window": "h-density lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs. 52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-u-1040",
+      "claim_type": "unit_value",
+      "raw_text": "13.3 mg/dL",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hour group.Conclusions: More than 50% of patients who underwent bariatric surgery had moderate-to-severe OSA.",
+      "context_window": "sity lipoprotein levels were lower (46.8\u00b19.9 mg/dL vs. 52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hour grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-p-1052",
+      "claim_type": "p_value",
+      "raw_text": "p=0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1052,
+      "sentence": "52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hour group.Conclusions: More than 50% of patients who underwent bariatric surgery had moderate-to-severe OSA.",
+      "context_window": "tein levels were lower (46.8\u00b19.9 mg/dL vs. 52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hour group.Conclus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_220008_metabolic_effect_of_obstructive_sleep_apnea_in_patients_unde-pct-1135",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1135,
+      "sentence": "52.8\u00b113.3 mg/dL, p=0.013) in the AHI \u226515/hour than in the AHI <15/hour group.Conclusions: More than 50% of patients who underwent bariatric surgery had moderate-to-severe OSA.",
+      "context_window": "/hour than in the AHI <15/hour group.Conclusions: More than 50% of patients who underwent bariatric surgery had moderate-to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

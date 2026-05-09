@@ -1,0 +1,573 @@
+{
+  "paper_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris",
+  "doi": "10.1111/jnc.70298",
+  "extracted_at": "2026-05-08T20:10:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 14,
+    "sample_size": 2,
+    "percentage": 12,
+    "correlation": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-163",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 163,
+      "sentence": "Dementia represents a group of disorders characterized by cognitive decline that affects daily living, and its prevalence is expected to nearly triple in the next 30 years, likely due to increased longevity and unhealthy lifestyles (GBD Dementia Forecasting GBD 2022 ).",
+      "context_window": "and its prevalence is expected to nearly triple in the next 30 years, likely due to increased longevity and unhealthy lifestyles",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-2524",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2524,
+      "sentence": "Mice fed a high\u2010fat diet for 6 months show altered concentrations of metabolites measured in vivo with magnetic resonance spectroscopy, including a prominent increase of hippocampal taurine (Lizarbe et al.",
+      "context_window": "cia\u2010Serrano and Duarte 2020 ). Mice fed a high\u2010fat diet for 6 months show altered concentrations of metabolites measured in vivo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-1511",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1511,
+      "sentence": "Smoking status was categorized as never, current, or former smoker, while educational attainment was classified according to Swedish educational levels: < 9 years, 9 years, upper secondary school, and university (with or without a degree).",
+      "context_window": "t was classified according to Swedish educational levels: < 9 years, 9 years, upper secondary school, and university (with or w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-1520",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1520,
+      "sentence": "Smoking status was categorized as never, current, or former smoker, while educational attainment was classified according to Swedish educational levels: < 9 years, 9 years, upper secondary school, and university (with or without a degree).",
+      "context_window": "ssified according to Swedish educational levels: < 9 years, 9 years, upper secondary school, and university (with or without a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-n-2689",
+      "claim_type": "sample_size",
+      "raw_text": "n = 447",
+      "numeric_values": [
+        447.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2689,
+      "sentence": "Participants missing data on covariates such as education, BMI, smoking, and physical activity were excluded ( n = 447), leaving a final sample of 27 786 individuals for the main analysis (Figure 1 ).",
+      "context_window": "cation, BMI, smoking, and physical activity were excluded ( n = 447), leaving a final sample of 27 786 individuals for the main",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-3160",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3160,
+      "sentence": "Dietary data were collected using a diet history method that included a seven\u2010day food diary covering cooked meals, cold beverages, and dietary supplements as well as a 168\u2010item diet history questionnaire covering the frequency and portion size of consumed foods that were not included in the food diary during the preceding 12 months.",
+      "context_window": "at were not included in the food diary during the preceding 12 months. In addition, a 60\u2010min (until September 1, 1994) or 45\u2010min",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-4832",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4832,
+      "sentence": "Similarly, the taurine content of pork, beef, and lamb was considered uniform, regardless of fat content. (2) Shellfish intake in the questionnaire was estimated based on a composition of 25% mussels and 75% shrimp. (3) The taurine content for \u201cPoultry\u201d was calculated as the average value of chicken breasts and chicken thighs. (4) \u201cGame meat\u201d was assumed to have a taurine content equivalent to the average of pork, beef, and lamb. (5) \u201cSausage\u201d intake was estimated as the average taurine content of ham and salami. (6) The taurine content of nuts was analyzed in only one of the referenced publications and was calculated as the average value of walnuts, hazelnuts, almonds, pistachios, cashews, and pine nuts (Pasantesmorales et al.",
+      "context_window": "n the questionnaire was estimated based on a composition of 25% mussels and 75% shrimp. (3) The taurine content for \u201cPoultr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-4848",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4848,
+      "sentence": "Similarly, the taurine content of pork, beef, and lamb was considered uniform, regardless of fat content. (2) Shellfish intake in the questionnaire was estimated based on a composition of 25% mussels and 75% shrimp. (3) The taurine content for \u201cPoultry\u201d was calculated as the average value of chicken breasts and chicken thighs. (4) \u201cGame meat\u201d was assumed to have a taurine content equivalent to the average of pork, beef, and lamb. (5) \u201cSausage\u201d intake was estimated as the average taurine content of ham and salami. (6) The taurine content of nuts was analyzed in only one of the referenced publications and was calculated as the average value of walnuts, hazelnuts, almonds, pistachios, cashews, and pine nuts (Pasantesmorales et al.",
+      "context_window": "ire was estimated based on a composition of 25% mussels and 75% shrimp. (3) The taurine content for \u201cPoultry\u201d was calculate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-6546",
+      "claim_type": "unit_value",
+      "raw_text": "100 mm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6546,
+      "sentence": "Samples were analyzed by hydrophilic\u2010interaction chromatography (ACQUITY UPLC BEH Amide 1.7 \u03bcm, 2.1 \u00d7 100 mm) coupled to quadrupole time\u2010of\u2010flight mass spectrometry (Agilent Technologies, 6550 QTOF, Santa Clara, CA, USA), using previously described methods (Ottosson et al.",
+      "context_window": "action chromatography (ACQUITY UPLC BEH Amide 1.7 \u03bcm, 2.1 \u00d7 100 mm) coupled to quadrupole time\u2010of\u2010flight mass spectrometry (Ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-8991",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8991,
+      "sentence": "Of the dementia cases derived from the patient register, 96% were confirmed through the validation process (N\u00e4gga et al.",
+      "context_window": "). Of the dementia cases derived from the patient register, 96% were confirmed through the validation process (N\u00e4gga et al.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-9077",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9077,
+      "sentence": "However, only 40% of the dementia subtypes (e.g., AD or VaD) were revised during the validation process (N\u00e4gga et al.",
+      "context_window": "the validation process (N\u00e4gga et al. 2022 ). However, only 40% of the dementia subtypes (e.g., AD or VaD) were revised dur",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-9789",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9789,
+      "sentence": "We used proportional Cox regression models to calculate the hazard ratios (HRs) and 95% confidence intervals (CIs) of all\u2010cause dementia and its subtypes associated with energy\u2010adjusted taurine intake.",
+      "context_window": "regression models to calculate the hazard ratios (HRs) and 95% confidence intervals (CIs) of all\u2010cause dementia and its su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-10483",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10483,
+      "sentence": "Model 2 included further adjustments for smoking status (current smokers, former smokers, or never smokers), educational level (< 9 years; 9 years; upper secondary school; university, no degree; university degree), leisure\u2010time physical activity (< 7.5 MET\u2010h/week, 7.5-15 MET\u2010h/week, 15-25 MET\u2010h/week, 25-50 MET\u2010h/week, or > 50 MET\u2010h/week), alcohol consumption (never/alcohol consumer), BMI (continuous), Social Network Index (0-5, continuous) (Berkman and Syme 1979 ), prevalent diabetes (yes/no), and anti\u2010hypertensive medication use (yes/no).",
+      "context_window": "rs, former smokers, or never smokers), educational level (< 9 years; 9 years; upper secondary school; university, no degree; un",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-10492",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10492,
+      "sentence": "Model 2 included further adjustments for smoking status (current smokers, former smokers, or never smokers), educational level (< 9 years; 9 years; upper secondary school; university, no degree; university degree), leisure\u2010time physical activity (< 7.5 MET\u2010h/week, 7.5-15 MET\u2010h/week, 15-25 MET\u2010h/week, 25-50 MET\u2010h/week, or > 50 MET\u2010h/week), alcohol consumption (never/alcohol consumer), BMI (continuous), Social Network Index (0-5, continuous) (Berkman and Syme 1979 ), prevalent diabetes (yes/no), and anti\u2010hypertensive medication use (yes/no).",
+      "context_window": "r smokers, or never smokers), educational level (< 9 years; 9 years; upper secondary school; university, no degree; university",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-13493",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 13493,
+      "sentence": "In the third sensitivity analysis, we excluded individuals with follow\u2010up time of < 5 years, leaving a total of 26 813 participants.",
+      "context_window": "analysis, we excluded individuals with follow\u2010up time of < 5 years, leaving a total of 26 813 participants. In the fourth sens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-85",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 85,
+      "sentence": "Among the 27 786 dementia\u2010free participants recruited at baseline (1991-1996), 3224 (11.6%) developed dementia during a median follow\u2010up of 24.9 years, up to 2020.",
+      "context_window": "\u2010free participants recruited at baseline (1991-1996), 3224 (11.6%) developed dementia during a median follow\u2010up of 24.9 years",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-140",
+      "claim_type": "unit_value",
+      "raw_text": "24.9 years",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 140,
+      "sentence": "Among the 27 786 dementia\u2010free participants recruited at baseline (1991-1996), 3224 (11.6%) developed dementia during a median follow\u2010up of 24.9 years, up to 2020.",
+      "context_window": "224 (11.6%) developed dementia during a median follow\u2010up of 24.9 years, up to 2020. Table 1 presents baseline characteristics of p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-303",
+      "claim_type": "unit_value",
+      "raw_text": "127 mg/day",
+      "numeric_values": [
+        127.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 303,
+      "sentence": "The average crude taurine intake was 127 mg/day, with a standard deviation of 49 mg.",
+      "context_window": "justed taurine intake. The average crude taurine intake was 127 mg/day, with a standard deviation of 49 mg. Individuals with highe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-344",
+      "claim_type": "unit_value",
+      "raw_text": "49 mg",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 344,
+      "sentence": "The average crude taurine intake was 127 mg/day, with a standard deviation of 49 mg.",
+      "context_window": "taurine intake was 127 mg/day, with a standard deviation of 49 mg. Individuals with higher energy\u2010adjusted taurine intake wer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-n-903",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 903,
+      "sentence": "Baseline Characteristics of the Study Population by quintiles of energy\u2010adjusted taurine intake, n = 27 786.",
+      "context_window": "Population by quintiles of energy\u2010adjusted taurine intake, n = 27 786. Table 2 and Figure 2 illustrate the associations betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-1592",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1592,
+      "sentence": "In the fully adjusted model, individuals in the highest quintile of taurine intake did not have a significantly different risk of all\u2010cause dementia compared to those in the lowest quintile (HR for follow\u2010up till 2014: 0.97; 95% CI, 0.83-1.12; HR for follow\u2010up till 2020: 0.97; 95% CI, 0.86-1.08).",
+      "context_window": "e in the lowest quintile (HR for follow\u2010up till 2014: 0.97; 95% CI, 0.83-1.12; HR for follow\u2010up till 2020: 0.97; 95% CI, 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-1645",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1645,
+      "sentence": "In the fully adjusted model, individuals in the highest quintile of taurine intake did not have a significantly different risk of all\u2010cause dementia compared to those in the lowest quintile (HR for follow\u2010up till 2014: 0.97; 95% CI, 0.83-1.12; HR for follow\u2010up till 2020: 0.97; 95% CI, 0.86-1.08).",
+      "context_window": "0.97; 95% CI, 0.83-1.12; HR for follow\u2010up till 2020: 0.97; 95% CI, 0.86-1.08). Stratified analysis by sex yielded similar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-3153",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3153,
+      "sentence": "In the fully adjusted model, individuals in the highest quintile of taurine intake did not have a significantly different risk of developing AD and VaD compared to those in the lowest quintile (AD: HR, 1.01; 95% CI, 0.83-1.22; VaD: HR, 0.99; 95% CI, 0.72-1.35).",
+      "context_window": "VaD compared to those in the lowest quintile (AD: HR, 1.01; 95% CI, 0.83-1.22; VaD: HR, 0.99; 95% CI, 0.72-1.35). Similar f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-3187",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3187,
+      "sentence": "In the fully adjusted model, individuals in the highest quintile of taurine intake did not have a significantly different risk of developing AD and VaD compared to those in the lowest quintile (AD: HR, 1.01; 95% CI, 0.83-1.22; VaD: HR, 0.99; 95% CI, 0.72-1.35).",
+      "context_window": "t quintile (AD: HR, 1.01; 95% CI, 0.83-1.22; VaD: HR, 0.99; 95% CI, 0.72-1.35). Similar findings were observed in sex\u2010strat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-corr-4246",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.12)",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4246,
+      "sentence": "Among lifestyle factors, serum taurine concentrations showed a weak but significant positive correlation with age ( r = 0.12) and sex ( r = 0.10), indicating higher taurine concentrations in older individuals and males.",
+      "context_window": "showed a weak but significant positive correlation with age ( r = 0.12) and sex ( r = 0.10), indicating higher taurine concentratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-corr-4266",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.10)",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4266,
+      "sentence": "Among lifestyle factors, serum taurine concentrations showed a weak but significant positive correlation with age ( r = 0.12) and sex ( r = 0.10), indicating higher taurine concentrations in older individuals and males.",
+      "context_window": "gnificant positive correlation with age ( r = 0.12) and sex ( r = 0.10), indicating higher taurine concentrations in older individu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-p-5271",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5271,
+      "sentence": "Serum taurine level was negatively associated with dietary taurine intake ( r : -0.033, p = 0.044).",
+      "context_window": "tively associated with dietary taurine intake ( r : -0.033, p = 0.044). For specific food groups, when mutually adjusting for lif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-7370",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7370,
+      "sentence": "Using crude instead of energy\u2010adjusted taurine intake, excluding participants classified as potential energy misreporters or those who had significantly altered their diet before baseline, or excluding participants with < 5 years of follow\u2010up did not alter the results.",
+      "context_window": "heir diet before baseline, or excluding participants with < 5 years of follow\u2010up did not alter the results. Similarly restricti",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-4248",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4248,
+      "sentence": "The incorporation of unvalidated dementia diagnoses from 2015 to 2020 is another strength, as prior research has shown that general dementia diagnoses (all\u2010cause dementia) are valid in 96% of cases.",
+      "context_window": "eneral dementia diagnoses (all\u2010cause dementia) are valid in 96% of cases. However, unvalidated AD and VaD data from 2015 to",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-pct-4349",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4349,
+      "sentence": "However, unvalidated AD and VaD data from 2015 to 2020 were excluded from analyses, as 40% of specific dementia diagnoses prior to 2014 were altered during the re\u2010evaluation process (N\u00e4gga et al.",
+      "context_window": "VaD data from 2015 to 2020 were excluded from analyses, as 40% of specific dementia diagnoses prior to 2014 were altered d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12623682_taurine_intake_plasma_taurine_concentration_and_dementia_ris-u-5678",
+      "claim_type": "unit_value",
+      "raw_text": "4000 mg",
+      "numeric_values": [
+        4000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5678,
+      "sentence": "Additionally, dietary data were collected in the 1990s, meaning information on the consumption of energy drinks-known to contain high taurine levels (~4000 mg/L) (Rubio et al.",
+      "context_window": "ion of energy drinks-known to contain high taurine levels (~4000 mg/L) (Rubio et al. 2022 )-was unavailable, which may limit th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

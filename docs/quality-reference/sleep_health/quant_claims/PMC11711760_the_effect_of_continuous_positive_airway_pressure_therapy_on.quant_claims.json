@@ -1,0 +1,2234 @@
+{
+  "paper_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on",
+  "doi": "10.1007/s11325-024-03189-9",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 59,
+    "unit_value": 27,
+    "p_value": 7,
+    "percentage": 18,
+    "sample_size": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-513",
+      "claim_type": "mean_sd",
+      "raw_text": "39.8 \u00b1 9.1",
+      "numeric_values": [
+        39.8,
+        9.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 513,
+      "sentence": "The mean follow-up time was 39.8 \u00b1 9.1 months.",
+      "context_window": "ith severe OSAHS were enrolled. The mean follow-up time was 39.8 \u00b1 9.1 months. Cardiovascular risk factors were assessed, and labo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-520",
+      "claim_type": "unit_value",
+      "raw_text": "9.1 months",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 520,
+      "sentence": "The mean follow-up time was 39.8 \u00b1 9.1 months.",
+      "context_window": "ere OSAHS were enrolled. The mean follow-up time was 39.8 \u00b1 9.1 months. Cardiovascular risk factors were assessed, and laboratory",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1248",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 0.11",
+      "numeric_values": [
+        0.73,
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "At the follow-up, CRC did not differ between the two groups, but CIMT was significantly lower in the treated group than in the untreated group (0.73 \u00b1 0.11 mm vs.",
+      "context_window": "tly lower in the treated group than in the untreated group (0.73 \u00b1 0.11 mm vs. 0.84 \u00b1 0.21 mm, p = 0.027). The CIMT of both groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1255",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1255,
+      "sentence": "At the follow-up, CRC did not differ between the two groups, but CIMT was significantly lower in the treated group than in the untreated group (0.73 \u00b1 0.11 mm vs.",
+      "context_window": "er in the treated group than in the untreated group (0.73 \u00b1 0.11 mm vs. 0.84 \u00b1 0.21 mm, p = 0.027). The CIMT of both groups inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1267",
+      "claim_type": "mean_sd",
+      "raw_text": "0.84 \u00b1 0.21",
+      "numeric_values": [
+        0.84,
+        0.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1267,
+      "sentence": "0.84 \u00b1 0.21 mm, p = 0.027).",
+      "context_window": "eated group than in the untreated group (0.73 \u00b1 0.11 mm vs. 0.84 \u00b1 0.21 mm, p = 0.027). The CIMT of both groups increased significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1274",
+      "claim_type": "unit_value",
+      "raw_text": "0.21 mm",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "0.84 \u00b1 0.21 mm, p = 0.027).",
+      "context_window": "roup than in the untreated group (0.73 \u00b1 0.11 mm vs. 0.84 \u00b1 0.21 mm, p = 0.027). The CIMT of both groups increased significantl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-1283",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "0.84 \u00b1 0.21 mm, p = 0.027).",
+      "context_window": "in the untreated group (0.73 \u00b1 0.11 mm vs. 0.84 \u00b1 0.21 mm, p = 0.027). The CIMT of both groups increased significantly during th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1377",
+      "claim_type": "mean_sd",
+      "raw_text": "0.65 \u00b1 0.11",
+      "numeric_values": [
+        0.65,
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1377,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "s increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1384",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1384,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "ased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1395",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 0.11",
+      "numeric_values": [
+        0.73,
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "icantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1402",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1441",
+      "claim_type": "mean_sd",
+      "raw_text": "0.69 \u00b1 0.11",
+      "numeric_values": [
+        0.69,
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1441,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "\u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the incre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1448",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1448,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1459",
+      "claim_type": "mean_sd",
+      "raw_text": "0.84 \u00b1 0.21",
+      "numeric_values": [
+        0.84,
+        0.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1459,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "\u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1466",
+      "claim_type": "unit_value",
+      "raw_text": "0.21 mm",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1466,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1578",
+      "claim_type": "mean_sd",
+      "raw_text": "0.09 \u00b1 0.09",
+      "numeric_values": [
+        0.09,
+        0.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1578,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm). In patients with severe OSAHS, CPA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1585",
+      "claim_type": "unit_value",
+      "raw_text": "0.09 mm",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1585,
+      "sentence": "The CIMT of both groups increased significantly during the follow-up period (from 0.65 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group), but the increase in the treated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "eated group was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm). In patients with severe OSAHS, CPAP t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1597",
+      "claim_type": "mean_sd",
+      "raw_text": "0.15 \u00b1 0.15",
+      "numeric_values": [
+        0.15,
+        0.15
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1597,
+      "sentence": "0.15 \u00b1 0.15 mm).",
+      "context_window": "was smaller than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm). In patients with severe OSAHS, CPAP treatment signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1604",
+      "claim_type": "unit_value",
+      "raw_text": "0.15 mm",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1604,
+      "sentence": "0.15 \u00b1 0.15 mm).",
+      "context_window": "ller than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm). In patients with severe OSAHS, CPAP treatment significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-245",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 245,
+      "sentence": "According to numerous epidemiologic studies, 30% of the population suffers from insomnia, and the prevalence of sleep apnea (apnea-hypopnea index [AHI] > 5/h) is estimated to be 14% of the world\u2019s population between the ages of 30 and 69 [ 1 ].",
+      "context_window": "consequences. According to numerous epidemiologic studies, 30% of the population suffers from insomnia, and the prevalence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-378",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 378,
+      "sentence": "According to numerous epidemiologic studies, 30% of the population suffers from insomnia, and the prevalence of sleep apnea (apnea-hypopnea index [AHI] > 5/h) is estimated to be 14% of the world\u2019s population between the ages of 30 and 69 [ 1 ].",
+      "context_window": "apnea (apnea-hypopnea index [AHI] > 5/h) is estimated to be 14% of the world\u2019s population between the ages of 30 and 69 [ 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-896",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 896,
+      "sentence": "The severity of the disease is determined by the number of total apneic and hypopneic events per hour of sleep (normal: AHI < 5/h) as determined by polysomnography (in the present study the American Academy of Sleep Medicine (AASM) 2012 criteria were used with at least 3% desaturation for hypopnoe).",
+      "context_window": "Sleep Medicine (AASM) 2012 criteria were used with at least 3% desaturation for hypopnoe). Sleep apnea has many short- an",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-1186",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1186,
+      "sentence": "Approximately 20% of car accidents are due to driver fatigue caused by insufficient and inadequate sleep [ 2 ].",
+      "context_window": "ated human error and motor vehicle accidents. Approximately 20% of car accidents are due to driver fatigue caused by insuff",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-2152",
+      "claim_type": "unit_value",
+      "raw_text": "0.01 mm",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "mm",
+      "source_section": "introduction",
+      "source_offset": 2152,
+      "sentence": "A cross-sectional study estimated that the average increase in CIMT is approximately 0.01 mm/year [ 8 ].",
+      "context_window": "stimated that the average increase in CIMT is approximately 0.01 mm/year [ 8 ]. However, multiple cardiovascular risk factors a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-3507",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3507,
+      "sentence": "Severely damaged CRC (below 15%) has been shown to be a risk factor for stroke [ 11 ].",
+      "context_window": "e middle cerebral artery (MCA). Severely damaged CRC (below 15%) has been shown to be a risk factor for stroke [ 11 ]. In o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-352",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 352,
+      "sentence": "Only patients diagnosed with severe sleep apnea syndrome (OSAHS) between the ages of 18 and 80 years were included after providing signed informed consent.",
+      "context_window": "ere sleep apnea syndrome (OSAHS) between the ages of 18 and 80 years were included after providing signed informed consent. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-734",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 734,
+      "sentence": "The clinical diagnosis of OSAHS was made by polysomnography evaluated by a qualified sleep physician (somnologist), and severe OSAHS was determined if the total number of apnea and hypopnea events per hour was at least 30 (AHI \u2265 30/h) in accordance with the American Academy of Sleep Medicine (2012 criteria, at least 3% desaturation for hypopnoe).",
+      "context_window": "American Academy of Sleep Medicine (2012 criteria, at least 3% desaturation for hypopnoe). Patients with severe heart dise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1649",
+      "claim_type": "unit_value",
+      "raw_text": "59 months",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1649,
+      "sentence": "After 27 to 59 months of follow-up, the baseline examinations were repeated in the treated and untreated groups.",
+      "context_window": "CPAP therapy was not available for 13 patients. After 27 to 59 months of follow-up, the baseline examinations were repeated in th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3759",
+      "claim_type": "unit_value",
+      "raw_text": "10 mm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3759,
+      "sentence": "Measurements were taken on the far wall of the common carotid artery at least 10 mm far from its distal end, where the vessel was free of atherosclerotic plaque and the lumen-intima and media-adventitia boundaries were clearly visible.",
+      "context_window": "taken on the far wall of the common carotid artery at least 10 mm far from its distal end, where the vessel was free of ather",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-4550",
+      "claim_type": "unit_value",
+      "raw_text": "55 mm",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4550,
+      "sentence": "The measurement was performed through the transtemporal window at a depth of 50-55 mm.",
+      "context_window": "performed through the transtemporal window at a depth of 50-55 mm. Before the breath-hold test, the MCA mean blood flow veloc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-5286",
+      "claim_type": "unit_value",
+      "raw_text": "39 months",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5286,
+      "sentence": "Laboratory tests, CIMT and CRC measurements were performed at baseline and at the end of an average follow-up of 39 months.",
+      "context_window": "ormed at baseline and at the end of an average follow-up of 39 months. The parameters of treated ( n = 28) and untreated patients",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-5325",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5325,
+      "sentence": "The parameters of treated ( n = 28) and untreated patients ( n = 13) were compared, as well as the parameters of treated patients before and after CPAP treatment ( n = 28).",
+      "context_window": "average follow-up of 39 months. The parameters of treated ( n = 28) and untreated patients ( n = 13) were compared, as well as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-5358",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5358,
+      "sentence": "The parameters of treated ( n = 28) and untreated patients ( n = 13) were compared, as well as the parameters of treated patients before and after CPAP treatment ( n = 28).",
+      "context_window": "he parameters of treated ( n = 28) and untreated patients ( n = 13) were compared, as well as the parameters of treated patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-5461",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5461,
+      "sentence": "The parameters of treated ( n = 28) and untreated patients ( n = 13) were compared, as well as the parameters of treated patients before and after CPAP treatment ( n = 28).",
+      "context_window": "eters of treated patients before and after CPAP treatment ( n = 28). SPSS software was used for the statistical analysis. In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-5829",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5829,
+      "sentence": "A value of p < 0.05 was considered significant.",
+      "context_window": "pare data from the treated and untreated groups. A value of p < 0.05 was considered significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-151",
+      "claim_type": "mean_sd",
+      "raw_text": "53.9 \u00b1 10.2",
+      "numeric_values": [
+        53.9,
+        10.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 151,
+      "sentence": "We performed a follow-up study of forty-one patients with severe OSAHS (mean AHI: 60.5/h \u00b1 16.1; mean desaturation index [DI]: 45.8/h \u00b1 23.4; mean age 53.9 \u00b1 10.2 years).",
+      "context_window": "16.1; mean desaturation index [DI]: 45.8/h \u00b1 23.4; mean age 53.9 \u00b1 10.2 years). The mean follow-up time was 39.8 \u00b1 9.1 months. The",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-158",
+      "claim_type": "unit_value",
+      "raw_text": "10.2 years",
+      "numeric_values": [
+        10.2
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 158,
+      "sentence": "We performed a follow-up study of forty-one patients with severe OSAHS (mean AHI: 60.5/h \u00b1 16.1; mean desaturation index [DI]: 45.8/h \u00b1 23.4; mean age 53.9 \u00b1 10.2 years).",
+      "context_window": "ean desaturation index [DI]: 45.8/h \u00b1 23.4; mean age 53.9 \u00b1 10.2 years). The mean follow-up time was 39.8 \u00b1 9.1 months. The mean",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-199",
+      "claim_type": "mean_sd",
+      "raw_text": "39.8 \u00b1 9.1",
+      "numeric_values": [
+        39.8,
+        9.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 199,
+      "sentence": "The mean follow-up time was 39.8 \u00b1 9.1 months.",
+      "context_window": "4; mean age 53.9 \u00b1 10.2 years). The mean follow-up time was 39.8 \u00b1 9.1 months. The mean age, risk factors, baseline PSG parameter",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-206",
+      "claim_type": "unit_value",
+      "raw_text": "9.1 months",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 206,
+      "sentence": "The mean follow-up time was 39.8 \u00b1 9.1 months.",
+      "context_window": "age 53.9 \u00b1 10.2 years). The mean follow-up time was 39.8 \u00b1 9.1 months. The mean age, risk factors, baseline PSG parameters, BMI,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-465",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 465,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "eline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-482",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 482,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "tics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (m",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-509",
+      "claim_type": "mean_sd",
+      "raw_text": "57.54 \u00b1 9.17",
+      "numeric_values": [
+        57.54,
+        9.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 509,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "ent Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-522",
+      "claim_type": "mean_sd",
+      "raw_text": "52.29 \u00b1 10.34",
+      "numeric_values": [
+        52.29,
+        10.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 522,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-560",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 560,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "e, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hyperte",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-569",
+      "claim_type": "percentage",
+      "raw_text": "89.3%",
+      "numeric_values": [
+        89.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 569,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-596",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 596,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-605",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 605,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "(male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-635",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 635,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-644",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 644,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "oking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-669",
+      "claim_type": "mean_sd",
+      "raw_text": "56.67 \u00b1 15.19",
+      "numeric_values": [
+        56.67,
+        15.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 669,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-683",
+      "claim_type": "mean_sd",
+      "raw_text": "62.30 \u00b1 16.43",
+      "numeric_values": [
+        62.3,
+        16.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 683,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "nsion, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CI",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-714",
+      "claim_type": "mean_sd",
+      "raw_text": "36.04 \u00b1 5.65",
+      "numeric_values": [
+        36.04,
+        5.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 714,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-727",
+      "claim_type": "mean_sd",
+      "raw_text": "37.20 \u00b1 6.70",
+      "numeric_values": [
+        37.2,
+        6.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 727,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, %",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-763",
+      "claim_type": "mean_sd",
+      "raw_text": "0.69 \u00b1 0.11",
+      "numeric_values": [
+        0.69,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 763,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-775",
+      "claim_type": "mean_sd",
+      "raw_text": "0.65 \u00b1 0.11",
+      "numeric_values": [
+        0.65,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 775,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "6.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mm",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-800",
+      "claim_type": "mean_sd",
+      "raw_text": "51.76 \u00b1 14.58",
+      "numeric_values": [
+        51.76,
+        14.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 800,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-814",
+      "claim_type": "mean_sd",
+      "raw_text": "45.61 \u00b1 14.11",
+      "numeric_values": [
+        45.61,
+        14.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 814,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-852",
+      "claim_type": "mean_sd",
+      "raw_text": "6.31 \u00b1 0.86",
+      "numeric_values": [
+        6.31,
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 852,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 C",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-864",
+      "claim_type": "mean_sd",
+      "raw_text": "6.50 \u00b1 2.18",
+      "numeric_values": [
+        6.5,
+        2.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "6 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-892",
+      "claim_type": "mean_sd",
+      "raw_text": "6.12 \u00b1 0.79",
+      "numeric_values": [
+        6.12,
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 892,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "3 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-904",
+      "claim_type": "mean_sd",
+      "raw_text": "6.33 \u00b1 0.98",
+      "numeric_values": [
+        6.33,
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 904,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-933",
+      "claim_type": "mean_sd",
+      "raw_text": "3.97 \u00b1 2.99",
+      "numeric_values": [
+        3.97,
+        2.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 933,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.6",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-945",
+      "claim_type": "mean_sd",
+      "raw_text": "6.07 \u00b1 5.18",
+      "numeric_values": [
+        6.07,
+        5.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 945,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mm",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-977",
+      "claim_type": "mean_sd",
+      "raw_text": "5.22 \u00b1 1.01",
+      "numeric_values": [
+        5.22,
+        1.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 977,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": ".505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-989",
+      "claim_type": "mean_sd",
+      "raw_text": "5.09 \u00b1 1.02",
+      "numeric_values": [
+        5.09,
+        1.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 989,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apn",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1022",
+      "claim_type": "mean_sd",
+      "raw_text": "1.27 \u00b1 0.32",
+      "numeric_values": [
+        1.27,
+        0.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1022,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1034",
+      "claim_type": "mean_sd",
+      "raw_text": "1.14 \u00b1 0.31",
+      "numeric_values": [
+        1.14,
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1034,
+      "sentence": "Table 1 Baseline characteristics of patients at enrollment Untreated ( n = 13) Treated( n = 28) p value Age, years 57.54 \u00b1 9.17 52.29 \u00b1 10.34 0.125 Sex (male), n 10 (77%) 25 (89.3%) 0.297 Smoking, n 3 (23%) 12 (43%) 0.221 Hypertension, n 9 (69%) 23 (82%) 0.352 AHI, events/h 56.67 \u00b1 15.19 62.30 \u00b1 16.43 0.302 BMI, kg/m\u00b2 36.04 \u00b1 5.65 37.20 \u00b1 6.70 0.594 Average CIMT, mm 0.69 \u00b1 0.11 0.65 \u00b1 0.11 0.216 CRC, % 51.76 \u00b1 14.58 45.61 \u00b1 14.11 0.263 glucose, (mmol/l) 6.31 \u00b1 0.86 6.50 \u00b1 2.18 0.762 HgA1C (%) 6.12 \u00b1 0.79 6.33 \u00b1 0.98 0.505 CRP (mg/l) 3.97 \u00b1 2.99 6.07 \u00b1 5.18 0.183 Chol (mmol/l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nBaseline characteristics of patients at enrollment\n\nAHI, apnea-hypopnea index; BMI, body mass index; CIMT, carotid intima-media thickness; CRC, cerebrovascular reserve capacity; HgA1C, glycated hemoglobin; CRP, C-reactive protein; Chol, total cholesterol; HDL-C, high-density lipoprotein\n\nPSG values (AHI, DI) were significantly better after CPAP treatment in the treated group than in the untreated group, indicating that the CPAP setting was appropriate [Table 2 ].",
+      "context_window": "l) 5.22 \u00b1 1.01 5.09 \u00b1 1.02 0.687 HDL-C (mmol/l) 1.27 \u00b1 0.32 1.14 \u00b1 0.31 0.221 AHI, apnea-hypopnea index; BMI, body mass index; CIMT",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-1814",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1814,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": "]. Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-1832",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1832,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": "lues at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1862",
+      "claim_type": "mean_sd",
+      "raw_text": "48.22 \u00b1 15.88",
+      "numeric_values": [
+        48.22,
+        15.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1862,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": "Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.3",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1876",
+      "claim_type": "mean_sd",
+      "raw_text": "1.97 \u00b1 1.91",
+      "numeric_values": [
+        1.97,
+        1.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1876,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": "= 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-1888",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1888,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": "d ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desatu",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1911",
+      "claim_type": "mean_sd",
+      "raw_text": "25.65 \u00b1 10.47",
+      "numeric_values": [
+        25.65,
+        10.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1911,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": ", events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index PSG values at",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-1925",
+      "claim_type": "mean_sd",
+      "raw_text": "1.62 \u00b1 1.36",
+      "numeric_values": [
+        1.62,
+        1.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1925,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": "22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index PSG values at follow-up e",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-1937",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1937,
+      "sentence": "Table 2 PSG values at follow-up examination Untreated ( n = 13) Treated ( n = 28) p value AHI, events/h 48.22 \u00b1 15.88 1.97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index\n\nPSG values at follow-up examination\n\nDI, desaturation index\n\nAt the follow-up, BMI, laboratory values, and CRC did not differ between the treated and untreated groups [Table 3 ], but CIMT was significantly lower in the treated group than in the untreated group [Table 3 ; Fig.",
+      "context_window": ".97 \u00b1 1.91 p < 0.001 DI, events/h 25.65 \u00b1 10.47 1.62 \u00b1 1.36 p < 0.001 DI, desaturation index PSG values at follow-up examination",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-2425",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2425,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-n-2443",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2443,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "e end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2470",
+      "claim_type": "mean_sd",
+      "raw_text": "36.08 \u00b1 5.65",
+      "numeric_values": [
+        36.08,
+        5.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2470,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "od Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2483",
+      "claim_type": "mean_sd",
+      "raw_text": "36.62 \u00b1 7.32",
+      "numeric_values": [
+        36.62,
+        7.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, %",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2519",
+      "claim_type": "mean_sd",
+      "raw_text": "0.84 \u00b1 0.21",
+      "numeric_values": [
+        0.84,
+        0.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2519,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 g",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2531",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 0.11",
+      "numeric_values": [
+        0.73,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2531,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "6.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmo",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2556",
+      "claim_type": "mean_sd",
+      "raw_text": "39.95 \u00b1 14.22",
+      "numeric_values": [
+        39.95,
+        14.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2556,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.1",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2570",
+      "claim_type": "mean_sd",
+      "raw_text": "47.3 \u00b1 15.78",
+      "numeric_values": [
+        47.3,
+        15.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2570,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2607",
+      "claim_type": "mean_sd",
+      "raw_text": "6.22 \u00b1 0.93",
+      "numeric_values": [
+        6.22,
+        0.93
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2607,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "7 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 C",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2619",
+      "claim_type": "mean_sd",
+      "raw_text": "6.03 \u00b1 1.17",
+      "numeric_values": [
+        6.03,
+        1.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2619,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2647",
+      "claim_type": "mean_sd",
+      "raw_text": "6.15 \u00b1 0.72",
+      "numeric_values": [
+        6.15,
+        0.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2647,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "5 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 C",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2659",
+      "claim_type": "mean_sd",
+      "raw_text": "6.09 \u00b1 0.98",
+      "numeric_values": [
+        6.09,
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2659,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l)",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2688",
+      "claim_type": "mean_sd",
+      "raw_text": "4.46 \u00b1 2.7",
+      "numeric_values": [
+        4.46,
+        2.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2688,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.4",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2699",
+      "claim_type": "mean_sd",
+      "raw_text": "5.12 \u00b1 7.52",
+      "numeric_values": [
+        5.12,
+        7.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2699,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "A1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mm",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2731",
+      "claim_type": "mean_sd",
+      "raw_text": "5.44 \u00b1 0.91",
+      "numeric_values": [
+        5.44,
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2731,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2743",
+      "claim_type": "mean_sd",
+      "raw_text": "5.16 \u00b1 1.04",
+      "numeric_values": [
+        5.16,
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2743,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "g/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-u",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2776",
+      "claim_type": "mean_sd",
+      "raw_text": "1.24 \u00b1 0.42",
+      "numeric_values": [
+        1.24,
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2776,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2788",
+      "claim_type": "mean_sd",
+      "raw_text": "1.13 \u00b1 0.27",
+      "numeric_values": [
+        1.13,
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2788,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.61",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2829",
+      "claim_type": "mean_sd",
+      "raw_text": "40.92 \u00b1 9.65",
+      "numeric_values": [
+        40.92,
+        9.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2829,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "mol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617 Characteristics of the patients at the",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-2842",
+      "claim_type": "mean_sd",
+      "raw_text": "39.36 \u00b1 9.06",
+      "numeric_values": [
+        39.36,
+        9.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2842,
+      "sentence": "Table 3 Characteristics of the patients at the end of the follow-up period Untreated ( n = 13) Treated ( n = 28) p value BMI, kg/m\u00b2 36.08 \u00b1 5.65 36.62 \u00b1 7.32 0.817 Average CIMT, mm 0.84 \u00b1 0.21 0.73 \u00b1 0.11 0.027 CRC, % 39.95 \u00b1 14.22 47.3 \u00b1 15.78 0.195 glucose, (mmol/l) 6.22 \u00b1 0.93 6.03 \u00b1 1.17 0.615 HgA1C (%) 6.15 \u00b1 0.72 6.09 \u00b1 0.98 0.825 CRP (mg/l) 4.46 \u00b1 2.7 5.12 \u00b1 7.52 0.762 Chol (mmol/l) 5.44 \u00b1 0.91 5.16 \u00b1 1.04 0.415 HDL-C (mmol/l) 1.24 \u00b1 0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617\n\nCharacteristics of the patients at the end of the follow-up period\n\nFig.",
+      "context_window": "0.42 1.13 \u00b1 0.27 0.351 Follow-up time (month) 40.92 \u00b1 9.65 39.36 \u00b1 9.06 0.617 Characteristics of the patients at the end of the fo",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-3371",
+      "claim_type": "mean_sd",
+      "raw_text": "0.64 \u00b1 0.11",
+      "numeric_values": [
+        0.64,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3371,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "ated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3378",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3378,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "d untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-3389",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 0.11",
+      "numeric_values": [
+        0.73,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3389,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3396",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3396,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-3426",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3426,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-3446",
+      "claim_type": "mean_sd",
+      "raw_text": "0.69 \u00b1 0.11",
+      "numeric_values": [
+        0.69,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3446,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), bu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3453",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 mm",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3453,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "\u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-3464",
+      "claim_type": "mean_sd",
+      "raw_text": "0.84 \u00b1 0.21",
+      "numeric_values": [
+        0.84,
+        0.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3464,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3471",
+      "claim_type": "unit_value",
+      "raw_text": "0.21 mm",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3471,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIM",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-3503",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3503,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "om 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-3599",
+      "claim_type": "mean_sd",
+      "raw_text": "0.09 \u00b1 0.09",
+      "numeric_values": [
+        0.09,
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3599,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm; p = 0.101) (Fig. 2 ). Fig. 2 Increa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3606",
+      "claim_type": "unit_value",
+      "raw_text": "0.09 mm",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3606,
+      "sentence": "1 Comparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nComparison of the CIMT measured at the beginning of the study (baseline) and at the end of the follow-up examinations (follow-up) in treated and untreated patients\n\nCIMT increased significantly in both the treated and untreated groups during the follow-up period (from 0.64 \u00b1 0.11 mm to 0.73 \u00b1 0.11 mm in the treated group, p < 0.001, and from 0.69 \u00b1 0.11 mm to 0.84 \u00b1 0.21 mm in the untreated group, p = 0.004), but the increase in CIMT was less in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs.",
+      "context_window": "ss in the treated group than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm; p = 0.101) (Fig. 2 ). Fig. 2 Increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-msd-3618",
+      "claim_type": "mean_sd",
+      "raw_text": "0.15 \u00b1 0.15",
+      "numeric_values": [
+        0.15,
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3618,
+      "sentence": "0.15 \u00b1 0.15 mm; p = 0.101) (Fig.",
+      "context_window": "eated group than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm; p = 0.101) (Fig. 2 ). Fig. 2 Increase in the CIMT duri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-3625",
+      "claim_type": "unit_value",
+      "raw_text": "0.15 mm",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3625,
+      "sentence": "0.15 \u00b1 0.15 mm; p = 0.101) (Fig.",
+      "context_window": "roup than in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm; p = 0.101) (Fig. 2 ). Fig. 2 Increase in the CIMT during",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-p-3634",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.101",
+      "numeric_values": [
+        0.101
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3634,
+      "sentence": "0.15 \u00b1 0.15 mm; p = 0.101) (Fig.",
+      "context_window": "in the untreated group (0.09 \u00b1 0.09 mm vs. 0.15 \u00b1 0.15 mm; p = 0.101) (Fig. 2 ). Fig. 2 Increase in the CIMT during the follow-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-331",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 331,
+      "sentence": "It is well known that about 50% of patients with OSAHS have hypertension, and it has been shown that almost 30% of patients with hypertension have OSAHS.",
+      "context_window": "on cardiovascular risk factor. It is well known that about 50% of patients with OSAHS have hypertension, and it has been s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-411",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 411,
+      "sentence": "It is well known that about 50% of patients with OSAHS have hypertension, and it has been shown that almost 30% of patients with hypertension have OSAHS.",
+      "context_window": "OSAHS have hypertension, and it has been shown that almost 30% of patients with hypertension have OSAHS. One of the possib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1015",
+      "claim_type": "unit_value",
+      "raw_text": "3 mmHg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 1015,
+      "sentence": "According to scientific reports, adequate CPAP treatment in OSAHS patients reduced systolic blood pressure by 3 mmHg and diastolic blood pressure by 2 mmHg [ 16 ].",
+      "context_window": "atment in OSAHS patients reduced systolic blood pressure by 3 mmHg and diastolic blood pressure by 2 mmHg [ 16 ]. In OSAHS pa",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-1054",
+      "claim_type": "unit_value",
+      "raw_text": "2 mmHg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 1054,
+      "sentence": "According to scientific reports, adequate CPAP treatment in OSAHS patients reduced systolic blood pressure by 3 mmHg and diastolic blood pressure by 2 mmHg [ 16 ].",
+      "context_window": "ic blood pressure by 3 mmHg and diastolic blood pressure by 2 mmHg [ 16 ]. In OSAHS patients, hypoxia was reported to be asso",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-1867",
+      "claim_type": "percentage",
+      "raw_text": "78.05%",
+      "numeric_values": [
+        78.05
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1867,
+      "sentence": "Consistent with literature data, hypertension and diabetes mellitus were more common in patients with severe OSAHS in the present study (hypertension 78.05%, diabetes mellitus 21.95%) than in the average Hungarian population (hypertension 32%, diabetes mellitus 14%) [ 20 ].",
+      "context_window": "tients with severe OSAHS in the present study (hypertension 78.05%, diabetes mellitus 21.95%) than in the average Hungarian po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-1893",
+      "claim_type": "percentage",
+      "raw_text": "21.95%",
+      "numeric_values": [
+        21.95
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1893,
+      "sentence": "Consistent with literature data, hypertension and diabetes mellitus were more common in patients with severe OSAHS in the present study (hypertension 78.05%, diabetes mellitus 21.95%) than in the average Hungarian population (hypertension 32%, diabetes mellitus 14%) [ 20 ].",
+      "context_window": "n the present study (hypertension 78.05%, diabetes mellitus 21.95%) than in the average Hungarian population (hypertension 32%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-1956",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1956,
+      "sentence": "Consistent with literature data, hypertension and diabetes mellitus were more common in patients with severe OSAHS in the present study (hypertension 78.05%, diabetes mellitus 21.95%) than in the average Hungarian population (hypertension 32%, diabetes mellitus 14%) [ 20 ].",
+      "context_window": "95%) than in the average Hungarian population (hypertension 32%, diabetes mellitus 14%) [ 20 ]. Bessler et al. found that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-pct-1979",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1979,
+      "sentence": "Consistent with literature data, hypertension and diabetes mellitus were more common in patients with severe OSAHS in the present study (hypertension 78.05%, diabetes mellitus 21.95%) than in the average Hungarian population (hypertension 32%, diabetes mellitus 14%) [ 20 ].",
+      "context_window": "e Hungarian population (hypertension 32%, diabetes mellitus 14%) [ 20 ]. Bessler et al. found that repeated hypoxia and hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-4648",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4648,
+      "sentence": "After 6 months of CPAP treatment, CIMT decreased in both studies [ 27 , 28 ].",
+      "context_window": "CIMT [26 27], as well as between AHI and CIMT [ 28 ]. After 6 months of CPAP treatment, CIMT decreased in both studies [ 27 , 28",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11711760_the_effect_of_continuous_positive_airway_pressure_therapy_on-u-5784",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5784,
+      "sentence": "The follow-up time was more than 3 years, and we were able to enroll and follow untreated patients with severe OSAHS.",
+      "context_window": "several notable strengths. The follow-up time was more than 3 years, and we were able to enroll and follow untreated patients w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

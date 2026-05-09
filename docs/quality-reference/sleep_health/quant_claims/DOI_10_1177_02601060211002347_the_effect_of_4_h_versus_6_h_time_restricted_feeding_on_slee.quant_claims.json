@@ -1,0 +1,385 @@
+{
+  "paper_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee",
+  "doi": "10.1177/02601060211002347",
+  "extracted_at": "2026-05-08T20:06:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 4,
+    "p_value": 1,
+    "mean_sd": 10,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-n-610",
+      "claim_type": "sample_size",
+      "raw_text": "n = 49",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 610,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "s:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-u-801",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 801,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-u-890",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 890,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "<jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-p-923",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 923,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "/jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-957",
+      "claim_type": "mean_sd",
+      "raw_text": "3.9 \u00b1 0.4",
+      "numeric_values": [
+        3.9,
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 957,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": ", body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls. Sleep qua",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-u-963",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 963,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls. Sleep qualit",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-985",
+      "claim_type": "mean_sd",
+      "raw_text": "3.4 \u00b1 0.4",
+      "numeric_values": [
+        3.4,
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 985,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "< 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls. Sleep quality, measured by the Pittsb",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-u-991",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "However, the effects of shorter TRF windows (4-6 h) on sleep, remain unknown.</jats:p> </jats:sec> <jats:sec> <jats:title>Aims:</jats:title> <jats:p>This study compared the effects of 4-h versus 6-h TRF on sleep quality, duration, insomnia severity and the risk of obstructive sleep apnea.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods:</jats:title> <jats:p>Adults with obesity ( n = 49) were randomized into one of three groups: 4-h TRF (eating only between 3 and 7 p.m.), 6-h TRF (eating only between 1 and 7 p.m.), or a control group (no meal timing restrictions) for 8 weeks.</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>After 8 weeks, body weight decreased ( p < 0.001) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls.",
+      "context_window": "1) similarly by 4-h TRF (-3.9 \u00b1 0.4 kg) and 6-h TRF (-3.4 \u00b1 0.4 kg), versus controls. Sleep quality, measured by the Pittsburg",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1124",
+      "claim_type": "mean_sd",
+      "raw_text": "5.9 \u00b1 0.7",
+      "numeric_values": [
+        5.9,
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1124,
+      "sentence": "Sleep quality, measured by the Pittsburgh Sleep Quality Index (PSQI), did not change by 4-h TRF (baseline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versus controls.",
+      "context_window": "Quality Index (PSQI), did not change by 4-h TRF (baseline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1143",
+      "claim_type": "mean_sd",
+      "raw_text": "4.8 \u00b1 0.6",
+      "numeric_values": [
+        4.8,
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1143,
+      "sentence": "Sleep quality, measured by the Pittsburgh Sleep Quality Index (PSQI), did not change by 4-h TRF (baseline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versus controls.",
+      "context_window": "I), did not change by 4-h TRF (baseline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versu",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1176",
+      "claim_type": "mean_sd",
+      "raw_text": "6.4 \u00b1 0.8",
+      "numeric_values": [
+        6.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "Sleep quality, measured by the Pittsburgh Sleep Quality Index (PSQI), did not change by 4-h TRF (baseline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versus controls.",
+      "context_window": "seline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versus controls. Wake time, bedtime, s",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1195",
+      "claim_type": "mean_sd",
+      "raw_text": "5.3 \u00b1 0.9",
+      "numeric_values": [
+        5.3,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Sleep quality, measured by the Pittsburgh Sleep Quality Index (PSQI), did not change by 4-h TRF (baseline: 5.9 \u00b1 0.7; week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versus controls.",
+      "context_window": "week 8: 4.8 \u00b1 0.6) or 6-h TRF (baseline: 6.4 \u00b1 0.8; week 8: 5.3 \u00b1 0.9), versus controls. Wake time, bedtime, sleep duration and s",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1363",
+      "claim_type": "mean_sd",
+      "raw_text": "4.4 \u00b1 1.0",
+      "numeric_values": [
+        4.4,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "Insomnia severity did not change by 4-h TRF (baseline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versus controls.",
+      "context_window": "ged. Insomnia severity did not change by 4-h TRF (baseline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1382",
+      "claim_type": "mean_sd",
+      "raw_text": "4.7 \u00b1 0.9",
+      "numeric_values": [
+        4.7,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1382,
+      "sentence": "Insomnia severity did not change by 4-h TRF (baseline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versus controls.",
+      "context_window": "ity did not change by 4-h TRF (baseline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versu",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1415",
+      "claim_type": "mean_sd",
+      "raw_text": "8.3 \u00b1 1.2",
+      "numeric_values": [
+        8.3,
+        1.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1415,
+      "sentence": "Insomnia severity did not change by 4-h TRF (baseline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versus controls.",
+      "context_window": "seline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versus controls. Percent of participan",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-msd-1434",
+      "claim_type": "mean_sd",
+      "raw_text": "5.5 \u00b1 1.1",
+      "numeric_values": [
+        5.5,
+        1.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1434,
+      "sentence": "Insomnia severity did not change by 4-h TRF (baseline: 4.4 \u00b1 1.0; week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versus controls.",
+      "context_window": "week 8: 4.7 \u00b1 0.9) or 6-h TRF (baseline: 8.3 \u00b1 1.2; week 8: 5.5 \u00b1 1.1), versus controls. Percent of participants reporting obstru",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-pct-1567",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1567,
+      "sentence": "Percent of participants reporting obstructive sleep apnea symptoms did not change by 4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion:</jats:title> <jats:p>These findings suggest that 4- and 6-h TRF have no effect on sleep quality, duration, insomnia severity, or the risk of obstructive sleep apnea.</jats:p> </jats:sec>",
+      "context_window": "e sleep apnea symptoms did not change by 4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), vers",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-pct-1580",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1580,
+      "sentence": "Percent of participants reporting obstructive sleep apnea symptoms did not change by 4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion:</jats:title> <jats:p>These findings suggest that 4- and 6-h TRF have no effect on sleep quality, duration, insomnia severity, or the risk of obstructive sleep apnea.</jats:p> </jats:sec>",
+      "context_window": "symptoms did not change by 4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.<",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-pct-1607",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1607,
+      "sentence": "Percent of participants reporting obstructive sleep apnea symptoms did not change by 4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion:</jats:title> <jats:p>These findings suggest that 4- and 6-h TRF have no effect on sleep quality, duration, insomnia severity, or the risk of obstructive sleep apnea.</jats:p> </jats:sec>",
+      "context_window": "4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.</jats:p> </jats:sec> <jats:",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1177_02601060211002347_the_effect_of_4_h_versus_6_h_time_restricted_feeding_on_slee-pct-1620",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1620,
+      "sentence": "Percent of participants reporting obstructive sleep apnea symptoms did not change by 4-h TRF (baseline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion:</jats:title> <jats:p>These findings suggest that 4- and 6-h TRF have no effect on sleep quality, duration, insomnia severity, or the risk of obstructive sleep apnea.</jats:p> </jats:sec>",
+      "context_window": "eline: 44%; week 8: 25%) or 6-h TRF (baseline: 47%; week 8: 20%), versus controls.</jats:p> </jats:sec> <jats:sec> <jats:ti",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    }
+  ]
+}

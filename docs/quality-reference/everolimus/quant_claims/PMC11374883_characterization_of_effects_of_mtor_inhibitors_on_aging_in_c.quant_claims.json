@@ -1,0 +1,1129 @@
+{
+  "paper_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c",
+  "doi": "10.1093/gerona/glae196",
+  "extracted_at": "2026-05-08T19:55:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 28,
+    "unit_value": 8,
+    "p_value": 26
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-600",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 600,
+      "sentence": "Liposome-mediated rapamycin treatment throughout adulthood showed a dose-dependent effect, causing a maximal 21.9% increase in mean lifespan, but shortening of lifespan at the highest dose, suggesting drug toxicity.",
+      "context_window": "adulthood showed a dose-dependent effect, causing a maximal 21.9% increase in mean lifespan, but shortening of lifespan at th",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-913",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 913,
+      "sentence": "By contrast, treatment initiated later in life robustly increased lifespan, even from Day 16 (or ~70 years in human terms).",
+      "context_window": "in life robustly increased lifespan, even from Day 16 (or ~70 years in human terms). The rapalog temsirolimus extended lifespan",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-338",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 338,
+      "sentence": "Rapamycin was administered in liposomes (100 \u03bcM), delivered on the surface of the E. coli lawn, and given repeatedly during adulthood from L4 onwards, every 2 days until Day 8 of adulthood, and every 4 days thereafter ( 15 ).",
+      "context_window": "nd given repeatedly during adulthood from L4 onwards, every 2 days until Day 8 of adulthood, and every 4 days thereafter ( 15",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 381,
+      "sentence": "Rapamycin was administered in liposomes (100 \u03bcM), delivered on the surface of the E. coli lawn, and given repeatedly during adulthood from L4 onwards, every 2 days until Day 8 of adulthood, and every 4 days thereafter ( 15 ).",
+      "context_window": "4 onwards, every 2 days until Day 8 of adulthood, and every 4 days thereafter ( 15 ). Given that rapamycin has limited solubil",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-790",
+      "claim_type": "percentage",
+      "raw_text": "11.4%",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 790,
+      "sentence": "We previously observed that the 1\u00d7 rapamycin dose increased mean lifespan more robustly (+11.4%) in the presence of an antibiotic (carbenicillin) ( 15 ); the antibiotic test was performed to exclude the possibility that rapamycin extends lifespan by reducing life-shortening infection by the E. coli food source.",
+      "context_window": "e 1\u00d7 rapamycin dose increased mean lifespan more robustly (+11.4%) in the presence of an antibiotic (carbenicillin) ( 15 ); t",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-1410",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1410,
+      "sentence": "In the absence of carbenicillin, only 2\u00d7 rapamycin significantly increased mean lifespan (+ 16.1%, p < .0001, log rank test; summed data from 3 trials, here and elsewhere unless otherwise stated).",
+      "context_window": "only 2\u00d7 rapamycin significantly increased mean lifespan (+ 16.1%, p < .0001, log rank test; summed data from 3 trials, here",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-1417",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1417,
+      "sentence": "In the absence of carbenicillin, only 2\u00d7 rapamycin significantly increased mean lifespan (+ 16.1%, p < .0001, log rank test; summed data from 3 trials, here and elsewhere unless otherwise stated).",
+      "context_window": "\u00d7 rapamycin significantly increased mean lifespan (+ 16.1%, p < .0001, log rank test; summed data from 3 trials, here and elsewhe",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-1623",
+      "claim_type": "p_value",
+      "raw_text": "p = .069",
+      "numeric_values": [
+        0.069
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1623,
+      "sentence": "In the presence of carbenicillin, 1\u00d7 rapamycin significantly increased lifespan in 2/3 trials (summed data: p = .069, log rank), 2\u00d7 rapamycin significantly increased lifespan (+ 10.4, p < .0001, log rank) ( Supplementary Table 2 ).",
+      "context_window": "ignificantly increased lifespan in 2/3 trials (summed data: p = .069, log rank), 2\u00d7 rapamycin significantly increased lifespan (",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-1699",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1699,
+      "sentence": "In the presence of carbenicillin, 1\u00d7 rapamycin significantly increased lifespan in 2/3 trials (summed data: p = .069, log rank), 2\u00d7 rapamycin significantly increased lifespan (+ 10.4, p < .0001, log rank) ( Supplementary Table 2 ).",
+      "context_window": "nk), 2\u00d7 rapamycin significantly increased lifespan (+ 10.4, p < .0001, log rank) ( Supplementary Table 2 ). Notably, the magnitud",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-2037",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2037,
+      "sentence": "In fact, the largest effect seen was in a trial with the 2\u00d7 dose without carbenicillin (+21.9%, p = .0021, log rank) ( Supplementary Table 1 ).",
+      "context_window": "een was in a trial with the 2\u00d7 dose without carbenicillin (+21.9%, p = .0021, log rank) ( Supplementary Table 1 ). By contras",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-2044",
+      "claim_type": "p_value",
+      "raw_text": "p = .0021",
+      "numeric_values": [
+        0.0021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2044,
+      "sentence": "In fact, the largest effect seen was in a trial with the 2\u00d7 dose without carbenicillin (+21.9%, p = .0021, log rank) ( Supplementary Table 1 ).",
+      "context_window": "in a trial with the 2\u00d7 dose without carbenicillin (+21.9%, p = .0021, log rank) ( Supplementary Table 1 ). By contrast, 10\u00d7 rapa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-2140",
+      "claim_type": "percentage",
+      "raw_text": "12.1%",
+      "numeric_values": [
+        12.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2140,
+      "sentence": "By contrast, 10\u00d7 rapamycin shortened lifespan (-12.1%, p < .0001, log rank, Figure 1A ) in the presence but not the absence of carbenicillin, suggesting a protective effect of proliferative E. coli against rapamycin toxicity.",
+      "context_window": "Table 1 ). By contrast, 10\u00d7 rapamycin shortened lifespan (-12.1%, p < .0001, log rank, Figure 1A ) in the presence but not t",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-2147",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2147,
+      "sentence": "By contrast, 10\u00d7 rapamycin shortened lifespan (-12.1%, p < .0001, log rank, Figure 1A ) in the presence but not the absence of carbenicillin, suggesting a protective effect of proliferative E. coli against rapamycin toxicity.",
+      "context_window": "1 ). By contrast, 10\u00d7 rapamycin shortened lifespan (-12.1%, p < .0001, log rank, Figure 1A ) in the presence but not the absence",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-3015",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3015,
+      "sentence": "Controls: empty liposomes (no drug). ( B ) Rapamycin reduces P death frequency (mortality with severe pharyngeal infection). ( C ) Rapamycin treatment during development retards growth. ( D ) Rapamycin treatment during development reduces progeny number. ( E ) Development-limited exposure to rapamycin (2\u00d7 dose) can modestly increase lifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C), (D) Tukey test. (E) Comparisons are to control ( Supplementary Table 2 ).",
+      "context_window": ") can modestly increase lifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log ra",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-3027",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3027,
+      "sentence": "Controls: empty liposomes (no drug). ( B ) Rapamycin reduces P death frequency (mortality with severe pharyngeal infection). ( C ) Rapamycin treatment during development retards growth. ( D ) Rapamycin treatment during development reduces progeny number. ( E ) Development-limited exposure to rapamycin (2\u00d7 dose) can modestly increase lifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C), (D) Tukey test. (E) Comparisons are to control ( Supplementary Table 2 ).",
+      "context_window": "ly increase lifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C)",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-3040",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3040,
+      "sentence": "Controls: empty liposomes (no drug). ( B ) Rapamycin reduces P death frequency (mortality with severe pharyngeal infection). ( C ) Rapamycin treatment during development retards growth. ( D ) Rapamycin treatment during development reduces progeny number. ( E ) Development-limited exposure to rapamycin (2\u00d7 dose) can modestly increase lifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C), (D) Tukey test. (E) Comparisons are to control ( Supplementary Table 2 ).",
+      "context_window": "ifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C), (D) Tukey te",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-3055",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3055,
+      "sentence": "Controls: empty liposomes (no drug). ( B ) Rapamycin reduces P death frequency (mortality with severe pharyngeal infection). ( C ) Rapamycin treatment during development retards growth. ( D ) Rapamycin treatment during development reduces progeny number. ( E ) Development-limited exposure to rapamycin (2\u00d7 dose) can modestly increase lifespan (carbenicillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C), (D) Tukey test. (E) Comparisons are to control ( Supplementary Table 2 ).",
+      "context_window": "icillin present). * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (E), log rank test; (C), (D) Tukey test. (E) Comparis",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-3464",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3464,
+      "sentence": "In aging wild-type C. elegans populations, around 40% die with a swollen pharynx heavily infected with E. coli , so-called P (\u201cbig P\u201d) deaths ( 29 ).",
+      "context_window": "old age. In aging wild-type C. elegans populations, around 40% die with a swollen pharynx heavily infected with E. coli ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-4947",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4947,
+      "sentence": "The lack of life-extension with the 4\u00d7 and 10\u00d7 treatments could reflect either rapamycin toxicity, or toxicity of the DMSO solvent which was present in liposomes at 0.5%.",
+      "context_window": "icity of the DMSO solvent which was present in liposomes at 0.5%. To assess whether DMSO might suppress life-extending effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-5151",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5151,
+      "sentence": "To assess whether DMSO might suppress life-extending effects of rapamycin at higher doses, nematodes were exposed to liposomes prepared as in the 10\u00d7 rapamycin treatment, but containing either only 0.5% DMSO or water.",
+      "context_window": "in the 10\u00d7 rapamycin treatment, but containing either only 0.5% DMSO or water. DMSO did not significantly affect lifespan (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-5216",
+      "claim_type": "percentage",
+      "raw_text": "5.0%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5216,
+      "sentence": "DMSO did not significantly affect lifespan (-5.0%, p = .44, log rank; carbenicillin present) ( Supplementary Figure 1D ).",
+      "context_window": "DMSO or water. DMSO did not significantly affect lifespan (-5.0%, p = .44, log rank; carbenicillin present) ( Supplementary",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-5222",
+      "claim_type": "p_value",
+      "raw_text": "p = .44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5222,
+      "sentence": "DMSO did not significantly affect lifespan (-5.0%, p = .44, log rank; carbenicillin present) ( Supplementary Figure 1D ).",
+      "context_window": "r water. DMSO did not significantly affect lifespan (-5.0%, p = .44, log rank; carbenicillin present) ( Supplementary Figure 1D",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-6224",
+      "claim_type": "percentage",
+      "raw_text": "38.6%",
+      "numeric_values": [
+        38.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6224,
+      "sentence": "This resulted in inhibition of growth, evident as reduced worm volume at 120 hours of age, of 38.6% and 46.5%, respectively ( Figure 1C ; Supplementary Figure 2A ).",
+      "context_window": "wth, evident as reduced worm volume at 120 hours of age, of 38.6% and 46.5%, respectively ( Figure 1C ; Supplementary Figure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-6234",
+      "claim_type": "percentage",
+      "raw_text": "46.5%",
+      "numeric_values": [
+        46.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6234,
+      "sentence": "This resulted in inhibition of growth, evident as reduced worm volume at 120 hours of age, of 38.6% and 46.5%, respectively ( Figure 1C ; Supplementary Figure 2A ).",
+      "context_window": "nt as reduced worm volume at 120 hours of age, of 38.6% and 46.5%, respectively ( Figure 1C ; Supplementary Figure 2A ). Inhi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-6652",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6652,
+      "sentence": "In C. elegans , rapamycin treatment during development (L1-L4) reduced brood size, the 2\u00d7 dose by 13.4% and the 10\u00d7 dose by 26.7%, and the 10\u00d7 dose caused an earlier peak in daily fecundity ( Figure 1D , Supplementary Figure 2B ); exposing adults to rapamycin was previously observed not to reduce brood size ( 2 ).",
+      "context_window": "ring development (L1-L4) reduced brood size, the 2\u00d7 dose by 13.4% and the 10\u00d7 dose by 26.7%, and the 10\u00d7 dose caused an earli",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-6678",
+      "claim_type": "percentage",
+      "raw_text": "26.7%",
+      "numeric_values": [
+        26.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6678,
+      "sentence": "In C. elegans , rapamycin treatment during development (L1-L4) reduced brood size, the 2\u00d7 dose by 13.4% and the 10\u00d7 dose by 26.7%, and the 10\u00d7 dose caused an earlier peak in daily fecundity ( Figure 1D , Supplementary Figure 2B ); exposing adults to rapamycin was previously observed not to reduce brood size ( 2 ).",
+      "context_window": "educed brood size, the 2\u00d7 dose by 13.4% and the 10\u00d7 dose by 26.7%, and the 10\u00d7 dose caused an earlier peak in daily fecundity",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-7302",
+      "claim_type": "percentage",
+      "raw_text": "12.9%",
+      "numeric_values": [
+        12.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7302,
+      "sentence": "Similarly, 2\u00d7 and 10\u00d7 rapamycin treatment restricted to development caused a modest but statistically significant reduction in number of unfertilized oocytes laid, from 57.7 per worm to 50.2 and 42.0 per worm, that is, by 12.9% and 27.1%, respectively ( Supplementary Figure 2C ).",
+      "context_window": ", from 57.7 per worm to 50.2 and 42.0 per worm, that is, by 12.9% and 27.1%, respectively ( Supplementary Figure 2C ). Taken",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-7312",
+      "claim_type": "percentage",
+      "raw_text": "27.1%",
+      "numeric_values": [
+        27.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7312,
+      "sentence": "Similarly, 2\u00d7 and 10\u00d7 rapamycin treatment restricted to development caused a modest but statistically significant reduction in number of unfertilized oocytes laid, from 57.7 per worm to 50.2 and 42.0 per worm, that is, by 12.9% and 27.1%, respectively ( Supplementary Figure 2C ).",
+      "context_window": "7 per worm to 50.2 and 42.0 per worm, that is, by 12.9% and 27.1%, respectively ( Supplementary Figure 2C ). Taken together,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-7657",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7657,
+      "sentence": "In three trials, 2\u00d7 rapamycin caused modest, apparent increases in mean lifespan (+2.0%-7.2%) which did not reach statistical significance.",
+      "context_window": "amycin caused modest, apparent increases in mean lifespan (+2.0%-7.2%) which did not reach statistical significance. However",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-7662",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7662,
+      "sentence": "In three trials, 2\u00d7 rapamycin caused modest, apparent increases in mean lifespan (+2.0%-7.2%) which did not reach statistical significance.",
+      "context_window": "n caused modest, apparent increases in mean lifespan (+2.0%-7.2%) which did not reach statistical significance. However, sum",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-7774",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7774,
+      "sentence": "However, summed data from the 3 trials showed a significant 4.6% increase in lifespan ( p = .027, log rank).",
+      "context_window": "However, summed data from the 3 trials showed a significant 4.6% increase in lifespan ( p = .027, log rank). The 10\u00d7 rapamyc",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-7802",
+      "claim_type": "p_value",
+      "raw_text": "p = .027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7802,
+      "sentence": "However, summed data from the 3 trials showed a significant 4.6% increase in lifespan ( p = .027, log rank).",
+      "context_window": "e 3 trials showed a significant 4.6% increase in lifespan ( p = .027, log rank). The 10\u00d7 rapamycin treatment did not increase li",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-9299",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9299,
+      "sentence": "Thus, liposome-mediated compound delivery remains effective until at least day 12 of adulthood, that is, up to ~60% of mean lifespan (equivalent to ~50 years in humans, given a mean C. elegans lifespan of 18 days, and a typical developed world human life expectancy of ~82 years).",
+      "context_window": "fective until at least day 12 of adulthood, that is, up to ~60% of mean lifespan (equivalent to ~50 years in humans, given",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-9336",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 9336,
+      "sentence": "Thus, liposome-mediated compound delivery remains effective until at least day 12 of adulthood, that is, up to ~60% of mean lifespan (equivalent to ~50 years in humans, given a mean C. elegans lifespan of 18 days, and a typical developed world human life expectancy of ~82 years).",
+      "context_window": "thood, that is, up to ~60% of mean lifespan (equivalent to ~50 years in humans, given a mean C. elegans lifespan of 18 days, and",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-9392",
+      "claim_type": "unit_value",
+      "raw_text": "18 days",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9392,
+      "sentence": "Thus, liposome-mediated compound delivery remains effective until at least day 12 of adulthood, that is, up to ~60% of mean lifespan (equivalent to ~50 years in humans, given a mean C. elegans lifespan of 18 days, and a typical developed world human life expectancy of ~82 years).",
+      "context_window": "to ~50 years in humans, given a mean C. elegans lifespan of 18 days, and a typical developed world human life expectancy of ~82",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-9457",
+      "claim_type": "unit_value",
+      "raw_text": "82 years",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 9457,
+      "sentence": "Thus, liposome-mediated compound delivery remains effective until at least day 12 of adulthood, that is, up to ~60% of mean lifespan (equivalent to ~50 years in humans, given a mean C. elegans lifespan of 18 days, and a typical developed world human life expectancy of ~82 years).",
+      "context_window": "ys, and a typical developed world human life expectancy of ~82 years). Effects of administration of 2\u00d7 rapamycin at later ages.",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-9794",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9794,
+      "sentence": "Left, no carbenicillin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log rank test, compared to DMSO control.",
+      "context_window": "ages. Left, no carbenicillin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-9806",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9806,
+      "sentence": "Left, no carbenicillin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log rank test, compared to DMSO control.",
+      "context_window": "no carbenicillin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-9819",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9819,
+      "sentence": "Left, no carbenicillin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log rank test, compared to DMSO control.",
+      "context_window": "lin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log rank test, compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-9834",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9834,
+      "sentence": "Left, no carbenicillin; right, carbenicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log rank test, compared to DMSO control.",
+      "context_window": "benicillin added. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), \u0160id\u00e1k test, (B), log rank test, compared to DMSO cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-10404",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10404,
+      "sentence": "In the absence of carbenicillin, 2\u00d7 rapamycin increased lifespan only when administered from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B , left; Supplementary Table 3 ).",
+      "context_window": "only when administered from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively (",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-10410",
+      "claim_type": "p_value",
+      "raw_text": "p = .0039",
+      "numeric_values": [
+        0.0039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10410,
+      "sentence": "In the absence of carbenicillin, 2\u00d7 rapamycin increased lifespan only when administered from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B , left; Supplementary Table 3 ).",
+      "context_window": "hen administered from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B ,",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-10426",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10426,
+      "sentence": "In the absence of carbenicillin, 2\u00d7 rapamycin increased lifespan only when administered from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B , left; Supplementary Table 3 ).",
+      "context_window": "from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B , left; Supp",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-10432",
+      "claim_type": "p_value",
+      "raw_text": "p = .018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10432,
+      "sentence": "In the absence of carbenicillin, 2\u00d7 rapamycin increased lifespan only when administered from Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B , left; Supplementary Table 3 ).",
+      "context_window": "Days 8 and 16 of adulthood, by +8.5%, p = .0039 and + 4.5%, p = .018 (log rank), respectively ( Figure 2B , left; Supplementary",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-10836",
+      "claim_type": "percentage",
+      "raw_text": "15.1%",
+      "numeric_values": [
+        15.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10836,
+      "sentence": "In the presence of carbenicillin, rapamycin increased lifespan in all cases, with the largest effect seen given administration from Day 8 onwards (+15.1%, p < .001, log rank), and only in this case was a statistically significant increase in lifespan seen in all 3 trials ( Figure 2B , right; Supplementary Table 4 ).",
+      "context_window": "rgest effect seen given administration from Day 8 onwards (+15.1%, p < .001, log rank), and only in this case was a statistic",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-10843",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10843,
+      "sentence": "In the presence of carbenicillin, rapamycin increased lifespan in all cases, with the largest effect seen given administration from Day 8 onwards (+15.1%, p < .001, log rank), and only in this case was a statistically significant increase in lifespan seen in all 3 trials ( Figure 2B , right; Supplementary Table 4 ).",
+      "context_window": "ffect seen given administration from Day 8 onwards (+15.1%, p < .001, log rank), and only in this case was a statistically signi",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-11257",
+      "claim_type": "percentage",
+      "raw_text": "17.0%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11257,
+      "sentence": "Mean lifespan from Day 16 was increased by rapamycin administration by +17.0% p < .0001, log rank ( Supplementary Table 4 ).",
+      "context_window": "n from Day 16 was increased by rapamycin administration by +17.0% p < .0001, log rank ( Supplementary Table 4 ). Taken toget",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-11263",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11263,
+      "sentence": "Mean lifespan from Day 16 was increased by rapamycin administration by +17.0% p < .0001, log rank ( Supplementary Table 4 ).",
+      "context_window": "Day 16 was increased by rapamycin administration by +17.0% p < .0001, log rank ( Supplementary Table 4 ). Taken together, these",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-11855",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11855,
+      "sentence": "Although we have achieved this, the magnitude of effects on mean lifespan (maximally +21.9%) is still relatively modest.",
+      "context_window": "this, the magnitude of effects on mean lifespan (maximally +21.9%) is still relatively modest. One possibility is that rapamy",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-12860",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12860,
+      "sentence": "The specified measurement times are approximations. (B) Temsirolimus extends C. elegans lifespan; carbenicillin present. ( C ) Effects of rapamycin on age-related pathology (segmental antigeroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log rank test.",
+      "context_window": "athology (segmental antigeroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k t",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-12872",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12872,
+      "sentence": "The specified measurement times are approximations. (B) Temsirolimus extends C. elegans lifespan; carbenicillin present. ( C ) Effects of rapamycin on age-related pathology (segmental antigeroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log rank test.",
+      "context_window": "gmental antigeroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-12885",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12885,
+      "sentence": "The specified measurement times are approximations. (B) Temsirolimus extends C. elegans lifespan; carbenicillin present. ( C ) Effects of rapamycin on age-related pathology (segmental antigeroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log rank test.",
+      "context_window": "eroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log rank test. N",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-12900",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12900,
+      "sentence": "The specified measurement times are approximations. (B) Temsirolimus extends C. elegans lifespan; carbenicillin present. ( C ) Effects of rapamycin on age-related pathology (segmental antigeroid effect); no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log rank test.",
+      "context_window": "no carbenicillin. * p < .05, ** p < .01, *** p < .001, **** p < .0001. (A), (C) \u0160id\u00e1k test; (B) log rank test. Next, we compared",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-13331",
+      "claim_type": "percentage",
+      "raw_text": "15.0%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13331,
+      "sentence": "Rapamycin again significantly increased lifespan in 3/3 trials (+15.0%, p = .0002, log rank, summed data) ( Figure 3B , Supplementary Table 5 ).",
+      "context_window": "ycin again significantly increased lifespan in 3/3 trials (+15.0%, p = .0002, log rank, summed data) ( Figure 3B , Supplement",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-13338",
+      "claim_type": "p_value",
+      "raw_text": "p = .0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13338,
+      "sentence": "Rapamycin again significantly increased lifespan in 3/3 trials (+15.0%, p = .0002, log rank, summed data) ( Figure 3B , Supplementary Table 5 ).",
+      "context_window": "ain significantly increased lifespan in 3/3 trials (+15.0%, p = .0002, log rank, summed data) ( Figure 3B , Supplementary Table 5",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-13598",
+      "claim_type": "percentage",
+      "raw_text": "13.9%",
+      "numeric_values": [
+        13.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13598,
+      "sentence": "Temsirolimus caused increases in lifespan that reached statistical significance in 1/3 trials, but the summed data showed a significant effect similar in magnitude to that of rapamycin (+13.9%, p = .0005, log rank).",
+      "context_window": "nificant effect similar in magnitude to that of rapamycin (+13.9%, p = .0005, log rank). By contrast, despite a consistent tr",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-13605",
+      "claim_type": "p_value",
+      "raw_text": "p = .0005",
+      "numeric_values": [
+        0.0005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13605,
+      "sentence": "Temsirolimus caused increases in lifespan that reached statistical significance in 1/3 trials, but the summed data showed a significant effect similar in magnitude to that of rapamycin (+13.9%, p = .0005, log rank).",
+      "context_window": "t effect similar in magnitude to that of rapamycin (+13.9%, p = .0005, log rank). By contrast, despite a consistent trend toward",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-13733",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13733,
+      "sentence": "By contrast, despite a consistent trend toward increased lifespan, everolimus had no significant effect (+6.8%, p = .075, log rank, summed data) ( Figure 3B , Supplementary Table 5 ).",
+      "context_window": "increased lifespan, everolimus had no significant effect (+6.8%, p = .075, log rank, summed data) ( Figure 3B , Supplementa",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "everolimus",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-p-13739",
+      "claim_type": "p_value",
+      "raw_text": "p = .075",
+      "numeric_values": [
+        0.075
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13739,
+      "sentence": "By contrast, despite a consistent trend toward increased lifespan, everolimus had no significant effect (+6.8%, p = .075, log rank, summed data) ( Figure 3B , Supplementary Table 5 ).",
+      "context_window": "ased lifespan, everolimus had no significant effect (+6.8%, p = .075, log rank, summed data) ( Figure 3B , Supplementary Table 5",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "everolimus",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-pct-834",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 834,
+      "sentence": "The largest increase in mean lifespan that we were able to achieve was 21.9%, using the 2\u00d7 rapamycin dose ( Figure 1A ).",
+      "context_window": "increase in mean lifespan that we were able to achieve was 21.9%, using the 2\u00d7 rapamycin dose ( Figure 1A ). One implicatio",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-1169",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1169,
+      "sentence": "The LD50 for rapamycin in rats is so high (> 2 500 mg/kg) that it is not possible to determine ( 40 ).",
+      "context_window": "is very low. The LD50 for rapamycin in rats is so high (> 2 500 mg/kg) that it is not possible to determine ( 40 ). Low toxici",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11374883_characterization_of_effects_of_mtor_inhibitors_on_aging_in_c-u-1338",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1338,
+      "sentence": "Low toxicity in humans is suggested by the consequences of a suicide attempt in which an individual consumed 103 1 mg rapamycin tablets, with no apparent harmful effects ( 41 ).",
+      "context_window": "es of a suicide attempt in which an individual consumed 103 1 mg rapamycin tablets, with no apparent harmful effects ( 41 ).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

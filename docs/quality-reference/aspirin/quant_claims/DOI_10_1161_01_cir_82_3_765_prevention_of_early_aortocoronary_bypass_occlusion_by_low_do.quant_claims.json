@@ -1,0 +1,355 @@
+{
+  "paper_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do",
+  "doi": "10.1161/01.cir.82.3.765",
+  "extracted_at": "2026-05-08T20:06:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 9,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-u-228",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 228,
+      "sentence": "<jats:p>To analyze the efficacy of low-dose aspirin in preventing early aortocoronary vein graft occlusion, 1,112 consecutive patients were enrolled in a multicenter, randomized, double-blind, placebo-controlled trial comparing 50 mg t.i.d. aspirin, 50 mg aspirin plus 75 mg t.i.d. dipyridamole, and placebo.",
+      "context_window": "andomized, double-blind, placebo-controlled trial comparing 50 mg t.i.d. aspirin, 50 mg aspirin plus 75 mg t.i.d. dipyridamol",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-u-250",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 250,
+      "sentence": "<jats:p>To analyze the efficacy of low-dose aspirin in preventing early aortocoronary vein graft occlusion, 1,112 consecutive patients were enrolled in a multicenter, randomized, double-blind, placebo-controlled trial comparing 50 mg t.i.d. aspirin, 50 mg aspirin plus 75 mg t.i.d. dipyridamole, and placebo.",
+      "context_window": "d, placebo-controlled trial comparing 50 mg t.i.d. aspirin, 50 mg aspirin plus 75 mg t.i.d. dipyridamole, and placebo. All pa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-u-269",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 269,
+      "sentence": "<jats:p>To analyze the efficacy of low-dose aspirin in preventing early aortocoronary vein graft occlusion, 1,112 consecutive patients were enrolled in a multicenter, randomized, double-blind, placebo-controlled trial comparing 50 mg t.i.d. aspirin, 50 mg aspirin plus 75 mg t.i.d. dipyridamole, and placebo.",
+      "context_window": "ed trial comparing 50 mg t.i.d. aspirin, 50 mg aspirin plus 75 mg t.i.d. dipyridamole, and placebo. All patients received 100",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-u-331",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 331,
+      "sentence": "All patients received 100 mg q.i.d. dipyridamole for 48 hours before surgery, and assigned treatment was started 7 hours after surgery.",
+      "context_window": "mg t.i.d. dipyridamole, and placebo. All patients received 100 mg q.i.d. dipyridamole for 48 hours before surgery, and assign",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-499",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 499,
+      "sentence": "Vein graft angiography was performed in 927 patients (83%) within 28 days of surgery (mean, 10 days).",
+      "context_window": "gery. Vein graft angiography was performed in 927 patients (83%) within 28 days of surgery (mean, 10 days). Aspirin plus di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-u-511",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 511,
+      "sentence": "Vein graft angiography was performed in 927 patients (83%) within 28 days of surgery (mean, 10 days).",
+      "context_window": "raft angiography was performed in 927 patients (83%) within 28 days of surgery (mean, 10 days). Aspirin plus dipyridamole signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-u-537",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 537,
+      "sentence": "Vein graft angiography was performed in 927 patients (83%) within 28 days of surgery (mean, 10 days).",
+      "context_window": "rmed in 927 patients (83%) within 28 days of surgery (mean, 10 days). Aspirin plus dipyridamole significantly (p = 0.017) reduc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-p-588",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 588,
+      "sentence": "Aspirin plus dipyridamole significantly (p = 0.017) reduced the occlusion rate of distal anastomoses from 18% (placebo) to 12.9%.",
+      "context_window": "y (mean, 10 days). Aspirin plus dipyridamole significantly (p = 0.017) reduced the occlusion rate of distal anastomoses from 18%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-653",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 653,
+      "sentence": "Aspirin plus dipyridamole significantly (p = 0.017) reduced the occlusion rate of distal anastomoses from 18% (placebo) to 12.9%.",
+      "context_window": ".017) reduced the occlusion rate of distal anastomoses from 18% (placebo) to 12.9%. Occlusion rate in the aspirin group was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-670",
+      "claim_type": "percentage",
+      "raw_text": "12.9%",
+      "numeric_values": [
+        12.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 670,
+      "sentence": "Aspirin plus dipyridamole significantly (p = 0.017) reduced the occlusion rate of distal anastomoses from 18% (placebo) to 12.9%.",
+      "context_window": "occlusion rate of distal anastomoses from 18% (placebo) to 12.9%. Occlusion rate in the aspirin group was 14%, which approac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-717",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 717,
+      "sentence": "Occlusion rate in the aspirin group was 14%, which approached statistical significance (p = 0.058).",
+      "context_window": "(placebo) to 12.9%. Occlusion rate in the aspirin group was 14%, which approached statistical significance (p = 0.058). Fur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-p-765",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 765,
+      "sentence": "Occlusion rate in the aspirin group was 14%, which approached statistical significance (p = 0.058).",
+      "context_window": "n group was 14%, which approached statistical significance (p = 0.058). Furthermore, only aspirin plus dipyridamole reduced (p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-p-830",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "Furthermore, only aspirin plus dipyridamole reduced (p = 0.01) the number of patients with occluded grafts (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%).",
+      "context_window": ".058). Furthermore, only aspirin plus dipyridamole reduced (p = 0.01) the number of patients with occluded grafts (placebo, 33%;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-894",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 894,
+      "sentence": "Furthermore, only aspirin plus dipyridamole reduced (p = 0.01) the number of patients with occluded grafts (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%).",
+      "context_window": "0.01) the number of patients with occluded grafts (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%). Mediast",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-908",
+      "claim_type": "percentage",
+      "raw_text": "27.1%",
+      "numeric_values": [
+        27.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 908,
+      "sentence": "Furthermore, only aspirin plus dipyridamole reduced (p = 0.01) the number of patients with occluded grafts (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%).",
+      "context_window": "er of patients with occluded grafts (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%). Mediastinal drainage wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-942",
+      "claim_type": "percentage",
+      "raw_text": "24.3%",
+      "numeric_values": [
+        24.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 942,
+      "sentence": "Furthermore, only aspirin plus dipyridamole reduced (p = 0.01) the number of patients with occluded grafts (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%).",
+      "context_window": "s (placebo, 33%; aspirin, 27.1%; aspirin plus dipyridamole, 24.3%). Mediastinal drainage was slightly higher (p = 0.04) in th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-p-992",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "Mediastinal drainage was slightly higher (p = 0.04) in the aspirin plus dipyridamole group (713 +/- 456 ml) than in the other two groups (placebo, 670 +/- 437 ml; aspirin, 629 +/- 337 ml), but hospital mortality (average, 4.6%) and early reoperation (average, 3.9%) rates were similar among the three groups.",
+      "context_window": "ridamole, 24.3%). Mediastinal drainage was slightly higher (p = 0.04) in the aspirin plus dipyridamole group (713 +/- 456 ml) th",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-1172",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1172,
+      "sentence": "Mediastinal drainage was slightly higher (p = 0.04) in the aspirin plus dipyridamole group (713 +/- 456 ml) than in the other two groups (placebo, 670 +/- 437 ml; aspirin, 629 +/- 337 ml), but hospital mortality (average, 4.6%) and early reoperation (average, 3.9%) rates were similar among the three groups.",
+      "context_window": "aspirin, 629 +/- 337 ml), but hospital mortality (average, 4.6%) and early reoperation (average, 3.9%) rates were similar a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_82_3_765_prevention_of_early_aortocoronary_bypass_occlusion_by_low_do-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1210,
+      "sentence": "Mediastinal drainage was slightly higher (p = 0.04) in the aspirin plus dipyridamole group (713 +/- 456 ml) than in the other two groups (placebo, 670 +/- 437 ml; aspirin, 629 +/- 337 ml), but hospital mortality (average, 4.6%) and early reoperation (average, 3.9%) rates were similar among the three groups.",
+      "context_window": "l mortality (average, 4.6%) and early reoperation (average, 3.9%) rates were similar among the three groups. Thus, low-dose",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

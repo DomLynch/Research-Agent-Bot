@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0503_0503_respiratory_effort_during_sleep_and_prevalent_diabetes",
+  "doi": "10.1093/sleep/zsad077.0503",
+  "extracted_at": "2026-05-08T20:06:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0503_0503_respiratory_effort_during_sleep_and_prevalent_diabetes-n-1105",
+      "claim_type": "sample_size",
+      "raw_text": "n=853",
+      "numeric_values": [
+        853.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1105,
+      "sentence": "The analysis included 1128 subjects, randomly assigned to training (n=853) and validation (n=275) subsets with equal T2Dia prevalence of 11%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The risk stratification model based on 19 input features including increased RE showed good performance for predicting prevalent T2Dia (sensitivity=0.81, specificity=0.89).",
+      "context_window": "ysis included 1128 subjects, randomly assigned to training (n=853) and validation (n=275) subsets with equal T2Dia prevalence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0503_0503_respiratory_effort_during_sleep_and_prevalent_diabetes-n-1128",
+      "claim_type": "sample_size",
+      "raw_text": "n=275",
+      "numeric_values": [
+        275.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1128,
+      "sentence": "The analysis included 1128 subjects, randomly assigned to training (n=853) and validation (n=275) subsets with equal T2Dia prevalence of 11%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The risk stratification model based on 19 input features including increased RE showed good performance for predicting prevalent T2Dia (sensitivity=0.81, specificity=0.89).",
+      "context_window": "ects, randomly assigned to training (n=853) and validation (n=275) subsets with equal T2Dia prevalence of 11%.</jats:p> </jat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0503_0503_respiratory_effort_during_sleep_and_prevalent_diabetes-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1174,
+      "sentence": "The analysis included 1128 subjects, randomly assigned to training (n=853) and validation (n=275) subsets with equal T2Dia prevalence of 11%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The risk stratification model based on 19 input features including increased RE showed good performance for predicting prevalent T2Dia (sensitivity=0.81, specificity=0.89).",
+      "context_window": "d validation (n=275) subsets with equal T2Dia prevalence of 11%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

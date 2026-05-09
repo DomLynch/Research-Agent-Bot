@@ -1,0 +1,679 @@
+{
+  "paper_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease",
+  "doi": "10.1186/s12964-021-00731-0",
+  "extracted_at": "2026-05-08T20:01:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 20,
+    "percentage": 13,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1058",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1058,
+      "sentence": "Here, we utilized an established model of age- and obesity-associated HCC, the low dose diethylnitrosamine (DEN)/high fat diet (HFD), a regimen promoting liver inflammation and tumorigenesis over a long period of 9 months.",
+      "context_window": "liver inflammation and tumorigenesis over a long period of 9 months. Four groups of mice each were created: group 1 included co",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-354",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 354,
+      "sentence": "Non-alcoholic fatty liver disease (NAFLD) is the most common chronic liver disorder, and it affects > 25% of the general population [ 4 ].",
+      "context_window": "is the most common chronic liver disorder, and it affects > 25% of the general population [ 4 ]. NAFLD is the main risk fac",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1891",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1891,
+      "sentence": "It was shown that cellular senescence drives NAFLD and the mix Dasatinib (5 mg/kg) + Quercetin (50 mg/kg) dependent elimination of p16 overexpressing senescent cells may be a novel therapeutic strategy to reduce NAFLD and obesity-induced anxiety in mice models.",
+      "context_window": "hat cellular senescence drives NAFLD and the mix Dasatinib (5 mg/kg) + Quercetin (50 mg/kg) dependent elimination of p16 ove",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1913",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1913,
+      "sentence": "It was shown that cellular senescence drives NAFLD and the mix Dasatinib (5 mg/kg) + Quercetin (50 mg/kg) dependent elimination of p16 overexpressing senescent cells may be a novel therapeutic strategy to reduce NAFLD and obesity-induced anxiety in mice models.",
+      "context_window": "e drives NAFLD and the mix Dasatinib (5 mg/kg) + Quercetin (50 mg/kg) dependent elimination of p16 overexpressing senescent c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-482",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 482,
+      "sentence": "Male C57/BL6J mice were obtained from AnLab (Czech Republic) at the age of 5 weeks and were maintained in a pathogen-free facility under temperature- and light- controlled conditions (22 + 2 \u00b0C, 12 h light/dark regimen) with free access to food and water.",
+      "context_window": "ice were obtained from AnLab (Czech Republic) at the age of 5 weeks and were maintained in a pathogen-free facility under tempe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-772",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 772,
+      "sentence": "The animals were fed by control diet (CD.88137; ssniff Spezialdi\u00e4ten GmbH) or by experimental high-fat diet (60% of kj has the fat origin; D12492; ssniff Spezialdi\u00e4ten GmbH).",
+      "context_window": "sniff Spezialdi\u00e4ten GmbH) or by experimental high-fat diet (60% of kj has the fat origin; D12492; ssniff Spezialdi\u00e4ten GmbH",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1354",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1354,
+      "sentence": "Mice from group 3 and 4 (model of steatosis and steatohepatitis) obtained single i.p. injection of diethylnitrosamine (DEN; 25 mg/kg; Sigma Aldrich) at the age of 7 weeks.",
+      "context_window": "obtained single i.p. injection of diethylnitrosamine (DEN; 25 mg/kg; Sigma Aldrich) at the age of 7 weeks. The intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1393",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1393,
+      "sentence": "Mice from group 3 and 4 (model of steatosis and steatohepatitis) obtained single i.p. injection of diethylnitrosamine (DEN; 25 mg/kg; Sigma Aldrich) at the age of 7 weeks.",
+      "context_window": "hylnitrosamine (DEN; 25 mg/kg; Sigma Aldrich) at the age of 7 weeks. The intervention of senolytics or placebo started at the 6",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1459",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1459,
+      "sentence": "The intervention of senolytics or placebo started at the 6 months of age and it was performed once per month over a 5-month period.",
+      "context_window": "s. The intervention of senolytics or placebo started at the 6 months of age and it was performed once per month over a 5-month p",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1561",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1561,
+      "sentence": "The solution of dasatinib (5 mg/kg; Sigma Aldrich) and quercetin (50 mg/kg; Sigma Aldrich) or the placebo was administrated by oral gavage in 100-150\u03bcL.",
+      "context_window": "per month over a 5-month period. The solution of dasatinib (5 mg/kg; Sigma Aldrich) and quercetin (50 mg/kg; Sigma Aldrich)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1600",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1600,
+      "sentence": "The solution of dasatinib (5 mg/kg; Sigma Aldrich) and quercetin (50 mg/kg; Sigma Aldrich) or the placebo was administrated by oral gavage in 100-150\u03bcL.",
+      "context_window": "lution of dasatinib (5 mg/kg; Sigma Aldrich) and quercetin (50 mg/kg; Sigma Aldrich) or the placebo was administrated by oral",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-2330",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2330,
+      "sentence": "Samples of livers were harvested from euthanized mice, fixed with 4% paraformaldehyde, processed for the embedding in tissue freezing medium (Leica) or paraffin wax (Surgipath Paraplast Plus, Leica) and sectioned for histopathological analysis.",
+      "context_window": "s of livers were harvested from euthanized mice, fixed with 4% paraformaldehyde, processed for the embedding in tissue fre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-2933",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2933,
+      "sentence": "Briefly, double-blinded analysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 foci per 200 \u00d7 field, 2: 2 to 4 foci per 200 \u00d7 field, and 3: > 4 foci per 200 \u00d7 field), hepatocyte ballooning (0: none; 1: rare or few; 2: many).",
+      "context_window": "inded analysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular infl",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-2943",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2943,
+      "sentence": "Briefly, double-blinded analysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 foci per 200 \u00d7 field, 2: 2 to 4 foci per 200 \u00d7 field, and 3: > 4 foci per 200 \u00d7 field), hepatocyte ballooning (0: none; 1: rare or few; 2: many).",
+      "context_window": "ysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-2958",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2958,
+      "sentence": "Briefly, double-blinded analysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 foci per 200 \u00d7 field, 2: 2 to 4 foci per 200 \u00d7 field, and 3: > 4 foci per 200 \u00d7 field), hepatocyte ballooning (0: none; 1: rare or few; 2: many).",
+      "context_window": "the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 <",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-2962",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2962,
+      "sentence": "Briefly, double-blinded analysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 foci per 200 \u00d7 field, 2: 2 to 4 foci per 200 \u00d7 field, and 3: > 4 foci per 200 \u00d7 field), hepatocyte ballooning (0: none; 1: rare or few; 2: many).",
+      "context_window": "score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 fo",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-2977",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2977,
+      "sentence": "Briefly, double-blinded analysis identified the score of steatosis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 foci per 200 \u00d7 field, 2: 2 to 4 foci per 200 \u00d7 field, and 3: > 4 foci per 200 \u00d7 field), hepatocyte ballooning (0: none; 1: rare or few; 2: many).",
+      "context_window": "osis (grade 0 \u2264 5%; 1 = 5-33%; grade 2 = 34%-66%; grade 3 \u2265 66%), lobular inflammation (0: no foci, 1 < 2 foci per 200 \u00d7 fi",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-3494",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3494,
+      "sentence": "Briefly, tissues frozen sections were fixed in 1% formalin in PBS for 1 min at RT, washed three times in PBS and incubated overnight on X-gal staining solution [1 mg/mL of X-gal (VWR), 40 mM citric acid/sodium phosphate buffer, 5 mM potassium ferricyanide (Sigma), 5 mM potassium ferrocyanide (Sigma), 150 mM NaCl, and 2 mM MgCl2] at 37 \u00b0C in a humidified chamber.",
+      "context_window": "ibed [ 14 ]. Briefly, tissues frozen sections were fixed in 1% formalin in PBS for 1 min at RT, washed three times in PBS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-3608",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3608,
+      "sentence": "Briefly, tissues frozen sections were fixed in 1% formalin in PBS for 1 min at RT, washed three times in PBS and incubated overnight on X-gal staining solution [1 mg/mL of X-gal (VWR), 40 mM citric acid/sodium phosphate buffer, 5 mM potassium ferricyanide (Sigma), 5 mM potassium ferrocyanide (Sigma), 150 mM NaCl, and 2 mM MgCl2] at 37 \u00b0C in a humidified chamber.",
+      "context_window": "in PBS and incubated overnight on X-gal staining solution [1 mg/mL of X-gal (VWR), 40 mM citric acid/sodium phosphate buffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-392",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 392,
+      "sentence": "To test this hypothesis, we adopted a well-established mouse model of NAFLD-induced HCC, where young mice (7 weeks of age) are administered with a low dose of a carcinogen (25 mg/kg diethynitrosamine, DEN), followed by feeding a high fat diet (HFD, 60% energy from lard)) from the 7th week to the 43rd week, when the animals were sacrificed for further analyses [ 23 , 24 ] (Fig.",
+      "context_window": "blished mouse model of NAFLD-induced HCC, where young mice (7 weeks of age) are administered with a low dose of a carcinogen (2",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-458",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 458,
+      "sentence": "To test this hypothesis, we adopted a well-established mouse model of NAFLD-induced HCC, where young mice (7 weeks of age) are administered with a low dose of a carcinogen (25 mg/kg diethynitrosamine, DEN), followed by feeding a high fat diet (HFD, 60% energy from lard)) from the 7th week to the 43rd week, when the animals were sacrificed for further analyses [ 23 , 24 ] (Fig.",
+      "context_window": "s of age) are administered with a low dose of a carcinogen (25 mg/kg diethynitrosamine, DEN), followed by feeding a high fat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-534",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 534,
+      "sentence": "To test this hypothesis, we adopted a well-established mouse model of NAFLD-induced HCC, where young mice (7 weeks of age) are administered with a low dose of a carcinogen (25 mg/kg diethynitrosamine, DEN), followed by feeding a high fat diet (HFD, 60% energy from lard)) from the 7th week to the 43rd week, when the animals were sacrificed for further analyses [ 23 , 24 ] (Fig.",
+      "context_window": "itrosamine, DEN), followed by feeding a high fat diet (HFD, 60% energy from lard)) from the 7th week to the 43rd week, when",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 843,
+      "sentence": "Four groups of 20 mice each were created: group 1 included control untreated mice; group 2 included mice treated with D + Q from the 24th week to the 43rd week of age (D = 5 mg/kg; Q = 50 mg/kg); group 3 included mice undergoing the above mentioned DEN/HFD protocol; group 4 included mice undergoing the DEN/HFD protocol with the administration of D + Q (Fig.",
+      "context_window": "with D + Q from the 24th week to the 43rd week of age (D = 5 mg/kg; Q = 50 mg/kg); group 3 included mice undergoing the abo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-856",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 856,
+      "sentence": "Four groups of 20 mice each were created: group 1 included control untreated mice; group 2 included mice treated with D + Q from the 24th week to the 43rd week of age (D = 5 mg/kg; Q = 50 mg/kg); group 3 included mice undergoing the above mentioned DEN/HFD protocol; group 4 included mice undergoing the DEN/HFD protocol with the administration of D + Q (Fig.",
+      "context_window": "rom the 24th week to the 43rd week of age (D = 5 mg/kg; Q = 50 mg/kg); group 3 included mice undergoing the above mentioned D",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-1122",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1122,
+      "sentence": "At the end of the chemical/dietary regimen, the DEN/HFD groups 3 and 4 exhibited a ~ 50% increase in body weight, with not tangible effect of D + Q treatment (Fig.",
+      "context_window": "l/dietary regimen, the DEN/HFD groups 3 and 4 exhibited a ~ 50% increase in body weight, with not tangible effect of D + Q",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-3618",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3618,
+      "sentence": "Dysplastic nodules were observed in many mice liver and classified based on their size, in small nodules (< 3 mm) and large nodules (> 3 mm) (Fig.",
+      "context_window": "ver and classified based on their size, in small nodules (< 3 mm) and large nodules (> 3 mm) (Fig. 2 b). About 35% of HFD mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-3645",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3645,
+      "sentence": "Dysplastic nodules were observed in many mice liver and classified based on their size, in small nodules (< 3 mm) and large nodules (> 3 mm) (Fig.",
+      "context_window": "their size, in small nodules (< 3 mm) and large nodules (> 3 mm) (Fig. 2 b). About 35% of HFD mice livers pre-treated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-3669",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3669,
+      "sentence": "About 35% of HFD mice livers pre-treated with DEN and, surprisingly, 5% of lean mice treated with D + Q, were presenting nodules, while none was detected in the lean controls.",
+      "context_window": "dules (< 3 mm) and large nodules (> 3 mm) (Fig. 2 b). About 35% of HFD mice livers pre-treated with DEN and, surprisingly,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "d + q",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-pct-3732",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3732,
+      "sentence": "About 35% of HFD mice livers pre-treated with DEN and, surprisingly, 5% of lean mice treated with D + Q, were presenting nodules, while none was detected in the lean controls.",
+      "context_window": "of HFD mice livers pre-treated with DEN and, surprisingly, 5% of lean mice treated with D + Q, were presenting nodules, w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "d + q",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-4731",
+      "claim_type": "unit_value",
+      "raw_text": "11 months",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4731,
+      "sentence": "These findings suggest that D + Q is not effective in removing senescent cells from adult mice (11 months) liver, further showing a slight pro-tumorigenic activity in accordance with our previous finding [ 22 ].",
+      "context_window": "not effective in removing senescent cells from adult mice (11 months) liver, further showing a slight pro-tumorigenic activity i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "d + q",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-p-5183",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5183,
+      "sentence": "Effects of D + Q treatment on diethylnitrosamine (DEN) / high fat diet (HFD) mouse model. a Experimental design of the study. b Body weight of mice under control diet or DEN/HFD and treated with D + Q (C) Intraperitoneal glucose tolerance test (GTT) graph and p value table showing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nBlood count analyses\n\nRBC red blood cells, Hct hematocrit, Hgb hemoglobin, Lymphs Lymphocytes\n\nPlasma analyses\n\nLDL low-density lipoprotein, HDL high-density lipoprotein, TC total cholesterol, TG triglycerides, ALT alanine transaminase, AST aspartate transaminase\n\n* p < 0.05 vs CTL Group\n\nEffects of D + Q treatment worsen liver disease progression. a Representative liver H&E images from control diet and DEN/HFD mice treated with D + Q and steatosis/ballooning score graph. b Distribution of tumor-bearing mice among the groups, with classification of dysplastic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red (NFR) images of CTL, D + Q, DEN/HFD and HFD/DEN D + Q groups showing no difference in senescent positive cells. d Immunoblotting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nD + Q does not affect NAFLD key factors gene expression in liver of both lean and obese mice. mRNA expression of Ppar-\u03b3, Cebpa, Pgc-1\u03b1, Plin2, Cidec, Cd36, Timp1 and Col1a1 of control mice, D + Q treated group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "context_window": "howing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test Blood count analyses",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-p-5498",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5498,
+      "sentence": "Effects of D + Q treatment on diethylnitrosamine (DEN) / high fat diet (HFD) mouse model. a Experimental design of the study. b Body weight of mice under control diet or DEN/HFD and treated with D + Q (C) Intraperitoneal glucose tolerance test (GTT) graph and p value table showing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nBlood count analyses\n\nRBC red blood cells, Hct hematocrit, Hgb hemoglobin, Lymphs Lymphocytes\n\nPlasma analyses\n\nLDL low-density lipoprotein, HDL high-density lipoprotein, TC total cholesterol, TG triglycerides, ALT alanine transaminase, AST aspartate transaminase\n\n* p < 0.05 vs CTL Group\n\nEffects of D + Q treatment worsen liver disease progression. a Representative liver H&E images from control diet and DEN/HFD mice treated with D + Q and steatosis/ballooning score graph. b Distribution of tumor-bearing mice among the groups, with classification of dysplastic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red (NFR) images of CTL, D + Q, DEN/HFD and HFD/DEN D + Q groups showing no difference in senescent positive cells. d Immunoblotting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nD + Q does not affect NAFLD key factors gene expression in liver of both lean and obese mice. mRNA expression of Ppar-\u03b3, Cebpa, Pgc-1\u03b1, Plin2, Cidec, Cd36, Timp1 and Col1a1 of control mice, D + Q treated group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "context_window": "es, ALT alanine transaminase, AST aspartate transaminase * p < 0.05 vs CTL Group Effects of D + Q treatment worsen liver disea",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-5852",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 5852,
+      "sentence": "Effects of D + Q treatment on diethylnitrosamine (DEN) / high fat diet (HFD) mouse model. a Experimental design of the study. b Body weight of mice under control diet or DEN/HFD and treated with D + Q (C) Intraperitoneal glucose tolerance test (GTT) graph and p value table showing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nBlood count analyses\n\nRBC red blood cells, Hct hematocrit, Hgb hemoglobin, Lymphs Lymphocytes\n\nPlasma analyses\n\nLDL low-density lipoprotein, HDL high-density lipoprotein, TC total cholesterol, TG triglycerides, ALT alanine transaminase, AST aspartate transaminase\n\n* p < 0.05 vs CTL Group\n\nEffects of D + Q treatment worsen liver disease progression. a Representative liver H&E images from control diet and DEN/HFD mice treated with D + Q and steatosis/ballooning score graph. b Distribution of tumor-bearing mice among the groups, with classification of dysplastic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red (NFR) images of CTL, D + Q, DEN/HFD and HFD/DEN D + Q groups showing no difference in senescent positive cells. d Immunoblotting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nD + Q does not affect NAFLD key factors gene expression in liver of both lean and obese mice. mRNA expression of Ppar-\u03b3, Cebpa, Pgc-1\u03b1, Plin2, Cidec, Cd36, Timp1 and Col1a1 of control mice, D + Q treated group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "context_window": "stic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative live",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-5888",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 5888,
+      "sentence": "Effects of D + Q treatment on diethylnitrosamine (DEN) / high fat diet (HFD) mouse model. a Experimental design of the study. b Body weight of mice under control diet or DEN/HFD and treated with D + Q (C) Intraperitoneal glucose tolerance test (GTT) graph and p value table showing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nBlood count analyses\n\nRBC red blood cells, Hct hematocrit, Hgb hemoglobin, Lymphs Lymphocytes\n\nPlasma analyses\n\nLDL low-density lipoprotein, HDL high-density lipoprotein, TC total cholesterol, TG triglycerides, ALT alanine transaminase, AST aspartate transaminase\n\n* p < 0.05 vs CTL Group\n\nEffects of D + Q treatment worsen liver disease progression. a Representative liver H&E images from control diet and DEN/HFD mice treated with D + Q and steatosis/ballooning score graph. b Distribution of tumor-bearing mice among the groups, with classification of dysplastic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red (NFR) images of CTL, D + Q, DEN/HFD and HFD/DEN D + Q groups showing no difference in senescent positive cells. d Immunoblotting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nD + Q does not affect NAFLD key factors gene expression in liver of both lean and obese mice. mRNA expression of Ppar-\u03b3, Cebpa, Pgc-1\u03b1, Plin2, Cidec, Cd36, Timp1 and Col1a1 of control mice, D + Q treated group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "context_window": "all nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-p-6134",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6134,
+      "sentence": "Effects of D + Q treatment on diethylnitrosamine (DEN) / high fat diet (HFD) mouse model. a Experimental design of the study. b Body weight of mice under control diet or DEN/HFD and treated with D + Q (C) Intraperitoneal glucose tolerance test (GTT) graph and p value table showing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nBlood count analyses\n\nRBC red blood cells, Hct hematocrit, Hgb hemoglobin, Lymphs Lymphocytes\n\nPlasma analyses\n\nLDL low-density lipoprotein, HDL high-density lipoprotein, TC total cholesterol, TG triglycerides, ALT alanine transaminase, AST aspartate transaminase\n\n* p < 0.05 vs CTL Group\n\nEffects of D + Q treatment worsen liver disease progression. a Representative liver H&E images from control diet and DEN/HFD mice treated with D + Q and steatosis/ballooning score graph. b Distribution of tumor-bearing mice among the groups, with classification of dysplastic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red (NFR) images of CTL, D + Q, DEN/HFD and HFD/DEN D + Q groups showing no difference in senescent positive cells. d Immunoblotting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nD + Q does not affect NAFLD key factors gene expression in liver of both lean and obese mice. mRNA expression of Ppar-\u03b3, Cebpa, Pgc-1\u03b1, Plin2, Cidec, Cd36, Timp1 and Col1a1 of control mice, D + Q treated group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "context_window": "otting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test D + Q does not affec",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-p-6446",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6446,
+      "sentence": "Effects of D + Q treatment on diethylnitrosamine (DEN) / high fat diet (HFD) mouse model. a Experimental design of the study. b Body weight of mice under control diet or DEN/HFD and treated with D + Q (C) Intraperitoneal glucose tolerance test (GTT) graph and p value table showing the statistical significance among all the groups. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nBlood count analyses\n\nRBC red blood cells, Hct hematocrit, Hgb hemoglobin, Lymphs Lymphocytes\n\nPlasma analyses\n\nLDL low-density lipoprotein, HDL high-density lipoprotein, TC total cholesterol, TG triglycerides, ALT alanine transaminase, AST aspartate transaminase\n\n* p < 0.05 vs CTL Group\n\nEffects of D + Q treatment worsen liver disease progression. a Representative liver H&E images from control diet and DEN/HFD mice treated with D + Q and steatosis/ballooning score graph. b Distribution of tumor-bearing mice among the groups, with classification of dysplastic nodules based on the size in small nodules (diameter < 3 mm) and large nodules (diameter > 3 mm). c Representative liver \u03b2-gal staining + nuclear fast red (NFR) images of CTL, D + Q, DEN/HFD and HFD/DEN D + Q groups showing no difference in senescent positive cells. d Immunoblotting and qRT-PCR analysis of the senescence marker p16. * p < 0.05 Vs CTL determined by Student\u00b4s t test\n\nD + Q does not affect NAFLD key factors gene expression in liver of both lean and obese mice. mRNA expression of Ppar-\u03b3, Cebpa, Pgc-1\u03b1, Plin2, Cidec, Cd36, Timp1 and Col1a1 of control mice, D + Q treated group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "context_window": "group, DEN/HFD group and DEN/HFD mice treated with D + Q. * p < 0.05 Vs CTL determined by Student\u2019s t test",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "d + q",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8034117_mild_exacerbation_of_obesity_and_age_dependent_liver_disease-u-1680",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1680,
+      "sentence": "In support of our finding, Gross et al . strikingly found that systemic elimination of p16 high senescent cells in 10-12 months old mice triggered liver, perivascular tissue fibrosis and general health deterioration [ 38 ].",
+      "context_window": "that systemic elimination of p16 high senescent cells in 10-12 months old mice triggered liver, perivascular tissue fibrosis and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

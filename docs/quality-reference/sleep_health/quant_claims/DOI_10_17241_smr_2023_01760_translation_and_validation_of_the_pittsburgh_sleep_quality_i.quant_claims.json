@@ -1,0 +1,68 @@
+{
+  "paper_id": "DOI_10_17241_smr_2023_01760_translation_and_validation_of_the_pittsburgh_sleep_quality_i",
+  "doi": "10.17241/smr.2023.01760",
+  "extracted_at": "2026-05-08T20:06:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_17241_smr_2023_01760_translation_and_validation_of_the_pittsburgh_sleep_quality_i-u-717",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 717,
+      "sentence": "The participants filled out the final questionnaire containing the PSQI translated version and the Insomnia Severity Index validated in Moroccan dialect two times within 10 days.",
+      "context_window": "verity Index validated in Moroccan dialect two times within 10 days. We studied the acceptability and internal reliability of t",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2023_01760_translation_and_validation_of_the_pittsburgh_sleep_quality_i-pct-930",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 930,
+      "sentence": "With respect to the test-retest reliability, we used the intra-class correlation coefficient (95% confidence interval) and the kappa coefficient.",
+      "context_window": "liability, we used the intra-class correlation coefficient (95% confidence interval) and the kappa coefficient. Convergent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2023_01760_translation_and_validation_of_the_pittsburgh_sleep_quality_i-ci-1286",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.491-0.707",
+      "numeric_values": [
+        0.491,
+        0.707
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1286,
+      "sentence": "The intraclass correlation coefficient was 0.61 (95% CI 0.491-0.707), while the kappa coefficient was 0.77.",
+      "context_window": "was 0.61. The intraclass correlation coefficient was 0.61 (95% CI 0.491-0.707), while the kappa coefficient was 0.77. The correlations be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

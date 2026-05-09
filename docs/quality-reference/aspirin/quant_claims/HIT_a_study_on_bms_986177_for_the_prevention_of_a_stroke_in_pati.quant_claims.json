@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_a_study_on_bms_986177_for_the_prevention_of_a_stroke_in_pati",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_study_on_bms_986177_for_the_prevention_of_a_stroke_in_pati-u-421",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 421,
+      "sentence": "Posted outcomes: Percent of Participants With Model Based Assessment of Composite of New Ischemic Stroke During Treatment and New Covert Brain Infarction (FLAIR + DWI) Detected . timeframe=From randomization to up to 90 days after randomization.",
+      "context_window": "AIR + DWI) Detected . timeframe=From randomization to up to 90 days after randomization. Placebo=16.8; Milvexian 25 mg QD=16.7;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_study_on_bms_986177_for_the_prevention_of_a_stroke_in_pati-u-474",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 474,
+      "sentence": "Placebo=16.8; Milvexian 25 mg QD=16.7; Milvexian 25 mg BID=16.6",
+      "context_window": "up to 90 days after randomization. Placebo=16.8; Milvexian 25 mg QD=16.7; Milvexian 25 mg BID=16.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_on_bms_986177_for_the_prevention_of_a_stroke_in_pati-u-499",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 499,
+      "sentence": "Placebo=16.8; Milvexian 25 mg QD=16.7; Milvexian 25 mg BID=16.6",
+      "context_window": "omization. Placebo=16.8; Milvexian 25 mg QD=16.7; Milvexian 25 mg BID=16.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

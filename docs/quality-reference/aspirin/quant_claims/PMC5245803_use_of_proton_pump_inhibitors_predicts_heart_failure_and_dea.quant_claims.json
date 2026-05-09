@@ -1,0 +1,1260 @@
+{
+  "paper_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea",
+  "doi": "10.1371/journal.pone.0169826",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 18,
+    "percentage": 30,
+    "mean_sd": 3,
+    "unit_value": 13,
+    "hazard_ratio": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-571",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 571,
+      "sentence": "58.0 (50.0-70.0) years; p = 0.003] and had a more frequent history of stroke (4.9% vs.",
+      "context_window": "Is were older [62.0 (53.0-73.0) vs. 58.0 (50.0-70.0) years; p = 0.003] and had a more frequent history of stroke (4.9% vs. 1.1%;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-625",
+      "claim_type": "percentage",
+      "raw_text": "4.9%",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 625,
+      "sentence": "58.0 (50.0-70.0) years; p = 0.003] and had a more frequent history of stroke (4.9% vs.",
+      "context_window": "ears; p = 0.003] and had a more frequent history of stroke (4.9% vs. 1.1%; p = 0.004) than those from the non-PPI group, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-634",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 634,
+      "sentence": "1.1%; p = 0.004) than those from the non-PPI group, and presented no differences in any other clinical variable, including cardiovascular risk factors, ejection fraction, and therapy with aspirin and clopidogrel.",
+      "context_window": "0.003] and had a more frequent history of stroke (4.9% vs. 1.1%; p = 0.004) than those from the non-PPI group, and presente",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-640",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 640,
+      "sentence": "1.1%; p = 0.004) than those from the non-PPI group, and presented no differences in any other clinical variable, including cardiovascular risk factors, ejection fraction, and therapy with aspirin and clopidogrel.",
+      "context_window": "] and had a more frequent history of stroke (4.9% vs. 1.1%; p = 0.004) than those from the non-PPI group, and presented no differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-msd-861",
+      "claim_type": "mean_sd",
+      "raw_text": "2.2\u00b10.99",
+      "numeric_values": [
+        2.2,
+        0.99
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 861,
+      "sentence": "Follow-up was 2.2\u00b10.99 years.",
+      "context_window": "on, and therapy with aspirin and clopidogrel. Follow-up was 2.2\u00b10.99 years. Seventy-eight patients met the primary outcome, 53 d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-865",
+      "claim_type": "unit_value",
+      "raw_text": "0.99 years",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 865,
+      "sentence": "Follow-up was 2.2\u00b10.99 years.",
+      "context_window": "and therapy with aspirin and clopidogrel. Follow-up was 2.2\u00b10.99 years. Seventy-eight patients met the primary outcome, 53 develop",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-1084",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "PPI use was an independent predictor of the primary outcome [hazard ratio (HR) = 2.281 (1.244-4.183); p = 0.008], along with hypertension, body-mass index, glomerular filtration rate, atrial fibrillation, and nitrate use.",
+      "context_window": "e primary outcome [hazard ratio (HR) = 2.281 (1.244-4.183); p = 0.008], along with hypertension, body-mass index, glomerular filt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-hr-a-1259",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 5.713",
+      "numeric_values": [
+        5.713
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1259,
+      "sentence": "PPI use was also an independent predictor of HF/death [HR = 5.713 (1.628-20.043); p = 0.007], but not of acute ischaemic events.",
+      "context_window": "use. PPI use was also an independent predictor of HF/death [HR = 5.713 (1.628-20.043); p = 0.007], but not of acute ischaemic even",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-1286",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1286,
+      "sentence": "PPI use was also an independent predictor of HF/death [HR = 5.713 (1.628-20.043); p = 0.007], but not of acute ischaemic events.",
+      "context_window": "dependent predictor of HF/death [HR = 5.713 (1.628-20.043); p = 0.007], but not of acute ischaemic events. A propensity score sho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-1820",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 1820,
+      "sentence": "In this study we assessed the potential association between the use of PPIs and adverse outcome in patients with stable CAD who had developed an acute coronary syndrome 6-12 months before.",
+      "context_window": "h stable CAD who had developed an acute coronary syndrome 6-12 months before.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-647",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 647,
+      "sentence": "Patients were seen on an outpatient basis 6 months after initial diagnosis.",
+      "context_window": "rted [ 15 , 16 ]. Patients were seen on an outpatient basis 6 months after initial diagnosis. At this time plasma was withdrawn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-1257",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1257,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": ", that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1267",
+      "claim_type": "percentage",
+      "raw_text": "17.3%",
+      "numeric_values": [
+        17.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1267,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "e been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to per",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1304",
+      "claim_type": "percentage",
+      "raw_text": "29.0%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1304,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1364",
+      "claim_type": "percentage",
+      "raw_text": "14.5%",
+      "numeric_values": [
+        14.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1364,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1424",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1424,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical inst",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1467",
+      "claim_type": "percentage",
+      "raw_text": "12.0%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1467,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "rdiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index ev",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1537",
+      "claim_type": "percentage",
+      "raw_text": "9.1%",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1537,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "inical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1581",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1581,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "he index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1644",
+      "claim_type": "percentage",
+      "raw_text": "9.3%",
+      "numeric_values": [
+        9.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1644,
+      "sentence": "The remaining patients were not included based on the following exclusion criteria, that have been described previously [ 15 , 16 ]: age over 85 years (17.3%), disorders limiting survival (29.0%), impossibility to perform cardiac revascularisation (14.5%), coexistence of other significant cardiac disorders (6.8%), impossibility to perform follow-up (12.0%), clinical instability beyond the sixth day at the index event (9.1%), refusal to participate in the study (2.0%), and impossibility of the investigators to include them (9.3%).",
+      "context_window": "%), and impossibility of the investigators to include them (9.3%). Of the 838 patients included during the acute event, 711",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-1741",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1741,
+      "sentence": "Of the 838 patients included during the acute event, 711 attended the outpatient visit at 6 months and had adequate plasma samples stored.",
+      "context_window": "uring the acute event, 711 attended the outpatient visit at 6 months and had adequate plasma samples stored. This visit took pla",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-2309",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2309,
+      "sentence": "At the end of follow-up (maximum 4.6 years) medical records were reviewed and patient status was confirmed by telephone contact.",
+      "context_window": "ry year at their hospital. At the end of follow-up (maximum 4.6 years) medical records were reviewed and patient status was confi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-5141",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5141,
+      "sentence": "In model 1, clinical and analytical variables were studied: age, sex, diabetes, smoking status, hypertension, body-mass index, LDL, HDL, triglycerides, previous history of peripheral artery disease, cerebrovascular events, atrial fibrillation or coronary artery by-pass graft; ejection fraction<40%, glomerular filtration rate assessed as Chronic Kidney Disease Epidemiology Collaboration method (CKD-EPI), high-sensitivity C-reactive protein, type of last acute coronary event, number of diseased vessels, percutaneous or surgical revascularisation, use of drug-eluting stents and existence of complete revascularisation at that event.",
+      "context_window": "llation or coronary artery by-pass graft; ejection fraction<40%, glomerular filtration rate assessed as Chronic Kidney Dise",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-msd-19",
+      "claim_type": "mean_sd",
+      "raw_text": "2.2\u00b10.99",
+      "numeric_values": [
+        2.2,
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19,
+      "sentence": "Mean follow-up was 2.2\u00b10.99 years.",
+      "context_window": "Mean follow-up was 2.2\u00b10.99 years. Time from the previous acute coronary event was 7.5",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-23",
+      "claim_type": "unit_value",
+      "raw_text": "0.99 years",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 23,
+      "sentence": "Mean follow-up was 2.2\u00b10.99 years.",
+      "context_window": "Mean follow-up was 2.2\u00b10.99 years. Time from the previous acute coronary event was 7.5 \u00b1 3.0",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-msd-83",
+      "claim_type": "mean_sd",
+      "raw_text": "7.5 \u00b1 3.0",
+      "numeric_values": [
+        7.5,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 83,
+      "sentence": "Time from the previous acute coronary event was 7.5 \u00b1 3.0 months.",
+      "context_window": "0.99 years. Time from the previous acute coronary event was 7.5 \u00b1 3.0 months. Of the 706 patients analysed, 431 (61.04%) were re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-89",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 89,
+      "sentence": "Time from the previous acute coronary event was 7.5 \u00b1 3.0 months.",
+      "context_window": "ears. Time from the previous acute coronary event was 7.5 \u00b1 3.0 months. Of the 706 patients analysed, 431 (61.04%) were receiving",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-137",
+      "claim_type": "percentage",
+      "raw_text": "61.04%",
+      "numeric_values": [
+        61.04
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 137,
+      "sentence": "Of the 706 patients analysed, 431 (61.04%) were receiving PPIs.",
+      "context_window": "t was 7.5 \u00b1 3.0 months. Of the 706 patients analysed, 431 (61.04%) were receiving PPIs. Most of them (405 patients, (57.4%))",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-195",
+      "claim_type": "percentage",
+      "raw_text": "57.4%",
+      "numeric_values": [
+        57.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 195,
+      "sentence": "Most of them (405 patients, (57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%) was taking rabeprazole.",
+      "context_window": "(61.04%) were receiving PPIs. Most of them (405 patients, (57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-231",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 231,
+      "sentence": "Most of them (405 patients, (57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%) was taking rabeprazole.",
+      "context_window": "of them (405 patients, (57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-254",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 254,
+      "sentence": "Most of them (405 patients, (57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%) was taking rabeprazole.",
+      "context_window": "(57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%) was taking rabeprazole.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-289",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 289,
+      "sentence": "Most of them (405 patients, (57.4%)) were taking omeprazole, 19 (2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%) was taking rabeprazole.",
+      "context_window": "(2.7%) pantoprazole, 6 (0.8%) lansoprazole, and 1 patient (0.1%) was taking rabeprazole. There were 72 (10.2%) patients tre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-334",
+      "claim_type": "percentage",
+      "raw_text": "10.2%",
+      "numeric_values": [
+        10.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 334,
+      "sentence": "There were 72 (10.2%) patients treated with histamine H 2 receptor antagonists, and the remaining patients did not receive gastric protectors.",
+      "context_window": "and 1 patient (0.1%) was taking rabeprazole. There were 72 (10.2%) patients treated with histamine H 2 receptor antagonists,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1306",
+      "claim_type": "percentage",
+      "raw_text": "14.61%",
+      "numeric_values": [
+        14.61
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1306,
+      "sentence": "Sixty-three (14.61%) patients taking PPIs and 15 (5.45%) not on PPIs met this outcome.",
+      "context_window": "tcome of acute ischaemic events, HF, or death. Sixty-three (14.61%) patients taking PPIs and 15 (5.45%) not on PPIs met this o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1343",
+      "claim_type": "percentage",
+      "raw_text": "5.45%",
+      "numeric_values": [
+        5.45
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1343,
+      "sentence": "Sixty-three (14.61%) patients taking PPIs and 15 (5.45%) not on PPIs met this outcome.",
+      "context_window": "or death. Sixty-three (14.61%) patients taking PPIs and 15 (5.45%) not on PPIs met this outcome. Twelve patients developed 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-1912",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.463",
+      "numeric_values": [
+        0.463
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1912,
+      "sentence": "The interaction between PPIs and clopidogrel did not reach statistical significance (p = 0.463).",
+      "context_window": "PIs and clopidogrel did not reach statistical significance (p = 0.463). Model 1: Risk adjusted for age, sex, diabetes, smoking s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-2246",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2246,
+      "sentence": "Model 1: Risk adjusted for age, sex, diabetes, smoking status, hypertension, body-mass index, low-density lipoprotein, high-density lipoprotein, and triglyceride plasma levels; previous history of peripheral artery disease, cerebrovascular events, atrial fibrillation or coronary artery by-pass graft; ejection fraction <40%, glomerular filtration rate assessed as Chronic Kidney Disease Epidemiology Collaboration method, high-sensitivity C-reactive protein; type of last acute coronary event, number of diseased vessels, percutaneous or surgical revascularisation, use of drug-eluting stents and existence of complete revascularisation at that event.",
+      "context_window": "lation or coronary artery by-pass graft; ejection fraction <40%, glomerular filtration rate assessed as Chronic Kidney Dise",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-3085",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 3085,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "nhibitors. a : hazard ratio estimated by every increase of 1 year. b : hazard ratio estimated by every increase of 1 kg/m 2",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-3142",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3142,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "of 1 year. b : hazard ratio estimated by every increase of 1 kg/m 2 . c : hazard ratio estimated by every increase of 1 ml",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3471",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3471,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3531",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3531,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atri",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3584",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3584,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": ".321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003),",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3641",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3641,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.0",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3705",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3705,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001). Co",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3760",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3760,
+      "sentence": "BMI: body-mass index; CI: confidence interval; CKD-EPI: glomerular filtration rate assessed according to the Chronic Kidney Disease Epidemiology Collaboration method; PPIs: proton-pump inhibitors.\n\na : hazard ratio estimated by every increase of 1 year.\n\nb : hazard ratio estimated by every increase of 1 kg/m 2 .\n\nc : hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nWhen multivariable Cox regression analysis was performed comparing patients with omeprazol with those no taking this drug (then including 26 patients using other PPIs in this group) omeprazol was an independent risk predictor (HR 2.343 [1.320-4.158]; p = 0.004) along with hypertension (HR 2.591 [1.262-5.321]; p = 0.010), body-mass index (HR 1.060 [1.006-1.116]; p = 0.028), atrial fibrillation (HR 2.561 [1.372-4.781]; p = 0.003), glomerular filtration rate (HR 0.975 [0.963-0.987]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001).",
+      "context_window": "87]; p<0.001), and use of nitrates (HR 2.678 [1.626-4.404]; p<0.001). Comparing patients with omeprazol with the remaining case",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-3891",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3891,
+      "sentence": "Comparing patients with omeprazol with the remaining cases not on PPIs confirmed that omeprazol (HR 2.371 [1.290-4.358]; p = 0.005) was an independent predictor of the primary outcome along with the same other described variables.",
+      "context_window": "t on PPIs confirmed that omeprazol (HR 2.371 [1.290-4.358]; p = 0.005) was an independent predictor of the primary outcome along",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-4204",
+      "claim_type": "percentage",
+      "raw_text": "9.74%",
+      "numeric_values": [
+        9.74
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4204,
+      "sentence": "Forty-two (9.74%) of the patients on PPIs and 11 (4%) of those not receiving these drugs met this end point.",
+      "context_window": "three patients developed acute ischaemic events. Forty-two (9.74%) of the patients on PPIs and 11 (4%) of those not receiving",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-4243",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4243,
+      "sentence": "Forty-two (9.74%) of the patients on PPIs and 11 (4%) of those not receiving these drugs met this end point.",
+      "context_window": "c events. Forty-two (9.74%) of the patients on PPIs and 11 (4%) of those not receiving these drugs met this end point. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-4783",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4783,
+      "sentence": "Models 1 and 2 as described in Table 2\n\nBMI: body-mass Index; CI: confidence interval\n\na : Hazard ratio estimated by every increase of 1 year.\n\nb : Hazard ratio estimated by every increase of 1 kg/m 2 .",
+      "context_window": "e interval a : Hazard ratio estimated by every increase of 1 year. b : Hazard ratio estimated by every increase of 1 kg/m 2",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-4840",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4840,
+      "sentence": "Models 1 and 2 as described in Table 2\n\nBMI: body-mass Index; CI: confidence interval\n\na : Hazard ratio estimated by every increase of 1 year.\n\nb : Hazard ratio estimated by every increase of 1 kg/m 2 .",
+      "context_window": "of 1 year. b : Hazard ratio estimated by every increase of 1 kg/m 2 . Thirty-three patients developed HF or death. This en",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-4936",
+      "claim_type": "percentage",
+      "raw_text": "6.49%",
+      "numeric_values": [
+        6.49
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4936,
+      "sentence": "This end point was met by 28 patients (6.49%) on PPIs, and by 5 patients (1.81%) not receiving this therapy.",
+      "context_window": "veloped HF or death. This end point was met by 28 patients (6.49%) on PPIs, and by 5 patients (1.81%) not receiving this ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-4971",
+      "claim_type": "percentage",
+      "raw_text": "1.81%",
+      "numeric_values": [
+        1.81
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4971,
+      "sentence": "This end point was met by 28 patients (6.49%) on PPIs, and by 5 patients (1.81%) not receiving this therapy.",
+      "context_window": "was met by 28 patients (6.49%) on PPIs, and by 5 patients (1.81%) not receiving this therapy. There were 16 episodes of HF a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-u-5919",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5919,
+      "sentence": "Models 1 and 2 as described in Table 2\n\nCI: confidence interval; CKD-EPI : glomerular filtration rate assessed as Chronic Kidney Disease Epidemiology Collaboration method; LDL: low-density lipoprotein; PCI: percutaneous coronary intervention; PPIs: proton-pump inhibitors\n\n* Although this P value failed to reach statistical significance, this variable was maintained in the model because the P value calculated with the likelihood ratio method was 0.015\n\na : Hazard ratio estimated by every increase of 1 year.\n\nb : Hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nKaplan-Meier curves showed that patients on PPIs developed more often the primary outcome (p = 0.013; log-rank test) ( Fig 1A ) and a borderline \u201cp\u201d value (p = 0.050) for the secondary outcome of heart failure or death ( Fig 1B ).\n\n(A) Time to primary outcome (acute ischaemic events, heart failure or death). (B) Time to heart failure or death. (C) Time to acute ischaemic events.",
+      "context_window": "was 0.015 a : Hazard ratio estimated by every increase of 1 year. b : Hazard ratio estimated by every increase of 1 ml/min/",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-6085",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6085,
+      "sentence": "Models 1 and 2 as described in Table 2\n\nCI: confidence interval; CKD-EPI : glomerular filtration rate assessed as Chronic Kidney Disease Epidemiology Collaboration method; LDL: low-density lipoprotein; PCI: percutaneous coronary intervention; PPIs: proton-pump inhibitors\n\n* Although this P value failed to reach statistical significance, this variable was maintained in the model because the P value calculated with the likelihood ratio method was 0.015\n\na : Hazard ratio estimated by every increase of 1 year.\n\nb : Hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nKaplan-Meier curves showed that patients on PPIs developed more often the primary outcome (p = 0.013; log-rank test) ( Fig 1A ) and a borderline \u201cp\u201d value (p = 0.050) for the secondary outcome of heart failure or death ( Fig 1B ).\n\n(A) Time to primary outcome (acute ischaemic events, heart failure or death). (B) Time to heart failure or death. (C) Time to acute ischaemic events.",
+      "context_window": "patients on PPIs developed more often the primary outcome (p = 0.013; log-rank test) ( Fig 1A ) and a borderline \u201cp\u201d value (p =",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-6150",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6150,
+      "sentence": "Models 1 and 2 as described in Table 2\n\nCI: confidence interval; CKD-EPI : glomerular filtration rate assessed as Chronic Kidney Disease Epidemiology Collaboration method; LDL: low-density lipoprotein; PCI: percutaneous coronary intervention; PPIs: proton-pump inhibitors\n\n* Although this P value failed to reach statistical significance, this variable was maintained in the model because the P value calculated with the likelihood ratio method was 0.015\n\na : Hazard ratio estimated by every increase of 1 year.\n\nb : Hazard ratio estimated by every increase of 1 ml/min/1.73m 2\n\nKaplan-Meier curves showed that patients on PPIs developed more often the primary outcome (p = 0.013; log-rank test) ( Fig 1A ) and a borderline \u201cp\u201d value (p = 0.050) for the secondary outcome of heart failure or death ( Fig 1B ).\n\n(A) Time to primary outcome (acute ischaemic events, heart failure or death). (B) Time to heart failure or death. (C) Time to acute ischaemic events.",
+      "context_window": ".013; log-rank test) ( Fig 1A ) and a borderline \u201cp\u201d value (p = 0.050) for the secondary outcome of heart failure or death ( Fig",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-hr-a-6565",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.912",
+      "numeric_values": [
+        1.912
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6565,
+      "sentence": "In the first step, we included clinical variables, and treatment with PPIs significantly increased the incidence of the primary outcome (HR = 1.912, [95% CI = 1.037-3.523]; p = 0.028).",
+      "context_window": "gnificantly increased the incidence of the primary outcome (HR = 1.912, [95% CI = 1.037-3.523]; p = 0.028). The combined outcome o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-6578",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6578,
+      "sentence": "In the first step, we included clinical variables, and treatment with PPIs significantly increased the incidence of the primary outcome (HR = 1.912, [95% CI = 1.037-3.523]; p = 0.028).",
+      "context_window": "ncreased the incidence of the primary outcome (HR = 1.912, [95% CI = 1.037-3.523]; p = 0.028). The combined outcome of HF o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-6601",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6601,
+      "sentence": "In the first step, we included clinical variables, and treatment with PPIs significantly increased the incidence of the primary outcome (HR = 1.912, [95% CI = 1.037-3.523]; p = 0.028).",
+      "context_window": "of the primary outcome (HR = 1.912, [95% CI = 1.037-3.523]; p = 0.028). The combined outcome of HF or death showed a result in th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-hr-a-6707",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 2.921",
+      "numeric_values": [
+        2.921
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6707,
+      "sentence": "The combined outcome of HF or death showed a result in the limit of statistical significance (HR = 2.921, [95% CI = 0.867-9.840]; p = 0.050).",
+      "context_window": "h showed a result in the limit of statistical significance (HR = 2.921, [95% CI = 0.867-9.840]; p = 0.050). In the second step, we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-6720",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6720,
+      "sentence": "The combined outcome of HF or death showed a result in the limit of statistical significance (HR = 2.921, [95% CI = 0.867-9.840]; p = 0.050).",
+      "context_window": "sult in the limit of statistical significance (HR = 2.921, [95% CI = 0.867-9.840]; p = 0.050). In the second step, we added",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-6743",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6743,
+      "sentence": "The combined outcome of HF or death showed a result in the limit of statistical significance (HR = 2.921, [95% CI = 0.867-9.840]; p = 0.050).",
+      "context_window": "atistical significance (HR = 2.921, [95% CI = 0.867-9.840]; p = 0.050). In the second step, we added concomitant drug therapy, sh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-hr-a-6885",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.938",
+      "numeric_values": [
+        1.938
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6885,
+      "sentence": "In the second step, we added concomitant drug therapy, showing that PPI treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "context_window": "I treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combinat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-6897",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6897,
+      "sentence": "In the second step, we added concomitant drug therapy, showing that PPI treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "context_window": "increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-6922",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6922,
+      "sentence": "In the second step, we added concomitant drug therapy, showing that PPI treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "context_window": "f the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statisti",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-hr-a-7009",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 2.767",
+      "numeric_values": [
+        2.767
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7009,
+      "sentence": "In the second step, we added concomitant drug therapy, showing that PPI treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "context_window": "mbination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-7021",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7021,
+      "sentence": "In the second step, we added concomitant drug therapy, showing that PPI treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "context_window": "HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-p-7046",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.066",
+      "numeric_values": [
+        0.066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7046,
+      "sentence": "In the second step, we added concomitant drug therapy, showing that PPI treatment increased the incidence of the primary outcome (HR = 1.938, 95% CI = 1.050 to 3.576, p = 0.025), although the combination of HF or death lost the statistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "context_window": "tistical significance (HR = 2.767, 95% CI = 0.817 to 9.373, p = 0.066).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-1169",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1169,
+      "sentence": "More than 90% of patients were taking aspirin.",
+      "context_window": "ited number of patients presenting this outcome. More than 90% of patients were taking aspirin. Chronic treatment with asp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5245803_use_of_proton_pump_inhibitors_predicts_heart_failure_and_dea-pct-9420",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9420,
+      "sentence": "Fifth, the study quality is modest, as more than 50% of patients discharged from the hospitals with a diagnosis of NSTEACS or STEMI were not included in the study based on the exclusion criteria described in the Methods section.",
+      "context_window": "of death. Fifth, the study quality is modest, as more than 50% of patients discharged from the hospitals with a diagnosis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

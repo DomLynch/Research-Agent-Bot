@@ -1,0 +1,248 @@
+{
+  "paper_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac",
+  "doi": "10.1159/000376551",
+  "extracted_at": "2026-05-08T19:55:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 7,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-u-469",
+      "claim_type": "unit_value",
+      "raw_text": "175 mg",
+      "numeric_values": [
+        175.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 469,
+      "sentence": "METHODS: In this trial, patients having failed to respond to prior platinum-based combination treatment of urothelial cancer were treated with paclitaxel (175 mg/m(2) i.v., 3-weekly) and the mTOR-inhibitor everolimus (10 mg p.o., once daily).",
+      "context_window": "reatment of urothelial cancer were treated with paclitaxel (175 mg/m(2) i.v., 3-weekly) and the mTOR-inhibitor everolimus (10",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-u-532",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 532,
+      "sentence": "METHODS: In this trial, patients having failed to respond to prior platinum-based combination treatment of urothelial cancer were treated with paclitaxel (175 mg/m(2) i.v., 3-weekly) and the mTOR-inhibitor everolimus (10 mg p.o., once daily).",
+      "context_window": "mg/m(2) i.v., 3-weekly) and the mTOR-inhibitor everolimus (10 mg p.o., once daily). The patients were treated until tumor pr",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-785",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 785,
+      "sentence": "RESULTS: A total of 27 patients (67% male; median age 63 years) were enrolled.",
+      "context_window": ") as the primary endpoint. RESULTS: A total of 27 patients (67% male; median age 63 years) were enrolled. The most frequent",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-u-806",
+      "claim_type": "unit_value",
+      "raw_text": "63 years",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "RESULTS: A total of 27 patients (67% male; median age 63 years) were enrolled.",
+      "context_window": "oint. RESULTS: A total of 27 patients (67% male; median age 63 years) were enrolled. The most frequent grade III/IV toxicities w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-886",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 886,
+      "sentence": "The most frequent grade III/IV toxicities were anemia (28%), peripheral neuropathy (28%), and fatigue (24%).",
+      "context_window": "led. The most frequent grade III/IV toxicities were anemia (28%), peripheral neuropathy (28%), and fatigue (24%). No treatm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-915",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 915,
+      "sentence": "The most frequent grade III/IV toxicities were anemia (28%), peripheral neuropathy (28%), and fatigue (24%).",
+      "context_window": "III/IV toxicities were anemia (28%), peripheral neuropathy (28%), and fatigue (24%). No treatment-related deaths were repor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-934",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 934,
+      "sentence": "The most frequent grade III/IV toxicities were anemia (28%), peripheral neuropathy (28%), and fatigue (24%).",
+      "context_window": "ere anemia (28%), peripheral neuropathy (28%), and fatigue (24%). No treatment-related deaths were reported. Complete and p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-1105",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1105,
+      "sentence": "Complete and partial remissions were observed in 0/24 and 3/24 patients eligible for efficacy analysis, respectively (ORR 13%).",
+      "context_window": "patients eligible for efficacy analysis, respectively (ORR 13%). Progression-free survival was 2.9 months [95% confidence",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-u-1141",
+      "claim_type": "unit_value",
+      "raw_text": "2.9 months",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1141,
+      "sentence": "Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2).",
+      "context_window": "ysis, respectively (ORR 13%). Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-1153",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1153,
+      "sentence": "Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2).",
+      "context_window": "tively (ORR 13%). Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-pct-1178",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1178,
+      "sentence": "Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2).",
+      "context_window": "sion-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overall survival was 5.6 month",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-u-1232",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 months",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2).",
+      "context_window": "rval (95% CI) 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2). CONCLUSION: The combination of paclitaxe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000376551_second_line_treatment_of_advanced_urothelial_cancer_with_pac-ci-1244",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 4.8-10.2",
+      "numeric_values": [
+        4.8,
+        10.2
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1244,
+      "sentence": "Progression-free survival was 2.9 months [95% confidence interval (95% CI) 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2).",
+      "context_window": ") 1.9-4.2], and the median overall survival was 5.6 months (95% CI 4.8-10.2). CONCLUSION: The combination of paclitaxel and everolimus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

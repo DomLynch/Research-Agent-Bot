@@ -1,0 +1,140 @@
+{
+  "paper_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri",
+  "doi": "10.1055/a-1667-7427",
+  "extracted_at": "2026-05-08T20:06:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "risk_ratio": 1,
+    "percentage": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 737,
+      "sentence": "Subgroup analyses were conducted to investigate the consistency of the effect sizes in studies including younger and older individuals, using a cut-off of 65 years.",
+      "context_window": "including younger and older individuals, using a cut-off of 65 years. A total of 21 randomized trials including 173,810 individu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-u-832",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 years",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 832,
+      "sentence": "A total of 21 randomized trials including 173,810 individuals at a mean follow-up of 5.3 years were included.",
+      "context_window": "trials including 173,810 individuals at a mean follow-up of 5.3 years were included. Compared with control, aspirin did not reduc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-rr-l-946",
+      "claim_type": "risk_ratio",
+      "raw_text": "risk ratio: 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "Compared with control, aspirin did not reduce significantly the risk of all-cause death (risk ratio: 0.96; 95% confidence interval: 0.92-1.00, p = 0.057).",
+      "context_window": "n did not reduce significantly the risk of all-cause death (risk ratio: 0.96; 95% confidence interval: 0.92-1.00, p = 0.057). Major adve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-pct-964",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 964,
+      "sentence": "Compared with control, aspirin did not reduce significantly the risk of all-cause death (risk ratio: 0.96; 95% confidence interval: 0.92-1.00, p = 0.057).",
+      "context_window": "ignificantly the risk of all-cause death (risk ratio: 0.96; 95% confidence interval: 0.92-1.00, p = 0.057). Major adverse c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-p-1000",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.057",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1000,
+      "sentence": "Compared with control, aspirin did not reduce significantly the risk of all-cause death (risk ratio: 0.96; 95% confidence interval: 0.92-1.00, p = 0.057).",
+      "context_window": "eath (risk ratio: 0.96; 95% confidence interval: 0.92-1.00, p = 0.057). Major adverse cardiovascular events were significantly re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-pct-1078",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "Major adverse cardiovascular events were significantly reduced by 11%, paralleled by significant reductions in myocardial infarction and transient ischemic attack.",
+      "context_window": "adverse cardiovascular events were significantly reduced by 11%, paralleled by significant reductions in myocardial infarct",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_1667_7427_efficacy_and_safety_of_aspirin_for_primary_cardiovascular_ri-pct-1416",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1416,
+      "sentence": "There was a significant age interaction for death (p for interaction = 0.007), with aspirin showing a statistically significant 7% relative benefit on all-cause death in studies including younger patients.</jats:p><jats:p> Conclusion The use of aspirin in subjects with no overt CVD was associated with a neutral effect on all-cause death and a modest lower risk of major cardiovascular events at the price of an increased risk in major bleeding.",
+      "context_window": "= 0.007), with aspirin showing a statistically significant 7% relative benefit on all-cause death in studies including yo",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

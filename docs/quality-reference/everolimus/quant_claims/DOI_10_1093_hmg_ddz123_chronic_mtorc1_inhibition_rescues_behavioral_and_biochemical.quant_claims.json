@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1093_hmg_ddz123_chronic_mtorc1_inhibition_rescues_behavioral_and_biochemical",
+  "doi": "10.1093/hmg/ddz123",
+  "extracted_at": "2026-05-08T19:55:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_hmg_ddz123_chronic_mtorc1_inhibition_rescues_behavioral_and_biochemical-u-994",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "Treatment with the mTORC1 inhibitor rapamycin starting after 3 weeks of age significantly prolonged the survival of Depdc5cc+ mice and partially rescued the behavioral hyperactivity.",
+      "context_window": "reatment with the mTORC1 inhibitor rapamycin starting after 3 weeks of age significantly prolonged the survival of Depdc5cc+ mi",
+      "claim_role": "protocol",
+      "endpoint": "mTOR signaling",
+      "arm": "torc1 inhibitor",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

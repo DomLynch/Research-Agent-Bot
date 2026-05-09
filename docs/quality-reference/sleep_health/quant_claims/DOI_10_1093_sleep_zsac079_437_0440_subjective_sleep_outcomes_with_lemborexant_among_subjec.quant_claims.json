@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsac079_437_0440_subjective_sleep_outcomes_with_lemborexant_among_subjec",
+  "doi": "10.1093/sleep/zsac079.437",
+  "extracted_at": "2026-05-08T20:07:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_437_0440_subjective_sleep_outcomes_with_lemborexant_among_subjec-n-851",
+      "claim_type": "sample_size",
+      "raw_text": "n=949",
+      "numeric_values": [
+        949.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 851,
+      "sentence": "Subjects (n=949; Full Analysis Set [FAS]) received LEM (5mg [LEM5]; 10mg [LEM10]) or PBO for 6mo.",
+      "context_window": "ts with ISI-TS \u226515 (moderate to severe insomnia). Subjects (n=949; Full Analysis Set [FAS]) received LEM (5mg [LEM5]; 10mg [L",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_437_0440_subjective_sleep_outcomes_with_lemborexant_among_subjec-u-897",
+      "claim_type": "unit_value",
+      "raw_text": "5mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "Subjects (n=949; Full Analysis Set [FAS]) received LEM (5mg [LEM5]; 10mg [LEM10]) or PBO for 6mo.",
+      "context_window": "a). Subjects (n=949; Full Analysis Set [FAS]) received LEM (5mg [LEM5]; 10mg [LEM10]) or PBO for 6mo. Changes from baseline",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_437_0440_subjective_sleep_outcomes_with_lemborexant_among_subjec-u-909",
+      "claim_type": "unit_value",
+      "raw_text": "10mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 909,
+      "sentence": "Subjects (n=949; Full Analysis Set [FAS]) received LEM (5mg [LEM5]; 10mg [LEM10]) or PBO for 6mo.",
+      "context_window": "(n=949; Full Analysis Set [FAS]) received LEM (5mg [LEM5]; 10mg [LEM10]) or PBO for 6mo. Changes from baseline (CFB) in sSO",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

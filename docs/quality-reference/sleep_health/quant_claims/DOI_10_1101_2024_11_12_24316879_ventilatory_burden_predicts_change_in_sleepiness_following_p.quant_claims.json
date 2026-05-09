@@ -1,0 +1,160 @@
+{
+  "paper_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p",
+  "doi": "10.1101/2024.11.12.24316879",
+  "extracted_at": "2026-05-08T20:05:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 4,
+    "confidence_interval": 1,
+    "correlation": 1,
+    "percentage": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-n-853",
+      "claim_type": "sample_size",
+      "raw_text": "n =64",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "Change-in-ESS prediction was evaluated using 213 CPAP treatment studies (HomePAP, BestAIR, and ABC) in three steps: severity measures were compared (adjusted regression, n =64), a prediction model was developed using baseline ventilatory burden and baseline ESS ( n =139), and then evaluated in holdout participants ( n =74).",
+      "context_window": "teps: severity measures were compared (adjusted regression, n =64), a prediction model was developed using baseline ventilato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-n-947",
+      "claim_type": "sample_size",
+      "raw_text": "n =139",
+      "numeric_values": [
+        139.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 947,
+      "sentence": "Change-in-ESS prediction was evaluated using 213 CPAP treatment studies (HomePAP, BestAIR, and ABC) in three steps: severity measures were compared (adjusted regression, n =64), a prediction model was developed using baseline ventilatory burden and baseline ESS ( n =139), and then evaluated in holdout participants ( n =74).",
+      "context_window": "eloped using baseline ventilatory burden and baseline ESS ( n =139), and then evaluated in holdout participants ( n =74). Meas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-n-1001",
+      "claim_type": "sample_size",
+      "raw_text": "n =74",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1001,
+      "sentence": "Change-in-ESS prediction was evaluated using 213 CPAP treatment studies (HomePAP, BestAIR, and ABC) in three steps: severity measures were compared (adjusted regression, n =64), a prediction model was developed using baseline ventilatory burden and baseline ESS ( n =139), and then evaluated in holdout participants ( n =74).",
+      "context_window": "ESS ( n =139), and then evaluated in holdout participants ( n =74). Measurements and Main Results In cross-sectional analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-ci-1128",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.23-0.67",
+      "numeric_values": [
+        0.23,
+        0.67
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1128,
+      "sentence": "Measurements and Main Results In cross-sectional analysis, ESS was associated with ventilatory burden (0.45 points/SD; 95% CI 0.23-0.67), hypoxic burden (0.39; 0.17-0.62), the apnea-hypopnea index (AHI) (0.36; 0.14-0.59), and flow limitation severity (0.22; 0.01-0.43).",
+      "context_window": "ESS was associated with ventilatory burden (0.45 points/SD; 95% CI 0.23-0.67), hypoxic burden (0.39; 0.17-0.62), the apnea-hypopnea inde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-corr-1616",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 =0.313",
+      "numeric_values": [
+        0.313
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1616,
+      "sentence": "Predicted change-in-ESS and actual change-in-ESS were correlated in holdout participants (adjusted R\u00b2 =0.313); median [IQR] actual change-in-ESS of predicted responders (\u22652-point ESS improvement, n =54, 73.0%) was -5.0 [-10.0 to -2.0] and non-responders was 0.0 [-1.0-1.0] ( P <0.001).",
+      "context_window": "ge-in-ESS were correlated in holdout participants (adjusted R\u00b2 =0.313); median [IQR] actual change-in-ESS of predicted responders",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-n-1713",
+      "claim_type": "sample_size",
+      "raw_text": "n =54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1713,
+      "sentence": "Predicted change-in-ESS and actual change-in-ESS were correlated in holdout participants (adjusted R\u00b2 =0.313); median [IQR] actual change-in-ESS of predicted responders (\u22652-point ESS improvement, n =54, 73.0%) was -5.0 [-10.0 to -2.0] and non-responders was 0.0 [-1.0-1.0] ( P <0.001).",
+      "context_window": "e-in-ESS of predicted responders (\u22652-point ESS improvement, n =54, 73.0%) was -5.0 [-10.0 to -2.0] and non-responders was 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-pct-1720",
+      "claim_type": "percentage",
+      "raw_text": "73.0%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1720,
+      "sentence": "Predicted change-in-ESS and actual change-in-ESS were correlated in holdout participants (adjusted R\u00b2 =0.313); median [IQR] actual change-in-ESS of predicted responders (\u22652-point ESS improvement, n =54, 73.0%) was -5.0 [-10.0 to -2.0] and non-responders was 0.0 [-1.0-1.0] ( P <0.001).",
+      "context_window": "S of predicted responders (\u22652-point ESS improvement, n =54, 73.0%) was -5.0 [-10.0 to -2.0] and non-responders was 0.0 [-1.0-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_11_12_24316879_ventilatory_burden_predicts_change_in_sleepiness_following_p-p-1792",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1792,
+      "sentence": "Predicted change-in-ESS and actual change-in-ESS were correlated in holdout participants (adjusted R\u00b2 =0.313); median [IQR] actual change-in-ESS of predicted responders (\u22652-point ESS improvement, n =54, 73.0%) was -5.0 [-10.0 to -2.0] and non-responders was 0.0 [-1.0-1.0] ( P <0.001).",
+      "context_window": "5.0 [-10.0 to -2.0] and non-responders was 0.0 [-1.0-1.0] ( P <0.001). Conclusions Baseline ventilatory burden and baseline ESS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

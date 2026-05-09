@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_will_lower_dose_aspirin_be_more_effective_following_acs_will",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_will_lower_dose_aspirin_be_more_effective_following_acs_will-u-319",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 319,
+      "sentence": "The other, 20 mg twice a day, is lower than the standard but there is growing scientific evidence that, when given with ticagrelor, this might offer advantages over the usual dose.",
+      "context_window": "aspirin used to treat heart attacks and angina. The other, 20 mg twice a day, is lower than the standard but there is growin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

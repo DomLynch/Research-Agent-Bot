@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car",
   "doi": "10.1038/s41598-021-93179-8",
-  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extracted_at": "2026-05-08T20:06:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 80,
@@ -24,9 +24,9 @@
       "context_window": "uctuated over the 20-year study period peaking in 2008 with 8.5% (5.4% primary prevention) and dropping to 5.1% (3.1% primar",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-573",
@@ -42,9 +42,9 @@
       "context_window": "ed over the 20-year study period peaking in 2008 with 8.5% (5.4% primary prevention) and dropping to 5.1% (3.1% primary prev",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-614",
@@ -60,9 +60,9 @@
       "context_window": "in 2008 with 8.5% (5.4% primary prevention) and dropping to 5.1% (3.1% primary prevention) in 2018. Aspirin use showed stron",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-620",
@@ -78,9 +78,9 @@
       "context_window": "8 with 8.5% (5.4% primary prevention) and dropping to 5.1% (3.1% primary prevention) in 2018. Aspirin use showed strong age",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-700",
@@ -96,9 +96,9 @@
       "context_window": "ion) in 2018. Aspirin use showed strong age dependency, and 21% of individuals > 80 years were treated with aspirin for pri",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-721",
@@ -114,9 +114,9 @@
       "context_window": "use showed strong age dependency, and 21% of individuals > 80 years were treated with aspirin for primary prevention in 2018. M",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-848",
@@ -132,9 +132,9 @@
       "context_window": "Medication adding to bleeding risk was used concurrently by 21% of all aspirin users in 2018. The incidence of major bleedi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-1046",
@@ -150,9 +150,9 @@
       "context_window": "est in elderly (2 per 100 patient years among individuals > 80 years in 2018). In conclusion, low-dose aspirin use for primary p",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-247",
@@ -168,9 +168,9 @@
       "context_window": "e risk-benefit balance is well-established for low-dose (75-150 mg) aspirin use in patients with ASCVD 2 , the net clinical be",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-531",
@@ -186,9 +186,9 @@
       "context_window": "l cardiovascular protective effect of relatively high-dose (500 mg) aspirin in individuals without ASCVD 6 , 7 . Since then, s",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-751",
@@ -203,10 +203,10 @@
       "sentence": "Since then, several randomized clinical trials have investigated the risk-benefit profile of primary prevention of cardiovascular events with low-to moderate dose (75-325 mg) aspirin in patients without established ASCVD 3 , 4 .",
       "context_window": "tion of cardiovascular events with low-to moderate dose (75-325 mg) aspirin in patients without established ASCVD 3 , 4 . Base",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-2141",
@@ -222,7 +222,7 @@
       "context_window": "vascular prevention, particularly in individuals older than 70 years or patients with increased risk of bleeding 18 . The histo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -240,9 +240,9 @@
       "context_window": "ementary Table 1 for ICD codes). We included all adults (> 18 years) redeeming a prescription for low-dose aspirin in strengths",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-882",
@@ -258,9 +258,9 @@
       "context_window": "edeeming a prescription for low-dose aspirin in strengths \u2264 150 mg (ATC codes B01AC06 and N02BA01). In Denmark, higher doses o",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-1405",
@@ -312,9 +312,9 @@
       "context_window": "deemed by individuals currently using aspirin or during the 30 days leading up to aspirin use were included. As a sensitivity a",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4470",
@@ -384,9 +384,9 @@
       "context_window": "study period (Fig. 1 ). The prevalence of aspirin users was 4.2% in 1998, 8.5% in 2008, and 5.1% in 2018. Primary prevention",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4764",
@@ -402,9 +402,9 @@
       "context_window": "Fig. 1 ). The prevalence of aspirin users was 4.2% in 1998, 8.5% in 2008, and 5.1% in 2018. Primary prevention use amounted",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4782",
@@ -420,9 +420,9 @@
       "context_window": "alence of aspirin users was 4.2% in 1998, 8.5% in 2008, and 5.1% in 2018. Primary prevention use amounted to 2.6% in 1998, 5",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4831",
@@ -438,9 +438,9 @@
       "context_window": "2008, and 5.1% in 2018. Primary prevention use amounted to 2.6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4845",
@@ -456,9 +456,9 @@
       "context_window": "% in 2018. Primary prevention use amounted to 2.6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61%",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4863",
@@ -474,9 +474,9 @@
       "context_window": "prevention use amounted to 2.6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61% of all prescribed",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4892",
@@ -492,9 +492,9 @@
       "context_window": ".6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61% of all prescribed low-dose aspirin the respect",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4905",
@@ -510,9 +510,9 @@
       "context_window": "5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61% of all prescribed low-dose aspirin the respective years. Fi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-5863",
@@ -528,9 +528,9 @@
       "context_window": "spirin use for primary prevention among those aged at least 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-5890",
@@ -546,9 +546,9 @@
       "context_window": "ention among those aged at least 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018. Figure 2 Prevalence",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-5903",
@@ -564,9 +564,9 @@
       "context_window": "those aged at least 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018. Figure 2 Prevalence of aspirin us",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-5920",
@@ -582,9 +582,9 @@
       "context_window": "st 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018. Figure 2 Prevalence of aspirin use stratified by a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-6911",
@@ -636,7 +636,7 @@
       "context_window": "anticoagulants) was highest in 2002-2010 with approximately 33%, and in 2018 it had dropped to its lowest prevalence of 21%",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "33%, and in 2018 it had dropped to its lowest prevalence of 21% (Fig. 4 ). The largest change among primary prevention aspi",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "tion aspirin users was for NSAID, which had a prevalence of 19% in 2001-2002 that had dropped to 7.1% in 2018 (Fig. 4 A). U",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "ch had a prevalence of 19% in 2001-2002 that had dropped to 7.1% in 2018 (Fig. 4 A). Use of SSRIs, other platelet inhibitors",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -708,9 +708,9 @@
       "context_window": "roportions of concomitant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-8754",
@@ -726,9 +726,9 @@
       "context_window": "ions of concomitant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary prevent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-8760",
@@ -744,9 +744,9 @@
       "context_window": "f concomitant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary prevention as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-8769",
@@ -762,9 +762,9 @@
       "context_window": "tant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary prevention aspirin use",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-8878",
@@ -780,9 +780,9 @@
       "context_window": "ion aspirin users almost doubled over the study period from 8.6% in 1999 to 16% in 2018. Figure 4 Primary prevention use of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-8894",
@@ -798,9 +798,9 @@
       "context_window": "s almost doubled over the study period from 8.6% in 1999 to 16% in 2018. Figure 4 Primary prevention use of aspirin and con",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-10505",
@@ -816,7 +816,7 @@
       "context_window": "0 patient years among primary prevention aspirin users aged 80 years or more. Figure 5 Incident bleeding events in aspirin users",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -834,9 +834,9 @@
       "context_window": "2018 (Supplementary Fig B). In general, patients older than 60 years had a high treatment persistence, with almost 60% of both p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-11696",
@@ -852,9 +852,9 @@
       "context_window": "than 60 years had a high treatment persistence, with almost 60% of both primary and secondary prevention aspirin users rede",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-11791",
@@ -870,9 +870,9 @@
       "context_window": "revention aspirin users redeeming prescription for at least 5 years (Supplementary Fig B).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-191",
@@ -942,9 +942,9 @@
       "context_window": "study period (Fig. 1 ). The prevalence of aspirin users was 4.2% in 1998, 8.5% in 2008, and 5.1% in 2018. Primary prevention",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-485",
@@ -960,9 +960,9 @@
       "context_window": "Fig. 1 ). The prevalence of aspirin users was 4.2% in 1998, 8.5% in 2008, and 5.1% in 2018. Primary prevention use amounted",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-503",
@@ -978,9 +978,9 @@
       "context_window": "alence of aspirin users was 4.2% in 1998, 8.5% in 2008, and 5.1% in 2018. Primary prevention use amounted to 2.6% in 1998, 5",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-552",
@@ -996,9 +996,9 @@
       "context_window": "2008, and 5.1% in 2018. Primary prevention use amounted to 2.6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-566",
@@ -1014,9 +1014,9 @@
       "context_window": "% in 2018. Primary prevention use amounted to 2.6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61%",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-584",
@@ -1032,9 +1032,9 @@
       "context_window": "prevention use amounted to 2.6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61% of all prescribed",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-613",
@@ -1050,9 +1050,9 @@
       "context_window": ".6% in 1998, 5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61% of all prescribed low-dose aspirin the respect",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-626",
@@ -1068,9 +1068,9 @@
       "context_window": "5.4% in 2008, and 3.1% in 2018, accounting for 62%, 64, and 61% of all prescribed low-dose aspirin the respective years. Fi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-1584",
@@ -1086,9 +1086,9 @@
       "context_window": "spirin use for primary prevention among those aged at least 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-1611",
@@ -1104,9 +1104,9 @@
       "context_window": "ention among those aged at least 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018. Figure 2 Prevalence",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-1624",
@@ -1122,9 +1122,9 @@
       "context_window": "those aged at least 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018. Figure 2 Prevalence of aspirin us",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-1641",
@@ -1140,9 +1140,9 @@
       "context_window": "st 80 years was approximately 27% in 1998, 40% in 2008, and 20% in 2018. Figure 2 Prevalence of aspirin use stratified by a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-2632",
@@ -1194,7 +1194,7 @@
       "context_window": "anticoagulants) was highest in 2002-2010 with approximately 33%, and in 2018 it had dropped to its lowest prevalence of 21%",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1212,7 +1212,7 @@
       "context_window": "33%, and in 2018 it had dropped to its lowest prevalence of 21% (Fig. 4 ). The largest change among primary prevention aspi",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1230,7 +1230,7 @@
       "context_window": "tion aspirin users was for NSAID, which had a prevalence of 19% in 2001-2002 that had dropped to 7.1% in 2018 (Fig. 4 A). U",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1248,7 +1248,7 @@
       "context_window": "ch had a prevalence of 19% in 2001-2002 that had dropped to 7.1% in 2018 (Fig. 4 A). Use of SSRIs, other platelet inhibitors",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1266,9 +1266,9 @@
       "context_window": "roportions of concomitant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4475",
@@ -1284,9 +1284,9 @@
       "context_window": "ions of concomitant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary prevent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4481",
@@ -1302,9 +1302,9 @@
       "context_window": "f concomitant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary prevention as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4490",
@@ -1320,9 +1320,9 @@
       "context_window": "tant users for these drug classes were 4.8%, 5.7%, 3.6% and 4.1%, respectively. Use of PPI in primary prevention aspirin use",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4599",
@@ -1338,9 +1338,9 @@
       "context_window": "ion aspirin users almost doubled over the study period from 8.6% in 1999 to 16% in 2018. Figure 4 Primary prevention use of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-4615",
@@ -1356,9 +1356,9 @@
       "context_window": "s almost doubled over the study period from 8.6% in 1999 to 16% in 2018. Figure 4 Primary prevention use of aspirin and con",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-6226",
@@ -1374,7 +1374,7 @@
       "context_window": "0 patient years among primary prevention aspirin users aged 80 years or more. Figure 5 Incident bleeding events in aspirin users",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1392,9 +1392,9 @@
       "context_window": "2018 (Supplementary Fig B). In general, patients older than 60 years had a high treatment persistence, with almost 60% of both p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-7417",
@@ -1410,9 +1410,9 @@
       "context_window": "than 60 years had a high treatment persistence, with almost 60% of both primary and secondary prevention aspirin users rede",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-7512",
@@ -1428,9 +1428,9 @@
       "context_window": "revention aspirin users redeeming prescription for at least 5 years (Supplementary Fig B).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-pct-113",
@@ -1446,7 +1446,7 @@
       "context_window": "rescribed for primary than secondary prevention. A total of 3.6% of the entire adult population used aspirin without a regis",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1464,7 +1464,7 @@
       "context_window": "without a registered diagnosis of ASCVD, whereas more than 20% of Danish citizens aged 80 years or older were treated with",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1482,7 +1482,7 @@
       "context_window": "sis of ASCVD, whereas more than 20% of Danish citizens aged 80 years or older were treated with aspirin for primary prevention,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1500,7 +1500,7 @@
       "context_window": "ad a substantial annual hospital-diagnosed bleeding risk of 2.2%. A major strength of our study is the nationwide capture o",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1518,9 +1518,9 @@
       "context_window": "OTC-sale is restricted to pharmacies and amounted to about 10% of the total low-dose aspirin sale in 2006-2018 (available",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-n-2199",
@@ -1536,7 +1536,7 @@
       "context_window": "t from the 2017 US National Health Interview Survey (NHIS) (n = 14,328), self-reported aspirin use ranged from 7% among indivi",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1554,7 +1554,7 @@
       "context_window": "(NHIS) (n = 14,328), self-reported aspirin use ranged from 7% among individuals aged 40-50 years to 46% among individuals",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1572,7 +1572,7 @@
       "context_window": "ported aspirin use ranged from 7% among individuals aged 40-50 years to 46% among individuals aged 80 years or more 26 . In cont",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1590,7 +1590,7 @@
       "context_window": "in use ranged from 7% among individuals aged 40-50 years to 46% among individuals aged 80 years or more 26 . In contrast to",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1608,7 +1608,7 @@
       "context_window": "individuals aged 40-50 years to 46% among individuals aged 80 years or more 26 . In contrast to our registry data, the NHIS def",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1626,7 +1626,7 @@
       "context_window": "an the corresponding numbers in our cohort, where less than 2% of the individuals aged 40-50 years and 20% of individuals",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1644,7 +1644,7 @@
       "context_window": "n our cohort, where less than 2% of the individuals aged 40-50 years and 20% of individuals aged 80 years or more were taking as",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1662,7 +1662,7 @@
       "context_window": "where less than 2% of the individuals aged 40-50 years and 20% of individuals aged 80 years or more were taking aspirin in",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1680,7 +1680,7 @@
       "context_window": "he individuals aged 40-50 years and 20% of individuals aged 80 years or more were taking aspirin in 2017. This difference may in",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1698,7 +1698,7 @@
       "context_window": "e of aspirin use for primary prevention among citizens aged 80 years peaked at 36% in 2010, and was reduced to almost half of th",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1716,7 +1716,7 @@
       "context_window": "r primary prevention among citizens aged 80 years peaked at 36% in 2010, and was reduced to almost half of that by 2018. Th",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "aspirin use, notably there was final response rate of only 53% in the 2017 NHIS 26 . Our registry-based estimates relying",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "major cardiovascular events is a relative risk reduction of 11% (95% CI 6-16%), which has to be compared to a 43% relative",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1771,7 +1771,7 @@
       "context_window": "cardiovascular events is a relative risk reduction of 11% (95% CI 6-16%), which has to be compared to a 43% relative risk increase",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1789,7 +1789,7 @@
       "context_window": "scular events is a relative risk reduction of 11% (95% CI 6-16%), which has to be compared to a 43% relative risk increase",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1807,7 +1807,7 @@
       "context_window": "uction of 11% (95% CI 6-16%), which has to be compared to a 43% relative risk increase of major bleeding events (95% CI 30-",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1826,7 +1826,7 @@
       "context_window": "d to a 43% relative risk increase of major bleeding events (95% CI 30-56%) 27 . Collectively, the large extent of primary preventio",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1844,7 +1844,7 @@
       "context_window": "relative risk increase of major bleeding events (95% CI 30-56%) 27 . Collectively, the large extent of primary prevention",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1862,9 +1862,9 @@
       "context_window": "guidelines discourage routine aspirin use in patients over 70 years, but offer little help in deciding which older patients (if",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245534_low_dose_aspirin_for_primary_and_secondary_prevention_of_car-u-5179",
@@ -1880,7 +1880,7 @@
       "context_window": "ts 29 . The recent ASCEND trial 15 with a mean follow-up of 7.4 years showed that in patients with type 2 diabetes, an absolute 1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1898,7 +1898,7 @@
       "context_window": "s showed that in patients with type 2 diabetes, an absolute 1.1%-point reduction of serious vascular events (8.5% with aspir",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1916,7 +1916,7 @@
       "context_window": "n absolute 1.1%-point reduction of serious vascular events (8.5% with aspirin treatment vs 9.6% with placebo) was balanced b",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1934,7 +1934,7 @@
       "context_window": "of serious vascular events (8.5% with aspirin treatment vs 9.6% with placebo) was balanced by a 0.9%-point excess of major",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1952,7 +1952,7 @@
       "context_window": "h aspirin treatment vs 9.6% with placebo) was balanced by a 0.9%-point excess of major bleeding events (4.1% with aspirin tr",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1970,7 +1970,7 @@
       "context_window": "s balanced by a 0.9%-point excess of major bleeding events (4.1% with aspirin treatment vs 3.2% with placebo). Notably, the",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1988,7 +1988,7 @@
       "context_window": "ss of major bleeding events (4.1% with aspirin treatment vs 3.2% with placebo). Notably, the most favourable risk-benefit ba",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2042,9 +2042,9 @@
       "context_window": "OTC-sale is restricted to pharmacies and amounted to about 10% of the total low-dose aspirin sale in 2006-2018 (available",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

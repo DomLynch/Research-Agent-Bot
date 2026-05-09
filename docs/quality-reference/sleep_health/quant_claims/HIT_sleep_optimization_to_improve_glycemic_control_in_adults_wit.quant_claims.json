@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_sleep_optimization_to_improve_glycemic_control_in_adults_wit",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_sleep_optimization_to_improve_glycemic_control_in_adults_wit-pct-6",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 6,
+      "sentence": "Up to 40% of adults with type 1 diabetes have insufficient sleep which is associated with negative health consequences including poor blood glucose control and greater diabetes complications.",
+      "context_window": "Up to 40% of adults with type 1 diabetes have insufficient sleep whic",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "paper_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi",
+  "doi": "10.1038/s41598-024-52606-2",
+  "extracted_at": "2026-05-08T20:10:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 10,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-154",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 154,
+      "sentence": "In developing countries 10 to 15% of human TB cases are estimated to be caused by the bovine pathogenic agent Mycobacterium bovis 1 .",
+      "context_window": "deadliest infectious disease. In developing countries 10 to 15% of human TB cases are estimated to be caused by the bovine",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-u-693",
+      "claim_type": "unit_value",
+      "raw_text": "000 years",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 693,
+      "sentence": "Transmission was thought to have occurred during domestication, around 10,000 years ago, but a recent study from 2020 provides a more modern (3rd to twelfth century AD) estimation for Mycobacterium bovis origin in East Africa 4 .",
+      "context_window": "as thought to have occurred during domestication, around 10,000 years ago, but a recent study from 2020 provides a more modern (3",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-2291",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2291,
+      "sentence": "Later reports show a higher prevalence of bTB in the European Taurine (EUT) Holstein breed than in African Zebu (AFZ) (mainly Arsi breed) or AFZ \u00d7 EUT crosses (22.2,11.6 and 11.9% respectively) by conducting a comparative intradermal tuberculin test with injection of purified protein derivatives of Mycobacterium bovis on a total of 5,424 cattle 13 .",
+      "context_window": "FZ) (mainly Arsi breed) or AFZ \u00d7 EUT crosses (22.2,11.6 and 11.9% respectively) by conducting a comparative intradermal tuber",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-u-4710",
+      "claim_type": "unit_value",
+      "raw_text": "000 years",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4710,
+      "sentence": "This method is optimally used for selections having occurred within the last 30,000 years in humans 93 , or 7200 years in equivalent for cattle considering standard approximates of 25- and 6- year generation intervals for the human and bovine species, respectively.",
+      "context_window": "ally used for selections having occurred within the last 30,000 years in humans 93 , or 7200 years in equivalent for cattle consi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-u-4738",
+      "claim_type": "unit_value",
+      "raw_text": "7200 years",
+      "numeric_values": [
+        7200.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4738,
+      "sentence": "This method is optimally used for selections having occurred within the last 30,000 years in humans 93 , or 7200 years in equivalent for cattle considering standard approximates of 25- and 6- year generation intervals for the human and bovine species, respectively.",
+      "context_window": "ing occurred within the last 30,000 years in humans 93 , or 7200 years in equivalent for cattle considering standard approximates",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-u-6158",
+      "claim_type": "unit_value",
+      "raw_text": "000 years",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6158,
+      "sentence": "The cross-population composite likelihood ratio (XP-CLR) method 96 is one of the statistics developed to detect allele frequency differentiation signature which has been estimated to persist over the equivalent of 18,000 to 12,000 years in cattle.",
+      "context_window": "en estimated to persist over the equivalent of 18,000 to 12,000 years in cattle. The XP-CLR method was implemented using scripts",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-7833",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7833,
+      "sentence": "After removing unmatched scaffolds, the 'CNV_overlap.py' script from ( https://github.com/bjtrost/TCAG-WGS-CNV-workflow) 103 was applied to identify copy number variation region (CNVR) as the 50% overlap between remaining CNVs.",
+      "context_window": "lied to identify copy number variation region (CNVR) as the 50% overlap between remaining CNVs. To minimize false-positives",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-8716",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8716,
+      "sentence": "Regions that were within the top 1% of the highest Vst and which had an adjusted t-test P -value below 0.01 were considered as population differentiated CNVRs.",
+      "context_window": "rrection) as a complement. Regions that were within the top 1% of the highest Vst and which had an adjusted t-test P -valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-11181",
+      "claim_type": "percentage",
+      "raw_text": "75.51%",
+      "numeric_values": [
+        75.51
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11181,
+      "sentence": "A score threshold of -1.3 was used as it was sufficient to detect the functional changes in the variants of non-human dataset with a balanced accuracy of 75.51% 110 .",
+      "context_window": "e variants of non-human dataset with a balanced accuracy of 75.51% 110 . The strongest candidate genes were visualized with Ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-218",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 218,
+      "sentence": "Previous studies reported that a 5 \u00d7 depth coverage was sufficient for CNV detection 21 - 23 , with accuracies as high as 97% being reached for a depth > 8 \u00d7 23 .",
+      "context_window": "ient for CNV detection 21 - 23 , with accuracies as high as 97% being reached for a depth > 8 \u00d7 23 . The minimum and averag",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-409",
+      "claim_type": "percentage",
+      "raw_text": "95.0%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 409,
+      "sentence": "The minimum and average mean depths reached in our study being 7.9 \u00d7 and 9.4 \u00d7, respectively, with associated alignment rate and coverage of 99.3 and 95.0% (Table.",
+      "context_window": "ly, with associated alignment rate and coverage of 99.3 and 95.0% (Table. S2 ), we estimated that CNVs calling accuracy was s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-2068",
+      "claim_type": "percentage",
+      "raw_text": "19.4%",
+      "numeric_values": [
+        19.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2068,
+      "sentence": "The first dimension of the PCA explained 19.4% of the variability in the dataset, while the second dimension explained 3.9% of the variability.",
+      "context_window": "second dimensions. The first dimension of the PCA explained 19.4% of the variability in the dataset, while the second dimensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-2146",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2146,
+      "sentence": "The first dimension of the PCA explained 19.4% of the variability in the dataset, while the second dimension explained 3.9% of the variability.",
+      "context_window": "bility in the dataset, while the second dimension explained 3.9% of the variability. As illustrated on (Fig. 1 b), dimension",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10824790_exploring_the_genetic_factors_behind_the_discrepancy_in_resi-pct-3128",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3128,
+      "sentence": "By annotating the upper 1% window of the empirical distribution obtained for each method, a total of 783, 882, 371, 619, 37, and 303 genes were identified as under recent or ongoing selection using the FLK, FST, XP-EHH, XP-CLR, VST, and t-test methods, respectively.",
+      "context_window": "ssociated with various time scales. By annotating the upper 1% window of the empirical distribution obtained for each meth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

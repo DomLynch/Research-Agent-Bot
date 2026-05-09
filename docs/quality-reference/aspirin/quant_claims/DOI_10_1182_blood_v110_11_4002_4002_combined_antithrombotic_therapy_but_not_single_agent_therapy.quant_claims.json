@@ -1,0 +1,180 @@
+{
+  "paper_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy",
+  "doi": "10.1182/blood.v110.11.4002.4002",
+  "extracted_at": "2026-05-08T20:05:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "mean_sd": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-n-1038",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "To evaluate the preventory effect of thromboses and the inhibitory effects for platelet activation by several kinds of antithrombotic agents in APS, 30 APS patients with cerebral infarctions were randomly treated with low-dose aspirin alone (Group A, n=10), aspirin plus warfarin (Group B, n=10), or aspirin plus cirostazole (Group C, n=10).",
+      "context_window": "were randomly treated with low-dose aspirin alone (Group A, n=10), aspirin plus warfarin (Group B, n=10), or aspirin plus ci",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-n-1077",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1077,
+      "sentence": "To evaluate the preventory effect of thromboses and the inhibitory effects for platelet activation by several kinds of antithrombotic agents in APS, 30 APS patients with cerebral infarctions were randomly treated with low-dose aspirin alone (Group A, n=10), aspirin plus warfarin (Group B, n=10), or aspirin plus cirostazole (Group C, n=10).",
+      "context_window": "irin alone (Group A, n=10), aspirin plus warfarin (Group B, n=10), or aspirin plus cirostazole (Group C, n=10). Their plasma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-n-1122",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1122,
+      "sentence": "To evaluate the preventory effect of thromboses and the inhibitory effects for platelet activation by several kinds of antithrombotic agents in APS, 30 APS patients with cerebral infarctions were randomly treated with low-dose aspirin alone (Group A, n=10), aspirin plus warfarin (Group B, n=10), or aspirin plus cirostazole (Group C, n=10).",
+      "context_window": "arin (Group B, n=10), or aspirin plus cirostazole (Group C, n=10). Their plasma PDMP levels were measured using \u201cJIMRO test",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-msd-1440",
+      "claim_type": "mean_sd",
+      "raw_text": "18.0 \u00b1 7.1",
+      "numeric_values": [
+        18.0,
+        7.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "Plasma PDMP levels in group B and group C significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS).",
+      "context_window": "significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-msd-1454",
+      "claim_type": "mean_sd",
+      "raw_text": "13.0 \u00b1 8.2",
+      "numeric_values": [
+        13.0,
+        8.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1454,
+      "sentence": "Plasma PDMP levels in group B and group C significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS).",
+      "context_window": "decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-msd-1471",
+      "claim_type": "mean_sd",
+      "raw_text": "17.8 \u00b1 6.7",
+      "numeric_values": [
+        17.8,
+        6.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "Plasma PDMP levels in group B and group C significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS).",
+      "context_window": "ined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-msd-1485",
+      "claim_type": "mean_sd",
+      "raw_text": "12.4 \u00b1 7.8",
+      "numeric_values": [
+        12.4,
+        7.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1485,
+      "sentence": "Plasma PDMP levels in group B and group C significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS).",
+      "context_window": "botic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in G",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-msd-1563",
+      "claim_type": "mean_sd",
+      "raw_text": "18.2 \u00b1 8.1",
+      "numeric_values": [
+        18.2,
+        8.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1563,
+      "sentence": "Plasma PDMP levels in group B and group C significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS).",
+      "context_window": "&lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS). Brain MRI revealed worsening of lacuna",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1182_blood_v110_11_4002_4002_combined_antithrombotic_therapy_but_not_single_agent_therapy-msd-1577",
+      "claim_type": "mean_sd",
+      "raw_text": "17.9 \u00b1 9.1",
+      "numeric_values": [
+        17.9,
+        9.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1577,
+      "sentence": "Plasma PDMP levels in group B and group C significantly decreased by combined antithrombotic therapy (18.0 \u00b1 7.1 to 13.0 \u00b1 8.2 U/mL, 17.8 \u00b1 6.7 to 12.4 \u00b1 7.8 U/mL, p &lt; 0.03 and &lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS).",
+      "context_window": "&lt; 0.01, respectively) but not in Group A (18.2 \u00b1 8.1 to 17.9 \u00b1 9.1, NS). Brain MRI revealed worsening of lacuna infarctions in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

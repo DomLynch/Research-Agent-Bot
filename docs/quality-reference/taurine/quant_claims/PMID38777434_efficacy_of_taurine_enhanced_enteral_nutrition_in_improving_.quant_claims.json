@@ -1,0 +1,142 @@
+{
+  "paper_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_",
+  "doi": "10.1016/j.clnesp.2024.03.012",
+  "extracted_at": "2026-05-08T20:10:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "risk_ratio": 1,
+    "p_value": 2,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-pct-808",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "Risk ratio (RR), mean difference (MD), and 95% confidence interval (95% CI) were used to analyze measurement data.",
+      "context_window": "of the results. Risk ratio (RR), mean difference (MD), and 95% confidence interval (95% CI) were used to analyze measureme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-pct-833",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 833,
+      "sentence": "Risk ratio (RR), mean difference (MD), and 95% confidence interval (95% CI) were used to analyze measurement data.",
+      "context_window": "io (RR), mean difference (MD), and 95% confidence interval (95% CI) were used to analyze measurement data. Results Four tri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-rr-a-1033",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.70",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1033,
+      "sentence": "The meta-analysis results indicated that taurine-enhanced EN did not reduce mortality (RR = 0.70, p = 0.45, 95% CI [0.28, 1.80], two trials, 176 participants, low quality).",
+      "context_window": "ndicated that taurine-enhanced EN did not reduce mortality (RR = 0.70, p = 0.45, 95% CI [0.28, 1.80], two trials, 176 participant",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-p-1044",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1044,
+      "sentence": "The meta-analysis results indicated that taurine-enhanced EN did not reduce mortality (RR = 0.70, p = 0.45, 95% CI [0.28, 1.80], two trials, 176 participants, low quality).",
+      "context_window": "at taurine-enhanced EN did not reduce mortality (RR = 0.70, p = 0.45, 95% CI [0.28, 1.80], two trials, 176 participants, low qua",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-ci-1054",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.28, 1.80",
+      "numeric_values": [
+        0.28,
+        1.8
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1054,
+      "sentence": "The meta-analysis results indicated that taurine-enhanced EN did not reduce mortality (RR = 0.70, p = 0.45, 95% CI [0.28, 1.80], two trials, 176 participants, low quality).",
+      "context_window": "-enhanced EN did not reduce mortality (RR = 0.70, p = 0.45, 95% CI [0.28, 1.80], two trials, 176 participants, low quality). There was als",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-p-1528",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1528,
+      "sentence": "However, taurine-enhanced EN had no significant impact on high-sensitivity-C-reactive protein levels (MD = -0.41, p = 0.40, 95% CI [-1.35, 0.54], two trials, 60 participants, low quality).",
+      "context_window": "on high-sensitivity-C-reactive protein levels (MD = -0.41, p = 0.40, 95% CI [-1.35, 0.54], two trials, 60 participants, low qua",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38777434_efficacy_of_taurine_enhanced_enteral_nutrition_in_improving_-ci-1538",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-1.35, 0.54",
+      "numeric_values": [
+        -1.35,
+        0.54
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1538,
+      "sentence": "However, taurine-enhanced EN had no significant impact on high-sensitivity-C-reactive protein levels (MD = -0.41, p = 0.40, 95% CI [-1.35, 0.54], two trials, 60 participants, low quality).",
+      "context_window": "ensitivity-C-reactive protein levels (MD = -0.41, p = 0.40, 95% CI [-1.35, 0.54], two trials, 60 participants, low quality). Discussion Tau",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

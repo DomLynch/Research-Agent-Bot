@@ -1,0 +1,1763 @@
+{
+  "paper_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p",
+  "doi": "10.3389/fcvm.2022.964541",
+  "extracted_at": "2026-05-08T20:06:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 46,
+    "percentage": 24,
+    "p_value": 17,
+    "odds_ratio": 8,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-413",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 413,
+      "sentence": "Women with twin pregnancies who received prenatal care before 20 weeks of gestational age were included.",
+      "context_window": "men with twin pregnancies who received prenatal care before 20 weeks of gestational age were included. They were divided into th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-836",
+      "claim_type": "percentage",
+      "raw_text": "10.75%",
+      "numeric_values": [
+        10.75
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 836,
+      "sentence": "Of 2,705 eligible women, 291 (10.75%) were administered aspirin and the other 2,414 (89.25%) did not.",
+      "context_window": "d due to missing information. Of 2,705 eligible women, 291 (10.75%) were administered aspirin and the other 2,414 (89.25%) did",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-891",
+      "claim_type": "percentage",
+      "raw_text": "89.25%",
+      "numeric_values": [
+        89.25
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 891,
+      "sentence": "Of 2,705 eligible women, 291 (10.75%) were administered aspirin and the other 2,414 (89.25%) did not.",
+      "context_window": "291 (10.75%) were administered aspirin and the other 2,414 (89.25%) did not. The patients in the LDA group were significantly",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1089",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1089,
+      "sentence": "The patients in the LDA group were significantly more likely to be older, have a higher rate of use of ART, have a previous history of hypertension, and have gestational diabetes ( p < 0.05).",
+      "context_window": "us history of hypertension, and have gestational diabetes ( p < 0.05). In the LDA group, aspirin compliance \u226550% was relatively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1138",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1138,
+      "sentence": "In the LDA group, aspirin compliance \u226550% was relatively low (14.43%, 42/291).",
+      "context_window": "diabetes ( p < 0.05). In the LDA group, aspirin compliance \u226550% was relatively low (14.43%, 42/291). Preeclampsia occurred",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1162",
+      "claim_type": "percentage",
+      "raw_text": "14.43%",
+      "numeric_values": [
+        14.43
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "In the LDA group, aspirin compliance \u226550% was relatively low (14.43%, 42/291).",
+      "context_window": "the LDA group, aspirin compliance \u226550% was relatively low (14.43%, 42/291). Preeclampsia occurred in 106 of 291 participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1229",
+      "claim_type": "percentage",
+      "raw_text": "36.43%",
+      "numeric_values": [
+        36.43
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1229,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01).",
+      "context_window": "42/291). Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1284",
+      "claim_type": "percentage",
+      "raw_text": "18.62%",
+      "numeric_values": [
+        18.62
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1284,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01).",
+      "context_window": "nts (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-1312",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 2.15",
+      "numeric_values": [
+        2.15
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1312,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01).",
+      "context_window": "p, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01). The association was confirme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-ci-1322",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.62-2.82",
+      "numeric_values": [
+        1.62,
+        2.82
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1322,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01).",
+      "context_window": "ared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01). The association was confirmed (OR: 1.74, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1341",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01).",
+      "context_window": "1 (18.62%) in the N-LDA group (OR: 2.15, 95% CI: 1.62-2.82; p < 0.01). The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-1383",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.74",
+      "numeric_values": [
+        1.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1383,
+      "sentence": "The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4; p < 0.01) in the 1:2 case-matched analysis.",
+      "context_window": "5% CI: 1.62-2.82; p < 0.01). The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4; p < 0.01) in the 1:2 case-matched analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-ci-1393",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.26-2.4",
+      "numeric_values": [
+        1.26,
+        2.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1393,
+      "sentence": "The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4; p < 0.01) in the 1:2 case-matched analysis.",
+      "context_window": "2-2.82; p < 0.01). The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4; p < 0.01) in the 1:2 case-matched analysis. Higher odds of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1411",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1411,
+      "sentence": "The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4; p < 0.01) in the 1:2 case-matched analysis.",
+      "context_window": "The association was confirmed (OR: 1.74, 95% CI: 1.26-2.4; p < 0.01) in the 1:2 case-matched analysis. Higher odds of ratio in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1522",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1522,
+      "sentence": "Higher odds of ratio in the LDA group were demonstrated (aORs > 1, p < 0.01), except for early-onset and preterm mild preeclampsia ( p > 0.05).",
+      "context_window": "odds of ratio in the LDA group were demonstrated (aORs > 1, p < 0.01), except for early-onset and preterm mild preeclampsia ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1588",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1588,
+      "sentence": "Higher odds of ratio in the LDA group were demonstrated (aORs > 1, p < 0.01), except for early-onset and preterm mild preeclampsia ( p > 0.05).",
+      "context_window": "01), except for early-onset and preterm mild preeclampsia ( p > 0.05). This association was confirmed in a subgroup analysis of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1689",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1689,
+      "sentence": "This association was confirmed in a subgroup analysis of methods of conception (aORs \u2265 1, p > 0.05).",
+      "context_window": "in a subgroup analysis of methods of conception (aORs \u2265 1, p > 0.05). Aspirin prescription of 75 to 100 mg in twin pregnancies",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1731",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1731,
+      "sentence": "Aspirin prescription of 75 to 100 mg in twin pregnancies was associated with no significant reduction of preeclampsia, which may be due to poor compliance with the aspirin used.",
+      "context_window": "eption (aORs \u2265 1, p > 0.05). Aspirin prescription of 75 to 100 mg in twin pregnancies was associated with no significant redu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-624",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 624,
+      "sentence": "Erkan et al. found that 75 mg aspirin daily did not lower the incidence of preeclampsia or gestational hypertension in twin pregnancy ( 9 ); however, 100 mg aspirin daily did reduce the risk in an observational study in China ( 10 ).",
+      "context_window": "n twin pregnancy are indeterminate. Erkan et al. found that 75 mg aspirin daily did not lower the incidence of preeclampsia o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-750",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 750,
+      "sentence": "Erkan et al. found that 75 mg aspirin daily did not lower the incidence of preeclampsia or gestational hypertension in twin pregnancy ( 9 ); however, 100 mg aspirin daily did reduce the risk in an observational study in China ( 10 ).",
+      "context_window": "gestational hypertension in twin pregnancy ( 9 ); however, 100 mg aspirin daily did reduce the risk in an observational study",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-107",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 107,
+      "sentence": "This was a retrospective cohort study of all women with twin pregnancies who received prenatal care before 20 weeks of gestational age in the Obstetrics and Gynecology Hospital of Fudan University in Shanghai, China, from 1 January 2013 to 31 December 2020.",
+      "context_window": "men with twin pregnancies who received prenatal care before 20 weeks of gestational age in the Obstetrics and Gynecology Hospita",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-427",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 427,
+      "sentence": "The inclusion criteria for the study were the following: maternal age \u2265 18 years old, twin pregnancies, and first prenatal visit before 20 weeks of gestational age.",
+      "context_window": "n criteria for the study were the following: maternal age \u2265 18 years old, twin pregnancies, and first prenatal visit before 20 w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-491",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 491,
+      "sentence": "The inclusion criteria for the study were the following: maternal age \u2265 18 years old, twin pregnancies, and first prenatal visit before 20 weeks of gestational age.",
+      "context_window": "ears old, twin pregnancies, and first prenatal visit before 20 weeks of gestational age. The exclusion criteria were as follows:",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-587",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 587,
+      "sentence": "The exclusion criteria were as follows: first prenatal visit after 20 weeks of gestational age, missing information on the number of fetuses, gestational age, or delivery week.",
+      "context_window": "lusion criteria were as follows: first prenatal visit after 20 weeks of gestational age, missing information on the number of fe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-995",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 995,
+      "sentence": "Indication for LDA was based on the traditional count of clinical risk factors in China ( 5 ): women with twin pregnancies are recommended for aspirin administration at 75-100 mg daily dose from 12 to 20 weeks of gestation until 36 weeks of gestation.",
+      "context_window": "regnancies are recommended for aspirin administration at 75-100 mg daily dose from 12 to 20 weeks of gestation until 36 weeks",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1024",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1024,
+      "sentence": "Indication for LDA was based on the traditional count of clinical risk factors in China ( 5 ): women with twin pregnancies are recommended for aspirin administration at 75-100 mg daily dose from 12 to 20 weeks of gestation until 36 weeks of gestation.",
+      "context_window": "r aspirin administration at 75-100 mg daily dose from 12 to 20 weeks of gestation until 36 weeks of gestation. According to the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1052",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1052,
+      "sentence": "Indication for LDA was based on the traditional count of clinical risk factors in China ( 5 ): women with twin pregnancies are recommended for aspirin administration at 75-100 mg daily dose from 12 to 20 weeks of gestation until 36 weeks of gestation.",
+      "context_window": "75-100 mg daily dose from 12 to 20 weeks of gestation until 36 weeks of gestation. According to the Chinese guideline, maternal",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1125",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1125,
+      "sentence": "According to the Chinese guideline, maternal age \u226540 years old, body mass index \u226528 kg/m 2 , use of artificial reproductive technology, and pregnancy interval \u226510 years were considered medium risk factors; and prior history of preeclampsia/fetal growth restriction/placental abruption, renal disease, and hypercoagulable disease were considered high-risk factors.",
+      "context_window": "estation. According to the Chinese guideline, maternal age \u226540 years old, body mass index \u226528 kg/m 2 , use of artificial reprodu",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1156",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1156,
+      "sentence": "According to the Chinese guideline, maternal age \u226540 years old, body mass index \u226528 kg/m 2 , use of artificial reproductive technology, and pregnancy interval \u226510 years were considered medium risk factors; and prior history of preeclampsia/fetal growth restriction/placental abruption, renal disease, and hypercoagulable disease were considered high-risk factors.",
+      "context_window": "ese guideline, maternal age \u226540 years old, body mass index \u226528 kg/m 2 , use of artificial reproductive technology, and pregna",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1235",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1235,
+      "sentence": "According to the Chinese guideline, maternal age \u226540 years old, body mass index \u226528 kg/m 2 , use of artificial reproductive technology, and pregnancy interval \u226510 years were considered medium risk factors; and prior history of preeclampsia/fetal growth restriction/placental abruption, renal disease, and hypercoagulable disease were considered high-risk factors.",
+      "context_window": "artificial reproductive technology, and pregnancy interval \u226510 years were considered medium risk factors; and prior history of p",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1532",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1532,
+      "sentence": "Women with \u22652 medium risk factors or \u22651 high-risk factor were recommended a daily dose of 75-100 mg low-dose aspirin to start between 12 and 20 weeks of gestation.",
+      "context_window": "or \u22651 high-risk factor were recommended a daily dose of 75-100 mg low-dose aspirin to start between 12 and 20 weeks of gestat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-1580",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1580,
+      "sentence": "Women with \u22652 medium risk factors or \u22651 high-risk factor were recommended a daily dose of 75-100 mg low-dose aspirin to start between 12 and 20 weeks of gestation.",
+      "context_window": "dose of 75-100 mg low-dose aspirin to start between 12 and 20 weeks of gestation. Gestational age was confirmed by the measure",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2657",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2657,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "wing criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on a",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2713",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 2713,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "re >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 wee",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2774",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2774,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "0 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2858",
+      "claim_type": "unit_value",
+      "raw_text": "160 mm",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2858,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria:",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2897",
+      "claim_type": "unit_value",
+      "raw_text": "110 mm",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2897,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "olic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2926",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2926,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "g or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-3282",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 mg/dL",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 3282,
+      "sentence": "According to the bulletin of the American College of Obstetricians and Gynecologists' Committee 2019, ( 3 ) preeclampsia was diagnosed as the following criteria: (1) Blood pressure: systolic blood pressure >140 mmHg and/or the diastolic blood pressure should be >90 mmHg on at least two occasions 4 h apart developing after 20 weeks of gestation in previously normotensive women; or systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg; (2) proteinuria: >300 mg in 24 h or two readings of at least ++ on dipstick analysis of midstream or catheter urine specimens if no 24-h collection is available, or in the absence of proteinuria, new-onset hypertension with the new onset of any of the following: thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to twice the normal concentration), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for other diagnoses ( 1 , 2 ).",
+      "context_window": "/L], renal insufficiency (serum creatinine concentrations > 1.1 mg/dL), impaired liver function (elevated liver transaminases to",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-3639",
+      "claim_type": "unit_value",
+      "raw_text": "160 mm",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3639,
+      "sentence": "Severe preeclampsia was defined as any of the following: systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg, thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations >1.1 mg/dL, or a doubling of the serum creatinine concentration in the absence of other renal diseases), impaired liver function (elevated liver transaminases to twice the normal concentration, or severe persistent right upper quadrant or epigastric pain unresponsive to medication and not accounted for by alternative diagnoses), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for by other diagnoses.",
+      "context_window": "s defined as any of the following: systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg, thrombocytopenia",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-3678",
+      "claim_type": "unit_value",
+      "raw_text": "110 mm",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3678,
+      "sentence": "Severe preeclampsia was defined as any of the following: systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg, thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations >1.1 mg/dL, or a doubling of the serum creatinine concentration in the absence of other renal diseases), impaired liver function (elevated liver transaminases to twice the normal concentration, or severe persistent right upper quadrant or epigastric pain unresponsive to medication and not accounted for by alternative diagnoses), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for by other diagnoses.",
+      "context_window": "olic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg, thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L],",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-3799",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 mg/dL",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 3799,
+      "sentence": "Severe preeclampsia was defined as any of the following: systolic blood pressure \u2265160 mm Hg or diastolic blood pressure \u2265110 mm Hg, thrombocytopenia [platelet count < 100,000 \u00d7 10 (9)/L], renal insufficiency (serum creatinine concentrations >1.1 mg/dL, or a doubling of the serum creatinine concentration in the absence of other renal diseases), impaired liver function (elevated liver transaminases to twice the normal concentration, or severe persistent right upper quadrant or epigastric pain unresponsive to medication and not accounted for by alternative diagnoses), pulmonary edema, new-onset headache unresponsive to medications, and not accounted for by other diagnoses.",
+      "context_window": ")/L], renal insufficiency (serum creatinine concentrations >1.1 mg/dL, or a doubling of the serum creatinine concentration in the",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4503",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4503,
+      "sentence": "Another secondary outcome was the gestational age (GA) at delivery integrated with the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks.",
+      "context_window": "the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4530",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4530,
+      "sentence": "Another secondary outcome was the gestational age (GA) at delivery integrated with the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks.",
+      "context_window": "PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4562",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4562,
+      "sentence": "Another secondary outcome was the gestational age (GA) at delivery integrated with the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks.",
+      "context_window": "34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4594",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4594,
+      "sentence": "Another secondary outcome was the gestational age (GA) at delivery integrated with the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks.",
+      "context_window": "eeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4628",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4628,
+      "sentence": "Another secondary outcome was the gestational age (GA) at delivery integrated with the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks.",
+      "context_window": "ks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks. The exposure variable i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4662",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4662,
+      "sentence": "Another secondary outcome was the gestational age (GA) at delivery integrated with the occurrence and type of PE as follows: PE delivery at < 34 weeks, PE delivery at < 37 weeks, mild PE delivery at < 34 weeks, mild PE delivery at < 37 weeks, severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks.",
+      "context_window": ", severe PE delivery at < 34 weeks, severe PE delivery at < 37 weeks. The exposure variable in this study was the administratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4779",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4779,
+      "sentence": "The daily low dose was 75-100 mg of aspirin to start between 12 and 36 weeks of gestation.",
+      "context_window": "ministration of low-dose aspirin. The daily low dose was 75-100 mg of aspirin to start between 12 and 36 weeks of gestation. I",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4821",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4821,
+      "sentence": "The daily low dose was 75-100 mg of aspirin to start between 12 and 36 weeks of gestation.",
+      "context_window": "y low dose was 75-100 mg of aspirin to start between 12 and 36 weeks of gestation. Information about aspirin included whether th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-5102",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5102,
+      "sentence": "Adherence to aspirin was evaluated by the actual prescribed dose/total dose required (from starting gestational week to 36 gestational weeks or delivery week) \u00d7 100%, and the daily intake is 75-100 mg.",
+      "context_window": "estational week to 36 gestational weeks or delivery week) \u00d7 100%, and the daily intake is 75-100 mg. Data are shown as mean",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-5135",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5135,
+      "sentence": "Adherence to aspirin was evaluated by the actual prescribed dose/total dose required (from starting gestational week to 36 gestational weeks or delivery week) \u00d7 100%, and the daily intake is 75-100 mg.",
+      "context_window": "weeks or delivery week) \u00d7 100%, and the daily intake is 75-100 mg. Data are shown as means and standard deviation or numbers",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-5520",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5520,
+      "sentence": "A binary logistic regression was employed to evaluate the association, and the results of primary and secondary outcomes were presented as odd ratios (ORs) or as mean differences with 95% of confidence intervals (CIs).",
+      "context_window": "e presented as odd ratios (ORs) or as mean differences with 95% of confidence intervals (CIs). The statistically significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-188",
+      "claim_type": "percentage",
+      "raw_text": "10.75%",
+      "numeric_values": [
+        10.75
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 188,
+      "sentence": "Among 2,705 eligible women, 291 (10.75%) took aspirin (LDA) and the other 2,414 (89.25%) N-LDA did not take aspirin ( Figure 1 ).",
+      "context_window": "( Supplemental Table 2 ). Among 2,705 eligible women, 291 (10.75%) took aspirin (LDA) and the other 2,414 (89.25%) N-LDA did",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-236",
+      "claim_type": "percentage",
+      "raw_text": "89.25%",
+      "numeric_values": [
+        89.25
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 236,
+      "sentence": "Among 2,705 eligible women, 291 (10.75%) took aspirin (LDA) and the other 2,414 (89.25%) N-LDA did not take aspirin ( Figure 1 ).",
+      "context_window": "women, 291 (10.75%) took aspirin (LDA) and the other 2,414 (89.25%) N-LDA did not take aspirin ( Figure 1 ). The patients in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-466",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 466,
+      "sentence": "The patients in the LDA group were significantly more likely to be older, have a higher rate of use of ART, have a previous history of hypertension, and have gestational diabetes ( p < 0.05).",
+      "context_window": "us history of hypertension, and have gestational diabetes ( p < 0.05). There were no significant differences in parity, BMI, del",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-935",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 935,
+      "sentence": "In the matched group, BMI, chorionicity, and previous history of hypertension were of no difference between the LDA group and the matched N-LDA group ( p > 0.05).",
+      "context_window": "ference between the LDA group and the matched N-LDA group ( p > 0.05). The rate of ART was observed significantly higher ( p = 0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-998",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 998,
+      "sentence": "The rate of ART was observed significantly higher ( p = 0.03) and maternal age was slightly elder ( p = 0.03) in the LDA group compared to that in the N-LDA group ( Supplemental Table 3 ).",
+      "context_window": "0.05). The rate of ART was observed significantly higher ( p = 0.03) and maternal age was slightly elder ( p = 0.03) in the LDA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1046",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1046,
+      "sentence": "The rate of ART was observed significantly higher ( p = 0.03) and maternal age was slightly elder ( p = 0.03) in the LDA group compared to that in the N-LDA group ( Supplemental Table 3 ).",
+      "context_window": "ly higher ( p = 0.03) and maternal age was slightly elder ( p = 0.03) in the LDA group compared to that in the N-LDA group ( Sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1218",
+      "claim_type": "percentage",
+      "raw_text": "14.43%",
+      "numeric_values": [
+        14.43
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1218,
+      "sentence": "Additionally, aspirin compliance was not satisfactory in the LDA group, since only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of other women had compliance of < 50%.",
+      "context_window": "ompliance was not satisfactory in the LDA group, since only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1262",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1262,
+      "sentence": "Additionally, aspirin compliance was not satisfactory in the LDA group, since only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of other women had compliance of < 50%.",
+      "context_window": "oup, since only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of other women had compliance of < 50%. Pree",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1273",
+      "claim_type": "percentage",
+      "raw_text": "85.57%",
+      "numeric_values": [
+        85.57
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1273,
+      "sentence": "Additionally, aspirin compliance was not satisfactory in the LDA group, since only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of other women had compliance of < 50%.",
+      "context_window": "only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of other women had compliance of < 50%. Preeclampsia occur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1315",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1315,
+      "sentence": "Additionally, aspirin compliance was not satisfactory in the LDA group, since only 14.43% (42/291) of women had compliance of \u226550%, while 85.57% of other women had compliance of < 50%.",
+      "context_window": "ce of \u226550%, while 85.57% of other women had compliance of < 50%. Preeclampsia occurred in 106 of 291 participants (36.43%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1371",
+      "claim_type": "percentage",
+      "raw_text": "36.43%",
+      "numeric_values": [
+        36.43
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1371,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ).",
+      "context_window": "f < 50%. Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1426",
+      "claim_type": "percentage",
+      "raw_text": "18.62%",
+      "numeric_values": [
+        18.62
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1426,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ).",
+      "context_window": "nts (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-1454",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 2.15",
+      "numeric_values": [
+        2.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1454,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ).",
+      "context_window": "p, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1464",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1464,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ).",
+      "context_window": "ared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ). In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-1484",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.62",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1484,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ).",
+      "context_window": "(18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ). In the 1:2 case-matched ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1502",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1502,
+      "sentence": "Preeclampsia occurred in 106 of 291 participants (36.43%) in the LDA group, as compared to 449 of 2,411 (18.62%) in the N-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ).",
+      "context_window": "-LDA group (OR: 2.15, 95% CI for adjusted OR: 1.62 to 2.82; p < 0.01) ( Table 2 ). In the 1:2 case-matched analysis, the associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-1590",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.74",
+      "numeric_values": [
+        1.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1590,
+      "sentence": "In the 1:2 case-matched analysis, the association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01).",
+      "context_window": "e 1:2 case-matched analysis, the association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01). Outcomes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1600",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1600,
+      "sentence": "In the 1:2 case-matched analysis, the association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01).",
+      "context_window": "-matched analysis, the association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01). Outcomes of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-1620",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.26",
+      "numeric_values": [
+        1.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1620,
+      "sentence": "In the 1:2 case-matched analysis, the association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01).",
+      "context_window": "he association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01). Outcomes of total participants and cas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-1638",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1638,
+      "sentence": "In the 1:2 case-matched analysis, the association was confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01).",
+      "context_window": "confirmed (OR: 1.74, 95% CI for adjusted OR: 1.26 to 2.40; p < 0.01). Outcomes of total participants and case-matched cases.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-2012",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2012,
+      "sentence": "The association for secondary outcomes, quantified as the odds ratio in the LDA group with a 95% CI, is shown in Table 2 .",
+      "context_window": "comes, quantified as the odds ratio in the LDA group with a 95% CI, is shown in Table 2 . Higher odds of ratios in the LDA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-2245",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2245,
+      "sentence": "Higher odds of ratios in the LDA group were demonstrated, including early-onset preeclampsia (delivery at < 34 gestational weeks) and preterm preeclampsia (delivery at < 37 gestational weeks) (aORs > 1, p < 0.01), except that there was no significant difference in the odds of ratios for early-onset severe preeclampsia ( p = 0.48) ( Table 2 ).",
+      "context_window": "reeclampsia (delivery at < 37 gestational weeks) (aORs > 1, p < 0.01), except that there was no significant difference in the od",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-2364",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2364,
+      "sentence": "Higher odds of ratios in the LDA group were demonstrated, including early-onset preeclampsia (delivery at < 34 gestational weeks) and preterm preeclampsia (delivery at < 37 gestational weeks) (aORs > 1, p < 0.01), except that there was no significant difference in the odds of ratios for early-onset severe preeclampsia ( p = 0.48) ( Table 2 ).",
+      "context_window": "in the odds of ratios for early-onset severe preeclampsia ( p = 0.48) ( Table 2 ). A subgroup analysis of methods of conception",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-2660",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2660,
+      "sentence": "There was a higher risk of preeclampsia in the LDA group regardless of whether ART was used (aORs > 1, p < 0.05), together with no difference for mild or severe preeclampsia.",
+      "context_window": "the LDA group regardless of whether ART was used (aORs > 1, p < 0.05), together with no difference for mild or severe preeclamps",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-2867",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2867,
+      "sentence": "In the case-matched analysis, higher odds of ratios were observed in the LDA group for preeclampsia of assistant conception (aORs > 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "context_window": "A group for preeclampsia of assistant conception (aORs > 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-2922",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.99",
+      "numeric_values": [
+        1.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2922,
+      "sentence": "In the case-matched analysis, higher odds of ratios were observed in the LDA group for preeclampsia of assistant conception (aORs > 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "context_window": "> 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-2932",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2932,
+      "sentence": "In the case-matched analysis, higher odds of ratios were observed in the LDA group for preeclampsia of assistant conception (aORs > 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "context_window": ".05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-or-a-2952",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.20",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2952,
+      "sentence": "In the case-matched analysis, higher odds of ratios were observed in the LDA group for preeclampsia of assistant conception (aORs > 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "context_window": "ampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-p-2967",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2967,
+      "sentence": "In the case-matched analysis, higher odds of ratios were observed in the LDA group for preeclampsia of assistant conception (aORs > 1, p < 0.05) and mild preeclampsia of natural conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "context_window": "al conception (OR: 1.99, 95% CI for adjusted OR: 1.20-3.40; p = 0.02).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-63",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 63,
+      "sentence": "In this retrospective cohort study, aspirin prescription of 75-100 mg in twin pregnancies was associated with no significant reduction of preeclampsia, including severe or mild preeclampsia.",
+      "context_window": "this retrospective cohort study, aspirin prescription of 75-100 mg in twin pregnancies was associated with no significant redu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1690",
+      "claim_type": "percentage",
+      "raw_text": "14.43%",
+      "numeric_values": [
+        14.43
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1690,
+      "sentence": "Second, the aspirin compliance was not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and therefore, this insufficient dose of aspirin used for twin pregnancy potentially contributed to the ineffectiveness of aspirin administration for twin pregnancy in reducing the risk of preeclampsia.",
+      "context_window": "Second, the aspirin compliance was not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and there",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-1725",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1725,
+      "sentence": "Second, the aspirin compliance was not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and therefore, this insufficient dose of aspirin used for twin pregnancy potentially contributed to the ineffectiveness of aspirin administration for twin pregnancy in reducing the risk of preeclampsia.",
+      "context_window": "not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and therefore, this insufficient dose of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-2106",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2106,
+      "sentence": "Third, regardless of whether patients who initiated aspirin initiated it before 16 weeks of pregnancy is of importance ( 15 - 17 ), however, the initiation gestational week of aspirin was unavailable in our study.",
+      "context_window": "whether patients who initiated aspirin initiated it before 16 weeks of pregnancy is of importance ( 15 - 17 ), however, the ini",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4416",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 4416,
+      "sentence": "In the 1993 Italian study of 1,106 twin pregnancies, a greater proportion of hypertensive diseases during pregnancy and intrauterine growth restriction was observed in the group of 50 mg/day aspirin, but the difference was insignificant ( 8 ).",
+      "context_window": "ntrauterine growth restriction was observed in the group of 50 mg/day aspirin, but the difference was insignificant ( 8 ). The di",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4509",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4509,
+      "sentence": "100 mg of aspirin, as well as initiation before and after 16 gestational weeks, was not compared since our local guideline recommends a dosage of 75-100 mg before 20 weeks.",
+      "context_window": "ence was insignificant ( 8 ). The difference between 75 vs. 100 mg of aspirin, as well as initiation before and after 16 gesta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4658",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4658,
+      "sentence": "100 mg of aspirin, as well as initiation before and after 16 gestational weeks, was not compared since our local guideline recommends a dosage of 75-100 mg before 20 weeks.",
+      "context_window": "ompared since our local guideline recommends a dosage of 75-100 mg before 20 weeks. Aspirin has been demonstrated to be benefi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4672",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4672,
+      "sentence": "100 mg of aspirin, as well as initiation before and after 16 gestational weeks, was not compared since our local guideline recommends a dosage of 75-100 mg before 20 weeks.",
+      "context_window": "our local guideline recommends a dosage of 75-100 mg before 20 weeks. Aspirin has been demonstrated to be beneficial when given",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4747",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4747,
+      "sentence": "Aspirin has been demonstrated to be beneficial when given before 16 weeks of gestation and has preventive effect with a 100-150 mg dosage (1-4), and therefore, whether a cutoff of 16 weeks or a larger dose would achieve effective prevention for twin pregnancy requires further validation.",
+      "context_window": "in has been demonstrated to be beneficial when given before 16 weeks of gestation and has preventive effect with a 100-150 mg do",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4806",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4806,
+      "sentence": "Aspirin has been demonstrated to be beneficial when given before 16 weeks of gestation and has preventive effect with a 100-150 mg dosage (1-4), and therefore, whether a cutoff of 16 weeks or a larger dose would achieve effective prevention for twin pregnancy requires further validation.",
+      "context_window": "16 weeks of gestation and has preventive effect with a 100-150 mg dosage (1-4), and therefore, whether a cutoff of 16 weeks o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-4862",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4862,
+      "sentence": "Aspirin has been demonstrated to be beneficial when given before 16 weeks of gestation and has preventive effect with a 100-150 mg dosage (1-4), and therefore, whether a cutoff of 16 weeks or a larger dose would achieve effective prevention for twin pregnancy requires further validation.",
+      "context_window": "100-150 mg dosage (1-4), and therefore, whether a cutoff of 16 weeks or a larger dose would achieve effective prevention for twi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-539",
+      "claim_type": "percentage",
+      "raw_text": "14.43%",
+      "numeric_values": [
+        14.43
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 539,
+      "sentence": "Second, the aspirin compliance was not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and therefore, this insufficient dose of aspirin used for twin pregnancy potentially contributed to the ineffectiveness of aspirin administration for twin pregnancy in reducing the risk of preeclampsia.",
+      "context_window": "Second, the aspirin compliance was not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and there",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-pct-574",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 574,
+      "sentence": "Second, the aspirin compliance was not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and therefore, this insufficient dose of aspirin used for twin pregnancy potentially contributed to the ineffectiveness of aspirin administration for twin pregnancy in reducing the risk of preeclampsia.",
+      "context_window": "not so satisfactory that 14.43% of women had compliance of \u226550% in the LDA group, and therefore, this insufficient dose of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-955",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 955,
+      "sentence": "Third, regardless of whether patients who initiated aspirin initiated it before 16 weeks of pregnancy is of importance ( 15 - 17 ), however, the initiation gestational week of aspirin was unavailable in our study.",
+      "context_window": "whether patients who initiated aspirin initiated it before 16 weeks of pregnancy is of importance ( 15 - 17 ), however, the ini",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9886671_low_dose_aspirin_in_the_prevention_of_preeclampsia_in_twin_p-u-73",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 73,
+      "sentence": "In conclusion, our findings indicated that an aspirin prescription of 75-100 mg in twin pregnancies was associated with no significant reduction of preeclampsia.",
+      "context_window": ", our findings indicated that an aspirin prescription of 75-100 mg in twin pregnancies was associated with no significant redu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

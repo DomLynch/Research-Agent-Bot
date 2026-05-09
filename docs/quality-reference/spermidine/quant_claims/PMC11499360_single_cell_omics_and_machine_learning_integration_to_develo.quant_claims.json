@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMC11499360_single_cell_omics_and_machine_learning_integration_to_develo",
+  "doi": "10.1007/s00432-024-06001-z",
+  "extracted_at": "2026-05-08T20:12:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11499360_single_cell_omics_and_machine_learning_integration_to_develo-pct-560",
+      "claim_type": "percentage",
+      "raw_text": "11.7%",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 560,
+      "sentence": "The International Agency for Research on Cancer (IARC), part of the World Health Organization, reported in 2020 that breast cancer accounted for nearly 2.26 million new cases globally, which is about 11.7% of all new cancer diagnoses (Sung et al.",
+      "context_window": "for nearly 2.26 million new cases globally, which is about 11.7% of all new cancer diagnoses (Sung et al. 2021 ). While brea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11499360_single_cell_omics_and_machine_learning_integration_to_develo-pct-1527",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1527,
+      "sentence": "Signature gene sets, indicative of particular biological conditions or pathways, demonstrated stable expression patterns.The consensus clustering process involved 1000 iterations, with each iteration sampling 80% of the dataset.",
+      "context_window": "cess involved 1000 iterations, with each iteration sampling 80% of the dataset. The optimal cluster count was determined by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11499360_single_cell_omics_and_machine_learning_integration_to_develo-pct-5530",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5530,
+      "sentence": "High-quality cells were filtered according to specific criteria: (1) a cell\u2019s gene count ranged from 200 to 8000; (2) a cell\u2019s total UMI count did not exceed 50,000; (3) the ratio of mitochondrial gene expression, an apoptosis-related indicator, was capped at 25%.",
+      "context_window": "e expression, an apoptosis-related indicator, was capped at 25%. Employing Seurat\u2019s t-SNE for nonlinear dimensionality redu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11499360_single_cell_omics_and_machine_learning_integration_to_develo-pct-336",
+      "claim_type": "percentage",
+      "raw_text": "11.7%",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 336,
+      "sentence": "2017 ).According to data from the World Health Organization, approximately 2.26 million new cases of breast cancer were reported in 2020, accounting for about 11.7% of all new cancer diagnoses.",
+      "context_window": "f breast cancer were reported in 2020, accounting for about 11.7% of all new cancer diagnoses. This disease poses a significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

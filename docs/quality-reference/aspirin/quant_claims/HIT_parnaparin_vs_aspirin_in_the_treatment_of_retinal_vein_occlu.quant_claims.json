@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_parnaparin_vs_aspirin_in_the_treatment_of_retinal_vein_occlu",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_parnaparin_vs_aspirin_in_the_treatment_of_retinal_vein_occlu-u-1142",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1142,
+      "sentence": "Study treatment is administered for 3 months.",
+      "context_window": "n the treatment of RVO. Study treatment is administered for 3 months. Primary end-point of the study is the incidence of functio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_parnaparin_vs_aspirin_in_the_treatment_of_retinal_vein_occlu-u-1247",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1247,
+      "sentence": "Primary end-point of the study is the incidence of functional worsening of the eye with RVO at 6 months.",
+      "context_window": "he incidence of functional worsening of the eye with RVO at 6 months. Secondary efficacy outcomes are the following: proportion",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC10108939_o050_associations_between_sleep_wake_state_discrepancy_and_c",
+  "doi": "10.1093/sleepadvances/zpac029.049",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10108939_o050_associations_between_sleep_wake_state_discrepancy_and_c-pct-388",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 388,
+      "sentence": "Seventy-three adults (female=53%, mean age=63.2, SD=6.3) were recruited.",
+      "context_window": "ive Behaviour Therapy (CBTi). Seventy-three adults (female=53%, mean age=63.2, SD=6.3) were recruited. Participants comple",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10108939_o050_associations_between_sleep_wake_state_discrepancy_and_c-p-917",
+      "claim_type": "p_value",
+      "raw_text": "p<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 917,
+      "sentence": "Following treatment, SWSD significantly reduced (p<.001), despite no improvement in objective TST, and was significantly associated with improvements in insomnia severity (r=-.57), fatigue (r=-.26), sleep self-efficacy (r=.33), and beliefs about sleep (r=-.38), ps < .05.",
+      "context_window": "ps > .05. Following treatment, SWSD significantly reduced (p<.001), despite no improvement in objective TST, and was signific",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

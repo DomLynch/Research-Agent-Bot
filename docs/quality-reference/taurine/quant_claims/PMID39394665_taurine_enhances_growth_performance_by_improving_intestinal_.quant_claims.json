@@ -1,0 +1,501 @@
+{
+  "paper_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_",
+  "doi": "10.1093/jas/skae311",
+  "extracted_at": "2026-05-08T20:11:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 1,
+    "percentage": 14,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-msd-481",
+      "claim_type": "mean_sd",
+      "raw_text": "8.39 \u00b1 0.11",
+      "numeric_values": [
+        8.39,
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 481,
+      "sentence": "A total of 160 crossbred piglets (Landrace \u00d7 Yorkshire, initially 8.39 \u00b1 0.11 kg) were assigned to 4 groups (10 pigs/pen and 4 replicates/group).",
+      "context_window": "l of 160 crossbred piglets (Landrace \u00d7 Yorkshire, initially 8.39 \u00b1 0.11 kg) were assigned to 4 groups (10 pigs/pen and 4 replicates",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-u-488",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 kg",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 488,
+      "sentence": "A total of 160 crossbred piglets (Landrace \u00d7 Yorkshire, initially 8.39 \u00b1 0.11 kg) were assigned to 4 groups (10 pigs/pen and 4 replicates/group).",
+      "context_window": "0 crossbred piglets (Landrace \u00d7 Yorkshire, initially 8.39 \u00b1 0.11 kg) were assigned to 4 groups (10 pigs/pen and 4 replicates/gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-602",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 602,
+      "sentence": "Basal diets containing 0 (control, CON), 0.1%, 0.3%, and 0.5% taurine were respectively provided to the piglets for a duration of 28 d.",
+      "context_window": "replicates/group). Basal diets containing 0 (control, CON), 0.1%, 0.3%, and 0.5% taurine were respectively provided to the p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-608",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 608,
+      "sentence": "Basal diets containing 0 (control, CON), 0.1%, 0.3%, and 0.5% taurine were respectively provided to the piglets for a duration of 28 d.",
+      "context_window": "ates/group). Basal diets containing 0 (control, CON), 0.1%, 0.3%, and 0.5% taurine were respectively provided to the piglets",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-618",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 618,
+      "sentence": "Basal diets containing 0 (control, CON), 0.1%, 0.3%, and 0.5% taurine were respectively provided to the piglets for a duration of 28 d.",
+      "context_window": "). Basal diets containing 0 (control, CON), 0.1%, 0.3%, and 0.5% taurine were respectively provided to the piglets for a dur",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-830",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "ample collection on day 29. The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gai",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-838",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 838,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "llection on day 29. The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-897",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-928",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "ncreased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea inde",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-958",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 958,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "< 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxida",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-999",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05). T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1055",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "The results showed that dietary 0.3% or 0.5% taurine supplementation increased average daily gain (P < 0.05), feed-to-gain ratio (P < 0.01), and serum albumin (P < 0.05), and decreased diarrhea index (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05).",
+      "context_window": "ex (P < 0.01) and diamine oxidase (DAO) level in the serum (P < 0.05). The greater expression of tight junction-related genes, i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1138",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1138,
+      "sentence": "The greater expression of tight junction-related genes, including ZO-1 (P < 0.05) and Claudin-1 (P < 0.01), were observed in the duodenum after supplementation with 0.5% taurine.",
+      "context_window": "expression of tight junction-related genes, including ZO-1 (P < 0.05) and Claudin-1 (P < 0.01), were observed in the duodenum af",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1163",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "The greater expression of tight junction-related genes, including ZO-1 (P < 0.05) and Claudin-1 (P < 0.01), were observed in the duodenum after supplementation with 0.5% taurine.",
+      "context_window": "ion-related genes, including ZO-1 (P < 0.05) and Claudin-1 (P < 0.01), were observed in the duodenum after supplementation with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1231",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1231,
+      "sentence": "The greater expression of tight junction-related genes, including ZO-1 (P < 0.05) and Claudin-1 (P < 0.01), were observed in the duodenum after supplementation with 0.5% taurine.",
+      "context_window": "), were observed in the duodenum after supplementation with 0.5% taurine. The supplementation of 0.3% or 0.5% taurine result",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1268",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1268,
+      "sentence": "The supplementation of 0.3% or 0.5% taurine resulted in a significant reduction of crypt depth (P < 0.01) and an increase of villus height-to-crypt depth ratio (P < 0.01) in the duodenum.",
+      "context_window": "r supplementation with 0.5% taurine. The supplementation of 0.3% or 0.5% taurine resulted in a significant reduction of cryp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1276",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1276,
+      "sentence": "The supplementation of 0.3% or 0.5% taurine resulted in a significant reduction of crypt depth (P < 0.01) and an increase of villus height-to-crypt depth ratio (P < 0.01) in the duodenum.",
+      "context_window": "mentation with 0.5% taurine. The supplementation of 0.3% or 0.5% taurine resulted in a significant reduction of crypt depth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1341",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "The supplementation of 0.3% or 0.5% taurine resulted in a significant reduction of crypt depth (P < 0.01) and an increase of villus height-to-crypt depth ratio (P < 0.01) in the duodenum.",
+      "context_window": "taurine resulted in a significant reduction of crypt depth (P < 0.01) and an increase of villus height-to-crypt depth ratio (P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1406",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1406,
+      "sentence": "The supplementation of 0.3% or 0.5% taurine resulted in a significant reduction of crypt depth (P < 0.01) and an increase of villus height-to-crypt depth ratio (P < 0.01) in the duodenum.",
+      "context_window": ".01) and an increase of villus height-to-crypt depth ratio (P < 0.01) in the duodenum. A greater abundance of goblet cells was d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1525",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1525,
+      "sentence": "A greater abundance of goblet cells was detected in the duodenum and jejunum of piglets fed 0.5% taurine (P < 0.05).",
+      "context_window": "lls was detected in the duodenum and jejunum of piglets fed 0.5% taurine (P < 0.05). In addition, serum superoxide dismutase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1539",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1539,
+      "sentence": "A greater abundance of goblet cells was detected in the duodenum and jejunum of piglets fed 0.5% taurine (P < 0.05).",
+      "context_window": "ed in the duodenum and jejunum of piglets fed 0.5% taurine (P < 0.05). In addition, serum superoxide dismutase (SOD) level, live",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-p-1698",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1698,
+      "sentence": "In addition, serum superoxide dismutase (SOD) level, liver catalase (CAT) level, and liver total antioxidant capacity level were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation.",
+      "context_window": "er total antioxidant capacity level were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine suppleme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1723",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1723,
+      "sentence": "In addition, serum superoxide dismutase (SOD) level, liver catalase (CAT) level, and liver total antioxidant capacity level were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation.",
+      "context_window": "city level were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation. On the whole",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1729",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1729,
+      "sentence": "In addition, serum superoxide dismutase (SOD) level, liver catalase (CAT) level, and liver total antioxidant capacity level were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation.",
+      "context_window": "evel were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation. On the whole, diet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1737",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1737,
+      "sentence": "In addition, serum superoxide dismutase (SOD) level, liver catalase (CAT) level, and liver total antioxidant capacity level were all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation.",
+      "context_window": "e all significantly (P < 0.05) increased with 0.1%, 0.3% or 0.5% dietary taurine supplementation. On the whole, dietary supp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1818",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1818,
+      "sentence": "On the whole, dietary supplementation with 0.3% or 0.5% taurine has the potential to significantly enhance the growth performance of piglets by improving the integrity of the intestinal barrier and boosting their antioxidant capacity.",
+      "context_window": "supplementation. On the whole, dietary supplementation with 0.3% or 0.5% taurine has the potential to significantly enhance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39394665_taurine_enhances_growth_performance_by_improving_intestinal_-pct-1826",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1826,
+      "sentence": "On the whole, dietary supplementation with 0.3% or 0.5% taurine has the potential to significantly enhance the growth performance of piglets by improving the integrity of the intestinal barrier and boosting their antioxidant capacity.",
+      "context_window": "ntation. On the whole, dietary supplementation with 0.3% or 0.5% taurine has the potential to significantly enhance the grow",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

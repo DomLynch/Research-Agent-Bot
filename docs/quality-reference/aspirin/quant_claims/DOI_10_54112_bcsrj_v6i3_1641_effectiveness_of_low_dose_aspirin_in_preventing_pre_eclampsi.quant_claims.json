@@ -1,0 +1,175 @@
+{
+  "paper_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi",
+  "doi": "10.54112/bcsrj.v6i3.1641",
+  "extracted_at": "2026-05-08T20:05:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 3,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-u-638",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg/day",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 638,
+      "sentence": "A total of 86 high-risk pregnant women were randomly assigned to either the aspirin group (75 mg/day from 12-16 to 36 weeks of gestation) or the control group receiving routine antenatal care.",
+      "context_window": "t women were randomly assigned to either the aspirin group (75 mg/day from 12-16 to 36 weeks of gestation) or the control group r",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "A total of 86 high-risk pregnant women were randomly assigned to either the aspirin group (75 mg/day from 12-16 to 36 weeks of gestation) or the control group receiving routine antenatal care.",
+      "context_window": "signed to either the aspirin group (75 mg/day from 12-16 to 36 weeks of gestation) or the control group receiving routine antena",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-p-1005",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1005,
+      "sentence": "Statistical analysis was performed using SPSS v26, with p < 0.05 considered significant.",
+      "context_window": "on. Statistical analysis was performed using SPSS v26, with p < 0.05 considered significant. Results: Pre-eclampsia occurred in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-pct-1073",
+      "claim_type": "percentage",
+      "raw_text": "13.9%",
+      "numeric_values": [
+        13.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1073,
+      "sentence": "Results: Pre-eclampsia occurred in 13.9% of women in the aspirin group versus 34.9% in the control group (p = 0.02).",
+      "context_window": "considered significant. Results: Pre-eclampsia occurred in 13.9% of women in the aspirin group versus 34.9% in the control g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-pct-1116",
+      "claim_type": "percentage",
+      "raw_text": "34.9%",
+      "numeric_values": [
+        34.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1116,
+      "sentence": "Results: Pre-eclampsia occurred in 13.9% of women in the aspirin group versus 34.9% in the control group (p = 0.02).",
+      "context_window": "psia occurred in 13.9% of women in the aspirin group versus 34.9% in the control group (p = 0.02). Severe pre-eclampsia was s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-p-1144",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1144,
+      "sentence": "Results: Pre-eclampsia occurred in 13.9% of women in the aspirin group versus 34.9% in the control group (p = 0.02).",
+      "context_window": "men in the aspirin group versus 34.9% in the control group (p = 0.02). Severe pre-eclampsia was significantly lower in the aspir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-pct-1222",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1222,
+      "sentence": "Severe pre-eclampsia was significantly lower in the aspirin group (4.7% vs.",
+      "context_window": "pre-eclampsia was significantly lower in the aspirin group (4.7% vs. 20.9%, p = 0.03). Rates of preterm delivery, low birth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-pct-1231",
+      "claim_type": "percentage",
+      "raw_text": "20.9%",
+      "numeric_values": [
+        20.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1231,
+      "sentence": "20.9%, p = 0.03).",
+      "context_window": "psia was significantly lower in the aspirin group (4.7% vs. 20.9%, p = 0.03). Rates of preterm delivery, low birth weight, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_54112_bcsrj_v6i3_1641_effectiveness_of_low_dose_aspirin_in_preventing_pre_eclampsi-p-1238",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1238,
+      "sentence": "20.9%, p = 0.03).",
+      "context_window": "s significantly lower in the aspirin group (4.7% vs. 20.9%, p = 0.03). Rates of preterm delivery, low birth weight, and NICU adm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

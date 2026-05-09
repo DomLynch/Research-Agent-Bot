@@ -1,0 +1,313 @@
+{
+  "paper_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto",
+  "doi": "10.1152/physiol.2025.40.s1.0649",
+  "extracted_at": "2026-05-08T20:11:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "sample_size": 1,
+    "p_value": 2,
+    "mean_sd": 10,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-pct-1080",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "6 four-week-old male PCK rats were given either water supplemented with 3% taurine (ad libitum) or regular water for eight weeks (N=3 in each group).",
+      "context_window": "old male PCK rats were given either water supplemented with 3% taurine (ad libitum) or regular water for eight weeks (N=3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-n-1138",
+      "claim_type": "sample_size",
+      "raw_text": "N=3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1138,
+      "sentence": "6 four-week-old male PCK rats were given either water supplemented with 3% taurine (ad libitum) or regular water for eight weeks (N=3 in each group).",
+      "context_window": "h 3% taurine (ad libitum) or regular water for eight weeks (N=3 in each group). Body weight, food and water consumption, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-p-1655",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1655,
+      "sentence": "Unpaired student t-tests or 2-way ANOVA with Sidak correction for multiple comparisons were used to determine significance p<0.05 and data is mean \u00b1 SEM.",
+      "context_window": "or multiple comparisons were used to determine significance p<0.05 and data is mean \u00b1 SEM. The taurine group had a significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-1771",
+      "claim_type": "mean_sd",
+      "raw_text": "6.6\u00b10.3",
+      "numeric_values": [
+        6.6,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1771,
+      "sentence": "The taurine group had a significantly higher liver cystic index compared to control (6.6\u00b10.3 vs.",
+      "context_window": "ignificantly higher liver cystic index compared to control (6.6\u00b10.3 vs. 5.4\u00b10.5, p\u22640.05). Additionally, there was a trend towar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-1783",
+      "claim_type": "mean_sd",
+      "raw_text": "5.4\u00b10.5",
+      "numeric_values": [
+        5.4,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1783,
+      "sentence": "5.4\u00b10.5, p\u22640.05).",
+      "context_window": "higher liver cystic index compared to control (6.6\u00b10.3 vs. 5.4\u00b10.5, p\u22640.05). Additionally, there was a trend toward an increas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-p-1792",
+      "claim_type": "p_value",
+      "raw_text": "p\u22640.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1792,
+      "sentence": "5.4\u00b10.5, p\u22640.05).",
+      "context_window": "iver cystic index compared to control (6.6\u00b10.3 vs. 5.4\u00b10.5, p\u22640.05). Additionally, there was a trend toward an increased cysti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-1908",
+      "claim_type": "mean_sd",
+      "raw_text": "6.4\u00b14.7",
+      "numeric_values": [
+        6.4,
+        4.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1908,
+      "sentence": "Additionally, there was a trend toward an increased cystic index in kidney samples from the taurine group (6.4\u00b14.7) compared to the control group (2.1\u00b10.4), and increased 2 kidney to total body weight ratios (10.5\u00b10.7 vs 9.0\u00b10.2).",
+      "context_window": "ased cystic index in kidney samples from the taurine group (6.4\u00b14.7) compared to the control group (2.1\u00b10.4), and increased 2 k",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-1948",
+      "claim_type": "mean_sd",
+      "raw_text": "2.1\u00b10.4",
+      "numeric_values": [
+        2.1,
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1948,
+      "sentence": "Additionally, there was a trend toward an increased cystic index in kidney samples from the taurine group (6.4\u00b14.7) compared to the control group (2.1\u00b10.4), and increased 2 kidney to total body weight ratios (10.5\u00b10.7 vs 9.0\u00b10.2).",
+      "context_window": "the taurine group (6.4\u00b14.7) compared to the control group (2.1\u00b10.4), and increased 2 kidney to total body weight ratios (10.5\u00b1",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-2010",
+      "claim_type": "mean_sd",
+      "raw_text": "10.5\u00b10.7",
+      "numeric_values": [
+        10.5,
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2010,
+      "sentence": "Additionally, there was a trend toward an increased cystic index in kidney samples from the taurine group (6.4\u00b14.7) compared to the control group (2.1\u00b10.4), and increased 2 kidney to total body weight ratios (10.5\u00b10.7 vs 9.0\u00b10.2).",
+      "context_window": "1\u00b10.4), and increased 2 kidney to total body weight ratios (10.5\u00b10.7 vs 9.0\u00b10.2). Urine volumes were consistently elevated in th",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-2022",
+      "claim_type": "mean_sd",
+      "raw_text": "9.0\u00b10.2",
+      "numeric_values": [
+        9.0,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2022,
+      "sentence": "Additionally, there was a trend toward an increased cystic index in kidney samples from the taurine group (6.4\u00b14.7) compared to the control group (2.1\u00b10.4), and increased 2 kidney to total body weight ratios (10.5\u00b10.7 vs 9.0\u00b10.2).",
+      "context_window": "increased 2 kidney to total body weight ratios (10.5\u00b10.7 vs 9.0\u00b10.2). Urine volumes were consistently elevated in the taurine g",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-2125",
+      "claim_type": "mean_sd",
+      "raw_text": "27.7\u00b16.0",
+      "numeric_values": [
+        27.7,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2125,
+      "sentence": "Urine volumes were consistently elevated in the taurine group throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-interaction <0.001, P-time <0.001, P-treatment - 0.06).",
+      "context_window": "levated in the taurine group throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-u-2130",
+      "claim_type": "unit_value",
+      "raw_text": "6.0 mL",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 2130,
+      "sentence": "Urine volumes were consistently elevated in the taurine group throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-interaction <0.001, P-time <0.001, P-treatment - 0.06).",
+      "context_window": "ed in the taurine group throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-2149",
+      "claim_type": "mean_sd",
+      "raw_text": "14.3\u00b11.0",
+      "numeric_values": [
+        14.3,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2149,
+      "sentence": "Urine volumes were consistently elevated in the taurine group throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-interaction <0.001, P-time <0.001, P-treatment - 0.06).",
+      "context_window": "roup throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-interaction <0.001, P-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-u-2154",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 2154,
+      "sentence": "Urine volumes were consistently elevated in the taurine group throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-interaction <0.001, P-time <0.001, P-treatment - 0.06).",
+      "context_window": "throughout the study, reaching 27.7\u00b16.0 mL compared to 14.3\u00b11.0 mL in the control group at week 8 (P-interaction <0.001, P-tim",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-2323",
+      "claim_type": "mean_sd",
+      "raw_text": "1298\u00b1189",
+      "numeric_values": [
+        1298.0,
+        189.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2323,
+      "sentence": "Correspondingly, urine osmolality was reduced in the taurine group with 1298\u00b1189 vs.",
+      "context_window": "gly, urine osmolality was reduced in the taurine group with 1298\u00b1189 vs. 1881\u00b182 mOsm at week 8 (2-way ANOVA, P-interaction - 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_physiol_2025_40_s1_0649_dietary_taurine_increases_cystic_burden_in_rat_model_of_auto-msd-2336",
+      "claim_type": "mean_sd",
+      "raw_text": "1881\u00b182",
+      "numeric_values": [
+        1881.0,
+        82.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2336,
+      "sentence": "1881\u00b182 mOsm at week 8 (2-way ANOVA, P-interaction - 0.454, P-treatment - 0.049, P-time - 0.117).",
+      "context_window": "molality was reduced in the taurine group with 1298\u00b1189 vs. 1881\u00b182 mOsm at week 8 (2-way ANOVA, P-interaction - 0.454, P-treat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

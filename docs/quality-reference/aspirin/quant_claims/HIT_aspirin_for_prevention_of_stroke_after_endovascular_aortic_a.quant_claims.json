@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_aspirin_for_prevention_of_stroke_after_endovascular_aortic_a",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_aspirin_for_prevention_of_stroke_after_endovascular_aortic_a-u-743",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "Patients undergoing Endovascular Aortic Arch Repair (EAAR) will be randomly assigned to three groups: aspirin treatment for 3 months, 6 months, or 1 year.",
+      "context_window": "be randomly assigned to three groups: aspirin treatment for 3 months, 6 months, or 1 year. All three groups will be followed up",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_aspirin_for_prevention_of_stroke_after_endovascular_aortic_a-u-753",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 753,
+      "sentence": "Patients undergoing Endovascular Aortic Arch Repair (EAAR) will be randomly assigned to three groups: aspirin treatment for 3 months, 6 months, or 1 year.",
+      "context_window": "y assigned to three groups: aspirin treatment for 3 months, 6 months, or 1 year. All three groups will be followed up on for ove",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_aspirin_for_prevention_of_stroke_after_endovascular_aortic_a-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Patients undergoing Endovascular Aortic Arch Repair (EAAR) will be randomly assigned to three groups: aspirin treatment for 3 months, 6 months, or 1 year.",
+      "context_window": "three groups: aspirin treatment for 3 months, 6 months, or 1 year. All three groups will be followed up on for over one year.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

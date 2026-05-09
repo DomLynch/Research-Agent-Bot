@@ -1,0 +1,85 @@
+{
+  "paper_id": "DOI_10_1016_s0020_7292_97_00257_9_a_randomized_controlled_trial_of_low_dose_aspirin_in_women_a",
+  "doi": "10.1016/s0020-7292(97)00257-9",
+  "extracted_at": "2026-05-08T20:05:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_s0020_7292_97_00257_9_a_randomized_controlled_trial_of_low_dose_aspirin_in_women_a-u-578",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 578,
+      "sentence": "<jats:title>Abstract</jats:title><jats:sec><jats:label/><jats:p><jats:italic>Objectives:</jats:italic> To determine whether low\u2010dose aspirin reduces the incidence of pre\u2010eclampsia, reduces perinatal mortality and improves birth weights in pregnant women considered at high risk of developing pre\u2010eclampsia. <jats:italic>Method:</jats:italic> Two\u2010hundred fifty subjects were recruited from the antenatal clinics at Harare Central Hospital with either a previous history of pregnancy\u2010induced hypertension or pre\u2010existing chronic hypertension and were randomized to receive either 75 mg of aspirin (ASA) or placebo (PLA). <jats:italic>Results:</jats:italic> Two\u2010hundred thirty subjects (ASA, <jats:italic>n</jats:italic>=113; PLA, <jats:italic>n</jats:italic>=117) completed the trial.",
+      "context_window": "chronic hypertension and were randomized to receive either 75 mg of aspirin (ASA) or placebo (PLA). <jats:italic>Results:</j",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0020_7292_97_00257_9_a_randomized_controlled_trial_of_low_dose_aspirin_in_women_a-pct-874",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 874,
+      "sentence": "The odds of developing pre\u2010eclampsia for those on aspirin was 0.72 times those on placebo (95% CI, 0.34-1.52).",
+      "context_window": "mpsia for those on aspirin was 0.72 times those on placebo (95% CI, 0.34-1.52). The mean birth weight was 2774 g for those",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0020_7292_97_00257_9_a_randomized_controlled_trial_of_low_dose_aspirin_in_women_a-or-a-1066",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR=0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "No difference was noted in the perinatal deaths (OR=0.38; 95% CI, 0.10-1.20). <jats:italic>Conclusion:</jats:italic> Prophylactic use of aspirin was not associated with a significant effect on the major pregnancy outcomes assessed in this study.</jats:p></jats:sec>",
+      "context_window": "ic>=0.80). No difference was noted in the perinatal deaths (OR=0.38; 95% CI, 0.10-1.20). <jats:italic>Conclusion:</jats:italic>",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0020_7292_97_00257_9_a_randomized_controlled_trial_of_low_dose_aspirin_in_women_a-pct-1075",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1075,
+      "sentence": "No difference was noted in the perinatal deaths (OR=0.38; 95% CI, 0.10-1.20). <jats:italic>Conclusion:</jats:italic> Prophylactic use of aspirin was not associated with a significant effect on the major pregnancy outcomes assessed in this study.</jats:p></jats:sec>",
+      "context_window": ". No difference was noted in the perinatal deaths (OR=0.38; 95% CI, 0.10-1.20). <jats:italic>Conclusion:</jats:italic> Prop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

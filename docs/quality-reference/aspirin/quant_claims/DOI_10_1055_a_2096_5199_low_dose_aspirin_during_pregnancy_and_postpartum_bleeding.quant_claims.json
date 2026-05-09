@@ -1,0 +1,306 @@
+{
+  "paper_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding",
+  "doi": "10.1055/a-2096-5199",
+  "extracted_at": "2026-05-08T20:06:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 3,
+    "odds_ratio": 3,
+    "confidence_interval": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-u-67",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 67,
+      "sentence": "<jats:p> Objective This study aimed to investigate whether aspirin 81 mg daily for preeclampsia prevention is associated with increased risk of postpartum blood loss at the time of delivery.</jats:p><jats:p> Study Design This is a retrospective cohort study performed at a tertiary hospital from January 2018 to April 2021.",
+      "context_window": "> Objective This study aimed to investigate whether aspirin 81 mg daily for preeclampsia prevention is associated with increa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-u-569",
+      "claim_type": "unit_value",
+      "raw_text": "000 mL",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 569,
+      "sentence": "The primary outcome was a composite of postpartum blood loss, defined as: estimated blood loss (EBL) >1,000 mL, documentation of International Classification of Diseases-9/-10 codes for postpartum hemorrhage (PPH), or red blood cell (RBC) transfusion.",
+      "context_window": "artum blood loss, defined as: estimated blood loss (EBL) >1,000 mL, documentation of International Classification of Diseases-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-pct-867",
+      "claim_type": "percentage",
+      "raw_text": "11.3%",
+      "numeric_values": [
+        11.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 867,
+      "sentence": "Bivariate analysis, and unadjusted and adjusted logistic regression modeling were performed.</jats:p><jats:p> Results Among 16,980 deliveries, 1,922 (11.3%) were prescribed LDA.",
+      "context_window": "d.</jats:p><jats:p> Results Among 16,980 deliveries, 1,922 (11.3%) were prescribed LDA. Patients prescribed LDA were more lik",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-u-943",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 943,
+      "sentence": "Patients prescribed LDA were more likely to be >35 years old, nulliparous, obese, taking other anticoagulants, or have diagnoses of diabetes, systemic lupus erythematosus, fibroids, or hypertensive disease of pregnancy.",
+      "context_window": "cribed LDA. Patients prescribed LDA were more likely to be >35 years old, nulliparous, obese, taking other anticoagulants, or ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-pct-1269",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1269,
+      "sentence": "After adjusting for potential confounders, the significant association between LDA use and the composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7).",
+      "context_window": "composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-u-1348",
+      "claim_type": "unit_value",
+      "raw_text": "000 mL",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 1348,
+      "sentence": "After adjusting for potential confounders, the significant association between LDA use and the composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7).",
+      "context_window": "rval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-or-a-1356",
+      "claim_type": "odds_ratio",
+      "raw_text": "aOR: 1.0",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "After adjusting for potential confounders, the significant association between LDA use and the composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7).",
+      "context_window": "]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-ci-1366",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.9-1.3",
+      "numeric_values": [
+        0.9,
+        1.3
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1366,
+      "sentence": "After adjusting for potential confounders, the significant association between LDA use and the composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7).",
+      "context_window": ") nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7). The assoc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-or-a-1404",
+      "claim_type": "odds_ratio",
+      "raw_text": "aOR: 1.3",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1404,
+      "sentence": "After adjusting for potential confounders, the significant association between LDA use and the composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7).",
+      "context_window": "> 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7). The association between LDA and PPH rema",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-ci-1414",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.9-1.7",
+      "numeric_values": [
+        0.9,
+        1.7
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1414,
+      "sentence": "After adjusting for potential confounders, the significant association between LDA use and the composite did not persist (adjusted odds ratio [aOR]: 1.1, 95% confidence interval [CI]: 1.0-1.3) nor did the association between EBL > 1,000 mL (aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7).",
+      "context_window": "(aOR: 1.0, 95% CI: 0.9-1.3) and RBC transfusion (aOR: 1.3, 95% CI: 0.9-1.7). The association between LDA and PPH remained significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-or-a-1490",
+      "claim_type": "odds_ratio",
+      "raw_text": "aOR: 1.3",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1490,
+      "sentence": "The association between LDA and PPH remained significant (aOR: 1.3, 95% CI: 1.1-1.6).",
+      "context_window": ". The association between LDA and PPH remained significant (aOR: 1.3, 95% CI: 1.1-1.6). Patients who discontinued LDA <7 days pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-ci-1500",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.1-1.6",
+      "numeric_values": [
+        1.1,
+        1.6
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1500,
+      "sentence": "The association between LDA and PPH remained significant (aOR: 1.3, 95% CI: 1.1-1.6).",
+      "context_window": "ciation between LDA and PPH remained significant (aOR: 1.3, 95% CI: 1.1-1.6). Patients who discontinued LDA <7 days prior to delivery h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-u-1549",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1549,
+      "sentence": "Patients who discontinued LDA <7 days prior to delivery had an increased risk of the postpartum blood loss composite compared discontinuation \u22657 days (15.0 vs.",
+      "context_window": "(aOR: 1.3, 95% CI: 1.1-1.6). Patients who discontinued LDA <7 days prior to delivery had an increased risk of the postpartum b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-u-1661",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1661,
+      "sentence": "Patients who discontinued LDA <7 days prior to delivery had an increased risk of the postpartum blood loss composite compared discontinuation \u22657 days (15.0 vs.",
+      "context_window": "e postpartum blood loss composite compared discontinuation \u22657 days (15.0 vs. 9.3%; p = 0.03).</jats:p><jats:p> Conclusion Ther",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-pct-1678",
+      "claim_type": "percentage",
+      "raw_text": "9.3%",
+      "numeric_values": [
+        9.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1678,
+      "sentence": "9.3%; p = 0.03).</jats:p><jats:p> Conclusion There may be an association between LDA use and increased risk of postpartum bleeding.",
+      "context_window": "d loss composite compared discontinuation \u22657 days (15.0 vs. 9.3%; p = 0.03).</jats:p><jats:p> Conclusion There may be an ass",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_a_2096_5199_low_dose_aspirin_during_pregnancy_and_postpartum_bleeding-p-1684",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1684,
+      "sentence": "9.3%; p = 0.03).</jats:p><jats:p> Conclusion There may be an association between LDA use and increased risk of postpartum bleeding.",
+      "context_window": "composite compared discontinuation \u22657 days (15.0 vs. 9.3%; p = 0.03).</jats:p><jats:p> Conclusion There may be an association b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "paper_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte",
+  "doi": "10.1111/jgh.14562",
+  "extracted_at": "2026-05-08T20:06:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "hazard_ratio": 2,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-pct-1137",
+      "claim_type": "percentage",
+      "raw_text": "80.7%",
+      "numeric_values": [
+        80.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1137,
+      "sentence": "Among 3292 patients with regular aspirin use before CRC diagnosis, 2658 (80.7%) continued aspirin and 634 (19.3%) discontinued aspirin after surgery.",
+      "context_window": "tients with regular aspirin use before CRC diagnosis, 2658 (80.7%) continued aspirin and 634 (19.3%) discontinued aspirin aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-pct-1171",
+      "claim_type": "percentage",
+      "raw_text": "19.3%",
+      "numeric_values": [
+        19.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1171,
+      "sentence": "Among 3292 patients with regular aspirin use before CRC diagnosis, 2658 (80.7%) continued aspirin and 634 (19.3%) discontinued aspirin after surgery.",
+      "context_window": "fore CRC diagnosis, 2658 (80.7%) continued aspirin and 634 (19.3%) discontinued aspirin after surgery. Continuous use of aspi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-pct-1296",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "Continuous use of aspirin significantly reduced CRC\u2010related mortality (SHR: 0.69, 95% confidence interval [CI]: 0.59-0.81) and all\u2010cause mortality (HR: 0.61, 95% CI: 0.55-0.68).",
+      "context_window": "rin significantly reduced CRC\u2010related mortality (SHR: 0.69, 95% confidence interval [CI]: 0.59-0.81) and all\u2010cause mortalit",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-hr-a-1362",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.61",
+      "numeric_values": [
+        0.61
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "Continuous use of aspirin significantly reduced CRC\u2010related mortality (SHR: 0.69, 95% confidence interval [CI]: 0.59-0.81) and all\u2010cause mortality (HR: 0.61, 95% CI: 0.55-0.68).",
+      "context_window": "nfidence interval [CI]: 0.59-0.81) and all\u2010cause mortality (HR: 0.61, 95% CI: 0.55-0.68). Among 10 236 patients who did not use",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-ci-1372",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.55-0.68",
+      "numeric_values": [
+        0.55,
+        0.68
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1372,
+      "sentence": "Continuous use of aspirin significantly reduced CRC\u2010related mortality (SHR: 0.69, 95% confidence interval [CI]: 0.59-0.81) and all\u2010cause mortality (HR: 0.61, 95% CI: 0.55-0.68).",
+      "context_window": "nterval [CI]: 0.59-0.81) and all\u2010cause mortality (HR: 0.61, 95% CI: 0.55-0.68). Among 10 236 patients who did not use aspirin before CRC",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-pct-1475",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1475,
+      "sentence": "Among 10 236 patients who did not use aspirin before CRC diagnosis, 1054 patients (10.3%) received aspirin after surgery and 9182 (89.7%) did not.",
+      "context_window": "ho did not use aspirin before CRC diagnosis, 1054 patients (10.3%) received aspirin after surgery and 9182 (89.7%) did not. A",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-pct-1523",
+      "claim_type": "percentage",
+      "raw_text": "89.7%",
+      "numeric_values": [
+        89.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1523,
+      "sentence": "Among 10 236 patients who did not use aspirin before CRC diagnosis, 1054 patients (10.3%) received aspirin after surgery and 9182 (89.7%) did not.",
+      "context_window": "4 patients (10.3%) received aspirin after surgery and 9182 (89.7%) did not. Aspirin initiated after surgery reduced CRC\u2010relat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-ci-1613",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.80-0.98",
+      "numeric_values": [
+        0.8,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1613,
+      "sentence": "Aspirin initiated after surgery reduced CRC\u2010related mortality (SHR: 0.88, 95% CI: 0.80-0.98) and all\u2010cause mortality (HR: 0.87, 95% CI: 0.81-0.94).</jats:p></jats:sec><jats:sec><jats:title>Conclusions</jats:title><jats:p>Irrespective of aspirin use before surgery for CRC, low\u2010dose aspirin after surgery lowers risk of both CRC\u2010related mortality and overall mortality.</jats:p></jats:sec>",
+      "context_window": "ted after surgery reduced CRC\u2010related mortality (SHR: 0.88, 95% CI: 0.80-0.98) and all\u2010cause mortality (HR: 0.87, 95% CI: 0.81-0.94).</ja",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-hr-a-1657",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "Aspirin initiated after surgery reduced CRC\u2010related mortality (SHR: 0.88, 95% CI: 0.80-0.98) and all\u2010cause mortality (HR: 0.87, 95% CI: 0.81-0.94).</jats:p></jats:sec><jats:sec><jats:title>Conclusions</jats:title><jats:p>Irrespective of aspirin use before surgery for CRC, low\u2010dose aspirin after surgery lowers risk of both CRC\u2010related mortality and overall mortality.</jats:p></jats:sec>",
+      "context_window": "ity (SHR: 0.88, 95% CI: 0.80-0.98) and all\u2010cause mortality (HR: 0.87, 95% CI: 0.81-0.94).</jats:p></jats:sec><jats:sec><jats:tit",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_colorectal_cancer_mortality_afte-ci-1667",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.81-0.94",
+      "numeric_values": [
+        0.81,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1667,
+      "sentence": "Aspirin initiated after surgery reduced CRC\u2010related mortality (SHR: 0.88, 95% CI: 0.80-0.98) and all\u2010cause mortality (HR: 0.87, 95% CI: 0.81-0.94).</jats:p></jats:sec><jats:sec><jats:title>Conclusions</jats:title><jats:p>Irrespective of aspirin use before surgery for CRC, low\u2010dose aspirin after surgery lowers risk of both CRC\u2010related mortality and overall mortality.</jats:p></jats:sec>",
+      "context_window": "0.88, 95% CI: 0.80-0.98) and all\u2010cause mortality (HR: 0.87, 95% CI: 0.81-0.94).</jats:p></jats:sec><jats:sec><jats:title>Conclusions</jat",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

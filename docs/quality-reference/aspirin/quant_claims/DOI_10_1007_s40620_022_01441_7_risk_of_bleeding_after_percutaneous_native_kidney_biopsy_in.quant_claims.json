@@ -1,0 +1,229 @@
+{
+  "paper_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in",
+  "doi": "10.1007/s40620-022-01441-7",
+  "extracted_at": "2026-05-08T20:06:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 5,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-u-146",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 146,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Background</jats:title> <jats:p>Although discontinuation of antiplatelet agents at least 5 days before kidney biopsy is commonly recommended, the evidence behind this practice is of low level.",
+      "context_window": ":p>Although discontinuation of antiplatelet agents at least 5 days before kidney biopsy is commonly recommended, the evidence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-u-626",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 626,
+      "sentence": "Indeed, few non-randomized studies previously showed an equivalent risk of bleeding in patients receiving aspirin therapy.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>We conducted a single center retrospective study comparing the risk of complications after percutaneous native kidney biopsy in patients who received low-dose aspirin (ASA) within 5 days from biopsy and those who did not.",
+      "context_window": "opsy in patients who received low-dose aspirin (ASA) within 5 days from biopsy and those who did not. The main outcome was the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-u-970",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 970,
+      "sentence": "Secondary outcomes included difference in minor complications, comparison between patients who received ASA within 48 h or within 3-5 days, identification of independent factors predictive of major complications.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>We analyzed data on 750 patients, of whom 94 received ASA within 5 days from biopsy.",
+      "context_window": "n between patients who received ASA within 48 h or within 3-5 days, identification of independent factors predictive of major",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-u-1189",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1189,
+      "sentence": "Secondary outcomes included difference in minor complications, comparison between patients who received ASA within 48 h or within 3-5 days, identification of independent factors predictive of major complications.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>We analyzed data on 750 patients, of whom 94 received ASA within 5 days from biopsy.",
+      "context_window": "alyzed data on 750 patients, of whom 94 received ASA within 5 days from biopsy. There were no significant differences in the p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-pct-1332",
+      "claim_type": "percentage",
+      "raw_text": "2.59%",
+      "numeric_values": [
+        2.59
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1332,
+      "sentence": "There were no significant differences in the proportion of major complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74).",
+      "context_window": "r complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-pct-1342",
+      "claim_type": "percentage",
+      "raw_text": "3.19%",
+      "numeric_values": [
+        3.19
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1342,
+      "sentence": "There were no significant differences in the proportion of major complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74).",
+      "context_window": "tions in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-pct-1391",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1391,
+      "sentence": "There were no significant differences in the proportion of major complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74).",
+      "context_window": "(2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74). Groups were also comparable f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-pct-1395",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "There were no significant differences in the proportion of major complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74).",
+      "context_window": "9% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74). Groups were also comparable for mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-pct-1409",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1409,
+      "sentence": "There were no significant differences in the proportion of major complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74).",
+      "context_window": "respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74). Groups were also comparable for minor complicat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-p-1413",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "There were no significant differences in the proportion of major complications in patients receiving or not receiving ASA (2.59% and 3.19%, respectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74).",
+      "context_window": "ectively, percentage point difference 1%, 95% CI - 3 to 4%, p = 0.74). Groups were also comparable for minor complications; amon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-u-1599",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1599,
+      "sentence": "Groups were also comparable for minor complications; among patients receiving ASA, there were no differences in major bleeding between those who received ASA within 48 h or 3-5 days from biopsy.",
+      "context_window": "or bleeding between those who received ASA within 48 h or 3-5 days from biopsy. Significant baseline predictors of major bleed",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1007_s40620_022_01441_7_risk_of_bleeding_after_percutaneous_native_kidney_biopsy_in-u-1901",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1901,
+      "sentence": "Significant baseline predictors of major bleeding in our cohort were platelet count lower than 120*103/microliter, higher diastolic blood pressure and higher blood urea.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Treatment with low-dose ASA within 5 days from kidney biopsy did not increase the risk of complications after the procedure.</jats:p> </jats:sec> <jats:sec> <jats:title>Graphical abstract</jats:title> </jats:sec>",
+      "context_window": "ons</jats:title> <jats:p>Treatment with low-dose ASA within 5 days from kidney biopsy did not increase the risk of complicatio",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "asa",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

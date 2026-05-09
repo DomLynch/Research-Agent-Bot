@@ -124,6 +124,15 @@ def test_prompt_forbids_scientific_rewrite_and_token_leakage() -> None:
     assert "Return only JSON: verdict, rationale, confidence." in prompt
 
 
+def test_prompt_defaults_ambiguous_before_to_reject_not_escalate() -> None:
+    prompt = build_arbitration_prompt(
+        _input(refusal="'before' appears 17x; ambiguous target")
+    )
+    assert "before appears multiple times, default to REJECT" in prompt
+    assert "ordinary ambiguous replacement targets" in prompt
+    assert "every repeated before occurrence is the same obvious public artifact" in prompt
+
+
 def test_context_guard_preserves_before_after_exactly() -> None:
     before = "BEFORE-" + ("x" * 500)
     after = "AFTER-" + ("y" * 500)

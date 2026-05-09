@@ -1,0 +1,1029 @@
+{
+  "paper_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas",
+  "doi": "10.1186/bcr3638",
+  "extracted_at": "2026-05-08T20:05:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 32,
+    "confidence_interval": 5,
+    "unit_value": 13,
+    "p_value": 3,
+    "odds_ratio": 2,
+    "hazard_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1014",
+      "claim_type": "percentage",
+      "raw_text": "18.3%",
+      "numeric_values": [
+        18.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1014,
+      "sentence": "After breast cancer diagnosis, 18.3% of cancer-specific deaths and 18.5% of matched controls received at least one prescription for low-dose aspirin, corresponding to an odds ratio (OR) of 0.98 (95% CI 0.83, 1.15).",
+      "context_window": "age and year of diagnosis). After breast cancer diagnosis, 18.3% of cancer-specific deaths and 18.5% of matched controls rec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1050",
+      "claim_type": "percentage",
+      "raw_text": "18.5%",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1050,
+      "sentence": "After breast cancer diagnosis, 18.3% of cancer-specific deaths and 18.5% of matched controls received at least one prescription for low-dose aspirin, corresponding to an odds ratio (OR) of 0.98 (95% CI 0.83, 1.15).",
+      "context_window": "reast cancer diagnosis, 18.3% of cancer-specific deaths and 18.5% of matched controls received at least one prescription for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-ci-1178",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83, 1.15",
+      "numeric_values": [
+        0.83,
+        1.15
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1178,
+      "sentence": "After breast cancer diagnosis, 18.3% of cancer-specific deaths and 18.5% of matched controls received at least one prescription for low-dose aspirin, corresponding to an odds ratio (OR) of 0.98 (95% CI 0.83, 1.15).",
+      "context_window": "-dose aspirin, corresponding to an odds ratio (OR) of 0.98 (95% CI 0.83, 1.15). Adjustment for potential confounders (including stage and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-221",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 221,
+      "sentence": "Evidence is accumulating that aspirin may protect against the development of some cancers, including breast cancer; for example, meta-analyses of observational studies indicate that breast cancer risk is reduced by 10 to 15% among aspirin users [ 1 , 2 ].",
+      "context_window": "tudies indicate that breast cancer risk is reduced by 10 to 15% among aspirin users [ 1 , 2 ]. Recent evidence also points",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-522",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 522,
+      "sentence": "In the Iowa Women\u2019s Health Study, the risk of death from breast cancer in postmenopausal breast cancer patients was reduced by approximately 50% among post-diagnostic users of aspirin and non-aspirin non-steroidal anti-inflammatory drugs (NSAIDs) [ 3 ].",
+      "context_window": "opausal breast cancer patients was reduced by approximately 50% among post-diagnostic users of aspirin and non-aspirin non-",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 487,
+      "sentence": "The CPRD is the world\u2019s largest database of longitudinal patient records comprising around 6% of the UK population and includes demographic information, clinical diagnoses and prescription data which are of documented high quality [ 12 ].",
+      "context_window": "database of longitudinal patient records comprising around 6% of the UK population and includes demographic information,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-1934",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1934,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1949",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1949,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "ssified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 7",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-1999",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1999,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher). Duration of use w",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-2006",
+      "claim_type": "percentage",
+      "raw_text": "97.1%",
+      "numeric_values": [
+        97.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2006,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "s (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher). Duration of use was dete",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-2012",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2012,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher). Duration of use was determined",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-2023",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2023,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "iptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher). Duration of use was determined from the",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-2028",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2028,
+      "sentence": "Aspirin prescriptions (from GP data) were classified as low-dose if the drug strength was 75 mg or less (1.1% of prescriptions after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher).",
+      "context_window": "ns after cancer diagnosis were 25 mg, 97.1% 75 mg, and 1.8% 300 mg or higher). Duration of use was determined from the quantit",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-2195",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2195,
+      "sentence": "A quantity of 28 tablets, based upon the average, was assumed for less than 1% of prescriptions where quantity was missing or assumed incorrect.",
+      "context_window": "tablets, based upon the average, was assumed for less than 1% of prescriptions where quantity was missing or assumed inco",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-2520",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2520,
+      "sentence": "Smoking, alcohol and body mass index (BMI) were determined from the closest GP record prior to breast cancer diagnosis (values older than 10 years were ignored).",
+      "context_window": "record prior to breast cancer diagnosis (values older than 10 years were ignored). GP prescribing data were used to determine h",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-4728",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4728,
+      "sentence": "Conditional logistic regression was used to compare the risk of breast cancer-specific death by aspirin exposure (defined by number of tablets or prescriptions) calculating odds ratios (ORs) and 95% confidence intervals (95% CIs).",
+      "context_window": "tablets or prescriptions) calculating odds ratios (ORs) and 95% confidence intervals (95% CIs). Adjusted analyses were cond",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-4754",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4754,
+      "sentence": "Conditional logistic regression was used to compare the risk of breast cancer-specific death by aspirin exposure (defined by number of tablets or prescriptions) calculating odds ratios (ORs) and 95% confidence intervals (95% CIs).",
+      "context_window": "calculating odds ratios (ORs) and 95% confidence intervals (95% CIs). Adjusted analyses were conducted including potential",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-5375",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5375,
+      "sentence": "Analyses were conducted excluding prescriptions in the first 12 months after cancer diagnosis as these may be influenced by cancer treatment.",
+      "context_window": "nalyses were conducted excluding prescriptions in the first 12 months after cancer diagnosis as these may be influenced by cancer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-6956",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6956,
+      "sentence": "The final analysis contained 1,435 breast cancer-specific deaths and 5,697 matched controls, with low-dose aspirin usage of approximately 20%.",
+      "context_window": "ched controls, with low-dose aspirin usage of approximately 20%. This allowed 80% power to detect as significant at the 5%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-6974",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6974,
+      "sentence": "This allowed 80% power to detect as significant at the 5% level an odds ratio of 0.80 in patients receiving low-dose aspirin equivalent to a 20% risk reduction in breast cancer-specific death.",
+      "context_window": "h low-dose aspirin usage of approximately 20%. This allowed 80% power to detect as significant at the 5% level an odds rati",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7016",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7016,
+      "sentence": "This allowed 80% power to detect as significant at the 5% level an odds ratio of 0.80 in patients receiving low-dose aspirin equivalent to a 20% risk reduction in breast cancer-specific death.",
+      "context_window": "20%. This allowed 80% power to detect as significant at the 5% level an odds ratio of 0.80 in patients receiving low-dose",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7102",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7102,
+      "sentence": "This allowed 80% power to detect as significant at the 5% level an odds ratio of 0.80 in patients receiving low-dose aspirin equivalent to a 20% risk reduction in breast cancer-specific death.",
+      "context_window": "0.80 in patients receiving low-dose aspirin equivalent to a 20% risk reduction in breast cancer-specific death. Statistical",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-585",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 years",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 585,
+      "sentence": "The final cohort for analysis therefore contained 9,817 breast cancer patients, with an average of 6.9 years of follow-up (range 1.0 years to 13.0 years) in those not dying, in whom there were 1,443 cancer-specific deaths.",
+      "context_window": "contained 9,817 breast cancer patients, with an average of 6.9 years of follow-up (range 1.0 years to 13.0 years) in those not d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-615",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 615,
+      "sentence": "The final cohort for analysis therefore contained 9,817 breast cancer patients, with an average of 6.9 years of follow-up (range 1.0 years to 13.0 years) in those not dying, in whom there were 1,443 cancer-specific deaths.",
+      "context_window": "patients, with an average of 6.9 years of follow-up (range 1.0 years to 13.0 years) in those not dying, in whom there were 1,443",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-628",
+      "claim_type": "unit_value",
+      "raw_text": "13.0 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 628,
+      "sentence": "The final cohort for analysis therefore contained 9,817 breast cancer patients, with an average of 6.9 years of follow-up (range 1.0 years to 13.0 years) in those not dying, in whom there were 1,443 cancer-specific deaths.",
+      "context_window": "th an average of 6.9 years of follow-up (range 1.0 years to 13.0 years) in those not dying, in whom there were 1,443 cancer-specif",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-1139",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 years",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1139,
+      "sentence": "The average time to death in the cases was 3.9 years and varied from 1 to 12.8 years.",
+      "context_window": "s) and controls. The average time to death in the cases was 3.9 years and varied from 1 to 12.8 years. There was a greater propor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-1170",
+      "claim_type": "unit_value",
+      "raw_text": "12.8 years",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1170,
+      "sentence": "The average time to death in the cases was 3.9 years and varied from 1 to 12.8 years.",
+      "context_window": "me to death in the cases was 3.9 years and varied from 1 to 12.8 years. There was a greater proportion of higher stage cancers ( P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-p-1239",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1239,
+      "sentence": "There was a greater proportion of higher stage cancers ( P <0.001) and higher grade ( P <0.001) in cases compared with controls and cases were more likely to have chemotherapy and less likely to have surgery within six months of diagnosis, compared with controls.",
+      "context_window": "s. There was a greater proportion of higher stage cancers ( P <0.001) and higher grade ( P <0.001) in cases compared with contro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-p-1268",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1268,
+      "sentence": "There was a greater proportion of higher stage cancers ( P <0.001) and higher grade ( P <0.001) in cases compared with controls and cases were more likely to have chemotherapy and less likely to have surgery within six months of diagnosis, compared with controls.",
+      "context_window": "tion of higher stage cancers ( P <0.001) and higher grade ( P <0.001) in cases compared with controls and cases were more likely",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1535",
+      "claim_type": "percentage",
+      "raw_text": "21.0%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1535,
+      "sentence": "Current smoking was more common in breast cancer-specific deaths compared with controls (21.0% versus 18.4%).",
+      "context_window": "on in breast cancer-specific deaths compared with controls (21.0% versus 18.4%). Rates of comorbidities, alcohol consumption",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1548",
+      "claim_type": "percentage",
+      "raw_text": "18.4%",
+      "numeric_values": [
+        18.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1548,
+      "sentence": "Current smoking was more common in breast cancer-specific deaths compared with controls (21.0% versus 18.4%).",
+      "context_window": "cancer-specific deaths compared with controls (21.0% versus 18.4%). Rates of comorbidities, alcohol consumption and BMI level",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-or-a-2090",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.00",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2090,
+      "sentence": "There was little evidence of an association between receiving at least one prescription for low-dose aspirin after cancer diagnosis and breast cancer-specific death (adjusted OR = 1.00, 95% CI 0.71, 1.41; P = 0.99).",
+      "context_window": "cancer diagnosis and breast cancer-specific death (adjusted OR = 1.00, 95% CI 0.71, 1.41; P = 0.99). There was also little eviden",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-ci-2101",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.71, 1.41",
+      "numeric_values": [
+        0.71,
+        1.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2101,
+      "sentence": "There was little evidence of an association between receiving at least one prescription for low-dose aspirin after cancer diagnosis and breast cancer-specific death (adjusted OR = 1.00, 95% CI 0.71, 1.41; P = 0.99).",
+      "context_window": "nosis and breast cancer-specific death (adjusted OR = 1.00, 95% CI 0.71, 1.41; P = 0.99). There was also little evidence of dose response",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-p-2120",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2120,
+      "sentence": "There was little evidence of an association between receiving at least one prescription for low-dose aspirin after cancer diagnosis and breast cancer-specific death (adjusted OR = 1.00, 95% CI 0.71, 1.41; P = 0.99).",
+      "context_window": "ncer-specific death (adjusted OR = 1.00, 95% CI 0.71, 1.41; P = 0.99). There was also little evidence of dose response associati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-2476",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2476,
+      "sentence": "Finally, there was no significant association between receiving at least one prescription for high dose aspirin (prescribed for approximately 1% of cases and controls) and cancer-specific mortality.",
+      "context_window": "ription for high dose aspirin (prescribed for approximately 1% of cases and controls) and cancer-specific mortality. Simil",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-or-a-5330",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.05",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5330,
+      "sentence": "Defining breast cancer-specific death based upon a breast cancer code for any cause of death, not necessarily the main cause, also had little impact on the results (OR = 1.05, 95% CI 0.91, 1.20).",
+      "context_window": "rily the main cause, also had little impact on the results (OR = 1.05, 95% CI 0.91, 1.20). Restricting the adjusted analysis to c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-ci-5341",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.91, 1.20",
+      "numeric_values": [
+        0.91,
+        1.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5341,
+      "sentence": "Defining breast cancer-specific death based upon a breast cancer code for any cause of death, not necessarily the main cause, also had little impact on the results (OR = 1.05, 95% CI 0.91, 1.20).",
+      "context_window": "in cause, also had little impact on the results (OR = 1.05, 95% CI 0.91, 1.20). Restricting the adjusted analysis to cancer registries wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-5442",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5442,
+      "sentence": "Restricting the adjusted analysis to cancer registries where stage recording was 85% complete also had little impact on the results.",
+      "context_window": "ted analysis to cancer registries where stage recording was 85% complete also had little impact on the results. Repeating t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-ci-5675",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.92, 1.22",
+      "numeric_values": [
+        0.92,
+        1.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5675,
+      "sentence": "Repeating the analysis in the entire breast cancer cohort using a Cox proportional hazards model with a time varying covariate produced similar estimates (hazard ratio (HR) = 1.06, 95% CI 0.92, 1.22) and additionally accounting for competing risks of deaths from other causes had little impact (sub-distribution HR = 1.04, 95% CI 0.81, 1.08).",
+      "context_window": "riate produced similar estimates (hazard ratio (HR) = 1.06, 95% CI 0.92, 1.22) and additionally accounting for competing risks of deaths",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-hr-a-5806",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.04",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5806,
+      "sentence": "Repeating the analysis in the entire breast cancer cohort using a Cox proportional hazards model with a time varying covariate produced similar estimates (hazard ratio (HR) = 1.06, 95% CI 0.92, 1.22) and additionally accounting for competing risks of deaths from other causes had little impact (sub-distribution HR = 1.04, 95% CI 0.81, 1.08).",
+      "context_window": "eaths from other causes had little impact (sub-distribution HR = 1.04, 95% CI 0.81, 1.08). Sensitivity analysis for association",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-ci-5817",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81, 1.08",
+      "numeric_values": [
+        0.81,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5817,
+      "sentence": "Repeating the analysis in the entire breast cancer cohort using a Cox proportional hazards model with a time varying covariate produced similar estimates (hazard ratio (HR) = 1.06, 95% CI 0.92, 1.22) and additionally accounting for competing risks of deaths from other causes had little impact (sub-distribution HR = 1.04, 95% CI 0.81, 1.08).",
+      "context_window": "other causes had little impact (sub-distribution HR = 1.04, 95% CI 0.81, 1.08). Sensitivity analysis for association between low dose as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-6471",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 years",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6471,
+      "sentence": "Sensitivity analysis for association between low dose aspirin exposure and breast cancer-specific death\n\na All sensitivity analyses refer to low dose aspirin prescriptions in the time period from breast cancer diagnosis to six months before death, and are adjusted for matching criteria only, unless otherwise stated.\n\nb Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis, restricted to individuals with one year of medication records prior to diagnosis.\n\nc Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis.\n\nd Restricted to individuals with at least 1.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\ne Restricted to individuals with at least 2.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\nf Restricted to individuals with at least two years of follow-up so relevant exposure period is at least a duration of six months.\n\ng Stage missing for 15% of individuals and breast cancer patients included from the Northern and Yorkshire Cancer Registry and Information Service, the Trent Cancer Registry, the Eastern Cancer Registration and Information Centre, the Oxford Cancer Intelligence Unit and the West Midlands Cancer Intelligence.\n\nh Reported estimates are hazard ratios and 95% confidence intervals (CIs), adjusted for age and year of breast cancer diagnosis.\n\ni Reported estimates are sub-distribution hazards ratios and 95% CIs, adjusted for competing risks of death, age and year of breast cancer diagnosis.",
+      "context_window": "ancer diagnosis. d Restricted to individuals with at least 1.5 years of follow-up so relevant exposure period is at least a dura",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-u-6603",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 years",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6603,
+      "sentence": "Sensitivity analysis for association between low dose aspirin exposure and breast cancer-specific death\n\na All sensitivity analyses refer to low dose aspirin prescriptions in the time period from breast cancer diagnosis to six months before death, and are adjusted for matching criteria only, unless otherwise stated.\n\nb Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis, restricted to individuals with one year of medication records prior to diagnosis.\n\nc Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis.\n\nd Restricted to individuals with at least 1.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\ne Restricted to individuals with at least 2.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\nf Restricted to individuals with at least two years of follow-up so relevant exposure period is at least a duration of six months.\n\ng Stage missing for 15% of individuals and breast cancer patients included from the Northern and Yorkshire Cancer Registry and Information Service, the Trent Cancer Registry, the Eastern Cancer Registration and Information Centre, the Oxford Cancer Intelligence Unit and the West Midlands Cancer Intelligence.\n\nh Reported estimates are hazard ratios and 95% confidence intervals (CIs), adjusted for age and year of breast cancer diagnosis.\n\ni Reported estimates are sub-distribution hazards ratios and 95% CIs, adjusted for competing risks of death, age and year of breast cancer diagnosis.",
+      "context_window": "n of six months. e Restricted to individuals with at least 2.5 years of follow-up so relevant exposure period is at least a dura",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-6845",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6845,
+      "sentence": "Sensitivity analysis for association between low dose aspirin exposure and breast cancer-specific death\n\na All sensitivity analyses refer to low dose aspirin prescriptions in the time period from breast cancer diagnosis to six months before death, and are adjusted for matching criteria only, unless otherwise stated.\n\nb Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis, restricted to individuals with one year of medication records prior to diagnosis.\n\nc Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis.\n\nd Restricted to individuals with at least 1.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\ne Restricted to individuals with at least 2.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\nf Restricted to individuals with at least two years of follow-up so relevant exposure period is at least a duration of six months.\n\ng Stage missing for 15% of individuals and breast cancer patients included from the Northern and Yorkshire Cancer Registry and Information Service, the Trent Cancer Registry, the Eastern Cancer Registration and Information Centre, the Oxford Cancer Intelligence Unit and the West Midlands Cancer Intelligence.\n\nh Reported estimates are hazard ratios and 95% confidence intervals (CIs), adjusted for age and year of breast cancer diagnosis.\n\ni Reported estimates are sub-distribution hazards ratios and 95% CIs, adjusted for competing risks of death, age and year of breast cancer diagnosis.",
+      "context_window": "is at least a duration of six months. g Stage missing for 15% of individuals and breast cancer patients included from the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7179",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7179,
+      "sentence": "Sensitivity analysis for association between low dose aspirin exposure and breast cancer-specific death\n\na All sensitivity analyses refer to low dose aspirin prescriptions in the time period from breast cancer diagnosis to six months before death, and are adjusted for matching criteria only, unless otherwise stated.\n\nb Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis, restricted to individuals with one year of medication records prior to diagnosis.\n\nc Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis.\n\nd Restricted to individuals with at least 1.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\ne Restricted to individuals with at least 2.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\nf Restricted to individuals with at least two years of follow-up so relevant exposure period is at least a duration of six months.\n\ng Stage missing for 15% of individuals and breast cancer patients included from the Northern and Yorkshire Cancer Registry and Information Service, the Trent Cancer Registry, the Eastern Cancer Registration and Information Centre, the Oxford Cancer Intelligence Unit and the West Midlands Cancer Intelligence.\n\nh Reported estimates are hazard ratios and 95% confidence intervals (CIs), adjusted for age and year of breast cancer diagnosis.\n\ni Reported estimates are sub-distribution hazards ratios and 95% CIs, adjusted for competing risks of death, age and year of breast cancer diagnosis.",
+      "context_window": "r Intelligence. h Reported estimates are hazard ratios and 95% confidence intervals (CIs), adjusted for age and year of br",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7327",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7327,
+      "sentence": "Sensitivity analysis for association between low dose aspirin exposure and breast cancer-specific death\n\na All sensitivity analyses refer to low dose aspirin prescriptions in the time period from breast cancer diagnosis to six months before death, and are adjusted for matching criteria only, unless otherwise stated.\n\nb Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis, restricted to individuals with one year of medication records prior to diagnosis.\n\nc Pre-diagnostic low dose aspirin prescriptions in one year prior to breast cancer diagnosis.\n\nd Restricted to individuals with at least 1.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\ne Restricted to individuals with at least 2.5 years of follow-up so relevant exposure period is at least a duration of six months.\n\nf Restricted to individuals with at least two years of follow-up so relevant exposure period is at least a duration of six months.\n\ng Stage missing for 15% of individuals and breast cancer patients included from the Northern and Yorkshire Cancer Registry and Information Service, the Trent Cancer Registry, the Eastern Cancer Registration and Information Centre, the Oxford Cancer Intelligence Unit and the West Midlands Cancer Intelligence.\n\nh Reported estimates are hazard ratios and 95% confidence intervals (CIs), adjusted for age and year of breast cancer diagnosis.\n\ni Reported estimates are sub-distribution hazards ratios and 95% CIs, adjusted for competing risks of death, age and year of breast cancer diagnosis.",
+      "context_window": "Reported estimates are sub-distribution hazards ratios and 95% CIs, adjusted for competing risks of death, age and year of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-819",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 819,
+      "sentence": "Data from two US studies, the Nurses\u2019 Health Study [ 4 ] and the Iowa Women\u2019s Health Study [ 3 ], indicate a substantial (approximately 50%) reduction in risk of cancer progression in early stage breast cancer patients using aspirin post-diagnostically, although another US study (the LACE study) [ 6 ] did not observe any risk reduction in aspirin users and a study of breast cancer patients recruited in New York state showed no association between recent pre-diagnostic aspirin exposure and breast cancer survival [ 20 ].",
+      "context_window": "s Health Study [ 3 ], indicate a substantial (approximately 50%) reduction in risk of cancer progression in early stage bre",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1421",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1421,
+      "sentence": "Indications for aspirin use were explored in the Nurses\u2019 Health Study; 35% of users took aspirin (most likely low-dose) for protection against cardiovascular disease while 37% used aspirin (presumably high dose) for musculoskeletal pain, headache or menstrual pain (data on other indications were not provided).",
+      "context_window": "for aspirin use were explored in the Nurses\u2019 Health Study; 35% of users took aspirin (most likely low-dose) for protection",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-1522",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1522,
+      "sentence": "Indications for aspirin use were explored in the Nurses\u2019 Health Study; 35% of users took aspirin (most likely low-dose) for protection against cardiovascular disease while 37% used aspirin (presumably high dose) for musculoskeletal pain, headache or menstrual pain (data on other indications were not provided).",
+      "context_window": "w-dose) for protection against cardiovascular disease while 37% used aspirin (presumably high dose) for musculoskeletal pai",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-4638",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4638,
+      "sentence": "However, the amount of over-the-counter use is likely to be low as a previous General Practice Research Database (GPRD) study [ 23 ] comparing prescription records to patient self-report noted that the majority of chronic aspirin therapy was captured by prescription records and another estimated that 70% to 80% of aspirin use in the age-group we investigated was prescription based [ 24 ].",
+      "context_window": "captured by prescription records and another estimated that 70% to 80% of aspirin use in the age-group we investigated was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-4645",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4645,
+      "sentence": "However, the amount of over-the-counter use is likely to be low as a previous General Practice Research Database (GPRD) study [ 23 ] comparing prescription records to patient self-report noted that the majority of chronic aspirin therapy was captured by prescription records and another estimated that 70% to 80% of aspirin use in the age-group we investigated was prescription based [ 24 ].",
+      "context_window": "d by prescription records and another estimated that 70% to 80% of aspirin use in the age-group we investigated was prescri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-6653",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6653,
+      "sentence": "Although stage data were incomplete, it seems unlikely that stage confounded the main finding as adjustments for stage in the subset of cancer registries where stage data were 85% complete had little influence on risk estimates.",
+      "context_window": "ge in the subset of cancer registries where stage data were 85% complete had little influence on risk estimates. Confoundin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7392",
+      "claim_type": "percentage",
+      "raw_text": "19.3%",
+      "numeric_values": [
+        19.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7392,
+      "sentence": "Regular use of aspirin has increased substantially in recent years, for example, the proportion of the US population taking aspirin at least three times a week over a three-month period increased from 19.3% to 27.4% (1.4-fold increase) between 2005 and 2010 [ 29 ].",
+      "context_window": "three times a week over a three-month period increased from 19.3% to 27.4% (1.4-fold increase) between 2005 and 2010 [ 29 ].",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7401",
+      "claim_type": "percentage",
+      "raw_text": "27.4%",
+      "numeric_values": [
+        27.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7401,
+      "sentence": "Regular use of aspirin has increased substantially in recent years, for example, the proportion of the US population taking aspirin at least three times a week over a three-month period increased from 19.3% to 27.4% (1.4-fold increase) between 2005 and 2010 [ 29 ].",
+      "context_window": "es a week over a three-month period increased from 19.3% to 27.4% (1.4-fold increase) between 2005 and 2010 [ 29 ]. Even high",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7585",
+      "claim_type": "percentage",
+      "raw_text": "21.3%",
+      "numeric_values": [
+        21.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7585,
+      "sentence": "Even higher increases in use were seen for cancer patients, including breast cancer patients in whom regular use increased from 21.3% to 37.9% (1.8-fold increase).",
+      "context_window": "g breast cancer patients in whom regular use increased from 21.3% to 37.9% (1.8-fold increase). Reasons for prescribing aspir",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4053148_post_diagnostic_prescriptions_for_low_dose_aspirin_and_breas-pct-7594",
+      "claim_type": "percentage",
+      "raw_text": "37.9%",
+      "numeric_values": [
+        37.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7594,
+      "sentence": "Even higher increases in use were seen for cancer patients, including breast cancer patients in whom regular use increased from 21.3% to 37.9% (1.8-fold increase).",
+      "context_window": "cancer patients in whom regular use increased from 21.3% to 37.9% (1.8-fold increase). Reasons for prescribing aspirin in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

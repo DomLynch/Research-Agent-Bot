@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1111_j_1532_5415_1991_tb02494_x_rationale_for_a_primary_prevention_study_using_low_dose_aspi",
+  "doi": "10.1111/j.1532-5415.1991.tb02494.x",
+  "extracted_at": "2026-05-08T20:05:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1532_5415_1991_tb02494_x_rationale_for_a_primary_prevention_study_using_low_dose_aspi-u-285",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 285,
+      "sentence": "The rationale for developing a multicentered, double\u2010blind, placebo\u2010controlled clinical trial to determine whether low\u2010dose aspirin (100 mg daily) prevents cardiovascular and cerebrovascular morbidity and mortality in persons aged 70 years and over with no evidence of pre\u2010existing cardiovascular or cerebrovascular disease is described.</jats:p> <jats:p>Sample size calculations have indicated that 15,000 subjects would be required over a 4\u2010year follow\u2010up period in order to demonstrate a 20% reduction in overall cardiovascular mortality at the 0.01 level with a power of 0.8.",
+      "context_window": "olled clinical trial to determine whether low\u2010dose aspirin (100 mg daily) prevents cardiovascular and cerebrovascular morbidit",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1532_5415_1991_tb02494_x_rationale_for_a_primary_prevention_study_using_low_dose_aspi-u-383",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 383,
+      "sentence": "The rationale for developing a multicentered, double\u2010blind, placebo\u2010controlled clinical trial to determine whether low\u2010dose aspirin (100 mg daily) prevents cardiovascular and cerebrovascular morbidity and mortality in persons aged 70 years and over with no evidence of pre\u2010existing cardiovascular or cerebrovascular disease is described.</jats:p> <jats:p>Sample size calculations have indicated that 15,000 subjects would be required over a 4\u2010year follow\u2010up period in order to demonstrate a 20% reduction in overall cardiovascular mortality at the 0.01 level with a power of 0.8.",
+      "context_window": "and cerebrovascular morbidity and mortality in persons aged 70 years and over with no evidence of pre\u2010existing cardiovascular or",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1532_5415_1991_tb02494_x_rationale_for_a_primary_prevention_study_using_low_dose_aspi-pct-643",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 643,
+      "sentence": "The rationale for developing a multicentered, double\u2010blind, placebo\u2010controlled clinical trial to determine whether low\u2010dose aspirin (100 mg daily) prevents cardiovascular and cerebrovascular morbidity and mortality in persons aged 70 years and over with no evidence of pre\u2010existing cardiovascular or cerebrovascular disease is described.</jats:p> <jats:p>Sample size calculations have indicated that 15,000 subjects would be required over a 4\u2010year follow\u2010up period in order to demonstrate a 20% reduction in overall cardiovascular mortality at the 0.01 level with a power of 0.8.",
+      "context_window": "ed over a 4\u2010year follow\u2010up period in order to demonstrate a 20% reduction in overall cardiovascular mortality at the 0.01 l",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

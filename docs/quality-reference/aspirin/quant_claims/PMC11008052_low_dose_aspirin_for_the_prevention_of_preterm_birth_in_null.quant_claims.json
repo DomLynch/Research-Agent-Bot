@@ -1,0 +1,3145 @@
+{
+  "paper_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null",
+  "doi": "10.1186/s12884-024-06413-2",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 77,
+    "percentage": 44,
+    "confidence_interval": 35,
+    "p_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-502",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 502,
+      "sentence": "The primary outcomes of this study were the rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation.",
+      "context_window": "of this study were the rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation. The secondary outcomes",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-525",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 525,
+      "sentence": "The primary outcomes of this study were the rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation.",
+      "context_window": "rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation. The secondary outcomes included postpartum he",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-738",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 738,
+      "sentence": "Relative risks with their 95% confidence intervals were calculated for analysis.",
+      "context_window": "cy and small for gestational age. Relative risks with their 95% confidence intervals were calculated for analysis. Heteroge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-907",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "A random-effects model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects model was used.",
+      "context_window": "gins\u2019s I 2 . A random-effects model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-934",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 934,
+      "sentence": "A random-effects model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects model was used.",
+      "context_window": "ts model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects model was used. The risk of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1511",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "ificant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-1548",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71-0.99",
+      "numeric_values": [
+        0.71,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1548,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "erm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-1573",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1573,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-1577",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1577,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "ks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the ra",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1678",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1678,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "ficant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-1709",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.90-1.02",
+      "numeric_values": [
+        0.9,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1709,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "f preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18). Low-dose aspirin was associated with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-1734",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1734,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "han 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18). Low-dose aspirin was associated with a signific",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-1739",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1739,
+      "sentence": "In nulliparous women, low-dose aspirin was associated with a significant reduction in the rate of preterm birth at less than 34 weeks of gestational age (RR 0.84,95% CI: 0.71-0.99; I 2 = 0%; P = 0.04), but we did not observe a significant difference in the rate of preterm birth at less than 37 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18).",
+      "context_window": "7 weeks of gestation (RR 0.96,95% CI: 0.90-1.02; I 2 = 31%; P = 0.18). Low-dose aspirin was associated with a significant increa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-1857",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.14-1.54",
+      "numeric_values": [
+        1.14,
+        1.54
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1857,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "ant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-1882",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1882,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-1886",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1886,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-1928",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.10-4.32",
+      "numeric_values": [
+        1.1,
+        4.32
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1928,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "4-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% C",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-1953",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1953,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-1958",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1958,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-2000",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.001-1.108",
+      "numeric_values": [
+        1.001,
+        1.108
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2000,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women. We also did not",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2027",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2027,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women. We also did not observe a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-2031",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2031,
+      "sentence": "Low-dose aspirin was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32,95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003), placental abruption (RR 2.18,95% CI: 1.10-4.32; I 2 = 16%; P = 0.02) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women.",
+      "context_window": "cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05) in nulliparous women. We also did not observe a significan",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-2193",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.96-1.14",
+      "numeric_values": [
+        0.96,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2193,
+      "sentence": "We also did not observe a significant effect of low-dose aspirin on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women.",
+      "context_window": "e rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2218",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2218,
+      "sentence": "We also did not observe a significant effect of low-dose aspirin on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women.",
+      "context_window": "ve disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-2222",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2222,
+      "sentence": "We also did not observe a significant effect of low-dose aspirin on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women.",
+      "context_window": "isorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02;",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-2271",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.91-1.02",
+      "numeric_values": [
+        0.91,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2271,
+      "sentence": "We also did not observe a significant effect of low-dose aspirin on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women.",
+      "context_window": "I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women. Funnel plots ind",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2296",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2296,
+      "sentence": "We also did not observe a significant effect of low-dose aspirin on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women.",
+      "context_window": "mall for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women. Funnel plots indicated tha",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-2300",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2300,
+      "sentence": "We also did not observe a significant effect of low-dose aspirin on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women.",
+      "context_window": "for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16) in nulliparous women. Funnel plots indicated that no signi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2461",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2461,
+      "sentence": "Except for preterm birth at less than 34 weeks of gestation, placental abruption and cesarean section, the sensitivity analysis showed similar results, which confirmed the robustness of this meta-analysis.",
+      "context_window": "n this meta-analysis. Except for preterm birth at less than 34 weeks of gestation, placental abruption and cesarean section, the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2699",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2699,
+      "sentence": "Low-dose aspirin might reduce the risk of preterm birth at less than 34 weeks of gestation in nulliparous women.",
+      "context_window": "aspirin might reduce the risk of preterm birth at less than 34 weeks of gestation in nulliparous women. The use of low-dose aspi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2280",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2280,
+      "sentence": "The primary outcomes of this study were the rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation.",
+      "context_window": "of this study were the rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation. Secondary outcomes inc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2303",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2303,
+      "sentence": "The primary outcomes of this study were the rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation.",
+      "context_window": "rates of preterm birth at less than 37 weeks and less than 34 weeks of gestation. Secondary outcomes included postpartum hemorr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-3028",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3028,
+      "sentence": "For dichotomous outcomes, relative risks (RRs) with their 95% confidence intervals (CIs) were calculated for analysis [ 29 ].",
+      "context_window": ". For dichotomous outcomes, relative risks (RRs) with their 95% confidence intervals (CIs) were calculated for analysis [ 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-3221",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3221,
+      "sentence": "A random-effects model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects model was used.",
+      "context_window": "[ 30 , 31 ]. A random-effects model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-3248",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3248,
+      "sentence": "A random-effects model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects model was used.",
+      "context_window": "ts model was used when I 2 was > 50% to generate the RR and 95% CI; otherwise, a fixed-effects model was used. We summarize",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-917",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 917,
+      "sentence": "Six out of the seven studies reported the effect of LDA on the rates of PTB at less than 37 weeks of gestation, and three out of the seven studies reported the effect of LDA on the rates of PTB at less than 34 weeks of gestation.",
+      "context_window": "reported the effect of LDA on the rates of PTB at less than 37 weeks of gestation, and three out of the seven studies reported t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1035",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1035,
+      "sentence": "Six out of the seven studies reported the effect of LDA on the rates of PTB at less than 37 weeks of gestation, and three out of the seven studies reported the effect of LDA on the rates of PTB at less than 34 weeks of gestation.",
+      "context_window": "reported the effect of LDA on the rates of PTB at less than 34 weeks of gestation. The data for the rates of PTB at less than 37",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1101",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1101,
+      "sentence": "The data for the rates of PTB at less than 37 weeks of gestation included the data for the rates of PTB at less than 34 weeks of gestation.",
+      "context_window": "ks of gestation. The data for the rates of PTB at less than 37 weeks of gestation included the data for the rates of PTB at less",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1175",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1175,
+      "sentence": "The data for the rates of PTB at less than 37 weeks of gestation included the data for the rates of PTB at less than 34 weeks of gestation.",
+      "context_window": "station included the data for the rates of PTB at less than 34 weeks of gestation. There were two studies both reported the rate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1265",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1265,
+      "sentence": "There were two studies both reported the rates of PTB at less than 37 weeks of gestation and the rates of PTB at less than 34 weeks of gestation and these data are presented separately in each study [ 24 , 36 ].",
+      "context_window": "ere two studies both reported the rates of PTB at less than 37 weeks of gestation and the rates of PTB at less than 34 weeks of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1321",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "There were two studies both reported the rates of PTB at less than 37 weeks of gestation and the rates of PTB at less than 34 weeks of gestation and these data are presented separately in each study [ 24 , 36 ].",
+      "context_window": "han 37 weeks of gestation and the rates of PTB at less than 34 weeks of gestation and these data are presented separately in eac",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1946",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1946,
+      "sentence": "Table 1 Characteristics of included studies Study Participants N Compliance Interventions Aspirin Control Onset and duration Sibai 1993 We enrolled nulliparous women seeking prenatal care who were 13 to 25 weeks pregnant if their blood pressure was below 135/85 mmHg and they had no proteinuria on testing with a dipstick (sensitivity, less than 30 mg per deciliter if the dipstick result is zero or trace).",
+      "context_window": "lled nulliparous women seeking prenatal care who were 13 to 25 weeks pregnant if their blood pressure was below 135/85 mmHg and",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2002",
+      "claim_type": "unit_value",
+      "raw_text": "85 mmHg",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 2002,
+      "sentence": "Table 1 Characteristics of included studies Study Participants N Compliance Interventions Aspirin Control Onset and duration Sibai 1993 We enrolled nulliparous women seeking prenatal care who were 13 to 25 weeks pregnant if their blood pressure was below 135/85 mmHg and they had no proteinuria on testing with a dipstick (sensitivity, less than 30 mg per deciliter if the dipstick result is zero or trace).",
+      "context_window": "to 25 weeks pregnant if their blood pressure was below 135/85 mmHg and they had no proteinuria on testing with a dipstick (sen",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2089",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2089,
+      "sentence": "Table 1 Characteristics of included studies Study Participants N Compliance Interventions Aspirin Control Onset and duration Sibai 1993 We enrolled nulliparous women seeking prenatal care who were 13 to 25 weeks pregnant if their blood pressure was below 135/85 mmHg and they had no proteinuria on testing with a dipstick (sensitivity, less than 30 mg per deciliter if the dipstick result is zero or trace).",
+      "context_window": "teinuria on testing with a dipstick (sensitivity, less than 30 mg per deciliter if the dipstick result is zero or trace). Wom",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2426",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2426,
+      "sentence": "The estimated percentage of the prescribed tablets taken averaged 83% in the aspirin group and 84% in the placebo group.",
+      "context_window": "timated percentage of the prescribed tablets taken averaged 83% in the aspirin group and 84% in the placebo group. 72% of t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2455",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2455,
+      "sentence": "The estimated percentage of the prescribed tablets taken averaged 83% in the aspirin group and 84% in the placebo group.",
+      "context_window": "scribed tablets taken averaged 83% in the aspirin group and 84% in the placebo group. 72% of the women in the aspirin group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2481",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2481,
+      "sentence": "72% of the women in the aspirin group and 74% of the women in the placebo group took 80% or more of the tablets prescribed between the start of the study and delivery.",
+      "context_window": "aged 83% in the aspirin group and 84% in the placebo group. 72% of the women in the aspirin group and 74% of the women in t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2523",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2523,
+      "sentence": "72% of the women in the aspirin group and 74% of the women in the placebo group took 80% or more of the tablets prescribed between the start of the study and delivery.",
+      "context_window": "he placebo group. 72% of the women in the aspirin group and 74% of the women in the placebo group took 80% or more of the t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-2566",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2566,
+      "sentence": "72% of the women in the aspirin group and 74% of the women in the placebo group took 80% or more of the tablets prescribed between the start of the study and delivery.",
+      "context_window": "spirin group and 74% of the women in the placebo group took 80% or more of the tablets prescribed between the start of the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2649",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2649,
+      "sentence": "60 mg daily Placebo From recruitment until the onset of labor Hauth 1993 Nulliparous, healthy, and with a singleton gestation at between 20 and 22 weeks\u2019 gestation.",
+      "context_window": "ets prescribed between the start of the study and delivery. 60 mg daily Placebo From recruitment until the onset of labor Hau",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-2793",
+      "claim_type": "unit_value",
+      "raw_text": "22 weeks",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2793,
+      "sentence": "60 mg daily Placebo From recruitment until the onset of labor Hauth 1993 Nulliparous, healthy, and with a singleton gestation at between 20 and 22 weeks\u2019 gestation.",
+      "context_window": ", healthy, and with a singleton gestation at between 20 and 22 weeks\u2019 gestation. 604 We assessed patient compliance by a capsule",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-3025",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.43",
+      "numeric_values": [
+        0.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3025,
+      "sentence": "The mean compliance index, with a maximum of 100, was 94.5 (SD \u00b1 5.4) in the aspirin group and 94.4 (SD \u00b1 7.53) in the placebo group ( p = 0.43, not significant).",
+      "context_window": "e aspirin group and 94.4 (SD \u00b1 7.53) in the placebo group ( p = 0.43, not significant). 60 mg daily Placebo From 24 weeks until",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3053",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3053,
+      "sentence": "60 mg daily Placebo From 24 weeks until delivery.",
+      "context_window": "\u00b1 7.53) in the placebo group ( p = 0.43, not significant). 60 mg daily Placebo From 24 weeks until delivery. Davies 1995 Hea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3078",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3078,
+      "sentence": "60 mg daily Placebo From 24 weeks until delivery.",
+      "context_window": "roup ( p = 0.43, not significant). 60 mg daily Placebo From 24 weeks until delivery. Davies 1995 Healthy, nulliparous women with",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3343",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3343,
+      "sentence": "75 mg daily Placebo From 18 weeks until delivery.",
+      "context_window": "ed that compliance was excellent but without specific data. 75 mg daily Placebo From 18 weeks until delivery. Golding 1998 Nu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3368",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3368,
+      "sentence": "75 mg daily Placebo From 18 weeks until delivery.",
+      "context_window": "cellent but without specific data. 75 mg daily Placebo From 18 weeks until delivery. Golding 1998 Nulliparous women enrolled bet",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3448",
+      "claim_type": "unit_value",
+      "raw_text": "32 weeks",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3448,
+      "sentence": "Golding 1998 Nulliparous women enrolled between 12 and 32 weeks of gestation.",
+      "context_window": "ery. Golding 1998 Nulliparous women enrolled between 12 and 32 weeks of gestation. 6275 Compliance was measured by counting the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3713",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3713,
+      "sentence": "60 mg daily Placebo From recruitment until delivery Rotchell 1998 All women attending antenatal clinics between 12 and 32 weeks of gestation were eligible, if without specific contraindications to aspirin and unlikely to deliver immediately.",
+      "context_window": "authors considered that compliance in this study was poor. 60 mg daily Placebo From recruitment until delivery Rotchell 1998",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-3832",
+      "claim_type": "unit_value",
+      "raw_text": "32 weeks",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3832,
+      "sentence": "60 mg daily Placebo From recruitment until delivery Rotchell 1998 All women attending antenatal clinics between 12 and 32 weeks of gestation were eligible, if without specific contraindications to aspirin and unlikely to deliver immediately.",
+      "context_window": "l 1998 All women attending antenatal clinics between 12 and 32 weeks of gestation were eligible, if without specific contraindic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-4067",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4067,
+      "sentence": "55% of women reported taking tablets for more than 80% of the time.",
+      "context_window": "h treatment pack contained seven one-month calendar sheets. 55% of women reported taking tablets for more than 80% of the t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-4118",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4118,
+      "sentence": "55% of women reported taking tablets for more than 80% of the time.",
+      "context_window": "sheets. 55% of women reported taking tablets for more than 80% of the time. 75 mg daily Placebo From recruitment until del",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4135",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4135,
+      "sentence": "75 mg daily Placebo From recruitment until delivery Subtil 2003 Women were eligible if they were nulliparous (no previous delivery at or after 22 weeks), at a gestational age between 14 and 20.6 weeks, planned to continue prenatal care and give birth in the participating facility and provided written informed consent.",
+      "context_window": "omen reported taking tablets for more than 80% of the time. 75 mg daily Placebo From recruitment until delivery Subtil 2003 W",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4278",
+      "claim_type": "unit_value",
+      "raw_text": "22 weeks",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4278,
+      "sentence": "75 mg daily Placebo From recruitment until delivery Subtil 2003 Women were eligible if they were nulliparous (no previous delivery at or after 22 weeks), at a gestational age between 14 and 20.6 weeks, planned to continue prenatal care and give birth in the participating facility and provided written informed consent.",
+      "context_window": "if they were nulliparous (no previous delivery at or after 22 weeks), at a gestational age between 14 and 20.6 weeks, planned t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4325",
+      "claim_type": "unit_value",
+      "raw_text": "20.6 weeks",
+      "numeric_values": [
+        20.6
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4325,
+      "sentence": "75 mg daily Placebo From recruitment until delivery Subtil 2003 Women were eligible if they were nulliparous (no previous delivery at or after 22 weeks), at a gestational age between 14 and 20.6 weeks, planned to continue prenatal care and give birth in the participating facility and provided written informed consent.",
+      "context_window": "at or after 22 weeks), at a gestational age between 14 and 20.6 weeks, planned to continue prenatal care and give birth in the pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-4659",
+      "claim_type": "percentage",
+      "raw_text": "88.7%",
+      "numeric_values": [
+        88.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4659,
+      "sentence": "The last day of treatment was known for 88.7% of the patients.",
+      "context_window": "y in some patients. The last day of treatment was known for 88.7% of the patients. Of them, 83.7% reported treatment complian",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-4691",
+      "claim_type": "percentage",
+      "raw_text": "83.7%",
+      "numeric_values": [
+        83.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4691,
+      "sentence": "Of them, 83.7% reported treatment compliance of at least 80%.",
+      "context_window": "of treatment was known for 88.7% of the patients. Of them, 83.7% reported treatment compliance of at least 80%. 100 mg daily",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-4739",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4739,
+      "sentence": "Of them, 83.7% reported treatment compliance of at least 80%.",
+      "context_window": "s. Of them, 83.7% reported treatment compliance of at least 80%. 100 mg daily Placebo From 14-20 weeks untill 34 weeks. Hof",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4744",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4744,
+      "sentence": "100 mg daily Placebo From 14-20 weeks untill 34 weeks.",
+      "context_window": "them, 83.7% reported treatment compliance of at least 80%. 100 mg daily Placebo From 14-20 weeks untill 34 weeks. Hoffman 202",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4773",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4773,
+      "sentence": "100 mg daily Placebo From 14-20 weeks untill 34 weeks.",
+      "context_window": "nt compliance of at least 80%. 100 mg daily Placebo From 14-20 weeks untill 34 weeks. Hoffman 2020 Nulliparous women between 14",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4789",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4789,
+      "sentence": "100 mg daily Placebo From 14-20 weeks untill 34 weeks.",
+      "context_window": "at least 80%. 100 mg daily Placebo From 14-20 weeks untill 34 weeks. Hoffman 2020 Nulliparous women between 14 and 40 years of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-4845",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4845,
+      "sentence": "Hoffman 2020 Nulliparous women between 14 and 40 years of age with an ultrasound confirming gestational age and singleton viable pregnancy in multi-country.",
+      "context_window": "ill 34 weeks. Hoffman 2020 Nulliparous women between 14 and 40 years of age with an ultrasound confirming gestational age and si",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5111",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5111,
+      "sentence": "Women were excluded if had any of the following by medical history: allergy or contraindication to aspirin, previously taken aspirin therapy for more than 7 days during this pregnancy, multiple gestations, history of more than two first trimester losses, or medical conditions for which low-dose aspirin therapy is currently indicated (e.g. diabetes and hypertension).",
+      "context_window": "to aspirin, previously taken aspirin therapy for more than 7 days during this pregnancy, multiple gestations, history of more",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5395",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5395,
+      "sentence": "11,976 A pre-packaged 2-week medication allotment was exchanged every 2 weeks by study personnel to assess compliance.",
+      "context_window": "re-packaged 2-week medication allotment was exchanged every 2 weeks by study personnel to assess compliance. Overall adherence",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-5507",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5507,
+      "sentence": "Overall adherence to medication or placebo defined as taking \u2265 90% of the prescribed medications was high (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%).",
+      "context_window": "rall adherence to medication or placebo defined as taking \u2265 90% of the prescribed medications was high (MITT population ove",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-5575",
+      "claim_type": "percentage",
+      "raw_text": "84.9%",
+      "numeric_values": [
+        84.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5575,
+      "sentence": "Overall adherence to medication or placebo defined as taking \u2265 90% of the prescribed medications was high (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%).",
+      "context_window": "he prescribed medications was high (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%). 81 mg daily Placebo Init",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-5590",
+      "claim_type": "percentage",
+      "raw_text": "85.3%",
+      "numeric_values": [
+        85.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5590,
+      "sentence": "Overall adherence to medication or placebo defined as taking \u2265 90% of the prescribed medications was high (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%).",
+      "context_window": "edications was high (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%). 81 mg daily Placebo Initiated between 6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-5608",
+      "claim_type": "percentage",
+      "raw_text": "84.4%",
+      "numeric_values": [
+        84.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5608,
+      "sentence": "Overall adherence to medication or placebo defined as taking \u2265 90% of the prescribed medications was high (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%).",
+      "context_window": "h (MITT population overall 84.9%: aspirin 85.3% vs. placebo 84.4%). 81 mg daily Placebo Initiated between 6 weeks and 0 days",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5616",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5616,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "population overall 84.9%: aspirin 85.3% vs. placebo 84.4%). 81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5654",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5654,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "% vs. placebo 84.4%). 81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5666",
+      "claim_type": "unit_value",
+      "raw_text": "0 days",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5666,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "o 84.4%). 81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregna",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5677",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5677,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "1 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy Characte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5690",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5690,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "acebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy Characteristics of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5703",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5703,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "ed between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy Characteristics of included studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-5716",
+      "claim_type": "unit_value",
+      "raw_text": "0 days",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5716,
+      "sentence": "81 mg daily Placebo Initiated between 6 weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy\n\nCharacteristics of included studies\n\nThe quality assessment of the included studies according to the Cochrane Handbook criteria is shown in Fig.",
+      "context_window": "weeks and 0 days and 13 weeks and 6 days until 36 weeks and 0 days of pregnancy Characteristics of included studies The qual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-6264",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6264,
+      "sentence": "4 Forest plot of the effect of aspirin on PTB less than 34 weeks of gestation\n\nForest plot of the effect of aspirin on PTB less than 34 weeks of gestation\n\nThe synthesis of results for each of the assessed outcomes in the included studies is shown in Table 2 .",
+      "context_window": "ig. 4 Forest plot of the effect of aspirin on PTB less than 34 weeks of gestation Forest plot of the effect of aspirin on PTB l",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-6341",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6341,
+      "sentence": "4 Forest plot of the effect of aspirin on PTB less than 34 weeks of gestation\n\nForest plot of the effect of aspirin on PTB less than 34 weeks of gestation\n\nThe synthesis of results for each of the assessed outcomes in the included studies is shown in Table 2 .",
+      "context_window": "tion Forest plot of the effect of aspirin on PTB less than 34 weeks of gestation The synthesis of results for each of the asse",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-6669",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6669,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "omes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of ges",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-6717",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6717,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "ative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm bir",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-6798",
+      "claim_type": "unit_value",
+      "raw_text": "34weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6798,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum h",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-7428",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7428,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "ith a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-7466",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.71-0.99",
+      "numeric_values": [
+        0.71,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7466,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "e of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig. 4 ), but we did not observe a sig",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-7491",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7491,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig. 4 ), but we did not observe a significant d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-7495",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7495,
+      "sentence": "Table 2 Summary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women Outcomes Trials, n Participants, n Fixed effect, relative risk (95% CI) P value I 2 , % Preterm birth less than 37 weeks of gestation 6 26,086 0.96 (0.90, 1.02) 0.18 31 Preterm birth less than 34weeks of gestation 3 14,647 0.84 (0.71, 0.99) 0.04 0 Postpartum hemorrhage 4 24,143 1.32 (1.14, 1.54) 0.0003 0 Placental abruption 3 6354 2.18 (1.10, 4.32) 0.02 16 Cesarean section 6 24,588 1.05 (1.00, 1.11) 0.05 0 Any hypertensive disorder of pregnancy 7 26,168 1.05 (0.96, 1.14) 0.28 9 Small for gestational age 5 18,005 0.96 (0.91, 1.02) 0.16 0 CI: confidence interval\n\nSummary statistics using the fixed-effects model in assessing the effect of aspirin on pregnancy outcomes in nulliparous women\n\nCI: confidence interval\n\nIn nulliparous women, LDA was associated with a significant reduction in the rate of PTB at less than 34 weeks of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig.",
+      "context_window": "s of gestational age (RR 0.84, 95% CI: 0.71-0.99; I 2 = 0%; P = 0.04; Fig. 4 ), but we did not observe a significant difference",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-7595",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7595,
+      "sentence": "4 ), but we did not observe a significant difference in the rate of PTB at less than 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig.",
+      "context_window": "ve a significant difference in the rate of PTB at less than 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-7627",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.90-1.02",
+      "numeric_values": [
+        0.9,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7627,
+      "sentence": "4 ), but we did not observe a significant difference in the rate of PTB at less than 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig.",
+      "context_window": "he rate of PTB at less than 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig. 5 ). Given that the definition o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-7652",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7652,
+      "sentence": "4 ), but we did not observe a significant difference in the rate of PTB at less than 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig.",
+      "context_window": "an 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig. 5 ). Given that the definition of PTB befor",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-7657",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7657,
+      "sentence": "4 ), but we did not observe a significant difference in the rate of PTB at less than 37 weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig.",
+      "context_window": "weeks of gestation (RR 0.96, 95% CI: 0.90-1.02; I 2 = 31%; P = 0.18; Fig. 5 ). Given that the definition of PTB before 37 weeks",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-7717",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7717,
+      "sentence": "Given that the definition of PTB before 37 weeks of gestation encompasses PTB before 34 weeks of gestation, this study further examined the relationship between LDA and the incidence of PTB between 34 and 37 weeks of gestation.",
+      "context_window": "P = 0.18; Fig. 5 ). Given that the definition of PTB before 37 weeks of gestation encompasses PTB before 34 weeks of gestation,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-7762",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7762,
+      "sentence": "Given that the definition of PTB before 37 weeks of gestation encompasses PTB before 34 weeks of gestation, this study further examined the relationship between LDA and the incidence of PTB between 34 and 37 weeks of gestation.",
+      "context_window": "of PTB before 37 weeks of gestation encompasses PTB before 34 weeks of gestation, this study further examined the relationship",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-7882",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7882,
+      "sentence": "Given that the definition of PTB before 37 weeks of gestation encompasses PTB before 34 weeks of gestation, this study further examined the relationship between LDA and the incidence of PTB between 34 and 37 weeks of gestation.",
+      "context_window": "ionship between LDA and the incidence of PTB between 34 and 37 weeks of gestation. The analysis revealed that there was no stati",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-8042",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8042,
+      "sentence": "The analysis revealed that there was no statistically significant difference in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ).",
+      "context_window": "in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-8074",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.78-1.32",
+      "numeric_values": [
+        0.78,
+        1.32
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8074,
+      "sentence": "The analysis revealed that there was no statistically significant difference in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ).",
+      "context_window": "dence of PTB between 34 and 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ). Fig. 5 Fo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-8099",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8099,
+      "sentence": "The analysis revealed that there was no statistically significant difference in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ).",
+      "context_window": "nd 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ). Fig. 5 Forest plot o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-8104",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8104,
+      "sentence": "The analysis revealed that there was no statistically significant difference in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ).",
+      "context_window": "weeks of gestation (RR 1.01, 95% CI: 0.78-1.32; I 2 = 68%; P = 0.91; Supplementary Figure S1 ). Fig. 5 Forest plot of the effe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-8203",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8203,
+      "sentence": "5 Forest plot of the effect of aspirin on PTB less than 37 weeks of gestation\n\nForest plot of the effect of aspirin on PTB less than 37 weeks of gestation\n\nFig.",
+      "context_window": "ig. 5 Forest plot of the effect of aspirin on PTB less than 37 weeks of gestation Forest plot of the effect of aspirin on PTB l",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-8280",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8280,
+      "sentence": "5 Forest plot of the effect of aspirin on PTB less than 37 weeks of gestation\n\nForest plot of the effect of aspirin on PTB less than 37 weeks of gestation\n\nFig.",
+      "context_window": "tion Forest plot of the effect of aspirin on PTB less than 37 weeks of gestation Fig. 6 Forest plot of the effect of aspirin o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-8531",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.14-1.54",
+      "numeric_values": [
+        1.14,
+        1.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8531,
+      "sentence": "6 Forest plot of the effect of aspirin on postpartum hemorrhage\n\nForest plot of the effect of aspirin on postpartum hemorrhage\n\nLDA was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32, 95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003; Fig.",
+      "context_window": "nt increase in the rates of postpartum hemorrhage (RR 1.32, 95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003; Fig. 6 ), placental abruption (RR 2.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-8556",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8556,
+      "sentence": "6 Forest plot of the effect of aspirin on postpartum hemorrhage\n\nForest plot of the effect of aspirin on postpartum hemorrhage\n\nLDA was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32, 95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003; Fig.",
+      "context_window": "of postpartum hemorrhage (RR 1.32, 95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003; Fig. 6 ), placental abruption (RR 2.18, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-8560",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8560,
+      "sentence": "6 Forest plot of the effect of aspirin on postpartum hemorrhage\n\nForest plot of the effect of aspirin on postpartum hemorrhage\n\nLDA was associated with a significant increase in the rates of postpartum hemorrhage (RR 1.32, 95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003; Fig.",
+      "context_window": "ostpartum hemorrhage (RR 1.32, 95% CI: 1.14-1.54; I 2 = 0%; P = 0.0003; Fig. 6 ), placental abruption (RR 2.18, 95% CI: 1.10-4.32;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-8612",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.10-4.32",
+      "numeric_values": [
+        1.1,
+        4.32
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8612,
+      "sentence": "6 ), placental abruption (RR 2.18, 95% CI: 1.10-4.32; I 2 = 16%; P = 0.02; Fig.",
+      "context_window": "2 = 0%; P = 0.0003; Fig. 6 ), placental abruption (RR 2.18, 95% CI: 1.10-4.32; I 2 = 16%; P = 0.02; Fig. 7 ) and cesarean section (RR 1.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-8637",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8637,
+      "sentence": "6 ), placental abruption (RR 2.18, 95% CI: 1.10-4.32; I 2 = 16%; P = 0.02; Fig.",
+      "context_window": "6 ), placental abruption (RR 2.18, 95% CI: 1.10-4.32; I 2 = 16%; P = 0.02; Fig. 7 ) and cesarean section (RR 1.053, 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-8642",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8642,
+      "sentence": "6 ), placental abruption (RR 2.18, 95% CI: 1.10-4.32; I 2 = 16%; P = 0.02; Fig.",
+      "context_window": "placental abruption (RR 2.18, 95% CI: 1.10-4.32; I 2 = 16%; P = 0.02; Fig. 7 ) and cesarean section (RR 1.053, 95% CI: 1.001-1.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-8693",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.001-1.108",
+      "numeric_values": [
+        1.001,
+        1.108
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8693,
+      "sentence": "7 ) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05; Fig.",
+      "context_window": "2 = 16%; P = 0.02; Fig. 7 ) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05; Fig. 8 ) in nulliparous women. We did",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-8720",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8720,
+      "sentence": "7 ) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05; Fig.",
+      "context_window": "and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05; Fig. 8 ) in nulliparous women. We did not observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-8724",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8724,
+      "sentence": "7 ) and cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05; Fig.",
+      "context_window": "cesarean section (RR 1.053, 95% CI: 1.001-1.108; I 2 = 0%; P = 0.05; Fig. 8 ) in nulliparous women. We did not observe a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-8877",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.96-1.14",
+      "numeric_values": [
+        0.96,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8877,
+      "sentence": "We did not observe a significant effect of LDA on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28; Fig.",
+      "context_window": "e rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28; Fig. 9 ) or small for gestational age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-8902",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8902,
+      "sentence": "We did not observe a significant effect of LDA on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28; Fig.",
+      "context_window": "ve disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28; Fig. 9 ) or small for gestational age (RR 0.96,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-8906",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8906,
+      "sentence": "We did not observe a significant effect of LDA on the rates of any hypertensive disorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28; Fig.",
+      "context_window": "isorder of pregnancy (RR 1.05, 95% CI: 0.96-1.14; I 2 = 9%; P = 0.28; Fig. 9 ) or small for gestational age (RR 0.96, 95% CI: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-8964",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.91-1.02",
+      "numeric_values": [
+        0.91,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8964,
+      "sentence": "9 ) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16; Fig.",
+      "context_window": "; P = 0.28; Fig. 9 ) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16; Fig. 10 ) in nulliparous women. Fig.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-8989",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8989,
+      "sentence": "9 ) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16; Fig.",
+      "context_window": "mall for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16; Fig. 10 ) in nulliparous women. Fig. 7 Forest p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-p-8993",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8993,
+      "sentence": "9 ) or small for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16; Fig.",
+      "context_window": "for gestational age (RR 0.96, 95% CI: 0.91-1.02; I 2 = 0%; P = 0.16; Fig. 10 ) in nulliparous women. Fig. 7 Forest plot of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-9708",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9708,
+      "sentence": "For preterm birth at less than 37 weeks of gestation, the pooled RR ranged from 0.94 (95% CI: 0.88, 1.01) to 1.02 (95% CI: 0.93, 1.12).",
+      "context_window": "ies sequentially (Table 3 ). For preterm birth at less than 37 weeks of gestation, the pooled RR ranged from 0.94 (95% CI: 0.88,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-9763",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.88, 1.01",
+      "numeric_values": [
+        0.88,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9763,
+      "sentence": "For preterm birth at less than 37 weeks of gestation, the pooled RR ranged from 0.94 (95% CI: 0.88, 1.01) to 1.02 (95% CI: 0.93, 1.12).",
+      "context_window": "than 37 weeks of gestation, the pooled RR ranged from 0.94 (95% CI: 0.88, 1.01) to 1.02 (95% CI: 0.93, 1.12). For preterm birth at less th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-9792",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.93, 1.12",
+      "numeric_values": [
+        0.93,
+        1.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9792,
+      "sentence": "For preterm birth at less than 37 weeks of gestation, the pooled RR ranged from 0.94 (95% CI: 0.88, 1.01) to 1.02 (95% CI: 0.93, 1.12).",
+      "context_window": "he pooled RR ranged from 0.94 (95% CI: 0.88, 1.01) to 1.02 (95% CI: 0.93, 1.12). For preterm birth at less than 34 weeks of gestation, the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-9844",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9844,
+      "sentence": "For preterm birth at less than 34 weeks of gestation, the pooled RR ranged from 0.82 (95% CI: 0.68, 0.99) to 0.91 (95% CI: 0.64, 1.30), and when the study by Hoffman was omitted, the estimated effect became nonsignificant (RR 0.91, 95% CI: 0.64, 1.30).",
+      "context_window": "o 1.02 (95% CI: 0.93, 1.12). For preterm birth at less than 34 weeks of gestation, the pooled RR ranged from 0.82 (95% CI: 0.68,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-9899",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.68, 0.99",
+      "numeric_values": [
+        0.68,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9899,
+      "sentence": "For preterm birth at less than 34 weeks of gestation, the pooled RR ranged from 0.82 (95% CI: 0.68, 0.99) to 0.91 (95% CI: 0.64, 1.30), and when the study by Hoffman was omitted, the estimated effect became nonsignificant (RR 0.91, 95% CI: 0.64, 1.30).",
+      "context_window": "than 34 weeks of gestation, the pooled RR ranged from 0.82 (95% CI: 0.68, 0.99) to 0.91 (95% CI: 0.64, 1.30), and when the study by Hoffma",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-9928",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.64, 1.30",
+      "numeric_values": [
+        0.64,
+        1.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9928,
+      "sentence": "For preterm birth at less than 34 weeks of gestation, the pooled RR ranged from 0.82 (95% CI: 0.68, 0.99) to 0.91 (95% CI: 0.64, 1.30), and when the study by Hoffman was omitted, the estimated effect became nonsignificant (RR 0.91, 95% CI: 0.64, 1.30).",
+      "context_window": "he pooled RR ranged from 0.82 (95% CI: 0.68, 0.99) to 0.91 (95% CI: 0.64, 1.30), and when the study by Hoffman was omitted, the estimated",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10045",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.64, 1.30",
+      "numeric_values": [
+        0.64,
+        1.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10045,
+      "sentence": "For preterm birth at less than 34 weeks of gestation, the pooled RR ranged from 0.82 (95% CI: 0.68, 0.99) to 0.91 (95% CI: 0.64, 1.30), and when the study by Hoffman was omitted, the estimated effect became nonsignificant (RR 0.91, 95% CI: 0.64, 1.30).",
+      "context_window": "itted, the estimated effect became nonsignificant (RR 0.91, 95% CI: 0.64, 1.30). For postpartum hemorrhage, the pooled RR ranged from 1.26",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10125",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00, 1.58",
+      "numeric_values": [
+        1.0,
+        1.58
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10125,
+      "sentence": "For postpartum hemorrhage, the pooled RR ranged from 1.26 (95% CI: 1.00, 1.58) to 1.34 (95% CI: 1.13, 1.57).",
+      "context_window": "For postpartum hemorrhage, the pooled RR ranged from 1.26 (95% CI: 1.00, 1.58) to 1.34 (95% CI: 1.13, 1.57). For placental abruption, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10154",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.13, 1.57",
+      "numeric_values": [
+        1.13,
+        1.57
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10154,
+      "sentence": "For postpartum hemorrhage, the pooled RR ranged from 1.26 (95% CI: 1.00, 1.58) to 1.34 (95% CI: 1.13, 1.57).",
+      "context_window": "he pooled RR ranged from 1.26 (95% CI: 1.00, 1.58) to 1.34 (95% CI: 1.13, 1.57). For placental abruption, the pooled RR ranged from 1.51 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10232",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.68, 3.35",
+      "numeric_values": [
+        0.68,
+        3.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10232,
+      "sentence": "For placental abruption, the pooled RR ranged from 1.51 (95% CI: 0.68, 3.35) to 4.40 (95% CI: 1.26, 15.41), and when the study by Sibai et al. was omitted, the estimated effect became nonsignificant (RR 1.51, 95% CI: 0.68, 3.35).",
+      "context_window": "). For placental abruption, the pooled RR ranged from 1.51 (95% CI: 0.68, 3.35) to 4.40 (95% CI: 1.26, 15.41), and when the study by Sibai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10261",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.26, 15.41",
+      "numeric_values": [
+        1.26,
+        15.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10261,
+      "sentence": "For placental abruption, the pooled RR ranged from 1.51 (95% CI: 0.68, 3.35) to 4.40 (95% CI: 1.26, 15.41), and when the study by Sibai et al. was omitted, the estimated effect became nonsignificant (RR 1.51, 95% CI: 0.68, 3.35).",
+      "context_window": "he pooled RR ranged from 1.51 (95% CI: 0.68, 3.35) to 4.40 (95% CI: 1.26, 15.41), and when the study by Sibai et al. was omitted, the estim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10384",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.68, 3.35",
+      "numeric_values": [
+        0.68,
+        3.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10384,
+      "sentence": "For placental abruption, the pooled RR ranged from 1.51 (95% CI: 0.68, 3.35) to 4.40 (95% CI: 1.26, 15.41), and when the study by Sibai et al. was omitted, the estimated effect became nonsignificant (RR 1.51, 95% CI: 0.68, 3.35).",
+      "context_window": "itted, the estimated effect became nonsignificant (RR 1.51, 95% CI: 0.68, 3.35). The pooled RR for cesarean section ranged from 1.04 (95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10458",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.99, 1.10",
+      "numeric_values": [
+        0.99,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10458,
+      "sentence": "The pooled RR for cesarean section ranged from 1.04 (95% CI: 0.99, 1.10) to 1.06 (95% CI: 1.01-1.12), which indicated heterogeneity, and when the study by Golding or by Hoffman et al. was omitted, the estimated effect became nonsignificant (RR 1.04, 95% CI: 0.99, 1.10 and RR 1.05, 95% CI: 0.96, 1.15; independently).",
+      "context_window": "3.35). The pooled RR for cesarean section ranged from 1.04 (95% CI: 0.99, 1.10) to 1.06 (95% CI: 1.01-1.12), which indicated heterogeneity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10487",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.01-1.12",
+      "numeric_values": [
+        1.01,
+        1.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10487,
+      "sentence": "The pooled RR for cesarean section ranged from 1.04 (95% CI: 0.99, 1.10) to 1.06 (95% CI: 1.01-1.12), which indicated heterogeneity, and when the study by Golding or by Hoffman et al. was omitted, the estimated effect became nonsignificant (RR 1.04, 95% CI: 0.99, 1.10 and RR 1.05, 95% CI: 0.96, 1.15; independently).",
+      "context_window": "rean section ranged from 1.04 (95% CI: 0.99, 1.10) to 1.06 (95% CI: 1.01-1.12), which indicated heterogeneity, and when the study by Gold",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10655",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.99, 1.10",
+      "numeric_values": [
+        0.99,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10655,
+      "sentence": "The pooled RR for cesarean section ranged from 1.04 (95% CI: 0.99, 1.10) to 1.06 (95% CI: 1.01-1.12), which indicated heterogeneity, and when the study by Golding or by Hoffman et al. was omitted, the estimated effect became nonsignificant (RR 1.04, 95% CI: 0.99, 1.10 and RR 1.05, 95% CI: 0.96, 1.15; independently).",
+      "context_window": "itted, the estimated effect became nonsignificant (RR 1.04, 95% CI: 0.99, 1.10 and RR 1.05, 95% CI: 0.96, 1.15; independently). For any hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10687",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.96, 1.15",
+      "numeric_values": [
+        0.96,
+        1.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10687,
+      "sentence": "The pooled RR for cesarean section ranged from 1.04 (95% CI: 0.99, 1.10) to 1.06 (95% CI: 1.01-1.12), which indicated heterogeneity, and when the study by Golding or by Hoffman et al. was omitted, the estimated effect became nonsignificant (RR 1.04, 95% CI: 0.99, 1.10 and RR 1.05, 95% CI: 0.96, 1.15; independently).",
+      "context_window": "me nonsignificant (RR 1.04, 95% CI: 0.99, 1.10 and RR 1.05, 95% CI: 0.96, 1.15; independently). For any hypertensive disorder of pregnancy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10799",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.93, 1.15",
+      "numeric_values": [
+        0.93,
+        1.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10799,
+      "sentence": "For any hypertensive disorder of pregnancy, the pooled RR ranged from 1.03 (95% CI: 0.93, 1.15) to 1.08 (95% CI: 0.98, 1.18).",
+      "context_window": "sive disorder of pregnancy, the pooled RR ranged from 1.03 (95% CI: 0.93, 1.15) to 1.08 (95% CI: 0.98, 1.18). For small for gestational ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10828",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.98, 1.18",
+      "numeric_values": [
+        0.98,
+        1.18
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10828,
+      "sentence": "For any hypertensive disorder of pregnancy, the pooled RR ranged from 1.03 (95% CI: 0.93, 1.15) to 1.08 (95% CI: 0.98, 1.18).",
+      "context_window": "he pooled RR ranged from 1.03 (95% CI: 0.93, 1.15) to 1.08 (95% CI: 0.98, 1.18). For small for gestational age, the pooled RR ranged from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10912",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.90, 1.01",
+      "numeric_values": [
+        0.9,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10912,
+      "sentence": "For small for gestational age, the pooled RR ranged from 0.95 (95% CI: 0.90, 1.01) to 0.97 (95% CI: 0.92-1.03).",
+      "context_window": "small for gestational age, the pooled RR ranged from 0.95 (95% CI: 0.90, 1.01) to 0.97 (95% CI: 0.92-1.03). Table 3 Sensitivity analyses",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-10941",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.92-1.03",
+      "numeric_values": [
+        0.92,
+        1.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10941,
+      "sentence": "For small for gestational age, the pooled RR ranged from 0.95 (95% CI: 0.90, 1.01) to 0.97 (95% CI: 0.92-1.03).",
+      "context_window": "he pooled RR ranged from 0.95 (95% CI: 0.90, 1.01) to 0.97 (95% CI: 0.92-1.03). Table 3 Sensitivity analyses by sequential omission of e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11055",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11055,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "equential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (9",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-11091",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 11091,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 wee",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11117",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11117,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (9",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-11153",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 11153,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95%",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11179",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11179,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11217",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11217,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "eeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean sectio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11253",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11253,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "stpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11286",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11286,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "or placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-11341",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11341,
+      "sentence": "Table 3 Sensitivity analyses by sequential omission of each included study Study omitted RR (95% CI) for preterm birth less than 37 weeks of gestation RR (95% CI) for preterm birth less than 34 weeks of gestation RR (95% CI) for postpartum hemorrhage RR (95% CI) for placental abruption RR (95% CI) for cesarean section RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71, 0.99) / 2.19 (1.08, 4.47) 1.05 (1.00, 1.11) 1.05 (0.97, 1.15) 0.96 (0.91, 1.02) Golding 1998 0.95 (0.88, 1.02) / 1.26 (1.00, 1.58) / 1.04 (0.99, 1.10) 1.03 (0.94, 1.14) / Hauth 1993 0.96 (0.90, 1.02) / / / 1.05 (1.00, 1.11) 1.06 (0.97, 1.16) 0.96 (0.91, 1.02) Hoffman 2020 1.02 (0.93, 1.12) 0.91 (0.64, 1.30) 1.34 (1.13, 1.57) / 1.05 (0.96, 1.15) 1.03 (0.93, 1.15) 0.97 (0.83, 1.13) Rotchell 1998 0.94 (0.88, 1.01) / / / / 1.05 (0.96, 1.14) / Sibai 1993 0.94 (0.88, 1.01) 0.82 (0.68, 0.99) 1.34 (1.14, 1.57) 1.51 (0.68, 3.35) 1.06 (1.01, 1.12) 1.08 (0.98, 1.18) 0.97 (0.92, 1.03) Subtil 2003 0.94 (0.88, 1.01) / 1.32 (1.13, 1.57) 4.40 (1.26, 15.41) 1.06 (1.01, 1.12) 1.03 (0.94, 1.13) 0.95 (0.90, 1.01) All studies 0.96 (0.90, 1.02) 0.84 (0.71, 0.99) 1.32 (1.14, 1.54) 2.18 (1.10, 4.32) 1.05 (1.00, 1.11) 1.05 (0.96, 1.14) 0.96 (0.91, 1.02) CI: confidence interval; RR: relative risk\n\nSensitivity analyses by sequential omission of each included study\n\n0.84\n\n(0.71, 0.99)\n\n2.19\n\n(1.08, 4.47)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.97, 1.15)\n\n0.96\n\n(0.91, 1.02)\n\n0.95\n\n(0.88, 1.02)\n\n1.26\n\n(1.00, 1.58)\n\n1.04\n\n(0.99, 1.10)\n\n1.03\n\n(0.94, 1.14)\n\n0.96\n\n(0.90, 1.02)\n\n1.05\n\n(1.00, 1.11)\n\n1.06\n\n(0.97, 1.16)\n\n0.96\n\n(0.91, 1.02)\n\n1.02\n\n(0.93, 1.12)\n\n0.91\n\n(0.64, 1.30)\n\n1.34\n\n(1.13, 1.57)\n\n1.05\n\n(0.96, 1.15)\n\n1.03\n\n(0.93, 1.15)\n\n0.97\n\n(0.83, 1.13)\n\n0.94\n\n(0.88, 1.01)\n\n1.05\n\n(0.96, 1.14)\n\n0.94\n\n(0.88, 1.01)\n\n0.82\n\n(0.68, 0.99)\n\n1.34\n\n(1.14, 1.57)\n\n1.51\n\n(0.68, 3.35)\n\n1.06\n\n(1.01, 1.12)\n\n1.08\n\n(0.98, 1.18)\n\n0.97\n\n(0.92, 1.03)\n\n0.94\n\n(0.88, 1.01)\n\n1.32\n\n(1.13, 1.57)\n\n4.40\n\n(1.26, 15.41)\n\n1.06\n\n(1.01, 1.12)\n\n1.03\n\n(0.94, 1.13)\n\n0.95\n\n(0.90, 1.01)\n\n0.96\n\n(0.90, 1.02)\n\n0.84\n\n(0.71, 0.99)\n\n1.32\n\n(1.14, 1.54)\n\n2.18\n\n(1.10, 4.32)\n\n1.05\n\n(1.00, 1.11)\n\n1.05\n\n(0.96, 1.14)\n\n0.96\n\n(0.91, 1.02)\n\nCI: confidence interval; RR: relative risk\n\nFunnel plots for each outcome in this review were created to qualitatively evaluate publication bias (Supplementary Figures S2 - 8 ).",
+      "context_window": "RR (95% CI) for any hypertensive disorder of pregnancy RR (95% CI) for small for gestational age Davies 1995 / 0.84 (0.71,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-13571",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 13571,
+      "sentence": "This meta-analysis showed that low-dose aspirin might reduce the risk of PTB at less than 34 weeks of gestation in nulliparous women.",
+      "context_window": "low-dose aspirin might reduce the risk of PTB at less than 34 weeks of gestation in nulliparous women. However, its impact on r",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-13684",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 13684,
+      "sentence": "However, its impact on reducing the overall risk of PTB at less than 37 weeks of gestation is not statistically significant.",
+      "context_window": "its impact on reducing the overall risk of PTB at less than 37 weeks of gestation is not statistically significant. Further anal",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-13879",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 13879,
+      "sentence": "Further analysis reveals that there is no statistically significant difference in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation.",
+      "context_window": "in the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation. The use of LDA in nulliparous women increased",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-14540",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 14540,
+      "sentence": "PTB at less than 34 weeks of gestation may have different pathophysiological mechanisms compared to those between 34 and 37 weeks, potentially leading to differential effects of LDA.",
+      "context_window": "and late PTB according to gestational age. PTB at less than 34 weeks of gestation may have different pathophysiological mechanis",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-14644",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 14644,
+      "sentence": "PTB at less than 34 weeks of gestation may have different pathophysiological mechanisms compared to those between 34 and 37 weeks, potentially leading to differential effects of LDA.",
+      "context_window": "hophysiological mechanisms compared to those between 34 and 37 weeks, potentially leading to differential effects of LDA. Resear",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-14890",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 14890,
+      "sentence": "In this meta-analysis, the ability of low-dose aspirin to prevent PTB at less than 34 weeks of gestation might be due to its anti-inflammatory properties.",
+      "context_window": "the ability of low-dose aspirin to prevent PTB at less than 34 weeks of gestation might be due to its anti-inflammatory properti",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-15088",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 15088,
+      "sentence": "In 2018, Andrikopoulou et al. reported similar results that low-dose aspirin reduced the risk of spontaneous PTB at less than 34 weeks of gestation but not 37 weeks of gestation in healthy nulliparous women [ 23 ].",
+      "context_window": "se aspirin reduced the risk of spontaneous PTB at less than 34 weeks of gestation but not 37 weeks of gestation in healthy nulli",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-15118",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 15118,
+      "sentence": "In 2018, Andrikopoulou et al. reported similar results that low-dose aspirin reduced the risk of spontaneous PTB at less than 34 weeks of gestation but not 37 weeks of gestation in healthy nulliparous women [ 23 ].",
+      "context_window": "spontaneous PTB at less than 34 weeks of gestation but not 37 weeks of gestation in healthy nulliparous women [ 23 ]. In additi",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-15697",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 15697,
+      "sentence": "This might also partly explain the unstable results of preterm birth at less than 34 weeks of gestation when performing sensitivity analysis in our meta-analysis.",
+      "context_window": "explain the unstable results of preterm birth at less than 34 weeks of gestation when performing sensitivity analysis in our me",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-15912",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 15912,
+      "sentence": "Furthermore, it was observed that the results of the meta-analysis examining the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation demonstrated a high level of heterogeneity.",
+      "context_window": "ng the effect of LDA on the incidence of PTB between 34 and 37 weeks of gestation demonstrated a high level of heterogeneity. Th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-18085",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.16-100.0",
+      "numeric_values": [
+        1.16,
+        100.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18085,
+      "sentence": "Andrikopoulou et al. found that placental abruption was more common in nulliparous women receiving low-dose aspirin than in those receiving placebo (OR 10.0; 95% CI: 1.16-100.0) [ 23 ].",
+      "context_window": "low-dose aspirin than in those receiving placebo (OR 10.0; 95% CI: 1.16-100.0) [ 23 ]. A secondary analysis of the effects of aspirin in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-ci-18318",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.98-1.07",
+      "numeric_values": [
+        0.98,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 18318,
+      "sentence": "A secondary analysis of the effects of aspirin in gestation and reproduction trials by Eubanks et al. showed that preconception-initiated LDA was not associated with the risk of cesarean section (RR 1.02; 95% CI: 0.98-1.07) compared with placebo [ 51 ].",
+      "context_window": "not associated with the risk of cesarean section (RR 1.02; 95% CI: 0.98-1.07) compared with placebo [ 51 ]. Overall, the safety of aspir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-18818",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 18818,
+      "sentence": "However, with further subgroup analysis, this meta-analysis revealed that aspirin was not effective in preventing spontaneous preterm birth at less than 37 and 34 weeks of gestation in nulliparous women who were at risk of preeclampsia.",
+      "context_window": "in preventing spontaneous preterm birth at less than 37 and 34 weeks of gestation in nulliparous women who were at risk of preec",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-19230",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 19230,
+      "sentence": "Man et al. performed a meta-analysis in healthy nulliparous women with singleton pregnancies and found that taking aspirin reduced the relative risk of preterm birth less than 34 weeks of gestation by 50% but there were no significant differences in preterm birth less than 37 weeks of gestation, which was similar to our study [ 49 ].",
+      "context_window": "spirin reduced the relative risk of preterm birth less than 34 weeks of gestation by 50% but there were no significant differenc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-pct-19255",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19255,
+      "sentence": "Man et al. performed a meta-analysis in healthy nulliparous women with singleton pregnancies and found that taking aspirin reduced the relative risk of preterm birth less than 34 weeks of gestation by 50% but there were no significant differences in preterm birth less than 37 weeks of gestation, which was similar to our study [ 49 ].",
+      "context_window": "ve risk of preterm birth less than 34 weeks of gestation by 50% but there were no significant differences in preterm birth",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-19328",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 19328,
+      "sentence": "Man et al. performed a meta-analysis in healthy nulliparous women with singleton pregnancies and found that taking aspirin reduced the relative risk of preterm birth less than 34 weeks of gestation by 50% but there were no significant differences in preterm birth less than 37 weeks of gestation, which was similar to our study [ 49 ].",
+      "context_window": "were no significant differences in preterm birth less than 37 weeks of gestation, which was similar to our study [ 49 ]. It is",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-21354",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 21354,
+      "sentence": "The most obvious limitation of this meta-analysis was that not all included studies reported the incidence of PTB, and only 3 studies reported the incidence of PTB at less than 34 weeks of gestation [ 24 , 36 , 37 ].",
+      "context_window": "d only 3 studies reported the incidence of PTB at less than 34 weeks of gestation [ 24 , 36 , 37 ]. Due to the small number of s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-21790",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 21790,
+      "sentence": "Sensitivity analysis demonstrated that the results of this meta-analysis were robust, except for PTB at less than 34 weeks of gestation, placental abruption and cesarean section.",
+      "context_window": "this meta-analysis were robust, except for PTB at less than 34 weeks of gestation, placental abruption and cesarean section. Two",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-329",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 329,
+      "sentence": "The most obvious limitation of this meta-analysis was that not all included studies reported the incidence of PTB, and only 3 studies reported the incidence of PTB at less than 34 weeks of gestation [ 24 , 36 , 37 ].",
+      "context_window": "d only 3 studies reported the incidence of PTB at less than 34 weeks of gestation [ 24 , 36 , 37 ]. Due to the small number of s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-765",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 765,
+      "sentence": "Sensitivity analysis demonstrated that the results of this meta-analysis were robust, except for PTB at less than 34 weeks of gestation, placental abruption and cesarean section.",
+      "context_window": "this meta-analysis were robust, except for PTB at less than 34 weeks of gestation, placental abruption and cesarean section. Two",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-108",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 108,
+      "sentence": "The results of this meta-analysis suggested that prophylactic LDA might reduce the risk of PTB at less than 34 weeks of gestation in nulliparous women.",
+      "context_window": "prophylactic LDA might reduce the risk of PTB at less than 34 weeks of gestation in nulliparous women. LDA might be beneficial",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11008052_low_dose_aspirin_for_the_prevention_of_preterm_birth_in_null-u-1443",
+      "claim_type": "unit_value",
+      "raw_text": "34 weeks",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 1443,
+      "sentence": "In summary, although the meta-analysis indicated that prophylactic use of LDA might prevent preterm birth at less than 34 weeks of gestation in nulliparous women, much work remains to be done to determine the impact of LDA on PTB [ 53 ].",
+      "context_window": "ylactic use of LDA might prevent preterm birth at less than 34 weeks of gestation in nulliparous women, much work remains to be",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,2486 @@
+{
+  "paper_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie",
+  "doi": "10.1186/s13058-023-01697-2",
+  "extracted_at": "2026-05-08T20:06:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 36,
+    "percentage": 24,
+    "confidence_interval": 41,
+    "hazard_ratio": 29,
+    "sample_size": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-333",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 333,
+      "sentence": "Women aged \u2265 50 years and diagnosed with BC in 2004-2017, who survived \u2265 12 months after diagnosis (follow-up started 12 months after diagnosis), were identified in the Cancer Registry of Norway.",
+      "context_window": "rmin was associated with BC-specific survival. Women aged \u2265 50 years and diagnosed with BC in 2004-2017, who survived \u2265 12 month",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-393",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 393,
+      "sentence": "Women aged \u2265 50 years and diagnosed with BC in 2004-2017, who survived \u2265 12 months after diagnosis (follow-up started 12 months after diagnosis), were identified in the Cancer Registry of Norway.",
+      "context_window": "50 years and diagnosed with BC in 2004-2017, who survived \u2265 12 months after diagnosis (follow-up started 12 months after diagnosi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-438",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 438,
+      "sentence": "Women aged \u2265 50 years and diagnosed with BC in 2004-2017, who survived \u2265 12 months after diagnosis (follow-up started 12 months after diagnosis), were identified in the Cancer Registry of Norway.",
+      "context_window": "who survived \u2265 12 months after diagnosis (follow-up started 12 months after diagnosis), were identified in the Cancer Registry of",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-681",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 681,
+      "sentence": "Multivariable Cox proportional hazard models were used to estimate hazard ratios (HR) and 95% confidence intervals (CI) for the association between post-diagnostic use and BC-specific survival, overall and by oestrogen receptor (ER) status.",
+      "context_window": "hazard models were used to estimate hazard ratios (HR) and 95% confidence intervals (CI) for the association between post-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-891",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 891,
+      "sentence": "Of these, 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "A total of 26,190 patients were included. Of these, 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-903",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 903,
+      "sentence": "Of these, 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "26,190 patients were included. Of these, 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-919",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 919,
+      "sentence": "Of these, 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "were included. Of these, 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-1034",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 years",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "The median follow-up was 6.1 years, and 2169 (8%) patients died from BC.",
+      "context_window": "tins, and metformin, respectively. The median follow-up was 6.1 years, and 2169 (8%) patients died from BC. HRs for use, compared",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-1055",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "The median follow-up was 6.1 years, and 2169 (8%) patients died from BC.",
+      "context_window": "respectively. The median follow-up was 6.1 years, and 2169 (8%) patients died from BC. HRs for use, compared to no use, we",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1139",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.85-1.08",
+      "numeric_values": [
+        0.85,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "C. HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1184",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1184,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "mated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p valu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1195",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-1.13",
+      "numeric_values": [
+        0.83,
+        1.13
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1218",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1218,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "or low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1229",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.73-1.29",
+      "numeric_values": [
+        0.73,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1229,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1287",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.75-0.94",
+      "numeric_values": [
+        0.75,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1287,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": ", 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1323",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1323,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "raction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p valu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1334",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82-1.09",
+      "numeric_values": [
+        0.82,
+        1.09
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1334,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": ".562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1357",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1357,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "5-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1368",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60-1.00",
+      "numeric_values": [
+        0.6,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1368,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1430",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.51-0.96",
+      "numeric_values": [
+        0.51,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1430,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabet",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1517",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1517,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "rmin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p valu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1528",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.45-1.01",
+      "numeric_values": [
+        0.45,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1528,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "red to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1551",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.62",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1551,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "rmin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077). We fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1562",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.72-3.62",
+      "numeric_values": [
+        0.72,
+        3.62
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1562,
+      "sentence": "HRs for use, compared to no use, were estimated at 0.96 (95% CI 0.85-1.08) for low-dose aspirin (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562), 0.84 (95% CI 0.75-0.94) for statins (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259), and 0.70 (95% CI 0.51-0.96) for metformin (compared to use of non-metformin antidiabetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077).",
+      "context_window": "abetics) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077). We found evidence suppo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-2444",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2444,
+      "sentence": "Therefore, we performed a large nationwide population-based cohort study of patients diagnosed with BC, where we aimed to explore a possible prognostic effect of use of low-dose (\u2264 160 mg) aspirin, statins, and metformin in patients with BC, analysed as a whole and stratified by several tumour and patient characteristics such as age at diagnosis, molecular features, stage, and use of chemotherapy.",
+      "context_window": "explore a possible prognostic effect of use of low-dose (\u2264 160 mg) aspirin, statins, and metformin in patients with BC, analy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-770",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 770,
+      "sentence": "The completeness of the Cancer Registry of Norway is estimated 99%.",
+      "context_window": "completeness of the Cancer Registry of Norway is estimated 99%. The topography and morphology codes from the International",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-1569",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1569,
+      "sentence": "From February 2012 onwards, the threshold for ER + changed from 10 to 1% reactivity.",
+      "context_window": "ary 2012 onwards, the threshold for ER + changed from 10 to 1% reactivity. PR + tumours were defined as tumours with \u2265 10%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-1628",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1628,
+      "sentence": "PR + tumours were defined as tumours with \u2265 10% reactivity throughout the study period.",
+      "context_window": "1% reactivity. PR + tumours were defined as tumours with \u2265 10% reactivity throughout the study period. Since 2012, Ki-67 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-4309",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4309,
+      "sentence": "Second, the inclusion was limited to patients living at least 6 months in Norway prior to the BC diagnosis, to ensure that all patients were covered by the registries for a minimum period prior to the diagnosis.",
+      "context_window": "cond, the inclusion was limited to patients living at least 6 months in Norway prior to the BC diagnosis, to ensure that all pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-4657",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4657,
+      "sentence": "Fourth, the inclusion was limited to patients aged \u2265 50 years at diagnosis.",
+      "context_window": "C44). Fourth, the inclusion was limited to patients aged \u2265 50 years at diagnosis. As women aged < 50 years rarely use low-dose",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-4696",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4696,
+      "sentence": "As women aged < 50 years rarely use low-dose aspirin, statins and metformin, the limitation to patients aged \u2265 50 years was applied to obtain more comparable age distributions in users and non-users, and to obtain a homogeneous population of mainly postmenopausal women.",
+      "context_window": "d to patients aged \u2265 50 years at diagnosis. As women aged < 50 years rarely use low-dose aspirin, statins and metformin, the lim",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-4791",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4791,
+      "sentence": "As women aged < 50 years rarely use low-dose aspirin, statins and metformin, the limitation to patients aged \u2265 50 years was applied to obtain more comparable age distributions in users and non-users, and to obtain a homogeneous population of mainly postmenopausal women.",
+      "context_window": "n, statins and metformin, the limitation to patients aged \u2265 50 years was applied to obtain more comparable age distributions in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-4978",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4978,
+      "sentence": "Finally, follow-up started 12 months after their BC diagnosis, thus patients who died or emigrated before that were excluded.",
+      "context_window": "of mainly postmenopausal women. Finally, follow-up started 12 months after their BC diagnosis, thus patients who died or emigrat",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-5400",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 5400,
+      "sentence": "Use of medications was assessed, separately for each medication, in the time from 1 month after diagnosis until end of follow-up.",
+      "context_window": "assessed, separately for each medication, in the time from 1 month after diagnosis until end of follow-up. The assessment star",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-5471",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 5471,
+      "sentence": "The assessment started 1 month after diagnosis to avoid changes in use of medications in the time surrounding diagnosis and surgery.",
+      "context_window": "er diagnosis until end of follow-up. The assessment started 1 month after diagnosis to avoid changes in use of medications in t",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-5875",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5875,
+      "sentence": "To avoid immortal time bias, medication use was handled as time-varying as follows: Patients contributed person-time to the no use group of a specific medication in the time from start of follow-up (i.e., 12 months after diagnosis) until the date they fulfilled the definition of post-diagnostic use of that specific medication (\u2265 270 DDD) or until end of follow-up.",
+      "context_window": "cific medication in the time from start of follow-up (i.e., 12 months after diagnosis) until the date they fulfilled the definiti",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6306",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6306,
+      "sentence": "If a patient fulfilled the definition of post-diagnostic use prior to the start of follow-up (i.e., 12 months after diagnosis), then they contributed person-time to the use group of that specific medication from the start of follow-up (Additional file 1 : Fig.",
+      "context_window": "post-diagnostic use prior to the start of follow-up (i.e., 12 months after diagnosis), then they contributed person-time to the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6529",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6529,
+      "sentence": "The follow-up for each patient in the cohort started at 12 months after their BC diagnosis and ended at the date of death due to BC (the event of interest, ICD-10: C50), death due to other causes, emigration, or administrative censoring (31st December 2018), whichever occurred first.",
+      "context_window": "). The follow-up for each patient in the cohort started at 12 months after their BC diagnosis and ended at the date of death due",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6826",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6826,
+      "sentence": "Cox proportional hazard models, with time since start of follow-up (12 months after diagnosis) as the underlying time scale, were used to estimate hazard ratios (HR) and 95% confidence intervals (CI) for the association between post-diagnostic use of low-dose (\u2264 160 mg) aspirin, statins, and metformin and BC-specific survival, and overall survival.",
+      "context_window": "ortional hazard models, with time since start of follow-up (12 months after diagnosis) as the underlying time scale, were used to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6928",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6928,
+      "sentence": "Cox proportional hazard models, with time since start of follow-up (12 months after diagnosis) as the underlying time scale, were used to estimate hazard ratios (HR) and 95% confidence intervals (CI) for the association between post-diagnostic use of low-dose (\u2264 160 mg) aspirin, statins, and metformin and BC-specific survival, and overall survival.",
+      "context_window": "ng time scale, were used to estimate hazard ratios (HR) and 95% confidence intervals (CI) for the association between post-",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-7021",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7021,
+      "sentence": "Cox proportional hazard models, with time since start of follow-up (12 months after diagnosis) as the underlying time scale, were used to estimate hazard ratios (HR) and 95% confidence intervals (CI) for the association between post-diagnostic use of low-dose (\u2264 160 mg) aspirin, statins, and metformin and BC-specific survival, and overall survival.",
+      "context_window": "the association between post-diagnostic use of low-dose (\u2264 160 mg) aspirin, statins, and metformin and BC-specific survival,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-8491",
+      "claim_type": "unit_value",
+      "raw_text": "69.9 years",
+      "numeric_values": [
+        69.9
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 8491,
+      "sentence": "The association was analysed in the overall BC population and stratified by ER status (+ , -), age at diagnosis (50-69.9 years, \u2265 70 years), molecular subtype (luminal A, luminal B HER2-, luminal B HER2 + , HER2 + , TNBC), stage (localised, regional, distant), and use of chemotherapy (yes, no).",
+      "context_window": "n and stratified by ER status (+ , -), age at diagnosis (50-69.9 years, \u2265 70 years), molecular subtype (luminal A, luminal B HER2-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-8505",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 8505,
+      "sentence": "The association was analysed in the overall BC population and stratified by ER status (+ , -), age at diagnosis (50-69.9 years, \u2265 70 years), molecular subtype (luminal A, luminal B HER2-, luminal B HER2 + , HER2 + , TNBC), stage (localised, regional, distant), and use of chemotherapy (yes, no).",
+      "context_window": "ed by ER status (+ , -), age at diagnosis (50-69.9 years, \u2265 70 years), molecular subtype (luminal A, luminal B HER2-, luminal B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-9909",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9909,
+      "sentence": "All tests were two-sided with a 5% significance level.",
+      "context_window": "rtional hazards assumption. All tests were two-sided with a 5% significance level. All data management and statistical ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-10183",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 10183,
+      "sentence": "To assess the influence of the definition of post-diagnostic use and when follow-up starts, in a separate analysis, follow-up started at 6 months after diagnosis (including patient diagnosed between July 2004 and June 2018, and excluding patients who died or emigrated in the first 6 months after diagnosis), and the definition of post-diagnostic use was set to \u2265 100 DDDs.",
+      "context_window": "low-up starts, in a separate analysis, follow-up started at 6 months after diagnosis (including patient diagnosed between July 2",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-10328",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 10328,
+      "sentence": "To assess the influence of the definition of post-diagnostic use and when follow-up starts, in a separate analysis, follow-up started at 6 months after diagnosis (including patient diagnosed between July 2004 and June 2018, and excluding patients who died or emigrated in the first 6 months after diagnosis), and the definition of post-diagnostic use was set to \u2265 100 DDDs.",
+      "context_window": ", and excluding patients who died or emigrated in the first 6 months after diagnosis), and the definition of post-diagnostic use",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-10629",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 10629,
+      "sentence": "To remove the influence of pre-diagnostic use of the medications, in a separate analysis, incident users only were included (i.e., all patients with at least one dispensation of the specific medication within 6 months prior to the diagnosis were excluded).",
+      "context_window": "at least one dispensation of the specific medication within 6 months prior to the diagnosis were excluded). In addition, to asse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-10985",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 10985,
+      "sentence": "Finally, in a separate analysis, peri-diagnostic use (at least one dispensation of the specific medication within 3 months prior to the diagnosis) was applied as the exposure definition.",
+      "context_window": "at least one dispensation of the specific medication within 3 months prior to the diagnosis) was applied as the exposure definit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-n-205",
+      "claim_type": "sample_size",
+      "raw_text": "n = 237",
+      "numeric_values": [
+        237.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 205,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "ig. S2). Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-225",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 225,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "e excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-n-283",
+      "claim_type": "sample_size",
+      "raw_text": "n = 96",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 283,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "n 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-n-384",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2350",
+      "numeric_values": [
+        2350.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 384,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "ding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-401",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 401,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the firs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-n-411",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7997",
+      "numeric_values": [
+        7997.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 411,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "er) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 month",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-471",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 471,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865). In total, 26,190 women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-n-507",
+      "claim_type": "sample_size",
+      "raw_text": "n = 865",
+      "numeric_values": [
+        865.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 507,
+      "sentence": "Of these, we excluded women with non-carcinoma BC (n = 237), less than 6 months residency in Norway prior to their BC diagnosis (n = 96), invasive cancer diagnosis (excluding non-melanoma skin cancer) prior to their BC diagnosis (n = 2350), age < 50 years (n = 7997), and those who died or emigrated within the first 12 months after their BC diagnosis (n = 865).",
+      "context_window": "grated within the first 12 months after their BC diagnosis (n = 865). In total, 26,190 women with BC were included, and during",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-596",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 years",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 596,
+      "sentence": "In total, 26,190 women with BC were included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively, and 2169 (8%) patients died from BC.",
+      "context_window": "men with BC were included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-612",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 612,
+      "sentence": "In total, 26,190 women with BC were included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively, and 2169 (8%) patients died from BC.",
+      "context_window": "included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of l",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-624",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 624,
+      "sentence": "In total, 26,190 women with BC were included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively, and 2169 (8%) patients died from BC.",
+      "context_window": "nd during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-640",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 640,
+      "sentence": "In total, 26,190 women with BC were included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively, and 2169 (8%) patients died from BC.",
+      "context_window": "an follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-740",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 740,
+      "sentence": "In total, 26,190 women with BC were included, and during a median follow-up of 6.1 years 5324 (20%), 7591 (29%), and 1495 (6%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively, and 2169 (8%) patients died from BC.",
+      "context_window": "se aspirin, statins, and metformin, respectively, and 2169 (8%) patients died from BC. Users of low-dose aspirin and stati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-1080",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1080,
+      "sentence": "Of the included patients, 47% have missing information on chemotherapy use.",
+      "context_window": "ith localised disease (Table 1 ). Of the included patients, 47% have missing information on chemotherapy use. Baseline cha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1673",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.85-1.08",
+      "numeric_values": [
+        0.85,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1673,
+      "sentence": "Baseline characteristics of patients with breast cancer by post-diagnostic use of low-dose aspirin, statins, and metformin, Norway 2004-2017\n\nQ quartile, HER2 human epidermal growth factor receptor 2, TNBC triple negative breast cancer, NSAIDs non-steroidal anti-inflammatory drugs, ACE angiotensin converting enzyme, ARB angiotensin receptor blocker, CCB calcium channel blocker\n\na Sweden, Denmark, Finland, Iceland\n\nHR for the association between use of low-dose aspirin, compared to no use, and BC-specific survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig.",
+      "context_window": "to no use, and BC-specific survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1697",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1697,
+      "sentence": "Baseline characteristics of patients with breast cancer by post-diagnostic use of low-dose aspirin, statins, and metformin, Norway 2004-2017\n\nQ quartile, HER2 human epidermal growth factor receptor 2, TNBC triple negative breast cancer, NSAIDs non-steroidal anti-inflammatory drugs, ACE angiotensin converting enzyme, ARB angiotensin receptor blocker, CCB calcium channel blocker\n\na Sweden, Denmark, Finland, Iceland\n\nHR for the association between use of low-dose aspirin, compared to no use, and BC-specific survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig.",
+      "context_window": "fic survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p valu",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1708",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-1.13",
+      "numeric_values": [
+        0.83,
+        1.13
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1708,
+      "sentence": "Baseline characteristics of patients with breast cancer by post-diagnostic use of low-dose aspirin, statins, and metformin, Norway 2004-2017\n\nQ quartile, HER2 human epidermal growth factor receptor 2, TNBC triple negative breast cancer, NSAIDs non-steroidal anti-inflammatory drugs, ACE angiotensin converting enzyme, ARB angiotensin receptor blocker, CCB calcium channel blocker\n\na Sweden, Denmark, Finland, Iceland\n\nHR for the association between use of low-dose aspirin, compared to no use, and BC-specific survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig.",
+      "context_window": "l was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1731",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1731,
+      "sentence": "Baseline characteristics of patients with breast cancer by post-diagnostic use of low-dose aspirin, statins, and metformin, Norway 2004-2017\n\nQ quartile, HER2 human epidermal growth factor receptor 2, TNBC triple negative breast cancer, NSAIDs non-steroidal anti-inflammatory drugs, ACE angiotensin converting enzyme, ARB angiotensin receptor blocker, CCB calcium channel blocker\n\na Sweden, Denmark, Finland, Iceland\n\nHR for the association between use of low-dose aspirin, compared to no use, and BC-specific survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig.",
+      "context_window": "(95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig. 1",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1742",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.73-1.29",
+      "numeric_values": [
+        0.73,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1742,
+      "sentence": "Baseline characteristics of patients with breast cancer by post-diagnostic use of low-dose aspirin, statins, and metformin, Norway 2004-2017\n\nQ quartile, HER2 human epidermal growth factor receptor 2, TNBC triple negative breast cancer, NSAIDs non-steroidal anti-inflammatory drugs, ACE angiotensin converting enzyme, ARB angiotensin receptor blocker, CCB calcium channel blocker\n\na Sweden, Denmark, Finland, Iceland\n\nHR for the association between use of low-dose aspirin, compared to no use, and BC-specific survival was estimated at 0.96 (95% CI 0.85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig.",
+      "context_window": "85-1.08) (ER+: HR = 0.97, 95% CI 0.83-1.13; ER-: HR = 0.97, 95% CI 0.73-1.29, p value for interaction = 0.562) (Fig. 1 ). We found an in",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-1928",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1928,
+      "sentence": "We found an indication of an association between use of low-dose aspirin and longer BC-specific survival in patients aged \u2265 70 years at diagnosis (HR = 0.88, 95% CI 0.75-1.03) (Table 1 , Additional file 1 : Fig.",
+      "context_window": "aspirin and longer BC-specific survival in patients aged \u2265 70 years at diagnosis (HR = 0.88, 95% CI 0.75-1.03) (Table 1 , Addit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1951",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "We found an indication of an association between use of low-dose aspirin and longer BC-specific survival in patients aged \u2265 70 years at diagnosis (HR = 0.88, 95% CI 0.75-1.03) (Table 1 , Additional file 1 : Fig.",
+      "context_window": "specific survival in patients aged \u2265 70 years at diagnosis (HR = 0.88, 95% CI 0.75-1.03) (Table 1 , Additional file 1 : Fig. S3).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1962",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.75-1.03",
+      "numeric_values": [
+        0.75,
+        1.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1962,
+      "sentence": "We found an indication of an association between use of low-dose aspirin and longer BC-specific survival in patients aged \u2265 70 years at diagnosis (HR = 0.88, 95% CI 0.75-1.03) (Table 1 , Additional file 1 : Fig.",
+      "context_window": "rvival in patients aged \u2265 70 years at diagnosis (HR = 0.88, 95% CI 0.75-1.03) (Table 1 , Additional file 1 : Fig. S3). Association betw",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3168",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.75-0.94",
+      "numeric_values": [
+        0.75,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3168,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nFor the association between use of statins, compared to no use, and BC-specific survival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig.",
+      "context_window": "se, and BC-specific survival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3192",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3192,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nFor the association between use of statins, compared to no use, and BC-specific survival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig.",
+      "context_window": "ival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3203",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82-1.09",
+      "numeric_values": [
+        0.82,
+        1.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3203,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nFor the association between use of statins, compared to no use, and BC-specific survival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig.",
+      "context_window": "R was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3226",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3226,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nFor the association between use of statins, compared to no use, and BC-specific survival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig.",
+      "context_window": "(95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig. 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3237",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60-1.00",
+      "numeric_values": [
+        0.6,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3237,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nFor the association between use of statins, compared to no use, and BC-specific survival, the HR was estimated at 0.84 (95% CI 0.75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig.",
+      "context_window": "75-0.94) (ER+: HR = 0.95, 95% CI 0.82-1.09; ER-: HR = 0.77, 95% CI 0.60-1.00, p value for interaction = 0.259) (Fig. 2 , Additional file",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-3408",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3408,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3418",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.82",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3418,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3429",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.70-0.97",
+      "numeric_values": [
+        0.7,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3429,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "rvival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3480",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3480,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "= 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3491",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.72-0.98",
+      "numeric_values": [
+        0.72,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3491,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98). In",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3534",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3534,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "ease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98). In addition, an indication of an associ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3545",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.63-0.98",
+      "numeric_values": [
+        0.63,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3545,
+      "sentence": "An association with longer BC-specific survival was found among patients aged < 70 years (HR = 0.82, 95% CI 0.70-0.97), patients with regional disease (HR = 0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98).",
+      "context_window": "0.84, 95% CI 0.72-0.98), and chemotherapy users (HR = 0.79, 95% CI 0.63-0.98). In addition, an indication of an association with longer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3682",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3682,
+      "sentence": "In addition, an indication of an association with longer BC-specific survival was found among the patients with TNBC (HR = 0.74, 95% CI 0.53-1.03).",
+      "context_window": "C-specific survival was found among the patients with TNBC (HR = 0.74, 95% CI 0.53-1.03). Association between post-diagnostic us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3693",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.53-1.03",
+      "numeric_values": [
+        0.53,
+        1.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3693,
+      "sentence": "In addition, an indication of an association with longer BC-specific survival was found among the patients with TNBC (HR = 0.74, 95% CI 0.53-1.03).",
+      "context_window": "survival was found among the patients with TNBC (HR = 0.74, 95% CI 0.53-1.03). Association between post-diagnostic use (dispensation of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-4861",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.51-0.96",
+      "numeric_values": [
+        0.51,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4861,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe HR for the association between metformin use, compared to use of non-metformin antidiabetics, and BC-specific survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig.",
+      "context_window": "idiabetics, and BC-specific survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-4885",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4885,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe HR for the association between metformin use, compared to use of non-metformin antidiabetics, and BC-specific survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig.",
+      "context_window": "fic survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-4896",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.45-1.01",
+      "numeric_values": [
+        0.45,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4896,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe HR for the association between metformin use, compared to use of non-metformin antidiabetics, and BC-specific survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig.",
+      "context_window": "l was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-4919",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.62",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4919,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe HR for the association between metformin use, compared to use of non-metformin antidiabetics, and BC-specific survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig.",
+      "context_window": "(95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig. 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-4930",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.72-3.62",
+      "numeric_values": [
+        0.72,
+        3.62
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4930,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe HR for the association between metformin use, compared to use of non-metformin antidiabetics, and BC-specific survival was estimated at 0.70 (95% CI 0.51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig.",
+      "context_window": "51-0.96) (ER+: HR = 0.67, 95% CI 0.45-1.01; ER-: HR = 1.62, 95% CI 0.72-3.62, p value for interaction = 0.077) (Fig. 3 , Additional file",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-5101",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5101,
+      "sentence": "An association with longer BC-specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82).",
+      "context_window": "longer BC-specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemother",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-5111",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5111,
+      "sentence": "An association with longer BC-specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82).",
+      "context_window": "specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-5122",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.36-0.92",
+      "numeric_values": [
+        0.36,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5122,
+      "sentence": "An association with longer BC-specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82).",
+      "context_window": "rvival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-5174",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.46",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5174,
+      "sentence": "An association with longer BC-specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82).",
+      "context_window": "= 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82). Association between post-diagnostic us",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-5185",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.26-0.82",
+      "numeric_values": [
+        0.26,
+        0.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5185,
+      "sentence": "An association with longer BC-specific survival was found among patients aged \u2265 70 years (HR = 0.57, 95% CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82).",
+      "context_window": "CI 0.36-0.92) and those not using chemotherapy (HR = 0.46, 95% CI 0.26-0.82). Association between post-diagnostic use (dispensation of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-6309",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.04-1.21",
+      "numeric_values": [
+        1.04,
+        1.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6309,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe estimated HRs for the association between use, compared to no use, and overall survival were 1.12 (95% CI 1.04-1.21) for low-dose aspirin, 0.84 (95% CI 0.78-0.91) for statins, and 0.79 (95% CI 0.64-0.96) for metformin (compared to use of non-metformin antidiabetics).",
+      "context_window": "en use, compared to no use, and overall survival were 1.12 (95% CI 1.04-1.21) for low-dose aspirin, 0.84 (95% CI 0.78-0.91) for statins,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-6355",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.78-0.91",
+      "numeric_values": [
+        0.78,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6355,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe estimated HRs for the association between use, compared to no use, and overall survival were 1.12 (95% CI 1.04-1.21) for low-dose aspirin, 0.84 (95% CI 0.78-0.91) for statins, and 0.79 (95% CI 0.64-0.96) for metformin (compared to use of non-metformin antidiabetics).",
+      "context_window": "al were 1.12 (95% CI 1.04-1.21) for low-dose aspirin, 0.84 (95% CI 0.78-0.91) for statins, and 0.79 (95% CI 0.64-0.96) for metformin (co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-6396",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.64-0.96",
+      "numeric_values": [
+        0.64,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6396,
+      "sentence": "The stratified estimates are adjusted for all variables except for the specific stratification variable\n\nThe estimated HRs for the association between use, compared to no use, and overall survival were 1.12 (95% CI 1.04-1.21) for low-dose aspirin, 0.84 (95% CI 0.78-0.91) for statins, and 0.79 (95% CI 0.64-0.96) for metformin (compared to use of non-metformin antidiabetics).",
+      "context_window": "ose aspirin, 0.84 (95% CI 0.78-0.91) for statins, and 0.79 (95% CI 0.64-0.96) for metformin (compared to use of non-metformin antidiabet",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6534",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6534,
+      "sentence": "In the sensitivity analyses where follow-up started at 6 months after diagnosis and \u2265 100 DDDs was used as the definition of post-diagnostic use, 27,894 patients with BC were included.",
+      "context_window": "s). In the sensitivity analyses where follow-up started at 6 months after diagnosis and \u2265 100 DDDs was used as the definition o",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6680",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6680,
+      "sentence": "Of these, 6697 (24%), 8870 (32%), and 1839 (7%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "use, 27,894 patients with BC were included. Of these, 6697 (24%), 8870 (32%), and 1839 (7%) were post-diagnostic users of l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6692",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6692,
+      "sentence": "Of these, 6697 (24%), 8870 (32%), and 1839 (7%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "patients with BC were included. Of these, 6697 (24%), 8870 (32%), and 1839 (7%) were post-diagnostic users of low-dose aspi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6708",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6708,
+      "sentence": "Of these, 6697 (24%), 8870 (32%), and 1839 (7%) were post-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "were included. Of these, 6697 (24%), 8870 (32%), and 1839 (7%) were post-diagnostic users of low-dose aspirin, statins, a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6860",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6860,
+      "sentence": "Of the patients included in the incident user analyses, 2187 (10%), 2898 (14%), and 604 (2%), were incident users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "the patients included in the incident user analyses, 2187 (10%), 2898 (14%), and 604 (2%), were incident users of low-dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6872",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6872,
+      "sentence": "Of the patients included in the incident user analyses, 2187 (10%), 2898 (14%), and 604 (2%), were incident users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "s included in the incident user analyses, 2187 (10%), 2898 (14%), and 604 (2%), were incident users of low-dose aspirin, st",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-6887",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6887,
+      "sentence": "Of the patients included in the incident user analyses, 2187 (10%), 2898 (14%), and 604 (2%), were incident users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "he incident user analyses, 2187 (10%), 2898 (14%), and 604 (2%), were incident users of low-dose aspirin, statins, and met",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-7342",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7342,
+      "sentence": "In the peri-diagnostic use analyses (at least one dispensation of the specific medication within 3 months prior to the diagnosis), 29,600 patients with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "at least one dispensation of the specific medication within 3 months prior to the diagnosis), 29,600 patients with BC were inclu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-7421",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7421,
+      "sentence": "In the peri-diagnostic use analyses (at least one dispensation of the specific medication within 3 months prior to the diagnosis), 29,600 patients with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "he diagnosis), 29,600 patients with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of lo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-7433",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7433,
+      "sentence": "In the peri-diagnostic use analyses (at least one dispensation of the specific medication within 3 months prior to the diagnosis), 29,600 patients with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "), 29,600 patients with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of low-dose aspir",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-pct-7448",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7448,
+      "sentence": "In the peri-diagnostic use analyses (at least one dispensation of the specific medication within 3 months prior to the diagnosis), 29,600 patients with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of low-dose aspirin, statins, and metformin, respectively.",
+      "context_window": "nts with BC were included, 3202 (11%), 4862 (16%), and 939 (3%) were peri-diagnostic users of low-dose aspirin, statins, a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-7645",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.99-1.25",
+      "numeric_values": [
+        0.99,
+        1.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7645,
+      "sentence": "The estimated HRs for the association between use, compared to no use, and BC-specific survival were 1.11 (95% CI 0.99-1.25) for low-dose aspirin, 0.90 (95% CI 0.81-1.01) for statins, and 1.19 (95% CI 0.85-1.67) for metformin (compared to use of non-metformin antidiabetics) (Additional file 1 : Figs.",
+      "context_window": "se, compared to no use, and BC-specific survival were 1.11 (95% CI 0.99-1.25) for low-dose aspirin, 0.90 (95% CI 0.81-1.01) for statins,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-7691",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.81-1.01",
+      "numeric_values": [
+        0.81,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7691,
+      "sentence": "The estimated HRs for the association between use, compared to no use, and BC-specific survival were 1.11 (95% CI 0.99-1.25) for low-dose aspirin, 0.90 (95% CI 0.81-1.01) for statins, and 1.19 (95% CI 0.85-1.67) for metformin (compared to use of non-metformin antidiabetics) (Additional file 1 : Figs.",
+      "context_window": "al were 1.11 (95% CI 0.99-1.25) for low-dose aspirin, 0.90 (95% CI 0.81-1.01) for statins, and 1.19 (95% CI 0.85-1.67) for metformin (co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-7732",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.85-1.67",
+      "numeric_values": [
+        0.85,
+        1.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7732,
+      "sentence": "The estimated HRs for the association between use, compared to no use, and BC-specific survival were 1.11 (95% CI 0.99-1.25) for low-dose aspirin, 0.90 (95% CI 0.81-1.01) for statins, and 1.19 (95% CI 0.85-1.67) for metformin (compared to use of non-metformin antidiabetics) (Additional file 1 : Figs.",
+      "context_window": "ose aspirin, 0.90 (95% CI 0.81-1.01) for statins, and 1.19 (95% CI 0.85-1.67) for metformin (compared to use of non-metformin antidiabet",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-391",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 391,
+      "sentence": "We found no clear evidence supporting an association between post-diagnostic use of low-dose (\u2264 160 mg) aspirin and survival.",
+      "context_window": "g an association between post-diagnostic use of low-dose (\u2264 160 mg) aspirin and survival. Statins decrease levels of serum ch",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1816",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1816,
+      "sentence": "Based on registry data on 15,140 Scottish patients with BC, Mc Menamin et al. [ 26 ] reported no association between post-diagnostic use of statins and risk of BC-specific death (HR = 0.93, 95% CI 0.77-1.12); however, an association with pre-diagnostic use of statins (HR = 0.85, 95% CI 0.74-0.98) was reported.",
+      "context_window": "st-diagnostic use of statins and risk of BC-specific death (HR = 0.93, 95% CI 0.77-1.12); however, an association with pre-diagno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1827",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.77-1.12",
+      "numeric_values": [
+        0.77,
+        1.12
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1827,
+      "sentence": "Based on registry data on 15,140 Scottish patients with BC, Mc Menamin et al. [ 26 ] reported no association between post-diagnostic use of statins and risk of BC-specific death (HR = 0.93, 95% CI 0.77-1.12); however, an association with pre-diagnostic use of statins (HR = 0.85, 95% CI 0.74-0.98) was reported.",
+      "context_window": "ic use of statins and risk of BC-specific death (HR = 0.93, 95% CI 0.77-1.12); however, an association with pre-diagnostic use of statin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-1906",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.85",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1906,
+      "sentence": "Based on registry data on 15,140 Scottish patients with BC, Mc Menamin et al. [ 26 ] reported no association between post-diagnostic use of statins and risk of BC-specific death (HR = 0.93, 95% CI 0.77-1.12); however, an association with pre-diagnostic use of statins (HR = 0.85, 95% CI 0.74-0.98) was reported.",
+      "context_window": "however, an association with pre-diagnostic use of statins (HR = 0.85, 95% CI 0.74-0.98) was reported. Nowakowska et al. [ 28 ] i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-1917",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.74-0.98",
+      "numeric_values": [
+        0.74,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1917,
+      "sentence": "Based on registry data on 15,140 Scottish patients with BC, Mc Menamin et al. [ 26 ] reported no association between post-diagnostic use of statins and risk of BC-specific death (HR = 0.93, 95% CI 0.77-1.12); however, an association with pre-diagnostic use of statins (HR = 0.85, 95% CI 0.74-0.98) was reported.",
+      "context_window": "association with pre-diagnostic use of statins (HR = 0.85, 95% CI 0.74-0.98) was reported. Nowakowska et al. [ 28 ] included 23,192 pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-2180",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2180,
+      "sentence": "Nowakowska et al. [ 28 ] included 23,192 patients with BC identified in the Texas Cancer Registry and reported an association between post-diagnostic use of statins and a decreased risk of BC-specific death for patients with TNBC (HR = 0.42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.71-1.39).",
+      "context_window": "decreased risk of BC-specific death for patients with TNBC (HR = 0.42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-2191",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.20-0.88",
+      "numeric_values": [
+        0.2,
+        0.88
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2191,
+      "sentence": "Nowakowska et al. [ 28 ] included 23,192 patients with BC identified in the Texas Cancer Registry and reported an association between post-diagnostic use of statins and a decreased risk of BC-specific death for patients with TNBC (HR = 0.42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.71-1.39).",
+      "context_window": "isk of BC-specific death for patients with TNBC (HR = 0.42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.7",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-2246",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2246,
+      "sentence": "Nowakowska et al. [ 28 ] included 23,192 patients with BC identified in the Texas Cancer Registry and reported an association between post-diagnostic use of statins and a decreased risk of BC-specific death for patients with TNBC (HR = 0.42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.71-1.39).",
+      "context_window": ".42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.71-1.39). This is consistent with our findings in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-2257",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.71-1.39",
+      "numeric_values": [
+        0.71,
+        1.39
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 2257,
+      "sentence": "Nowakowska et al. [ 28 ] included 23,192 patients with BC identified in the Texas Cancer Registry and reported an association between post-diagnostic use of statins and a decreased risk of BC-specific death for patients with TNBC (HR = 0.42, 95% CI 0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.71-1.39).",
+      "context_window": "0.20-0.88), but not for patients with non-TNBC (HR = 0.97, 95% CI 0.71-1.39). This is consistent with our findings in TNBC and non-TNBC",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3026",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3026,
+      "sentence": "To corroborate the hypothesis of a potential interaction between statins and chemotherapeutic agents, we estimated a decreased risk of BC-specific death associated with use of statins among recipients of chemotherapy (HR = 0.79, 95% CI 0.63-0.98) but not among patients who do not receive chemotherapy (HR = 1.01, 95% CI 0.82-1.24) (Fig.",
+      "context_window": "iated with use of statins among recipients of chemotherapy (HR = 0.79, 95% CI 0.63-0.98) but not among patients who do not receiv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3037",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.63-0.98",
+      "numeric_values": [
+        0.63,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3037,
+      "sentence": "To corroborate the hypothesis of a potential interaction between statins and chemotherapeutic agents, we estimated a decreased risk of BC-specific death associated with use of statins among recipients of chemotherapy (HR = 0.79, 95% CI 0.63-0.98) but not among patients who do not receive chemotherapy (HR = 1.01, 95% CI 0.82-1.24) (Fig.",
+      "context_window": "use of statins among recipients of chemotherapy (HR = 0.79, 95% CI 0.63-0.98) but not among patients who do not receive chemotherapy (HR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-3111",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.01",
+      "numeric_values": [
+        1.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3111,
+      "sentence": "To corroborate the hypothesis of a potential interaction between statins and chemotherapeutic agents, we estimated a decreased risk of BC-specific death associated with use of statins among recipients of chemotherapy (HR = 0.79, 95% CI 0.63-0.98) but not among patients who do not receive chemotherapy (HR = 1.01, 95% CI 0.82-1.24) (Fig.",
+      "context_window": "98) but not among patients who do not receive chemotherapy (HR = 1.01, 95% CI 0.82-1.24) (Fig. 2 ). Metformin functions by reduc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-3122",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82-1.24",
+      "numeric_values": [
+        0.82,
+        1.24
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3122,
+      "sentence": "To corroborate the hypothesis of a potential interaction between statins and chemotherapeutic agents, we estimated a decreased risk of BC-specific death associated with use of statins among recipients of chemotherapy (HR = 0.79, 95% CI 0.63-0.98) but not among patients who do not receive chemotherapy (HR = 1.01, 95% CI 0.82-1.24) (Fig.",
+      "context_window": "among patients who do not receive chemotherapy (HR = 1.01, 95% CI 0.82-1.24) (Fig. 2 ). Metformin functions by reducing resistance to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6401",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6401,
+      "sentence": "Our findings of no association corroborate a number of previous epidemiological studies [ 17 - 20 ], as well as the recently finished randomised phase III Aspirin after Breast Cancer (ABC) trial [ 11 ], which included 3021 BC patients and reported that addition of aspirin (300 mg) to the standard treatment did not improve disease-free survival.",
+      "context_window": "ded 3021 BC patients and reported that addition of aspirin (300 mg) to the standard treatment did not improve disease-free sur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-6785",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6785,
+      "sentence": "Using data from the Iowa Women\u2019s Health Study (591 patients with BC), Blair et al. [ 14 ] reported that post-diagnostic use of aspirin was associated with a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.30-0.93).",
+      "context_window": "was associated with a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.30-0.93). Similarly, Holmes et al. [ 15 ] reporte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-6796",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.30-0.93",
+      "numeric_values": [
+        0.3,
+        0.93
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 6796,
+      "sentence": "Using data from the Iowa Women\u2019s Health Study (591 patients with BC), Blair et al. [ 14 ] reported that post-diagnostic use of aspirin was associated with a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.30-0.93).",
+      "context_window": "ated with a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.30-0.93). Similarly, Holmes et al. [ 15 ] reported that use of aspi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6953",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6953,
+      "sentence": "Similarly, Holmes et al. [ 15 ] reported that use of aspirin after diagnosis was associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Health Study.",
+      "context_window": "as associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-6968",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.29",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6968,
+      "sentence": "Similarly, Holmes et al. [ 15 ] reported that use of aspirin after diagnosis was associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Health Study.",
+      "context_window": "ith a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-6979",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.16-0.52",
+      "numeric_values": [
+        0.16,
+        0.52
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 6979,
+      "sentence": "Similarly, Holmes et al. [ 15 ] reported that use of aspirin after diagnosis was associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Health Study.",
+      "context_window": "ased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 pati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-u-6999",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6999,
+      "sentence": "Similarly, Holmes et al. [ 15 ] reported that use of aspirin after diagnosis was associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Health Study.",
+      "context_window": "ific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-7014",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.36",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7014,
+      "sentence": "Similarly, Holmes et al. [ 15 ] reported that use of aspirin after diagnosis was associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Health Study.",
+      "context_window": "days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-7025",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.24-0.54",
+      "numeric_values": [
+        0.24,
+        0.54
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 7025,
+      "sentence": "Similarly, Holmes et al. [ 15 ] reported that use of aspirin after diagnosis was associated with a decreased risk of BC-specific death (2-5 days a week: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Health Study.",
+      "context_window": "k: HR = 0.29, 95% CI 0.16-0.52; 6-7 days a week: HR = 0.36, 95% CI 0.24-0.54) in 4164 patients with BC participating in the Nurses\u2019 Heal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-hr-a-7416",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7416,
+      "sentence": "In addition, a Scottish registry study by Fraser et al. (4627 patients with BC) [ 16 ] reported an association between post-diagnostic use of aspirin and a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.45-0.63).",
+      "context_window": "c use of aspirin and a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.45-0.63). The strength or dose of aspirin may hav",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10466817_low_dose_aspirin_statins_and_metformin_and_survival_in_patie-ci-7427",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.45-0.63",
+      "numeric_values": [
+        0.45,
+        0.63
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 7427,
+      "sentence": "In addition, a Scottish registry study by Fraser et al. (4627 patients with BC) [ 16 ] reported an association between post-diagnostic use of aspirin and a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.45-0.63).",
+      "context_window": "pirin and a decreased risk of BC-specific death (HR = 0.53, 95% CI 0.45-0.63). The strength or dose of aspirin may have been inconsisten",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

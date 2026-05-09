@@ -1,0 +1,850 @@
+{
+  "paper_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_",
+  "doi": "10.3390/life15060905",
+  "extracted_at": "2026-05-08T20:06:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "mean_sd": 7,
+    "p_value": 23,
+    "percentage": 3,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-28",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 28,
+      "sentence": "This study aimed to compare 4 weeks of cranial electrotherapy stimulation (CES) versus cognitive behavioral therapy for insomnia (CBT-I) in athletes with poor sleep quality pre-competition as measured by changes in daily mood state and physiologic parameters of sleep.",
+      "context_window": "This study aimed to compare 4 weeks of cranial electrotherapy stimulation (CES) versus cognitiv",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-837",
+      "claim_type": "mean_sd",
+      "raw_text": "46.71 \u00b1 11.21",
+      "numeric_values": [
+        46.71,
+        11.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 837,
+      "sentence": "Twenty-four participants (time to competition = 46.71 \u00b1 11.21 days) completed the study.",
+      "context_window": "erventions. Twenty-four participants (time to competition = 46.71 \u00b1 11.21 days) completed the study. Decreases in PSQI and ESS scores",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-845",
+      "claim_type": "unit_value",
+      "raw_text": "11.21 days",
+      "numeric_values": [
+        11.21
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 845,
+      "sentence": "Twenty-four participants (time to competition = 46.71 \u00b1 11.21 days) completed the study.",
+      "context_window": "ns. Twenty-four participants (time to competition = 46.71 \u00b1 11.21 days) completed the study. Decreases in PSQI and ESS scores were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1045",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1045,
+      "sentence": "A decrease in confusion and tension scores and improvement of sleep efficiency were noted after CBT-I ( p < 0.05).",
+      "context_window": "nd improvement of sleep efficiency were noted after CBT-I ( p < 0.05). Changes in light sleep (stages S1 and S2) and deep sleep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1148",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1148,
+      "sentence": "Changes in light sleep (stages S1 and S2) and deep sleep (stages S3 and S4) were observed ( p < 0.05), accompanied by alterations in HRV ( p < 0.05).",
+      "context_window": "1 and S2) and deep sleep (stages S3 and S4) were observed ( p < 0.05), accompanied by alterations in HRV ( p < 0.05). Both inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1195",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Changes in light sleep (stages S1 and S2) and deep sleep (stages S3 and S4) were observed ( p < 0.05), accompanied by alterations in HRV ( p < 0.05).",
+      "context_window": "e observed ( p < 0.05), accompanied by alterations in HRV ( p < 0.05). Both interventions for athletes experiencing poor sleep q",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-196",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 196,
+      "sentence": "The inclusion criteria required the participants to be within 2 months of a national-level competition, have experienced insomnia before a competition, and have a single-item sleep quality scale (SISQ) score of less than 3.",
+      "context_window": "e inclusion criteria required the participants to be within 2 months of a national-level competition, have experienced insomnia",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-pct-2084",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2084,
+      "sentence": "The electrical parameters of 60 min, bipolar asymmetric rectangular waveform, 0.5 Hz, 100 \u00b5A, and 50% duty cycle were used.",
+      "context_window": "ipolar asymmetric rectangular waveform, 0.5 Hz, 100 \u00b5A, and 50% duty cycle were used. Lande and Gragnani found that adminis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-2195",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2195,
+      "sentence": "Lande and Gragnani found that administering CES at 100 \u03bcA and 0.5 Hz for 60 min over 5 days improved sleep quality and reduced sleep onset latency in male participants [ 13 ].",
+      "context_window": "that administering CES at 100 \u03bcA and 0.5 Hz for 60 min over 5 days improved sleep quality and reduced sleep onset latency in m",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-2473",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2473,
+      "sentence": "The intervention was administered 3 times per week for 4 weeks and conducted by an otolaryngologist.",
+      "context_window": "ure. The intervention was administered 3 times per week for 4 weeks and conducted by an otolaryngologist. The intervention con",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-2626",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2626,
+      "sentence": "The intervention consisted of a six-session CBT-I program delivered three times per week over a period of 4 weeks.",
+      "context_window": "T-I program delivered three times per week over a period of 4 weeks. The sessions were conducted by the same psychological coun",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-n-5053",
+      "claim_type": "sample_size",
+      "raw_text": "n = 539",
+      "numeric_values": [
+        539.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5053,
+      "sentence": "Confirmatory factor analysis indicated that the Chinese version of POMS demonstrated an acceptable fit (n = 539, \u03c7 2 = 167.89, p = 0.14) [ 17 ].",
+      "context_window": "the Chinese version of POMS demonstrated an acceptable fit (n = 539, \u03c7 2 = 167.89, p = 0.14) [ 17 ]. The scale exhibits appropr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-5076",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5076,
+      "sentence": "Confirmatory factor analysis indicated that the Chinese version of POMS demonstrated an acceptable fit (n = 539, \u03c7 2 = 167.89, p = 0.14) [ 17 ].",
+      "context_window": "POMS demonstrated an acceptable fit (n = 539, \u03c7 2 = 167.89, p = 0.14) [ 17 ]. The scale exhibits appropriate construct validity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-32",
+      "claim_type": "mean_sd",
+      "raw_text": "20.63 \u00b1 2.43",
+      "numeric_values": [
+        20.63,
+        2.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 32,
+      "sentence": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts.",
+      "context_window": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-40",
+      "claim_type": "unit_value",
+      "raw_text": "2.43 years",
+      "numeric_values": [
+        2.43
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 40,
+      "sentence": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts.",
+      "context_window": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) comp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-61",
+      "claim_type": "mean_sd",
+      "raw_text": "169.73 \u00b1 8.54",
+      "numeric_values": [
+        169.73,
+        8.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 61,
+      "sentence": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts.",
+      "context_window": "wenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-70",
+      "claim_type": "unit_value",
+      "raw_text": "8.54 cm",
+      "numeric_values": [
+        8.54
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 70,
+      "sentence": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts.",
+      "context_window": "r participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-88",
+      "claim_type": "mean_sd",
+      "raw_text": "63.47 \u00b1 11.40",
+      "numeric_values": [
+        63.47,
+        11.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 88,
+      "sentence": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts.",
+      "context_window": "e = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts. As the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-96",
+      "claim_type": "unit_value",
+      "raw_text": "11.40 kg",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 96,
+      "sentence": "Twenty-four participants (age = 20.63 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts.",
+      "context_window": "3 \u00b1 2.43 years, height = 169.73 \u00b1 8.54 cm, weight = 63.47 \u00b1 11.40 kg) completed the study, and there were no dropouts. As the co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-208",
+      "claim_type": "mean_sd",
+      "raw_text": "46.71 \u00b1 11.21",
+      "numeric_values": [
+        46.71,
+        11.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 208,
+      "sentence": "As the competition approached (time to competition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia frequency = 2.90 \u00b1 1.34 times per week).",
+      "context_window": "pouts. As the competition approached (time to competition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-216",
+      "claim_type": "unit_value",
+      "raw_text": "11.21 days",
+      "numeric_values": [
+        11.21
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 216,
+      "sentence": "As the competition approached (time to competition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia frequency = 2.90 \u00b1 1.34 times per week).",
+      "context_window": "s the competition approached (time to competition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia freq",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-260",
+      "claim_type": "mean_sd",
+      "raw_text": "2.46 \u00b1 0.66",
+      "numeric_values": [
+        2.46,
+        0.66
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 260,
+      "sentence": "As the competition approached (time to competition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia frequency = 2.90 \u00b1 1.34 times per week).",
+      "context_window": "ition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia frequency = 2.90 \u00b1 1.34 times per week). Demograp",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-msd-294",
+      "claim_type": "mean_sd",
+      "raw_text": "2.90 \u00b1 1.34",
+      "numeric_values": [
+        2.9,
+        1.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 294,
+      "sentence": "As the competition approached (time to competition = 46.71 \u00b1 11.21 days), sleep quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia frequency = 2.90 \u00b1 1.34 times per week).",
+      "context_window": "quality worsened (SISQ = 2.46 \u00b1 0.66; insomnia frequency = 2.90 \u00b1 1.34 times per week). Demographic characteristics, including bas",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-474",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 474,
+      "sentence": "Demographic characteristics, including basic data and sleep conditions, showed no significant differences between the CBT-I and CES groups ( Table 1 , p > 0.05).",
+      "context_window": "nt differences between the CBT-I and CES groups ( Table 1 , p > 0.05). Demographic characteristics. * p < 0.05, BMI, body mass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-518",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 518,
+      "sentence": "Demographic characteristics.\n\n* p < 0.05, BMI, body mass index; SISQ, single-item sleep quality scale.",
+      "context_window": "ups ( Table 1 , p > 0.05). Demographic characteristics. * p < 0.05, BMI, body mass index; SISQ, single-item sleep quality scal",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-820",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 820,
+      "sentence": "In the CBT-I group, confusion and tension scores significantly decreased after the intervention ( p < 0.05).",
+      "context_window": "ion scores significantly decreased after the intervention ( p < 0.05). However, no significant differences were found in other P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-921",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 921,
+      "sentence": "However, no significant differences were found in other POMS items within the CES group ( p > 0.05).",
+      "context_window": "ences were found in other POMS items within the CES group ( p > 0.05). Additionally, anger, tension, and depression scores in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1059",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1059,
+      "sentence": "Additionally, anger, tension, and depression scores in the CES group were significantly higher than those in the CBT-I group ( p < 0.05).",
+      "context_window": "p were significantly higher than those in the CBT-I group ( p < 0.05). Outcome of POMS. * p < 0.05, before vs. after; # p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1091",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1091,
+      "sentence": "Outcome of POMS.\n\n* p < 0.05, before vs. after; # p < 0.05, CBT-I vs.",
+      "context_window": "those in the CBT-I group ( p < 0.05). Outcome of POMS. * p < 0.05, before vs. after; # p < 0.05, CBT-I vs. CES group. Differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1121",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1121,
+      "sentence": "Outcome of POMS.\n\n* p < 0.05, before vs. after; # p < 0.05, CBT-I vs.",
+      "context_window": "< 0.05). Outcome of POMS. * p < 0.05, before vs. after; # p < 0.05, CBT-I vs. CES group. Differences in PSQI and ESS scores b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1267",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1267,
+      "sentence": "Differences in PSQI and ESS scores between the two groups were not significant before or after the intervention ( p > 0.05, Table 3 ).",
+      "context_window": "ups were not significant before or after the intervention ( p > 0.05, Table 3 ). However, significant decreases in PSQI and ESS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1381",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1381,
+      "sentence": "However, significant decreases in PSQI and ESS scores were observed after the intervention ( p < 0.05).",
+      "context_window": "PSQI and ESS scores were observed after the intervention ( p < 0.05). Regarding sleep architecture, no significant differences",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1518",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1518,
+      "sentence": "Regarding sleep architecture, no significant differences were found between the two groups before or after the intervention ( p > 0.05).",
+      "context_window": "d between the two groups before or after the intervention ( p > 0.05). However, a significant increase in sleep efficiency was n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1726",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1726,
+      "sentence": "However, a significant increase in sleep efficiency was noted in the CBT-I group, while changes in light sleep (stages S1 and S2) and deep sleep (stages S3 and S4) were observed in the CES group ( p < 0.05).",
+      "context_window": "p sleep (stages S3 and S4) were observed in the CES group ( p < 0.05). Outcome of PSQI, ESS, sleep architecture, sleep diary, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1805",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "Outcome of PSQI, ESS, sleep architecture, sleep diary, and HRV.\n\n* p < 0.05, before vs. after; TST, Total sleep time; REM, Rapid Eye Movement.",
+      "context_window": "of PSQI, ESS, sleep architecture, sleep diary, and HRV. * p < 0.05, before vs. after; TST, Total sleep time; REM, Rapid Eye Mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-2010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2010,
+      "sentence": "For nighttime HRV in Table 3 and Figure 2 , significant changes in LF, HF, and the LF/HF ratio were observed in the CES group ( p < 0.05).",
+      "context_window": "F, HF, and the LF/HF ratio were observed in the CES group ( p < 0.05). Additionally, no significant differences were noted betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-2131",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2131,
+      "sentence": "Additionally, no significant differences were noted between the two groups before or after the intervention ( p > 0.05).",
+      "context_window": "d between the two groups before or after the intervention ( p > 0.05). Changes in LF and HF in both groups. * p < 0.05, before",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-2182",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2182,
+      "sentence": "Changes in LF and HF in both groups. * p < 0.05, before vs. after.",
+      "context_window": "ention ( p > 0.05). Changes in LF and HF in both groups. * p < 0.05, before vs. after.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1318",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1318,
+      "sentence": "Bang et al. used CES to treat chronic sleep disorders, finding significant improvements in PSQI scores (Cohen\u2019s d = 0.40, p < 0.001), Insomnia Severity Index scores (Cohen\u2019s d = 0.26, p = 0.006), and daily sleep logs, including sleep latency, time in bed, and total sleep time (Cohen\u2019s d = 0.30-0.57, p < 0.05) [ 23 ].",
+      "context_window": "significant improvements in PSQI scores (Cohen\u2019s d = 0.40, p < 0.001), Insomnia Severity Index scores (Cohen\u2019s d = 0.26, p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1380",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1380,
+      "sentence": "Bang et al. used CES to treat chronic sleep disorders, finding significant improvements in PSQI scores (Cohen\u2019s d = 0.40, p < 0.001), Insomnia Severity Index scores (Cohen\u2019s d = 0.26, p = 0.006), and daily sleep logs, including sleep latency, time in bed, and total sleep time (Cohen\u2019s d = 0.30-0.57, p < 0.05) [ 23 ].",
+      "context_window": "< 0.001), Insomnia Severity Index scores (Cohen\u2019s d = 0.26, p = 0.006), and daily sleep logs, including sleep latency, time in be",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1497",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1497,
+      "sentence": "Bang et al. used CES to treat chronic sleep disorders, finding significant improvements in PSQI scores (Cohen\u2019s d = 0.40, p < 0.001), Insomnia Severity Index scores (Cohen\u2019s d = 0.26, p = 0.006), and daily sleep logs, including sleep latency, time in bed, and total sleep time (Cohen\u2019s d = 0.30-0.57, p < 0.05) [ 23 ].",
+      "context_window": ", time in bed, and total sleep time (Cohen\u2019s d = 0.30-0.57, p < 0.05) [ 23 ]. In our study, CES led to improvements in PSQI and",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-p-1860",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1860,
+      "sentence": "Tan et al. conducted CES for poor sleep quality in athletes, and found that sleep efficiency, total sleep time, and wakefulness after sleep onset were significant improved ( p < 0.05) [ 6 ].",
+      "context_window": "d wakefulness after sleep onset were significant improved ( p < 0.05) [ 6 ]. The proposed mechanism behind these benefits is tha",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-pct-5285",
+      "claim_type": "percentage",
+      "raw_text": "64.0%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5285,
+      "sentence": "A previous study indicated that 64.0% of athletes reported worse sleep on at least one occasion during the nights prior to an important competition over the past 12 months [ 34 ].",
+      "context_window": "egies for athletes [ 33 ]. A previous study indicated that 64.0% of athletes reported worse sleep on at least one occasion d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-5415",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5415,
+      "sentence": "A previous study indicated that 64.0% of athletes reported worse sleep on at least one occasion during the nights prior to an important competition over the past 12 months [ 34 ].",
+      "context_window": "the nights prior to an important competition over the past 12 months [ 34 ]. The primary difficulty reported was an inability to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-pct-6045",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6045,
+      "sentence": "They indicated that CBT-I significantly improved sleep efficiency by 7.2%, increased total sleep time by about 20 min, and reduced both insomnia and comorbid depressive symptoms.",
+      "context_window": "cated that CBT-I significantly improved sleep efficiency by 7.2%, increased total sleep time by about 20 min, and reduced bo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12194249_comparing_the_effects_of_cranial_electrotherapy_stimulation_-u-6204",
+      "claim_type": "unit_value",
+      "raw_text": "28 weeks",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6204,
+      "sentence": "Notably, these benefits were maintained for 4 to 28 weeks post-intervention [ 35 ].",
+      "context_window": "symptoms. Notably, these benefits were maintained for 4 to 28 weeks post-intervention [ 35 ]. Another systematic review identif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1177_1074248417696820_aspirin_in_older_adults",
+  "doi": "10.1177/1074248417696820",
+  "extracted_at": "2026-05-08T20:05:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1177_1074248417696820_aspirin_in_older_adults-u-275",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 275,
+      "sentence": "Despite evidence from randomized trials and their meta-analyses, older adults, defined as aged 65 years or older, are less likely to be prescribed aspirin than their middle-aged counterparts.",
+      "context_window": "ials and their meta-analyses, older adults, defined as aged 65 years or older, are less likely to be prescribed aspirin than the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

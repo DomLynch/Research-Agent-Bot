@@ -1,0 +1,103 @@
+{
+  "paper_id": "PMC11736431_roe_deer_uterine_fluid_metabolome_reveals_elevated_glycolysi",
+  "doi": "10.1093/biolre/ioae161",
+  "extracted_at": "2026-05-08T20:12:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "sample_size": 2,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11736431_roe_deer_uterine_fluid_metabolome_reveals_elevated_glycolysi-u-986",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 986,
+      "sentence": "Fertilization takes place in July/August after which the hatched blastocyst enters a period of developmental delay characterized by reduced but continuous embryonic growth for 4-5 months [ 7 , 8 ] with continuous luteal support [ 9 ].",
+      "context_window": "racterized by reduced but continuous embryonic growth for 4-5 months [ 7 , 8 ] with continuous luteal support [ 9 ]. In December",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11736431_roe_deer_uterine_fluid_metabolome_reveals_elevated_glycolysi-n-9553",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9553,
+      "sentence": "Polyamines in the roe deer uterine fluid during pre-implantation embryo development. (a) Quantification of putrescine, spermidine, and spermine in the roe deer uterine fluid during diapause and elongation ( n = 10 and 11, respectively) presented as mean \u00b1 standard error of the mean (SEM); P \u2264 0.05 = *, P \u2264 0.01 = **. (b) Biochemical pathway of polyamine synthesis.",
+      "context_window": "the roe deer uterine fluid during diapause and elongation ( n = 10 and 11, respectively) presented as mean \u00b1 standard error of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11736431_roe_deer_uterine_fluid_metabolome_reveals_elevated_glycolysi-p-9636",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9636,
+      "sentence": "Polyamines in the roe deer uterine fluid during pre-implantation embryo development. (a) Quantification of putrescine, spermidine, and spermine in the roe deer uterine fluid during diapause and elongation ( n = 10 and 11, respectively) presented as mean \u00b1 standard error of the mean (SEM); P \u2264 0.05 = *, P \u2264 0.01 = **. (b) Biochemical pathway of polyamine synthesis.",
+      "context_window": "vely) presented as mean \u00b1 standard error of the mean (SEM); P \u2264 0.05 = *, P \u2264 0.01 = **. (b) Biochemical pathway of polyamine sy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11736431_roe_deer_uterine_fluid_metabolome_reveals_elevated_glycolysi-p-9650",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9650,
+      "sentence": "Polyamines in the roe deer uterine fluid during pre-implantation embryo development. (a) Quantification of putrescine, spermidine, and spermine in the roe deer uterine fluid during diapause and elongation ( n = 10 and 11, respectively) presented as mean \u00b1 standard error of the mean (SEM); P \u2264 0.05 = *, P \u2264 0.01 = **. (b) Biochemical pathway of polyamine synthesis.",
+      "context_window": "d as mean \u00b1 standard error of the mean (SEM); P \u2264 0.05 = *, P \u2264 0.01 = **. (b) Biochemical pathway of polyamine synthesis. Putre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11736431_roe_deer_uterine_fluid_metabolome_reveals_elevated_glycolysi-n-10417",
+      "claim_type": "sample_size",
+      "raw_text": "n = 63",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10417,
+      "sentence": "SAT1 and PAOX can reverse the functions of SMS and SRM by synthesizing spermidine from spermine via an N1-acetylspermine intermediate and synthesizing putrescine from spermidine via an n1-acetylspermidinde intermediate. (c, d) Roe deer embryo transcriptomics data [ 8 ]. (c) Correlation of the expression of genes involved in polyamine biosynthesis expressed in roe deer diapause and elongated embryos ( n = 63 and 16, respectively). (d) Heatmap representing the significant differentially expressed genes (P-value \u22640.05).",
+      "context_window": "esis expressed in roe deer diapause and elongated embryos ( n = 63 and 16, respectively). (d) Heatmap representing the signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

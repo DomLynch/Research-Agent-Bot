@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_optimal_antiplatelet_therapy_for_high_bleeding_and_ischemic_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_optimal_antiplatelet_therapy_for_high_bleeding_and_ischemic_-u-133",
+      "claim_type": "unit_value",
+      "raw_text": "30 months",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 133,
+      "sentence": "Current guidelines recommend that patients with ACS undergoing stent implantation might be offered extended DAPT treatment for up to 30 months if necessary.",
+      "context_window": "antation might be offered extended DAPT treatment for up to 30 months if necessary. Therefore, we designed a prospective, multice",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_optimal_antiplatelet_therapy_for_high_bleeding_and_ischemic_-u-359",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 359,
+      "sentence": "Therefore, we designed a prospective, multicenter, randomized, placebo-controlled trial among ACS patients with high-risk on ischemic and bleeding who received a new generation of DES and received 9 to 12 months of DAPT, and evaluated whether clopidogrel monotherapy reduce the risk of bleeding compared with clopidogrel plus ASA in the following 9 months and achieved non-inferior outcomes in preventing ischemic risk.",
+      "context_window": "ding who received a new generation of DES and received 9 to 12 months of DAPT, and evaluated whether clopidogrel monotherapy redu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_optimal_antiplatelet_therapy_for_high_bleeding_and_ischemic_-u-504",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 504,
+      "sentence": "Therefore, we designed a prospective, multicenter, randomized, placebo-controlled trial among ACS patients with high-risk on ischemic and bleeding who received a new generation of DES and received 9 to 12 months of DAPT, and evaluated whether clopidogrel monotherapy reduce the risk of bleeding compared with clopidogrel plus ASA in the following 9 months and achieved non-inferior outcomes in preventing ischemic risk.",
+      "context_window": "leeding compared with clopidogrel plus ASA in the following 9 months and achieved non-inferior outcomes in preventing ischemic r",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

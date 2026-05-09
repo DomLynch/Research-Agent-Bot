@@ -1,0 +1,1485 @@
+{
+  "paper_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca",
+  "doi": "10.1038/s41598-021-86192-4",
+  "extracted_at": "2026-05-08T20:05:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 29,
+    "p_value": 12,
+    "unit_value": 27,
+    "sample_size": 2,
+    "mean_sd": 1,
+    "confidence_interval": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-601",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 601,
+      "sentence": "The secondary outcomes were kidney events defined as a > 50% reduction of estimated glomerular filtration rate from baseline, doubling of serum creatinine, or onset of kidney failure with replacement therapy, the all-cause mortality, and bleeding event.",
+      "context_window": "E. The secondary outcomes were kidney events defined as a > 50% reduction of estimated glomerular filtration rate from base",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-900",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 900,
+      "sentence": "The incidence of CVE was significantly greater in low-dose aspirin users than in non-users (HR 1.798; P = 0.011).",
+      "context_window": "ater in low-dose aspirin users than in non-users (HR 1.798; P = 0.011). A significant association between aspirin use and an incr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-1054",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1054,
+      "sentence": "A significant association between aspirin use and an increased risk of CVE was observed only in the lowest quartile of body weight (HR 4.014; P = 0.019) (Q1 < 60.0 kg).",
+      "context_window": "erved only in the lowest quartile of body weight (HR 4.014; P = 0.019) (Q1 < 60.0 kg). Secondary outcomes were not significantly",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-1071",
+      "claim_type": "unit_value",
+      "raw_text": "60.0 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "A significant association between aspirin use and an increased risk of CVE was observed only in the lowest quartile of body weight (HR 4.014; P = 0.019) (Q1 < 60.0 kg).",
+      "context_window": "lowest quartile of body weight (HR 4.014; P = 0.019) (Q1 < 60.0 kg). Secondary outcomes were not significantly different betwe",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-1362",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "It needs to be individualized of prescribing low-dose aspirin for the prevention of cardiovascular events in patients with chronic kidney disease, particularly patients with low bodyweight (< 60 kg).",
+      "context_window": "idney disease, particularly patients with low bodyweight (< 60 kg). Subject terms: Nephrology, Kidney diseases",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-195",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 195,
+      "sentence": "In brief, 2238 adults aged 20 to 75 years with CKD G1-5 (non-dialysis) were enrolled between 2011 and 2016 ( NCT01630486 at http://www.clinicaltrials.gov ) from nine tertiary hospitals in Korea.",
+      "context_window": "bservational cohort study. In brief, 2238 adults aged 20 to 75 years with CKD G1-5 (non-dialysis) were enrolled between 2011 and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-n-542",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 542,
+      "sentence": "For this study, we excluded participants who did not have anthropometric measurements at baseline (n = 24) and other baseline covariates (n = 144).",
+      "context_window": "s who did not have anthropometric measurements at baseline (n = 24) and other baseline covariates (n = 144). Therefore, a tota",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-n-581",
+      "claim_type": "sample_size",
+      "raw_text": "n = 144",
+      "numeric_values": [
+        144.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 581,
+      "sentence": "For this study, we excluded participants who did not have anthropometric measurements at baseline (n = 24) and other baseline covariates (n = 144).",
+      "context_window": "rements at baseline (n = 24) and other baseline covariates (n = 144). Therefore, a total of 2070 participants were included in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-2982",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2982,
+      "sentence": "The secondary outcomes were kidney events defined as a > 50% reduction of eGFR cr from baseline, doubling of serum creatinine, or onset of kidney failure with replacement therapy, all-cause mortality, the composite outcome of the CVE or kidney event or death, and bleeding event.",
+      "context_window": "t. The secondary outcomes were kidney events defined as a > 50% reduction of eGFR cr from baseline, doubling of serum creat",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-4127",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4127,
+      "sentence": "To assess the effect of aspirin use on the incidence of outcomes, we performed multivariable Cox proportional hazards models and estimated hazard ration (HR) and 95% confidence intervals (CIs) of aspirin use.",
+      "context_window": "rtional hazards models and estimated hazard ration (HR) and 95% confidence intervals (CIs) of aspirin use. The multivariabl",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-msd-104",
+      "claim_type": "mean_sd",
+      "raw_text": "53.1 \u00b1 30.9",
+      "numeric_values": [
+        53.1,
+        30.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 104,
+      "sentence": "A total of 2070 patients with CKD were included in this study and the mean eGFR of study population was 53.1 \u00b1 30.9 mL/min/1.73 m 2 .",
+      "context_window": "ded in this study and the mean eGFR of study population was 53.1 \u00b1 30.9 mL/min/1.73 m 2 . Of whom 571 (27.6%) patients were prescri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-111",
+      "claim_type": "unit_value",
+      "raw_text": "30.9 mL/min",
+      "numeric_values": [
+        30.9
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 111,
+      "sentence": "A total of 2070 patients with CKD were included in this study and the mean eGFR of study population was 53.1 \u00b1 30.9 mL/min/1.73 m 2 .",
+      "context_window": "this study and the mean eGFR of study population was 53.1 \u00b1 30.9 mL/min/1.73 m 2 . Of whom 571 (27.6%) patients were prescribed asp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-147",
+      "claim_type": "percentage",
+      "raw_text": "27.6%",
+      "numeric_values": [
+        27.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 147,
+      "sentence": "Of whom 571 (27.6%) patients were prescribed aspirin at enrollment.",
+      "context_window": "y population was 53.1 \u00b1 30.9 mL/min/1.73 m 2 . Of whom 571 (27.6%) patients were prescribed aspirin at enrollment. Almost all",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-228",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 228,
+      "sentence": "Almost all aspirin users (98%) were taking a low-dose (75-100 mg) of one.",
+      "context_window": "prescribed aspirin at enrollment. Almost all aspirin users (98%) were taking a low-dose (75-100 mg) of one. The other antip",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-260",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 260,
+      "sentence": "Almost all aspirin users (98%) were taking a low-dose (75-100 mg) of one.",
+      "context_window": ". Almost all aspirin users (98%) were taking a low-dose (75-100 mg) of one. The other antiplatelet agents such as clopidogrel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-362",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 362,
+      "sentence": "The other antiplatelet agents such as clopidogrel and ticlopidine were prescribed for 4.4% (92 of 2070), and warfarin was prescribed for 1.3% (27 of 2070).",
+      "context_window": "nts such as clopidogrel and ticlopidine were prescribed for 4.4% (92 of 2070), and warfarin was prescribed for 1.3% (27 of 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-413",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 413,
+      "sentence": "The other antiplatelet agents such as clopidogrel and ticlopidine were prescribed for 4.4% (92 of 2070), and warfarin was prescribed for 1.3% (27 of 2070).",
+      "context_window": "ibed for 4.4% (92 of 2070), and warfarin was prescribed for 1.3% (27 of 2070). Baseline demographic characteristics, laborat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-1353",
+      "claim_type": "unit_value",
+      "raw_text": "51.8 months",
+      "numeric_values": [
+        51.8
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1353,
+      "sentence": "During the median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched cohort.",
+      "context_window": "lcium channel blocker. During the median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-1386",
+      "claim_type": "percentage",
+      "raw_text": "10.2%",
+      "numeric_values": [
+        10.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1386,
+      "sentence": "During the median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched cohort.",
+      "context_window": "e median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-1418",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1418,
+      "sentence": "During the median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched cohort.",
+      "context_window": "months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin us",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-1466",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1466,
+      "sentence": "During the median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched cohort.",
+      "context_window": "versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched co",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-1497",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1497,
+      "sentence": "During the median follow up time of 51.8 months, CVE occurred in 58 (10.2%) aspirin users versus 69 (4.6%) non-users in the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched cohort.",
+      "context_window": "the unmatched cohort and 52 (9.8%) aspirin users versus 32 (6.0%) non-users in the matched cohort. Cox proportional regressi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-1706",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.126-2.407",
+      "numeric_values": [
+        1.126,
+        2.407
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1706,
+      "sentence": "Cox proportional regression analysis showed that the risk of CVE was significantly higher in aspirin users than non-users in both unmatched and matched cohort (HR 1.646; 95% CI 1.126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819, P = 0.011 in the matched cohort) (Table 2 ).",
+      "context_window": "n non-users in both unmatched and matched cohort (HR 1.646; 95% CI 1.126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-1726",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1726,
+      "sentence": "Cox proportional regression analysis showed that the risk of CVE was significantly higher in aspirin users than non-users in both unmatched and matched cohort (HR 1.646; 95% CI 1.126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819, P = 0.011 in the matched cohort) (Table 2 ).",
+      "context_window": "unmatched and matched cohort (HR 1.646; 95% CI 1.126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-1775",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.146-2.819",
+      "numeric_values": [
+        1.146,
+        2.819
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1775,
+      "sentence": "Cox proportional regression analysis showed that the risk of CVE was significantly higher in aspirin users than non-users in both unmatched and matched cohort (HR 1.646; 95% CI 1.126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819, P = 0.011 in the matched cohort) (Table 2 ).",
+      "context_window": "126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819, P = 0.011 in the matched cohort) (Table 2 ). In order to e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-1795",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1795,
+      "sentence": "Cox proportional regression analysis showed that the risk of CVE was significantly higher in aspirin users than non-users in both unmatched and matched cohort (HR 1.646; 95% CI 1.126-2.407, P = 0.010 in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819, P = 0.011 in the matched cohort) (Table 2 ).",
+      "context_window": "in the unmatched cohort, and HR 1.798; 95% CI 1.146-2.819, P = 0.011 in the matched cohort) (Table 2 ). In order to evaluate the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-2197",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.900-2.192",
+      "numeric_values": [
+        0.9,
+        2.192
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2197,
+      "sentence": "The incidence of CVE was not significantly different between aspirin users and non-users in patients without a history of previous CVD (HR 1.404; 95% CI 0.900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404; P = 0.167 in the matched cohort).",
+      "context_window": "rs in patients without a history of previous CVD (HR 1.404; 95% CI 0.900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-2217",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.135",
+      "numeric_values": [
+        0.135
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2217,
+      "sentence": "The incidence of CVE was not significantly different between aspirin users and non-users in patients without a history of previous CVD (HR 1.404; 95% CI 0.900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404; P = 0.167 in the matched cohort).",
+      "context_window": "ut a history of previous CVD (HR 1.404; 95% CI 0.900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404;",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-2266",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.859-2.404",
+      "numeric_values": [
+        0.859,
+        2.404
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2266,
+      "sentence": "The incidence of CVE was not significantly different between aspirin users and non-users in patients without a history of previous CVD (HR 1.404; 95% CI 0.900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404; P = 0.167 in the matched cohort).",
+      "context_window": "900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404; P = 0.167 in the matched cohort). However, the incidence o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-2286",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.167",
+      "numeric_values": [
+        0.167
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2286,
+      "sentence": "The incidence of CVE was not significantly different between aspirin users and non-users in patients without a history of previous CVD (HR 1.404; 95% CI 0.900-2.192; P = 0.135 in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404; P = 0.167 in the matched cohort).",
+      "context_window": "in the unmatched cohort, and HR 1.437; 95% CI 0.859-2.404; P = 0.167 in the matched cohort). However, the incidence of CVE was s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-2466",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.169-5.891",
+      "numeric_values": [
+        1.169,
+        5.891
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2466,
+      "sentence": "However, the incidence of CVE was significantly greater in aspirin users than non-users in patients who had previously experienced CVD (HR 2.625; 95% CI 1.169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598; P = 0.013 in the matched cohort).",
+      "context_window": "s in patients who had previously experienced CVD (HR 2.625; 95% CI 1.169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-2486",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2486,
+      "sentence": "However, the incidence of CVE was significantly greater in aspirin users than non-users in patients who had previously experienced CVD (HR 2.625; 95% CI 1.169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598; P = 0.013 in the matched cohort).",
+      "context_window": "d previously experienced CVD (HR 2.625; 95% CI 1.169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598;",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-2535",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.343-11.598",
+      "numeric_values": [
+        1.343,
+        11.598
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2535,
+      "sentence": "However, the incidence of CVE was significantly greater in aspirin users than non-users in patients who had previously experienced CVD (HR 2.625; 95% CI 1.169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598; P = 0.013 in the matched cohort).",
+      "context_window": "169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598; P = 0.013 in the matched cohort). When analyses were condu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-2556",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2556,
+      "sentence": "However, the incidence of CVE was significantly greater in aspirin users than non-users in patients who had previously experienced CVD (HR 2.625; 95% CI 1.169-5.891; P = 0.019 in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598; P = 0.013 in the matched cohort).",
+      "context_window": "in the unmatched cohort, and HR 3.947; 95% CI 1.343-11.598; P = 0.013 in the matched cohort). When analyses were conducted in sub",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-2653",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2653,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "n analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-2683",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2683,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "ubgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in asp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-2802",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 2802,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "ter in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the un",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-2832",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.127-2.713",
+      "numeric_values": [
+        1.127,
+        2.713
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2832,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-2852",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2852,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "th eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-2901",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.258-3.650",
+      "numeric_values": [
+        1.258,
+        3.65
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2901,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-2921",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2921,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-3009",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3009,
+      "sentence": "When analyses were conducted in subgroups stratified by eGFR \u2265 60 mL/min/1.73 m 2 and eGFR < 60 mL/min/1.73 m 2 , the risk of CVE was significantly greater in aspirin users than non-users in patients with eGFR < 60 mL/min/1.73 m 2 (HR 1.748; 95% CI 1.127-2.713; P = 0.013 in the unmatched cohort, and HR 2.143; 95% CI 1.258-3.650; P = 0.005 in the matched cohort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ).",
+      "context_window": "ort) but not different between them in patients with eGFR \u2265 60 mL/min/1.73 m 2 (Supplementary Table S1 ). Multivariate Cox propo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3493",
+      "claim_type": "percentage",
+      "raw_text": "31.0%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3493,
+      "sentence": "During the follow-up time, kidney event developed in 177 (31.0%) aspirin users and 381 (25.4%) non-users in the unmatched cohort and 167 (31.5%) aspirin users and 161 (30.3%) non-users in the matched cohort.",
+      "context_window": "During the follow-up time, kidney event developed in 177 (31.0%) aspirin users and 381 (25.4%) non-users in the unmatched c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3523",
+      "claim_type": "percentage",
+      "raw_text": "25.4%",
+      "numeric_values": [
+        25.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3523,
+      "sentence": "During the follow-up time, kidney event developed in 177 (31.0%) aspirin users and 381 (25.4%) non-users in the unmatched cohort and 167 (31.5%) aspirin users and 161 (30.3%) non-users in the matched cohort.",
+      "context_window": "idney event developed in 177 (31.0%) aspirin users and 381 (25.4%) non-users in the unmatched cohort and 167 (31.5%) aspirin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3573",
+      "claim_type": "percentage",
+      "raw_text": "31.5%",
+      "numeric_values": [
+        31.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3573,
+      "sentence": "During the follow-up time, kidney event developed in 177 (31.0%) aspirin users and 381 (25.4%) non-users in the unmatched cohort and 167 (31.5%) aspirin users and 161 (30.3%) non-users in the matched cohort.",
+      "context_window": "and 381 (25.4%) non-users in the unmatched cohort and 167 (31.5%) aspirin users and 161 (30.3%) non-users in the matched coh",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3603",
+      "claim_type": "percentage",
+      "raw_text": "30.3%",
+      "numeric_values": [
+        30.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3603,
+      "sentence": "During the follow-up time, kidney event developed in 177 (31.0%) aspirin users and 381 (25.4%) non-users in the unmatched cohort and 167 (31.5%) aspirin users and 161 (30.3%) non-users in the matched cohort.",
+      "context_window": "the unmatched cohort and 167 (31.5%) aspirin users and 161 (30.3%) non-users in the matched cohort. Multivariable Cox regress",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3845",
+      "claim_type": "percentage",
+      "raw_text": "4.9%",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3845,
+      "sentence": "All-cause mortality was observed in 28 (4.9%) aspirin users and 54 (3.6%) non-users in the unmatched cohort and 24 (4.5%) aspirin users and 34 (6.4%) non-users in the matched cohort.",
+      "context_window": "cohort (Table 2 ). All-cause mortality was observed in 28 (4.9%) aspirin users and 54 (3.6%) non-users in the unmatched coh",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3873",
+      "claim_type": "percentage",
+      "raw_text": "3.6%",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3873,
+      "sentence": "All-cause mortality was observed in 28 (4.9%) aspirin users and 54 (3.6%) non-users in the unmatched cohort and 24 (4.5%) aspirin users and 34 (6.4%) non-users in the matched cohort.",
+      "context_window": "e mortality was observed in 28 (4.9%) aspirin users and 54 (3.6%) non-users in the unmatched cohort and 24 (4.5%) aspirin us",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3921",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3921,
+      "sentence": "All-cause mortality was observed in 28 (4.9%) aspirin users and 54 (3.6%) non-users in the unmatched cohort and 24 (4.5%) aspirin users and 34 (6.4%) non-users in the matched cohort.",
+      "context_window": "ers and 54 (3.6%) non-users in the unmatched cohort and 24 (4.5%) aspirin users and 34 (6.4%) non-users in the matched cohor",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-3949",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3949,
+      "sentence": "All-cause mortality was observed in 28 (4.9%) aspirin users and 54 (3.6%) non-users in the unmatched cohort and 24 (4.5%) aspirin users and 34 (6.4%) non-users in the matched cohort.",
+      "context_window": "in the unmatched cohort and 24 (4.5%) aspirin users and 34 (6.4%) non-users in the matched cohort. All-cause mortality was n",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-4162",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4162,
+      "sentence": "Bleeding events were observed in 10 (1.8%) aspirin users and 20 (1.3%) non-users in the unmatched cohort and 10 (1.9%) aspirin users and 7 (1.3%) non-users in the matched cohort.",
+      "context_window": "hed cohort (Table 2 ). Bleeding events were observed in 10 (1.8%) aspirin users and 20 (1.3%) non-users in the unmatched coh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-4190",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4190,
+      "sentence": "Bleeding events were observed in 10 (1.8%) aspirin users and 20 (1.3%) non-users in the unmatched cohort and 10 (1.9%) aspirin users and 7 (1.3%) non-users in the matched cohort.",
+      "context_window": "ing events were observed in 10 (1.8%) aspirin users and 20 (1.3%) non-users in the unmatched cohort and 10 (1.9%) aspirin us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-4238",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4238,
+      "sentence": "Bleeding events were observed in 10 (1.8%) aspirin users and 20 (1.3%) non-users in the unmatched cohort and 10 (1.9%) aspirin users and 7 (1.3%) non-users in the matched cohort.",
+      "context_window": "ers and 20 (1.3%) non-users in the unmatched cohort and 10 (1.9%) aspirin users and 7 (1.3%) non-users in the matched cohort",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-4265",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4265,
+      "sentence": "Bleeding events were observed in 10 (1.8%) aspirin users and 20 (1.3%) non-users in the unmatched cohort and 10 (1.9%) aspirin users and 7 (1.3%) non-users in the matched cohort.",
+      "context_window": "in the unmatched cohort and 10 (1.9%) aspirin users and 7 (1.3%) non-users in the matched cohort. Bleeding risk was not sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-5674",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5674,
+      "sentence": "The adjusted HR of CVE and kidney event appears to increase in patients weighing less than 60 kg in aspirin users, while there seems little difference in risk of CVE and kidney event according to bodyweight in non-users in both unmatched (Supplementary Figures S1 and S2 in supplement) and matched cohort (Fig.",
+      "context_window": "ey event appears to increase in patients weighing less than 60 kg in aspirin users, while there seems little difference in ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-6129",
+      "claim_type": "percentage",
+      "raw_text": "4.0%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6129,
+      "sentence": "1 ), but the numbers of death event (82 out of 2070; 4.0%) were too small to provide a proper answer.",
+      "context_window": "d Fig. 1 ), but the numbers of death event (82 out of 2070; 4.0%) were too small to provide a proper answer. Indeed, the ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-6364",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6364,
+      "sentence": "Given the above findings, we evaluated the effects of aspirin on study outcomes in patients weighting less than 60 kg versus those weighting 60 kg or more, separately.",
+      "context_window": "f aspirin on study outcomes in patients weighting less than 60 kg versus those weighting 60 kg or more, separately. In Table",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-6393",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6393,
+      "sentence": "Given the above findings, we evaluated the effects of aspirin on study outcomes in patients weighting less than 60 kg versus those weighting 60 kg or more, separately.",
+      "context_window": "n patients weighting less than 60 kg versus those weighting 60 kg or more, separately. In Table 4 , the use of aspirin was si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-6539",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6539,
+      "sentence": "In Table 4 , the use of aspirin was significantly associated with increased risk of CVE in patients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019).",
+      "context_window": "d with increased risk of CVE in patients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-6574",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.218-6.395",
+      "numeric_values": [
+        1.218,
+        6.395
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6574,
+      "sentence": "In Table 4 , the use of aspirin was significantly associated with increased risk of CVE in patients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019).",
+      "context_window": "ients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.8",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-6594",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6594,
+      "sentence": "In Table 4 , the use of aspirin was significantly associated with increased risk of CVE in patients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019).",
+      "context_window": "than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-ci-6635",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.253-12.865",
+      "numeric_values": [
+        1.253,
+        12.865
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6635,
+      "sentence": "In Table 4 , the use of aspirin was significantly associated with increased risk of CVE in patients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019).",
+      "context_window": "5% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019). The risk of the composite outcome of CVE or ki",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-p-6656",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6656,
+      "sentence": "In Table 4 , the use of aspirin was significantly associated with increased risk of CVE in patients weighing less than 60 kg in both unmatched (HR 2.791; 95% CI 1.218-6.395; P = 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019).",
+      "context_window": "= 0.015) and matched cohort (HR 4.014; 95% CI 1.253-12.865, P = 0.019). The risk of the composite outcome of CVE or kidney events",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-6804",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6804,
+      "sentence": "The risk of the composite outcome of CVE or kidney events or death was also significantly increased in aspirin users weighing less than 60 kg in both unmatched and matched cohort.",
+      "context_window": "significantly increased in aspirin users weighing less than 60 kg in both unmatched and matched cohort. However, in patients",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-6878",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6878,
+      "sentence": "However, in patients weighing 60 kg or more, the use of aspirin was not associated with the risk of any other clinical outcomes.",
+      "context_window": "unmatched and matched cohort. However, in patients weighing 60 kg or more, the use of aspirin was not associated with the ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-8065",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8065,
+      "sentence": "Multivariate Cox proportional analyses for clinical outcomes according to dichotomized bodyweight (< 60 kg vs. \u2265 60 kg).",
+      "context_window": "r clinical outcomes according to dichotomized bodyweight (< 60 kg vs. \u2265 60 kg). Adjusted for age, male gender, BMI, smoking,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-8077",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8077,
+      "sentence": "Multivariate Cox proportional analyses for clinical outcomes according to dichotomized bodyweight (< 60 kg vs. \u2265 60 kg).",
+      "context_window": "utcomes according to dichotomized bodyweight (< 60 kg vs. \u2265 60 kg). Adjusted for age, male gender, BMI, smoking, baseline eG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-313",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 313,
+      "sentence": "On the contrary, the use of low-dose aspirin was associated with an increased risk of CVE in those patients and this harmful effect was prominent in patients with low bodyweight (< 60 kg).",
+      "context_window": "ful effect was prominent in patients with low bodyweight (< 60 kg). In addition, these adverse effects were insignificant in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-2546",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2546,
+      "sentence": "However, only 2.9% of participants had an eGFR < 45 mL/min/1.73 m 2 , and a much smaller proportion of participants (0.5%) had an eGFR < 30 mL/min/1.73 m 2 .",
+      "context_window": "CKD 20 , which was contrary to our findings. However, only 2.9% of participants had an eGFR < 45 mL/min/1.73 m 2 , and a mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-2581",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 2581,
+      "sentence": "However, only 2.9% of participants had an eGFR < 45 mL/min/1.73 m 2 , and a much smaller proportion of participants (0.5%) had an eGFR < 30 mL/min/1.73 m 2 .",
+      "context_window": "findings. However, only 2.9% of participants had an eGFR < 45 mL/min/1.73 m 2 , and a much smaller proportion of participants (0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-2649",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2649,
+      "sentence": "However, only 2.9% of participants had an eGFR < 45 mL/min/1.73 m 2 , and a much smaller proportion of participants (0.5%) had an eGFR < 30 mL/min/1.73 m 2 .",
+      "context_window": "n/1.73 m 2 , and a much smaller proportion of participants (0.5%) had an eGFR < 30 mL/min/1.73 m 2 . Moreover, the study was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-2669",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 2669,
+      "sentence": "However, only 2.9% of participants had an eGFR < 45 mL/min/1.73 m 2 , and a much smaller proportion of participants (0.5%) had an eGFR < 30 mL/min/1.73 m 2 .",
+      "context_window": "uch smaller proportion of participants (0.5%) had an eGFR < 30 mL/min/1.73 m 2 . Moreover, the study was designed for diastolic h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-2768",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2768,
+      "sentence": "Moreover, the study was designed for diastolic hypertensive patients and only 8.0% of the study population had diabetes, whereas our study had larger proportion of participants with severe CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study.",
+      "context_window": "y was designed for diastolic hypertensive patients and only 8.0% of the study population had diabetes, whereas our study had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-2891",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 2891,
+      "sentence": "Moreover, the study was designed for diastolic hypertensive patients and only 8.0% of the study population had diabetes, whereas our study had larger proportion of participants with severe CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study.",
+      "context_window": "d larger proportion of participants with severe CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-2913",
+      "claim_type": "percentage",
+      "raw_text": "27.8%",
+      "numeric_values": [
+        27.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2913,
+      "sentence": "Moreover, the study was designed for diastolic hypertensive patients and only 8.0% of the study population had diabetes, whereas our study had larger proportion of participants with severe CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study.",
+      "context_window": "participants with severe CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study. These disparities of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-pct-2934",
+      "claim_type": "percentage",
+      "raw_text": "34.0%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2934,
+      "sentence": "Moreover, the study was designed for diastolic hypertensive patients and only 8.0% of the study population had diabetes, whereas our study had larger proportion of participants with severe CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study.",
+      "context_window": "vere CKD (eGFR < 30 mL/min/1.73 m 2 in 27.8%) and diabetes (34.0%) than HOT study. These disparities of study population betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-3180",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3180,
+      "sentence": "Recently, it was published that low-dose aspirin was effective for the prevention of CVE only in patients with low bodyweight (< 70 kg) and become ineffective with increasing bodyweight 15 .",
+      "context_window": "e prevention of CVE only in patients with low bodyweight (< 70 kg) and become ineffective with increasing bodyweight 15 . The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-4816",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 4816,
+      "sentence": "A Japanese demonstrated that low-dose aspirin therapy reduced the incidence of CVE in patients with estimated glomerular filtration rate based on serum creatinine (eGFR cr ) 60-90 mL/min/1.73 m 2 , but not in patients with eGFR cr < 60 mL/min/1.73 m 2 or eGFR cr \u2265 90 mL/min/1.73 m 2 21 , and suggested that eGFR cr might affect the efficacy of low-dose aspirin therapy in those patients.",
+      "context_window": "lar filtration rate based on serum creatinine (eGFR cr ) 60-90 mL/min/1.73 m 2 , but not in patients with eGFR cr < 60 mL/min/1.7",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-4872",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 4872,
+      "sentence": "A Japanese demonstrated that low-dose aspirin therapy reduced the incidence of CVE in patients with estimated glomerular filtration rate based on serum creatinine (eGFR cr ) 60-90 mL/min/1.73 m 2 , but not in patients with eGFR cr < 60 mL/min/1.73 m 2 or eGFR cr \u2265 90 mL/min/1.73 m 2 21 , and suggested that eGFR cr might affect the efficacy of low-dose aspirin therapy in those patients.",
+      "context_window": "60-90 mL/min/1.73 m 2 , but not in patients with eGFR cr < 60 mL/min/1.73 m 2 or eGFR cr \u2265 90 mL/min/1.73 m 2 21 , and suggested",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-4904",
+      "claim_type": "unit_value",
+      "raw_text": "90 mL/min",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mL/min",
+      "source_section": "discussion",
+      "source_offset": 4904,
+      "sentence": "A Japanese demonstrated that low-dose aspirin therapy reduced the incidence of CVE in patients with estimated glomerular filtration rate based on serum creatinine (eGFR cr ) 60-90 mL/min/1.73 m 2 , but not in patients with eGFR cr < 60 mL/min/1.73 m 2 or eGFR cr \u2265 90 mL/min/1.73 m 2 21 , and suggested that eGFR cr might affect the efficacy of low-dose aspirin therapy in those patients.",
+      "context_window": "in patients with eGFR cr < 60 mL/min/1.73 m 2 or eGFR cr \u2265 90 mL/min/1.73 m 2 21 , and suggested that eGFR cr might affect the e",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7988000_low_dose_aspirin_was_associated_with_an_increased_risk_of_ca-u-9490",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 9490,
+      "sentence": "In conclusion, this study showed that the use of low-dose aspirin in patients with CKD was associated with a significant increase of CVE without improving all-cause mortality and this harmful effect of low-dose aspirin was prominent in patients with low bodyweight (< 60 kg).",
+      "context_window": "se aspirin was prominent in patients with low bodyweight (< 60 kg). Therefore, our results do not support prescribing low-dos",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

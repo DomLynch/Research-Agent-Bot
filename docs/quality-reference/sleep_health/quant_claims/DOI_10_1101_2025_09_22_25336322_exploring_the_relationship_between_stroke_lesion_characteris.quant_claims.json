@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1101_2025_09_22_25336322_exploring_the_relationship_between_stroke_lesion_characteris",
+  "doi": "10.1101/2025.09.22.25336322",
+  "extracted_at": "2026-05-08T20:06:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_09_22_25336322_exploring_the_relationship_between_stroke_lesion_characteris-n-534",
+      "claim_type": "sample_size",
+      "raw_text": "N=38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 534,
+      "sentence": "We analysed previously collected structural brain images (Magnetic Resonance Imaging) from 38 stroke participants (11 female, mean (SD) age 64 (12), mean (SD) time since stroke 95 (66) months) and sleep data (questionnaires (N=38, actigraphy (N=37), and electrophysiology (N=18)) which were collected in their home environment.",
+      "context_window": "ince stroke 95 (66) months) and sleep data (questionnaires (N=38, actigraphy (N=37), and electrophysiology (N=18)) which wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_22_25336322_exploring_the_relationship_between_stroke_lesion_characteris-n-552",
+      "claim_type": "sample_size",
+      "raw_text": "N=37",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 552,
+      "sentence": "We analysed previously collected structural brain images (Magnetic Resonance Imaging) from 38 stroke participants (11 female, mean (SD) age 64 (12), mean (SD) time since stroke 95 (66) months) and sleep data (questionnaires (N=38, actigraphy (N=37), and electrophysiology (N=18)) which were collected in their home environment.",
+      "context_window": ") months) and sleep data (questionnaires (N=38, actigraphy (N=37), and electrophysiology (N=18)) which were collected in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_22_25336322_exploring_the_relationship_between_stroke_lesion_characteris-n-582",
+      "claim_type": "sample_size",
+      "raw_text": "N=18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 582,
+      "sentence": "We analysed previously collected structural brain images (Magnetic Resonance Imaging) from 38 stroke participants (11 female, mean (SD) age 64 (12), mean (SD) time since stroke 95 (66) months) and sleep data (questionnaires (N=38, actigraphy (N=37), and electrophysiology (N=18)) which were collected in their home environment.",
+      "context_window": "tionnaires (N=38, actigraphy (N=37), and electrophysiology (N=18)) which were collected in their home environment. Neither l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_22_25336322_exploring_the_relationship_between_stroke_lesion_characteris-p-1040",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "However, a data-driven approach revealed clusters of voxels disconnected by the stroke lesions were linked to lower spindle density and amplitude (threshold free cluster enhancement p < 0.050).",
+      "context_window": "e density and amplitude (threshold free cluster enhancement p < 0.050). Overall, these results provide preliminary insights that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

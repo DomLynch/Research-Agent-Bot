@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_study_to_compare_the_pharmacokinetics_and_pharmacodynamics_o",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_to_compare_the_pharmacokinetics_and_pharmacodynamics_o-u-389",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 389,
+      "sentence": "In the first treatment period, subjects will be randomized to receive either a single dose (100 mg) of I-ASA powder via a Dry Powder Inhaler (DPI) OR a single dose (162 mg) of C-ASA tablets.",
+      "context_window": "ubjects will be randomized to receive either a single dose (100 mg) of I-ASA powder via a Dry Powder Inhaler (DPI) OR a single",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_to_compare_the_pharmacokinetics_and_pharmacodynamics_o-u-462",
+      "claim_type": "unit_value",
+      "raw_text": "162 mg",
+      "numeric_values": [
+        162.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 462,
+      "sentence": "In the first treatment period, subjects will be randomized to receive either a single dose (100 mg) of I-ASA powder via a Dry Powder Inhaler (DPI) OR a single dose (162 mg) of C-ASA tablets.",
+      "context_window": "ASA powder via a Dry Powder Inhaler (DPI) OR a single dose (162 mg) of C-ASA tablets. After a washout period, subjects will be",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1992 @@
+{
+  "paper_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy",
+  "doi": "10.1111/acel.70108",
+  "extracted_at": "2026-05-08T20:01:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 32,
+    "p_value": 30,
+    "percentage": 21,
+    "sample_size": 11,
+    "mean_sd": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-382",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 382,
+      "sentence": "In a randomized, double\u2010blind trial, 97 patients (78 men) undergoing coronary artery bypass graft surgery were treated with either quercetin (500 mg twice daily, 47 patients) or placebo (50 patients) for two days pre\u2010surgery through hospital discharge.",
+      "context_window": "ry bypass graft surgery were treated with either quercetin (500 mg twice daily, 47 patients) or placebo (50 patients) for two",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-787",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.073",
+      "numeric_values": [
+        0.073
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 787,
+      "sentence": "Quercetin treatment showed a trend toward reduced C\u2010reactive protein at discharge ( p = 0.073) and differentially modulated circulating inflammatory protein expression between men and women, with a pro\u2010inflammatory effect of quercetin in females.",
+      "context_window": "ed a trend toward reduced C\u2010reactive protein at discharge ( p = 0.073) and differentially modulated circulating inflammatory prot",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-1035",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "Endothelial acetylcholine\u2010induced relaxation improved significantly with quercetin ( p = 0.049), with effects in men ( p = 0.043) but not in women ( p = 0.852).",
+      "context_window": "\u2010induced relaxation improved significantly with quercetin ( p = 0.049), with effects in men ( p = 0.043) but not in women ( p = 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-1069",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1069,
+      "sentence": "Endothelial acetylcholine\u2010induced relaxation improved significantly with quercetin ( p = 0.049), with effects in men ( p = 0.043) but not in women ( p = 0.852).",
+      "context_window": "ficantly with quercetin ( p = 0.049), with effects in men ( p = 0.043) but not in women ( p = 0.852). ITA transcriptomics reveale",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-1099",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.852",
+      "numeric_values": [
+        0.852
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "Endothelial acetylcholine\u2010induced relaxation improved significantly with quercetin ( p = 0.049), with effects in men ( p = 0.043) but not in women ( p = 0.852).",
+      "context_window": "0.049), with effects in men ( p = 0.043) but not in women ( p = 0.852). ITA transcriptomics revealed the overexpression of senesc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-1581",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1581,
+      "sentence": "Post\u2010operative atrial fibrillation incidence was significantly lower with quercetin, representing 4% of the patients compared to 18% in the placebo group ( p = 0.033).",
+      "context_window": "idence was significantly lower with quercetin, representing 4% of the patients compared to 18% in the placebo group ( p =",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-1612",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1612,
+      "sentence": "Post\u2010operative atrial fibrillation incidence was significantly lower with quercetin, representing 4% of the patients compared to 18% in the placebo group ( p = 0.033).",
+      "context_window": "with quercetin, representing 4% of the patients compared to 18% in the placebo group ( p = 0.033). In conclusion, short\u2010ter",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-1639",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1639,
+      "sentence": "Post\u2010operative atrial fibrillation incidence was significantly lower with quercetin, representing 4% of the patients compared to 18% in the placebo group ( p = 0.033).",
+      "context_window": "g 4% of the patients compared to 18% in the placebo group ( p = 0.033). In conclusion, short\u2010term quercetin treatment effectively",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-1343",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1343,
+      "sentence": "Patients \u2265 18 years of age who experienced a recent ACS within the previous month, including a diagnosis of unstable angina, non\u2010ST elevation myocardial infarction (NSTEMI) or ST\u2010elevation myocardial infarction (STEMI), and who were scheduled to undergo an inpatient CABG surgery at the Montreal Heart Institute were approached for the study (June 2021 to June 2023).",
+      "context_window": "ndly selected from this population of patients. Patients \u2265 18 years of age who experienced a recent ACS within the previous mon",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-2168",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2168,
+      "sentence": "After obtaining written consent, patients were randomly assigned in a 1:1 ratio to either the intervention arm, in which they received quercetin supplementation (500 mg per os bid), or the control arm, in which they received a placebo.",
+      "context_window": "tion arm, in which they received quercetin supplementation (500 mg per os bid), or the control arm, in which they received a p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-2636",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2636,
+      "sentence": "Quercetin or placebo administration was started 2 days before planned surgery and was continued after surgery until hospital discharge or for a maximum of seven POD.",
+      "context_window": "the trial. Quercetin or placebo administration was started 2 days before planned surgery and was continued after surgery unti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-3450",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3450,
+      "sentence": "Statistical analyses comparing Placebo and Quercetin groups were performed using ANOVA for continuous variables and a chi\u2010square for categorial variables. * p < 0.05 vs. placebo.",
+      "context_window": "uous variables and a chi\u2010square for categorial variables. * p < 0.05 vs. placebo. Abbreviations: ACEI, angiotensin converting e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-5566",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5566,
+      "sentence": "Statistical analyses comparing Placebo and Quercetin groups were performed using ANOVA for continuous variables and a chi\u2010square for categorial variables. * p < 0.05 vs. placebo.",
+      "context_window": "uous variables and a chi\u2010square for categorial variables. * p < 0.05 vs. placebo. Abbreviations: ACS, acute coronary syndrome;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-6439",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6439,
+      "sentence": "A sample of 50 subjects per group (100 subjects in total) would detect a relative reduction of 50% in the change in hs\u2010CRP in the quercetin group compared to the placebo group, with a two\u2010tailed significance level of 0.05 and a power of 80%.",
+      "context_window": "100 subjects in total) would detect a relative reduction of 50% in the change in hs\u2010CRP in the quercetin group compared to",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-6581",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6581,
+      "sentence": "A sample of 50 subjects per group (100 subjects in total) would detect a relative reduction of 50% in the change in hs\u2010CRP in the quercetin group compared to the placebo group, with a two\u2010tailed significance level of 0.05 and a power of 80%.",
+      "context_window": "with a two\u2010tailed significance level of 0.05 and a power of 80%. The complete design of the study has been published in (Da",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-7463",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7463,
+      "sentence": "Changes from baseline to follow\u2010up in blood levels of hs\u2010CRP were compared between the two groups (quercetin or placebo) using a 2\u2010way repeated measures covariance analysis (ANCOVA), including the following terms: groups (quercetin or placebo), time points (POD1, POD4, POD7), an interaction term between the groups and time points, and a term for the baseline hs\u2010CRP value (collected the morning before the first dose of treatment, 2 days before the surgery).",
+      "context_window": "(collected the morning before the first dose of treatment, 2 days before the surgery). Whether the interaction term was stati",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-7952",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7952,
+      "sentence": "Because of their non\u2010normal distribution, EC 50 (the concentration of ACh that induces 50% of the maximal relaxation measured in each donor arterial segment) in placebo and quercetin groups was compared using the Mann-Whitney\u2010Wilcoxon test.",
+      "context_window": "distribution, EC 50 (the concentration of ACh that induces 50% of the maximal relaxation measured in each donor arterial s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-98",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 98,
+      "sentence": "Between June 2021 and June 2023, 111 patients were enrolled and randomized to receive quercetin ( n = 55) or placebo ( n = 56).",
+      "context_window": "atients were enrolled and randomized to receive quercetin ( n = 55) or placebo ( n = 56). A total of 97 patients (the intent\u2010t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-119",
+      "claim_type": "sample_size",
+      "raw_text": "n = 56",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 119,
+      "sentence": "Between June 2021 and June 2023, 111 patients were enrolled and randomized to receive quercetin ( n = 55) or placebo ( n = 56).",
+      "context_window": "and randomized to receive quercetin ( n = 55) or placebo ( n = 56). A total of 97 patients (the intent\u2010to treat (ITT) populat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-252",
+      "claim_type": "percentage",
+      "raw_text": "48.4%",
+      "numeric_values": [
+        48.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 252,
+      "sentence": "Of these 97 patients, 47 (48.4%) received quercetin (39 men and 8 women), and 50 (51.5%) received a placebo (39 men and 11 women); there was no cross\u2010over of treatment during the study.",
+      "context_window": "re finally analyzed (Figure S1 ). Of these 97 patients, 47 (48.4%) received quercetin (39 men and 8 women), and 50 (51.5%) re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-308",
+      "claim_type": "percentage",
+      "raw_text": "51.5%",
+      "numeric_values": [
+        51.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 308,
+      "sentence": "Of these 97 patients, 47 (48.4%) received quercetin (39 men and 8 women), and 50 (51.5%) received a placebo (39 men and 11 women); there was no cross\u2010over of treatment during the study.",
+      "context_window": "47 (48.4%) received quercetin (39 men and 8 women), and 50 (51.5%) received a placebo (39 men and 11 women); there was no cro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-449",
+      "claim_type": "mean_sd",
+      "raw_text": "67.0 \u00b1 1.0",
+      "numeric_values": [
+        67.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 449,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "ment during the study. The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for wo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-456",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 456,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "ring the study. The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-467",
+      "claim_type": "mean_sd",
+      "raw_text": "66.6 \u00b1 1.1",
+      "numeric_values": [
+        66.6,
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 467,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "udy. The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39). Th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-474",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 years",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 474,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "e mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39). The base",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-496",
+      "claim_type": "mean_sd",
+      "raw_text": "68.8 \u00b1 1.8",
+      "numeric_values": [
+        68.8,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 496,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "icipants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39). The baseline demographic and cl",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-503",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 years",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 503,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "s was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39). The baseline demographic and clinical",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-524",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 524,
+      "sentence": "The mean age of the participants was 67.0 \u00b1 1.0 years (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39).",
+      "context_window": "s (66.6 \u00b1 1.1 years for men and 68.8 \u00b1 1.8 years for women, p = 0.39). The baseline demographic and clinical characteristics of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-1916",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1916,
+      "sentence": "Remarkably, the incidence of new onset postoperative atrial fibrillation (AF) while patients were still hospitalized was significantly reduced by quercetin compared to placebo (quercetin: 4%, i.e., 2/47, vs. placebo: 18%, i.e., 9/50, p = 0.033; Table 2 ).",
+      "context_window": "cantly reduced by quercetin compared to placebo (quercetin: 4%, i.e., 2/47, vs. placebo: 18%, i.e., 9/50, p = 0.033; Table",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-1945",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1945,
+      "sentence": "Remarkably, the incidence of new onset postoperative atrial fibrillation (AF) while patients were still hospitalized was significantly reduced by quercetin compared to placebo (quercetin: 4%, i.e., 2/47, vs. placebo: 18%, i.e., 9/50, p = 0.033; Table 2 ).",
+      "context_window": "ompared to placebo (quercetin: 4%, i.e., 2/47, vs. placebo: 18%, i.e., 9/50, p = 0.033; Table 2 ). In the placebo group, 8",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-1962",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1962,
+      "sentence": "Remarkably, the incidence of new onset postoperative atrial fibrillation (AF) while patients were still hospitalized was significantly reduced by quercetin compared to placebo (quercetin: 4%, i.e., 2/47, vs. placebo: 18%, i.e., 9/50, p = 0.033; Table 2 ).",
+      "context_window": "o (quercetin: 4%, i.e., 2/47, vs. placebo: 18%, i.e., 9/50, p = 0.033; Table 2 ). In the placebo group, 8 men and 1 woman develop",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-2113",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.128",
+      "numeric_values": [
+        0.128
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2113,
+      "sentence": "In the placebo group, 8 men and 1 woman developed new onset AF, while only 2 men developed AF in the quercetin group ( \u03c7 2 test, p = 0.128).",
+      "context_window": "only 2 men developed AF in the quercetin group ( \u03c7 2 test, p = 0.128). No confounders were identified, such as left atrium size,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-2854",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2854,
+      "sentence": "To assess the potential beneficial effect of quercetin on systemic inflammation, we used 2 different strategies (Figure 1 ): first, we assessed the temporal evolution of the inflammatory response (primary endpoint) of plasma hs\u2010CRP by a 4\u2010timepoint analysis (baseline, i.e., morning before the first dose given 2 days before the surgery, and at POD1, POD4 and POD7, i.e., after 9 days of quercetin) (Figure 1A-D ); second, as an exploratory endpoint, we used the Olink Explore 384 Inflammation panel at POD4 (after 6 days of quercetin) in the plasma of 40 blindly and randomly selected patients (30 men and 10 women) to compare the global inflammatory signature between sexes only according to treatment (Figure 1E-G ); we indeed previously reported that the peak of CABG surgery\u2010induced inflammation was at POD4 (Noly et al.",
+      "context_window": "alysis (baseline, i.e., morning before the first dose given 2 days before the surgery, and at POD1, POD4 and POD7, i.e., after",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-2921",
+      "claim_type": "unit_value",
+      "raw_text": "9 days",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2921,
+      "sentence": "To assess the potential beneficial effect of quercetin on systemic inflammation, we used 2 different strategies (Figure 1 ): first, we assessed the temporal evolution of the inflammatory response (primary endpoint) of plasma hs\u2010CRP by a 4\u2010timepoint analysis (baseline, i.e., morning before the first dose given 2 days before the surgery, and at POD1, POD4 and POD7, i.e., after 9 days of quercetin) (Figure 1A-D ); second, as an exploratory endpoint, we used the Olink Explore 384 Inflammation panel at POD4 (after 6 days of quercetin) in the plasma of 40 blindly and randomly selected patients (30 men and 10 women) to compare the global inflammatory signature between sexes only according to treatment (Figure 1E-G ); we indeed previously reported that the peak of CABG surgery\u2010induced inflammation was at POD4 (Noly et al.",
+      "context_window": "before the surgery, and at POD1, POD4 and POD7, i.e., after 9 days of quercetin) (Figure 1A-D ); second, as an exploratory end",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-3058",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3058,
+      "sentence": "To assess the potential beneficial effect of quercetin on systemic inflammation, we used 2 different strategies (Figure 1 ): first, we assessed the temporal evolution of the inflammatory response (primary endpoint) of plasma hs\u2010CRP by a 4\u2010timepoint analysis (baseline, i.e., morning before the first dose given 2 days before the surgery, and at POD1, POD4 and POD7, i.e., after 9 days of quercetin) (Figure 1A-D ); second, as an exploratory endpoint, we used the Olink Explore 384 Inflammation panel at POD4 (after 6 days of quercetin) in the plasma of 40 blindly and randomly selected patients (30 men and 10 women) to compare the global inflammatory signature between sexes only according to treatment (Figure 1E-G ); we indeed previously reported that the peak of CABG surgery\u2010induced inflammation was at POD4 (Noly et al.",
+      "context_window": "sed the Olink Explore 384 Inflammation panel at POD4 (after 6 days of quercetin) in the plasma of 40 blindly and randomly sele",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-3937",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.824",
+      "numeric_values": [
+        0.824
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3937,
+      "sentence": "ANCOVA was performed (effect of Group p = 0.824, Time p < 0.0001, Group \u00d7 Time p = 0.025). (C) Mean plasma hs\u2010CRP levels of 39 men placebo patients vs.",
+      "context_window": "7 quercetin patients. ANCOVA was performed (effect of Group p = 0.824, Time p < 0.0001, Group \u00d7 Time p = 0.025). (C) Mean plasma",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-3953",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3953,
+      "sentence": "ANCOVA was performed (effect of Group p = 0.824, Time p < 0.0001, Group \u00d7 Time p = 0.025). (C) Mean plasma hs\u2010CRP levels of 39 men placebo patients vs.",
+      "context_window": "ents. ANCOVA was performed (effect of Group p = 0.824, Time p < 0.0001, Group \u00d7 Time p = 0.025). (C) Mean plasma hs\u2010CRP levels of",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-3978",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3978,
+      "sentence": "ANCOVA was performed (effect of Group p = 0.824, Time p < 0.0001, Group \u00d7 Time p = 0.025). (C) Mean plasma hs\u2010CRP levels of 39 men placebo patients vs.",
+      "context_window": "d (effect of Group p = 0.824, Time p < 0.0001, Group \u00d7 Time p = 0.025). (C) Mean plasma hs\u2010CRP levels of 39 men placebo patients",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-4144",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4144,
+      "sentence": "8 women quercetin patients. * p < 0.05 vs. men placebo. (D) Mean plasma hs\u2010CRP levels of 39 men quercetin vs.",
+      "context_window": "39 men quercetin patients vs. 8 women quercetin patients. * p < 0.05 vs. men placebo. (D) Mean plasma hs\u2010CRP levels of 39 men qu",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-5051",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5051,
+      "sentence": "First, baseline hs\u2010CRP levels measured 2 days before surgery were similar between placebo and quercetin\u2010treated patients (Table 1 ), suggesting that all patients presented the same high residual inflammatory risk.",
+      "context_window": "5 and L2FC > 0.25). First, baseline hs\u2010CRP levels measured 2 days before surgery were similar between placebo and quercetin\u2010t",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-5358",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5358,
+      "sentence": "Second, a 2\u2010way repeated measures ANCOVA on the change of hs\u2010CRP levels revealed a significant time \u00d7 treatment group interaction ( p = 0.025).",
+      "context_window": "revealed a significant time \u00d7 treatment group interaction ( p = 0.025). Treatment with quercetin during the perioperative period",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-5586",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.073",
+      "numeric_values": [
+        0.073
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5586,
+      "sentence": "Treatment with quercetin during the perioperative period seems to have little effect on the inflammatory storm caused by the surgery in the ITT cohort, with a tendency to reduce hs\u2010CRP levels at hospital discharge ( p = 0.073) but not earlier (POD1 p = 0.273; POD4 p = 0.422) (Figure 1B ).",
+      "context_window": "a tendency to reduce hs\u2010CRP levels at hospital discharge ( p = 0.073) but not earlier (POD1 p = 0.273; POD4 p = 0.422) (Figure 1",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-5619",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.273",
+      "numeric_values": [
+        0.273
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5619,
+      "sentence": "Treatment with quercetin during the perioperative period seems to have little effect on the inflammatory storm caused by the surgery in the ITT cohort, with a tendency to reduce hs\u2010CRP levels at hospital discharge ( p = 0.073) but not earlier (POD1 p = 0.273; POD4 p = 0.422) (Figure 1B ).",
+      "context_window": "ls at hospital discharge ( p = 0.073) but not earlier (POD1 p = 0.273; POD4 p = 0.422) (Figure 1B ). Based on our recent data obt",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-5635",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.422",
+      "numeric_values": [
+        0.422
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5635,
+      "sentence": "Treatment with quercetin during the perioperative period seems to have little effect on the inflammatory storm caused by the surgery in the ITT cohort, with a tendency to reduce hs\u2010CRP levels at hospital discharge ( p = 0.073) but not earlier (POD1 p = 0.273; POD4 p = 0.422) (Figure 1B ).",
+      "context_window": "ischarge ( p = 0.073) but not earlier (POD1 p = 0.273; POD4 p = 0.422) (Figure 1B ). Based on our recent data obtained in an inde",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6061",
+      "claim_type": "mean_sd",
+      "raw_text": "87.3 \u00b1 10.4",
+      "numeric_values": [
+        87.3,
+        10.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6061,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6068",
+      "claim_type": "unit_value",
+      "raw_text": "10.4 mg",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6068,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "l stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W =",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6092",
+      "claim_type": "mean_sd",
+      "raw_text": "112.8 \u00b1 6.4",
+      "numeric_values": [
+        112.8,
+        6.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6092,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "ticular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 12",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6100",
+      "claim_type": "unit_value",
+      "raw_text": "6.4 mg",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6100,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-6110",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6110,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "omen (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9 \u00b1 7.8 mg/L;",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6135",
+      "claim_type": "mean_sd",
+      "raw_text": "84.97 \u00b1 10.3",
+      "numeric_values": [
+        84.97,
+        10.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6135,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ). In",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6143",
+      "claim_type": "unit_value",
+      "raw_text": "10.3 mg",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6143,
+      "sentence": "In the placebo group, women exhibited lower levels of hs\u2010CRP throughout the hospital stay post\u2010CABG, in particular at POD1 (women (W) = 87.3 \u00b1 10.4 mg/L vs. men (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs.",
+      "context_window": "en (M) = 112.8 \u00b1 6.4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ). In the",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6161",
+      "claim_type": "mean_sd",
+      "raw_text": "126.9 \u00b1 7.8",
+      "numeric_values": [
+        126.9,
+        7.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6161,
+      "sentence": "M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ).",
+      "context_window": ".4 mg/L; p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ). In the quercetin group, howe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6169",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mg",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6169,
+      "sentence": "M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ).",
+      "context_window": "p = 0.043) and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ). In the quercetin group, however",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-6179",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6179,
+      "sentence": "M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ).",
+      "context_window": ") and POD4 (W = 84.97 \u00b1 10.3 mg/L vs. M = 126.9 \u00b1 7.8 mg/L; p = 0.018) (Figure 1C ). In the quercetin group, however, hs\u2010CRP leve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6405",
+      "claim_type": "mean_sd",
+      "raw_text": "120.4 \u00b1 20.6",
+      "numeric_values": [
+        120.4,
+        20.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6405,
+      "sentence": "In the quercetin group, however, hs\u2010CRP levels in women were comparable to those of men (Figure 1C ), suggesting some pro\u2010inflammatory activity of quercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ).",
+      "context_window": "ty of quercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6413",
+      "claim_type": "unit_value",
+      "raw_text": "20.6 mg",
+      "numeric_values": [
+        20.6
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6413,
+      "sentence": "In the quercetin group, however, hs\u2010CRP levels in women were comparable to those of men (Figure 1C ), suggesting some pro\u2010inflammatory activity of quercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ).",
+      "context_window": "ercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ).",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6437",
+      "claim_type": "mean_sd",
+      "raw_text": "84.97 \u00b1 10.3",
+      "numeric_values": [
+        84.97,
+        10.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6437,
+      "sentence": "In the quercetin group, however, hs\u2010CRP levels in women were comparable to those of men (Figure 1C ), suggesting some pro\u2010inflammatory activity of quercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ).",
+      "context_window": "ularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ). In contrast, quercetin had o",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6445",
+      "claim_type": "unit_value",
+      "raw_text": "10.3 mg",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6445,
+      "sentence": "In the quercetin group, however, hs\u2010CRP levels in women were comparable to those of men (Figure 1C ), suggesting some pro\u2010inflammatory activity of quercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ).",
+      "context_window": "t POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ). In contrast, quercetin had over",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-6456",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.149",
+      "numeric_values": [
+        0.149
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6456,
+      "sentence": "In the quercetin group, however, hs\u2010CRP levels in women were comparable to those of men (Figure 1C ), suggesting some pro\u2010inflammatory activity of quercetin in women, particularly at POD4 (quercetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ).",
+      "context_window": "rcetin = 120.4 \u00b1 20.6 mg/L vs. placebo = 84.97 \u00b1 10.3 mg/L; p = 0.149) (Figure 1D ). In contrast, quercetin had overall limited e",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6630",
+      "claim_type": "mean_sd",
+      "raw_text": "45.9 \u00b1 9.7",
+      "numeric_values": [
+        45.9,
+        9.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6630,
+      "sentence": "In contrast, quercetin had overall limited effects on hs\u2010CRP in men, with only a tendency to reduce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ).",
+      "context_window": "to reduce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D )",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6637",
+      "claim_type": "unit_value",
+      "raw_text": "9.7 mg",
+      "numeric_values": [
+        9.7
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6637,
+      "sentence": "In contrast, quercetin had overall limited effects on hs\u2010CRP in men, with only a tendency to reduce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ).",
+      "context_window": "uce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ).",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-6660",
+      "claim_type": "mean_sd",
+      "raw_text": "75.5 \u00b1 18.0",
+      "numeric_values": [
+        75.5,
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6660,
+      "sentence": "In contrast, quercetin had overall limited effects on hs\u2010CRP in men, with only a tendency to reduce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ).",
+      "context_window": "spital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ). Quercetin treatment had no s",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6667",
+      "claim_type": "unit_value",
+      "raw_text": "18.0 mg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6667,
+      "sentence": "In contrast, quercetin had overall limited effects on hs\u2010CRP in men, with only a tendency to reduce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ).",
+      "context_window": "discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ). Quercetin treatment had no stat",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-6678",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.083",
+      "numeric_values": [
+        0.083
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6678,
+      "sentence": "In contrast, quercetin had overall limited effects on hs\u2010CRP in men, with only a tendency to reduce hs\u2010CRP levels at hospital discharge (quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ).",
+      "context_window": "quercetin = 45.9 \u00b1 9.7 mg/L vs. placebo = 75.5 \u00b1 18.0 mg/L, p = 0.083; Figure 1D ). Quercetin treatment had no statistically sig",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-7164",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7164,
+      "sentence": "W = 6 DEP), suggesting a higher inflammatory proteomic signature in placebo men after 4 days of surgery, in accordance with higher hs\u2010CRP levels in placebo men (Figure 1C ).",
+      "context_window": "igher inflammatory proteomic signature in placebo men after 4 days of surgery, in accordance with higher hs\u2010CRP levels in plac",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-7492",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.149",
+      "numeric_values": [
+        0.149
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7492,
+      "sentence": "W = 22 DEP) (Figure 1G ), suggesting a pro\u2010inflammatory effect of quercetin in females, a tendency also seen with hs\u2010CRP levels at POD4 ( p = 0.149, Figure 1D ).",
+      "context_window": "females, a tendency also seen with hs\u2010CRP levels at POD4 ( p = 0.149, Figure 1D ). In quercetin\u2010treated women, the proteomic ana",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-8915",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8915,
+      "sentence": "Two typical indexes of endothelium\u2010dependent relaxation were measured: ACh\u2010EC 50 to characterize the endothelial sensitivity to ACh (the lower the concentration of ACh needed to reach 50% of relaxation, the better the endothelial sensitivity), and E max (the maximal relaxation of the ITA induced by ACh) to characterize the efficacy of ACh.",
+      "context_window": "to ACh (the lower the concentration of ACh needed to reach 50% of relaxation, the better the endothelial sensitivity), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-9153",
+      "claim_type": "sample_size",
+      "raw_text": "n = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9153,
+      "sentence": "ACh\u2010EC 50 was significantly lower (better sensitivity) in the quercetin group ( n = 44) than in the placebo ( n = 34) group (median quercetin = 101 nM [6.48-228] vs. placebo = 151 nM [47.7-408.5]; p = 0.049), while E max was similar between groups (Figure 2B ).",
+      "context_window": "icantly lower (better sensitivity) in the quercetin group ( n = 44) than in the placebo ( n = 34) group (median quercetin = 10",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-9183",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9183,
+      "sentence": "ACh\u2010EC 50 was significantly lower (better sensitivity) in the quercetin group ( n = 44) than in the placebo ( n = 34) group (median quercetin = 101 nM [6.48-228] vs. placebo = 151 nM [47.7-408.5]; p = 0.049), while E max was similar between groups (Figure 2B ).",
+      "context_window": "ity) in the quercetin group ( n = 44) than in the placebo ( n = 34) group (median quercetin = 101 nM [6.48-228] vs. placebo =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-9270",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9270,
+      "sentence": "ACh\u2010EC 50 was significantly lower (better sensitivity) in the quercetin group ( n = 44) than in the placebo ( n = 34) group (median quercetin = 101 nM [6.48-228] vs. placebo = 151 nM [47.7-408.5]; p = 0.049), while E max was similar between groups (Figure 2B ).",
+      "context_window": "etin = 101 nM [6.48-228] vs. placebo = 151 nM [47.7-408.5]; p = 0.049), while E max was similar between groups (Figure 2B ). Beca",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-9590",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9590,
+      "sentence": "2024 ), we explored whether sex was a defining variable of the response to quercetin: ACh\u2010EC 50 was reduced by quercetin in male (Figure 2C , p = 0.043) but not in female arteries (Figure 2D , p = 0.852).",
+      "context_window": "in: ACh\u2010EC 50 was reduced by quercetin in male (Figure 2C , p = 0.043) but not in female arteries (Figure 2D , p = 0.852). In oth",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-9641",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.852",
+      "numeric_values": [
+        0.852
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9641,
+      "sentence": "2024 ), we explored whether sex was a defining variable of the response to quercetin: ACh\u2010EC 50 was reduced by quercetin in male (Figure 2C , p = 0.043) but not in female arteries (Figure 2D , p = 0.852).",
+      "context_window": "ure 2C , p = 0.043) but not in female arteries (Figure 2D , p = 0.852). In other words, quercetin improved endothelial sensitivit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-10567",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 10567,
+      "sentence": "Impact of quercetin on endothelial relaxant function to acetylcholine. (A) Flow\u2010chart of the vascular endothelial function analysis performed the day of the surgery, after 2 days of exposure to quercetin (created using BioRender). (B) Endothelial\u2010dependent relaxation to ACh was assessed ex vivo on pre\u2010constricted arterial segments of the ITT population made available by the surgeons.",
+      "context_window": "l function analysis performed the day of the surgery, after 2 days of exposure to quercetin (created using BioRender). (B) End",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-10904",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10904,
+      "sentence": "Values are expressed as mean \u00b1 SEM of n = 34 quercetin patients and n = 44 placebo patients arterial rings.",
+      "context_window": "aximal effect of ACh. Values are expressed as mean \u00b1 SEM of n = 34 quercetin patients and n = 44 placebo patients arterial rin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-10934",
+      "claim_type": "sample_size",
+      "raw_text": "n = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10934,
+      "sentence": "Values are expressed as mean \u00b1 SEM of n = 34 quercetin patients and n = 44 placebo patients arterial rings.",
+      "context_window": "re expressed as mean \u00b1 SEM of n = 34 quercetin patients and n = 44 placebo patients arterial rings. A Mann-Whitney test was us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-11024",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11024,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. placebo. (C) Values are expressed as mean \u00b1 SEM of n = 28 men quercetin patients and n = 35 men placebo patients arterial rings.",
+      "context_window": "al rings. A Mann-Whitney test was used to compare groups. * p < 0.05 vs. placebo. (C) Values are expressed as mean \u00b1 SEM of n =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-11088",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11088,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. placebo. (C) Values are expressed as mean \u00b1 SEM of n = 28 men quercetin patients and n = 35 men placebo patients arterial rings.",
+      "context_window": "0.05 vs. placebo. (C) Values are expressed as mean \u00b1 SEM of n = 28 men quercetin patients and n = 35 men placebo patients arte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-11122",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11122,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. placebo. (C) Values are expressed as mean \u00b1 SEM of n = 28 men quercetin patients and n = 35 men placebo patients arterial rings.",
+      "context_window": "xpressed as mean \u00b1 SEM of n = 28 men quercetin patients and n = 35 men placebo patients arterial rings. A Mann-Whitney test wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-11216",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11216,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. men placebo. (D) Values are expressed as mean \u00b1 SEM of n = 6 women quercetin patients and n = 9 women placebo patients arterial rings.",
+      "context_window": "al rings. A Mann-Whitney test was used to compare groups. * p < 0.05 vs. men placebo. (D) Values are expressed as mean \u00b1 SEM of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-11284",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11284,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. men placebo. (D) Values are expressed as mean \u00b1 SEM of n = 6 women quercetin patients and n = 9 women placebo patients arterial rings.",
+      "context_window": "vs. men placebo. (D) Values are expressed as mean \u00b1 SEM of n = 6 women quercetin patients and n = 9 women placebo patients a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-11319",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11319,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. men placebo. (D) Values are expressed as mean \u00b1 SEM of n = 6 women quercetin patients and n = 9 women placebo patients arterial rings.",
+      "context_window": "pressed as mean \u00b1 SEM of n = 6 women quercetin patients and n = 9 women placebo patients arterial rings. A Mann-Whitney test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-11414",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11414,
+      "sentence": "A Mann-Whitney test was used to compare groups. * p < 0.05 vs. women placebo.",
+      "context_window": "al rings. A Mann-Whitney test was used to compare groups. * p < 0.05 vs. women placebo. To deepen our understanding of the effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-12068",
+      "claim_type": "mean_sd",
+      "raw_text": "34.2 \u00b1 1.6",
+      "numeric_values": [
+        34.2,
+        1.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12068,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "iation analysis \u2019). BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-12075",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 kg",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 12075,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "analysis \u2019). BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-12102",
+      "claim_type": "mean_sd",
+      "raw_text": "27.9 \u00b1 1.4",
+      "numeric_values": [
+        27.9,
+        1.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12102,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "e as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-12109",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 kg",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 12109,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "llows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-12134",
+      "claim_type": "mean_sd",
+      "raw_text": "38.1 \u00b1 3.1",
+      "numeric_values": [
+        38.1,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12134,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-12141",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 kg",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 12141,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and th",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-n-12165",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12165,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-msd-12169",
+      "claim_type": "mean_sd",
+      "raw_text": "28.0 \u00b1 2.8",
+      "numeric_values": [
+        28.0,
+        2.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12169,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the anal",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-12176",
+      "claim_type": "unit_value",
+      "raw_text": "2.8 kg",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 12176,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-p-12189",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12189,
+      "sentence": "BMI values were as follows: M placebo = 34.2 \u00b1 1.6 kg/m 2 , M quercetin = 27.9 \u00b1 1.4 kg/m 2 , W placebo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis.",
+      "context_window": "bo = 38.1 \u00b1 3.1 kg/m 2 , W querceti n = 28.0 \u00b1 2.8 kg/m 2 ( p = 0.039), and this was accounted for in the analysis. Sex\u2010dependen",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-12478",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 12478,
+      "sentence": "Sex\u2010dependent effect of quercetin treatment on single\u2010nuclei RNA sequencing. (A) Flow\u2010chart of the transcriptomic analysis using single\u2010nuclei RNA sequencing, performed on 3 samples per group collected the day of the surgery, after 2 days of quercetin treatment (created using BioRender). (B) Uniform Manifold Approximation and Projection (UMAP) plot, in 2 dimensions (UMAP\u20101 and UMAP\u20102), of annotated cell\u2010types clustered based on their specific gene expression, present in ITA graft arteries. (C) Proportion (%) of the 5 cell\u2010types (EC: Endothelial cells; SMC: Smooth muscle cells; FIB: Fibroblasts; IMM: Immune cells; PER: Pericytes) in men (M) and women (W) arteries, in placebo and quercetin groups. (D) UMAP plot colored by sample in men and women in placebo and quercetin groups. (E) Cell type prioritization representation of AUGUR predictive score, reflecting the effect of quercetin on the transcriptomic response in each arterial cell type, in men cells (brown circles) and in women cells (green circles); the higher the score (AUC), the higher the impact of quercetin. (F) Heatmap showing Gene Set Variation Analysis (GSVA) analysis of selected senescence\u2010related genes in the 5 cell types between men placebo and women placebo (F) and between men and women treated with quercetin (G).",
+      "context_window": "3 samples per group collected the day of the surgery, after 2 days of quercetin treatment (created using BioRender). (B) Unifo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-14716",
+      "claim_type": "percentage",
+      "raw_text": "85.7%",
+      "numeric_values": [
+        85.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14716,
+      "sentence": "2024 ), five large cell types uniformly distributed were identified between treatments and sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ).",
+      "context_window": "ied between treatments and sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-14742",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14742,
+      "sentence": "2024 ), five large cell types uniformly distributed were identified between treatments and sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ).",
+      "context_window": "sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-14772",
+      "claim_type": "percentage",
+      "raw_text": "4.9%",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14772,
+      "sentence": "2024 ), five large cell types uniformly distributed were identified between treatments and sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ).",
+      "context_window": "MC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-14798",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14798,
+      "sentence": "2024 ), five large cell types uniformly distributed were identified between treatments and sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ).",
+      "context_window": "IB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ). The freq",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-14824",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14824,
+      "sentence": "2024 ), five large cell types uniformly distributed were identified between treatments and sexes: smooth muscle cells (SMC: 85.7%), fibroblasts (FIB: 5.4%), endothelial cells (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ).",
+      "context_window": "ls (EC: 4.9%), immune cells (IMM: 2.5%) and pericytes (PER: 1.4%) (Figures 3B-D and S2 ). The frequency of cell types was si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-18288",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18288,
+      "sentence": "In contrast, in FIB from female quercetin patients, red signals are highlighted in ~70% of the 50 Hallmark pathways and in 43% of the senescence pathways, demonstrating that quercetin stimulated the inflammaging in this cell type.",
+      "context_window": "female quercetin patients, red signals are highlighted in ~70% of the 50 Hallmark pathways and in 43% of the senescence pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-18327",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18327,
+      "sentence": "In contrast, in FIB from female quercetin patients, red signals are highlighted in ~70% of the 50 Hallmark pathways and in 43% of the senescence pathways, demonstrating that quercetin stimulated the inflammaging in this cell type.",
+      "context_window": "are highlighted in ~70% of the 50 Hallmark pathways and in 43% of the senescence pathways, demonstrating that quercetin st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-1409",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1409,
+      "sentence": "Although this finding was unexpected considering the relatively low incidence (~15%) of AF in post\u2010CABG\u2010only patients, the small cohort in this study and the short\u2010term duration of the treatment with quercetin, these data further support the hypothesis that senescence drives AF (Mehdizadeh et al.",
+      "context_window": "g was unexpected considering the relatively low incidence (~15%) of AF in post\u2010CABG\u2010only patients, the small cohort in this",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-2703",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2703,
+      "sentence": "Patients had acute ACS within the last 30 days, indicated by high baseline levels of hs\u2010CRP (> 7 mg/L).",
+      "context_window": "uced by the surgery. Patients had acute ACS within the last 30 days, indicated by high baseline levels of hs\u2010CRP (> 7 mg/L). Ho",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-2759",
+      "claim_type": "unit_value",
+      "raw_text": "7 mg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2759,
+      "sentence": "Patients had acute ACS within the last 30 days, indicated by high baseline levels of hs\u2010CRP (> 7 mg/L).",
+      "context_window": "ast 30 days, indicated by high baseline levels of hs\u2010CRP (> 7 mg/L). However, unexpected results were observed in female pat",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-3315",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3315,
+      "sentence": "In our study, women were post\u2010menopausal, with a similar BMI (around 30 kg/m 2 ) to men.",
+      "context_window": "udy, women were post\u2010menopausal, with a similar BMI (around 30 kg/m 2 ) to men. Similar high basal hs\u2010CRP levels may be expla",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-3435",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3435,
+      "sentence": "Similar high basal hs\u2010CRP levels may be explained by the fact that all patients had ACS in the past 30 days.",
+      "context_window": "explained by the fact that all patients had ACS in the past 30 days. The proteomic analysis provided more qualitative informati",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-4907",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4907,
+      "sentence": "Gene Set Variation Analysis reveals that in females FIB, quercetin weakly but significantly stimulated 70% of the Hallmark pathways and 43% of the senescence pathways.",
+      "context_window": "females FIB, quercetin weakly but significantly stimulated 70% of the Hallmark pathways and 43% of the senescence pathways",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-4940",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4940,
+      "sentence": "Gene Set Variation Analysis reveals that in females FIB, quercetin weakly but significantly stimulated 70% of the Hallmark pathways and 43% of the senescence pathways.",
+      "context_window": "t significantly stimulated 70% of the Hallmark pathways and 43% of the senescence pathways. This contrasts with the anti\u2010in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "quercetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-u-6309",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6309,
+      "sentence": "Women in their mid\u2010fifties develop vascular endothelial dysfunction, but 10 years later than men (Celermajer et al.",
+      "context_window": "r mid\u2010fifties develop vascular endothelial dysfunction, but 10 years later than men (Celermajer et al. 1994 ; Lakatta et al. 200",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12341813_quercetin_reduces_vascular_senescence_and_inflammation_in_sy-pct-917",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 917,
+      "sentence": "Transitory inflammation is a vital repair mechanism (Straub and Schradin 2016 ). (3) The low number of female patients recruited is a limitation, representing only ~20% of all patients; this reflects, however, the lower incidence of corrective CABG surgeries for CAD in women, a clinical fact with no clear explanation considering that acute myocardial infarction is the first cause of death in both men and women living in high\u2010income countries (Woodward 2019 ). (4) In the current study, statistical power analysis did not account for sex as a variable, which limited the statistical power of the data, particularly for the endothelial function parameters collected from female patients.",
+      "context_window": "male patients recruited is a limitation, representing only ~20% of all patients; this reflects, however, the lower incidenc",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

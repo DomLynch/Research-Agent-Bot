@@ -1,0 +1,175 @@
+{
+  "paper_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_",
+  "doi": "10.1038/s41598-025-34948-7",
+  "extracted_at": "2026-05-08T20:11:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "correlation": 6,
+    "sample_size": 1,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-corr-1713",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.993",
+      "numeric_values": [
+        0.993
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1713,
+      "sentence": "Their hybrid machine-learning framework achieved exceptional predictive accuracy (R\u00b2 = 0.993) and provided physical interpretability through SHAP analysis.",
+      "context_window": "earning framework achieved exceptional predictive accuracy (R\u00b2 = 0.993) and provided physical interpretability through SHAP analys",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-n-5626",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 5626,
+      "sentence": "Linear alkanediamines\n\n( n = 3-12)\n\nCurrent\n\nStudy",
+      "context_window": "and limitations relevant to the. Linear alkanediamines ( n = 3-12) Current Study",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-u-20399",
+      "claim_type": "unit_value",
+      "raw_text": "1017.07 kg",
+      "numeric_values": [
+        1017.07
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 20399,
+      "sentence": "The dataset includes three ABPs Putrescine dihydrochloride (PUT), Cadaverine dihydrochloride (CAD), and Spermine tetrahydrochloride (SPER) with molar masses ranging from 161.07 to 348.18 g/mol, molal concentrations from 0 to 0.20094 mol/kg, temperatures from 288.15 to 313.15 K, density values from 992.21 to 1017.07 kg/m\u00b3, speed of sound values from 1465.96 to 1576.52 m/s, and dynamic viscosity values from 0.6531 to 1.3838 mPa.s.",
+      "context_window": "ures from 288.15 to 313.15 K, density values from 992.21 to 1017.07 kg/m\u00b3, speed of sound values from 1465.96 to 1576.52 m/s, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-u-20452",
+      "claim_type": "unit_value",
+      "raw_text": "1576.52 m/s",
+      "numeric_values": [
+        1576.52
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 20452,
+      "sentence": "The dataset includes three ABPs Putrescine dihydrochloride (PUT), Cadaverine dihydrochloride (CAD), and Spermine tetrahydrochloride (SPER) with molar masses ranging from 161.07 to 348.18 g/mol, molal concentrations from 0 to 0.20094 mol/kg, temperatures from 288.15 to 313.15 K, density values from 992.21 to 1017.07 kg/m\u00b3, speed of sound values from 1465.96 to 1576.52 m/s, and dynamic viscosity values from 0.6531 to 1.3838 mPa.s.",
+      "context_window": ".21 to 1017.07 kg/m\u00b3, speed of sound values from 1465.96 to 1576.52 m/s, and dynamic viscosity values from 0.6531 to 1.3838 mPa.s.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-corr-23403",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.997800542",
+      "numeric_values": [
+        0.997800542
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23403,
+      "sentence": "14 a, 15 , 16 , 17 and 18 a), the MLP-ANN approach stands out with a compact deviation profile (AARE% = 0.025414597, R\u00b2 = 0.997800542), trailed closely by KNN (AARE% = 0.026013582, R\u00b2 = 0.997755089).",
+      "context_window": "out with a compact deviation profile (AARE% = 0.025414597, R\u00b2 = 0.997800542), trailed closely by KNN (AARE% = 0.026013582, R\u00b2 = 0.99775",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-corr-23467",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.997755089",
+      "numeric_values": [
+        0.997755089
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23467,
+      "sentence": "14 a, 15 , 16 , 17 and 18 a), the MLP-ANN approach stands out with a compact deviation profile (AARE% = 0.025414597, R\u00b2 = 0.997800542), trailed closely by KNN (AARE% = 0.026013582, R\u00b2 = 0.997755089).",
+      "context_window": "0.997800542), trailed closely by KNN (AARE% = 0.026013582, R\u00b2 = 0.997755089). For acoustic velocity (Figs. 14 b, 15 , 16 , 17 and 18 b)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-corr-23599",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.99825565",
+      "numeric_values": [
+        0.99825565
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23599,
+      "sentence": "14 b, 15 , 16 , 17 and 18 b), EL delivers the tightest spread (AARE% = 0.072083185, R\u00b2 = 0.99825565), with AdaBoost and CNN performing solidly in pursuit.",
+      "context_window": "8 b), EL delivers the tightest spread (AARE% = 0.072083185, R\u00b2 = 0.99825565), with AdaBoost and CNN performing solidly in pursuit. In t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-corr-23785",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.999540903",
+      "numeric_values": [
+        0.999540903
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23785,
+      "sentence": "14 c, 15 , 16 , 17 and 18 c), MLP-ANN again dominates (AARE% = 0.479200074, R\u00b2 = 0.999540903), supported by robust showings from AdaBoost and CNN.",
+      "context_window": "17 and 18 c), MLP-ANN again dominates (AARE% = 0.479200074, R\u00b2 = 0.999540903), supported by robust showings from AdaBoost and CNN. By co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12868671_accurate_prediction_of_density_viscosity_and_speed_of_sound_-corr-1203",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.997755089",
+      "numeric_values": [
+        0.997755089
+      ],
+      "units": "",
+      "source_section": "conclusion",
+      "source_offset": 1203,
+      "sentence": "With respect to mass density, MLP-ANN dominated, attaining an R\u00b2 value of 0.997800542, RMSE of 0.344613659, and AARE% of 0.025414597, with KNN trailing narrowly (R\u00b2 = 0.997755089, AARE% = 0.026013582).",
+      "context_window": "3659, and AARE% of 0.025414597, with KNN trailing narrowly (R\u00b2 = 0.997755089, AARE% = 0.026013582). Regarding acoustic velocity, EL took",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

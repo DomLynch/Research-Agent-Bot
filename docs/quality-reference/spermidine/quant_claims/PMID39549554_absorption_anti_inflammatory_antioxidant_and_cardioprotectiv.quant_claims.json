@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMID39549554_absorption_anti_inflammatory_antioxidant_and_cardioprotectiv",
+  "doi": "10.1016/j.nutres.2024.10.006",
+  "extracted_at": "2026-05-08T20:12:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID39549554_absorption_anti_inflammatory_antioxidant_and_cardioprotectiv-p-960",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Plasma 1-methylnicotinamide, PEA, and OEA concentrations increased after supplement intake (P < .05).",
+      "context_window": ", and OEA concentrations increased after supplement intake (P < .05). Spermidine concentrations decreased in the control arm (P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39549554_absorption_anti_inflammatory_antioxidant_and_cardioprotectiv-p-1026",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "Spermidine concentrations decreased in the control arm (P < .05) but not the supplement arms.",
+      "context_window": "5). Spermidine concentrations decreased in the control arm (P < .05) but not the supplement arms. Net incremental area under th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID39549554_absorption_anti_inflammatory_antioxidant_and_cardioprotectiv-p-1253",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1253,
+      "sentence": "Net incremental area under the curve for tumor necrosis factor alpha and reactive oxygen species in stimulated macrophages decreased when incubated with plasma following supplement intake (P < .05).",
+      "context_window": "sed when incubated with plasma following supplement intake (P < .05). Intake of the combined supplements showed they were bioav",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

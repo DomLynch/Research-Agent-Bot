@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMID41296931_long_term_senolytic_treatment_prevents_endothelial_dysfuncti",
+  "doi": "10.14336/ad.2025.0976",
+  "extracted_at": "2026-05-08T20:01:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID41296931_long_term_senolytic_treatment_prevents_endothelial_dysfuncti-u-209",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 209,
+      "sentence": "This study demonstrates that long-term senolytic treatment with dasatinib plus quercetin (D+Q; 5 mg/kg + 50 mg/kg biweekly for 8 months) in mice significantly attenuates vascular endothelial senescence.",
+      "context_window": "erm senolytic treatment with dasatinib plus quercetin (D+Q; 5 mg/kg + 50 mg/kg biweekly for 8 months) in mice significantly",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41296931_long_term_senolytic_treatment_prevents_endothelial_dysfuncti-u-219",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 219,
+      "sentence": "This study demonstrates that long-term senolytic treatment with dasatinib plus quercetin (D+Q; 5 mg/kg + 50 mg/kg biweekly for 8 months) in mice significantly attenuates vascular endothelial senescence.",
+      "context_window": "tic treatment with dasatinib plus quercetin (D+Q; 5 mg/kg + 50 mg/kg biweekly for 8 months) in mice significantly attenuates",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41296931_long_term_senolytic_treatment_prevents_endothelial_dysfuncti-u-241",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 241,
+      "sentence": "This study demonstrates that long-term senolytic treatment with dasatinib plus quercetin (D+Q; 5 mg/kg + 50 mg/kg biweekly for 8 months) in mice significantly attenuates vascular endothelial senescence.",
+      "context_window": "atinib plus quercetin (D+Q; 5 mg/kg + 50 mg/kg biweekly for 8 months) in mice significantly attenuates vascular endothelial sene",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

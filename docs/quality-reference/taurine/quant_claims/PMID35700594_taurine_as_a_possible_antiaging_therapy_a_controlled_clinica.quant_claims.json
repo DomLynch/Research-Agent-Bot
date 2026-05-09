@@ -1,0 +1,124 @@
+{
+  "paper_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica",
+  "doi": "10.1016/j.nut.2022.111706",
+  "extracted_at": "2026-05-08T20:10:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "unit_value": 1,
+    "sample_size": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica-msd-327",
+      "claim_type": "mean_sd",
+      "raw_text": "61.4 \u00b1 4.2",
+      "numeric_values": [
+        61.4,
+        4.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 327,
+      "sentence": "Methods A double-blind study was conducted with 24 women (61.4 \u00b1 4.2 y, body mass index 31.4 \u00b1 5.1 kg/m\u00b2).",
+      "context_window": ". Methods A double-blind study was conducted with 24 women (61.4 \u00b1 4.2 y, body mass index 31.4 \u00b1 5.1 kg/m\u00b2). The participants were",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica-msd-357",
+      "claim_type": "mean_sd",
+      "raw_text": "31.4 \u00b1 5.1",
+      "numeric_values": [
+        31.4,
+        5.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 357,
+      "sentence": "Methods A double-blind study was conducted with 24 women (61.4 \u00b1 4.2 y, body mass index 31.4 \u00b1 5.1 kg/m\u00b2).",
+      "context_window": "was conducted with 24 women (61.4 \u00b1 4.2 y, body mass index 31.4 \u00b1 5.1 kg/m\u00b2). The participants were randomly assigned to either a",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica-u-364",
+      "claim_type": "unit_value",
+      "raw_text": "5.1 kg",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 364,
+      "sentence": "Methods A double-blind study was conducted with 24 women (61.4 \u00b1 4.2 y, body mass index 31.4 \u00b1 5.1 kg/m\u00b2).",
+      "context_window": "nducted with 24 women (61.4 \u00b1 4.2 y, body mass index 31.4 \u00b1 5.1 kg/m\u00b2). The participants were randomly assigned to either a co",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica-n-447",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 447,
+      "sentence": "The participants were randomly assigned to either a control group (GC, n = 11), supplemented with placebo (1.5 g of starch); or a taurine group (GTAU, n = 13), supplemented with taurine (1.5 g), for 16 wk.",
+      "context_window": "pants were randomly assigned to either a control group (GC, n = 11), supplemented with placebo (1.5 g of starch); or a taurine",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica-n-527",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 527,
+      "sentence": "The participants were randomly assigned to either a control group (GC, n = 11), supplemented with placebo (1.5 g of starch); or a taurine group (GTAU, n = 13), supplemented with taurine (1.5 g), for 16 wk.",
+      "context_window": "d with placebo (1.5 g of starch); or a taurine group (GTAU, n = 13), supplemented with taurine (1.5 g), for 16 wk. As primary",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID35700594_taurine_as_a_possible_antiaging_therapy_a_controlled_clinica-p-1035",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "The results were analyzed by two-way repeated analysis of variance measures mixed model, with the Sidak post hoc (P < 0.05).",
+      "context_window": "of variance measures mixed model, with the Sidak post hoc (P < 0.05). Results Taurine and superoxide dismutase (SOD, antioxidan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

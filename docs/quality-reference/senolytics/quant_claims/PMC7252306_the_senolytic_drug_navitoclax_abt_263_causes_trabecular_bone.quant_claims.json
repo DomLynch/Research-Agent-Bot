@@ -1,0 +1,1436 @@
+{
+  "paper_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone",
+  "doi": "10.3389/fcell.2020.00354",
+  "extracted_at": "2026-05-08T20:00:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 31,
+    "percentage": 34,
+    "sample_size": 12,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1176",
+      "claim_type": "unit_value",
+      "raw_text": "24 month",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "Aged (24 month old) male and female mice were treated with navitoclax (50 mg/kg body mass daily) for 2 weeks.",
+      "context_window": "n bone mass and osteoprogenitor function in old mice. Aged (24 month old) male and female mice were treated with navitoclax (50",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1241",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1241,
+      "sentence": "Aged (24 month old) male and female mice were treated with navitoclax (50 mg/kg body mass daily) for 2 weeks.",
+      "context_window": "nth old) male and female mice were treated with navitoclax (50 mg/kg body mass daily) for 2 weeks. Surprisingly, despite decr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1271",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1271,
+      "sentence": "Aged (24 month old) male and female mice were treated with navitoclax (50 mg/kg body mass daily) for 2 weeks.",
+      "context_window": "were treated with navitoclax (50 mg/kg body mass daily) for 2 weeks. Surprisingly, despite decreasing senescent cell burden, na",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-1430",
+      "claim_type": "percentage",
+      "raw_text": "60.1%",
+      "numeric_values": [
+        60.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1430,
+      "sentence": "Surprisingly, despite decreasing senescent cell burden, navitoclax treatment decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males), and BMSC-derived osteoblasts from the navitoclax treated mice were impaired in their ability to produce a mineralized matrix (-88% females, -83% males).",
+      "context_window": "becular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males), and BMSC-derived osteoblasts from t",
+      "claim_role": "effect",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-1446",
+      "claim_type": "percentage",
+      "raw_text": "45.6%",
+      "numeric_values": [
+        45.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1446,
+      "sentence": "Surprisingly, despite decreasing senescent cell burden, navitoclax treatment decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males), and BMSC-derived osteoblasts from the navitoclax treated mice were impaired in their ability to produce a mineralized matrix (-88% females, -83% males).",
+      "context_window": "ume fraction in aged female and male mice (-60.1% females, -45.6% males), and BMSC-derived osteoblasts from the navitoclax tr",
+      "claim_role": "effect",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-1587",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1587,
+      "sentence": "Surprisingly, despite decreasing senescent cell burden, navitoclax treatment decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males), and BMSC-derived osteoblasts from the navitoclax treated mice were impaired in their ability to produce a mineralized matrix (-88% females, -83% males).",
+      "context_window": "impaired in their ability to produce a mineralized matrix (-88% females, -83% males). Moreover, in vitro administration of",
+      "claim_role": "effect",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-1601",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1601,
+      "sentence": "Surprisingly, despite decreasing senescent cell burden, navitoclax treatment decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males), and BMSC-derived osteoblasts from the navitoclax treated mice were impaired in their ability to produce a mineralized matrix (-88% females, -83% males).",
+      "context_window": "eir ability to produce a mineralized matrix (-88% females, -83% males). Moreover, in vitro administration of navitoclax dec",
+      "claim_role": "effect",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-871",
+      "claim_type": "unit_value",
+      "raw_text": "28 month",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "month",
+      "source_section": "introduction",
+      "source_offset": 871,
+      "sentence": "For example, inducible elimination of p16 Ink4a -positive senescent cells delayed onset of age related pathologies and improved physical function in old (26-28 month) mice ( Baker et al., 2011 ; Xu et al., 2018 ).",
+      "context_window": "lated pathologies and improved physical function in old (26-28 month) mice ( Baker et al., 2011 ; Xu et al., 2018 ). Likewise, t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1858",
+      "claim_type": "unit_value",
+      "raw_text": "22 month",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "month",
+      "source_section": "introduction",
+      "source_offset": 1858,
+      "sentence": "Critically, selective depletion of senescent cells via INK-ATTAC caspase 8 activation or inhibition of the SASP via JAK inhibitors reduced bone resorption activity and maintained trabecular bone mass in aged (20-22 month old) treated as compared to control mice ( Farr et al., 2017 ).",
+      "context_window": "on activity and maintained trabecular bone mass in aged (20-22 month old) treated as compared to control mice ( Farr et al., 201",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-162",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 162,
+      "sentence": "Male and female C57BL/6 mice (24 months of age, n = 10 females and n = 10 males) from the National Institute on Aging aged rodent colony were obtained for study.",
+      "context_window": "mittee at Augusta University. Male and female C57BL/6 mice (24 months of age, n = 10 females and n = 10 males) from the National",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-180",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 180,
+      "sentence": "Male and female C57BL/6 mice (24 months of age, n = 10 females and n = 10 males) from the National Institute on Aging aged rodent colony were obtained for study.",
+      "context_window": "University. Male and female C57BL/6 mice (24 months of age, n = 10 females and n = 10 males) from the National Institute on Ag",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-199",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 199,
+      "sentence": "Male and female C57BL/6 mice (24 months of age, n = 10 females and n = 10 males) from the National Institute on Aging aged rodent colony were obtained for study.",
+      "context_window": "d female C57BL/6 mice (24 months of age, n = 10 females and n = 10 males) from the National Institute on Aging aged rodent col",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-439",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 439,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "d were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% P",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-459",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 459,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-486",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 486,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "ax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once dai",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-499",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 499,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 week",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-512",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 512,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gav",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-526",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 526,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "er sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage. This dosage",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-556",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 556,
+      "sentence": "Mice were permitted water and standard rodent chow (RD: Teklad #2918) ad libitum , and were treated with the senolytic drug navitoclax (ABT-263, 50 mg/kg body mass, n = 5 per sex) or vehicle (10% ethanol, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage.",
+      "context_window": "l, 30% PEG 400, 60% Phosal50, n = 5 per sex) once daily for 2 weeks by oral gavage. This dosage of navitoclax was previously sh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "senolytic",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-1045",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1045,
+      "sentence": "One tibia per mouse was fixed in 10% neutral buffered formalin, decalcified in 15% EDTA, paraffin embedded, histologically sectioned, and stained with hematoxylin and eosin for gross tissue visualization; one sample (female navitoclax treatment) was damaged during processing and was excluded from analysis.",
+      "context_window": "e-Lawrence et al., 2013 ). One tibia per mouse was fixed in 10% neutral buffered formalin, decalcified in 15% EDTA, paraffi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-1091",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1091,
+      "sentence": "One tibia per mouse was fixed in 10% neutral buffered formalin, decalcified in 15% EDTA, paraffin embedded, histologically sectioned, and stained with hematoxylin and eosin for gross tissue visualization; one sample (female navitoclax treatment) was damaged during processing and was excluded from analysis.",
+      "context_window": "was fixed in 10% neutral buffered formalin, decalcified in 15% EDTA, paraffin embedded, histologically sectioned, and stai",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-2479",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2479,
+      "sentence": "Briefly, bone marrow was flushed from the diaphysis, and BMSC were immediately seeded into 6-well plates (10 million cells per well) in osteogenic medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 \u03bcg/ml ascorbic acid + 10 mM beta glycerophosphate + 100 nM dexamethasone).",
+      "context_window": "0 million cells per well) in osteogenic medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 \u03bcg/ml ascorbic acid +",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-2489",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2489,
+      "sentence": "Briefly, bone marrow was flushed from the diaphysis, and BMSC were immediately seeded into 6-well plates (10 million cells per well) in osteogenic medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 \u03bcg/ml ascorbic acid + 10 mM beta glycerophosphate + 100 nM dexamethasone).",
+      "context_window": "cells per well) in osteogenic medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 \u03bcg/ml ascorbic acid + 10 mM bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-2619",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2619,
+      "sentence": "Cells were cultured for 21 days prior to assessment of mineralized matrix production by alizarin red staining ( n = 3 wells per group) as previously described ( McGee-Lawrence et al., 2013 ).",
+      "context_window": "ophosphate + 100 nM dexamethasone). Cells were cultured for 21 days prior to assessment of mineralized matrix production by ali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-2707",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2707,
+      "sentence": "Cells were cultured for 21 days prior to assessment of mineralized matrix production by alizarin red staining ( n = 3 wells per group) as previously described ( McGee-Lawrence et al., 2013 ).",
+      "context_window": "of mineralized matrix production by alizarin red staining ( n = 3 wells per group) as previously described ( McGee-Lawrence e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-3002",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3002,
+      "sentence": "Parallel cultures were harvested after 7 days of growth for semi-quantitative PCR-based analysis of gene expression ( n = 3 wells per group; males only due to limitations in the number of cells obtained for female mice).",
+      "context_window": "TN, United States). Parallel cultures were harvested after 7 days of growth for semi-quantitative PCR-based analysis of gene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-3081",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3081,
+      "sentence": "Parallel cultures were harvested after 7 days of growth for semi-quantitative PCR-based analysis of gene expression ( n = 3 wells per group; males only due to limitations in the number of cells obtained for female mice).",
+      "context_window": "r semi-quantitative PCR-based analysis of gene expression ( n = 3 wells per group; males only due to limitations in the numbe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-4175",
+      "claim_type": "unit_value",
+      "raw_text": "24 month",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 4175,
+      "sentence": "An additional cohort of 24 month old male and female wildtype C57BL/6J mice was obtained from the NIA aged rodent colony ( n = 5 per sex).",
+      "context_window": "navitoclax (or vehicle) in vitro . An additional cohort of 24 month old male and female wildtype C57BL/6J mice was obtained fro",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-4274",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4274,
+      "sentence": "An additional cohort of 24 month old male and female wildtype C57BL/6J mice was obtained from the NIA aged rodent colony ( n = 5 per sex).",
+      "context_window": "57BL/6J mice was obtained from the NIA aged rodent colony ( n = 5 per sex). In addition, for follow-up studies on TUNEL stain",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-4381",
+      "claim_type": "unit_value",
+      "raw_text": "27 months",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4381,
+      "sentence": "In addition, for follow-up studies on TUNEL staining, a group of old female wildtype mice (27 months of age, n = 5) was culled from an in-house breeding colony [wildtype Osx1-Cre-negative Hdac3 fl/fl mice ( McGee-Lawrence et al., 2016 , 2018 )].",
+      "context_window": "ies on TUNEL staining, a group of old female wildtype mice (27 months of age, n = 5) was culled from an in-house breeding colony",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-4399",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4399,
+      "sentence": "In addition, for follow-up studies on TUNEL staining, a group of old female wildtype mice (27 months of age, n = 5) was culled from an in-house breeding colony [wildtype Osx1-Cre-negative Hdac3 fl/fl mice ( McGee-Lawrence et al., 2016 , 2018 )].",
+      "context_window": "ing, a group of old female wildtype mice (27 months of age, n = 5) was culled from an in-house breeding colony [wildtype Osx1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-5027",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5027,
+      "sentence": "Bone marrow stromal cells were seeded into 12 well plates (4 million cells per well) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic), or osteogenic cell culture medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without dexamethasone.",
+      "context_window": "es (4 million cells per well) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic), or osteogenic cell cultur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-5037",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5037,
+      "sentence": "Bone marrow stromal cells were seeded into 12 well plates (4 million cells per well) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic), or osteogenic cell culture medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without dexamethasone.",
+      "context_window": "ion cells per well) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic), or osteogenic cell culture medium",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-5112",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5112,
+      "sentence": "Bone marrow stromal cells were seeded into 12 well plates (4 million cells per well) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic), or osteogenic cell culture medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without dexamethasone.",
+      "context_window": "ntimycotic), or osteogenic cell culture medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 ug/mL ascorbic acid +",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-5122",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5122,
+      "sentence": "Bone marrow stromal cells were seeded into 12 well plates (4 million cells per well) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic), or osteogenic cell culture medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without dexamethasone.",
+      "context_window": "), or osteogenic cell culture medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic + 50 ug/mL ascorbic acid + 10 mM bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-6069",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6069,
+      "sentence": "Cells were grown for 21 days to promote colony formation as measured by crystal violet staining, or to promote formation of a mineralized extracellular matrix detectable by alizarin red staining ( McGee-Lawrence et al., 2016 ).",
+      "context_window": "the impact of navitoclax on the cells. Cells were grown for 21 days to promote colony formation as measured by crystal violet s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-6433",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6433,
+      "sentence": "At the conclusion of studies, cells were fixed in 10% formalin and stained with crystal violet or 2% alizarin red, as described ( McGee-Lawrence et al., 2013 , 2016 ).",
+      "context_window": "periment. At the conclusion of studies, cells were fixed in 10% formalin and stained with crystal violet or 2% alizarin red",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-6481",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6481,
+      "sentence": "At the conclusion of studies, cells were fixed in 10% formalin and stained with crystal violet or 2% alizarin red, as described ( McGee-Lawrence et al., 2013 , 2016 ).",
+      "context_window": "re fixed in 10% formalin and stained with crystal violet or 2% alizarin red, as described ( McGee-Lawrence et al., 2013 ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-6711",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6711,
+      "sentence": "The areal fraction of each well covered in crystal violet or alizarin red-stained calcified matrix was quantified with image analysis software (Bioquant Osteo; n = 3 wells per condition).",
+      "context_window": "as quantified with image analysis software (Bioquant Osteo; n = 3 wells per condition). Bone marrow stromal cells were seede",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-6781",
+      "claim_type": "unit_value",
+      "raw_text": "100 mm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6781,
+      "sentence": "Bone marrow stromal cells were seeded in 100 mm dishes (70 million cells per dish) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic) or osteogenic culture medium (growth medium + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without 100 nM dexamethasone and cultured for 10 days, after which cells were trypsinized, resuspended, and seeded into 12-well plates (100,000 cells per well).",
+      "context_window": "s per condition). Bone marrow stromal cells were seeded in 100 mm dishes (70 million cells per dish) in growth medium (alpha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-6853",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6853,
+      "sentence": "Bone marrow stromal cells were seeded in 100 mm dishes (70 million cells per dish) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic) or osteogenic culture medium (growth medium + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without 100 nM dexamethasone and cultured for 10 days, after which cells were trypsinized, resuspended, and seeded into 12-well plates (100,000 cells per well).",
+      "context_window": "s (70 million cells per dish) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic) or osteogenic culture medi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-6863",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6863,
+      "sentence": "Bone marrow stromal cells were seeded in 100 mm dishes (70 million cells per dish) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic) or osteogenic culture medium (growth medium + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without 100 nM dexamethasone and cultured for 10 days, after which cells were trypsinized, resuspended, and seeded into 12-well plates (100,000 cells per well).",
+      "context_window": "ion cells per dish) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic) or osteogenic culture medium (growt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-7044",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7044,
+      "sentence": "Bone marrow stromal cells were seeded in 100 mm dishes (70 million cells per dish) in growth medium (alpha MEM + 20% FBS + 1% antibiotic/antimycotic) or osteogenic culture medium (growth medium + 50 ug/mL ascorbic acid + 10 mM beta glycerophosphate) with or without 100 nM dexamethasone and cultured for 10 days, after which cells were trypsinized, resuspended, and seeded into 12-well plates (100,000 cells per well).",
+      "context_window": "hate) with or without 100 nM dexamethasone and cultured for 10 days, after which cells were trypsinized, resuspended, and seede",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-7263",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7263,
+      "sentence": "After overnight attachment, culture medium was changed to include 5 \u03bcM navitoclax or vehicle (DMSO) for 5 days.",
+      "context_window": "as changed to include 5 \u03bcM navitoclax or vehicle (DMSO) for 5 days. Cells were fixed in 10% formalin and stained to detect sen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-7291",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7291,
+      "sentence": "Cells were fixed in 10% formalin and stained to detect senescence-associated beta galactosidase activity with a commercial kit (Cell Signaling Technology Senescence \u03b2-Galactosidase Staining Kit #9860) as per the manufacturer\u2019s protocol to identify senescent cells (blue staining).",
+      "context_window": "avitoclax or vehicle (DMSO) for 5 days. Cells were fixed in 10% formalin and stained to detect senescence-associated beta g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-7799",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7799,
+      "sentence": "Cells were imaged with a digital camera (Jenoptik) and inverted phase contrast microscope (Olympus IX-70), and the percentage of senescent cells normalized to total cell number for each condition was quantified from six random images per well and n = 6 wells per condition using image analysis software (Bioquant Osteo).",
+      "context_window": "ondition was quantified from six random images per well and n = 6 wells per condition using image analysis software (Bioquant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-8115",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8115,
+      "sentence": "After overnight attachment, culture medium was changed to include 5 \u03bcM navitoclax or vehicle (DMSO) for 5 days; a \u201cno treatment\u201d control (with no vehicle or navitoclax) was also included for calculation of relative cytotoxicity.",
+      "context_window": "as changed to include 5 \u03bcM navitoclax or vehicle (DMSO) for 5 days; a \u201cno treatment\u201d control (with no vehicle or navitoclax) w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-8853",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8853,
+      "sentence": "After overnight attachment, culture medium was changed to include 5 \u03bcM navitoclax or vehicle (DMSO) for either 24 h or 5 days.",
+      "context_window": "nclude 5 \u03bcM navitoclax or vehicle (DMSO) for either 24 h or 5 days. DNA damage was assessed via in situ TUNEL staining as prev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-9000",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9000,
+      "sentence": "Briefly, cells were fixed with 4% paraformaldehyde, lysed with PBS containing 0.1% TritonX-100 and 0.1% sodium citrate, and stained with an in situ TUNEL detection kit (Roche #11 767 305 001, #11 767 291 910).",
+      "context_window": "Gee-Lawrence et al., 2013 ). Briefly, cells were fixed with 4% paraformaldehyde, lysed with PBS containing 0.1% TritonX-10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-9047",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9047,
+      "sentence": "Briefly, cells were fixed with 4% paraformaldehyde, lysed with PBS containing 0.1% TritonX-100 and 0.1% sodium citrate, and stained with an in situ TUNEL detection kit (Roche #11 767 305 001, #11 767 291 910).",
+      "context_window": "e fixed with 4% paraformaldehyde, lysed with PBS containing 0.1% TritonX-100 and 0.1% sodium citrate, and stained with an in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-9068",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9068,
+      "sentence": "Briefly, cells were fixed with 4% paraformaldehyde, lysed with PBS containing 0.1% TritonX-100 and 0.1% sodium citrate, and stained with an in situ TUNEL detection kit (Roche #11 767 305 001, #11 767 291 910).",
+      "context_window": "ormaldehyde, lysed with PBS containing 0.1% TritonX-100 and 0.1% sodium citrate, and stained with an in situ TUNEL detection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-9447",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9447,
+      "sentence": "The percentage of apoptotic (TUNEL+ nucleus) cells, normalized to total cell number, for each condition was quantified from n = 3 random images per coverslip and n = 2 coverslips per condition using image analysis software (Bioquant Osteo).",
+      "context_window": "o total cell number, for each condition was quantified from n = 3 random images per coverslip and n = 2 coverslips per condit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-n-9485",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9485,
+      "sentence": "The percentage of apoptotic (TUNEL+ nucleus) cells, normalized to total cell number, for each condition was quantified from n = 3 random images per coverslip and n = 2 coverslips per condition using image analysis software (Bioquant Osteo).",
+      "context_window": "n was quantified from n = 3 random images per coverslip and n = 2 coverslips per condition using image analysis software (Bio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-p-10061",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10061,
+      "sentence": "A significance of p < 0.05 was used for all comparisons.",
+      "context_window": "n significant interactions were detected. A significance of p < 0.05 was used for all comparisons.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-172",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 172,
+      "sentence": "Surprisingly, 2 weeks of in vivo administration of navitoclax did not improve, and instead significantly decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males) ( Figure 1A ).",
+      "context_window": "bone mass in aged mice ( Farr et al., 2017 ). Surprisingly, 2 weeks of in vivo administration of navitoclax did not improve, an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-336",
+      "claim_type": "percentage",
+      "raw_text": "60.1%",
+      "numeric_values": [
+        60.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 336,
+      "sentence": "Surprisingly, 2 weeks of in vivo administration of navitoclax did not improve, and instead significantly decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males) ( Figure 1A ).",
+      "context_window": "becular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males) ( Figure 1A ). BMSC-derived osteobla",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-352",
+      "claim_type": "percentage",
+      "raw_text": "45.6%",
+      "numeric_values": [
+        45.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 352,
+      "sentence": "Surprisingly, 2 weeks of in vivo administration of navitoclax did not improve, and instead significantly decreased trabecular bone volume fraction in aged female and male mice (-60.1% females, -45.6% males) ( Figure 1A ).",
+      "context_window": "ume fraction in aged female and male mice (-60.1% females, -45.6% males) ( Figure 1A ). BMSC-derived osteoblasts from the nav",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-503",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 503,
+      "sentence": "BMSC-derived osteoblasts from the navitoclax treated mice were impaired in their ability to produce a mineralized matrix (-88% females, -83% males), although pairwise comparison differences in females did not achieve statistical significance, likely because mineralized matrix was substantially lower overall in the BMSC cultures from females as compared to males ( Figures 1B,C ).",
+      "context_window": "impaired in their ability to produce a mineralized matrix (-88% females, -83% males), although pairwise comparison differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-517",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 517,
+      "sentence": "BMSC-derived osteoblasts from the navitoclax treated mice were impaired in their ability to produce a mineralized matrix (-88% females, -83% males), although pairwise comparison differences in females did not achieve statistical significance, likely because mineralized matrix was substantially lower overall in the BMSC cultures from females as compared to males ( Figures 1B,C ).",
+      "context_window": "eir ability to produce a mineralized matrix (-88% females, -83% males), although pairwise comparison differences in females",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-918",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 918,
+      "sentence": "BMSC-derived osteoblasts from the male navitoclax-treated mice demonstrated significantly lower expression levels of the osteoprogenitor gene Osterix/Sp7 (-63%), consistent with an impaired osteogenic phenotype ( Figure 1D ).",
+      "context_window": "expression levels of the osteoprogenitor gene Osterix/Sp7 (-63%), consistent with an impaired osteogenic phenotype ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1325",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1325,
+      "sentence": "Navitoclax administration caused trabecular bone loss and impaired osteoprogenitor differentiation. (A) Navitoclax (50 mg/kg body mass, once daily) was administered to 24 month-old male and female mice via oral gavage for 2 weeks.",
+      "context_window": "d impaired osteoprogenitor differentiation. (A) Navitoclax (50 mg/kg body mass, once daily) was administered to 24 month-old",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1377",
+      "claim_type": "unit_value",
+      "raw_text": "24 month",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 1377,
+      "sentence": "Navitoclax administration caused trabecular bone loss and impaired osteoprogenitor differentiation. (A) Navitoclax (50 mg/kg body mass, once daily) was administered to 24 month-old male and female mice via oral gavage for 2 weeks.",
+      "context_window": "toclax (50 mg/kg body mass, once daily) was administered to 24 month-old male and female mice via oral gavage for 2 weeks. Trabe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1431",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1431,
+      "sentence": "Navitoclax administration caused trabecular bone loss and impaired osteoprogenitor differentiation. (A) Navitoclax (50 mg/kg body mass, once daily) was administered to 24 month-old male and female mice via oral gavage for 2 weeks.",
+      "context_window": "ed to 24 month-old male and female mice via oral gavage for 2 weeks. Trabecular bone volume fraction, measured histologically i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1689",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1689,
+      "sentence": "Trabecular bone volume fraction, measured histologically in the proximal tibia, was significantly decreased by navitoclax treatment. (B,C) Primary BMSC from the mice (A) were harvested at sacrifice and subjected to osteogenic culture conditions for 21 days.",
+      "context_window": "acrifice and subjected to osteogenic culture conditions for 21 days. Cells from navitoclax-treated mice demonstrated reduced pr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1846",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1846,
+      "sentence": "Cells from navitoclax-treated mice demonstrated reduced production of calcified matrix (C) . (D) BMSC were cultured under osteogenic conditions for 7 days; cells from navitoclax-treated mice demonstrated reduced expression of the osteoprogenitor gene Osterix/Sp7. (E,F) Frontal sections of the tibia from each mouse were stained with an in situ TUNEL detection kit to quantify apoptosis in the bone marrow; TUNEL+ cells were identified by green staining and normalized to tissue area.",
+      "context_window": "C) . (D) BMSC were cultured under osteogenic conditions for 7 days; cells from navitoclax-treated mice demonstrated reduced ex",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-p-2865",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2865,
+      "sentence": "A Tukey-Kramer HSD post hoc multiple comparisons test was performed when significant interactions were detected; bars with different superscript letters are significantly ( p < 0.05) different from one another.",
+      "context_window": "bars with different superscript letters are significantly ( p < 0.05) different from one another. To test the direct effects of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-3237",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3237,
+      "sentence": "The senolytic effects of navitoclax were confirmed, as navitoclax generally reduced senescent cell burden, detected by the presence of SA-\u03b2 gal staining, in BMSC and osteogenic cultures from both male (-49 to -73%) and female (-30 to -77%) cells ( Figure 2 ).",
+      "context_window": "ng, in BMSC and osteogenic cultures from both male (-49 to -73%) and female (-30 to -77%) cells ( Figure 2 ). However, desp",
+      "claim_role": "effect",
+      "endpoint": "senescent cell burden",
+      "arm": "senolytic",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-3262",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3262,
+      "sentence": "The senolytic effects of navitoclax were confirmed, as navitoclax generally reduced senescent cell burden, detected by the presence of SA-\u03b2 gal staining, in BMSC and osteogenic cultures from both male (-49 to -73%) and female (-30 to -77%) cells ( Figure 2 ).",
+      "context_window": "c cultures from both male (-49 to -73%) and female (-30 to -77%) cells ( Figure 2 ). However, despite reducing senescent ce",
+      "claim_role": "effect",
+      "endpoint": "senescent cell burden",
+      "arm": "senolytic",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-3419",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3419,
+      "sentence": "However, despite reducing senescent cell burden, BMSC from aged mice treated with navitoclax demonstrated a significant reduction (-89% female, -70% male) in colony formation as measured by crystal violet staining ( Figures 3A,B ).",
+      "context_window": "ated with navitoclax demonstrated a significant reduction (-89% female, -70% male) in colony formation as measured by cryst",
+      "claim_role": "dose",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-3432",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3432,
+      "sentence": "However, despite reducing senescent cell burden, BMSC from aged mice treated with navitoclax demonstrated a significant reduction (-89% female, -70% male) in colony formation as measured by crystal violet staining ( Figures 3A,B ).",
+      "context_window": "itoclax demonstrated a significant reduction (-89% female, -70% male) in colony formation as measured by crystal violet sta",
+      "claim_role": "dose",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-4184",
+      "claim_type": "unit_value",
+      "raw_text": "24 month",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 4184,
+      "sentence": "Primary BMSC were harvested from 24 month old male and female mice and treated with navitoclax (5 \u03bcM) or vehicle (DMSO) for 5 days in BMSC growth medium (A,B) , osteogenic medium (C,D) , or osteogenic medium with 100 nM dexamethasone (E,F) .",
+      "context_window": "C and osteogenic cultures. Primary BMSC were harvested from 24 month old male and female mice and treated with navitoclax (5 \u03bcM)",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-4275",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4275,
+      "sentence": "Primary BMSC were harvested from 24 month old male and female mice and treated with navitoclax (5 \u03bcM) or vehicle (DMSO) for 5 days in BMSC growth medium (A,B) , osteogenic medium (C,D) , or osteogenic medium with 100 nM dexamethasone (E,F) .",
+      "context_window": "ce and treated with navitoclax (5 \u03bcM) or vehicle (DMSO) for 5 days in BMSC growth medium (A,B) , osteogenic medium (C,D) , or",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-4910",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4910,
+      "sentence": "Primary BMSC were treated with navitoclax (5 \u03bcM) or vehicle (DMSO) for 21 days in BMSC growth medium (A,B) , osteogenic medium (C,D) , or osteogenic medium with 100 nM dexamethasone (E,F) .",
+      "context_window": "C were treated with navitoclax (5 \u03bcM) or vehicle (DMSO) for 21 days in BMSC growth medium (A,B) , osteogenic medium (C,D) , or",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-5136",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5136,
+      "sentence": "Colony growth and matrix production were quantified as the fractional area of the well with staining after 21 days.",
+      "context_window": "fied as the fractional area of the well with staining after 21 days. Representative wells for each condition are shown in (A,C,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-6205",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6205,
+      "sentence": "With regards to TUNEL staining, unfortunately, after BMSC and BMSC-derived osteoblasts were cultured on glass coverslips for 5 days in the presence of each treatment of interest, we detected no appreciable TUNEL staining in the cultures (data not shown).",
+      "context_window": "C-derived osteoblasts were cultured on glass coverslips for 5 days in the presence of each treatment of interest, we detected",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-6633",
+      "claim_type": "percentage",
+      "raw_text": "117.8%",
+      "numeric_values": [
+        117.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6633,
+      "sentence": "These studies revealed that 24 h of navitoclax treatment significantly increased the fraction of TUNEL+ cells, indicative of apoptosis, in both BMSC (+117.8%) and osteogenic (+106.8%) cultures ( Figure 5 ).",
+      "context_window": "on of TUNEL+ cells, indicative of apoptosis, in both BMSC (+117.8%) and osteogenic (+106.8%) cultures ( Figure 5 ). Navitocla",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-pct-6658",
+      "claim_type": "percentage",
+      "raw_text": "106.8%",
+      "numeric_values": [
+        106.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6658,
+      "sentence": "These studies revealed that 24 h of navitoclax treatment significantly increased the fraction of TUNEL+ cells, indicative of apoptosis, in both BMSC (+117.8%) and osteogenic (+106.8%) cultures ( Figure 5 ).",
+      "context_window": "ative of apoptosis, in both BMSC (+117.8%) and osteogenic (+106.8%) cultures ( Figure 5 ). Navitoclax has cytotoxic effects i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-7379",
+      "claim_type": "unit_value",
+      "raw_text": "27 months",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7379,
+      "sentence": "Primary BMSC from aged female wildtype mice (27 months old) were treated with navitoclax (5 \u03bcM) or vehicle (DMSO) for 24 h in BMSC growth medium or osteogenic medium.",
+      "context_window": "enic cultures. Primary BMSC from aged female wildtype mice (27 months old) were treated with navitoclax (5 \u03bcM) or vehicle (DMSO)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7252306_the_senolytic_drug_navitoclax_abt_263_causes_trabecular_bone-u-1457",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1457,
+      "sentence": "Surprisingly, the opposite effect was observed in vivo ; aged (24-month-old) male and female mice treated with navitoclax for 2 weeks developed trabecular bone loss in the proximal tibia attributable at least in part to impaired osteoprogenitor function.",
+      "context_window": "month-old) male and female mice treated with navitoclax for 2 weeks developed trabecular bone loss in the proximal tibia attrib",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_impact_of_combination_of_clopidogrel_with_aspirin_on_postope",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_impact_of_combination_of_clopidogrel_with_aspirin_on_postope-u-324",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 324,
+      "sentence": "Although the maintenance of aspirin until surgery does not affect postoperative bleeding after coronary artery bypass graft (CABG) surgery, the latter may be dramatically increased when clopidogrel is continued over a period of 5 days preoperatively.",
+      "context_window": "ly increased when clopidogrel is continued over a period of 5 days preoperatively. Methods and results: This prospective obser",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_impact_of_combination_of_clopidogrel_with_aspirin_on_postope-u-613",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 613,
+      "sentence": "Postoperative bleeding and blood transfusion requirements will be compared (non inferiority)between patients pretreated during a period of 5 days prior surgery by either aspirin alone or combined with clopidogrel.",
+      "context_window": "inferiority)between patients pretreated during a period of 5 days prior surgery by either aspirin alone or combined with clop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_impact_of_combination_of_clopidogrel_with_aspirin_on_postope-pct-930",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 930,
+      "sentence": "In concusion, this study has to to test the hypothesis that with tranexamic acid also, bleeding in the aspirin + clopidogrel group is not 25% more important than in the aspirin alone group after CABG surgery, according to the previous study using aprotinin.",
+      "context_window": "id also, bleeding in the aspirin + clopidogrel group is not 25% more important than in the aspirin alone group after CABG s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

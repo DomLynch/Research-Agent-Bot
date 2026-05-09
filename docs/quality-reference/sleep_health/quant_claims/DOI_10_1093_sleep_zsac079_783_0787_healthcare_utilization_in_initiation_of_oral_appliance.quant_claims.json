@@ -1,0 +1,334 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance",
+  "doi": "10.1093/sleep/zsac079.783",
+  "extracted_at": "2026-05-08T20:07:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "mean_sd": 16
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-pct-1300",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1300,
+      "sentence": "Contractual amounts for CPT codes were averaged to estimate cost.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>5172 patients, 374 received OA (7.2%).",
+      "context_window": "esults</jats:title> <jats:p>5172 patients, 374 received OA (7.2%). Prior to initiation, OA therapy utilized more visits on a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1381",
+      "claim_type": "mean_sd",
+      "raw_text": "4.5\u00b11.7",
+      "numeric_values": [
+        4.5,
+        1.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1381,
+      "sentence": "Prior to initiation, OA therapy utilized more visits on average than PAP (4.5\u00b11.7(\u00b1SD) vs 3.5\u00b11.9, p&lt;0.0001).",
+      "context_window": "ation, OA therapy utilized more visits on average than PAP (4.5\u00b11.7(\u00b1SD) vs 3.5\u00b11.9, p&lt;0.0001). Following initiation, OA the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1397",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5\u00b11.9",
+      "numeric_values": [
+        3.5,
+        1.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "Prior to initiation, OA therapy utilized more visits on average than PAP (4.5\u00b11.7(\u00b1SD) vs 3.5\u00b11.9, p&lt;0.0001).",
+      "context_window": "y utilized more visits on average than PAP (4.5\u00b11.7(\u00b1SD) vs 3.5\u00b11.9, p&lt;0.0001). Following initiation, OA therapy utilized fe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1485",
+      "claim_type": "mean_sd",
+      "raw_text": "4.1\u00b13.9",
+      "numeric_values": [
+        4.1,
+        3.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1485,
+      "sentence": "Following initiation, OA therapy utilized fewer visits than PAP (4.1\u00b13.9 vs 5.5\u00b14.6, p&lt;0.0001).",
+      "context_window": "wing initiation, OA therapy utilized fewer visits than PAP (4.1\u00b13.9 vs 5.5\u00b14.6, p&lt;0.0001). Specialized provider visits, i.e.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1496",
+      "claim_type": "mean_sd",
+      "raw_text": "5.5\u00b14.6",
+      "numeric_values": [
+        5.5,
+        4.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1496,
+      "sentence": "Following initiation, OA therapy utilized fewer visits than PAP (4.1\u00b13.9 vs 5.5\u00b14.6, p&lt;0.0001).",
+      "context_window": "tion, OA therapy utilized fewer visits than PAP (4.1\u00b13.9 vs 5.5\u00b14.6, p&lt;0.0001). Specialized provider visits, i.e. dentist fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1649",
+      "claim_type": "mean_sd",
+      "raw_text": "1.4\u00b10.8",
+      "numeric_values": [
+        1.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1649,
+      "sentence": "Specialized provider visits, i.e. dentist for OA, were lower compared to RPSGT for PAP therapy, both before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001).",
+      "context_window": "to RPSGT for PAP therapy, both before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1660",
+      "claim_type": "mean_sd",
+      "raw_text": "2.0\u00b11.4",
+      "numeric_values": [
+        2.0,
+        1.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1660,
+      "sentence": "Specialized provider visits, i.e. dentist for OA, were lower compared to RPSGT for PAP therapy, both before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001).",
+      "context_window": "r PAP therapy, both before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001). Furthe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1676",
+      "claim_type": "mean_sd",
+      "raw_text": "1.9\u00b11.2",
+      "numeric_values": [
+        1.9,
+        1.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1676,
+      "sentence": "Specialized provider visits, i.e. dentist for OA, were lower compared to RPSGT for PAP therapy, both before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001).",
+      "context_window": "oth before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001). Further, prior to init",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1687",
+      "claim_type": "mean_sd",
+      "raw_text": "2.6\u00b11.8",
+      "numeric_values": [
+        2.6,
+        1.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1687,
+      "sentence": "Specialized provider visits, i.e. dentist for OA, were lower compared to RPSGT for PAP therapy, both before and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001).",
+      "context_window": "and after initiation (1.4\u00b10.8 vs 2.0\u00b11.4 before, 1.9\u00b11.2 vs 2.6\u00b11.8 after, both p&lt;0.0001). Further, prior to initiation, Phy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1822",
+      "claim_type": "mean_sd",
+      "raw_text": "1.4\u00b10.8",
+      "numeric_values": [
+        1.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1822,
+      "sentence": "Further, prior to initiation, Physician and PA utilization was similar between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057).",
+      "context_window": "nd PA utilization was similar between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1833",
+      "claim_type": "mean_sd",
+      "raw_text": "1.5\u00b11.0",
+      "numeric_values": [
+        1.5,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1833,
+      "sentence": "Further, prior to initiation, Physician and PA utilization was similar between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057).",
+      "context_window": "zation was similar between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057). However",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1852",
+      "claim_type": "mean_sd",
+      "raw_text": "1.1\u00b10.8",
+      "numeric_values": [
+        1.1,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1852,
+      "sentence": "Further, prior to initiation, Physician and PA utilization was similar between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057).",
+      "context_window": "between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057). However, following initiat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1863",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2\u00b10.8",
+      "numeric_values": [
+        1.2,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1863,
+      "sentence": "Further, prior to initiation, Physician and PA utilization was similar between OA and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057).",
+      "context_window": "and PAP therapies (1.4\u00b10.8 vs 1.5\u00b11.0 Physician, 1.1\u00b10.8 vs 1.2\u00b10.8 PA, both p&gt;0.057). However, following initiation, OA the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1977",
+      "claim_type": "mean_sd",
+      "raw_text": "1.7\u00b11.1",
+      "numeric_values": [
+        1.7,
+        1.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1977,
+      "sentence": "However, following initiation, OA therapy utilized fewer Physician visits than PAP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&gt;0.5).",
+      "context_window": "ation, OA therapy utilized fewer Physician visits than PAP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-1988",
+      "claim_type": "mean_sd",
+      "raw_text": "2.1\u00b11.7",
+      "numeric_values": [
+        2.1,
+        1.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1988,
+      "sentence": "However, following initiation, OA therapy utilized fewer Physician visits than PAP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&gt;0.5).",
+      "context_window": "herapy utilized fewer Physician visits than PAP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-2033",
+      "claim_type": "mean_sd",
+      "raw_text": "1.9\u00b11.5",
+      "numeric_values": [
+        1.9,
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2033,
+      "sentence": "However, following initiation, OA therapy utilized fewer Physician visits than PAP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&gt;0.5).",
+      "context_window": "AP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&gt;0.5). Together, with OA dental visits esti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_783_0787_healthcare_utilization_in_initiation_of_oral_appliance-msd-2044",
+      "claim_type": "mean_sd",
+      "raw_text": "2.1\u00b11.4",
+      "numeric_values": [
+        2.1,
+        1.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2044,
+      "sentence": "However, following initiation, OA therapy utilized fewer Physician visits than PAP (1.7\u00b11.1 vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&gt;0.5).",
+      "context_window": "vs 2.1\u00b11.7, p&lt;0.0001) but similar PA visits (1.9\u00b11.5 vs 2.1\u00b11.4, p&gt;0.5). Together, with OA dental visits estimated to be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

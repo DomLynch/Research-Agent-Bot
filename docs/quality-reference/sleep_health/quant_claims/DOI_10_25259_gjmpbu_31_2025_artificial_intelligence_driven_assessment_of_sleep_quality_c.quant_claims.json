@@ -1,0 +1,49 @@
+{
+  "paper_id": "DOI_10_25259_gjmpbu_31_2025_artificial_intelligence_driven_assessment_of_sleep_quality_c",
+  "doi": "10.25259/gjmpbu_31_2025",
+  "extracted_at": "2026-05-08T20:05:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_25259_gjmpbu_31_2025_artificial_intelligence_driven_assessment_of_sleep_quality_c-msd-1356",
+      "claim_type": "mean_sd",
+      "raw_text": "10.65 \u00b1 2.30",
+      "numeric_values": [
+        10.65,
+        2.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "The first is the traditional PSQI tool, and the second is an AI-generated sleep quality assessment tool for undergraduate medical students, structured and designed by Chat-GPT, which utilizes the same seven domains as the PSQI.</jats:p> </jats:sec> <jats:sec id=\"st3\"> <jats:title>Results:</jats:title> <jats:p>The current study found out that the mean score of the AI-generated assessment (10.65 \u00b1 2.30) was lower than the mean PSQI score (11.94 \u00b1 2.45).",
+      "context_window": "und out that the mean score of the AI-generated assessment (10.65 \u00b1 2.30) was lower than the mean PSQI score (11.94 \u00b1 2.45). In addi",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_25259_gjmpbu_31_2025_artificial_intelligence_driven_assessment_of_sleep_quality_c-msd-1406",
+      "claim_type": "mean_sd",
+      "raw_text": "11.94 \u00b1 2.45",
+      "numeric_values": [
+        11.94,
+        2.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1406,
+      "sentence": "The first is the traditional PSQI tool, and the second is an AI-generated sleep quality assessment tool for undergraduate medical students, structured and designed by Chat-GPT, which utilizes the same seven domains as the PSQI.</jats:p> </jats:sec> <jats:sec id=\"st3\"> <jats:title>Results:</jats:title> <jats:p>The current study found out that the mean score of the AI-generated assessment (10.65 \u00b1 2.30) was lower than the mean PSQI score (11.94 \u00b1 2.45).",
+      "context_window": "sessment (10.65 \u00b1 2.30) was lower than the mean PSQI score (11.94 \u00b1 2.45). In addition, a slight agreement was found between these t",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

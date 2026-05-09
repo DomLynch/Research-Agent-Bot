@@ -1,0 +1,245 @@
+{
+  "cases": [
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "2d3c632c8cb2a3bf11a9652eb4025a17be907e0404ebeb7f4618f6f3c64956a4",
+        "model": "offline-fixture",
+        "patch_id": "P02",
+        "rationale": "exact deletion patch matches fail-closed removal of unsafe text",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P02",
+      "passed": true
+    },
+    {
+      "actual": "APPLY",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "APPLY",
+        "fail_closed": false,
+        "input_hash": "a415602f5356158b265b10777194c6e0cae56aa03edeceaf9e6a314b4d02ec09",
+        "model": "offline-fixture",
+        "patch_id": "P02",
+        "rationale": "exact deletion patch matches fail-closed removal of unsafe text",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "APPLY",
+      "fail_closed": false,
+      "id": "synthesis-urolithin_a-v06-2026-05-08T14-37-21Z:P02",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "b26c44be1aebee11a6bab00d21c69ad31683dfc52db2b5dc2088a8a6ffebbca1",
+        "model": "offline-fixture",
+        "patch_id": "P08",
+        "rationale": "patch would publish an untraced citation token",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P08",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.9,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "65694d55f827b777a2af363d3470eddbf2fc0d75baabcbb7cfa2c9614f48919f",
+        "model": "offline-fixture",
+        "patch_id": "P09",
+        "rationale": "patch would publish an untraced citation token",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.9,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-ENDGAME-2026-05-05T20-30-00Z:P09",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.82,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "53181af2a7a449c4cfce9966c91a8b84f80068c44406f06f36aa2189371f6294",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "ambiguous replacement target; reject patch rather than escalate",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.82,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P01",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.82,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "7e5790db34fe9012f26ee482a155292bffd80ea4b50aef20b59325aca3632958",
+        "model": "offline-fixture",
+        "patch_id": "P05",
+        "rationale": "ambiguous replacement target; reject patch rather than escalate",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.82,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-creatine-v06-Q14VALID-2026-05-06T12-19-00Z:P05",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.7,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "1978ba8433910ccf4ada214b03f209d02ad44fb85f207541737fff354ec953af",
+        "model": "offline-fixture",
+        "patch_id": "P05",
+        "rationale": "semantic claim judgment lacks deterministic proof",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-FINAL-2026-05-05T21-15-00Z:P05",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.7,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "1c466f8c6b066e51232ed1634c0293c0b0932ffaa974b752033568f01ccd9629",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "semantic claim judgment lacks deterministic proof",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-aaa-real-2026-05-03T16-00-40Z:P01",
+      "passed": true
+    },
+    {
+      "actual": "ESCALATE",
+      "arbitration_log_entry": {
+        "confidence": 0.7,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "ESCALATE",
+        "fail_closed": false,
+        "input_hash": "53c3205a9b0fd31b3c381c45070e5cf843310f69cfe27f01ba198cdcf77e24d1",
+        "model": "offline-fixture",
+        "patch_id": "P03",
+        "rationale": "semantic claim judgment lacks deterministic proof",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.7,
+      "expected": "ESCALATE",
+      "fail_closed": false,
+      "id": "synthesis-rapamycin-v06-PATH2RICHFIX3-2026-05-08TCLASSIFIER:P03",
+      "passed": true
+    },
+    {
+      "actual": "REJECT",
+      "arbitration_log_entry": {
+        "confidence": 0.82,
+        "created_at": "2026-05-08T00:00:00+00:00",
+        "decision": "REJECT",
+        "fail_closed": false,
+        "input_hash": "ebc51ba8d465d88ff7c4d59f5038c82c6476e6bb7b6de780a9a5bd1af73a26c8",
+        "model": "offline-fixture",
+        "patch_id": "P01",
+        "rationale": "ambiguous replacement target; reject patch rather than escalate",
+        "schema_version": "arbitration_log.v1"
+      },
+      "confidence": 0.82,
+      "expected": "REJECT",
+      "fail_closed": false,
+      "id": "synthesis-metformin-v06-phd-2026-05-03T16-58-57Z:P01",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "actual_distribution": {
+      "APPLY": 2,
+      "ESCALATE": 3,
+      "REJECT": 5
+    },
+    "agreement_rate": 1.0,
+    "by_expected": {
+      "APPLY": {
+        "agreed": 2,
+        "agreement_rate": 1.0,
+        "total": 2
+      },
+      "ESCALATE": {
+        "agreed": 3,
+        "agreement_rate": 1.0,
+        "total": 3
+      },
+      "REJECT": {
+        "agreed": 5,
+        "agreement_rate": 1.0,
+        "total": 5
+      }
+    },
+    "confusion_matrix": {
+      "APPLY": {
+        "APPLY": 2,
+        "ESCALATE": 0,
+        "REJECT": 0
+      },
+      "ESCALATE": {
+        "APPLY": 0,
+        "ESCALATE": 3,
+        "REJECT": 0
+      },
+      "REJECT": {
+        "APPLY": 0,
+        "ESCALATE": 0,
+        "REJECT": 5
+      }
+    },
+    "escalate_count": 3,
+    "expected_distribution": {
+      "APPLY": 2,
+      "ESCALATE": 3,
+      "REJECT": 5
+    },
+    "fail_closed_count": 0
+  },
+  "passed": 10,
+  "total": 10
+}

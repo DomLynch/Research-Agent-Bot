@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1152_japplphysiol_00494_2005_effects_of_nasal_continuous_positive_airway_pressure_and_oxy",
+  "doi": "10.1152/japplphysiol.00494.2005",
+  "extracted_at": "2026-05-08T20:07:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1152_japplphysiol_00494_2005_effects_of_nasal_continuous_positive_airway_pressure_and_oxy-u-586",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 586,
+      "sentence": "NE clearance and release rates, circulating NE levels, urinary NE excretion, and blood pressure and heart rate were determined before and after 14 days of CPAP, placebo CPAP (CPAP administered at ineffective pressure), or oxygen supplementation.",
+      "context_window": "od pressure and heart rate were determined before and after 14 days of CPAP, placebo CPAP (CPAP administered at ineffective pre",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_japplphysiol_00494_2005_effects_of_nasal_continuous_positive_airway_pressure_and_oxy-p-827",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 827,
+      "sentence": "CPAP led to a significant increase in NE clearance (P < or = 0.01), as well as decreases in plasma NE levels (P < or = 0.018) and daytime (P < 0.001) and nighttime (P < 0.05) NE excretion.",
+      "context_window": "decreases in plasma NE levels (P < or = 0.018) and daytime (P < 0.001) and nighttime (P < 0.05) NE excretion. NE release rate was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_japplphysiol_00494_2005_effects_of_nasal_continuous_positive_airway_pressure_and_oxy-p-853",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "CPAP led to a significant increase in NE clearance (P < or = 0.01), as well as decreases in plasma NE levels (P < or = 0.018) and daytime (P < 0.001) and nighttime (P < 0.05) NE excretion.",
+      "context_window": "els (P < or = 0.018) and daytime (P < 0.001) and nighttime (P < 0.05) NE excretion. NE release rate was unchanged with treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_japplphysiol_00494_2005_effects_of_nasal_continuous_positive_airway_pressure_and_oxy-p-1265",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1265,
+      "sentence": "Posttreatment systolic blood pressure was best predicted by pretreatment systolic blood pressure and posttreatment NE clearance and release rate (P < 0.01).",
+      "context_window": "d pressure and posttreatment NE clearance and release rate (P < 0.01). The findings indicate that one of the mechanisms through",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

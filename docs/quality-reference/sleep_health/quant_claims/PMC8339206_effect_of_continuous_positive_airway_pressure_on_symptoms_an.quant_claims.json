@@ -1,0 +1,1764 @@
+{
+  "paper_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an",
+  "doi": "10.3389/fpsyg.2021.691495",
+  "extracted_at": "2026-05-08T20:06:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 30,
+    "percentage": 34,
+    "p_value": 24,
+    "mean_sd": 2,
+    "sample_size": 6,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-484",
+      "claim_type": "unit_value",
+      "raw_text": "54.9 years",
+      "numeric_values": [
+        54.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 484,
+      "sentence": "The sample included 442 patients diagnosed with OSA [mean age 54.9 years (SD = 12.1), 74.4% males] who started treatment with CPAP at a university hospital.",
+      "context_window": "e sample included 442 patients diagnosed with OSA [mean age 54.9 years (SD = 12.1), 74.4% males] who started treatment with CPAP a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-508",
+      "claim_type": "percentage",
+      "raw_text": "74.4%",
+      "numeric_values": [
+        74.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 508,
+      "sentence": "The sample included 442 patients diagnosed with OSA [mean age 54.9 years (SD = 12.1), 74.4% males] who started treatment with CPAP at a university hospital.",
+      "context_window": "tients diagnosed with OSA [mean age 54.9 years (SD = 12.1), 74.4% males] who started treatment with CPAP at a university hosp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-801",
+      "claim_type": "unit_value",
+      "raw_text": "19.9 weeks",
+      "numeric_values": [
+        19.9
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 801,
+      "sentence": "Insomnia was assessed prior to CPAP treatment (baseline) and at follow-up after a median of 19.9 weeks (range 6-52 weeks) with the Bergen Insomnia Scale (BIS).",
+      "context_window": "PAP treatment (baseline) and at follow-up after a median of 19.9 weeks (range 6-52 weeks) with the Bergen Insomnia Scale (BIS). CP",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-821",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 821,
+      "sentence": "Insomnia was assessed prior to CPAP treatment (baseline) and at follow-up after a median of 19.9 weeks (range 6-52 weeks) with the Bergen Insomnia Scale (BIS).",
+      "context_window": "ine) and at follow-up after a median of 19.9 weeks (range 6-52 weeks) with the Bergen Insomnia Scale (BIS). CPAP adherence was d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-1112",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "There was a significant decrease in BIS scores from baseline (mean = 18.8, SD = 9.8) to follow-up (mean = 12.9, SD = 9.9), p < 0.001.",
+      "context_window": "ean = 18.8, SD = 9.8) to follow-up (mean = 12.9, SD = 9.9), p < 0.001. Cohen\u2019s d (0.65) indicated a moderate effect size. The red",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-1272",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1272,
+      "sentence": "The reduction in BIS scores was depending on CPAP adherence (interaction effect F (1,440) = 12.4, p < 0.001), with larger reduction in the adherent group than in the non-adherent group.",
+      "context_window": "ing on CPAP adherence (interaction effect F (1,440) = 12.4, p < 0.001), with larger reduction in the adherent group than in the n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1440",
+      "claim_type": "percentage",
+      "raw_text": "51.1%",
+      "numeric_values": [
+        51.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "The proportion of patients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001).",
+      "context_window": "tients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001). Overall, t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1461",
+      "claim_type": "percentage",
+      "raw_text": "33.0%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1461,
+      "sentence": "The proportion of patients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001).",
+      "context_window": "nsomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001). Overall, there was a significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-1482",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1482,
+      "sentence": "The proportion of patients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001).",
+      "context_window": "ntly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001). Overall, there was a significant reduction in insomnia s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-133",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 133,
+      "sentence": "OSA affects at least 8-10% whereas insomnia affects about 7-16% of the population, depending on the diagnostic criteria used ( Ohayon and Reynolds, 2009 ; Hrubos-Str\u00f8m et al., 2011 ; Peppard et al., 2013 ; Pallesen et al., 2014 ).",
+      "context_window": "disorders in the general population. OSA affects at least 8-10% whereas insomnia affects about 7-16% of the population, dep",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-170",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 170,
+      "sentence": "OSA affects at least 8-10% whereas insomnia affects about 7-16% of the population, depending on the diagnostic criteria used ( Ohayon and Reynolds, 2009 ; Hrubos-Str\u00f8m et al., 2011 ; Peppard et al., 2013 ; Pallesen et al., 2014 ).",
+      "context_window": "OSA affects at least 8-10% whereas insomnia affects about 7-16% of the population, depending on the diagnostic criteria use",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-876",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 876,
+      "sentence": "Chronic insomnia is characterized by self-reported difficulties initiating sleep, maintaining sleep, and/or early morning awakenings from sleep, which are associated with daytime impairment for a period of 3 months or more ( American Psychiatric Association, 2013 ).",
+      "context_window": "hich are associated with daytime impairment for a period of 3 months or more ( American Psychiatric Association, 2013 ). Comorb",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1238",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1238,
+      "sentence": "Among insomnia patients, 29-67% fulfill the diagnostic criteria for OSA, whereas 39-58% of OSA patients report insomnia symptoms ( Krakow et al., 2001 ; Luyster et al., 2010 ; Bj\u00f6rnsd\u00f3ttir et al., 2012 ; Bjorvatn et al., 2015 ).",
+      "context_window": "nal ( Sweetman et al., 2019a ). Among insomnia patients, 29-67% fulfill the diagnostic criteria for OSA, whereas 39-58% of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1294",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1294,
+      "sentence": "Among insomnia patients, 29-67% fulfill the diagnostic criteria for OSA, whereas 39-58% of OSA patients report insomnia symptoms ( Krakow et al., 2001 ; Luyster et al., 2010 ; Bj\u00f6rnsd\u00f3ttir et al., 2012 ; Bjorvatn et al., 2015 ).",
+      "context_window": "29-67% fulfill the diagnostic criteria for OSA, whereas 39-58% of OSA patients report insomnia symptoms ( Krakow et al., 2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-393",
+      "claim_type": "percentage",
+      "raw_text": "74.4%",
+      "numeric_values": [
+        74.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 393,
+      "sentence": "In total, 329 (74.4%) of the patients were males and 113 (25.6%) were females.",
+      "context_window": "n of Norway receive CPAP from this hospital. In total, 329 (74.4%) of the patients were males and 113 (25.6%) were females. M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-436",
+      "claim_type": "percentage",
+      "raw_text": "25.6%",
+      "numeric_values": [
+        25.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 436,
+      "sentence": "In total, 329 (74.4%) of the patients were males and 113 (25.6%) were females.",
+      "context_window": ". In total, 329 (74.4%) of the patients were males and 113 (25.6%) were females. Mean age was 54.9 \u00b1 12.1 years (range 21-82)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-msd-470",
+      "claim_type": "mean_sd",
+      "raw_text": "54.9 \u00b1 12.1",
+      "numeric_values": [
+        54.9,
+        12.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 470,
+      "sentence": "Mean age was 54.9 \u00b1 12.1 years (range 21-82).",
+      "context_window": "ients were males and 113 (25.6%) were females. Mean age was 54.9 \u00b1 12.1 years (range 21-82). In this longitudinal study, inclusion",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-477",
+      "claim_type": "unit_value",
+      "raw_text": "12.1 years",
+      "numeric_values": [
+        12.1
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 477,
+      "sentence": "Mean age was 54.9 \u00b1 12.1 years (range 21-82).",
+      "context_window": "ere males and 113 (25.6%) were females. Mean age was 54.9 \u00b1 12.1 years (range 21-82). In this longitudinal study, inclusion crite",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-727",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 727,
+      "sentence": "Exclusion criteria were attending follow-up in less than 1 month or more than 1 year after baseline, missing one or more items on Bergen Insomnia Scale (BIS) at baseline and/or follow-up, and missing AHI and/or adherence data measured from the CPAP machine at follow-up ( Figure 1 ).",
+      "context_window": "p. Exclusion criteria were attending follow-up in less than 1 month or more than 1 year after baseline, missing one or more ite",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 748,
+      "sentence": "Exclusion criteria were attending follow-up in less than 1 month or more than 1 year after baseline, missing one or more items on Bergen Insomnia Scale (BIS) at baseline and/or follow-up, and missing AHI and/or adherence data measured from the CPAP machine at follow-up ( Figure 1 ).",
+      "context_window": "were attending follow-up in less than 1 month or more than 1 year after baseline, missing one or more items on Bergen Insomni",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1391",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1391,
+      "sentence": "Thus, apneas were defined as a reduction of 90% or more of baseline nasal airflow with a duration of at least 10 s.",
+      "context_window": "07 ) were used. Thus, apneas were defined as a reduction of 90% or more of baseline nasal airflow with a duration of at lea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1518",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1518,
+      "sentence": "Hypopneas were defined as a nasal flow reduction of 30-90% of baseline, lasting at least 10 s accompanied by an oxygen desaturation of \u2265 4%.",
+      "context_window": "0 s. Hypopneas were defined as a nasal flow reduction of 30-90% of baseline, lasting at least 10 s accompanied by an oxygen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1600",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1600,
+      "sentence": "Hypopneas were defined as a nasal flow reduction of 30-90% of baseline, lasting at least 10 s accompanied by an oxygen desaturation of \u2265 4%.",
+      "context_window": "ng at least 10 s accompanied by an oxygen desaturation of \u2265 4%. The severity of obstructive sleep apnea was classified in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-msd-1965",
+      "claim_type": "mean_sd",
+      "raw_text": "30.1 \u00b1 21.1",
+      "numeric_values": [
+        30.1,
+        21.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1965,
+      "sentence": "Mean baseline AHI in the current sample was 30.1 \u00b1 21.1 (range 5.0-135.2).",
+      "context_window": "to be present. Mean baseline AHI in the current sample was 30.1 \u00b1 21.1 (range 5.0-135.2). Adherence was categorized at follow-up",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-2473",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2473,
+      "sentence": "Prior to CPAP treatment and at follow-up, which was scheduled after about 3 months, the patients completed a questionnaire including questions about age, sex, marital status, and diagnosed hypertension, diabetes mellitus, angina pectoris, myocardial infarction, or stroke.",
+      "context_window": "treatment and at follow-up, which was scheduled after about 3 months, the patients completed a questionnaire including questions",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-3877",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3877,
+      "sentence": "The items are scored along an eight-point scale indicating the number of days per week (0-7 days) for which a specific insomnia symptom is experienced.",
+      "context_window": "eight-point scale indicating the number of days per week (0-7 days) for which a specific insomnia symptom is experienced. Unti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-4060",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4060,
+      "sentence": "Until 2018, BIS addressed symptoms during the past month, whereas from 2018 the scale addressed symptoms during the past 3 months, in line with the updated criteria for chronic insomnia (DSM-5).",
+      "context_window": "reas from 2018 the scale addressed symptoms during the past 3 months, in line with the updated criteria for chronic insomnia (DS",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-4203",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4203,
+      "sentence": "A total of 73 among the 442 patients answered BIS regarding the past 3 months.",
+      "context_window": "f 73 among the 442 patients answered BIS regarding the past 3 months. The first four items refer to sleep onset (sleep latency e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-4831",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4831,
+      "sentence": "Chronic insomnia, according to the updated diagnostic criteria in International Classification of Sleep Disorders, version 3, and the Diagnostic and Statistical Manual of Mental Disorders, 5th edition, was defined as scoring \u2265 3 days per week on at least one of the first three items as well as \u2265 3 days per week on at least one of the two latter items ( American Psychiatric Association, 2013 ; American Academy of Sleep Medicine, 2014 ).",
+      "context_window": "of Mental Disorders, 5th edition, was defined as scoring \u2265 3 days per week on at least one of the first three items as well a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-4901",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4901,
+      "sentence": "Chronic insomnia, according to the updated diagnostic criteria in International Classification of Sleep Disorders, version 3, and the Diagnostic and Statistical Manual of Mental Disorders, 5th edition, was defined as scoring \u2265 3 days per week on at least one of the first three items as well as \u2265 3 days per week on at least one of the two latter items ( American Psychiatric Association, 2013 ; American Academy of Sleep Medicine, 2014 ).",
+      "context_window": "week on at least one of the first three items as well as \u2265 3 days per week on at least one of the two latter items ( American",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-5641",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5641,
+      "sentence": "Those who scored \u2265 3 days on one of the first three questions of BIS (sleep onset latency, wake after sleep onset, and early morning awakening) in addition to \u2265 3 days on question five and/or six (daytime impairment and dissatisfaction with sleep) were classified as having sleep onset, sleep maintenance and early morning awakening insomnia subtypes, respectively.",
+      "context_window": "ssessed according to the DSM-5 criteria. Those who scored \u2265 3 days on one of the first three questions of BIS (sleep onset lat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-5783",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5783,
+      "sentence": "Those who scored \u2265 3 days on one of the first three questions of BIS (sleep onset latency, wake after sleep onset, and early morning awakening) in addition to \u2265 3 days on question five and/or six (daytime impairment and dissatisfaction with sleep) were classified as having sleep onset, sleep maintenance and early morning awakening insomnia subtypes, respectively.",
+      "context_window": "sleep onset, and early morning awakening) in addition to \u2265 3 days on question five and/or six (daytime impairment and dissati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-7022",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7022,
+      "sentence": "Mixed between-within ANOVAs were also conducted in order to explore the impact of follow-up time (< 20 vs \u2265 20 weeks) on BIS scores (baseline vs follow-up).",
+      "context_window": "in order to explore the impact of follow-up time (< 20 vs \u2265 20 weeks) on BIS scores (baseline vs follow-up). We used median spli",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-105",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 105,
+      "sentence": "Although follow-up was scheduled at around 3 months, the actual time for follow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks).",
+      "context_window": "ted in Table 1 . Although follow-up was scheduled at around 3 months, the actual time for follow-up ranged from 6.0-51.9 weeks (",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-161",
+      "claim_type": "unit_value",
+      "raw_text": "51.9 weeks",
+      "numeric_values": [
+        51.9
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 161,
+      "sentence": "Although follow-up was scheduled at around 3 months, the actual time for follow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks).",
+      "context_window": "und 3 months, the actual time for follow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks). This was mostly due t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-178",
+      "claim_type": "unit_value",
+      "raw_text": "23.1 weeks",
+      "numeric_values": [
+        23.1
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 178,
+      "sentence": "Although follow-up was scheduled at around 3 months, the actual time for follow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks).",
+      "context_window": "actual time for follow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks). This was mostly due to patients re-sch",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-197",
+      "claim_type": "unit_value",
+      "raw_text": "19.9 weeks",
+      "numeric_values": [
+        19.9
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 197,
+      "sentence": "Although follow-up was scheduled at around 3 months, the actual time for follow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks).",
+      "context_window": "llow-up ranged from 6.0-51.9 weeks (mean 23.1 weeks, median 19.9 weeks). This was mostly due to patients re-scheduling their appoi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-681",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 681,
+      "sentence": "Notably, two items from BIS were reported on average more than 4 days per week at baseline: non-restorative sleep and dissatisfaction with sleep.",
+      "context_window": "ably, two items from BIS were reported on average more than 4 days per week at baseline: non-restorative sleep and dissatisfac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-812",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 812,
+      "sentence": "There was a significant reduction in all items, p < 0.001, with a small effect size for the first three items and a moderate effect size for the last three items.",
+      "context_window": "with sleep. There was a significant reduction in all items, p < 0.001, with a small effect size for the first three items and a m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1154",
+      "claim_type": "percentage",
+      "raw_text": "26.5%",
+      "numeric_values": [
+        26.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1154,
+      "sentence": "Among the 442 patients with OSA, 26.5% of the patients had sleep onset insomnia, 33.3% had sleep maintenance insomnia, and 8.1% had early morning awakenings.",
+      "context_window": "een the insomnia subtypes. Among the 442 patients with OSA, 26.5% of the patients had sleep onset insomnia, 33.3% had sleep m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1202",
+      "claim_type": "percentage",
+      "raw_text": "33.3%",
+      "numeric_values": [
+        33.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1202,
+      "sentence": "Among the 442 patients with OSA, 26.5% of the patients had sleep onset insomnia, 33.3% had sleep maintenance insomnia, and 8.1% had early morning awakenings.",
+      "context_window": "s with OSA, 26.5% of the patients had sleep onset insomnia, 33.3% had sleep maintenance insomnia, and 8.1% had early morning",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1244",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1244,
+      "sentence": "Among the 442 patients with OSA, 26.5% of the patients had sleep onset insomnia, 33.3% had sleep maintenance insomnia, and 8.1% had early morning awakenings.",
+      "context_window": "p onset insomnia, 33.3% had sleep maintenance insomnia, and 8.1% had early morning awakenings. 13.3% had an overlap of all t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1279",
+      "claim_type": "percentage",
+      "raw_text": "13.3%",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1279,
+      "sentence": "13.3% had an overlap of all three insomnia subtypes, whereas isolated sleep onset insomnia, sleep maintenance insomnia and early morning awakenings presented in 6.8, 3.4, and 8.1% of the patients, respectively.",
+      "context_window": "aintenance insomnia, and 8.1% had early morning awakenings. 13.3% had an overlap of all three insomnia subtypes, whereas isol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1454",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1454,
+      "sentence": "13.3% had an overlap of all three insomnia subtypes, whereas isolated sleep onset insomnia, sleep maintenance insomnia and early morning awakenings presented in 6.8, 3.4, and 8.1% of the patients, respectively.",
+      "context_window": "nia and early morning awakenings presented in 6.8, 3.4, and 8.1% of the patients, respectively. Prevalence and overlapping",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-n-1586",
+      "claim_type": "sample_size",
+      "raw_text": "n = 442",
+      "numeric_values": [
+        442.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1586,
+      "sentence": "Prevalence and overlapping between insomnia subtypes at baseline among all patients with OSA ( n = 442).",
+      "context_window": "insomnia subtypes at baseline among all patients with OSA ( n = 442). There was an overall decrease in insomnia symptoms as me",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-1697",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1697,
+      "sentence": "There was an overall decrease in insomnia symptoms as measured with BIS from baseline to follow-up, p < 0.001 ( Table 3 ).",
+      "context_window": "a symptoms as measured with BIS from baseline to follow-up, p < 0.001 ( Table 3 ). Cohen\u2019s d for repeated measures indicated a mo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-2046",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2046,
+      "sentence": "In terms of CPAP adherence, there was a significant group \u00d7 time interaction effect [ F (1,440) = 12.4, p < 0.001], indicating that the reduction in BIS scores was larger in the adherent group than in the non-adherent group ( Table 3 ).",
+      "context_window": "ificant group \u00d7 time interaction effect [ F (1,440) = 12.4, p < 0.001], indicating that the reduction in BIS scores was larger in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-2314",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2314,
+      "sentence": "Subsequent analyses of simple effects revealed a significant reduction in BIS scores for the adherent group with a large effect size ( p < 0.001, Cohen\u2019s d = 0.80), whereas the reduction in BIS scores for the non-adherent group was significant with a small to moderate effect size ( p < 0.001, Cohen\u2019s d = 0.43).",
+      "context_window": "IS scores for the adherent group with a large effect size ( p < 0.001, Cohen\u2019s d = 0.80), whereas the reduction in BIS scores for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-2462",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2462,
+      "sentence": "Subsequent analyses of simple effects revealed a significant reduction in BIS scores for the adherent group with a large effect size ( p < 0.001, Cohen\u2019s d = 0.80), whereas the reduction in BIS scores for the non-adherent group was significant with a small to moderate effect size ( p < 0.001, Cohen\u2019s d = 0.43).",
+      "context_window": "roup was significant with a small to moderate effect size ( p < 0.001, Cohen\u2019s d = 0.43). There was a significant main effect of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-2589",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2589,
+      "sentence": "There was a significant main effect of group, with higher BIS scores in the non-adherent group ( p < 0.001) ( Table 3 ).",
+      "context_window": "f group, with higher BIS scores in the non-adherent group ( p < 0.001) ( Table 3 ). When analyzing patients with isolated sleep o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-n-2685",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2685,
+      "sentence": "When analyzing patients with isolated sleep onset insomnia separately ( n = 30), there was a significant decrease in BIS scores from baseline (mean = 20.7, SD = 5.2) to follow-up (mean = 13.9, SD = 8.2), t (29) = 5.07, p < 0.001.",
+      "context_window": "ng patients with isolated sleep onset insomnia separately ( n = 30), there was a significant decrease in BIS scores from basel",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-2832",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2832,
+      "sentence": "When analyzing patients with isolated sleep onset insomnia separately ( n = 30), there was a significant decrease in BIS scores from baseline (mean = 20.7, SD = 5.2) to follow-up (mean = 13.9, SD = 8.2), t (29) = 5.07, p < 0.001.",
+      "context_window": "= 5.2) to follow-up (mean = 13.9, SD = 8.2), t (29) = 5.07, p < 0.001. Cohen\u2019s d (0.93) indicated a large effect size. Compariso",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-3357",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3357,
+      "sentence": "There was a significant group \u00d7 time interaction effect for the BIS score in terms of having chronic insomnia at baseline vs. not insomnia at baseline, F (1,440) = 38.1, p < 0.001 ( Table 4 ).",
+      "context_window": "at baseline vs. not insomnia at baseline, F (1,440) = 38.1, p < 0.001 ( Table 4 ). Scores were significantly reduced in both grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-3492",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3492,
+      "sentence": "Scores were significantly reduced in both groups, with a large effect size in the group with chronic insomnia ( p < 0.001, Cohen\u2019s d = 0.90), and a small to moderate effect size in the group without chronic insomnia ( p < 0.001, Cohen\u2019s d = 0.45).",
+      "context_window": "th a large effect size in the group with chronic insomnia ( p < 0.001, Cohen\u2019s d = 0.90), and a small to moderate effect size in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-3598",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3598,
+      "sentence": "Scores were significantly reduced in both groups, with a large effect size in the group with chronic insomnia ( p < 0.001, Cohen\u2019s d = 0.90), and a small to moderate effect size in the group without chronic insomnia ( p < 0.001, Cohen\u2019s d = 0.45).",
+      "context_window": "oderate effect size in the group without chronic insomnia ( p < 0.001, Cohen\u2019s d = 0.45). In terms of OSA severity, there was a s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-3729",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3729,
+      "sentence": "In terms of OSA severity, there was a significant group \u00d7 time interaction effect [ F (1,440) = 4.1, p = 0.045], indicating that the reduction in BIS scores was larger in the group with severe OSA compared to the group with mild to moderate OSA ( Table 4 ).",
+      "context_window": "nificant group \u00d7 time interaction effect [ F (1,440) = 4.1, p = 0.045], indicating that the reduction in BIS scores was larger in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-4101",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4101,
+      "sentence": "There was a main effect of group, with higher BIS scores in the group with AHI < 30 ( p = 0.003).",
+      "context_window": "group, with higher BIS scores in the group with AHI < 30 ( p = 0.003). In terms of follow-up time (< 20 vs \u2265 20 weeks), there wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-4151",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4151,
+      "sentence": "In terms of follow-up time (< 20 vs \u2265 20 weeks), there was no significant group \u00d7 time interaction effects for BIS, F (1,440) = 1.75, p = 0.186.",
+      "context_window": "HI < 30 ( p = 0.003). In terms of follow-up time (< 20 vs \u2265 20 weeks), there was no significant group \u00d7 time interaction effects",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-4247",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.186",
+      "numeric_values": [
+        0.186
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4247,
+      "sentence": "In terms of follow-up time (< 20 vs \u2265 20 weeks), there was no significant group \u00d7 time interaction effects for BIS, F (1,440) = 1.75, p = 0.186.",
+      "context_window": "group \u00d7 time interaction effects for BIS, F (1,440) = 1.75, p = 0.186. Comparison of BIS scores at baseline and follow-up depend",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-4668",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4668,
+      "sentence": "Furthermore, multiple linear regressions with difference in BIS from baseline to follow-up (continuous parameter) as the dependent variable showed a positive association with CPAP adherence (hours) (B = 0.83, standard error (SE) = 0.19, beta = 0.21, t = 4.37, p < 0.001) when controlling for the influence of sex, age, and OSA severity.",
+      "context_window": "= 0.83, standard error (SE) = 0.19, beta = 0.21, t = 4.37, p < 0.001) when controlling for the influence of sex, age, and OSA se",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-4834",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4834,
+      "sentence": "A negative association was seen with age (B = -0.08, SE = 0.04, beta = -0.10, t = -2.09, p = 0.037).",
+      "context_window": "en with age (B = -0.08, SE = 0.04, beta = -0.10, t = -2.09, p = 0.037). There was no association with sex (B = 1.05, SE = 0.99, b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-4925",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.29",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4925,
+      "sentence": "There was no association with sex (B = 1.05, SE = 0.99, beta = 0.05, t = 1.06, p = 0.29) or OSA severity (B = 0.03, SE = 0.02, beta = 0.06, t = 1.30, p = 0.19).",
+      "context_window": "ation with sex (B = 1.05, SE = 0.99, beta = 0.05, t = 1.06, p = 0.29) or OSA severity (B = 0.03, SE = 0.02, beta = 0.06, t = 1.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-4996",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4996,
+      "sentence": "There was no association with sex (B = 1.05, SE = 0.99, beta = 0.05, t = 1.06, p = 0.29) or OSA severity (B = 0.03, SE = 0.02, beta = 0.06, t = 1.30, p = 0.19).",
+      "context_window": "r OSA severity (B = 0.03, SE = 0.02, beta = 0.06, t = 1.30, p = 0.19). In the logistic regression analysis, we found that higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5170",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5170,
+      "sentence": "In the logistic regression analysis, we found that higher BIS scores at baseline predicted non-adherence to CPAP, B = 0.03, SE = 0.1, wald = 6.14, Exp (\u03b2) = 1.03, 95% CI = 1.01-1.05, p = 0.013.",
+      "context_window": "e to CPAP, B = 0.03, SE = 0.1, wald = 6.14, Exp (\u03b2) = 1.03, 95% CI = 1.01-1.05, p = 0.013. The association remained the sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-5190",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5190,
+      "sentence": "In the logistic regression analysis, we found that higher BIS scores at baseline predicted non-adherence to CPAP, B = 0.03, SE = 0.1, wald = 6.14, Exp (\u03b2) = 1.03, 95% CI = 1.01-1.05, p = 0.013.",
+      "context_window": "SE = 0.1, wald = 6.14, Exp (\u03b2) = 1.03, 95% CI = 1.01-1.05, p = 0.013. The association remained the same when adjusting for sex,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-or-a-5282",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5282,
+      "sentence": "The association remained the same when adjusting for sex, age, and OSA severity (OR = 1.03, 95% CI = 1.01-1.05, p = 0.012).",
+      "context_window": "ned the same when adjusting for sex, age, and OSA severity (OR = 1.03, 95% CI = 1.01-1.05, p = 0.012). The proportion of patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5293",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5293,
+      "sentence": "The association remained the same when adjusting for sex, age, and OSA severity (OR = 1.03, 95% CI = 1.01-1.05, p = 0.012).",
+      "context_window": "e when adjusting for sex, age, and OSA severity (OR = 1.03, 95% CI = 1.01-1.05, p = 0.012). The proportion of patients wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-5313",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5313,
+      "sentence": "The association remained the same when adjusting for sex, age, and OSA severity (OR = 1.03, 95% CI = 1.01-1.05, p = 0.012).",
+      "context_window": "sex, age, and OSA severity (OR = 1.03, 95% CI = 1.01-1.05, p = 0.012). The proportion of patients with chronic insomnia was sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5406",
+      "claim_type": "percentage",
+      "raw_text": "51.1%",
+      "numeric_values": [
+        51.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5406,
+      "sentence": "The proportion of patients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001).",
+      "context_window": "tients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001). A McNemar\u2019s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5427",
+      "claim_type": "percentage",
+      "raw_text": "33.0%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5427,
+      "sentence": "The proportion of patients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001).",
+      "context_window": "nsomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001). A McNemar\u2019s test showed that 31.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-5448",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5448,
+      "sentence": "The proportion of patients with chronic insomnia was significantly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001).",
+      "context_window": "ntly reduced from 51.1% at baseline to 33.0% at follow-up ( p < 0.001). A McNemar\u2019s test showed that 31.2% ( n = 138) changed cat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5489",
+      "claim_type": "percentage",
+      "raw_text": "31.2%",
+      "numeric_values": [
+        31.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5489,
+      "sentence": "A McNemar\u2019s test showed that 31.2% ( n = 138) changed category at follow-up of CPAP treatment.",
+      "context_window": ".0% at follow-up ( p < 0.001). A McNemar\u2019s test showed that 31.2% ( n = 138) changed category at follow-up of CPAP treatment.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-n-5497",
+      "claim_type": "sample_size",
+      "raw_text": "n = 138",
+      "numeric_values": [
+        138.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5497,
+      "sentence": "A McNemar\u2019s test showed that 31.2% ( n = 138) changed category at follow-up of CPAP treatment.",
+      "context_window": "ollow-up ( p < 0.001). A McNemar\u2019s test showed that 31.2% ( n = 138) changed category at follow-up of CPAP treatment. Among the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5601",
+      "claim_type": "percentage",
+      "raw_text": "24.7%",
+      "numeric_values": [
+        24.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5601,
+      "sentence": "Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "context_window": "AP treatment. Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-n-5608",
+      "claim_type": "sample_size",
+      "raw_text": "n = 109",
+      "numeric_values": [
+        109.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5608,
+      "sentence": "Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "context_window": "tment. Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-5722",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5722,
+      "sentence": "Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "context_window": "nsomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-n-5728",
+      "claim_type": "sample_size",
+      "raw_text": "n = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5728,
+      "sentence": "Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "context_window": "a, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-n-5745",
+      "claim_type": "sample_size",
+      "raw_text": "n = 442",
+      "numeric_values": [
+        442.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5745,
+      "sentence": "Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "context_window": "having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-p-5763",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5763,
+      "sentence": "Among these, significantly more participants (24.7%, n = 109) changed from chronic insomnia to not having insomnia, than from not having insomnia to chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "context_window": "chronic insomnia (6.6%, n = 29), \u03c7 2 (1, n = 442) = 45.23, p < 0.001 (two sided).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-687",
+      "claim_type": "percentage",
+      "raw_text": "51.1%",
+      "numeric_values": [
+        51.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 687,
+      "sentence": "As expected, we found a clearly higher prevalence of chronic insomnia (51.1%) at baseline among these patients with OSA, compared to means of 8-20% in the general Norwegian population ( Pallesen et al., 2014 ; Uhlig et al., 2014 ; Bjorvatn et al., 2018b ).",
+      "context_window": ", we found a clearly higher prevalence of chronic insomnia (51.1%) at baseline among these patients with OSA, compared to mea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-760",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 760,
+      "sentence": "As expected, we found a clearly higher prevalence of chronic insomnia (51.1%) at baseline among these patients with OSA, compared to means of 8-20% in the general Norwegian population ( Pallesen et al., 2014 ; Uhlig et al., 2014 ; Bjorvatn et al., 2018b ).",
+      "context_window": "eline among these patients with OSA, compared to means of 8-20% in the general Norwegian population ( Pallesen et al., 2014",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1299",
+      "claim_type": "percentage",
+      "raw_text": "33.3%",
+      "numeric_values": [
+        33.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1299,
+      "sentence": "However, sleep maintenance insomnia was found in 33.3% of the patients compared to 59.4% in a similar Icelandic cohort study, and isolated sleep maintenance insomnia was found in only 3.4 vs.",
+      "context_window": "symptoms. However, sleep maintenance insomnia was found in 33.3% of the patients compared to 59.4% in a similar Icelandic co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1333",
+      "claim_type": "percentage",
+      "raw_text": "59.4%",
+      "numeric_values": [
+        59.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1333,
+      "sentence": "However, sleep maintenance insomnia was found in 33.3% of the patients compared to 59.4% in a similar Icelandic cohort study, and isolated sleep maintenance insomnia was found in only 3.4 vs.",
+      "context_window": "nce insomnia was found in 33.3% of the patients compared to 59.4% in a similar Icelandic cohort study, and isolated sleep mai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-1442",
+      "claim_type": "percentage",
+      "raw_text": "33.0%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1442,
+      "sentence": "33.0% of the patients from Iceland ( Bj\u00f6rnsd\u00f3ttir et al., 2013 ).",
+      "context_window": "olated sleep maintenance insomnia was found in only 3.4 vs. 33.0% of the patients from Iceland ( Bj\u00f6rnsd\u00f3ttir et al., 2013 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-6236",
+      "claim_type": "percentage",
+      "raw_text": "48.2%",
+      "numeric_values": [
+        48.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6236,
+      "sentence": "In the present study, however, 48.2% (109/226) of the patients having chronic insomnia at baseline according to DSM-5 criteria did not have insomnia at follow-up.",
+      "context_window": "rence and insomnia symptoms. In the present study, however, 48.2% (109/226) of the patients having chronic insomnia at baseli",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-6801",
+      "claim_type": "percentage",
+      "raw_text": "51.8%",
+      "numeric_values": [
+        51.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6801,
+      "sentence": "However, 51.8% of the patients with chronic insomnia at baseline had persistent insomnia at follow-up, and if the treatment of OSA does not result in improvement of insomnia symptoms at follow-up, these patients should be recommended CBTi, as several studies have reported that COMISA patients receiving both CBTi and CPAP therapy have significantly greater improvement of global insomnia symptoms after 6 months ( Sweetman et al., 2019b ; Ong et al., 2020a ; Alessi et al., 2021 ).",
+      "context_window": "both insomnia symptoms and prevalence of insomnia. However, 51.8% of the patients with chronic insomnia at baseline had persi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-7196",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 7196,
+      "sentence": "However, 51.8% of the patients with chronic insomnia at baseline had persistent insomnia at follow-up, and if the treatment of OSA does not result in improvement of insomnia symptoms at follow-up, these patients should be recommended CBTi, as several studies have reported that COMISA patients receiving both CBTi and CPAP therapy have significantly greater improvement of global insomnia symptoms after 6 months ( Sweetman et al., 2019b ; Ong et al., 2020a ; Alessi et al., 2021 ).",
+      "context_window": "antly greater improvement of global insomnia symptoms after 6 months ( Sweetman et al., 2019b ; Ong et al., 2020a ; Alessi et al",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-7531",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7531,
+      "sentence": "Although many patients reported improved sleep and less insomnia symptoms after treatment with CPAP, 13.4% (29/216) of the patients who did not have chronic insomnia at baseline fulfilled the diagnostic criteria at follow-up.",
+      "context_window": "sleep and less insomnia symptoms after treatment with CPAP, 13.4% (29/216) of the patients who did not have chronic insomnia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-10499",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 10499,
+      "sentence": "One possible limitation was that the time frame in BIS was changed from complaints during the past month to the past 3 months in 2018, due to the new diagnostic criteria in DSM-5.",
+      "context_window": "s changed from complaints during the past month to the past 3 months in 2018, due to the new diagnostic criteria in DSM-5. Thus,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-10725",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 10725,
+      "sentence": "However, a study from Morin et al. (2009) showed that the risk of still having insomnia after 1 year in patients having insomnia for more than 1 month is 74%.",
+      "context_window": "(2009) showed that the risk of still having insomnia after 1 year in patients having insomnia for more than 1 month is 74%. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-10774",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 10774,
+      "sentence": "However, a study from Morin et al. (2009) showed that the risk of still having insomnia after 1 year in patients having insomnia for more than 1 month is 74%.",
+      "context_window": "mnia after 1 year in patients having insomnia for more than 1 month is 74%. These results suggest that insomnia for most people",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-10785",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10785,
+      "sentence": "However, a study from Morin et al. (2009) showed that the risk of still having insomnia after 1 year in patients having insomnia for more than 1 month is 74%.",
+      "context_window": "1 year in patients having insomnia for more than 1 month is 74%. These results suggest that insomnia for most people is a c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-pct-11098",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 11098,
+      "sentence": "The low percentage of patients with isolated sleep maintenance insomnia (3.4%) did not provide us enough statistical power to conduct separate analyses to compare this insomnia subtype to the sleep onset and early morning awakening insomnia subtypes, as done in previous studies ( Wickwire et al., 2010 ; Bj\u00f6rnsd\u00f3ttir et al., 2013 ).",
+      "context_window": "ntage of patients with isolated sleep maintenance insomnia (3.4%) did not provide us enough statistical power to conduct sep",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-12012",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 12012,
+      "sentence": "Furthermore, although follow-up was scheduled at 3 months, the time interval between baseline and follow-up varied considerably.",
+      "context_window": "imitation. Furthermore, although follow-up was scheduled at 3 months, the time interval between baseline and follow-up varied co",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-12211",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 12211,
+      "sentence": "We excluded patients attending follow-up in less than 1 month and more than 1 year after baseline, and the statistical analyses showed no significant interaction between follow-up time (<20 vs. \u226520 weeks) and decrease in BIS scores.",
+      "context_window": "ment. We excluded patients attending follow-up in less than 1 month and more than 1 year after baseline, and the statistical an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-12233",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 12233,
+      "sentence": "We excluded patients attending follow-up in less than 1 month and more than 1 year after baseline, and the statistical analyses showed no significant interaction between follow-up time (<20 vs. \u226520 weeks) and decrease in BIS scores.",
+      "context_window": "ents attending follow-up in less than 1 month and more than 1 year after baseline, and the statistical analyses showed no sign",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8339206_effect_of_continuous_positive_airway_pressure_on_symptoms_an-u-12352",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 12352,
+      "sentence": "We excluded patients attending follow-up in less than 1 month and more than 1 year after baseline, and the statistical analyses showed no significant interaction between follow-up time (<20 vs. \u226520 weeks) and decrease in BIS scores.",
+      "context_window": "no significant interaction between follow-up time (<20 vs. \u226520 weeks) and decrease in BIS scores. The CPAP device reports an ave",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

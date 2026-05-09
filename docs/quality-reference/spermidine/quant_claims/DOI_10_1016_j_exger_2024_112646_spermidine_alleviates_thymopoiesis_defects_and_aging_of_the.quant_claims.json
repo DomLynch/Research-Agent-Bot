@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1016_j_exger_2024_112646_spermidine_alleviates_thymopoiesis_defects_and_aging_of_the",
+  "doi": "10.1016/j.exger.2024.112646",
+  "extracted_at": "2026-05-08T20:12:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_exger_2024_112646_spermidine_alleviates_thymopoiesis_defects_and_aging_of_the-u-427",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 427,
+      "sentence": "This study investigated the na\u00efve T-cell pool, thymic cellularity, and transcriptome in mice irradiated with 3.8 Gy at 5 weeks of age and treated 13 months later with 30 mM spermidine (SPD), a metabolism regulator.",
+      "context_window": "larity, and transcriptome in mice irradiated with 3.8 Gy at 5 weeks of age and treated 13 months later with 30 mM spermidine (S",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_exger_2024_112646_spermidine_alleviates_thymopoiesis_defects_and_aging_of_the-u-454",
+      "claim_type": "unit_value",
+      "raw_text": "13 months",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 454,
+      "sentence": "This study investigated the na\u00efve T-cell pool, thymic cellularity, and transcriptome in mice irradiated with 3.8 Gy at 5 weeks of age and treated 13 months later with 30 mM spermidine (SPD), a metabolism regulator.",
+      "context_window": "n mice irradiated with 3.8 Gy at 5 weeks of age and treated 13 months later with 30 mM spermidine (SPD), a metabolism regulator.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_exger_2024_112646_spermidine_alleviates_thymopoiesis_defects_and_aging_of_the-u-610",
+      "claim_type": "unit_value",
+      "raw_text": "14 months",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 610,
+      "sentence": "The number of conventional na\u00efve CD4 and CD8 T cells in the peripheral blood decreased 14 months after irradiation whereas the number of virtual memory na\u00efve T cells, which increased with age, further increased by irradiation.",
+      "context_window": "na\u00efve CD4 and CD8 T cells in the peripheral blood decreased 14 months after irradiation whereas the number of virtual memory na\u00efv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

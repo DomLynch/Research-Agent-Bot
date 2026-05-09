@@ -1,0 +1,140 @@
+{
+  "paper_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl",
+  "doi": "10.1161/01.str.0000236560.15735.0f",
+  "extracted_at": "2026-05-08T20:05:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2,
+    "hazard_ratio": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-u-469",
+      "claim_type": "unit_value",
+      "raw_text": "100 years",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 469,
+      "sentence": "To investigate whether sleep apnea represents an independent risk factor in this population, we performed a prospective longitudinal study in a population-based cohort of subjects from 70 to 100 years old.",
+      "context_window": "l study in a population-based cohort of subjects from 70 to 100 years old. METHODS: Within the context of the Vitoria Sleep Proje",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-u-787",
+      "claim_type": "unit_value",
+      "raw_text": "100 years",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 787,
+      "sentence": "METHODS: Within the context of the Vitoria Sleep Project, a population-based study designed to investigate the prevalence of sleep apnea in the population of Vitoria, Spain, we performed a 6-year longitudinal study in a subsample cohort of 394 noninstitutionalized, initially event-free subjects (70 to 100 years old, median 77.28 years, 57.1% males).",
+      "context_window": "noninstitutionalized, initially event-free subjects (70 to 100 years old, median 77.28 years, 57.1% males). Demographic and poly",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-u-809",
+      "claim_type": "unit_value",
+      "raw_text": "77.28 years",
+      "numeric_values": [
+        77.28
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 809,
+      "sentence": "METHODS: Within the context of the Vitoria Sleep Project, a population-based study designed to investigate the prevalence of sleep apnea in the population of Vitoria, Spain, we performed a 6-year longitudinal study in a subsample cohort of 394 noninstitutionalized, initially event-free subjects (70 to 100 years old, median 77.28 years, 57.1% males).",
+      "context_window": "initially event-free subjects (70 to 100 years old, median 77.28 years, 57.1% males). Demographic and polysomnographic data and kn",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-pct-822",
+      "claim_type": "percentage",
+      "raw_text": "57.1%",
+      "numeric_values": [
+        57.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 822,
+      "sentence": "METHODS: Within the context of the Vitoria Sleep Project, a population-based study designed to investigate the prevalence of sleep apnea in the population of Vitoria, Spain, we performed a 6-year longitudinal study in a subsample cohort of 394 noninstitutionalized, initially event-free subjects (70 to 100 years old, median 77.28 years, 57.1% males).",
+      "context_window": "ent-free subjects (70 to 100 years old, median 77.28 years, 57.1% males). Demographic and polysomnographic data and known con",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-hr-l-1549",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio=2.52",
+      "numeric_values": [
+        2.52
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1549,
+      "sentence": "After adjustment for confounding factors, subjects with severe obstructive sleep apnea hypopnea (defined as apnea-hypopnea index >or=30) at baseline had an increased risk of developing a stroke (hazard ratio=2.52, 95% CI=1.04 to 6.01, P=0.04).",
+      "context_window": ") at baseline had an increased risk of developing a stroke (hazard ratio=2.52, 95% CI=1.04 to 6.01, P=0.04). CONCLUSIONS: This study show",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-pct-1568",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1568,
+      "sentence": "After adjustment for confounding factors, subjects with severe obstructive sleep apnea hypopnea (defined as apnea-hypopnea index >or=30) at baseline had an increased risk of developing a stroke (hazard ratio=2.52, 95% CI=1.04 to 6.01, P=0.04).",
+      "context_window": "n increased risk of developing a stroke (hazard ratio=2.52, 95% CI=1.04 to 6.01, P=0.04). CONCLUSIONS: This study shows tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000236560_15735_0f_severe_sleep_apnea_and_risk_of_ischemic_stroke_in_the_elderl-p-1589",
+      "claim_type": "p_value",
+      "raw_text": "P=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1589,
+      "sentence": "After adjustment for confounding factors, subjects with severe obstructive sleep apnea hypopnea (defined as apnea-hypopnea index >or=30) at baseline had an increased risk of developing a stroke (hazard ratio=2.52, 95% CI=1.04 to 6.01, P=0.04).",
+      "context_window": "eveloping a stroke (hazard ratio=2.52, 95% CI=1.04 to 6.01, P=0.04). CONCLUSIONS: This study shows that severe obstructive sle",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

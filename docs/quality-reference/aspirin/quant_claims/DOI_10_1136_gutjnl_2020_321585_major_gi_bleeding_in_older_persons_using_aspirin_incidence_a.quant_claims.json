@@ -1,0 +1,341 @@
+{
+  "paper_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a",
+  "doi": "10.1136/gutjnl-2020-321585",
+  "extracted_at": "2026-05-08T20:06:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 4,
+    "confidence_interval": 2,
+    "p_value": 2,
+    "percentage": 9
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-n-499",
+      "claim_type": "sample_size",
+      "raw_text": "n=19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 499,
+      "sentence": "We calculated the incidence, risk factors and absolute risk using data from a large randomised, controlled trial.</jats:p></jats:sec><jats:sec><jats:title>Design</jats:title><jats:p>Data were extracted from an aspirin versus placebo primary prevention trial conducted throughout 2010-2017 (\u2018ASPirin in Reducing Events in the Elderly (ASPREE)\u2019, n=19 114) in community-dwelling persons aged \u226570 years.",
+      "context_window": "2017 (\u2018ASPirin in Reducing Events in the Elderly (ASPREE)\u2019, n=19 114) in community-dwelling persons aged \u226570 years. Clinical",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "We calculated the incidence, risk factors and absolute risk using data from a large randomised, controlled trial.</jats:p></jats:sec><jats:sec><jats:title>Design</jats:title><jats:p>Data were extracted from an aspirin versus placebo primary prevention trial conducted throughout 2010-2017 (\u2018ASPirin in Reducing Events in the Elderly (ASPREE)\u2019, n=19 114) in community-dwelling persons aged \u226570 years.",
+      "context_window": "ly (ASPREE)\u2019, n=19 114) in community-dwelling persons aged \u226570 years. Clinical characteristics were collected at baseline and an",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-u-883",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 883,
+      "sentence": "The endpoint was major GI bleeding that resulted in transfusion, hospitalisation, surgery or death, adjudicated independently by two physicians blinded to trial arm.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall.",
+      "context_window": "itle>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 i",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-ci-998",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.32 to 2.66",
+      "numeric_values": [
+        1.32,
+        2.66
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 998,
+      "sentence": "The endpoint was major GI bleeding that resulted in transfusion, hospitalisation, surgery or death, adjudicated independently by two physicians blinded to trial arm.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall.",
+      "context_window": "I bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in p",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-p-1019",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1019,
+      "sentence": "The endpoint was major GI bleeding that resulted in transfusion, hospitalisation, surgery or death, adjudicated independently by two physicians blinded to trial arm.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall.",
+      "context_window": "in arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo a",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-ci-1098",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.96 to 1.94",
+      "numeric_values": [
+        0.96,
+        1.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "The endpoint was major GI bleeding that resulted in transfusion, hospitalisation, surgery or death, adjudicated independently by two physicians blinded to trial arm.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall.",
+      "context_window": "er GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall. The",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-p-1119",
+      "claim_type": "p_value",
+      "raw_text": "p=0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1119,
+      "sentence": "The endpoint was major GI bleeding that resulted in transfusion, hospitalisation, surgery or death, adjudicated independently by two physicians blinded to trial arm.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall.",
+      "context_window": "spirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall. There were",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1140",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1140,
+      "sentence": "The endpoint was major GI bleeding that resulted in transfusion, hospitalisation, surgery or death, adjudicated independently by two physicians blinded to trial arm.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Over a median follow-up of 4.7 years (88 389 person years), there were 137 upper GI bleeds (89 in aspirin arm and 48 in placebo arm, HR 1.87, 95% CI 1.32 to 2.66, p<0.01) and 127 lower GI bleeds (73 in aspirin and 54 in placebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall.",
+      "context_window": "ebo arm, HR 1.36, 95% CI 0.96 to 1.94, p=0.08) reflecting a 60% increase in bleeding overall. There were two fatal bleeds i",
+      "claim_role": "duration",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1384",
+      "claim_type": "percentage",
+      "raw_text": "0.25%",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1384,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "sed bleeding risk. The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin an",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1391",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1391,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "eding risk. The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1398",
+      "claim_type": "percentage",
+      "raw_text": "0.16%",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1398,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "isk. The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03%",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1407",
+      "claim_type": "percentage",
+      "raw_text": "0.37%",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1407,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-u-1420",
+      "claim_type": "unit_value",
+      "raw_text": "70 year",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1420,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "ar risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "5.03%",
+      "numeric_values": [
+        5.03
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with add",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1464",
+      "claim_type": "percentage",
+      "raw_text": "2.56%",
+      "numeric_values": [
+        2.56
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1464,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1473",
+      "claim_type": "percentage",
+      "raw_text": "8.73%",
+      "numeric_values": [
+        8.73
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1473,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk fac",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-u-1487",
+      "claim_type": "unit_value",
+      "raw_text": "80 year",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1487,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_gutjnl_2020_321585_major_gi_bleeding_in_older_persons_using_aspirin_incidence_a-pct-1662",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1662,
+      "sentence": "The absolute 5-year risk of bleeding was 0.25% (95% CI 0.16% to 0.37%) for a 70 year old not on aspirin and up to 5.03% (2.56% to 8.73%) for an 80 year old taking aspirin with additional risk factors.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is modest in younger, well individuals.",
+      "context_window": "title><jats:p>Aspirin increases overall GI bleeding risk by 60%; however, the 5-year absolute risk of serious bleeding is m",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

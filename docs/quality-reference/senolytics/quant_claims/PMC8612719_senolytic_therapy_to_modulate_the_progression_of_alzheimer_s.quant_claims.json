@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8612719_senolytic_therapy_to_modulate_the_progression_of_alzheimer_s",
   "doi": "10.14283/jpad.2021.62",
-  "extracted_at": "2026-05-04T12:05:33+00:00",
+  "extracted_at": "2026-05-08T20:01:08+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 17,
@@ -22,9 +22,9 @@
       "context_window": "ysis of cerebrospinal fluid collected at baseline and after 12 weeks of treatment. Further, through a series of secondary outcom",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "dasatinib",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8612719_senolytic_therapy_to_modulate_the_progression_of_alzheimer_s-u-818",
@@ -58,9 +58,9 @@
       "context_window": "other week, which totaled six rounds of treatment spanning 12 weeks ( 29 ). Histopathological analyses revealed 35% lower NFT d",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8612719_senolytic_therapy_to_modulate_the_progression_of_alzheimer_s-pct-6832",
@@ -76,7 +76,7 @@
       "context_window": "anning 12 weeks ( 29 ). Histopathological analyses revealed 35% lower NFT density in senolytic treated mice ( 29 ). Brain M",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -364,7 +364,7 @@
       "context_window": "er, disease-modifying effects were observed with a partial (35%) decrease in NFTs, which was consistent with preclinical st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

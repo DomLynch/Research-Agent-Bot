@@ -1,0 +1,234 @@
+{
+  "paper_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten",
+  "doi": "10.1111/j.1399-6576.2008.01766.x",
+  "extracted_at": "2026-05-08T20:06:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "mean_sd": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-u-564",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 564,
+      "sentence": "We verified the effectiveness of this method in healthy volunteers.</jats:p><jats:p><jats:bold>Methods: </jats:bold> Volunteers with bleeding time prolonged by taking 81 mg of aspirin a day for a period of 1 week were randomly divided into two groups.",
+      "context_window": "ats:bold> Volunteers with bleeding time prolonged by taking 81 mg of aspirin a day for a period of 1 week were randomly divid",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-u-603",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 603,
+      "sentence": "We verified the effectiveness of this method in healthy volunteers.</jats:p><jats:p><jats:bold>Methods: </jats:bold> Volunteers with bleeding time prolonged by taking 81 mg of aspirin a day for a period of 1 week were randomly divided into two groups.",
+      "context_window": "prolonged by taking 81 mg of aspirin a day for a period of 1 week were randomly divided into two groups. The test group of 18",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-u-700",
+      "claim_type": "unit_value",
+      "raw_text": "660 mg",
+      "numeric_values": [
+        660.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 700,
+      "sentence": "The test group of 18 volunteers received a dose of 660 mg of aspirin, while the control group of 16 received placebo.",
+      "context_window": "groups. The test group of 18 volunteers received a dose of 660 mg of aspirin, while the control group of 16 received placebo.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-u-888",
+      "claim_type": "unit_value",
+      "raw_text": "660 mg",
+      "numeric_values": [
+        660.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 888,
+      "sentence": "Bleeding time and maximum platelet activity were then evaluated.</jats:p><jats:p><jats:bold>Results: </jats:bold> Before 660 mg of aspirin or placebo, bleeding time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16).",
+      "context_window": "ed.</jats:p><jats:p><jats:bold>Results: </jats:bold> Before 660 mg of aspirin or placebo, bleeding time was prolonged: in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-msd-973",
+      "claim_type": "mean_sd",
+      "raw_text": "3.1 \u00b1 0.7",
+      "numeric_values": [
+        3.1,
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 973,
+      "sentence": "Bleeding time and maximum platelet activity were then evaluated.</jats:p><jats:p><jats:bold>Results: </jats:bold> Before 660 mg of aspirin or placebo, bleeding time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16).",
+      "context_window": "ebo, bleeding time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-msd-986",
+      "claim_type": "mean_sd",
+      "raw_text": "6.1 \u00b1 1.4",
+      "numeric_values": [
+        6.1,
+        1.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 986,
+      "sentence": "Bleeding time and maximum platelet activity were then evaluated.</jats:p><jats:p><jats:bold>Results: </jats:bold> Before 660 mg of aspirin or placebo, bleeding time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16).",
+      "context_window": "time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in the placebo g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-msd-1065",
+      "claim_type": "mean_sd",
+      "raw_text": "2.9 \u00b1 0.9",
+      "numeric_values": [
+        2.9,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "Bleeding time and maximum platelet activity were then evaluated.</jats:p><jats:p><jats:bold>Results: </jats:bold> Before 660 mg of aspirin or placebo, bleeding time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16).",
+      "context_window": "s:italic>n</jats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16). This pr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-msd-1078",
+      "claim_type": "mean_sd",
+      "raw_text": "6.1 \u00b1 1.5",
+      "numeric_values": [
+        6.1,
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "Bleeding time and maximum platelet activity were then evaluated.</jats:p><jats:p><jats:bold>Results: </jats:bold> Before 660 mg of aspirin or placebo, bleeding time was prolonged: in the aspirin group from 3.1 \u00b1 0.7 to 6.1 \u00b1 1.4 min (<jats:italic>n</jats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16).",
+      "context_window": "ats:italic>=18), and in the placebo group from 2.9 \u00b1 0.9 to 6.1 \u00b1 1.5 min (<jats:italic>n</jats:italic>=16). This prolongation wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-msd-1274",
+      "claim_type": "mean_sd",
+      "raw_text": "4.5 \u00b1 1.3",
+      "numeric_values": [
+        4.5,
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "In the test group, bleeding time was shortened to 4.5 \u00b1 1.3 min (<jats:italic>P</jats:italic><0.01), which is in the normal range, while it remained prolonged in the control group (6.0 \u00b1 1.2 min).",
+      "context_window": "01 level. In the test group, bleeding time was shortened to 4.5 \u00b1 1.3 min (<jats:italic>P</jats:italic><0.01), which is in the no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-msd-1405",
+      "claim_type": "mean_sd",
+      "raw_text": "6.0 \u00b1 1.2",
+      "numeric_values": [
+        6.0,
+        1.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1405,
+      "sentence": "In the test group, bleeding time was shortened to 4.5 \u00b1 1.3 min (<jats:italic>P</jats:italic><0.01), which is in the normal range, while it remained prolonged in the control group (6.0 \u00b1 1.2 min).",
+      "context_window": "al range, while it remained prolonged in the control group (6.0 \u00b1 1.2 min). Platelet activity, on the other hand, was suppressed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-u-1559",
+      "claim_type": "unit_value",
+      "raw_text": "660 mg",
+      "numeric_values": [
+        660.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1559,
+      "sentence": "Platelet activity, on the other hand, was suppressed in both groups.</jats:p><jats:p><jats:bold>Conclusion: </jats:bold> We conclude that 660 mg of aspirin effectively shortens the bleeding time prolonged by daily low\u2010dose (81 mg) aspirin.</jats:p>",
+      "context_window": "jats:p><jats:bold>Conclusion: </jats:bold> We conclude that 660 mg of aspirin effectively shortens the bleeding time prolonged",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1399_6576_2008_01766_x_bleeding_time_prolonged_by_daily_low_dose_aspirin_is_shorten-u-1645",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1645,
+      "sentence": "Platelet activity, on the other hand, was suppressed in both groups.</jats:p><jats:p><jats:bold>Conclusion: </jats:bold> We conclude that 660 mg of aspirin effectively shortens the bleeding time prolonged by daily low\u2010dose (81 mg) aspirin.</jats:p>",
+      "context_window": "ely shortens the bleeding time prolonged by daily low\u2010dose (81 mg) aspirin.</jats:p>",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

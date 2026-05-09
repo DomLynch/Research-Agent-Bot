@@ -1,0 +1,2018 @@
+{
+  "paper_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl",
+  "doi": "10.1136/bmjgast-2020-000453",
+  "extracted_at": "2026-05-08T20:06:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 49,
+    "confidence_interval": 24,
+    "percentage": 35
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-n-389",
+      "claim_type": "sample_size",
+      "raw_text": "n=412",
+      "numeric_values": [
+        412.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 389,
+      "sentence": "We conducted a historical cohort study (2005-2013) of all Danish residents who initiated low-dose aspirin treatment (n=412 202) in a setting without screening for CRC.",
+      "context_window": "Danish residents who initiated low-dose aspirin treatment (n=412 202) in a setting without screening for CRC. Each new aspir",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-n-496",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 496,
+      "sentence": "Each new aspirin user was matched with three non-users (n=1 236 560) by age, sex and region of residence on the date of their matched new user\u2019s first-time aspirin prescription (index date).",
+      "context_window": "RC. Each new aspirin user was matched with three non-users (n=1 236 560) by age, sex and region of residence on the date of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-944",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "The ARs were higher for new users than non-users for LGIB, lower gastrointestinal endoscopy, colorectal polyps and CRC within 3 months after index.",
+      "context_window": "astrointestinal endoscopy, colorectal polyps and CRC within 3 months after index. Comparing new users with non-users, the RRs we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-1021",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 2.40 to 3.24",
+      "numeric_values": [
+        2.4,
+        3.24
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "Comparing new users with non-users, the RRs were 2.79 (95% CI 2.40 to 3.24) for LGIB, 1.73 (95% CI 1.63 to 1.84) for lower gastrointestinal endoscopy, 1.56 (95% CI 1.42 to 1.72) for colorectal polyps and 1.73 (95% CI 1.51 to 1.98) for CRC.",
+      "context_window": "dex. Comparing new users with non-users, the RRs were 2.79 (95% CI 2.40 to 3.24) for LGIB, 1.73 (95% CI 1.63 to 1.84) for lower gastrointes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-1058",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.63 to 1.84",
+      "numeric_values": [
+        1.63,
+        1.84
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1058,
+      "sentence": "Comparing new users with non-users, the RRs were 2.79 (95% CI 2.40 to 3.24) for LGIB, 1.73 (95% CI 1.63 to 1.84) for lower gastrointestinal endoscopy, 1.56 (95% CI 1.42 to 1.72) for colorectal polyps and 1.73 (95% CI 1.51 to 1.98) for CRC.",
+      "context_window": "rs, the RRs were 2.79 (95% CI 2.40 to 3.24) for LGIB, 1.73 (95% CI 1.63 to 1.84) for lower gastrointestinal endoscopy, 1.56 (95% CI 1.42 to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-1123",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.42 to 1.72",
+      "numeric_values": [
+        1.42,
+        1.72
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "Comparing new users with non-users, the RRs were 2.79 (95% CI 2.40 to 3.24) for LGIB, 1.73 (95% CI 1.63 to 1.84) for lower gastrointestinal endoscopy, 1.56 (95% CI 1.42 to 1.72) for colorectal polyps and 1.73 (95% CI 1.51 to 1.98) for CRC.",
+      "context_window": "I 1.63 to 1.84) for lower gastrointestinal endoscopy, 1.56 (95% CI 1.42 to 1.72) for colorectal polyps and 1.73 (95% CI 1.51 to 1.98) for C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-1176",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.51 to 1.98",
+      "numeric_values": [
+        1.51,
+        1.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "Comparing new users with non-users, the RRs were 2.79 (95% CI 2.40 to 3.24) for LGIB, 1.73 (95% CI 1.63 to 1.84) for lower gastrointestinal endoscopy, 1.56 (95% CI 1.42 to 1.72) for colorectal polyps and 1.73 (95% CI 1.51 to 1.98) for CRC.",
+      "context_window": "1.56 (95% CI 1.42 to 1.72) for colorectal polyps and 1.73 (95% CI 1.51 to 1.98) for CRC. The RRs remained elevated for more than 12 months",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-1246",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "The RRs remained elevated for more than 12 months after the index date, with the exception of CRC where the RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date.",
+      "context_window": "1 to 1.98) for CRC. The RRs remained elevated for more than 12 months after the index date, with the exception of CRC where the R",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-1355",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1355,
+      "sentence": "The RRs remained elevated for more than 12 months after the index date, with the exception of CRC where the RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date.",
+      "context_window": "n of CRC where the RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-1373",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83 to 0.98",
+      "numeric_values": [
+        0.83,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1373,
+      "sentence": "The RRs remained elevated for more than 12 months after the index date, with the exception of CRC where the RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date.",
+      "context_window": "RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) follo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-1408",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1408,
+      "sentence": "The RRs remained elevated for more than 12 months after the index date, with the exception of CRC where the RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date.",
+      "context_window": "the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date. T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-1426",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82 to 1.00",
+      "numeric_values": [
+        0.82,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1426,
+      "sentence": "The RRs remained elevated for more than 12 months after the index date, with the exception of CRC where the RRs were slightly decreased during the 3-5 years (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date.",
+      "context_window": "0.90, 95% CI 0.83 to 0.98) and more than 5 years (RR 0.91, 95% CI 0.82 to 1.00) following the index date. These findings indicate that as",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-2107",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2107,
+      "sentence": "New users were defined as individuals who redeemed a first-time prescription for low-dose aspirin (in strengths of 75, 100 or 150 mg) recorded in the DNHSPD during the 2005-2013 period.",
+      "context_window": "escription for low-dose aspirin (in strengths of 75, 100 or 150 mg) recorded in the DNHSPD during the 2005-2013 period. Drug c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-2422",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2422,
+      "sentence": "While low-dose aspirin is available over-the-counter in Denmark, approximately 90% of patients who use it on a continuous basis obtain a prescription to reduce costs.",
+      "context_window": "rin is available over-the-counter in Denmark, approximately 90% of patients who use it on a continuous basis obtain a presc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-3239",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3239,
+      "sentence": "Matching criteria were age (\u00b15 years), sex and region of residence in Denmark on the index date.",
+      "context_window": "n (defined as the index date). Matching criteria were age (\u00b15 years), sex and region of residence in Denmark on the index date.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-3549",
+      "claim_type": "percentage",
+      "raw_text": "13.1%",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3549,
+      "sentence": "In total, 161 865 (13.1%) subjects from the matched cohort redeemed an aspirin prescription after the index date.",
+      "context_window": "ted and they joined the new user cohort. In total, 161 865 (13.1%) subjects from the matched cohort redeemed an aspirin presc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-3983",
+      "claim_type": "percentage",
+      "raw_text": "1.2%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3983,
+      "sentence": "We excluded 4836 (1.2%) new users with a diagnosis of LGIB, 57 195 (13.9%) new users recorded as having had a lower gastrointestinal endoscopy and 16 787 (4.1%) new users who received a diagnosis of colorectal polyps before the index date.",
+      "context_window": "ls with LGIB before the index date, etc). We excluded 4836 (1.2%) new users with a diagnosis of LGIB, 57 195 (13.9%) new use",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-4033",
+      "claim_type": "percentage",
+      "raw_text": "13.9%",
+      "numeric_values": [
+        13.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4033,
+      "sentence": "We excluded 4836 (1.2%) new users with a diagnosis of LGIB, 57 195 (13.9%) new users recorded as having had a lower gastrointestinal endoscopy and 16 787 (4.1%) new users who received a diagnosis of colorectal polyps before the index date.",
+      "context_window": "ded 4836 (1.2%) new users with a diagnosis of LGIB, 57 195 (13.9%) new users recorded as having had a lower gastrointestinal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-4120",
+      "claim_type": "percentage",
+      "raw_text": "4.1%",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4120,
+      "sentence": "We excluded 4836 (1.2%) new users with a diagnosis of LGIB, 57 195 (13.9%) new users recorded as having had a lower gastrointestinal endoscopy and 16 787 (4.1%) new users who received a diagnosis of colorectal polyps before the index date.",
+      "context_window": "s having had a lower gastrointestinal endoscopy and 16 787 (4.1%) new users who received a diagnosis of colorectal polyps be",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-6041",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 6041,
+      "sentence": "We obtained information on the following prescription redemptions recorded in the DNHSPD within 1 year prior to the index date: non-aspirin non-steroidal anti-inflammatory drugs (NSAIDs), high-dose aspirin, postmenopausal hormone replacement therapy, statins, corticosteroids, insulin and analogues, oral antidiabetic drugs, other antithrombotic treatments, calcium channel blockers and ACE inhibitors (drug codes are listed in online supplementary table 1 ).",
+      "context_window": "wing prescription redemptions recorded in the DNHSPD within 1 year prior to the index date: non-aspirin non-steroidal anti-inf",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7252",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 7252,
+      "sentence": "We calculated the absolute risk of the outcomes as the cumulative incidence proportion during 3 months, 3\u226412 months and more than 12 months after the index date in new users and non-users, respectively.",
+      "context_window": "the outcomes as the cumulative incidence proportion during 3 months, 3\u226412 months and more than 12 months after the index date i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7264",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 7264,
+      "sentence": "We calculated the absolute risk of the outcomes as the cumulative incidence proportion during 3 months, 3\u226412 months and more than 12 months after the index date in new users and non-users, respectively.",
+      "context_window": "s as the cumulative incidence proportion during 3 months, 3\u226412 months and more than 12 months after the index date in new users a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7288",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 7288,
+      "sentence": "We calculated the absolute risk of the outcomes as the cumulative incidence proportion during 3 months, 3\u226412 months and more than 12 months after the index date in new users and non-users, respectively.",
+      "context_window": "dence proportion during 3 months, 3\u226412 months and more than 12 months after the index date in new users and non-users, respective",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-7563",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7563,
+      "sentence": "Using bootstrapping, we calculated 95% CIs associated with the RDs.",
+      "context_window": "w users minus non-users. Using bootstrapping, we calculated 95% CIs associated with the RDs. We used Cox proportional haza",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-7681",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7681,
+      "sentence": "We used Cox proportional hazards regression analysis to compute HRs with associated 95% CIs as an estimate of the relative risk (RR) of the outcomes, comparing new users of low-dose aspirin with their matched non-users.",
+      "context_window": "hazards regression analysis to compute HRs with associated 95% CIs as an estimate of the relative risk (RR) of the outcome",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7971",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 7971,
+      "sentence": "However, we also calculated RRs of CRC within 1-3 years, 3-5 years and 5+ years after the index date, in addition to the previously defined intervals.",
+      "context_window": "time scale. However, we also calculated RRs of CRC within 1-3 years, 3-5 years and 5+ years after the index date, in addition t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7982",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 7982,
+      "sentence": "However, we also calculated RRs of CRC within 1-3 years, 3-5 years and 5+ years after the index date, in addition to the previously defined intervals.",
+      "context_window": "However, we also calculated RRs of CRC within 1-3 years, 3-5 years and 5+ years after the index date, in addition to the previ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-8832",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 8832,
+      "sentence": "8 49-64 Model 1 included CCI score on the index date, index year, presence of alcoholism-related disorders, haemorrhoids and diverticular disease recorded at any time before the index date, as well as records of prescriptions other than low-dose aspirin (including NSAIDs, high-dose aspirin, postmenopausal hormone replacement therapy, statins, corticosteroids, insulin and analogues, oral antidiabetic drugs, other antithrombotic treatments, calcium channel blockers and ACE inhibitors) redeemed within 1 year prior to the index date.",
+      "context_window": "alcium channel blockers and ACE inhibitors) redeemed within 1 year prior to the index date. Model 2 included CCI score on the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-9443",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 9443,
+      "sentence": "Model 2 included CCI score on the index date, index year, presence of alcoholism-related disorders, chronic liver disease, chronic obstructive pulmonary disease, diverticular disease and diabetes mellitus recorded at any time before the index date, as well as records of prescriptions for medications other than low-dose aspirin (including NSAIDs, high-dose aspirin, postmenopausal hormone replacement therapy, statins, corticosteroids, insulin and analogues, oral antidiabetic drugs, other antithrombotic treatments, calcium channel blockers and ACE inhibitors) redeemed within 1 year prior to the index date.",
+      "context_window": "alcium channel blockers and ACE inhibitors) redeemed within 1 year prior to the index date. Potential confounding from age, se",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-9757",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 9757,
+      "sentence": "We stratified absolute risks and RRs by age, gender, modified CCI score, index year, comorbidities and records of prescriptions for medications other than low-dose aspirin redeemed within 1 year prior to the index date.",
+      "context_window": "for medications other than low-dose aspirin redeemed within 1 year prior to the index date. To investigate whether presence of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-10066",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 10066,
+      "sentence": "To investigate whether presence of LGIB and removal of colorectal polyps could be intermediate steps on the pathway from initiation of low- dose aspirin to decreased CRC risk, we additionally stratified our analysis of colorectal polyp risk by presence of LGIB recorded within 1 year prior to polypectomy.",
+      "context_window": "f colorectal polyp risk by presence of LGIB recorded within 1 year prior to polypectomy. We further stratified the risk of CRC",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-10164",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 10164,
+      "sentence": "We further stratified the risk of CRC by polypectomy recorded within 1 year after the index date.",
+      "context_window": "r stratified the risk of CRC by polypectomy recorded within 1 year after the index date. Using the robust Poisson method, we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-10281",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10281,
+      "sentence": "Using the robust Poisson method, we calculated prevalence ratios (PRs) with associated 95% CIs to compare the prevalence of new aspirin users and non-users with records of specific combinations of the different outcomes during the study period.",
+      "context_window": "thod, we calculated prevalence ratios (PRs) with associated 95% CIs to compare the prevalence of new aspirin users and non-",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-10717",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 10717,
+      "sentence": "To evaluate if use of other antithrombotic treatments (see online supplementary table 1 for codes) impacted the risk of LGIB and colorectal neoplasms, we conducted a sensitivity analysis excluding patients with prescriptions for other antithrombotic treatments redeemed within 1 year prior to the index date.",
+      "context_window": "iptions for other antithrombotic treatments redeemed within 1 year prior to the index date. Data management and statistical a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-161",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 161,
+      "sentence": "We excluded 3568 (0.8%) individuals with IBD and 6098 (1.4%) individuals with a previous diagnosis of CRC.",
+      "context_window": "on for low-dose aspirin during 2005-2013. We excluded 3568 (0.8%) individuals with IBD and 6098 (1.4%) individuals with a pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-198",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 198,
+      "sentence": "We excluded 3568 (0.8%) individuals with IBD and 6098 (1.4%) individuals with a previous diagnosis of CRC.",
+      "context_window": "013. We excluded 3568 (0.8%) individuals with IBD and 6098 (1.4%) individuals with a previous diagnosis of CRC. Finally, 450",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-553",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 553,
+      "sentence": "The final cohort thus comprised 412 202 new users of low-dose aspirin and 1 236 560 non-users matched by age (median age=66 years (IQR: 58-75 years)), sex (men=52%) and region of residence on the index date ( table 1 ).",
+      "context_window": "aspirin and 1 236 560 non-users matched by age (median age=66 years (IQR: 58-75 years)), sex (men=52%) and region of residence",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-571",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 571,
+      "sentence": "The final cohort thus comprised 412 202 new users of low-dose aspirin and 1 236 560 non-users matched by age (median age=66 years (IQR: 58-75 years)), sex (men=52%) and region of residence on the index date ( table 1 ).",
+      "context_window": "560 non-users matched by age (median age=66 years (IQR: 58-75 years)), sex (men=52%) and region of residence on the index date",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-592",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 592,
+      "sentence": "The final cohort thus comprised 412 202 new users of low-dose aspirin and 1 236 560 non-users matched by age (median age=66 years (IQR: 58-75 years)), sex (men=52%) and region of residence on the index date ( table 1 ).",
+      "context_window": "d by age (median age=66 years (IQR: 58-75 years)), sex (men=52%) and region of residence on the index date ( table 1 ). Ch",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-924",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 924,
+      "sentence": "Characteristics of new users of low-dose aspirin and non-users matched by age, gender and region of residence, Denmark, 2005-2013\n\n*IQR.\n\n\u2020Excluding colorectal cancer from the index (date of first-time prescription for low-dose aspirin).\n\n\u2021Prescription redemption within 1 year prior to the index date.\n\n\u00a7Vitamin-K-antagonists (warfarin, phenprocoumon), heparins (dalteparin, tinzaparin, enoxaparin, heparin), thienopyridines (dipyridamole, clopidogrel, prasugrel), factor X inhibitors (rivaroxaban, apixaban, fondaparinux), nucleotide/nucleoside analogues (ticagrelor, congrelor).",
+      "context_window": "ion for low-dose aspirin). \u2021Prescription redemption within 1 year prior to the index date. \u00a7Vitamin-K-antagonists (warfarin,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1352",
+      "claim_type": "percentage",
+      "raw_text": "39.9%",
+      "numeric_values": [
+        39.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1352,
+      "sentence": "New users were more likely than non-users to have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online supplementary table 3 ).",
+      "context_window": "were more likely than non-users to have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1361",
+      "claim_type": "percentage",
+      "raw_text": "21.4%",
+      "numeric_values": [
+        21.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1361,
+      "sentence": "New users were more likely than non-users to have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online supplementary table 3 ).",
+      "context_window": "likely than non-users to have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1387",
+      "claim_type": "percentage",
+      "raw_text": "10.7%",
+      "numeric_values": [
+        10.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1387,
+      "sentence": "New users were more likely than non-users to have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online supplementary table 3 ).",
+      "context_window": "have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online supplementary table 3 ). New",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1396",
+      "claim_type": "percentage",
+      "raw_text": "4.8%",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1396,
+      "sentence": "New users were more likely than non-users to have a medium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online supplementary table 3 ).",
+      "context_window": "dium CCI score (39.9% vs 21.4%) or high CCI score (10.7% vs 4.8%) ( table 1 and online supplementary table 3 ). New users al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1539",
+      "claim_type": "percentage",
+      "raw_text": "29.2%",
+      "numeric_values": [
+        29.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1539,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drug",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1548",
+      "claim_type": "percentage",
+      "raw_text": "22.6%",
+      "numeric_values": [
+        22.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1548,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1565",
+      "claim_type": "percentage",
+      "raw_text": "46.4%",
+      "numeric_values": [
+        46.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1565,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "deemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1574",
+      "claim_type": "percentage",
+      "raw_text": "11.5%",
+      "numeric_values": [
+        11.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1574,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithromb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1607",
+      "claim_type": "percentage",
+      "raw_text": "10.6%",
+      "numeric_values": [
+        10.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1607,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1616",
+      "claim_type": "percentage",
+      "raw_text": "3.7%",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1616,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1656",
+      "claim_type": "percentage",
+      "raw_text": "16.6%",
+      "numeric_values": [
+        16.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1656,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "tic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1665",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1665,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "(10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibito",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1698",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1698,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "botic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1707",
+      "claim_type": "percentage",
+      "raw_text": "11.1%",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1707,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "atments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1733",
+      "claim_type": "percentage",
+      "raw_text": "27.9%",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1733,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "alcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date. The remain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-1742",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1742,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "annel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date. The remaining chara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-1756",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 1756,
+      "sentence": "New users also were more likely than non-users to have redeemed a prescription for NSAIDs (29.2% vs 22.6%), statins (46.4% vs 11.5%), oral antidiabetic drugs (10.6% vs 3.7%), other antithrombotic treatments (16.6% vs 4.2%), calcium channel blockers (21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date.",
+      "context_window": "(21.9% vs 11.1%) or ACE inhibitors (27.9% vs 11.6%) within 1 year prior to the index date. The remaining characteristics were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-2154",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2154,
+      "sentence": "Among non-users, 8472 persons received a diagnosis of LGIB, yielding absolute risks below 1.5% during 3, 3\u226412 and more than 12 months after the index date ( figure 1 ).",
+      "context_window": "received a diagnosis of LGIB, yielding absolute risks below 1.5% during 3, 3\u226412 and more than 12 months after the index date",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-2188",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2188,
+      "sentence": "Among non-users, 8472 persons received a diagnosis of LGIB, yielding absolute risks below 1.5% during 3, 3\u226412 and more than 12 months after the index date ( figure 1 ).",
+      "context_window": "ding absolute risks below 1.5% during 3, 3\u226412 and more than 12 months after the index date ( figure 1 ). The corresponding RDs ar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-2483",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "We observed the greatest risk increase during the first 3 months following the index date (RR 2.79, 95% CI 2.40 to 3.24).",
+      "context_window": "). We observed the greatest risk increase during the first 3 months following the index date (RR 2.79, 95% CI 2.40 to 3.24). Th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-2527",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 2.40 to 3.24",
+      "numeric_values": [
+        2.4,
+        3.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2527,
+      "sentence": "We observed the greatest risk increase during the first 3 months following the index date (RR 2.79, 95% CI 2.40 to 3.24).",
+      "context_window": "uring the first 3 months following the index date (RR 2.79, 95% CI 2.40 to 3.24). The RR decreased with time elapsed since the index date,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-2626",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.52 to 1.67",
+      "numeric_values": [
+        1.52,
+        1.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2626,
+      "sentence": "The RR decreased with time elapsed since the index date, concluding at 1.60 (95% CI 1.52 to 1.67) after more than 12 months of follow-up ( figure 2 ).",
+      "context_window": "with time elapsed since the index date, concluding at 1.60 (95% CI 1.52 to 1.67) after more than 12 months of follow-up ( figure 2 ). Cumu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-2663",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2663,
+      "sentence": "The RR decreased with time elapsed since the index date, concluding at 1.60 (95% CI 1.52 to 1.67) after more than 12 months of follow-up ( figure 2 ).",
+      "context_window": "e, concluding at 1.60 (95% CI 1.52 to 1.67) after more than 12 months of follow-up ( figure 2 ). Cumulative incidence proportion",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-2808",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2808,
+      "sentence": "Cumulative incidence proportions (ARs) and cumulative risk differences (RDs) in percentages and associated 95% CIs of lower gastrointestinal bleeding, gastrointestinal endoscopy, colorectal polyps a , and colorectal cancer among new users and non-users of low-dose aspirin by time elapsed since the index date b , Denmark, 2005-2013. a Includes all polyps registered in the Danish National Pathology Registry during 2005-2012 (identified using Systemised Nomenclature of Medicine codes) or in the Danish National Patient Registry during 2005-2013 (identified using the International Classification of Diseases, 10th Revision codes or Nordic Medico-statistical Committee system codes). b Date of first-time prescription for low-dose aspirin.",
+      "context_window": "lative risk differences (RDs) in percentages and associated 95% CIs of lower gastrointestinal bleeding, gastrointestinal en",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-3521",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3521,
+      "sentence": "Crude and adjusted a relative risks (RRs) and associated 95% CIs of lower gastrointestinal bleeding, gastrointestinal endoscopy, colorectal polyps b and colorectal cancer, comparing new users with non-users of low-dose aspirin by time elapsed since the index date c , Denmark 2005-2013. a For lower gastrointestinal bleeding and gastrointestinal endoscopy: adjusted for index year, Charlson Comorbidity Index score, alcoholism-related disorders, haemorrhoids, diverticular disease and prescriptions for other medications (including NSAIDs, statins, corticosteroids, other antithrombotic treatments and calcium channel blockers) redeemed within 1 year prior to the index date.",
+      "context_window": ". Crude and adjusted a relative risks (RRs) and associated 95% CIs of lower gastrointestinal bleeding, gastrointestinal en",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-4108",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4108,
+      "sentence": "Crude and adjusted a relative risks (RRs) and associated 95% CIs of lower gastrointestinal bleeding, gastrointestinal endoscopy, colorectal polyps b and colorectal cancer, comparing new users with non-users of low-dose aspirin by time elapsed since the index date c , Denmark 2005-2013. a For lower gastrointestinal bleeding and gastrointestinal endoscopy: adjusted for index year, Charlson Comorbidity Index score, alcoholism-related disorders, haemorrhoids, diverticular disease and prescriptions for other medications (including NSAIDs, statins, corticosteroids, other antithrombotic treatments and calcium channel blockers) redeemed within 1 year prior to the index date.",
+      "context_window": "ic treatments and calcium channel blockers) redeemed within 1 year prior to the index date. For colorectal polyps and colorect",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-4542",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4542,
+      "sentence": "For colorectal polyps and colorectal cancer: adjusted for index year, Charlson Comorbidity Index score, alcoholism-related disorders, chronic liver disease, chronic obstructive pulmonary disease, diverticular disease, diabetes mellitus and prescriptions for other medications (including NSAIDs, hormone replacement therapy, statins, oral antidiabetic drugs, insulin and ACE inhibitors) redeemed within 1 year prior to the index date. b Includes all polyps registered in the Danish National Pathology Registry during 2005-2012 (identified using Systemised Nomenclature of medicine codes) or in the Danish National Patient Registry during 2005-2013 (identified using the International Classification of Diseases, 10th Revision codes or Nordic Medico-statistical Committee system codes). c Date of first-time prescription for low-dose aspirin.",
+      "context_window": "diabetic drugs, insulin and ACE inhibitors) redeemed within 1 year prior to the index date. b Includes all polyps registered i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-5325",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5325,
+      "sentence": "New users were more frequently referred for a lower gastrointestinal endoscopy than non-users, particularly during the first 3 months following the index date (RR 1.73, 95% CI 1.63 to 3.24) ( figure 2 ).",
+      "context_window": "nal endoscopy than non-users, particularly during the first 3 months following the index date (RR 1.73, 95% CI 1.63 to 3.24) ( f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-5369",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.63 to 3.24",
+      "numeric_values": [
+        1.63,
+        3.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5369,
+      "sentence": "New users were more frequently referred for a lower gastrointestinal endoscopy than non-users, particularly during the first 3 months following the index date (RR 1.73, 95% CI 1.63 to 3.24) ( figure 2 ).",
+      "context_window": "uring the first 3 months following the index date (RR 1.73, 95% CI 1.63 to 3.24) ( figure 2 ). Among the 39 274 persons with at least one",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-5783",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5783,
+      "sentence": "The greatest increase in RR was observed during the first 3 months of follow-up (RR 1.56, 95% CI 1.42 to 1.72) ( figure 2 ).",
+      "context_window": ". The greatest increase in RR was observed during the first 3 months of follow-up (RR 1.56, 95% CI 1.42 to 1.72) ( figure 2 ). T",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-5815",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.42 to 1.72",
+      "numeric_values": [
+        1.42,
+        1.72
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5815,
+      "sentence": "The greatest increase in RR was observed during the first 3 months of follow-up (RR 1.56, 95% CI 1.42 to 1.72) ( figure 2 ).",
+      "context_window": "s observed during the first 3 months of follow-up (RR 1.56, 95% CI 1.42 to 1.72) ( figure 2 ). The RR decreased with time elapsed since the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-5922",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.17 to 1.24",
+      "numeric_values": [
+        1.17,
+        1.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5922,
+      "sentence": "The RR decreased with time elapsed since the index date, reaching 1.20 (95% CI 1.17 to 1.24) after more than 12 months of follow-up.",
+      "context_window": "ased with time elapsed since the index date, reaching 1.20 (95% CI 1.17 to 1.24) after more than 12 months of follow-up. When the analysis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-5959",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5959,
+      "sentence": "The RR decreased with time elapsed since the index date, reaching 1.20 (95% CI 1.17 to 1.24) after more than 12 months of follow-up.",
+      "context_window": "x date, reaching 1.20 (95% CI 1.17 to 1.24) after more than 12 months of follow-up. When the analysis was restricted to histologi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-6117",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.23 to 1.77",
+      "numeric_values": [
+        1.23,
+        1.77
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6117,
+      "sentence": "When the analysis was restricted to histologically verified polyps, new users had an elevated risk of conventional adenomas (RR 1.47, 95% CI 1.23 to 1.77) and a particularly increased risk of serrated polyps (RR 1.77, 95% CI 1.36 to 2.29) during the 3 months following the index date ( online supplementary table 4 ).",
+      "context_window": "ers had an elevated risk of conventional adenomas (RR 1.47, 95% CI 1.23 to 1.77) and a particularly increased risk of serrated polyps (RR 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-6201",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.36 to 2.29",
+      "numeric_values": [
+        1.36,
+        2.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6201,
+      "sentence": "When the analysis was restricted to histologically verified polyps, new users had an elevated risk of conventional adenomas (RR 1.47, 95% CI 1.23 to 1.77) and a particularly increased risk of serrated polyps (RR 1.77, 95% CI 1.36 to 2.29) during the 3 months following the index date ( online supplementary table 4 ).",
+      "context_window": "a particularly increased risk of serrated polyps (RR 1.77, 95% CI 1.36 to 2.29) during the 3 months following the index date ( online supp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-6233",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6233,
+      "sentence": "When the analysis was restricted to histologically verified polyps, new users had an elevated risk of conventional adenomas (RR 1.47, 95% CI 1.23 to 1.77) and a particularly increased risk of serrated polyps (RR 1.77, 95% CI 1.36 to 2.29) during the 3 months following the index date ( online supplementary table 4 ).",
+      "context_window": "f serrated polyps (RR 1.77, 95% CI 1.36 to 2.29) during the 3 months following the index date ( online supplementary table 4 ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-6410",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6410,
+      "sentence": "After stratification by polyp location, new users had a particularly increased risk of distal lesions during 3 months following the index date, compared with non-users (RR 1.98, 95% CI 1.39 to 2.80) ( online supplementary table 4 ).",
+      "context_window": "had a particularly increased risk of distal lesions during 3 months following the index date, compared with non-users (RR 1.98,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-6479",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.39 to 2.80",
+      "numeric_values": [
+        1.39,
+        2.8
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6479,
+      "sentence": "After stratification by polyp location, new users had a particularly increased risk of distal lesions during 3 months following the index date, compared with non-users (RR 1.98, 95% CI 1.39 to 2.80) ( online supplementary table 4 ).",
+      "context_window": "following the index date, compared with non-users (RR 1.98, 95% CI 1.39 to 2.80) ( online supplementary table 4 ). However, increased RRs w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-6604",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6604,
+      "sentence": "However, increased RRs were observed for all polyp locations within 3\u226412 months after index date.",
+      "context_window": "ncreased RRs were observed for all polyp locations within 3\u226412 months after index date. Stratification by LGIB recorded within 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-6671",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6671,
+      "sentence": "Stratification by LGIB recorded within 1 year prior to the diagnosis of polyps yielded a substantially elevated increased risk of endoscopically removed polyps for new users within 3 months after index date (RR 2.02, 95% CI 1.68 to 2.43).",
+      "context_window": "hs after index date. Stratification by LGIB recorded within 1 year prior to the diagnosis of polyps yielded a substantially el",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-6813",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6813,
+      "sentence": "Stratification by LGIB recorded within 1 year prior to the diagnosis of polyps yielded a substantially elevated increased risk of endoscopically removed polyps for new users within 3 months after index date (RR 2.02, 95% CI 1.68 to 2.43).",
+      "context_window": "risk of endoscopically removed polyps for new users within 3 months after index date (RR 2.02, 95% CI 1.68 to 2.43). The absol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-6849",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.68 to 2.43",
+      "numeric_values": [
+        1.68,
+        2.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6849,
+      "sentence": "Stratification by LGIB recorded within 1 year prior to the diagnosis of polyps yielded a substantially elevated increased risk of endoscopically removed polyps for new users within 3 months after index date (RR 2.02, 95% CI 1.68 to 2.43).",
+      "context_window": "ps for new users within 3 months after index date (RR 2.02, 95% CI 1.68 to 2.43). The absolute risks and RDs of CRC among new users and no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-7026",
+      "claim_type": "percentage",
+      "raw_text": "71.5%",
+      "numeric_values": [
+        71.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7026,
+      "sentence": "Of all new users diagnosed with CRC during follow-up, 3388 (71.5%) were still receiving aspirin therapy at the time of their diagnosis.",
+      "context_window": "Of all new users diagnosed with CRC during follow-up, 3388 (71.5%) were still receiving aspirin therapy at the time of their",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7147",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7147,
+      "sentence": "The RR of CRC was increased during the first 3 months of follow-up (RR 1.73, 95% CI 1.51 to 1.98) ( figure 2 ).",
+      "context_window": "eir diagnosis. The RR of CRC was increased during the first 3 months of follow-up (RR 1.73, 95% CI 1.51 to 1.98) ( figure 2 ). W",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-7179",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.51 to 1.98",
+      "numeric_values": [
+        1.51,
+        1.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7179,
+      "sentence": "The RR of CRC was increased during the first 3 months of follow-up (RR 1.73, 95% CI 1.51 to 1.98) ( figure 2 ).",
+      "context_window": "increased during the first 3 months of follow-up (RR 1.73, 95% CI 1.51 to 1.98) ( figure 2 ). We observed no substantial differences in CR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7304",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7304,
+      "sentence": "We observed no substantial differences in CRC risk between the two groups during three to 12 months following the index date (RR 1.12, 95% CI 1.02 to 1.23) or more than 12 months following the index date (RR 0.95, 95% CI 0.91 to 0.99).",
+      "context_window": "ferences in CRC risk between the two groups during three to 12 months following the index date (RR 1.12, 95% CI 1.02 to 1.23) or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-7349",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.02 to 1.23",
+      "numeric_values": [
+        1.02,
+        1.23
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7349,
+      "sentence": "We observed no substantial differences in CRC risk between the two groups during three to 12 months following the index date (RR 1.12, 95% CI 1.02 to 1.23) or more than 12 months following the index date (RR 0.95, 95% CI 0.91 to 0.99).",
+      "context_window": "uring three to 12 months following the index date (RR 1.12, 95% CI 1.02 to 1.23) or more than 12 months following the index date (RR 0.95,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7383",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7383,
+      "sentence": "We observed no substantial differences in CRC risk between the two groups during three to 12 months following the index date (RR 1.12, 95% CI 1.02 to 1.23) or more than 12 months following the index date (RR 0.95, 95% CI 0.91 to 0.99).",
+      "context_window": "the index date (RR 1.12, 95% CI 1.02 to 1.23) or more than 12 months following the index date (RR 0.95, 95% CI 0.91 to 0.99). Ov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-7428",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.91 to 0.99",
+      "numeric_values": [
+        0.91,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7428,
+      "sentence": "We observed no substantial differences in CRC risk between the two groups during three to 12 months following the index date (RR 1.12, 95% CI 1.02 to 1.23) or more than 12 months following the index date (RR 0.95, 95% CI 0.91 to 0.99).",
+      "context_window": ") or more than 12 months following the index date (RR 0.95, 95% CI 0.91 to 0.99). Overall, we observed the same pattern when we stratified",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7650",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7650,
+      "sentence": "The risk of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ).",
+      "context_window": "k of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-7681",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.93 to 1.06",
+      "numeric_values": [
+        0.93,
+        1.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7681,
+      "sentence": "The risk of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ).",
+      "context_window": "users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7735",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7735,
+      "sentence": "The risk of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ).",
+      "context_window": "1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-7766",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83 to 0.98",
+      "numeric_values": [
+        0.83,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7766,
+      "sentence": "The risk of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ).",
+      "context_window": "slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7801",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7801,
+      "sentence": "The risk of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ).",
+      "context_window": "s of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-7832",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.82 to 1.00",
+      "numeric_values": [
+        0.82,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7832,
+      "sentence": "The risk of CRC was similar among new users and non-users during 1-3 years of follow-up (RR 1.00, 95% CI 0.93 to 1.06), but slightly decreased during 3-5 years of follow-up (RR 0.90, 95% CI 0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ).",
+      "context_window": "0.83 to 0.98) and more than 5 years of follow-up (RR 0.91, 95% CI 0.82 to 1.00) after the index date ( table 2 ). Stratification by remova",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-7950",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7950,
+      "sentence": "Stratification by removal of colorectal polyps recorded within 1 year following the index date yielded a decreased RR of CRC for new users compared with non-users (RR 0.52, 95% CI 0.05 to 5.53).",
+      "context_window": "atification by removal of colorectal polyps recorded within 1 year following the index date yielded a decreased RR of CRC for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-8060",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.05 to 5.53",
+      "numeric_values": [
+        0.05,
+        5.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8060,
+      "sentence": "Stratification by removal of colorectal polyps recorded within 1 year following the index date yielded a decreased RR of CRC for new users compared with non-users (RR 0.52, 95% CI 0.05 to 5.53).",
+      "context_window": "d RR of CRC for new users compared with non-users (RR 0.52, 95% CI 0.05 to 5.53). Crude and adjusted relative risks (RRs) and associated 9",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-8138",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8138,
+      "sentence": "Crude and adjusted relative risks (RRs) and associated 95% CIs of colorectal cancer comparing new users with non-users of low-dose aspirin by cancer location, stage at diagnosis, and time elapsed since index date*, Denmark 2005-2013\n\n*Date of first-time prescription for low-dose aspirin.\n\n\u2020Adjusted for index year, Charlson Comorbidity Index score, alcoholism-related disorders, chronic liver disease, chronic obstructive pulmonary disease, diverticular disease, diabetes mellitus and prescriptions for other medications (including NSAIDs, hormone replacement therapy, statins, oral antidiabetic drugs, insulin and ACE inhibitors) redeemed within 1 year prior to the index date.",
+      "context_window": "3). Crude and adjusted relative risks (RRs) and associated 95% CIs of colorectal cancer comparing new users with non-users",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-8731",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 8731,
+      "sentence": "Crude and adjusted relative risks (RRs) and associated 95% CIs of colorectal cancer comparing new users with non-users of low-dose aspirin by cancer location, stage at diagnosis, and time elapsed since index date*, Denmark 2005-2013\n\n*Date of first-time prescription for low-dose aspirin.\n\n\u2020Adjusted for index year, Charlson Comorbidity Index score, alcoholism-related disorders, chronic liver disease, chronic obstructive pulmonary disease, diverticular disease, diabetes mellitus and prescriptions for other medications (including NSAIDs, hormone replacement therapy, statins, oral antidiabetic drugs, insulin and ACE inhibitors) redeemed within 1 year prior to the index date.",
+      "context_window": "diabetic drugs, insulin and ACE inhibitors) redeemed within 1 year prior to the index date. NSAIDs, non-steroidal anti-inflam",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-9096",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 2.11 to 2.54",
+      "numeric_values": [
+        2.11,
+        2.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9096,
+      "sentence": "Of specific interest, the prevalence of combined LGIB, lower gastrointestinal endoscopy and colorectal polyps without CRC was substantially elevated (PR 2.32, 95% CI 2.11 to 2.54) in new users.",
+      "context_window": "tal polyps without CRC was substantially elevated (PR 2.32, 95% CI 2.11 to 2.54) in new users. The prevalence of new users without LGIB who",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-ci-9273",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.44 to 1.52",
+      "numeric_values": [
+        1.44,
+        1.52
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9273,
+      "sentence": "The prevalence of new users without LGIB who underwent an endoscopy and were diagnosed with colorectal polyps was slightly elevated (PR 1.48, 95% CI 1.44 to 1.52).",
+      "context_window": "osed with colorectal polyps was slightly elevated (PR 1.48, 95% CI 1.44 to 1.52). Number of patients, proportions and prevalence ratios (P",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-9372",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9372,
+      "sentence": "Number of patients, proportions and prevalence ratios (PRs) with associated 95% CIs of specific combinations of outcomes comparing new users of low-dose aspirin and their matched comparisons, Denmark 2005-2013\n\n*Includes all polyps registered in the Danish National Pathology Registry during 2005-2012 (identified using Systemised Nomenclature of Medicine codes) or in the Danish National Patient Registry during 2005-2013 (identified using the International Classification of Diseases, 10th Revision codes or Nordic Medico-statistical Committee system codes).",
+      "context_window": "ts, proportions and prevalence ratios (PRs) with associated 95% CIs of specific combinations of outcomes comparing new user",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-117",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 117,
+      "sentence": "Compared with non-users, new users of low-dose aspirin had an increased RR of LGIB, colorectal polyps and CRC within 3 months following their first-time prescription for low-dose aspirin.",
+      "context_window": "d an increased RR of LGIB, colorectal polyps and CRC within 3 months following their first-time prescription for low-dose aspiri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-226",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 226,
+      "sentence": "These remained elevated for more than 12 months after the first-time prescription for low-dose aspirin.",
+      "context_window": "for low-dose aspirin. These remained elevated for more than 12 months after the first-time prescription for low-dose aspirin. An",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-386",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 386,
+      "sentence": "An exception was that aspirin use was associated with a slightly decreased RR of CRC starting 3 years after the first-time prescription.",
+      "context_window": "was associated with a slightly decreased RR of CRC starting 3 years after the first-time prescription. Finally, our results sug",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-2327",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2327,
+      "sentence": "28 32 33\n\nWe observed a slightly decreased risk of CRC in aspirin users compared with matched non-users starting 3 years after a first-time aspirin prescription.",
+      "context_window": "C in aspirin users compared with matched non-users starting 3 years after a first-time aspirin prescription. In light of the in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-3143",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3143,
+      "sentence": "Finally, the increased risk of distal lesions in aspirin users during 3 months after the index date adds further support to our hypothesis as bleeding from distal lesions may be more visual for patients and clinicians thereby leading patients to medical attention.",
+      "context_window": "he increased risk of distal lesions in aspirin users during 3 months after the index date adds further support to our hypothesis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-u-3632",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3632,
+      "sentence": "However, it is challenging to distinguish this potential mechanism from the preventive effect of long-term (at least 3 years) use of aspirin, previously demonstrated by two randomised double-blind trials.",
+      "context_window": "mechanism from the preventive effect of long-term (at least 3 years) use of aspirin, previously demonstrated by two randomised",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-4157",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4157,
+      "sentence": "The conflicting results might be explained by the different study populations (78% of the included patients in the German study were referred for primary CRC screening colonoscopy).",
+      "context_window": "ults might be explained by the different study populations (78% of the included patients in the German study were referred",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7389508_risk_of_lower_gastrointestinal_bleeding_and_colorectal_neopl-pct-4570",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4570,
+      "sentence": "40 42 44 45 48 68 The ICD-10 coding for LGIB in the DNPR has previously been validated showing a PPV of 96% for fresh bleeding per rectum.",
+      "context_window": "in the DNPR has previously been validated showing a PPV of 96% for fresh bleeding per rectum. 69 However, several factors",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

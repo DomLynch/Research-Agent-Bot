@@ -1,0 +1,3839 @@
+{
+  "paper_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art",
+  "doi": "10.1186/s13019-025-03434-6",
+  "extracted_at": "2026-05-08T20:06:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 93,
+    "confidence_interval": 23,
+    "p_value": 52,
+    "odds_ratio": 16,
+    "hazard_ratio": 7,
+    "correlation": 3,
+    "sample_size": 1,
+    "unit_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-732",
+      "claim_type": "percentage",
+      "raw_text": "14.54%",
+      "numeric_values": [
+        14.54
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 732,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio (OR) of 2.24 (95% CI: 1.69-2.97, p < 0.001).",
+      "context_window": "vascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-784",
+      "claim_type": "percentage",
+      "raw_text": "7.07%",
+      "numeric_values": [
+        7.07
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 784,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio (OR) of 2.24 (95% CI: 1.69-2.97, p < 0.001).",
+      "context_window": "group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio (OR) of 2.24 (95% CI:",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-841",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.69-2.97",
+      "numeric_values": [
+        1.69,
+        2.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 841,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio (OR) of 2.24 (95% CI: 1.69-2.97, p < 0.001).",
+      "context_window": "p (7.07%, 71 out of 1005), with an odds ratio (OR) of 2.24 (95% CI: 1.69-2.97, p < 0.001). 770 patients who received DAPT for six months",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-860",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio (OR) of 2.24 (95% CI: 1.69-2.97, p < 0.001).",
+      "context_window": "1005), with an odds ratio (OR) of 2.24 (95% CI: 1.69-2.97, p < 0.001). 770 patients who received DAPT for six months or more aft",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1062",
+      "claim_type": "percentage",
+      "raw_text": "22.08%",
+      "numeric_values": [
+        22.08
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1062,
+      "sentence": "770 patients who received DAPT for six months or more after surgery were compared in sub-analysis and were noted to have significantly higher incidence of revascularization compared to AMT (22.08% vs.",
+      "context_window": "ntly higher incidence of revascularization compared to AMT (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001). The",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1073",
+      "claim_type": "percentage",
+      "raw_text": "6.96%",
+      "numeric_values": [
+        6.96
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1073,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001).",
+      "context_window": "incidence of revascularization compared to AMT (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001). The binary re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-1080",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.157",
+      "numeric_values": [
+        3.157
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001).",
+      "context_window": "nce of revascularization compared to AMT (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001). The binary regression mod",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-1092",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.734-4.940",
+      "numeric_values": [
+        2.734,
+        4.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1092,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001).",
+      "context_window": "cularization compared to AMT (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001). The binary regression model revealed that youn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1113",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1113,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001).",
+      "context_window": "to AMT (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940; p < 0.001). The binary regression model revealed that younger patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-1213",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.95-0.97",
+      "numeric_values": [
+        0.95,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1213,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1232",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "er patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-1255",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.50",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1255,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "tio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-1266",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.12-2.00",
+      "numeric_values": [
+        1.12,
+        2.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1266,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1285",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1285,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-1352",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1352,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "07), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-1363",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.36-0.81",
+      "numeric_values": [
+        0.36,
+        0.81
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "ts who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration af",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1382",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1382,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "ternal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-1450",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 3.47",
+      "numeric_values": [
+        3.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "3), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-1461",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.55-4.72",
+      "numeric_values": [
+        2.55,
+        4.72
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1461,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "ients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1480",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "The binary regression model revealed that younger patients ( hazard ratio (HR) = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "context_window": "T of any duration after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1614",
+      "claim_type": "percentage",
+      "raw_text": "12.8%",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1614,
+      "sentence": "The model, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001).",
+      "context_window": "odel, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-corr-1679",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.128",
+      "numeric_values": [
+        0.128
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1679,
+      "sentence": "The model, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001).",
+      "context_window": "of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001). The survival rates were 96.5% for the DAPT gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1691",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1691,
+      "sentence": "The model, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001).",
+      "context_window": "ance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001). The survival rates were 96.5% for the DAPT group and 92.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1727",
+      "claim_type": "percentage",
+      "raw_text": "96.5%",
+      "numeric_values": [
+        96.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1727,
+      "sentence": "The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001).",
+      "context_window": "(Nagelkerke R\u00b2 = 0.128; p < 0.001). The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1756",
+      "claim_type": "percentage",
+      "raw_text": "92.0%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001).",
+      "context_window": ".001). The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1796",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1796,
+      "sentence": "The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001).",
+      "context_window": "the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001). Dia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1821",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1821,
+      "sentence": "The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001).",
+      "context_window": "for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001). Diabetes mellitus, younger a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1843",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1843,
+      "sentence": "The survival rates were 96.5% for the DAPT group and 92.0% for AMT (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001).",
+      "context_window": "OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001). Diabetes mellitus, younger age, fewer Internal mammary a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1675",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1675,
+      "sentence": "Data from the Society of Thoracic Surgeons\u2019 National Adult Cardiac Surgery Database indicate cumulative incidences of secondary revascularization (PCI or CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaining notably low at all time points [ 8 ].",
+      "context_window": "(PCI or CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates rem",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1679",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1679,
+      "sentence": "Data from the Society of Thoracic Surgeons\u2019 National Adult Cardiac Surgery Database indicate cumulative incidences of secondary revascularization (PCI or CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaining notably low at all time points [ 8 ].",
+      "context_window": "I or CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaini",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1683",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1683,
+      "sentence": "Data from the Society of Thoracic Surgeons\u2019 National Adult Cardiac Surgery Database indicate cumulative incidences of secondary revascularization (PCI or CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaining notably low at all time points [ 8 ].",
+      "context_window": "CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaining no",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1692",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1692,
+      "sentence": "Data from the Society of Thoracic Surgeons\u2019 National Adult Cardiac Surgery Database indicate cumulative incidences of secondary revascularization (PCI or CABG) at 1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaining notably low at all time points [ 8 ].",
+      "context_window": "1-, 5-, 10-, and 18-years post-surgery as 2%, 7%, 13%, and 16%, respectively, with repeat CABG rates remaining notably low",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-n-154",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 154,
+      "sentence": "Patients who died within the first 48 h post-CABG ( n = 12) were excluded from the analysis.",
+      "context_window": "th AMT. Patients who died within the first 48 h post-CABG ( n = 12) were excluded from the analysis. Compared to those on DAP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-306",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 306,
+      "sentence": "Compared to those on DAPT, patients in the AMT group had a higher prevalence of chronic kidney disease (CKD) (18.8% vs.",
+      "context_window": "up had a higher prevalence of chronic kidney disease (CKD) (18.8% vs. 14.1%; p = 0.002) and stable angina (65.6% vs. 60.6%; p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-316",
+      "claim_type": "percentage",
+      "raw_text": "14.1%",
+      "numeric_values": [
+        14.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 316,
+      "sentence": "14.1%; p = 0.002) and stable angina (65.6% vs.",
+      "context_window": "igher prevalence of chronic kidney disease (CKD) (18.8% vs. 14.1%; p = 0.002) and stable angina (65.6% vs. 60.6%; p = 0.013).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-323",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 323,
+      "sentence": "14.1%; p = 0.002) and stable angina (65.6% vs.",
+      "context_window": "revalence of chronic kidney disease (CKD) (18.8% vs. 14.1%; p = 0.002) and stable angina (65.6% vs. 60.6%; p = 0.013). In contras",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-353",
+      "claim_type": "percentage",
+      "raw_text": "65.6%",
+      "numeric_values": [
+        65.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 353,
+      "sentence": "14.1%; p = 0.002) and stable angina (65.6% vs.",
+      "context_window": "sease (CKD) (18.8% vs. 14.1%; p = 0.002) and stable angina (65.6% vs. 60.6%; p = 0.013). In contrast, the DAPT group exhibite",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-363",
+      "claim_type": "percentage",
+      "raw_text": "60.6%",
+      "numeric_values": [
+        60.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 363,
+      "sentence": "60.6%; p = 0.013).",
+      "context_window": ") (18.8% vs. 14.1%; p = 0.002) and stable angina (65.6% vs. 60.6%; p = 0.013). In contrast, the DAPT group exhibited a higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-370",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 370,
+      "sentence": "60.6%; p = 0.013).",
+      "context_window": "% vs. 14.1%; p = 0.002) and stable angina (65.6% vs. 60.6%; p = 0.013). In contrast, the DAPT group exhibited a higher prevalence",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-478",
+      "claim_type": "percentage",
+      "raw_text": "14.8%",
+      "numeric_values": [
+        14.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 478,
+      "sentence": "In contrast, the DAPT group exhibited a higher prevalence of peripheral arterial disease (PAD) (14.8% vs.",
+      "context_window": "d a higher prevalence of peripheral arterial disease (PAD) (14.8% vs. 10.5%; p = 0.002), glomerular filtration rate (GFR) < 6",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-488",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 488,
+      "sentence": "10.5%; p = 0.002), glomerular filtration rate (GFR) < 60 (44.98% vs.",
+      "context_window": "prevalence of peripheral arterial disease (PAD) (14.8% vs. 10.5%; p = 0.002), glomerular filtration rate (GFR) < 60 (44.98%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-495",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "10.5%; p = 0.002), glomerular filtration rate (GFR) < 60 (44.98% vs.",
+      "context_window": "ence of peripheral arterial disease (PAD) (14.8% vs. 10.5%; p = 0.002), glomerular filtration rate (GFR) < 60 (44.98% vs. 42.59%;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-546",
+      "claim_type": "percentage",
+      "raw_text": "44.98%",
+      "numeric_values": [
+        44.98
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 546,
+      "sentence": "10.5%; p = 0.002), glomerular filtration rate (GFR) < 60 (44.98% vs.",
+      "context_window": ". 10.5%; p = 0.002), glomerular filtration rate (GFR) < 60 (44.98% vs. 42.59%; p = 0.020), prior PCI (24.5% vs. 20.1%; p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-557",
+      "claim_type": "percentage",
+      "raw_text": "42.59%",
+      "numeric_values": [
+        42.59
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 557,
+      "sentence": "42.59%; p = 0.020), prior PCI (24.5% vs.",
+      "context_window": "= 0.002), glomerular filtration rate (GFR) < 60 (44.98% vs. 42.59%; p = 0.020), prior PCI (24.5% vs. 20.1%; p = 0.011), and pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-565",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 565,
+      "sentence": "42.59%; p = 0.020), prior PCI (24.5% vs.",
+      "context_window": ", glomerular filtration rate (GFR) < 60 (44.98% vs. 42.59%; p = 0.020), prior PCI (24.5% vs. 20.1%; p = 0.011), and pre-CABG use",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-588",
+      "claim_type": "percentage",
+      "raw_text": "24.5%",
+      "numeric_values": [
+        24.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 588,
+      "sentence": "42.59%; p = 0.020), prior PCI (24.5% vs.",
+      "context_window": "rate (GFR) < 60 (44.98% vs. 42.59%; p = 0.020), prior PCI (24.5% vs. 20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-598",
+      "claim_type": "percentage",
+      "raw_text": "20.1%",
+      "numeric_values": [
+        20.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 598,
+      "sentence": "20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs.",
+      "context_window": ") < 60 (44.98% vs. 42.59%; p = 0.020), prior PCI (24.5% vs. 20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs. 15.5%; p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-605",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 605,
+      "sentence": "20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs.",
+      "context_window": "(44.98% vs. 42.59%; p = 0.020), prior PCI (24.5% vs. 20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs. 15.5%; p < 0.001). Ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-643",
+      "claim_type": "percentage",
+      "raw_text": "30.0%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 643,
+      "sentence": "20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs.",
+      "context_window": "PCI (24.5% vs. 20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs. 15.5%; p < 0.001). Additionally, patients in the DAPT g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-653",
+      "claim_type": "percentage",
+      "raw_text": "15.5%",
+      "numeric_values": [
+        15.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 653,
+      "sentence": "15.5%; p < 0.001).",
+      "context_window": "vs. 20.1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs. 15.5%; p < 0.001). Additionally, patients in the DAPT group were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-660",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 660,
+      "sentence": "15.5%; p < 0.001).",
+      "context_window": ".1%; p = 0.011), and pre-CABG use of DAPT (30.0% vs. 15.5%; p < 0.001). Additionally, patients in the DAPT group were more likely",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-758",
+      "claim_type": "percentage",
+      "raw_text": "79.2%",
+      "numeric_values": [
+        79.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 758,
+      "sentence": "Additionally, patients in the DAPT group were more likely to undergo on-pump surgery (79.2% vs.",
+      "context_window": "the DAPT group were more likely to undergo on-pump surgery (79.2% vs. 68.5%; p < 0.001) with a longer duration (210.15 vs. 18",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-768",
+      "claim_type": "percentage",
+      "raw_text": "68.5%",
+      "numeric_values": [
+        68.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 768,
+      "sentence": "68.5%; p < 0.001) with a longer duration (210.15 vs.",
+      "context_window": "roup were more likely to undergo on-pump surgery (79.2% vs. 68.5%; p < 0.001) with a longer duration (210.15 vs. 185.66 min;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-775",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 775,
+      "sentence": "68.5%; p < 0.001) with a longer duration (210.15 vs.",
+      "context_window": "re more likely to undergo on-pump surgery (79.2% vs. 68.5%; p < 0.001) with a longer duration (210.15 vs. 185.66 min; p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-833",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 833,
+      "sentence": "185.66 min; p < 0.001).",
+      "context_window": "; p < 0.001) with a longer duration (210.15 vs. 185.66 min; p < 0.001). Among the DAPT group, 770 patients received DAPT for \u2265 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-901",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 901,
+      "sentence": "Among the DAPT group, 770 patients received DAPT for \u2265 6 months.",
+      "context_window": "1). Among the DAPT group, 770 patients received DAPT for \u2265 6 months. Compared to AMT, patients receiving prolonged DAPT were mo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-993",
+      "claim_type": "percentage",
+      "raw_text": "31.7%",
+      "numeric_values": [
+        31.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 993,
+      "sentence": "Compared to AMT, patients receiving prolonged DAPT were more likely to be female (31.7% vs.",
+      "context_window": "nts receiving prolonged DAPT were more likely to be female (31.7% vs. 24.3%; p < 0.001), younger (mean age 64.13 vs. 65.69 ye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1003",
+      "claim_type": "percentage",
+      "raw_text": "24.3%",
+      "numeric_values": [
+        24.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1003,
+      "sentence": "24.3%; p < 0.001), younger (mean age 64.13 vs.",
+      "context_window": "ing prolonged DAPT were more likely to be female (31.7% vs. 24.3%; p < 0.001), younger (mean age 64.13 vs. 65.69 years; p = 0",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1010,
+      "sentence": "24.3%; p < 0.001), younger (mean age 64.13 vs.",
+      "context_window": "longed DAPT were more likely to be female (31.7% vs. 24.3%; p < 0.001), younger (mean age 64.13 vs. 65.69 years; p = 0.001), and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-1050",
+      "claim_type": "unit_value",
+      "raw_text": "65.69 years",
+      "numeric_values": [
+        65.69
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1050,
+      "sentence": "65.69 years; p = 0.001), and smokers (57.8% vs.",
+      "context_window": "e (31.7% vs. 24.3%; p < 0.001), younger (mean age 64.13 vs. 65.69 years; p = 0.001), and smokers (57.8% vs. 51.4%; p = 0.007). They",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1063",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1063,
+      "sentence": "65.69 years; p = 0.001), and smokers (57.8% vs.",
+      "context_window": "24.3%; p < 0.001), younger (mean age 64.13 vs. 65.69 years; p = 0.001), and smokers (57.8% vs. 51.4%; p = 0.007). They also had a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1088",
+      "claim_type": "percentage",
+      "raw_text": "57.8%",
+      "numeric_values": [
+        57.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1088,
+      "sentence": "65.69 years; p = 0.001), and smokers (57.8% vs.",
+      "context_window": "r (mean age 64.13 vs. 65.69 years; p = 0.001), and smokers (57.8% vs. 51.4%; p = 0.007). They also had a higher prevalence of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1098",
+      "claim_type": "percentage",
+      "raw_text": "51.4%",
+      "numeric_values": [
+        51.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1098,
+      "sentence": "51.4%; p = 0.007).",
+      "context_window": "e 64.13 vs. 65.69 years; p = 0.001), and smokers (57.8% vs. 51.4%; p = 0.007). They also had a higher prevalence of co-morbid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1105",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1105,
+      "sentence": "51.4%; p = 0.007).",
+      "context_window": "vs. 65.69 years; p = 0.001), and smokers (57.8% vs. 51.4%; p = 0.007). They also had a higher prevalence of co-morbidities, incl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1186",
+      "claim_type": "percentage",
+      "raw_text": "27.2%",
+      "numeric_values": [
+        27.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1186,
+      "sentence": "They also had a higher prevalence of co-morbidities, including COPD (27.2% vs.",
+      "context_window": "had a higher prevalence of co-morbidities, including COPD (27.2% vs. 25.1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), pr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1196",
+      "claim_type": "percentage",
+      "raw_text": "25.1%",
+      "numeric_values": [
+        25.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1196,
+      "sentence": "25.1%; p = 0.027), PAD (18.2% vs.",
+      "context_window": "her prevalence of co-morbidities, including COPD (27.2% vs. 25.1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1203",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1203,
+      "sentence": "25.1%; p = 0.027), PAD (18.2% vs.",
+      "context_window": "valence of co-morbidities, including COPD (27.2% vs. 25.1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1220",
+      "claim_type": "percentage",
+      "raw_text": "18.2%",
+      "numeric_values": [
+        18.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1220,
+      "sentence": "25.1%; p = 0.027), PAD (18.2% vs.",
+      "context_window": "bidities, including COPD (27.2% vs. 25.1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.5%; p = 0.018",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1230",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1230,
+      "sentence": "10.5%; p < 0.001), prior MI (33.8% vs.",
+      "context_window": "including COPD (27.2% vs. 25.1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.5%; p = 0.018), previou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1237",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1237,
+      "sentence": "10.5%; p < 0.001), prior MI (33.8% vs.",
+      "context_window": "ng COPD (27.2% vs. 25.1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.5%; p = 0.018), previous CVA (10.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1259",
+      "claim_type": "percentage",
+      "raw_text": "33.8%",
+      "numeric_values": [
+        33.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1259,
+      "sentence": "10.5%; p < 0.001), prior MI (33.8% vs.",
+      "context_window": "1%; p = 0.027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.5%; p = 0.018), previous CVA (10.4% vs. 7.0%; p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1269",
+      "claim_type": "percentage",
+      "raw_text": "28.5%",
+      "numeric_values": [
+        28.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1269,
+      "sentence": "28.5%; p = 0.018), previous CVA (10.4% vs.",
+      "context_window": "027), PAD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.5%; p = 0.018), previous CVA (10.4% vs. 7.0%; p = 0.010), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1276",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1276,
+      "sentence": "28.5%; p = 0.018), previous CVA (10.4% vs.",
+      "context_window": "AD (18.2% vs. 10.5%; p < 0.001), prior MI (33.8% vs. 28.5%; p = 0.018), previous CVA (10.4% vs. 7.0%; p = 0.010), and prior PCI (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1302",
+      "claim_type": "percentage",
+      "raw_text": "10.4%",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1302,
+      "sentence": "28.5%; p = 0.018), previous CVA (10.4% vs.",
+      "context_window": ".001), prior MI (33.8% vs. 28.5%; p = 0.018), previous CVA (10.4% vs. 7.0%; p = 0.010), and prior PCI (28.8% vs. 20.1%; p < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1312",
+      "claim_type": "percentage",
+      "raw_text": "7.0%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1312,
+      "sentence": "7.0%; p = 0.010), and prior PCI (28.8% vs.",
+      "context_window": "or MI (33.8% vs. 28.5%; p = 0.018), previous CVA (10.4% vs. 7.0%; p = 0.010), and prior PCI (28.8% vs. 20.1%; p < 0.001). DA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1318",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1318,
+      "sentence": "7.0%; p = 0.010), and prior PCI (28.8% vs.",
+      "context_window": "(33.8% vs. 28.5%; p = 0.018), previous CVA (10.4% vs. 7.0%; p = 0.010), and prior PCI (28.8% vs. 20.1%; p < 0.001). DAPT patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1345",
+      "claim_type": "percentage",
+      "raw_text": "28.8%",
+      "numeric_values": [
+        28.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1345,
+      "sentence": "7.0%; p = 0.010), and prior PCI (28.8% vs.",
+      "context_window": "), previous CVA (10.4% vs. 7.0%; p = 0.010), and prior PCI (28.8% vs. 20.1%; p < 0.001). DAPT patients were also more likely",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1355",
+      "claim_type": "percentage",
+      "raw_text": "20.1%",
+      "numeric_values": [
+        20.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1355,
+      "sentence": "20.1%; p < 0.001).",
+      "context_window": "s CVA (10.4% vs. 7.0%; p = 0.010), and prior PCI (28.8% vs. 20.1%; p < 0.001). DAPT patients were also more likely to have be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1362",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1362,
+      "sentence": "20.1%; p < 0.001).",
+      "context_window": "10.4% vs. 7.0%; p = 0.010), and prior PCI (28.8% vs. 20.1%; p < 0.001). DAPT patients were also more likely to have been prescrib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1467",
+      "claim_type": "percentage",
+      "raw_text": "37.9%",
+      "numeric_values": [
+        37.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1467,
+      "sentence": "DAPT patients were also more likely to have been prescribed P2Y12 antagonists prior to CABG (37.9% vs.",
+      "context_window": "ly to have been prescribed P2Y12 antagonists prior to CABG (37.9% vs. 15.5%; p < 0.001) (for details, see Table 1 ). Baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1477",
+      "claim_type": "percentage",
+      "raw_text": "15.5%",
+      "numeric_values": [
+        15.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1477,
+      "sentence": "15.5%; p < 0.001) (for details, see Table 1 ).",
+      "context_window": "been prescribed P2Y12 antagonists prior to CABG (37.9% vs. 15.5%; p < 0.001) (for details, see Table 1 ). Baseline characte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1484",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1484,
+      "sentence": "15.5%; p < 0.001) (for details, see Table 1 ).",
+      "context_window": "rescribed P2Y12 antagonists prior to CABG (37.9% vs. 15.5%; p < 0.001) (for details, see Table 1 ). Baseline characteristics of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1635",
+      "claim_type": "percentage",
+      "raw_text": "90.7%",
+      "numeric_values": [
+        90.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1635,
+      "sentence": "Baseline characteristics of patients\n\nAdditionally, the DAPT group had a higher prescription rate of statins (90.7% vs.",
+      "context_window": ", the DAPT group had a higher prescription rate of statins (90.7% vs. 86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1645",
+      "claim_type": "percentage",
+      "raw_text": "86.6%",
+      "numeric_values": [
+        86.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1645,
+      "sentence": "86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs.",
+      "context_window": "group had a higher prescription rate of statins (90.7% vs. 86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs. 22.6%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1652",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1652,
+      "sentence": "86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs.",
+      "context_window": "had a higher prescription rate of statins (90.7% vs. 86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs. 22.6%; p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1695",
+      "claim_type": "percentage",
+      "raw_text": "33.3%",
+      "numeric_values": [
+        33.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1695,
+      "sentence": "86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs.",
+      "context_window": "90.7% vs. 86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs. 22.6%; p < 0.001). The overall incidence of revascular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1705",
+      "claim_type": "percentage",
+      "raw_text": "22.6%",
+      "numeric_values": [
+        22.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1705,
+      "sentence": "22.6%; p < 0.001).",
+      "context_window": "86.6%; p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs. 22.6%; p < 0.001). The overall incidence of revascularization wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1712",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1712,
+      "sentence": "22.6%; p < 0.001).",
+      "context_window": "p < 0.001) and antiarrhythmic drugs (AAD) (33.3% vs. 22.6%; p < 0.001). The overall incidence of revascularization was significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1812",
+      "claim_type": "percentage",
+      "raw_text": "14.54%",
+      "numeric_values": [
+        14.54
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1812,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio of 2.24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ).",
+      "context_window": "vascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-1864",
+      "claim_type": "percentage",
+      "raw_text": "7.07%",
+      "numeric_values": [
+        7.07
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1864,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio of 2.24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ).",
+      "context_window": "group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio of 2.24 (95% CI: 1.69-",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-1916",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.69-2.97",
+      "numeric_values": [
+        1.69,
+        2.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1916,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio of 2.24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ).",
+      "context_window": "group (7.07%, 71 out of 1005), with an odds ratio of 2.24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ). In the first 2 years of follow up,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-1935",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1935,
+      "sentence": "The overall incidence of revascularization was significantly higher in the DAPT group (14.54%, 212 out of 1458) compared to the AMT group (7.07%, 71 out of 1005), with an odds ratio of 2.24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ).",
+      "context_window": "ut of 1005), with an odds ratio of 2.24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ). In the first 2 years of follow up, revasculari",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-1971",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1971,
+      "sentence": "In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001).",
+      "context_window": ".24 (95% CI: 1.69-2.97, p < 0.001) (Table 2 ). In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-2028",
+      "claim_type": "percentage",
+      "raw_text": "9.7%",
+      "numeric_values": [
+        9.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2028,
+      "sentence": "In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001).",
+      "context_window": "st 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR =",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-2063",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2063,
+      "sentence": "In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001).",
+      "context_window": "ization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.00",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-2087",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.512",
+      "numeric_values": [
+        2.512
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2087,
+      "sentence": "In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001).",
+      "context_window": "(9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001). In the 2-5 years follow-up",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-2098",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.780-3.548",
+      "numeric_values": [
+        1.78,
+        3.548
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2098,
+      "sentence": "In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001).",
+      "context_window": "he DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001). In the 2-5 years follow-up period, 68 (4.7%) i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-2119",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2119,
+      "sentence": "In the first 2 years of follow up, revascularization occurred in 142 (9.7%) in the DAPT group versus 39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001).",
+      "context_window": "39 (3.9%) of the AMT group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001). In the 2-5 years follow-up period, 68 (4.7%) in the DAPT",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-2140",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2140,
+      "sentence": "In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs.",
+      "context_window": "group (OR = 2.512 95% CI: 1.780-3.548, p < 0.001). In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-2170",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2170,
+      "sentence": "In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs.",
+      "context_window": "0-3.548, p < 0.001). In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group r",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-2210",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2210,
+      "sentence": "In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs.",
+      "context_window": "llow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-2271",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.676",
+      "numeric_values": [
+        1.676
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2271,
+      "sentence": "In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs.",
+      "context_window": ".8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs. 1 and 2 ). Revascu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-2283",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.087-2.577",
+      "numeric_values": [
+        1.087,
+        2.577
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2283,
+      "sentence": "In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs.",
+      "context_window": "AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs. 1 and 2 ). Revascularization- AMT versu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-2304",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2304,
+      "sentence": "In the 2-5 years follow-up period, 68 (4.7%) in the DAPT group compared to 28 (2.8%) of the AMT group required post-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs.",
+      "context_window": "st-CABG revascularization (OR = 1.676 (95% CI: 1.087-2.577, p = 0.018) (Figs. 1 and 2 ). Revascularization- AMT versus DAPT Kap",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3213",
+      "claim_type": "percentage",
+      "raw_text": "13.51%",
+      "numeric_values": [
+        13.51
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3213,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nAmong patients on AMT and those who received DAPT for more than six months after CABG, 240 out of 1775 patients(AMT=1005+DAPT=770, 13.51%) required revascularization during follow-up.",
+      "context_window": "ths after CABG, 240 out of 1775 patients(AMT=1005+DAPT=770, 13.51%) required revascularization during follow-up. A significant",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3378",
+      "claim_type": "percentage",
+      "raw_text": "22.08%",
+      "numeric_values": [
+        22.08
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3378,
+      "sentence": "A significantly higher incidence of revascularization was observed in the DAPT group compared to the AMT group (22.08% vs.",
+      "context_window": "n was observed in the DAPT group compared to the AMT group (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Tab",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3389",
+      "claim_type": "percentage",
+      "raw_text": "6.96%",
+      "numeric_values": [
+        6.96
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3389,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ).",
+      "context_window": "ved in the DAPT group compared to the AMT group (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ). In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-3396",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.157",
+      "numeric_values": [
+        3.157
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3396,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ).",
+      "context_window": "the DAPT group compared to the AMT group (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ). In the first 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-3408",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.734-4.940",
+      "numeric_values": [
+        2.734,
+        4.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3408,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ).",
+      "context_window": "up compared to the AMT group (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ). In the first 2 years of follow-up,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-3429",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3429,
+      "sentence": "6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ).",
+      "context_window": "T group (22.08% vs. 6.96%; OR = 3.157, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ). In the first 2 years of follow-up, revasculari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-3465",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3465,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "7, 95% CI: 2.734-4.940, p < 0.001) (Table 3 ). In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3522",
+      "claim_type": "percentage",
+      "raw_text": "15.1%",
+      "numeric_values": [
+        15.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3522,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "st 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-3543",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3543,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3569",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3569,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "rred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.0",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-3593",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 4.326",
+      "numeric_values": [
+        4.326
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3593,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "he DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-3605",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.049-6.140",
+      "numeric_values": [
+        3.049,
+        6.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3605,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of reva",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-3626",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3626,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "9 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularizati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-3738",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3738,
+      "sentence": "In the first 2 years of follow-up, revascularization occurred in 116 (15.1%) of the DAPT \u2265 6 months group versus 39 (3.9%) of the AMT group (OR = 4.326, 95% CI: 3.049-6.140, p < 0.001), indicating a significantly higher risk of revascularization in patients receiving DAPT for at least 6 months.",
+      "context_window": "f revascularization in patients receiving DAPT for at least 6 months. In the 2-5 years follow-up period, revascularization was r",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-3757",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3757,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": "in patients receiving DAPT for at least 6 months. In the 2-5 years follow-up period, revascularization was reported in 51 (6.6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3821",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3821,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": "ars follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-3841",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3841,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": ", revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 9",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3872",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3872,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": "d in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-3896",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.393",
+      "numeric_values": [
+        2.393
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3896,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": "PT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-3908",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.514-3.780",
+      "numeric_values": [
+        1.514,
+        3.78
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3908,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": "s group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revasculariz",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-3929",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3929,
+      "sentence": "In the 2-5 years follow-up period, revascularization was reported in 51 (6.6%) of the DAPT \u2265 6 months group compared to 28 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization associated with prolonged DAPT use (Figs.",
+      "context_window": "8 (2.8%) of the AMT group (OR = 2.393, 95% CI: 1.514-3.780, p < 0.001), reaffirming the increased risk of revascularization assoc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-4092",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4092,
+      "sentence": "DAPT \u2265 6 months)\n\nKaplan-Meier survival curves illustrating the cumulative revascularization-free survival in patients prescribed DAPT > 6 months compared to those receiving AMT throughout the entire follow-up duration.",
+      "context_window": "s. 3 and 4 ). Revascularization occurrence (AMT vs. DAPT \u2265 6 months) Kaplan-Meier survival curves illustrating the cumulative",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-4222",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4222,
+      "sentence": "DAPT \u2265 6 months)\n\nKaplan-Meier survival curves illustrating the cumulative revascularization-free survival in patients prescribed DAPT > 6 months compared to those receiving AMT throughout the entire follow-up duration.",
+      "context_window": "vascularization-free survival in patients prescribed DAPT > 6 months compared to those receiving AMT throughout the entire follo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-4530",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4530,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nKaplan-Meier survival curves illustrating the revascularization-free survival in patients prescribed DAPT > 6 months compared to those receiving AMT in the first two years post-srugery.",
+      "context_window": "vascularization-free survival in patients prescribed DAPT > 6 months compared to those receiving AMT in the first two years post",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4749",
+      "claim_type": "percentage",
+      "raw_text": "92.0%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4749,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig.",
+      "context_window": "ompared to the DAPT group (purple) The survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4767",
+      "claim_type": "percentage",
+      "raw_text": "96.5%",
+      "numeric_values": [
+        96.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4767,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig.",
+      "context_window": "T group (purple) The survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-4788",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4788,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig.",
+      "context_window": "survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4829",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4829,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig.",
+      "context_window": ".5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig. 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4854",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4854,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig.",
+      "context_window": "hs group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig. 5 ). Similarly, survival r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-4876",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4876,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe survival rates were 92.0% for AMT and 96.5% for the DAPT > 6 months group (odds ratio (OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig.",
+      "context_window": "OR) = 0.421, 95% confidence interval (95% CI): 0.269-0.658; p < 0.001(Fig. 5 ). Similarly, survival rate was significantly higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5005",
+      "claim_type": "percentage",
+      "raw_text": "96.16%",
+      "numeric_values": [
+        96.16
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5005,
+      "sentence": "Similarly, survival rate was significantly higher in overall DAPT group regardless of duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001.",
+      "context_window": "in overall DAPT group regardless of duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5040",
+      "claim_type": "percentage",
+      "raw_text": "92.14%",
+      "numeric_values": [
+        92.14
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5040,
+      "sentence": "Similarly, survival rate was significantly higher in overall DAPT group regardless of duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001.",
+      "context_window": "f duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001. The incident rate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-5049",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5049,
+      "sentence": "Similarly, survival rate was significantly higher in overall DAPT group regardless of duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001.",
+      "context_window": "n of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001. The incident rate of CV death",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-5059",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.33-0.67",
+      "numeric_values": [
+        0.33,
+        0.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5059,
+      "sentence": "Similarly, survival rate was significantly higher in overall DAPT group regardless of duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001.",
+      "context_window": "ment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001. The incident rate of CV death (0.9% vs. 5.3%, O",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-5078",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5078,
+      "sentence": "Similarly, survival rate was significantly higher in overall DAPT group regardless of duration of treatment (96.16%) compared to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001.",
+      "context_window": "red to the AMT group (92.14%) (OR = 0.47 95% CI: 0.33-0.67, p < 0.001. The incident rate of CV death (0.9% vs. 5.3%, OR = 0.165,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5120",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5120,
+      "sentence": "The incident rate of CV death (0.9% vs.",
+      "context_window": "5% CI: 0.33-0.67, p < 0.001. The incident rate of CV death (0.9% vs. 5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5129",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5129,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "33-0.67, p < 0.001. The incident rate of CV death (0.9% vs. 5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-5135",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.165",
+      "numeric_values": [
+        0.165
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5135,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "7, p < 0.001. The incident rate of CV death (0.9% vs. 5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-5147",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 0.075-0.366",
+      "numeric_values": [
+        0.075,
+        0.366
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5147,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": ". The incident rate of CV death (0.9% vs. 5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-5167",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5167,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "of CV death (0.9% vs. 5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-5207",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5207,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-5268",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5268,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001). Kaplan-Meier survival curv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-5279",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16-0.45",
+      "numeric_values": [
+        0.16,
+        0.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5279,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "up and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001). Kaplan-Meier survival curves illustrating sur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-5298",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5298,
+      "sentence": "5.3%, OR = 0.165, 95%CI: 0.075-0.366; p < 0.001) was both lower in the DAPT > 6 months group and DAPT group all durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001).",
+      "context_window": "ll durations compared to AMT (OR = 0.27 (95% CI: 0.16-0.45, p < 0.001). Kaplan-Meier survival curves illustrating survival in pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-5392",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5392,
+      "sentence": "Kaplan-Meier survival curves illustrating survival in patients prescribed DAPT > 6 months compared to those receiving AMT throughout the entire follow-up duration.",
+      "context_window": "curves illustrating survival in patients prescribed DAPT > 6 months compared to those receiving AMT throughout the entire follo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5897",
+      "claim_type": "percentage",
+      "raw_text": "4.18%",
+      "numeric_values": [
+        4.18
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5897,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11).",
+      "context_window": "the DAPT group (purple) The incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5924",
+      "claim_type": "percentage",
+      "raw_text": "5.69%",
+      "numeric_values": [
+        5.69
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5924,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11).",
+      "context_window": "e incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of treatment duration, with s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-6002",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.38",
+      "numeric_values": [
+        1.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6002,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11).",
+      "context_window": "group, regardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11). However, there was a signif",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-6012",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.95-2.02",
+      "numeric_values": [
+        0.95,
+        2.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6012,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11).",
+      "context_window": "ardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11). However, there was a significantly higher rate",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6031",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6031,
+      "sentence": "The AMT group (blue) demonstrates a higher revascularization-free survival rate compared to the DAPT group (purple)\n\nThe incidence of post-CABG ACS was 4.18% in the AMT group and 5.69% in the DAPT group, regardless of treatment duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11).",
+      "context_window": "t duration, with similar odds (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11). However, there was a significantly higher rate of post-C",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6204",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6204,
+      "sentence": "However, there was a significantly higher rate of post-CABG ACS events in the DAPT group receiving greater than six months treatment, compared to the AMT group (8.1% vs.",
+      "context_window": "eater than six months treatment, compared to the AMT group (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). Of n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6213",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6213,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "n six months treatment, compared to the AMT group (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). Of note, ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-6219",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.172",
+      "numeric_values": [
+        2.172
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6219,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "months treatment, compared to the AMT group (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). Of note, there was no sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-6231",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.439-3.281",
+      "numeric_values": [
+        1.439,
+        3.281
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6231,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "ment, compared to the AMT group (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). Of note, there was no significant difference i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6252",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6252,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "AMT group (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). Of note, there was no significant difference in the rate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6391",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6391,
+      "sentence": "Of note, there was no significant difference in the rate of major adverse cardiovascular events (MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097).",
+      "context_window": "dverse cardiovascular events (MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097). P",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6415",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6415,
+      "sentence": "Of note, there was no significant difference in the rate of major adverse cardiovascular events (MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097).",
+      "context_window": "ents (MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097). Patients presenting with",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-6421",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.172",
+      "numeric_values": [
+        2.172
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6421,
+      "sentence": "Of note, there was no significant difference in the rate of major adverse cardiovascular events (MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097).",
+      "context_window": "MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097). Patients presenting with ACS prior to",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6433",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6433,
+      "sentence": "Of note, there was no significant difference in the rate of major adverse cardiovascular events (MACE) between the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097).",
+      "context_window": "n the DAPT group (12%) and the AMT group (11%) (OR = 2.172, 95% CI, p = 1.097). Patients presenting with ACS prior to CABG",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6563",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6563,
+      "sentence": "Patients presenting with ACS prior to CABG were significantly more likely to experience post-CABG ACS events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002).",
+      "context_window": "gnificantly more likely to experience post-CABG ACS events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6613",
+      "claim_type": "percentage",
+      "raw_text": "4.0%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6613,
+      "sentence": "Patients presenting with ACS prior to CABG were significantly more likely to experience post-CABG ACS events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002).",
+      "context_window": "S events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002). The binary regression mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-6620",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.834",
+      "numeric_values": [
+        1.834
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6620,
+      "sentence": "Patients presenting with ACS prior to CABG were significantly more likely to experience post-CABG ACS events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002).",
+      "context_window": "s (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002). The binary regression model revealed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-6632",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6632,
+      "sentence": "Patients presenting with ACS prior to CABG were significantly more likely to experience post-CABG ACS events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002).",
+      "context_window": "pared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002). The binary regression model revealed that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6640",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6640,
+      "sentence": "Patients presenting with ACS prior to CABG were significantly more likely to experience post-CABG ACS events (7.1%) compared to those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002).",
+      "context_window": "those undergoing elective CABG (4.0%) (OR = 1.834, 95% CI, p = 0.002). The binary regression model revealed that younger patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-6713",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.964",
+      "numeric_values": [
+        0.964
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6713,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-6725",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.95-0.97",
+      "numeric_values": [
+        0.95,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6725,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "egression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6744",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6744,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "ealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-6767",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.50",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6767,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "ents (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-6778",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.12-2.00",
+      "numeric_values": [
+        1.12,
+        2.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6778,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6797",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6797,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) graft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-6869",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6869,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-6880",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.36-0.81",
+      "numeric_values": [
+        0.36,
+        0.81
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6880,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "o had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6899",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6899,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "l mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-hr-a-6951",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 3.47",
+      "numeric_values": [
+        3.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6951,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "6-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-6962",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.55-4.72",
+      "numeric_values": [
+        2.55,
+        4.72
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6962,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-6981",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6981,
+      "sentence": "The binary regression model revealed that younger patients (HR = 0.964, 95% CI: 0.95-0.97; p < 0.001), diabetics (HR = 1.50, 95% CI: 1.12-2.00, p = 0.007), patients who had fewer internal mammary artery(IMA) grafts (HR = 0.54, 95% CI: 0.36-0.81, p = 0.003), and patients receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (Table 4 ).",
+      "context_window": "ts receiving DAPT after CABG (HR = 3.47, 95% CI: 2.55-4.72, p < 0.001) were more likely to receive revascularization after CABG (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-7126",
+      "claim_type": "percentage",
+      "raw_text": "12.8%",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7126,
+      "sentence": "The model, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001).",
+      "context_window": "odel, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-corr-7191",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.128",
+      "numeric_values": [
+        0.128
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7191,
+      "sentence": "The model, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001).",
+      "context_window": "of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001). Pre- and Post-CABG medications and surgical v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-7203",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7203,
+      "sentence": "The model, comprising these four predictors, was able to explain 12.8% of the variance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001).",
+      "context_window": "ance in post-CABG revascularization (Nagelkerke R\u00b2 = 0.128; p < 0.001). Pre- and Post-CABG medications and surgical variables in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-595",
+      "claim_type": "percentage",
+      "raw_text": "13.51%",
+      "numeric_values": [
+        13.51
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 595,
+      "sentence": "A total of 13.51% of patients required revascularization during follow-up, with DAPT patients exhibiting a higher rate of revascularization (22.08%) compared to the AMT group (6.96%, p < 0.001).",
+      "context_window": "differences are discussed in the next section. A total of 13.51% of patients required revascularization during follow-up, wi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-725",
+      "claim_type": "percentage",
+      "raw_text": "22.08%",
+      "numeric_values": [
+        22.08
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 725,
+      "sentence": "A total of 13.51% of patients required revascularization during follow-up, with DAPT patients exhibiting a higher rate of revascularization (22.08%) compared to the AMT group (6.96%, p < 0.001).",
+      "context_window": "APT patients exhibiting a higher rate of revascularization (22.08%) compared to the AMT group (6.96%, p < 0.001). Although thi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-760",
+      "claim_type": "percentage",
+      "raw_text": "6.96%",
+      "numeric_values": [
+        6.96
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 760,
+      "sentence": "A total of 13.51% of patients required revascularization during follow-up, with DAPT patients exhibiting a higher rate of revascularization (22.08%) compared to the AMT group (6.96%, p < 0.001).",
+      "context_window": "te of revascularization (22.08%) compared to the AMT group (6.96%, p < 0.001). Although this study primarily focused on patie",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-767",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 767,
+      "sentence": "A total of 13.51% of patients required revascularization during follow-up, with DAPT patients exhibiting a higher rate of revascularization (22.08%) compared to the AMT group (6.96%, p < 0.001).",
+      "context_window": "evascularization (22.08%) compared to the AMT group (6.96%, p < 0.001). Although this study primarily focused on patients who rec",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3253",
+      "claim_type": "percentage",
+      "raw_text": "96.5%",
+      "numeric_values": [
+        96.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3253,
+      "sentence": "Despite greater cardiovascular risk and higher burden of comorbidities, DAPT group demonstrated a survival benefit, with a higher survival rate of 96.5% compared to 92.0% in the AMT group ( p < 0.001).",
+      "context_window": "nstrated a survival benefit, with a higher survival rate of 96.5% compared to 92.0% in the AMT group ( p < 0.001). In contras",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3271",
+      "claim_type": "percentage",
+      "raw_text": "92.0%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3271,
+      "sentence": "Despite greater cardiovascular risk and higher burden of comorbidities, DAPT group demonstrated a survival benefit, with a higher survival rate of 96.5% compared to 92.0% in the AMT group ( p < 0.001).",
+      "context_window": "l benefit, with a higher survival rate of 96.5% compared to 92.0% in the AMT group ( p < 0.001). In contrast, revascularizati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-3296",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3296,
+      "sentence": "Despite greater cardiovascular risk and higher burden of comorbidities, DAPT group demonstrated a survival benefit, with a higher survival rate of 96.5% compared to 92.0% in the AMT group ( p < 0.001).",
+      "context_window": "survival rate of 96.5% compared to 92.0% in the AMT group ( p < 0.001). In contrast, revascularization appears to be more closely",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3617",
+      "claim_type": "percentage",
+      "raw_text": "5.69%",
+      "numeric_values": [
+        5.69
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3617,
+      "sentence": "The incidence of post-CABG acute coronary syndrome (ACS) was slightly higher in the DAPT group compared to AMT (5.69% vs.",
+      "context_window": "ACS) was slightly higher in the DAPT group compared to AMT (5.69% vs. 4.18%), though this difference did not reach statistica",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-3627",
+      "claim_type": "percentage",
+      "raw_text": "4.18%",
+      "numeric_values": [
+        4.18
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3627,
+      "sentence": "4.18%), though this difference did not reach statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DAPT did not markedly increase the risk of post-CABG ACS.",
+      "context_window": "lightly higher in the DAPT group compared to AMT (5.69% vs. 4.18%), though this difference did not reach statistical signific",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-3698",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.38",
+      "numeric_values": [
+        1.38
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3698,
+      "sentence": "4.18%), though this difference did not reach statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DAPT did not markedly increase the risk of post-CABG ACS.",
+      "context_window": "ugh this difference did not reach statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-3708",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.95-2.02",
+      "numeric_values": [
+        0.95,
+        2.02
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3708,
+      "sentence": "4.18%), though this difference did not reach statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DAPT did not markedly increase the risk of post-CABG ACS.",
+      "context_window": "ifference did not reach statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DAPT did not markedly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-3727",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3727,
+      "sentence": "4.18%), though this difference did not reach statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DAPT did not markedly increase the risk of post-CABG ACS.",
+      "context_window": "each statistical significance (OR: 1.38, 95% CI: 0.95-2.02, p = 0.11), suggesting that, overall, DAPT did not markedly increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4036",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4036,
+      "sentence": "Patients receiving DAPT for more than six months had a more than twofold increased risk of post-CABG ACS compared to those on AMT (8.1% vs.",
+      "context_window": "d increased risk of post-CABG ACS compared to those on AMT (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). But",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4045",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4045,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "ed risk of post-CABG ACS compared to those on AMT (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). But of note t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-4051",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.172",
+      "numeric_values": [
+        2.172
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4051,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "k of post-CABG ACS compared to those on AMT (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). But of note there was no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-ci-4063",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.439-3.281",
+      "numeric_values": [
+        1.439,
+        3.281
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 4063,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "BG ACS compared to those on AMT (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). But of note there was no significant differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-4084",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4084,
+      "sentence": "3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001).",
+      "context_window": "ose on AMT (8.1% vs. 3.9%; OR = 2.172, 95% CI: 1.439-3.281; p < 0.001). But of note there was no significant difference in overal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4746",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4746,
+      "sentence": "Notably, patients who underwent urgent CABG had a significantly higher incidence of post-CABG ACS compared to those who had elective procedures (7.1% vs.",
+      "context_window": "ost-CABG ACS compared to those who had elective procedures (7.1% vs. 4.0%; OR = 1.834, p = 0.002). Alternatively, the increa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-4755",
+      "claim_type": "percentage",
+      "raw_text": "4.0%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4755,
+      "sentence": "4.0%; OR = 1.834, p = 0.002).",
+      "context_window": "ACS compared to those who had elective procedures (7.1% vs. 4.0%; OR = 1.834, p = 0.002). Alternatively, the increased ACS r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-or-a-4761",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.834",
+      "numeric_values": [
+        1.834
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4761,
+      "sentence": "4.0%; OR = 1.834, p = 0.002).",
+      "context_window": "mpared to those who had elective procedures (7.1% vs. 4.0%; OR = 1.834, p = 0.002). Alternatively, the increased ACS rate in the D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-4773",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4773,
+      "sentence": "4.0%; OR = 1.834, p = 0.002).",
+      "context_window": "ose who had elective procedures (7.1% vs. 4.0%; OR = 1.834, p = 0.002). Alternatively, the increased ACS rate in the DAPT \u2265 6 mon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-u-4837",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4837,
+      "sentence": "Alternatively, the increased ACS rate in the DAPT \u2265 6 months group might also reflect improved survival, wherein these patients were more likely to survive an initial ischemic event and subsequently develop ACS requiring intervention.",
+      "context_window": "0.002). Alternatively, the increased ACS rate in the DAPT \u2265 6 months group might also reflect improved survival, wherein these p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-5519",
+      "claim_type": "percentage",
+      "raw_text": "12.8%",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5519,
+      "sentence": "The regression analysis identified younger age, diabetes, fewer IMA grafts, and post-CABG DAPT use as predictors of revascularization, accounting for 12.8% of the variance in revascularization outcomes (Nagelkerke R\u00b2 = 0.128, p < 0.001) (Table 5 ).",
+      "context_window": "DAPT use as predictors of revascularization, accounting for 12.8% of the variance in revascularization outcomes (Nagelkerke R",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-corr-5583",
+      "claim_type": "correlation",
+      "raw_text": "R\u00b2 = 0.128",
+      "numeric_values": [
+        0.128
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5583,
+      "sentence": "The regression analysis identified younger age, diabetes, fewer IMA grafts, and post-CABG DAPT use as predictors of revascularization, accounting for 12.8% of the variance in revascularization outcomes (Nagelkerke R\u00b2 = 0.128, p < 0.001) (Table 5 ).",
+      "context_window": "% of the variance in revascularization outcomes (Nagelkerke R\u00b2 = 0.128, p < 0.001) (Table 5 ). Notably, DAPT use after CABG emerge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-5595",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5595,
+      "sentence": "The regression analysis identified younger age, diabetes, fewer IMA grafts, and post-CABG DAPT use as predictors of revascularization, accounting for 12.8% of the variance in revascularization outcomes (Nagelkerke R\u00b2 = 0.128, p < 0.001) (Table 5 ).",
+      "context_window": "iance in revascularization outcomes (Nagelkerke R\u00b2 = 0.128, p < 0.001) (Table 5 ). Notably, DAPT use after CABG emerged as the st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-8372",
+      "claim_type": "percentage",
+      "raw_text": "29.1%",
+      "numeric_values": [
+        29.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8372,
+      "sentence": "For instance, multivessel disease was more prevalent in the AMT group (29.1%) compared to the DAPT group (25.7%; p = 0.026), but this did not emerge as a significant predictor in the regression model (Table 3 ).",
+      "context_window": "e, multivessel disease was more prevalent in the AMT group (29.1%) compared to the DAPT group (25.7%; p = 0.026), but this di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-pct-8407",
+      "claim_type": "percentage",
+      "raw_text": "25.7%",
+      "numeric_values": [
+        25.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8407,
+      "sentence": "For instance, multivessel disease was more prevalent in the AMT group (29.1%) compared to the DAPT group (25.7%; p = 0.026), but this did not emerge as a significant predictor in the regression model (Table 3 ).",
+      "context_window": "valent in the AMT group (29.1%) compared to the DAPT group (25.7%; p = 0.026), but this did not emerge as a significant predi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12001649_predictors_of_secondary_revascularization_after_coronary_art-p-8414",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8414,
+      "sentence": "For instance, multivessel disease was more prevalent in the AMT group (29.1%) compared to the DAPT group (25.7%; p = 0.026), but this did not emerge as a significant predictor in the regression model (Table 3 ).",
+      "context_window": "in the AMT group (29.1%) compared to the DAPT group (25.7%; p = 0.026), but this did not emerge as a significant predictor in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

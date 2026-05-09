@@ -1,0 +1,646 @@
+{
+  "paper_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn",
+  "doi": "10.1007/s41105-021-00361-6",
+  "extracted_at": "2026-05-08T20:05:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "percentage": 17,
+    "sample_size": 2,
+    "p_value": 4,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-673",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 673,
+      "sentence": "Of 163 included patients, 112 were available for long-term follow-up 2-4 years after starting CPAP, and use data were downloaded for 99 patients.",
+      "context_window": "uded patients, 112 were available for long-term follow-up 2-4 years after starting CPAP, and use data were downloaded for 99 pa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-902",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 902,
+      "sentence": "Nearly half (43%) of the patients needed extra consultations beyond the standard treatment plan.",
+      "context_window": "ing long-term usage was usage at three months. Nearly half (43%) of the patients needed extra consultations beyond the stan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-1001",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1001,
+      "sentence": "Most patients (69%) did not contact the clinic for their recommended two-year follow-up but were instead called into the clinic specifically for the study.",
+      "context_window": "ltations beyond the standard treatment plan. Most patients (69%) did not contact the clinic for their recommended two-year",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-1005",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1005,
+      "sentence": "CPAP adherence rates reported in the literature vary considerably, with non-adherence ranging between 29 and 83% [ 6 , 7 ] where the cut-off in most cases has been based on a standard of CPAP adherence for 4 h nightly [ 6 , 8 ].",
+      "context_window": "ary considerably, with non-adherence ranging between 29 and 83% [ 6 , 7 ] where the cut-off in most cases has been based on",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-1177",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 1177,
+      "sentence": "Most studies describe CPAP use in the short term (< 6 months after initial referral), and there are few studies reporting CPAP adherence rate in the long term (beyond 1 year) [ 9 ].",
+      "context_window": ", 8 ]. Most studies describe CPAP use in the short term (< 6 months after initial referral), and there are few studies reportin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-1292",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 1292,
+      "sentence": "Most studies describe CPAP use in the short term (< 6 months after initial referral), and there are few studies reporting CPAP adherence rate in the long term (beyond 1 year) [ 9 ].",
+      "context_window": "dies reporting CPAP adherence rate in the long term (beyond 1 year) [ 9 ]. Many have tried to identify clinical factors that c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-1509",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1509,
+      "sentence": "The aim of the present study was to investigate CPAP usage in the long term (2 years after initial referral) and to identify potential predictors to long-term adherence.",
+      "context_window": "esent study was to investigate CPAP usage in the long term (2 years after initial referral) and to identify potential predictor",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-181",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 181,
+      "sentence": "The median age was 50 (range 21-79), median AHI 25,8 (range 1-139) and 20% were women.",
+      "context_window": "age was 50 (range 21-79), median AHI 25,8 (range 1-139) and 20% were women. Two patients discontinued the CPAP treatment be",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-411",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 411,
+      "sentence": "An additional 21 patients discontinued the CPAP treatment or were lost for follow-up before 3 months and 28 patients after the 3-month follow-up, resulting in 112 CPAP patients available for long-term follow-up.",
+      "context_window": "tinued the CPAP treatment or were lost for follow-up before 3 months and 28 patients after the 3-month follow-up, resulting in 1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-597",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 597,
+      "sentence": "The reasons for discontinuing CPAP treatment were multifactorial: 47% were referred for treatment with OAT, while 16% of the patients did not attend the follow-up for an unknown reason.",
+      "context_window": "asons for discontinuing CPAP treatment were multifactorial: 47% were referred for treatment with OAT, while 16% of the pati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-645",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 645,
+      "sentence": "The reasons for discontinuing CPAP treatment were multifactorial: 47% were referred for treatment with OAT, while 16% of the patients did not attend the follow-up for an unknown reason.",
+      "context_window": "ifactorial: 47% were referred for treatment with OAT, while 16% of the patients did not attend the follow-up for an unknown",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-n-847",
+      "claim_type": "sample_size",
+      "raw_text": "n = 112",
+      "numeric_values": [
+        112.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 847,
+      "sentence": "The clinical characteristics of the patients available for long-term follow-up ( n = 112), and those lost for follow-up ( n = 51) are summarized in Table 1 .",
+      "context_window": "ristics of the patients available for long-term follow-up ( n = 112), and those lost for follow-up ( n = 51) are summarized in",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-n-888",
+      "claim_type": "sample_size",
+      "raw_text": "n = 51",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 888,
+      "sentence": "The clinical characteristics of the patients available for long-term follow-up ( n = 112), and those lost for follow-up ( n = 51) are summarized in Table 1 .",
+      "context_window": "g-term follow-up ( n = 112), and those lost for follow-up ( n = 51) are summarized in Table 1 . The patients who continued CPA",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-1564",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1564,
+      "sentence": "Participant flow chart\n\nClinical characteristics at baseline for patients available for long-term follow up and lost to follow up\n\nCPAP continuous positive airway treatment; IQR interquartile range; AHI apnea-hypopnea index, the number of apneas and hypopneas per hour of sleep; ESS Epworth\n\nSleepiness Scale; BMI body mass index\n\nDownloaded data were obtained from 99 of the 112 patients at the long-term follow-up at a median of 3 years (IQR 2.6-3.6).",
+      "context_window": "the 112 patients at the long-term follow-up at a median of 3 years (IQR 2.6-3.6). There were no significant differences in cli",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-1842",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1842,
+      "sentence": "Of the 99 patients, 78 (79%) used the CPAP > 4 h/night, and 51 (52%) used it > 6 h/night.",
+      "context_window": "se was 6 h per night (IQR 4.2-7.1). Of the 99 patients, 78 (79%) used the CPAP > 4 h/night, and 51 (52%) used it > 6 h/nigh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-1882",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1882,
+      "sentence": "Of the 99 patients, 78 (79%) used the CPAP > 4 h/night, and 51 (52%) used it > 6 h/night.",
+      "context_window": "he 99 patients, 78 (79%) used the CPAP > 4 h/night, and 51 (52%) used it > 6 h/night. We performed a multivariate linear r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-2191",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2191,
+      "sentence": "The only predictor that was significantly associated with long-term CPAP adherence was CPAP use at 3 months.",
+      "context_window": "ly associated with long-term CPAP adherence was CPAP use at 3 months. Multivariate linear regression predicting long-term CPAP",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-p-2808",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2808,
+      "sentence": "There was a decline in use from the first follow-up to the 3-month follow-up ( p = 0.001), but there was no significant change in use from the 3-month follow-up to the long-term follow-up ( p = 0.98).",
+      "context_window": "in use from the first follow-up to the 3-month follow-up ( p = 0.001), but there was no significant change in use from the 3-mon",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-p-2919",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2919,
+      "sentence": "There was a decline in use from the first follow-up to the 3-month follow-up ( p = 0.001), but there was no significant change in use from the 3-month follow-up to the long-term follow-up ( p = 0.98).",
+      "context_window": "use from the 3-month follow-up to the long-term follow-up ( p = 0.98). Distribution of CPAP use (hours/night) at each follow-up",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-2994",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2994,
+      "sentence": "Distribution of CPAP use (hours/night) at each follow-up\n\nOnly 20% of the patients initiated their own long-term follow-up visit, as recommended.",
+      "context_window": "tribution of CPAP use (hours/night) at each follow-up Only 20% of the patients initiated their own long-term follow-up vis",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-3092",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3092,
+      "sentence": "Most patients (69%) were called in by the study nurse for the purpose of this study.",
+      "context_window": "n long-term follow-up visit, as recommended. Most patients (69%) were called in by the study nurse for the purpose of this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-3176",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3176,
+      "sentence": "The remaining 11% were followed at the clinic on a regular basis for various reasons.",
+      "context_window": "he study nurse for the purpose of this study. The remaining 11% were followed at the clinic on a regular basis for various",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-p-3506",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3506,
+      "sentence": "When comparing long-term CPAP use for patients who initiated their own follow-up visit (median use of 6.1 h/night, IQR 4.6-7.3) with patients who were invited by the study nurse (median use of 5.5 h/night, IQR 4.1-7.1), there was no significant difference ( p = 0.28).",
+      "context_window": "/night, IQR 4.1-7.1), there was no significant difference ( p = 0.28). In addition, there were no significant differences in cli",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-3634",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3634,
+      "sentence": "Almost half (43%) of the patients needed extra consultations beyond the standard treatment plan.",
+      "context_window": "nical characteristics between the two groups. Almost half (43%) of the patients needed extra consultations beyond the stan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-42",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 42,
+      "sentence": "In this sample of patients, the majority (69%) were available for long-term follow-up.",
+      "context_window": "In this sample of patients, the majority (69%) were available for long-term follow-up. After a median tim",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-110",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 110,
+      "sentence": "After a median time of 3 years, downloaded CPAP data indicated median use of 6 (IQR 4.2-7.1) hours per night.",
+      "context_window": "e available for long-term follow-up. After a median time of 3 years, downloaded CPAP data indicated median use of 6 (IQR 4.2-7.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-592",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 592,
+      "sentence": "Most (57%) patients followed the standard treatment plan, but 43% needed extra appointments with a nurse or an ENT-specialist to achieve satisfactory CPAP use.",
+      "context_window": "CPAP adherence was CPAP use at the 3-month follow-up. Most (57%) patients followed the standard treatment plan, but 43% nee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-648",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 648,
+      "sentence": "Most (57%) patients followed the standard treatment plan, but 43% needed extra appointments with a nurse or an ENT-specialist to achieve satisfactory CPAP use.",
+      "context_window": "st (57%) patients followed the standard treatment plan, but 43% needed extra appointments with a nurse or an ENT-specialist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-2741",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2741,
+      "sentence": "For the present study, 69% of all patients were available for long-term follow-up, and data from the device were downloaded for the majority (99 out of 112 patients), showing a median duration of CPAP use of 6 h/night (IQR 4.2-7.1).",
+      "context_window": "pletely define, measure and compare. For the present study, 69% of all patients were available for long-term follow-up, and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-msd-3022",
+      "claim_type": "mean_sd",
+      "raw_text": "5.5 \u00b1 1.9",
+      "numeric_values": [
+        5.5,
+        1.9
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3022,
+      "sentence": "This is similar to findings from other studies that report mean use of 5.5 \u00b1 1.9 h at 3 years and median use of 5 h after 4 years [ 14 , 15 ].",
+      "context_window": "ilar to findings from other studies that report mean use of 5.5 \u00b1 1.9 h at 3 years and median use of 5 h after 4 years [ 14 , 15",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-3037",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3037,
+      "sentence": "This is similar to findings from other studies that report mean use of 5.5 \u00b1 1.9 h at 3 years and median use of 5 h after 4 years [ 14 , 15 ].",
+      "context_window": "s from other studies that report mean use of 5.5 \u00b1 1.9 h at 3 years and median use of 5 h after 4 years [ 14 , 15 ]. Of the 16",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-3073",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3073,
+      "sentence": "This is similar to findings from other studies that report mean use of 5.5 \u00b1 1.9 h at 3 years and median use of 5 h after 4 years [ 14 , 15 ].",
+      "context_window": "n use of 5.5 \u00b1 1.9 h at 3 years and median use of 5 h after 4 years [ 14 , 15 ]. Of the 163 patients included in this study, 5",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-pct-6456",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6456,
+      "sentence": "Although the majority of patients in this study managed well on their own in the long run, more than 40% of the study population needed extra appointments at the clinic beyond the standard follow-up plan.",
+      "context_window": "study managed well on their own in the long run, more than 40% of the study population needed extra appointments at the cl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-p-7114",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7114,
+      "sentence": "For the present study, the only significant variable predicting long-term CPAP usage was user time at the three-month follow-up ( p < 0.001).",
+      "context_window": "erm CPAP usage was user time at the three-month follow-up ( p < 0.001). This finding is similar to those of other studies where e",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10899904_long_term_use_of_cpap_in_patients_with_obstructive_sleep_apn-u-106",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 106,
+      "sentence": "The only predictor of long-term adherence is CPAP use 3 months after starting treatment.",
+      "context_window": "term. The only predictor of long-term adherence is CPAP use 3 months after starting treatment. Many patients need more follow-up",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

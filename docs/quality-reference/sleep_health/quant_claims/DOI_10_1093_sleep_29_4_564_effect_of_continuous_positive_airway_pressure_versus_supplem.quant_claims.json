@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1093_sleep_29_4_564_effect_of_continuous_positive_airway_pressure_versus_supplem",
+  "doi": "10.1093/sleep/29.4.564",
+  "extracted_at": "2026-05-08T20:06:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_29_4_564_effect_of_continuous_positive_airway_pressure_versus_supplem-u-515",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 515,
+      "sentence": "INTERVENTIONS: Patients were randomly assigned to 1 of 3 treatments (CPAP, placebo-CPAP, or nocturnal oxygen at 3 L per minute) for 2 weeks.",
+      "context_window": "P, placebo-CPAP, or nocturnal oxygen at 3 L per minute) for 2 weeks. Sleep quality was assessed at baseline and after 1 and 14",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_29_4_564_effect_of_continuous_positive_airway_pressure_versus_supplem-u-579",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "Sleep quality was assessed at baseline and after 1 and 14 days of therapy.",
+      "context_window": "eks. Sleep quality was assessed at baseline and after 1 and 14 days of therapy. Repeated-measures analysis of variance was used",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_29_4_564_effect_of_continuous_positive_airway_pressure_versus_supplem-p-1224",
+      "claim_type": "p_value",
+      "raw_text": "p = .009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1224,
+      "sentence": "Oxygen improved only mean nocturnal saturation (p = .009).",
+      "context_window": "of therapy. Oxygen improved only mean nocturnal saturation (p = .009). CPAP had no significant effect on stage 2 sleep or slow-w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

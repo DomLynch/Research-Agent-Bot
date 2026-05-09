@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_3177_jnsv_55_361_long_term_oral_polyamine_intake_increases_blood_polyamine_co",
+  "doi": "10.3177/jnsv.55.361",
+  "extracted_at": "2026-05-08T20:11:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 2,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3177_jnsv_55_361_long_term_oral_polyamine_intake_increases_blood_polyamine_co-p-983",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 983,
+      "sentence": "After 26 wk, the mean blood spermine concentration in mice receiving the test diet with high polyamine concentrations was 10.1+/-2.4 micromol/L, while the mean concentrations found in mice fed with a diet with normal or low polyamine concentrations were 5.2+/-0.9 and 4.7+/-0.5 micromol/L, respectively (p<0.05).",
+      "context_window": "ions were 5.2+/-0.9 and 4.7+/-0.5 micromol/L, respectively (p<0.05). A mean daily intake of 66.4+/-3.7 g (range=46.4-89.3 g) o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3177_jnsv_55_361_long_term_oral_polyamine_intake_increases_blood_polyamine_co-n-1155",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1155,
+      "sentence": "A mean daily intake of 66.4+/-3.7 g (range=46.4-89.3 g) of natto for 2 mo by human volunteers increased the mean blood spermine concentration by a factor of 1.39 (n=10) (p<0.01), while in control volunteers (n=7), asked to exclude polyamine-rich foods from their diet, blood spermine concentration remained unchanged.",
+      "context_window": "the mean blood spermine concentration by a factor of 1.39 (n=10) (p<0.01), while in control volunteers (n=7), asked to excl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3177_jnsv_55_361_long_term_oral_polyamine_intake_increases_blood_polyamine_co-p-1162",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "A mean daily intake of 66.4+/-3.7 g (range=46.4-89.3 g) of natto for 2 mo by human volunteers increased the mean blood spermine concentration by a factor of 1.39 (n=10) (p<0.01), while in control volunteers (n=7), asked to exclude polyamine-rich foods from their diet, blood spermine concentration remained unchanged.",
+      "context_window": "an blood spermine concentration by a factor of 1.39 (n=10) (p<0.01), while in control volunteers (n=7), asked to exclude polya",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3177_jnsv_55_361_long_term_oral_polyamine_intake_increases_blood_polyamine_co-n-1200",
+      "claim_type": "sample_size",
+      "raw_text": "n=7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1200,
+      "sentence": "A mean daily intake of 66.4+/-3.7 g (range=46.4-89.3 g) of natto for 2 mo by human volunteers increased the mean blood spermine concentration by a factor of 1.39 (n=10) (p<0.01), while in control volunteers (n=7), asked to exclude polyamine-rich foods from their diet, blood spermine concentration remained unchanged.",
+      "context_window": "actor of 1.39 (n=10) (p<0.01), while in control volunteers (n=7), asked to exclude polyamine-rich foods from their diet, bl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

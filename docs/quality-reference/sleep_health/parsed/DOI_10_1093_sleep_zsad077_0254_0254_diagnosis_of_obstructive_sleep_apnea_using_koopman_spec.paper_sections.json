@@ -1,0 +1,34 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0254_0254_diagnosis_of_obstructive_sleep_apnea_using_koopman_spec",
+  "source_pdf": "https://doi.org/10.1093/sleep/zsad077.0254",
+  "title": "0254 Diagnosis of Obstructive Sleep Apnea using Koopman Spectral Analysis",
+  "authors": [],
+  "year": 2023,
+  "journal": "SLEEP",
+  "doi": "10.1093/sleep/zsad077.0254",
+  "pmid": "",
+  "trial_ids": [],
+  "sections": {
+    "abstract": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Introduction</jats:title> <jats:p>Koopman operator theory and the Hankel alternative view of the Koopman (HAVOK) model have been widely used to investigate the chaotic dynamics in complex systems. Although the statistics of intermittent dynamics have been evaluated in the HAVOK model, they are not adequate to characterize intermittent forcing. We proposed the Koopman spectral analysis method to characterize the intermittent transition between apeanic and non-apneaic episodes to predict impending OSA episodes.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Apnea-ECG Database from Physionet.org was selected to investigate the nonlinear intermittent behaviors of OSA disorder. The data set has 70 records of OSA patients, and the recordings vary from 7 hours to nearly 10 hours each. Each recording consists of a continuous digitized ECG signal and apnea annotations. First, the eigen time-delay coordinates were reconstructed from the heart rate variability (HRV) features. Next, the last eigen time-delay coordinate was modeled as an intermittent forcing component during apneic episodes. Finally, the forcing statistics in OSA were estimated to characterize the intermittency of the pathophysiological process.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The statistics of the forcing in OSA demonstrated the fat-tailed distribution of the intermittent forcing of the underlying OSA pathophysiological process. The pooled means and standard deviations of the burst duration and the inter-burst duration across OSA patients were also calculated to be 1.73\u00b10.26 minutes and 11.71\u00b12.69 minutes. Scalogram amplitude and spectral decomposition of the wavelet transform exhibited various predominant frequencies and dynamics modes associated with apneic events.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>We have reported the data-driven HAVOK model to obtain an intermittently forced linear system of chaos for the OSA pathophysiological processes The proposed method has been validated on 70 records of OSA patients from Apnea-ECG database. The forcing signal can predict the intermittent transient events, such as the transition from normal to apneic episodes in OSA case.</jats:p> </jats:sec> <jats:sec> <jats:title>Support (if any)</jats:title> <jats:p>Huynh PK, Setty AR, Le TB, Le TQ. A noise-robust Koopman spectral analysis of an intermittent dynamics method for complex systems: a case study in pathophysiological processes of obstructive sleep apnea. IISE Transactions on Healthcare Systems Engineering. 2022 Nov 1:1-6.</jats:p> </jats:sec>",
+    "introduction": "",
+    "methods": "",
+    "results": "",
+    "discussion": "",
+    "limitations": "",
+    "conclusion": "",
+    "references": ""
+  },
+  "tables": [],
+  "figures": [],
+  "extraction_quality": {
+    "section_coverage": [
+      "abstract"
+    ],
+    "table_count": 0,
+    "figure_count": 0,
+    "reference_count": 0,
+    "warnings": [
+      "abstract-fallback:no_pmcid"
+    ]
+  }
+}

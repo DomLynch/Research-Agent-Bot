@@ -1,0 +1,34 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde",
+  "source_pdf": "https://doi.org/10.1093/sleep/zsaf090.1400",
+  "title": "1400 Sound-Based AI Model for Estimating Apnea-Hypopnea Index in Sleep Apnea Detection",
+  "authors": [],
+  "year": 2025,
+  "journal": "SLEEP",
+  "doi": "10.1093/sleep/zsaf090.1400",
+  "pmid": "",
+  "trial_ids": [],
+  "sections": {
+    "abstract": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Introduction</jats:title> <jats:p>Obstructive sleep apnea (OSA) is a common sleep disorder associated with numerous health outcomes. Accurate diagnosis and severity assessment typically rely on the Apnea-Hypopnea Index (AHI), a standard metric obtained from polysomnography (PSG). However, PSG is costly and impractical for multi-night monitoring. This study validates a sound-based AI model to estimate AHI, exploring its potential as a convenient, contactless monitoring tool for long-term OSA management.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>The AI model simultaneously predicts OSA events, sleep stages and snoring events. Performance was enhanced by improving data quality, extending the attention range, and augmenting Mel spectrogram data. The training dataset included 2,973 nights of sleep recordings collected between 2013 and 2024, using either PSG microphones or smartphone microphones. All recordings were annotated with PSG for both OSA and sleep stages. The model predicts apnea or hypopnea events in 6-second intervals and uses a simple linear regression on their distribution across the predicted sleep stages to estimate the AHI. Performance was assessed by comparing the estimated AHI with the manually scored AHI from PSG.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>On a separate test set of 1,492 nights, the model\u2019s estimated AHI strongly correlated with the PSG reference (r=0.97) and showed a mean estimation error of -0.74 events/hour (95% CI: -0.74 \u00b1 11.02). As a screening tool at different AHI thresholds (\u22655, \u226515, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; specificities of 0.88, 0.91, and 0.95; and ROC AUCs of 0.97, 0.98, and 0.98, respectively. When classifying OSA severity into four categories (AHI 0 to &lt; 5, 5 to &lt; 15, 15 to &lt; 30 and \u2265 30), it attained 81% accuracy and a macro F1 score of 0.80.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>This sound-based AI model accurately estimates AHI using only audio data, providing a low-cost and contactless approach to OSA screening and management. Its ability to enable home-based, long-term monitoring can greatly improve patient access to diagnosis and care. Future research will focus on enhancing robustness across diverse sleep environments and varying noise conditions.</jats:p> </jats:sec> <jats:sec> <jats:title>Support (if any)</jats:title> <jats:p> </jats:p> </jats:sec>",
+    "introduction": "",
+    "methods": "",
+    "results": "",
+    "discussion": "",
+    "limitations": "",
+    "conclusion": "",
+    "references": ""
+  },
+  "tables": [],
+  "figures": [],
+  "extraction_quality": {
+    "section_coverage": [
+      "abstract"
+    ],
+    "table_count": 0,
+    "figure_count": 0,
+    "reference_count": 0,
+    "warnings": [
+      "abstract-fallback:no_pmcid"
+    ]
+  }
+}

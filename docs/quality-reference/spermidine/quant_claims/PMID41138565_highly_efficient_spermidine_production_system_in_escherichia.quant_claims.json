@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMID41138565_highly_efficient_spermidine_production_system_in_escherichia",
+  "doi": "10.1016/j.enzmictec.2025.110763",
+  "extracted_at": "2026-05-08T20:11:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID41138565_highly_efficient_spermidine_production_system_in_escherichia-u-1357",
+      "claim_type": "unit_value",
+      "raw_text": "163.11 mg",
+      "numeric_values": [
+        163.11
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1357,
+      "sentence": "Following 48 h of shake flask fermentation, SPD06-P5-P6 achieved a spermidine titer of 163.11 mg/L, which further increased to 1164.22 mg/L after 96 h of scale-up cultivation in a 5 L bioreactor.",
+      "context_window": "sk fermentation, SPD06-P5-P6 achieved a spermidine titer of 163.11 mg/L, which further increased to 1164.22 mg/L after 96 h of sc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID41138565_highly_efficient_spermidine_production_system_in_escherichia-u-1397",
+      "claim_type": "unit_value",
+      "raw_text": "1164.22 mg",
+      "numeric_values": [
+        1164.22
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "Following 48 h of shake flask fermentation, SPD06-P5-P6 achieved a spermidine titer of 163.11 mg/L, which further increased to 1164.22 mg/L after 96 h of scale-up cultivation in a 5 L bioreactor.",
+      "context_window": "spermidine titer of 163.11 mg/L, which further increased to 1164.22 mg/L after 96 h of scale-up cultivation in a 5 L bioreactor.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

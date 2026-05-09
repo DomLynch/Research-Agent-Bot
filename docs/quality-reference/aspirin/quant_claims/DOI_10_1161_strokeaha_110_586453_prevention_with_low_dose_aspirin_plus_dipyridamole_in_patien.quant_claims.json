@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1161_strokeaha_110_586453_prevention_with_low_dose_aspirin_plus_dipyridamole_in_patien",
+  "doi": "10.1161/strokeaha.110.586453",
+  "extracted_at": "2026-05-08T20:05:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_strokeaha_110_586453_prevention_with_low_dose_aspirin_plus_dipyridamole_in_patien-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "We used proportional hazards regression to estimate the treatment effect across mRS strata at baseline, and we tested for interactions with treatment. </jats:p> <jats:p> <jats:bold> <jats:italic>Results-</jats:italic> </jats:bold> In total, 426 patients (7.5%) had mRS score of 4 or 5 at baseline.",
+      "context_window": "Results-</jats:italic> </jats:bold> In total, 426 patients (7.5%) had mRS score of 4 or 5 at baseline. The risk of an outcom",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_110_586453_prevention_with_low_dose_aspirin_plus_dipyridamole_in_patien-pct-1240",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1240,
+      "sentence": "The relative risk associated with the combination of aspirin and dipyridamole compared to aspirin alone in patients with mRS score 0 to 5 was 0.79 (95% confidence interval, 0.69-0.91).",
+      "context_window": "o aspirin alone in patients with mRS score 0 to 5 was 0.79 (95% confidence interval, 0.69-0.91). The relative risk accordin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

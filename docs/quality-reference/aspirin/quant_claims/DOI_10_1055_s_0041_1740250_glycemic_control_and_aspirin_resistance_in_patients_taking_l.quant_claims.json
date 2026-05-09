@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l",
+  "doi": "10.1055/s-0041-1740250",
+  "extracted_at": "2026-05-08T20:05:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 4,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l-u-499",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 499,
+      "sentence": "A subset of insulin-controlled diabetic patient samples on placebo or 60 mg aspirin daily were evaluated.",
+      "context_window": "f insulin-controlled diabetic patient samples on placebo or 60 mg aspirin daily were evaluated. Glycosylated hemoglobin was m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l-p-1087",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1087,
+      "sentence": "3,244.3 [2,691.5-4,187.0 \u00b5g/mL]; p < 0.01) compared with no difference in levels of glycosylated hemoglobin across gestation in the LDA group (2,186.4 [IQR: 1,462.3-3,097.7 \u00b5g/mL] vs.",
+      "context_window": "1,767.0-3,209.9 \u00b5g/mL] vs. 3,244.3 [2,691.5-4,187.0 \u00b5g/mL]; p < 0.01) compared with no difference in levels of glycosylated hemo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l-p-1307",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1307,
+      "sentence": "2,532.9 [1,804.9-5,511.8 \u00b5g/mL]; p = 0.78).",
+      "context_window": "1,327.7-5,932.6 \u00b5g/mL] vs. 2,532.9 [1,804.9-5,511.8 \u00b5g/mL]; p = 0.78). Higher levels of glycosylated hemoglobin were associated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l-p-1436",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1436,
+      "sentence": "Higher levels of glycosylated hemoglobin were associated with increased TXB2 levels prior to randomization (r = 0.67, p < 0.05).",
+      "context_window": "ith increased TXB2 levels prior to randomization (r = 0.67, p < 0.05). Incomplete TXB2 was higher in pregnancies with increasing",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l-pct-1636",
+      "claim_type": "percentage",
+      "raw_text": "18.1%",
+      "numeric_values": [
+        18.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1636,
+      "sentence": "18.1%, p = 0.02).</jats:p><jats:p> Conclusion LDA exposure may be beneficial to glycemic control in this patient population.",
+      "context_window": "evels of glycosylated hemoglobin across gestation (69.2 vs. 18.1%, p = 0.02).</jats:p><jats:p> Conclusion LDA exposure may be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1055_s_0041_1740250_glycemic_control_and_aspirin_resistance_in_patients_taking_l-p-1643",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1643,
+      "sentence": "18.1%, p = 0.02).</jats:p><jats:p> Conclusion LDA exposure may be beneficial to glycemic control in this patient population.",
+      "context_window": "f glycosylated hemoglobin across gestation (69.2 vs. 18.1%, p = 0.02).</jats:p><jats:p> Conclusion LDA exposure may be beneficia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

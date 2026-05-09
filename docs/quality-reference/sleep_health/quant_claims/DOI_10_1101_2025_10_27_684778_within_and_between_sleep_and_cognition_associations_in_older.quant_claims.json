@@ -1,0 +1,49 @@
+{
+  "paper_id": "DOI_10_1101_2025_10_27_684778_within_and_between_sleep_and_cognition_associations_in_older",
+  "doi": "10.1101/2025.10.27.684778",
+  "extracted_at": "2026-05-08T20:05:02+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_10_27_684778_within_and_between_sleep_and_cognition_associations_in_older-msd-931",
+      "claim_type": "mean_sd",
+      "raw_text": "70.8 \u00b1 4.9",
+      "numeric_values": [
+        70.8,
+        4.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 931,
+      "sentence": "Here we investigated the relationship between sleep and cognition by quantifying associations between intraindividual variation in sleep and cognition as well as associations between interindividual variation in sleep and cognition in 35 cognitively intact older adults (70.8 \u00b1 4.9 years; mean \u00b1 SD; 14 females) living in the community.",
+      "context_window": "sleep and cognition in 35 cognitively intact older adults (70.8 \u00b1 4.9 years; mean \u00b1 SD; 14 females) living in the community. Subj",
+      "claim_role": "population",
+      "endpoint": "cognition",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_27_684778_within_and_between_sleep_and_cognition_associations_in_older-u-938",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 years",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 938,
+      "sentence": "Here we investigated the relationship between sleep and cognition by quantifying associations between intraindividual variation in sleep and cognition as well as associations between interindividual variation in sleep and cognition in 35 cognitively intact older adults (70.8 \u00b1 4.9 years; mean \u00b1 SD; 14 females) living in the community.",
+      "context_window": "and cognition in 35 cognitively intact older adults (70.8 \u00b1 4.9 years; mean \u00b1 SD; 14 females) living in the community. Subjective",
+      "claim_role": "population",
+      "endpoint": "cognition",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "paper_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp-u-268",
+      "claim_type": "unit_value",
+      "raw_text": "10mm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 268,
+      "sentence": "This is a randomized, multi-center, placebo-controlled, double-blind study to compare the risk of significant bleeding after endoscopic polypectomy of large (\\>=10mm) colorectal polyps in patients continuing or discontinuing on daily acetylsalicylic acid (ASA) use.",
+      "context_window": "nificant bleeding after endoscopic polypectomy of large (\\>=10mm) colorectal polyps in patients continuing or discontinuing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp-u-450",
+      "claim_type": "unit_value",
+      "raw_text": "75mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 450,
+      "sentence": "Eligible patients will be randomly assigned in a 1:1 ratio to a group taking 75mg daily ASA or placebo 7 days before and 14 days following polypectomy.",
+      "context_window": "will be randomly assigned in a 1:1 ratio to a group taking 75mg daily ASA or placebo 7 days before and 14 days following po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp-u-476",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 476,
+      "sentence": "Eligible patients will be randomly assigned in a 1:1 ratio to a group taking 75mg daily ASA or placebo 7 days before and 14 days following polypectomy.",
+      "context_window": "in a 1:1 ratio to a group taking 75mg daily ASA or placebo 7 days before and 14 days following polypectomy. The primary endpo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp-u-494",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 494,
+      "sentence": "Eligible patients will be randomly assigned in a 1:1 ratio to a group taking 75mg daily ASA or placebo 7 days before and 14 days following polypectomy.",
+      "context_window": "a group taking 75mg daily ASA or placebo 7 days before and 14 days following polypectomy. The primary endpoint of the study is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp-u-578",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 578,
+      "sentence": "The primary endpoint of the study is bleeding within 30 days from colorectal polypectomy.",
+      "context_window": "ctomy. The primary endpoint of the study is bleeding within 30 days from colorectal polypectomy. The secondary endpoints are co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_the_risk_of_bleeding_after_removal_of_large_colorectal_polyp-u-723",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 723,
+      "sentence": "The secondary endpoints are composite cardiovascular events occurring between the date of randomization and 30 days after polypectomy.",
+      "context_window": "ular events occurring between the date of randomization and 30 days after polypectomy.",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

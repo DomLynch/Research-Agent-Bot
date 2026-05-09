@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1212_01_wnl_0000279334_78298_d5_obstructive_sleep_apnea_is_associated_with_seizure_occurrenc",
+  "doi": "10.1212/01.wnl.0000279334.78298.d5",
+  "extracted_at": "2026-05-08T20:07:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1212_01_wnl_0000279334_78298_d5_obstructive_sleep_apnea_is_associated_with_seizure_occurrenc-n-495",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 495,
+      "sentence": "METHODS: Polysomnography was performed in older adult patients with late-onset or worsening seizures (Group 1, n = 11) and those who were seizure-free or who had improvement of seizures (Group 2, n = 10).",
+      "context_window": "lt patients with late-onset or worsening seizures (Group 1, n = 11) and those who were seizure-free or who had improvement of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_01_wnl_0000279334_78298_d5_obstructive_sleep_apnea_is_associated_with_seizure_occurrenc-n-580",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 580,
+      "sentence": "METHODS: Polysomnography was performed in older adult patients with late-onset or worsening seizures (Group 1, n = 11) and those who were seizure-free or who had improvement of seizures (Group 2, n = 10).",
+      "context_window": "e seizure-free or who had improvement of seizures (Group 2, n = 10). RESULTS: Patients in Group 1 had a significantly higher a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_01_wnl_0000279334_78298_d5_obstructive_sleep_apnea_is_associated_with_seizure_occurrenc-p-692",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 692,
+      "sentence": "RESULTS: Patients in Group 1 had a significantly higher apnea-hypopnea index than patients in Group 2 (p = 0.002).",
+      "context_window": "antly higher apnea-hypopnea index than patients in Group 2 (p = 0.002). Group 1 patients also had higher Epworth Sleepiness Scale",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_01_wnl_0000279334_78298_d5_obstructive_sleep_apnea_is_associated_with_seizure_occurrenc-p-770",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "Group 1 patients also had higher Epworth Sleepiness Scale scores (p = 0.009) and higher scores on the Sleep Apnea Scale of the Sleep Disorders Questionnaire (p = 0.04).",
+      "context_window": "1 patients also had higher Epworth Sleepiness Scale scores (p = 0.009) and higher scores on the Sleep Apnea Scale of the Sleep Di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_01_wnl_0000279334_78298_d5_obstructive_sleep_apnea_is_associated_with_seizure_occurrenc-p-862",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 862,
+      "sentence": "Group 1 patients also had higher Epworth Sleepiness Scale scores (p = 0.009) and higher scores on the Sleep Apnea Scale of the Sleep Disorders Questionnaire (p = 0.04).",
+      "context_window": "the Sleep Apnea Scale of the Sleep Disorders Questionnaire (p = 0.04). The two groups were similar in age, body mass index, neck",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

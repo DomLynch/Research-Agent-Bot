@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_aspirin_and_renal_disease_progression_in_patients_with_type_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_aspirin_and_renal_disease_progression_in_patients_with_type_-u-2034",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2034,
+      "sentence": "In a recent work lead on a large cohort of 800 patients with non-valvular atrial fibrillation, ASA use was associated with a reduced progression of eGFR \\<45 ml/min during 2 years of follow-up.",
+      "context_window": "iated with a reduced progression of eGFR \\<45 ml/min during 2 years of follow-up. Furthermore, basal levels of urinary excretio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_aspirin_and_renal_disease_progression_in_patients_with_type_-u-2319",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 2319,
+      "sentence": "The aim of the study is to evaluate the decline in renal function in diabetic patients treated with low-dose aspirin (100 mg/day) vs. untreated diabetic patients.",
+      "context_window": "unction in diabetic patients treated with low-dose aspirin (100 mg/day) vs. untreated diabetic patients.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

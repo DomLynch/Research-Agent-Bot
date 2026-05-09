@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMC11103249_translating_the_biology_of_aging_into_new_therapeutics_for_a",
+  "doi": "10.14283/jpad.2023.104",
+  "extracted_at": "2026-05-08T20:00:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11103249_translating_the_biology_of_aging_into_new_therapeutics_for_a-pct-745",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 745,
+      "sentence": "Historically, research focused on identifying AD drug targets and interventions have experienced significant failures with a ~1% success rate ( 8 ).",
+      "context_window": "interventions have experienced significant failures with a ~1% success rate ( 8 ). One major hurdle in drug development is",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11103249_translating_the_biology_of_aging_into_new_therapeutics_for_a-pct-1809",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1809,
+      "sentence": "For example, in our evaluation of postmortem human brain tissue from individuals with various levels of AD neuropathology, we observed a wide range (0-15%) of senescent cell burden ( 39 ).",
+      "context_window": "us levels of AD neuropathology, we observed a wide range (0-15%) of senescent cell burden ( 39 ). The current limited knowl",
+      "claim_role": "unknown",
+      "endpoint": "senescent cell burden",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

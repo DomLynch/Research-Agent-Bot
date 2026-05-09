@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMID41759822_immune_preconditioning_with_oral_quercetin_supplement_and_co",
+  "doi": "10.1016/j.tjnut.2026.101431",
+  "extracted_at": "2026-05-08T20:01:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMID41759822_immune_preconditioning_with_oral_quercetin_supplement_and_co-u-907",
+      "claim_type": "unit_value",
+      "raw_text": "280 mg",
+      "numeric_values": [
+        280.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "Each QG capsule contained 280 mg \u00b1 5% of QG complex; 2 capsules were taken per day.",
+      "context_window": "before a mRNA SARS-CoV-2 booster. Each QG capsule contained 280 mg \u00b1 5% of QG complex; 2 capsules were taken per day. Immune p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID41759822_immune_preconditioning_with_oral_quercetin_supplement_and_co-pct-916",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 916,
+      "sentence": "Each QG capsule contained 280 mg \u00b1 5% of QG complex; 2 capsules were taken per day.",
+      "context_window": "mRNA SARS-CoV-2 booster. Each QG capsule contained 280 mg \u00b1 5% of QG complex; 2 capsules were taken per day. Immune profil",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

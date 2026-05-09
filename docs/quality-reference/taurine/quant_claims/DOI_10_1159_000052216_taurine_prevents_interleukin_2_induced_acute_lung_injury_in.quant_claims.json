@@ -1,0 +1,180 @@
+{
+  "paper_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in",
+  "doi": "10.1159/000052216",
+  "extracted_at": "2026-05-08T20:10:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 1,
+    "mean_sd": 4,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-n-471",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 471,
+      "sentence": "This study investigates the role of taurine in preventing IL-2-induced lung injury, and the role of neutrophil-endothelial interactions in mediating this injury. <i>Methods:</i><i>Study 1:</i> Sprague-Dawley rats (n = 12/groups) were randomised to controls, IL-2-treated (1 \u00d7 10<sup>6</sup> units), and IL-2-treated with taurine (4% solution, orally for 48 h prior to IL-2 therapy).",
+      "context_window": "injury. <i>Methods:</i><i>Study 1:</i> Sprague-Dawley rats (n = 12/groups) were randomised to controls, IL-2-treated (1 \u00d7 10<s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-pct-587",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 587,
+      "sentence": "This study investigates the role of taurine in preventing IL-2-induced lung injury, and the role of neutrophil-endothelial interactions in mediating this injury. <i>Methods:</i><i>Study 1:</i> Sprague-Dawley rats (n = 12/groups) were randomised to controls, IL-2-treated (1 \u00d7 10<sup>6</sup> units), and IL-2-treated with taurine (4% solution, orally for 48 h prior to IL-2 therapy).",
+      "context_window": "(1 \u00d7 10<sup>6</sup> units), and IL-2-treated with taurine (4% solution, orally for 48 h prior to IL-2 therapy). Lung inju",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-n-911",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "Neutrophil infiltration was evaluated by measuring myeloperoxidase activity and bronchoalveolar lavage neutrophil concentration. <i>Study 2:</i> Rats (n = 10/group) were randomised into the same groups as study 1.",
+      "context_window": "olar lavage neutrophil concentration. <i>Study 2:</i> Rats (n = 10/group) were randomised into the same groups as study 1. Neu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-msd-1224",
+      "claim_type": "mean_sd",
+      "raw_text": "7.2 \u00b1 0.5",
+      "numeric_values": [
+        7.2,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1224,
+      "sentence": "Neutrophil-endothelial interactions in mesenteric vessels were assessed by intravital microscopy at half-hourly intervals. <i>Results:</i> Taurine reduced IL-2-induced acute lung injury as reflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05).",
+      "context_window": "eflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-msd-1255",
+      "claim_type": "mean_sd",
+      "raw_text": "4.7 \u00b1 0.3",
+      "numeric_values": [
+        4.7,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1255,
+      "sentence": "Neutrophil-endothelial interactions in mesenteric vessels were assessed by intravital microscopy at half-hourly intervals. <i>Results:</i> Taurine reduced IL-2-induced acute lung injury as reflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05).",
+      "context_window": "o-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-p-1287",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1287,
+      "sentence": "Neutrophil-endothelial interactions in mesenteric vessels were assessed by intravital microscopy at half-hourly intervals. <i>Results:</i> Taurine reduced IL-2-induced acute lung injury as reflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05).",
+      "context_window": "\u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentratio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-msd-1362",
+      "claim_type": "mean_sd",
+      "raw_text": "823 \u00b1 19.5",
+      "numeric_values": [
+        823.0,
+        19.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "Neutrophil-endothelial interactions in mesenteric vessels were assessed by intravital microscopy at half-hourly intervals. <i>Results:</i> Taurine reduced IL-2-induced acute lung injury as reflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05).",
+      "context_window": "a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-msd-1394",
+      "claim_type": "mean_sd",
+      "raw_text": "538 \u00b1 18",
+      "numeric_values": [
+        538.0,
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1394,
+      "sentence": "Neutrophil-endothelial interactions in mesenteric vessels were assessed by intravital microscopy at half-hourly intervals. <i>Results:</i> Taurine reduced IL-2-induced acute lung injury as reflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05).",
+      "context_window": "utrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05). Intravital microscopy demo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000052216_taurine_prevents_interleukin_2_induced_acute_lung_injury_in-p-1425",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "Neutrophil-endothelial interactions in mesenteric vessels were assessed by intravital microscopy at half-hourly intervals. <i>Results:</i> Taurine reduced IL-2-induced acute lung injury as reflected by a decrease in wet-to-dry lung weight ratio from 7.2 \u00b1 0.5 in the IL-2 group to 4.7 \u00b1 0.3 in the taurine group (p < 0.05), and a decrease in bronchoalveolar neutrophil concentration from 823 \u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05).",
+      "context_window": "\u00b1 19.5 in the IL-2 group to 538 \u00b1 18 in the taurine group (p < 0.05). Intravital microscopy demonstrated that IL-2 increased le",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,2469 @@
+{
+  "paper_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper",
+  "doi": "10.3390/ph19030431",
+  "extracted_at": "2026-05-08T20:01:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 63,
+    "mean_sd": 6,
+    "percentage": 26,
+    "sample_size": 8,
+    "p_value": 33
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-431",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 431,
+      "sentence": "Methods : Navitoclax was injected into male young Wistar rats at doses of 10 and 30 mg/kg (i.p.). to evaluate its pharmacokinetics, cerebral levels and potential to cause thrombocytopenia.",
+      "context_window": "was injected into male young Wistar rats at doses of 10 and 30 mg/kg (i.p.). to evaluate its pharmacokinetics, cerebral level",
+      "claim_role": "dose",
+      "endpoint": "thrombocytopenia",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-660",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 660,
+      "sentence": "Navitoclax (10 mg/kg, i.p.) or vehicle was injected every other day between days 3 and 13 after tMCAO.",
+      "context_window": "sient middle cerebral artery occlusion (tMCAO). Navitoclax (10 mg/kg, i.p.) or vehicle was injected every other day between d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "Results : Navitoclax (10 mg/kg) administration resulted in a maximum plasma concentration of 0.702 mg/L and half-life of 11.33 h.",
+      "context_window": "ence markers were assessed on day 14. Results : Navitoclax (10 mg/kg) administration resulted in a maximum plasma concentrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-935",
+      "claim_type": "unit_value",
+      "raw_text": "0.702 mg",
+      "numeric_values": [
+        0.702
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 935,
+      "sentence": "Results : Navitoclax (10 mg/kg) administration resulted in a maximum plasma concentration of 0.702 mg/L and half-life of 11.33 h.",
+      "context_window": "dministration resulted in a maximum plasma concentration of 0.702 mg/L and half-life of 11.33 h. Additionally, a brain concentra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-msd-1011",
+      "claim_type": "mean_sd",
+      "raw_text": "0.04 \u00b1 0.02",
+      "numeric_values": [
+        0.04,
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1011,
+      "sentence": "Additionally, a brain concentration of 0.04 \u00b1 0.02 \u00b5g/g was detected.",
+      "context_window": "alf-life of 11.33 h. Additionally, a brain concentration of 0.04 \u00b1 0.02 \u00b5g/g was detected. Moderate thrombocytopenia was induced by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1083",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1083,
+      "sentence": "Moderate thrombocytopenia was induced by 10 mg/kg, and to a greater extent by 30 mg/kg.",
+      "context_window": "\u00b5g/g was detected. Moderate thrombocytopenia was induced by 10 mg/kg, and to a greater extent by 30 mg/kg. Navitoclax (6 \u00d7 10",
+      "claim_role": "unknown",
+      "endpoint": "thrombocytopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1120",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1120,
+      "sentence": "Moderate thrombocytopenia was induced by 10 mg/kg, and to a greater extent by 30 mg/kg.",
+      "context_window": "topenia was induced by 10 mg/kg, and to a greater extent by 30 mg/kg. Navitoclax (6 \u00d7 10 mg/kg) improved neurofunctional impa",
+      "claim_role": "unknown",
+      "endpoint": "thrombocytopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1146",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1146,
+      "sentence": "Navitoclax (6 \u00d7 10 mg/kg) improved neurofunctional impairment, as indicated by significant decrease by 66% in the total time for the tape removal test, and significantly reduced infarct area by 52% when compared to vehicle.",
+      "context_window": "mg/kg, and to a greater extent by 30 mg/kg. Navitoclax (6 \u00d7 10 mg/kg) improved neurofunctional impairment, as indicated by si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1233",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1233,
+      "sentence": "Navitoclax (6 \u00d7 10 mg/kg) improved neurofunctional impairment, as indicated by significant decrease by 66% in the total time for the tape removal test, and significantly reduced infarct area by 52% when compared to vehicle.",
+      "context_window": "ctional impairment, as indicated by significant decrease by 66% in the total time for the tape removal test, and significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1324",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1324,
+      "sentence": "Navitoclax (6 \u00d7 10 mg/kg) improved neurofunctional impairment, as indicated by significant decrease by 66% in the total time for the tape removal test, and significantly reduced infarct area by 52% when compared to vehicle.",
+      "context_window": "ape removal test, and significantly reduced infarct area by 52% when compared to vehicle. Moreover, navitoclax significantl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1420",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1420,
+      "sentence": "Moreover, navitoclax significantly reduced levels of SA-\u03b2-gal (by 80%), lipofuscin (by 91%), and Checkpoint kinase 2 (Chk2; by 69%) in the ischemic hemisphere.",
+      "context_window": "er, navitoclax significantly reduced levels of SA-\u03b2-gal (by 80%), lipofuscin (by 91%), and Checkpoint kinase 2 (Chk2; by 69",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1441",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1441,
+      "sentence": "Moreover, navitoclax significantly reduced levels of SA-\u03b2-gal (by 80%), lipofuscin (by 91%), and Checkpoint kinase 2 (Chk2; by 69%) in the ischemic hemisphere.",
+      "context_window": "icantly reduced levels of SA-\u03b2-gal (by 80%), lipofuscin (by 91%), and Checkpoint kinase 2 (Chk2; by 69%) in the ischemic he",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1481",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1481,
+      "sentence": "Moreover, navitoclax significantly reduced levels of SA-\u03b2-gal (by 80%), lipofuscin (by 91%), and Checkpoint kinase 2 (Chk2; by 69%) in the ischemic hemisphere.",
+      "context_window": "0%), lipofuscin (by 91%), and Checkpoint kinase 2 (Chk2; by 69%) in the ischemic hemisphere. Conclusions : Navitoclax prote",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-1628",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1628,
+      "sentence": "Eighteen na\u00efve animals were used to assess both navitoclax pharmacokinetics ( n = 14) and potential navitoclax-induced thrombocytopenia ( n = 17).",
+      "context_window": "mals were used to assess both navitoclax pharmacokinetics ( n = 14) and potential navitoclax-induced thrombocytopenia ( n = 17",
+      "claim_role": "unknown",
+      "endpoint": "thrombocytopenia",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-1688",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1688,
+      "sentence": "Eighteen na\u00efve animals were used to assess both navitoclax pharmacokinetics ( n = 14) and potential navitoclax-induced thrombocytopenia ( n = 17).",
+      "context_window": "n = 14) and potential navitoclax-induced thrombocytopenia ( n = 17). On the other hand, 26 animals underwent tMCAO and were ra",
+      "claim_role": "unknown",
+      "endpoint": "thrombocytopenia",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1919",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1919,
+      "sentence": "On the other hand, 26 animals underwent tMCAO and were randomized to receive either vehicle or navitoclax, but 6 were excluded from the study because they met one of the exclusion criteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach the baseline after filament withdrawal, n = 0); (3) death before the time limit established ( n = 2); and (4) no infarction in spite of a right ischemia-reperfusion pattern ( n = 1).",
+      "context_window": "of the exclusion criteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-1938",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1938,
+      "sentence": "On the other hand, 26 animals underwent tMCAO and were randomized to receive either vehicle or navitoclax, but 6 were excluded from the study because they met one of the exclusion criteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach the baseline after filament withdrawal, n = 0); (3) death before the time limit established ( n = 2); and (4) no infarction in spite of a right ischemia-reperfusion pattern ( n = 1).",
+      "context_window": "riteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach the baseline after f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-2023",
+      "claim_type": "sample_size",
+      "raw_text": "n = 0",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2023,
+      "sentence": "On the other hand, 26 animals underwent tMCAO and were randomized to receive either vehicle or navitoclax, but 6 were excluded from the study because they met one of the exclusion criteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach the baseline after filament withdrawal, n = 0); (3) death before the time limit established ( n = 2); and (4) no infarction in spite of a right ischemia-reperfusion pattern ( n = 1).",
+      "context_window": "n (CP did not reach the baseline after filament withdrawal, n = 0); (3) death before the time limit established ( n = 2); and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-2077",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2077,
+      "sentence": "On the other hand, 26 animals underwent tMCAO and were randomized to receive either vehicle or navitoclax, but 6 were excluded from the study because they met one of the exclusion criteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach the baseline after filament withdrawal, n = 0); (3) death before the time limit established ( n = 2); and (4) no infarction in spite of a right ischemia-reperfusion pattern ( n = 1).",
+      "context_window": "awal, n = 0); (3) death before the time limit established ( n = 2); and (4) no infarction in spite of a right ischemia-reperf",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-2158",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2158,
+      "sentence": "On the other hand, 26 animals underwent tMCAO and were randomized to receive either vehicle or navitoclax, but 6 were excluded from the study because they met one of the exclusion criteria: (1) no ischemia (CP reduction < 50% from baseline, n = 3); (2) no reperfusion (CP did not reach the baseline after filament withdrawal, n = 0); (3) death before the time limit established ( n = 2); and (4) no infarction in spite of a right ischemia-reperfusion pattern ( n = 1).",
+      "context_window": "farction in spite of a right ischemia-reperfusion pattern ( n = 1). Therefore, 10 animals receiving vehicle (60% phosal 50 PG",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-2207",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2207,
+      "sentence": "Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days 3 and 13 after tMCAO were included.",
+      "context_window": "pattern ( n = 1). Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-2225",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2225,
+      "sentence": "Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days 3 and 13 after tMCAO were included.",
+      "context_window": "Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-2258",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2258,
+      "sentence": "Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days 3 and 13 after tMCAO were included.",
+      "context_window": "vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-2312",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2312,
+      "sentence": "Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days 3 and 13 after tMCAO were included.",
+      "context_window": ", and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-2343",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2343,
+      "sentence": "Therefore, 10 animals receiving vehicle (60% phosal 50 PG, 30% polyethylene glycol 400, and 10% ethanol) and 10 animals receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days 3 and 13 after tMCAO were included.",
+      "context_window": "ls receiving navitoclax (6 \u00d7 10 mg/kg) via i.p. injections (1 mL) every other day between days 3 and 13 after tMCAO were inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-2433",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2433,
+      "sentence": "Navitoclax (10 or 30 mg/kg) was injected (i.p.) and tail vein blood samples were taken at 0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h.",
+      "context_window": "days 3 and 13 after tMCAO were included. Navitoclax (10 or 30 mg/kg) was injected (i.p.) and tail vein blood samples were ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-2618",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2618,
+      "sentence": "Animals were euthanized at 24 h or 48 h by intracardiac injection of KCl (200 mg/kg) to obtain the brain.",
+      "context_window": "uthanized at 24 h or 48 h by intracardiac injection of KCl (200 mg/kg) to obtain the brain. Serum and brain navitoclax levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3227",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3227,
+      "sentence": "Animals were anesthetized by intraperitoneal (i.p.) injection of 5 mg/kg diazepam and 100 mg/kg ketamine.",
+      "context_window": "ls were anesthetized by intraperitoneal (i.p.) injection of 5 mg/kg diazepam and 100 mg/kg ketamine. Inhalatory anesthesia w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3248",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3248,
+      "sentence": "Animals were anesthetized by intraperitoneal (i.p.) injection of 5 mg/kg diazepam and 100 mg/kg ketamine.",
+      "context_window": "by intraperitoneal (i.p.) injection of 5 mg/kg diazepam and 100 mg/kg ketamine. Inhalatory anesthesia was maintained with 0.5-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-3314",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3314,
+      "sentence": "Inhalatory anesthesia was maintained with 0.5-1% sevoflurane in 80% medicinal air plus 20% O 2 .",
+      "context_window": "/kg ketamine. Inhalatory anesthesia was maintained with 0.5-1% sevoflurane in 80% medicinal air plus 20% O 2 . Right tMCAO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-3332",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3332,
+      "sentence": "Inhalatory anesthesia was maintained with 0.5-1% sevoflurane in 80% medicinal air plus 20% O 2 .",
+      "context_window": "latory anesthesia was maintained with 0.5-1% sevoflurane in 80% medicinal air plus 20% O 2 . Right tMCAO was performed by f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-3355",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3355,
+      "sentence": "Inhalatory anesthesia was maintained with 0.5-1% sevoflurane in 80% medicinal air plus 20% O 2 .",
+      "context_window": "aintained with 0.5-1% sevoflurane in 80% medicinal air plus 20% O 2 . Right tMCAO was performed by following the intralumin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3884",
+      "claim_type": "unit_value",
+      "raw_text": "0.05 mg",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3884,
+      "sentence": "Buprenorphine (s.c., 0.05 mg/kg) was used to provide analgesia.",
+      "context_window": "reperfusion was monitored for 10 min. Buprenorphine (s.c., 0.05 mg/kg) was used to provide analgesia. The animals were subject",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4006",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4006,
+      "sentence": "The animals were subjected to neurofunctional evaluation at baseline and 24 h, 7 days, and 14 days after the ischemic insult.",
+      "context_window": "bjected to neurofunctional evaluation at baseline and 24 h, 7 days, and 14 days after the ischemic insult. Tail vein blood sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4018",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4018,
+      "sentence": "The animals were subjected to neurofunctional evaluation at baseline and 24 h, 7 days, and 14 days after the ischemic insult.",
+      "context_window": "eurofunctional evaluation at baseline and 24 h, 7 days, and 14 days after the ischemic insult. Tail vein blood samples were obt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4197",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4197,
+      "sentence": "Then, the animals were euthanized by intracardiac injection of KCl (200 mg/kg) to obtain the brain and post-process it according to specific requirements for each determination.",
+      "context_window": "e animals were euthanized by intracardiac injection of KCl (200 mg/kg) to obtain the brain and post-process it according to sp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4832",
+      "claim_type": "unit_value",
+      "raw_text": "12 mm",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4832,
+      "sentence": "Two tape strips of equal size (12 mm long and 8 mm wide) were applied with equal pressure to the forepaws.",
+      "context_window": "bing sensory neglect [ 33 ]. Two tape strips of equal size (12 mm long and 8 mm wide) were applied with equal pressure to the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4847",
+      "claim_type": "unit_value",
+      "raw_text": "8 mm",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4847,
+      "sentence": "Two tape strips of equal size (12 mm long and 8 mm wide) were applied with equal pressure to the forepaws.",
+      "context_window": "glect [ 33 ]. Two tape strips of equal size (12 mm long and 8 mm wide) were applied with equal pressure to the forepaws. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-5125",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mm",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5125,
+      "sentence": "Fresh frozen cryostat-cut brain coronal sections 0.2 to -1.8 mm from the bregma were obtained (20 \u00b5m thick; CM 1950 cryostat, Leica Biosystems, Nussloch, Germany), stained with 0.5% thionine as previously reported [ 34 ], and observed at 2X magnification in a DMD108 digital microscope (Leica Biosystems, Wetzlar, Germany).",
+      "context_window": ". Fresh frozen cryostat-cut brain coronal sections 0.2 to -1.8 mm from the bregma were obtained (20 \u00b5m thick; CM 1950 cryosta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-5245",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5245,
+      "sentence": "Fresh frozen cryostat-cut brain coronal sections 0.2 to -1.8 mm from the bregma were obtained (20 \u00b5m thick; CM 1950 cryostat, Leica Biosystems, Nussloch, Germany), stained with 0.5% thionine as previously reported [ 34 ], and observed at 2X magnification in a DMD108 digital microscope (Leica Biosystems, Wetzlar, Germany).",
+      "context_window": "ryostat, Leica Biosystems, Nussloch, Germany), stained with 0.5% thionine as previously reported [ 34 ], and observed at 2X",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-5953",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5953,
+      "sentence": "Afterward, sections were counterstained for 10 min with 0.1% Nuclear Fast Red (NFR, Sigma-Aldrich, Darmstadt, Germany).",
+      "context_window": "C). Afterward, sections were counterstained for 10 min with 0.1% Nuclear Fast Red (NFR, Sigma-Aldrich, Darmstadt, Germany).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6174",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6174,
+      "sentence": "Briefly, brain coronal sections were prefixed (4% paraformaldehyde) washed with PBS, and incubated in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%).",
+      "context_window": "any) method. Briefly, brain coronal sections were prefixed (4% paraformaldehyde) washed with PBS, and incubated in increas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6270",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6270,
+      "sentence": "Briefly, brain coronal sections were prefixed (4% paraformaldehyde) washed with PBS, and incubated in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%).",
+      "context_window": ", and incubated in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%). Freshly prepared SBB (0.7 g in 100 mL 70% E",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6275",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6275,
+      "sentence": "Briefly, brain coronal sections were prefixed (4% paraformaldehyde) washed with PBS, and incubated in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%).",
+      "context_window": "incubated in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%). Freshly prepared SBB (0.7 g in 100 mL 70% EtOH a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6284",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6284,
+      "sentence": "Briefly, brain coronal sections were prefixed (4% paraformaldehyde) washed with PBS, and incubated in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%).",
+      "context_window": "d in increasing ethanol concentrations (EtOH, 50%, 60%, and 70%). Freshly prepared SBB (0.7 g in 100 mL 70% EtOH and double",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-6321",
+      "claim_type": "unit_value",
+      "raw_text": "100 mL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6321,
+      "sentence": "Freshly prepared SBB (0.7 g in 100 mL 70% EtOH and double filtered) was dropped on a clean slide.",
+      "context_window": "s (EtOH, 50%, 60%, and 70%). Freshly prepared SBB (0.7 g in 100 mL 70% EtOH and double filtered) was dropped on a clean slide.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6328",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6328,
+      "sentence": "Freshly prepared SBB (0.7 g in 100 mL 70% EtOH and double filtered) was dropped on a clean slide.",
+      "context_window": ", 50%, 60%, and 70%). Freshly prepared SBB (0.7 g in 100 mL 70% EtOH and double filtered) was dropped on a clean slide. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6521",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6521,
+      "sentence": "The tissue was then embedded into 50% EtOH, transferred and counterstained with 0.1% NFR for 10 min.",
+      "context_window": "lowed to react for 8 min. The tissue was then embedded into 50% EtOH, transferred and counterstained with 0.1% NFR for 10 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6567",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6567,
+      "sentence": "The tissue was then embedded into 50% EtOH, transferred and counterstained with 0.1% NFR for 10 min.",
+      "context_window": "embedded into 50% EtOH, transferred and counterstained with 0.1% NFR for 10 min. Slides were mounted into 40% glycerol. Ima",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-6613",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6613,
+      "sentence": "Slides were mounted into 40% glycerol.",
+      "context_window": "rstained with 0.1% NFR for 10 min. Slides were mounted into 40% glycerol. ImageJ NIH software version 1.53t was used for q",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-6797",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6797,
+      "sentence": "A 2 mm thick brain coronal section (0.2 to -1.8 mm from bregma) was obtained and both ischemic and non-ischemic cortex and caudate putamen samples were dissected, flash-frozen in liquid N 2 , lyophilized, and ground to obtain brain powder.",
+      "context_window": "groups and selected regions, cortex and caudate putamen. A 2 mm thick brain coronal section (0.2 to -1.8 mm from bregma) wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-6839",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mm",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6839,
+      "sentence": "A 2 mm thick brain coronal section (0.2 to -1.8 mm from bregma) was obtained and both ischemic and non-ischemic cortex and caudate putamen samples were dissected, flash-frozen in liquid N 2 , lyophilized, and ground to obtain brain powder.",
+      "context_window": "udate putamen. A 2 mm thick brain coronal section (0.2 to -1.8 mm from bregma) was obtained and both ischemic and non-ischemi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-8173",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8173,
+      "sentence": "Differences were considered significant at p < 0.05.",
+      "context_window": "oston, MA, USA). Differences were considered significant at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-65",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 65,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-msd-83",
+      "claim_type": "mean_sd",
+      "raw_text": "15 \u00b1 9",
+      "numeric_values": [
+        15.0,
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 83,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-msd-101",
+      "claim_type": "mean_sd",
+      "raw_text": "0.702 \u00b1 0.169",
+      "numeric_values": [
+        0.702,
+        0.169
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 101,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "ng an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-109",
+      "claim_type": "unit_value",
+      "raw_text": "0.169 mg",
+      "numeric_values": [
+        0.169
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 109,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-msd-129",
+      "claim_type": "mean_sd",
+      "raw_text": "11.3 \u00b1 3.1",
+      "numeric_values": [
+        11.3,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 129,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "g/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-172",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 172,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "69 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-msd-205",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 15",
+      "numeric_values": [
+        25.0,
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 205,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "d to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h). Figure 1 A sh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-msd-224",
+      "claim_type": "mean_sd",
+      "raw_text": "1.205 \u00b1 0.431",
+      "numeric_values": [
+        1.205,
+        0.431
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 224,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "t after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h). Figure 1 A shows circulating navitocla",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-232",
+      "claim_type": "unit_value",
+      "raw_text": "0.431 mg",
+      "numeric_values": [
+        0.431
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 232,
+      "sentence": "Serum navitoclax levels increased following an i.p. injection of 10 mg/kg (t max = 15 \u00b1 9 h; C max = 0.702 \u00b1 0.169 mg/L; t 1/2 = 11.3 \u00b1 3.1 h) and to a higher extent after 30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h).",
+      "context_window": "30 mg/kg i.p. injection (t max = 25 \u00b1 15 h; C max = 1.205 \u00b1 0.431 mg/L; t 1/2 > 48 h). Figure 1 A shows circulating navitoclax l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-426",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 426,
+      "sentence": "In addition, navitoclax was detected in brain tissue 24 and 48 h following both 10 and 30 mg/kg i.p. injections ( Figure 1 B).",
+      "context_window": "detected in brain tissue 24 and 48 h following both 10 and 30 mg/kg i.p. injections ( Figure 1 B). Navitoclax pharmacokinet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-535",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 535,
+      "sentence": "Navitoclax pharmacokinetics and brain levels after injection (10 or 30 mg/kg, i.p.) to na\u00efve adult male Wistar rats. ( A ) Time course of serum navitoclax levels in blood samples collected at 0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at 24 or 48 h after administration.",
+      "context_window": "ax pharmacokinetics and brain levels after injection (10 or 30 mg/kg, i.p.) to na\u00efve adult male Wistar rats. ( A ) Time cours",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-719",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 719,
+      "sentence": "Navitoclax pharmacokinetics and brain levels after injection (10 or 30 mg/kg, i.p.) to na\u00efve adult male Wistar rats. ( A ) Time course of serum navitoclax levels in blood samples collected at 0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at 24 or 48 h after administration.",
+      "context_window": "0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in bra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-729",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 729,
+      "sentence": "Navitoclax pharmacokinetics and brain levels after injection (10 or 30 mg/kg, i.p.) to na\u00efve adult male Wistar rats. ( A ) Time course of serum navitoclax levels in blood samples collected at 0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at 24 or 48 h after administration.",
+      "context_window": "4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-736",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 736,
+      "sentence": "Navitoclax pharmacokinetics and brain levels after injection (10 or 30 mg/kg, i.p.) to na\u00efve adult male Wistar rats. ( A ) Time course of serum navitoclax levels in blood samples collected at 0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at 24 or 48 h after administration.",
+      "context_window": "12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-n-746",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 746,
+      "sentence": "Navitoclax pharmacokinetics and brain levels after injection (10 or 30 mg/kg, i.p.) to na\u00efve adult male Wistar rats. ( A ) Time course of serum navitoclax levels in blood samples collected at 0.5, 1, 2, 4, 8, 12, 24, 36, and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at 24 or 48 h after administration.",
+      "context_window": ", and 48 h after administration (10 mg/kg, n = 5; 30 mg/kg, n = 7). ( B ) Navitoclax levels in brain homogenates at 24 or 48",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-929",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 929,
+      "sentence": "An i.p. injection of 10 mg/kg of navitoclax induced a significant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01).",
+      "context_window": "st. Data are expressed as mean \u00b1 SEM. An i.p. injection of 10 mg/kg of navitoclax induced a significant reduction in platele",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1012",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "An i.p. injection of 10 mg/kg of navitoclax induced a significant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01).",
+      "context_window": "induced a significant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-1028",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1028,
+      "sentence": "An i.p. injection of 10 mg/kg of navitoclax induced a significant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01).",
+      "context_window": "icant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01). This effect was si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1051",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1051,
+      "sentence": "An i.p. injection of 10 mg/kg of navitoclax induced a significant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01).",
+      "context_window": "elet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01). This effect was significantly more p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-1067",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1067,
+      "sentence": "An i.p. injection of 10 mg/kg of navitoclax induced a significant reduction in platelet counts at 24 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01).",
+      "context_window": "4 h (54% of control, p < 0.01) and at 48 h (45% of control, p < 0.01). This effect was significantly more pronounced following t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1138",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1138,
+      "sentence": "This effect was significantly more pronounced following the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01).",
+      "context_window": "This effect was significantly more pronounced following the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of contr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1191",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1191,
+      "sentence": "This effect was significantly more pronounced following the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01).",
+      "context_window": "ng the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-1216",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1216,
+      "sentence": "This effect was significantly more pronounced following the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01).",
+      "context_window": ", which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01). Figure 2 A show",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-pct-1233",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1233,
+      "sentence": "This effect was significantly more pronounced following the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01).",
+      "context_window": "latelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01). Figure 2 A shows the time c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-1258",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1258,
+      "sentence": "This effect was significantly more pronounced following the 30 mg/kg i.p. dose, which reduced platelet counts to 26% of control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01).",
+      "context_window": "control at 24 h ( p < 0.01) and to 28% of control at 48 h ( p < 0.01). Figure 2 A shows the time course of platelet counts follo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1376",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1376,
+      "sentence": "Figure 2 A shows the time course of platelet counts following the administration of a single dose of 10 or 30 mg/kg navitoclax.",
+      "context_window": "unts following the administration of a single dose of 10 or 30 mg/kg navitoclax. Effects of navitoclax on platelet counts. (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1538",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1538,
+      "sentence": "Effects of navitoclax on platelet counts. ( A ) Platelet counts in blood samples collected at 24 and 48 h after navitoclax injection (10 or 30 mg/kg, i.p.) in na\u00efve adult male Wistar rats.",
+      "context_window": "collected at 24 and 48 h after navitoclax injection (10 or 30 mg/kg, i.p.) in na\u00efve adult male Wistar rats. Mixed-effects mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-1644",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1644,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from control. # p < 0.05, significantly different from navitoclax 10 mg/kg. ( B ) Platelet counts in blood samples collected one day before and 4, 7, and 14 days after transient middle cerebral artery occlusion (tMCAO) in adult male Wistar rats.",
+      "context_window": "s. Mixed-effects model was used, followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from control. # p < 0.05, signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-1694",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1694,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from control. # p < 0.05, significantly different from navitoclax 10 mg/kg. ( B ) Platelet counts in blood samples collected one day before and 4, 7, and 14 days after transient middle cerebral artery occlusion (tMCAO) in adult male Wistar rats.",
+      "context_window": "test. ** p < 0.01, significantly different from control. # p < 0.05, significantly different from navitoclax 10 mg/kg. ( B ) Pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1744",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1744,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from control. # p < 0.05, significantly different from navitoclax 10 mg/kg. ( B ) Platelet counts in blood samples collected one day before and 4, 7, and 14 days after transient middle cerebral artery occlusion (tMCAO) in adult male Wistar rats.",
+      "context_window": "ontrol. # p < 0.05, significantly different from navitoclax 10 mg/kg. ( B ) Platelet counts in blood samples collected one da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1832",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1832,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from control. # p < 0.05, significantly different from navitoclax 10 mg/kg. ( B ) Platelet counts in blood samples collected one day before and 4, 7, and 14 days after transient middle cerebral artery occlusion (tMCAO) in adult male Wistar rats.",
+      "context_window": "nts in blood samples collected one day before and 4, 7, and 14 days after transient middle cerebral artery occlusion (tMCAO) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-1972",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1972,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO.",
+      "context_window": "istar rats. The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-2100",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2100,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. * p < 0.05, ** p < 0.01, significantly different from vehicle.",
+      "context_window": "AO. Mixed-effects model was used, followed by \u0160id\u00e1k test. * p < 0.05, ** p < 0.01, significantly different from vehicle. Data ar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-2113",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2113,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. * p < 0.05, ** p < 0.01, significantly different from vehicle.",
+      "context_window": "ects model was used, followed by \u0160id\u00e1k test. * p < 0.05, ** p < 0.01, significantly different from vehicle. Data are expressed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-2289",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2289,
+      "sentence": "Given the pharmacokinetics of navitoclax and its effects on platelet counts, the low dose of 10 mg/kg was chosen for repeated administration after ischemic stroke.",
+      "context_window": "itoclax and its effects on platelet counts, the low dose of 10 mg/kg was chosen for repeated administration after ischemic st",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3403",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3403,
+      "sentence": "Six i.p. navitoclax injections (10 mg/kg), administered every other day between days 3 and 13 after tMCAO, resulted in a tendency toward higher improvement in the neurofunctional score at 7 and 14 days post-stroke compared to vehicle ( Figure 3 A).",
+      "context_window": "d tape removal performance. Six i.p. navitoclax injections (10 mg/kg), administered every other day between days 3 and 13 aft",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3565",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3565,
+      "sentence": "Six i.p. navitoclax injections (10 mg/kg), administered every other day between days 3 and 13 after tMCAO, resulted in a tendency toward higher improvement in the neurofunctional score at 7 and 14 days post-stroke compared to vehicle ( Figure 3 A).",
+      "context_window": "rd higher improvement in the neurofunctional score at 7 and 14 days post-stroke compared to vehicle ( Figure 3 A). Furthermore,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3697",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3697,
+      "sentence": "Furthermore, navitoclax treatment significantly reduced tape removal time at 7 days post-stroke compared to vehicle ( p < 0.05; Figure 3 B).",
+      "context_window": "toclax treatment significantly reduced tape removal time at 7 days post-stroke compared to vehicle ( p < 0.05; Figure 3 B). Su",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-3738",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3738,
+      "sentence": "Furthermore, navitoclax treatment significantly reduced tape removal time at 7 days post-stroke compared to vehicle ( p < 0.05; Figure 3 B).",
+      "context_window": "pe removal time at 7 days post-stroke compared to vehicle ( p < 0.05; Figure 3 B). Supplementary Figure S1A shows the reaction t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3876",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3876,
+      "sentence": "Supplementary Figure S1A shows the reaction time in the tape removal test, which was also significantly reduced at 7 days post-stroke compared to vehicle ( p < 0.05).",
+      "context_window": "tape removal test, which was also significantly reduced at 7 days post-stroke compared to vehicle ( p < 0.05). As expected, t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-3917",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3917,
+      "sentence": "Supplementary Figure S1A shows the reaction time in the tape removal test, which was also significantly reduced at 7 days post-stroke compared to vehicle ( p < 0.05).",
+      "context_window": "icantly reduced at 7 days post-stroke compared to vehicle ( p < 0.05). As expected, the left forepaw tape removal time, which co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4056",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4056,
+      "sentence": "As expected, the left forepaw tape removal time, which corresponds to the affected side of the animal, was also increased after 7 days of stroke ( Figure S1B ), while right forepaw time remained unchanged ( Figure S1C ).",
+      "context_window": "o the affected side of the animal, was also increased after 7 days of stroke ( Figure S1B ), while right forepaw time remained",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-4255",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4255,
+      "sentence": "The beneficial effects of navitoclax involved a significant reduction in left forepaw tape removal time ( p < 0.05; Figure S1B ).",
+      "context_window": "a significant reduction in left forepaw tape removal time ( p < 0.05; Figure S1B ). Effects of navitoclax on neurofunctional im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4377",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4377,
+      "sentence": "Effects of navitoclax on neurofunctional impairment in stroke adult male Wistar rats 24 h, 7 and 14 days after tMCAO.",
+      "context_window": "nal impairment in stroke adult male Wistar rats 24 h, 7 and 14 days after tMCAO. The animals were injected i.p. with navitoclax",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4446",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4446,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) Neurofunctional score (0-12).",
+      "context_window": "fter tMCAO. The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-4777",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4777,
+      "sentence": "Mixed-effects model was used, followed by \u0160id\u00e1k test. * p < 0.05, significantly different from vehicle.",
+      "context_window": "st. Mixed-effects model was used, followed by \u0160id\u00e1k test. * p < 0.05, significantly different from vehicle. Data are expressed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-4988",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4988,
+      "sentence": "Fourteen days after the ischemic stroke, navitoclax-treated animals showed significantly smaller infarcts compared to vehicle ( p < 0.01; Figure 4 A and Figure S2 ).",
+      "context_window": "showed significantly smaller infarcts compared to vehicle ( p < 0.01; Figure 4 A and Figure S2 ). Significant reductions in infa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-5082",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5082,
+      "sentence": "Significant reductions in infarct size in both cortex ( p < 0.01) and caudate putamen ( p < 0.01) regions accounted for total infarct reduction ( Figure 4 B).",
+      "context_window": "). Significant reductions in infarct size in both cortex ( p < 0.01) and caudate putamen ( p < 0.01) regions accounted for tota",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-5114",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5114,
+      "sentence": "Significant reductions in infarct size in both cortex ( p < 0.01) and caudate putamen ( p < 0.01) regions accounted for total infarct reduction ( Figure 4 B).",
+      "context_window": "farct size in both cortex ( p < 0.01) and caudate putamen ( p < 0.01) regions accounted for total infarct reduction ( Figure 4 B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-5308",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5308,
+      "sentence": "Cerebroprotective effects of navitoclax were found despite a significant reduction in platelet counts observed at days 4 ( p < 0.01), 7 ( p < 0.05), and 14 ( p < 0.01) during repeated administration ( Figure 2 B).",
+      "context_window": "gnificant reduction in platelet counts observed at days 4 ( p < 0.01), 7 ( p < 0.05), and 14 ( p < 0.01) during repeated adminis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-5323",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5323,
+      "sentence": "Cerebroprotective effects of navitoclax were found despite a significant reduction in platelet counts observed at days 4 ( p < 0.01), 7 ( p < 0.05), and 14 ( p < 0.01) during repeated administration ( Figure 2 B).",
+      "context_window": "tion in platelet counts observed at days 4 ( p < 0.01), 7 ( p < 0.05), and 14 ( p < 0.01) during repeated administration ( Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-5343",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5343,
+      "sentence": "Cerebroprotective effects of navitoclax were found despite a significant reduction in platelet counts observed at days 4 ( p < 0.01), 7 ( p < 0.05), and 14 ( p < 0.01) during repeated administration ( Figure 2 B).",
+      "context_window": "nts observed at days 4 ( p < 0.01), 7 ( p < 0.05), and 14 ( p < 0.01) during repeated administration ( Figure 2 B). Effects of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-5470",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5470,
+      "sentence": "Effects of navitoclax on brain infarct size in adult male Wistar rats 14 days after tMCAO.",
+      "context_window": "navitoclax on brain infarct size in adult male Wistar rats 14 days after tMCAO. The animals were injected i.p. with navitoclax",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-5539",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5539,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) Representative macroscopic images (2\u00d7 magnification) of thionine-stained brain coronal sections (0.2 to -1.8 mm from the bregma) in vehicle- and navitoclax-treated animals, and quantification of total infarct area (red dotted lines).",
+      "context_window": "fter tMCAO. The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-5722",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mm",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 5722,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) Representative macroscopic images (2\u00d7 magnification) of thionine-stained brain coronal sections (0.2 to -1.8 mm from the bregma) in vehicle- and navitoclax-treated animals, and quantification of total infarct area (red dotted lines).",
+      "context_window": "cation) of thionine-stained brain coronal sections (0.2 to -1.8 mm from the bregma) in vehicle- and navitoclax-treated animals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-5884",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5884,
+      "sentence": "Two-tailed Student\u2019s t -test. ** p < 0.01, significantly different from vehicle. ( B ) Regional quantification of infarct area in the cortex and caudate putamen.",
+      "context_window": "t area (red dotted lines). Two-tailed Student\u2019s t -test. ** p < 0.01, significantly different from vehicle. ( B ) Regional quant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-6054",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6054,
+      "sentence": "Two-way ANOVA followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from vehicle.",
+      "context_window": "d caudate putamen. Two-way ANOVA followed by \u0160id\u00e1k test. ** p < 0.01, significantly different from vehicle. Data are expressed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-6373",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6373,
+      "sentence": "Expression was significantly higher in the caudate putamen than in the cortex ( p < 0.01; Figure 5 B,C).",
+      "context_window": "ficantly higher in the caudate putamen than in the cortex ( p < 0.01; Figure 5 B,C). Repeated navitoclax treatment significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-6499",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6499,
+      "sentence": "Repeated navitoclax treatment significantly reduced SA-\u03b2-gal expression in the ischemic hemisphere ( p < 0.05; Figure 5 A) due primarily to a significant reduction in SA-\u03b2-gal expression in the caudate putamen ( p < 0.05; Figure 5 B,C).",
+      "context_window": "ly reduced SA-\u03b2-gal expression in the ischemic hemisphere ( p < 0.05; Figure 5 A) due primarily to a significant reduction in SA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-6610",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6610,
+      "sentence": "Repeated navitoclax treatment significantly reduced SA-\u03b2-gal expression in the ischemic hemisphere ( p < 0.05; Figure 5 A) due primarily to a significant reduction in SA-\u03b2-gal expression in the caudate putamen ( p < 0.05; Figure 5 B,C).",
+      "context_window": "t reduction in SA-\u03b2-gal expression in the caudate putamen ( p < 0.05; Figure 5 B,C). Effects of navitoclax on senescence-associ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-6760",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6760,
+      "sentence": "Effects of navitoclax on senescence-associated \u03b2-galactosidase (SA-\u03b2-gal) expression in the brain of adult male Wistar rats 14 days after tMCAO.",
+      "context_window": "SA-\u03b2-gal) expression in the brain of adult male Wistar rats 14 days after tMCAO. The animals were injected i.p. with navitoclax",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-6829",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6829,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) SA-\u03b2-gal expression area in coronal sections (0.2 to -1.8 mm from the bregma) of vehicle- and navitoclax-treated animals.",
+      "context_window": "fter tMCAO. The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-6961",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mm",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6961,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) SA-\u03b2-gal expression area in coronal sections (0.2 to -1.8 mm from the bregma) of vehicle- and navitoclax-treated animals.",
+      "context_window": "( A ) SA-\u03b2-gal expression area in coronal sections (0.2 to -1.8 mm from the bregma) of vehicle- and navitoclax-treated animals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-7061",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7061,
+      "sentence": "Two-tailed Student\u2019s t -test. * p < 0.05, significantly different from vehicle. ( B ) Regional quantification of SA-\u03b2-gal expression area in the cortex and caudate putamen.",
+      "context_window": "navitoclax-treated animals. Two-tailed Student\u2019s t -test. * p < 0.05, significantly different from vehicle. ( B ) Regional quant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-7245",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7245,
+      "sentence": "Two-way ANOVA followed by Tukey\u2019s test. ** p < 0.01, significantly different from cortex. # p < 0.05, significantly different from vehicle.",
+      "context_window": "caudate putamen. Two-way ANOVA followed by Tukey\u2019s test. ** p < 0.01, significantly different from cortex. # p < 0.05, significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-7294",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7294,
+      "sentence": "Two-way ANOVA followed by Tukey\u2019s test. ** p < 0.01, significantly different from cortex. # p < 0.05, significantly different from vehicle.",
+      "context_window": "s test. ** p < 0.01, significantly different from cortex. # p < 0.05, significantly different from vehicle. Data are expressed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-7894",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7894,
+      "sentence": "Repeated navitoclax treatment significantly reduced lipofuscin accumulation in the ischemic hemisphere ( p < 0.05; Figure 6 A) by reducing lipofuscin granules in the cortex and caudate putamen ( Figure 6 B,C).",
+      "context_window": "educed lipofuscin accumulation in the ischemic hemisphere ( p < 0.05; Figure 6 A) by reducing lipofuscin granules in the cortex",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-8215",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8215,
+      "sentence": "Effects of navitoclax on lipofuscin accumulation in the brain of adult male Wistar rats 14 days after tMCAO.",
+      "context_window": "ofuscin accumulation in the brain of adult male Wistar rats 14 days after tMCAO. The animals were injected i.p. with navitoclax",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-8284",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8284,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) Lipofuscin accumulation area in coronal sections (0.2 to -1.8 mm from the bregma) of vehicle- and navitoclax-treated animals.",
+      "context_window": "fter tMCAO. The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-8420",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 mm",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 8420,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) Lipofuscin accumulation area in coronal sections (0.2 to -1.8 mm from the bregma) of vehicle- and navitoclax-treated animals.",
+      "context_window": ") Lipofuscin accumulation area in coronal sections (0.2 to -1.8 mm from the bregma) of vehicle- and navitoclax-treated animals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-8520",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8520,
+      "sentence": "Two-tailed Student\u2019s t -test. * p < 0.05, significantly different from vehicle. ( B ) Regional quantification of lipofuscin accumulation area in the cortex and caudate putamen.",
+      "context_window": "navitoclax-treated animals. Two-tailed Student\u2019s t -test. * p < 0.05, significantly different from vehicle. ( B ) Regional quant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-9021",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9021,
+      "sentence": "The expression of cell senescence and SASP biomarkers at mRNA level was measured in the ischemic hemisphere 14 days after stroke.",
+      "context_window": "rkers at mRNA level was measured in the ischemic hemisphere 14 days after stroke. At this time point, the cell cycle regulator",
+      "claim_role": "unknown",
+      "endpoint": "sasp biomarkers",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-9190",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9190,
+      "sentence": "At this time point, the cell cycle regulator Chk2, but not Chk1, was significantly overexpressed in the ischemic compared to non-ischemic cortex ( p < 0.01; Figure 7 A,B).",
+      "context_window": "expressed in the ischemic compared to non-ischemic cortex ( p < 0.01; Figure 7 A,B). Expression of both checkpoint kinases remai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-9409",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9409,
+      "sentence": "Repeated navitoclax treatment significantly inhibited Chk2 upregulation in the ischemic cortex ( p < 0.01; Figure 7 B).",
+      "context_window": "cantly inhibited Chk2 upregulation in the ischemic cortex ( p < 0.01; Figure 7 B). Effects of navitoclax on the mRNA expression",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-9555",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9555,
+      "sentence": "Effects of navitoclax on the mRNA expression of checkpoint kinases (Chk1 and Chk2) in the brain of adult male Wistar rats 14 days after tMCAO.",
+      "context_window": "ases (Chk1 and Chk2) in the brain of adult male Wistar rats 14 days after tMCAO. The animals were injected i.p. with navitoclax",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-9624",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9624,
+      "sentence": "The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after tMCAO. ( A ) Chk1 expression in non-ischemic and ischemic cortex of vehicle- and navitoclax-treated animals. ( B ) Chk2 expression in non-ischemic and ischemic cortex of vehicle- and navitoclax-treated animals. ( C ) Chk1 expression in non-ischemic and ischemic caudate putamen of vehicle- and navitoclax-treated animals. ( D ) Chk2 expression in non-ischemic and ischemic caudate putamen of vehicle- and navitoclax-treated animals.",
+      "context_window": "fter tMCAO. The animals were injected i.p. with navitoclax (10 mg/kg) or vehicle every other day between days 3 and 13 after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-10165",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10165,
+      "sentence": "One-way ANOVA followed by Tukey\u2019s test. ** p < 0.01, significantly different from non-ischemic cortex. ## p < 0.01, significantly different from vehicle.",
+      "context_window": "treated animals. One-way ANOVA followed by Tukey\u2019s test. ** p < 0.01, significantly different from non-ischemic cortex. ## p < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-p-10228",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10228,
+      "sentence": "One-way ANOVA followed by Tukey\u2019s test. ** p < 0.01, significantly different from non-ischemic cortex. ## p < 0.01, significantly different from vehicle.",
+      "context_window": "0.01, significantly different from non-ischemic cortex. ## p < 0.01, significantly different from vehicle. Data are expressed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-2300",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2300,
+      "sentence": "It is possible that changes in the expression of cell cycle markers, such as p16, could have been captured at earlier time points than 14 days.",
+      "context_window": "s p16, could have been captured at earlier time points than 14 days. Checkpoint kinases can be part of the DNA segments with ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3563",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3563,
+      "sentence": "After 10 mg/kg injection, circulating navitoclax increased to 0.702 mg/L, with a half-life of almost 12 h, and detectable serum levels up to 48 h after injection.",
+      "context_window": "following intraperitoneal single-dose administration. After 10 mg/kg injection, circulating navitoclax increased to 0.702 mg/",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3619",
+      "claim_type": "unit_value",
+      "raw_text": "0.702 mg",
+      "numeric_values": [
+        0.702
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3619,
+      "sentence": "After 10 mg/kg injection, circulating navitoclax increased to 0.702 mg/L, with a half-life of almost 12 h, and detectable serum levels up to 48 h after injection.",
+      "context_window": "ter 10 mg/kg injection, circulating navitoclax increased to 0.702 mg/L, with a half-life of almost 12 h, and detectable serum le",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-3812",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3812,
+      "sentence": "We therefore chose a schedule for navitoclax treatment consisting of six i.p. injections of 10 mg/kg every other day between days 3 and 13 after ischemic stroke.",
+      "context_window": "r navitoclax treatment consisting of six i.p. injections of 10 mg/kg every other day between days 3 and 13 after ischemic str",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13028689_the_senolytic_drug_navitoclax_protects_the_brain_after_exper-u-4421",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4421,
+      "sentence": "In our study, navitoclax was injected starting 3 days after stroke onset, when BBB permeability was facilitated by ischemia-induced BBB breakdown [ 23 ].",
+      "context_window": "mice [ 9 ]. In our study, navitoclax was injected starting 3 days after stroke onset, when BBB permeability was facilitated b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "navitoclax",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

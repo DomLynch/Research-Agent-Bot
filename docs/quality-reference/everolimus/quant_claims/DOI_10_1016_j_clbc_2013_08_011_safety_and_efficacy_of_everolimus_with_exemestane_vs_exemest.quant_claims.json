@@ -1,0 +1,156 @@
+{
+  "paper_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest",
+  "doi": "10.1016/j.clbc.2013.08.011",
+  "extracted_at": "2026-05-08T19:55:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg/d",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 680,
+      "sentence": "PATIENTS AND METHODS: BOLERO-2, a phase III randomized trial, compared EVE (10 mg/d) and placebo (PBO), both plus EXE (25 mg/d), in 724 postmenopausal women with HR(+) advanced breast cancer recurring/progressing after treatment with NSAIs.",
+      "context_window": "HODS: BOLERO-2, a phase III randomized trial, compared EVE (10 mg/d) and placebo (PBO), both plus EXE (25 mg/d), in 724 postmen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-u-723",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg/d",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 723,
+      "sentence": "PATIENTS AND METHODS: BOLERO-2, a phase III randomized trial, compared EVE (10 mg/d) and placebo (PBO), both plus EXE (25 mg/d), in 724 postmenopausal women with HR(+) advanced breast cancer recurring/progressing after treatment with NSAIs.",
+      "context_window": "l, compared EVE (10 mg/d) and placebo (PBO), both plus EXE (25 mg/d), in 724 postmenopausal women with HR(+) advanced breast ca",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-u-1028",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "RESULTS: Baseline disease characteristics and treatment histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younger patients.",
+      "context_window": "istics and treatment histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-n-1038",
+      "claim_type": "sample_size",
+      "raw_text": "n = 275",
+      "numeric_values": [
+        275.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "RESULTS: Baseline disease characteristics and treatment histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younger patients.",
+      "context_window": "treatment histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younge",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-u-1049",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "RESULTS: Baseline disease characteristics and treatment histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younger patients.",
+      "context_window": "histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younger patients.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-n-1059",
+      "claim_type": "sample_size",
+      "raw_text": "n = 164",
+      "numeric_values": [
+        164.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1059,
+      "sentence": "RESULTS: Baseline disease characteristics and treatment histories among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younger patients.",
+      "context_window": "among the elderly subsets (\u2265 65 years, n = 275; \u2265 70 years, n = 164) were generally comparable with younger patients. The addit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-u-1198",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1198,
+      "sentence": "The addition of EVE to EXE improved PFS regardless of age (hazard ratio, 0.59 [\u2265 65 years] and 0.45 [\u2265 70 years]).",
+      "context_window": "o EXE improved PFS regardless of age (hazard ratio, 0.59 [\u2265 65 years] and 0.45 [\u2265 70 years]). Adverse events (AEs) of special in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clbc_2013_08_011_safety_and_efficacy_of_everolimus_with_exemestane_vs_exemest-u-1220",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1220,
+      "sentence": "The addition of EVE to EXE improved PFS regardless of age (hazard ratio, 0.59 [\u2265 65 years] and 0.45 [\u2265 70 years]).",
+      "context_window": "ardless of age (hazard ratio, 0.59 [\u2265 65 years] and 0.45 [\u2265 70 years]). Adverse events (AEs) of special interest (all grades) th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

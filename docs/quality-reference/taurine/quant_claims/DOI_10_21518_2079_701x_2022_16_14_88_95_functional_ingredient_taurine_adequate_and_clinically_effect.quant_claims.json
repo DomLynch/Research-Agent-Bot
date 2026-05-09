@@ -1,0 +1,83 @@
+{
+  "paper_id": "DOI_10_21518_2079_701x_2022_16_14_88_95_functional_ingredient_taurine_adequate_and_clinically_effect",
+  "doi": "10.21518/2079-701x-2022-16-14-88-95",
+  "extracted_at": "2026-05-08T20:10:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2022_16_14_88_95_functional_ingredient_taurine_adequate_and_clinically_effect-u-592",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg/day",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 592,
+      "sentence": "Taurine intake is 40-400 mg/day.",
+      "context_window": "methionine, but also comes from food. Taurine intake is 40-400 mg/day. The main food sources are animal products: shellfish, fish",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2022_16_14_88_95_functional_ingredient_taurine_adequate_and_clinically_effect-u-1082",
+      "claim_type": "unit_value",
+      "raw_text": "1200 mg",
+      "numeric_values": [
+        1200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1082,
+      "sentence": "There are a number of products in which taurine is added: specialized food products (SF) and food supplements (FS) contain 60-1200 mg of taurine per serving, energy drinks - 300-400 mg per 100 ml.",
+      "context_window": "zed food products (SF) and food supplements (FS) contain 60-1200 mg of taurine per serving, energy drinks - 300-400 mg per 100",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2022_16_14_88_95_functional_ingredient_taurine_adequate_and_clinically_effect-u-1134",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1134,
+      "sentence": "There are a number of products in which taurine is added: specialized food products (SF) and food supplements (FS) contain 60-1200 mg of taurine per serving, energy drinks - 300-400 mg per 100 ml.",
+      "context_window": "tain 60-1200 mg of taurine per serving, energy drinks - 300-400 mg per 100 ml. The clinical effects of taurine in diabetes mel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_21518_2079_701x_2022_16_14_88_95_functional_ingredient_taurine_adequate_and_clinically_effect-u-1298",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1298,
+      "sentence": "The clinical effects of taurine in diabetes mellitus, heart failure are manifested when it is included in diet therapy in doses of 1.5-3 g for 2-16 weeks.",
+      "context_window": "en it is included in diet therapy in doses of 1.5-3 g for 2-16 weeks. Even the maximum doses allowed for use as part of SFP and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

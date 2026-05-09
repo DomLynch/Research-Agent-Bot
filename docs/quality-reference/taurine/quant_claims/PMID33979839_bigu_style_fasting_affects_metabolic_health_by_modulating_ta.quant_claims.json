@@ -1,0 +1,141 @@
+{
+  "paper_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta",
+  "doi": "10.1093/jn/nxab123",
+  "extracted_at": "2026-05-08T20:10:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "p_value": 3,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-msd-296",
+      "claim_type": "mean_sd",
+      "raw_text": "23.2 \u00b1 2.4",
+      "numeric_values": [
+        23.2,
+        2.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 296,
+      "sentence": "Methods We conducted a 5-d Bigu trial in 43 healthy subjects [age 23.2 \u00b1 2.4 y; BMI (in kg/m2) 22.52 \u00b1 1.79].",
+      "context_window": "s We conducted a 5-d Bigu trial in 43 healthy subjects [age 23.2 \u00b1 2.4 y; BMI (in kg/m2) 22.52 \u00b1 1.79]. Physiological indicators a",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-msd-325",
+      "claim_type": "mean_sd",
+      "raw_text": "22.52 \u00b1 1.79",
+      "numeric_values": [
+        22.52,
+        1.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 325,
+      "sentence": "Methods We conducted a 5-d Bigu trial in 43 healthy subjects [age 23.2 \u00b1 2.4 y; BMI (in kg/m2) 22.52 \u00b1 1.79].",
+      "context_window": "al in 43 healthy subjects [age 23.2 \u00b1 2.4 y; BMI (in kg/m2) 22.52 \u00b1 1.79]. Physiological indicators and body composition were monito",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-p-1190",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1190,
+      "sentence": "Risk factors associated with inflammation and cardiovascular diseases were significantly lowered during or after Bigu (P < 0.05).",
+      "context_window": "r diseases were significantly lowered during or after Bigu (P < 0.05). Body composition measurement detected an overconsumption",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "Plasma taurine significantly increased at F3D by 31%-46% followed by a reduction to basal level at F5D (P < 0.001), a pattern inversely correlated with changes in glucose and de novo synthesized cholesterol (r = -0.407 and -0.296, respectively; P < 0.001).",
+      "context_window": "eyond F3D. Plasma taurine significantly increased at F3D by 31%-46% followed by a reduction to basal level at F5D (P < 0.00",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-pct-1461",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1461,
+      "sentence": "Plasma taurine significantly increased at F3D by 31%-46% followed by a reduction to basal level at F5D (P < 0.001), a pattern inversely correlated with changes in glucose and de novo synthesized cholesterol (r = -0.407 and -0.296, respectively; P < 0.001).",
+      "context_window": "d F3D. Plasma taurine significantly increased at F3D by 31%-46% followed by a reduction to basal level at F5D (P < 0.001),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-p-1512",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1512,
+      "sentence": "Plasma taurine significantly increased at F3D by 31%-46% followed by a reduction to basal level at F5D (P < 0.001), a pattern inversely correlated with changes in glucose and de novo synthesized cholesterol (r = -0.407 and -0.296, respectively; P < 0.001).",
+      "context_window": "D by 31%-46% followed by a reduction to basal level at F5D (P < 0.001), a pattern inversely correlated with changes in glucose an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID33979839_bigu_style_fasting_affects_metabolic_health_by_modulating_ta-p-1653",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1653,
+      "sentence": "Plasma taurine significantly increased at F3D by 31%-46% followed by a reduction to basal level at F5D (P < 0.001), a pattern inversely correlated with changes in glucose and de novo synthesized cholesterol (r = -0.407 and -0.296, respectively; P < 0.001).",
+      "context_window": "nthesized cholesterol (r = -0.407 and -0.296, respectively; P < 0.001). Gut microbial profiling showed an enrichment of taurine-u",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

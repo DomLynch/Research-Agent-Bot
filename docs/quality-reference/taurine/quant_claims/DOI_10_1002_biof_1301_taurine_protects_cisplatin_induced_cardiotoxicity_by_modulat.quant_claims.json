@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1002_biof_1301_taurine_protects_cisplatin_induced_cardiotoxicity_by_modulat",
+  "doi": "10.1002/biof.1301",
+  "extracted_at": "2026-05-08T20:10:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_biof_1301_taurine_protects_cisplatin_induced_cardiotoxicity_by_modulat-u-456",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 456,
+      "sentence": "Mice were simultaneously treated with taurine (150 mg kg<jats:sup>-1</jats:sup> body wt, i.p.) and cisplatin (10 mg kg<jats:sup>-1</jats:sup> body wt, i.p.) for a week.",
+      "context_window": "nflammation. Mice were simultaneously treated with taurine (150 mg kg<jats:sup>-1</jats:sup> body wt, i.p.) and cisplatin (10",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_biof_1301_taurine_protects_cisplatin_induced_cardiotoxicity_by_modulat-u-519",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 519,
+      "sentence": "Mice were simultaneously treated with taurine (150 mg kg<jats:sup>-1</jats:sup> body wt, i.p.) and cisplatin (10 mg kg<jats:sup>-1</jats:sup> body wt, i.p.) for a week.",
+      "context_window": "mg kg<jats:sup>-1</jats:sup> body wt, i.p.) and cisplatin (10 mg kg<jats:sup>-1</jats:sup> body wt, i.p.) for a week. Cispla",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

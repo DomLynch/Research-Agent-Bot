@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co",
+  "doi": "10.18103/mra.v12i1.4975",
+  "extracted_at": "2026-05-08T20:06:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 4,
+    "unit_value": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-n-831",
+      "claim_type": "sample_size",
+      "raw_text": "n=50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 831,
+      "sentence": "Study Design: Plasma samples were collected from patients with OSA (n=50) at baseline and approximately 90 days after CPAP initiation and compared to referent control subjects (n=10).",
+      "context_window": "sign: Plasma samples were collected from patients with OSA (n=50) at baseline and approximately 90 days after CPAP initiatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-u-867",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 867,
+      "sentence": "Study Design: Plasma samples were collected from patients with OSA (n=50) at baseline and approximately 90 days after CPAP initiation and compared to referent control subjects (n=10).",
+      "context_window": "from patients with OSA (n=50) at baseline and approximately 90 days after CPAP initiation and compared to referent control subj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-n-940",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 940,
+      "sentence": "Study Design: Plasma samples were collected from patients with OSA (n=50) at baseline and approximately 90 days after CPAP initiation and compared to referent control subjects (n=10).",
+      "context_window": "CPAP initiation and compared to referent control subjects (n=10). Patients with OSA were further divided into cohorts defin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-p-1349",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1349,
+      "sentence": "Results: At baseline, increased hsa-miR-15a-5p, hsa-miR-15b-5p, hsa-miR-16-5p, hsa- miR-195-5p, hsa-miR-424-5p, hsa-miR-223-3p, and hsa-miR-223-5p were observed in patients with OSA compared to controls (p<0.05).",
+      "context_window": "5p were observed in patients with OSA compared to controls (p<0.05). In CPAP adherent patients (n=22), hsa-miR233-3p and hsa-m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-n-1385",
+      "claim_type": "sample_size",
+      "raw_text": "n=22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1385,
+      "sentence": "In CPAP adherent patients (n=22), hsa-miR233-3p and hsa-miR233-5p decreased at follow-up (p<0.05) whereas there was no change in miR levels from baseline in non-adherent CPAP patients (n=28).",
+      "context_window": "A compared to controls (p<0.05). In CPAP adherent patients (n=22), hsa-miR233-3p and hsa-miR233-5p decreased at follow-up (p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-p-1448",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1448,
+      "sentence": "In CPAP adherent patients (n=22), hsa-miR233-3p and hsa-miR233-5p decreased at follow-up (p<0.05) whereas there was no change in miR levels from baseline in non-adherent CPAP patients (n=28).",
+      "context_window": "2), hsa-miR233-3p and hsa-miR233-5p decreased at follow-up (p<0.05) whereas there was no change in miR levels from baseline in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_18103_mra_v12i1_4975_obstructive_sleep_apnea_alters_microrna_levels_effects_of_co-n-1543",
+      "claim_type": "sample_size",
+      "raw_text": "n=28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "In CPAP adherent patients (n=22), hsa-miR233-3p and hsa-miR233-5p decreased at follow-up (p<0.05) whereas there was no change in miR levels from baseline in non-adherent CPAP patients (n=28).",
+      "context_window": "in miR levels from baseline in non-adherent CPAP patients (n=28). The miRs hsa-miR233-3p and hsa-miR233-5p mapped to both p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

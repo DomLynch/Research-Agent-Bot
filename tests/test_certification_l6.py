@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -72,6 +73,20 @@ def test_l6_clean_latest_two_same_topic_pass(monkeypatch) -> None:
     result = cert.certify_consecutive([_paper(a), _paper(b)])
     assert result["l6_reproducibly_journal_ready"] is True
     assert result["selected_pair"] == [a, b]
+    assert result["consecutive_aaa_count"] == 2
+    assert result["consecutive_aaa_run_ids"] == [a, b]
+    assert result["consecutive_l5_count"] == 2
+    assert result["consecutive_l5_run_ids"] == [a, b]
+    assert result["l6_evidence"] == {
+        "gate": cert.CERTIFICATION_GATE_VERSION,
+        "selected_pair": [a, b],
+        "consecutive_aaa_count": 2,
+        "consecutive_aaa_run_ids": [a, b],
+        "consecutive_l5_count": 2,
+        "consecutive_l5_run_ids": [a, b],
+        "selected_pair_clean_l5": True,
+        "blockers": [],
+    }
     assert result["certification_gate_version"] == cert.CERTIFICATION_GATE_VERSION
 
 
@@ -97,6 +112,9 @@ def test_l6_uses_latest_adjacent_pair(monkeypatch) -> None:
     result = cert.certify_consecutive([_paper(old), _paper(mid), _paper(new)])
     assert result["selected_pair"] == [mid, new]
     assert result["l6_reproducibly_journal_ready"] is False
+    assert result["consecutive_aaa_count"] == 0
+    assert result["consecutive_aaa_run_ids"] == []
+    assert result["l6_evidence"]["selected_pair_clean_l5"] is False
     assert any(new in b for b in result["l6_blockers"])
 
 
@@ -122,3 +140,32 @@ def test_l6_journal_surface_failure_blocks_reproducibility(monkeypatch) -> None:
     assert result["certified"] is True
     assert result["l6_reproducibly_journal_ready"] is False
     assert any("journal surface failed" in b for b in result["l6_blockers"])
+
+
+def test_rapamycin_patha_l6_verdicts_are_self_contained() -> None:
+    runs = [
+        "synthesis-rapamycin-v06-PATHA8-2026-05-07T09-02-06Z",
+        "synthesis-rapamycin-v06-PATHA9-2026-05-07T09-20-53Z",
+        "synthesis-rapamycin-v06-PATHA10-2026-05-07T09-38-47Z",
+    ]
+    selected_pair = runs[1:]
+    for run_id in runs:
+        path = REPO / "runs" / run_id / "full_paper.final_verdict.json"
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        assert doc["maturity_level"] == 6
+        assert doc["l6_reproducibly_journal_ready"] is True
+        assert doc["consecutive_aaa_count"] == 3
+        assert doc["consecutive_aaa_run_ids"] == runs
+        assert doc["l6_selected_pair"] == selected_pair
+        assert doc["arbitration_count"] == 0
+        assert doc["arbitration_log_path"] is None
+        assert doc["l6_evidence"] == {
+            "blockers": [],
+            "consecutive_aaa_count": 3,
+            "consecutive_aaa_run_ids": runs,
+            "consecutive_l5_count": 3,
+            "consecutive_l5_run_ids": runs,
+            "gate": cert.CERTIFICATION_GATE_VERSION,
+            "selected_pair": selected_pair,
+            "selected_pair_clean_l5": True,
+        }

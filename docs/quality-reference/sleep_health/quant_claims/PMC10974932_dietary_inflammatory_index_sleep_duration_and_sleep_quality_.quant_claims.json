@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC10974932_dietary_inflammatory_index_sleep_duration_and_sleep_quality_",
+  "doi": "10.3390/nu16060890",
+  "extracted_at": "2026-05-08T20:06:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10974932_dietary_inflammatory_index_sleep_duration_and_sleep_quality_-u-1150",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1150,
+      "sentence": "Additionally, a meta-analysis of five cross-sectional studies conducted in older adults (\u226564 years)) revealed significant inverse associations between adherence to a Mediterranean dietary pattern and circulating CRP [ 10 ].",
+      "context_window": "of five cross-sectional studies conducted in older adults (\u226564 years)) revealed significant inverse associations between adheren",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10974932_dietary_inflammatory_index_sleep_duration_and_sleep_quality_-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 487,
+      "sentence": "One study reported an association between higher DII scores and shorter sleep duration amongst university employees in Iran [ 19 ]; however, it is important to highlight that the majority of participants (i.e., 85% and above) reported a short sleep duration of less than 6 h, which may not represent the broader population [ 36 ].",
+      "context_window": "rtant to highlight that the majority of participants (i.e., 85% and above) reported a short sleep duration of less than 6 h",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

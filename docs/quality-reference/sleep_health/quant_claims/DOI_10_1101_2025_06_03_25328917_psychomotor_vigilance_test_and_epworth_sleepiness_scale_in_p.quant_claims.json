@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1101_2025_06_03_25328917_psychomotor_vigilance_test_and_epworth_sleepiness_scale_in_p",
+  "doi": "10.1101/2025.06.03.25328917",
+  "extracted_at": "2026-05-08T20:05:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_06_03_25328917_psychomotor_vigilance_test_and_epworth_sleepiness_scale_in_p-n-545",
+      "claim_type": "sample_size",
+      "raw_text": "n=128",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "Methods A total of 167 participants, primarily diagnosed or suspected of OSA (n=128 [76.6%]), completed the ESS and PVT during their clinical visit.",
+      "context_window": "167 participants, primarily diagnosed or suspected of OSA (n=128 [76.6%]), completed the ESS and PVT during their clinical v",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_06_03_25328917_psychomotor_vigilance_test_and_epworth_sleepiness_scale_in_p-pct-552",
+      "claim_type": "percentage",
+      "raw_text": "76.6%",
+      "numeric_values": [
+        76.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 552,
+      "sentence": "Methods A total of 167 participants, primarily diagnosed or suspected of OSA (n=128 [76.6%]), completed the ESS and PVT during their clinical visit.",
+      "context_window": "rticipants, primarily diagnosed or suspected of OSA (n=128 [76.6%]), completed the ESS and PVT during their clinical visit. A",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

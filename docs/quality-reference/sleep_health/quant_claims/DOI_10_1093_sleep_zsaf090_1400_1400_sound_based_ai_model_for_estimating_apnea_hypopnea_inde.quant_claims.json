@@ -1,0 +1,140 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde",
+  "doi": "10.1093/sleep/zsaf090.1400",
+  "extracted_at": "2026-05-08T20:05:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "correlation": 1,
+    "percentage": 5,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-corr-1518",
+      "claim_type": "correlation",
+      "raw_text": "(r=0.97)",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1518,
+      "sentence": "Performance was assessed by comparing the estimated AHI with the manually scored AHI from PSG.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>On a separate test set of 1,492 nights, the model\u2019s estimated AHI strongly correlated with the PSG reference (r=0.97) and showed a mean estimation error of -0.74 events/hour (95% CI: -0.74 \u00b1 11.02).",
+      "context_window": "\u2019s estimated AHI strongly correlated with the PSG reference (r=0.97) and showed a mean estimation error of -0.74 events/hour (95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-pct-1584",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1584,
+      "sentence": "Performance was assessed by comparing the estimated AHI with the manually scored AHI from PSG.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>On a separate test set of 1,492 nights, the model\u2019s estimated AHI strongly correlated with the PSG reference (r=0.97) and showed a mean estimation error of -0.74 events/hour (95% CI: -0.74 \u00b1 11.02).",
+      "context_window": "7) and showed a mean estimation error of -0.74 events/hour (95% CI: -0.74 \u00b1 11.02). As a screening tool at different AHI th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-msd-1593",
+      "claim_type": "mean_sd",
+      "raw_text": "0.74 \u00b1 11.02",
+      "numeric_values": [
+        0.74,
+        11.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1593,
+      "sentence": "Performance was assessed by comparing the estimated AHI with the manually scored AHI from PSG.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>On a separate test set of 1,492 nights, the model\u2019s estimated AHI strongly correlated with the PSG reference (r=0.97) and showed a mean estimation error of -0.74 events/hour (95% CI: -0.74 \u00b1 11.02).",
+      "context_window": "owed a mean estimation error of -0.74 events/hour (95% CI: -0.74 \u00b1 11.02). As a screening tool at different AHI thresholds (\u22655, \u226515,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-pct-1709",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1709,
+      "sentence": "As a screening tool at different AHI thresholds (\u22655, \u226515, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; specificities of 0.88, 0.91, and 0.95; and ROC AUCs of 0.97, 0.98, and 0.98, respectively.",
+      "context_window": "sholds (\u22655, \u226515, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; speci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-pct-1714",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1714,
+      "sentence": "As a screening tool at different AHI thresholds (\u22655, \u226515, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; specificities of 0.88, 0.91, and 0.95; and ROC AUCs of 0.97, 0.98, and 0.98, respectively.",
+      "context_window": "s (\u22655, \u226515, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; specificit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-pct-1723",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1723,
+      "sentence": "As a screening tool at different AHI thresholds (\u22655, \u226515, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; specificities of 0.88, 0.91, and 0.95; and ROC AUCs of 0.97, 0.98, and 0.98, respectively.",
+      "context_window": "5, and \u226530), the model achieved accuracies of 92%, 93%, and 94%; sensitivities of 0.94, 0.94, and 0.93; specificities of 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1400_1400_sound_based_ai_model_for_estimating_apnea_hypopnea_inde-pct-1978",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1978,
+      "sentence": "When classifying OSA severity into four categories (AHI 0 to &lt; 5, 5 to &lt; 15, 15 to &lt; 30 and \u2265 30), it attained 81% accuracy and a macro F1 score of 0.80.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>This sound-based AI model accurately estimates AHI using only audio data, providing a low-cost and contactless approach to OSA screening and management.",
+      "context_window": "&lt; 5, 5 to &lt; 15, 15 to &lt; 30 and \u2265 30), it attained 81% accuracy and a macro F1 score of 0.80.</jats:p> </jats:sec>",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

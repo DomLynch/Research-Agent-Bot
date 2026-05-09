@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_fmt_for_insomnia_disorder_fmt_sleep",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:58+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_fmt_for_insomnia_disorder_fmt_sleep-pct-381",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 381,
+      "sentence": "In about 40% of cases, insomnia can develop into a more chronic condition.",
+      "context_window": "e transient insomnia at some point in their lives. In about 40% of cases, insomnia can develop into a more chronic conditio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_fmt_for_insomnia_disorder_fmt_sleep-pct-576",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 576,
+      "sentence": "The COVID-19 pandemic has further aggravated sleep problems, with a reported global prevalence of sleep disturbances reaching 40-49%.",
+      "context_window": "eported global prevalence of sleep disturbances reaching 40-49%. The implications of insomnia disorder are substantial, enc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

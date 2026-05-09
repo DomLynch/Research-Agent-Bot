@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_sleep_apnea_syndrome_in_obese_women_during_pregnancy",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_sleep_apnea_syndrome_in_obese_women_during_pregnancy-pct-768",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 768,
+      "sentence": "The prevalence of OSA among women is estimated to be 2-5%, but it remains underdiagnosed during pregnancy.",
+      "context_window": "rth. The prevalence of OSA among women is estimated to be 2-5%, but it remains underdiagnosed during pregnancy. In sleep a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_sleep_apnea_syndrome_in_obese_women_during_pregnancy-u-1215",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1215,
+      "sentence": "In sleep apnea syndrome, a few data have shown better pregnancy and fetal outcome with the use continuous positive airway pressure (CPAP) therapy. the hypothesis is in obese pregnant women that there could be a significant association between sleep apnea syndrome and hypertensive disorders, preeclampsia and adverse fetal outcomes This is a prospective study of Women with a body mass index of 35 kg.m2 or greater.",
+      "context_window": "s is a prospective study of Women with a body mass index of 35 kg.m2 or greater. The aim of this study is to determinate the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

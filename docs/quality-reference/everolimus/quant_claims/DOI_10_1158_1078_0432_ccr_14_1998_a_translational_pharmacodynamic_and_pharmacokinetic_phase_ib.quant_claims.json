@@ -1,0 +1,265 @@
+{
+  "paper_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib",
+  "doi": "10.1158/1078-0432.ccr-14-1998",
+  "extracted_at": "2026-05-08T19:55:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 7,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-u-538",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 538,
+      "sentence": "EXPERIMENTAL DESIGN: We enrolled 33 patients and obtained baseline tumor biopsy and 2[18F]fluoro-2-deoxy-D-glucose-positron emission tomography/computed tomography (FDG-PET/CT) imaging followed by everolimus treatment (5 or 10 mg daily, up to 28 days), or without intervening treatment for controls.",
+      "context_window": "(FDG-PET/CT) imaging followed by everolimus treatment (5 or 10 mg daily, up to 28 days), or without intervening treatment for",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-u-557",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 557,
+      "sentence": "EXPERIMENTAL DESIGN: We enrolled 33 patients and obtained baseline tumor biopsy and 2[18F]fluoro-2-deoxy-D-glucose-positron emission tomography/computed tomography (FDG-PET/CT) imaging followed by everolimus treatment (5 or 10 mg daily, up to 28 days), or without intervening treatment for controls.",
+      "context_window": "g followed by everolimus treatment (5 or 10 mg daily, up to 28 days), or without intervening treatment for controls. Target mod",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-u-977",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 977,
+      "sentence": "RESULTS: There were 23 patients on the treatment arm and 10 controls; median age 64 years; 22 tumors (67%) were adenocarcinomas.",
+      "context_window": "3 patients on the treatment arm and 10 controls; median age 64 years; 22 tumors (67%) were adenocarcinomas. There was a dose-dep",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-998",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 998,
+      "sentence": "RESULTS: There were 23 patients on the treatment arm and 10 controls; median age 64 years; 22 tumors (67%) were adenocarcinomas.",
+      "context_window": "atment arm and 10 controls; median age 64 years; 22 tumors (67%) were adenocarcinomas. There was a dose-dependent reduction",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-1093",
+      "claim_type": "percentage",
+      "raw_text": "29.0%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "s a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-1101",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1101,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-1107",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "dent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-p-1112",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-1136",
+      "claim_type": "percentage",
+      "raw_text": "10.1%",
+      "numeric_values": [
+        10.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1136,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "ctivity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-1143",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1143,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "(SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -7",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-pct-1150",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1150,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "x: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-p-1157",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1157,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": "%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-p-1212",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.071",
+      "numeric_values": [
+        0.071
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1212,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": ".6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients tr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1078_0432_ccr_14_1998_a_translational_pharmacodynamic_and_pharmacokinetic_phase_ib-p-1256",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.063",
+      "numeric_values": [
+        0.063
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1256,
+      "sentence": "There was a dose-dependent reduction in metabolic activity (SUVmax: 29.0%, -21%, -24%; P = 0.014), tumor size (10.1%, 5.8%, -11.6%; P = 0.047), and modulation of S6 (-36.1, -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohorts, respectively.",
+      "context_window": ", -13.7, -77.0; P = 0.071) and pS6 (-41.25, -61.57, -47.21; P = 0.063) in patients treated in the control, 5-mg, and 10-mg cohort",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

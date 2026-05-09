@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1111_bcp_14502_low_dose_aspirin_use_and_risk_of_head_and_neck_cancer_a_dani",
+  "doi": "10.1111/bcp.14502",
+  "extracted_at": "2026-05-08T20:05:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_bcp_14502_low_dose_aspirin_use_and_risk_of_head_and_neck_cancer_a_dani-pct-624",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 624,
+      "sentence": "Using conditional logistic regression, we estimated multivariable\u2010adjusted odds ratios and 95% confidence intervals for HNC associated with low\u2010dose aspirin use (\u22652 prescriptions).",
+      "context_window": "ession, we estimated multivariable\u2010adjusted odds ratios and 95% confidence intervals for HNC associated with low\u2010dose aspir",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_bcp_14502_low_dose_aspirin_use_and_risk_of_head_and_neck_cancer_a_dani-or-l-793",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio: 1.03",
+      "numeric_values": [
+        1.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 793,
+      "sentence": "No association was observed between low\u2010dose aspirin ever\u2010use and overall HNC (odds ratio: 1.03, 95% confidence interval: 0.97-1.10).",
+      "context_window": "observed between low\u2010dose aspirin ever\u2010use and overall HNC (odds ratio: 1.03, 95% confidence interval: 0.97-1.10). Estimates remained ne",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_bcp_14502_low_dose_aspirin_use_and_risk_of_head_and_neck_cancer_a_dani-pct-811",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "No association was observed between low\u2010dose aspirin ever\u2010use and overall HNC (odds ratio: 1.03, 95% confidence interval: 0.97-1.10).",
+      "context_window": "ow\u2010dose aspirin ever\u2010use and overall HNC (odds ratio: 1.03, 95% confidence interval: 0.97-1.10). Estimates remained neutral",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "paper_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a",
+  "doi": "10.1159/000545054",
+  "extracted_at": "2026-05-08T20:12:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1,
+    "p_value": 3,
+    "hazard_ratio": 2,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-u-1157",
+      "claim_type": "unit_value",
+      "raw_text": "6.11 years",
+      "numeric_values": [
+        6.11
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1157,
+      "sentence": "Results Over a median follow-up of 6.11 years, our findings revealed a negative correlation between putrescine levels and estimated glomerular filtration rate (eGFR), while spermidine and spermine levels were positively correlated with eGFR.",
+      "context_window": "as the competing event. Results Over a median follow-up of 6.11 years, our findings revealed a negative correlation between putre",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-pct-1700",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1700,
+      "sentence": "Moreover, Cox regression analyses showed that, in a multivariate Cox model, patients in the highest quartile of putrescine displayed a significantly higher risk of CV events (hazard ratio [HR] 6.972, 95% confidence interval [CI] 2.520-19.294, p < 0.001) compared to those in the lowest quartile.",
+      "context_window": "ficantly higher risk of CV events (hazard ratio [HR] 6.972, 95% confidence interval [CI] 2.520-19.294, p < 0.001) compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-p-1743",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1743,
+      "sentence": "Moreover, Cox regression analyses showed that, in a multivariate Cox model, patients in the highest quartile of putrescine displayed a significantly higher risk of CV events (hazard ratio [HR] 6.972, 95% confidence interval [CI] 2.520-19.294, p < 0.001) compared to those in the lowest quartile.",
+      "context_window": "atio [HR] 6.972, 95% confidence interval [CI] 2.520-19.294, p < 0.001) compared to those in the lowest quartile. Conversely, high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-hr-a-1884",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.077",
+      "numeric_values": [
+        0.077
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1884,
+      "sentence": "Conversely, higher levels of spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002).",
+      "context_window": "spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of sperm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-ci-1896",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.022-0.274",
+      "numeric_values": [
+        0.022,
+        0.274
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1896,
+      "sentence": "Conversely, higher levels of spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002).",
+      "context_window": "were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-p-1916",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1916,
+      "sentence": "Conversely, higher levels of spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002).",
+      "context_window": "a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-hr-a-2005",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.180",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2005,
+      "sentence": "Conversely, higher levels of spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002).",
+      "context_window": "of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002). The relationship between s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-ci-2017",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.061-0.530",
+      "numeric_values": [
+        0.061,
+        0.53
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2017,
+      "sentence": "Conversely, higher levels of spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002).",
+      "context_window": "also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002). The relationship between serum polyamines and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40037314_association_of_serum_polyamines_with_cardiovascular_events_a-p-2037",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2037,
+      "sentence": "Conversely, higher levels of spermidine were associated with a lower risk of CV events (HR = 0.077, 95% CI 0.022-0.274, p < 0.001), and higher levels of spermine also appeared to reduce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002).",
+      "context_window": "duce the risk of CV events (HR = 0.180, 95% CI 0.061-0.530, p = 0.002). The relationship between serum polyamines and CVD remaine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

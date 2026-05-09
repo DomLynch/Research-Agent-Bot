@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1093_pubmed_fdz114_low_dose_aspirin_use_and_cancer_specific_mortality_a_meta_an",
+  "doi": "10.1093/pubmed/fdz114",
+  "extracted_at": "2026-05-08T20:06:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "odds_ratio": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_pubmed_fdz114_low_dose_aspirin_use_and_cancer_specific_mortality_a_meta_an-or-a-1123",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1123,
+      "sentence": "Overall, statistical evidence of significantly decreased cancer-specific mortality was found to be associated with post-diagnosis low-dose aspirin use (OR = 0.84, 95% CI = 0.75-0.93), but not with pre-diagnosis low-dose aspirin use.",
+      "context_window": "to be associated with post-diagnosis low-dose aspirin use (OR = 0.84, 95% CI = 0.75-0.93), but not with pre-diagnosis low-dose a",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_pubmed_fdz114_low_dose_aspirin_use_and_cancer_specific_mortality_a_meta_an-pct-1134",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1134,
+      "sentence": "Overall, statistical evidence of significantly decreased cancer-specific mortality was found to be associated with post-diagnosis low-dose aspirin use (OR = 0.84, 95% CI = 0.75-0.93), but not with pre-diagnosis low-dose aspirin use.",
+      "context_window": "ciated with post-diagnosis low-dose aspirin use (OR = 0.84, 95% CI = 0.75-0.93), but not with pre-diagnosis low-dose aspiri",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

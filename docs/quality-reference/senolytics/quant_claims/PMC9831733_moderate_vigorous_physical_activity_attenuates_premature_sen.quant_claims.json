@@ -1,0 +1,465 @@
+{
+  "paper_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen",
+  "doi": "10.18632/aging.204458",
+  "extracted_at": "2026-05-08T20:00:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "unit_value": 6,
+    "mean_sd": 1,
+    "p_value": 13
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-pct-600",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 600,
+      "sentence": "The world is aging rapidly, with around 13% of the world population (one billion) aged 60 years and above, as reported by WHO in 2020 [ 3 ].",
+      "context_window": "ivity (MVPA) [ 2 ]. The world is aging rapidly, with around 13% of the world population (one billion) aged 60 years and abo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-u-647",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 647,
+      "sentence": "The world is aging rapidly, with around 13% of the world population (one billion) aged 60 years and above, as reported by WHO in 2020 [ 3 ].",
+      "context_window": "with around 13% of the world population (one billion) aged 60 years and above, as reported by WHO in 2020 [ 3 ]. This has led t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-u-415",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 415,
+      "sentence": "Inclusion criteria for adults with a sedentary lifestyle were as follows: 1) Chinese adults; 2) aged between 18 and 45 years; 3) physically inactive (less than 150-minute MVPA per week) and with prolonged sedentary behavior (sitting time over eight hours per day) as screened by the Chinese version of the International Physical Activity Questionnaire-Short Version [ 29 ] and activPAL\u2122 (PAL Technologies, Glasgow, UK); 4) BMI \u2265 25 kg/m 2 ; 5) blood pressure less than 140/90 mmHg, 6) non-smoker and non-drinker of alcohol; 7) without cardiovascular diseases, such as heart diseases, vascular diseases, or diabetes; 8) no medical history of physical injuries in the last three months; and 9) not taking any medicine in the last three months.",
+      "context_window": "were as follows: 1) Chinese adults; 2) aged between 18 and 45 years; 3) physically inactive (less than 150-minute MVPA per week",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-u-728",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 728,
+      "sentence": "Inclusion criteria for adults with a sedentary lifestyle were as follows: 1) Chinese adults; 2) aged between 18 and 45 years; 3) physically inactive (less than 150-minute MVPA per week) and with prolonged sedentary behavior (sitting time over eight hours per day) as screened by the Chinese version of the International Physical Activity Questionnaire-Short Version [ 29 ] and activPAL\u2122 (PAL Technologies, Glasgow, UK); 4) BMI \u2265 25 kg/m 2 ; 5) blood pressure less than 140/90 mmHg, 6) non-smoker and non-drinker of alcohol; 7) without cardiovascular diseases, such as heart diseases, vascular diseases, or diabetes; 8) no medical history of physical injuries in the last three months; and 9) not taking any medicine in the last three months.",
+      "context_window": "9 ] and activPAL\u2122 (PAL Technologies, Glasgow, UK); 4) BMI \u2265 25 kg/m 2 ; 5) blood pressure less than 140/90 mmHg, 6) non-smoke",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-u-772",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 772,
+      "sentence": "Inclusion criteria for adults with a sedentary lifestyle were as follows: 1) Chinese adults; 2) aged between 18 and 45 years; 3) physically inactive (less than 150-minute MVPA per week) and with prolonged sedentary behavior (sitting time over eight hours per day) as screened by the Chinese version of the International Physical Activity Questionnaire-Short Version [ 29 ] and activPAL\u2122 (PAL Technologies, Glasgow, UK); 4) BMI \u2265 25 kg/m 2 ; 5) blood pressure less than 140/90 mmHg, 6) non-smoker and non-drinker of alcohol; 7) without cardiovascular diseases, such as heart diseases, vascular diseases, or diabetes; 8) no medical history of physical injuries in the last three months; and 9) not taking any medicine in the last three months.",
+      "context_window": ", UK); 4) BMI \u2265 25 kg/m 2 ; 5) blood pressure less than 140/90 mmHg, 6) non-smoker and non-drinker of alcohol; 7) without cardi",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-pct-1502",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1502,
+      "sentence": "Consequently, approximately fourteen participants in each group were estimated to achieve the effect size (0.283) by using a two-arm pretest-posttest design at a two-sided significance level of 5% and at a power of 80% ( F tests, ANOVA: repeated measures, within-between interaction).",
+      "context_window": "retest-posttest design at a two-sided significance level of 5% and at a power of 80% ( F tests, ANOVA: repeated measures,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-pct-1523",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1523,
+      "sentence": "Consequently, approximately fourteen participants in each group were estimated to achieve the effect size (0.283) by using a two-arm pretest-posttest design at a two-sided significance level of 5% and at a power of 80% ( F tests, ANOVA: repeated measures, within-between interaction).",
+      "context_window": "n at a two-sided significance level of 5% and at a power of 80% ( F tests, ANOVA: repeated measures, within-between interac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-u-3782",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3782,
+      "sentence": "The goal for the PA was set at over 12,000 steps per day for at least 5 days per week.",
+      "context_window": "or the PA was set at over 12,000 steps per day for at least 5 days per week. The researchers messaged participants who had not",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-msd-102",
+      "claim_type": "mean_sd",
+      "raw_text": "31.71 \u00b1 7.30",
+      "numeric_values": [
+        31.71,
+        7.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 102,
+      "sentence": "The demographic, anthropometric, and behavioral characteristics of the included 45 participants (age, 31.71 \u00b1 7.30 years) are shown in Table 1 .",
+      "context_window": "ioral characteristics of the included 45 participants (age, 31.71 \u00b1 7.30 years) are shown in Table 1 . The cross-sectional analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-u-110",
+      "claim_type": "unit_value",
+      "raw_text": "7.30 years",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 110,
+      "sentence": "The demographic, anthropometric, and behavioral characteristics of the included 45 participants (age, 31.71 \u00b1 7.30 years) are shown in Table 1 .",
+      "context_window": "aracteristics of the included 45 participants (age, 31.71 \u00b1 7.30 years) are shown in Table 1 . The cross-sectional analysis indica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-490",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 490,
+      "sentence": "The cross-sectional analysis indicated that chronological age, maximal oxygen consumption (VO 2 max), body fat, and blood pressures (diastolic blood pressure and systolic blood pressure) were not associated with the log 2 -transformed p16 INK4a and p21 Cip1 levels in peripheral blood mononuclear cell (PBMCs) in sedentary adults with obesity ( p > 0.05) ( Figure 1A - 1C , Tables 2 , 3 ; Supplementary Figure 1 ).",
+      "context_window": "mononuclear cell (PBMCs) in sedentary adults with obesity ( p > 0.05) ( Figure 1A - 1C , Tables 2 , 3 ; Supplementary Figure 1 )",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-pct-663",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 663,
+      "sentence": "Notably, MVPA was independently and reversely correlated with log 2 -transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, no significant correlation was found in the other physical behaviors, including light PA (LPA), vigorous PA, standing, sedentary behaviors, and sleep duration ( p > 0.05) ( Figure 1D and Table 2 ; Supplementary Figure 1 ).",
+      "context_window": "ly correlated with log 2 -transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-689",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 689,
+      "sentence": "Notably, MVPA was independently and reversely correlated with log 2 -transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, no significant correlation was found in the other physical behaviors, including light PA (LPA), vigorous PA, standing, sedentary behaviors, and sleep duration ( p > 0.05) ( Figure 1D and Table 2 ; Supplementary Figure 1 ).",
+      "context_window": "transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-pct-724",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 724,
+      "sentence": "Notably, MVPA was independently and reversely correlated with log 2 -transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, no significant correlation was found in the other physical behaviors, including light PA (LPA), vigorous PA, standing, sedentary behaviors, and sleep duration ( p > 0.05) ( Figure 1D and Table 2 ; Supplementary Figure 1 ).",
+      "context_window": "5% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-750",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 750,
+      "sentence": "Notably, MVPA was independently and reversely correlated with log 2 -transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, no significant correlation was found in the other physical behaviors, including light PA (LPA), vigorous PA, standing, sedentary behaviors, and sleep duration ( p > 0.05) ( Figure 1D and Table 2 ; Supplementary Figure 1 ).",
+      "context_window": "= 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, no significant correlation was f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-947",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 947,
+      "sentence": "Notably, MVPA was independently and reversely correlated with log 2 -transformed p16 INK4a (B = -8.83, 95% CI = -15.98 to -1.68, p = 0.02) and p21 Cip1 (B = -8.30, 95% CI = -14.74 to -1.85, p = 0.01) levels in PBMCs; however, no significant correlation was found in the other physical behaviors, including light PA (LPA), vigorous PA, standing, sedentary behaviors, and sleep duration ( p > 0.05) ( Figure 1D and Table 2 ; Supplementary Figure 1 ).",
+      "context_window": "ous PA, standing, sedentary behaviors, and sleep duration ( p > 0.05) ( Figure 1D and Table 2 ; Supplementary Figure 1 ). Althou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-1160",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1160,
+      "sentence": "Although the body mass index (BMI) and daily steps were also significantly correlated with log 2 -transformed p16 INK4a and p21 Cip1 levels in PBMCs ( p < 0.05) ( Figure 1C ; Supplementary Figure 1 ), the correlation became non-significant after adjusting for other factors ( p > 0.05) ( Table 2 ).",
+      "context_window": "log 2 -transformed p16 INK4a and p21 Cip1 levels in PBMCs ( p < 0.05) ( Figure 1C ; Supplementary Figure 1 ), the correlation be",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-1285",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1285,
+      "sentence": "Although the body mass index (BMI) and daily steps were also significantly correlated with log 2 -transformed p16 INK4a and p21 Cip1 levels in PBMCs ( p < 0.05) ( Figure 1C ; Supplementary Figure 1 ), the correlation became non-significant after adjusting for other factors ( p > 0.05) ( Table 2 ).",
+      "context_window": "became non-significant after adjusting for other factors ( p > 0.05) ( Table 2 ). These findings suggested that insufficient MV",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-3358",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3358,
+      "sentence": "Significant increases in MVPA (group effect, p = 0.004) and steps (group effect, p = 0.04 [activPAL\u2122]; group effect, p < 0.01 [Fitbit Watch]) were observed in the PA intervention group compared with those in the control group ( Table 3 ; Supplementary Figures 2 , 3 ).",
+      "context_window": "with obesity. Significant increases in MVPA (group effect, p = 0.004) and steps (group effect, p = 0.04 [activPAL\u2122]; group effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-3394",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3394,
+      "sentence": "Significant increases in MVPA (group effect, p = 0.004) and steps (group effect, p = 0.04 [activPAL\u2122]; group effect, p < 0.01 [Fitbit Watch]) were observed in the PA intervention group compared with those in the control group ( Table 3 ; Supplementary Figures 2 , 3 ).",
+      "context_window": "in MVPA (group effect, p = 0.004) and steps (group effect, p = 0.04 [activPAL\u2122]; group effect, p < 0.01 [Fitbit Watch]) were ob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-3430",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3430,
+      "sentence": "Significant increases in MVPA (group effect, p = 0.004) and steps (group effect, p = 0.04 [activPAL\u2122]; group effect, p < 0.01 [Fitbit Watch]) were observed in the PA intervention group compared with those in the control group ( Table 3 ; Supplementary Figures 2 , 3 ).",
+      "context_window": "nd steps (group effect, p = 0.04 [activPAL\u2122]; group effect, p < 0.01 [Fitbit Watch]) were observed in the PA intervention group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-3736",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3736,
+      "sentence": "In contrast, the other physical behaviors, including sedentary behaviors, LPA, and sleep duration, remained unchanged after the 12-week PA intervention ( p > 0.05) ( Table 3 ).",
+      "context_window": "ion, remained unchanged after the 12-week PA intervention ( p > 0.05) ( Table 3 ). However, the change in habitual MVPA showed n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-3898",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3898,
+      "sentence": "However, the change in habitual MVPA showed no effect on the anthropometric measures, including BMI, body weight, body fat, and VO 2 max ( p > 0.05).",
+      "context_window": "sures, including BMI, body weight, body fat, and VO 2 max ( p > 0.05). More importantly, the 12-week PA intervention significant",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-4059",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4059,
+      "sentence": "More importantly, the 12-week PA intervention significantly attenuated the elevated log 2 -transformed p16 INK4a levels in PBMCs (interaction effect, p = 0.04) ( Table 3 ; Supplementary Figure 4A ).",
+      "context_window": "-transformed p16 INK4a levels in PBMCs (interaction effect, p = 0.04) ( Table 3 ; Supplementary Figure 4A ). However, the interv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9831733_moderate_vigorous_physical_activity_attenuates_premature_sen-p-4451",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4451,
+      "sentence": "However, the intervention had no impact on the expression of p21 Cip1 , interleukin (IL)-1\u03b2, IL-6, and tumor necrosis factor (TNF)-\u03b1 in PBMCs and serum IL-1\u03b2, IL-6, IL-8, C-C motif chemokine ligand 2 (CCL2), intercellular adhesion molecule 1 (ICAM-I), vascular endothelial growth factor (VEGF), and plasminogen activator inhibitor-1 (PAI-I) ( p > 0.05) levels, which are also known as senescence-associated secretory phenotypes (SASPs) ( Table 3 ; Supplementary Figure 4B ).",
+      "context_window": "tor (VEGF), and plasminogen activator inhibitor-1 (PAI-I) ( p > 0.05) levels, which are also known as senescence-associated secr",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

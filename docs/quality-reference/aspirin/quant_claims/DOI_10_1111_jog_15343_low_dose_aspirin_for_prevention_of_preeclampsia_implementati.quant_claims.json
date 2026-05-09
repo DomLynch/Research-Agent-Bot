@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati",
+  "doi": "10.1111/jog.15343",
+  "extracted_at": "2026-05-08T20:06:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati-u-588",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 588,
+      "sentence": "In cases of positive screening results, a daily dose of 81 mg aspirin was prescribed.",
+      "context_window": "sk. In cases of positive screening results, a daily dose of 81 mg aspirin was prescribed. Pregnancy outcomes were compared wi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati-pct-1045",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1045,
+      "sentence": "The effectiveness of aspirin prophylaxis following the NICE guideline was assessed by a logistic regression model to compare the risk of PE development between before and after guidance.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>The screening positive rate by NICE was 8.3%.",
+      "context_window": "/jats:title><jats:p>The screening positive rate by NICE was 8.3%. Of these, 77.36% of the participants received aspirin prop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati-pct-1061",
+      "claim_type": "percentage",
+      "raw_text": "77.36%",
+      "numeric_values": [
+        77.36
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "Of these, 77.36% of the participants received aspirin prophylaxis according to the NICE recommendation.",
+      "context_window": "s:p>The screening positive rate by NICE was 8.3%. Of these, 77.36% of the participants received aspirin prophylaxis according",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati-pct-1254",
+      "claim_type": "percentage",
+      "raw_text": "4.31%",
+      "numeric_values": [
+        4.31
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1254,
+      "sentence": "After the implementation of the PE screening program, the incidence of PE slightly decreased (from 4.31% to 3.72%, <jats:italic>p</jats:italic> = 0.274).",
+      "context_window": "ening program, the incidence of PE slightly decreased (from 4.31% to 3.72%, <jats:italic>p</jats:italic> = 0.274). The chance",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati-pct-1263",
+      "claim_type": "percentage",
+      "raw_text": "3.72%",
+      "numeric_values": [
+        3.72
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "After the implementation of the PE screening program, the incidence of PE slightly decreased (from 4.31% to 3.72%, <jats:italic>p</jats:italic> = 0.274).",
+      "context_window": "gram, the incidence of PE slightly decreased (from 4.31% to 3.72%, <jats:italic>p</jats:italic> = 0.274). The chance of PE in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jog_15343_low_dose_aspirin_for_prevention_of_preeclampsia_implementati-u-1637",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg/day",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1637,
+      "sentence": "The chance of PE in pregnancies who had high\u2010risk factors was reduced after using low\u2010dose aspirin prophylaxis, even though the difference was not statistically significant.</jats:p></jats:sec><jats:sec><jats:title>Conclusions</jats:title><jats:p>Screening with the NICE guidelines followed by prescription of low\u2010dose aspirin (81 mg/day) was probably not an effective strategy for the prevention of PE in our population.",
+      "context_window": "CE guidelines followed by prescription of low\u2010dose aspirin (81 mg/day) was probably not an effective strategy for the prevention",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

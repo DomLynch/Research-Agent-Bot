@@ -1,0 +1,123 @@
+{
+  "paper_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on",
+  "doi": "10.1158/1940-6207.capr-19-0036",
+  "extracted_at": "2026-05-08T20:05:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "mean_sd": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on-u-444",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 444,
+      "sentence": "Fifty-four participants were randomized to intermittent (ASA 81 mg daily for one week/placebo for one week) or continuous (ASA 81 mg daily) for 12 weeks.",
+      "context_window": "ifty-four participants were randomized to intermittent (ASA 81 mg daily for one week/placebo for one week) or continuous (ASA",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on-u-510",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 510,
+      "sentence": "Fifty-four participants were randomized to intermittent (ASA 81 mg daily for one week/placebo for one week) or continuous (ASA 81 mg daily) for 12 weeks.",
+      "context_window": "daily for one week/placebo for one week) or continuous (ASA 81 mg daily) for 12 weeks. Low-dose ASA suppressed urinary prosta",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on-u-527",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 527,
+      "sentence": "Fifty-four participants were randomized to intermittent (ASA 81 mg daily for one week/placebo for one week) or continuous (ASA 81 mg daily) for 12 weeks.",
+      "context_window": "k/placebo for one week) or continuous (ASA 81 mg daily) for 12 weeks. Low-dose ASA suppressed urinary prostaglandin E2 metabolit",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on-msd-615",
+      "claim_type": "mean_sd",
+      "raw_text": "4.55 \u00b1 11.52",
+      "numeric_values": [
+        4.55,
+        11.52
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 615,
+      "sentence": "Low-dose ASA suppressed urinary prostaglandin E2 metabolite (PGEM; change of -4.55 \u00b1 11.52 from baseline 15.44 \u00b1 13.79 ng/mg creatinine for arms combined, P = 0.02), a surrogate of COX-mediated ARA metabolism, but had minimal effects on nasal gene expression of nasal or bronchial gene-expression signatures associated with smoking, lung cancer, and chronic obstructive pulmonary disease.",
+      "context_window": "essed urinary prostaglandin E2 metabolite (PGEM; change of -4.55 \u00b1 11.52 from baseline 15.44 \u00b1 13.79 ng/mg creatinine for arms combi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on-msd-642",
+      "claim_type": "mean_sd",
+      "raw_text": "15.44 \u00b1 13.79",
+      "numeric_values": [
+        15.44,
+        13.79
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 642,
+      "sentence": "Low-dose ASA suppressed urinary prostaglandin E2 metabolite (PGEM; change of -4.55 \u00b1 11.52 from baseline 15.44 \u00b1 13.79 ng/mg creatinine for arms combined, P = 0.02), a surrogate of COX-mediated ARA metabolism, but had minimal effects on nasal gene expression of nasal or bronchial gene-expression signatures associated with smoking, lung cancer, and chronic obstructive pulmonary disease.",
+      "context_window": "E2 metabolite (PGEM; change of -4.55 \u00b1 11.52 from baseline 15.44 \u00b1 13.79 ng/mg creatinine for arms combined, P = 0.02), a surrogate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_19_0036_effect_of_intermittent_versus_continuous_low_dose_aspirin_on-p-692",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 692,
+      "sentence": "Low-dose ASA suppressed urinary prostaglandin E2 metabolite (PGEM; change of -4.55 \u00b1 11.52 from baseline 15.44 \u00b1 13.79 ng/mg creatinine for arms combined, P = 0.02), a surrogate of COX-mediated ARA metabolism, but had minimal effects on nasal gene expression of nasal or bronchial gene-expression signatures associated with smoking, lung cancer, and chronic obstructive pulmonary disease.",
+      "context_window": "baseline 15.44 \u00b1 13.79 ng/mg creatinine for arms combined, P = 0.02), a surrogate of COX-mediated ARA metabolism, but had minim",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

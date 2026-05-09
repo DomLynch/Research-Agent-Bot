@@ -1,0 +1,143 @@
+{
+  "paper_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation",
+  "doi": "10.17241/smr.2024.02607",
+  "extracted_at": "2026-05-08T20:05:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "mean_sd": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-u-776",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 776,
+      "sentence": "All patients underwent 50 sessions of intermittent theta burst stimulation over the left dorsolateral prefrontal cortex across 10 days.Results The mean age of the patients was 40.82\u00b112.03 years.",
+      "context_window": "ulation over the left dorsolateral prefrontal cortex across 10 days.Results The mean age of the patients was 40.82\u00b112.03 years.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-msd-825",
+      "claim_type": "mean_sd",
+      "raw_text": "40.82\u00b112.03",
+      "numeric_values": [
+        40.82,
+        12.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 825,
+      "sentence": "All patients underwent 50 sessions of intermittent theta burst stimulation over the left dorsolateral prefrontal cortex across 10 days.Results The mean age of the patients was 40.82\u00b112.03 years.",
+      "context_window": "tex across 10 days.Results The mean age of the patients was 40.82\u00b112.03 years. Before aTMS, the Insomnia Severity Index (ISI) score",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-u-831",
+      "claim_type": "unit_value",
+      "raw_text": "12.03 years",
+      "numeric_values": [
+        12.03
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 831,
+      "sentence": "All patients underwent 50 sessions of intermittent theta burst stimulation over the left dorsolateral prefrontal cortex across 10 days.Results The mean age of the patients was 40.82\u00b112.03 years.",
+      "context_window": "ross 10 days.Results The mean age of the patients was 40.82\u00b112.03 years. Before aTMS, the Insomnia Severity Index (ISI) score was 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-msd-901",
+      "claim_type": "mean_sd",
+      "raw_text": "18.21\u00b19.45",
+      "numeric_values": [
+        18.21,
+        9.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 901,
+      "sentence": "Before aTMS, the Insomnia Severity Index (ISI) score was 18.21\u00b19.45, and the Pittsburgh Sleep Quality Index (PSQI) score was 12.85\u00b14.75.",
+      "context_window": "s. Before aTMS, the Insomnia Severity Index (ISI) score was 18.21\u00b19.45, and the Pittsburgh Sleep Quality Index (PSQI) score was 12",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-msd-969",
+      "claim_type": "mean_sd",
+      "raw_text": "12.85\u00b14.75",
+      "numeric_values": [
+        12.85,
+        4.75
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "Before aTMS, the Insomnia Severity Index (ISI) score was 18.21\u00b19.45, and the Pittsburgh Sleep Quality Index (PSQI) score was 12.85\u00b14.75.",
+      "context_window": "45, and the Pittsburgh Sleep Quality Index (PSQI) score was 12.85\u00b14.75. After aTMS, ISI and PSQI scores improved to 5.75\u00b16.70 and",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-msd-1025",
+      "claim_type": "mean_sd",
+      "raw_text": "5.75\u00b16.70",
+      "numeric_values": [
+        5.75,
+        6.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1025,
+      "sentence": "After aTMS, ISI and PSQI scores improved to 5.75\u00b16.70 and 6.75\u00b15.01, respectively.",
+      "context_window": "was 12.85\u00b14.75. After aTMS, ISI and PSQI scores improved to 5.75\u00b16.70 and 6.75\u00b15.01, respectively. The mean reductions in ISI and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_17241_smr_2024_02607_the_effect_of_accelerated_transcranial_magnetic_stimulation-msd-1039",
+      "claim_type": "mean_sd",
+      "raw_text": "6.75\u00b15.01",
+      "numeric_values": [
+        6.75,
+        5.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1039,
+      "sentence": "After aTMS, ISI and PSQI scores improved to 5.75\u00b16.70 and 6.75\u00b15.01, respectively.",
+      "context_window": ". After aTMS, ISI and PSQI scores improved to 5.75\u00b16.70 and 6.75\u00b15.01, respectively. The mean reductions in ISI and PSQI scores p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

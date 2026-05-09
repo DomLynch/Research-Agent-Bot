@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_13078_jsm_210002_advanced_cognitive_behavioral_therapy_for_insomnia_cbt_i_bas",
+  "doi": "10.13078/jsm.210002",
+  "extracted_at": "2026-05-08T20:05:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_13078_jsm_210002_advanced_cognitive_behavioral_therapy_for_insomnia_cbt_i_bas-n-834",
+      "claim_type": "sample_size",
+      "raw_text": "n=16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 834,
+      "sentence": "To examine the efficacy of advanced CBT-I compared to that of CBT-I, the patients (n=16) were assigned to two groups (CBT-I: n=6; advanced CBT-I: n=10).",
+      "context_window": "of advanced CBT-I compared to that of CBT-I, the patients (n=16) were assigned to two groups (CBT-I: n=6; advanced CBT-I: n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_210002_advanced_cognitive_behavioral_therapy_for_insomnia_cbt_i_bas-n-876",
+      "claim_type": "sample_size",
+      "raw_text": "n=6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 876,
+      "sentence": "To examine the efficacy of advanced CBT-I compared to that of CBT-I, the patients (n=16) were assigned to two groups (CBT-I: n=6; advanced CBT-I: n=10).",
+      "context_window": "-I, the patients (n=16) were assigned to two groups (CBT-I: n=6; advanced CBT-I: n=10). The patients in each group were tre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_210002_advanced_cognitive_behavioral_therapy_for_insomnia_cbt_i_bas-n-897",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "To examine the efficacy of advanced CBT-I compared to that of CBT-I, the patients (n=16) were assigned to two groups (CBT-I: n=6; advanced CBT-I: n=10).",
+      "context_window": "6) were assigned to two groups (CBT-I: n=6; advanced CBT-I: n=10). The patients in each group were treated for 4 weeks (8 se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_210002_advanced_cognitive_behavioral_therapy_for_insomnia_cbt_i_bas-u-948",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 948,
+      "sentence": "The patients in each group were treated for 4 weeks (8 sessions).",
+      "context_window": "d CBT-I: n=10). The patients in each group were treated for 4 weeks (8 sessions). The quality of sleep, severity of insomnia, s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

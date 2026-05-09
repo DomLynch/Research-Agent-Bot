@@ -1,0 +1,1779 @@
+{
+  "paper_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_",
+  "doi": "10.3390/cancers12061551",
+  "extracted_at": "2026-05-08T20:06:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 28,
+    "hazard_ratio": 3,
+    "percentage": 29,
+    "unit_value": 30,
+    "sample_size": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-727",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 727,
+      "sentence": "Results : The Kaplan-Meier analysis revealed that the overall survival ( p < 0.0001) and disease-specific survival ( p < 0.0001) rates of 180-day aspirin users increased.",
+      "context_window": "Kaplan-Meier analysis revealed that the overall survival ( p < 0.0001) and disease-specific survival ( p < 0.0001) rates of 180-d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-771",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 771,
+      "sentence": "Results : The Kaplan-Meier analysis revealed that the overall survival ( p < 0.0001) and disease-specific survival ( p < 0.0001) rates of 180-day aspirin users increased.",
+      "context_window": "rall survival ( p < 0.0001) and disease-specific survival ( p < 0.0001) rates of 180-day aspirin users increased. Increased surviv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-hr-a-1031",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Cox regression models indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival.",
+      "context_window": "indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-1042",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "Cox regression models indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival.",
+      "context_window": "that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-1062",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1062,
+      "sentence": "Cox regression models indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival.",
+      "context_window": "ing aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-hr-a-1087",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1087,
+      "sentence": "Cox regression models indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival.",
+      "context_window": "te: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognosti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-1098",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "Cox regression models indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival.",
+      "context_window": "28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic fac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-1118",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "Cox regression models indicated that factors, including aspirin use (univariate: HR = 0.28, 95% CI = 0.14-0.55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival.",
+      "context_window": "55, p < 0.001; multivariate: HR = 0.23, 95% CI = 0.12-0.46, p < 0.001), were independent prognostic factors for survival. Conclus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-1220",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1220,
+      "sentence": "Conclusions : Aspirin use for more than 180 days is associated with an increased survival rate and is a positive independent prognostic factor in NPC.",
+      "context_window": "ctors for survival. Conclusions : Aspirin use for more than 180 days is associated with an increased survival rate and is a posi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-501",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 501,
+      "sentence": "It is estimated that 30-60% of patients diagnosed with NPC will develop metastatic cancers, which account for the vast majority of NPC deaths [ 2 , 6 , 7 ].",
+      "context_window": "distal-organ metastasis is common. It is estimated that 30-60% of patients diagnosed with NPC will develop metastatic canc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-1790",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1790,
+      "sentence": "Despite the fact that the five-year survival rate for people diagnosed with early-stage NPC is 72%, the survival rate is dramatically lower in patients with late-stage NPC due to its anatomical position as it relates to detection and management [ 2 , 13 ].",
+      "context_window": "survival rate for people diagnosed with early-stage NPC is 72%, the survival rate is dramatically lower in patients with l",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-3752",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3752,
+      "sentence": "In order to understand whether there is an association between increased survival rates in NPC and aspirin use, we used a database from Chang Gung Memorial Hospital to conduct a cohort study with a long follow-up period (10 years) to analyze overall survival (OS) and disease-specific survival (DSS) rates [ 28 ].",
+      "context_window": "tal to conduct a cohort study with a long follow-up period (10 years) to analyze overall survival (OS) and disease-specific surv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-585",
+      "claim_type": "sample_size",
+      "raw_text": "n = 290",
+      "numeric_values": [
+        290.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 585,
+      "sentence": "Exclusion criteria were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21).",
+      "context_window": "ia were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-617",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 617,
+      "sentence": "Exclusion criteria were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21).",
+      "context_window": "g data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology cod",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-628",
+      "claim_type": "sample_size",
+      "raw_text": "n = 114",
+      "numeric_values": [
+        114.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 628,
+      "sentence": "Exclusion criteria were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21).",
+      "context_window": "tage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-740",
+      "claim_type": "sample_size",
+      "raw_text": "n = 38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 740,
+      "sentence": "Exclusion criteria were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21).",
+      "context_window": "y codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21). In total, 2203 p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-763",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 763,
+      "sentence": "Exclusion criteria were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21).",
+      "context_window": ", 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21). In total, 2203 patients were analyzed in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-781",
+      "claim_type": "sample_size",
+      "raw_text": "n = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 781,
+      "sentence": "Exclusion criteria were AJCC Stage IVc or missing data on stage of cancer ( n = 290), aspirin use less than 180 days ( n = 114), nasopharyngeal malignancies with morphology codes other than 8010, 8020, 8070, 8071, 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21).",
+      "context_window": ", 8072, and 8082 ( n = 38), and less than 20 years of age ( n = 21). In total, 2203 patients were analyzed in our study. Cate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-871",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 871,
+      "sentence": "Aspirin users (\u2265180 days) were matched with non-users (None) based on a 1:4 propensity score (PSM), resulting in a final inclusion of 565 patients with NPC for data analysis.",
+      "context_window": "sed with NPC were recruited for this study. Aspirin users (\u2265180 days) were matched with non-users (None) based on a 1:4 propensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-2013",
+      "claim_type": "sample_size",
+      "raw_text": "n = 565",
+      "numeric_values": [
+        565.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2013,
+      "sentence": "Demographic and clinical characteristics of the study cohort ( n = 565).",
+      "context_window": "ographic and clinical characteristics of the study cohort ( n = 565). Abbreviations: IQR interquartile range; CCRT concurrent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2249",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2249,
+      "sentence": "Abbreviations: IQR interquartile range; CCRT concurrent chemoradiotherapy; RT radiotherapy; CT chemotherapy; CVA cerebrovascular accident; DM diabetes mellitus; a AJCC Cancer Staging 7th Edition; b Stages IVa and IVb only; * p \u2264 0.05; *** p \u2264 0.001.",
+      "context_window": "CC Cancer Staging 7th Edition; b Stages IVa and IVb only; * p \u2264 0.05; *** p \u2264 0.001. Regarding the influence of prognostic fact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2263",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2263,
+      "sentence": "Abbreviations: IQR interquartile range; CCRT concurrent chemoradiotherapy; RT radiotherapy; CT chemotherapy; CVA cerebrovascular accident; DM diabetes mellitus; a AJCC Cancer Staging 7th Edition; b Stages IVa and IVb only; * p \u2264 0.05; *** p \u2264 0.001.",
+      "context_window": "ing 7th Edition; b Stages IVa and IVb only; * p \u2264 0.05; *** p \u2264 0.001. Regarding the influence of prognostic factors on survival",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-2456",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2456,
+      "sentence": "Regarding the influence of prognostic factors on survival rates, the univariate Cox regression analysis showed that various clinical variables, including age (HR \u226460 vs. >60 =2.05, 95% CI = 1.43-2.95, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 3.88, 95% CI = 2.45-6.15, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "us clinical variables, including age (HR \u226460 vs. >60 =2.05, 95% CI = 1.43-2.95, p < 0.001), AJCC stages of cancer (HR stage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2476",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2476,
+      "sentence": "Regarding the influence of prognostic factors on survival rates, the univariate Cox regression analysis showed that various clinical variables, including age (HR \u226460 vs. >60 =2.05, 95% CI = 1.43-2.95, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 3.88, 95% CI = 2.45-6.15, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "s, including age (HR \u226460 vs. >60 =2.05, 95% CI = 1.43-2.95, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-2560",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2560,
+      "sentence": "Regarding the influence of prognostic factors on survival rates, the univariate Cox regression analysis showed that various clinical variables, including age (HR \u226460 vs. >60 =2.05, 95% CI = 1.43-2.95, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 3.88, 95% CI = 2.45-6.15, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "of cancer (HR stages I and II vs. stages III and IV = 3.88, 95% CI = 2.45-6.15, p < 0.001), CT (HR CT treatment vs. CCRT st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2580",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2580,
+      "sentence": "Regarding the influence of prognostic factors on survival rates, the univariate Cox regression analysis showed that various clinical variables, including age (HR \u226460 vs. >60 =2.05, 95% CI = 1.43-2.95, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 3.88, 95% CI = 2.45-6.15, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "I and II vs. stages III and IV = 3.88, 95% CI = 2.45-6.15, p < 0.001), CT (HR CT treatment vs. CCRT standard NPC treatment = 29.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-2653",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2653,
+      "sentence": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs.",
+      "context_window": "T (HR CT treatment vs. CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2675",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2675,
+      "sentence": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs.",
+      "context_window": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-2743",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2743,
+      "sentence": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs.",
+      "context_window": "1), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2763",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2763,
+      "sentence": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs.",
+      "context_window": "(HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, whil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-2876",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2876,
+      "sentence": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs.",
+      "context_window": "vival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs. CCRT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2896",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.372",
+      "numeric_values": [
+        0.372
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2896,
+      "sentence": "CCRT standard NPC treatment = 29.63, 95% CI = 12.14-72.34, p < 0.001), and aspirin use (HR aspirin non-users vs. users = 0.28, 95% CI = 0.14-0.55, p < 0.001) were significantly associated with the survival rate, while patient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs.",
+      "context_window": "tient sex (HR females vs. males = 1.26, 95% CI = 0.76-2.11, p = 0.372) and RT (HR RT treatment vs. CCRT standard NPC treatment =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-2971",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2971,
+      "sentence": "CCRT standard NPC treatment = 0.78, 95% CI = 0.44-1.39, p = 0.405) were not significantly related to survival.",
+      "context_window": "RT (HR RT treatment vs. CCRT standard NPC treatment = 0.78, 95% CI = 0.44-1.39, p = 0.405) were not significantly related t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-2991",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.405",
+      "numeric_values": [
+        0.405
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2991,
+      "sentence": "CCRT standard NPC treatment = 0.78, 95% CI = 0.44-1.39, p = 0.405) were not significantly related to survival.",
+      "context_window": "vs. CCRT standard NPC treatment = 0.78, 95% CI = 0.44-1.39, p = 0.405) were not significantly related to survival. The multivaria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3217",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3217,
+      "sentence": "The multivariate Cox regression analysis, the results of which were similar to those of the univariate analysis, indicated that the factors of age (HR \u226460 vs. >60 = 2.11, 95% CI = 1.45-3.09, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 4.02, 95% CI = 2.43-6.67, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": ", indicated that the factors of age (HR \u226460 vs. >60 = 2.11, 95% CI = 1.45-3.09, p < 0.001), AJCC stages of cancer (HR stage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-3237",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3237,
+      "sentence": "The multivariate Cox regression analysis, the results of which were similar to those of the univariate analysis, indicated that the factors of age (HR \u226460 vs. >60 = 2.11, 95% CI = 1.45-3.09, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 4.02, 95% CI = 2.43-6.67, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "factors of age (HR \u226460 vs. >60 = 2.11, 95% CI = 1.45-3.09, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3321",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3321,
+      "sentence": "The multivariate Cox regression analysis, the results of which were similar to those of the univariate analysis, indicated that the factors of age (HR \u226460 vs. >60 = 2.11, 95% CI = 1.45-3.09, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 4.02, 95% CI = 2.43-6.67, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "of cancer (HR stages I and II vs. stages III and IV = 4.02, 95% CI = 2.43-6.67, p < 0.001), CT (HR CT treatment vs. CCRT st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-3341",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3341,
+      "sentence": "The multivariate Cox regression analysis, the results of which were similar to those of the univariate analysis, indicated that the factors of age (HR \u226460 vs. >60 = 2.11, 95% CI = 1.45-3.09, p < 0.001), AJCC stages of cancer (HR stages I and II vs. stages III and IV = 4.02, 95% CI = 2.43-6.67, p < 0.001), CT (HR CT treatment vs.",
+      "context_window": "I and II vs. stages III and IV = 4.02, 95% CI = 2.43-6.67, p < 0.001), CT (HR CT treatment vs. CCRT standard NPC treatment = 25.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3414",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3414,
+      "sentence": "CCRT standard NPC treatment = 25.34, 95% CI = 9.83-65.32, p < 0.001) and aspirin use (HR aspirin non-users vs. users = 0.23, 95% CI = 0.12-0.46, p < 0.001) were still significantly associated with survival.",
+      "context_window": "T (HR CT treatment vs. CCRT standard NPC treatment = 25.34, 95% CI = 9.83-65.32, p < 0.001) and aspirin use (HR aspirin non",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-3435",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3435,
+      "sentence": "CCRT standard NPC treatment = 25.34, 95% CI = 9.83-65.32, p < 0.001) and aspirin use (HR aspirin non-users vs. users = 0.23, 95% CI = 0.12-0.46, p < 0.001) were still significantly associated with survival.",
+      "context_window": ". CCRT standard NPC treatment = 25.34, 95% CI = 9.83-65.32, p < 0.001) and aspirin use (HR aspirin non-users vs. users = 0.23, 95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3502",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3502,
+      "sentence": "CCRT standard NPC treatment = 25.34, 95% CI = 9.83-65.32, p < 0.001) and aspirin use (HR aspirin non-users vs. users = 0.23, 95% CI = 0.12-0.46, p < 0.001) were still significantly associated with survival.",
+      "context_window": "01) and aspirin use (HR aspirin non-users vs. users = 0.23, 95% CI = 0.12-0.46, p < 0.001) were still significantly associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-3522",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3522,
+      "sentence": "CCRT standard NPC treatment = 25.34, 95% CI = 9.83-65.32, p < 0.001) and aspirin use (HR aspirin non-users vs. users = 0.23, 95% CI = 0.12-0.46, p < 0.001) were still significantly associated with survival.",
+      "context_window": "(HR aspirin non-users vs. users = 0.23, 95% CI = 0.12-0.46, p < 0.001) were still significantly associated with survival. In cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-hr-a-3610",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.08",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3610,
+      "sentence": "In contrast, patient sex (HR = 1.08 females vs. males , 95% CI = 0.64-1.82, p = 0.773) and RT (HR RT treatment vs.",
+      "context_window": "icantly associated with survival. In contrast, patient sex (HR = 1.08 females vs. males , 95% CI = 0.64-1.82, p = 0.773) and RT (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3640",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3640,
+      "sentence": "In contrast, patient sex (HR = 1.08 females vs. males , 95% CI = 0.64-1.82, p = 0.773) and RT (HR RT treatment vs.",
+      "context_window": "al. In contrast, patient sex (HR = 1.08 females vs. males , 95% CI = 0.64-1.82, p = 0.773) and RT (HR RT treatment vs. CCRT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-3660",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.773",
+      "numeric_values": [
+        0.773
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3660,
+      "sentence": "In contrast, patient sex (HR = 1.08 females vs. males , 95% CI = 0.64-1.82, p = 0.773) and RT (HR RT treatment vs.",
+      "context_window": "ient sex (HR = 1.08 females vs. males , 95% CI = 0.64-1.82, p = 0.773) and RT (HR RT treatment vs. CCRT standard NPC treatment =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3735",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3735,
+      "sentence": "CCRT standard NPC treatment = 1.29, 95% CI = 0.67-2.48, p = 0.454) were not independent prognostic factors for survival ( Table 2 ).",
+      "context_window": "RT (HR RT treatment vs. CCRT standard NPC treatment = 1.29, 95% CI = 0.67-2.48, p = 0.454) were not independent prognostic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-3755",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.454",
+      "numeric_values": [
+        0.454
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3755,
+      "sentence": "CCRT standard NPC treatment = 1.29, 95% CI = 0.67-2.48, p = 0.454) were not independent prognostic factors for survival ( Table 2 ).",
+      "context_window": "vs. CCRT standard NPC treatment = 1.29, 95% CI = 0.67-2.48, p = 0.454) were not independent prognostic factors for survival ( Tab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3949",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3949,
+      "sentence": "Abbreviations: 95% CI 95% confidence interval; CCRT concurrent chemoradiotherapy; RT radiotherapy; CT chemotherapy; a AJCC Cancer Staging 7th Edition; b Stages IVa and IVb only; c, e Comparing RT to CCRT; d, f Comparing CT to CCRT; *** p \u2264 0.001.",
+      "context_window": "els of prognostic factors for NPC survival. Abbreviations: 95% CI 95% confidence interval; CCRT concurrent chemoradiothera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-3956",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3956,
+      "sentence": "Abbreviations: 95% CI 95% confidence interval; CCRT concurrent chemoradiotherapy; RT radiotherapy; CT chemotherapy; a AJCC Cancer Staging 7th Edition; b Stages IVa and IVb only; c, e Comparing RT to CCRT; d, f Comparing CT to CCRT; *** p \u2264 0.001.",
+      "context_window": "prognostic factors for NPC survival. Abbreviations: 95% CI 95% confidence interval; CCRT concurrent chemoradiotherapy; RT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-4170",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4170,
+      "sentence": "Abbreviations: 95% CI 95% confidence interval; CCRT concurrent chemoradiotherapy; RT radiotherapy; CT chemotherapy; a AJCC Cancer Staging 7th Edition; b Stages IVa and IVb only; c, e Comparing RT to CCRT; d, f Comparing CT to CCRT; *** p \u2264 0.001.",
+      "context_window": "; c, e Comparing RT to CCRT; d, f Comparing CT to CCRT; *** p \u2264 0.001. Comorbidities were also additionally adjusted in univaria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-5341",
+      "claim_type": "percentage",
+      "raw_text": "32.6%",
+      "numeric_values": [
+        32.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5341,
+      "sentence": "In this cohort of patients, there were a total of 184 deaths (32.6%) in 565 patients.",
+      "context_window": "this cohort of patients, there were a total of 184 deaths (32.6%) in 565 patients. Regarding aspirin use, there were 17 (15%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-5403",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5403,
+      "sentence": "Regarding aspirin use, there were 17 (15%) deaths in the 113 patients who were aspirin users and 184 (32.6%) deaths in the 448 patients who were non-users ( Table 1 ).",
+      "context_window": ".6%) in 565 patients. Regarding aspirin use, there were 17 (15%) deaths in the 113 patients who were aspirin users and 184",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-5467",
+      "claim_type": "percentage",
+      "raw_text": "32.6%",
+      "numeric_values": [
+        32.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5467,
+      "sentence": "Regarding aspirin use, there were 17 (15%) deaths in the 113 patients who were aspirin users and 184 (32.6%) deaths in the 448 patients who were non-users ( Table 1 ).",
+      "context_window": "deaths in the 113 patients who were aspirin users and 184 (32.6%) deaths in the 448 patients who were non-users ( Table 1 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-5629",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 5629,
+      "sentence": "We performed a Kaplan-Meier survival analysis to further evaluate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS rate in patients of all ages with NPC after a diagnosis of cancer.",
+      "context_window": "analysis to further evaluate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-5655",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5655,
+      "sentence": "We performed a Kaplan-Meier survival analysis to further evaluate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS rate in patients of all ages with NPC after a diagnosis of cancer.",
+      "context_window": "ate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS rate in patients of all",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-5862",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 5862,
+      "sentence": "We performed a Kaplan-Meier survival analysis to further evaluate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS rate in patients of all ages with NPC after a diagnosis of cancer.",
+      "context_window": "analysis to further evaluate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-5888",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5888,
+      "sentence": "We performed a Kaplan-Meier survival analysis to further evaluate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS rate in patients of all ages with NPC after a diagnosis of cancer.",
+      "context_window": "ate whether low-dose aspirin use (100 mg/day) for more than 180 days is associated with an increased OS rate in patients of all",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6104",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6104,
+      "sentence": "The Kaplan-Meier survival analysis demonstrated that patients with NPC who received aspirin for at least 180 days had better survival rates compared to non-users ( Figure 2 ).",
+      "context_window": "ed that patients with NPC who received aspirin for at least 180 days had better survival rates compared to non-users ( Figure 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6443",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6443,
+      "sentence": "Interestingly, in contrast to patients with NPC who received aspirin for at least 180 days, patients who only received aspirin for either 30-89 days or 90-179 days had no significantly higher DSS rate compared to non-users ( Figure S1 ).",
+      "context_window": "rast to patients with NPC who received aspirin for at least 180 days, patients who only received aspirin for either 30-89 days o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6502",
+      "claim_type": "unit_value",
+      "raw_text": "89 days",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6502,
+      "sentence": "Interestingly, in contrast to patients with NPC who received aspirin for at least 180 days, patients who only received aspirin for either 30-89 days or 90-179 days had no significantly higher DSS rate compared to non-users ( Figure S1 ).",
+      "context_window": "180 days, patients who only received aspirin for either 30-89 days or 90-179 days had no significantly higher DSS rate compare",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6516",
+      "claim_type": "unit_value",
+      "raw_text": "179 days",
+      "numeric_values": [
+        179.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6516,
+      "sentence": "Interestingly, in contrast to patients with NPC who received aspirin for at least 180 days, patients who only received aspirin for either 30-89 days or 90-179 days had no significantly higher DSS rate compared to non-users ( Figure S1 ).",
+      "context_window": "ients who only received aspirin for either 30-89 days or 90-179 days had no significantly higher DSS rate compared to non-users",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6664",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6664,
+      "sentence": "Kaplan-Meier survival curve of OS rates between aspirin users (\u2265180 days) and non-users.",
+      "context_window": "an-Meier survival curve of OS rates between aspirin users (\u2265180 days) and non-users. The median OS rates of aspirin non-users (N",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6747",
+      "claim_type": "unit_value",
+      "raw_text": "5.9 years",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6747,
+      "sentence": "The median OS rates of aspirin non-users (None) was about 5.9 years, and the estimated 5- and 10-year OS rates were 54.9% and 42.4%, respectively.",
+      "context_window": ". The median OS rates of aspirin non-users (None) was about 5.9 years, and the estimated 5- and 10-year OS rates were 54.9% and 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-6805",
+      "claim_type": "percentage",
+      "raw_text": "54.9%",
+      "numeric_values": [
+        54.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6805,
+      "sentence": "The median OS rates of aspirin non-users (None) was about 5.9 years, and the estimated 5- and 10-year OS rates were 54.9% and 42.4%, respectively.",
+      "context_window": "t 5.9 years, and the estimated 5- and 10-year OS rates were 54.9% and 42.4%, respectively. Although median survival was not r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-6815",
+      "claim_type": "percentage",
+      "raw_text": "42.4%",
+      "numeric_values": [
+        42.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6815,
+      "sentence": "The median OS rates of aspirin non-users (None) was about 5.9 years, and the estimated 5- and 10-year OS rates were 54.9% and 42.4%, respectively.",
+      "context_window": "s, and the estimated 5- and 10-year OS rates were 54.9% and 42.4%, respectively. Although median survival was not reached for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-6897",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6897,
+      "sentence": "Although median survival was not reached for aspirin users (\u2265180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "lthough median survival was not reached for aspirin users (\u2265180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-6947",
+      "claim_type": "percentage",
+      "raw_text": "79.9%",
+      "numeric_values": [
+        79.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6947,
+      "sentence": "Although median survival was not reached for aspirin users (\u2265180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "n users (\u2265180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001. Kaplan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-6957",
+      "claim_type": "percentage",
+      "raw_text": "62.0%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6957,
+      "sentence": "Although median survival was not reached for aspirin users (\u2265180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001. Kaplan-Meier sur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-6993",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6993,
+      "sentence": "Although median survival was not reached for aspirin users (\u2265180 days), estimated 5- and 10-year OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "OS rates were 79.9% and 62.0%, respectively. **** indicates p \u2264 0.0001. Kaplan-Meier survival curve of DSS rates between aspirin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-7072",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7072,
+      "sentence": "Kaplan-Meier survival curve of DSS rates between aspirin users (\u2265 180 days) and non-users.",
+      "context_window": "-Meier survival curve of DSS rates between aspirin users (\u2265 180 days) and non-users. The estimated 5- and 10-year DSS rates of a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-7169",
+      "claim_type": "percentage",
+      "raw_text": "66.9%",
+      "numeric_values": [
+        66.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7169,
+      "sentence": "The estimated 5- and 10-year DSS rates of aspirin non-users (None) were 66.9% and 55.9%, respectively.",
+      "context_window": "d 5- and 10-year DSS rates of aspirin non-users (None) were 66.9% and 55.9%, respectively. The estimated 5- and 10-year DSS r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-7179",
+      "claim_type": "percentage",
+      "raw_text": "55.9%",
+      "numeric_values": [
+        55.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7179,
+      "sentence": "The estimated 5- and 10-year DSS rates of aspirin non-users (None) were 66.9% and 55.9%, respectively.",
+      "context_window": "0-year DSS rates of aspirin non-users (None) were 66.9% and 55.9%, respectively. The estimated 5- and 10-year DSS rates of as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-7258",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7258,
+      "sentence": "The estimated 5- and 10-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": ". The estimated 5- and 10-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-7273",
+      "claim_type": "percentage",
+      "raw_text": "90.1%",
+      "numeric_values": [
+        90.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7273,
+      "sentence": "The estimated 5- and 10-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "5- and 10-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001. Surviv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-pct-7283",
+      "claim_type": "percentage",
+      "raw_text": "73.5%",
+      "numeric_values": [
+        73.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7283,
+      "sentence": "The estimated 5- and 10-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001. Survival benefit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-7319",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7319,
+      "sentence": "The estimated 5- and 10-year DSS rates of aspirin users (\u2265180 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001.",
+      "context_window": "80 days) were 90.1% and 73.5%, respectively. **** indicates p \u2264 0.0001. Survival benefits associated with at least 180 days of as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-7375",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7375,
+      "sentence": "Survival benefits associated with at least 180 days of aspirin use were observed in patients with Stages III and IV NPC ( p < 0.001), while no statistical significance was observed in patients with Stages I and II NPC ( p = 0.302) ( Table 3 ).",
+      "context_window": "tes p \u2264 0.0001. Survival benefits associated with at least 180 days of aspirin use were observed in patients with Stages III an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-7454",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7454,
+      "sentence": "Survival benefits associated with at least 180 days of aspirin use were observed in patients with Stages III and IV NPC ( p < 0.001), while no statistical significance was observed in patients with Stages I and II NPC ( p = 0.302) ( Table 3 ).",
+      "context_window": "use were observed in patients with Stages III and IV NPC ( p < 0.001), while no statistical significance was observed in patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-7552",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.302",
+      "numeric_values": [
+        0.302
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7552,
+      "sentence": "Survival benefits associated with at least 180 days of aspirin use were observed in patients with Stages III and IV NPC ( p < 0.001), while no statistical significance was observed in patients with Stages I and II NPC ( p = 0.302) ( Table 3 ).",
+      "context_window": "ficance was observed in patients with Stages I and II NPC ( p = 0.302) ( Table 3 ). We also evaluated the effect of aspirin on th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-8053",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8053,
+      "sentence": "Overall, these stratifiable analyses also suggested that patients with late-stage NPC were the most likely to benefit from aspirin use when patients received aspirin for more than 180 days after NPC diagnosis.",
+      "context_window": "om aspirin use when patients received aspirin for more than 180 days after NPC diagnosis. Comparing mortality rates between asp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-8135",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8135,
+      "sentence": "Comparing mortality rates between aspirin users (\u2265 180 days) and non-users in patients ( n = 565) with Stages I and II and III and IV NPC.",
+      "context_window": "gnosis. Comparing mortality rates between aspirin users (\u2265 180 days) and non-users in patients ( n = 565) with Stages I and II",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-8173",
+      "claim_type": "sample_size",
+      "raw_text": "n = 565",
+      "numeric_values": [
+        565.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8173,
+      "sentence": "Comparing mortality rates between aspirin users (\u2265 180 days) and non-users in patients ( n = 565) with Stages I and II and III and IV NPC.",
+      "context_window": "ween aspirin users (\u2265 180 days) and non-users in patients ( n = 565) with Stages I and II and III and IV NPC. Abbreviation: vs",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-8282",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8282,
+      "sentence": "Abbreviation: vs. versus. a Stages IVa and IVb only; **** p \u2264 0.001.",
+      "context_window": "Abbreviation: vs. versus. a Stages IVa and IVb only; **** p \u2264 0.001. Comparing mortality rates between aspirin users (\u2265180 day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-8344",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8344,
+      "sentence": "Comparing mortality rates between aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of Stages III and IV NPC in the T category.",
+      "context_window": "\u2264 0.001. Comparing mortality rates between aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-8382",
+      "claim_type": "sample_size",
+      "raw_text": "n = 333",
+      "numeric_values": [
+        333.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8382,
+      "sentence": "Comparing mortality rates between aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of Stages III and IV NPC in the T category.",
+      "context_window": "tween aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of Stages III and IV NPC in the T categ",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-8567",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8567,
+      "sentence": "Abbreviation: vs. versus; a Stages IVa and IVb only; b One patient with missing data on T category of cancer; * p \u2264 0.05; *** p \u2264 0.001.",
+      "context_window": "b One patient with missing data on T category of cancer; * p \u2264 0.05; *** p \u2264 0.001. Comparing mortality rates between aspirin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-8581",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8581,
+      "sentence": "Abbreviation: vs. versus; a Stages IVa and IVb only; b One patient with missing data on T category of cancer; * p \u2264 0.05; *** p \u2264 0.001.",
+      "context_window": "with missing data on T category of cancer; * p \u2264 0.05; *** p \u2264 0.001. Comparing mortality rates between aspirin users (\u2265180 day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-8643",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8643,
+      "sentence": "Comparing mortality rates between aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of Stages III and IV NPC in the N category.",
+      "context_window": "\u2264 0.001. Comparing mortality rates between aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-n-8681",
+      "claim_type": "sample_size",
+      "raw_text": "n = 333",
+      "numeric_values": [
+        333.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8681,
+      "sentence": "Comparing mortality rates between aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of Stages III and IV NPC in the N category.",
+      "context_window": "tween aspirin users (\u2265180 days) and non-users in patients ( n = 333) with a subdivision of Stages III and IV NPC in the N categ",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-8866",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8866,
+      "sentence": "Abbreviation: vs. versus; a Stages IVa and IVb only; b One patient with missing data on N category of cancer. * p \u2264 0.05; *** p \u2264 0.001.",
+      "context_window": "b One patient with missing data on N category of cancer. * p \u2264 0.05; *** p \u2264 0.001.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-p-8880",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8880,
+      "sentence": "Abbreviation: vs. versus; a Stages IVa and IVb only; b One patient with missing data on N category of cancer. * p \u2264 0.05; *** p \u2264 0.001.",
+      "context_window": "with missing data on N category of cancer. * p \u2264 0.05; *** p \u2264 0.001.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-1633",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1633,
+      "sentence": "The primary advantages of using this database are that we were ensured high follow-up rates of patients for a longer period of time (10 years), and because of the data-quality needed for this retrospective study [ 28 ], we had the ability to control potential selection bias with the following covariates: age, AJCC stages of cancer and treatments.",
+      "context_window": "gh follow-up rates of patients for a longer period of time (10 years), and because of the data-quality needed for this retrospec",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-3746",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3746,
+      "sentence": "We observed that aspirin use for at least 180 days after diagnosis of NPC positively affected 10-year OS and DSS rates ( Figure 2 , Figure 3 , Figure S1 ); this effect was most pronounced for patients with late-stage NPC ( Table 3 ).",
+      "context_window": ", Table S2-S4 ). We observed that aspirin use for at least 180 days after diagnosis of NPC positively affected 10-year OS and D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-4671",
+      "claim_type": "unit_value",
+      "raw_text": "89 days",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4671,
+      "sentence": "In addition, while this database contained information for the duration of aspirin treatment, we were also able to test whether there was any benefit of taking aspirin for 30-89 days, 90-179 days ( Figure S1 ), or more than 180 days ( Figure 2 , Figure 3 , Figure S1 ).",
+      "context_window": "test whether there was any benefit of taking aspirin for 30-89 days, 90-179 days ( Figure S1 ), or more than 180 days ( Figure",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-4683",
+      "claim_type": "unit_value",
+      "raw_text": "179 days",
+      "numeric_values": [
+        179.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4683,
+      "sentence": "In addition, while this database contained information for the duration of aspirin treatment, we were also able to test whether there was any benefit of taking aspirin for 30-89 days, 90-179 days ( Figure S1 ), or more than 180 days ( Figure 2 , Figure 3 , Figure S1 ).",
+      "context_window": "there was any benefit of taking aspirin for 30-89 days, 90-179 days ( Figure S1 ), or more than 180 days ( Figure 2 , Figure 3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-4720",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4720,
+      "sentence": "In addition, while this database contained information for the duration of aspirin treatment, we were also able to test whether there was any benefit of taking aspirin for 30-89 days, 90-179 days ( Figure S1 ), or more than 180 days ( Figure 2 , Figure 3 , Figure S1 ).",
+      "context_window": "rin for 30-89 days, 90-179 days ( Figure S1 ), or more than 180 days ( Figure 2 , Figure 3 , Figure S1 ). Our analyses suggested",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-4915",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4915,
+      "sentence": "Our analyses suggested that there is only an improvement in the 10-year survival rates (OS and DSS) for aspirin users who received aspirin more than 180 days.",
+      "context_window": "S and DSS) for aspirin users who received aspirin more than 180 days. All of these findings shed light on whether or not aspirin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352863_low_dose_aspirin_use_significantly_improves_the_survival_of_-u-355",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "conclusion",
+      "source_offset": 355,
+      "sentence": "Our findings indicated that OS and DSS rates exhibited significant improvement in patients with NPC after aspirin use for more than 180 days.",
+      "context_window": "vement in patients with NPC after aspirin use for more than 180 days. According to the univariate and multivariate Cox regressio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1042 @@
+{
+  "paper_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma",
+  "doi": "10.18632/aging.204511",
+  "extracted_at": "2026-05-08T20:01:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "percentage": 30,
+    "p_value": 17,
+    "unit_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-msd-286",
+      "claim_type": "mean_sd",
+      "raw_text": "26.1 \u00b1 2.5",
+      "numeric_values": [
+        26.1,
+        2.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 286,
+      "sentence": "Biopsied vastus lateralis of 9 sedentary men (age 26.1 \u00b1 2.5 y) were assessed before and after a single bout of moderate steady state exercise (SSE, 60% maximal aerobic power) and high intensity interval exercise (HIIE, 120% maximal aerobic power) on a cycloergometer accumulating same amount of cycling work (in kilojoule).",
+      "context_window": "r design. Biopsied vastus lateralis of 9 sedentary men (age 26.1 \u00b1 2.5 y) were assessed before and after a single bout of moderate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-385",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 385,
+      "sentence": "Biopsied vastus lateralis of 9 sedentary men (age 26.1 \u00b1 2.5 y) were assessed before and after a single bout of moderate steady state exercise (SSE, 60% maximal aerobic power) and high intensity interval exercise (HIIE, 120% maximal aerobic power) on a cycloergometer accumulating same amount of cycling work (in kilojoule).",
+      "context_window": "after a single bout of moderate steady state exercise (SSE, 60% maximal aerobic power) and high intensity interval exercise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-456",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 456,
+      "sentence": "Biopsied vastus lateralis of 9 sedentary men (age 26.1 \u00b1 2.5 y) were assessed before and after a single bout of moderate steady state exercise (SSE, 60% maximal aerobic power) and high intensity interval exercise (HIIE, 120% maximal aerobic power) on a cycloergometer accumulating same amount of cycling work (in kilojoule).",
+      "context_window": "aerobic power) and high intensity interval exercise (HIIE, 120% maximal aerobic power) on a cycloergometer accumulating sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-740",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 740,
+      "sentence": "Increases in cell infiltration (+1.2 folds), DNA strand break (+1.3 folds), and \u03b3-H2AX + myofibers (+1.1 folds) occurred immediately after HIIE and returned to baseline in 24 h ( p < 0.05).",
+      "context_window": "d immediately after HIIE and returned to baseline in 24 h ( p < 0.05). Muscle p16 Ink4a mRNA decreased 24 h after HIIE (-57%, p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-801",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 801,
+      "sentence": "Muscle p16 Ink4a mRNA decreased 24 h after HIIE (-57%, p < 0.05).",
+      "context_window": "< 0.05). Muscle p16 Ink4a mRNA decreased 24 h after HIIE (-57%, p < 0.05). SSE had no effect on cell infiltration, p16 Ink",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-806",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "Muscle p16 Ink4a mRNA decreased 24 h after HIIE (-57%, p < 0.05).",
+      "context_window": "05). Muscle p16 Ink4a mRNA decreased 24 h after HIIE (-57%, p < 0.05). SSE had no effect on cell infiltration, p16 Ink4a mRNA, a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-1645",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "introduction",
+      "source_offset": 1645,
+      "sentence": "We have previously shown a decreased p16 INK4a mRNA 1 day after an acute bout of resistance exercise in human skeletal muscle [ 3 ].",
+      "context_window": "uscle. We have previously shown a decreased p16 INK4a mRNA 1 day after an acute bout of resistance exercise in human skeleta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-1912",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1912,
+      "sentence": "However, cellular senescence marker does not seem to change after aerobic exercise at 70% V \u02d9 O 2peak [ 17 , 18 ].",
+      "context_window": "ce marker does not seem to change after aerobic exercise at 70% V \u02d9 O 2peak [ 17 , 18 ]. In this study, we asked the questi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-msd-307",
+      "claim_type": "mean_sd",
+      "raw_text": "26.1 \u00b1 2.5",
+      "numeric_values": [
+        26.1,
+        2.5
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 307,
+      "sentence": "Nine sedentary men (age 26.1 \u00b1 2.5 y) completed the study.",
+      "context_window": "outs associated with time conflict. Nine sedentary men (age 26.1 \u00b1 2.5 y) completed the study. Inclusion criteria were sedentary m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-392",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 392,
+      "sentence": "Inclusion criteria were sedentary men (exercise < 1 day per week) who were capable to conduct cycling exercise.",
+      "context_window": "he study. Inclusion criteria were sedentary men (exercise < 1 day per week) who were capable to conduct cycling exercise. Exc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-802",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 802,
+      "sentence": "A counter-balanced crossover design was performed to compare the effects of two exercise intensities (SSE: 60% maximal aerobic power; HIIE: 120% maximal aerobic power), accumulating the same work on a cycloergometer.",
+      "context_window": "ed to compare the effects of two exercise intensities (SSE: 60% maximal aerobic power; HIIE: 120% maximal aerobic power), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-835",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 835,
+      "sentence": "A counter-balanced crossover design was performed to compare the effects of two exercise intensities (SSE: 60% maximal aerobic power; HIIE: 120% maximal aerobic power), accumulating the same work on a cycloergometer.",
+      "context_window": "exercise intensities (SSE: 60% maximal aerobic power; HIIE: 120% maximal aerobic power), accumulating the same work on a cyc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-1075",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1075,
+      "sentence": "Baseline muscle biopsy to vastus lateralis muscle was performed 3 weeks prior to the study.",
+      "context_window": "line muscle biopsy to vastus lateralis muscle was performed 3 weeks prior to the study. One week after the baseline muscle biop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-1320",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1320,
+      "sentence": "Aerobic power at maximal oxygen uptake (maximal aerobic power) of each participant was measured 1 week before exercise challenge.",
+      "context_window": "ke (maximal aerobic power) of each participant was measured 1 week before exercise challenge. On the day of exercise challenge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-1787",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1787,
+      "sentence": "The crossover trials were separated for > 3 weeks.",
+      "context_window": "een HIIE and SSE. The crossover trials were separated for > 3 weeks. Post-exercise muscle samples were collected immediately af",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-2846",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2846,
+      "sentence": "Criteria to obtain V \u02d9 O 2peak required to achieve two of the following four conditions: (1) failed to maintain 60 rpm for > 10 sec; (2) RER \u2265 1.2; (3) heart rate > 95% HR max ; (4) RPE > 9.",
+      "context_window": "intain 60 rpm for > 10 sec; (2) RER \u2265 1.2; (3) heart rate > 95% HR max ; (4) RPE > 9. We used the rating of the perceived e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-3299",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3299,
+      "sentence": "For SSE, each participant cycled at the work rate of 60% power at V \u02d9 O 2peak to maintained above 70 rpm for a total period of ~10 min.",
+      "context_window": "meter. For SSE, each participant cycled at the work rate of 60% power at V \u02d9 O 2peak to maintained above 70 rpm for a total",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-3436",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3436,
+      "sentence": "For HIIE, each participant cycled at the work rate of 120% maximal aerobic power to maintain above 70 rpm for 20 s with a 20-s rest interval up to 15 times (~10 min).",
+      "context_window": "min. For HIIE, each participant cycled at the work rate of 120% maximal aerobic power to maintain above 70 rpm for 20 s wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-3866",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3866,
+      "sentence": "Muscle biopsy was conducted by a physician under local anesthesia (2% lidocaine) using a 18-G Temno disposable cutting needle (Cardinal Health, McGaw Park, Illinois, USA) inserted into the vastus lateralis according to a previously published procedure [ 41 ].",
+      "context_window": "biopsy was conducted by a physician under local anesthesia (2% lidocaine) using a 18-G Temno disposable cutting needle (Ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-4144",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4144,
+      "sentence": "The first muscle tissue collection (pre-exercise baseline) was performed on one leg, 3 weeks before exercise challenge.",
+      "context_window": "ollection (pre-exercise baseline) was performed on one leg, 3 weeks before exercise challenge. The second and third muscle biop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-4675",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4675,
+      "sentence": "One muscle sample from the first puncture was placed into liquid nitrogen for real-time PCR analysis and another piece of muscle sample from the second puncture was placed in a conical vial containing 4% paraformaldehyde solution (PFA) for immunohistochemical analysis (IHC).",
+      "context_window": "the second puncture was placed in a conical vial containing 4% paraformaldehyde solution (PFA) for immunohistochemical ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5684",
+      "claim_type": "percentage",
+      "raw_text": "99.9%",
+      "numeric_values": [
+        99.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5684,
+      "sentence": "Muscle tissues were sliced (2-3 \u03bcm thick) from the paraffinize blocks, de-paraffinized in xylene and rehydrated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin (TA01NB, BioTnA, Kaohsiung, Taiwan) for 3 min.",
+      "context_window": "ne and rehydrated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematox",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5691",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5691,
+      "sentence": "Muscle tissues were sliced (2-3 \u03bcm thick) from the paraffinize blocks, de-paraffinized in xylene and rehydrated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin (TA01NB, BioTnA, Kaohsiung, Taiwan) for 3 min.",
+      "context_window": "rehydrated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5696",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5696,
+      "sentence": "Muscle tissues were sliced (2-3 \u03bcm thick) from the paraffinize blocks, de-paraffinized in xylene and rehydrated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin (TA01NB, BioTnA, Kaohsiung, Taiwan) for 3 min.",
+      "context_window": "rated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin (TA01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5704",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5704,
+      "sentence": "Muscle tissues were sliced (2-3 \u03bcm thick) from the paraffinize blocks, de-paraffinized in xylene and rehydrated in a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin (TA01NB, BioTnA, Kaohsiung, Taiwan) for 3 min.",
+      "context_window": "a graded alcohol series using ethanol (99.9%, 95%, 85% and 75%) each for 2 min, and stained with hematoxylin (TA01NB, BioT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-7154",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7154,
+      "sentence": "The positive \u03b3-H2AX + cells were counted according to the criteria modified from the previous studies [ 43 , 44 ]: (a) brown signals covering 90% of myofiber; (b) Scoring: dark brown myofibers multiplied by 2, light brown myofibers multiplied by 1.",
+      "context_window": "he previous studies [ 43 , 44 ]: (a) brown signals covering 90% of myofiber; (b) Scoring: dark brown myofibers multiplied b",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-8575",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 8575,
+      "sentence": "The frozen muscle sample (5-10 mg) was transferred into a 1.5 ml tube containing 600 \u03bcl of \u03b2-mercaptoethanol (\u03b2-ME) with RLT buffer on ice.",
+      "context_window": "wing the muscle homogenization. The frozen muscle sample (5-10 mg) was transferred into a 1.5 ml tube containing 600 \u03bcl of \u03b2-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-8809",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8809,
+      "sentence": "They were homogenized immediately using Polytron (model PT 3000D, Brinkmann, Zurich, Switzerland) for 30 sec at 9000 rpm (50% of the maximum speed).",
+      "context_window": "0D, Brinkmann, Zurich, Switzerland) for 30 sec at 9000 rpm (50% of the maximum speed). Extracted RNA (1 \u03bcg in 20 \u03bcl) was re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-10289",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10289,
+      "sentence": "Type 1 error of p < 0.05 for comparison between means was considered significant.",
+      "context_window": "used to compare mean between SSE and HIIE. Type 1 error of p < 0.05 for comparison between means was considered significant. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-328",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 328,
+      "sentence": "At pre-exercise baseline, approximately 1% area of nucleated cell aggregation in collapsed and shrinking myofibers was observed for the entire muscle cross-section among the young sedentary participants.",
+      "context_window": "hown in Figure 1A . At pre-exercise baseline, approximately 1% area of nucleated cell aggregation in collapsed and shrinki",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-549",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 549,
+      "sentence": "HIIE doubled the amount of cell infiltration ( d = 1.00; p < 0.05) in skeletal muscle immediately after exercise and returned to baseline within 24 h ( Figure 1B ).",
+      "context_window": "s. HIIE doubled the amount of cell infiltration ( d = 1.00; p < 0.05) in skeletal muscle immediately after exercise and returned",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-1302",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1302,
+      "sentence": "Individual response after SSE ( C ) and HIIE ( D ) are shown in the lower panel. * Significant difference against pre-exercise baseline, p < 0.05.",
+      "context_window": "el. * Significant difference against pre-exercise baseline, p < 0.05. Abbreviations: SSE: steady state cycling exercise (60% max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-1363",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1363,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "< 0.05. Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-1439",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1439,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "bic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power). In this study, p16 INK4a mRNA was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-1685",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1685,
+      "sentence": "HIIE decreased p16 INK4a mRNA in muscle tissues following a 24-h recovery ( d = 0.90, p = 0.04), whereas SSE showed no effect on p16 INK4a mRNA in muscle tissues ( Figure 2A ).",
+      "context_window": "RNA in muscle tissues following a 24-h recovery ( d = 0.90, p = 0.04), whereas SSE showed no effect on p16 INK4a mRNA in muscle",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-2316",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2316,
+      "sentence": "A significant difference between SSE and HIIE was found 24 h after exercise ( d = 1.90, p < 0.01).",
+      "context_window": "ween SSE and HIIE was found 24 h after exercise ( d = 1.90, p < 0.01). The individual responses of p16 INK4a+ cell numbers in mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-2633",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2633,
+      "sentence": "The cellular senescence marker p16 INK4a mRNA decreased 24 h after HIIE ( d = 0.90, p = 0.04), whilst no change was observed after SSE at similar amount of cycling work ( A ).",
+      "context_window": "marker p16 INK4a mRNA decreased 24 h after HIIE ( d = 0.90, p = 0.04), whilst no change was observed after SSE at similar amount",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-3221",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3221,
+      "sentence": "Individual responses to SSE and HIIE are shown in ( F and G ), respectively. * Significant difference against pre-exercise baseline, p < 0.05. \u2020 Significance against SSE, p < 0.05.",
+      "context_window": "ly. * Significant difference against pre-exercise baseline, p < 0.05. \u2020 Significance against SSE, p < 0.05. Abbreviations: SSE:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-3259",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3259,
+      "sentence": "Individual responses to SSE and HIIE are shown in ( F and G ), respectively. * Significant difference against pre-exercise baseline, p < 0.05. \u2020 Significance against SSE, p < 0.05.",
+      "context_window": "re-exercise baseline, p < 0.05. \u2020 Significance against SSE, p < 0.05. Abbreviations: SSE: steady state cycling exercise (60% max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-3320",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3320,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "< 0.05. Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-3396",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3396,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "bic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power). Figure 3 represents DNA strand bre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-3854",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3854,
+      "sentence": "Increased amount of these fragmented DNA (+1.3-fold, d = 0.77, p < 0.05) was observed immediately after HIIE and returned to baseline in 24 h ( Figure 3B ).",
+      "context_window": "reased amount of these fragmented DNA (+1.3-fold, d = 0.77, p < 0.05) was observed immediately after HIIE and returned to baseli",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-4446",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4446,
+      "sentence": "Individual response after SSE ( C ) and HIIE ( D ) are shown in the lower panel. * Significance against pre-exercise baseline, p < 0.05. \u2020 Significant difference against SSE, p < 0.05.",
+      "context_window": "lower panel. * Significance against pre-exercise baseline, p < 0.05. \u2020 Significant difference against SSE, p < 0.05. Abbreviati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-4494",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4494,
+      "sentence": "Individual response after SSE ( C ) and HIIE ( D ) are shown in the lower panel. * Significance against pre-exercise baseline, p < 0.05. \u2020 Significant difference against SSE, p < 0.05.",
+      "context_window": "e baseline, p < 0.05. \u2020 Significant difference against SSE, p < 0.05. Abbreviations: SSE: steady state cycling exercise (60% max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-4555",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4555,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "< 0.05. Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-4631",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4631,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "bic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power). Figure 4 shown \u03b3-H2AX (a phosphory",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-4987",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4987,
+      "sentence": "HIIE increased \u03b3-H2AX + myofiber immediately after HIIE (+ 1.1-fold, d = 1.55, p < 0.05) and returned to pre-exercise baseline in 24 h.",
+      "context_window": "AX + myofiber immediately after HIIE (+ 1.1-fold, d = 1.55, p < 0.05) and returned to pre-exercise baseline in 24 h. Despite a d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5104",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5104,
+      "sentence": "Despite a decreased \u03b3-H2AX + myofibers 24 h following SSE (-66%, d = 0.69, p = 0.09), no statistical significance between HIIE and SSE was reached 24 h after exercise.",
+      "context_window": "Despite a decreased \u03b3-H2AX + myofibers 24 h following SSE (-66%, d = 0.69, p = 0.09), no statistical significance between H",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-5119",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5119,
+      "sentence": "Despite a decreased \u03b3-H2AX + myofibers 24 h following SSE (-66%, d = 0.69, p = 0.09), no statistical significance between HIIE and SSE was reached 24 h after exercise.",
+      "context_window": "ased \u03b3-H2AX + myofibers 24 h following SSE (-66%, d = 0.69, p = 0.09), no statistical significance between HIIE and SSE was reac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-5883",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5883,
+      "sentence": "H2AX mRNA was not influenced by exercise ( E ). * Significant difference against pre-exercise baseline, p < 0.05; \u2020 Significance against SSE, p < 0.05.",
+      "context_window": "). * Significant difference against pre-exercise baseline, p < 0.05; \u2020 Significance against SSE, p < 0.05. Abbreviations: SSE:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-p-5921",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5921,
+      "sentence": "H2AX mRNA was not influenced by exercise ( E ). * Significant difference against pre-exercise baseline, p < 0.05; \u2020 Significance against SSE, p < 0.05.",
+      "context_window": "re-exercise baseline, p < 0.05; \u2020 Significance against SSE, p < 0.05. Abbreviations: SSE: steady state cycling exercise (60% max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5982",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5982,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "< 0.05. Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-6058",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6058,
+      "sentence": "Abbreviations: SSE: steady state cycling exercise (60% maximal aerobic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "context_window": "bic power); HIIE: high intensity interval cycling exercise (120% maximal aerobic power).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-3848",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3848,
+      "sentence": "We have previous reported a reversed DNA fragmentation to pre-exercise level in 3 h following a cycling exercise at the aerobic power equivalent to 70% V \u02d9 O 2peak [ 18 ].",
+      "context_window": "owing a cycling exercise at the aerobic power equivalent to 70% V \u02d9 O 2peak [ 18 ]. It remains to be examined whether the o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5216",
+      "claim_type": "percentage",
+      "raw_text": "110%",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5216,
+      "sentence": "It has been shown significant improvements in muscle mass gain in octogenarians after 4-week of high intensity interval training (100-110% maximal aerobic power, 90-sec cycling for 12 sessions) [ 36 ].",
+      "context_window": "rians after 4-week of high intensity interval training (100-110% maximal aerobic power, 90-sec cycling for 12 sessions) [ 36",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-pct-5289",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5289,
+      "sentence": "SSE (70% heart rate reserve, 45-min treadmill running, 24 weeks) has no effect in lean mass gain [ 37 ].",
+      "context_window": "aerobic power, 90-sec cycling for 12 sessions) [ 36 ]. SSE (70% heart rate reserve, 45-min treadmill running, 24 weeks) has",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9970302_senolytic_effect_of_high_intensity_interval_exercise_on_huma-u-5339",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5339,
+      "sentence": "SSE (70% heart rate reserve, 45-min treadmill running, 24 weeks) has no effect in lean mass gain [ 37 ].",
+      "context_window": "6 ]. SSE (70% heart rate reserve, 45-min treadmill running, 24 weeks) has no effect in lean mass gain [ 37 ]. Muscle tissue cont",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

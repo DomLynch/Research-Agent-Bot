@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1152_ajpcell_00437_2019_elevated_mmp2_abundance_and_activity_in_mdx_mice_are_allevia",
+  "doi": "10.1152/ajpcell.00437.2019",
+  "extracted_at": "2026-05-08T20:10:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1152_ajpcell_00437_2019_elevated_mmp2_abundance_and_activity_in_mdx_mice_are_allevia-u-243",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 243,
+      "sentence": "It lacks dystrophin and displays peak muscle cell necrosis at ~28 days (D28), but in contrast to DMD, mdx mice experience muscle regeneration by D70.",
+      "context_window": "lacks dystrophin and displays peak muscle cell necrosis at ~28 days (D28), but in contrast to DMD, mdx mice experience muscle r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1152_ajpcell_00437_2019_elevated_mmp2_abundance_and_activity_in_mdx_mice_are_allevia-p-1247",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1247,
+      "sentence": "There was no difference in MMP9 abundance between age-matched WT and mdx mice ( P > 0.05).",
+      "context_window": "nce in MMP9 abundance between age-matched WT and mdx mice ( P > 0.05). WT mice displayed decreased MMP9 abundance as they aged.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

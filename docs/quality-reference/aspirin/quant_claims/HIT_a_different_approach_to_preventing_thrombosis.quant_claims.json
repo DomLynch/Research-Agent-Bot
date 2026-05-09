@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_a_different_approach_to_preventing_thrombosis",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_different_approach_to_preventing_thrombosis-u-482",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 482,
+      "sentence": "Posted outcomes: Number of Participants With Treatment-related Bleeding Events as Assessed by the Need for Blood Transfusions and Procedures for Bleeding Complications After Ini. timeframe=90 days.",
+      "context_window": "Procedures for Bleeding Complications After Ini. timeframe=90 days. VTE Prophylaxis With Enoxaparin 30mg BID=52; VTE Prophylax",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_different_approach_to_preventing_thrombosis-u-523",
+      "claim_type": "unit_value",
+      "raw_text": "30mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 523,
+      "sentence": "VTE Prophylaxis With Enoxaparin 30mg BID=52; VTE Prophylaxis With Aspirin 81mg BID=53",
+      "context_window": "ter Ini. timeframe=90 days. VTE Prophylaxis With Enoxaparin 30mg BID=52; VTE Prophylaxis With Aspirin 81mg BID=53",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_different_approach_to_preventing_thrombosis-u-565",
+      "claim_type": "unit_value",
+      "raw_text": "81mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 565,
+      "sentence": "VTE Prophylaxis With Enoxaparin 30mg BID=52; VTE Prophylaxis With Aspirin 81mg BID=53",
+      "context_window": "s With Enoxaparin 30mg BID=52; VTE Prophylaxis With Aspirin 81mg BID=53",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

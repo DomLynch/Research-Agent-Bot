@@ -1,0 +1,86 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsab223_the_effect_of_sleep_restriction_therapy_for_insomnia_on_slee",
+  "doi": "10.1093/sleep/zsab223",
+  "extracted_at": "2026-05-08T20:06:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "mean_sd": 1,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab223_the_effect_of_sleep_restriction_therapy_for_insomnia_on_slee-u-1381",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1381,
+      "sentence": "Outcomes were assessed at baseline (2-week period prior to randomization), during the intervention phase (1-4 weeks post-randomization), and at 12-week follow-up.",
+      "context_window": "d prior to randomization), during the intervention phase (1-4 weeks post-randomization), and at 12-week follow-up. We performed",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab223_the_effect_of_sleep_restriction_therapy_for_insomnia_on_slee-msd-1741",
+      "claim_type": "mean_sd",
+      "raw_text": "40.78 \u00b1 9.08",
+      "numeric_values": [
+        40.78,
+        9.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1741,
+      "sentence": "For continuous daily measures, the treatment period was split into early (weeks 1-2) and late (weeks 3-4) treatment.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Fifty-six participants (39 females, mean age = 40.78 \u00b1 9.08) were assigned to SRT (n = 27) or TBR (n = 29).",
+      "context_window": "tle> <jats:p>Fifty-six participants (39 females, mean age = 40.78 \u00b1 9.08) were assigned to SRT (n = 27) or TBR (n = 29). The SRT gro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab223_the_effect_of_sleep_restriction_therapy_for_insomnia_on_slee-n-1777",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1777,
+      "sentence": "For continuous daily measures, the treatment period was split into early (weeks 1-2) and late (weeks 3-4) treatment.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Fifty-six participants (39 females, mean age = 40.78 \u00b1 9.08) were assigned to SRT (n = 27) or TBR (n = 29).",
+      "context_window": "(39 females, mean age = 40.78 \u00b1 9.08) were assigned to SRT (n = 27) or TBR (n = 29). The SRT group showed enhanced sleep press",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab223_the_effect_of_sleep_restriction_therapy_for_insomnia_on_slee-n-1793",
+      "claim_type": "sample_size",
+      "raw_text": "n = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1793,
+      "sentence": "For continuous daily measures, the treatment period was split into early (weeks 1-2) and late (weeks 3-4) treatment.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Fifty-six participants (39 females, mean age = 40.78 \u00b1 9.08) were assigned to SRT (n = 27) or TBR (n = 29).",
+      "context_window": "n age = 40.78 \u00b1 9.08) were assigned to SRT (n = 27) or TBR (n = 29). The SRT group showed enhanced sleep pressure relative to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

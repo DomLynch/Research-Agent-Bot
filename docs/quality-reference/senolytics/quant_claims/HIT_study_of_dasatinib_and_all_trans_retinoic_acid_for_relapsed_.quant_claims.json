@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_study_of_dasatinib_and_all_trans_retinoic_acid_for_relapsed_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_of_dasatinib_and_all_trans_retinoic_acid_for_relapsed_-u-420",
+      "claim_type": "unit_value",
+      "raw_text": "70mg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 420,
+      "sentence": "The investigators will treat with an escalating dose of dasatinib from 70mg to 140mg daily.",
+      "context_window": "gators will treat with an escalating dose of dasatinib from 70mg to 140mg daily. Dose escalation will proceed in a standard",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_of_dasatinib_and_all_trans_retinoic_acid_for_relapsed_-u-428",
+      "claim_type": "unit_value",
+      "raw_text": "140mg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 428,
+      "sentence": "The investigators will treat with an escalating dose of dasatinib from 70mg to 140mg daily.",
+      "context_window": "ill treat with an escalating dose of dasatinib from 70mg to 140mg daily. Dose escalation will proceed in a standard 3+3 fashi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_of_dasatinib_and_all_trans_retinoic_acid_for_relapsed_-u-518",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 518,
+      "sentence": "A de-escalation to a 50 mg total daily dose of dasatinib is planned if DLT is greater than or equal to 33% is observed at the first dose level.",
+      "context_window": "ill proceed in a standard 3+3 fashion. A de-escalation to a 50 mg total daily dose of dasatinib is planned if DLT is greater",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_of_dasatinib_and_all_trans_retinoic_acid_for_relapsed_-pct-600",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 600,
+      "sentence": "A de-escalation to a 50 mg total daily dose of dasatinib is planned if DLT is greater than or equal to 33% is observed at the first dose level.",
+      "context_window": "of dasatinib is planned if DLT is greater than or equal to 33% is observed at the first dose level. Once the MTD for the c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

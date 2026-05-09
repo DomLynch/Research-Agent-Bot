@@ -1,0 +1,161 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct",
+  "doi": "10.1093/sleep/zsab072.392",
+  "extracted_at": "2026-05-08T20:05:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "mean_sd": 3,
+    "p_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-u-599",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 599,
+      "sentence": "Oxygen desaturation and resaturation slopes and durations in OSA and CSA were compared between OSA and CSA patients.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Polysomnographic data of patients aged 18 years or older with diagnosis of OSA and CSA, at University of Iowa Hospitals and Clinics, were analyzed and demographic data were collected.",
+      "context_window": "/jats:title> <jats:p>Polysomnographic data of patients aged 18 years or older with diagnosis of OSA and CSA, at University of Io",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-msd-1539",
+      "claim_type": "mean_sd",
+      "raw_text": "106.81\u00b187.93",
+      "numeric_values": [
+        106.81,
+        87.93
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1539,
+      "sentence": "The mean number of desaturation and resaturation events was not significantly different between patients with OSA and CSA (OSA - 106.81\u00b187.93; CSA - 130.67\u00b176.88 with a p-value 0.1472).",
+      "context_window": "ficantly different between patients with OSA and CSA (OSA - 106.81\u00b187.93; CSA - 130.67\u00b176.88 with a p-value 0.1472). 4/15 CSA patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-msd-1559",
+      "claim_type": "mean_sd",
+      "raw_text": "130.67\u00b176.88",
+      "numeric_values": [
+        130.67,
+        76.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1559,
+      "sentence": "The mean number of desaturation and resaturation events was not significantly different between patients with OSA and CSA (OSA - 106.81\u00b187.93; CSA - 130.67\u00b176.88 with a p-value 0.1472).",
+      "context_window": "etween patients with OSA and CSA (OSA - 106.81\u00b187.93; CSA - 130.67\u00b176.88 with a p-value 0.1472). 4/15 CSA patients had Cheyne-Stokes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-p-1885",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0053",
+      "numeric_values": [
+        0.0053
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1885,
+      "sentence": "Mean desaturation durations was significantly longer in OSA (20.84 s \u00b1 5.67) compared to CSA (15.94 s \u00b1 4.54) (p=0.0053) and consequently the desaturation slopes were steeper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064).",
+      "context_window": "r in OSA (20.84 s \u00b1 5.67) compared to CSA (15.94 s \u00b1 4.54) (p=0.0053) and consequently the desaturation slopes were steeper in C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-pct-1967",
+      "claim_type": "percentage",
+      "raw_text": "0.35%",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1967,
+      "sentence": "Mean desaturation durations was significantly longer in OSA (20.84 s \u00b1 5.67) compared to CSA (15.94 s \u00b1 4.54) (p=0.0053) and consequently the desaturation slopes were steeper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064).",
+      "context_window": "ntly the desaturation slopes were steeper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064). The resaturation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-msd-1989",
+      "claim_type": "mean_sd",
+      "raw_text": "0.243 \u00b1 0.073",
+      "numeric_values": [
+        0.243,
+        0.073
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1989,
+      "sentence": "Mean desaturation durations was significantly longer in OSA (20.84 s \u00b1 5.67) compared to CSA (15.94 s \u00b1 4.54) (p=0.0053) and consequently the desaturation slopes were steeper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064).",
+      "context_window": "slopes were steeper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064). The resaturation duration was not significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-p-2004",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0064",
+      "numeric_values": [
+        0.0064
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2004,
+      "sentence": "Mean desaturation durations was significantly longer in OSA (20.84 s \u00b1 5.67) compared to CSA (15.94 s \u00b1 4.54) (p=0.0053) and consequently the desaturation slopes were steeper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064).",
+      "context_window": "eper in CSA than OSA (-0.35%/sec \u00b10.180 vs. -0.243 \u00b1 0.073; p=0.0064). The resaturation duration was not significantly longer in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_392_393_comparison_of_oxygenation_abnormalities_between_obstruct-p-2120",
+      "claim_type": "p_value",
+      "raw_text": "p=0.2857",
+      "numeric_values": [
+        0.2857
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2120,
+      "sentence": "The resaturation duration was not significantly longer in OSA (9.76 s \u00b1 2.02) than CSA (9.057 s \u00b1 2.17) (p=0.2857).",
+      "context_window": "ly longer in OSA (9.76 s \u00b1 2.02) than CSA (9.057 s \u00b1 2.17) (p=0.2857). Differences between desaturation duration and slopes betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

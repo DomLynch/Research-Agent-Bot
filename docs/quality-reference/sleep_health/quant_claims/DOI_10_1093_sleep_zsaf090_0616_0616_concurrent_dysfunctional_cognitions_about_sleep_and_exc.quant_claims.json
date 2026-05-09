@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_0616_0616_concurrent_dysfunctional_cognitions_about_sleep_and_exc",
+  "doi": "10.1093/sleep/zsaf090.0616",
+  "extracted_at": "2026-05-08T20:07:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0616_0616_concurrent_dysfunctional_cognitions_about_sleep_and_exc-n-1036",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1036,
+      "sentence": "This study examined associations of dysfunctional cognitions about sleep and excessive daytime sleepiness to a unique characteristic of COMISA, potentially its challenging clinical manifestations.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>We analyzed data from 346 patients, consisting of CID alone (n = 55, median age: 44.0), OSA alone (n = 195, median age: 52.0), and COMISA (n = 96, median age: 65.0) using the National Center Hospital of NCNP database, which is part of a polysomnography databank for sleep disorders in Japan.",
+      "context_window": "e analyzed data from 346 patients, consisting of CID alone (n = 55, median age: 44.0), OSA alone (n = 195, median age: 52.0),",
+      "claim_role": "population",
+      "endpoint": "cognition",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0616_0616_concurrent_dysfunctional_cognitions_about_sleep_and_exc-n-1074",
+      "claim_type": "sample_size",
+      "raw_text": "n = 195",
+      "numeric_values": [
+        195.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1074,
+      "sentence": "This study examined associations of dysfunctional cognitions about sleep and excessive daytime sleepiness to a unique characteristic of COMISA, potentially its challenging clinical manifestations.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>We analyzed data from 346 patients, consisting of CID alone (n = 55, median age: 44.0), OSA alone (n = 195, median age: 52.0), and COMISA (n = 96, median age: 65.0) using the National Center Hospital of NCNP database, which is part of a polysomnography databank for sleep disorders in Japan.",
+      "context_window": "sisting of CID alone (n = 55, median age: 44.0), OSA alone (n = 195, median age: 52.0), and COMISA (n = 96, median age: 65.0) u",
+      "claim_role": "population",
+      "endpoint": "cognition",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0616_0616_concurrent_dysfunctional_cognitions_about_sleep_and_exc-n-1114",
+      "claim_type": "sample_size",
+      "raw_text": "n = 96",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1114,
+      "sentence": "This study examined associations of dysfunctional cognitions about sleep and excessive daytime sleepiness to a unique characteristic of COMISA, potentially its challenging clinical manifestations.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>We analyzed data from 346 patients, consisting of CID alone (n = 55, median age: 44.0), OSA alone (n = 195, median age: 52.0), and COMISA (n = 96, median age: 65.0) using the National Center Hospital of NCNP database, which is part of a polysomnography databank for sleep disorders in Japan.",
+      "context_window": ": 44.0), OSA alone (n = 195, median age: 52.0), and COMISA (n = 96, median age: 65.0) using the National Center Hospital of NC",
+      "claim_role": "population",
+      "endpoint": "cognition",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0616_0616_concurrent_dysfunctional_cognitions_about_sleep_and_exc-p-2207",
+      "claim_type": "p_value",
+      "raw_text": "p= 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2207,
+      "sentence": "CID (adjusted odds ratio [AOR] = 5.14; p= 0.007) and COMISA vs.",
+      "context_window": "parisons: COMISA vs. CID (adjusted odds ratio [AOR] = 5.14; p= 0.007) and COMISA vs. OSA (AOR = 3.29; p = 0.004). These associat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0616_0616_concurrent_dysfunctional_cognitions_about_sleep_and_exc-p-2249",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2249,
+      "sentence": "OSA (AOR = 3.29; p = 0.004).",
+      "context_window": "tio [AOR] = 5.14; p= 0.007) and COMISA vs. OSA (AOR = 3.29; p = 0.004). These associations remained significant after sex adjustm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

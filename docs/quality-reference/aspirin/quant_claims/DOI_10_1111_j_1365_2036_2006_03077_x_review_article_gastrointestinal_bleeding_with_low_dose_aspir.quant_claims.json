@@ -1,0 +1,252 @@
+{
+  "paper_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir",
+  "doi": "10.1111/j.1365-2036.2006.03077.x",
+  "extracted_at": "2026-05-08T20:05:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "unit_value": 3,
+    "confidence_interval": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 293,
+      "sentence": "<jats:title>Summary</jats:title><jats:p>This review examines ulcers and gastrointestinal bleeding with low\u2010dose aspirin, focusing on randomized placebo\u2010controlled trials.</jats:p><jats:p>The single endoscopic trial assessing ulcers showed no significant difference in 12\u2010week ulcer incidence: 6% of 381 given placebo vs.",
+      "context_window": "howed no significant difference in 12\u2010week ulcer incidence: 6% of 381 given placebo vs. 7% of 387 given 81 mg enteric\u2010coat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-pct-321",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 321,
+      "sentence": "7% of 387 given 81 mg enteric\u2010coated aspirin.</jats:p><jats:p>The relative risk of major gastrointestinal bleeding with low\u2010dose aspirin in a meta\u2010analysis of placebo\u2010controlled trials of vascular protection was 2.07 (95% CI: 1.61-2.66).",
+      "context_window": "nce in 12\u2010week ulcer incidence: 6% of 381 given placebo vs. 7% of 387 given 81 mg enteric\u2010coated aspirin.</jats:p><jats:p>",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-u-337",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 337,
+      "sentence": "7% of 387 given 81 mg enteric\u2010coated aspirin.</jats:p><jats:p>The relative risk of major gastrointestinal bleeding with low\u2010dose aspirin in a meta\u2010analysis of placebo\u2010controlled trials of vascular protection was 2.07 (95% CI: 1.61-2.66).",
+      "context_window": "lcer incidence: 6% of 381 given placebo vs. 7% of 387 given 81 mg enteric\u2010coated aspirin.</jats:p><jats:p>The relative risk o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-ci-539",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.61-2.66",
+      "numeric_values": [
+        1.61,
+        2.66
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 539,
+      "sentence": "7% of 387 given 81 mg enteric\u2010coated aspirin.</jats:p><jats:p>The relative risk of major gastrointestinal bleeding with low\u2010dose aspirin in a meta\u2010analysis of placebo\u2010controlled trials of vascular protection was 2.07 (95% CI: 1.61-2.66).",
+      "context_window": "placebo\u2010controlled trials of vascular protection was 2.07 (95% CI: 1.61-2.66). The absolute rate increase with aspirin above placebo was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-pct-617",
+      "claim_type": "percentage",
+      "raw_text": "0.12%",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 617,
+      "sentence": "The absolute rate increase with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526-1429).",
+      "context_window": ". The absolute rate increase with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-ci-633",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.07-0.19",
+      "numeric_values": [
+        0.07,
+        0.19
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 633,
+      "sentence": "The absolute rate increase with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526-1429).",
+      "context_window": "ate increase with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-pct-646",
+      "claim_type": "percentage",
+      "raw_text": "0.19%",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "The absolute rate increase with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526-1429).",
+      "context_window": "with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-ci-699",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 526-1429",
+      "numeric_values": [
+        526.0,
+        1429.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 699,
+      "sentence": "The absolute rate increase with aspirin above placebo was 0.12% per year (95% CI: 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526-1429).",
+      "context_window": ": 0.07-0.19%) with a number\u2010needed\u2010to\u2010harm of 833 patients (95% CI: 526-1429). A meta\u2010analysis of aspirin 50-1500 mg daily reported an o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 748,
+      "sentence": "A meta\u2010analysis of aspirin 50-1500 mg daily reported an odds ratio for any gastrointestinal bleeding of 1.68 (95% CI: 1.51-1.88) with an number\u2010needed\u2010to\u2010harm at 1 year of 247.",
+      "context_window": "patients (95% CI: 526-1429). A meta\u2010analysis of aspirin 50-1500 mg daily reported an odds ratio for any gastrointestinal bleed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-ci-828",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.51-1.88",
+      "numeric_values": [
+        1.51,
+        1.88
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 828,
+      "sentence": "A meta\u2010analysis of aspirin 50-1500 mg daily reported an odds ratio for any gastrointestinal bleeding of 1.68 (95% CI: 1.51-1.88) with an number\u2010needed\u2010to\u2010harm at 1 year of 247.",
+      "context_window": "ed an odds ratio for any gastrointestinal bleeding of 1.68 (95% CI: 1.51-1.88) with an number\u2010needed\u2010to\u2010harm at 1 year of 247. The relati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-u-880",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 880,
+      "sentence": "A meta\u2010analysis of aspirin 50-1500 mg daily reported an odds ratio for any gastrointestinal bleeding of 1.68 (95% CI: 1.51-1.88) with an number\u2010needed\u2010to\u2010harm at 1 year of 247.",
+      "context_window": "f 1.68 (95% CI: 1.51-1.88) with an number\u2010needed\u2010to\u2010harm at 1 year of 247. The relative risk of hospitalization for upper gast",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-ci-1030",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.2-2.9",
+      "numeric_values": [
+        2.2,
+        2.9
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1030,
+      "sentence": "The relative risk of hospitalization for upper gastrointestinal bleeding with low\u2010dose aspirin in a large Danish cohort study was 2.6 (95% CI: 2.2-2.9) with an absolute annual incidence of 0.6%.</jats:p><jats:p>Factors that may increase the risk of gastrointestinal bleeding include prior history of ulcers or gastrointestinal bleeding, corticosteroid use, anticoagulant therapy and addition of a non\u2010aspirin non\u2010steroidal anti\u2010inflammatory drug.</jats:p><jats:p>When determining whether low\u2010dose aspirin is appropriate for an individual patient, the cardiovascular benefit must be weighed against the potential for clinical events such as gastrointestinal bleeding.</jats:p>",
+      "context_window": "th low\u2010dose aspirin in a large Danish cohort study was 2.6 (95% CI: 2.2-2.9) with an absolute annual incidence of 0.6%.</jats:p><jats:p",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1365_2036_2006_03077_x_review_article_gastrointestinal_bleeding_with_low_dose_aspir-pct-1084",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "The relative risk of hospitalization for upper gastrointestinal bleeding with low\u2010dose aspirin in a large Danish cohort study was 2.6 (95% CI: 2.2-2.9) with an absolute annual incidence of 0.6%.</jats:p><jats:p>Factors that may increase the risk of gastrointestinal bleeding include prior history of ulcers or gastrointestinal bleeding, corticosteroid use, anticoagulant therapy and addition of a non\u2010aspirin non\u2010steroidal anti\u2010inflammatory drug.</jats:p><jats:p>When determining whether low\u2010dose aspirin is appropriate for an individual patient, the cardiovascular benefit must be weighed against the potential for clinical events such as gastrointestinal bleeding.</jats:p>",
+      "context_window": "2.6 (95% CI: 2.2-2.9) with an absolute annual incidence of 0.6%.</jats:p><jats:p>Factors that may increase the risk of gast",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

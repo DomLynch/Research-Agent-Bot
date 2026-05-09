@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_32592_yafteh_2023_24_4_2_the_effect_of_eight_weeks_of_combined_aerobic_and_resistance",
+  "doi": "10.32592/yafteh.2023.24.4.2",
+  "extracted_at": "2026-05-08T20:10:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_32592_yafteh_2023_24_4_2_the_effect_of_eight_weeks_of_combined_aerobic_and_resistance-u-286",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 286,
+      "sentence": "Materials and Methods: 40 male Wistar rats aged 10 weeks old and weighing between 200 and 250 grams were prepared.",
+      "context_window": "betic rats. Materials and Methods: 40 male Wistar rats aged 10 weeks old and weighing between 200 and 250 grams were prepared. T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_32592_yafteh_2023_24_4_2_the_effect_of_eight_weeks_of_combined_aerobic_and_resistance-u-628",
+      "claim_type": "unit_value",
+      "raw_text": "35 mg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 628,
+      "sentence": "The rats of the diabetic groups were considered diabetic by injecting a single dose of streptozotocin (35 mg/weight) and sugar levels higher than 250 mg/dL before the start of the exercise.",
+      "context_window": "ered diabetic by injecting a single dose of streptozotocin (35 mg/weight) and sugar levels higher than 250 mg/dL before the s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_32592_yafteh_2023_24_4_2_the_effect_of_eight_weeks_of_combined_aerobic_and_resistance-u-671",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 671,
+      "sentence": "The rats of the diabetic groups were considered diabetic by injecting a single dose of streptozotocin (35 mg/weight) and sugar levels higher than 250 mg/dL before the start of the exercise.",
+      "context_window": "streptozotocin (35 mg/weight) and sugar levels higher than 250 mg/dL before the start of the exercise. The rats were anesthetize",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_32592_yafteh_2023_24_4_2_the_effect_of_eight_weeks_of_combined_aerobic_and_resistance-p-1185",
+      "claim_type": "p_value",
+      "raw_text": "P>0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "Results: The results showed that the FOXO3a protein decreased in the T+S, group compared to the C and T groups (P>0.001).",
+      "context_window": "decreased in the T+S, group compared to the C and T groups (P>0.001). Moreover, taurine supplement, combined training, as well",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_32592_yafteh_2023_24_4_2_the_effect_of_eight_weeks_of_combined_aerobic_and_resistance-p-1363",
+      "claim_type": "p_value",
+      "raw_text": "P>0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "Moreover, taurine supplement, combined training, as well as combined training+taurine supplement led to a significant change in the level of MURF-1 protein expression (P>0.001).",
+      "context_window": "gnificant change in the level of MURF-1 protein expression (P>0.001). Conclusion: It seems that the combination of taurine supp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

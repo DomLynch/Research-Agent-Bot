@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events",
+  "doi": "10.7326/m15-2113",
+  "extracted_at": "2026-05-08T20:05:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events-u-229",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 229,
+      "sentence": "PURPOSE: To update a systematic review about the benefits of aspirin for the primary prevention of cardiovascular events in adults aged 40 years or older and to evaluate effect modification in subpopulations.",
+      "context_window": "primary prevention of cardiovascular events in adults aged 40 years or older and to evaluate effect modification in subpopulati",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events-pct-1009",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "In analyses of all doses, aspirin reduced the risk for nonfatal myocardial infarction (MI) (relative risk [RR], 0.78 [95% CI, 0.71 to 0.87]) but not nonfatal stroke; aspirin showed little or no benefit for all-cause or cardiovascular mortality.",
+      "context_window": "fatal myocardial infarction (MI) (relative risk [RR], 0.78 [95% CI, 0.71 to 0.87]) but not nonfatal stroke; aspirin showed",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events-u-1168",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "Benefits began within the first 5 years.",
+      "context_window": "r cardiovascular mortality. Benefits began within the first 5 years. Older adults achieved greater relative MI reduction, but n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events-u-1335",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1335,
+      "sentence": "In trials with aspirin doses of 100 mg or less per day, the reduction in nonfatal MI benefit persisted (absolute risk reduction, 0.15 to 1.43 events per 1000 person-years) and a 14% reduction in nonfatal stroke benefit was noted, but no benefit was found for all-cause mortality (RR, 0.95 [CI, 0.89 to 1.01]) or cardiovascular mortality (RR, 0.97 [CI, 0.85 to 1.10]).",
+      "context_window": "in analyzed subpopulations. In trials with aspirin doses of 100 mg or less per day, the reduction in nonfatal MI benefit persi",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events-pct-1481",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1481,
+      "sentence": "In trials with aspirin doses of 100 mg or less per day, the reduction in nonfatal MI benefit persisted (absolute risk reduction, 0.15 to 1.43 events per 1000 person-years) and a 14% reduction in nonfatal stroke benefit was noted, but no benefit was found for all-cause mortality (RR, 0.95 [CI, 0.89 to 1.01]) or cardiovascular mortality (RR, 0.97 [CI, 0.85 to 1.10]).",
+      "context_window": "reduction, 0.15 to 1.43 events per 1000 person-years) and a 14% reduction in nonfatal stroke benefit was noted, but no bene",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2113_aspirin_for_the_primary_prevention_of_cardiovascular_events-u-1918",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1918,
+      "sentence": "CONCLUSION: The beneficial effect of aspirin for the primary prevention of CVD is modest and occurs at doses of 100 mg or less per day.",
+      "context_window": "primary prevention of CVD is modest and occurs at doses of 100 mg or less per day. Older adults seem to achieve a greater rel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

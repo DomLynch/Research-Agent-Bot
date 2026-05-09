@@ -1,0 +1,303 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn",
+  "doi": "10.1093/sleep/zsae067.0384",
+  "extracted_at": "2026-05-08T20:07:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "mean_sd": 1,
+    "percentage": 12,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-u-1081",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1081,
+      "sentence": "The intervention was delivered virtually via tablet and consisted of sleep hygiene education, meaningful activity in the daytime and relaxation therapy in the evening for 4 weeks.",
+      "context_window": "ty in the daytime and relaxation therapy in the evening for 4 weeks. The active control received sleep hygiene education only.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "sleep hygiene",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-msd-1645",
+      "claim_type": "mean_sd",
+      "raw_text": "65.63 \u00b1 6.39",
+      "numeric_values": [
+        65.63,
+        6.39
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1645,
+      "sentence": "Our sample was balanced on all key variables, had a mean age of 65.63 \u00b1 6.39, was primarily (81.5%) female, and mixed between white (51.9%), Black (44.4%).",
+      "context_window": "sample was balanced on all key variables, had a mean age of 65.63 \u00b1 6.39, was primarily (81.5%) female, and mixed between white (51.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-1674",
+      "claim_type": "percentage",
+      "raw_text": "81.5%",
+      "numeric_values": [
+        81.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1674,
+      "sentence": "Our sample was balanced on all key variables, had a mean age of 65.63 \u00b1 6.39, was primarily (81.5%) female, and mixed between white (51.9%), Black (44.4%).",
+      "context_window": "y variables, had a mean age of 65.63 \u00b1 6.39, was primarily (81.5%) female, and mixed between white (51.9%), Black (44.4%). Re",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-1714",
+      "claim_type": "percentage",
+      "raw_text": "51.9%",
+      "numeric_values": [
+        51.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1714,
+      "sentence": "Our sample was balanced on all key variables, had a mean age of 65.63 \u00b1 6.39, was primarily (81.5%) female, and mixed between white (51.9%), Black (44.4%).",
+      "context_window": ".39, was primarily (81.5%) female, and mixed between white (51.9%), Black (44.4%). Retention rate was high at almost 90%. At",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-1729",
+      "claim_type": "percentage",
+      "raw_text": "44.4%",
+      "numeric_values": [
+        44.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1729,
+      "sentence": "Our sample was balanced on all key variables, had a mean age of 65.63 \u00b1 6.39, was primarily (81.5%) female, and mixed between white (51.9%), Black (44.4%).",
+      "context_window": "ily (81.5%) female, and mixed between white (51.9%), Black (44.4%). Retention rate was high at almost 90%. At baseline, avera",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-1771",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1771,
+      "sentence": "Retention rate was high at almost 90%.",
+      "context_window": "e (51.9%), Black (44.4%). Retention rate was high at almost 90%. At baseline, average latency was 46.5 (27.3) minutes for c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-p-1985",
+      "claim_type": "p_value",
+      "raw_text": "p=0.076",
+      "numeric_values": [
+        0.076
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1985,
+      "sentence": "Post intervention, average latency for control group was 47.0 (34.6) and 28.3 (31.8) for intervention (p=0.076) Standardized mean difference (SMD) was 0.56.",
+      "context_window": "rol group was 47.0 (34.6) and 28.3 (31.8) for intervention (p=0.076) Standardized mean difference (SMD) was 0.56. Average effic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2080",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2080,
+      "sentence": "Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline.",
+      "context_window": "ce (SMD) was 0.56. Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline. Post inte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2085",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2085,
+      "sentence": "Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline.",
+      "context_window": "MD) was 0.56. Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline. Post intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2094",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2094,
+      "sentence": "Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline.",
+      "context_window": ".56. Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline. Post intervention, effi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2099",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2099,
+      "sentence": "Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline.",
+      "context_window": "Average efficiency for control group was 65% (11%) and 70% (12%) for intervention at baseline. Post intervention, efficienc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2168",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2168,
+      "sentence": "Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044).",
+      "context_window": "intervention at baseline. Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2173",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2173,
+      "sentence": "Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044).",
+      "context_window": "vention at baseline. Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2200",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2200,
+      "sentence": "Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044).",
+      "context_window": "ntervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044). SMD was 0.76. There were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-pct-2205",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2205,
+      "sentence": "Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044).",
+      "context_window": "ention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044). SMD was 0.76. There were no si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0384_0384_multicomponent_behavioral_sleep_intervention_for_insomn-p-2228",
+      "claim_type": "p_value",
+      "raw_text": "p=0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2228,
+      "sentence": "Post intervention, efficiency was 68% (14%) for control group and 78% (12%) for intervention (p=0.044).",
+      "context_window": "68% (14%) for control group and 78% (12%) for intervention (p=0.044). SMD was 0.76. There were no significant differences betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_a_brief_parent_based_sleep_intervention_for_adhd_children",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_brief_parent_based_sleep_intervention_for_adhd_children-pct-88",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 88,
+      "sentence": "Sleep problems are very common in children with ADHD, with a prevalence rate as high as 73%, and often pose significant challenges and stress to the families.",
+      "context_window": "on in children with ADHD, with a prevalence rate as high as 73%, and often pose significant challenges and stress to the fa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_brief_parent_based_sleep_intervention_for_adhd_children-u-746",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 746,
+      "sentence": "Assessments will be conducted at pre-treatment (baseline), one-week after the intervention (post-treatment), and 3 months after the intervention.",
+      "context_window": "ine), one-week after the intervention (post-treatment), and 3 months after the intervention.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

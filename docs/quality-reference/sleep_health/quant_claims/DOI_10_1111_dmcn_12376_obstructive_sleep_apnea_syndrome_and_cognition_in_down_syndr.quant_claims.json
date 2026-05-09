@@ -1,0 +1,83 @@
+{
+  "paper_id": "DOI_10_1111_dmcn_12376_obstructive_sleep_apnea_syndrome_and_cognition_in_down_syndr",
+  "doi": "10.1111/dmcn.12376",
+  "extracted_at": "2026-05-08T20:06:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_dmcn_12376_obstructive_sleep_apnea_syndrome_and_cognition_in_down_syndr-p-903",
+      "claim_type": "p_value",
+      "raw_text": "p=0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 903,
+      "sentence": "RESULTS: Among children with Down syndrome, mean Verbal IQ score (p=0.006) was 9 points lower in those with comorbid OSAS (apnea-hypopnea index >1.5) than in those without OSAS, and performance on measures of cognitive flexibility was poorer (p=0.03).",
+      "context_window": "S: Among children with Down syndrome, mean Verbal IQ score (p=0.006) was 9 points lower in those with comorbid OSAS (apnea-hypo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_dmcn_12376_obstructive_sleep_apnea_syndrome_and_cognition_in_down_syndr-p-1080",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "RESULTS: Among children with Down syndrome, mean Verbal IQ score (p=0.006) was 9 points lower in those with comorbid OSAS (apnea-hypopnea index >1.5) than in those without OSAS, and performance on measures of cognitive flexibility was poorer (p=0.03).",
+      "context_window": "erformance on measures of cognitive flexibility was poorer (p=0.03). In addition, those with OSAS showed increased light-stage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_dmcn_12376_obstructive_sleep_apnea_syndrome_and_cognition_in_down_syndr-p-1154",
+      "claim_type": "p_value",
+      "raw_text": "p=0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1154,
+      "sentence": "In addition, those with OSAS showed increased light-stage sleep (p=0.009) at the expense of slow-wave sleep (p=0.04).",
+      "context_window": "dition, those with OSAS showed increased light-stage sleep (p=0.009) at the expense of slow-wave sleep (p=0.04). INTERPRETATION",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_dmcn_12376_obstructive_sleep_apnea_syndrome_and_cognition_in_down_syndr-p-1198",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1198,
+      "sentence": "In addition, those with OSAS showed increased light-stage sleep (p=0.009) at the expense of slow-wave sleep (p=0.04).",
+      "context_window": "ht-stage sleep (p=0.009) at the expense of slow-wave sleep (p=0.04). INTERPRETATION: These findings demonstrate a relation bet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsae067_0391_0391_effects_of_brief_behavioral_treatment_for_insomnia_on_i",
+  "doi": "10.1093/sleep/zsae067.0391",
+  "extracted_at": "2026-05-08T20:06:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0391_0391_effects_of_brief_behavioral_treatment_for_insomnia_on_i-pct-126",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 126,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Introduction</jats:title> <jats:p>Insomnia is prevalent in more than 50% of cancer survivors, occurring during and after their treatment trajectory, potentially leading to subsequent insomnia disorder.",
+      "context_window": "ion</jats:title> <jats:p>Insomnia is prevalent in more than 50% of cancer survivors, occurring during and after their treat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0391_0391_effects_of_brief_behavioral_treatment_for_insomnia_on_i-pct-1657",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "Mean differences (95% CI) in ISI (BBTI minus control) were estimated to be -2.2(-4.1, 0.4), -2.1(-4.2, 0.1), and -2.3(-4.4, 0.1) at 1-, 3-, and 12-months, respectively.",
+      "context_window": "me points for both ISI and sleep quality. Mean differences (95% CI) in ISI (BBTI minus control) were estimated to be -2.2(-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

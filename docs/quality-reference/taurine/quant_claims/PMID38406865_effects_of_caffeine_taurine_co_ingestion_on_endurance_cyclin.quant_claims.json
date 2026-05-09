@@ -1,0 +1,120 @@
+{
+  "paper_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin",
+  "doi": "10.1177/19417381241231627",
+  "extracted_at": "2026-05-08T20:10:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin-pct-1166",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "After a 7-day washout period, participants completed a time to exhaustion (TTE) test in the heat (35\u00b0C, 65% relative humidity).</jats:p> </jats:sec> <jats:sec> <jats:title>Results:</jats:title> <jats:p>All experimental groups improved TTE compared with the placebo group.",
+      "context_window": "ompleted a time to exhaustion (TTE) test in the heat (35\u00b0C, 65% relative humidity).</jats:p> </jats:sec> <jats:sec> <jats:t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin-p-1486",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "Peak and mean power of countermovement jump were significantly higher in the CAF group compared with the placebo group before the exhaustion exercise ( P = 0.02, d = 1.2 and P = 0.04, d = 1.1, respectively).",
+      "context_window": "red with the placebo group before the exhaustion exercise ( P = 0.02, d = 1.2 and P = 0.04, d = 1.1, respectively). Blood lactat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin-p-1508",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1508,
+      "sentence": "Peak and mean power of countermovement jump were significantly higher in the CAF group compared with the placebo group before the exhaustion exercise ( P = 0.02, d = 1.2 and P = 0.04, d = 1.1, respectively).",
+      "context_window": "roup before the exhaustion exercise ( P = 0.02, d = 1.2 and P = 0.04, d = 1.1, respectively). Blood lactate was significantly lo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin-p-1647",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1647,
+      "sentence": "Blood lactate was significantly lower after the exhaustion test in the TAU group compared with the CAF ( P < 0.01, d = 0.8) and TAU + CAF ( P < 0.01, d = 0.7) groups.",
+      "context_window": "he exhaustion test in the TAU group compared with the CAF ( P < 0.01, d = 0.8) and TAU + CAF ( P < 0.01, d = 0.7) groups. Core t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin-p-1682",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1682,
+      "sentence": "Blood lactate was significantly lower after the exhaustion test in the TAU group compared with the CAF ( P < 0.01, d = 0.8) and TAU + CAF ( P < 0.01, d = 0.7) groups.",
+      "context_window": "compared with the CAF ( P < 0.01, d = 0.8) and TAU + CAF ( P < 0.01, d = 0.7) groups. Core temperature in the TAU group was sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID38406865_effects_of_caffeine_taurine_co_ingestion_on_endurance_cyclin-p-1821",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1821,
+      "sentence": "Core temperature in the TAU group was significantly reduced in the placebo group later in the exhaustion test ( P < 0.01, d = 1.9).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion:</jats:title> <jats:p>In high temperature and humidity environments, acute TAU, CAF, and combined supplementation all improved TTE and did not affect recovery from lower limb neuromuscular fatigue compared with placebo, with TAU having the best effect.",
+      "context_window": "reduced in the placebo group later in the exhaustion test ( P < 0.01, d = 1.9).</jats:p> </jats:sec> <jats:sec> <jats:title>Conc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

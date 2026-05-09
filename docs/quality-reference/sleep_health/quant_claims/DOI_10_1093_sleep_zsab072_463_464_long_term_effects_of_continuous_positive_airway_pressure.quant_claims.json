@@ -1,0 +1,123 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure",
+  "doi": "10.1093/sleep/zsab072.463",
+  "extracted_at": "2026-05-08T20:05:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "mean_sd": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure-u-849",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 849,
+      "sentence": "Data was assessed on 1 month, 6 month, and 12 month intervals.",
+      "context_window": "be updated along with CPAP compliance. Data was assessed on 1 month, 6 month, and 12 month intervals. Exclusion criteria includ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure-u-858",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 858,
+      "sentence": "Data was assessed on 1 month, 6 month, and 12 month intervals.",
+      "context_window": "d along with CPAP compliance. Data was assessed on 1 month, 6 month, and 12 month intervals. Exclusion criteria include diureti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure-u-871",
+      "claim_type": "unit_value",
+      "raw_text": "12 month",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 871,
+      "sentence": "Data was assessed on 1 month, 6 month, and 12 month intervals.",
+      "context_window": "CPAP compliance. Data was assessed on 1 month, 6 month, and 12 month intervals. Exclusion criteria include diuretic use, diet/ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure-msd-1179",
+      "claim_type": "mean_sd",
+      "raw_text": "2.68\u00b111.29",
+      "numeric_values": [
+        2.68,
+        11.29
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "Exclusion criteria include diuretic use, diet/exercise additions, and discontinuation of CPAP therapy before the full observation window.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Patients with long term use of their CPAP devices had an average increase of 2.68\u00b111.29 lbs after a year.",
+      "context_window": "g term use of their CPAP devices had an average increase of 2.68\u00b111.29 lbs after a year. 233 participants gained weight (an averag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure-msd-1254",
+      "claim_type": "mean_sd",
+      "raw_text": "9.8\u00b17.3",
+      "numeric_values": [
+        9.8,
+        7.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1254,
+      "sentence": "233 participants gained weight (an average of 9.8\u00b17.3 lbs) while 141 participants lost weight (an average of -8.5\u00b17.2 lbs) with 19 participants showing no weight change.",
+      "context_window": "after a year. 233 participants gained weight (an average of 9.8\u00b17.3 lbs) while 141 participants lost weight (an average of -8.5",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsab072_463_464_long_term_effects_of_continuous_positive_airway_pressure-msd-1318",
+      "claim_type": "mean_sd",
+      "raw_text": "8.5\u00b17.2",
+      "numeric_values": [
+        8.5,
+        7.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1318,
+      "sentence": "233 participants gained weight (an average of 9.8\u00b17.3 lbs) while 141 participants lost weight (an average of -8.5\u00b17.2 lbs) with 19 participants showing no weight change.",
+      "context_window": "7.3 lbs) while 141 participants lost weight (an average of -8.5\u00b17.2 lbs) with 19 participants showing no weight change. This we",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

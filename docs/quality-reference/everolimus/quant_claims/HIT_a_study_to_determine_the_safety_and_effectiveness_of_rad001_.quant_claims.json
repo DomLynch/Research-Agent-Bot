@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_a_study_to_determine_the_safety_and_effectiveness_of_rad001_",
+  "doi": "",
+  "extracted_at": "2026-05-08T19:55:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_study_to_determine_the_safety_and_effectiveness_of_rad001_-u-281",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 281,
+      "sentence": "This was an exploratory study to determine whether escalating doses of RAD001 (everolimus) were safe and effective in patients with Lymphangioleiomyomatosis\n\nPosted outcomes: Change From Baseline in Vascular Endothelial Growth Factor-D (VEGF-D) Concentrations. timeframe=Baseline, 26 weeks.",
+      "context_window": "rowth Factor-D (VEGF-D) Concentrations. timeframe=Baseline, 26 weeks. Everolimus 2.5 mg/Day=-464.3 (\u00b1745.23); Everolimus 5 mg/Da",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rad001",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_to_determine_the_safety_and_effectiveness_of_rad001_-u-302",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 302,
+      "sentence": "Everolimus 2.5 mg/Day=-464.3 (\u00b1745.23); Everolimus 5 mg/Day=-1113.2 (\u00b11468.9); Everolimus 10 mg/Day=-1771.7 (\u00b12091.6)",
+      "context_window": "D) Concentrations. timeframe=Baseline, 26 weeks. Everolimus 2.5 mg/Day=-464.3 (\u00b1745.23); Everolimus 5 mg/Day=-1113.2 (\u00b11468.9)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_to_determine_the_safety_and_effectiveness_of_rad001_-u-342",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 342,
+      "sentence": "Everolimus 2.5 mg/Day=-464.3 (\u00b1745.23); Everolimus 5 mg/Day=-1113.2 (\u00b11468.9); Everolimus 10 mg/Day=-1771.7 (\u00b12091.6)",
+      "context_window": "6 weeks. Everolimus 2.5 mg/Day=-464.3 (\u00b1745.23); Everolimus 5 mg/Day=-1113.2 (\u00b11468.9); Everolimus 10 mg/Day=-1771.7 (\u00b12091.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_to_determine_the_safety_and_effectiveness_of_rad001_-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 381,
+      "sentence": "Everolimus 2.5 mg/Day=-464.3 (\u00b1745.23); Everolimus 5 mg/Day=-1113.2 (\u00b11468.9); Everolimus 10 mg/Day=-1771.7 (\u00b12091.6)",
+      "context_window": "\u00b1745.23); Everolimus 5 mg/Day=-1113.2 (\u00b11468.9); Everolimus 10 mg/Day=-1771.7 (\u00b12091.6)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

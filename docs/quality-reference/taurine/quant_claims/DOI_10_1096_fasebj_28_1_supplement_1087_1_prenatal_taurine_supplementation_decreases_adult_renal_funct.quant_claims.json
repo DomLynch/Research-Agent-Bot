@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1096_fasebj_28_1_supplement_1087_1_prenatal_taurine_supplementation_decreases_adult_renal_funct",
+  "doi": "10.1096/fasebj.28.1_supplement.1087.1",
+  "extracted_at": "2026-05-08T20:10:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1096_fasebj_28_1_supplement_1087_1_prenatal_taurine_supplementation_decreases_adult_renal_funct-u-344",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 344,
+      "sentence": "Female Sprague\u2010Dawley rats were fed normal rat chow and given water alone (control) or water containing captopril (400 mg/ml; captopril) or 3% taurine (taurine) from conception until delivery.",
+      "context_window": "given water alone (control) or water containing captopril (400 mg/ml; captopril) or 3% taurine (taurine) from conception unti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1096_fasebj_28_1_supplement_1087_1_prenatal_taurine_supplementation_decreases_adult_renal_funct-pct-369",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 369,
+      "sentence": "Female Sprague\u2010Dawley rats were fed normal rat chow and given water alone (control) or water containing captopril (400 mg/ml; captopril) or 3% taurine (taurine) from conception until delivery.",
+      "context_window": "ol) or water containing captopril (400 mg/ml; captopril) or 3% taurine (taurine) from conception until delivery. Then, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1096_fasebj_28_1_supplement_1087_1_prenatal_taurine_supplementation_decreases_adult_renal_funct-u-482",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 482,
+      "sentence": "At 7\u20108 weeks of age, renal function at rest and after acute saline load (5% of body weight) was studied in conscious, restrained male rats.",
+      "context_window": "Then, the rats received normal rat chow and tap water. At 7\u20108 weeks of age, renal function at rest and after acute saline load",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1096_fasebj_28_1_supplement_1087_1_prenatal_taurine_supplementation_decreases_adult_renal_funct-pct-550",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 550,
+      "sentence": "At 7\u20108 weeks of age, renal function at rest and after acute saline load (5% of body weight) was studied in conscious, restrained male rats.",
+      "context_window": "of age, renal function at rest and after acute saline load (5% of body weight) was studied in conscious, restrained male r",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

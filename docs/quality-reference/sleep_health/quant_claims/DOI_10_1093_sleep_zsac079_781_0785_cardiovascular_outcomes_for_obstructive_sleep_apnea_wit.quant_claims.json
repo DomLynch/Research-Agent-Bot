@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit",
+  "doi": "10.1093/sleep/zsac079.781",
+  "extracted_at": "2026-05-08T20:06:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit-pct-1183",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "Patients were excluded for active PAP therapy use, recent automobile accidents, a minimum difference (&lt;30%) between \u201cactive\u201d and \u201csham\u201d voltages, and pregnancy.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>53 patients met all inclusion criteria.",
+      "context_window": "use, recent automobile accidents, a minimum difference (&lt;30%) between \u201cactive\u201d and \u201csham\u201d voltages, and pregnancy.</jats",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit-pct-1449",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "Overall, the study cohort was older (mean [SD] age 66.8 [10.2]), overweight (BMI 28.8 [4.36]), 60% male, and predominantly of white race.",
+      "context_window": "(mean [SD] age 66.8 [10.2]), overweight (BMI 28.8 [4.36]), 60% male, and predominantly of white race. There was no signifi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit-u-1582",
+      "claim_type": "unit_value",
+      "raw_text": "122.4 mmHg",
+      "numeric_values": [
+        122.4
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1582,
+      "sentence": "There was no significant difference in mean 24-hour SBP between \u201cactive\u201d and \u201csham\u201d HGNS (122.4 mmHg [12.2] vs.",
+      "context_window": "rence in mean 24-hour SBP between \u201cactive\u201d and \u201csham\u201d HGNS (122.4 mmHg [12.2] vs. 122.4 mmHg [11.2], respectively). Further, there",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit-u-1604",
+      "claim_type": "unit_value",
+      "raw_text": "122.4 mmHg",
+      "numeric_values": [
+        122.4
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1604,
+      "sentence": "122.4 mmHg [11.2], respectively).",
+      "context_window": "SBP between \u201cactive\u201d and \u201csham\u201d HGNS (122.4 mmHg [12.2] vs. 122.4 mmHg [11.2], respectively). Further, there was no significant di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit-u-1742",
+      "claim_type": "unit_value",
+      "raw_text": "115.0 mmHg",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1742,
+      "sentence": "Further, there was no significant difference in mean SBP during sleep between \u201cactive\u201d and \u201csham\u201d HGNS (115.0 mmHg [15.2] vs.",
+      "context_window": "in mean SBP during sleep between \u201cactive\u201d and \u201csham\u201d HGNS (115.0 mmHg [15.2] vs. 115.2 mmHg [14.4], respectively).</jats:p> </jat",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsac079_781_0785_cardiovascular_outcomes_for_obstructive_sleep_apnea_wit-u-1764",
+      "claim_type": "unit_value",
+      "raw_text": "115.2 mmHg",
+      "numeric_values": [
+        115.2
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1764,
+      "sentence": "115.2 mmHg [14.4], respectively).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>This is a randomized controlled trial evaluating cardiovascular outcomes in patients with OSA using HGNS therapy.",
+      "context_window": "eep between \u201cactive\u201d and \u201csham\u201d HGNS (115.0 mmHg [15.2] vs. 115.2 mmHg [14.4], respectively).</jats:p> </jats:sec> <jats:sec> <jat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

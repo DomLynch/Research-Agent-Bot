@@ -1,0 +1,4192 @@
+{
+  "paper_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh",
+  "doi": "10.1016/j.hrthm.2026.01.007",
+  "extracted_at": "2026-05-08T20:01:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 28,
+    "mean_sd": 19,
+    "sample_size": 36,
+    "percentage": 106,
+    "p_value": 42
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-589",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 589,
+      "sentence": "Young (\u22641 year) and aged (\u22654 years) New Zealand White rabbits were evaluated using optical mapping, patch-clamp electrophysiology, and histologic and molecular analyses.",
+      "context_window": "her senolytic therapy can mitigate this phenotype. Young (\u22641 year) and aged (\u22654 years) New Zealand White rabbits were evaluat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-608",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 608,
+      "sentence": "Young (\u22641 year) and aged (\u22654 years) New Zealand White rabbits were evaluated using optical mapping, patch-clamp electrophysiology, and histologic and molecular analyses.",
+      "context_window": "py can mitigate this phenotype. Young (\u22641 year) and aged (\u22654 years) New Zealand White rabbits were evaluated using optical map",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-769",
+      "claim_type": "mean_sd",
+      "raw_text": "393.5 \u00b1 128.1",
+      "numeric_values": [
+        393.5,
+        128.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 769,
+      "sentence": "In the ex vivo OM setting, spontaneous AF episodes lasted 393.5 \u00b1 128.1 seconds on average (n = 5 episodes in 3 of 13 hearts).",
+      "context_window": ". In the ex vivo OM setting, spontaneous AF episodes lasted 393.5 \u00b1 128.1 seconds on average (n = 5 episodes in 3 of 13 hearts). Thes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-803",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 803,
+      "sentence": "In the ex vivo OM setting, spontaneous AF episodes lasted 393.5 \u00b1 128.1 seconds on average (n = 5 episodes in 3 of 13 hearts).",
+      "context_window": "aneous AF episodes lasted 393.5 \u00b1 128.1 seconds on average (n = 5 episodes in 3 of 13 hearts). These data demonstrate prolong",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-1303",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 1303,
+      "sentence": "ECGs were recorded at 50 mm/s.",
+      "context_window": "d atrial activity consistent with AF. ECGs were recorded at 50 mm/s. C: Sample ex vivo ECG traces showing normal sinus rhythm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-1633",
+      "claim_type": "percentage",
+      "raw_text": "23.1%",
+      "numeric_values": [
+        23.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1633,
+      "sentence": "E: Historic data of ex vivo intact heart optical mapping show that 23.1% of aged rabbit atria showed spontaneous AF ( red ) (n = 3/13), whereas young atria showed spontaneous AF ( red ) rarely (n = 3/163; 1.8%) compared with no spontaneous AF ( gray ).",
+      "context_window": "oric data of ex vivo intact heart optical mapping show that 23.1% of aged rabbit atria showed spontaneous AF ( red ) (n = 3/1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-1691",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1691,
+      "sentence": "E: Historic data of ex vivo intact heart optical mapping show that 23.1% of aged rabbit atria showed spontaneous AF ( red ) (n = 3/13), whereas young atria showed spontaneous AF ( red ) rarely (n = 3/163; 1.8%) compared with no spontaneous AF ( gray ).",
+      "context_window": "t 23.1% of aged rabbit atria showed spontaneous AF ( red ) (n = 3/13), whereas young atria showed spontaneous AF ( red ) rare",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-1760",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1760,
+      "sentence": "E: Historic data of ex vivo intact heart optical mapping show that 23.1% of aged rabbit atria showed spontaneous AF ( red ) (n = 3/13), whereas young atria showed spontaneous AF ( red ) rarely (n = 3/163; 1.8%) compared with no spontaneous AF ( gray ).",
+      "context_window": ", whereas young atria showed spontaneous AF ( red ) rarely (n = 3/163; 1.8%) compared with no spontaneous AF ( gray ). Fisher",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-1771",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1771,
+      "sentence": "E: Historic data of ex vivo intact heart optical mapping show that 23.1% of aged rabbit atria showed spontaneous AF ( red ) (n = 3/13), whereas young atria showed spontaneous AF ( red ) rarely (n = 3/163; 1.8%) compared with no spontaneous AF ( gray ).",
+      "context_window": "oung atria showed spontaneous AF ( red ) rarely (n = 3/163; 1.8%) compared with no spontaneous AF ( gray ). Fisher\u2019s exact t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-1842",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1842,
+      "sentence": "Fisher\u2019s exact test ** P < .01.",
+      "context_window": "red with no spontaneous AF ( gray ). Fisher\u2019s exact test ** P < .01. AF = atrial fibrillation; ECG = electrocardiogram; SR = si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-2508",
+      "claim_type": "mean_sd",
+      "raw_text": "7.2 \u00b1 7.8",
+      "numeric_values": [
+        7.2,
+        7.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2508,
+      "sentence": "11 S1S2 protocol-induced AF had an average duration of 7.2 \u00b1 7.8 seconds (n = 11 episodes in 8 of 13 aged hearts) ( Figure 2G ) but not in young atria (n = 0/8).",
+      "context_window": "ans. 11 S1S2 protocol-induced AF had an average duration of 7.2 \u00b1 7.8 seconds (n = 11 episodes in 8 of 13 aged hearts) ( Figure 2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-2527",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2527,
+      "sentence": "11 S1S2 protocol-induced AF had an average duration of 7.2 \u00b1 7.8 seconds (n = 11 episodes in 8 of 13 aged hearts) ( Figure 2G ) but not in young atria (n = 0/8).",
+      "context_window": "ol-induced AF had an average duration of 7.2 \u00b1 7.8 seconds (n = 11 episodes in 8 of 13 aged hearts) ( Figure 2G ) but not in y",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-2605",
+      "claim_type": "sample_size",
+      "raw_text": "n = 0",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2605,
+      "sentence": "11 S1S2 protocol-induced AF had an average duration of 7.2 \u00b1 7.8 seconds (n = 11 episodes in 8 of 13 aged hearts) ( Figure 2G ) but not in young atria (n = 0/8).",
+      "context_window": "8 of 13 aged hearts) ( Figure 2G ) but not in young atria (n = 0/8). Detailed maps of AF showed that both focal activity and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-3203",
+      "claim_type": "p_value",
+      "raw_text": "P = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3203,
+      "sentence": "APD dispersion was significantly higher in the aged atria ( P = .03), explaining frequent reentry and AF induction under the S1S2 stimulation protocol.",
+      "context_window": "APD dispersion was significantly higher in the aged atria ( P = .03), explaining frequent reentry and AF induction under the S1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-3330",
+      "claim_type": "p_value",
+      "raw_text": "P = .24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3330,
+      "sentence": "However, slowing of CV reduction ( P = .24) and APD prolongation ( P = .39) did not reach statistical significance owing to increased intragroup variation in aged rabbits (standard deviation [SD] of CV 0.08 m/s in young vs 0.12 m/s in old; SD of APD 6 ms in young vs 19 ms in aged).",
+      "context_window": "S2 stimulation protocol. However, slowing of CV reduction ( P = .24) and APD prolongation ( P = .39) did not reach statistical",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-3362",
+      "claim_type": "p_value",
+      "raw_text": "P = .39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3362,
+      "sentence": "However, slowing of CV reduction ( P = .24) and APD prolongation ( P = .39) did not reach statistical significance owing to increased intragroup variation in aged rabbits (standard deviation [SD] of CV 0.08 m/s in young vs 0.12 m/s in old; SD of APD 6 ms in young vs 19 ms in aged).",
+      "context_window": ", slowing of CV reduction ( P = .24) and APD prolongation ( P = .39) did not reach statistical significance owing to increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-3497",
+      "claim_type": "unit_value",
+      "raw_text": "0.08 m/s",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 3497,
+      "sentence": "However, slowing of CV reduction ( P = .24) and APD prolongation ( P = .39) did not reach statistical significance owing to increased intragroup variation in aged rabbits (standard deviation [SD] of CV 0.08 m/s in young vs 0.12 m/s in old; SD of APD 6 ms in young vs 19 ms in aged).",
+      "context_window": "up variation in aged rabbits (standard deviation [SD] of CV 0.08 m/s in young vs 0.12 m/s in old; SD of APD 6 ms in young vs 19",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-3518",
+      "claim_type": "unit_value",
+      "raw_text": "0.12 m/s",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 3518,
+      "sentence": "However, slowing of CV reduction ( P = .24) and APD prolongation ( P = .39) did not reach statistical significance owing to increased intragroup variation in aged rabbits (standard deviation [SD] of CV 0.08 m/s in young vs 0.12 m/s in old; SD of APD 6 ms in young vs 19 ms in aged).",
+      "context_window": "rabbits (standard deviation [SD] of CV 0.08 m/s in young vs 0.12 m/s in old; SD of APD 6 ms in young vs 19 ms in aged). Charact",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-5445",
+      "claim_type": "p_value",
+      "raw_text": "P = .24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5445,
+      "sentence": "There are trends in CV reduction ( P = .24) and APD prolongation ( P = .39) and significantly increased APD dispersion ( P = .03) in the aged rabbit left atria (n = 7).",
+      "context_window": "ed ( red ) rabbit atria. There are trends in CV reduction ( P = .24) and APD prolongation ( P = .39) and significantly increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-5477",
+      "claim_type": "p_value",
+      "raw_text": "P = .39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5477,
+      "sentence": "There are trends in CV reduction ( P = .24) and APD prolongation ( P = .39) and significantly increased APD dispersion ( P = .03) in the aged rabbit left atria (n = 7).",
+      "context_window": "re trends in CV reduction ( P = .24) and APD prolongation ( P = .39) and significantly increased APD dispersion ( P = .03) in t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-5531",
+      "claim_type": "p_value",
+      "raw_text": "P = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5531,
+      "sentence": "There are trends in CV reduction ( P = .24) and APD prolongation ( P = .39) and significantly increased APD dispersion ( P = .03) in the aged rabbit left atria (n = 7).",
+      "context_window": "ion ( P = .39) and significantly increased APD dispersion ( P = .03) in the aged rabbit left atria (n = 7). L: AF ( red ) was s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-5571",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5571,
+      "sentence": "There are trends in CV reduction ( P = .24) and APD prolongation ( P = .39) and significantly increased APD dispersion ( P = .03) in the aged rabbit left atria (n = 7).",
+      "context_window": "ed APD dispersion ( P = .03) in the aged rabbit left atria (n = 7). L: AF ( red ) was successfully induced with the S1S2 stim",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5656",
+      "claim_type": "percentage",
+      "raw_text": "61.5%",
+      "numeric_values": [
+        61.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5656,
+      "sentence": "L: AF ( red ) was successfully induced with the S1S2 stimulation protocol in 61.5% of aged rabbits (n = 8/13), whereas no instances of induced AF (gray) (n = 0/8) were observed in young rabbits.",
+      "context_window": "successfully induced with the S1S2 stimulation protocol in 61.5% of aged rabbits (n = 8/13), whereas no instances of induced",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-5679",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5679,
+      "sentence": "L: AF ( red ) was successfully induced with the S1S2 stimulation protocol in 61.5% of aged rabbits (n = 8/13), whereas no instances of induced AF (gray) (n = 0/8) were observed in young rabbits.",
+      "context_window": "ith the S1S2 stimulation protocol in 61.5% of aged rabbits (n = 8/13), whereas no instances of induced AF (gray) (n = 0/8) we",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-5733",
+      "claim_type": "sample_size",
+      "raw_text": "n = 0",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5733,
+      "sentence": "L: AF ( red ) was successfully induced with the S1S2 stimulation protocol in 61.5% of aged rabbits (n = 8/13), whereas no instances of induced AF (gray) (n = 0/8) were observed in young rabbits.",
+      "context_window": "bits (n = 8/13), whereas no instances of induced AF (gray) (n = 0/8) were observed in young rabbits. AF = atrial fibrillation",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5872",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5872,
+      "sentence": "AF = atrial fibrillation; AP = action potential; APD = action potential duration; APD 90 = APD at 90% repolarization level; CV = conduction velocity; ECG = electrocardiogram; LA = left atrium; RA = right atrium.",
+      "context_window": "potential; APD = action potential duration; APD 90 = APD at 90% repolarization level; CV = conduction velocity; ECG = elect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-6093",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6093,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "hly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6125",
+      "claim_type": "mean_sd",
+      "raw_text": "3.2 \u00b1 2.5",
+      "numeric_values": [
+        3.2,
+        2.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6125,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6144",
+      "claim_type": "mean_sd",
+      "raw_text": "6.5 \u00b1 2.7",
+      "numeric_values": [
+        6.5,
+        2.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6144,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "t APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-6158",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6158,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "epolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-6176",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6176,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "l (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6208",
+      "claim_type": "mean_sd",
+      "raw_text": "8.5 \u00b1 4.9",
+      "numeric_values": [
+        8.5,
+        4.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6208,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "\u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolari",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6227",
+      "claim_type": "mean_sd",
+      "raw_text": "36.3 \u00b1 19.9",
+      "numeric_values": [
+        36.3,
+        19.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6227,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": ", APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-6243",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6243,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "olarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-6265",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6265,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "ng 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6307",
+      "claim_type": "mean_sd",
+      "raw_text": "86.8 \u00b1 37.5",
+      "numeric_values": [
+        86.8,
+        37.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6307,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": ".001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6328",
+      "claim_type": "mean_sd",
+      "raw_text": "134.4 \u00b1 44.3",
+      "numeric_values": [
+        134.4,
+        44.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6328,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial my",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-6345",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6345,
+      "sentence": "Patch-clamp recordings of atrial myocytes freshly isolated from aged and young rabbits showed that APD at 30% repolarization level (young 3.2 \u00b1 2.5 ms; aged 6.5 \u00b1 2.7 ms; P < .001), APD at 50% repolarization level (young 8.5 \u00b1 4.9 ms; aged 36.3 \u00b1 19.9 ms; P < .001), and APD at 90% repolarization level (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compared with young ( Figure 3 ).",
+      "context_window": "evel (APD 90 ) (young 86.8 \u00b1 37.5 ms; aged 134.4 \u00b1 44.3 ms; P < .01) were significantly prolonged in aged atrial myocytes compa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6503",
+      "claim_type": "mean_sd",
+      "raw_text": "278.3 \u00b1 59.5",
+      "numeric_values": [
+        278.3,
+        59.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6503,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "ere were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (yo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6526",
+      "claim_type": "mean_sd",
+      "raw_text": "283.9 \u00b1 59.7",
+      "numeric_values": [
+        283.9,
+        59.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6526,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; ag",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6579",
+      "claim_type": "mean_sd",
+      "raw_text": "147.2 \u00b1 14.1",
+      "numeric_values": [
+        147.2,
+        14.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6579,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (yo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6601",
+      "claim_type": "mean_sd",
+      "raw_text": "144.6 \u00b1 13",
+      "numeric_values": [
+        144.6,
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6601,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms;",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6655",
+      "claim_type": "mean_sd",
+      "raw_text": "79.4 \u00b1 36.7",
+      "numeric_values": [
+        79.4,
+        36.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6655,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (yo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6676",
+      "claim_type": "mean_sd",
+      "raw_text": "93.5 \u00b1 30.6",
+      "numeric_values": [
+        93.5,
+        30.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6676,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6731",
+      "claim_type": "mean_sd",
+      "raw_text": "74.4 \u00b1 4.4",
+      "numeric_values": [
+        74.4,
+        4.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6731,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV). APs of atrial myocytes from youn",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-6752",
+      "claim_type": "mean_sd",
+      "raw_text": "72.9 \u00b1 3.8",
+      "numeric_values": [
+        72.9,
+        3.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6752,
+      "sentence": "There were no significant differences in maximum dV/dt (young 278.3 \u00b1 59.5 V/s; aged 283.9 \u00b1 59.7 V/s), action potential amplitude (young 147.2 \u00b1 14.1 mV; aged 144.6 \u00b1 13 mV), action potential triangulation (young 79.4 \u00b1 36.7 ms; aged 93.5 \u00b1 30.6 ms), or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV).",
+      "context_window": "or resting membrane potential (young -74.4 \u00b1 4.4 mV; aged -72.9 \u00b1 3.8 mV). APs of atrial myocytes from young and aged rabbits. A",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-7530",
+      "claim_type": "p_value",
+      "raw_text": "P = .79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7530,
+      "sentence": "Aged maximum dV/dt is not changed compared with young ( t test, equal variance, P = .79).",
+      "context_window": "s not changed compared with young ( t test, equal variance, P = .79). C: Mean APD at 30% repolarization (APD 30 ) of young (19",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-7555",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7555,
+      "sentence": "C: Mean APD at 30% repolarization (APD 30 ) of young (19 cells, 4 hearts) and old rabbit atrial myocytes (16 cells, 4 hearts).",
+      "context_window": "th young ( t test, equal variance, P = .79). C: Mean APD at 30% repolarization (APD 30 ) of young (19 cells, 4 hearts) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-7747",
+      "claim_type": "p_value",
+      "raw_text": "P = .0009",
+      "numeric_values": [
+        0.0009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7747,
+      "sentence": "Aged APD 30 is significantly longer than young APD 30 ( t test, equal variance, P = .0009).",
+      "context_window": "ficantly longer than young APD 30 ( t test, equal variance, P = .0009). D: Mean APD at 50% repolarization (APD 50 ) of young (16",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-7774",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7774,
+      "sentence": "D: Mean APD at 50% repolarization (APD 50 ) of young (16 cells, 4 hearts) and old rabbit atrial myocytes (17 cells, 4 hearts).",
+      "context_window": "APD 30 ( t test, equal variance, P = .0009). D: Mean APD at 50% repolarization (APD 50 ) of young (16 cells, 4 hearts) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-7996",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7996,
+      "sentence": "E: Mean APD at 90% repolarization (APD 90 ) of young (18 cells, 4 hearts) and old rabbit atrial myocytes (18 cells, 4 hearts).",
+      "context_window": "50 ( t test, unequal variance, P = 3.8e-5). E: Mean APD at 90% repolarization (APD 90 ) of young (18 cells, 4 hearts) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-8188",
+      "claim_type": "p_value",
+      "raw_text": "P = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8188,
+      "sentence": "Aged APD 90 is significantly longer than young APD 90 ( t test, equal variance, P = .002).",
+      "context_window": "ficantly longer than young APD 90 ( t test, equal variance, P = .002). F: Mean APD triangulation (APDtri = APD 90 - APD 50 ) of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-8388",
+      "claim_type": "p_value",
+      "raw_text": "P = .2",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8388,
+      "sentence": "No significant difference ( t test, equal variance, P = .2).",
+      "context_window": "earts). No significant difference ( t test, equal variance, P = .2). G: Mean AP amplitude of young (18 cells, 4 hearts) and ol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-8553",
+      "claim_type": "p_value",
+      "raw_text": "P = .6",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8553,
+      "sentence": "No significant difference ( t test, equal variance, P = .6).",
+      "context_window": "earts). No significant difference ( t test, equal variance, P = .6). H: Mean resting membrane potential (RMP) of young (16 cel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-8738",
+      "claim_type": "p_value",
+      "raw_text": "P = .3",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8738,
+      "sentence": "No significant difference ( t test, equal variance, P = .3).",
+      "context_window": "earts). No significant difference ( t test, equal variance, P = .3). All column plots show mean \u00b1 standard deviation. Scatter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9199",
+      "claim_type": "percentage",
+      "raw_text": "17.2%",
+      "numeric_values": [
+        17.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9199,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "ed rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA]",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9207",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9207,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "ts contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9222",
+      "claim_type": "percentage",
+      "raw_text": "12.5%",
+      "numeric_values": [
+        12.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9222,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "ificantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9230",
+      "claim_type": "percentage",
+      "raw_text": "9.6%",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9230,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "y more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9247",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9247,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ). N",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9254",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9254,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ). No signi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9268",
+      "claim_type": "percentage",
+      "raw_text": "0.2%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9268,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "0.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ). No significant differe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9275",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9275,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "A] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ). No significant difference was",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-9286",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9286,
+      "sentence": "The results showed that the LAs and RAs of aged rabbits contain significantly more SA-\u03b2-Gal+ cells (aged 17.2% \u00b1 10.3% [RA] and 12.5% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ).",
+      "context_window": "% \u00b1 9.6% [LA]; young 0.6% \u00b1 1.0% [RA] and 0.2% \u00b1 0.3% [LA]; P < .01) ( Figure 4B ). No significant difference was detected betw",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9471",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9471,
+      "sentence": "However, greater variability was observed within the aged group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflected in the electrophysiological parameters from the OM data ( Figure 2I - 2L ).",
+      "context_window": "r variability was observed within the aged group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [youn",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9487",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9487,
+      "sentence": "However, greater variability was observed within the aged group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflected in the electrophysiological parameters from the OM data ( Figure 2I - 2L ).",
+      "context_window": "s observed within the aged group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflect",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9511",
+      "claim_type": "percentage",
+      "raw_text": "9.6%",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9511,
+      "sentence": "However, greater variability was observed within the aged group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflected in the electrophysiological parameters from the OM data ( Figure 2I - 2L ).",
+      "context_window": "ed group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflected in the electrophysiol",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9526",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9526,
+      "sentence": "However, greater variability was observed within the aged group (SD for RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflected in the electrophysiological parameters from the OM data ( Figure 2I - 2L ).",
+      "context_window": "r RA 10.3% [aged] vs 1.0% [young]; SD for LA 9.6% [aged] vs 0.3% [young]), as reflected in the electrophysiological paramete",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-9811",
+      "claim_type": "unit_value",
+      "raw_text": "6 mm",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 9811,
+      "sentence": "The scale bar of the aged animal\u2019s 2\u00d7 image is 6 mm.",
+      "context_window": "imals (11m). The scale bar of the aged animal\u2019s 2\u00d7 image is 6 mm. The scale bar of the young animal\u2019s 2\u00d7 image is 4 mm. Scal",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-9865",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 9865,
+      "sentence": "The scale bar of the young animal\u2019s 2\u00d7 image is 4 mm.",
+      "context_window": "ge is 6 mm. The scale bar of the young animal\u2019s 2\u00d7 image is 4 mm. Scale bars of 40\u00d7 images are 60 \u03bcm. Blue color represents",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-9980",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9980,
+      "sentence": "Frozen sections were fixed in 0.5% glutaraldehyde, stained with X-gal at 37 \u00b0 C (no CO 2 ) for 16 hours, and counterstained with nuclear fast red (NFR).",
+      "context_window": "presents SA-\u03b2-Gal positivity. Frozen sections were fixed in 0.5% glutaraldehyde, stained with X-gal at 37 \u00b0 C (no CO 2 ) for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-10290",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10290,
+      "sentence": "5 randomly selected representative images at 40\u00d7 per animal were used for quantification. ** P < .01, Mann-Whitney U test (n = 6 aged and n = 7 young rabbits).",
+      "context_window": "e images at 40\u00d7 per animal were used for quantification. ** P < .01, Mann-Whitney U test (n = 6 aged and n = 7 young rabbits).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-10320",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10320,
+      "sentence": "5 randomly selected representative images at 40\u00d7 per animal were used for quantification. ** P < .01, Mann-Whitney U test (n = 6 aged and n = 7 young rabbits).",
+      "context_window": "e used for quantification. ** P < .01, Mann-Whitney U test (n = 6 aged and n = 7 young rabbits). C: Representative IF confoca",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-10335",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10335,
+      "sentence": "5 randomly selected representative images at 40\u00d7 per animal were used for quantification. ** P < .01, Mann-Whitney U test (n = 6 aged and n = 7 young rabbits).",
+      "context_window": "tification. ** P < .01, Mann-Whitney U test (n = 6 aged and n = 7 young rabbits). C: Representative IF confocal images showin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-11595",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11595,
+      "sentence": "A combined analysis was performed for both atria. n = 5 for aged, n = 5 for young animals.",
+      "context_window": "animals. A combined analysis was performed for both atria. n = 5 for aged, n = 5 for young animals. Scatter plots = mean \u00b1 S",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-11611",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11611,
+      "sentence": "A combined analysis was performed for both atria. n = 5 for aged, n = 5 for young animals.",
+      "context_window": "ined analysis was performed for both atria. n = 5 for aged, n = 5 for young animals. Scatter plots = mean \u00b1 SEM, * P < .05, *",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-11666",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11666,
+      "sentence": "Scatter plots = mean \u00b1 SEM, * P < .05, ** P < .01, Mann-Whitney U test.",
+      "context_window": "ged, n = 5 for young animals. Scatter plots = mean \u00b1 SEM, * P < .05, ** P < .01, Mann-Whitney U test. The percentage of SA-\u03b2-Ga",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-11678",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11678,
+      "sentence": "Scatter plots = mean \u00b1 SEM, * P < .05, ** P < .01, Mann-Whitney U test.",
+      "context_window": "or young animals. Scatter plots = mean \u00b1 SEM, * P < .05, ** P < .01, Mann-Whitney U test. The percentage of SA-\u03b2-Gal-positive c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12896",
+      "claim_type": "percentage",
+      "raw_text": "72.5%",
+      "numeric_values": [
+        72.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12896,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "fluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas age",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12904",
+      "claim_type": "percentage",
+      "raw_text": "8.8%",
+      "numeric_values": [
+        8.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12904,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "ence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12921",
+      "claim_type": "percentage",
+      "raw_text": "14.07%",
+      "numeric_values": [
+        14.07
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12921,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12930",
+      "claim_type": "percentage",
+      "raw_text": "4.04%",
+      "numeric_values": [
+        4.04
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12930,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12973",
+      "claim_type": "percentage",
+      "raw_text": "71.1%",
+      "numeric_values": [
+        71.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12973,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "in+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12981",
+      "claim_type": "percentage",
+      "raw_text": "10.9%",
+      "numeric_values": [
+        10.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12981,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ). Impor",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-12999",
+      "claim_type": "percentage",
+      "raw_text": "14.03%",
+      "numeric_values": [
+        14.03
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12999,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": "A+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ). Importantly, we observed",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13008",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13008,
+      "sentence": "Quantification of the immunofluorescence (IF) results revealed that the young atria had 72.5% \u00b1 8.8% desmin+ and 14.07% \u00b1 4.04% \u03b1SMA+ nuclei, whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ).",
+      "context_window": ", whereas aged atria had 71.1% \u00b1 10.9% desmin+ and 14.03% \u00b1 4.5% \u03b1SMA+ nuclei ( Figure 4E ). Importantly, we observed a sign",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13128",
+      "claim_type": "percentage",
+      "raw_text": "21.98%",
+      "numeric_values": [
+        21.98
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13128,
+      "sentence": "Importantly, we observed a significantly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01).",
+      "context_window": "significantly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01). Furthe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13137",
+      "claim_type": "percentage",
+      "raw_text": "14.7%",
+      "numeric_values": [
+        14.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13137,
+      "sentence": "Importantly, we observed a significantly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01).",
+      "context_window": "ntly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01). Furthermore, t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13153",
+      "claim_type": "percentage",
+      "raw_text": "0.08%",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13153,
+      "sentence": "Importantly, we observed a significantly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01).",
+      "context_window": "er of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01). Furthermore, these results dem",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13161",
+      "claim_type": "percentage",
+      "raw_text": "0.11%",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13161,
+      "sentence": "Importantly, we observed a significantly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01).",
+      "context_window": "2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01). Furthermore, these results demonstrate",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-13178",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13178,
+      "sentence": "Importantly, we observed a significantly higher number of \u03b3H2AX+ nuclei in aged atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01).",
+      "context_window": "ed atria (21.98% \u00b1 14.7% [aged] vs 0.08% \u00b1 0.11% [young]) ( P < .01). Furthermore, these results demonstrate that 85.8% \u00b1 5.86%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13232",
+      "claim_type": "percentage",
+      "raw_text": "85.8%",
+      "numeric_values": [
+        85.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13232,
+      "sentence": "Furthermore, these results demonstrate that 85.8% \u00b1 5.86% of the \u03b3H2AX+ nuclei in aged atria belong to myocytes as defined by desmin costaining and their rod shape typical of atrial myocytes ( Figure 4F ).",
+      "context_window": "g]) ( P < .01). Furthermore, these results demonstrate that 85.8% \u00b1 5.86% of the \u03b3H2AX+ nuclei in aged atria belong to myocyt",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13240",
+      "claim_type": "percentage",
+      "raw_text": "5.86%",
+      "numeric_values": [
+        5.86
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13240,
+      "sentence": "Furthermore, these results demonstrate that 85.8% \u00b1 5.86% of the \u03b3H2AX+ nuclei in aged atria belong to myocytes as defined by desmin costaining and their rod shape typical of atrial myocytes ( Figure 4F ).",
+      "context_window": "< .01). Furthermore, these results demonstrate that 85.8% \u00b1 5.86% of the \u03b3H2AX+ nuclei in aged atria belong to myocytes as de",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13407",
+      "claim_type": "percentage",
+      "raw_text": "13.04%",
+      "numeric_values": [
+        13.04
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13407,
+      "sentence": "In addition, 13.04% \u00b1 6.4% of the \u03b3H2AX+ nuclei stained positive for \u03b1SMA.",
+      "context_window": "hape typical of atrial myocytes ( Figure 4F ). In addition, 13.04% \u00b1 6.4% of the \u03b3H2AX+ nuclei stained positive for \u03b1SMA. We",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-13416",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13416,
+      "sentence": "In addition, 13.04% \u00b1 6.4% of the \u03b3H2AX+ nuclei stained positive for \u03b1SMA.",
+      "context_window": "cal of atrial myocytes ( Figure 4F ). In addition, 13.04% \u00b1 6.4% of the \u03b3H2AX+ nuclei stained positive for \u03b1SMA. We conduct",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-13811",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13811,
+      "sentence": "Reverse transcription qPCR revealed that transcript levels of p16 ( CDKN2A ) were 19.1-fold higher ( P < .01) in aged LAs and 6.3-fold higher ( P < .01) in aged RAs than young atria. p21 ( CDKN1A ) transcript levels were 2.7-fold higher ( P < .05) in aged RA, with a similar trend observed in aged LA ( Figure 5A ).",
+      "context_window": "transcript levels of p16 ( CDKN2A ) were 19.1-fold higher ( P < .01) in aged LAs and 6.3-fold higher ( P < .01) in aged RAs tha",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-13854",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13854,
+      "sentence": "Reverse transcription qPCR revealed that transcript levels of p16 ( CDKN2A ) were 19.1-fold higher ( P < .01) in aged LAs and 6.3-fold higher ( P < .01) in aged RAs than young atria. p21 ( CDKN1A ) transcript levels were 2.7-fold higher ( P < .05) in aged RA, with a similar trend observed in aged LA ( Figure 5A ).",
+      "context_window": ".1-fold higher ( P < .01) in aged LAs and 6.3-fold higher ( P < .01) in aged RAs than young atria. p21 ( CDKN1A ) transcript le",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-13949",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13949,
+      "sentence": "Reverse transcription qPCR revealed that transcript levels of p16 ( CDKN2A ) were 19.1-fold higher ( P < .01) in aged LAs and 6.3-fold higher ( P < .01) in aged RAs than young atria. p21 ( CDKN1A ) transcript levels were 2.7-fold higher ( P < .05) in aged RA, with a similar trend observed in aged LA ( Figure 5A ).",
+      "context_window": "ia. p21 ( CDKN1A ) transcript levels were 2.7-fold higher ( P < .05) in aged RA, with a similar trend observed in aged LA ( Fig",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-14118",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14118,
+      "sentence": "Western blot analysis confirmed that p21 protein levels were elevated 4.5-fold in aged LA ( P < .05) and 3.08-fold in aged RA ( P < .05), whereas total p53 and phospho-p53 (serine 15) levels remained unchanged ( Figure 5B ).",
+      "context_window": "that p21 protein levels were elevated 4.5-fold in aged LA ( P < .05) and 3.08-fold in aged RA ( P < .05), whereas total p53 and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-14154",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14154,
+      "sentence": "Western blot analysis confirmed that p21 protein levels were elevated 4.5-fold in aged LA ( P < .05) and 3.08-fold in aged RA ( P < .05), whereas total p53 and phospho-p53 (serine 15) levels remained unchanged ( Figure 5B ).",
+      "context_window": "d 4.5-fold in aged LA ( P < .05) and 3.08-fold in aged RA ( P < .05), whereas total p53 and phospho-p53 (serine 15) levels rema",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-15161",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15161,
+      "sentence": "Right: Scatter plots (mean \u00b1 SEM) show relative protein expression levels of p21, as well as p53 activation (phospho-p53-to-total p53 ratio) in the right and left atria of aged and young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits).",
+      "context_window": "io) in the right and left atria of aged and young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 youn",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-15173",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15173,
+      "sentence": "Right: Scatter plots (mean \u00b1 SEM) show relative protein expression levels of p21, as well as p53 activation (phospho-p53-to-total p53 ratio) in the right and left atria of aged and young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits).",
+      "context_window": "ight and left atria of aged and young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-15203",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15203,
+      "sentence": "Right: Scatter plots (mean \u00b1 SEM) show relative protein expression levels of p21, as well as p53 activation (phospho-p53-to-total p53 ratio) in the right and left atria of aged and young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits).",
+      "context_window": "d young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits). Proteins were extracted from",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-15218",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15218,
+      "sentence": "Right: Scatter plots (mean \u00b1 SEM) show relative protein expression levels of p21, as well as p53 activation (phospho-p53-to-total p53 ratio) in the right and left atria of aged and young rabbits * P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits).",
+      "context_window": "* P < .05, ** P < .01, Mann-Whitney U test (n = 5 aged and n = 5 young rabbits). Proteins were extracted from 20-30 mg of ra",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-15272",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 15272,
+      "sentence": "Proteins were extracted from 20-30 mg of rabbit atrial tissue using RIPA buffer with inhibitors.",
+      "context_window": "d and n = 5 young rabbits). Proteins were extracted from 20-30 mg of rabbit atrial tissue using RIPA buffer with inhibitors.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-15592",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15592,
+      "sentence": "C: Scatter plots depict RNA level expression differences of senescence genes p16 ( CDKN2A ) and p21( CDKN1A ) in aged vs young atria (*** P < .001).",
+      "context_window": "16 ( CDKN2A ) and p21( CDKN1A ) in aged vs young atria (*** P < .001). High-quality RNA was isolated using TRIzol and sent to Az",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-16463",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16463,
+      "sentence": "Bulk RNAseq of RA tissue from aged (n = 5) and young rabbits (n = 5) identified 247 upregulated and 116 downregulated genes in aged animals (false discovery rate < 0.05).",
+      "context_window": "f the mean; Y = young. Bulk RNAseq of RA tissue from aged (n = 5) and young rabbits (n = 5) identified 247 upregulated and 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-16489",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16489,
+      "sentence": "Bulk RNAseq of RA tissue from aged (n = 5) and young rabbits (n = 5) identified 247 upregulated and 116 downregulated genes in aged animals (false discovery rate < 0.05).",
+      "context_window": "lk RNAseq of RA tissue from aged (n = 5) and young rabbits (n = 5) identified 247 upregulated and 116 downregulated genes in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-16694",
+      "claim_type": "mean_sd",
+      "raw_text": "144.04 \u00b1 99.7",
+      "numeric_values": [
+        144.04,
+        99.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16694,
+      "sentence": "Consistent with qPCR results, p16 ( CDKN2A ) expression was significantly higher in aged atria (144.04 \u00b1 99.7 vs 36.7 \u00b1 6.8), whereas p21 ( CDKN1A ) showed a nonsignificant upward trend ( P = .127) ( Figure 5C ).",
+      "context_window": "CDKN2A ) expression was significantly higher in aged atria (144.04 \u00b1 99.7 vs 36.7 \u00b1 6.8), whereas p21 ( CDKN1A ) showed a nonsignific",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-16711",
+      "claim_type": "mean_sd",
+      "raw_text": "36.7 \u00b1 6.8",
+      "numeric_values": [
+        36.7,
+        6.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16711,
+      "sentence": "Consistent with qPCR results, p16 ( CDKN2A ) expression was significantly higher in aged atria (144.04 \u00b1 99.7 vs 36.7 \u00b1 6.8), whereas p21 ( CDKN1A ) showed a nonsignificant upward trend ( P = .127) ( Figure 5C ).",
+      "context_window": "on was significantly higher in aged atria (144.04 \u00b1 99.7 vs 36.7 \u00b1 6.8), whereas p21 ( CDKN1A ) showed a nonsignificant upward tre",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-16786",
+      "claim_type": "p_value",
+      "raw_text": "P = .127",
+      "numeric_values": [
+        0.127
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16786,
+      "sentence": "Consistent with qPCR results, p16 ( CDKN2A ) expression was significantly higher in aged atria (144.04 \u00b1 99.7 vs 36.7 \u00b1 6.8), whereas p21 ( CDKN1A ) showed a nonsignificant upward trend ( P = .127) ( Figure 5C ).",
+      "context_window": "ereas p21 ( CDKN1A ) showed a nonsignificant upward trend ( P = .127) ( Figure 5C ). The SenMayo gene set, 12 comprising 125 sen",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-16909",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16909,
+      "sentence": "The SenMayo gene set, 12 comprising 125 senescence-related genes, was significantly upregulated ( P < .05) in aged RA tissue ( Figure 5D ).",
+      "context_window": "5 senescence-related genes, was significantly upregulated ( P < .05) in aged RA tissue ( Figure 5D ). Concordantly, gene set en",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-17335",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17335,
+      "sentence": "We checked the degree of fibrosis of aged (n = 5) and young atria (n = 7) using Masson\u2019s trichrome ( Supplemental Figure 1A ).",
+      "context_window": "( Figure 5E ). We checked the degree of fibrosis of aged (n = 5) and young atria (n = 7) using Masson\u2019s trichrome ( Supplem",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-17359",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17359,
+      "sentence": "We checked the degree of fibrosis of aged (n = 5) and young atria (n = 7) using Masson\u2019s trichrome ( Supplemental Figure 1A ).",
+      "context_window": "ked the degree of fibrosis of aged (n = 5) and young atria (n = 7) using Masson\u2019s trichrome ( Supplemental Figure 1A ). High",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17552",
+      "claim_type": "percentage",
+      "raw_text": "16.6%",
+      "numeric_values": [
+        16.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17552,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "analysis. The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17560",
+      "claim_type": "percentage",
+      "raw_text": "12.1%",
+      "numeric_values": [
+        12.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17560,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "s. The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibroti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17586",
+      "claim_type": "percentage",
+      "raw_text": "6.1%",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17586,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "tal Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17593",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17593,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "ure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17642",
+      "claim_type": "percentage",
+      "raw_text": "8.4%",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17642,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs ar",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17649",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17649,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibro",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17675",
+      "claim_type": "percentage",
+      "raw_text": "9.9%",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17675,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "re fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas. The differences",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-17682",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17682,
+      "sentence": "The results ( Supplemental Figure 1B ) show that 16.6% \u00b1 12.1% of the aged LAs and 6.1% \u00b1 4.6% of the aged RAs are fibrotic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas.",
+      "context_window": "otic areas, whereas 8.4% \u00b1 2.9% of the young LAs and 9.9% \u00b1 2.6% of the young RAs are fibrotic areas. The differences betwee",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18242",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18242,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "lity in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18249",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18249,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-18296",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18296,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "ples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18304",
+      "claim_type": "percentage",
+      "raw_text": "1.98%",
+      "numeric_values": [
+        1.98
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18304,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18312",
+      "claim_type": "percentage",
+      "raw_text": "2.01%",
+      "numeric_values": [
+        2.01
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18312,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-18350",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18350,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "h AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18358",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18358,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "= 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18365",
+      "claim_type": "percentage",
+      "raw_text": "3.6%",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18365,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": ".98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-18402",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18402,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "ith SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18414",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18414,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5). Overall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-18421",
+      "claim_type": "percentage",
+      "raw_text": "1.97%",
+      "numeric_values": [
+        1.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18421,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5). Overall, there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-18463",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18463,
+      "sentence": "Not unexpectedly, there was a significant variability in the percentage of senescent cells in these samples: 2.9% \u00b1 3.8% in LAAs derived from individuals with AF (n = 6), 1.98% \u00b1 2.01% in LAAs of individuals with SR (n = 4), 2.7% \u00b1 3.6% in RAAs of individuals with AF (n = 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5).",
+      "context_window": "= 6), and 1.6% \u00b1 1.97% in the RAAs of individuals with SR (n = 5). Overall, there were no statistically significant differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-19296",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19296,
+      "sentence": "The average age of AF LAA (n = 6) and AF RAA (n = 6) is 63.8 years.",
+      "context_window": "SR or AF at the time of surgery. The average age of AF LAA (n = 6) and AF RAA (n = 6) is 63.8 years. The average age of SR LA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-19315",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19315,
+      "sentence": "The average age of AF LAA (n = 6) and AF RAA (n = 6) is 63.8 years.",
+      "context_window": "e of surgery. The average age of AF LAA (n = 6) and AF RAA (n = 6) is 63.8 years. The average age of SR LAA (n = 4) is 65.5 y",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-19325",
+      "claim_type": "unit_value",
+      "raw_text": "63.8 years",
+      "numeric_values": [
+        63.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 19325,
+      "sentence": "The average age of AF LAA (n = 6) and AF RAA (n = 6) is 63.8 years.",
+      "context_window": "ry. The average age of AF LAA (n = 6) and AF RAA (n = 6) is 63.8 years. The average age of SR LAA (n = 4) is 65.5 years, and SR RA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-19364",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19364,
+      "sentence": "The average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years.",
+      "context_window": "nd AF RAA (n = 6) is 63.8 years. The average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years. A summary",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-19374",
+      "claim_type": "unit_value",
+      "raw_text": "65.5 years",
+      "numeric_values": [
+        65.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 19374,
+      "sentence": "The average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years.",
+      "context_window": "(n = 6) is 63.8 years. The average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years. A summary of available p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-19398",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19398,
+      "sentence": "The average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years.",
+      "context_window": "he average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years. A summary of available patient characterist",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-19408",
+      "claim_type": "unit_value",
+      "raw_text": "63.6 years",
+      "numeric_values": [
+        63.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 19408,
+      "sentence": "The average age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years.",
+      "context_window": "age of SR LAA (n = 4) is 65.5 years, and SR RAA (n = 5) is 63.6 years. A summary of available patient characteristics, including",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-19939",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19939,
+      "sentence": "Anonymized RAA samples from individuals with AF (n = 5) or SR rhythm (n = 5) were analyzed using IF.",
+      "context_window": "s rhythm. Anonymized RAA samples from individuals with AF (n = 5) or SR rhythm (n = 5) were analyzed using IF. Representativ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-19960",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19960,
+      "sentence": "Anonymized RAA samples from individuals with AF (n = 5) or SR rhythm (n = 5) were analyzed using IF.",
+      "context_window": "RAA samples from individuals with AF (n = 5) or SR rhythm (n = 5) were analyzed using IF. Representative confocal images of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-20216",
+      "claim_type": "percentage",
+      "raw_text": "60.1%",
+      "numeric_values": [
+        60.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20216,
+      "sentence": "The proportion of desmin-positive nuclei was similar between AF and SR samples (60.1% \u00b1 7.9 vs 59.7% \u00b1 10.6, respectively).",
+      "context_window": "smin-positive nuclei was similar between AF and SR samples (60.1% \u00b1 7.9 vs 59.7% \u00b1 10.6, respectively). Likewise, staining fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-20231",
+      "claim_type": "percentage",
+      "raw_text": "59.7%",
+      "numeric_values": [
+        59.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20231,
+      "sentence": "The proportion of desmin-positive nuclei was similar between AF and SR samples (60.1% \u00b1 7.9 vs 59.7% \u00b1 10.6, respectively).",
+      "context_window": "uclei was similar between AF and SR samples (60.1% \u00b1 7.9 vs 59.7% \u00b1 10.6, respectively). Likewise, staining for the myofibrob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-20397",
+      "claim_type": "percentage",
+      "raw_text": "25.6%",
+      "numeric_values": [
+        25.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20397,
+      "sentence": "Likewise, staining for the myofibroblast marker \u03b1SMA ( Figure 7B ) revealed no significant difference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%).",
+      "context_window": "o significant difference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%). IF and IHC data from human righ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-20405",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20405,
+      "sentence": "Likewise, staining for the myofibroblast marker \u03b1SMA ( Figure 7B ) revealed no significant difference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%).",
+      "context_window": "icant difference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%). IF and IHC data from human right atria",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-20414",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20414,
+      "sentence": "Likewise, staining for the myofibroblast marker \u03b1SMA ( Figure 7B ) revealed no significant difference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%).",
+      "context_window": "ference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%). IF and IHC data from human right atrial specimen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-20422",
+      "claim_type": "percentage",
+      "raw_text": "14.8%",
+      "numeric_values": [
+        14.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20422,
+      "sentence": "Likewise, staining for the myofibroblast marker \u03b1SMA ( Figure 7B ) revealed no significant difference in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%).",
+      "context_window": "in \u03b1SMA+ nuclei between groups (AF 25.6% \u00b1 6.6%; SR 21.9% \u00b1 14.8%). IF and IHC data from human right atrial specimens with a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-21438",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21438,
+      "sentence": "Scale bars of focused nuclear images and all CD68 images are 10 \u03bcm. n = 5 for AF, n = 5 for SR.",
+      "context_window": "rs of focused nuclear images and all CD68 images are 10 \u03bcm. n = 5 for AF, n = 5 for SR. The average age of AF RAA is 65.8 yea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-21452",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21452,
+      "sentence": "Scale bars of focused nuclear images and all CD68 images are 10 \u03bcm. n = 5 for AF, n = 5 for SR.",
+      "context_window": "nuclear images and all CD68 images are 10 \u03bcm. n = 5 for AF, n = 5 for SR. The average age of AF RAA is 65.8 years. The averag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-21495",
+      "claim_type": "unit_value",
+      "raw_text": "65.8 years",
+      "numeric_values": [
+        65.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 21495,
+      "sentence": "The average age of AF RAA is 65.8 years.",
+      "context_window": "m. n = 5 for AF, n = 5 for SR. The average age of AF RAA is 65.8 years. The average age of SR RAA is 68.3 years. Scatter plot = me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-21536",
+      "claim_type": "unit_value",
+      "raw_text": "68.3 years",
+      "numeric_values": [
+        68.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 21536,
+      "sentence": "The average age of SR RAA is 68.3 years.",
+      "context_window": "e age of AF RAA is 65.8 years. The average age of SR RAA is 68.3 years. Scatter plot = mean \u00b1 SEM, * P < .05, Mann-Whitney U test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-21577",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21577,
+      "sentence": "Scatter plot = mean \u00b1 SEM, * P < .05, Mann-Whitney U test.",
+      "context_window": "e age of SR RAA is 68.3 years. Scatter plot = mean \u00b1 SEM, * P < .05, Mann-Whitney U test. E: Representative images of female (F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22435",
+      "claim_type": "percentage",
+      "raw_text": "38.1%",
+      "numeric_values": [
+        38.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22435,
+      "sentence": "In contrast, AF samples displayed a significantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05).",
+      "context_window": "a significantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05). This increase was also",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22443",
+      "claim_type": "percentage",
+      "raw_text": "8.6%",
+      "numeric_values": [
+        8.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22443,
+      "sentence": "In contrast, AF samples displayed a significantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05).",
+      "context_window": "ficantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05). This increase was also observe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22451",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22451,
+      "sentence": "In contrast, AF samples displayed a significantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05).",
+      "context_window": "higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05). This increase was also observed in \u03b3H2A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22459",
+      "claim_type": "percentage",
+      "raw_text": "10.98%",
+      "numeric_values": [
+        10.98
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22459,
+      "sentence": "In contrast, AF samples displayed a significantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05).",
+      "context_window": "abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05). This increase was also observed in \u03b3H2AX+ nuclei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-22467",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22467,
+      "sentence": "In contrast, AF samples displayed a significantly higher abundance of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05).",
+      "context_window": "e of \u03b3H2AX+ nuclei than SR (38.1% \u00b1 8.6% vs 17.8% \u00b1 10.98%; P < .05). This increase was also observed in \u03b3H2AX+ nuclei colabele",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22549",
+      "claim_type": "percentage",
+      "raw_text": "26.6%",
+      "numeric_values": [
+        26.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22549,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "e was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22557",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22557,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "so observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22570",
+      "claim_type": "percentage",
+      "raw_text": "12.04%",
+      "numeric_values": [
+        12.04
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22570,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "n \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22579",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22579,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-22590",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22590,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "beled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22609",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22609,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22616",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22616,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22629",
+      "claim_type": "percentage",
+      "raw_text": "3.3%",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22629,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C . The proporti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22636",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22636,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "\u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C . The proportion of C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-22647",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22647,
+      "sentence": "This increase was also observed in \u03b3H2AX+ nuclei colabeled with desmin (26.6% \u00b1 5.4% [AF] vs 12.04% \u00b1 9.5% [SR]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C .",
+      "context_window": "]; P < .05) and \u03b1SMA (7.4% \u00b1 1.9% [AF] vs 3.3% \u00b1 2.3% [SR]; P < .05), as shown in Figure 7C . The proportion of CD68+ macrophag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22769",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22769,
+      "sentence": "The proportion of CD68+ macrophages/monocytes was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ).",
+      "context_window": "ophages/monocytes was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D )",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22776",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22776,
+      "sentence": "The proportion of CD68+ macrophages/monocytes was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ).",
+      "context_window": "/monocytes was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ). In ad",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22785",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22785,
+      "sentence": "The proportion of CD68+ macrophages/monocytes was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ).",
+      "context_window": "s was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ). In addition, i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-22792",
+      "claim_type": "percentage",
+      "raw_text": "4.03%",
+      "numeric_values": [
+        4.03
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22792,
+      "sentence": "The proportion of CD68+ macrophages/monocytes was low and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ).",
+      "context_window": "ow and comparable between groups (AF 3.1% \u00b1 3.2%; SR 3.2% \u00b1 4.03%; P = not significant) ( Figure 7D ). In addition, immunohis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-23037",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23037,
+      "sentence": "In addition, immunohistochemistry staining for p16 revealed qualitatively increased p16+ cells in aged vs young atrial tissue ( Figure 7E ); however, owing to the limited number of young human samples (n = 2), no statistical comparison was performed.",
+      "context_window": "owever, owing to the limited number of young human samples (n = 2), no statistical comparison was performed. Bulk RNAseq was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-msd-23269",
+      "claim_type": "mean_sd",
+      "raw_text": "60 \u00b1 12",
+      "numeric_values": [
+        60.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23269,
+      "sentence": "15 The cohort included 181 males and 84 females, with a mean age of 60 \u00b1 12 years; 235 patients were of European and 30 of African descent.",
+      "context_window": "ohort included 181 males and 84 females, with a mean age of 60 \u00b1 12 years; 235 patients were of European and 30 of African desc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-23274",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 23274,
+      "sentence": "15 The cohort included 181 males and 84 females, with a mean age of 60 \u00b1 12 years; 235 patients were of European and 30 of African descent.",
+      "context_window": "included 181 males and 84 females, with a mean age of 60 \u00b1 12 years; 235 patients were of European and 30 of African descent. T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-24935",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24935,
+      "sentence": "Nonsignificant P values ( P < .05).",
+      "context_window": "scular cell adhesion molecule 1. Nonsignificant P values ( P < .05). Positive correlation. Negative correlation. We investi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-25144",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25144,
+      "sentence": "We investigated the degree of fibrosis of human samples, which showed that individuals from both groups had a relatively large area of fibrosis in RAA (n = 5) compared with LAA samples (n = 5) ( Supplemental Figure 2A and 2B ).",
+      "context_window": "both groups had a relatively large area of fibrosis in RAA (n = 5) compared with LAA samples (n = 5) ( Supplemental Figure 2A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-25178",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25178,
+      "sentence": "We investigated the degree of fibrosis of human samples, which showed that individuals from both groups had a relatively large area of fibrosis in RAA (n = 5) compared with LAA samples (n = 5) ( Supplemental Figure 2A and 2B ).",
+      "context_window": "area of fibrosis in RAA (n = 5) compared with LAA samples (n = 5) ( Supplemental Figure 2A and 2B ). In particular, the AF g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25295",
+      "claim_type": "percentage",
+      "raw_text": "19.0%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25295,
+      "sentence": "In particular, the AF group\u2019s relative area of fibrosis of RAA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis.",
+      "context_window": "the AF group\u2019s relative area of fibrosis of RAA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibros",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25303",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25303,
+      "sentence": "In particular, the AF group\u2019s relative area of fibrosis of RAA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis.",
+      "context_window": "roup\u2019s relative area of fibrosis of RAA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25340",
+      "claim_type": "percentage",
+      "raw_text": "15.2%",
+      "numeric_values": [
+        15.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25340,
+      "sentence": "In particular, the AF group\u2019s relative area of fibrosis of RAA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis.",
+      "context_window": "AA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis. The LAA samples showed a relative fibroti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25348",
+      "claim_type": "percentage",
+      "raw_text": "10.2%",
+      "numeric_values": [
+        10.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25348,
+      "sentence": "In particular, the AF group\u2019s relative area of fibrosis of RAA samples was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis.",
+      "context_window": "es was 19.0% \u00b1 7.1% compared with the SR group with 15.2% \u00b1 10.2% fibrosis. The LAA samples showed a relative fibrotic area o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25415",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25415,
+      "sentence": "The LAA samples showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR).",
+      "context_window": "ibrosis. The LAA samples showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR). The differences between t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25422",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25422,
+      "sentence": "The LAA samples showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR).",
+      "context_window": ". The LAA samples showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR). The differences between the grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25436",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25436,
+      "sentence": "The LAA samples showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR).",
+      "context_window": "les showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR). The differences between the groups did not rea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-25443",
+      "claim_type": "percentage",
+      "raw_text": "5.9%",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 25443,
+      "sentence": "The LAA samples showed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR).",
+      "context_window": "wed a relative fibrotic area of 7.7% \u00b1 3.8% (AF) and 7.2% \u00b1 5.9% (SR). The differences between the groups did not reach stat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-26096",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 26096,
+      "sentence": "In protocol A, 2 consecutive daily doses were followed by a 3-week observation period; in protocol B, 2 weekly cycles of 2 daily doses were followed by 1 week of observation ( Figure 8A ).",
+      "context_window": "otocol B, 2 weekly cycles of 2 daily doses were followed by 1 week of observation ( Figure 8A ). ECGs and echocardiograms were",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26407",
+      "claim_type": "percentage",
+      "raw_text": "6.09%",
+      "numeric_values": [
+        6.09
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26407,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "ated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26415",
+      "claim_type": "percentage",
+      "raw_text": "1.24%",
+      "numeric_values": [
+        1.24
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26415,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "t of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26424",
+      "claim_type": "percentage",
+      "raw_text": "1.15%",
+      "numeric_values": [
+        1.15
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26424,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26432",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26432,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "t cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26456",
+      "claim_type": "percentage",
+      "raw_text": "7.28%",
+      "numeric_values": [
+        7.28
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26456,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05). By contrast,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26464",
+      "claim_type": "percentage",
+      "raw_text": "3.34%",
+      "numeric_values": [
+        3.34
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26464,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "om 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05). By contrast, 1 cycle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26473",
+      "claim_type": "percentage",
+      "raw_text": "1.23%",
+      "numeric_values": [
+        1.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26473,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "\u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05). By contrast, 1 cycle of 2-day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-26481",
+      "claim_type": "percentage",
+      "raw_text": "1.08%",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 26481,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05). By contrast, 1 cycle of 2-day treatmen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-26498",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26498,
+      "sentence": "The results ( Figure 8B and 8C ) show that fisetin treatment for 2 cycles eliminated most of the senescent cells from the LAs and RAs (from 6.09% \u00b1 1.24% to 1.15% \u00b1 0.9% in the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05).",
+      "context_window": "n the LA and from 7.28% \u00b1 3.34% to 1.23% \u00b1 1.08% in the RA; P < .05). By contrast, 1 cycle of 2-day treatment with fisetin fail",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-26804",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 26804,
+      "sentence": "Protocol A: animals received vehicle or fisetin (20 mg/kg) for 2 days throughout the protocol.",
+      "context_window": "protocols. Protocol A: animals received vehicle or fisetin (20 mg/kg) for 2 days throughout the protocol. Protocol B: animals",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-26818",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 26818,
+      "sentence": "Protocol A: animals received vehicle or fisetin (20 mg/kg) for 2 days throughout the protocol.",
+      "context_window": "tocol A: animals received vehicle or fisetin (20 mg/kg) for 2 days throughout the protocol. Protocol B: animals received eithe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-26895",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 26895,
+      "sentence": "Protocol B: animals received either fisetin (20 mg/kg) or vehicle 2 days per week and for 2 weekly cycles throughout the protocol.",
+      "context_window": "the protocol. Protocol B: animals received either fisetin (20 mg/kg) or vehicle 2 days per week and for 2 weekly cycles thro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-26916",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 26916,
+      "sentence": "Protocol B: animals received either fisetin (20 mg/kg) or vehicle 2 days per week and for 2 weekly cycles throughout the protocol.",
+      "context_window": "ol B: animals received either fisetin (20 mg/kg) or vehicle 2 days per week and for 2 weekly cycles throughout the protocol. B",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-27277",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27277,
+      "sentence": "C: Quantification results of percent SA-\u03b2-Gal+ cells. n = 3 for all groups.",
+      "context_window": "0 \u03bcm. C: Quantification results of percent SA-\u03b2-Gal+ cells. n = 3 for all groups. The average age per group is 4.4 years. Sca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-27328",
+      "claim_type": "unit_value",
+      "raw_text": "4.4 years",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 27328,
+      "sentence": "The average age per group is 4.4 years.",
+      "context_window": "+ cells. n = 3 for all groups. The average age per group is 4.4 years. Scatter plot: mean \u00b1 SEM, * P < .05. 1-way ANOVA with post",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-27367",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27367,
+      "sentence": "Scatter plot: mean \u00b1 SEM, * P < .05.",
+      "context_window": "age age per group is 4.4 years. Scatter plot: mean \u00b1 SEM, * P < .05. 1-way ANOVA with post hoc Tukey test. D and E: In the fise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-27569",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27569,
+      "sentence": "D and E: In the fisetin-treated group, spontaneous AF was absent and S1S2-induced AF was markedly reduced ( red , AF; green , no AF; Fisher\u2019s exact test * P < .05).",
+      "context_window": "ly reduced ( red , AF; green , no AF; Fisher\u2019s exact test * P < .05). F-H: Characterization of atrial action potential and AF i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-27759",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27759,
+      "sentence": "Preliminary results of APD and CV of fisetin ( blue ) or vehicle hearts ( red ) (n = 5 each).",
+      "context_window": "f APD and CV of fisetin ( blue ) or vehicle hearts ( red ) (n = 5 each). Column plots show mean \u00b1 standard deviation. Propaga",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-28405",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 28405,
+      "sentence": "AF = atrial fibrillation; ANOVA = analysis of variance; APD = action potential duration; BHH = beating heart harvest; CV = conduction velocity; ECG = electrocardiogram; LA = left atrium; NFR = nuclear fast red; RA = right atrium; SA-\u03b2-Gal = senescence-associated \u03b2-galactosidase; SEM = standard error of the mean; Veh = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment.",
+      "context_window": "e; SEM = standard error of the mean; Veh = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatm",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-28415",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 28415,
+      "sentence": "AF = atrial fibrillation; ANOVA = analysis of variance; APD = action potential duration; BHH = beating heart harvest; CV = conduction velocity; ECG = electrocardiogram; LA = left atrium; NFR = nuclear fast red; RA = right atrium; SA-\u03b2-Gal = senescence-associated \u03b2-galactosidase; SEM = standard error of the mean; Veh = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment.",
+      "context_window": "tandard error of the mean; Veh = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment. We n",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-28444",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 28444,
+      "sentence": "AF = atrial fibrillation; ANOVA = analysis of variance; APD = action potential duration; BHH = beating heart harvest; CV = conduction velocity; ECG = electrocardiogram; LA = left atrium; NFR = nuclear fast red; RA = right atrium; SA-\u03b2-Gal = senescence-associated \u03b2-galactosidase; SEM = standard error of the mean; Veh = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment.",
+      "context_window": "h = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment. We next applied protocol B to a l",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-28454",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 28454,
+      "sentence": "AF = atrial fibrillation; ANOVA = analysis of variance; APD = action potential duration; BHH = beating heart harvest; CV = conduction velocity; ECG = electrocardiogram; LA = left atrium; NFR = nuclear fast red; RA = right atrium; SA-\u03b2-Gal = senescence-associated \u03b2-galactosidase; SEM = standard error of the mean; Veh = vehicle; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment.",
+      "context_window": "e; 1-Cyc = 2 days to 1 week of treatment; 2-Cyc = 2 days to 2 weeks of treatment. We next applied protocol B to a larger cohor",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-n-28540",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 28540,
+      "sentence": "We next applied protocol B to a larger cohort of aged rabbits (n = 11 per group) blindly treated with fisetin or vehicle for 3 weeks.",
+      "context_window": "next applied protocol B to a larger cohort of aged rabbits (n = 11 per group) blindly treated with fisetin or vehicle for 3 we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-28602",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 28602,
+      "sentence": "We next applied protocol B to a larger cohort of aged rabbits (n = 11 per group) blindly treated with fisetin or vehicle for 3 weeks.",
+      "context_window": "= 11 per group) blindly treated with fisetin or vehicle for 3 weeks. Of note, none of the rabbits had any previously documented",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fisetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-28840",
+      "claim_type": "p_value",
+      "raw_text": "P = .476",
+      "numeric_values": [
+        0.476
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 28840,
+      "sentence": "Across the full cohort, ECG monitoring detected spontaneous AF in 2 of 11 vehicle-treated rabbits but in none of the 11 fisetin-treated rabbits (Fisher\u2019s exact test, P = .476).",
+      "context_window": "one of the 11 fisetin-treated rabbits (Fisher\u2019s exact test, P = .476). These 2 rabbits were subjected to OM. 4 fisetin-treated r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-29598",
+      "claim_type": "p_value",
+      "raw_text": "P = .048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29598,
+      "sentence": "Within this OM subset, programmed electrical stimulation induced AF in 4 of 4 vehicle-treated hearts but in only 1 of 5 fisetin-treated hearts (Fisher\u2019s exact test, P = .048) ( Figure 8D ).",
+      "context_window": "in only 1 of 5 fisetin-treated hearts (Fisher\u2019s exact test, P = .048) ( Figure 8D ). In addition, 2 vehicle hearts exhibited spo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-p-29778",
+      "claim_type": "p_value",
+      "raw_text": "P = .444",
+      "numeric_values": [
+        0.444
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29778,
+      "sentence": "In addition, 2 vehicle hearts exhibited spontaneous AF during OM, and 1 of these displayed sustained AF throughout the mapping study (Fisher\u2019s exact test, P = .444) ( Figure 8E ).",
+      "context_window": "ained AF throughout the mapping study (Fisher\u2019s exact test, P = .444) ( Figure 8E ). Fisetin treatment did not significantly alt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "vehicle",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-925",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 925,
+      "sentence": "For example, 1 cohort of patients aged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years.",
+      "context_window": "markedly with age. For example, 1 cohort of patients aged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-957",
+      "claim_type": "percentage",
+      "raw_text": "22.4%",
+      "numeric_values": [
+        22.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 957,
+      "sentence": "For example, 1 cohort of patients aged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years.",
+      "context_window": "1 cohort of patients aged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years. 18 Thus, our rabbi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-980",
+      "claim_type": "percentage",
+      "raw_text": "28.5%",
+      "numeric_values": [
+        28.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 980,
+      "sentence": "For example, 1 cohort of patients aged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years.",
+      "context_window": "ged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years. 18 Thus, our rabbit model prevalence of ~",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-994",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 994,
+      "sentence": "For example, 1 cohort of patients aged \u226565 years showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years.",
+      "context_window": "showed a prevalence of 22.4% at age 80-84 and 28.5% at age \u226585 years. 18 Thus, our rabbit model prevalence of ~12.5% falls withi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-1045",
+      "claim_type": "percentage",
+      "raw_text": "12.5%",
+      "numeric_values": [
+        12.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1045,
+      "sentence": "18 Thus, our rabbit model prevalence of ~12.5% falls within the lower range of aged-human values ( Figure 1 ).",
+      "context_window": "at age \u226585 years. 18 Thus, our rabbit model prevalence of ~12.5% falls within the lower range of aged-human values ( Figure",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-3024",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3024,
+      "sentence": "Our patch-clamp studies determined that, relative to young rabbit atrial myocytes, aged rabbit atrial myocytes showed significantly prolonged APD at 30% repolarization level, APD at 50% repolarization level, and APD 90 ( Figure 3 ).",
+      "context_window": "abbit atrial myocytes showed significantly prolonged APD at 30% repolarization level, APD at 50% repolarization level, and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-3057",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3057,
+      "sentence": "Our patch-clamp studies determined that, relative to young rabbit atrial myocytes, aged rabbit atrial myocytes showed significantly prolonged APD at 30% repolarization level, APD at 50% repolarization level, and APD 90 ( Figure 3 ).",
+      "context_window": "ificantly prolonged APD at 30% repolarization level, APD at 50% repolarization level, and APD 90 ( Figure 3 ). These change",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-4425",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4425,
+      "sentence": "In human AF samples, SA-\u03b2-Gal+ cell numbers showed a trend toward an increase but varied significantly (1%-9%), with no statistical difference between AF and SR groups ( Figure 6C ).",
+      "context_window": "showed a trend toward an increase but varied significantly (1%-9%), with no statistical difference between AF and SR group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-4428",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4428,
+      "sentence": "In human AF samples, SA-\u03b2-Gal+ cell numbers showed a trend toward an increase but varied significantly (1%-9%), with no statistical difference between AF and SR groups ( Figure 6C ).",
+      "context_window": "wed a trend toward an increase but varied significantly (1%-9%), with no statistical difference between AF and SR groups (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5186",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5186,
+      "sentence": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated.",
+      "context_window": "at are positive for the markers. Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5190",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5190,
+      "sentence": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated.",
+      "context_window": "re positive for the markers. Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, where",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5218",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5218,
+      "sentence": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated.",
+      "context_window": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5222",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5222,
+      "sentence": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated.",
+      "context_window": "diomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5270",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5270,
+      "sentence": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated.",
+      "context_window": "me and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-pct-5288",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5288,
+      "sentence": "Cardiomyocytes constitute ~70%-80% of cellular volume and ~30%-40% of total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated.",
+      "context_window": "total heart cells, whereas approximately 90% of rabbit and 25% of human cardiomyocytes are multinucleated. 25 The mechanis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13075518_senolytic_reduction_of_senescent_cells_mitigates_atrial_arrh-u-10911",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 10911,
+      "sentence": "Notably, preliminary extended fisetin treatment, consisting of repeated monthly doses over 5 months, seemed to maintain downregulation of inflammatory and senescence-associated pathways (including tumor necrosis factor \u03b1/nuclear factor kappa B signaling and the SenMayo gene set) while upregulating apoptotic programs, indicating prolonged suppression of proinflammatory and senescence signatures (data not shown).",
+      "context_window": "isetin treatment, consisting of repeated monthly doses over 5 months, seemed to maintain downregulation of inflammatory and sene",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "fisetin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi",
   "doi": "10.1001/jamanetworkopen.2026.6579",
-  "extracted_at": "2026-05-05T21:18:36+00:00",
+  "extracted_at": "2026-05-08T20:05:58+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 66,
@@ -21,10 +21,10 @@
       "sentence": "In this this cohort study including 14 528 patients, with 36% initiating low-dose aspirin at GCA diagnosis, low-dose aspirin was associated with reduced risk of major cardiovascular events, including all-cause mortality, at 1 year but with an increased risk of major hemorrhage.",
       "context_window": "In this this cohort study including 14 528 patients, with 36% initiating low-dose aspirin at GCA diagnosis, low-dose aspi",
       "claim_role": "effect",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-386",
@@ -40,7 +40,7 @@
       "context_window": "or cardiovascular events, including all-cause mortality, at 1 year but with an increased risk of major hemorrhage. The associa",
       "claim_role": "protocol",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -75,10 +75,10 @@
       "sentence": "The primary objective of our study was to evaluate the association of initiation of low-dose aspirin with primary prevention of MACE at 1 year in patients with incident GCA.",
       "context_window": "tion of low-dose aspirin with primary prevention of MACE at 1 year in patients with incident GCA. Secondary objectives include",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-2116",
@@ -111,7 +111,7 @@
       "sentence": "Participants were aged at least 50 years, alive at discharge, had an index hospitalization lasting no more than 28 days, and had no history of cardiovascular events (ie, myocardial infarction or revascularization, transient or established stroke, peripheral artery disease, or carotid artery stenosis), atrial fibrillation, or prior or concurrent anterior ischemic optic neuropathy at index hospitalization.",
       "context_window": "k-back period was 3 years. Participants were aged at least 50 years, alive at discharge, had an index hospitalization lasting n",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -129,7 +129,7 @@
       "sentence": "Participants were aged at least 50 years, alive at discharge, had an index hospitalization lasting no more than 28 days, and had no history of cardiovascular events (ie, myocardial infarction or revascularization, transient or established stroke, peripheral artery disease, or carotid artery stenosis), atrial fibrillation, or prior or concurrent anterior ischemic optic neuropathy at index hospitalization.",
       "context_window": "ischarge, had an index hospitalization lasting no more than 28 days, and had no history of cardiovascular events (ie, myocardia",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -166,9 +166,9 @@
       "context_window": "as. The exposure was initiation of low-dose aspirin (75 to 300 mg) at discharge of index hospitalization, as determined by ph",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-3283",
@@ -201,10 +201,10 @@
       "sentence": "The primary outcome was any MACE, defined as incident acute myocardial infarction, stroke, or death from any cause at 1 year.",
       "context_window": "e myocardial infarction, stroke, or death from any cause at 1 year. Secondary outcomes included additional time points (6 mont",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-3490",
@@ -219,10 +219,10 @@
       "sentence": "Secondary outcomes included additional time points (6 months, 2 years, and 3 years), individual components of the primary outcome, major hemorrhage (hospitalization for digestive, intracranial, or other bleeding as the primary diagnosis), and a composite of MACE and major hemorrhage, defined as net clinical benefit, in line with randomized trials.",
       "context_window": "1 year. Secondary outcomes included additional time points (6 months, 2 years, and 3 years), individual components of the primar",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-3500",
@@ -237,10 +237,10 @@
       "sentence": "Secondary outcomes included additional time points (6 months, 2 years, and 3 years), individual components of the primary outcome, major hemorrhage (hospitalization for digestive, intracranial, or other bleeding as the primary diagnosis), and a composite of MACE and major hemorrhage, defined as net clinical benefit, in line with randomized trials.",
       "context_window": "condary outcomes included additional time points (6 months, 2 years, and 3 years), individual components of the primary outcome",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-3513",
@@ -255,10 +255,10 @@
       "sentence": "Secondary outcomes included additional time points (6 months, 2 years, and 3 years), individual components of the primary outcome, major hemorrhage (hospitalization for digestive, intracranial, or other bleeding as the primary diagnosis), and a composite of MACE and major hemorrhage, defined as net clinical benefit, in line with randomized trials.",
       "context_window": "mes included additional time points (6 months, 2 years, and 3 years), individual components of the primary outcome, major hemor",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-6580",
@@ -274,7 +274,7 @@
       "context_window": "CVD event) or if aspirin use was interrupted for more than 90 days in the low-dose aspirin group (unless due to a major hemorr",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -310,7 +310,7 @@
       "context_window": "ring or before index hospitalization, censoring patients at 30 days if they had no corticosteroid dispensing by the end of this",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -328,7 +328,7 @@
       "context_window": "n dispensed before index date, reducing the grace period to 7 days, applying in the per-protocol analysis a 1-month carry-over",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -400,9 +400,9 @@
       "context_window": "roid dispensing after index date. A total of 5220 patients (36%) initiated low-dose aspirin within the 14 days following ho",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-336",
@@ -418,9 +418,9 @@
       "context_window": "f 5220 patients (36%) initiated low-dose aspirin within the 14 days following hospital discharge and 9269 patients (64%) did no",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-392",
@@ -436,9 +436,9 @@
       "context_window": "the 14 days following hospital discharge and 9269 patients (64%) did not. Most baseline characteristics were similar across",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-1058",
@@ -454,9 +454,9 @@
       "context_window": "n of treatment was 469 (172-1061) days, with 4344 patients (83%) receiving a dose of 75 mg/d and 5201 patients (>99%) recei",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-1083",
@@ -472,9 +472,9 @@
       "context_window": "72-1061) days, with 4344 patients (83%) receiving a dose of 75 mg/d and 5201 patients (>99%) receiving doses of 160 mg/d or les",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-1111",
@@ -490,9 +490,9 @@
       "context_window": "ients (83%) receiving a dose of 75 mg/d and 5201 patients (>99%) receiving doses of 160 mg/d or less. Abbreviations: ICD-1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-1135",
@@ -508,9 +508,9 @@
       "context_window": "dose of 75 mg/d and 5201 patients (>99%) receiving doses of 160 mg/d or less. Abbreviations: ICD-10 , International Statistical",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-1727",
@@ -561,8 +561,8 @@
       "sentence": "The 1-year MACE probability was lower in the low-dose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ).",
       "context_window": "he low-dose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) (",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -579,8 +579,8 @@
       "sentence": "The 1-year MACE probability was lower in the low-dose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ).",
       "context_window": "ose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -597,8 +597,8 @@
       "sentence": "The 1-year MACE probability was lower in the low-dose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ).",
       "context_window": "in group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ). We als",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -615,8 +615,8 @@
       "sentence": "The 1-year MACE probability was lower in the low-dose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ).",
       "context_window": "the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ). We also observed a",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -633,8 +633,8 @@
       "sentence": "The 1-year MACE probability was lower in the low-dose aspirin group than the control group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ).",
       "context_window": "ntrol group (RR, 0.86 [95% CI, 0.75% to 0.96%]; RD, -0.54% [95% CI, -0.99 to -0.12]) ( Figure 1 ). We also observed a lower",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -652,7 +652,7 @@
       "context_window": "ose aspirin group compared with the control group (RR 0.82 [95% CI, 0.68 to 0.95]; RD, -0.43% (95% CI, -0.77% to -0.10%), w",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -670,7 +670,7 @@
       "context_window": "ith the control group (RR 0.82 [95% CI, 0.68 to 0.95]; RD, -0.43% (95% CI, -0.77% to -0.10%), while no significant difference",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -688,7 +688,7 @@
       "context_window": "control group (RR 0.82 [95% CI, 0.68 to 0.95]; RD, -0.43% (95% CI, -0.77% to -0.10%), while no significant differences wer",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -706,7 +706,7 @@
       "context_window": "group (RR 0.82 [95% CI, 0.68 to 0.95]; RD, -0.43% (95% CI, -0.77% to -0.10%), while no significant differences were observed",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -724,7 +724,7 @@
       "context_window": "0.82 [95% CI, 0.68 to 0.95]; RD, -0.43% (95% CI, -0.77% to -0.10%), while no significant differences were observed for myocar",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -741,10 +741,10 @@
       "sentence": "The NNT to avoid a MACE at 1 year was 184 and to avoid 1 death was 232.",
       "context_window": "nfarction or stroke ( Table 2 ). The NNT to avoid a MACE at 1 year was 184 and to avoid 1 death was 232. At 1 year, we did not",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-2401",
@@ -759,7 +759,7 @@
       "sentence": "At 1 year, we did not observe any statistically significant difference in coronary events, cardiovascular death, or lower-limb ischemia, nor in the composite outcome of cardiovascular events (eTable 6 in Supplement 1 ).",
       "context_window": "d a MACE at 1 year was 184 and to avoid 1 death was 232. At 1 year, we did not observe any statistically significant differenc",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -813,8 +813,8 @@
       "sentence": "At 3 years, we observed a lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "context_window": "tween the low-dose aspirin group and the control group. At 3 years, we observed a lower risk of MACE in the low-dose aspirin g",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -831,8 +831,8 @@
       "sentence": "At 3 years, we observed a lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "context_window": "lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -849,8 +849,8 @@
       "sentence": "At 3 years, we observed a lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "context_window": "w-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]). In particular, stroke and myoc",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -867,8 +867,8 @@
       "sentence": "At 3 years, we observed a lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "context_window": "aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]). In particular, stroke and myocardia",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -885,8 +885,8 @@
       "sentence": "At 3 years, we observed a lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "context_window": "roup (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]). In particular, stroke and myocardial infarctio",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -903,8 +903,8 @@
       "sentence": "At 3 years, we observed a lower risk of MACE in the low-dose aspirin group (RR, 0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]).",
       "context_window": "0.88 [95% CI, 0.80 to 0.95]; RD, -1.08% [95% CI, -1.77% to -0.41%]). In particular, stroke and myocardial infarctions were si",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -922,7 +922,7 @@
       "context_window": "in the low-dose aspirin group than the control group (RD, -0.65% [95% CI, -1.02 to -0.27]), whereas lower-limb ischemia (RD,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -940,7 +940,7 @@
       "context_window": "low-dose aspirin group than the control group (RD, -0.65% [95% CI, -1.02 to -0.27]), whereas lower-limb ischemia (RD, 0.56",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -958,7 +958,7 @@
       "context_window": "[95% CI, -1.02 to -0.27]), whereas lower-limb ischemia (RD, 0.56% [95% CI, 0.24% to 0.81%]) and anterior optic ischemic neuro",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -976,7 +976,7 @@
       "context_window": ", -1.02 to -0.27]), whereas lower-limb ischemia (RD, 0.56% [95% CI, 0.24% to 0.81%]) and anterior optic ischemic neuropathy",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -994,7 +994,7 @@
       "context_window": "to -0.27]), whereas lower-limb ischemia (RD, 0.56% [95% CI, 0.24% to 0.81%]) and anterior optic ischemic neuropathy (RD, 0.29",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1012,7 +1012,7 @@
       "context_window": "), whereas lower-limb ischemia (RD, 0.56% [95% CI, 0.24% to 0.81%]) and anterior optic ischemic neuropathy (RD, 0.29% [95% CI",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1030,7 +1030,7 @@
       "context_window": ".24% to 0.81%]) and anterior optic ischemic neuropathy (RD, 0.29% [95% CI, 0.11% to 0.49%]) were more frequent, although the",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1048,7 +1048,7 @@
       "context_window": "0.81%]) and anterior optic ischemic neuropathy (RD, 0.29% [95% CI, 0.11% to 0.49%]) were more frequent, although the absol",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1066,7 +1066,7 @@
       "context_window": "and anterior optic ischemic neuropathy (RD, 0.29% [95% CI, 0.11% to 0.49%]) were more frequent, although the absolute number",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1084,7 +1084,7 @@
       "context_window": "rior optic ischemic neuropathy (RD, 0.29% [95% CI, 0.11% to 0.49%]) were more frequent, although the absolute number of anter",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1102,7 +1102,7 @@
       "context_window": "tic ischemic neuropathy events remained low (77 events over 3 years). Major hemorrhage probability at 1 year was higher in the",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1120,7 +1120,7 @@
       "context_window": "(77 events over 3 years). Major hemorrhage probability at 1 year was higher in the low-dose aspirin group than the control g",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1138,7 +1138,7 @@
       "context_window": "he low-dose aspirin group than the control group (RR, 1.29 [95% CI, 1.05 to 1.53]; RD, 0.51% [95% CI, 0.13 to 0.91]) ( Figu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1156,7 +1156,7 @@
       "context_window": "han the control group (RR, 1.29 [95% CI, 1.05 to 1.53]; RD, 0.51% [95% CI, 0.13 to 0.91]) ( Figure 2 ; eFigure 5 in Supplemen",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1174,7 +1174,7 @@
       "context_window": "control group (RR, 1.29 [95% CI, 1.05 to 1.53]; RD, 0.51% [95% CI, 0.13 to 0.91]) ( Figure 2 ; eFigure 5 in Supplement 1 )",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1210,7 +1210,7 @@
       "context_window": "1 year was 196. Major hemorrhage risk was not increased at 3 years in the low-dose aspirin group. Net clinical benefit was no",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1353,10 +1353,10 @@
       "sentence": "In the observational per-protocol analysis, the reduction in MACE risk associated with low-dose aspirin was similar to that observed in the ITT analogue analysis (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0.80]).",
       "context_window": "to that observed in the ITT analogue analysis (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-5486",
@@ -1371,10 +1371,10 @@
       "sentence": "In the observational per-protocol analysis, the reduction in MACE risk associated with low-dose aspirin was similar to that observed in the ITT analogue analysis (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0.80]).",
       "context_window": "t observed in the ITT analogue analysis (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-5523",
@@ -1389,10 +1389,10 @@
       "sentence": "In the observational per-protocol analysis, the reduction in MACE risk associated with low-dose aspirin was similar to that observed in the ITT analogue analysis (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0.80]).",
       "context_window": "is (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0.80]). The 1-year risk of major hemorrh",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-5530",
@@ -1407,10 +1407,10 @@
       "sentence": "In the observational per-protocol analysis, the reduction in MACE risk associated with low-dose aspirin was similar to that observed in the ITT analogue analysis (1-year RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0.80]).",
       "context_window": "ear RD, -0.77% [95% CI, -1.24 to -0.31]; 3-year RD, -1.74% [95% CI, -2.69 to -0.80]). The 1-year risk of major hemorrhage w",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-5630",
@@ -1461,10 +1461,10 @@
       "sentence": "Subgroup analyses for MACE and major hemorrhage at 1 year and 3 years are presented in Figure 3 and eFigure 7, eTable 10, and eTable 11 in Supplement 1 .",
       "context_window": "nt 1 ). Subgroup analyses for MACE and major hemorrhage at 1 year and 3 years are presented in Figure 3 and eFigure 7, eTable",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-5766",
@@ -1479,10 +1479,10 @@
       "sentence": "Subgroup analyses for MACE and major hemorrhage at 1 year and 3 years are presented in Figure 3 and eFigure 7, eTable 10, and eTable 11 in Supplement 1 .",
       "context_window": "bgroup analyses for MACE and major hemorrhage at 1 year and 3 years are presented in Figure 3 and eFigure 7, eTable 10, and eTa",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-5938",
@@ -1497,8 +1497,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": "n pattern was observed between men and women. Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose as",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1515,8 +1515,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": "igher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk o",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1533,8 +1533,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": "isk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MAC",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1551,8 +1551,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": "43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]). In contrast, we observed an ass",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1569,8 +1569,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": ".99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]). In contrast, we observed an associat",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1587,8 +1587,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": "hout any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]). In contrast, we observed an association between",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1605,8 +1605,8 @@
       "sentence": "Among men, at 1 year, we observed a higher risk of hemorrhage in the low-dose aspirin group (RD, 1.22% [95% CI, 0.43 to 1.99]) without any reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]).",
       "context_window": "reduction in the risk of MACE (RD, 0.14% [95% CI, -0.80% to 1.07%]). In contrast, we observed an association between low-dose",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1623,10 +1623,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of maj",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6251",
@@ -1641,10 +1641,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "pirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major he",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6260",
@@ -1659,10 +1659,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6270",
@@ -1677,10 +1677,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "isk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD,",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6335",
@@ -1695,10 +1695,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline charact",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6342",
@@ -1713,10 +1713,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "out increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characterist",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6351",
@@ -1731,10 +1731,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "ase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6360",
@@ -1749,10 +1749,10 @@
       "sentence": "In contrast, we observed an association between low-dose aspirin and reduced risk of MACE in women (1-year RD, -0.78% [95% CI, -1.29% to -0.25%]) without increase in risk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and women (eTable 12 in Supplement 1 ).",
       "context_window": "sk of major hemorrhage (1-year RD, 0.01% [95% CI, -0.39% to 0.40%]) despite similar baseline characteristics between men and",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-pct-6589",
@@ -1767,8 +1767,8 @@
       "sentence": "Patients with diabetes at baseline showed the largest association between low-dose aspirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]).",
       "context_window": "tween low-dose aspirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]). CVRF indicates cardiovascular",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1785,8 +1785,8 @@
       "sentence": "Patients with diabetes at baseline showed the largest association between low-dose aspirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]).",
       "context_window": "ow-dose aspirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]). CVRF indicates cardiovascular risk",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1803,8 +1803,8 @@
       "sentence": "Patients with diabetes at baseline showed the largest association between low-dose aspirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]).",
       "context_window": "spirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]). CVRF indicates cardiovascular risk factors; M",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1821,8 +1821,8 @@
       "sentence": "Patients with diabetes at baseline showed the largest association between low-dose aspirin use and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]).",
       "context_window": "and lower MACE risk (1-year RD, -2.23% [95% CI, -3.48% to -1.02%]). CVRF indicates cardiovascular risk factors; MACE, major",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1840,9 +1840,9 @@
       "context_window": "steroid dispensed by day 30, shortening the grace period to 7 days, or restricting inclusions from January 1, 2016, onward sho",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-7923",
@@ -1858,7 +1858,7 @@
       "context_window": "eding events. As expected, the risks of infection at 1 and 3 years were not different according to low-dose aspirin exposure (",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1875,8 +1875,8 @@
       "sentence": "At 1 year, low-dose aspirin was associated with a reduction in MACE, including all-cause mortality.",
       "context_window": "no clear association with age, sex, or CVD risk profile. At 1 year, low-dose aspirin was associated with a reduction in MACE,",
       "claim_role": "protocol",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1893,8 +1893,8 @@
       "sentence": "At 3 years, low-dose aspirin was associated with reduced risk of MACE, including myocardial infarction and stroke, with no association with risk of major hemorrhage.",
       "context_window": "o associated with an increased risk of major hemorrhage. At 3 years, low-dose aspirin was associated with reduced risk of MACE,",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1911,7 +1911,7 @@
       "sentence": "The ASPREE trial, 10 conducted in healthy individuals with a mean age similar to that of our study population, found no benefit on MACE over 6 years and an increased risk of hemorrhage, with a low incidence of MACE overall.",
       "context_window": "that of our study population, found no benefit on MACE over 6 years and an increased risk of hemorrhage, with a low incidence o",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1929,10 +1929,10 @@
       "sentence": "The ASCEND trial, 28 limited to patients with diabetes aged older than 40 years, showed an overall benefit of low-dose aspirin on MACE, especially during the first 3 years but with a significantly increased risk of bleeding.",
       "context_window": "trial, 28 limited to patients with diabetes aged older than 40 years, showed an overall benefit of low-dose aspirin on MACE, esp",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-1353",
@@ -1947,10 +1947,10 @@
       "sentence": "The ASCEND trial, 28 limited to patients with diabetes aged older than 40 years, showed an overall benefit of low-dose aspirin on MACE, especially during the first 3 years but with a significantly increased risk of bleeding.",
       "context_window": "it of low-dose aspirin on MACE, especially during the first 3 years but with a significantly increased risk of bleeding. Finall",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13090850_low_dose_aspirin_for_cardiovascular_disease_primary_preventi-u-2486",
@@ -1966,7 +1966,7 @@
       "context_window": "sure. We observed a lower risk of myocardial infarction at 3 years associated with low-dose aspirin, consistent with a 2019 me",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "low-dose aspirin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1984,7 +1984,7 @@
       "context_window": "ted mortality rate in the aspirin group, particularly after 4 years of follow-up. In our study, the difference in all-cause mor",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2019,8 +2019,8 @@
       "sentence": "At 3 years, low-dose aspirin was associated with a significant reduction in MACE risk without an increased risk of major hemorrhage.",
       "context_window": "year risk of MACE but a higher risk of major hemorrhage. At 3 years, low-dose aspirin was associated with a significant reducti",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

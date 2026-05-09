@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1002_hep_22811_taurine_supplementation_prevents_ethanol_induced_decrease_in",
+  "doi": "10.1002/hep.22811",
+  "extracted_at": "2026-05-08T20:11:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_hep_22811_taurine_supplementation_prevents_ethanol_induced_decrease_in-u-663",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 663,
+      "sentence": "Serum adiponectin concentrations decreased as early as 4 to 7 days after feeding rats a 36% ethanol diet.",
+      "context_window": "Serum adiponectin concentrations decreased as early as 4 to 7 days after feeding rats a 36% ethanol diet. This rapid decrease",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_hep_22811_taurine_supplementation_prevents_ethanol_induced_decrease_in-pct-691",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 691,
+      "sentence": "Serum adiponectin concentrations decreased as early as 4 to 7 days after feeding rats a 36% ethanol diet.",
+      "context_window": "ions decreased as early as 4 to 7 days after feeding rats a 36% ethanol diet. This rapid decrease was associated with incre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

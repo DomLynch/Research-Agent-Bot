@@ -1,0 +1,1194 @@
+{
+  "paper_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne",
+  "doi": "10.3390/medicina59050873",
+  "extracted_at": "2026-05-08T20:07:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 23,
+    "percentage": 32,
+    "unit_value": 1,
+    "mean_sd": 6,
+    "sample_size": 1,
+    "hazard_ratio": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-1328",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1328,
+      "sentence": "SCORE-2 increased in line with OSA severity and was higher in OSA groups compared to the control group (H = 29.913; DF = 3; p < 0.001).",
+      "context_window": "A groups compared to the control group (H = 29.913; DF = 3; p < 0.001). Charlson Index was significantly higher in OSA patients c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-1419",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1419,
+      "sentence": "Charlson Index was significantly higher in OSA patients compared to controls ( p = 0.001), with a higher prevalence of total comorbidities in the OSA group of patients.",
+      "context_window": "significantly higher in OSA patients compared to controls ( p = 0.001), with a higher prevalence of total comorbidities in the OS",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-378",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 378,
+      "sentence": "Sleep apnea syndrome occurs in 2-26% of the general population, depending on gender, age, and body mass index.",
+      "context_window": "sleepiness [ 1 , 2 , 3 ]. Sleep apnea syndrome occurs in 2-26% of the general population, depending on gender, age, and bo",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-493",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 493,
+      "sentence": "In middle-aged men, it is present in 4% of cases, and in women, in 2% of cases.",
+      "context_window": ", and body mass index. In middle-aged men, it is present in 4% of cases, and in women, in 2% of cases. The prevalence in a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-523",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 523,
+      "sentence": "In middle-aged men, it is present in 4% of cases, and in women, in 2% of cases.",
+      "context_window": "le-aged men, it is present in 4% of cases, and in women, in 2% of cases. The prevalence in asymptomatic people can be up t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-587",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 587,
+      "sentence": "The prevalence in asymptomatic people can be up to 24% and up to 60% in the elderly and obese [ 2 , 4 ].",
+      "context_window": "f cases. The prevalence in asymptomatic people can be up to 24% and up to 60% in the elderly and obese [ 2 , 4 ]. One of th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-601",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 601,
+      "sentence": "The prevalence in asymptomatic people can be up to 24% and up to 60% in the elderly and obese [ 2 , 4 ].",
+      "context_window": "revalence in asymptomatic people can be up to 24% and up to 60% in the elderly and obese [ 2 , 4 ]. One of the most importa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-2122",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2122,
+      "sentence": "Thirty-five-70% of patients with OSA have hypertension, while approximately 30% of patients with hypertension have OSA [ 3 ].",
+      "context_window": "on, cerebrovascular disease, and heart failure. Thirty-five-70% of patients with OSA have hypertension, while approximately",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-2186",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2186,
+      "sentence": "Thirty-five-70% of patients with OSA have hypertension, while approximately 30% of patients with hypertension have OSA [ 3 ].",
+      "context_window": "of patients with OSA have hypertension, while approximately 30% of patients with hypertension have OSA [ 3 ]. It is crucial",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3025",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3025,
+      "sentence": "Obstructive sleep apnea associated with chronic obstructive pulmonary disease (COPD) is an overlap syndrome that occurs in 10-20% of patients with OSA [ 15 ].",
+      "context_window": "ary disease (COPD) is an overlap syndrome that occurs in 10-20% of patients with OSA [ 15 ]. The presence of OSA in COPD co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-u-346",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 346,
+      "sentence": "The study was conducted between 2018 and 2022 and included patients over 18 years of age of both sexes.",
+      "context_window": "conducted between 2018 and 2022 and included patients over 18 years of age of both sexes. The Ethics Committee of the Universi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-4135",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4135,
+      "sentence": "When those variables are combined, SCORE-2 values indicate a 10-year risk for cardiovascular mortality that ranges from less than 1% to more than 15%, enhancing the identification of individuals at higher risk for developing CVD across Europe [ 24 ].",
+      "context_window": "isk for cardiovascular mortality that ranges from less than 1% to more than 15%, enhancing the identification of individua",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-4151",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4151,
+      "sentence": "When those variables are combined, SCORE-2 values indicate a 10-year risk for cardiovascular mortality that ranges from less than 1% to more than 15%, enhancing the identification of individuals at higher risk for developing CVD across Europe [ 24 ].",
+      "context_window": "scular mortality that ranges from less than 1% to more than 15%, enhancing the identification of individuals at higher risk",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-4862",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4862,
+      "sentence": "According to the guidelines, apnea was defined as a reduction in airflow of more than 90% for at least 10 s.",
+      "context_window": "s, apnea was defined as a reduction in airflow of more than 90% for at least 10 s. Hypopnea was defined as a recognizable r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-4962",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4962,
+      "sentence": "Hypopnea was defined as a recognizable reduction of the airflow by more than 30% for at least 10 s, with a reduction in oxygen saturation of at least \u2265 3% from the baseline or arousal registered by the electroencephalography (EEG) [ 25 ].",
+      "context_window": "ned as a recognizable reduction of the airflow by more than 30% for at least 10 s, with a reduction in oxygen saturation of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-5037",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5037,
+      "sentence": "Hypopnea was defined as a recognizable reduction of the airflow by more than 30% for at least 10 s, with a reduction in oxygen saturation of at least \u2265 3% from the baseline or arousal registered by the electroencephalography (EEG) [ 25 ].",
+      "context_window": "t 10 s, with a reduction in oxygen saturation of at least \u2265 3% from the baseline or arousal registered by the electroencep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-8405",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8405,
+      "sentence": "All independent variables whose statistical significance was p < 0.05 were analyzed within multinomial logistic regression for the prediction model of the severity of sleep apnea as an outcome of interest.",
+      "context_window": "ll independent variables whose statistical significance was p < 0.05 were analyzed within multinomial logistic regression for th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-9010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9010,
+      "sentence": "The results are presented tabularly and graphically, and those values that reached the p < 0.05 level were considered statistically significant.",
+      "context_window": "abularly and graphically, and those values that reached the p < 0.05 level were considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-msd-550",
+      "claim_type": "mean_sd",
+      "raw_text": "37.88 \u00b1 14.31",
+      "numeric_values": [
+        37.88,
+        14.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 550,
+      "sentence": "The mean age of the control group was significantly lower than any subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001).",
+      "context_window": "was significantly lower than any subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.8",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-msd-584",
+      "claim_type": "mean_sd",
+      "raw_text": "53.39 \u00b1 15.01",
+      "numeric_values": [
+        53.39,
+        15.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 584,
+      "sentence": "The mean age of the control group was significantly lower than any subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001).",
+      "context_window": "subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-msd-619",
+      "claim_type": "mean_sd",
+      "raw_text": "54.82 \u00b1 11.95",
+      "numeric_values": [
+        54.82,
+        11.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 619,
+      "sentence": "The mean age of the control group was significantly lower than any subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001).",
+      "context_window": "4.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-msd-655",
+      "claim_type": "mean_sd",
+      "raw_text": "53.97 \u00b1 11.52",
+      "numeric_values": [
+        53.97,
+        11.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 655,
+      "sentence": "The mean age of the control group was significantly lower than any subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001).",
+      "context_window": "01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001). In relation",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-704",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 704,
+      "sentence": "The mean age of the control group was significantly lower than any subgroup of OSA patients (37.88 \u00b1 14.31 for controls versus 53.39 \u00b1 15.01 for mild OSA, versus 54.82 \u00b1 11.95 for moderate OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001).",
+      "context_window": "e OSA, and 53.97 \u00b1 11.52 for severe OSA; F = 14.39; DF = 3; p < 0.001). In relation to BMI, a statistically significant differenc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-837",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 837,
+      "sentence": "In relation to BMI, a statistically significant difference was observed between the examined groups (F = 14.608; DF = 3; p < 0.001).",
+      "context_window": "s observed between the examined groups (F = 14.608; DF = 3; p < 0.001). Patients with severe OSA had higher BMI compared to the c",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-msd-920",
+      "claim_type": "mean_sd",
+      "raw_text": "28.10 \u00b1 1.99",
+      "numeric_values": [
+        28.1,
+        1.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 920,
+      "sentence": "Patients with severe OSA had higher BMI compared to the control group (28.10 \u00b1 1.99 versus 24.25 \u00b1 2.98, p < 0.001).",
+      "context_window": "th severe OSA had higher BMI compared to the control group (28.10 \u00b1 1.99 versus 24.25 \u00b1 2.98, p < 0.001). A post hoc test determined",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-msd-940",
+      "claim_type": "mean_sd",
+      "raw_text": "24.25 \u00b1 2.98",
+      "numeric_values": [
+        24.25,
+        2.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 940,
+      "sentence": "Patients with severe OSA had higher BMI compared to the control group (28.10 \u00b1 1.99 versus 24.25 \u00b1 2.98, p < 0.001).",
+      "context_window": "gher BMI compared to the control group (28.10 \u00b1 1.99 versus 24.25 \u00b1 2.98, p < 0.001). A post hoc test determined the difference betw",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-954",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 954,
+      "sentence": "Patients with severe OSA had higher BMI compared to the control group (28.10 \u00b1 1.99 versus 24.25 \u00b1 2.98, p < 0.001).",
+      "context_window": "red to the control group (28.10 \u00b1 1.99 versus 24.25 \u00b1 2.98, p < 0.001). A post hoc test determined the difference between the gro",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-1164",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1164,
+      "sentence": "Forty patients were active smokers (29%).",
+      "context_window": "d the severe OSA group. Forty patients were active smokers (29%). Anthropometric characteristics of all participants are pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-1506",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1506,
+      "sentence": "In relation to diastolic blood pressure, statistically significant higher mean values were in the moderate and severe OSA groups, compared to controls (F = 3.461; DF = 3; p < 0.018).",
+      "context_window": "severe OSA groups, compared to controls (F = 3.461; DF = 3; p < 0.018). In regard to sleep characteristics, statistically signifi",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-2219",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2219,
+      "sentence": "In relation to HDL, significantly lower HDL values were observed in the severe OSA group compared to the mild OSA and control group (F = 5.745; DF = 3; p = 0.001).",
+      "context_window": "pared to the mild OSA and control group (F = 5.745; DF = 3; p = 0.001). In relation to triglycerides, statistically significant h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-2394",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2394,
+      "sentence": "In relation to triglycerides, statistically significant higher values were noticed in severe and moderate OSA groups compared to the controls (H = 35.759; DF = 3; p < 0.001).",
+      "context_window": "te OSA groups compared to the controls (H = 35.759; DF = 3; p < 0.001). In relation to VLDL, statistically significant difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-2547",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2547,
+      "sentence": "In relation to VLDL, statistically significant differences were observed between the control and the moderate OSA groups (F = 4.466; DF = 3; p = 0.005).",
+      "context_window": "the control and the moderate OSA groups (F = 4.466; DF = 3; p = 0.005). In regard to the value of glucose, insulin, and HOMA inde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-2809",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2809,
+      "sentence": "In regard to the value of glucose, insulin, and HOMA index, statistically significant differences were observed between the examined groups, controls in comparison to the moderate or severe OSA groups, as well as between mild and severe OSA groups ( p < 0.001 for glucose; versus p = 0.004 for insulin; versus p = 0.002 for HOMA index).",
+      "context_window": "OSA groups, as well as between mild and severe OSA groups ( p < 0.001 for glucose; versus p = 0.004 for insulin; versus p = 0.002",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-2839",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2839,
+      "sentence": "In regard to the value of glucose, insulin, and HOMA index, statistically significant differences were observed between the examined groups, controls in comparison to the moderate or severe OSA groups, as well as between mild and severe OSA groups ( p < 0.001 for glucose; versus p = 0.004 for insulin; versus p = 0.002 for HOMA index).",
+      "context_window": "mild and severe OSA groups ( p < 0.001 for glucose; versus p = 0.004 for insulin; versus p = 0.002 for HOMA index). The represe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-2869",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2869,
+      "sentence": "In regard to the value of glucose, insulin, and HOMA index, statistically significant differences were observed between the examined groups, controls in comparison to the moderate or severe OSA groups, as well as between mild and severe OSA groups ( p < 0.001 for glucose; versus p = 0.004 for insulin; versus p = 0.002 for HOMA index).",
+      "context_window": "p < 0.001 for glucose; versus p = 0.004 for insulin; versus p = 0.002 for HOMA index). The representation of comorbidities by gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3068",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3068,
+      "sentence": "Regarding comorbidities, hyperlipidemia was the most prevalent disease, present in 63% of the study population, followed by hypertension (44.20% of the study population).",
+      "context_window": ", hyperlipidemia was the most prevalent disease, present in 63% of the study population, followed by hypertension (44.20% o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3123",
+      "claim_type": "percentage",
+      "raw_text": "44.20%",
+      "numeric_values": [
+        44.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3123,
+      "sentence": "Regarding comorbidities, hyperlipidemia was the most prevalent disease, present in 63% of the study population, followed by hypertension (44.20% of the study population).",
+      "context_window": "t in 63% of the study population, followed by hypertension (44.20% of the study population). 26.8% of the study population had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3156",
+      "claim_type": "percentage",
+      "raw_text": "26.8%",
+      "numeric_values": [
+        26.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3156,
+      "sentence": "26.8% of the study population had deviated septum, and 24.6% had allergic rhinitis.",
+      "context_window": "followed by hypertension (44.20% of the study population). 26.8% of the study population had deviated septum, and 24.6% had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3211",
+      "claim_type": "percentage",
+      "raw_text": "24.6%",
+      "numeric_values": [
+        24.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3211,
+      "sentence": "26.8% of the study population had deviated septum, and 24.6% had allergic rhinitis.",
+      "context_window": "on). 26.8% of the study population had deviated septum, and 24.6% had allergic rhinitis. 18.8% had GERD, asthma was present i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3240",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3240,
+      "sentence": "18.8% had GERD, asthma was present in 15.2% of patients, and 7.2% had diabetes mellitus.",
+      "context_window": "ation had deviated septum, and 24.6% had allergic rhinitis. 18.8% had GERD, asthma was present in 15.2% of patients, and 7.2%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3278",
+      "claim_type": "percentage",
+      "raw_text": "15.2%",
+      "numeric_values": [
+        15.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3278,
+      "sentence": "18.8% had GERD, asthma was present in 15.2% of patients, and 7.2% had diabetes mellitus.",
+      "context_window": "ad allergic rhinitis. 18.8% had GERD, asthma was present in 15.2% of patients, and 7.2% had diabetes mellitus. Hypothyroidism",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3301",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3301,
+      "sentence": "18.8% had GERD, asthma was present in 15.2% of patients, and 7.2% had diabetes mellitus.",
+      "context_window": "8.8% had GERD, asthma was present in 15.2% of patients, and 7.2% had diabetes mellitus. Hypothyroidism and COPD groups had t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3382",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3382,
+      "sentence": "Hypothyroidism and COPD groups had the same value of 4.3%, and 2.9% of patients had a history of previous myocardial infarction, while heart failure and coronary disease were present in 2.2%.",
+      "context_window": "litus. Hypothyroidism and COPD groups had the same value of 4.3%, and 2.9% of patients had a history of previous myocardial",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3392",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3392,
+      "sentence": "Hypothyroidism and COPD groups had the same value of 4.3%, and 2.9% of patients had a history of previous myocardial infarction, while heart failure and coronary disease were present in 2.2%.",
+      "context_window": "othyroidism and COPD groups had the same value of 4.3%, and 2.9% of patients had a history of previous myocardial infarction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3515",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3515,
+      "sentence": "Hypothyroidism and COPD groups had the same value of 4.3%, and 2.9% of patients had a history of previous myocardial infarction, while heart failure and coronary disease were present in 2.2%.",
+      "context_window": "n, while heart failure and coronary disease were present in 2.2%. In relation to hypertension, hyperlipidemia, and diabetes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-3768",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3768,
+      "sentence": "In relation to hypertension, hyperlipidemia, and diabetes mellitus, which were more prevalent in OSA patients, statistically significant differences were noticed between the control group compared to moderate and severe OSA groups, respectively ( p < 0.001; p < 0.001; p = 0.015).",
+      "context_window": "compared to moderate and severe OSA groups, respectively ( p < 0.001; p < 0.001; p = 0.015). SCORE-2 increased in line with OSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-3779",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3779,
+      "sentence": "In relation to hypertension, hyperlipidemia, and diabetes mellitus, which were more prevalent in OSA patients, statistically significant differences were noticed between the control group compared to moderate and severe OSA groups, respectively ( p < 0.001; p < 0.001; p = 0.015).",
+      "context_window": "o moderate and severe OSA groups, respectively ( p < 0.001; p < 0.001; p = 0.015). SCORE-2 increased in line with OSA severity,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-3790",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3790,
+      "sentence": "In relation to hypertension, hyperlipidemia, and diabetes mellitus, which were more prevalent in OSA patients, statistically significant differences were noticed between the control group compared to moderate and severe OSA groups, respectively ( p < 0.001; p < 0.001; p = 0.015).",
+      "context_window": "and severe OSA groups, respectively ( p < 0.001; p < 0.001; p = 0.015). SCORE-2 increased in line with OSA severity, and statist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-3969",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3969,
+      "sentence": "SCORE-2 increased in line with OSA severity, and statistically significant higher values were observed in the OSA group compared to the controls (H = 29.913; DF = 3; p < 0.001) ( Table 5 ).",
+      "context_window": "the OSA group compared to the controls (H = 29.913; DF = 3; p < 0.001) ( Table 5 ). A comparison of SCORE-2 between controls and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-4176",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4176,
+      "sentence": "In addition, the Charlson Index was significantly higher in OSA patients compared to controls ( p = 0.001).",
+      "context_window": "significantly higher in OSA patients compared to controls ( p = 0.001). The OSA group was characterized by a higher prevalence of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-4409",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4409,
+      "sentence": "As well, for CCI 10-year survival score, a statistically significant difference was observed between the examined groups (H = 16.489; DF = 3; p < 0.001).",
+      "context_window": "s observed between the examined groups (H = 16.489; DF = 3; p < 0.001). Post hoc test determined the difference between the contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-n-5498",
+      "claim_type": "sample_size",
+      "raw_text": "n = 138",
+      "numeric_values": [
+        138.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5498,
+      "sentence": "The whole model with all predictors was statistically significant, Chi-square (48, n = 138) = 175.652, p < 0.001, which shows that the model differentiates the respondents\u2019 group affiliation (Cox and Snell R 2 = 0.720; Nagelkerke R 2 = 0.769; McFadden R 2 = 0.461).",
+      "context_window": "l predictors was statistically significant, Chi-square (48, n = 138) = 175.652, p < 0.001, which shows that the model different",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-5518",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5518,
+      "sentence": "The whole model with all predictors was statistically significant, Chi-square (48, n = 138) = 175.652, p < 0.001, which shows that the model differentiates the respondents\u2019 group affiliation (Cox and Snell R 2 = 0.720; Nagelkerke R 2 = 0.769; McFadden R 2 = 0.461).",
+      "context_window": "tistically significant, Chi-square (48, n = 138) = 175.652, p < 0.001, which shows that the model differentiates the respondents\u2019",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-2177",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2177,
+      "sentence": "Clinical cohort studies and epidemiological data from the general population show that up to 50% of patients with arterial hypertension, refractory arrhythmias, stroke, coronary heart disease, and cardiac failure have OSA.",
+      "context_window": "miological data from the general population show that up to 50% of patients with arterial hypertension, refractory arrhythm",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-2359",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2359,
+      "sentence": "Cardiometabolic abnormalities are detected in up to 50% of patients with OSAS as well [ 33 , 35 , 36 ].",
+      "context_window": "ve OSA. Cardiometabolic abnormalities are detected in up to 50% of patients with OSAS as well [ 33 , 35 , 36 ]. Moreover, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-3226",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3226,
+      "sentence": "In a variety of observational studies, measures of nocturnal hypoxemia, such as the proportion of the time spent sleeping with oxygen saturation below 90%, have been shown to more accurately predict the CVD risk and mortality than the AHI index [ 38 , 39 ].",
+      "context_window": "ion of the time spent sleeping with oxygen saturation below 90%, have been shown to more accurately predict the CVD risk an",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-4023",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4023,
+      "sentence": "It is also reported impaired memory, intelligence, and selective attention in patients who have more than 3% of oxygen desaturation in the REM phase of sleep [ 42 ].",
+      "context_window": "nce, and selective attention in patients who have more than 3% of oxygen desaturation in the REM phase of sleep [ 42 ]. Re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-5489",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5489,
+      "sentence": "In this study, 42% of patients had hypertension, and 62% had hyperlipidemia, mainly males.",
+      "context_window": "d with incident CVD in men but not in women. In this study, 42% of patients had hypertension, and 62% had hyperlipidemia, m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-5527",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5527,
+      "sentence": "In this study, 42% of patients had hypertension, and 62% had hyperlipidemia, mainly males.",
+      "context_window": "women. In this study, 42% of patients had hypertension, and 62% had hyperlipidemia, mainly males. In the study by Dudenbost",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-5651",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5651,
+      "sentence": "In the study by Dudenbostel et al. was reported that obstructive sleep apnea affected 90% of male patients and 77% of female patients with resistant hypertension and that nocturnal hypertension is significantly more common in patients with OSA and is linked to an increased risk of heart failure, stroke, myocardial infarction, and total cardiovascular disease [ 48 ].",
+      "context_window": "l et al. was reported that obstructive sleep apnea affected 90% of male patients and 77% of female patients with resistant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-pct-5676",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5676,
+      "sentence": "In the study by Dudenbostel et al. was reported that obstructive sleep apnea affected 90% of male patients and 77% of female patients with resistant hypertension and that nocturnal hypertension is significantly more common in patients with OSA and is linked to an increased risk of heart failure, stroke, myocardial infarction, and total cardiovascular disease [ 48 ].",
+      "context_window": "t obstructive sleep apnea affected 90% of male patients and 77% of female patients with resistant hypertension and that noc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-12457",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 12457,
+      "sentence": "In our study, the Charlson Index was significantly higher in OSA patients compared to controls ( p = 0.001), with a higher prevalence of total comorbidities in the OSA group of patients.",
+      "context_window": "significantly higher in OSA patients compared to controls ( p = 0.001), with a higher prevalence of total comorbidities in the OS",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-hr-a-13342",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR:11.01",
+      "numeric_values": [
+        11.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 13342,
+      "sentence": "The calculation for the CoSA index was similar to the Charlson Index, and comparing OSA patients with and without comorbidities, those with comorbidities had a greater likelihood of death (HR:11.01, 95% CI 4.00-30.33, p < 0.001).",
+      "context_window": "those with comorbidities had a greater likelihood of death (HR:11.01, 95% CI 4.00-30.33, p < 0.001). After multivariable adjustm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-ci-13352",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 4.00-30.33",
+      "numeric_values": [
+        4.0,
+        30.33
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 13352,
+      "sentence": "The calculation for the CoSA index was similar to the Charlson Index, and comparing OSA patients with and without comorbidities, those with comorbidities had a greater likelihood of death (HR:11.01, 95% CI 4.00-30.33, p < 0.001).",
+      "context_window": "comorbidities had a greater likelihood of death (HR:11.01, 95% CI 4.00-30.33, p < 0.001). After multivariable adjustment, the chance of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223591_comorbidity_profile_and_predictors_of_obstructive_sleep_apne-p-13371",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 13371,
+      "sentence": "The calculation for the CoSA index was similar to the Charlson Index, and comparing OSA patients with and without comorbidities, those with comorbidities had a greater likelihood of death (HR:11.01, 95% CI 4.00-30.33, p < 0.001).",
+      "context_window": "a greater likelihood of death (HR:11.01, 95% CI 4.00-30.33, p < 0.001). After multivariable adjustment, the chance of death was i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

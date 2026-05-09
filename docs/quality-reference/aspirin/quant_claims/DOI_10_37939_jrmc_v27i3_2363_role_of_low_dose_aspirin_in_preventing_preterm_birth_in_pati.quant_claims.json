@@ -1,0 +1,269 @@
+{
+  "paper_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati",
+  "doi": "10.37939/jrmc.v27i3.2363",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 3,
+    "mean_sd": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-57",
+      "claim_type": "unit_value",
+      "raw_text": "37 weeks",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 57,
+      "sentence": "<jats:p>Objective: Preterm birth (PTB) occurs between 24-37 weeks of gestation.",
+      "context_window": "<jats:p>Objective: Preterm birth (PTB) occurs between 24-37 weeks of gestation. The important risk factor for PTB is a previo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-973",
+      "claim_type": "unit_value",
+      "raw_text": "75mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 973,
+      "sentence": "In Group A, low-dose aspirin (75mg) was given while group B was taken as a control group.",
+      "context_window": ", using random number tables. In Group A, low-dose aspirin (75mg) was given while group B was taken as a control group. Pati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-1060",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "Patients were called every 8 weeks in the outpatient department for the assessment of compliance and side effects of the drug.",
+      "context_window": "B was taken as a control group. Patients were called every 8 weeks in the outpatient department for the assessment of complian",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-pct-1322",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1322,
+      "sentence": "Relative risk (along with a 95% confidence interval) for the decrease in the incidence of preterm birth with the use of aspirin was calculated.",
+      "context_window": "for incidence of preterm birth. Relative risk (along with a 95% confidence interval) for the decrease in the incidence of p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-1503",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1503,
+      "sentence": "Results: The age of participants included in the study was 18 to 40 years.",
+      "context_window": "ts: The age of participants included in the study was 18 to 40 years. The mean age of patients in group A was 33.85\u00b15.210 years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-msd-1553",
+      "claim_type": "mean_sd",
+      "raw_text": "33.85\u00b15.210",
+      "numeric_values": [
+        33.85,
+        5.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1553,
+      "sentence": "The mean age of patients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years.",
+      "context_window": "was 18 to 40 years. The mean age of patients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years. The mean fetal",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-1559",
+      "claim_type": "unit_value",
+      "raw_text": "5.210 years",
+      "numeric_values": [
+        5.21
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1559,
+      "sentence": "The mean age of patients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years.",
+      "context_window": "to 40 years. The mean age of patients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years. The mean fetal birth",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-msd-1590",
+      "claim_type": "mean_sd",
+      "raw_text": "32.86\u00b14.139",
+      "numeric_values": [
+        32.86,
+        4.139
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1590,
+      "sentence": "The mean age of patients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years.",
+      "context_window": "atients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years. The mean fetal birth weight in group A was 2281.1962",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-1596",
+      "claim_type": "unit_value",
+      "raw_text": "4.139 years",
+      "numeric_values": [
+        4.139
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "The mean age of patients in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years.",
+      "context_window": "s in group A was 33.85\u00b15.210 years and in group B was 32.86\u00b14.139 years. The mean fetal birth weight in group A was 2281.1962\u00b1363.1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-msd-1652",
+      "claim_type": "mean_sd",
+      "raw_text": "2281.1962\u00b1363.125",
+      "numeric_values": [
+        2281.1962,
+        363.125
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1652,
+      "sentence": "The mean fetal birth weight in group A was 2281.1962\u00b1363.125 grams and in group B was 2271.4344\u00b1374.797 grams.",
+      "context_window": ".86\u00b14.139 years. The mean fetal birth weight in group A was 2281.1962\u00b1363.125 grams and in group B was 2271.4344\u00b1374.797 grams. In the lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-msd-1695",
+      "claim_type": "mean_sd",
+      "raw_text": "2271.4344\u00b1374.797",
+      "numeric_values": [
+        2271.4344,
+        374.797
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1695,
+      "sentence": "The mean fetal birth weight in group A was 2281.1962\u00b1363.125 grams and in group B was 2271.4344\u00b1374.797 grams.",
+      "context_window": "t in group A was 2281.1962\u00b1363.125 grams and in group B was 2271.4344\u00b1374.797 grams. In the low-dose aspirin group, 10(11.6%) had preterm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-pct-1754",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1754,
+      "sentence": "In the low-dose aspirin group, 10(11.6%) had preterm birth and 31(36.0%) in the control group with a p-value of 0.001, which is statistically significant.",
+      "context_window": "2271.4344\u00b1374.797 grams. In the low-dose aspirin group, 10(11.6%) had preterm birth and 31(36.0%) in the control group with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-pct-1786",
+      "claim_type": "percentage",
+      "raw_text": "36.0%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1786,
+      "sentence": "In the low-dose aspirin group, 10(11.6%) had preterm birth and 31(36.0%) in the control group with a p-value of 0.001, which is statistically significant.",
+      "context_window": "low-dose aspirin group, 10(11.6%) had preterm birth and 31(36.0%) in the control group with a p-value of 0.001, which is sta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_37939_jrmc_v27i3_2363_role_of_low_dose_aspirin_in_preventing_preterm_birth_in_pati-u-2011",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2011,
+      "sentence": "Conclusion: aspirin in low dose given before 14 weeks of gestation decrease spontaneous preterm birth as compared to the control group in a woman with a history of previous preterm birth which was spontaneous</jats:p>",
+      "context_window": "than controls. Conclusion: aspirin in low dose given before 14 weeks of gestation decrease spontaneous preterm birth as compared",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

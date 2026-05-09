@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv",
+  "doi": "10.1164/rccm.200302-206oc",
+  "extracted_at": "2026-05-08T20:05:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-u-442",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 442,
+      "sentence": "Before, 2 days after, and after 3 months of effective CPAP treatment, hyperinsulinemic euglycemic clamp studies were performed.",
+      "context_window": "(apnea-hypopnea index > 20) were treated with CPAP. Before, 2 days after, and after 3 months of effective CPAP treatment, hype",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-u-466",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 466,
+      "sentence": "Before, 2 days after, and after 3 months of effective CPAP treatment, hyperinsulinemic euglycemic clamp studies were performed.",
+      "context_window": "20) were treated with CPAP. Before, 2 days after, and after 3 months of effective CPAP treatment, hyperinsulinemic euglycemic cl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-u-612",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 612,
+      "sentence": "Insulin sensitivity significantly increased after 2 days (5.75 +/- 4.20 baseline versus 6.79 +/- 4.91 micromol/kg.min; p = 0.003) and remained stable after 3 months of treatment.",
+      "context_window": "erformed. Insulin sensitivity significantly increased after 2 days (5.75 +/- 4.20 baseline versus 6.79 +/- 4.91 micromol/kg.mi",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-p-681",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 681,
+      "sentence": "Insulin sensitivity significantly increased after 2 days (5.75 +/- 4.20 baseline versus 6.79 +/- 4.91 micromol/kg.min; p = 0.003) and remained stable after 3 months of treatment.",
+      "context_window": ".75 +/- 4.20 baseline versus 6.79 +/- 4.91 micromol/kg.min; p = 0.003) and remained stable after 3 months of treatment. The impro",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-u-718",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 718,
+      "sentence": "Insulin sensitivity significantly increased after 2 days (5.75 +/- 4.20 baseline versus 6.79 +/- 4.91 micromol/kg.min; p = 0.003) and remained stable after 3 months of treatment.",
+      "context_window": "4.91 micromol/kg.min; p = 0.003) and remained stable after 3 months of treatment. The improvement in insulin sensitivity after",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-u-786",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 786,
+      "sentence": "The improvement in insulin sensitivity after 2 days was much greater in patients with a body mass index less than 30 kg/m2 than in more obese patients.",
+      "context_window": "of treatment. The improvement in insulin sensitivity after 2 days was much greater in patients with a body mass index less th",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200302_206oc_continuous_positive_airway_pressure_treatment_rapidly_improv-u-855",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg/m2",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "The improvement in insulin sensitivity after 2 days was much greater in patients with a body mass index less than 30 kg/m2 than in more obese patients.",
+      "context_window": "s much greater in patients with a body mass index less than 30 kg/m2 than in more obese patients. The improved insulin sensitivi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

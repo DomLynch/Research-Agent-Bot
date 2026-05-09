@@ -1,0 +1,752 @@
+{
+  "paper_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re",
+  "doi": "10.1007/s11325-022-02613-2",
+  "extracted_at": "2026-05-08T20:05:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 30,
+    "percentage": 6,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-n-1051",
+      "claim_type": "sample_size",
+      "raw_text": "n = 43",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1051,
+      "sentence": "The SAA of the OSAHS group ( n = 43) were higher than those of control group ( n = 19).",
+      "context_window": "sed for statistical analysis. The SAA of the OSAHS group ( n = 43) were higher than those of control group ( n = 19). The sco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-n-1101",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1101,
+      "sentence": "The SAA of the OSAHS group ( n = 43) were higher than those of control group ( n = 19).",
+      "context_window": "S group ( n = 43) were higher than those of control group ( n = 19). The scores of AVLT-immediate and AVLT-delay in the severe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1225",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1225,
+      "sentence": "The scores of AVLT-immediate and AVLT-delay in the severe OSAHS group were lower than those in the control group ( P < 0.05), and it was negatively correlated with SAA.",
+      "context_window": "re OSAHS group were lower than those in the control group ( P < 0.05), and it was negatively correlated with SAA. In the severe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1441",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1441,
+      "sentence": "In the severe OSAHS group, the rest state Function Connection (rsFC) in temporal lobe, marginal lobe, and frontal lobe was lower than that in the control group ( P < 0.05) and was significantly negatively correlated with SAA.",
+      "context_window": "and frontal lobe was lower than that in the control group ( P < 0.05) and was significantly negatively correlated with SAA. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1586",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1586,
+      "sentence": "The rsFC in bilateral parietal lobes was higher than that in the control group ( P < 0.05), was significantly positively correlated with SAA, and was negatively correlated with AVLT-delay.",
+      "context_window": "parietal lobes was higher than that in the control group ( P < 0.05), was significantly positively correlated with SAA, and was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-pct-430",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 430,
+      "sentence": "According to foreign statistics, the prevalence rate of ADULT OSAHS is about 4%, while in China, the prevalence rate of adult OSAHS is about 12-13%, with an increasing trend [ 2 ].",
+      "context_window": "ign statistics, the prevalence rate of ADULT OSAHS is about 4%, while in China, the prevalence rate of adult OSAHS is abou",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-pct-497",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 497,
+      "sentence": "According to foreign statistics, the prevalence rate of ADULT OSAHS is about 4%, while in China, the prevalence rate of adult OSAHS is about 12-13%, with an increasing trend [ 2 ].",
+      "context_window": "le in China, the prevalence rate of adult OSAHS is about 12-13%, with an increasing trend [ 2 ]. Cognitive dysfunction is",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-u-642",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 642,
+      "sentence": "The inclusion criteria of patients with OSAHS were as follows: (1) patients with OSAHS diagnosed by PSG had no other sleep disorders; (2) no history of airway and throat surgery, such as tonsillectomy and adenoidectomy; (3) age \u2265 20 years old and \u2264 60 years old; (4) right-handedness; (5) no alcohol addiction or illegal drug use; (6) no use of psychotropic drugs or medication which may affect on oxygen saturation, such as selective serotonin reuptake inhibitors; (7) no organic brain diseases and no serious cognitive impairment, such as meningioma, pituitary tumor, Parkinson\u2019s disease, and Alzheimer\u2019s disease, and scores on Minimum Mental State Examination (MMSE) > 24/30; (8) no lung disease or other chronic inflammatory diseases by CT examination and pulmonary function test, such as chronic bronchitis; (9) no MRI scan contraindications (no metal stents, no metal dentures, no pacemaker).",
+      "context_window": "surgery, such as tonsillectomy and adenoidectomy; (3) age \u2265 20 years old and \u2264 60 years old; (4) right-handedness; (5) no alcoho",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-u-661",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 661,
+      "sentence": "The inclusion criteria of patients with OSAHS were as follows: (1) patients with OSAHS diagnosed by PSG had no other sleep disorders; (2) no history of airway and throat surgery, such as tonsillectomy and adenoidectomy; (3) age \u2265 20 years old and \u2264 60 years old; (4) right-handedness; (5) no alcohol addiction or illegal drug use; (6) no use of psychotropic drugs or medication which may affect on oxygen saturation, such as selective serotonin reuptake inhibitors; (7) no organic brain diseases and no serious cognitive impairment, such as meningioma, pituitary tumor, Parkinson\u2019s disease, and Alzheimer\u2019s disease, and scores on Minimum Mental State Examination (MMSE) > 24/30; (8) no lung disease or other chronic inflammatory diseases by CT examination and pulmonary function test, such as chronic bronchitis; (9) no MRI scan contraindications (no metal stents, no metal dentures, no pacemaker).",
+      "context_window": "nsillectomy and adenoidectomy; (3) age \u2265 20 years old and \u2264 60 years old; (4) right-handedness; (5) no alcohol addiction or ille",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-pct-3018",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3018,
+      "sentence": "Specifically, apneas were scored by an event lasting 10 s or more with flow amplitude decreased by 90% or more.",
+      "context_window": "event lasting 10 s or more with flow amplitude decreased by 90% or more. Similarly, hypopneas lasted 10 s or more and had a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-pct-3110",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3110,
+      "sentence": "Similarly, hypopneas lasted 10 s or more and had a decreased flow amplitude of 50% or more associated with a decrease in oxygen saturation of 3% or an arousal.",
+      "context_window": "s lasted 10 s or more and had a decreased flow amplitude of 50% or more associated with a decrease in oxygen saturation of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-pct-3173",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3173,
+      "sentence": "Similarly, hypopneas lasted 10 s or more and had a decreased flow amplitude of 50% or more associated with a decrease in oxygen saturation of 3% or an arousal.",
+      "context_window": "or more associated with a decrease in oxygen saturation of 3% or an arousal. For all subjects, 2 ml fasting venous blood",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-u-4965",
+      "claim_type": "unit_value",
+      "raw_text": "6 mm",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4965,
+      "sentence": "Therefore, the cingulate cortex (MNI coordinate (3, - 57,26) [ 13 ] was taken as the center, and the radius of 6 mm was taken as the region of interest.",
+      "context_window": "- 57,26) [ 13 ] was taken as the center, and the radius of 6 mm was taken as the region of interest. Resting-state fMRI Dat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-5609",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5609,
+      "sentence": "When making multiple comparisons, the AlphaSim program provided by REST was used to correct the resulting positive result image ( P < 0.05) presented by the REST software.",
+      "context_window": "T was used to correct the resulting positive result image ( P < 0.05) presented by the REST software. During the correlation ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-6469",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6469,
+      "sentence": "P < 0.05 was considered statistically significant.",
+      "context_window": "AHI, ODI, MMSE score, AVLT-immediate, and AVLT-delay score. P < 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-171",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 171,
+      "sentence": "In this study, all patients were male, and there was no statistical difference in age, education, and MMSE between the 43 patients with OSAHS and the 19 normal controls ( P > 0.05).",
+      "context_window": "een the 43 patients with OSAHS and the 19 normal controls ( P > 0.05). Compared with the normal control group, BMI, AHI, ODI, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-293",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 293,
+      "sentence": "Compared with the normal control group, BMI, AHI, ODI, and ESS of the OSAHS group were significantly greater ( P < 0.05).",
+      "context_window": "DI, and ESS of the OSAHS group were significantly greater ( P < 0.05). Specific results are shown in Table 1 . Comparison of ge",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-656",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 656,
+      "sentence": "Overall comparison of AVLT-immediate and AVLT-delay in each group showed significant differences ( P < 0.05).",
+      "context_window": "d AVLT-delay in each group showed significant differences ( P < 0.05). Compared with normal control group, there were significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-804",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 804,
+      "sentence": "Compared with normal control group, there were significant differences between AVLT-immediate and AVLT-delay in the severe OSAHS group ( P < 0.05).",
+      "context_window": "n AVLT-immediate and AVLT-delay in the severe OSAHS group ( P < 0.05). Compared with the mild group, there were significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-942",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 942,
+      "sentence": "Compared with the mild group, there were significant differences between AVLT-immediate and AVLT-delay in severe OSAHS group ( P < 0.05).",
+      "context_window": "tween AVLT-immediate and AVLT-delay in severe OSAHS group ( P < 0.05). There was no statistical significance between the other t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1022",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1022,
+      "sentence": "There was no statistical significance between the other two groups ( P > 0.05).",
+      "context_window": "no statistical significance between the other two groups ( P > 0.05). See Table 2 for details. Comparison of AVLT-immediate, A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1186",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1186,
+      "sentence": "Comparison of AVLT-immediate, AVLT-delay, and SAA concentration among the groups\n\n*Was compared with the normal control group, P < 0.05; \u25b3was compared with severe OSAHS group, P < 0.05.",
+      "context_window": "ng the groups *Was compared with the normal control group, P < 0.05; \u25b3was compared with severe OSAHS group, P < 0.05. Overall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1235",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1235,
+      "sentence": "Comparison of AVLT-immediate, AVLT-delay, and SAA concentration among the groups\n\n*Was compared with the normal control group, P < 0.05; \u25b3was compared with severe OSAHS group, P < 0.05.",
+      "context_window": "rol group, P < 0.05; \u25b3was compared with severe OSAHS group, P < 0.05. Overall comparison of SAA concentrations in each group re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1336",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1336,
+      "sentence": "Overall comparison of SAA concentrations in each group revealed significant differences ( P < 0.05).",
+      "context_window": "entrations in each group revealed significant differences ( P < 0.05). Further comparison of LSD between the two groups showed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1480",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1480,
+      "sentence": "Further comparison of LSD between the two groups showed that SAA concentration was significantly increased in the mild OSAHS group ( P < 0.05) and significantly increased in the moderate and severe OSAHS groups ( P < 0.01) compared with the normal control group.",
+      "context_window": "ation was significantly increased in the mild OSAHS group ( P < 0.05) and significantly increased in the moderate and severe OSA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1560",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1560,
+      "sentence": "Further comparison of LSD between the two groups showed that SAA concentration was significantly increased in the mild OSAHS group ( P < 0.05) and significantly increased in the moderate and severe OSAHS groups ( P < 0.01) compared with the normal control group.",
+      "context_window": "icantly increased in the moderate and severe OSAHS groups ( P < 0.01) compared with the normal control group. There were also si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-1744",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1744,
+      "sentence": "There were also significant differences between mild and moderate groups, mild and severe groups, and moderate and severe groups (all P < 0.01).",
+      "context_window": "mild and severe groups, and moderate and severe groups (all P < 0.01). The concentration of SAA increased with the degree of sev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-2016",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2016,
+      "sentence": "Correlation analysis results showed that SAA concentration in serum of patients with OSAHS was significantly positively correlated with AHI, ODI, and ESS score ( P < 0.05), and SAA was negatively correlated with AVLT-immediate and AVLT-delay ( P < 0.05).",
+      "context_window": "cantly positively correlated with AHI, ODI, and ESS score ( P < 0.05), and SAA was negatively correlated with AVLT-immediate and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-2098",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2098,
+      "sentence": "Correlation analysis results showed that SAA concentration in serum of patients with OSAHS was significantly positively correlated with AHI, ODI, and ESS score ( P < 0.05), and SAA was negatively correlated with AVLT-immediate and AVLT-delay ( P < 0.05).",
+      "context_window": "negatively correlated with AVLT-immediate and AVLT-delay ( P < 0.05). See Table 3 for details. Correlation analysis of SAA con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-2349",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2349,
+      "sentence": "Correlation analysis of SAA concentration level\n\nCompared with the normal control group, the severe OSAHS group showed significant reduction of rsFC in the temporal lobe, marginal lobe, and parahippocampal gyrus ( P < 0.05); the frontal lobe showed a significant decrease in rsFC ( P < 0.05), while rsFC in the left parietal lobe and right parietal lobe showed a significant increase ( P < 0.05).",
+      "context_window": "e temporal lobe, marginal lobe, and parahippocampal gyrus ( P < 0.05); the frontal lobe showed a significant decrease in rsFC (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-2417",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2417,
+      "sentence": "Correlation analysis of SAA concentration level\n\nCompared with the normal control group, the severe OSAHS group showed significant reduction of rsFC in the temporal lobe, marginal lobe, and parahippocampal gyrus ( P < 0.05); the frontal lobe showed a significant decrease in rsFC ( P < 0.05), while rsFC in the left parietal lobe and right parietal lobe showed a significant increase ( P < 0.05).",
+      "context_window": "); the frontal lobe showed a significant decrease in rsFC ( P < 0.05), while rsFC in the left parietal lobe and right parietal l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-2521",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2521,
+      "sentence": "Correlation analysis of SAA concentration level\n\nCompared with the normal control group, the severe OSAHS group showed significant reduction of rsFC in the temporal lobe, marginal lobe, and parahippocampal gyrus ( P < 0.05); the frontal lobe showed a significant decrease in rsFC ( P < 0.05), while rsFC in the left parietal lobe and right parietal lobe showed a significant increase ( P < 0.05).",
+      "context_window": "obe and right parietal lobe showed a significant increase ( P < 0.05). See Fig. 1 and Table 4 for details. Changes of rsFC in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-2852",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2852,
+      "sentence": "Note: Blue-green is the brain region with reduced rsFC, and red-yellow is the brain region with enhanced rsFC.On the left and right of the image are the actual brain on the right and left, respectively, corrected by AlphaSim ( P < 0.05). a The blue areas indicated by the cross cursor are temporal lobe, marginal lobe, and parahippocampal gyrus. b The cross cursor points to the blue area of the frontal lobe. c The red area indicated by the cross cursor is the left parietal lobe. d The yellow and red area indicated by the cross cursor is the right lateral parietal lobe\n\nBrain regions with rsFC changes in patients with severe OSAHS compared with the normal control group\n\n*MNI coordinates, Coordinates of the Montreal Institute of Neuroscience.",
+      "context_window": "n the right and left, respectively, corrected by AlphaSim ( P < 0.05). a The blue areas indicated by the cross cursor are tempor",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-3511",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3511,
+      "sentence": "Bivariate correlation analysis showed that the left parietal lobe was significantly positively correlated with ESS, AHI, ODI, and SAA ( P < 0.05), while the right parietal lobe was significantly positively correlated with ESS, AHI, ODI, and SAA ( P < 0.05).",
+      "context_window": "icantly positively correlated with ESS, AHI, ODI, and SAA ( P < 0.05), while the right parietal lobe was significantly positivel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-3622",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3622,
+      "sentence": "Bivariate correlation analysis showed that the left parietal lobe was significantly positively correlated with ESS, AHI, ODI, and SAA ( P < 0.05), while the right parietal lobe was significantly positively correlated with ESS, AHI, ODI, and SAA ( P < 0.05).",
+      "context_window": "icantly positively correlated with ESS, AHI, ODI, and SAA ( P < 0.05). The temporal lobe, marginal lobe, and parahippocampal gyr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-3764",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3764,
+      "sentence": "The temporal lobe, marginal lobe, and parahippocampal gyrus were significantly negatively correlated with ESS, AHI, ODI, and SAA ( P < 0.05).",
+      "context_window": "icantly negatively correlated with ESS, AHI, ODI, and SAA ( P < 0.05). The frontal lobe was negatively correlated with ESS, AHI,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-3848",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3848,
+      "sentence": "The frontal lobe was negatively correlated with ESS, AHI, ODI, and SAA ( P < 0.05).",
+      "context_window": "obe was negatively correlated with ESS, AHI, ODI, and SAA ( P < 0.05). Temporal lobe, limbic lobe, parahippocampal gyrus, and fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-4204",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4204,
+      "sentence": "The left parietal lobe and the right parietal lobe were negatively correlated with AVLT-delay ( P < 0.05), respectively.",
+      "context_window": "parietal lobe were negatively correlated with AVLT-delay ( P < 0.05), respectively. See Table 5 for details. Correlation analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-4573",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4573,
+      "sentence": "Correlation analysis of rsFC in the brain of patients with severe OSAHS\n\nWith cognitive dysfunction as the dependent variable, ODI, ESS, and SAA as independent variables were included in the multiple linear regression analysis model, which showed that the regression model was statistically significant ( F = 235.633, P < 0.001) (Table 6 ), The independent variable explained 96.6% of the changes in cognitive function, with a high degree of interpretation (Table 7 ).The results of the significance test showed that the SAA, ODI, and ESS affected the cognitive function in patients with OSAHS ( P < 0.05) (Table 8 ).",
+      "context_window": "gression model was statistically significant ( F = 235.633, P < 0.001) (Table 6 ), The independent variable explained 96.6% of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-pct-4631",
+      "claim_type": "percentage",
+      "raw_text": "96.6%",
+      "numeric_values": [
+        96.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4631,
+      "sentence": "Correlation analysis of rsFC in the brain of patients with severe OSAHS\n\nWith cognitive dysfunction as the dependent variable, ODI, ESS, and SAA as independent variables were included in the multiple linear regression analysis model, which showed that the regression model was statistically significant ( F = 235.633, P < 0.001) (Table 6 ), The independent variable explained 96.6% of the changes in cognitive function, with a high degree of interpretation (Table 7 ).The results of the significance test showed that the SAA, ODI, and ESS affected the cognitive function in patients with OSAHS ( P < 0.05) (Table 8 ).",
+      "context_window": ", P < 0.001) (Table 6 ), The independent variable explained 96.6% of the changes in cognitive function, with a high degree of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10212809_relationship_between_blood_amyloid_a_and_resting_magnetic_re-p-4851",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4851,
+      "sentence": "Correlation analysis of rsFC in the brain of patients with severe OSAHS\n\nWith cognitive dysfunction as the dependent variable, ODI, ESS, and SAA as independent variables were included in the multiple linear regression analysis model, which showed that the regression model was statistically significant ( F = 235.633, P < 0.001) (Table 6 ), The independent variable explained 96.6% of the changes in cognitive function, with a high degree of interpretation (Table 7 ).The results of the significance test showed that the SAA, ODI, and ESS affected the cognitive function in patients with OSAHS ( P < 0.05) (Table 8 ).",
+      "context_window": "SS affected the cognitive function in patients with OSAHS ( P < 0.05) (Table 8 ). ANOVA a a Dependent variable: cognitive dysf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

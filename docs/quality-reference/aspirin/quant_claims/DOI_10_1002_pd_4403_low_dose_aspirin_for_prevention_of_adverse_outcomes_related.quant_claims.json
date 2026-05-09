@@ -1,0 +1,218 @@
+{
+  "paper_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related",
+  "doi": "10.1002/pd.4403",
+  "extracted_at": "2026-05-08T20:06:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1,
+    "confidence_interval": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-u-203",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 203,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "ia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of P",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-pct-299",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 299,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "icant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restricti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-375",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.33-0.64",
+      "numeric_values": [
+        0.33,
+        0.64
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 375,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "nterval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-418",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.22-0.57",
+      "numeric_values": [
+        0.22,
+        0.57
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 418,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "iction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-466",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.19-0.92",
+      "numeric_values": [
+        0.19,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 466,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "h (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substan",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-u-523",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 523,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "1, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-564",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.61-0.99",
+      "numeric_values": [
+        0.61,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 564,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-591",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.88-1.08",
+      "numeric_values": [
+        0.88,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 591,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-618",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-0.97",
+      "numeric_values": [
+        0.83,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 618,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": "0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively). Moreover, th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-ci-649",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.73-1.19",
+      "numeric_values": [
+        0.73,
+        1.19
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 649,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p>Meta\u2010analysis of randomized studies on the use of low\u2010dose aspirin in women at high risk of preeclampsia (PE) has demonstrated that if treatment is initiated at \u226416 weeks' gestation, there is significant reduction in the risk of PE [relative risk (RR) 0.47, 95% confidence interval (CI) 0.36-0.62], fetal growth restriction (RR 0.46, 95% CI 0.33-0.64), preterm birth (RR 0.35, 95% CI 0.22-0.57) and perinatal death (RR 0.41, 95% CI 0.19-0.92), whereas the effect of treatment after 16 weeks is substantially less (RR 0.78, 95% CI 0.61-0.99; RR 0.98, 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively).",
+      "context_window": ", 95% CI 0.88-1.08; RR 0.90, 95% CI 0.83-0.97; and RR 0.93, 95% CI 0.73-1.19, respectively). Moreover, the decrease in the risk of PE fr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_pd_4403_low_dose_aspirin_for_prevention_of_adverse_outcomes_related-u-809",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 809,
+      "sentence": "Moreover, the decrease in the risk of PE from early onset treatment seems to be related to the dose of aspirin, and a dose of >80 mg daily should be considered for optimal benefits. \u00a9 2014 John Wiley & Sons, Ltd.</jats:p>",
+      "context_window": "seems to be related to the dose of aspirin, and a dose of >80 mg daily should be considered for optimal benefits. \u00a9 2014 Joh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

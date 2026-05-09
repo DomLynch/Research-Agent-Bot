@@ -1,0 +1,85 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0544_0544_occult_obstructive_sleep_apnea_increases_risk_for_depre",
+  "doi": "10.1093/sleep/zsad077.0544",
+  "extracted_at": "2026-05-08T20:05:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1,
+    "risk_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0544_0544_occult_obstructive_sleep_apnea_increases_risk_for_depre-pct-674",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 674,
+      "sentence": "We hypothesized that relative to non-sleep disordered controls, older adults with occult OSA would demonstrate greater risk for incident depression during the year prior to OSA diagnosis.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Our data source was a random 5% sample of Medicare administrative claims data from 2006-2013.",
+      "context_window": "e>Methods</jats:title> <jats:p>Our data source was a random 5% sample of Medicare administrative claims data from 2006-201",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0544_0544_occult_obstructive_sleep_apnea_increases_risk_for_depre-u-1039",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1039,
+      "sentence": "Beneficiaries with history of depression prior to the beginning of follow-up (12 months before OSA diagnosis) were excluded.",
+      "context_window": "history of depression prior to the beginning of follow-up (12 months before OSA diagnosis) were excluded. Non-sleep disordered c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0544_0544_occult_obstructive_sleep_apnea_increases_risk_for_depre-rr-l-1764",
+      "claim_type": "risk_ratio",
+      "raw_text": "risk ratio 3.19",
+      "numeric_values": [
+        3.19
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1764,
+      "sentence": "In fully adjusted models, beneficiaries with OSA demonstrated significantly higher risk of depression during the year prior to OSA diagnosis (risk ratio 3.19; 95% confidence interval 3.00, 3.39).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>In this national study of older adult Medicare beneficiaries, occult OSA was associated with three-fold risk of incident depression.",
+      "context_window": "risk of depression during the year prior to OSA diagnosis (risk ratio 3.19; 95% confidence interval 3.00, 3.39).</jats:p> </jats:sec>",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0544_0544_occult_obstructive_sleep_apnea_increases_risk_for_depre-pct-1781",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1781,
+      "sentence": "In fully adjusted models, beneficiaries with OSA demonstrated significantly higher risk of depression during the year prior to OSA diagnosis (risk ratio 3.19; 95% confidence interval 3.00, 3.39).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>In this national study of older adult Medicare beneficiaries, occult OSA was associated with three-fold risk of incident depression.",
+      "context_window": "on during the year prior to OSA diagnosis (risk ratio 3.19; 95% confidence interval 3.00, 3.39).</jats:p> </jats:sec> <jats",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

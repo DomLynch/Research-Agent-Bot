@@ -1,0 +1,139 @@
+{
+  "paper_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver",
+  "doi": "10.1016/j.clnu.2022.07.042",
+  "extracted_at": "2026-05-08T20:10:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-u-330",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 330,
+      "sentence": "Methods Patients older than 18 years old who had received LT in Abu-Ali Sina transplantation center in Shiraz, Iran from September 2020 to June 2021, were enrolled in this double-blinded randomized clinical trial.",
+      "context_window": "ion effect on post-LT delirium. Methods Patients older than 18 years old who had received LT in Abu-Ali Sina transplantation cen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-u-753",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 753,
+      "sentence": "Patients were randomly divided into two groups, each received 2 g/day placebo or taurine from the first day post-LT for 30 days.",
+      "context_window": "d 2 g/day placebo or taurine from the first day post-LT for 30 days. Delirium was assessed using Confusion Assessment Method-In",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-pct-1250",
+      "claim_type": "percentage",
+      "raw_text": "23.08%",
+      "numeric_values": [
+        23.08
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1250,
+      "sentence": "Delirium rate within the first month was 23.08% and was significantly lower in taurine group (9.46%) compared with placebo (35.36%, P = 0.012).",
+      "context_window": "-LT, respectively. Delirium rate within the first month was 23.08% and was significantly lower in taurine group (9.46%) compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-pct-1303",
+      "claim_type": "percentage",
+      "raw_text": "9.46%",
+      "numeric_values": [
+        9.46
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1303,
+      "sentence": "Delirium rate within the first month was 23.08% and was significantly lower in taurine group (9.46%) compared with placebo (35.36%, P = 0.012).",
+      "context_window": "th was 23.08% and was significantly lower in taurine group (9.46%) compared with placebo (35.36%, P = 0.012). Length of ITU s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-pct-1333",
+      "claim_type": "percentage",
+      "raw_text": "35.36%",
+      "numeric_values": [
+        35.36
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1333,
+      "sentence": "Delirium rate within the first month was 23.08% and was significantly lower in taurine group (9.46%) compared with placebo (35.36%, P = 0.012).",
+      "context_window": "antly lower in taurine group (9.46%) compared with placebo (35.36%, P = 0.012). Length of ITU stay was significantly higher am",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-p-1341",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "Delirium rate within the first month was 23.08% and was significantly lower in taurine group (9.46%) compared with placebo (35.36%, P = 0.012).",
+      "context_window": "wer in taurine group (9.46%) compared with placebo (35.36%, P = 0.012). Length of ITU stay was significantly higher among delirio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36081295_the_effect_of_taurine_supplementation_on_delirium_post_liver-p-1423",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1423,
+      "sentence": "Length of ITU stay was significantly higher among delirious patients (P = 0.015) in this analysis.",
+      "context_window": "ITU stay was significantly higher among delirious patients (P = 0.015) in this analysis. Conclusion we reached to the result that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

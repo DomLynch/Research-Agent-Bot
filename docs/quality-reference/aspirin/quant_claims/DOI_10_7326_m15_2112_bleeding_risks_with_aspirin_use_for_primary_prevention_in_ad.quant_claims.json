@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_7326_m15_2112_bleeding_risks_with_aspirin_use_for_primary_prevention_in_ad",
+  "doi": "10.7326/m15-2112",
+  "extracted_at": "2026-05-08T20:05:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_7326_m15_2112_bleeding_risks_with_aspirin_use_for_primary_prevention_in_ad-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 748,
+      "sentence": "DATA SYNTHESIS: In CVD primary prevention studies, very-low-dose aspirin use (\u2264100 mg daily or every other day) increased major gastrointestinal (GI) bleeding risk by 58% (odds ratio [OR], 1.58 [95% CI, 1.29 to 1.95]) and hemorrhagic stroke risk by 27% (OR, 1.27 [CI, 0.96 to 1.68]).",
+      "context_window": "CVD primary prevention studies, very-low-dose aspirin use (\u2264100 mg daily or every other day) increased major gastrointestinal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2112_bleeding_risks_with_aspirin_use_for_primary_prevention_in_ad-pct-836",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 836,
+      "sentence": "DATA SYNTHESIS: In CVD primary prevention studies, very-low-dose aspirin use (\u2264100 mg daily or every other day) increased major gastrointestinal (GI) bleeding risk by 58% (odds ratio [OR], 1.58 [95% CI, 1.29 to 1.95]) and hemorrhagic stroke risk by 27% (OR, 1.27 [CI, 0.96 to 1.68]).",
+      "context_window": "day) increased major gastrointestinal (GI) bleeding risk by 58% (odds ratio [OR], 1.58 [95% CI, 1.29 to 1.95]) and hemorrha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2112_bleeding_risks_with_aspirin_use_for_primary_prevention_in_ad-pct-864",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "DATA SYNTHESIS: In CVD primary prevention studies, very-low-dose aspirin use (\u2264100 mg daily or every other day) increased major gastrointestinal (GI) bleeding risk by 58% (odds ratio [OR], 1.58 [95% CI, 1.29 to 1.95]) and hemorrhagic stroke risk by 27% (OR, 1.27 [CI, 0.96 to 1.68]).",
+      "context_window": "ntestinal (GI) bleeding risk by 58% (odds ratio [OR], 1.58 [95% CI, 1.29 to 1.95]) and hemorrhagic stroke risk by 27% (OR,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_m15_2112_bleeding_risks_with_aspirin_use_for_primary_prevention_in_ad-pct-918",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 918,
+      "sentence": "DATA SYNTHESIS: In CVD primary prevention studies, very-low-dose aspirin use (\u2264100 mg daily or every other day) increased major gastrointestinal (GI) bleeding risk by 58% (odds ratio [OR], 1.58 [95% CI, 1.29 to 1.95]) and hemorrhagic stroke risk by 27% (OR, 1.27 [CI, 0.96 to 1.68]).",
+      "context_window": "1.58 [95% CI, 1.29 to 1.95]) and hemorrhagic stroke risk by 27% (OR, 1.27 [CI, 0.96 to 1.68]). Projected excess bleeding ev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

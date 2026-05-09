@@ -1,0 +1,247 @@
+{
+  "paper_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast",
+  "doi": "10.1158/1538-7445.sabcs22-p4-03-02",
+  "extracted_at": "2026-05-08T20:05:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 5,
+    "hazard_ratio": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-u-494",
+      "claim_type": "unit_value",
+      "raw_text": "23 years",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 494,
+      "sentence": "Objectives To evaluate the association between aspirin use and breast cancer recurrence up to 23 years after primary diagnosis.",
+      "context_window": "tion between aspirin use and breast cancer recurrence up to 23 years after primary diagnosis. Methods We included all women diag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-u-895",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "Information on early and late (&gt;10 years after primary diagnosis) recurrence was obtained using the DBCG database (for recurrence within the first 10 years after diagnosis) and for late recurrence via a previously described and validated algorithm, drawing on data from the Danish National Patient Registry, the Danish Pathology Registry, the Danish Cancer Registry and a contralateral breast cancer database.",
+      "context_window": "l Prescription Registry. Information on early and late (&gt;10 years after primary diagnosis) recurrence was obtained using the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-u-1010",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "Information on early and late (&gt;10 years after primary diagnosis) recurrence was obtained using the DBCG database (for recurrence within the first 10 years after diagnosis) and for late recurrence via a previously described and validated algorithm, drawing on data from the Danish National Patient Registry, the Danish Pathology Registry, the Danish Cancer Registry and a contralateral breast cancer database.",
+      "context_window": "ed using the DBCG database (for recurrence within the first 10 years after diagnosis) and for late recurrence via a previously d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1351,
+      "sentence": "We used Cox regression to compute crude and adjusted hazard ratios (HRs) with 95% confidence intervals (CI) employing landmark analyses starting follow-up at years 5, 10, 15, and 20 after primary diagnosis.",
+      "context_window": "sion to compute crude and adjusted hazard ratios (HRs) with 95% confidence intervals (CI) employing landmark analyses start",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-hr-a-2335",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2335,
+      "sentence": "Our landmark analyses showed a reduced hazard of recurrence in the 5-, 10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14).",
+      "context_window": "10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-pct-2346",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2346,
+      "sentence": "Our landmark analyses showed a reduced hazard of recurrence in the 5-, 10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14).",
+      "context_window": "-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-hr-a-2393",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2393,
+      "sentence": "Our landmark analyses showed a reduced hazard of recurrence in the 5-, 10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14).",
+      "context_window": "d HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-pct-2404",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2404,
+      "sentence": "Our landmark analyses showed a reduced hazard of recurrence in the 5-, 10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14).",
+      "context_window": ", 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-hr-a-2451",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2451,
+      "sentence": "Our landmark analyses showed a reduced hazard of recurrence in the 5-, 10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14).",
+      "context_window": "d HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14). The 20-year landmark analysis reveal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-pct-2462",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2462,
+      "sentence": "Our landmark analyses showed a reduced hazard of recurrence in the 5-, 10-, and 15-year landmark cohorts (5-year landmark adjusted HR = 0.80, 95% CI = 0.68, 0.94; 10-year landmark adjusted HR = 0.84, 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14).",
+      "context_window": ", 95% CI = 0.71, 1.00, 15-year landmark adjusted HR = 0.83, 95% CI = 0.61, 1.14). The 20-year landmark analysis revealed an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-pct-2547",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2547,
+      "sentence": "The 20-year landmark analysis revealed an adjusted HR of 1.09 (95% CI = 0.49, 2.46).",
+      "context_window": "20-year landmark analysis revealed an adjusted HR of 1.09 (95% CI = 0.49, 2.46). Conclusions The potential anti-cancer eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-u-2662",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2662,
+      "sentence": "Conclusions The potential anti-cancer effect of aspirin appears most pronounced in the first 15 years after breast cancer diagnosis.",
+      "context_window": "ncer effect of aspirin appears most pronounced in the first 15 years after breast cancer diagnosis. Funding Elisabeth Solmunde i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1538_7445_sabcs22_p4_03_02_abstract_p4_03_02_low_dose_aspirin_prescriptions_and_breast-u-3243",
+      "claim_type": "unit_value",
+      "raw_text": "23 years",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 3243,
+      "sentence": "Low-dose aspirin prescriptions and breast cancer recurrence: a Danish nationwide cohort study with up to 23 years of follow-up [abstract].",
+      "context_window": "cer recurrence: a Danish nationwide cohort study with up to 23 years of follow-up [abstract]. In: Proceedings of the 2022 San An",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

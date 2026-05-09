@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and",
+  "doi": "10.1093/sleep/zsaf090.1515",
+  "extracted_at": "2026-05-08T20:05:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-u-1009",
+      "claim_type": "unit_value",
+      "raw_text": "50 mmHg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "Transthoracic echocardiogram revealed right ventricular systolic function moderately to severely reduced, elevated right ventricular systolic pressure (40-50 mmHg), and preserved left ventricular ejection fraction (50-55%).",
+      "context_window": "y reduced, elevated right ventricular systolic pressure (40-50 mmHg), and preserved left ventricular ejection fraction (50-55%)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-pct-1072",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1072,
+      "sentence": "Transthoracic echocardiogram revealed right ventricular systolic function moderately to severely reduced, elevated right ventricular systolic pressure (40-50 mmHg), and preserved left ventricular ejection fraction (50-55%).",
+      "context_window": "mmHg), and preserved left ventricular ejection fraction (50-55%). He was diagnosed with decompensated diastolic heart failu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-pct-1568",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1568,
+      "sentence": "The diagnostic segment revealed severe OSA with an AHI of 86.8 events/hour with an oxygen nadir of 72% and 69 minutes spent &lt; 85%.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>During the therapeutic segment, optimal settings could not be identified.",
+      "context_window": "OSA with an AHI of 86.8 events/hour with an oxygen nadir of 72% and 69 minutes spent &lt; 85%.</jats:p> </jats:sec> <jats:s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-pct-1598",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1598,
+      "sentence": "The diagnostic segment revealed severe OSA with an AHI of 86.8 events/hour with an oxygen nadir of 72% and 69 minutes spent &lt; 85%.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>During the therapeutic segment, optimal settings could not be identified.",
+      "context_window": "/hour with an oxygen nadir of 72% and 69 minutes spent &lt; 85%.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</ja",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-u-1793",
+      "claim_type": "unit_value",
+      "raw_text": "15 cm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1793,
+      "sentence": "Our patient was titrated from CPAP 5 to 15 cm H20, then switched to bilevel PAP due to CPAP insufficiency.",
+      "context_window": "not be identified. Our patient was titrated from CPAP 5 to 15 cm H20, then switched to bilevel PAP due to CPAP insufficiency",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-u-1891",
+      "claim_type": "unit_value",
+      "raw_text": "15 cm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1891,
+      "sentence": "Bilevel PAP was titrated to 23/15 cm H20 with 2L of oxygen, but oxygen saturation remained below 88%.",
+      "context_window": "P due to CPAP insufficiency. Bilevel PAP was titrated to 23/15 cm H20 with 2L of oxygen, but oxygen saturation remained below",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_1515_1515_a_complex_case_of_obesity_hypoventilation_syndrome_and-pct-1957",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1957,
+      "sentence": "Bilevel PAP was titrated to 23/15 cm H20 with 2L of oxygen, but oxygen saturation remained below 88%.",
+      "context_window": "H20 with 2L of oxygen, but oxygen saturation remained below 88%. Due to persistent sleep-related hypoventilation, he was ul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMID40287131_differential_polyamine_metabolism_in_cho_cell_lines_insights",
+  "doi": "10.1016/j.nbt.2025.04.007",
+  "extracted_at": "2026-05-08T20:12:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMID40287131_differential_polyamine_metabolism_in_cho_cell_lines_insights-pct-576",
+      "claim_type": "percentage",
+      "raw_text": "77 %",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 576,
+      "sentence": "CHO-K1 cells strongly depended on external polyamines, showing a 77 % reduction in viable cell density and an 88 % decrease in growth rate under PUT depletion, although their culture longevity was extended.",
+      "context_window": "1 cells strongly depended on external polyamines, showing a 77 % reduction in viable cell density and an 88 % decrease in gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine-rich wheat germ",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40287131_differential_polyamine_metabolism_in_cho_cell_lines_insights-pct-621",
+      "claim_type": "percentage",
+      "raw_text": "88 %",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 621,
+      "sentence": "CHO-K1 cells strongly depended on external polyamines, showing a 77 % reduction in viable cell density and an 88 % decrease in growth rate under PUT depletion, although their culture longevity was extended.",
+      "context_window": "nes, showing a 77 % reduction in viable cell density and an 88 % decrease in growth rate under PUT depletion, although their",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine-rich wheat germ",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID40287131_differential_polyamine_metabolism_in_cho_cell_lines_insights-pct-823",
+      "claim_type": "percentage",
+      "raw_text": "25 %",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 823,
+      "sentence": "In contrast, CHO-S and CHO-DG44 cells demonstrated greater resilience, with CHO-DG44 experiencing only a 25 % reduction in cell density.",
+      "context_window": "rated greater resilience, with CHO-DG44 experiencing only a 25 % reduction in cell density. PUT deprivation also impacted an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

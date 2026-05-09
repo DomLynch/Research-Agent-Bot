@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i",
+  "doi": "10.1159/000494250",
+  "extracted_at": "2026-05-08T20:05:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 1,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i-n-563",
+      "claim_type": "sample_size",
+      "raw_text": "n = 52",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 563,
+      "sentence": "Patients administered with LDA (n = 52) were compared with those without antithrombotic therapy (n = 241; control) by propensity-score matching (PSM) concerning outcomes of ESD.",
+      "context_window": "ary 2014 and February 2018. Patients administered with LDA (n = 52) were compared with those without antithrombotic therapy (n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i-n-628",
+      "claim_type": "sample_size",
+      "raw_text": "n = 241",
+      "numeric_values": [
+        241.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 628,
+      "sentence": "Patients administered with LDA (n = 52) were compared with those without antithrombotic therapy (n = 241; control) by propensity-score matching (PSM) concerning outcomes of ESD.",
+      "context_window": "2) were compared with those without antithrombotic therapy (n = 241; control) by propensity-score matching (PSM) concerning out",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i-p-933",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.710",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "Comparison showed similar values for frequency of intraoperative major bleeding: 1 (0-4) times (median [range]) in the LDA group and 0 (0-5) in the control group respectively (p = 0.710).",
+      "context_window": "he LDA group and 0 (0-5) in the control group respectively (p = 0.710). Others (frequency of preventive coagulation, procedure ti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i-pct-1139",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "Others (frequency of preventive coagulation, procedure time, decrease of hemoglobin levels, en bloc resection, complete resection) were the same with a few adverse events including perforation (0%), and thromboembolism (0%).",
+      "context_window": "e the same with a few adverse events including perforation (0%), and thromboembolism (0%). Postoperative bleeding rate was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i-pct-1165",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1165,
+      "sentence": "Others (frequency of preventive coagulation, procedure time, decrease of hemoglobin levels, en bloc resection, complete resection) were the same with a few adverse events including perforation (0%), and thromboembolism (0%).",
+      "context_window": "rse events including perforation (0%), and thromboembolism (0%). Postoperative bleeding rate was 1.9% in LDA group. Multiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000494250_effect_of_continued_administration_of_low_dose_aspirin_for_i-pct-1202",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "Postoperative bleeding rate was 1.9% in LDA group.",
+      "context_window": ", and thromboembolism (0%). Postoperative bleeding rate was 1.9% in LDA group. Multivariate analysis indicated that location",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

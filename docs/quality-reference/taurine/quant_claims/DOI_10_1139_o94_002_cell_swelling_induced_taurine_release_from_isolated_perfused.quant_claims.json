@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1139_o94_002_cell_swelling_induced_taurine_release_from_isolated_perfused",
+  "doi": "10.1139/o94-002",
+  "extracted_at": "2026-05-08T20:10:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1139_o94_002_cell_swelling_induced_taurine_release_from_isolated_perfused-pct-459",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 459,
+      "sentence": "This induced an 6-8% increase in liver mass and was associated with a specific 1.7-fold (-50 mosM) and 14-fold (-100 mosM) increase of the taurine release.",
+      "context_window": "concentration 25 or 50 mM, respectively. This induced an 6-8% increase in liver mass and was associated with a specific 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1139_o94_002_cell_swelling_induced_taurine_release_from_isolated_perfused-pct-991",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "This release was 29 and 17% of the original during the second and third exposure, respectively.Key words: cell swelling, liver, taurine. </jats:p>",
+      "context_window": "of the isolated liver to -100 mosM. This release was 29 and 17% of the original during the second and third exposure, respe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

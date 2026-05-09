@@ -1,0 +1,166 @@
+{
+  "cases": [
+    {
+      "defect_class": "broken_public_citation",
+      "expected_min_severity": "P1",
+      "id": "metformin_broken_citation_token",
+      "status": "schema_validated",
+      "topic": "metformin"
+    },
+    {
+      "defect_class": "duplicate_public_citation",
+      "expected_min_severity": "P1",
+      "id": "metformin_duplicate_citation_construction",
+      "status": "schema_validated",
+      "topic": "metformin"
+    },
+    {
+      "defect_class": "malformed_qei_row",
+      "expected_min_severity": "P1",
+      "id": "metformin_malformed_qei_row",
+      "status": "schema_validated",
+      "topic": "metformin"
+    },
+    {
+      "defect_class": "unsupported_numeric_claim",
+      "expected_min_severity": "P1",
+      "id": "glp1_unsupported_numeric_effect",
+      "status": "schema_validated",
+      "topic": "glp1"
+    },
+    {
+      "defect_class": "placeholder_prose",
+      "expected_min_severity": "P1",
+      "id": "glp1_placeholder_backfill",
+      "status": "schema_validated",
+      "topic": "glp1"
+    },
+    {
+      "defect_class": "duplicate_paragraph",
+      "expected_min_severity": "P1",
+      "id": "glp1_duplicate_background_stutter",
+      "status": "schema_validated",
+      "topic": "glp1"
+    },
+    {
+      "defect_class": "duplicate_paragraph",
+      "expected_min_severity": "P1",
+      "id": "omega3_duplicate_backstop_paragraph",
+      "status": "schema_validated",
+      "topic": "omega3"
+    },
+    {
+      "defect_class": "untraceable_numeric",
+      "expected_min_severity": "P1",
+      "id": "urolithin_untraceable_percent_57",
+      "status": "schema_validated",
+      "topic": "urolithin_a"
+    },
+    {
+      "defect_class": "malformed_numeric_artifact",
+      "expected_min_severity": "P1",
+      "id": "urolithin_zero_mg_artifact",
+      "status": "schema_validated",
+      "topic": "urolithin_a"
+    },
+    {
+      "defect_class": "topic_slug_public_leak",
+      "expected_min_severity": "P1",
+      "id": "urolithin_slug_heading",
+      "status": "schema_validated",
+      "topic": "urolithin_a"
+    },
+    {
+      "defect_class": "placeholder_prose",
+      "expected_min_severity": "P1",
+      "id": "senolytics_placeholder_conclusion",
+      "status": "schema_validated",
+      "topic": "senolytics"
+    },
+    {
+      "defect_class": "untraceable_numeric",
+      "expected_min_severity": "P1",
+      "id": "senolytics_unanchored_duration_row",
+      "status": "schema_validated",
+      "topic": "senolytics"
+    },
+    {
+      "defect_class": "unauthorized_external_citation",
+      "expected_min_severity": "P1",
+      "id": "vitamin_d_external_review_citation",
+      "status": "schema_validated",
+      "topic": "vitamin_d"
+    },
+    {
+      "defect_class": "semantic_numeric_unit_error",
+      "expected_min_severity": "P1",
+      "id": "vitamin_d_nonsense_body_weight_unit",
+      "status": "schema_validated",
+      "topic": "vitamin_d"
+    },
+    {
+      "defect_class": "metadata_leak",
+      "expected_min_severity": "P1",
+      "id": "rapamycin_bracketed_metadata_leak",
+      "status": "schema_validated",
+      "topic": "rapamycin"
+    },
+    {
+      "defect_class": "unsafe_patch_addition",
+      "expected_min_severity": "P1",
+      "id": "rapamycin_semantic_after_addition",
+      "status": "schema_validated",
+      "topic": "rapamycin"
+    },
+    {
+      "defect_class": "unsupported_numeric_claim",
+      "expected_min_severity": "P1",
+      "id": "statins_unanchored_ldl_value",
+      "status": "schema_validated",
+      "topic": "statins"
+    },
+    {
+      "defect_class": "clean_control",
+      "expected_min_severity": "P3",
+      "id": "aspirin_clean_control",
+      "status": "schema_validated",
+      "topic": "aspirin"
+    }
+  ],
+  "evaluated": 0,
+  "metrics": {
+    "defect_class_count": 14,
+    "defect_classes": [
+      "broken_public_citation",
+      "clean_control",
+      "duplicate_paragraph",
+      "duplicate_public_citation",
+      "malformed_numeric_artifact",
+      "malformed_qei_row",
+      "metadata_leak",
+      "placeholder_prose",
+      "semantic_numeric_unit_error",
+      "topic_slug_public_leak",
+      "unauthorized_external_citation",
+      "unsafe_patch_addition",
+      "unsupported_numeric_claim",
+      "untraceable_numeric"
+    ],
+    "topic_count": 9,
+    "topics": [
+      "aspirin",
+      "glp1",
+      "metformin",
+      "omega3",
+      "rapamycin",
+      "senolytics",
+      "statins",
+      "urolithin_a",
+      "vitamin_d"
+    ],
+    "unsafe_if_missed_count": 13
+  },
+  "provider": "dry-run",
+  "schema_version": "reviewer_replay_result.v1",
+  "total": 18
+}

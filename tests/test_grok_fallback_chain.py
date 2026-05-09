@@ -45,6 +45,74 @@ def test_primary_used_when_available() -> None:
     assert cost > 0
 
 
+def test_low_patch_long_paper_can_escalate_to_grok() -> None:
+    """DeepSeek can be cheap-first, but a suspiciously clean long paper can
+    escalate to a stronger reviewer when explicitly configured."""
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("deepseek/deepseek-v4-pro", {"patches": []}),
+        _mock_chat_response(
+            "x-ai/grok-4.3",
+            {
+                "patches": [
+                    {
+                        "id": "P01",
+                        "patch_type": "formatting",
+                        "severity": "P1",
+                        "location": "Body",
+                        "before": "artifact",
+                        "after": "",
+                        "reason": "Public artifact.",
+                    }
+                ]
+            },
+        ),
+    ])
+
+    patches, raw, model_used, cost = asyncio.run(
+        grok_reviewer.review_with_grok(
+            "word " * 10_001,
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="deepseek/deepseek-v4-pro",
+            fallback_model="mistralai/mistral-small-2603",
+            escalation_model="x-ai/grok-4.3",
+            api_key="test-key",
+            client=client,
+        )
+    )
+
+    assert model_used == "deepseek/deepseek-v4-pro→x-ai/grok-4.3"
+    assert client.post.call_count == 2
+    assert len(patches) == 1
+    assert patches[0].severity == "P1"
+    assert cost > 0
+
+
+def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
+    client = MagicMock()
+    client.post = AsyncMock(return_value=_mock_chat_response(
+        "deepseek/deepseek-v4-pro", {"patches": []},
+    ))
+
+    patches, _raw, model_used, _cost = asyncio.run(
+        grok_reviewer.review_with_grok(
+            "short clean paper",
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="deepseek/deepseek-v4-pro",
+            fallback_model="mistralai/mistral-small-2603",
+            escalation_model="x-ai/grok-4.3",
+            api_key="test-key",
+            client=client,
+        )
+    )
+
+    assert model_used == "deepseek/deepseek-v4-pro"
+    assert patches == []
+    assert client.post.call_count == 1
+
+
 def test_mistral_fallback_when_primary_fails() -> None:
     """When primary throws (HTTP error / parse failure), Mistral is the
     next call. Pipeline never silently skips final-layer review."""

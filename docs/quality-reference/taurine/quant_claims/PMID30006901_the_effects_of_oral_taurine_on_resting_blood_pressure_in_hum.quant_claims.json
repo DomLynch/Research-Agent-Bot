@@ -1,0 +1,175 @@
+{
+  "paper_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum",
+  "doi": "10.1007/s11906-018-0881-z",
+  "extracted_at": "2026-05-08T20:10:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "p_value": 2,
+    "unit_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-pct-820",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 820,
+      "sentence": "Taurine ingestion reduced SBP (Hedges' g = - 0.70, 95% CI - 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P < 0.0001).",
+      "context_window": "tatuses. Taurine ingestion reduced SBP (Hedges' g = - 0.70, 95% CI - 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.6",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-p-845",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 845,
+      "sentence": "Taurine ingestion reduced SBP (Hedges' g = - 0.70, 95% CI - 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P < 0.0001).",
+      "context_window": "n reduced SBP (Hedges' g = - 0.70, 95% CI - 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P <",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-pct-886",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 886,
+      "sentence": "Taurine ingestion reduced SBP (Hedges' g = - 0.70, 95% CI - 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P < 0.0001).",
+      "context_window": "- 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P < 0.0001). These results translated",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-p-911",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "Taurine ingestion reduced SBP (Hedges' g = - 0.70, 95% CI - 0.98 to - 0.41, P < 0.0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P < 0.0001).",
+      "context_window": "0001) and DBP (Hedges' g = - 0.62, 95% CI - 0.91 to - 0.34, P < 0.0001). These results translated to mean ~ 3 mmHg reductions in b",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-u-959",
+      "claim_type": "unit_value",
+      "raw_text": "3 mmHg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 959,
+      "sentence": "These results translated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported.",
+      "context_window": "to - 0.34, P < 0.0001). These results translated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range =",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-u-1000",
+      "claim_type": "unit_value",
+      "raw_text": "15 mmHg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1000,
+      "sentence": "These results translated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported.",
+      "context_window": "anslated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 t",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-u-1028",
+      "claim_type": "unit_value",
+      "raw_text": "7 mmHg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "These results translated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported.",
+      "context_window": "ductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 to 6 g/day) and supplementat",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-u-1107",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "These results translated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported.",
+      "context_window": "range of doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported. These prelim",
+      "claim_role": "dose",
+      "endpoint": "adverse events",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID30006901_the_effects_of_oral_taurine_on_resting_blood_pressure_in_hum-u-1116",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1116,
+      "sentence": "These results translated to mean ~ 3 mmHg reductions in both SBP (range = 0-15 mmHg) and DBP (range = 0-7 mmHg) following a range of doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported.",
+      "context_window": "doses (1 to 6 g/day) and supplementation periods (1 day to 12 weeks), with no adverse events reported. These preliminary findin",
+      "claim_role": "dose",
+      "endpoint": "adverse events",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

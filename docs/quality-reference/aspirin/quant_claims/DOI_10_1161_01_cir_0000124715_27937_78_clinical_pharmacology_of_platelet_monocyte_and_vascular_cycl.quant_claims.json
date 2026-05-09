@@ -1,0 +1,270 @@
+{
+  "paper_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl",
+  "doi": "10.1161/01.cir.0000124715.27937.78",
+  "extracted_at": "2026-05-08T20:05:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "mean_sd": 5,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-u-466",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 466,
+      "sentence": "<jats:p> <jats:bold> <jats:italic>Background-</jats:italic> </jats:bold> The current controversy on the potential cardioprotective effect of naproxen prompted us to evaluate the extent and duration of platelet, monocyte, and vascular cyclooxygenase (COX) inhibition by naproxen compared with low-dose aspirin. </jats:p> <jats:p> <jats:bold> <jats:italic>Methods and Results-</jats:italic> </jats:bold> We performed a crossover, open-label study of low-dose aspirin (100 mg/d) or naproxen (500 mg BID) administered to 9 healthy subjects for 6 days.",
+      "context_window": "erformed a crossover, open-label study of low-dose aspirin (100 mg/d) or naproxen (500 mg BID) administered to 9 healthy subject",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-u-489",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 489,
+      "sentence": "<jats:p> <jats:bold> <jats:italic>Background-</jats:italic> </jats:bold> The current controversy on the potential cardioprotective effect of naproxen prompted us to evaluate the extent and duration of platelet, monocyte, and vascular cyclooxygenase (COX) inhibition by naproxen compared with low-dose aspirin. </jats:p> <jats:p> <jats:bold> <jats:italic>Methods and Results-</jats:italic> </jats:bold> We performed a crossover, open-label study of low-dose aspirin (100 mg/d) or naproxen (500 mg BID) administered to 9 healthy subjects for 6 days.",
+      "context_window": "pen-label study of low-dose aspirin (100 mg/d) or naproxen (500 mg BID) administered to 9 healthy subjects for 6 days. The eff",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-u-540",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 540,
+      "sentence": "<jats:p> <jats:bold> <jats:italic>Background-</jats:italic> </jats:bold> The current controversy on the potential cardioprotective effect of naproxen prompted us to evaluate the extent and duration of platelet, monocyte, and vascular cyclooxygenase (COX) inhibition by naproxen compared with low-dose aspirin. </jats:p> <jats:p> <jats:bold> <jats:italic>Methods and Results-</jats:italic> </jats:bold> We performed a crossover, open-label study of low-dose aspirin (100 mg/d) or naproxen (500 mg BID) administered to 9 healthy subjects for 6 days.",
+      "context_window": "aproxen (500 mg BID) administered to 9 healthy subjects for 6 days. The effects on thromboxane (TX) and prostacyclin biosynthe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-msd-1075",
+      "claim_type": "mean_sd",
+      "raw_text": "94\u00b13",
+      "numeric_values": [
+        94.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1075,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary ex",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-pct-1078",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "duction, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary exc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-msd-1085",
+      "claim_type": "mean_sd",
+      "raw_text": "99\u00b10.3",
+      "numeric_values": [
+        99.0,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": ", an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-pct-1088",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1088,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "n index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-msd-1266",
+      "claim_type": "mean_sd",
+      "raw_text": "85\u00b18",
+      "numeric_values": [
+        85.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1266,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "emic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-pct-1269",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1269,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "c biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-msd-1276",
+      "claim_type": "mean_sd",
+      "raw_text": "78\u00b17",
+      "numeric_values": [
+        78.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1276,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "nthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-pct-1279",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1279,
+      "sentence": "The administration of naproxen or aspirin caused a similar suppression of whole-blood TXB <jats:sub>2</jats:sub> production, an index of platelet COX-1 activity ex vivo, by 94\u00b13% and 99\u00b10.3% (mean\u00b1SD), respectively, and of the urinary excretion of 11-dehydro-TXB <jats:sub>2</jats:sub> , an index of systemic biosynthesis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interval.",
+      "context_window": "esis of TXA <jats:sub>2</jats:sub> in vivo, by 85\u00b18% and 78\u00b17%, respectively, that persisted throughout the dosing interva",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-msd-1438",
+      "claim_type": "mean_sd",
+      "raw_text": "77\u00b119",
+      "numeric_values": [
+        77.0,
+        19.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "Naproxen, in contrast to aspirin, significantly reduced systemic prostacyclin biosynthesis by 77\u00b119%, consistent with differential inhibition of monocyte COX-2 activity measured ex vivo. </jats:p> <jats:p> <jats:bold> <jats:italic>Conclusions-</jats:italic> </jats:bold> The regular administration of naproxen 500 mg BID can mimic the antiplatelet COX-1 effect of low-dose aspirin.",
+      "context_window": "significantly reduced systemic prostacyclin biosynthesis by 77\u00b119%, consistent with differential inhibition of monocyte COX-2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-pct-1441",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1441,
+      "sentence": "Naproxen, in contrast to aspirin, significantly reduced systemic prostacyclin biosynthesis by 77\u00b119%, consistent with differential inhibition of monocyte COX-2 activity measured ex vivo. </jats:p> <jats:p> <jats:bold> <jats:italic>Conclusions-</jats:italic> </jats:bold> The regular administration of naproxen 500 mg BID can mimic the antiplatelet COX-1 effect of low-dose aspirin.",
+      "context_window": "nificantly reduced systemic prostacyclin biosynthesis by 77\u00b119%, consistent with differential inhibition of monocyte COX-2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000124715_27937_78_clinical_pharmacology_of_platelet_monocyte_and_vascular_cycl-u-1654",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1654,
+      "sentence": "Naproxen, in contrast to aspirin, significantly reduced systemic prostacyclin biosynthesis by 77\u00b119%, consistent with differential inhibition of monocyte COX-2 activity measured ex vivo. </jats:p> <jats:p> <jats:bold> <jats:italic>Conclusions-</jats:italic> </jats:bold> The regular administration of naproxen 500 mg BID can mimic the antiplatelet COX-1 effect of low-dose aspirin.",
+      "context_window": "italic> </jats:bold> The regular administration of naproxen 500 mg BID can mimic the antiplatelet COX-1 effect of low-dose asp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

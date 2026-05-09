@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1097_01_aog_0000930500_55836_e6_low_dose_aspirin_prescription_for_pregnant_people_at_risk_fo",
+  "doi": "10.1097/01.aog.0000930500.55836.e6",
+  "extracted_at": "2026-05-08T20:05:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000930500_55836_e6_low_dose_aspirin_prescription_for_pregnant_people_at_risk_fo-u-695",
+      "claim_type": "unit_value",
+      "raw_text": "28 weeks",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 695,
+      "sentence": "Patients who began prenatal care prior to 28 weeks and gave birth between September 2021 and December 2021 were included.",
+      "context_window": "n health network. Patients who began prenatal care prior to 28 weeks and gave birth between September 2021 and December 2021 wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000930500_55836_e6_low_dose_aspirin_prescription_for_pregnant_people_at_risk_fo-pct-1257",
+      "claim_type": "percentage",
+      "raw_text": "71.7%",
+      "numeric_values": [
+        71.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1257,
+      "sentence": "Of the 120 patients with at least one high-risk factor, 86 (71.7%) were prescribed LDA.",
+      "context_window": "Of the 120 patients with at least one high-risk factor, 86 (71.7%) were prescribed LDA. Of the 240 patients with at least two",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_aog_0000930500_55836_e6_low_dose_aspirin_prescription_for_pregnant_people_at_risk_fo-pct-1350",
+      "claim_type": "percentage",
+      "raw_text": "22.5%",
+      "numeric_values": [
+        22.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1350,
+      "sentence": "Of the 240 patients with at least two moderate-risk factors, 54 (22.5%) were prescribed LDA.",
+      "context_window": "e 240 patients with at least two moderate-risk factors, 54 (22.5%) were prescribed LDA. Among the 34 patients with a high-ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

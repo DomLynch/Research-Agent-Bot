@@ -1,0 +1,717 @@
+{
+  "paper_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_",
+  "doi": "10.3389/fpls.2025.1636076",
+  "extracted_at": "2026-05-08T20:11:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 6,
+    "mean_sd": 1,
+    "percentage": 20,
+    "unit_value": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-n-10089",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 10089,
+      "sentence": "Each biological replicate is represented by a grey circle; n = 6.",
+      "context_window": "Each biological replicate is represented by a grey circle; n = 6. If a metabolite could not be detected in all samples, only",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-msd-53",
+      "claim_type": "mean_sd",
+      "raw_text": "21 \u00b1 3",
+      "numeric_values": [
+        21.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 53,
+      "sentence": "Tomato (Moneymaker) and N. benthamiana were grown at 21 \u00b1 3\u00b0C, 30-50% humidity, and a 16/8-hour light/dark photoperiod.",
+      "context_window": "Tomato (Moneymaker) and N. benthamiana were grown at 21 \u00b1 3\u00b0C, 30-50% humidity, and a 16/8-hour light/dark photoperiod.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-66",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 66,
+      "sentence": "Tomato (Moneymaker) and N. benthamiana were grown at 21 \u00b1 3\u00b0C, 30-50% humidity, and a 16/8-hour light/dark photoperiod.",
+      "context_window": "(Moneymaker) and N. benthamiana were grown at 21 \u00b1 3\u00b0C, 30-50% humidity, and a 16/8-hour light/dark photoperiod. Previous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-577",
+      "claim_type": "unit_value",
+      "raw_text": "11 cm",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 577,
+      "sentence": "Germinated seedlings were genotyped, then transferred into 11 cm diameter pots at 18 days after germination (DAG), and phenotypes measured/counted every 3 days from 26-47 DAG.",
+      "context_window": "Germinated seedlings were genotyped, then transferred into 11 cm diameter pots at 18 days after germination (DAG), and pheno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-600",
+      "claim_type": "unit_value",
+      "raw_text": "18 days",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 600,
+      "sentence": "Germinated seedlings were genotyped, then transferred into 11 cm diameter pots at 18 days after germination (DAG), and phenotypes measured/counted every 3 days from 26-47 DAG.",
+      "context_window": "ere genotyped, then transferred into 11 cm diameter pots at 18 days after germination (DAG), and phenotypes measured/counted ev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-671",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 671,
+      "sentence": "Germinated seedlings were genotyped, then transferred into 11 cm diameter pots at 18 days after germination (DAG), and phenotypes measured/counted every 3 days from 26-47 DAG.",
+      "context_window": "er germination (DAG), and phenotypes measured/counted every 3 days from 26-47 DAG. Plant height was measured to nearest 0.5cm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-731",
+      "claim_type": "unit_value",
+      "raw_text": "0.5cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 731,
+      "sentence": "Plant height was measured to nearest 0.5cm from the cotyledon to shoot apical meristem.",
+      "context_window": "3 days from 26-47 DAG. Plant height was measured to nearest 0.5cm from the cotyledon to shoot apical meristem. Only fully exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-1085",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1085,
+      "sentence": "The youngest, fully expanded adult leaf was cut from each replicate (aged 4-5 weeks).",
+      "context_window": "lly expanded adult leaf was cut from each replicate (aged 4-5 weeks). The terminal and two primary leaflets were kept in water",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-2419",
+      "claim_type": "unit_value",
+      "raw_text": "50mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2419,
+      "sentence": "50mg (exact weight recorded) of plant tissue was flash frozen, ground in pre-cooled adapters using a TissueLyser II (Qiagen \u00ae ; 22 Hz, 30 sec, x2) and homogenized in ADC activity buffer (300\u00b5L of 5 mM Tris [pH 7.5], 0.75% polyvinylpolypyrrolidone [PVPP], 1 mM ascorbate, 50 \u00b5M pyridoxal 5 phosphate [P5P], 0.5 x protease inhibitor [Roche complete]; 2\u00b5M 13 C 1 D 2 citrulline [Eurisotop \u00ae ] and 2.5\u00b5M D 5 tryptophan [Sigma-Aldrich \u00ae ] as internal standards).",
+      "context_window": "urface of N. benthamiana leaves using a blunt end syringe. 50mg (exact weight recorded) of plant tissue was flash frozen, g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-2635",
+      "claim_type": "percentage",
+      "raw_text": "0.75%",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2635,
+      "sentence": "50mg (exact weight recorded) of plant tissue was flash frozen, ground in pre-cooled adapters using a TissueLyser II (Qiagen \u00ae ; 22 Hz, 30 sec, x2) and homogenized in ADC activity buffer (300\u00b5L of 5 mM Tris [pH 7.5], 0.75% polyvinylpolypyrrolidone [PVPP], 1 mM ascorbate, 50 \u00b5M pyridoxal 5 phosphate [P5P], 0.5 x protease inhibitor [Roche complete]; 2\u00b5M 13 C 1 D 2 citrulline [Eurisotop \u00ae ] and 2.5\u00b5M D 5 tryptophan [Sigma-Aldrich \u00ae ] as internal standards).",
+      "context_window": "enized in ADC activity buffer (300\u00b5L of 5 mM Tris [pH 7.5], 0.75% polyvinylpolypyrrolidone [PVPP], 1 mM ascorbate, 50 \u00b5M pyri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-4142",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4142,
+      "sentence": "To determine if metabolite levels fell into the linear range of their respective calibration curves ( Supplementary Table 2 ), dilutions (in water, 0.1% FA, 0.1% HFBA) of representative samples were tested prior to running all samples.",
+      "context_window": "tion curves ( Supplementary Table 2 ), dilutions (in water, 0.1% FA, 0.1% HFBA) of representative samples were tested prior",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-4151",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4151,
+      "sentence": "To determine if metabolite levels fell into the linear range of their respective calibration curves ( Supplementary Table 2 ), dilutions (in water, 0.1% FA, 0.1% HFBA) of representative samples were tested prior to running all samples.",
+      "context_window": "es ( Supplementary Table 2 ), dilutions (in water, 0.1% FA, 0.1% HFBA) of representative samples were tested prior to runnin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-4459",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4459,
+      "sentence": "Chromatographic separation was achieved on a HaloFused C18 micro column (150 x 0.5 mm; 2.7 \u03bcm; AB Sciex) and a Luna C18 (2) micro trap column (5\u03bcm; 100 \u00c5; 20\u00d70.5mm; Phenomenex); injection volume was 50 \u03bcL.",
+      "context_window": "aration was achieved on a HaloFused C18 micro column (150 x 0.5 mm; 2.7 \u03bcm; AB Sciex) and a Luna C18 (2) micro trap column (5\u03bc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-4538",
+      "claim_type": "unit_value",
+      "raw_text": "0.5mm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4538,
+      "sentence": "Chromatographic separation was achieved on a HaloFused C18 micro column (150 x 0.5 mm; 2.7 \u03bcm; AB Sciex) and a Luna C18 (2) micro trap column (5\u03bcm; 100 \u00c5; 20\u00d70.5mm; Phenomenex); injection volume was 50 \u03bcL.",
+      "context_window": "Sciex) and a Luna C18 (2) micro trap column (5\u03bcm; 100 \u00c5; 20\u00d70.5mm; Phenomenex); injection volume was 50 \u03bcL. Analytes were ion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-5019",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5019,
+      "sentence": "A general loss of sample volume of about 10% (data not shown) using the reduced trapping time was deemed acceptable.",
+      "context_window": "the sample itself. A general loss of sample volume of about 10% (data not shown) using the reduced trapping time was deemed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-5276",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5276,
+      "sentence": "The metabolite content in each replicate was calculated using commercial standards (external calibration in water, 0.1% FA, 0.1% HFBA), except for 13 C 5 agmatine, 13 C 4 putrescine, and 13 C 4 15 N 2 putrescine, which were quantified based on their natural variants.",
+      "context_window": "using commercial standards (external calibration in water, 0.1% FA, 0.1% HFBA), except for 13 C 5 agmatine, 13 C 4 putresci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-5285",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5285,
+      "sentence": "The metabolite content in each replicate was calculated using commercial standards (external calibration in water, 0.1% FA, 0.1% HFBA), except for 13 C 5 agmatine, 13 C 4 putrescine, and 13 C 4 15 N 2 putrescine, which were quantified based on their natural variants.",
+      "context_window": "mmercial standards (external calibration in water, 0.1% FA, 0.1% HFBA), except for 13 C 5 agmatine, 13 C 4 putrescine, and 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7159",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7159,
+      "sentence": "N. benthamiana leaf tissue was flash frozen and ground in pre-cooled adapters, then homogenized in extraction buffer (80 mM Tris [pH 7.5], 2.5% SDS, 50 mM EDTA, 2.5x strength protease inhibitor; 33 \u00b5L per leaf disk) and loading dye added (20 mM Tris-HCl pH 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v] bromophenol blue; 13 \u00b5L per leaf disk).",
+      "context_window": "then homogenized in extraction buffer (80 mM Tris [pH 7.5], 2.5% SDS, 50 mM EDTA, 2.5x strength protease inhibitor; 33 \u00b5L pe",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7282",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7282,
+      "sentence": "N. benthamiana leaf tissue was flash frozen and ground in pre-cooled adapters, then homogenized in extraction buffer (80 mM Tris [pH 7.5], 2.5% SDS, 50 mM EDTA, 2.5x strength protease inhibitor; 33 \u00b5L per leaf disk) and loading dye added (20 mM Tris-HCl pH 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v] bromophenol blue; 13 \u00b5L per leaf disk).",
+      "context_window": "er leaf disk) and loading dye added (20 mM Tris-HCl pH 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v]",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7302",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7302,
+      "sentence": "N. benthamiana leaf tissue was flash frozen and ground in pre-cooled adapters, then homogenized in extraction buffer (80 mM Tris [pH 7.5], 2.5% SDS, 50 mM EDTA, 2.5x strength protease inhibitor; 33 \u00b5L per leaf disk) and loading dye added (20 mM Tris-HCl pH 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v] bromophenol blue; 13 \u00b5L per leaf disk).",
+      "context_window": "ading dye added (20 mM Tris-HCl pH 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v] bromophenol blue; 1",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7335",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7335,
+      "sentence": "N. benthamiana leaf tissue was flash frozen and ground in pre-cooled adapters, then homogenized in extraction buffer (80 mM Tris [pH 7.5], 2.5% SDS, 50 mM EDTA, 2.5x strength protease inhibitor; 33 \u00b5L per leaf disk) and loading dye added (20 mM Tris-HCl pH 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v] bromophenol blue; 13 \u00b5L per leaf disk).",
+      "context_window": "H 8.6, 40% [v/v] glycerol, 10% [v/v] 2-mercaptoethanol, and 0.1% [w/v] bromophenol blue; 13 \u00b5L per leaf disk). Samples were",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7465",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7465,
+      "sentence": "Samples were heated (90\u00b0C, 10 minutes), briefly centrifuged, and loaded onto a 10% SDS PAGE gel.",
+      "context_window": "(90\u00b0C, 10 minutes), briefly centrifuged, and loaded onto a 10% SDS PAGE gel. Proteins were transferred to a PVDF membrane",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7588",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7588,
+      "sentence": "Proteins were transferred to a PVDF membrane using Trans-Blot \u00ae Turbo Transfer System (BioRad), blocked (5% milk powder in TBST [50 mM Tris-HCl, 150 mM NaCl, 0.05% Tween-20]), then incubated overnight (6\u00b0C, rocking) with the epitope-detecting antibody (i.e., monoclonal, conjugated anti-HA-HRP antibody [Roche] or monoclonal anti-c myc [raised in mouse; Sigma Aldrich]).",
+      "context_window": "using Trans-Blot \u00ae Turbo Transfer System (BioRad), blocked (5% milk powder in TBST [50 mM Tris-HCl, 150 mM NaCl, 0.05% Twe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-7641",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7641,
+      "sentence": "Proteins were transferred to a PVDF membrane using Trans-Blot \u00ae Turbo Transfer System (BioRad), blocked (5% milk powder in TBST [50 mM Tris-HCl, 150 mM NaCl, 0.05% Tween-20]), then incubated overnight (6\u00b0C, rocking) with the epitope-detecting antibody (i.e., monoclonal, conjugated anti-HA-HRP antibody [Roche] or monoclonal anti-c myc [raised in mouse; Sigma Aldrich]).",
+      "context_window": "ocked (5% milk powder in TBST [50 mM Tris-HCl, 150 mM NaCl, 0.05% Tween-20]), then incubated overnight (6\u00b0C, rocking) with th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-8215",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8215,
+      "sentence": "Ponceau staining (0.1% [w/v] Ponceau S, and 5% [v/v] glacial acetic acid) of all blots was conducted to verify even protein loading.",
+      "context_window": "Imager 600, GE Healthcare Life Sciences. Ponceau staining (0.1% [w/v] Ponceau S, and 5% [v/v] glacial acetic acid) of all b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-8241",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8241,
+      "sentence": "Ponceau staining (0.1% [w/v] Ponceau S, and 5% [v/v] glacial acetic acid) of all blots was conducted to verify even protein loading.",
+      "context_window": "Life Sciences. Ponceau staining (0.1% [w/v] Ponceau S, and 5% [v/v] glacial acetic acid) of all blots was conducted to ve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-3970",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3970,
+      "sentence": "Previously, 0.05% heptafluorobutyric acid (HFBA) was included in the gradient solvents as an ion pairing agent ( Wu et al., 2019 ).",
+      "context_window": "he LC-MS gradient composition for optimization. Previously, 0.05% heptafluorobutyric acid (HFBA) was included in the gradient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-9323",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9323,
+      "sentence": "Immunoblot analysis of N. benthamiana leaves agroinfiltrated with 35Sp: HA-SlADC1:35St (left) and 35Sp:myc-SlADC2:35St (right) at increasing OD 600 (0.05, 0.1, 0.5, and 1) of samples taken 2 days post infiltration (dpi).",
+      "context_window": "increasing OD 600 (0.05, 0.1, 0.5, and 1) of samples taken 2 days post infiltration (dpi). Upper images (cropped) show HA-SlA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-n-10121",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10121,
+      "sentence": "Each biological replicate represented by a grey circle; n = 3.",
+      "context_window": "5). Each biological replicate represented by a grey circle; n = 3. Previously, unprocessed N. benthamiana leaf samples rapid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-n-13312",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13312,
+      "sentence": "Each biological replicate represented by a grey circle; n = 6.",
+      "context_window": "5). Each biological replicate represented by a grey circle; n = 6. As ADCs and ODCs are key enzymes in PA biosynthesis, we w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-n-15849",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15849,
+      "sentence": "Each biological replicate represented by a grey circle; n = 6.",
+      "context_window": "5). Each biological replicate represented by a grey circle; n = 6. Overall, these results demonstrate that tomato ADC and OD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-17344",
+      "claim_type": "unit_value",
+      "raw_text": "47 days",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 17344,
+      "sentence": "Twenty genotyped tomato plants representing WT, adc1 , adc2 , adc1/adc2 , and odc1 were examined every three days between 26 to 47 days after germination (DAG), with photos taken of representative plants at 37 DAG ( Figure 7A ).",
+      "context_window": "dc2 , and odc1 were examined every three days between 26 to 47 days after germination (DAG), with photos taken of representativ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-18532",
+      "claim_type": "unit_value",
+      "raw_text": "47 days",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 18532,
+      "sentence": "Phenotypes of WT, adc1 , adc2 , adc1/adc2 , and odc1 tomato mutants were analyzed until 47 days after germination (DAG). (A) Photos of whole plants were taken at 37 DAG; two representatives are shown. (B) Leaves of the adc1/adc2 double mutant have morphological differences to WT.",
+      "context_window": "2 , adc1/adc2 , and odc1 tomato mutants were analyzed until 47 days after germination (DAG). (A) Photos of whole plants were ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-u-19097",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 19097,
+      "sentence": "All plants (WT [purple], adc1 [red], adc2 [green], adc1/adc2 [yellow], and odc1 [blue]) were analyzed every 3 days from 26-47 DAG; n = 20.",
+      "context_window": "], adc1/adc2 [yellow], and odc1 [blue]) were analyzed every 3 days from 26-47 DAG; n = 20. Solid lines represent mean and shad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-n-19120",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19120,
+      "sentence": "All plants (WT [purple], adc1 [red], adc2 [green], adc1/adc2 [yellow], and odc1 [blue]) were analyzed every 3 days from 26-47 DAG; n = 20.",
+      "context_window": "and odc1 [blue]) were analyzed every 3 days from 26-47 DAG; n = 20. Solid lines represent mean and shaded area represents stan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-n-20747",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20747,
+      "sentence": "Each biological replicate represented by a grey circle (n = 6).",
+      "context_window": "AG. Each biological replicate represented by a grey circle (n = 6). Statistical significance determined using ANOVA followed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-1319",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1319,
+      "sentence": "Since at both substrate concentrations 13 C 6 arginine levels were never depleted ( Supplementary Data File ), the higher concentration (i.e., 500 \u00b5M) likely increased ADC activity by almost reaching the reported SlADC1 Km of 600 \u00b5M ( Guo et al., 2023 ), a situation representing 50% substrate saturation of the enzyme.",
+      "context_window": "Km of 600 \u00b5M ( Guo et al., 2023 ), a situation representing 50% substrate saturation of the enzyme. A higher 13 C 6 arginin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-1409",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1409,
+      "sentence": "A higher 13 C 6 arginine concentration to achieve 100% enzyme substrate saturation was not considered as this could negatively affect the chromatographic separation and electrospray ionization process of coeluting metabolites ( Jessome and Volmer, 2006 ).",
+      "context_window": "e enzyme. A higher 13 C 6 arginine concentration to achieve 100% enzyme substrate saturation was not considered as this coul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12460301_optimized_lc_ms_method_for_simultaneous_polyamine_profiling_-pct-6267",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6267,
+      "sentence": "This is likely due to high alkaloid levels in this species, making up to ~1% of its dry weight ( Stephan et al., 2018 ), which would also be present in the WE samples.",
+      "context_window": "due to high alkaloid levels in this species, making up to ~1% of its dry weight ( Stephan et al., 2018 ), which would als",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

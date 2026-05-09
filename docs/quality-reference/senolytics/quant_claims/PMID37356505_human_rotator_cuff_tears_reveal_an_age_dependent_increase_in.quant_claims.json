@@ -1,0 +1,229 @@
+{
+  "paper_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in",
+  "doi": "10.1016/j.arthro.2023.05.036",
+  "extracted_at": "2026-05-08T20:01:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 2,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-u-329",
+      "claim_type": "unit_value",
+      "raw_text": "62 years",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 329,
+      "sentence": "Methods Tissue was harvested from 41 patients (mean age, 62 years) undergoing arthroscopic rotator cuff repairs.",
+      "context_window": "n. Methods Tissue was harvested from 41 patients (mean age, 62 years) undergoing arthroscopic rotator cuff repairs. In part 1 (n",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-n-396",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 396,
+      "sentence": "In part 1 (n = 35), senescence was quantified using immunohistochemistry and gene expression for senescent cell markers (p16 and p21) and the senescence-associated secretory phenotype (SASP) (interleukin [IL] 6, IL-8, matrix metalloproteinase [MMP] 3, monocyte chemoattractant protein [MCP] 1).",
+      "context_window": "s) undergoing arthroscopic rotator cuff repairs. In part 1 (n = 35), senescence was quantified using immunohistochemistry and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "bcl-xl inhibitor",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-u-730",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 730,
+      "sentence": "Senescence was compared between patients <60 and \u226560 years old.",
+      "context_window": "[MCP] 1). Senescence was compared between patients <60 and \u226560 years old. In part 2 (n = 6) , an in vitro model of rotator cuff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-n-755",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 755,
+      "sentence": "In part 2 (n = 6) , an in vitro model of rotator cuff tears was treated with D+Q or control.",
+      "context_window": "compared between patients <60 and \u226560 years old. In part 2 (n = 6) , an in vitro model of rotator cuff tears was treated with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "d+q",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1210",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1210,
+      "sentence": "Results Part 1 revealed an age-dependent significant increase in the relative expression of p21, IL-6, and IL-8 in tendon and p21, p16, IL-6, IL-8, and MMP-3 in bursa (P < .05).",
+      "context_window": "L-8 in tendon and p21, p16, IL-6, IL-8, and MMP-3 in bursa (P < .05). A significant increase was seen in immunohistochemical st",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1298",
+      "claim_type": "p_value",
+      "raw_text": "P = .028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1298,
+      "sentence": "A significant increase was seen in immunohistochemical staining of bursa p21 (P = .028).",
+      "context_window": "ease was seen in immunohistochemical staining of bursa p21 (P = .028). In part 2, D+Q significantly decreased expression of p21,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1419",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1419,
+      "sentence": "In part 2, D+Q significantly decreased expression of p21, IL-6, and IL-8 in tendon and p21 and IL-8 in bursa (P < .05).",
+      "context_window": "of p21, IL-6, and IL-8 in tendon and p21 and IL-8 in bursa (P < .05). Enzyme-linked immunosorbent assay analysis showed decreas",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "d+q",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1530",
+      "claim_type": "p_value",
+      "raw_text": "P = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1530,
+      "sentence": "Enzyme-linked immunosorbent assay analysis showed decreased release of the SASP (IL-6, MMP-3, MCP-1; P = .002, P = .024, P < .001, respectively).",
+      "context_window": "s showed decreased release of the SASP (IL-6, MMP-3, MCP-1; P = .002, P = .024, P < .001, respectively). Tendon (P = .022) and b",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1540",
+      "claim_type": "p_value",
+      "raw_text": "P = .024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1540,
+      "sentence": "Enzyme-linked immunosorbent assay analysis showed decreased release of the SASP (IL-6, MMP-3, MCP-1; P = .002, P = .024, P < .001, respectively).",
+      "context_window": "ecreased release of the SASP (IL-6, MMP-3, MCP-1; P = .002, P = .024, P < .001, respectively). Tendon (P = .022) and bursa (P =",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1550",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1550,
+      "sentence": "Enzyme-linked immunosorbent assay analysis showed decreased release of the SASP (IL-6, MMP-3, MCP-1; P = .002, P = .024, P < .001, respectively).",
+      "context_window": "elease of the SASP (IL-6, MMP-3, MCP-1; P = .002, P = .024, P < .001, respectively). Tendon (P = .022) and bursa (P = .027) trea",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1583",
+      "claim_type": "p_value",
+      "raw_text": "P = .022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1583,
+      "sentence": "Tendon (P = .022) and bursa (P = .027) treated with D+Q increased the expression of COL1A1.",
+      "context_window": "MCP-1; P = .002, P = .024, P < .001, respectively). Tendon (P = .022) and bursa (P = .027) treated with D+Q increased the expres",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "d+q",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37356505_human_rotator_cuff_tears_reveal_an_age_dependent_increase_in-p-1604",
+      "claim_type": "p_value",
+      "raw_text": "P = .027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1604,
+      "sentence": "Tendon (P = .022) and bursa (P = .027) treated with D+Q increased the expression of COL1A1.",
+      "context_window": ".024, P < .001, respectively). Tendon (P = .022) and bursa (P = .027) treated with D+Q increased the expression of COL1A1. Concl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "d+q",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

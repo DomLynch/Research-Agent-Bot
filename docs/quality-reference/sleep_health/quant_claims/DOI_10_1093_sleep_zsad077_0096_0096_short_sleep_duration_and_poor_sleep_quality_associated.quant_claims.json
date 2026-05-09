@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated",
+  "doi": "10.1093/sleep/zsad077.0096",
+  "extracted_at": "2026-05-08T20:05:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated-pct-127",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 127,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Introduction</jats:title> <jats:p>Ten percent of adults aged \u2265 65 and 50% of adults \u2265 85 years exhibit cognitive impairment.",
+      "context_window": "on</jats:title> <jats:p>Ten percent of adults aged \u2265 65 and 50% of adults \u2265 85 years exhibit cognitive impairment. In addit",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated-u-143",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 143,
+      "sentence": "<jats:title>Abstract</jats:title> <jats:sec> <jats:title>Introduction</jats:title> <jats:p>Ten percent of adults aged \u2265 65 and 50% of adults \u2265 85 years exhibit cognitive impairment.",
+      "context_window": "<jats:p>Ten percent of adults aged \u2265 65 and 50% of adults \u2265 85 years exhibit cognitive impairment. In addition, 50% of older adu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated-pct-195",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 195,
+      "sentence": "In addition, 50% of older adults experience poor sleep quality.",
+      "context_window": "dults \u2265 85 years exhibit cognitive impairment. In addition, 50% of older adults experience poor sleep quality. Veterans are",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated-p-1701",
+      "claim_type": "p_value",
+      "raw_text": "p =0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1701,
+      "sentence": "7.7h, p =0.001) and slept fewer hours (Fitbit 4.7h vs.",
+      "context_window": "lt; 5). Poor sleepers spent less TIB (Fitbit 5.3h vs. 7.7h, p =0.001) and slept fewer hours (Fitbit 4.7h vs. 7.2h, p =0.001) whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated-p-1756",
+      "claim_type": "p_value",
+      "raw_text": "p =0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "7.2h, p =0.001) when compared to good sleepers.",
+      "context_window": ".7h, p =0.001) and slept fewer hours (Fitbit 4.7h vs. 7.2h, p =0.001) when compared to good sleepers. Additionally, poor sleeper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0096_0096_short_sleep_duration_and_poor_sleep_quality_associated-p-1950",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1950,
+      "sentence": "Lastly, poor sleepers exhibited higher serum NfL (mean 66.7, p=0.04).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Poor sleep quality was associated with short sleep duration, mild cognitive impairment, and higher serum levels of NfL in older Veterans without a dementia diagnosis.",
+      "context_window": "astly, poor sleepers exhibited higher serum NfL (mean 66.7, p=0.04).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

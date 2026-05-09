@@ -1,0 +1,482 @@
+{
+  "paper_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity",
+  "doi": "10.4161/15384101.2014.973309",
+  "extracted_at": "2026-05-08T20:13:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 10,
+    "unit_value": 2,
+    "sample_size": 6,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-822",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 822,
+      "sentence": "Subsequently, flies were transferred into fresh vials with filter papers soaked with solution containing 10% sucrose and 20 mM MnCl 2 (pH 6.0) as previously described.",
+      "context_window": "sh vials with filter papers soaked with solution containing 10% sucrose and 20 mM MnCl 2 (pH 6.0) as previously described.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-u-1690",
+      "claim_type": "unit_value",
+      "raw_text": "7 cm",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1690,
+      "sentence": "Under red light conditions the flies were gently tapped to the bottom of the vial and the number of animals that could climb a defined height (7 cm) was recorded after 15 seconds.",
+      "context_window": "nd the number of animals that could climb a defined height (7 cm) was recorded after 15 seconds. The same flies were tested",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-2051",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2051,
+      "sentence": "For protein extraction 20-30 fly heads were homogenized in 2% SDS and 1% Triton X-100 final concentration.",
+      "context_window": "For protein extraction 20-30 fly heads were homogenized in 2% SDS and 1% Triton X-100 final concentration. Laemmli buffer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-2062",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2062,
+      "sentence": "For protein extraction 20-30 fly heads were homogenized in 2% SDS and 1% Triton X-100 final concentration.",
+      "context_window": "n extraction 20-30 fly heads were homogenized in 2% SDS and 1% Triton X-100 final concentration. Laemmli buffer was added",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-2329",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2329,
+      "sentence": "After centrifugation at 13.400 rpm for 2 minutes to pellet residual fly head debris, an equivalent of 2 fly heads for each condition was loaded onto 12% acrylamide gels for protein separation using standard SDS-PAGE followed by immunoblotting.",
+      "context_window": "quivalent of 2 fly heads for each condition was loaded onto 12% acrylamide gels for protein separation using standard SDS-P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-u-855",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 855,
+      "sentence": "35 Employing this experimental setup, 31,32 pan-neuronal elav-GAL4-driven expression of \u03b1Syn killed the flies within 4-6 days ( Fig.",
+      "context_window": "av-GAL4-driven expression of \u03b1Syn killed the flies within 4-6 days ( Fig. 1A ). Simultaneous supplementation of food with sper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1125,
+      "sentence": "In fact, while the mean lifespan in flies expressing \u03b1Syn decreased by 20% upon manganese treatment, spermidine supplementation led to an almost complete restoration of mean lifespan ( Fig.",
+      "context_window": "ile the mean lifespan in flies expressing \u03b1Syn decreased by 20% upon manganese treatment, spermidine supplementation led to",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-1668",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1668,
+      "sentence": "Spermidine prevents \u0251Syn-induced motor dysfunction and death of D. melanogaster. ( A ) Survival of male flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic w 1118 wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ .",
+      "context_window": "1118 wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ . Survival has been determined at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-n-1786",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1786,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate of the flies described in ( A ) upon supplementation of food with 20 mM Mn 2+ . ( C ) Immunoblot analysis of brain lysates of flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated for 24 h.",
+      "context_window": "ed at indicated time points. Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mea",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-1831",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1831,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate of the flies described in ( A ) upon supplementation of food with 20 mM Mn 2+ . ( C ) Immunoblot analysis of brain lysates of flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated for 24 h.",
+      "context_window": "eans \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-2190",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2190,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate of the flies described in ( A ) upon supplementation of food with 20 mM Mn 2+ . ( C ) Immunoblot analysis of brain lysates of flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated for 24 h.",
+      "context_window": "genic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-n-2584",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2584,
+      "sentence": "For each genotype and condition, 150-180 flies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunoblotting to analyze Atg8a levels in brain lysates of flies expressing human \u03b1Syn upon supplementation of food with 20 mM Mn 2+ for 72 h.",
+      "context_window": "For each genotype and condition, 150-180 flies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-2626",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2626,
+      "sentence": "For each genotype and condition, 150-180 flies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunoblotting to analyze Atg8a levels in brain lysates of flies expressing human \u03b1Syn upon supplementation of food with 20 mM Mn 2+ for 72 h.",
+      "context_window": "lies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunoblotting to analyze Atg8a levels in brain lysa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-n-3000",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3000,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 4, * P < 0.05.",
+      "context_window": "malized to \u03b1-tubulin levels. Data represent means \u00b1 s.e.m., n = 4, * P < 0.05. Spermidine prevents \u0251Syn-induced motor dysfun",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-3009",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3009,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 4, * P < 0.05.",
+      "context_window": "o \u03b1-tubulin levels. Data represent means \u00b1 s.e.m., n = 4, * P < 0.05. Spermidine prevents \u0251Syn-induced motor dysfunction and de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-3294",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3294,
+      "sentence": "Spermidine prevents \u0251Syn-induced motor dysfunction and death of D. melanogaster. ( A ) Survival of male flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic w 1118 wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ .",
+      "context_window": "1118 wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ . Survival has been determined at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-n-3412",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3412,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate of the flies described in ( A ) upon supplementation of food with 20 mM Mn 2+ . ( C ) Immunoblot analysis of brain lysates of flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated for 24 h.",
+      "context_window": "ed at indicated time points. Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mea",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-3457",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3457,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate of the flies described in ( A ) upon supplementation of food with 20 mM Mn 2+ . ( C ) Immunoblot analysis of brain lysates of flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated for 24 h.",
+      "context_window": "eans \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-3816",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3816,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 5-6 with 30-40 flies per experiment. *** P < 0.001. ( B ) Mean lifespan calculated using Kaplan Meier estimate of the flies described in ( A ) upon supplementation of food with 20 mM Mn 2+ . ( C ) Immunoblot analysis of brain lysates of flies expressing human \u03b1-synuclein (\u03b1Syn) driven by x chromosome-linked elav-GAL4 and corresponding isogenic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated for 24 h.",
+      "context_window": "genic wild type flies (Ctrl.) upon supplementation of food (10% sucrose) with 20 mM Mn 2+ and 5 mM spermidine as indicated",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-n-4210",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4210,
+      "sentence": "For each genotype and condition, 150-180 flies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunoblotting to analyze Atg8a levels in brain lysates of flies expressing human \u03b1Syn upon supplementation of food with 20 mM Mn 2+ for 72 h.",
+      "context_window": "For each genotype and condition, 150-180 flies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-4252",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4252,
+      "sentence": "For each genotype and condition, 150-180 flies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunoblotting to analyze Atg8a levels in brain lysates of flies expressing human \u03b1Syn upon supplementation of food with 20 mM Mn 2+ for 72 h.",
+      "context_window": "lies were tested (n = 6 with 25-30 flies per experiment). * P < 0.05. ( E ) Immunoblotting to analyze Atg8a levels in brain lysa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-n-4626",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4626,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 4, * P < 0.05.",
+      "context_window": "malized to \u03b1-tubulin levels. Data represent means \u00b1 s.e.m., n = 4, * P < 0.05. In addition, we monitored the effect of sperm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-4635",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4635,
+      "sentence": "Data represent means \u00b1 s.e.m., n = 4, * P < 0.05.",
+      "context_window": "o \u03b1-tubulin levels. Data represent means \u00b1 s.e.m., n = 4, * P < 0.05. In addition, we monitored the effect of spermidine supple",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-pct-6902",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6902,
+      "sentence": "2A ), leading to less than 10% of worms with healthy, wild-type like CEPs ( Fig.",
+      "context_window": "mals expressing GFP alone ( Fig. 2A ), leading to less than 10% of worms with healthy, wild-type like CEPs ( Fig. 2B ). Sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-7856",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7856,
+      "sentence": "Data represent mean \u00b1 s.e.m., ** P < 0.01, Student's t test. ( C ) Confocal images of nematodes (baIn11[p dat-1 \u03b1Syn, p dat-1 GFP]; N 2 Ex[p lgg-1 DsRED::LGG-1]) expressing \u0251Syn in dopaminergic neurons as well as the autophagosomal marker LGG-1 fused to DsRED driven by the endogenous lgg-1 promoter following supplementation of food with 5 mM spermidine compared to age-matched untreated animals.",
+      "context_window": "4 independent experiments. Data represent mean \u00b1 s.e.m., ** P < 0.01, Student's t test. ( C ) Confocal images of nematodes (baIn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4614020_spermidine_protects_against_synuclein_neurotoxicity-p-8978",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8978,
+      "sentence": "Data represent mean \u00b1 s.e.m., ** P < 0.01, Student's t test. ( C ) Confocal images of nematodes (baIn11[p dat-1 \u03b1Syn, p dat-1 GFP]; N 2 Ex[p lgg-1 DsRED::LGG-1]) expressing \u0251Syn in dopaminergic neurons as well as the autophagosomal marker LGG-1 fused to DsRED driven by the endogenous lgg-1 promoter following supplementation of food with 5 mM spermidine compared to age-matched untreated animals.",
+      "context_window": "4 independent experiments. Data represent mean \u00b1 s.e.m., ** P < 0.01, Student's t test. ( C ) Confocal images of nematodes (baIn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

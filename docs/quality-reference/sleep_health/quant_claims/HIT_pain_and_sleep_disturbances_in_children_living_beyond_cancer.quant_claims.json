@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_pain_and_sleep_disturbances_in_children_living_beyond_cancer",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_pain_and_sleep_disturbances_in_children_living_beyond_cancer-pct-157",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 157,
+      "sentence": "Studies suggest that 11-44% of CBC experience chronic pain, negatively impacting a wide range of child biopsychosocial outcomes and creating high financial burden for their families and society.",
+      "context_window": "need of long-term clinical support. Studies suggest that 11-44% of CBC experience chronic pain, negatively impacting a wide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_pain_and_sleep_disturbances_in_children_living_beyond_cancer-pct-522",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 522,
+      "sentence": "Indeed, \\>50% of CBC report some form of sleep disturbance even 9 to 15 years after the cancer diagnosis.",
+      "context_window": "r, difficulties initiating and maintaining sleep. Indeed, \\>50% of CBC report some form of sleep disturbance even 9 to 15 y",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_pain_and_sleep_disturbances_in_children_living_beyond_cancer-u-581",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 581,
+      "sentence": "Indeed, \\>50% of CBC report some form of sleep disturbance even 9 to 15 years after the cancer diagnosis.",
+      "context_window": ">50% of CBC report some form of sleep disturbance even 9 to 15 years after the cancer diagnosis. Much attention has been paid to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

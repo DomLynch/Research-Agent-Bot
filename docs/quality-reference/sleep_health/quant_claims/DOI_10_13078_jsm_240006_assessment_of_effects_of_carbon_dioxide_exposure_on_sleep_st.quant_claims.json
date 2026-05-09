@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_13078_jsm_240006_assessment_of_effects_of_carbon_dioxide_exposure_on_sleep_st",
+  "doi": "10.13078/jsm.240006",
+  "extracted_at": "2026-05-08T20:06:58+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "p_value": 2,
+    "correlation": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_13078_jsm_240006_assessment_of_effects_of_carbon_dioxide_exposure_on_sleep_st-pct-646",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "Two interventions involved exposure to either 2% low-concentration CO2 gas or room air.",
+      "context_window": "ysomnography. Two interventions involved exposure to either 2% low-concentration CO2 gas or room air. CVE analysis was per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_240006_assessment_of_effects_of_carbon_dioxide_exposure_on_sleep_st-p-1009",
+      "claim_type": "p_value",
+      "raw_text": "p=0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "Results: Exposure to CO2 improved the total sleep time (TST) (p=0.010) and total arousal index (TAI) (p=0.011).",
+      "context_window": "sults: Exposure to CO2 improved the total sleep time (TST) (p=0.010) and total arousal index (TAI) (p=0.011). The CVE analysis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_240006_assessment_of_effects_of_carbon_dioxide_exposure_on_sleep_st-p-1049",
+      "claim_type": "p_value",
+      "raw_text": "p=0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "Results: Exposure to CO2 improved the total sleep time (TST) (p=0.010) and total arousal index (TAI) (p=0.011).",
+      "context_window": "l sleep time (TST) (p=0.010) and total arousal index (TAI) (p=0.011). The CVE analysis showed a distinct distribution between t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_240006_assessment_of_effects_of_carbon_dioxide_exposure_on_sleep_st-corr-1207",
+      "claim_type": "correlation",
+      "raw_text": "(r=0.41)",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1207,
+      "sentence": "Moreover, correlations between the TST and CVE (r=0.41) and those between the TAI and CVE (r=0.40) were observed.",
+      "context_window": "lled groups. Moreover, correlations between the TST and CVE (r=0.41) and those between the TAI and CVE (r=0.40) were observed. C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13078_jsm_240006_assessment_of_effects_of_carbon_dioxide_exposure_on_sleep_st-corr-1250",
+      "claim_type": "correlation",
+      "raw_text": "(r=0.40)",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1250,
+      "sentence": "Moreover, correlations between the TST and CVE (r=0.41) and those between the TAI and CVE (r=0.40) were observed.",
+      "context_window": "the TST and CVE (r=0.41) and those between the TAI and CVE (r=0.40) were observed. Conclusions: This study is the first to eval",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

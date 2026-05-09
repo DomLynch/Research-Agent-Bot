@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating",
   "doi": "10.3390/ani11051318",
-  "extracted_at": "2026-05-05T21:41:39+00:00",
+  "extracted_at": "2026-05-08T20:10:27+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 33,
@@ -24,10 +24,10 @@
       "sentence": "The immune response and growth performance of O. niloticus showed marked improvements when provided a 1% TUR-enriched supplement.",
       "context_window": "of O. niloticus showed marked improvements when provided a 1% TUR-enriched supplement. Indiscriminate use of insecticide",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "vaccine response",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-pct-5194",
@@ -43,9 +43,9 @@
       "context_window": "Taurine (TUR) is a sulfonic amino acid that accounts for 30-50% of the free amino acid pool in animal tissues [ 32 ]. It is",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-pct-36",
@@ -823,9 +823,9 @@
       "context_window": "atological indices on O. niloticus and the role of Taurine (1% in diet). For 60 days ( n = 60). The values are shown in m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-u-1037",
@@ -1039,7 +1039,7 @@
       "context_window": "o LCT and/or MTM (1/20 of LC50) and fed on diets containing 1% taurine (TUR) for 60 days. ( A , B ) Fish that were fed on",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1057,7 +1057,7 @@
       "context_window": "0 of LC50) and fed on diets containing 1% taurine (TUR) for 60 days. ( A , B ) Fish that were fed on the basal diet, without or",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1147,7 +1147,7 @@
       "context_window": "at the level of AchE in serum was significantly decreased ( p < 0.001) after exposure to LCT and MTM for 60 days compared with co",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1165,7 +1165,7 @@
       "context_window": "ly decreased ( p < 0.001) after exposure to LCT and MTM for 60 days compared with control. Severe increases in the serum 8-OHdG",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1183,7 +1183,7 @@
       "context_window": "post-infection for O. niloticus , and the role of taurine (1% in diet). Sixty days ( n = 60). The values are shown as me",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2039,9 +2039,9 @@
       "context_window": "sure to LCT and/or MTM (1/20 of LC50) and a diet containing 1% taurine (TUR) for 60 days. The values are shown as means \u00b1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-u-8932",
@@ -2057,9 +2057,9 @@
       "context_window": "M (1/20 of LC50) and a diet containing 1% taurine (TUR) for 60 days. The values are shown as means \u00b1 SEs. One-way ANOVA was fol",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-p-9093",
@@ -2148,7 +2148,7 @@
       "context_window": "and two-fold for CXC. The mean values in the LCT group were 5.83 \u00b1 0.37, 0.3 \u00b1 0.06, 4.43 \u00b1 0.32, 2.46 \u00b1 0.52, and 7.63 \u00b1 0.43 for",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2167,7 +2167,7 @@
       "context_window": "for CXC. The mean values in the LCT group were 5.83 \u00b1 0.37, 0.3 \u00b1 0.06, 4.43 \u00b1 0.32, 2.46 \u00b1 0.52, and 7.63 \u00b1 0.43 for TNF\u03b1, IL-10,",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2186,7 +2186,7 @@
       "context_window": "mean values in the LCT group were 5.83 \u00b1 0.37, 0.3 \u00b1 0.06, 4.43 \u00b1 0.32, 2.46 \u00b1 0.52, and 7.63 \u00b1 0.43 for TNF\u03b1, IL-10, CC, CXC, and",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2205,7 +2205,7 @@
       "context_window": "in the LCT group were 5.83 \u00b1 0.37, 0.3 \u00b1 0.06, 4.43 \u00b1 0.32, 2.46 \u00b1 0.52, and 7.63 \u00b1 0.43 for TNF\u03b1, IL-10, CC, CXC, and IL-1\u03b2, respe",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2224,7 +2224,7 @@
       "context_window": "were 5.83 \u00b1 0.37, 0.3 \u00b1 0.06, 4.43 \u00b1 0.32, 2.46 \u00b1 0.52, and 7.63 \u00b1 0.43 for TNF\u03b1, IL-10, CC, CXC, and IL-1\u03b2, respectively (control-",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2243,7 +2243,7 @@
       "context_window": "for TNF\u03b1, IL-10, CC, CXC, and IL-1\u03b2, respectively (control-1 \u00b1 0.24, 1.13 \u00b1 0.15, 1.08 \u00b1 0.16, 1.1 \u00b1 0.17 and 1 \u00b1 0.13). The fo",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2262,7 +2262,7 @@
       "context_window": "IL-10, CC, CXC, and IL-1\u03b2, respectively (control-1 \u00b1 0.24, 1.13 \u00b1 0.15, 1.08 \u00b1 0.16, 1.1 \u00b1 0.17 and 1 \u00b1 0.13). The former incremen",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2281,7 +2281,7 @@
       "context_window": "XC, and IL-1\u03b2, respectively (control-1 \u00b1 0.24, 1.13 \u00b1 0.15, 1.08 \u00b1 0.16, 1.1 \u00b1 0.17 and 1 \u00b1 0.13). The former increments were also",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2300,7 +2300,7 @@
       "context_window": ", respectively (control-1 \u00b1 0.24, 1.13 \u00b1 0.15, 1.08 \u00b1 0.16, 1.1 \u00b1 0.17 and 1 \u00b1 0.13). The former increments were also found nearly",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2319,7 +2319,7 @@
       "context_window": "(control-1 \u00b1 0.24, 1.13 \u00b1 0.15, 1.08 \u00b1 0.16, 1.1 \u00b1 0.17 and 1 \u00b1 0.13). The former increments were also found nearly in the same",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2736,9 +2736,9 @@
       "context_window": "1. For LCT, MTM, TUR, or combined regarding to the control (3.7 \u00b1 0.20, 41.33 \u00b1 0.05, 3.36 \u00b1 0.09, and 2.23 \u00b1 18.56, respectively.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-msd-11024",
@@ -2755,9 +2755,9 @@
       "context_window": "MTM, TUR, or combined regarding to the control (3.7 \u00b1 0.20, 41.33 \u00b1 0.05, 3.36 \u00b1 0.09, and 2.23 \u00b1 18.56, respectively. Fold changes",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-msd-11038",
@@ -2774,9 +2774,9 @@
       "context_window": "ombined regarding to the control (3.7 \u00b1 0.20, 41.33 \u00b1 0.05, 3.36 \u00b1 0.09, and 2.23 \u00b1 18.56, respectively. Fold changes in TNF-\u03b1, IL",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-msd-11055",
@@ -2793,9 +2793,9 @@
       "context_window": "to the control (3.7 \u00b1 0.20, 41.33 \u00b1 0.05, 3.36 \u00b1 0.09, and 2.23 \u00b1 18.56, respectively. Fold changes in TNF-\u03b1, IL-10, IL-1\u03b2, CC, an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8148011_the_antioxidant_role_of_a_taurine_enriched_diet_in_combating-pct-11234",
@@ -2811,7 +2811,7 @@
       "context_window": "to LCT and/or MTM (1/20 of LC50) and fed a diet containing 1% taurine (TUR) for 60 days. The values are shown as means \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2829,7 +2829,7 @@
       "context_window": "/20 of LC50) and fed a diet containing 1% taurine (TUR) for 60 days. The values are shown as means \u00b1 SEs. One-way ANOVA followe",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2901,7 +2901,7 @@
       "context_window": "t mortality percent was recorded in LCT + MTM-exposed fish (86.67%) followed by LCT (80%), MTM (73.33%), and control groups (6",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2919,7 +2919,7 @@
       "context_window": "ecorded in LCT + MTM-exposed fish (86.67%) followed by LCT (80%), MTM (73.33%), and control groups (66.67%). On the other h",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2937,7 +2937,7 @@
       "context_window": "LCT + MTM-exposed fish (86.67%) followed by LCT (80%), MTM (73.33%), and control groups (66.67%). On the other hand, the fish",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2955,7 +2955,7 @@
       "context_window": "%) followed by LCT (80%), MTM (73.33%), and control groups (66.67%). On the other hand, the fish fed on a TUR-supplemented die",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3045,7 +3045,7 @@
       "context_window": "ure to LCT and/or MTM (1/20 of LC50), fed a diet containing 1% taurine (TUR) for 60 days. Each line represents a group\u2019s c",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3063,7 +3063,7 @@
       "context_window": "(1/20 of LC50), fed a diet containing 1% taurine (TUR) for 60 days. Each line represents a group\u2019s cumulative mortality (%) fr",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "taurine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3170,7 +3170,7 @@
       "sentence": "Furthermore, LCT and/or MTM exposure significantly ( p < 0.001) decreased the total WBC counts, especially of lymphocytes, elucidating a stress condition and suppressing a non-specific immune response in O. niloticus .",
       "context_window": "62 ]. Furthermore, LCT and/or MTM exposure significantly ( p < 0.001) decreased the total WBC counts, especially of lymphocytes,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "vaccine response",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -3242,7 +3242,7 @@
       "sentence": "Our results support previous findings that LCT exposure induced a substantial decrease in the immune response of O. niloticus after 30 days [ 30 ].",
       "context_window": "ntial decrease in the immune response of O. niloticus after 30 days [ 30 ]. Feeding a TUR-supplemented diet to LCT and/or MTM-e",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "vaccine response",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

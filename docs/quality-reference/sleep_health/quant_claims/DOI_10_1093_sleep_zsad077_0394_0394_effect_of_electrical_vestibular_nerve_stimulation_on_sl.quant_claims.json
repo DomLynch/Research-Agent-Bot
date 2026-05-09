@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl",
+  "doi": "10.1093/sleep/zsad077.0394",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl-u-891",
+      "claim_type": "unit_value",
+      "raw_text": "24 years",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 891,
+      "sentence": "The present study is a randomised, double blinded, sham-controlled trial with the aim of assessing the efficacy of VeNS on the sleep quality of young adults suffering from insomnia.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>Eighty adults aged 18-24 years who scored 15 or higher on the Insomnia Severity Index (ISI) were recruited.",
+      "context_window": "ts:title>Methods</jats:title> <jats:p>Eighty adults aged 18-24 years who scored 15 or higher on the Insomnia Severity Index (ISI",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl-n-1026",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "Participants assigned to the intervention group (n=40) received 30 minutes per day of VeNS with 5 sessions per week for 4 weeks, while the control group (n=40) received sham stimulation for the same period.",
+      "context_window": "recruited. Participants assigned to the intervention group (n=40) received 30 minutes per day of VeNS with 5 sessions per we",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl-u-1097",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1097,
+      "sentence": "Participants assigned to the intervention group (n=40) received 30 minutes per day of VeNS with 5 sessions per week for 4 weeks, while the control group (n=40) received sham stimulation for the same period.",
+      "context_window": "ved 30 minutes per day of VeNS with 5 sessions per week for 4 weeks, while the control group (n=40) received sham stimulation f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl-n-1131",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1131,
+      "sentence": "Participants assigned to the intervention group (n=40) received 30 minutes per day of VeNS with 5 sessions per week for 4 weeks, while the control group (n=40) received sham stimulation for the same period.",
+      "context_window": "h 5 sessions per week for 4 weeks, while the control group (n=40) received sham stimulation for the same period. ISI scores",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl-pct-1836",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1836,
+      "sentence": "The intervention group had a higher reduction in mean ISI score relative to the control group at day 28 (mean change [95% CI]: 7.23 [6.78, 7.67] vs.",
+      "context_window": "score relative to the control group at day 28 (mean change [95% CI]: 7.23 [6.78, 7.67] vs. 0.98 [0.89, 1.06], P&lt; 0.001;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0394_0394_effect_of_electrical_vestibular_nerve_stimulation_on_sl-u-2190",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2190,
+      "sentence": "Furthermore, the intervention group showed improvements in depression, anxiety, and stress scores (P&lt; 0.001) and QoL outcomes (P&lt; 0.001) compared with the control group.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Regular VeNS usage over 4 weeks lead to a clinically meaningful decrease in ISI scores and improved general well-being in young adults with insomnia.",
+      "context_window": "tle>Conclusion</jats:title> <jats:p>Regular VeNS usage over 4 weeks lead to a clinically meaningful decrease in ISI scores and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

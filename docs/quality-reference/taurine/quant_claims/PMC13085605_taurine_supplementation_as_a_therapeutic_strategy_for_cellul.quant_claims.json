@@ -1,0 +1,1026 @@
+{
+  "paper_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul",
+  "doi": "10.1186/s12879-026-13009-y",
+  "extracted_at": "2026-05-08T20:10:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 15,
+    "confidence_interval": 21,
+    "percentage": 11,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-n-1260",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1260,
+      "sentence": "Analysis of 27 clinical trials ( n = 1,030) demonstrated that taurine supplementation significantly improved markers of metabolic dysfunction (including hemoglobin A1c, fasting blood glucose, fasting insulin, HOMA-IR, total cholesterol, triglycerides, and low-density lipoprotein), inflammation (C-reactive protein, TNF-\u237a, and IL-6), and oxidative stress (malondialdehyde).",
+      "context_window": "lore study heterogeneity. Analysis of 27 clinical trials ( n = 1,030) demonstrated that taurine supplementation significantl",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-1855",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1855,
+      "sentence": "Given the dose-response relationship identified between taurine and inflammatory markers TNF-\u237a and IL-6, a daily dose of 3,000 mg appears to offer an optimal balance between clinical efficacy and tolerability.",
+      "context_window": "and inflammatory markers TNF-\u237a and IL-6, a daily dose of 3,000 mg appears to offer an optimal balance between clinical effica",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-n-1990",
+      "claim_type": "sample_size",
+      "raw_text": "n = 308",
+      "numeric_values": [
+        308.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1990,
+      "sentence": "Furthermore, a pooled analysis of six studies ( n = 308) revealed significantly lower plasma taurine levels in individuals with PASC compared to recovered, symptom-free counterparts (SMD - 0.35, 95% CI: -0.63 to -0.08).",
+      "context_window": "lerability. Furthermore, a pooled analysis of six studies ( n = 308) revealed significantly lower plasma taurine levels in indi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-2137",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.63 to -0.08",
+      "numeric_values": [
+        -0.63,
+        -0.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2137,
+      "sentence": "Furthermore, a pooled analysis of six studies ( n = 308) revealed significantly lower plasma taurine levels in individuals with PASC compared to recovered, symptom-free counterparts (SMD - 0.35, 95% CI: -0.63 to -0.08).",
+      "context_window": "mpared to recovered, symptom-free counterparts (SMD - 0.35, 95% CI: -0.63 to -0.08). Taurine supplementation effectively ameliorates key path",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-564",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 564,
+      "sentence": "Epidemiological studies suggest that 6% to 30% of COVID-19 survivors develop long COVID, translating to at least 65 million affected individuals worldwide [ 4 , 6 ].",
+      "context_window": "many others [ 4 , 5 ]. Epidemiological studies suggest that 6% to 30% of COVID-19 survivors develop long COVID, translatin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-570",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 570,
+      "sentence": "Epidemiological studies suggest that 6% to 30% of COVID-19 survivors develop long COVID, translating to at least 65 million affected individuals worldwide [ 4 , 6 ].",
+      "context_window": "thers [ 4 , 5 ]. Epidemiological studies suggest that 6% to 30% of COVID-19 survivors develop long COVID, translating to at",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1951,
+      "sentence": "Randomized and non-randomized clinical trials evaluating oral taurine supplementation in adults 18 years of age or older were eligible for inclusion.",
+      "context_window": "al trials evaluating oral taurine supplementation in adults 18 years of age or older were eligible for inclusion. We included st",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-5754",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5754,
+      "sentence": "For meta-analysis of continuous variables, standardized mean differences (SMD) with corresponding 95% confidence intervals were calculated.",
+      "context_window": "les, standardized mean differences (SMD) with corresponding 95% confidence intervals were calculated. Data reported as mean",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-6102",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6102,
+      "sentence": "An I 2 value greater than 50% was considered to indicate substantial heterogeneity among the included studies.",
+      "context_window": "tau-squared, and chi-square test. An I 2 value greater than 50% was considered to indicate substantial heterogeneity among",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-p-6866",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6866,
+      "sentence": "Statistical significance was considered based on two-tailed p < 0.05.",
+      "context_window": "Statistical significance was considered based on two-tailed p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-402",
+      "claim_type": "percentage",
+      "raw_text": "50.5%",
+      "numeric_values": [
+        50.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 402,
+      "sentence": "Females comprised 50.5% of the overall participants, and seven studies enrolled exclusively female participants [ 32 - 38 ].",
+      "context_window": "th a median of 30 participants per study. Females comprised 50.5% of the overall participants, and seven studies enrolled exc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-541",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 541,
+      "sentence": "The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks (ranging from 1 week to 16 weeks).",
+      "context_window": "e participants [ 32 - 38 ]. The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered ov",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-568",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 568,
+      "sentence": "The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks (ranging from 1 week to 16 weeks).",
+      "context_window": "The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-584",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 584,
+      "sentence": "The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks (ranging from 1 week to 16 weeks).",
+      "context_window": "ine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks (ranging from 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-652",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 652,
+      "sentence": "The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks (ranging from 1 week to 16 weeks).",
+      "context_window": "ay) administered over a median of eight weeks (ranging from 1 week to 16 weeks). Taurine appeared to be generally well-tolerat",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 662,
+      "sentence": "The median taurine dosage was 3,000 mg/day (ranging from 1,000 mg/day to 6,000 mg/day) administered over a median of eight weeks (ranging from 1 week to 16 weeks).",
+      "context_window": "stered over a median of eight weeks (ranging from 1 week to 16 weeks). Taurine appeared to be generally well-tolerated, with no",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-844",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 844,
+      "sentence": "Taurine appeared to be generally well-tolerated, with no major adverse events reported except for mild gastrointestinal discomfort, increased fatigue, and flatulence at 6,000 mg/day as noted in one study (Supplemental Table 4 ) [ 39 ].",
+      "context_window": "testinal discomfort, increased fatigue, and flatulence at 6,000 mg/day as noted in one study (Supplemental Table 4 ) [ 39 ]. Seven",
+      "claim_role": "effect",
+      "endpoint": "adverse events",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-2057",
+      "claim_type": "unit_value",
+      "raw_text": "61 years",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2057,
+      "sentence": "The average participant age ranged from 32 to 61 years, with 51% female representation.",
+      "context_window": "al Table 5 ). The average participant age ranged from 32 to 61 years, with 51% female representation. Follow-up duration varied",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-2072",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2072,
+      "sentence": "The average participant age ranged from 32 to 61 years, with 51% female representation.",
+      "context_window": "he average participant age ranged from 32 to 61 years, with 51% female representation. Follow-up duration varied from 3 to",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-2135",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2135,
+      "sentence": "Follow-up duration varied from 3 to 24 months, and all studies used liquid chromatography-mass spectrometry for taurine measurement with COVID-19 diagnosis confirmed based on positive SARS-CoV-2 real time PCR assay.",
+      "context_window": "female representation. Follow-up duration varied from 3 to 24 months, and all studies used liquid chromatography-mass spectromet",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-2447",
+      "claim_type": "percentage",
+      "raw_text": "44.4%",
+      "numeric_values": [
+        44.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2447,
+      "sentence": "Of the 27 studies, 12 studies (44.4%) had a low risk of bias [ 37 , 39 - 49 ], 11 studies (40.7%) raised some concerns [ 32 , 35 , 36 , 38 , 50 - 56 ], and 4 studies (14.8%) were at high risk [ 33 , 34 , 57 , 58 ].",
+      "context_window": "2 and Supplemental Fig. 2 . Of the 27 studies, 12 studies (44.4%) had a low risk of bias [ 37 , 39 - 49 ], 11 studies (40.7%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-2507",
+      "claim_type": "percentage",
+      "raw_text": "40.7%",
+      "numeric_values": [
+        40.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2507,
+      "sentence": "Of the 27 studies, 12 studies (44.4%) had a low risk of bias [ 37 , 39 - 49 ], 11 studies (40.7%) raised some concerns [ 32 , 35 , 36 , 38 , 50 - 56 ], and 4 studies (14.8%) were at high risk [ 33 , 34 , 57 , 58 ].",
+      "context_window": "44.4%) had a low risk of bias [ 37 , 39 - 49 ], 11 studies (40.7%) raised some concerns [ 32 , 35 , 36 , 38 , 50 - 56 ], and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-2583",
+      "claim_type": "percentage",
+      "raw_text": "14.8%",
+      "numeric_values": [
+        14.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2583,
+      "sentence": "Of the 27 studies, 12 studies (44.4%) had a low risk of bias [ 37 , 39 - 49 ], 11 studies (40.7%) raised some concerns [ 32 , 35 , 36 , 38 , 50 - 56 ], and 4 studies (14.8%) were at high risk [ 33 , 34 , 57 , 58 ].",
+      "context_window": "me concerns [ 32 , 35 , 36 , 38 , 50 - 56 ], and 4 studies (14.8%) were at high risk [ 33 , 34 , 57 , 58 ]. Among the high-ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3118",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.42 to -0.03",
+      "numeric_values": [
+        -0.42,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3118,
+      "sentence": "Summary of risk of bias assessment using the Cochrane Risk of Bias 2 tool\n\nTaurine supplementation was associated with improved glycemic indices, evidenced by reduced glycated hemoglobin (HbA1c, 10 studies: SMD -0.23, 95% CI: -0.42 to -0.03), fasting blood glucose (FBG, 8 studies: SMD -0.38, 95% CI: -0.59 to -0.17), fasting insulin (7 studies: SMD -0.40, 95% CI: -0.63 to -0.16), and homeostatic model assessment for insulin resistance (HOMA-IR, 7 studies: SMD -0.36, 95% CI: -0.59 to -0.13, Fig.",
+      "context_window": "reduced glycated hemoglobin (HbA1c, 10 studies: SMD -0.23, 95% CI: -0.42 to -0.03), fasting blood glucose (FBG, 8 studies: SMD -0.38, 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3193",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.59 to -0.17",
+      "numeric_values": [
+        -0.59,
+        -0.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3193,
+      "sentence": "Summary of risk of bias assessment using the Cochrane Risk of Bias 2 tool\n\nTaurine supplementation was associated with improved glycemic indices, evidenced by reduced glycated hemoglobin (HbA1c, 10 studies: SMD -0.23, 95% CI: -0.42 to -0.03), fasting blood glucose (FBG, 8 studies: SMD -0.38, 95% CI: -0.59 to -0.17), fasting insulin (7 studies: SMD -0.40, 95% CI: -0.63 to -0.16), and homeostatic model assessment for insulin resistance (HOMA-IR, 7 studies: SMD -0.36, 95% CI: -0.59 to -0.13, Fig.",
+      "context_window": "o -0.03), fasting blood glucose (FBG, 8 studies: SMD -0.38, 95% CI: -0.59 to -0.17), fasting insulin (7 studies: SMD -0.40, 95% CI: -0.63 to -",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3257",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.63 to -0.16",
+      "numeric_values": [
+        -0.63,
+        -0.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3257,
+      "sentence": "Summary of risk of bias assessment using the Cochrane Risk of Bias 2 tool\n\nTaurine supplementation was associated with improved glycemic indices, evidenced by reduced glycated hemoglobin (HbA1c, 10 studies: SMD -0.23, 95% CI: -0.42 to -0.03), fasting blood glucose (FBG, 8 studies: SMD -0.38, 95% CI: -0.59 to -0.17), fasting insulin (7 studies: SMD -0.40, 95% CI: -0.63 to -0.16), and homeostatic model assessment for insulin resistance (HOMA-IR, 7 studies: SMD -0.36, 95% CI: -0.59 to -0.13, Fig.",
+      "context_window": "CI: -0.59 to -0.17), fasting insulin (7 studies: SMD -0.40, 95% CI: -0.63 to -0.16), and homeostatic model assessment for insulin resistance (",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3370",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.59 to -0.13",
+      "numeric_values": [
+        -0.59,
+        -0.13
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3370,
+      "sentence": "Summary of risk of bias assessment using the Cochrane Risk of Bias 2 tool\n\nTaurine supplementation was associated with improved glycemic indices, evidenced by reduced glycated hemoglobin (HbA1c, 10 studies: SMD -0.23, 95% CI: -0.42 to -0.03), fasting blood glucose (FBG, 8 studies: SMD -0.38, 95% CI: -0.59 to -0.17), fasting insulin (7 studies: SMD -0.40, 95% CI: -0.63 to -0.16), and homeostatic model assessment for insulin resistance (HOMA-IR, 7 studies: SMD -0.36, 95% CI: -0.59 to -0.13, Fig.",
+      "context_window": "ment for insulin resistance (HOMA-IR, 7 studies: SMD -0.36, 95% CI: -0.59 to -0.13, Fig. 3 A ) . Forest plot of the overall effects of taurin",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3621",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.85 to -0.15",
+      "numeric_values": [
+        -0.85,
+        -0.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3621,
+      "sentence": "Forest plot of the overall effects of taurine supplementation on metabolic parameters\n\nAdditionally, taurine supplementation also promoted better lipid profiles, reducing total cholesterol (12 studies: SMD -0.50, 95% CI: -0.85 to -0.15), triglycerides (12 studies: SMD -0.50, 95% CI: -0.98 to -0.03), and low-density lipoprotein (LDL, 8 studies: SMD -0.33, 95% CI: -0.55 to -0.11, Fig.",
+      "context_window": "rofiles, reducing total cholesterol (12 studies: SMD -0.50, 95% CI: -0.85 to -0.15), triglycerides (12 studies: SMD -0.50, 95% CI: -0.98 to -0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3684",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.98 to -0.03",
+      "numeric_values": [
+        -0.98,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3684,
+      "sentence": "Forest plot of the overall effects of taurine supplementation on metabolic parameters\n\nAdditionally, taurine supplementation also promoted better lipid profiles, reducing total cholesterol (12 studies: SMD -0.50, 95% CI: -0.85 to -0.15), triglycerides (12 studies: SMD -0.50, 95% CI: -0.98 to -0.03), and low-density lipoprotein (LDL, 8 studies: SMD -0.33, 95% CI: -0.55 to -0.11, Fig.",
+      "context_window": "CI: -0.85 to -0.15), triglycerides (12 studies: SMD -0.50, 95% CI: -0.98 to -0.03), and low-density lipoprotein (LDL, 8 studies: SMD -0.33, 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3765",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.55 to -0.11",
+      "numeric_values": [
+        -0.55,
+        -0.11
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3765,
+      "sentence": "Forest plot of the overall effects of taurine supplementation on metabolic parameters\n\nAdditionally, taurine supplementation also promoted better lipid profiles, reducing total cholesterol (12 studies: SMD -0.50, 95% CI: -0.85 to -0.15), triglycerides (12 studies: SMD -0.50, 95% CI: -0.98 to -0.03), and low-density lipoprotein (LDL, 8 studies: SMD -0.33, 95% CI: -0.55 to -0.11, Fig.",
+      "context_window": "3), and low-density lipoprotein (LDL, 8 studies: SMD -0.33, 95% CI: -0.55 to -0.11, Fig. 3 B). However, supplementation did not demonstrate a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-3944",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.09 to 1.08",
+      "numeric_values": [
+        -0.09,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3944,
+      "sentence": "However, supplementation did not demonstrate a significant effect on high-density lipoprotein (HDL) compared to controls (10 studies: SMD 0.49, 95% CI: -0.09 to 1.08).",
+      "context_window": "poprotein (HDL) compared to controls (10 studies: SMD 0.49, 95% CI: -0.09 to 1.08). There was significant heterogeneity observed between stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-p-4066",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4066,
+      "sentence": "There was significant heterogeneity observed between studies for total cholesterol (I 2 = 66.75, p = 0.001), triglycerides (I 2 = 82.01, p < 0.001), and HDL (I 2 = 86.50, p < 0.001).",
+      "context_window": "bserved between studies for total cholesterol (I 2 = 66.75, p = 0.001), triglycerides (I 2 = 82.01, p < 0.001), and HDL (I 2 = 86",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-p-4106",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4106,
+      "sentence": "There was significant heterogeneity observed between studies for total cholesterol (I 2 = 66.75, p = 0.001), triglycerides (I 2 = 82.01, p < 0.001), and HDL (I 2 = 86.50, p < 0.001).",
+      "context_window": "terol (I 2 = 66.75, p = 0.001), triglycerides (I 2 = 82.01, p < 0.001), and HDL (I 2 = 86.50, p < 0.001). According to Cook\u2019s dis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-p-4140",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4140,
+      "sentence": "There was significant heterogeneity observed between studies for total cholesterol (I 2 = 66.75, p = 0.001), triglycerides (I 2 = 82.01, p < 0.001), and HDL (I 2 = 86.50, p < 0.001).",
+      "context_window": "iglycerides (I 2 = 82.01, p < 0.001), and HDL (I 2 = 86.50, p < 0.001). According to Cook\u2019s distance, one study was deemed as ove",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-4713",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.01 to -0.54",
+      "numeric_values": [
+        -1.01,
+        -0.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4713,
+      "sentence": "Taurine supplementation significantly reduced markers of inflammation, including C-reactive protein (CRP, 7 studies: SMD -0.77, 95% CI: -1.01 to -0.54) and TNF-\u03b1 (6 studies: SMD -0.42, 95% CI: -0.65 to -0.19, Fig.",
+      "context_window": "n, including C-reactive protein (CRP, 7 studies: SMD -0.77, 95% CI: -1.01 to -0.54) and TNF-\u03b1 (6 studies: SMD -0.42, 95% CI: -0.65 to -0.19, F",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-4770",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.65 to -0.19",
+      "numeric_values": [
+        -0.65,
+        -0.19
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4770,
+      "sentence": "Taurine supplementation significantly reduced markers of inflammation, including C-reactive protein (CRP, 7 studies: SMD -0.77, 95% CI: -1.01 to -0.54) and TNF-\u03b1 (6 studies: SMD -0.42, 95% CI: -0.65 to -0.19, Fig.",
+      "context_window": "7, 95% CI: -1.01 to -0.54) and TNF-\u03b1 (6 studies: SMD -0.42, 95% CI: -0.65 to -0.19, Fig. 4 A). Moreover, there was a trend towards reduction i",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-4889",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.07 to -0.01",
+      "numeric_values": [
+        -1.07,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4889,
+      "sentence": "Moreover, there was a trend towards reduction in IL-6 levels (6 studies: SMD -0.54, 95% CI: -1.07 to -0.01) in the pooled analysis with a wide confidence interval.",
+      "context_window": "end towards reduction in IL-6 levels (6 studies: SMD -0.54, 95% CI: -1.07 to -0.01) in the pooled analysis with a wide confidence interval. Si",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-5091",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.11 to 1.34",
+      "numeric_values": [
+        -0.11,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5091,
+      "sentence": "Similarly, taurine supplementation resulted in a uniform direction towards increase in IL-10 levels (3 studies: SMD 0.62, 95% CI: -0.11 to 1.34), but the overall pooled effect did not reach statistical significance due to the limited sample size.",
+      "context_window": "tion towards increase in IL-10 levels (3 studies: SMD 0.62, 95% CI: -0.11 to 1.34), but the overall pooled effect did not reach statistical s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-5787",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.17 to -0.24",
+      "numeric_values": [
+        -1.17,
+        -0.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5787,
+      "sentence": "Of these markers assessed, only MDA was consistently reported across 6 trials and was reduced by taurine supplementation (SMD -0.71, 95% CI: -1.17 to -0.24, Fig.",
+      "context_window": "ials and was reduced by taurine supplementation (SMD -0.71, 95% CI: -1.17 to -0.24, Fig. 4 B). Meta-regression identified a dose-response rel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-p-5914",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5914,
+      "sentence": "Meta-regression identified a dose-response relationship with reduction in TNF-\u03b1 (\u03b2 -0.006, p = 0.03) and IL-6 (\u03b2 -0.0008, p = 0.02).",
+      "context_window": "se-response relationship with reduction in TNF-\u03b1 (\u03b2 -0.006, p = 0.03) and IL-6 (\u03b2 -0.0008, p = 0.02). Despite the heterogeneity",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-p-5945",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5945,
+      "sentence": "Meta-regression identified a dose-response relationship with reduction in TNF-\u03b1 (\u03b2 -0.006, p = 0.03) and IL-6 (\u03b2 -0.0008, p = 0.02).",
+      "context_window": "eduction in TNF-\u03b1 (\u03b2 -0.006, p = 0.03) and IL-6 (\u03b2 -0.0008, p = 0.02). Despite the heterogeneity observed for IL-6, IL-10, and M",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-6402",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.56 to -0.05",
+      "numeric_values": [
+        -0.56,
+        -0.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6402,
+      "sentence": "In pooled analyses, taurine supplementation was associated with reduction in systolic blood pressure (SMD -0.30, 95% CI: -0.56 to -0.05) and diastolic blood pressure (SMD -0.29, 95% CI: -0.49 to -0.10).",
+      "context_window": "iated with reduction in systolic blood pressure (SMD -0.30, 95% CI: -0.56 to -0.05) and diastolic blood pressure (SMD -0.29, 95% CI: -0.49 to",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-6467",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.49 to -0.10",
+      "numeric_values": [
+        -0.49,
+        -0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6467,
+      "sentence": "In pooled analyses, taurine supplementation was associated with reduction in systolic blood pressure (SMD -0.30, 95% CI: -0.56 to -0.05) and diastolic blood pressure (SMD -0.29, 95% CI: -0.49 to -0.10).",
+      "context_window": "I: -0.56 to -0.05) and diastolic blood pressure (SMD -0.29, 95% CI: -0.49 to -0.10). However, no significant effect on heart rate was observed",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-6562",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.59 to 0.30",
+      "numeric_values": [
+        -0.59,
+        0.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6562,
+      "sentence": "However, no significant effect on heart rate was observed (SMD -0.15, 95% CI: -0.59 to 0.30).",
+      "context_window": "o significant effect on heart rate was observed (SMD -0.15, 95% CI: -0.59 to 0.30). Since shortness of breath, post-exertional malaise, and f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-7083",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02 to 0.98",
+      "numeric_values": [
+        0.02,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7083,
+      "sentence": "A suggestive association was observed between taurine supplementation and an increase in exercise capacity based on the pooled analysis (SMD 0.50, 95% CI: 0.02 to 0.98).",
+      "context_window": "n exercise capacity based on the pooled analysis (SMD 0.50, 95% CI: 0.02 to 0.98). No significant asymmetry was present on the funnel plots",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-7754",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7754,
+      "sentence": "Another study was in the setting of first-episode psychosis among young adults aged 18-25 years with cognition assessed using the MATRICS Consensus Cognitive Battery [ 44 ].",
+      "context_window": "tting of first-episode psychosis among young adults aged 18-25 years with cognition assessed using the MATRICS Consensus Cogniti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-8022",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.24 to 0.38",
+      "numeric_values": [
+        -0.24,
+        0.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8022,
+      "sentence": "Individually, neither of these studies demonstrated an improvement in cognitive function from taurine supplementation, which was further reflected in the pooled estimate (SMD 0.07, 95% CI: -0.24 to 0.38, Fig.",
+      "context_window": "ich was further reflected in the pooled estimate (SMD 0.07, 95% CI: -0.24 to 0.38, Fig. 6 and Supplemental Fig. 7 ). Forest plot of the over",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-8471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.60 to 0.20",
+      "numeric_values": [
+        -0.6,
+        0.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8471,
+      "sentence": "A total of six studies were initially examined for plasma taurine levels during convalescence, comparing patients who reported complete symptom resolution with those experiencing persistent PASC symptoms (SMD -0.20, 95% CI: -0.60 to 0.20, Supplemental Fig.",
+      "context_window": "ith those experiencing persistent PASC symptoms (SMD -0.20, 95% CI: -0.60 to 0.20, Supplemental Fig. 8 ) [ 23 , 24 , 62 - 65 ]. However, we n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-8590",
+      "claim_type": "percentage",
+      "raw_text": "61.68%",
+      "numeric_values": [
+        61.68
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8590,
+      "sentence": "However, we noted substantial heterogeneity (I 2 = 61.68%, tau 2 =0.15, Chi 2 = 11.99) and one study was identified to have a significant influence on the pooled effects (Cook\u2019s d = 0.55, \u0394SMD = 1.15) [ 23 ].",
+      "context_window": "- 65 ]. However, we noted substantial heterogeneity (I 2 = 61.68%, tau 2 =0.15, Chi 2 = 11.99) and one study was identified t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-8827",
+      "claim_type": "unit_value",
+      "raw_text": "32 years",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8827,
+      "sentence": "A notable difference was found with the mean age of the study population being 32 years [ 23 ], whereas the mean age ranged between 50 and 60 years for other studies [ 24 , 62 - 65 ].",
+      "context_window": "e was found with the mean age of the study population being 32 years [ 23 ], whereas the mean age ranged between 50 and 60 years",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-8887",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8887,
+      "sentence": "A notable difference was found with the mean age of the study population being 32 years [ 23 ], whereas the mean age ranged between 50 and 60 years for other studies [ 24 , 62 - 65 ].",
+      "context_window": "32 years [ 23 ], whereas the mean age ranged between 50 and 60 years for other studies [ 24 , 62 - 65 ]. Although data from thre",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-ci-9674",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.63 to -0.08",
+      "numeric_values": [
+        -0.63,
+        -0.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9674,
+      "sentence": "When the remaining studies were examined, we observed reduced plasma taurine levels in those with PASC compared to recovered individuals (SMD -0.35, 95% CI -0.63 to -0.08, I 2 = 11.70, tau 2 = 0.01, Chi 2 = 5.57, Fig.",
+      "context_window": "ose with PASC compared to recovered individuals (SMD -0.35, 95% CI -0.63 to -0.08, I 2 = 11.70, tau 2 = 0.01, Chi 2 = 5.57, Fig. 7 ). Meta-re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-2668",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 2668,
+      "sentence": "This pathophysiological process underscores the potential of taurine supplementation, which at 3,000 mg/day reduces inflammatory (CRP, TNF\u03b1) and oxidative stress (MDA) markers, replenishing these depleted reserves and halting the cycle of inflammation [ 75 , 76 ].",
+      "context_window": "scores the potential of taurine supplementation, which at 3,000 mg/day reduces inflammatory (CRP, TNF\u03b1) and oxidative stress (MDA)",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-pct-3319",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3319,
+      "sentence": "Under physiologic conditions, approximately 95% of these conjugated bile acids are reabsorbed in the terminal ileum and recycled [ 78 ].",
+      "context_window": "s in the liver. Under physiologic conditions, approximately 95% of these conjugated bile acids are reabsorbed in the termin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13085605_taurine_supplementation_as_a_therapeutic_strategy_for_cellul-u-331",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 331,
+      "sentence": "A daily dose of approximately 3,000 mg appears to balance clinical efficacy with tolerability.",
+      "context_window": "enescence observed in PASC. A daily dose of approximately 3,000 mg appears to balance clinical efficacy with tolerability. Fur",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

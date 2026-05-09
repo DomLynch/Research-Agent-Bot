@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_2337_diacare_26_12_3264_primary_prevention_of_cardiovascular_events_with_low_dose_as",
+  "doi": "10.2337/diacare.26.12.3264",
+  "extracted_at": "2026-05-08T20:06:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2337_diacare_26_12_3264_primary_prevention_of_cardiovascular_events_with_low_dose_as-u-341",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 341,
+      "sentence": "RESEARCH DESIGN AND METHODS: The Primary Prevention Project (PPP) is a randomized, open trial with a two-by-two factorial design aimed to investigate low-dose aspirin (100 mg/day) and vitamin E (300 mg/day) in the prevention of cardiovascular events in patients with one or more cardiovascular risk factors.",
+      "context_window": "two factorial design aimed to investigate low-dose aspirin (100 mg/day) and vitamin E (300 mg/day) in the prevention of cardiovasc",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_12_3264_primary_prevention_of_cardiovascular_events_with_low_dose_as-u-368",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 368,
+      "sentence": "RESEARCH DESIGN AND METHODS: The Primary Prevention Project (PPP) is a randomized, open trial with a two-by-two factorial design aimed to investigate low-dose aspirin (100 mg/day) and vitamin E (300 mg/day) in the prevention of cardiovascular events in patients with one or more cardiovascular risk factors.",
+      "context_window": "to investigate low-dose aspirin (100 mg/day) and vitamin E (300 mg/day) in the prevention of cardiovascular events in patients wit",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_12_3264_primary_prevention_of_cardiovascular_events_with_low_dose_as-u-646",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "A total of 1,031 people with diabetes in the PPP, aged >/=50 years, without a previous cardiovascular event were enrolled by 316 general practitioners and 14 diabetes outpatient clinics.",
+      "context_window": ". A total of 1,031 people with diabetes in the PPP, aged >/=50 years, without a previous cardiovascular event were enrolled by 3",
+      "claim_role": "population",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_12_3264_primary_prevention_of_cardiovascular_events_with_low_dose_as-u-841",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 years",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 841,
+      "sentence": "RESULTS: The PPP trial was prematurely stopped (after a median of 3.7 years) by the independent data safety and monitoring board because of a consistent benefit of aspirin compared with the control group in a population of 4,495 patients with one or more major cardiovascular risk factors.",
+      "context_window": "S: The PPP trial was prematurely stopped (after a median of 3.7 years) by the independent data safety and monitoring board becaus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_12_3264_primary_prevention_of_cardiovascular_events_with_low_dose_as-ci-1202",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.50-1.62",
+      "numeric_values": [
+        0.5,
+        1.62
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "In diabetic patients, aspirin treatment was associated with a nonsignificant reduction in the main end point (relative risk [RR] = 0.90, 95% CI 0.50-1.62) and in total cardiovascular events (0.89, 0.62-1.26) and with a nonsignificant increase in cardiovascular deaths (1.23, 0.69-2.19).",
+      "context_window": "reduction in the main end point (relative risk [RR] = 0.90, 95% CI 0.50-1.62) and in total cardiovascular events (0.89, 0.62-1.26) and w",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

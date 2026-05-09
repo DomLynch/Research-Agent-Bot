@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1073_pnas_1010203108_polyamine_catabolism_contributes_to_enterotoxigenicbacteroid",
+  "doi": "10.1073/pnas.1010203108",
+  "extracted_at": "2026-05-08T20:12:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1073_pnas_1010203108_polyamine_catabolism_contributes_to_enterotoxigenicbacteroid-pct-40",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 40,
+      "sentence": "It is estimated that the etiology of 20-30% of epithelial cancers is directly associated with inflammation, although the direct molecular events linking inflammation and carcinogenesis are poorly defined.",
+      "context_window": "It is estimated that the etiology of 20-30% of epithelial cancers is directly associated with inflammat",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1073_pnas_1010203108_polyamine_catabolism_contributes_to_enterotoxigenicbacteroid-pct-1241",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1241,
+      "sentence": "Most importantly, in the multiple intestinal neoplasia (Min) mouse model, treatment with MDL 72527 reduces ETBF-induced colon tumorigenesis by 69% (P < 0.001).",
+      "context_window": "with MDL 72527 reduces ETBF-induced colon tumorigenesis by 69% (P < 0.001). The results of these studies indicate that SMO",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1073_pnas_1010203108_polyamine_catabolism_contributes_to_enterotoxigenicbacteroid-p-1246",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "Most importantly, in the multiple intestinal neoplasia (Min) mouse model, treatment with MDL 72527 reduces ETBF-induced colon tumorigenesis by 69% (P < 0.001).",
+      "context_window": "MDL 72527 reduces ETBF-induced colon tumorigenesis by 69% (P < 0.001). The results of these studies indicate that SMO is a sourc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

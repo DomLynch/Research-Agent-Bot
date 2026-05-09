@@ -1,0 +1,1215 @@
+{
+  "paper_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab",
+  "doi": "10.3389/fnut.2024.1393552",
+  "extracted_at": "2026-05-08T20:11:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 26,
+    "odds_ratio": 6,
+    "confidence_interval": 12,
+    "p_value": 12,
+    "percentage": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-721",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 721,
+      "sentence": "T2DM was defined as participants with a FPG level of 7.0 mmol/L or greater, or self-reported diagnosis of diabetes by a doctor.",
+      "context_window": "ethod. T2DM was defined as participants with a FPG level of 7.0 mmol/L or greater, or self-reported diagnosis of diabetes by a d",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-or-a-1372",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.68",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1372,
+      "sentence": "The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point.",
+      "context_window": ". The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-1383",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52 to 0.92",
+      "numeric_values": [
+        0.52,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1383,
+      "sentence": "The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point.",
+      "context_window": "spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-1405",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1405,
+      "sentence": "The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point.",
+      "context_window": "vely associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-or-a-1510",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.97",
+      "numeric_values": [
+        1.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point.",
+      "context_window": "og (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-1521",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.93 to 4.15",
+      "numeric_values": [
+        0.93,
+        4.15
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1521,
+      "sentence": "The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point.",
+      "context_window": "ine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point. Among the participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-1543",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "The log (spermidine) was negatively associated with T2DM (OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01) below the inflection point, while log (spermidine) was not significantly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point.",
+      "context_window": "ntly associated with T2DM (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07) above the inflection point. Among the participants without",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-1754",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.05 to 0.21",
+      "numeric_values": [
+        0.05,
+        0.21
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1754,
+      "sentence": "The log (spermidine) was positively associated with FPG ( \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001) below the inflection point, while log (spermidine) was negatively associated with FPG ( \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001) above the inflection point.",
+      "context_window": "(spermidine) was positively associated with FPG ( \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001) below the inflection point, while log (spermidi",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-1776",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1776,
+      "sentence": "The log (spermidine) was positively associated with FPG ( \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001) below the inflection point, while log (spermidine) was negatively associated with FPG ( \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001) above the inflection point.",
+      "context_window": "ively associated with FPG ( \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001) below the inflection point, while log (spermidine) was neg",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-1886",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.42 to -0.16",
+      "numeric_values": [
+        -0.42,
+        -0.16
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1886,
+      "sentence": "The log (spermidine) was positively associated with FPG ( \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001) below the inflection point, while log (spermidine) was negatively associated with FPG ( \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001) above the inflection point.",
+      "context_window": "spermidine) was negatively associated with FPG ( \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001) above the inflection point. In conclusion, non",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-1910",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1910,
+      "sentence": "The log (spermidine) was positively associated with FPG ( \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001) below the inflection point, while log (spermidine) was negatively associated with FPG ( \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001) above the inflection point.",
+      "context_window": "ly associated with FPG ( \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001) above the inflection point. In conclusion, non-linear ass",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-209",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 209,
+      "sentence": "According to the International Diabetes Federation (IDF), an estimated 10.5% of adults aged 20-79 years, equating to 537 million individuals, were living with diabetes mellitus in 2021 ( 1 ).",
+      "context_window": "o the International Diabetes Federation (IDF), an estimated 10.5% of adults aged 20-79 years, equating to 537 million individ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-233",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 233,
+      "sentence": "According to the International Diabetes Federation (IDF), an estimated 10.5% of adults aged 20-79 years, equating to 537 million individuals, were living with diabetes mellitus in 2021 ( 1 ).",
+      "context_window": "etes Federation (IDF), an estimated 10.5% of adults aged 20-79 years, equating to 537 million individuals, were living with diab",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-423",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 423,
+      "sentence": "Projections indicate that this figure is expected to increase to 783 million by 2045, with a 16% rise in prevalence attributed to the aging of the population ( 1 ).",
+      "context_window": "gure is expected to increase to 783 million by 2045, with a 16% rise in prevalence attributed to the aging of the populatio",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-1246",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1246,
+      "sentence": "The study\u2019s inclusion criteria for participants were as follows: (1) aged 35 years or older ( 17 , 18 ); (2) no pregnancy; (3) no severe liver and renal failure; (4) having resided locally for at least 5 years; and (5) having signed informed consent.",
+      "context_window": "clusion criteria for participants were as follows: (1) aged 35 years or older ( 17 , 18 ); (2) no pregnancy; (3) no severe liver",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-1374",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1374,
+      "sentence": "The study\u2019s inclusion criteria for participants were as follows: (1) aged 35 years or older ( 17 , 18 ); (2) no pregnancy; (3) no severe liver and renal failure; (4) having resided locally for at least 5 years; and (5) having signed informed consent.",
+      "context_window": "and renal failure; (4) having resided locally for at least 5 years; and (5) having signed informed consent. The exclusion crit",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-3230",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3230,
+      "sentence": "T2DM was defined as participants with a FPG level of 7.0 mmol/L or greater, or self-reported diagnosis of diabetes by a doctor from a township health center, community service center, or higher-level medical institution.",
+      "context_window": "USA). T2DM was defined as participants with a FPG level of 7.0 mmol/L or greater, or self-reported diagnosis of diabetes by a d",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-5532",
+      "claim_type": "unit_value",
+      "raw_text": "18.5 kg",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5532,
+      "sentence": "If BMI < 18.5 kg/m 2 , BMI group was defined as underweight.",
+      "context_window": "in kilograms divided by height in meters squared. If BMI < 18.5 kg/m 2 , BMI group was defined as underweight. If 18.5 \u2264 BMI <",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-5600",
+      "claim_type": "unit_value",
+      "raw_text": "24 kg",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5600,
+      "sentence": "If 18.5 \u2264 BMI < 24 kg/m 2 , BMI group was defined as normal.",
+      "context_window": "m 2 , BMI group was defined as underweight. If 18.5 \u2264 BMI < 24 kg/m 2 , BMI group was defined as normal. If 24 \u2264 BMI < 28 kg/",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-5659",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5659,
+      "sentence": "If 24 \u2264 BMI < 28 kg/m 2 , BMI group was defined as overweight.",
+      "context_window": "24 kg/m 2 , BMI group was defined as normal. If 24 \u2264 BMI < 28 kg/m 2 , BMI group was defined as overweight. IF BMI \u2265 28 kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-5717",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5717,
+      "sentence": "IF BMI \u2265 28 kg/m 2 , BMI group was defined as obese.",
+      "context_window": "< 28 kg/m 2 , BMI group was defined as overweight. IF BMI \u2265 28 kg/m 2 , BMI group was defined as obese. Participants were se",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-7898",
+      "claim_type": "unit_value",
+      "raw_text": "18.5 kg",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 7898,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .",
+      "context_window": "ams divided by height in meters squared. Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-7933",
+      "claim_type": "unit_value",
+      "raw_text": "24 kg",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 7933,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .",
+      "context_window": "ared. Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-7968",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 7968,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .",
+      "context_window": "2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 . In sensitivity analyses, mi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-7993",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 7993,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .",
+      "context_window": "24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 . In sensitivity analyses, missing variables were hand",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-86",
+      "claim_type": "percentage",
+      "raw_text": "99.0%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 86,
+      "sentence": "A total of 4,689 individuals were included in this study, of which 4,640 individuals (99.0%) underwent testing for serum spermidine.",
+      "context_window": "ls were included in this study, of which 4,640 individuals (99.0%) underwent testing for serum spermidine. 203 individuals (4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-150",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 150,
+      "sentence": "203 individuals (4.4%, age and sex: 56, educational level: 120, income: 20, BMI group: 6, FPG: 1) were excluded due to missing variables, resulting in leaving a final analysis of 4,437 participants.",
+      "context_window": "%) underwent testing for serum spermidine. 203 individuals (4.4%, age and sex: 56, educational level: 120, income: 20, BMI g",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-508",
+      "claim_type": "percentage",
+      "raw_text": "64.1%",
+      "numeric_values": [
+        64.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 508,
+      "sentence": "The mean [SD] age of the participants was 59.3 [10.0] years, with 64.1% being women, 65.6% belonging to the Han ethnicity, and 622 diagnosed with T2DM.",
+      "context_window": "an [SD] age of the participants was 59.3 [10.0] years, with 64.1% being women, 65.6% belonging to the Han ethnicity, and 622",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-527",
+      "claim_type": "percentage",
+      "raw_text": "65.6%",
+      "numeric_values": [
+        65.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 527,
+      "sentence": "The mean [SD] age of the participants was 59.3 [10.0] years, with 64.1% being women, 65.6% belonging to the Han ethnicity, and 622 diagnosed with T2DM.",
+      "context_window": "participants was 59.3 [10.0] years, with 64.1% being women, 65.6% belonging to the Han ethnicity, and 622 diagnosed with T2DM",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-1279",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1279,
+      "sentence": "The levels of serum spermidine among participants under 60 years old and those over 60 years old were 24.3 (13.2-46.6) ng/ml and 26.8 (13.6-52.7) ng/ml, respectively.",
+      "context_window": "2 . The levels of serum spermidine among participants under 60 years old and those over 60 years old were 24.3 (13.2-46.6) ng/ml",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-1307",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1307,
+      "sentence": "The levels of serum spermidine among participants under 60 years old and those over 60 years old were 24.3 (13.2-46.6) ng/ml and 26.8 (13.6-52.7) ng/ml, respectively.",
+      "context_window": "midine among participants under 60 years old and those over 60 years old were 24.3 (13.2-46.6) ng/ml and 26.8 (13.6-52.7) ng/ml,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-2659",
+      "claim_type": "unit_value",
+      "raw_text": "18.5 kg",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2659,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .\n\n\u2021 The p -values indicate the statistical significance of differences in serum spermidine levels between age groups and BMI groups, as determined by non-parametric analysis.\n\n\u00a7 The p -values indicate the statistical significance of differences in serum spermidine levels between individuals without T2DM and those with T2DM across different subgroups of age and BMI, as determined by non-parametric analysis.",
+      "context_window": "ams divided by height in meters squared. Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-2694",
+      "claim_type": "unit_value",
+      "raw_text": "24 kg",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2694,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .\n\n\u2021 The p -values indicate the statistical significance of differences in serum spermidine levels between age groups and BMI groups, as determined by non-parametric analysis.\n\n\u00a7 The p -values indicate the statistical significance of differences in serum spermidine levels between individuals without T2DM and those with T2DM across different subgroups of age and BMI, as determined by non-parametric analysis.",
+      "context_window": "ared. Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-2729",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2729,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .\n\n\u2021 The p -values indicate the statistical significance of differences in serum spermidine levels between age groups and BMI groups, as determined by non-parametric analysis.\n\n\u00a7 The p -values indicate the statistical significance of differences in serum spermidine levels between individuals without T2DM and those with T2DM across different subgroups of age and BMI, as determined by non-parametric analysis.",
+      "context_window": "2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 . \u2021 The p -values indicate th",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-2754",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2754,
+      "sentence": "Underweight: BMI < 18.5 kg/m 2 ; Normal: 18.5 \u2264 BMI < 24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 .\n\n\u2021 The p -values indicate the statistical significance of differences in serum spermidine levels between age groups and BMI groups, as determined by non-parametric analysis.\n\n\u00a7 The p -values indicate the statistical significance of differences in serum spermidine levels between individuals without T2DM and those with T2DM across different subgroups of age and BMI, as determined by non-parametric analysis.",
+      "context_window": "24 kg/m 2 ; Overweight: 24 \u2264 BMI < 28 kg/m 2 ; Obese: BMI \u2265 28 kg/m 2 . \u2021 The p -values indicate the statistical significanc",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-4127",
+      "claim_type": "unit_value",
+      "raw_text": "28.4 ng/mL",
+      "numeric_values": [
+        28.4
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 4127,
+      "sentence": "The concentration of serum spermidine at the inflection points in the J-shaped association and in the inverted J-shaped association were 28.4 ng/mL and 27.2 ng/mL, respectively.",
+      "context_window": "d association and in the inverted J-shaped association were 28.4 ng/mL and 27.2 ng/mL, respectively. Nonlinear association of ser",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-4142",
+      "claim_type": "unit_value",
+      "raw_text": "27.2 ng/mL",
+      "numeric_values": [
+        27.2
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 4142,
+      "sentence": "The concentration of serum spermidine at the inflection points in the J-shaped association and in the inverted J-shaped association were 28.4 ng/mL and 27.2 ng/mL, respectively.",
+      "context_window": "nd in the inverted J-shaped association were 28.4 ng/mL and 27.2 ng/mL, respectively. Nonlinear association of serum spermidine w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-4426",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4426,
+      "sentence": "Odds ratio was indicated by solid lines and 95% CIs by shaded areas.",
+      "context_window": "e participants. Odds ratio was indicated by solid lines and 95% CIs by shaded areas. The red dashed line indicates the valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-4549",
+      "claim_type": "unit_value",
+      "raw_text": "28.4 ng/mL",
+      "numeric_values": [
+        28.4
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 4549,
+      "sentence": "The red dashed line indicates the value of serum spermidine at the inflection point (spermidine = 28.4 ng/mL). (B) Nonlinear association between serum spermidine and FPG among participants without T2DM.",
+      "context_window": "e of serum spermidine at the inflection point (spermidine = 28.4 ng/mL). (B) Nonlinear association between serum spermidine and FP",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-4699",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4699,
+      "sentence": "Coefficient was indicated by solid lines and 95% CIs by shaded areas.",
+      "context_window": "without T2DM. Coefficient was indicated by solid lines and 95% CIs by shaded areas. The red dashed line indicates the valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-4822",
+      "claim_type": "unit_value",
+      "raw_text": "27.2 ng/mL",
+      "numeric_values": [
+        27.2
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 4822,
+      "sentence": "The red dashed line indicates the value of serum spermidine at the inflection point (spermidine = 27.2 ng/mL).",
+      "context_window": "e of serum spermidine at the inflection point (spermidine = 27.2 ng/mL). The models were adjusted for age, sex, education level, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-or-a-5309",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.69",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5309,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "icipants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-5320",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52 to 0.92",
+      "numeric_values": [
+        0.52,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5320,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "re negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-5342",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5342,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-or-a-5361",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.68",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5361,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "odel 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-5372",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.52 to 0.92",
+      "numeric_values": [
+        0.52,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5372,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "= 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-5394",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5394,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "o 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-or-a-5480",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.19",
+      "numeric_values": [
+        2.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5480,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "iation were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-5491",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.04 to 4.60",
+      "numeric_values": [
+        1.04,
+        4.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5491,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-5513",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5513,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "flection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.9",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-or-a-5560",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.97",
+      "numeric_values": [
+        1.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5560,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": ".04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-5571",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.93 to 4.15",
+      "numeric_values": [
+        0.93,
+        4.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5571,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": ", p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (sperm",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-5593",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5593,
+      "sentence": "In multivariable logistic regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and T2DM among all the participants were negative below the inflection point (model 1: OR = 0.69, 95% CI: 0.52 to 0.92, p = 0.01; model 2: OR = 0.68, 95% CI: 0.52 to 0.92, p = 0.01), while the association were positive above the inflection point in model 1 (OR = 2.19, 95% CI: 1.04 to 4.60, p = 0.001) and had no significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as depicted in Table 3 .",
+      "context_window": "o significance in model 2 (OR = 1.97, 95% CI: 0.93 to 4.15, p = 0.07), with the inflection point of 1.71 of log (spermidine), as",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-5987",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.05 to 0.21",
+      "numeric_values": [
+        0.05,
+        0.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5987,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": "ere positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-6009",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6009,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": "inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-6039",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.05 to 0.21",
+      "numeric_values": [
+        0.05,
+        0.21
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6039,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": "= 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-6061",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6061,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": "o 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-6158",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.40 to -0.12",
+      "numeric_values": [
+        -0.4,
+        -0.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6158,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": "re negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p <",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-6182",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6182,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": "flection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), wi",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-ci-6213",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.42 to -0.16",
+      "numeric_values": [
+        -0.42,
+        -0.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6213,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": ".26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (sper",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-p-6237",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6237,
+      "sentence": "Furthermore, in multivariable linear regression models that adjusted by different confounding variables incorporating with two-line piecewise linear model, the associations between log (spermidine) and FPG among the participants without T2DM were positive below the inflection point (model 1: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.002; model 2: \u03b2 = 0.13, 95% CI: 0.05 to 0.21, p = 0.001), while the associations were negative above the inflection point (model 1: \u03b2 = -0.26, 95% CI: -0.40 to -0.12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as depicted in Table 4 .",
+      "context_window": ".12, p < 0.001; model 2: \u03b2 = -0.29, 95% CI: -0.42 to -0.16, p < 0.001), with the inflection point of 1.56 of log (spermidine), as",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-7525",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7525,
+      "sentence": "Odds ratio was indicated by solid lines and 95% CIs by shaded areas.",
+      "context_window": "itive analyses. Odds ratio was indicated by solid lines and 95% CIs by shaded areas. The red dashed line indicates the valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-7648",
+      "claim_type": "unit_value",
+      "raw_text": "28.4 ng/mL",
+      "numeric_values": [
+        28.4
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 7648,
+      "sentence": "The red dashed line indicates the value of serum spermidine at the inflection point (spermidine = 28.4 ng/mL). (B) Nonlinear association between serum spermidine and FPG among participants without T2DM included in the sensitive analyses.",
+      "context_window": "e of serum spermidine at the inflection point (spermidine = 28.4 ng/mL). (B) Nonlinear association between serum spermidine and FP",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-pct-7833",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7833,
+      "sentence": "Coefficient was indicated by solid lines and 95% CIs by shaded areas.",
+      "context_window": "tive analyses. Coefficient was indicated by solid lines and 95% CIs by shaded areas. The red dashed line indicates the valu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-7956",
+      "claim_type": "unit_value",
+      "raw_text": "27.2 ng/mL",
+      "numeric_values": [
+        27.2
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 7956,
+      "sentence": "The red dashed line indicates the value of serum spermidine at the inflection point (spermidine = 27.2 ng/mL).",
+      "context_window": "e of serum spermidine at the inflection point (spermidine = 27.2 ng/mL). The models were adjusted for age, sex, education level, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11133730_non_linear_associations_of_serum_spermidine_with_type_2_diab-u-6566",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6566,
+      "sentence": "Equally important, the study was conducted with adults \u226535 years old and it is therefore not possible to extrapolate the results to other age categories.",
+      "context_window": "gs. Equally important, the study was conducted with adults \u226535 years old and it is therefore not possible to extrapolate the res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

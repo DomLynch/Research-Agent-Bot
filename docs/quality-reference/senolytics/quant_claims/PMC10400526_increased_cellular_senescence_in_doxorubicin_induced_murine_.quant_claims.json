@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_",
   "doi": "10.1007/s11357-023-00728-2",
-  "extracted_at": "2026-05-05T21:22:31+00:00",
+  "extracted_at": "2026-05-08T20:01:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 13,
@@ -134,9 +134,9 @@
       "context_window": "roup (Dox + F), DQ group, and Fisetin group. DQ (dasatinib, 5 mg/kg; quercetin, 50 mg/kg) or fisetin (100 mg/kg) or vehicle",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-u-977",
@@ -152,9 +152,9 @@
       "context_window": "roup, and Fisetin group. DQ (dasatinib, 5 mg/kg; quercetin, 50 mg/kg) or fisetin (100 mg/kg) or vehicle solution (10% polyeth",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-u-999",
@@ -170,9 +170,9 @@
       "context_window": "p. DQ (dasatinib, 5 mg/kg; quercetin, 50 mg/kg) or fisetin (100 mg/kg) or vehicle solution (10% polyethylene glycol 400, PEG40",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-pct-1031",
@@ -188,9 +188,9 @@
       "context_window": "etin, 50 mg/kg) or fisetin (100 mg/kg) or vehicle solution (10% polyethylene glycol 400, PEG400) was administered by oral g",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-u-1125",
@@ -206,9 +206,9 @@
       "context_window": "0) was administered by oral gavage once every other day for 3 weeks [ 24 , 28 ]. A single intraperitoneal injection of doxorubi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-u-1197",
@@ -224,9 +224,9 @@
       "context_window": ", 28 ]. A single intraperitoneal injection of doxorubicin (10 mg/kg) or saline was given at the day after the second adminis",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "saline",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-u-1521",
@@ -548,9 +548,9 @@
       "context_window": "ovary index of mice after saline or doxorubicin injection ( n = 16, unpaired Student\u2019s t -test). e The proportion of regular o",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "saline",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-n-1859",
@@ -566,9 +566,9 @@
       "context_window": "ular estrous cycles after saline or doxorubicin injection ( n = 16, Chi-square test). f The serum levels of AMH, FSH, and E2 a",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "saline",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-n-1938",
@@ -584,9 +584,9 @@
       "context_window": "test). f The serum levels of AMH, FSH, and E2 at diestrus ( n = 6, unpaired Student\u2019s t -test). g The proportion of follicles",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "saline",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-n-2602",
@@ -710,7 +710,7 @@
       "context_window": "test). f The serum levels of AMH, FSH, and E2 at diestrus ( n = 6, one-way ANOVA). g Representative H&E staining images of mu",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -782,9 +782,9 @@
       "context_window": "ups in different groups. Data are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To figure out",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-6426",
@@ -800,9 +800,9 @@
       "context_window": "ent groups. Data are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To figure out whether the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-6440",
@@ -818,9 +818,9 @@
       "context_window": "ta are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To figure out whether the two senolytics",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-6456",
@@ -836,9 +836,9 @@
       "context_window": "as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To figure out whether the two senolytics eliminated senesc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-n-7620",
@@ -854,7 +854,7 @@
       "context_window": "scores of relative expression of p16 and p21 based on IOD ( n = 3, one-way ANOVA). f , g Protein expression of p16 and p21 in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -872,7 +872,7 @@
       "context_window": "genes related to cellular senescence and SASP in ovaries ( n = 3, one-way ANOVA). Data are presented as mean \u00b1 SD. * p < 0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -890,9 +890,9 @@
       "context_window": "( n = 3, one-way ANOVA). Data are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Senolytics ca",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-7892",
@@ -908,9 +908,9 @@
       "context_window": "way ANOVA). Data are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Senolytics cannot prevent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-7906",
@@ -926,9 +926,9 @@
       "context_window": "ta are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Senolytics cannot prevent ovarian fibrosi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-7922",
@@ -944,9 +944,9 @@
       "context_window": "as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 Senolytics cannot prevent ovarian fibrosis after doxorubic",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-n-8294",
@@ -998,9 +998,9 @@
       "context_window": "( n = 3, one-way ANOVA). Data are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To further el",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-8454",
@@ -1016,9 +1016,9 @@
       "context_window": "way ANOVA). Data are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To further elucidate why D",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-8468",
@@ -1034,9 +1034,9 @@
       "context_window": "ta are presented as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To further elucidate why DQ and fisetin f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-p-8484",
@@ -1052,9 +1052,9 @@
       "context_window": "as mean \u00b1 SD. * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001 To further elucidate why DQ and fisetin failed to rescue o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dq",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-u-9433",
@@ -1106,9 +1106,9 @@
       "context_window": "DNA damage marker \u03b3H2AX in murine ovaries detected by IHC ( n = 3, one-way ANOVA). b Representative TUNEL staining images of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10400526_increased_cellular_senescence_in_doxorubicin_induced_murine_-n-10583",

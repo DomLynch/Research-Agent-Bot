@@ -1,0 +1,292 @@
+{
+  "paper_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi",
+  "doi": "10.13175/swjpccs001-23",
+  "extracted_at": "2026-05-08T20:07:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "mean_sd": 8,
+    "unit_value": 1,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-pct-1010",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "The cohort was comprised mainly of women (62%) and 24% were non-Hispanic white.",
+      "context_window": "ed in this study. The cohort was comprised mainly of women (62%) and 24% were non-Hispanic white. Participants with OSA had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-pct-1019",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1019,
+      "sentence": "The cohort was comprised mainly of women (62%) and 24% were non-Hispanic white.",
+      "context_window": "s study. The cohort was comprised mainly of women (62%) and 24% were non-Hispanic white. Participants with OSA had a higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1120",
+      "claim_type": "mean_sd",
+      "raw_text": "30.6 \u00b1 9.1",
+      "numeric_values": [
+        30.6,
+        9.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1120,
+      "sentence": "Participants with OSA had a higher BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001).",
+      "context_window": "with OSA had a higher BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001). Those with acute insomnia ha",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1134",
+      "claim_type": "mean_sd",
+      "raw_text": "27.4 \u00b1 7.1",
+      "numeric_values": [
+        27.4,
+        7.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1134,
+      "sentence": "Participants with OSA had a higher BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001).",
+      "context_window": "a higher BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001). Those with acute insomnia had significantl",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-u-1141",
+      "claim_type": "unit_value",
+      "raw_text": "7.1 kg/m2",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 1141,
+      "sentence": "Participants with OSA had a higher BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001).",
+      "context_window": "r BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001). Those with acute insomnia had significantly decr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-p-1152",
+      "claim_type": "p_value",
+      "raw_text": "p\u22640.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "Participants with OSA had a higher BMI compared with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001).",
+      "context_window": "red with no sleep disorder (30.6 \u00b1 9.1 vs 27.4 \u00b1 7.1 kg/m2, p\u22640.001). Those with acute insomnia had significantly decreased con",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1246",
+      "claim_type": "mean_sd",
+      "raw_text": "61.5 \u00b1 4.7",
+      "numeric_values": [
+        61.5,
+        4.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "Those with acute insomnia had significantly decreased consumption of total protein (61.5 \u00b1 4.7 vs.",
+      "context_window": "a had significantly decreased consumption of total protein (61.5 \u00b1 4.7 vs. 77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs. 80.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1261",
+      "claim_type": "mean_sd",
+      "raw_text": "77.9 \u00b1 4.9",
+      "numeric_values": [
+        77.9,
+        4.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1261,
+      "sentence": "77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs.",
+      "context_window": "ntly decreased consumption of total protein (61.5 \u00b1 4.7 vs. 77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs. 80.5 \u00b1 4.6 g, p\u22640.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-p-1275",
+      "claim_type": "p_value",
+      "raw_text": "p\u22640.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1275,
+      "sentence": "77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs.",
+      "context_window": "consumption of total protein (61.5 \u00b1 4.7 vs. 77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs. 80.5 \u00b1 4.6 g, p\u22640.05). Among",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1298",
+      "claim_type": "mean_sd",
+      "raw_text": "60.0 \u00b1 4.4",
+      "numeric_values": [
+        60.0,
+        4.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1298,
+      "sentence": "77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs.",
+      "context_window": "rotein (61.5 \u00b1 4.7 vs. 77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs. 80.5 \u00b1 4.6 g, p\u22640.05). Among the participants with chro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1313",
+      "claim_type": "mean_sd",
+      "raw_text": "80.5 \u00b1 4.6",
+      "numeric_values": [
+        80.5,
+        4.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1313,
+      "sentence": "80.5 \u00b1 4.6 g, p\u22640.05).",
+      "context_window": "4.7 vs. 77.9 \u00b1 4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs. 80.5 \u00b1 4.6 g, p\u22640.05). Among the participants with chronic insomnia, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-p-1327",
+      "claim_type": "p_value",
+      "raw_text": "p\u22640.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1327,
+      "sentence": "80.5 \u00b1 4.6 g, p\u22640.05).",
+      "context_window": "4.9 g, p\u22640.05) and total fat (60.0 \u00b1 4.4 vs. 80.5 \u00b1 4.6 g, p\u22640.05). Among the participants with chronic insomnia, there was l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1674",
+      "claim_type": "mean_sd",
+      "raw_text": "89.0 \u00b1 6.7",
+      "numeric_values": [
+        89.0,
+        6.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1674,
+      "sentence": "There were no overall differences between participants with OSA in comparison to no sleep disorder, but women consumed less total fat (89.0 \u00b1 6.7 vs.",
+      "context_window": "on to no sleep disorder, but women consumed less total fat (89.0 \u00b1 6.7 vs. 57.5 \u00b1 8.0 g, p\u22640.01). The Healthy Eating Index of all",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-msd-1689",
+      "claim_type": "mean_sd",
+      "raw_text": "57.5 \u00b1 8.0",
+      "numeric_values": [
+        57.5,
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1689,
+      "sentence": "57.5 \u00b1 8.0 g, p\u22640.01).",
+      "context_window": "disorder, but women consumed less total fat (89.0 \u00b1 6.7 vs. 57.5 \u00b1 8.0 g, p\u22640.01). The Healthy Eating Index of all groups was belo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_13175_swjpccs001_23_associations_between_insomnia_and_obstructive_sleep_apnea_wi-p-1703",
+      "claim_type": "p_value",
+      "raw_text": "p\u22640.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1703,
+      "sentence": "57.5 \u00b1 8.0 g, p\u22640.01).",
+      "context_window": "women consumed less total fat (89.0 \u00b1 6.7 vs. 57.5 \u00b1 8.0 g, p\u22640.01). The Healthy Eating Index of all groups was below the aver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

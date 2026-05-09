@@ -1,0 +1,533 @@
+{
+  "paper_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf",
+  "doi": "10.1136/heart.85.3.265",
+  "extracted_at": "2026-05-08T20:06:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 29
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-977",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 977,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "evention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial inf",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-982",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 982,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "ion significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarcti",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1011",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1011,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1017",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1017,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "ovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1052",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1052,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "ence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deat",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1064",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1064,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "l (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1071",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1121",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%). Aspirin non-significantly increased st",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1125,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "1% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%). Aspirin non-significantly increased strokes",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1133",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1133,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%). Aspirin non-significantly increased strokes by 6%",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1139",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "RESULTS: Aspirin for primary prevention significantly reduced all cardiovascular events by 15% (95% confidence interval (CI) 6% to 22%) and myocardial infarctions by 30% (95% CI 21% to 38%), and non-significantly reduced all deaths by 6% (95% CI -4% to 15%).",
+      "context_window": "d non-significantly reduced all deaths by 6% (95% CI -4% to 15%). Aspirin non-significantly increased strokes by 6% (95% CI",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1192",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1192,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "-4% to 15%). Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1196",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1196,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "to 15%). Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1204",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1204,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1211",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1211,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "n non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1269",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1269,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "o 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%). The risk of major bleeding balanced t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1274",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "and significantly increased bleeding complications by 69% (95% CI 38% to 107%). The risk of major bleeding balanced the re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1281",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "gnificantly increased bleeding complications by 69% (95% CI 38% to 107%). The risk of major bleeding balanced the reduction",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1288",
+      "claim_type": "percentage",
+      "raw_text": "107%",
+      "numeric_values": [
+        107.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1288,
+      "sentence": "Aspirin non-significantly increased strokes by 6% (95% CI -24% to 9%) and significantly increased bleeding complications by 69% (95% CI 38% to 107%).",
+      "context_window": "ntly increased bleeding complications by 69% (95% CI 38% to 107%). The risk of major bleeding balanced the reduction in card",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1405",
+      "claim_type": "percentage",
+      "raw_text": "0.22%",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1405,
+      "sentence": "The risk of major bleeding balanced the reduction in cardiovascular events when cardiovascular event risk was 0.22%/year.",
+      "context_window": "in cardiovascular events when cardiovascular event risk was 0.22%/year. The upper 95% CI for this estimate suggests that harm",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1427",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1427,
+      "sentence": "The upper 95% CI for this estimate suggests that harm from aspirin is unlikely to outweigh benefit provided the cardiovascular event risk is 0.8%/year, equivalent to a coronary risk of 0.6%/year.",
+      "context_window": "ts when cardiovascular event risk was 0.22%/year. The upper 95% CI for this estimate suggests that harm from aspirin is unl",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1558",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1558,
+      "sentence": "The upper 95% CI for this estimate suggests that harm from aspirin is unlikely to outweigh benefit provided the cardiovascular event risk is 0.8%/year, equivalent to a coronary risk of 0.6%/year.",
+      "context_window": "outweigh benefit provided the cardiovascular event risk is 0.8%/year, equivalent to a coronary risk of 0.6%/year. At corona",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1602",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1602,
+      "sentence": "The upper 95% CI for this estimate suggests that harm from aspirin is unlikely to outweigh benefit provided the cardiovascular event risk is 0.8%/year, equivalent to a coronary risk of 0.6%/year.",
+      "context_window": "r event risk is 0.8%/year, equivalent to a coronary risk of 0.6%/year. At coronary event risk 1.5%/year, the five year NNT w",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1636",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1636,
+      "sentence": "At coronary event risk 1.5%/year, the five year NNT was 44 to prevent a myocardial infarction, and 77 to prevent a myocardial infarction net of any important bleeding complication.",
+      "context_window": "ent to a coronary risk of 0.6%/year. At coronary event risk 1.5%/year, the five year NNT was 44 to prevent a myocardial infa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-1817",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1817,
+      "sentence": "At coronary event risk 1%/year the NNT was 67 to prevent a myocardial infarction, and 182 to prevent a myocardial infarction net of important bleeding.",
+      "context_window": "any important bleeding complication. At coronary event risk 1%/year the NNT was 67 to prevent a myocardial infarction, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-2050",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2050,
+      "sentence": "CONCLUSIONS: Aspirin treatment for primary prevention is safe and worthwhile at coronary event risk >/= 1.5%/year; safe but of limited value at coronary risk 1%/year; and unsafe at coronary event risk 0.5%/year.",
+      "context_window": "revention is safe and worthwhile at coronary event risk >/= 1.5%/year; safe but of limited value at coronary risk 1%/year; a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-2104",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2104,
+      "sentence": "CONCLUSIONS: Aspirin treatment for primary prevention is safe and worthwhile at coronary event risk >/= 1.5%/year; safe but of limited value at coronary risk 1%/year; and unsafe at coronary event risk 0.5%/year.",
+      "context_window": "k >/= 1.5%/year; safe but of limited value at coronary risk 1%/year; and unsafe at coronary event risk 0.5%/year. Advice o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1136_heart_85_3_265_aspirin_for_primary_prevention_of_coronary_heart_disease_saf-pct-2147",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2147,
+      "sentence": "CONCLUSIONS: Aspirin treatment for primary prevention is safe and worthwhile at coronary event risk >/= 1.5%/year; safe but of limited value at coronary risk 1%/year; and unsafe at coronary event risk 0.5%/year.",
+      "context_window": "at coronary risk 1%/year; and unsafe at coronary event risk 0.5%/year. Advice on aspirin for primary prevention requires for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

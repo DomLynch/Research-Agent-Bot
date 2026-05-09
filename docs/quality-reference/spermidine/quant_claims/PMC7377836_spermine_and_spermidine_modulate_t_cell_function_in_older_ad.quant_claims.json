@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad",
   "doi": "10.18632/aging.103527",
-  "extracted_at": "2026-05-05T21:43:39+00:00",
+  "extracted_at": "2026-05-08T20:11:56+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 6,
@@ -25,9 +25,9 @@
       "context_window": "elease of Th1/Th2 cytokines from blood samples of patients (n=22) with cognitive impairment or dementia in comparison to hea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad-n-660",
@@ -43,9 +43,9 @@
       "context_window": "e impairment or dementia in comparison to healthy controls (n=12) ex vivo . We found that spermine downregulated all investi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad-u-1755",
@@ -60,10 +60,10 @@
       "sentence": "Effects of polyamines on cognition were reported from several animal models and from humans: i) Supplementation with polyamines improved memory functions of aged flies [ 4 ]; ii) Higher polyamine levels in the hippocampus were shown to correlate with better memory retrieval and formation [ 5 ], and changes in polyamine levels in memory-associated brain structures are suggested to contribute to age-related impairments in learning and memory in rats [ 6 ]; iii) Encouraging results have been reported from a proof of concept trial, showing that 3-months supplementation with a plant extract mainly containing spermidine and spermine (with 1.2 mg spermidine and 0.6 mg spermine per 1 g extract) as active substances was not only safe [ 3 ], but also improved memory functions of older adults with SCD [ 7 ].",
       "context_window": "ant extract mainly containing spermidine and spermine (with 1.2 mg spermidine and 0.6 mg spermine per 1 g extract) as active s",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "spermidine supplementation",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad-u-1777",
@@ -78,10 +78,10 @@
       "sentence": "Effects of polyamines on cognition were reported from several animal models and from humans: i) Supplementation with polyamines improved memory functions of aged flies [ 4 ]; ii) Higher polyamine levels in the hippocampus were shown to correlate with better memory retrieval and formation [ 5 ], and changes in polyamine levels in memory-associated brain structures are suggested to contribute to age-related impairments in learning and memory in rats [ 6 ]; iii) Encouraging results have been reported from a proof of concept trial, showing that 3-months supplementation with a plant extract mainly containing spermidine and spermine (with 1.2 mg spermidine and 0.6 mg spermine per 1 g extract) as active substances was not only safe [ 3 ], but also improved memory functions of older adults with SCD [ 7 ].",
       "context_window": "taining spermidine and spermine (with 1.2 mg spermidine and 0.6 mg spermine per 1 g extract) as active substances was not only",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cognition",
+      "arm": "spermidine supplementation",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad-msd-29",
@@ -351,9 +351,9 @@
       "context_window": "BB 026/18). All patients and control individuals were aged \u226518 years, and provided written informed consent before entering the",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad-p-2018",
@@ -369,7 +369,7 @@
       "context_window": ", L , G , H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-10, IL-13, IL17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -387,7 +387,7 @@
       "context_window": "H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-10, IL-13, IL17A, IL17-F)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -405,7 +405,7 @@
       "context_window": "n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-10, IL-13, IL17A, IL17-F) of pre-stimul",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "context_window": ", L , G , H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-22, INF-\u03b3, TNF-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -441,7 +441,7 @@
       "context_window": "H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-22, INF-\u03b3, TNF-\u03b1) of pre-s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -459,7 +459,7 @@
       "context_window": "n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-22, INF-\u03b3, TNF-\u03b1) of pre-stimulated T-c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -477,7 +477,7 @@
       "context_window": ", D , K , L , G , H ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. In contrast to spermine, addition",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -495,7 +495,7 @@
       "context_window": "L , G , H ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. In contrast to spermine, addition of spermid",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -513,7 +513,7 @@
       "context_window": "n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. In contrast to spermine, addition of spermidine caused a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -531,7 +531,7 @@
       "context_window": ", L , G , H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-10, IL-13, IL-1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -549,7 +549,7 @@
       "context_window": "H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-10, IL-13, IL-17A, IL-17F)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -567,7 +567,7 @@
       "context_window": "n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-10, IL-13, IL-17A, IL-17F) of pre-stimu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -585,7 +585,7 @@
       "context_window": ", L , G , H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-22, INF-\u03b3, TNF-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -603,7 +603,7 @@
       "context_window": "H , O , P ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-22, INF-\u03b3, TNF-\u03b1) of pre-s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -621,7 +621,7 @@
       "context_window": "n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Cytokine data (IL-22, INF-\u03b3, TNF-\u03b1) of pre-stimulated T-c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -639,7 +639,7 @@
       "context_window": ", D , K , L , G , H ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Summary: Spermine downregulated a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -657,7 +657,7 @@
       "context_window": "L , G , H ). n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Summary: Spermine downregulated all cytokine",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -675,7 +675,7 @@
       "context_window": "n control = 12; n CD-patient = 20 * p<0.05; ** p<0.01; *** p<0.001. Summary: Spermine downregulated all cytokines in a dose-d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -693,7 +693,7 @@
       "context_window": "s) are depicted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Autophagy of CD4+ T helper-cells",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -711,7 +711,7 @@
       "context_window": "cted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Autophagy of CD4+ T helper-cells and cytotox",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -729,7 +729,7 @@
       "context_window": "n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Autophagy of CD4+ T helper-cells and cytotoxic CD8+ T-cel",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -747,7 +747,7 @@
       "context_window": "s) are depicted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. CD8+ T-cells: A dose-dependent in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -765,7 +765,7 @@
       "context_window": "cted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. CD8+ T-cells: A dose-dependent increase of C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -783,7 +783,7 @@
       "context_window": "n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. CD8+ T-cells: A dose-dependent increase of CD8+ CD25+ or",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -801,7 +801,7 @@
       "context_window": "s) are depicted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Although the percentage of autoph",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -819,7 +819,7 @@
       "context_window": "cted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Although the percentage of autophagic CD8+ T",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -837,7 +837,7 @@
       "context_window": "n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Although the percentage of autophagic CD8+ T-cells was no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -855,7 +855,7 @@
       "context_window": "s) are depicted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. The amount of CD25 per T-cells wa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -873,7 +873,7 @@
       "context_window": "cted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. The amount of CD25 per T-cells was significa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -891,7 +891,7 @@
       "context_window": "n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. The amount of CD25 per T-cells was significantly increase",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -909,7 +909,7 @@
       "context_window": "s) are depicted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. CD8+ T-cell: Only 1000\u03bcM of sperm",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -927,7 +927,7 @@
       "context_window": "cted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. CD8+ T-cell: Only 1000\u03bcM of spermidine incre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -945,7 +945,7 @@
       "context_window": "n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. CD8+ T-cell: Only 1000\u03bcM of spermidine increased the perc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -963,7 +963,7 @@
       "context_window": "s) are depicted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Spermidine treated CD8+ T-cell sh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -981,7 +981,7 @@
       "context_window": "cted for %. n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Spermidine treated CD8+ T-cell showed an enh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -999,7 +999,7 @@
       "context_window": "n control = 12; n CD-patient = 20; * p<0.05; ** p<0.01; *** p<0.001. Spermidine treated CD8+ T-cell showed an enhanced percent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1017,7 +1017,7 @@
       "context_window": "yamines and also PBMC were used by Soda in a cohort aged 20-70 years [ 31 ], our work focused on T-cell activation in aged cohor",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1036,7 +1036,7 @@
       "context_window": "our work focused on T-cell activation in aged cohorts (age: 74 \u00b1 7.5 years) affected by cognitive decline compared to aged healt",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1054,7 +1054,7 @@
       "context_window": "ork focused on T-cell activation in aged cohorts (age: 74 \u00b1 7.5 years) affected by cognitive decline compared to aged healthy con",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1073,7 +1073,7 @@
       "context_window": "y cognitive decline compared to aged healthy controls (age: 74.3 \u00b1 6.4 years). Young, growing cells have increased polyamine synth",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1091,7 +1091,7 @@
       "context_window": "tive decline compared to aged healthy controls (age: 74.3 \u00b1 6.4 years). Young, growing cells have increased polyamine synthesis a",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1109,7 +1109,7 @@
       "context_window": "d without the polyamines [ 19 ]. Blood concentrations after 2 months of polyamine administration increased 1.39-fold [ 37 ]. Epi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1128,9 +1128,9 @@
       "context_window": "epithelial cells were reported by Weiss et al. (spermidine 2.49 \u00b1 0.26 nmol/mg; healthy controls) and correspond to 2000\u03bcM spermid",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

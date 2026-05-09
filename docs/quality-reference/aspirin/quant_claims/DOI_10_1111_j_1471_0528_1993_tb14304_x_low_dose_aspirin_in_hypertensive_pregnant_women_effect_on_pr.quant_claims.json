@@ -1,0 +1,178 @@
+{
+  "paper_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr",
+  "doi": "10.1111/j.1471-0528.1993.tb14304.x",
+  "extracted_at": "2026-05-08T20:05:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "mean_sd": 2,
+    "sample_size": 2,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-u-119",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 119,
+      "sentence": "<jats:title>ABSTRACT</jats:title><jats:p><jats:bold>Objective </jats:bold> To study the effect of daily treatment with 50 mg of aspirin (ASA) on the hypertensive pregnancy complications and on the production prostacyclin (PGI<jats:sub>2</jats:sub>) and thromboxane A<jats:sub>2</jats:sub> (TxA<jats:sub>2</jats:sub>) in high risk pregnant women and their infants.</jats:p><jats:p><jats:bold>Design </jats:bold> Placebo controlled prospective study.</jats:p><jats:p><jats:bold>Setting </jats:bold> Departments of Obstetrics and Gynaecology, University of Helsinki, University of Oulu and Central Hospital of Middle Finland, Finland.</jats:p><jats:p><jats:bold>Subjects </jats:bold> Two hundred and eight pregnant women with pre\u2010existing hypertension or a history of severe preeclampsia in their previous pregnancy.",
+      "context_window": "ve </jats:bold> To study the effect of daily treatment with 50 mg of aspirin (ASA) on the hypertensive pregnancy complication",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-u-962",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 962,
+      "sentence": "Prostanoids were studied in a subgroup of 18 women.</jats:p><jats:p><jats:bold>Interventions </jats:bold> The women were randomised to receive ASA (50 mg/day, <jats:styled-content><jats:italic>n</jats:italic>= 103</jats:styled-content>) or placebo (<jats:styled-content><jats:italic>n</jats:italic>= 105</jats:styled-content>) from the mean of 15 weeks gestational age to delivery.",
+      "context_window": "ions </jats:bold> The women were randomised to receive ASA (50 mg/day, <jats:styled-content><jats:italic>n</jats:italic>= 103</ja",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-u-1158",
+      "claim_type": "unit_value",
+      "raw_text": "15 weeks",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1158,
+      "sentence": "Prostanoids were studied in a subgroup of 18 women.</jats:p><jats:p><jats:bold>Interventions </jats:bold> The women were randomised to receive ASA (50 mg/day, <jats:styled-content><jats:italic>n</jats:italic>= 103</jats:styled-content>) or placebo (<jats:styled-content><jats:italic>n</jats:italic>= 105</jats:styled-content>) from the mean of 15 weeks gestational age to delivery.",
+      "context_window": "</jats:italic>= 105</jats:styled-content>) from the mean of 15 weeks gestational age to delivery. The exacerbation of pre\u2010existi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-msd-2869",
+      "claim_type": "mean_sd",
+      "raw_text": "3348 \u00b1 707",
+      "numeric_values": [
+        3348.0,
+        707.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2869,
+      "sentence": "ASA tended to increase the birthweight of the newborn (3348 \u00b1 707 g <jats:italic>vs</jats:italic> 3170 \u00b1 665 g, mean \u00b1 SD, <jats:styled-content><jats:italic>P</jats:italic>= 0.07</jats:styled-content>), but two perinatal deaths occurred in ASA group.",
+      "context_window": "oup. ASA tended to increase the birthweight of the newborn (3348 \u00b1 707 g <jats:italic>vs</jats:italic> 3170 \u00b1 665 g, mean \u00b1 SD, <j",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-msd-2912",
+      "claim_type": "mean_sd",
+      "raw_text": "3170 \u00b1 665",
+      "numeric_values": [
+        3170.0,
+        665.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2912,
+      "sentence": "ASA tended to increase the birthweight of the newborn (3348 \u00b1 707 g <jats:italic>vs</jats:italic> 3170 \u00b1 665 g, mean \u00b1 SD, <jats:styled-content><jats:italic>P</jats:italic>= 0.07</jats:styled-content>), but two perinatal deaths occurred in ASA group.",
+      "context_window": "of the newborn (3348 \u00b1 707 g <jats:italic>vs</jats:italic> 3170 \u00b1 665 g, mean \u00b1 SD, <jats:styled-content><jats:italic>P</jats:ita",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-n-3415",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 3415,
+      "sentence": "In a subgroup of mothers (ASA, <jats:styled-content>n = 10</jats:styled-content>; placebo, <jats:styled-content>n = 8</jats:styled-content>), ASA inhibited more than 90% of platelet TxA<jats:sub>2</jats:sub>\u2010production, and caused a 65 to 80% decrease in the urinary excretion of TxA<jats:sub>2</jats:sub> metabolites, but no decrease in the urinary excretion of PGI<jats:sub>2</jats:sub> metabolites.</jats:p><jats:p><jats:bold>Conclusions </jats:bold> ASA did not prevent the rise of maternal hypertension, but improved fetal haemodynamic performance and reduced the need of intensive neonatal care.",
+      "context_window": "stasis. In a subgroup of mothers (ASA, <jats:styled-content>n = 10</jats:styled-content>; placebo, <jats:styled-content>n = 8<",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-n-3475",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 3475,
+      "sentence": "In a subgroup of mothers (ASA, <jats:styled-content>n = 10</jats:styled-content>; placebo, <jats:styled-content>n = 8</jats:styled-content>), ASA inhibited more than 90% of platelet TxA<jats:sub>2</jats:sub>\u2010production, and caused a 65 to 80% decrease in the urinary excretion of TxA<jats:sub>2</jats:sub> metabolites, but no decrease in the urinary excretion of PGI<jats:sub>2</jats:sub> metabolites.</jats:p><jats:p><jats:bold>Conclusions </jats:bold> ASA did not prevent the rise of maternal hypertension, but improved fetal haemodynamic performance and reduced the need of intensive neonatal care.",
+      "context_window": "n = 10</jats:styled-content>; placebo, <jats:styled-content>n = 8</jats:styled-content>), ASA inhibited more than 90% of plat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-pct-3529",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 3529,
+      "sentence": "In a subgroup of mothers (ASA, <jats:styled-content>n = 10</jats:styled-content>; placebo, <jats:styled-content>n = 8</jats:styled-content>), ASA inhibited more than 90% of platelet TxA<jats:sub>2</jats:sub>\u2010production, and caused a 65 to 80% decrease in the urinary excretion of TxA<jats:sub>2</jats:sub> metabolites, but no decrease in the urinary excretion of PGI<jats:sub>2</jats:sub> metabolites.</jats:p><jats:p><jats:bold>Conclusions </jats:bold> ASA did not prevent the rise of maternal hypertension, but improved fetal haemodynamic performance and reduced the need of intensive neonatal care.",
+      "context_window": "ntent>n = 8</jats:styled-content>), ASA inhibited more than 90% of platelet TxA<jats:sub>2</jats:sub>\u2010production, and cause",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1471_0528_1993_tb14304_x_low_dose_aspirin_in_hypertensive_pregnant_women_effect_on_pr-pct-3602",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 3602,
+      "sentence": "In a subgroup of mothers (ASA, <jats:styled-content>n = 10</jats:styled-content>; placebo, <jats:styled-content>n = 8</jats:styled-content>), ASA inhibited more than 90% of platelet TxA<jats:sub>2</jats:sub>\u2010production, and caused a 65 to 80% decrease in the urinary excretion of TxA<jats:sub>2</jats:sub> metabolites, but no decrease in the urinary excretion of PGI<jats:sub>2</jats:sub> metabolites.</jats:p><jats:p><jats:bold>Conclusions </jats:bold> ASA did not prevent the rise of maternal hypertension, but improved fetal haemodynamic performance and reduced the need of intensive neonatal care.",
+      "context_window": "et TxA<jats:sub>2</jats:sub>\u2010production, and caused a 65 to 80% decrease in the urinary excretion of TxA<jats:sub>2</jats:s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

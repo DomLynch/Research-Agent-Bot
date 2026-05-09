@@ -1,0 +1,159 @@
+{
+  "paper_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati",
+  "doi": "10.62567/micjo.v2i4.1515",
+  "extracted_at": "2026-05-08T20:05:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3,
+    "confidence_interval": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-u-1038",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "Studies were eligible if they assessed polypill therapies in individuals aged 30 to 70 years with intermediate cardiovascular risk (10-20% 10-year risk), reported composite major adverse cardiovascular events (MACE) outcomes, and included a minimum follow-up of 6 months.",
+      "context_window": "they assessed polypill therapies in individuals aged 30 to 70 years with intermediate cardiovascular risk (10-20% 10-year risk)",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-pct-1089",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1089,
+      "sentence": "Studies were eligible if they assessed polypill therapies in individuals aged 30 to 70 years with intermediate cardiovascular risk (10-20% 10-year risk), reported composite major adverse cardiovascular events (MACE) outcomes, and included a minimum follow-up of 6 months.",
+      "context_window": "ed 30 to 70 years with intermediate cardiovascular risk (10-20% 10-year risk), reported composite major adverse cardiovascu",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-u-1216",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1216,
+      "sentence": "Studies were eligible if they assessed polypill therapies in individuals aged 30 to 70 years with intermediate cardiovascular risk (10-20% 10-year risk), reported composite major adverse cardiovascular events (MACE) outcomes, and included a minimum follow-up of 6 months.",
+      "context_window": "events (MACE) outcomes, and included a minimum follow-up of 6 months. Two independent reviewers conducted screening, data extrac",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular outcome",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-ci-1628",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60-0.75",
+      "numeric_values": [
+        0.6,
+        0.75
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1628,
+      "sentence": "Polypill therapies showed a substantial decrease in composite MACE relative to control groups (pooled HR 0.67 (95% CI 0.60-0.75, p<0.001).",
+      "context_window": "composite MACE relative to control groups (pooled HR 0.67 (95% CI 0.60-0.75, p<0.001). Individual trial hazard ratios varied from 0.50",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-p-1646",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1646,
+      "sentence": "Polypill therapies showed a substantial decrease in composite MACE relative to control groups (pooled HR 0.67 (95% CI 0.60-0.75, p<0.001).",
+      "context_window": "lative to control groups (pooled HR 0.67 (95% CI 0.60-0.75, p<0.001). Individual trial hazard ratios varied from 0.50 (PolyPars",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-pct-1784",
+      "claim_type": "percentage",
+      "raw_text": "35.2%",
+      "numeric_values": [
+        35.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1784,
+      "sentence": "Individual trial hazard ratios varied from 0.50 (PolyPars) to 0.66 (PolyIran) and 0.79 (TIPS-3) with moderate heterogeneity (I\u00b2=35.2%, p=0.20).",
+      "context_window": "PolyIran) and 0.79 (TIPS-3) with moderate heterogeneity (I\u00b2=35.2%, p=0.20). Polypills were generally well- tolerated, with a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-p-1791",
+      "claim_type": "p_value",
+      "raw_text": "p=0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1791,
+      "sentence": "Individual trial hazard ratios varied from 0.50 (PolyPars) to 0.66 (PolyIran) and 0.79 (TIPS-3) with moderate heterogeneity (I\u00b2=35.2%, p=0.20).",
+      "context_window": "n) and 0.79 (TIPS-3) with moderate heterogeneity (I\u00b2=35.2%, p=0.20). Polypills were generally well- tolerated, with a safety p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_62567_micjo_v2i4_1515_the_efficacy_and_safety_of_a_polypill_antihypertensive_stati-pct-2180",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2180,
+      "sentence": "Conclusions: Polypill techniques markedly reduce major adverse cardiovascular events (MACE) in intermediate-risk patients for primary cardiovascular prevention, achieving around a 33% relative risk reduction.",
+      "context_window": "s for primary cardiovascular prevention, achieving around a 33% relative risk reduction. The fixed-dose combination strateg",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

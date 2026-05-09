@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1111_imj_16079_aspirin_deprescribing_in_primary_prevention_of_cardiovascula",
+  "doi": "10.1111/imj.16079",
+  "extracted_at": "2026-05-08T20:05:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_imj_16079_aspirin_deprescribing_in_primary_prevention_of_cardiovascula-u-890",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 890,
+      "sentence": "Pharmacists are well placed to assess the clinical appropriateness of aspirin in CVD and initiate deprescribing as required with medical colleagues.</jats:p></jats:sec><jats:sec><jats:title>Aim</jats:title><jats:p>The aim of this study was to identify medical inpatients taking aspirin for primary prevention of CVD and initiate deprescribing utilising a risk\u2010benefit approach.</jats:p></jats:sec><jats:sec><jats:title>Methods</jats:title><jats:p>A single\u2010arm prospective feasibility study of general medicine patients admitted to a major tertiary hospital over 5 weeks (July-August 2020) was conducted.",
+      "context_window": "edicine patients admitted to a major tertiary hospital over 5 weeks (July-August 2020) was conducted. Screened patients were ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_imj_16079_aspirin_deprescribing_in_primary_prevention_of_cardiovascula-pct-1396",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1396,
+      "sentence": "Ten of these patients (14%) were categorised as taking aspirin for primary prevention and thus were deemed suitable for deprescribing.",
+      "context_window": "s were identified as taking aspirin. Ten of these patients (14%) were categorised as taking aspirin for primary prevention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_imj_16079_aspirin_deprescribing_in_primary_prevention_of_cardiovascula-pct-1606",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1606,
+      "sentence": "The analysis showed that aspirin continuance would, on average, increase major bleeding events by 39%, whilst reducing major cardiovascular events by 13.4%.",
+      "context_window": "nuance would, on average, increase major bleeding events by 39%, whilst reducing major cardiovascular events by 13.4%. Phar",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_imj_16079_aspirin_deprescribing_in_primary_prevention_of_cardiovascula-pct-1658",
+      "claim_type": "percentage",
+      "raw_text": "13.4%",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1658,
+      "sentence": "The analysis showed that aspirin continuance would, on average, increase major bleeding events by 39%, whilst reducing major cardiovascular events by 13.4%.",
+      "context_window": "ents by 39%, whilst reducing major cardiovascular events by 13.4%. Pharmacists recommended aspirin cessation in seven of the",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

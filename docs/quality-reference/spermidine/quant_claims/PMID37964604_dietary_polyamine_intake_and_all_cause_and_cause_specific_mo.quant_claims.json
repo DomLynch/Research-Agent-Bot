@@ -1,0 +1,84 @@
+{
+  "paper_id": "PMID37964604_dietary_polyamine_intake_and_all_cause_and_cause_specific_mo",
+  "doi": "10.1017/s0007114523002465",
+  "extracted_at": "2026-05-08T20:11:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID37964604_dietary_polyamine_intake_and_all_cause_and_cause_specific_mo-u-397",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 397,
+      "sentence": "The study included 13 355 men and 15 724 women aged 35 years and older.",
+      "context_window": "Japan. The study included 13 355 men and 15 724 women aged 35 years and older. Diet was assessed via a validated FFQ at the bas",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37964604_dietary_polyamine_intake_and_all_cause_and_cause_specific_mo-pct-644",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 644,
+      "sentence": "Sex-specific hazard ratios (HR) and 95 % CI for all-cause and cause-specific mortality were estimated according to polyamine quartiles.",
+      "context_window": "ng Japanese population. Sex-specific hazard ratios (HR) and 95 % CI for all-cause and cause-specific mortality were estimate",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37964604_dietary_polyamine_intake_and_all_cause_and_cause_specific_mo-u-751",
+      "claim_type": "unit_value",
+      "raw_text": "16 years",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 751,
+      "sentence": "During 16 years of follow-up, 2901 deaths in men and 2438 in women occurred.",
+      "context_window": "ity were estimated according to polyamine quartiles. During 16 years of follow-up, 2901 deaths in men and 2438 in women occurred",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID37964604_dietary_polyamine_intake_and_all_cause_and_cause_specific_mo-pct-1126",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "There was a suggestive positive association between spermidine intake and cancer mortality in women: HR for the highest v. lowest quartile were 1.38 (95 % CI (0.99, 1.93); Ptrend = 0.02).",
+      "context_window": "in women: HR for the highest v. lowest quartile were 1.38 (95 % CI (0.99, 1.93); Ptrend = 0.02). Our results did not provid",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

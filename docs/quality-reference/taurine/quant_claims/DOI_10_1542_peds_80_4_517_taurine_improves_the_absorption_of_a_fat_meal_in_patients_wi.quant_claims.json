@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1542_peds_80_4_517_taurine_improves_the_absorption_of_a_fat_meal_in_patients_wi",
+  "doi": "10.1542/peds.80.4.517",
+  "extracted_at": "2026-05-08T20:10:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1542_peds_80_4_517_taurine_improves_the_absorption_of_a_fat_meal_in_patients_wi-u-193",
+      "claim_type": "unit_value",
+      "raw_text": "2.6 years",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 193,
+      "sentence": "In a cross-over design study, five patients with cystic fibrosis (12.1 +/- 2.6 years of age) and three control subjects received either placebo or taurine (30 mg/kg/d) for two 1-week periods, a month apart, followed by a fat meal test.",
+      "context_window": "design study, five patients with cystic fibrosis (12.1 +/- 2.6 years of age) and three control subjects received either placebo",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1542_peds_80_4_517_taurine_improves_the_absorption_of_a_fat_meal_in_patients_wi-u-274",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/kg/d",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/kg/d",
+      "source_section": "abstract",
+      "source_offset": 274,
+      "sentence": "In a cross-over design study, five patients with cystic fibrosis (12.1 +/- 2.6 years of age) and three control subjects received either placebo or taurine (30 mg/kg/d) for two 1-week periods, a month apart, followed by a fat meal test.",
+      "context_window": "three control subjects received either placebo or taurine (30 mg/kg/d) for two 1-week periods, a month apart, followed by a fat m",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

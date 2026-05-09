@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_aspirin_dosing_in_pregnancy",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_aspirin_dosing_in_pregnancy-u-157",
+      "claim_type": "unit_value",
+      "raw_text": "81mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 157,
+      "sentence": "The purpose of this study is assess platelet phenotypes based on aspirin dosing in pregnant patients at risk for the development preeclampsia who are taking 81mg twice a day aspirin.",
+      "context_window": "nts at risk for the development preeclampsia who are taking 81mg twice a day aspirin. Blood samples will be collected approx",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_aspirin_dosing_in_pregnancy-u-229",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 229,
+      "sentence": "Blood samples will be collected approximately 4 weeks after initiation of aspirin to evaluate the platelet phenotype during pregnancy in patients.",
+      "context_window": "day aspirin. Blood samples will be collected approximately 4 weeks after initiation of aspirin to evaluate the platelet phenot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,728 @@
+{
+  "paper_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al",
+  "doi": "10.1111/jsr.70048",
+  "extracted_at": "2026-05-08T20:06:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "mean_sd": 12,
+    "percentage": 13,
+    "sample_size": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-u-1884",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1884,
+      "sentence": "The field of sleep medicine has evolved considerably with the digitisation of recordings, which 50 years ago were traced in pen and ink on kilos of paper (Palagini and Rosenlicht 2011 ), but the difficulty remains the same: reading thousands of 30\u2010s epochs, page by page on a screen, for a single patient's night.",
+      "context_window": "ved considerably with the digitisation of recordings, which 50 years ago were traced in pen and ink on kilos of paper (Palagini",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4315",
+      "claim_type": "mean_sd",
+      "raw_text": "0.78 \u00b1 0.06",
+      "numeric_values": [
+        0.78,
+        0.06
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4315,
+      "sentence": "EEG: C3/C4 & O1/O2\n\nEOG: LEOG & REOG\n\nEMG: Chin\n\n4 cohorts\n\n2784 PSGs (train)\n\n793 PSGs (test)\n\n0.78 \u00b1 0.06 (DH; Guillot et al.",
+      "context_window": "EMG: Chin 4 cohorts 2784 PSGs (train) 793 PSGs (test) 0.78 \u00b1 0.06 (DH; Guillot et al. 2020 ) 0.70 \u00b1 0.16 (DO; Guillot et al.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4355",
+      "claim_type": "mean_sd",
+      "raw_text": "0.70 \u00b1 0.16",
+      "numeric_values": [
+        0.7,
+        0.16
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4355,
+      "sentence": "2020 )\n\n0.70 \u00b1 0.16 (DO; Guillot et al.",
+      "context_window": ") 793 PSGs (test) 0.78 \u00b1 0.06 (DH; Guillot et al. 2020 ) 0.70 \u00b1 0.16 (DO; Guillot et al. 2020 ) 83.4 \u00b1 7.1% (TS) Feature extra",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4395",
+      "claim_type": "mean_sd",
+      "raw_text": "83.4 \u00b1 7.1",
+      "numeric_values": [
+        83.4,
+        7.1
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4395,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "llot et al. 2020 ) 0.70 \u00b1 0.16 (DO; Guillot et al. 2020 ) 83.4 \u00b1 7.1% (TS) Feature extraction Gradient\u2010boosted classifier (Nat",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-4402",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4402,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "al. 2020 ) 0.70 \u00b1 0.16 (DO; Guillot et al. 2020 ) 83.4 \u00b1 7.1% (TS) Feature extraction Gradient\u2010boosted classifier (Nate",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-4601",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4601,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "1/F2/C3/C4/O1/O2 EOG: LEOG/REOG 16 cohorts 15,660 PSGs (85% train, 15% test) 0.83 \u00b1 0.05 (DH) 0.79 \u00b1 0.10 (DO) 0.79",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-4612",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4612,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "O1/O2 EOG: LEOG/REOG 16 cohorts 15,660 PSGs (85% train, 15% test) 0.83 \u00b1 0.05 (DH) 0.79 \u00b1 0.10 (DO) 0.79 \u00b1 0.03 (TS)",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4623",
+      "claim_type": "mean_sd",
+      "raw_text": "0.83 \u00b1 0.05",
+      "numeric_values": [
+        0.83,
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4623,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "LEOG/REOG 16 cohorts 15,660 PSGs (85% train, 15% test) 0.83 \u00b1 0.05 (DH) 0.79 \u00b1 0.10 (DO) 0.79 \u00b1 0.03 (TS) Feature extractio",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4641",
+      "claim_type": "mean_sd",
+      "raw_text": "0.79 \u00b1 0.10",
+      "numeric_values": [
+        0.79,
+        0.1
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4641,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "orts 15,660 PSGs (85% train, 15% test) 0.83 \u00b1 0.05 (DH) 0.79 \u00b1 0.10 (DO) 0.79 \u00b1 0.03 (TS) Feature extraction Gradient\u2010booste",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4659",
+      "claim_type": "mean_sd",
+      "raw_text": "0.79 \u00b1 0.03",
+      "numeric_values": [
+        0.79,
+        0.03
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4659,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "(85% train, 15% test) 0.83 \u00b1 0.05 (DH) 0.79 \u00b1 0.10 (DO) 0.79 \u00b1 0.03 (TS) Feature extraction Gradient\u2010boosted classifier (Nate",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4838",
+      "claim_type": "mean_sd",
+      "raw_text": "0.79 \u00b1 0.11",
+      "numeric_values": [
+        0.79,
+        0.11
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4838,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "EMG: Chin 7 cohorts 3163 PSGs (train) 585 PSGs (test) 0.79 \u00b1 0.11 (DH) 0.74 \u00b1 0.12 (DO) 87.5% (median, TS) CNN (ResNet (He",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-4856",
+      "claim_type": "mean_sd",
+      "raw_text": "0.74 \u00b1 0.12",
+      "numeric_values": [
+        0.74,
+        0.12
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 4856,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "orts 3163 PSGs (train) 585 PSGs (test) 0.79 \u00b1 0.11 (DH) 0.74 \u00b1 0.12 (DO) 87.5% (median, TS) CNN (ResNet (He et al. 2016 )) R",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-4874",
+      "claim_type": "percentage",
+      "raw_text": "87.5%",
+      "numeric_values": [
+        87.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4874,
+      "sentence": "2020 )\n\n83.4 \u00b1 7.1% (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\nEEG: F1/F2/C3/C4/O1/O2\n\nEOG: LEOG/REOG\n\n16 cohorts\n\n15,660 PSGs\n\n(85% train, 15% test)\n\n0.83 \u00b1 0.05 (DH)\n\n0.79 \u00b1 0.10 (DO)\n\n0.79 \u00b1 0.03 (TS)\n\nFeature extraction\n\nGradient\u2010boosted classifier (Natekin and Knoll 2013 )\n\nEEG: C3/C4\n\nEOG: LEOG/REOG\n\nEMG: Chin\n\n7 cohorts\n\n3163 PSGs (train)\n\n585 PSGs (test)\n\n0.79 \u00b1 0.11 (DH)\n\n0.74 \u00b1 0.12 (DO)\n\n87.5% (median, TS)\n\nCNN (ResNet (He et al.",
+      "context_window": "rain) 585 PSGs (test) 0.79 \u00b1 0.11 (DH) 0.74 \u00b1 0.12 (DO) 87.5% (median, TS) CNN (ResNet (He et al. 2016 )) RNN (GRU (Chu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-5054",
+      "claim_type": "mean_sd",
+      "raw_text": "0.82 \u00b1 0.08",
+      "numeric_values": [
+        0.82,
+        0.08
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 5054,
+      "sentence": "2014 ))\n\nLinear layers\n\nEEG: F1/F2/C3/C4\n\nEOG: LEOG/REOG\n\n4 cohorts\n\n2983 PSGs (train)\n\n331 PSGs (test)\n\n0.82 \u00b1 0.08 (DH)\n\n0.80 \u00b1 0.11 (DO)\n\nUnknown (TS)\n\nNote : A slash (/) between two channels indicates that only one is required, whereas an ampersand (&) indicates that both are required.",
+      "context_window": ": LEOG/REOG 4 cohorts 2983 PSGs (train) 331 PSGs (test) 0.82 \u00b1 0.08 (DH) 0.80 \u00b1 0.11 (DO) Unknown (TS) Note : A slash (/) be",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-5072",
+      "claim_type": "mean_sd",
+      "raw_text": "0.80 \u00b1 0.11",
+      "numeric_values": [
+        0.8,
+        0.11
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 5072,
+      "sentence": "2014 ))\n\nLinear layers\n\nEEG: F1/F2/C3/C4\n\nEOG: LEOG/REOG\n\n4 cohorts\n\n2983 PSGs (train)\n\n331 PSGs (test)\n\n0.82 \u00b1 0.08 (DH)\n\n0.80 \u00b1 0.11 (DO)\n\nUnknown (TS)\n\nNote : A slash (/) between two channels indicates that only one is required, whereas an ampersand (&) indicates that both are required.",
+      "context_window": "orts 2983 PSGs (train) 331 PSGs (test) 0.82 \u00b1 0.08 (DH) 0.80 \u00b1 0.11 (DO) Unknown (TS) Note : A slash (/) between two channels",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-5382",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 5382,
+      "sentence": "Performance was evaluated using the macro F1 score on the DREEM dataset for healthy participants (DH, n = 25) and patients with sleep\u2010disordered breathing (DO, n = 55), based on the consensus of five expert sleep scorers.",
+      "context_window": "F1 score on the DREEM dataset for healthy participants (DH, n = 25) and patients with sleep\u2010disordered breathing (DO, n = 55),",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-5440",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 5440,
+      "sentence": "Performance was evaluated using the macro F1 score on the DREEM dataset for healthy participants (DH, n = 25) and patients with sleep\u2010disordered breathing (DO, n = 55), based on the consensus of five expert sleep scorers.",
+      "context_window": ", n = 25) and patients with sleep\u2010disordered breathing (DO, n = 55), based on the consensus of five expert sleep scorers. The",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-u-723",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 723,
+      "sentence": "Chronic insomnia was diagnosed in accordance with the International Classification of Sleep Disorders, Third Edition (ICSD\u20103) ( International Classification of Sleep Disorders 2014 ), defined by persistent difficulties with sleep initiation, maintenance, or early morning awakenings occurring at least three nights per week for a minimum of 3 months (Riemann et al.",
+      "context_window": "s occurring at least three nights per week for a minimum of 3 months (Riemann et al. 2023 ). Subjects who met the criteria for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-2779",
+      "claim_type": "sample_size",
+      "raw_text": "N = 890",
+      "numeric_values": [
+        890.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2779,
+      "sentence": "The study utilised two PSG devices; most studies were recorded with NOX\u2010A1 (Nox Medical, N = 890) and only a few with MORPHEUS (Micromed S.p.A., N = 14).",
+      "context_window": "vices; most studies were recorded with NOX\u2010A1 (Nox Medical, N = 890) and only a few with MORPHEUS (Micromed S.p.A., N = 14). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-2835",
+      "claim_type": "sample_size",
+      "raw_text": "N = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2835,
+      "sentence": "The study utilised two PSG devices; most studies were recorded with NOX\u2010A1 (Nox Medical, N = 890) and only a few with MORPHEUS (Micromed S.p.A., N = 14).",
+      "context_window": "al, N = 890) and only a few with MORPHEUS (Micromed S.p.A., N = 14). The number of EEG, EOG and EMG derivations varied across",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-4932",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4932,
+      "sentence": "2020 ) (split into healthy participants, n = 25, and patients with sleep\u2010disordered breathing, n = 55), as well as the performance reported on the test set of each model's original study.",
+      "context_window": "et (Guillot et al. 2020 ) (split into healthy participants, n = 25, and patients with sleep\u2010disordered breathing, n = 55), as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-4986",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4986,
+      "sentence": "2020 ) (split into healthy participants, n = 25, and patients with sleep\u2010disordered breathing, n = 55), as well as the performance reported on the test set of each model's original study.",
+      "context_window": "ants, n = 25, and patients with sleep\u2010disordered breathing, n = 55), as well as the performance reported on the test set of ea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-71",
+      "claim_type": "percentage",
+      "raw_text": "69.5%",
+      "numeric_values": [
+        69.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 71,
+      "sentence": "The study population consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 .",
+      "context_window": "opulation consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 ye",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-103",
+      "claim_type": "mean_sd",
+      "raw_text": "45.7 \u00b1 14.1",
+      "numeric_values": [
+        45.7,
+        14.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 103,
+      "sentence": "The study population consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 .",
+      "context_window": "nts, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-u-110",
+      "claim_type": "unit_value",
+      "raw_text": "14.1 years",
+      "numeric_values": [
+        14.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 110,
+      "sentence": "The study population consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 .",
+      "context_window": "th 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 . O",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-u-131",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 131,
+      "sentence": "The study population consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 .",
+      "context_window": "69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 . Of the 904 patients,",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-msd-159",
+      "claim_type": "mean_sd",
+      "raw_text": "23.1 \u00b1 3.8",
+      "numeric_values": [
+        23.1,
+        3.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 159,
+      "sentence": "The study population consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 .",
+      "context_window": "of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 . Of the 904 patients, 690 had abnormal PSG results",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-u-166",
+      "claim_type": "unit_value",
+      "raw_text": "3.8 kg",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 166,
+      "sentence": "The study population consisted of 904 patients, with 628 being female (69.5%) and having a mean age of 45.7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 .",
+      "context_window": "7 \u00b1 14.1 years (range 11-87 years) and a mean BMI of 23.1 \u00b1 3.8 kg/m 2 . Of the 904 patients, 690 had abnormal PSG results (SO",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-3524",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3524,
+      "sentence": "STAGES had the highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%).",
+      "context_window": "ions. STAGES had the highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-3545",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3545,
+      "sentence": "STAGES had the highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%).",
+      "context_window": "highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-3563",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3563,
+      "sentence": "STAGES had the highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%).",
+      "context_window": "y in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%). Furthermore, G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-3581",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3581,
+      "sentence": "STAGES had the highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%).",
+      "context_window": "e (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%). Furthermore, GSSC showed the sec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-3606",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3606,
+      "sentence": "STAGES had the highest sensitivity in detecting Wake (91%), U\u2010Sleep in N1 (43%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%).",
+      "context_window": "3%), GSSC in N2 (85%), Luna in N3 (68%) and U\u2010Sleep in REM (86%). Furthermore, GSSC showed the second highest sensitivity (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-4319",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4319,
+      "sentence": "For N3, all classifiers confused this stage almost exclusively with N2, with STAGES misclassifying the majority of N3 epochs as N2 (64%), contributing to its poor performance in N3.",
+      "context_window": "with STAGES misclassifying the majority of N3 epochs as N2 (64%), contributing to its poor performance in N3. U\u2010Sleep also",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-4439",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4439,
+      "sentence": "U\u2010Sleep also struggled with correct detection of N3 by misclassifying 50% of N3 epochs as N2.",
+      "context_window": "so struggled with correct detection of N3 by misclassifying 50% of N3 epochs as N2. Finally, REM was confused most with N2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-8862",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8862,
+      "sentence": "Performance comparison of four sleep staging classifiers (GSSC, U\u2010Sleep, STAGES and YASA) on three different datasets: DREEM healthy subjects (DH, n = 25), DREEM patients with sleep\u2010disordered breathing (DO, n = 55) and our dataset of patients with chronic insomnia (Ours, n = 904).",
+      "context_window": "A) on three different datasets: DREEM healthy subjects (DH, n = 25), DREEM patients with sleep\u2010disordered breathing (DO, n = 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-8923",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8923,
+      "sentence": "Performance comparison of four sleep staging classifiers (GSSC, U\u2010Sleep, STAGES and YASA) on three different datasets: DREEM healthy subjects (DH, n = 25), DREEM patients with sleep\u2010disordered breathing (DO, n = 55) and our dataset of patients with chronic insomnia (Ours, n = 904).",
+      "context_window": "= 25), DREEM patients with sleep\u2010disordered breathing (DO, n = 55) and our dataset of patients with chronic insomnia (Ours, n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-n-8988",
+      "claim_type": "sample_size",
+      "raw_text": "n = 904",
+      "numeric_values": [
+        904.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8988,
+      "sentence": "Performance comparison of four sleep staging classifiers (GSSC, U\u2010Sleep, STAGES and YASA) on three different datasets: DREEM healthy subjects (DH, n = 25), DREEM patients with sleep\u2010disordered breathing (DO, n = 55) and our dataset of patients with chronic insomnia (Ours, n = 904).",
+      "context_window": "5) and our dataset of patients with chronic insomnia (Ours, n = 904). Performance in the DREEM datasets is based on the consens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12592834_deciphering_insomnia_benchmarking_automated_sleep_staging_al-pct-6219",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6219,
+      "sentence": "However, the > 50% reduction in performance for N1 classification (Figure 6 ) is unlikely to be explained only by the subject characteristics; it may also be attributed to the use of a single technician, whose subjective scoring preferences could introduce bias, and/or the reliance on a single device for recording PSGs.",
+      "context_window": "arousal and frequent wake-sleep transitions. However, the > 50% reduction in performance for N1 classification (Figure 6 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

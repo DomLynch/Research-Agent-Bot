@@ -1,0 +1,949 @@
+{
+  "paper_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn",
+  "doi": "10.1093/sleepadvances/zpad054",
+  "extracted_at": "2026-05-08T20:05:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "p_value": 7,
+    "percentage": 44
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-n-570",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1561",
+      "numeric_values": [
+        1561.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 570,
+      "sentence": "Conventional AHI and REI were calculated based on total sleep time (TST) and total analyzed time (TAT), respectively, from two different PSG datasets ( n = 1561).",
+      "context_window": "time (TAT), respectively, from two different PSG datasets ( n = 1561). Moreover, TAT-based AHI (AHI TAT ) and TST-based REI (REI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-791",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 791,
+      "sentence": "The REI, AHI TAT , and REI TST were significantly lower than AHI ( p < 0.0001, p \u2264 0.002, and p \u2264 0.01, respectively).",
+      "context_window": ", AHI TAT , and REI TST were significantly lower than AHI ( p < 0.0001, p \u2264 0.002, and p \u2264 0.01, respectively). The total classifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-803",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 803,
+      "sentence": "The REI, AHI TAT , and REI TST were significantly lower than AHI ( p < 0.0001, p \u2264 0.002, and p \u2264 0.01, respectively).",
+      "context_window": "and REI TST were significantly lower than AHI ( p < 0.0001, p \u2264 0.002, and p \u2264 0.01, respectively). The total classification accu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-818",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 818,
+      "sentence": "The REI, AHI TAT , and REI TST were significantly lower than AHI ( p < 0.0001, p \u2264 0.002, and p \u2264 0.01, respectively).",
+      "context_window": "e significantly lower than AHI ( p < 0.0001, p \u2264 0.002, and p \u2264 0.01, respectively). The total classification accuracy of OSA se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-910",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 910,
+      "sentence": "The total classification accuracy of OSA severity based on REI was 42.1% and 72.8% for two datasets.",
+      "context_window": "al classification accuracy of OSA severity based on REI was 42.1% and 72.8% for two datasets. Based on AHI TAT , the accuraci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-920",
+      "claim_type": "percentage",
+      "raw_text": "72.8%",
+      "numeric_values": [
+        72.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 920,
+      "sentence": "The total classification accuracy of OSA severity based on REI was 42.1% and 72.8% for two datasets.",
+      "context_window": "ication accuracy of OSA severity based on REI was 42.1% and 72.8% for two datasets. Based on AHI TAT , the accuracies were 68",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-983",
+      "claim_type": "percentage",
+      "raw_text": "68.4%",
+      "numeric_values": [
+        68.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 983,
+      "sentence": "Based on AHI TAT , the accuracies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared to AHI.",
+      "context_window": "8% for two datasets. Based on AHI TAT , the accuracies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-993",
+      "claim_type": "percentage",
+      "raw_text": "85.9%",
+      "numeric_values": [
+        85.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 993,
+      "sentence": "Based on AHI TAT , the accuracies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared to AHI.",
+      "context_window": "datasets. Based on AHI TAT , the accuracies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "65.9%",
+      "numeric_values": [
+        65.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1033,
+      "sentence": "Based on AHI TAT , the accuracies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared to AHI.",
+      "context_window": "cies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared to AHI. AHI was most correlated with REI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1043",
+      "claim_type": "percentage",
+      "raw_text": "88.5%",
+      "numeric_values": [
+        88.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "Based on AHI TAT , the accuracies were 68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared to AHI.",
+      "context_window": "68.4% and 85.9%, and based on REI TST , they were 65.9% and 88.5% compared to AHI. AHI was most correlated with REI TST ( r =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1335",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1335,
+      "sentence": "REI had the lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets.",
+      "context_window": "the lowest (5.9 and 1.9). REI had the lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both data",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1345",
+      "claim_type": "percentage",
+      "raw_text": "72.8%",
+      "numeric_values": [
+        72.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1345,
+      "sentence": "REI had the lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets.",
+      "context_window": "(5.9 and 1.9). REI had the lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets. Base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1371",
+      "claim_type": "percentage",
+      "raw_text": "80.7%",
+      "numeric_values": [
+        80.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1371,
+      "sentence": "REI had the lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets.",
+      "context_window": "e lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets. Based on these present results",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1381",
+      "claim_type": "percentage",
+      "raw_text": "90.9%",
+      "numeric_values": [
+        90.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1381,
+      "sentence": "REI had the lowest sensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets.",
+      "context_window": "ensitivities (42.1% and 72.8%) and specificities (80.7% and 90.9%) in both datasets. Based on these present results, REI unde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-2394",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2394,
+      "sentence": "The hypopneas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal.",
+      "context_window": "eas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-2461",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2461,
+      "sentence": "The hypopneas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal.",
+      "context_window": "at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an aro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-2479",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2479,
+      "sentence": "The hypopneas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal.",
+      "context_window": "ds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal. TST was def",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-3643",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3643,
+      "sentence": "The hypopneas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal.",
+      "context_window": "eas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-3710",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3710,
+      "sentence": "The hypopneas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal.",
+      "context_window": "at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an aro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-3728",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3728,
+      "sentence": "The hypopneas were scored when the airflow signal dropped by at least 30% for at least 10 seconds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal.",
+      "context_window": "ds and they were associated with at least 3% (dataset-1) or 4% (dataset-2) oxygen desaturation or an arousal. Abbreviatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-301",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 301,
+      "sentence": "In both datasets, the REI was significantly lower than the AHI in all OSA severity groups when the groups were defined based on the AHI (MWU p < 0.0001).",
+      "context_window": "y groups when the groups were defined based on the AHI (MWU p < 0.0001). Similarly, AHI TAT and REI TST were also significantly lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-400",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 400,
+      "sentence": "Similarly, AHI TAT and REI TST were also significantly lower compared to the AHI (MWU p < 0.0001 in dataset-1, p = 0.002 and p = 0.01 in dataset-2, respectively) in all OSA severity groups.",
+      "context_window": "TST were also significantly lower compared to the AHI (MWU p < 0.0001 in dataset-1, p = 0.002 and p = 0.01 in dataset-2, respecti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-425",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 425,
+      "sentence": "Similarly, AHI TAT and REI TST were also significantly lower compared to the AHI (MWU p < 0.0001 in dataset-1, p = 0.002 and p = 0.01 in dataset-2, respectively) in all OSA severity groups.",
+      "context_window": "tly lower compared to the AHI (MWU p < 0.0001 in dataset-1, p = 0.002 and p = 0.01 in dataset-2, respectively) in all OSA severit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-p-439",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 439,
+      "sentence": "Similarly, AHI TAT and REI TST were also significantly lower compared to the AHI (MWU p < 0.0001 in dataset-1, p = 0.002 and p = 0.01 in dataset-2, respectively) in all OSA severity groups.",
+      "context_window": "ared to the AHI (MWU p < 0.0001 in dataset-1, p = 0.002 and p = 0.01 in dataset-2, respectively) in all OSA severity groups. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-3774",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3774,
+      "sentence": "The overall accuracies of OSA severity classification (ground truth obtained using the AHI) using REI were 42.1% and 72.8% for dataset-1 and dataset-2, respectively.",
+      "context_window": "cation (ground truth obtained using the AHI) using REI were 42.1% and 72.8% for dataset-1 and dataset-2, respectively. The pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-3784",
+      "claim_type": "percentage",
+      "raw_text": "72.8%",
+      "numeric_values": [
+        72.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3784,
+      "sentence": "The overall accuracies of OSA severity classification (ground truth obtained using the AHI) using REI were 42.1% and 72.8% for dataset-1 and dataset-2, respectively.",
+      "context_window": "ound truth obtained using the AHI) using REI were 42.1% and 72.8% for dataset-1 and dataset-2, respectively. The percentages",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4086",
+      "claim_type": "percentage",
+      "raw_text": "45.0%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4086,
+      "sentence": "For example, the accuracies of REI in correctly classifying patients to have severe OSA were 45.0% and 75.1% in datasets 1 and 2, respectively.",
+      "context_window": "I in correctly classifying patients to have severe OSA were 45.0% and 75.1% in datasets 1 and 2, respectively. The classifica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4096",
+      "claim_type": "percentage",
+      "raw_text": "75.1%",
+      "numeric_values": [
+        75.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4096,
+      "sentence": "For example, the accuracies of REI in correctly classifying patients to have severe OSA were 45.0% and 75.1% in datasets 1 and 2, respectively.",
+      "context_window": "ctly classifying patients to have severe OSA were 45.0% and 75.1% in datasets 1 and 2, respectively. The classification accur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4226",
+      "claim_type": "percentage",
+      "raw_text": "18.6%",
+      "numeric_values": [
+        18.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4226,
+      "sentence": "The classification accuracies were the lowest in cases of moderate OSA in both datasets (18.6% in dataset-1 and 48.1% in dataset-2).",
+      "context_window": "were the lowest in cases of moderate OSA in both datasets (18.6% in dataset-1 and 48.1% in dataset-2). In addition, there we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4249",
+      "claim_type": "percentage",
+      "raw_text": "48.1%",
+      "numeric_values": [
+        48.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4249,
+      "sentence": "The classification accuracies were the lowest in cases of moderate OSA in both datasets (18.6% in dataset-1 and 48.1% in dataset-2).",
+      "context_window": "es of moderate OSA in both datasets (18.6% in dataset-1 and 48.1% in dataset-2). In addition, there were several cases when p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4382",
+      "claim_type": "percentage",
+      "raw_text": "18.6%",
+      "numeric_values": [
+        18.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4382,
+      "sentence": "For example, 18.6% of the patients who were diagnosed to have moderate OSA by using the AHI were wrongly classified as having no-OSA in dataset-1.",
+      "context_window": "were severely underdiagnosed by utilizing REI. For example, 18.6% of the patients who were diagnosed to have moderate OSA by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4541",
+      "claim_type": "percentage",
+      "raw_text": "14.2%",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4541,
+      "sentence": "Similarly, in dataset-1, 14.2% of the patients were wrongly classified as having mild OSA when in fact, those patients belonged to the severe OSA group.",
+      "context_window": "ied as having no-OSA in dataset-1. Similarly, in dataset-1, 14.2% of the patients were wrongly classified as having mild OSA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4902",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4902,
+      "sentence": "For example, in dataset-1, 1.3% and 8.3% of the patients with moderate OSA were misclassified as having no-OSA using AHI TAT and REI TST , respectively.",
+      "context_window": "everely underdiagnosed patients. For example, in dataset-1, 1.3% and 8.3% of the patients with moderate OSA were misclassifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-4911",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4911,
+      "sentence": "For example, in dataset-1, 1.3% and 8.3% of the patients with moderate OSA were misclassified as having no-OSA using AHI TAT and REI TST , respectively.",
+      "context_window": "nderdiagnosed patients. For example, in dataset-1, 1.3% and 8.3% of the patients with moderate OSA were misclassified as hav",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-5039",
+      "claim_type": "percentage",
+      "raw_text": "4.1%",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5039,
+      "sentence": "Similarly, 4.1% (using AHI TAT ) and 2.3% (using REI TST ) of the patients were incorrectly diagnosed as having mild OSA, when in fact those patients belonged to the severe OSA group.",
+      "context_window": "no-OSA using AHI TAT and REI TST , respectively. Similarly, 4.1% (using AHI TAT ) and 2.3% (using REI TST ) of the patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-5065",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5065,
+      "sentence": "Similarly, 4.1% (using AHI TAT ) and 2.3% (using REI TST ) of the patients were incorrectly diagnosed as having mild OSA, when in fact those patients belonged to the severe OSA group.",
+      "context_window": "EI TST , respectively. Similarly, 4.1% (using AHI TAT ) and 2.3% (using REI TST ) of the patients were incorrectly diagnosed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-6432",
+      "claim_type": "percentage",
+      "raw_text": "29.0%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6432,
+      "sentence": "For example, the F1-scores for the mild and moderate OSA groups were 29.0% and 21.2%, whereas for the severe OSA group it was 62.0% in the dataset-1.",
+      "context_window": "le, the F1-scores for the mild and moderate OSA groups were 29.0% and 21.2%, whereas for the severe OSA group it was 62.0% in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-6442",
+      "claim_type": "percentage",
+      "raw_text": "21.2%",
+      "numeric_values": [
+        21.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6442,
+      "sentence": "For example, the F1-scores for the mild and moderate OSA groups were 29.0% and 21.2%, whereas for the severe OSA group it was 62.0% in the dataset-1.",
+      "context_window": "-scores for the mild and moderate OSA groups were 29.0% and 21.2%, whereas for the severe OSA group it was 62.0% in the datas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-6489",
+      "claim_type": "percentage",
+      "raw_text": "62.0%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6489,
+      "sentence": "For example, the F1-scores for the mild and moderate OSA groups were 29.0% and 21.2%, whereas for the severe OSA group it was 62.0% in the dataset-1.",
+      "context_window": "re 29.0% and 21.2%, whereas for the severe OSA group it was 62.0% in the dataset-1. Similarly, the F1-scores for the mild and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-6597",
+      "claim_type": "percentage",
+      "raw_text": "61.6%",
+      "numeric_values": [
+        61.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6597,
+      "sentence": "Similarly, the F1-scores for the mild and moderate OSA groups in the dataset-2 were 61.6% and 51.4%, but that of the severe OSA group was 85.8%.",
+      "context_window": "for the mild and moderate OSA groups in the dataset-2 were 61.6% and 51.4%, but that of the severe OSA group was 85.8%. Macr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-6607",
+      "claim_type": "percentage",
+      "raw_text": "51.4%",
+      "numeric_values": [
+        51.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6607,
+      "sentence": "Similarly, the F1-scores for the mild and moderate OSA groups in the dataset-2 were 61.6% and 51.4%, but that of the severe OSA group was 85.8%.",
+      "context_window": "ild and moderate OSA groups in the dataset-2 were 61.6% and 51.4%, but that of the severe OSA group was 85.8%. Macro averaged",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-6651",
+      "claim_type": "percentage",
+      "raw_text": "85.8%",
+      "numeric_values": [
+        85.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6651,
+      "sentence": "Similarly, the F1-scores for the mild and moderate OSA groups in the dataset-2 were 61.6% and 51.4%, but that of the severe OSA group was 85.8%.",
+      "context_window": "were 61.6% and 51.4%, but that of the severe OSA group was 85.8%. Macro averaged F1-scores and overall accuracies are presen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7550",
+      "claim_type": "percentage",
+      "raw_text": "68.4%",
+      "numeric_values": [
+        68.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7550,
+      "sentence": "AHI TAT had the highest sensitivity (68.4%) and specificity (89.5%) in dataset-1, whereas in dataset-2, REI TST had the highest sensitivity (88.5%) and specificity (96.2%).",
+      "context_window": "city than sensitivity. AHI TAT had the highest sensitivity (68.4%) and specificity (89.5%) in dataset-1, whereas in dataset-2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7574",
+      "claim_type": "percentage",
+      "raw_text": "89.5%",
+      "numeric_values": [
+        89.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7574,
+      "sentence": "AHI TAT had the highest sensitivity (68.4%) and specificity (89.5%) in dataset-1, whereas in dataset-2, REI TST had the highest sensitivity (88.5%) and specificity (96.2%).",
+      "context_window": "HI TAT had the highest sensitivity (68.4%) and specificity (89.5%) in dataset-1, whereas in dataset-2, REI TST had the highes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7654",
+      "claim_type": "percentage",
+      "raw_text": "88.5%",
+      "numeric_values": [
+        88.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7654,
+      "sentence": "AHI TAT had the highest sensitivity (68.4%) and specificity (89.5%) in dataset-1, whereas in dataset-2, REI TST had the highest sensitivity (88.5%) and specificity (96.2%).",
+      "context_window": "whereas in dataset-2, REI TST had the highest sensitivity (88.5%) and specificity (96.2%). REI had the lowest sensitivity (4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7678",
+      "claim_type": "percentage",
+      "raw_text": "96.2%",
+      "numeric_values": [
+        96.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7678,
+      "sentence": "AHI TAT had the highest sensitivity (68.4%) and specificity (89.5%) in dataset-1, whereas in dataset-2, REI TST had the highest sensitivity (88.5%) and specificity (96.2%).",
+      "context_window": "EI TST had the highest sensitivity (88.5%) and specificity (96.2%). REI had the lowest sensitivity (42.1% and 72.8%) and spec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7718",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7718,
+      "sentence": "REI had the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "context_window": "%) and specificity (96.2%). REI had the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7728",
+      "claim_type": "percentage",
+      "raw_text": "72.8%",
+      "numeric_values": [
+        72.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7728,
+      "sentence": "REI had the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "context_window": "cificity (96.2%). REI had the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7752",
+      "claim_type": "percentage",
+      "raw_text": "80.7%",
+      "numeric_values": [
+        80.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7752,
+      "sentence": "REI had the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "context_window": "d the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-7762",
+      "claim_type": "percentage",
+      "raw_text": "90.9%",
+      "numeric_values": [
+        90.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7762,
+      "sentence": "REI had the lowest sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "context_window": "st sensitivity (42.1% and 72.8%) and specificity (80.7% and 90.9%) in both datasets.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1057,
+      "sentence": "Our research also revealed that the degree to which REI underestimates the true severity of OSA is alarming with more than 50% of the patients classified into the less severe OSA group in dataset-1 and more than 20% in dataset-2 ( Figures 2 and 3 ).",
+      "context_window": "timates the true severity of OSA is alarming with more than 50% of the patients classified into the less severe OSA group i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10805527_respiratory_event_index_underestimates_severity_of_sleep_apn-pct-1146",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1146,
+      "sentence": "Our research also revealed that the degree to which REI underestimates the true severity of OSA is alarming with more than 50% of the patients classified into the less severe OSA group in dataset-1 and more than 20% in dataset-2 ( Figures 2 and 3 ).",
+      "context_window": "d into the less severe OSA group in dataset-1 and more than 20% in dataset-2 ( Figures 2 and 3 ). Moreover, some individual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

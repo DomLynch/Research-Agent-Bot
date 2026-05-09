@@ -1,0 +1,1504 @@
+{
+  "paper_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin",
+  "doi": "10.3390/clinpract14040105",
+  "extracted_at": "2026-05-08T20:06:14+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 25,
+    "odds_ratio": 1,
+    "unit_value": 24,
+    "p_value": 13,
+    "sample_size": 7,
+    "confidence_interval": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1022",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1022,
+      "sentence": "The incidences of CAAs (odds ratio [OR] = 0.93; 95% confidence interval [CI] = 0.64-1.34) and IVIG resistance (OR = 1.46; 95% CI = 1.00-2.12) did not differ significantly between no or low-dose versus high-dose aspirin in treating acute KD.",
+      "context_window": "n criteria. The incidences of CAAs (odds ratio [OR] = 0.93; 95% confidence interval [CI] = 0.64-1.34) and IVIG resistance (",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-or-a-1085",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.46",
+      "numeric_values": [
+        1.46
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "The incidences of CAAs (odds ratio [OR] = 0.93; 95% confidence interval [CI] = 0.64-1.34) and IVIG resistance (OR = 1.46; 95% CI = 1.00-2.12) did not differ significantly between no or low-dose versus high-dose aspirin in treating acute KD.",
+      "context_window": "confidence interval [CI] = 0.64-1.34) and IVIG resistance (OR = 1.46; 95% CI = 1.00-2.12) did not differ significantly between n",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1096",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1096,
+      "sentence": "The incidences of CAAs (odds ratio [OR] = 0.93; 95% confidence interval [CI] = 0.64-1.34) and IVIG resistance (OR = 1.46; 95% CI = 1.00-2.12) did not differ significantly between no or low-dose versus high-dose aspirin in treating acute KD.",
+      "context_window": "interval [CI] = 0.64-1.34) and IVIG resistance (OR = 1.46; 95% CI = 1.00-2.12) did not differ significantly between no or",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1277",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1277,
+      "sentence": "Moreover, the fever durations (mean difference [MD] = 3.55 h; 95% CI = -7.99-15.10) and hospital stay lengths (MD = -0.54 days; 95% CI = -2.50-1.41) were similar in the no and low-dose aspirin group compared to the high-dose aspirin group.",
+      "context_window": "reover, the fever durations (mean difference [MD] = 3.55 h; 95% CI = -7.99-15.10) and hospital stay lengths (MD = -0.54 day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1332",
+      "claim_type": "unit_value",
+      "raw_text": "0.54 days",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1332,
+      "sentence": "Moreover, the fever durations (mean difference [MD] = 3.55 h; 95% CI = -7.99-15.10) and hospital stay lengths (MD = -0.54 days; 95% CI = -2.50-1.41) were similar in the no and low-dose aspirin group compared to the high-dose aspirin group.",
+      "context_window": "5 h; 95% CI = -7.99-15.10) and hospital stay lengths (MD = -0.54 days; 95% CI = -2.50-1.41) were similar in the no and low-dose a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1343",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "Moreover, the fever durations (mean difference [MD] = 3.55 h; 95% CI = -7.99-15.10) and hospital stay lengths (MD = -0.54 days; 95% CI = -2.50-1.41) were similar in the no and low-dose aspirin group compared to the high-dose aspirin group.",
+      "context_window": "= -7.99-15.10) and hospital stay lengths (MD = -0.54 days; 95% CI = -2.50-1.41) were similar in the no and low-dose aspiri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1506",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1506,
+      "sentence": "It has been reported that 9% of patients with KD will experience acute-phase cardiac complications, while about 3% will experience cardiac sequelae.",
+      "context_window": "ars after the onset of KD [ 4 ]. It has been reported that 9% of patients with KD will experience acute-phase cardiac com",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1592",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1592,
+      "sentence": "It has been reported that 9% of patients with KD will experience acute-phase cardiac complications, while about 3% will experience cardiac sequelae.",
+      "context_window": "l experience acute-phase cardiac complications, while about 3% will experience cardiac sequelae. It has also been document",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1671",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1671,
+      "sentence": "It has also been documented that about 50-70% of patients in the acute phase of KD will experience myocardial inflammation.",
+      "context_window": "cardiac sequelae. It has also been documented that about 50-70% of patients in the acute phase of KD will experience myocar",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1864",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1864,
+      "sentence": "Moreover, data show that about 15-25% of untreated children will develop a CAA [ 1 ].",
+      "context_window": "ion have been documented. Moreover, data show that about 15-25% of untreated children will develop a CAA [ 1 ]. There is no",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-2079",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2079,
+      "sentence": "Interestingly, about 15-20% of KD cases are considered atypical, and they are diagnosed by the echocardiographic identification of a coronary artery lesion without fulfilling the criteria [ 5 ].",
+      "context_window": "clinical criteria mentioned above. Interestingly, about 15-20% of KD cases are considered atypical, and they are diagnosed",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2508",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/kg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2508,
+      "sentence": "The American Heart Association recommends administering 2 g/kg of intravenous immunoglobulin (IVIG) and 80-100 mg/kg/day of high-dose aspirin (acetylsalicylic acid) within the first 48 h [ 6 ].",
+      "context_window": "istering 2 g/kg of intravenous immunoglobulin (IVIG) and 80-100 mg/kg/day of high-dose aspirin (acetylsalicylic acid) within the firs",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2726",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/kg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2726,
+      "sentence": "Similarly, the Japanese Society of Pediatric Cardiology and Cardiac Surgery recommends administering IVIG (2 g/kg) and aspirin (30-50 mg/kg/day) until the patient has no fever [ 7 ], after which it recommends that patients receive low-dose aspirin (3-5 mg/kg/day) for 2-3 months.",
+      "context_window": "gery recommends administering IVIG (2 g/kg) and aspirin (30-50 mg/kg/day) until the patient has no fever [ 7 ], after which it recom",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2846",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg/kg/day",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2846,
+      "sentence": "Similarly, the Japanese Society of Pediatric Cardiology and Cardiac Surgery recommends administering IVIG (2 g/kg) and aspirin (30-50 mg/kg/day) until the patient has no fever [ 7 ], after which it recommends that patients receive low-dose aspirin (3-5 mg/kg/day) for 2-3 months.",
+      "context_window": "ich it recommends that patients receive low-dose aspirin (3-5 mg/kg/day) for 2-3 months. Combining IVIG and aspirin at a high dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2865",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2865,
+      "sentence": "Similarly, the Japanese Society of Pediatric Cardiology and Cardiac Surgery recommends administering IVIG (2 g/kg) and aspirin (30-50 mg/kg/day) until the patient has no fever [ 7 ], after which it recommends that patients receive low-dose aspirin (3-5 mg/kg/day) for 2-3 months.",
+      "context_window": "hat patients receive low-dose aspirin (3-5 mg/kg/day) for 2-3 months. Combining IVIG and aspirin at a high dose (>30 mg/kg/day)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2920",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/kg/day",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 2920,
+      "sentence": "Combining IVIG and aspirin at a high dose (>30 mg/kg/day) is recommended in the initial phase of the disease as it might result in a stronger anti-inflammatory effect.",
+      "context_window": "or 2-3 months. Combining IVIG and aspirin at a high dose (>30 mg/kg/day) is recommended in the initial phase of the disease as it m",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-3542",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3542,
+      "sentence": "Hypersensitivity is also common, affecting 1-2% of those taking aspirin.",
+      "context_window": "al hemorrhage. Hypersensitivity is also common, affecting 1-2% of those taking aspirin. The symptoms range from a simple r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-3692",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3692,
+      "sentence": "Moreover, the prevalence of allergic symptoms may be 26% higher among patients with asthma and chronic rhinosinusitis.",
+      "context_window": "laxis. Moreover, the prevalence of allergic symptoms may be 26% higher among patients with asthma and chronic rhinosinusiti",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-881",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 881,
+      "sentence": "The inclusion criteria were as follows: (1) randomized controlled trials (RCTs) or observational studies, (2) studies involving pediatric patients aged <18 years with acute KD, (3) studies reporting the outcomes of interest, (4) studies using aspirin in the treatment of acute-phase KD, (5) studies reporting the aspirin dose administered, (6) studies administering high-dose aspirin (\u226530 mg/kg/day) compared to low-dose or no aspirin, and (7) studies published in English.",
+      "context_window": "nal studies, (2) studies involving pediatric patients aged <18 years with acute KD, (3) studies reporting the outcomes of intere",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1114",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/kg/day",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 1114,
+      "sentence": "The inclusion criteria were as follows: (1) randomized controlled trials (RCTs) or observational studies, (2) studies involving pediatric patients aged <18 years with acute KD, (3) studies reporting the outcomes of interest, (4) studies using aspirin in the treatment of acute-phase KD, (5) studies reporting the aspirin dose administered, (6) studies administering high-dose aspirin (\u226530 mg/kg/day) compared to low-dose or no aspirin, and (7) studies published in English.",
+      "context_window": "administered, (6) studies administering high-dose aspirin (\u226530 mg/kg/day) compared to low-dose or no aspirin, and (7) studies publis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1724",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1724,
+      "sentence": "The exclusion criteria were as follows: (1) case-control studies or case series, as these study designs are more prone to bias in assessing treatment effects, (2) studies including patients with other vasculitis or autoimmune conditions that could confound the KD treatment response, (3) studies in which patients received additional anti-inflammatory treatments beyond standard IVIG and aspirin, (4) studies with incomplete or unclear reporting of aspirin dosing regimens, (5) studies with follow-up periods shorter than 4 weeks, as this may be insufficient to assess CAA outcomes, (6) studies focusing solely on recurrent or refractory KD cases, (7) non-English language publications due to translation limitations, and (8) duplicate reports of the same patient cohort.",
+      "context_window": "g regimens, (5) studies with follow-up periods shorter than 4 weeks, as this may be insufficient to assess CAA outcomes, (6) st",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2199",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2199,
+      "sentence": "The primary outcome was the incidence of CAAs, which was assessed using echocardiography according to the Japanese Ministry of Health criteria, which classify coronary arteries as abnormal if the internal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whether the internal diameter of a segment measures \u2265 1.5 times that of an adjacent segment; or according to whether the coronary lumen is clearly irregular [ 7 , 11 ] or the AHA coronary artery z-score system is used (in which the z-score of the coronary artery diameter is calculated using special formulas and a z-score of \u22652.5 for any coronary artery is considered indicative of CAA) [ 12 , 13 ].",
+      "context_window": "ary arteries as abnormal if the internal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2217",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2217,
+      "sentence": "The primary outcome was the incidence of CAAs, which was assessed using echocardiography according to the Japanese Ministry of Health criteria, which classify coronary arteries as abnormal if the internal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whether the internal diameter of a segment measures \u2265 1.5 times that of an adjacent segment; or according to whether the coronary lumen is clearly irregular [ 7 , 11 ] or the AHA coronary artery z-score system is used (in which the z-score of the coronary artery diameter is calculated using special formulas and a z-score of \u22652.5 for any coronary artery is considered indicative of CAA) [ 12 , 13 ].",
+      "context_window": "normal if the internal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whethe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2233",
+      "claim_type": "unit_value",
+      "raw_text": "4 mm",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2233,
+      "sentence": "The primary outcome was the incidence of CAAs, which was assessed using echocardiography according to the Japanese Ministry of Health criteria, which classify coronary arteries as abnormal if the internal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whether the internal diameter of a segment measures \u2265 1.5 times that of an adjacent segment; or according to whether the coronary lumen is clearly irregular [ 7 , 11 ] or the AHA coronary artery z-score system is used (in which the z-score of the coronary artery diameter is calculated using special formulas and a z-score of \u22652.5 for any coronary artery is considered indicative of CAA) [ 12 , 13 ].",
+      "context_window": "ternal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whether the interna",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-2252",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2252,
+      "sentence": "The primary outcome was the incidence of CAAs, which was assessed using echocardiography according to the Japanese Ministry of Health criteria, which classify coronary arteries as abnormal if the internal lumen diameter is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whether the internal diameter of a segment measures \u2265 1.5 times that of an adjacent segment; or according to whether the coronary lumen is clearly irregular [ 7 , 11 ] or the AHA coronary artery z-score system is used (in which the z-score of the coronary artery diameter is calculated using special formulas and a z-score of \u22652.5 for any coronary artery is considered indicative of CAA) [ 12 , 13 ].",
+      "context_window": "er is >3 mm in children <5 years old or >4 mm in children \u2265 5 years old; according to whether the internal diameter of a segmen",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-5538",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5538,
+      "sentence": "The results are expressed as an odds ratio (OR) for dichotomous variables and the mean difference (MD) for continuous variables, with a 95% confidence interval (CI).",
+      "context_window": "d the mean difference (MD) for continuous variables, with a 95% confidence interval (CI). The meta-analysis used a random-e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-5669",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5669,
+      "sentence": "The meta-analysis used a random-effects model, and the results are expressed as the MD and OR with a 95% CI.",
+      "context_window": "odel, and the results are expressed as the MD and OR with a 95% CI. Heterogeneity was assessed using a chi-square test and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-5772",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5772,
+      "sentence": "Heterogeneity was assessed using a chi-square test and considered statistically significant if p < 0.05.",
+      "context_window": "chi-square test and considered statistically significant if p < 0.05. In addition, a percentage of variance ( I 2 ) value of >50",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-5838",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5838,
+      "sentence": "In addition, a percentage of variance ( I 2 ) value of >50% was considered high heterogeneity.",
+      "context_window": "05. In addition, a percentage of variance ( I 2 ) value of >50% was considered high heterogeneity. In addition to the previ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-416",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 416,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-473",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 473,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unav",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-516",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 516,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "mparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2),",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-548",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 548,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong populat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-574",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 574,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-619",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 619,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "iew articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1). Finally, eleven retr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-n-656",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 656,
+      "sentence": "The full-text review excluded 24 of the 36 articles for not meeting the study\u2019s inclusion criteria: studies using different interventions ( n = 10), studies without a control or comparison group ( n = 4), studies not published in English ( n = 4), full text unavailable ( n = 2), review articles ( n = 2), a study using the wrong population ( n = 1), and a letter to the editor ( n = 1).",
+      "context_window": "the wrong population ( n = 1), and a letter to the editor ( n = 1). Finally, eleven retrospective cohort studies (RCSs) and o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1123",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1123,
+      "sentence": "All included studies used 3-5 mg/kg/mg of aspirin as the low dose.",
+      "context_window": "o both no and low-dose aspirin. All included studies used 3-5 mg/kg/mg of aspirin as the low dose. However, one study that u",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1194",
+      "claim_type": "unit_value",
+      "raw_text": "29 mg/kg/day",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 1194,
+      "sentence": "However, one study that used 20-29 mg/kg/day of aspirin as the low dose was excluded from the meta-analysis; therefore, a total of 66,126 participants were included in that analysis.",
+      "context_window": "of aspirin as the low dose. However, one study that used 20-29 mg/kg/day of aspirin as the low dose was excluded from the meta-analy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1421",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/kg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 1421,
+      "sentence": "The high aspirin dose varied among the included studies, with seven using > 80 mg/kg/day and five using doses >30 mg/kg/day.",
+      "context_window": "dose varied among the included studies, with seven using > 80 mg/kg/day and five using doses >30 mg/kg/day. Ten of the twelve studi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-1456",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/kg/day",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 1456,
+      "sentence": "The high aspirin dose varied among the included studies, with seven using > 80 mg/kg/day and five using doses >30 mg/kg/day.",
+      "context_window": "dies, with seven using > 80 mg/kg/day and five using doses >30 mg/kg/day. Ten of the twelve studies used an IVIG dose of 2 g/kg, whi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-1956",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1956,
+      "sentence": "Three had NOS scores >6% and were judged as having high quality, and eight had NOS scores of 4-6% and were judged as having moderate quality.",
+      "context_window": "uded RCSs are summarized in Table 2 . Three had NOS scores >6% and were judged as having high quality, and eight had NOS s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-2029",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2029,
+      "sentence": "Three had NOS scores >6% and were judged as having high quality, and eight had NOS scores of 4-6% and were judged as having moderate quality.",
+      "context_window": "udged as having high quality, and eight had NOS scores of 4-6% and were judged as having moderate quality. The Cochrane ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-2314",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.55-1.67",
+      "numeric_values": [
+        0.55,
+        1.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2314,
+      "sentence": "Regarding low-dose vs. high-dose aspirin, an analysis of seven studies with 64,413 participants had an overall OR of 0.96 (95% CI: 0.55-1.67).",
+      "context_window": "studies with 64,413 participants had an overall OR of 0.96 (95% CI: 0.55-1.67). The heterogeneity among the included studies was high ( I",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-2396",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2396,
+      "sentence": "The heterogeneity among the included studies was high ( I 2 = 90%), and the test for an overall effect yielded a z -score of 0.14 ( p = 0.890).",
+      "context_window": "e heterogeneity among the included studies was high ( I 2 = 90%), and the test for an overall effect yielded a z -score of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-2466",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.890",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2466,
+      "sentence": "The heterogeneity among the included studies was high ( I 2 = 90%), and the test for an overall effect yielded a z -score of 0.14 ( p = 0.890).",
+      "context_window": "the test for an overall effect yielded a z -score of 0.14 ( p = 0.890). Regarding no aspirin vs. high-dose aspirin, the analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-2599",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.64-1.17",
+      "numeric_values": [
+        0.64,
+        1.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2599,
+      "sentence": "Regarding no aspirin vs. high-dose aspirin, the analysis of five studies with 1654 participants had a pooled OR of 0.87 (95% CI: 0.64-1.17).",
+      "context_window": "ive studies with 1654 participants had a pooled OR of 0.87 (95% CI: 0.64-1.17). This subgroup showed no heterogeneity ( I 2 = 0%), and th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "no aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-2665",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2665,
+      "sentence": "This subgroup showed no heterogeneity ( I 2 = 0%), and the test for an overall effect had a z -score of 0.94 ( p = 0.350).",
+      "context_window": ": 0.64-1.17). This subgroup showed no heterogeneity ( I 2 = 0%), and the test for an overall effect had a z -score of 0.94",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-2730",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.350",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2730,
+      "sentence": "This subgroup showed no heterogeneity ( I 2 = 0%), and the test for an overall effect had a z -score of 0.94 ( p = 0.350).",
+      "context_window": "and the test for an overall effect had a z -score of 0.94 ( p = 0.350). When comparing both no and low-dose aspirin to high-dose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-2831",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.64-1.34",
+      "numeric_values": [
+        0.64,
+        1.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2831,
+      "sentence": "When comparing both no and low-dose aspirin to high-dose aspirin, the total OR was 0.93 (95% CI: 0.64-1.34) among the 66,067 participants.",
+      "context_window": "w-dose aspirin to high-dose aspirin, the total OR was 0.93 (95% CI: 0.64-1.34) among the 66,067 participants. The overall heterogeneity w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-2924",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2924,
+      "sentence": "The overall heterogeneity was high ( I 2 = 82%) with an overall effect z -score of 0.39 ( p = 0.690; Figure 2 ).",
+      "context_window": "67 participants. The overall heterogeneity was high ( I 2 = 82%) with an overall effect z -score of 0.39 ( p = 0.690; Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-2971",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.690",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2971,
+      "sentence": "The overall heterogeneity was high ( I 2 = 82%) with an overall effect z -score of 0.39 ( p = 0.690; Figure 2 ).",
+      "context_window": "high ( I 2 = 82%) with an overall effect z -score of 0.39 ( p = 0.690; Figure 2 ). Regarding low-dose vs. high-dose aspirin, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-3107",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.99-2.03",
+      "numeric_values": [
+        0.99,
+        2.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3107,
+      "sentence": "Regarding low-dose vs. high-dose aspirin, the subgroup analysis of 63,421 participants had a pooled OR of 1.42 (95% CI: 0.99-2.03).",
+      "context_window": "up analysis of 63,421 participants had a pooled OR of 1.42 (95% CI: 0.99-2.03). The heterogeneity was high in this subgroup ( I 2 = 87%),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-3179",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3179,
+      "sentence": "The heterogeneity was high in this subgroup ( I 2 = 87%), and the overall effect z -score was 1.93 ( p = 0.050).",
+      "context_window": "-2.03). The heterogeneity was high in this subgroup ( I 2 = 87%), and the overall effect z -score was 1.93 ( p = 0.050). Re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-3228",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3228,
+      "sentence": "The heterogeneity was high in this subgroup ( I 2 = 87%), and the overall effect z -score was 1.93 ( p = 0.050).",
+      "context_window": "up ( I 2 = 87%), and the overall effect z -score was 1.93 ( p = 0.050). Regarding no vs. high-dose aspirin, the subgroup analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-3340",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.38-4.97",
+      "numeric_values": [
+        0.38,
+        4.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3340,
+      "sentence": "Regarding no vs. high-dose aspirin, the subgroup analysis of 1354 patients had a pooled OR of 1.37 (95% CI: 0.38-4.97).",
+      "context_window": "subgroup analysis of 1354 patients had a pooled OR of 1.37 (95% CI: 0.38-4.97). The heterogeneity was high in this subgroup ( I 2 = 93%),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-3412",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3412,
+      "sentence": "The heterogeneity was high in this subgroup ( I 2 = 93%), with an overall effect z -score of 0.49 ( p = 0.630).",
+      "context_window": "-4.97). The heterogeneity was high in this subgroup ( I 2 = 93%), with an overall effect z -score of 0.49 ( p = 0.630). Whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-3460",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.630",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3460,
+      "sentence": "The heterogeneity was high in this subgroup ( I 2 = 93%), with an overall effect z -score of 0.49 ( p = 0.630).",
+      "context_window": "oup ( I 2 = 93%), with an overall effect z -score of 0.49 ( p = 0.630). When comparing the no and low-dose aspirin group with the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-3578",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.00-2.12",
+      "numeric_values": [
+        1.0,
+        2.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3578,
+      "sentence": "When comparing the no and low-dose aspirin group with the high-dose aspirin group, the total OR was 1.46 (95% CI: 1.00-2.12) among 64,775 participants.",
+      "context_window": "up with the high-dose aspirin group, the total OR was 1.46 (95% CI: 1.00-2.12) among 64,775 participants. The overall heterogeneity remai",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-3672",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3672,
+      "sentence": "The overall heterogeneity remained high ( I 2 = 89%) with an overall effect z -score of 1.97 ( p = 0.050; Figure 3 ).",
+      "context_window": "rticipants. The overall heterogeneity remained high ( I 2 = 89%) with an overall effect z -score of 1.97 ( p = 0.050; Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-3719",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3719,
+      "sentence": "The overall heterogeneity remained high ( I 2 = 89%) with an overall effect z -score of 1.97 ( p = 0.050; Figure 3 ).",
+      "context_window": "high ( I 2 = 89%) with an overall effect z -score of 1.97 ( p = 0.050; Figure 3 ). Regarding low-dose vs. high-dose aspirin, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-3882",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -12.32-18.33",
+      "numeric_values": [
+        -12.32,
+        18.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3882,
+      "sentence": "Regarding low-dose vs. high-dose aspirin, the analysis of 10,097 participants in four studies had a pooled MD in fever duration of 3.01 h (95% CI: -12.32-18.33).",
+      "context_window": "n four studies had a pooled MD in fever duration of 3.01 h (95% CI: -12.32-18.33). The heterogeneity was high within this subgroup ( I 2 = 9",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-3961",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3961,
+      "sentence": "The heterogeneity was high within this subgroup ( I 2 = 96%), and the test for an overall effect indicated no significant difference ( z = 0.38, p = 0.700).",
+      "context_window": "3). The heterogeneity was high within this subgroup ( I 2 = 96%), and the test for an overall effect indicated no significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-4050",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.700",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4050,
+      "sentence": "The heterogeneity was high within this subgroup ( I 2 = 96%), and the test for an overall effect indicated no significant difference ( z = 0.38, p = 0.700).",
+      "context_window": "rall effect indicated no significant difference ( z = 0.38, p = 0.700). Only one study involving 180 patients compared no aspirin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-4179",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.13-11.07",
+      "numeric_values": [
+        3.13,
+        11.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4179,
+      "sentence": "The MD in fever duration was 7.10 h (95% CI: 3.13-11.07).",
+      "context_window": "to high-dose aspirin. The MD in fever duration was 7.10 h (95% CI: 3.13-11.07). The test for an overall effect was significant ( z = 3.50",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-4259",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4259,
+      "sentence": "The test for an overall effect was significant ( z = 3.50, p < 0.001).",
+      "context_window": "The test for an overall effect was significant ( z = 3.50, p < 0.001). By comparing the no or low-dose aspirin group to the high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-4386",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -7.99-15.10",
+      "numeric_values": [
+        -7.99,
+        15.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4386,
+      "sentence": "By comparing the no or low-dose aspirin group to the high-dose group, the overall MD in fever duration was 3.55 h (95% CI: -7.99-15.10) among the 10,277 participants.",
+      "context_window": "gh-dose group, the overall MD in fever duration was 3.55 h (95% CI: -7.99-15.10) among the 10,277 participants. The overall heterogeneity r",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-4486",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4486,
+      "sentence": "The overall heterogeneity remained high ( I 2 = 95%) with an overall effect z -score of 0.60 ( p = 0.550) ( Figure 4 ).",
+      "context_window": "rticipants. The overall heterogeneity remained high ( I 2 = 95%) with an overall effect z -score of 0.60 ( p = 0.550) ( Fig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-4533",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.550",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4533,
+      "sentence": "The overall heterogeneity remained high ( I 2 = 95%) with an overall effect z -score of 0.60 ( p = 0.550) ( Figure 4 ).",
+      "context_window": "high ( I 2 = 95%) with an overall effect z -score of 0.60 ( p = 0.550) ( Figure 4 ). Only one study involving 358 patients compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-4671",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 days",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4671,
+      "sentence": "The mean hospital stay length was 5.7 days with low-dose aspirin and 7.3 days with high-dose aspirin, resulting in an MD of -1.60 days (95% CI: -2.53--0.670.",
+      "context_window": "ose to high-dose aspirin. The mean hospital stay length was 5.7 days with low-dose aspirin and 7.3 days with high-dose aspirin,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-4706",
+      "claim_type": "unit_value",
+      "raw_text": "7.3 days",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4706,
+      "sentence": "The mean hospital stay length was 5.7 days with low-dose aspirin and 7.3 days with high-dose aspirin, resulting in an MD of -1.60 days (95% CI: -2.53--0.670.",
+      "context_window": "hospital stay length was 5.7 days with low-dose aspirin and 7.3 days with high-dose aspirin, resulting in an MD of -1.60 days (9",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-4762",
+      "claim_type": "unit_value",
+      "raw_text": "1.60 days",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4762,
+      "sentence": "The mean hospital stay length was 5.7 days with low-dose aspirin and 7.3 days with high-dose aspirin, resulting in an MD of -1.60 days (95% CI: -2.53--0.670.",
+      "context_window": "and 7.3 days with high-dose aspirin, resulting in an MD of -1.60 days (95% CI: -2.53--0.670. The test for an overall effect was s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-4773",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.53--0.670",
+      "numeric_values": [
+        -2.53,
+        -0.67
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4773,
+      "sentence": "The mean hospital stay length was 5.7 days with low-dose aspirin and 7.3 days with high-dose aspirin, resulting in an MD of -1.60 days (95% CI: -2.53--0.670.",
+      "context_window": "s with high-dose aspirin, resulting in an MD of -1.60 days (95% CI: -2.53--0.670. The test for an overall effect was significant ( z = 3.38,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-4854",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4854,
+      "sentence": "The test for an overall effect was significant ( z = 3.38, p < 0.001).",
+      "context_window": "The test for an overall effect was significant ( z = 3.38, p < 0.001). Similarly, only one study involving 851 patients compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-4991",
+      "claim_type": "unit_value",
+      "raw_text": "6.7 days",
+      "numeric_values": [
+        6.7
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4991,
+      "sentence": "The mean hospital stay length was 6.7 days with no aspirin and 6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI: 0.37-0.43).",
+      "context_window": "rin to high-dose aspirin. The mean hospital stay length was 6.7 days with no aspirin and 6.3 days with high-dose aspirin, giving",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "no aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-5020",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 days",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5020,
+      "sentence": "The mean hospital stay length was 6.7 days with no aspirin and 6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI: 0.37-0.43).",
+      "context_window": "mean hospital stay length was 6.7 days with no aspirin and 6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI:",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "no aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-5069",
+      "claim_type": "unit_value",
+      "raw_text": "0.40 days",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5069,
+      "sentence": "The mean hospital stay length was 6.7 days with no aspirin and 6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI: 0.37-0.43).",
+      "context_window": "spirin and 6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI: 0.37-0.43). The test for an overall effect was sig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "no aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-5080",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.37-0.43",
+      "numeric_values": [
+        0.37,
+        0.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5080,
+      "sentence": "The mean hospital stay length was 6.7 days with no aspirin and 6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI: 0.37-0.43).",
+      "context_window": "6.3 days with high-dose aspirin, giving an MD of 0.40 days (95% CI: 0.37-0.43). The test for an overall effect was significant ( z = 27.9",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "no aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-5160",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5160,
+      "sentence": "The test for an overall effect was significant ( z = 27.98, p < 0.001), reflecting the large sample size rather than a substantial clinical difference.",
+      "context_window": "The test for an overall effect was significant ( z = 27.98, p < 0.001), reflecting the large sample size rather than a substantia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-u-5356",
+      "claim_type": "unit_value",
+      "raw_text": "0.54 days",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5356,
+      "sentence": "By comparing no or low-dose aspirin to high-dose aspirin, the total MD in the hospital stay length was -0.54 days (95% CI: -2.50-1.41) among the 1209 participants, demonstrating no significant overall difference.",
+      "context_window": "dose aspirin, the total MD in the hospital stay length was -0.54 days (95% CI: -2.50-1.41) among the 1209 participants, demonstra",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-ci-5367",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.50-1.41",
+      "numeric_values": [
+        -2.5,
+        1.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5367,
+      "sentence": "By comparing no or low-dose aspirin to high-dose aspirin, the total MD in the hospital stay length was -0.54 days (95% CI: -2.50-1.41) among the 1209 participants, demonstrating no significant overall difference.",
+      "context_window": "n, the total MD in the hospital stay length was -0.54 days (95% CI: -2.50-1.41) among the 1209 participants, demonstrating no significant",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-pct-5523",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5523,
+      "sentence": "The heterogeneity across the two studies was high ( I 2 = 94%), with an overall effect z -score of 0.55 ( p = 0.590; Figure 5 ).",
+      "context_window": ". The heterogeneity across the two studies was high ( I 2 = 94%), with an overall effect z -score of 0.55 ( p = 0.590; Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11270423_the_effectiveness_of_no_or_low_dose_versus_high_dose_aspirin-p-5571",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.590",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5571,
+      "sentence": "The heterogeneity across the two studies was high ( I 2 = 94%), with an overall effect z -score of 0.55 ( p = 0.590; Figure 5 ).",
+      "context_window": "igh ( I 2 = 94%), with an overall effect z -score of 0.55 ( p = 0.590; Figure 5 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

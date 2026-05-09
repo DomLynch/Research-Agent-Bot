@@ -1,0 +1,86 @@
+{
+  "paper_id": "DOI_10_4103_jewd_jewd_76_23_level_of_long_noncoding_rna_taurine_upregulated_gene_1_after",
+  "doi": "10.4103/jewd.jewd_76_23",
+  "extracted_at": "2026-05-08T20:10:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_4103_jewd_jewd_76_23_level_of_long_noncoding_rna_taurine_upregulated_gene_1_after-u-969",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "The second step was a prospective single-arm interventional study in which patients were subjected to 12 weeks of NB-UVB phototherapy and biopsies were taken from repigmenting areas.",
+      "context_window": "rm interventional study in which patients were subjected to 12 weeks of NB-UVB phototherapy and biopsies were taken from repigme",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_4103_jewd_jewd_76_23_level_of_long_noncoding_rna_taurine_upregulated_gene_1_after-msd-1394",
+      "claim_type": "mean_sd",
+      "raw_text": "0.307\u00b10.202",
+      "numeric_values": [
+        0.307,
+        0.202
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1394,
+      "sentence": "Biopsies were kept frozen at -80\u00b0C till by real-time polymerase chain reaction was conducted to evaluate the lnc TUG-1 expression.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The mean lnc TUG-1 expression in skin tissue biopsies of the vitiligo patients was significantly lower compared with control skin biopsies (0.307\u00b10.202 ng/mg vs 1.03\u00b10.063 pg/mg, respectively, <jats:italic toggle=\"yes\">P</jats:italic><0.001).",
+      "context_window": "as significantly lower compared with control skin biopsies (0.307\u00b10.202 ng/mg vs 1.03\u00b10.063 pg/mg, respectively, <jats:italic toggl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_4103_jewd_jewd_76_23_level_of_long_noncoding_rna_taurine_upregulated_gene_1_after-msd-1415",
+      "claim_type": "mean_sd",
+      "raw_text": "1.03\u00b10.063",
+      "numeric_values": [
+        1.03,
+        0.063
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1415,
+      "sentence": "Biopsies were kept frozen at -80\u00b0C till by real-time polymerase chain reaction was conducted to evaluate the lnc TUG-1 expression.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The mean lnc TUG-1 expression in skin tissue biopsies of the vitiligo patients was significantly lower compared with control skin biopsies (0.307\u00b10.202 ng/mg vs 1.03\u00b10.063 pg/mg, respectively, <jats:italic toggle=\"yes\">P</jats:italic><0.001).",
+      "context_window": "r compared with control skin biopsies (0.307\u00b10.202 ng/mg vs 1.03\u00b10.063 pg/mg, respectively, <jats:italic toggle=\"yes\">P</jats:ital",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_4103_jewd_jewd_76_23_level_of_long_noncoding_rna_taurine_upregulated_gene_1_after-u-1607",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1607,
+      "sentence": "Although the level of lnc TUG-1 was not normalized, the mean value of lnc TUG-1 significantly increased after 12 weeks treatment with NB-UVB compared with its value before phototherapy (0.0687 ng/mg vs.",
+      "context_window": ", the mean value of lnc TUG-1 significantly increased after 12 weeks treatment with NB-UVB compared with its value before photot",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

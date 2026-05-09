@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_7454_jpdi_v11i2_1565_sleep_quality_among_patients_with_systemic_lupus_erythematos",
+  "doi": "10.7454/jpdi.v11i2.1565",
+  "extracted_at": "2026-05-08T20:06:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_7454_jpdi_v11i2_1565_sleep_quality_among_patients_with_systemic_lupus_erythematos-u-1161",
+      "claim_type": "unit_value",
+      "raw_text": "32.7 years",
+      "numeric_values": [
+        32.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1161,
+      "sentence": "Mean age was 32.7 years old with the majority in age group of 21-30 years old and female.",
+      "context_window": "ults. Total of 166 SLE patients were included. Mean age was 32.7 years old with the majority in age group of 21-30 years old and f",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7454_jpdi_v11i2_1565_sleep_quality_among_patients_with_systemic_lupus_erythematos-u-1213",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1213,
+      "sentence": "Mean age was 32.7 years old with the majority in age group of 21-30 years old and female.",
+      "context_window": "age was 32.7 years old with the majority in age group of 21-30 years old and female. Poor sleep quality in SLE patients was foun",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7454_jpdi_v11i2_1565_sleep_quality_among_patients_with_systemic_lupus_erythematos-pct-1286",
+      "claim_type": "percentage",
+      "raw_text": "82.5%",
+      "numeric_values": [
+        82.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1286,
+      "sentence": "Poor sleep quality in SLE patients was found in 82.5% of subjects.",
+      "context_window": "and female. Poor sleep quality in SLE patients was found in 82.5% of subjects. Symptoms of depression were significantly asso",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

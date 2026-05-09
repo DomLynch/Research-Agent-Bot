@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11012227_the_differential_effect_of_senolytics_on_sasp_cytokine_secre",
   "doi": "10.3390/ijms25074031",
-  "extracted_at": "2026-05-05T21:22:29+00:00",
+  "extracted_at": "2026-05-08T20:00:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 7,
@@ -149,9 +149,9 @@
       "context_window": "After that, the CAF culture was treated with senolytics for 5 days with a change of medium with treatment on day 1 and day 3.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "bcl-xl inhibitor",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11012227_the_differential_effect_of_senolytics_on_sasp_cytokine_secre-u-1478",
@@ -167,7 +167,7 @@
       "context_window": "and 1 \u00b5M quercetin (HY-18085, MedChemExpress, USA), or with 10 ng/mL TNF r with 10 ng/mL TNF (from E. coli purified as described",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "navitoclax",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -185,7 +185,7 @@
       "context_window": "HY-18085, MedChemExpress, USA), or with 10 ng/mL TNF r with 10 ng/mL TNF (from E. coli purified as described previously [ 41 ]),",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "navitoclax",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -401,7 +401,7 @@
       "context_window": "monstrated a decrease in the number of p16 High cells after 5 days of senolytic treatment with navitoclax or the combination o",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "senolytic",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -419,7 +419,7 @@
       "context_window": "Figure 4 A,B). In untreated CAFs, we observed a 1.8-fold ( p < 0.0001) decrease in IL-6 levels relative to control CAFs after nav",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "navitoclax",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -437,9 +437,9 @@
       "context_window": "expression and secretion levels by 5.8-fold and 1.4-fold ( p < 0.0001, p < 0.001, respectively) ( Figure 4 A,B). In contrast, the",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "navitoclax",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11012227_the_differential_effect_of_senolytics_on_sasp_cytokine_secre-p-5184",
@@ -455,9 +455,9 @@
       "context_window": "and secretion levels by 5.8-fold and 1.4-fold ( p < 0.0001, p < 0.001, respectively) ( Figure 4 A,B). In contrast, the combinatio",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "navitoclax",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

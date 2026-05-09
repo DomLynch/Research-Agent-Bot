@@ -1,0 +1,1057 @@
+{
+  "paper_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b",
+  "doi": "10.1016/j.jot.2024.08.012",
+  "extracted_at": "2026-05-08T20:00:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 6,
+    "p_value": 45
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 662,
+      "sentence": "The administration of ABT263 was done orally by gavage, with a dose of 50 mg per kilogram of body weight per day (mg/kg/day), given for one week [ 21 ].",
+      "context_window": "tration of ABT263 was done orally by gavage, with a dose of 50 mg per kilogram of body weight per day (mg/kg/day), given for",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-1868",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1868,
+      "sentence": "For trabecular bone analysis, the region of interest (ROI) started at 0.5 mm proximal to the growth plate and extended 1.5 mm in the proximal direction.",
+      "context_window": "ular bone analysis, the region of interest (ROI) started at 0.5 mm proximal to the growth plate and extended 1.5 mm in the pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-1917",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mm",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1917,
+      "sentence": "For trabecular bone analysis, the region of interest (ROI) started at 0.5 mm proximal to the growth plate and extended 1.5 mm in the proximal direction.",
+      "context_window": "started at 0.5 mm proximal to the growth plate and extended 1.5 mm in the proximal direction. Image reconstruction was perform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-pct-2072",
+      "claim_type": "percentage",
+      "raw_text": "30 %",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2072,
+      "sentence": "Image reconstruction was performed using NRecon software (version 1.7.3.0, Bruker) with beam hardening correction set to 30 % and ring artifact correction set to 8.",
+      "context_window": "sion 1.7.3.0, Bruker) with beam hardening correction set to 30 % and ring artifact correction set to 8. The reconstructed im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-pct-3411",
+      "claim_type": "percentage",
+      "raw_text": "6 %",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3411,
+      "sentence": "To block the endogenous peroxidase activity, the sections were then incubated with 6 % hydrogen peroxide, followed by a wash with PBS (pH 7.6).",
+      "context_window": "peroxidase activity, the sections were then incubated with 6 % hydrogen peroxide, followed by a wash with PBS (pH 7.6). Su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-4132",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4132,
+      "sentence": "Staining was achieved using 3,3-diaminobenzidine (2.5 mg/ml) and counterstaining was performed with Mayer's hematoxylin.",
+      "context_window": "r 30 min. Staining was achieved using 3,3-diaminobenzidine (2.5 mg/ml) and counterstaining was performed with Mayer's hematoxy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-pct-5460",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5460,
+      "sentence": "Isolated cells were cultured in \u03b1-modified Eagle's MEM (Life Technologies) supplemented with 10 % FBS (Excell) and 1 % penicillin/streptomycin (Life Technologies) at a cell density of 10 \u00d7 10 6 /ml as previously described [ 28 ].",
+      "context_window": "-modified Eagle's MEM (Life Technologies) supplemented with 10 % FBS (Excell) and 1 % penicillin/streptomycin (Life Technolo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-pct-5482",
+      "claim_type": "percentage",
+      "raw_text": "1 %",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5482,
+      "sentence": "Isolated cells were cultured in \u03b1-modified Eagle's MEM (Life Technologies) supplemented with 10 % FBS (Excell) and 1 % penicillin/streptomycin (Life Technologies) at a cell density of 10 \u00d7 10 6 /ml as previously described [ 28 ].",
+      "context_window": "(Life Technologies) supplemented with 10 % FBS (Excell) and 1 % penicillin/streptomycin (Life Technologies) at a cell densi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-5878",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5878,
+      "sentence": "For osteogenic differentiation, cells were maintained in osteogenic medium (supplemented with 100 nM dexamethasone, 10 mM \u03b2-glycerophosphate, and 50 \u03bcg/ml ascorbic acid) for 10 days.",
+      "context_window": ", 10 mM \u03b2-glycerophosphate, and 50 \u03bcg/ml ascorbic acid) for 10 days. Staining with Methylene blue for colony forming units-fibr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-pct-7466",
+      "claim_type": "percentage",
+      "raw_text": "0.1 %",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7466,
+      "sentence": "After a brief incubation at room temperature, cells were washed thrice with 0.1 % PBST and incubated with the secondary antibody in darkness.",
+      "context_window": "cubation at room temperature, cells were washed thrice with 0.1 % PBST and incubated with the secondary antibody in darkness.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-pct-7719",
+      "claim_type": "percentage",
+      "raw_text": "20 %",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7719,
+      "sentence": "Slides were washed thrice by immersion in PBS and mounted with 100 \u03bcl of 20 % glycerol-PBS solution to maintain sample hydration.",
+      "context_window": "ashed thrice by immersion in PBS and mounted with 100 \u03bcl of 20 % glycerol-PBS solution to maintain sample hydration. Positiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-10690",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10690,
+      "sentence": "P < 0.05 was considered statistically significant.",
+      "context_window": "y one-way ANOVA with post-hoc tests using GraphPad Prism 8. P < 0.05 was considered statistically significant. For our primary o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-1367",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1367,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group.",
+      "context_window": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group. Figure 1 A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-1382",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1382,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group.",
+      "context_window": "\u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group. Figure 1 ABT263 induces ap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-2350",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2350,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group.",
+      "context_window": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group. To investi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-2365",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2365,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group.",
+      "context_window": "\u00b1 S.E.M. of 6 determinations per group. \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to the control group. To investigate the molecul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-5755",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5755,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-5791",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5791,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs. Figure 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-5806",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5806,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs. Figure 2 ABT263 induces",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-6626",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6626,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-6662",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6662,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs. To evalu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-6677",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6677,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- BM-MSCs. To evaluate the efficacy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-8558",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8558,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-8594",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8594,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 3 AB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-8609",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8609,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 3 ABT263 interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-9298",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9298,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-9334",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9334,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. To investig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-9349",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9349,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. To investigate whether the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-11321",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11321,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-11357",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11357,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 4 AB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-11372",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11372,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 4 ABT263 interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-12549",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12549,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-12585",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12585,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Additionall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-12600",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12600,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Additionally, we investigat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-15030",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15030,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-15066",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15066,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 5 AB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-15081",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15081,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 5 ABT263 interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-15656",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15656,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-15692",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15692,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. To assess t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-15707",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15707,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. To assess the impact of ABT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-17935",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17935,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-17949",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17949,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "an \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-17964",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17964,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-18000",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18000,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": ".05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 6 AB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-18015",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18015,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. Figure 6 ABT263 interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-18936",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18936,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-18950",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18950,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "an \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-18965",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18965,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-19001",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19001,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": ".05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. To elucidat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-19016",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19016,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217: P < 0.05; \u2217\u2217: P < 0.01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice.",
+      "context_window": "01; \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. To elucidate the correlatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-20800",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 20800,
+      "sentence": "Figure 7 ABT263 intervention corrects BMSC osteogenesis impairments caused by 1,25(OH) 2 D insufficiency BM-MSCs from WT, Cyp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs of SA-\u03b2-gal staining. (B) Percentage of SA-\u03b2-gal-positive cells. (C) Representative micrographs of EdU incorporation. (D) Percentage of EdU-positive cells. (E) Representative image of methylene blue staining. (F) Quantification of CFU-f-positive area. (G) Representative micrographs of ALP cytochemical staining. (H) Quantification of ALP-positive area.",
+      "context_window": "yp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-21282",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21282,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.) Figure 7\n\nABT263 intervention corrects BMSC osteogenesis impairments caused by 1,25(OH) 2 D insufficiency\n\nBM-MSCs from WT, Cyp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs of SA-\u03b2-gal staining. (B) Percentage of SA-\u03b2-gal-positive cells. (C) Representative micrographs of EdU incorporation. (D) Percentage of EdU-positive cells. (E) Representative image of methylene blue staining. (F) Quantification of CFU-f-positive area. (G) Representative micrographs of ALP cytochemical staining. (H) Quantification of ALP-positive area.",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-21318",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21318,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.) Figure 7\n\nABT263 intervention corrects BMSC osteogenesis impairments caused by 1,25(OH) 2 D insufficiency\n\nBM-MSCs from WT, Cyp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs of SA-\u03b2-gal staining. (B) Percentage of SA-\u03b2-gal-positive cells. (C) Representative micrographs of EdU incorporation. (D) Percentage of EdU-positive cells. (E) Representative image of methylene blue staining. (F) Quantification of CFU-f-positive area. (G) Representative micrographs of ALP cytochemical staining. (H) Quantification of ALP-positive area.",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-21333",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21333,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.) Figure 7\n\nABT263 intervention corrects BMSC osteogenesis impairments caused by 1,25(OH) 2 D insufficiency\n\nBM-MSCs from WT, Cyp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs of SA-\u03b2-gal staining. (B) Percentage of SA-\u03b2-gal-positive cells. (C) Representative micrographs of EdU incorporation. (D) Percentage of EdU-positive cells. (E) Representative image of methylene blue staining. (F) Quantification of CFU-f-positive area. (G) Representative micrographs of ALP cytochemical staining. (H) Quantification of ALP-positive area.",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-u-21690",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 21690,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.) Figure 7\n\nABT263 intervention corrects BMSC osteogenesis impairments caused by 1,25(OH) 2 D insufficiency\n\nBM-MSCs from WT, Cyp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs of SA-\u03b2-gal staining. (B) Percentage of SA-\u03b2-gal-positive cells. (C) Representative micrographs of EdU incorporation. (D) Percentage of EdU-positive cells. (E) Representative image of methylene blue staining. (F) Quantification of CFU-f-positive area. (G) Representative micrographs of ALP cytochemical staining. (H) Quantification of ALP-positive area.",
+      "context_window": "yp27b1 +/- , and Cyp27b1 +/- + ABT263 mice were treated for 1 month and were cultured ex vivo . (A) Representative micrographs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-22172",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22172,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.)",
+      "context_window": "alues are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-22208",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22208,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.)",
+      "context_window": "nations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11490840_the_senolytic_agent_abt263_ameliorates_osteoporosis_caused_b-p-22223",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22223,
+      "sentence": "Values are mean \u00b1 S.E.M. of 6 determinations per group. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.)",
+      "context_window": "up. \u2217\u2217\u2217: P < 0.001, compared to WT mice. ##: P < 0.01; ###: P < 0.001, compared to Cyp27b1 +/- mice. (For interpretation of the r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

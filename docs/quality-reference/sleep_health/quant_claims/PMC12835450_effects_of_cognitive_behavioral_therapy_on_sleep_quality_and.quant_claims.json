@@ -1,0 +1,1402 @@
+{
+  "paper_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and",
+  "doi": "10.4069/whn.2025.09.07",
+  "extracted_at": "2026-05-08T20:06:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 17,
+    "unit_value": 16,
+    "percentage": 23,
+    "confidence_interval": 1,
+    "p_value": 20
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-533",
+      "claim_type": "sample_size",
+      "raw_text": "n=973",
+      "numeric_values": [
+        973.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 533,
+      "sentence": "Eleven RCTs (n=973) met the inclusion criteria.",
+      "context_window": "ep outcomes in menopausal women were included. Eleven RCTs (n=973) met the inclusion criteria. The interventions comprised fa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-757",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 757,
+      "sentence": "The interventions comprised face-to-face, telephone, and internet-based CBT-I programs, with session counts ranging from 4 to 12 and follow-up durations extending from post-intervention to 52 weeks.",
+      "context_window": "and follow-up durations extending from post-intervention to 52 weeks. Data were analyzed using Review Manager 5.4, and effect si",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-916",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 916,
+      "sentence": "Data were analyzed using Review Manager 5.4, and effect sizes were expressed as standardized mean differences (SMDs) and mean differences (MDs) with 95% confidence intervals (CIs).",
+      "context_window": "zed mean differences (SMDs) and mean differences (MDs) with 95% confidence intervals (CIs). CBT-I significantly improved s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-993",
+      "claim_type": "sample_size",
+      "raw_text": "n=795",
+      "numeric_values": [
+        795.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 993,
+      "sentence": "CBT-I significantly improved sleep quality (n=795, SMD=-1.01; 95% CI, -1.27 to -0.75) and reduced insomnia severity (n=504, MD=-4.49; 95% CI, -6.12 to -2.87).",
+      "context_window": "tervals (CIs). CBT-I significantly improved sleep quality (n=795, SMD=-1.01; 95% CI, -1.27 to -0.75) and reduced insomnia se",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-1011",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1011,
+      "sentence": "CBT-I significantly improved sleep quality (n=795, SMD=-1.01; 95% CI, -1.27 to -0.75) and reduced insomnia severity (n=504, MD=-4.49; 95% CI, -6.12 to -2.87).",
+      "context_window": "T-I significantly improved sleep quality (n=795, SMD=-1.01; 95% CI, -1.27 to -0.75) and reduced insomnia severity (n=504, M",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-1066",
+      "claim_type": "sample_size",
+      "raw_text": "n=504",
+      "numeric_values": [
+        504.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "CBT-I significantly improved sleep quality (n=795, SMD=-1.01; 95% CI, -1.27 to -0.75) and reduced insomnia severity (n=504, MD=-4.49; 95% CI, -6.12 to -2.87).",
+      "context_window": ".01; 95% CI, -1.27 to -0.75) and reduced insomnia severity (n=504, MD=-4.49; 95% CI, -6.12 to -2.87). Subgroup analyses indic",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-1083",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1083,
+      "sentence": "CBT-I significantly improved sleep quality (n=795, SMD=-1.01; 95% CI, -1.27 to -0.75) and reduced insomnia severity (n=504, MD=-4.49; 95% CI, -6.12 to -2.87).",
+      "context_window": "7 to -0.75) and reduced insomnia severity (n=504, MD=-4.49; 95% CI, -6.12 to -2.87). Subgroup analyses indicated that CBT-I",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-4724",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4724,
+      "sentence": "According to the Korea National Health and Nutrition Examination Survey, sleep disturbances are a major factor affecting subjective health and health-related quality of life among middle-aged women aged 40 to 59 years.",
+      "context_window": "-related quality of life among middle-aged women aged 40 to 59 years. As the number of menopausal women experiencing insomnia co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 737,
+      "sentence": "The patients (P) were: (1) women aged 40-60 years in the early to late stages of menopause, and (2) those who, by self-report, experienced early, middle, or late insomnia at least three times per week for more than 3 months despite having an adequate sleep environment, resulting in functional impairment; or those with an Insomnia Severity Index (ISI) score \u22657 or a Pittsburgh Sleep Quality Index (PSQI) score \u22655.",
+      "context_window": "systematic review. The patients (P) were: (1) women aged 40-60 years in the early to late stages of menopause, and (2) those who",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-911",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 911,
+      "sentence": "The patients (P) were: (1) women aged 40-60 years in the early to late stages of menopause, and (2) those who, by self-report, experienced early, middle, or late insomnia at least three times per week for more than 3 months despite having an adequate sleep environment, resulting in functional impairment; or those with an Insomnia Severity Index (ISI) score \u22657 or a Pittsburgh Sleep Quality Index (PSQI) score \u22655.",
+      "context_window": "r late insomnia at least three times per week for more than 3 months despite having an adequate sleep environment, resulting in",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "Follow-up periods ranged from immediate post-intervention to 52 weeks.",
+      "context_window": "ollow-up periods ranged from immediate post-intervention to 52 weeks. As shown in Figure 2 , the risk of bias arising from the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-988",
+      "claim_type": "percentage",
+      "raw_text": "81.8%",
+      "numeric_values": [
+        81.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 988,
+      "sentence": "As shown in Figure 2 , the risk of bias arising from the randomization process was rated as low in nine studies (81.8%) [ 14 , 15 , 18 - 20 , 22 - 25 ] and as having some concerns in two studies (18.2%) [ 3 , 21 ].",
+      "context_window": "the randomization process was rated as low in nine studies (81.8%) [ 14 , 15 , 18 - 20 , 22 - 25 ] and as having some concern",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-1071",
+      "claim_type": "percentage",
+      "raw_text": "18.2%",
+      "numeric_values": [
+        18.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1071,
+      "sentence": "As shown in Figure 2 , the risk of bias arising from the randomization process was rated as low in nine studies (81.8%) [ 14 , 15 , 18 - 20 , 22 - 25 ] and as having some concerns in two studies (18.2%) [ 3 , 21 ].",
+      "context_window": "20 , 22 - 25 ] and as having some concerns in two studies (18.2%) [ 3 , 21 ]. For bias due to missing outcome data, eight st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-1143",
+      "claim_type": "percentage",
+      "raw_text": "72.7%",
+      "numeric_values": [
+        72.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1143,
+      "sentence": "For bias due to missing outcome data, eight studies (72.7%) [ 3 , 14 , 15 , 18 , 19 , 22 , 24 , 25 ] were rated as low risk, while three studies (27.3%) [ 20 , 21 , 24 ] were assessed as high risk.",
+      "context_window": "21 ]. For bias due to missing outcome data, eight studies (72.7%) [ 3 , 14 , 15 , 18 , 19 , 22 , 24 , 25 ] were rated as low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-1236",
+      "claim_type": "percentage",
+      "raw_text": "27.3%",
+      "numeric_values": [
+        27.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1236,
+      "sentence": "For bias due to missing outcome data, eight studies (72.7%) [ 3 , 14 , 15 , 18 , 19 , 22 , 24 , 25 ] were rated as low risk, while three studies (27.3%) [ 20 , 21 , 24 ] were assessed as high risk.",
+      "context_window": "22 , 24 , 25 ] were rated as low risk, while three studies (27.3%) [ 20 , 21 , 24 ] were assessed as high risk. Bias related",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-1992",
+      "claim_type": "sample_size",
+      "raw_text": "n=795",
+      "numeric_values": [
+        795.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1992,
+      "sentence": "The SMD between the intervention and control groups for the effect of CBT-I on sleep quality was -1.01 (n=795; 95% CI -1.27 to -0.75), indicating a significant improvement in sleep quality.",
+      "context_window": "groups for the effect of CBT-I on sleep quality was -1.01 (n=795; 95% CI -1.27 to -0.75), indicating a significant improveme",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-ci-1999",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.27 to -0.75",
+      "numeric_values": [
+        -1.27,
+        -0.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1999,
+      "sentence": "The SMD between the intervention and control groups for the effect of CBT-I on sleep quality was -1.01 (n=795; 95% CI -1.27 to -0.75), indicating a significant improvement in sleep quality.",
+      "context_window": "for the effect of CBT-I on sleep quality was -1.01 (n=795; 95% CI -1.27 to -0.75), indicating a significant improvement in sleep quality. Th",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-2129",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2129,
+      "sentence": "This effect was statistically significant (Z=7.58, p <.001).",
+      "context_window": "quality. This effect was statistically significant (Z=7.58, p <.001). Assessment of heterogeneity revealed moderate heterogenei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-2227",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2227,
+      "sentence": "Assessment of heterogeneity revealed moderate heterogeneity among studies (Higgins I 2 =65%); therefore, a random-effects model was applied to analyze the effect size of CBT-I on sleep quality ( Figure 3 ).",
+      "context_window": "revealed moderate heterogeneity among studies (Higgins I 2 =65%); therefore, a random-effects model was applied to analyze",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-2483",
+      "claim_type": "sample_size",
+      "raw_text": "n=508",
+      "numeric_values": [
+        508.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "For face-to-face CBT-I, the intervention group demonstrated a significant improvement in sleep quality compared with the control group (n=508, SMD=-1.10; 95% CI, -1.42 to -0.77), and this difference was statistically significant (Z=6.62, p <.001).",
+      "context_window": "provement in sleep quality compared with the control group (n=508, SMD=-1.10; 95% CI, -1.42 to -0.77), and this difference wa",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-2501",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2501,
+      "sentence": "For face-to-face CBT-I, the intervention group demonstrated a significant improvement in sleep quality compared with the control group (n=508, SMD=-1.10; 95% CI, -1.42 to -0.77), and this difference was statistically significant (Z=6.62, p <.001).",
+      "context_window": "quality compared with the control group (n=508, SMD=-1.10; 95% CI, -1.42 to -0.77), and this difference was statistically",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-2585",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2585,
+      "sentence": "For face-to-face CBT-I, the intervention group demonstrated a significant improvement in sleep quality compared with the control group (n=508, SMD=-1.10; 95% CI, -1.42 to -0.77), and this difference was statistically significant (Z=6.62, p <.001).",
+      "context_window": "and this difference was statistically significant (Z=6.62, p <.001). Similarly, for remotely delivered CBT-I, the intervention",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-2724",
+      "claim_type": "sample_size",
+      "raw_text": "n=287",
+      "numeric_values": [
+        287.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2724,
+      "sentence": "Similarly, for remotely delivered CBT-I, the intervention group also exhibited a significant improvement over the control group (n=287, SMD=-0.84; 95% CI, -1.33 to -0.36), which was statistically significant (Z=3.44, p <.001).",
+      "context_window": "exhibited a significant improvement over the control group (n=287, SMD=-0.84; 95% CI, -1.33 to -0.36), which was statisticall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-2742",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2742,
+      "sentence": "Similarly, for remotely delivered CBT-I, the intervention group also exhibited a significant improvement over the control group (n=287, SMD=-0.84; 95% CI, -1.33 to -0.36), which was statistically significant (Z=3.44, p <.001).",
+      "context_window": "icant improvement over the control group (n=287, SMD=-0.84; 95% CI, -1.33 to -0.36), which was statistically significant (Z",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-2812",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2812,
+      "sentence": "Similarly, for remotely delivered CBT-I, the intervention group also exhibited a significant improvement over the control group (n=287, SMD=-0.84; 95% CI, -1.33 to -0.36), which was statistically significant (Z=3.44, p <.001).",
+      "context_window": ".33 to -0.36), which was statistically significant (Z=3.44, p <.001). However, the difference in effect size between face-to-fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-2944",
+      "claim_type": "p_value",
+      "raw_text": "p =.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2944,
+      "sentence": "However, the difference in effect size between face-to-face and remote CBT-I delivery was not statistically significant ( p =.39) ( Figure 3 ).",
+      "context_window": "d remote CBT-I delivery was not statistically significant ( p =.39) ( Figure 3 ). When the follow-up period without CBT-I was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-3021",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3021,
+      "sentence": "When the follow-up period without CBT-I was less than 25 weeks, the intervention group showed a greater improvement in sleep quality than the control group (n=505, SMD=-1.29; 95% CI, -1.95 to -0.63), with a statistically significant difference (Z=3.86, p <.001).",
+      "context_window": "3 ). When the follow-up period without CBT-I was less than 25 weeks, the intervention group showed a greater improvement in sle",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-3124",
+      "claim_type": "sample_size",
+      "raw_text": "n=505",
+      "numeric_values": [
+        505.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3124,
+      "sentence": "When the follow-up period without CBT-I was less than 25 weeks, the intervention group showed a greater improvement in sleep quality than the control group (n=505, SMD=-1.29; 95% CI, -1.95 to -0.63), with a statistically significant difference (Z=3.86, p <.001).",
+      "context_window": "reater improvement in sleep quality than the control group (n=505, SMD=-1.29; 95% CI, -1.95 to -0.63), with a statistically s",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-3142",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3142,
+      "sentence": "When the follow-up period without CBT-I was less than 25 weeks, the intervention group showed a greater improvement in sleep quality than the control group (n=505, SMD=-1.29; 95% CI, -1.95 to -0.63), with a statistically significant difference (Z=3.86, p <.001).",
+      "context_window": "in sleep quality than the control group (n=505, SMD=-1.29; 95% CI, -1.95 to -0.63), with a statistically significant diffe",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-3220",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3220,
+      "sentence": "When the follow-up period without CBT-I was less than 25 weeks, the intervention group showed a greater improvement in sleep quality than the control group (n=505, SMD=-1.29; 95% CI, -1.95 to -0.63), with a statistically significant difference (Z=3.86, p <.001).",
+      "context_window": "0.63), with a statistically significant difference (Z=3.86, p <.001). When the follow-up period exceeded 25 weeks, the interven",
+      "claim_role": "duration",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-3265",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3265,
+      "sentence": "When the follow-up period exceeded 25 weeks, the intervention group continued to show significant improvement compared to the control group (n=44, SMD=-0.93; 95% CI, -1.56 to -0.30), and this difference was statistically significant (Z=2.91, p <.01).",
+      "context_window": "rence (Z=3.86, p <.001). When the follow-up period exceeded 25 weeks, the intervention group continued to show significant impro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-3371",
+      "claim_type": "sample_size",
+      "raw_text": "n=44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3371,
+      "sentence": "When the follow-up period exceeded 25 weeks, the intervention group continued to show significant improvement compared to the control group (n=44, SMD=-0.93; 95% CI, -1.56 to -0.30), and this difference was statistically significant (Z=2.91, p <.01).",
+      "context_window": "show significant improvement compared to the control group (n=44, SMD=-0.93; 95% CI, -1.56 to -0.30), and this difference wa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-3388",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3388,
+      "sentence": "When the follow-up period exceeded 25 weeks, the intervention group continued to show significant improvement compared to the control group (n=44, SMD=-0.93; 95% CI, -1.56 to -0.30), and this difference was statistically significant (Z=2.91, p <.01).",
+      "context_window": "improvement compared to the control group (n=44, SMD=-0.93; 95% CI, -1.56 to -0.30), and this difference was statistically",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-3472",
+      "claim_type": "p_value",
+      "raw_text": "p <.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3472,
+      "sentence": "When the follow-up period exceeded 25 weeks, the intervention group continued to show significant improvement compared to the control group (n=44, SMD=-0.93; 95% CI, -1.56 to -0.30), and this difference was statistically significant (Z=2.91, p <.01).",
+      "context_window": "and this difference was statistically significant (Z=2.91, p <.01). However, the difference in effect size between the groups",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-3557",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3557,
+      "sentence": "However, the difference in effect size between the groups reassessed within 25 weeks and those reassessed after 25 weeks was not statistically significant ( p =.44) ( Figure 3 ).",
+      "context_window": "ference in effect size between the groups reassessed within 25 weeks and those reassessed after 25 weeks was not statistically s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-3593",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3593,
+      "sentence": "However, the difference in effect size between the groups reassessed within 25 weeks and those reassessed after 25 weeks was not statistically significant ( p =.44) ( Figure 3 ).",
+      "context_window": "roups reassessed within 25 weeks and those reassessed after 25 weeks was not statistically significant ( p =.44) ( Figure 3 ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-3638",
+      "claim_type": "p_value",
+      "raw_text": "p =.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3638,
+      "sentence": "However, the difference in effect size between the groups reassessed within 25 weeks and those reassessed after 25 weeks was not statistically significant ( p =.44) ( Figure 3 ).",
+      "context_window": "assessed after 25 weeks was not statistically significant ( p =.44) ( Figure 3 ). For participants with subthreshold insomnia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-3798",
+      "claim_type": "sample_size",
+      "raw_text": "n=124",
+      "numeric_values": [
+        124.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3798,
+      "sentence": "For participants with subthreshold insomnia (ISI score, 8-14), CBT-I significantly improved sleep quality compared to the control group (n=124, SMD=-1.10; 95% CI, -1.48 to -0.72), and this effect was statistically significant (Z=5.68, p <.001).",
+      "context_window": "antly improved sleep quality compared to the control group (n=124, SMD=-1.10; 95% CI, -1.48 to -0.72), and this effect was st",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-3816",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3816,
+      "sentence": "For participants with subthreshold insomnia (ISI score, 8-14), CBT-I significantly improved sleep quality compared to the control group (n=124, SMD=-1.10; 95% CI, -1.48 to -0.72), and this effect was statistically significant (Z=5.68, p <.001).",
+      "context_window": "ep quality compared to the control group (n=124, SMD=-1.10; 95% CI, -1.48 to -0.72), and this effect was statistically sign",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-3896",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3896,
+      "sentence": "For participants with subthreshold insomnia (ISI score, 8-14), CBT-I significantly improved sleep quality compared to the control group (n=124, SMD=-1.10; 95% CI, -1.48 to -0.72), and this effect was statistically significant (Z=5.68, p <.001).",
+      "context_window": "72), and this effect was statistically significant (Z=5.68, p <.001). Among participants with clinical insomnia (ISI score, 15-",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-4017",
+      "claim_type": "sample_size",
+      "raw_text": "n=382",
+      "numeric_values": [
+        382.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4017,
+      "sentence": "Among participants with clinical insomnia (ISI score, 15-21), CBT-I also significantly improved sleep quality (n=382, SMD=-1.25; 95% CI, -1.58 to -0.93), with a statistically significant difference (Z=7.52, p <.001).",
+      "context_window": "e, 15-21), CBT-I also significantly improved sleep quality (n=382, SMD=-1.25; 95% CI, -1.58 to -0.93), with a statistically s",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-4035",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4035,
+      "sentence": "Among participants with clinical insomnia (ISI score, 15-21), CBT-I also significantly improved sleep quality (n=382, SMD=-1.25; 95% CI, -1.58 to -0.93), with a statistically significant difference (Z=7.52, p <.001).",
+      "context_window": "lso significantly improved sleep quality (n=382, SMD=-1.25; 95% CI, -1.58 to -0.93), with a statistically significant diffe",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-4113",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4113,
+      "sentence": "Among participants with clinical insomnia (ISI score, 15-21), CBT-I also significantly improved sleep quality (n=382, SMD=-1.25; 95% CI, -1.58 to -0.93), with a statistically significant difference (Z=7.52, p <.001).",
+      "context_window": "0.93), with a statistically significant difference (Z=7.52, p <.001). However, the difference in effect size between the subthr",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-4252",
+      "claim_type": "p_value",
+      "raw_text": "p =.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4252,
+      "sentence": "However, the difference in effect size between the subthreshold and clinical insomnia groups was not statistically significant ( p =.55) ( Figure 3 ).",
+      "context_window": "linical insomnia groups was not statistically significant ( p =.55) ( Figure 3 ). The effect size of CBT-I on insomnia severi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-4445",
+      "claim_type": "sample_size",
+      "raw_text": "n=504",
+      "numeric_values": [
+        504.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4445,
+      "sentence": "The effect size of CBT-I on insomnia severity demonstrated a significant reduction in the intervention group compared with the control group, with an MD of -4.49 points (n=504; 95% CI, -6.12 to -2.87).",
+      "context_window": "ompared with the control group, with an MD of -4.49 points (n=504; 95% CI, -6.12 to -2.87). This difference was statistically",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-4452",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4452,
+      "sentence": "The effect size of CBT-I on insomnia severity demonstrated a significant reduction in the intervention group compared with the control group, with an MD of -4.49 points (n=504; 95% CI, -6.12 to -2.87).",
+      "context_window": "with the control group, with an MD of -4.49 points (n=504; 95% CI, -6.12 to -2.87). This difference was statistically sign",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-4532",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4532,
+      "sentence": "This difference was statistically significant (Z=5.41, p <.001).",
+      "context_window": "87). This difference was statistically significant (Z=5.41, p <.001). Heterogeneity across studies was high (Higgins I\u00b2=89%); t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-4592",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4592,
+      "sentence": "Heterogeneity across studies was high (Higgins I\u00b2=89%); therefore, a random-effects model was applied to analyze the effect size of CBT-I on sleep quality ( Figure 4 ).",
+      "context_window": "p <.001). Heterogeneity across studies was high (Higgins I\u00b2=89%); therefore, a random-effects model was applied to analyze",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-4857",
+      "claim_type": "sample_size",
+      "raw_text": "n=326",
+      "numeric_values": [
+        326.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4857,
+      "sentence": "For insomnia severity, face-to-face CBT-I resulted in a mean reduction of 4.36 points in the intervention group compared with the control group (n=326; MD=-4.36; 95% CI, -6.21 to -2.51), which was statistically significant (Z=4.63, p <.001).",
+      "context_window": "in the intervention group compared with the control group (n=326; MD=-4.36; 95% CI, -6.21 to -2.51), which was statistically",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-4874",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4874,
+      "sentence": "For insomnia severity, face-to-face CBT-I resulted in a mean reduction of 4.36 points in the intervention group compared with the control group (n=326; MD=-4.36; 95% CI, -6.21 to -2.51), which was statistically significant (Z=4.63, p <.001).",
+      "context_window": "ion group compared with the control group (n=326; MD=-4.36; 95% CI, -6.21 to -2.51), which was statistically significant (Z",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-4944",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4944,
+      "sentence": "For insomnia severity, face-to-face CBT-I resulted in a mean reduction of 4.36 points in the intervention group compared with the control group (n=326; MD=-4.36; 95% CI, -6.21 to -2.51), which was statistically significant (Z=4.63, p <.001).",
+      "context_window": ".21 to -2.51), which was statistically significant (Z=4.63, p <.001). Non-face-to-face CBT-I produced a mean reduction of 4.72",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-5077",
+      "claim_type": "sample_size",
+      "raw_text": "n=168",
+      "numeric_values": [
+        168.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5077,
+      "sentence": "Non-face-to-face CBT-I produced a mean reduction of 4.72 points in the intervention group compared with the control group (n=168; MD=-4.72; 95% CI, -8.14 to -1.29), and this difference was also statistically significant (Z=2.70, p <.01).",
+      "context_window": "in the intervention group compared with the control group (n=168; MD=-4.72; 95% CI, -8.14 to -1.29), and this difference was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-5094",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5094,
+      "sentence": "Non-face-to-face CBT-I produced a mean reduction of 4.72 points in the intervention group compared with the control group (n=168; MD=-4.72; 95% CI, -8.14 to -1.29), and this difference was also statistically significant (Z=2.70, p <.01).",
+      "context_window": "ion group compared with the control group (n=168; MD=-4.72; 95% CI, -8.14 to -1.29), and this difference was also statistic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-5183",
+      "claim_type": "p_value",
+      "raw_text": "p <.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5183,
+      "sentence": "Non-face-to-face CBT-I produced a mean reduction of 4.72 points in the intervention group compared with the control group (n=168; MD=-4.72; 95% CI, -8.14 to -1.29), and this difference was also statistically significant (Z=2.70, p <.01).",
+      "context_window": "this difference was also statistically significant (Z=2.70, p <.01). However, the difference in effect size between face-to-fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-5315",
+      "claim_type": "p_value",
+      "raw_text": "p =.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5315,
+      "sentence": "However, the difference in effect size between face-to-face and non-face-to-face CBT-I was not statistically significant ( p =.86) ( Figure 4 ).",
+      "context_window": "non-face-to-face CBT-I was not statistically significant ( p =.86) ( Figure 4 ). When the follow-up period after CBT-I was l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-5390",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5390,
+      "sentence": "When the follow-up period after CBT-I was less than 25 weeks, the intervention group exhibited a significant 5.98-point reduction in insomnia severity compared with the control group (n=270; MD=-5.98; 95% CI, -8.59 to -3.37), and this difference was statistically significant (Z=4.49, p <.001).",
+      "context_window": "e 4 ). When the follow-up period after CBT-I was less than 25 weeks, the intervention group exhibited a significant 5.98-point",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-5522",
+      "claim_type": "sample_size",
+      "raw_text": "n=270",
+      "numeric_values": [
+        270.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5522,
+      "sentence": "When the follow-up period after CBT-I was less than 25 weeks, the intervention group exhibited a significant 5.98-point reduction in insomnia severity compared with the control group (n=270; MD=-5.98; 95% CI, -8.59 to -3.37), and this difference was statistically significant (Z=4.49, p <.001).",
+      "context_window": "ction in insomnia severity compared with the control group (n=270; MD=-5.98; 95% CI, -8.59 to -3.37), and this difference was",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-5539",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5539,
+      "sentence": "When the follow-up period after CBT-I was less than 25 weeks, the intervention group exhibited a significant 5.98-point reduction in insomnia severity compared with the control group (n=270; MD=-5.98; 95% CI, -8.59 to -3.37), and this difference was statistically significant (Z=4.49, p <.001).",
+      "context_window": "severity compared with the control group (n=270; MD=-5.98; 95% CI, -8.59 to -3.37), and this difference was statistically",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-5623",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5623,
+      "sentence": "When the follow-up period after CBT-I was less than 25 weeks, the intervention group exhibited a significant 5.98-point reduction in insomnia severity compared with the control group (n=270; MD=-5.98; 95% CI, -8.59 to -3.37), and this difference was statistically significant (Z=4.49, p <.001).",
+      "context_window": "and this difference was statistically significant (Z=4.49, p <.001). For follow-up periods between 25 and 52 weeks, the effect",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-5670",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5670,
+      "sentence": "For follow-up periods between 25 and 52 weeks, the effect size indicated a 4.61-point reduction in insomnia severity in the intervention group compared with the control group (n=44; MD=-4.61; 95% CI, -7.80 to -1.42), which was also statistically significant (Z=2.83, p <.01).",
+      "context_window": "ant (Z=4.49, p <.001). For follow-up periods between 25 and 52 weeks, the effect size indicated a 4.61-point reduction in insomn",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-5809",
+      "claim_type": "sample_size",
+      "raw_text": "n=44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5809,
+      "sentence": "For follow-up periods between 25 and 52 weeks, the effect size indicated a 4.61-point reduction in insomnia severity in the intervention group compared with the control group (n=44; MD=-4.61; 95% CI, -7.80 to -1.42), which was also statistically significant (Z=2.83, p <.01).",
+      "context_window": "in the intervention group compared with the control group (n=44; MD=-4.61; 95% CI, -7.80 to -1.42), which was also statisti",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-5825",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5825,
+      "sentence": "For follow-up periods between 25 and 52 weeks, the effect size indicated a 4.61-point reduction in insomnia severity in the intervention group compared with the control group (n=44; MD=-4.61; 95% CI, -7.80 to -1.42), which was also statistically significant (Z=2.83, p <.01).",
+      "context_window": "tion group compared with the control group (n=44; MD=-4.61; 95% CI, -7.80 to -1.42), which was also statistically significa",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-5900",
+      "claim_type": "p_value",
+      "raw_text": "p <.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5900,
+      "sentence": "For follow-up periods between 25 and 52 weeks, the effect size indicated a 4.61-point reduction in insomnia severity in the intervention group compared with the control group (n=44; MD=-4.61; 95% CI, -7.80 to -1.42), which was also statistically significant (Z=2.83, p <.01).",
+      "context_window": "o -1.42), which was also statistically significant (Z=2.83, p <.01). However, the difference in effect size between studies wi",
+      "claim_role": "duration",
+      "endpoint": "insomnia severity",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-6000",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6000,
+      "sentence": "However, the difference in effect size between studies with follow-up periods of less than 25 weeks and those exceeding 25 weeks was not statistically significant ( p =.52) ( Figure 4 ).",
+      "context_window": "ct size between studies with follow-up periods of less than 25 weeks and those exceeding 25 weeks was not statistically signific",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-6029",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6029,
+      "sentence": "However, the difference in effect size between studies with follow-up periods of less than 25 weeks and those exceeding 25 weeks was not statistically significant ( p =.52) ( Figure 4 ).",
+      "context_window": "follow-up periods of less than 25 weeks and those exceeding 25 weeks was not statistically significant ( p =.52) ( Figure 4 ).",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-6074",
+      "claim_type": "p_value",
+      "raw_text": "p =.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6074,
+      "sentence": "However, the difference in effect size between studies with follow-up periods of less than 25 weeks and those exceeding 25 weeks was not statistically significant ( p =.52) ( Figure 4 ).",
+      "context_window": "hose exceeding 25 weeks was not statistically significant ( p =.52) ( Figure 4 ). Among participants with subthreshold insomn",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-6281",
+      "claim_type": "sample_size",
+      "raw_text": "n=124",
+      "numeric_values": [
+        124.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6281,
+      "sentence": "Among participants with subthreshold insomnia (ISI score, 8-14), CBT-I significantly reduced insomnia severity compared with the control group, with a mean difference of -3.45 points (n=124; 95% CI, -5.20 to -1.71), and this difference was statistically significant (Z=3.87, p <.001).",
+      "context_window": "the control group, with a mean difference of -3.45 points (n=124; 95% CI, -5.20 to -1.71), and this difference was statistic",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-6288",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6288,
+      "sentence": "Among participants with subthreshold insomnia (ISI score, 8-14), CBT-I significantly reduced insomnia severity compared with the control group, with a mean difference of -3.45 points (n=124; 95% CI, -5.20 to -1.71), and this difference was statistically significant (Z=3.87, p <.001).",
+      "context_window": "ntrol group, with a mean difference of -3.45 points (n=124; 95% CI, -5.20 to -1.71), and this difference was statistically",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-6372",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6372,
+      "sentence": "Among participants with subthreshold insomnia (ISI score, 8-14), CBT-I significantly reduced insomnia severity compared with the control group, with a mean difference of -3.45 points (n=124; 95% CI, -5.20 to -1.71), and this difference was statistically significant (Z=3.87, p <.001).",
+      "context_window": "and this difference was statistically significant (Z=3.87, p <.001). For participants with clinical insomnia (ISI, 15-21), CBT",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-n-6488",
+      "claim_type": "sample_size",
+      "raw_text": "n=380",
+      "numeric_values": [
+        380.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6488,
+      "sentence": "For participants with clinical insomnia (ISI, 15-21), CBT-I also significantly reduced insomnia severity (n=380; MD=-4.76; 95% CI, -6.73 to -2.78), with a statistically significant difference (Z=4.72, p <.001).",
+      "context_window": "15-21), CBT-I also significantly reduced insomnia severity (n=380; MD=-4.76; 95% CI, -6.73 to -2.78), with a statistically si",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-6505",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6505,
+      "sentence": "For participants with clinical insomnia (ISI, 15-21), CBT-I also significantly reduced insomnia severity (n=380; MD=-4.76; 95% CI, -6.73 to -2.78), with a statistically significant difference (Z=4.72, p <.001).",
+      "context_window": "o significantly reduced insomnia severity (n=380; MD=-4.76; 95% CI, -6.73 to -2.78), with a statistically significant diffe",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-6583",
+      "claim_type": "p_value",
+      "raw_text": "p <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6583,
+      "sentence": "For participants with clinical insomnia (ISI, 15-21), CBT-I also significantly reduced insomnia severity (n=380; MD=-4.76; 95% CI, -6.73 to -2.78), with a statistically significant difference (Z=4.72, p <.001).",
+      "context_window": "2.78), with a statistically significant difference (Z=4.72, p <.001). However, the difference in effect size between the subthr",
+      "claim_role": "effect",
+      "endpoint": "insomnia severity",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-p-6722",
+      "claim_type": "p_value",
+      "raw_text": "p =.33",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6722,
+      "sentence": "However, the difference in effect size between the subthreshold and clinical insomnia groups was not statistically significant ( p =.33) ( Figure 4 ).",
+      "context_window": "linical insomnia groups was not statistically significant ( p =.33) ( Figure 4 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-1589",
+      "claim_type": "unit_value",
+      "raw_text": "9 weeks",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1589,
+      "sentence": "Likewise, internet-based CBT-I for menopausal [ 15 ] and adult populations [ 30 ] yielded positive outcomes over 6 to 9 weeks.",
+      "context_window": "dult populations [ 30 ] yielded positive outcomes over 6 to 9 weeks. Given the relatively long duration of CBT-I interventions,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-2455",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2455,
+      "sentence": "Subgroup analysis by follow-up duration (\u226425 weeks vs. >25 weeks) demonstrated that CBT-I maintained effectiveness regardless of time elapsed, contrasting with the waning effects often observed in pharmacologic or exercise-based therapies.",
+      "context_window": "f these programs. Subgroup analysis by follow-up duration (\u226425 weeks vs. >25 weeks) demonstrated that CBT-I maintained effective",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-u-2469",
+      "claim_type": "unit_value",
+      "raw_text": "25 weeks",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2469,
+      "sentence": "Subgroup analysis by follow-up duration (\u226425 weeks vs. >25 weeks) demonstrated that CBT-I maintained effectiveness regardless of time elapsed, contrasting with the waning effects often observed in pharmacologic or exercise-based therapies.",
+      "context_window": "ms. Subgroup analysis by follow-up duration (\u226425 weeks vs. >25 weeks) demonstrated that CBT-I maintained effectiveness regardles",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12835450_effects_of_cognitive_behavioral_therapy_on_sleep_quality_and-pct-3142",
+      "claim_type": "percentage",
+      "raw_text": "77.5%",
+      "numeric_values": [
+        77.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3142,
+      "sentence": "Previous studies have reported significant ISI reductions following face-to-face CBT-I among college students [ 31 ] and after internet-based CBT-I among adults (predominantly female, 77.5%; with menopausal status not specified) [ 32 ].",
+      "context_window": "er internet-based CBT-I among adults (predominantly female, 77.5%; with menopausal status not specified) [ 32 ]. The current",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

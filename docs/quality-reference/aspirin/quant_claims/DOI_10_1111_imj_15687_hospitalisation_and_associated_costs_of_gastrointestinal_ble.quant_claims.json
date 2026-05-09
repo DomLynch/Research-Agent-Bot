@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1111_imj_15687_hospitalisation_and_associated_costs_of_gastrointestinal_ble",
+  "doi": "10.1111/imj.15687",
+  "extracted_at": "2026-05-08T20:05:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_imj_15687_hospitalisation_and_associated_costs_of_gastrointestinal_ble-pct-403",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 403,
+      "sentence": "Identified patients (<jats:italic>n</jats:italic> = 22) carried little co\u2010morbidity, 41% received prior proton\u2010pump inhibitors and 68% were aged >70 years.",
+      "context_window": "s:italic>n</jats:italic> = 22) carried little co\u2010morbidity, 41% received prior proton\u2010pump inhibitors and 68% were aged >70",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_imj_15687_hospitalisation_and_associated_costs_of_gastrointestinal_ble-pct-449",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 449,
+      "sentence": "Identified patients (<jats:italic>n</jats:italic> = 22) carried little co\u2010morbidity, 41% received prior proton\u2010pump inhibitors and 68% were aged >70 years.",
+      "context_window": "co\u2010morbidity, 41% received prior proton\u2010pump inhibitors and 68% were aged >70 years. Mean hospital admission cost was $6769",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_imj_15687_hospitalisation_and_associated_costs_of_gastrointestinal_ble-u-464",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 464,
+      "sentence": "Identified patients (<jats:italic>n</jats:italic> = 22) carried little co\u2010morbidity, 41% received prior proton\u2010pump inhibitors and 68% were aged >70 years.",
+      "context_window": "1% received prior proton\u2010pump inhibitors and 68% were aged >70 years. Mean hospital admission cost was $6769 (95% confidence int",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1111_imj_15687_hospitalisation_and_associated_costs_of_gastrointestinal_ble-pct-514",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 514,
+      "sentence": "Mean hospital admission cost was $6769 (95% confidence interval $5198-$8340), with projected state and national annual costs of $0.57 and $8.12 million respectively.",
+      "context_window": "ere aged >70 years. Mean hospital admission cost was $6769 (95% confidence interval $5198-$8340), with projected state and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_3899_jrheum_161351_longterm_hydroxychloroquine_therapy_and_low_dose_aspirin_may",
+  "doi": "10.3899/jrheum.161351",
+  "extracted_at": "2026-05-08T20:06:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3899_jrheum_161351_longterm_hydroxychloroquine_therapy_and_low_dose_aspirin_may-u-980",
+      "claim_type": "unit_value",
+      "raw_text": "13 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 980,
+      "sentence": "RESULTS: For the study, 189 patients with SLE were enrolled and monitored for 13 years (median).",
+      "context_window": "tudy, 189 patients with SLE were enrolled and monitored for 13 years (median). Ten CVE occurred during followup. At Kaplan-Meier",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3899_jrheum_161351_longterm_hydroxychloroquine_therapy_and_low_dose_aspirin_may-p-1281",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "At Kaplan-Meier analysis, the CVE-free rate was higher in ASA-treated patients administered a c-HCQ > 600 g (standard HCQ dose for at least 5 yrs) than in patients receiving ASA alone, or with a c-HCQ dose < 600 g (log-rank test chi-square = 4.01, p = 0.04).",
+      "context_window": "with a c-HCQ dose < 600 g (log-rank test chi-square = 4.01, p = 0.04). Multivariate analysis showed that antimalarials plus ASA",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

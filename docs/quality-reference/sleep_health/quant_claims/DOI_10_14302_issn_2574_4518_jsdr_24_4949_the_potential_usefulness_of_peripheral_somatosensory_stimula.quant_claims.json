@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula",
+  "doi": "10.14302/issn.2574-4518.jsdr-24-4949",
+  "extracted_at": "2026-05-08T20:05:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula-u-896",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 896,
+      "sentence": "Mean age was 55.1 (range 29 to 80 years).",
+      "context_window": "ed one month of PSS therapy. Mean age was 55.1 (range 29 to 80 years). No adverse events were described by the patients. The ave",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula-pct-1352",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1352,
+      "sentence": "The median composite score was improved from baseline, with an overall median score of 2 (IQR: 1.25 - 2.75, min-max: 1-4) at baseline compared to 0.5 (IQR: 0 - 0.25, min-max: 0-2) by week 4 (MD = -1 95% CI: , p < 0.001), signaling typically moderate insomnia at baseline vs. typically minimal to no symptoms by week 4.",
+      "context_window": "red to 0.5 (IQR: 0 - 0.25, min-max: 0-2) by week 4 (MD = -1 95% CI: , p < 0.001), signaling typically moderate insomnia at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula-p-1362",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "The median composite score was improved from baseline, with an overall median score of 2 (IQR: 1.25 - 2.75, min-max: 1-4) at baseline compared to 0.5 (IQR: 0 - 0.25, min-max: 0-2) by week 4 (MD = -1 95% CI: , p < 0.001), signaling typically moderate insomnia at baseline vs. typically minimal to no symptoms by week 4.",
+      "context_window": "(IQR: 0 - 0.25, min-max: 0-2) by week 4 (MD = -1 95% CI: , p < 0.001), signaling typically moderate insomnia at baseline vs. typ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula-pct-1542",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1542,
+      "sentence": "The predicted probability of obtaining the best outcome (score=0) was 9% at baseline vs.",
+      "context_window": "ted probability of obtaining the best outcome (score=0) was 9% at baseline vs. 53% by week 4. The overall cumulative odds",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula-pct-1561",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1561,
+      "sentence": "53% by week 4.",
+      "context_window": "obtaining the best outcome (score=0) was 9% at baseline vs. 53% by week 4. The overall cumulative odds ratio was 11.9 (p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_14302_issn_2574_4518_jsdr_24_4949_the_potential_usefulness_of_peripheral_somatosensory_stimula-p-1620",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1620,
+      "sentence": "The overall cumulative odds ratio was 11.9 (p < 0.001), suggesting that on average, the odds of moving from one score to a lower (improved) score at week 4 compared to the baseline are approximately 12 times higher than moving to a neutral or worse score.",
+      "context_window": "53% by week 4. The overall cumulative odds ratio was 11.9 (p < 0.001), suggesting that on average, the odds of moving from one s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1226 @@
+{
+  "paper_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p",
+  "doi": "10.3389/fnut.2025.1632131",
+  "extracted_at": "2026-05-08T20:11:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 5,
+    "unit_value": 11,
+    "percentage": 19,
+    "p_value": 31,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-msd-309",
+      "claim_type": "mean_sd",
+      "raw_text": "20.12 \u00b1 1.12",
+      "numeric_values": [
+        20.12,
+        1.12
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 309,
+      "sentence": "Sixteen male university students majoring in physical education (age: 20.12 \u00b1 1.12 years; training status: \u22653 endurance sessions/week) received 4 supplement conditions: (1) placebo (maltodextrin), (2) low-dose (1 g taurine), (3) medium-dose (4 g taurine), and (4) high-dose (6 g taurine).",
+      "context_window": "le university students majoring in physical education (age: 20.12 \u00b1 1.12 years; training status: \u22653 endurance sessions/week) receive",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-317",
+      "claim_type": "unit_value",
+      "raw_text": "1.12 years",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 317,
+      "sentence": "Sixteen male university students majoring in physical education (age: 20.12 \u00b1 1.12 years; training status: \u22653 endurance sessions/week) received 4 supplement conditions: (1) placebo (maltodextrin), (2) low-dose (1 g taurine), (3) medium-dose (4 g taurine), and (4) high-dose (6 g taurine).",
+      "context_window": "rsity students majoring in physical education (age: 20.12 \u00b1 1.12 years; training status: \u22653 endurance sessions/week) received 4 su",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-670",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 670,
+      "sentence": "Participants performed a graded cycling test (initial 50 W, +50 W every 3 min at 70 rpm) until exhaustion in an environmental chamber (35 \u00b0C, 65% RH).",
+      "context_window": "0 rpm) until exhaustion in an environmental chamber (35 \u00b0C, 65% RH). Heart rate, core temperature, skin temperature, sweat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-874",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 874,
+      "sentence": "Compared to placebo, time to exhaustion was significantly longer in the medium-dose group ( p < 0.05), with no significant or trend-level effects in low- or high-dose groups.",
+      "context_window": "austion was significantly longer in the medium-dose group ( p < 0.05), with no significant or trend-level effects in low- or hig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-1041",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1041,
+      "sentence": "Blood lactate accumulation and sweating rate were higher in the medium-dose group ( p < 0.05).",
+      "context_window": "on and sweating rate were higher in the medium-dose group ( p < 0.05). Core temperature (9 min-End) was lower in the medium-dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-1151",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1151,
+      "sentence": "Core temperature (9 min-End) was lower in the medium-dose group during the latter exercise phase ( p < 0.05).",
+      "context_window": "in the medium-dose group during the latter exercise phase ( p < 0.05). Under hot and humid conditions, acute 4 g taurine supple",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1013",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1013,
+      "sentence": "These distinct mechanisms position taurine as a uniquely promising ergogenic aid for humid heat conditions exceeding 60% relative humidity ( 6 , 12 ).",
+      "context_window": "promising ergogenic aid for humid heat conditions exceeding 60% relative humidity ( 6 , 12 ). Current understanding of tau",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-2009",
+      "claim_type": "percentage",
+      "raw_text": "12.7%",
+      "numeric_values": [
+        12.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2009,
+      "sentence": "Studies have demonstrated that acute taurine intake can increase sweating rates by 12.7% at 35 \u00b0C ( 16 ), while chronic supplementation appears to delay critical core temperature thresholds during progressive heat exposure ( 12 ).",
+      "context_window": "ed that acute taurine intake can increase sweating rates by 12.7% at 35 \u00b0C ( 16 ), while chronic supplementation appears to d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-2255",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2255,
+      "sentence": "However, existing research has predominantly examined these effects at moderate humidity levels (\u226440% RH) ( 6 , 16 ), leaving a critical gap in understanding taurine\u2019s potential under the more physiologically challenging conditions of high humidity (\u226560% RH) where evaporative cooling is substantially impaired.",
+      "context_window": "nantly examined these effects at moderate humidity levels (\u226440% RH) ( 6 , 16 ), leaving a critical gap in understanding tau",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-2408",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2408,
+      "sentence": "However, existing research has predominantly examined these effects at moderate humidity levels (\u226440% RH) ( 6 , 16 ), leaving a critical gap in understanding taurine\u2019s potential under the more physiologically challenging conditions of high humidity (\u226560% RH) where evaporative cooling is substantially impaired.",
+      "context_window": "e physiologically challenging conditions of high humidity (\u226560% RH) where evaporative cooling is substantially impaired. T",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-2697",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2697,
+      "sentence": "Therefore, the present study aimed to investigate the acute effects of three doses of taurine (1, 4, and 6 g) on endurance cycling performance and thermoregulatory responses under controlled hot and humid conditions (35 \u00b0C and 65% relative humidity).",
+      "context_window": "ponses under controlled hot and humid conditions (35 \u00b0C and 65% relative humidity). We hypothesized that moderate-dose taur",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1172",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1172,
+      "sentence": "The entire experiment was conducted within a Controlled High-Temperature and High-Humidity Chamber, meticulously regulated by a combination of heating (SAWO, CON4, Finland) and humidifying (BELIN, SC-G060ZS, CHN) equipment, ensuring a precise temperature range of 35 \u00b0C \u00b1 1 \u00b0C and humidity level of 65% \u00b1 2%, thereby fostering optimal conditions for the experimental proceedings.",
+      "context_window": "ise temperature range of 35 \u00b0C \u00b1 1 \u00b0C and humidity level of 65% \u00b1 2%, thereby fostering optimal conditions for the experime",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1178",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1178,
+      "sentence": "The entire experiment was conducted within a Controlled High-Temperature and High-Humidity Chamber, meticulously regulated by a combination of heating (SAWO, CON4, Finland) and humidifying (BELIN, SC-G060ZS, CHN) equipment, ensuring a precise temperature range of 35 \u00b0C \u00b1 1 \u00b0C and humidity level of 65% \u00b1 2%, thereby fostering optimal conditions for the experimental proceedings.",
+      "context_window": "mperature range of 35 \u00b0C \u00b1 1 \u00b0C and humidity level of 65% \u00b1 2%, thereby fostering optimal conditions for the experimental",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-1729",
+      "claim_type": "unit_value",
+      "raw_text": "300 mL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1729,
+      "sentence": "Participants ingested 300 mL of water mixed with supplements 1 h before the start of the test to ensure a homogeneous status.",
+      "context_window": "fected by ingested food or beverages. Participants ingested 300 mL of water mixed with supplements 1 h before the start of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1994",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1994,
+      "sentence": "Participants were initially performed in a laboratory environment (25 \u00b0C, 30% RH) for a 5 min 100 W steady-state warm-up.",
+      "context_window": "ere initially performed in a laboratory environment (25 \u00b0C, 30% RH) for a 5 min 100 W steady-state warm-up. Subsequently, t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-msd-2612",
+      "claim_type": "mean_sd",
+      "raw_text": "20.12 \u00b1 1.12",
+      "numeric_values": [
+        20.12,
+        1.12
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2612,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "al education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-2620",
+      "claim_type": "unit_value",
+      "raw_text": "1.12 years",
+      "numeric_values": [
+        1.12
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2620,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "tion volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maxima",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-msd-2641",
+      "claim_type": "mean_sd",
+      "raw_text": "1.76 \u00b1 0.06",
+      "numeric_values": [
+        1.76,
+        0.06
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2641,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "articipate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-msd-2667",
+      "claim_type": "mean_sd",
+      "raw_text": "72.06 \u00b1 5.99",
+      "numeric_values": [
+        72.06,
+        5.99
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2667,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-2675",
+      "claim_type": "unit_value",
+      "raw_text": "5.99 kg",
+      "numeric_values": [
+        5.99
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2675,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-msd-2719",
+      "claim_type": "mean_sd",
+      "raw_text": "46.24 \u00b1 4.07",
+      "numeric_values": [
+        46.24,
+        4.07
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2719,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "y mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min). A priori sample sizes were calculated using G*P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-2727",
+      "claim_type": "unit_value",
+      "raw_text": "4.07 mL",
+      "numeric_values": [
+        4.07
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2727,
+      "sentence": "Sixteen male college students majoring in physical education volunteered to participate in this study (age: 20.12 \u00b1 1.12 years; stature: 1.76 \u00b1 0.06 m; body mass: 72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min).",
+      "context_window": "72.06 \u00b1 5.99 kg; maximal oxygen uptake (V\u0307 O2max ): 46.24 \u00b1 4.07 mL/kg/min). A priori sample sizes were calculated using G*Powe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-3533",
+      "claim_type": "unit_value",
+      "raw_text": "22 years",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3533,
+      "sentence": "Aged between 18 and 22 years old, with at least 3 physical training sessions per week; (2) Good health, no major illnesses, no injuries or surgeries within the last 6 months; (3) No intake of any ergogenic aid in the last 3 months; and (4) No habit of exercising in high temperature or high humidity environments.",
+      "context_window": "lusion criteria were as follows: (1) 1. Aged between 18 and 22 years old, with at least 3 physical training sessions per week; (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-3678",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3678,
+      "sentence": "Aged between 18 and 22 years old, with at least 3 physical training sessions per week; (2) Good health, no major illnesses, no injuries or surgeries within the last 6 months; (3) No intake of any ergogenic aid in the last 3 months; and (4) No habit of exercising in high temperature or high humidity environments.",
+      "context_window": "o major illnesses, no injuries or surgeries within the last 6 months; (3) No intake of any ergogenic aid in the last 3 months; a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-3735",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3735,
+      "sentence": "Aged between 18 and 22 years old, with at least 3 physical training sessions per week; (2) Good health, no major illnesses, no injuries or surgeries within the last 6 months; (3) No intake of any ergogenic aid in the last 3 months; and (4) No habit of exercising in high temperature or high humidity environments.",
+      "context_window": "st 6 months; (3) No intake of any ergogenic aid in the last 3 months; and (4) No habit of exercising in high temperature or high",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-4095",
+      "claim_type": "unit_value",
+      "raw_text": "300 mL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4095,
+      "sentence": "All supplements were prepared in powder form and measured using an analytical balance and subsequently ingested in liquid form, mixed with 300 mL of water.",
+      "context_window": "alance and subsequently ingested in liquid form, mixed with 300 mL of water. Participants ingested the supplement 1 hour prior",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-5044",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 5044,
+      "sentence": "The same period in 1 day was selected to complete each experiment to minimize the effects of circadian rhythms (8:00 a.m.-10:00 a.m.).",
+      "context_window": "he laboratory at least 3 h after eating. The same period in 1 day was selected to complete each experiment to minimize the ef",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-8230",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8230,
+      "sentence": "The statistical significance level was set at p < 0.05.",
+      "context_window": "i correction. The statistical significance level was set at p < 0.05. Effect sizes were interpreted using Cohen\u2019s guidelines for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-274",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 274,
+      "sentence": "The data showed significant differences in TTE between interventions, F (3, 33) = 4.858, MSE = 1442.365; p = 0.046.",
+      "context_window": "E between interventions, F (3, 33) = 4.858, MSE = 1442.365; p = 0.046. Follow-up multiple comparisons showed that TTE was signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-394",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 394,
+      "sentence": "Follow-up multiple comparisons showed that TTE was significantly higher in the M group than in the P group ( p = 0.031) ( Figure 2 ).",
+      "context_window": "s significantly higher in the M group than in the P group ( p = 0.031) ( Figure 2 ). Time to exhaustion (* p < 0.05) after suppl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-442",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 442,
+      "sentence": "Time to exhaustion (* p < 0.05) after supplementation with different doses of taurine or placebo ( n = 16) under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "e P group ( p = 0.031) ( Figure 2 ). Time to exhaustion (* p < 0.05) after supplementation with different doses of taurine or p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-n-519",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "Time to exhaustion (* p < 0.05) after supplementation with different doses of taurine or placebo ( n = 16) under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "upplementation with different doses of taurine or placebo ( n = 16) under hot and humid conditions (35 \u00b0C, 65% RH). These res",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-566",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 566,
+      "sentence": "Time to exhaustion (* p < 0.05) after supplementation with different doses of taurine or placebo ( n = 16) under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "or placebo ( n = 16) under hot and humid conditions (35 \u00b0C, 65% RH). These results showed no significant main effect of in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-661",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.870",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 661,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 0.237, p = 0.870, \u03b7 2 partial = 0.012], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 1177.885, p < 0.001, \u03b7 2 partial = 0.988], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.018, p = 0.104, \u03b7 2 partial = 0.120] ( Figure 3 ).",
+      "context_window": "ignificant main effect of intervention [ F (3, 60) = 0.237, p = 0.870, \u03b7 2 partial = 0.012], and a significant main effect of tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-785",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 785,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 0.237, p = 0.870, \u03b7 2 partial = 0.012], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 1177.885, p < 0.001, \u03b7 2 partial = 0.988], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.018, p = 0.104, \u03b7 2 partial = 0.120] ( Figure 3 ).",
+      "context_window": "f time, Greenhouse-Geisser adjusted [ F (4, 57) = 1177.885, p < 0.001, \u03b7 2 partial = 0.988], there was no significant interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-932",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.104",
+      "numeric_values": [
+        0.104
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 932,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 0.237, p = 0.870, \u03b7 2 partial = 0.012], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 1177.885, p < 0.001, \u03b7 2 partial = 0.988], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.018, p = 0.104, \u03b7 2 partial = 0.120] ( Figure 3 ).",
+      "context_window": "on effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.018, p = 0.104, \u03b7 2 partial = 0.120] ( Figure 3 ). Changes in HR during t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1059",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1059,
+      "sentence": "Changes in HR during the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH). B[La] pre-post difference values for P (mean = 10.006",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-1377",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1377,
+      "sentence": "The data showed significant differences in B[La] pre-post difference between interventions, F (3, 33) = 3.876, MSE = 5.30; p = 0.014.",
+      "context_window": "rence between interventions, F (3, 33) = 3.876, MSE = 5.30; p = 0.014. Follow-up multiple comparisons showed that B[La] pre-post",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-1519",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1519,
+      "sentence": "Follow-up multiple comparisons showed that B[La] pre-post difference was significantly higher in the M group than in the P group ( p = 0.043) ( Figure 4 ).",
+      "context_window": "s significantly higher in the M group than in the P group ( p = 0.043) ( Figure 4 ). Comparison of blood lactate differences pre",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-1621",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1621,
+      "sentence": "Comparison of blood lactate differences pre- and post-exhaustion testing (* p < 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "ood lactate differences pre- and post-exhaustion testing (* p < 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1682",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1682,
+      "sentence": "Comparison of blood lactate differences pre- and post-exhaustion testing (* p < 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "< 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH). SR values for P (mean = 0.981; SD = 0.506), L (mean =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-1951",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "The data showed significant differences in SR between interventions, F (3, 33) = 4.858, MSE = 0.465; p = 0.041.",
+      "context_window": "n SR between interventions, F (3, 33) = 4.858, MSE = 0.465; p = 0.041. Follow-up multiple comparisons showed that SR was signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2070",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2070,
+      "sentence": "Follow-up multiple comparisons showed that SR was significantly higher in the M group than in the P group ( p = 0.031) ( Figure 5 ).",
+      "context_window": "s significantly higher in the M group than in the P group ( p = 0.031) ( Figure 5 ). Comparison of SR (* p < 0.05) in 4 groups u",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2116",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2116,
+      "sentence": "Comparison of SR (* p < 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "the P group ( p = 0.031) ( Figure 5 ). Comparison of SR (* p < 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-2177",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2177,
+      "sentence": "Comparison of SR (* p < 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "< 0.05) in 4 groups under hot and humid conditions (35 \u00b0C, 65% RH). These results showed no significant main effect of in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2272",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.377",
+      "numeric_values": [
+        0.377
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2272,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 1.051, p = 0.377, \u03b7 2 partial = 0.050], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 49.150, p < 0.001, \u03b7 2 partial = 0.775], there was significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 3.689, p = 0.010, \u03b7 2 partial = 0.200].",
+      "context_window": "ignificant main effect of intervention [ F (3, 60) = 1.051, p = 0.377, \u03b7 2 partial = 0.050], and a significant main effect of tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2394",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2394,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 1.051, p = 0.377, \u03b7 2 partial = 0.050], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 49.150, p < 0.001, \u03b7 2 partial = 0.775], there was significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 3.689, p = 0.010, \u03b7 2 partial = 0.200].",
+      "context_window": "of time, Greenhouse-Geisser adjusted [ F (4, 57) = 49.150, p < 0.001, \u03b7 2 partial = 0.775], there was significant intervention \u00d7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2538",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2538,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 1.051, p = 0.377, \u03b7 2 partial = 0.050], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 49.150, p < 0.001, \u03b7 2 partial = 0.775], there was significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 3.689, p = 0.010, \u03b7 2 partial = 0.200].",
+      "context_window": "on effect, Greenhouse-Geisser adjusted [ F (4, 59) = 3.689, p = 0.010, \u03b7 2 partial = 0.200]. CT was significantly lower in group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2636",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2636,
+      "sentence": "CT was significantly lower in group M than in group P at 9 min ( p = 0.037) and at the end of exhaustion ( p = 0.001) ( Figure 6 ).",
+      "context_window": "s significantly lower in group M than in group P at 9 min ( p = 0.037) and at the end of exhaustion ( p = 0.001) ( Figure 6 ). C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2678",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2678,
+      "sentence": "CT was significantly lower in group M than in group P at 9 min ( p = 0.037) and at the end of exhaustion ( p = 0.001) ( Figure 6 ).",
+      "context_window": "roup P at 9 min ( p = 0.037) and at the end of exhaustion ( p = 0.001) ( Figure 6 ). Changes in CT (* p < 0.05) during the exhau",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2721",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2721,
+      "sentence": "Changes in CT (* p < 0.05) during the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "of exhaustion ( p = 0.001) ( Figure 6 ). Changes in CT (* p < 0.05) during the exhaustion test under hot and humid conditions",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-2797",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2797,
+      "sentence": "Changes in CT (* p < 0.05) during the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH). These results showed no significant main effect of in",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-2892",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.129",
+      "numeric_values": [
+        0.129
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2892,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 1.964, p = 0.129, \u03b7 2 partial = 0.089], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 94.695, p<0.001, \u03b7 2 partial = 0.869], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.276, p = 0.290, \u03b7 2 partial = 0.080] ( Figure 7 ).",
+      "context_window": "ignificant main effect of intervention [ F (3, 60) = 1.964, p = 0.129, \u03b7 2 partial = 0.089], and a significant main effect of tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3014",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3014,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 1.964, p = 0.129, \u03b7 2 partial = 0.089], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 94.695, p<0.001, \u03b7 2 partial = 0.869], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.276, p = 0.290, \u03b7 2 partial = 0.080] ( Figure 7 ).",
+      "context_window": "of time, Greenhouse-Geisser adjusted [ F (4, 57) = 94.695, p<0.001, \u03b7 2 partial = 0.869], there was no significant interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3159",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.290",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3159,
+      "sentence": "These results showed no significant main effect of intervention [ F (3, 60) = 1.964, p = 0.129, \u03b7 2 partial = 0.089], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 94.695, p<0.001, \u03b7 2 partial = 0.869], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.276, p = 0.290, \u03b7 2 partial = 0.080] ( Figure 7 ).",
+      "context_window": "on effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.276, p = 0.290, \u03b7 2 partial = 0.080] ( Figure 7 ). Changes in MST during",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-3287",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3287,
+      "sentence": "Changes in MST during the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH). For RPE, these results showed no significant main eff",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3391",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.826",
+      "numeric_values": [
+        0.826
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3391,
+      "sentence": "For RPE, these results showed no significant main effect of intervention [ F (3, 60) = 0.300, p = 0.826, \u03b7 2 partial = 0.015], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 366.065, p < 0.001, \u03b7 2 partial = 0.963], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.093, p = 0.093, \u03b7 2 partial = 0.124].",
+      "context_window": "ignificant main effect of intervention [ F (3, 60) = 0.300, p = 0.826, \u03b7 2 partial = 0.015], and a significant main effect of tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3514",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3514,
+      "sentence": "For RPE, these results showed no significant main effect of intervention [ F (3, 60) = 0.300, p = 0.826, \u03b7 2 partial = 0.015], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 366.065, p < 0.001, \u03b7 2 partial = 0.963], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.093, p = 0.093, \u03b7 2 partial = 0.124].",
+      "context_window": "of time, Greenhouse-Geisser adjusted [ F (4, 57) = 366.065, p < 0.001, \u03b7 2 partial = 0.963], there was no significant interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3661",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.093",
+      "numeric_values": [
+        0.093
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3661,
+      "sentence": "For RPE, these results showed no significant main effect of intervention [ F (3, 60) = 0.300, p = 0.826, \u03b7 2 partial = 0.015], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 366.065, p < 0.001, \u03b7 2 partial = 0.963], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.093, p = 0.093, \u03b7 2 partial = 0.124].",
+      "context_window": "on effect, Greenhouse-Geisser adjusted [ F (4, 59) = 2.093, p = 0.093, \u03b7 2 partial = 0.124]. For TS, these results showed no sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3788",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.145",
+      "numeric_values": [
+        0.145
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3788,
+      "sentence": "For TS, these results showed no significant main effect of intervention [ F (3, 60) = 1.867, p = 0.145, \u03b7 2 partial = 0.085], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 151.966, p < 0.001, \u03b7 2 partial = 0.914], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.631, p = 0.178, \u03b7 2 partial = 0.100] ( Figure 8 ).",
+      "context_window": "ignificant main effect of intervention [ F (3, 60) = 1.867, p = 0.145, \u03b7 2 partial = 0.085], and a significant main effect of tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-3911",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3911,
+      "sentence": "For TS, these results showed no significant main effect of intervention [ F (3, 60) = 1.867, p = 0.145, \u03b7 2 partial = 0.085], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 151.966, p < 0.001, \u03b7 2 partial = 0.914], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.631, p = 0.178, \u03b7 2 partial = 0.100] ( Figure 8 ).",
+      "context_window": "of time, Greenhouse-Geisser adjusted [ F (4, 57) = 151.966, p < 0.001, \u03b7 2 partial = 0.914], there was no significant interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-p-4058",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.178",
+      "numeric_values": [
+        0.178
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4058,
+      "sentence": "For TS, these results showed no significant main effect of intervention [ F (3, 60) = 1.867, p = 0.145, \u03b7 2 partial = 0.085], and a significant main effect of time, Greenhouse-Geisser adjusted [ F (4, 57) = 151.966, p < 0.001, \u03b7 2 partial = 0.914], there was no significant intervention \u00d7 time interaction effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.631, p = 0.178, \u03b7 2 partial = 0.100] ( Figure 8 ).",
+      "context_window": "on effect, Greenhouse-Geisser adjusted [ F (4, 59) = 1.631, p = 0.178, \u03b7 2 partial = 0.100] ( Figure 8 ). Changes in RPE and TS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-4193",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4193,
+      "sentence": "Changes in RPE and TS during the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "the exhaustion test under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-162",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 162,
+      "sentence": "The present study investigated the dose-response effects of acute taurine supplementation on endurance cycling performance under hot and humid conditions (35 \u00b0C, 65% RH).",
+      "context_window": "cycling performance under hot and humid conditions (35 \u00b0C, 65% RH). Our findings demonstrate that moderate-dose taurine (4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-274",
+      "claim_type": "percentage",
+      "raw_text": "12.4%",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 274,
+      "sentence": "Our findings demonstrate that moderate-dose taurine (4 g) significantly improved time to exhaustion by 12.4% compared to placebo, while low (1 g) and high (6 g) doses showed no ergogenic benefits.",
+      "context_window": "taurine (4 g) significantly improved time to exhaustion by 12.4% compared to placebo, while low (1 g) and high (6 g) doses s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-pct-1177",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1177,
+      "sentence": "Importantly, the humid conditions in our study (65% RH) likely amplified the thermoregulatory challenge, making these improvements particularly meaningful for athletic performance.",
+      "context_window": "mechanism. Importantly, the humid conditions in our study (65% RH) likely amplified the thermoregulatory challenge, making",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12554441_dose_response_relationship_of_taurine_on_endurance_cycling_p-u-3187",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3187,
+      "sentence": "Future research should investigate weight-adjusted dosing (e.g., 50 mg/kg), include female and masters athletes, and examine prolonged exercise scenarios.",
+      "context_window": "e research should investigate weight-adjusted dosing (e.g., 50 mg/kg), include female and masters athletes, and examine prolo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "paper_id": "DOI_10_3889_oamjms_2023_11214_screening_preeclampsia_and_the_role_of_low_dose_aspirin_for",
+  "doi": "10.3889/oamjms.2023.11214",
+  "extracted_at": "2026-05-08T20:05:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3889_oamjms_2023_11214_screening_preeclampsia_and_the_role_of_low_dose_aspirin_for-u-580",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg/day",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 580,
+      "sentence": "Prophylactic administration of low-dose aspirin (81 mg/day) is recommended in women with a high risk of preeclampsia.",
+      "context_window": "ant women. Prophylactic administration of low-dose aspirin (81 mg/day) is recommended in women with a high risk of preeclampsia.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3889_oamjms_2023_11214_screening_preeclampsia_and_the_role_of_low_dose_aspirin_for-u-678",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 678,
+      "sentence": "It should be started between 12 weeks of gestation to 18 weeks (optimal before 16 weeks).",
+      "context_window": "h a high risk of preeclampsia. It should be started between 12 weeks of gestation to 18 weeks (optimal before 16 weeks). Aspirin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3889_oamjms_2023_11214_screening_preeclampsia_and_the_role_of_low_dose_aspirin_for-u-703",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 703,
+      "sentence": "It should be started between 12 weeks of gestation to 18 weeks (optimal before 16 weeks).",
+      "context_window": "psia. It should be started between 12 weeks of gestation to 18 weeks (optimal before 16 weeks). Aspirin has been shown to be saf",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3889_oamjms_2023_11214_screening_preeclampsia_and_the_role_of_low_dose_aspirin_for-u-728",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 728,
+      "sentence": "It should be started between 12 weeks of gestation to 18 weeks (optimal before 16 weeks).",
+      "context_window": "d between 12 weeks of gestation to 18 weeks (optimal before 16 weeks). Aspirin has been shown to be safe for the mother and the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

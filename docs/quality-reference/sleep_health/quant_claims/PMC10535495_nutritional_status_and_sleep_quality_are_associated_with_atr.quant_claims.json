@@ -1,0 +1,1323 @@
+{
+  "paper_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr",
+  "doi": "10.3390/nu15183943",
+  "extracted_at": "2026-05-08T20:05:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 29,
+    "odds_ratio": 8,
+    "confidence_interval": 8,
+    "p_value": 8,
+    "unit_value": 11,
+    "mean_sd": 2,
+    "sample_size": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-921",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 921,
+      "sentence": "Of the OSA patients, 169 (6.6%) had AF.",
+      "context_window": "cal history were also determined. Of the OSA patients, 169 (6.6%) had AF. Compared with the non-AF patients, OSA patients wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-1498",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 4.020",
+      "numeric_values": [
+        4.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1498,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "ps. The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol cons",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-1510",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.895-8.527",
+      "numeric_values": [
+        1.895,
+        8.527
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "stic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-1531",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1531,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "sis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-1577",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.718",
+      "numeric_values": [
+        2.718
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1577,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-1589",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.461-5.057",
+      "numeric_values": [
+        1.461,
+        5.057
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1589,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-1610",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1610,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "ry of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-1642",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.129",
+      "numeric_values": [
+        2.129
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1642,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sle",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-1654",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.077-4.209",
+      "numeric_values": [
+        1.077,
+        4.209
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1654,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "I: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-1675",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1675,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": ".002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-1716",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 5.361",
+      "numeric_values": [
+        5.361
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1716,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-1728",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.505-19.104",
+      "numeric_values": [
+        1.505,
+        19.104
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1728,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF. The p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-1750",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1750,
+      "sentence": "The logistic regression analysis demonstrated that age (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a high CONUT score (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF.",
+      "context_window": "reduced slow-wave sleep (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to AF. The prevalence o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1849",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1849,
+      "sentence": "The prevalence of AF in patients with OSA was 6.6%.",
+      "context_window": "elated to AF. The prevalence of AF in patients with OSA was 6.6%. Age, a history of alcohol consumption, undernutrition, and",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-373",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 373,
+      "sentence": "Previous studies have shown that the occurrence of OSA in patients with AF is considerably higher (ranging from 21% to 74%) compared to those without AF [ 1 , 10 , 11 , 12 , 13 ].",
+      "context_window": "SA in patients with AF is considerably higher (ranging from 21% to 74%) compared to those without AF [ 1 , 10 , 11 , 12 , 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-380",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 380,
+      "sentence": "Previous studies have shown that the occurrence of OSA in patients with AF is considerably higher (ranging from 21% to 74%) compared to those without AF [ 1 , 10 , 11 , 12 , 13 ].",
+      "context_window": "atients with AF is considerably higher (ranging from 21% to 74%) compared to those without AF [ 1 , 10 , 11 , 12 , 13 ]. Co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-528",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 528,
+      "sentence": "Conversely, the occurrence of AF in patients with OSA has been estimated to be between 3% and 6% [ 14 , 15 , 16 ], which is somewhat higher than in control patients or the general population.",
+      "context_window": "of AF in patients with OSA has been estimated to be between 3% and 6% [ 14 , 15 , 16 ], which is somewhat higher than in c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-535",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 535,
+      "sentence": "Conversely, the occurrence of AF in patients with OSA has been estimated to be between 3% and 6% [ 14 , 15 , 16 ], which is somewhat higher than in control patients or the general population.",
+      "context_window": "n patients with OSA has been estimated to be between 3% and 6% [ 14 , 15 , 16 ], which is somewhat higher than in control",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-568",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 568,
+      "sentence": "The inclusion criteria comprised: (1) age \u2265 30 years; (2) diagnosis of obstructive sleep apnea (defined as an apnea-hypopnea index (AHI) \u2265 5/h) based on an overnight polysomnography; (3) evaluation using a 12-lead ECG or examination of medical records; and (4) assessment via echocardiography.",
+      "context_window": "e study cohort. The inclusion criteria comprised: (1) age \u2265 30 years; (2) diagnosis of obstructive sleep apnea (defined as an ap",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-1046",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1046,
+      "sentence": "Hypertension was defined as a systolic/diastolic blood pressure of \u2265140/90 mmHg and/or current use of antihypertensive medications.",
+      "context_window": "was defined as a systolic/diastolic blood pressure of \u2265140/90 mmHg and/or current use of antihypertensive medications. Diabete",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1279",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1279,
+      "sentence": "Diabetes mellitus was determined by a prior diagnosis in medical records, a hemoglobin A1c value (as calculated by the National Glycohemoglobin Standardization Program) of \u22656.5%, or treatment with oral antidiabetic medications or insulin.",
+      "context_window": "y the National Glycohemoglobin Standardization Program) of \u22656.5%, or treatment with oral antidiabetic medications or insulin",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-1444",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 1444,
+      "sentence": "Chronic kidney disease (CKD) was characterized by an estimated glomerular filtration rate (eGFR) < 60 mL/min/1.73 m 2 .",
+      "context_window": "terized by an estimated glomerular filtration rate (eGFR) < 60 mL/min/1.73 m 2 . The study was conducted with the approval of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-1871",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1871,
+      "sentence": "The inclusion criteria were as follows: (1) age \u2265 30 years; (2) diagnosis of OSA (AHI \u2265 5/h), based on overnight polysomnography; (3) assessment using a 12-lead ECG; and (4) assessment using echocardiography.",
+      "context_window": "versity. The inclusion criteria were as follows: (1) age \u2265 30 years; (2) diagnosis of OSA (AHI \u2265 5/h), based on overnight polys",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-2956",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2956,
+      "sentence": "Paroxysmal AF was characterized as an episode of AF that spontaneously resolved, or following the administration of antiarrhythmic drugs within 7 days of onset.",
+      "context_window": "following the administration of antiarrhythmic drugs within 7 days of onset. Persistent AF was defined as an AF episode lastin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-3029",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3029,
+      "sentence": "Persistent AF was defined as an AF episode lasting for \u22657 days and up to 1 year.",
+      "context_window": "et. Persistent AF was defined as an AF episode lasting for \u22657 days and up to 1 year. Long-standing AF was classified as persis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-3046",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 3046,
+      "sentence": "Persistent AF was defined as an AF episode lasting for \u22657 days and up to 1 year.",
+      "context_window": "was defined as an AF episode lasting for \u22657 days and up to 1 year. Long-standing AF was classified as persisting for \u22651 year.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-3105",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 3105,
+      "sentence": "Long-standing AF was classified as persisting for \u22651 year.",
+      "context_window": "1 year. Long-standing AF was classified as persisting for \u22651 year. We assessed nutritional status at admission for polysomno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-4194",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4194,
+      "sentence": "Patients were diagnosed with OSA when an obstructive component accounted for more than 50% of the apnea-hypopnea events and the AHI was 5 per hour.",
+      "context_window": "h OSA when an obstructive component accounted for more than 50% of the apnea-hypopnea events and the AHI was 5 per hour. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-4893",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4893,
+      "sentence": "A multivariable logistic regression analysis was performed to determine the risk factors for AF using the following variables: age \u2265 65 years old, male sex, a history of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM \u2265 5/h.",
+      "context_window": "he risk factors for AF using the following variables: age \u2265 65 years old, male sex, a history of alcohol consumption, hypertensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-5007",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5007,
+      "sentence": "A multivariable logistic regression analysis was performed to determine the risk factors for AF using the following variables: age \u2265 65 years old, male sex, a history of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM \u2265 5/h.",
+      "context_window": "on, hypertension, CKD, a CONUT score \u2265 2, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM \u2265 5/h. The odds ratios (95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-5031",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5031,
+      "sentence": "A multivariable logistic regression analysis was performed to determine the risk factors for AF using the following variables: age \u2265 65 years old, male sex, a history of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM \u2265 5/h.",
+      "context_window": "CONUT score \u2265 2, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM \u2265 5/h. The odds ratios (95% confidence intervals)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-5068",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5068,
+      "sentence": "The odds ratios (95% confidence intervals) and p -values were calculated.",
+      "context_window": "0%, sleep efficiency < 75%, and PLM \u2265 5/h. The odds ratios (95% confidence intervals) and p -values were calculated. Two-si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-msd-165",
+      "claim_type": "mean_sd",
+      "raw_text": "56 \u00b113",
+      "numeric_values": [
+        56.0,
+        13.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 165,
+      "sentence": "In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men.",
+      "context_window": "study. In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-169",
+      "claim_type": "unit_value",
+      "raw_text": "13 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 169,
+      "sentence": "In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men.",
+      "context_window": "dy. In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patien",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-msd-196",
+      "claim_type": "mean_sd",
+      "raw_text": "26.8 \u00b1 4.7",
+      "numeric_values": [
+        26.8,
+        4.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 196,
+      "sentence": "In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men.",
+      "context_window": "population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men. Compared with th",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-u-203",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 kg",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 203,
+      "sentence": "In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men.",
+      "context_window": "ion, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men. Compared with the n",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-220",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 220,
+      "sentence": "In the overall patient population, the mean age was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men.",
+      "context_window": "was 56 \u00b113 years, the mean BMI was 26.8 \u00b1 4.7 kg/m 2 , and 85% of the patients were men. Compared with the non-AF patients",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-989",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 989,
+      "sentence": "The prevalence of AF was 6.6% ( n = 159) in patients with OSA ( n = 2569).",
+      "context_window": "ate; CKD: chronic kidney disease. The prevalence of AF was 6.6% ( n = 159) in patients with OSA ( n = 2569). In the analysi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-n-996",
+      "claim_type": "sample_size",
+      "raw_text": "n = 159",
+      "numeric_values": [
+        159.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 996,
+      "sentence": "The prevalence of AF was 6.6% ( n = 159) in patients with OSA ( n = 2569).",
+      "context_window": "D: chronic kidney disease. The prevalence of AF was 6.6% ( n = 159) in patients with OSA ( n = 2569). In the analysis, a highe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-n-1028",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2569",
+      "numeric_values": [
+        2569.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1028,
+      "sentence": "The prevalence of AF was 6.6% ( n = 159) in patients with OSA ( n = 2569).",
+      "context_window": "prevalence of AF was 6.6% ( n = 159) in patients with OSA ( n = 2569). In the analysis, a higher frequency of AF was observed in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1118,
+      "sentence": "In the analysis, a higher frequency of AF was observed in cases with moderate (6.9%) to severe (7.2%) OSA than in those with mild OSA (3.9%) when based on the severity of OSA.",
+      "context_window": "higher frequency of AF was observed in cases with moderate (6.9%) to severe (7.2%) OSA than in those with mild OSA (3.9%) wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1135",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1135,
+      "sentence": "In the analysis, a higher frequency of AF was observed in cases with moderate (6.9%) to severe (7.2%) OSA than in those with mild OSA (3.9%) when based on the severity of OSA.",
+      "context_window": "of AF was observed in cases with moderate (6.9%) to severe (7.2%) OSA than in those with mild OSA (3.9%) when based on the s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1174,
+      "sentence": "In the analysis, a higher frequency of AF was observed in cases with moderate (6.9%) to severe (7.2%) OSA than in those with mild OSA (3.9%) when based on the severity of OSA.",
+      "context_window": "te (6.9%) to severe (7.2%) OSA than in those with mild OSA (3.9%) when based on the severity of OSA. When considering the cl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1311",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1311,
+      "sentence": "When considering the classification of AF types, there was a higher incidence of paroxysmal AF (3%) and long-standing AF (2.6%).",
+      "context_window": "of AF types, there was a higher incidence of paroxysmal AF (3%) and long-standing AF (2.6%). Prevalence of AF in the tota",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1337",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1337,
+      "sentence": "When considering the classification of AF types, there was a higher incidence of paroxysmal AF (3%) and long-standing AF (2.6%).",
+      "context_window": "igher incidence of paroxysmal AF (3%) and long-standing AF (2.6%). Prevalence of AF in the total study population and sever",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1699",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1699,
+      "sentence": "There were no significant differences in the AHI or hypoxia index (3% ODI, lowest SpO 2 , and sleep time with SpO 2 < 90%) between the two groups.",
+      "context_window": "ere no significant differences in the AHI or hypoxia index (3% ODI, lowest SpO 2 , and sleep time with SpO 2 < 90%) betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1750",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1750,
+      "sentence": "There were no significant differences in the AHI or hypoxia index (3% ODI, lowest SpO 2 , and sleep time with SpO 2 < 90%) between the two groups.",
+      "context_window": "a index (3% ODI, lowest SpO 2 , and sleep time with SpO 2 < 90%) between the two groups. Sleep-study findings. Values are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-2288",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2288,
+      "sentence": "The significant risk factors of AF were age, male sex, a history of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2%, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM index \u2265 5/h in the univariate analysis.",
+      "context_window": "of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2%, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-2310",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2310,
+      "sentence": "The significant risk factors of AF were age, male sex, a history of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2%, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM index \u2265 5/h in the univariate analysis.",
+      "context_window": "n, hypertension, CKD, a CONUT score \u2265 2%, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM index \u2265 5/h in the univari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-2334",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2334,
+      "sentence": "The significant risk factors of AF were age, male sex, a history of alcohol consumption, hypertension, CKD, a CONUT score \u2265 2%, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM index \u2265 5/h in the univariate analysis.",
+      "context_window": "CONUT score \u2265 2%, slow-wave sleep < 10%, sleep efficiency < 75%, and PLM index \u2265 5/h in the univariate analysis. The multiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-2459",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 4.020",
+      "numeric_values": [
+        4.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2459,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "iate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-2471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.895-8.527",
+      "numeric_values": [
+        1.895,
+        8.527
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2471,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "c regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-2492",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2492,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-2538",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.718",
+      "numeric_values": [
+        2.718
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2538,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-2550",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.461-5.057",
+      "numeric_values": [
+        1.461,
+        5.057
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2550,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-2571",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2571,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "ry of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-2602",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.129",
+      "numeric_values": [
+        2.129
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2602,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-2614",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.077-4.209",
+      "numeric_values": [
+        1.077,
+        4.209
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2614,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-2635",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2635,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-2674",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2674,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-or-a-2679",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 5.361",
+      "numeric_values": [
+        5.361
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2679,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "I: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-ci-2691",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.505-19.104",
+      "numeric_values": [
+        1.505,
+        19.104
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2691,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "09; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the prese",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-p-2713",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2713,
+      "sentence": "The multivariate logistic regression analysis identified that age \u2265 65 (OR = 4.020; 95% CI: 1.895-8.527; p < 0.001), a history of alcohol consumption (OR = 2.718; 95% CI: 1.461-5.057; p = 0.002), a CONUT score \u2265 2 (OR = 2.129; 95% CI: 1.077-4.209; p = 0.030), and % of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "context_window": "of slow-wave sleep < 10% (OR = 5.361; 95% CI: 1.505-19.104; p = 0.010) were factors significantly related to the presence of AF.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-484",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 484,
+      "sentence": "The major findings were as follows: (1) the prevalence of AF was 6.6% in patients with OSA. (2) The CONUT score was significantly associated with the presence of AF in OSA patients. (3) Reduced slow-wave sleep, which indicates poor sleep, was also significantly associated with the presence of AF. (4) Among the lifestyle habits, a history of alcohol consumption was significantly associated with the presence of AF.",
+      "context_window": "ajor findings were as follows: (1) the prevalence of AF was 6.6% in patients with OSA. (2) The CONUT score was significantly",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-n-928",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2569",
+      "numeric_values": [
+        2569.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 928,
+      "sentence": "In this study, among patients with OSA obtained from a large-scale Japanese sleep cohort ( n = 2569), the prevalence of AF was 6.6% ( n = 159).",
+      "context_window": "ith OSA obtained from a large-scale Japanese sleep cohort ( n = 2569), the prevalence of AF was 6.6% ( n = 159). Previous studie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-964",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 964,
+      "sentence": "In this study, among patients with OSA obtained from a large-scale Japanese sleep cohort ( n = 2569), the prevalence of AF was 6.6% ( n = 159).",
+      "context_window": "Japanese sleep cohort ( n = 2569), the prevalence of AF was 6.6% ( n = 159). Previous studies have reported AF prevalence in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-n-971",
+      "claim_type": "sample_size",
+      "raw_text": "n = 159",
+      "numeric_values": [
+        159.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 971,
+      "sentence": "In this study, among patients with OSA obtained from a large-scale Japanese sleep cohort ( n = 2569), the prevalence of AF was 6.6% ( n = 159).",
+      "context_window": "e sleep cohort ( n = 2569), the prevalence of AF was 6.6% ( n = 159). Previous studies have reported AF prevalence in OSA patie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1055",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1055,
+      "sentence": "Previous studies have reported AF prevalence in OSA patients ranging from 3% to 6% [ 14 , 15 , 16 ].",
+      "context_window": "es have reported AF prevalence in OSA patients ranging from 3% to 6% [ 14 , 15 , 16 ]. Our analysis revealed that, based o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-1061",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1061,
+      "sentence": "Previous studies have reported AF prevalence in OSA patients ranging from 3% to 6% [ 14 , 15 , 16 ].",
+      "context_window": "e reported AF prevalence in OSA patients ranging from 3% to 6% [ 14 , 15 , 16 ]. Our analysis revealed that, based on the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-n-6111",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2569",
+      "numeric_values": [
+        2569.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6111,
+      "sentence": "Additionally, we gathered detailed medical histories from all patients, and the sample size was substantial ( n = 2569).",
+      "context_window": "es from all patients, and the sample size was substantial ( n = 2569). Secondly, the study\u2019s participant pool was exclusively co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-n-481",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2569",
+      "numeric_values": [
+        2569.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 481,
+      "sentence": "Additionally, we gathered detailed medical histories from all patients, and the sample size was substantial ( n = 2569).",
+      "context_window": "es from all patients, and the sample size was substantial ( n = 2569). Secondly, the study\u2019s participant pool was exclusively co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10535495_nutritional_status_and_sleep_quality_are_associated_with_atr-pct-110",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 110,
+      "sentence": "In this large Japanese sleep cohort of 2569 OSA patients who underwent complete PSG, the prevalence of AF was 6.6%.",
+      "context_window": "tients who underwent complete PSG, the prevalence of AF was 6.6%. Undernutrition and reduced sleep quality were independent",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

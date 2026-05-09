@@ -1,0 +1,590 @@
+{
+  "paper_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict",
+  "doi": "10.3389/fimmu.2022.1048204",
+  "extracted_at": "2026-05-08T20:12:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 5,
+    "sample_size": 5,
+    "p_value": 19
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-pct-45",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 45,
+      "sentence": "Renal carcinoma is a common malignant tumor, 80% of which is clear cell renal cell carcinoma (ccRCC) ( 1 ).",
+      "context_window": "Renal carcinoma is a common malignant tumor, 80% of which is clear cell renal cell carcinoma (ccRCC) ( 1 ).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-pct-263",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 263,
+      "sentence": "However, only 42% of patients respond to treatment because of tumor heterogeneity, and the median progression free survival is 11.6 months ( 3 ).",
+      "context_window": "ents with advanced or metastatic ccRCC ( 2 ). However, only 42% of patients respond to treatment because of tumor heterogen",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-u-376",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 months",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 376,
+      "sentence": "However, only 42% of patients respond to treatment because of tumor heterogeneity, and the median progression free survival is 11.6 months ( 3 ).",
+      "context_window": "heterogeneity, and the median progression free survival is 11.6 months ( 3 ). No effective biomarker for predicting the response o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-n-2350",
+      "claim_type": "sample_size",
+      "raw_text": "n = 317",
+      "numeric_values": [
+        317.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2350,
+      "sentence": "The \u201ccaret\u201d package was used in randomly dividing patients into training group (n = 317) and testing group (n = 316) in a ratio of 1:1.",
+      "context_window": "was used in randomly dividing patients into training group (n = 317) and testing group (n = 316) in a ratio of 1:1. PGES was de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-n-2378",
+      "claim_type": "sample_size",
+      "raw_text": "n = 316",
+      "numeric_values": [
+        316.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2378,
+      "sentence": "The \u201ccaret\u201d package was used in randomly dividing patients into training group (n = 317) and testing group (n = 316) in a ratio of 1:1.",
+      "context_window": "g patients into training group (n = 317) and testing group (n = 316) in a ratio of 1:1. PGES was developed by Lasso Cox regress",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-u-5762",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5762,
+      "sentence": "For the colony formation assays, 786-0 (1000 cells) and 769-P (2000 cells) were cultured on six-well plates for 14 days, fixed with methanol, and stained with 0.1% crystal violet.",
+      "context_window": "and 769-P (2000 cells) were cultured on six-well plates for 14 days, fixed with methanol, and stained with 0.1% crystal violet.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-pct-5809",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5809,
+      "sentence": "For the colony formation assays, 786-0 (1000 cells) and 769-P (2000 cells) were cultured on six-well plates for 14 days, fixed with methanol, and stained with 0.1% crystal violet.",
+      "context_window": "l plates for 14 days, fixed with methanol, and stained with 0.1% crystal violet. For the Transwell assay, 786-0 (1 \u00d7 10 4) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-6803",
+      "claim_type": "p_value",
+      "raw_text": "P< 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6803,
+      "sentence": "P< 0.05 was considered statistically significant.",
+      "context_window": "stic genes. Pearson test was used for correlation analysis. P< 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-1947",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1947,
+      "sentence": "PMRGs, polyamine metabolism-related genes; ccRCC, clear cell renal cell carcinoma. **p < 0.01, ***p < 0.001.",
+      "context_window": "sm-related genes; ccRCC, clear cell renal cell carcinoma. **p < 0.01, ***p < 0.001. We used an unsupervised clustering method t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-1960",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1960,
+      "sentence": "PMRGs, polyamine metabolism-related genes; ccRCC, clear cell renal cell carcinoma. **p < 0.01, ***p < 0.001.",
+      "context_window": "nes; ccRCC, clear cell renal cell carcinoma. **p < 0.01, ***p < 0.001. We used an unsupervised clustering method to classify pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-n-2075",
+      "claim_type": "sample_size",
+      "raw_text": "n = 288",
+      "numeric_values": [
+        288.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2075,
+      "sentence": "We used an unsupervised clustering method to classify patients into three PMRG expression clusters: A (n = 288), B (n = 266), and C (n = 79) according to the expression values of 16 PMRGs.",
+      "context_window": "o classify patients into three PMRG expression clusters: A (n = 288), B (n = 266), and C (n = 79) according to the expression v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-n-2088",
+      "claim_type": "sample_size",
+      "raw_text": "n = 266",
+      "numeric_values": [
+        266.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2088,
+      "sentence": "We used an unsupervised clustering method to classify patients into three PMRG expression clusters: A (n = 288), B (n = 266), and C (n = 79) according to the expression values of 16 PMRGs.",
+      "context_window": "tients into three PMRG expression clusters: A (n = 288), B (n = 266), and C (n = 79) according to the expression values of 16 P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-n-2105",
+      "claim_type": "sample_size",
+      "raw_text": "n = 79",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2105,
+      "sentence": "We used an unsupervised clustering method to classify patients into three PMRG expression clusters: A (n = 288), B (n = 266), and C (n = 79) according to the expression values of 16 PMRGs.",
+      "context_window": "PMRG expression clusters: A (n = 288), B (n = 266), and C (n = 79) according to the expression values of 16 PMRGs. PCA indica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-2297",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2297,
+      "sentence": "PMRG expression cluster A had the longest survival time ( P = 0.002, Figure 2B ).",
+      "context_window": ". PMRG expression cluster A had the longest survival time ( P = 0.002, Figure 2B ). The expression of PMRGs was highest in PMRG e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-5133",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5133,
+      "sentence": "PM, polyamine metabolism; PMRGs, polyamine metabolism-related genes. *p < 0.05, **p < 0.01, ***p < 0.001.",
+      "context_window": "ine metabolism; PMRGs, polyamine metabolism-related genes. *p < 0.05, **p < 0.01, ***p < 0.001. LASSO regression analysis was p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-5145",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5145,
+      "sentence": "PM, polyamine metabolism; PMRGs, polyamine metabolism-related genes. *p < 0.05, **p < 0.01, ***p < 0.001.",
+      "context_window": "sm; PMRGs, polyamine metabolism-related genes. *p < 0.05, **p < 0.01, ***p < 0.001. LASSO regression analysis was performed on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-5158",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5158,
+      "sentence": "PM, polyamine metabolism; PMRGs, polyamine metabolism-related genes. *p < 0.05, **p < 0.01, ***p < 0.001.",
+      "context_window": "lyamine metabolism-related genes. *p < 0.05, **p < 0.01, ***p < 0.001. LASSO regression analysis was performed on prognostic DEG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-u-5663",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5663,
+      "sentence": "ROC curves showed that AUCs at 1, 3, and 5 years were 0.836, 0.785, and 0783, respectively ( Figure 4B ).",
+      "context_window": "oup ( Figure 4A ). ROC curves showed that AUCs at 1, 3, and 5 years were 0.836, 0.785, and 0783, respectively ( Figure 4B ). P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-u-6702",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6702,
+      "sentence": "In the external validation of the E-MTAB-1980 and GSE22541 datasets, the survival times of low-PGES patients were longer ( Figures 4G, I ), and the ROC curves showed that the AUCs of 1, 3, and 5 years were greater than 0.7, indicating that the PGES had good predictive power and applicability ( Figures 4H, J ).",
+      "context_window": ", I ), and the ROC curves showed that the AUCs of 1, 3, and 5 years were greater than 0.7, indicating that the PGES had good pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-u-6973",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6973,
+      "sentence": "To visualize the model, we combined risk and clinicopathological variables to construct a nomogram for predicting the survival of patients at 1, 3, and 5 years ( Supplementary Figure 4A ).",
+      "context_window": "mogram for predicting the survival of patients at 1, 3, and 5 years ( Supplementary Figure 4A ). The ROC curve suggested that t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-8466",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8466,
+      "sentence": "PGES, polyamine gene expression score. **p < 0.01, ***p < 0.001 and ns means no significance.",
+      "context_window": "stimate algorithm. PGES, polyamine gene expression score. **p < 0.01, ***p < 0.001 and ns means no significance. Then immune ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-8479",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8479,
+      "sentence": "PGES, polyamine gene expression score. **p < 0.01, ***p < 0.001 and ns means no significance.",
+      "context_window": "ithm. PGES, polyamine gene expression score. **p < 0.01, ***p < 0.001 and ns means no significance. Then immune cell infiltratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-10632",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10632,
+      "sentence": "PGES, polyamine gene expression score; ccRCC, clear cell renal cell carcinoma. ***p < 0.001.",
+      "context_window": "xpression score; ccRCC, clear cell renal cell carcinoma. ***p < 0.001. The prognosis of the high TMB group was worse than that o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-13181",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13181,
+      "sentence": "Validation of tissue samples. (A-F) Expression of EDA, SEMA3G, ENPP5, EMX2, OPCM, and PCDHGC3 in ccRCC cancer and normal tissues. *p < 0.05, **p < 0.01, ****p < 0.0001.",
+      "context_window": "MX2, OPCM, and PCDHGC3 in ccRCC cancer and normal tissues. *p < 0.05, **p < 0.01, ****p < 0.0001. To further explore the role o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-13193",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13193,
+      "sentence": "Validation of tissue samples. (A-F) Expression of EDA, SEMA3G, ENPP5, EMX2, OPCM, and PCDHGC3 in ccRCC cancer and normal tissues. *p < 0.05, **p < 0.01, ****p < 0.0001.",
+      "context_window": "nd PCDHGC3 in ccRCC cancer and normal tissues. *p < 0.05, **p < 0.01, ****p < 0.0001. To further explore the role of PMRG expre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-13207",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13207,
+      "sentence": "Validation of tissue samples. (A-F) Expression of EDA, SEMA3G, ENPP5, EMX2, OPCM, and PCDHGC3 in ccRCC cancer and normal tissues. *p < 0.05, **p < 0.01, ****p < 0.0001.",
+      "context_window": "ccRCC cancer and normal tissues. *p < 0.05, **p < 0.01, ****p < 0.0001. To further explore the role of PMRG expression in ccRCC,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-15944",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15944,
+      "sentence": "PMRGs, polyamine metabolism-related genes; ccRCC, clear cell renal cell carcinoma. ***p < 0.001, ****p < 0.0001.",
+      "context_window": "m-related genes; ccRCC, clear cell renal cell carcinoma. ***p < 0.001, ****p < 0.0001. Validation of treatment response in vitro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-15959",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15959,
+      "sentence": "PMRGs, polyamine metabolism-related genes; ccRCC, clear cell renal cell carcinoma. ***p < 0.001, ****p < 0.0001.",
+      "context_window": "; ccRCC, clear cell renal cell carcinoma. ***p < 0.001, ****p < 0.0001. Validation of treatment response in vitro . (A) Scratch a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-16518",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16518,
+      "sentence": "Validation of treatment response in vitro . (A) Scratch assay was used to detect the effect of SRM on the migration ability of 786-0 and 769-P. (B) Score difference between high and low SRM expression groups. (C) Correlation analysis between score and SRM expression. (D) Differences in scores between shSRM and negative control cell lines. (E-F) Effect of knockdown of SRM on 786-0 cell survival after treatment with sunitinib and sorafenib. (G-H) Effect of knockdown of SRM on 769-P cell survival after treatment with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "context_window": "ell survival after treatment with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-16530",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16530,
+      "sentence": "Validation of treatment response in vitro . (A) Scratch assay was used to detect the effect of SRM on the migration ability of 786-0 and 769-P. (B) Score difference between high and low SRM expression groups. (C) Correlation analysis between score and SRM expression. (D) Differences in scores between shSRM and negative control cell lines. (E-F) Effect of knockdown of SRM on 786-0 cell survival after treatment with sunitinib and sorafenib. (G-H) Effect of knockdown of SRM on 769-P cell survival after treatment with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "context_window": "after treatment with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-16543",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16543,
+      "sentence": "Validation of treatment response in vitro . (A) Scratch assay was used to detect the effect of SRM on the migration ability of 786-0 and 769-P. (B) Score difference between high and low SRM expression groups. (C) Correlation analysis between score and SRM expression. (D) Differences in scores between shSRM and negative control cell lines. (E-F) Effect of knockdown of SRM on 786-0 cell survival after treatment with sunitinib and sorafenib. (G-H) Effect of knockdown of SRM on 769-P cell survival after treatment with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "context_window": "ent with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9732944_development_of_a_polyamine_gene_expression_score_for_predict-p-16558",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16558,
+      "sentence": "Validation of treatment response in vitro . (A) Scratch assay was used to detect the effect of SRM on the migration ability of 786-0 and 769-P. (B) Score difference between high and low SRM expression groups. (C) Correlation analysis between score and SRM expression. (D) Differences in scores between shSRM and negative control cell lines. (E-F) Effect of knockdown of SRM on 786-0 cell survival after treatment with sunitinib and sorafenib. (G-H) Effect of knockdown of SRM on 769-P cell survival after treatment with sunitinib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "context_window": "nib and sorafenib. *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "paper_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged",
+  "doi": "10.1164/rccm.2105124",
+  "extracted_at": "2026-05-08T20:05:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 7,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-u-156",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 156,
+      "sentence": "The incidence of a cardiovascular disease (CVD) was explored in a consecutive sleep clinic cohort of 182 middle-aged men (mean age, 46.8 +/- 9.3; range, 30-69 years in 1991) with or without obstructive sleep apnea (OSA).",
+      "context_window": "t of 182 middle-aged men (mean age, 46.8 +/- 9.3; range, 30-69 years in 1991) with or without obstructive sleep apnea (OSA). All",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-800",
+      "claim_type": "percentage",
+      "raw_text": "36.7%",
+      "numeric_values": [
+        36.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 800,
+      "sentence": "The incidence of at least one CVD was observed in 22 of 60 (36.7%) cases with OSA (overnight oxygen desaturations of 30 or more) compared with in 8 of 122 (6.6%) subjects without OSA (p < 0.001).",
+      "context_window": "The incidence of at least one CVD was observed in 22 of 60 (36.7%) cases with OSA (overnight oxygen desaturations of 30 or mo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-896",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 896,
+      "sentence": "The incidence of at least one CVD was observed in 22 of 60 (36.7%) cases with OSA (overnight oxygen desaturations of 30 or more) compared with in 8 of 122 (6.6%) subjects without OSA (p < 0.001).",
+      "context_window": "gen desaturations of 30 or more) compared with in 8 of 122 (6.6%) subjects without OSA (p < 0.001). In a multiple logistic r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-p-924",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 924,
+      "sentence": "The incidence of at least one CVD was observed in 22 of 60 (36.7%) cases with OSA (overnight oxygen desaturations of 30 or more) compared with in 8 of 122 (6.6%) subjects without OSA (p < 0.001).",
+      "context_window": "ore) compared with in 8 of 122 (6.6%) subjects without OSA (p < 0.001). In a multiple logistic regression model, significant pred",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-1060",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "In a multiple logistic regression model, significant predictors of CVD incidence were OSA at baseline (odds ratio [OR] 4.9; 95% confidence interval [CI], 1.8-13.6) and age (OR 23.4; 95% CI, 2.7-197.5) after adjustment for BMI, SBP, and DBP at baseline.",
+      "context_window": "of CVD incidence were OSA at baseline (odds ratio [OR] 4.9; 95% confidence interval [CI], 1.8-13.6) and age (OR 23.4; 95% C",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "In a multiple logistic regression model, significant predictors of CVD incidence were OSA at baseline (odds ratio [OR] 4.9; 95% confidence interval [CI], 1.8-13.6) and age (OR 23.4; 95% CI, 2.7-197.5) after adjustment for BMI, SBP, and DBP at baseline.",
+      "context_window": "; 95% confidence interval [CI], 1.8-13.6) and age (OR 23.4; 95% CI, 2.7-197.5) after adjustment for BMI, SBP, and DBP at ba",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-1247",
+      "claim_type": "percentage",
+      "raw_text": "56.8%",
+      "numeric_values": [
+        56.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1247,
+      "sentence": "In the OSA group, CVD incidence was observed in 21 of 37 (56.8%) incompletely treated cases compared with in 1 of 15 (6.7%) efficiently treated subjects (p < 0.001).",
+      "context_window": ". In the OSA group, CVD incidence was observed in 21 of 37 (56.8%) incompletely treated cases compared with in 1 of 15 (6.7%)",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-1307",
+      "claim_type": "percentage",
+      "raw_text": "6.7%",
+      "numeric_values": [
+        6.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1307,
+      "sentence": "In the OSA group, CVD incidence was observed in 21 of 37 (56.8%) incompletely treated cases compared with in 1 of 15 (6.7%) efficiently treated subjects (p < 0.001).",
+      "context_window": "56.8%) incompletely treated cases compared with in 1 of 15 (6.7%) efficiently treated subjects (p < 0.001). In a multiple re",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-p-1343",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "In the OSA group, CVD incidence was observed in 21 of 37 (56.8%) incompletely treated cases compared with in 1 of 15 (6.7%) efficiently treated subjects (p < 0.001).",
+      "context_window": "mpared with in 1 of 15 (6.7%) efficiently treated subjects (p < 0.001). In a multiple regression analysis, efficient treatment wa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_2105124_increased_incidence_of_cardiovascular_disease_in_middle_aged-pct-1486",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "In a multiple regression analysis, efficient treatment was associated with a significant risk reduction for CVD incidence (OR 0.1; 95% CI, 0.0-0.7) after adjustment for age and SBP at baseline in the OSA subjects.",
+      "context_window": "ith a significant risk reduction for CVD incidence (OR 0.1; 95% CI, 0.0-0.7) after adjustment for age and SBP at baseline i",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

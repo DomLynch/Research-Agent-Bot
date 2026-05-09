@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_the_comparison_of_effects_of_state_and_trait_anxiety_on_the_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_comparison_of_effects_of_state_and_trait_anxiety_on_the_-p-804",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 804,
+      "sentence": "Results: There was a significant difference in sleep quality between different age groups (P < 0.001).",
+      "context_window": "t difference in sleep quality between different age groups (P < 0.001). As the age of study participants increased, the quality o",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_comparison_of_effects_of_state_and_trait_anxiety_on_the_-pct-947",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 947,
+      "sentence": "The prevalence of poor sleep in students was about 63%.",
+      "context_window": "poorer. The prevalence of poor sleep in students was about 63%. The highest level of correlation of state and trait anxiet",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

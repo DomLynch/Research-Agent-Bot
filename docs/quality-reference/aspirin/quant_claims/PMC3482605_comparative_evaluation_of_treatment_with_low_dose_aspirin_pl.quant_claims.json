@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl",
   "doi": "10.1186/1471-2377-12-67",
-  "extracted_at": "2026-05-05T21:18:37+00:00",
+  "extracted_at": "2026-05-08T20:06:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 7,
@@ -332,9 +332,9 @@
       "context_window": "ic is shown in Table 2 . The most frequent used doses were: 75mg aspirin daily and 200mg dipyridamole, twice daily. Use of",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl-u-514",
@@ -350,9 +350,9 @@
       "context_window": ". The most frequent used doses were: 75mg aspirin daily and 200mg dipyridamole, twice daily. Use of antithrombotic pre-strok",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl-pct-861",
@@ -530,9 +530,9 @@
       "context_window": "ared with patients on aspirin only (HR, 0.52; CI, 032-0.86; p = 0.01) (Figure 1 ), after adjusting for age, NIHSS at admittance,",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl-p-1932",
@@ -584,9 +584,9 @@
       "context_window": "D group in comparison with aspirin only group already after 3months (p = 0.12). There was, however, neither difference in funct",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl-p-2436",
@@ -602,9 +602,9 @@
       "context_window": "n comparison with aspirin only group already after 3months (p = 0.12). There was, however, neither difference in functional outc",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl-u-2523",
@@ -619,10 +619,10 @@
       "sentence": "There was, however, neither difference in functional outcome (mRS) at 3 and 12months, nor in occurrence rate of cardiovascular events (non-fatal myocardial infarction, stroke/TIA, ischemic heart disease or congestive heart failure) (Table 3 ).",
       "context_window": "er, neither difference in functional outcome (mRS) at 3 and 12months, nor in occurrence rate of cardiovascular events (non-fatal",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular outcome",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3482605_comparative_evaluation_of_treatment_with_low_dose_aspirin_pl-u-2711",
@@ -638,7 +638,7 @@
       "context_window": "r congestive heart failure) (Table 3 ). Mortality at 3 and 12 months and cardiovascular events in patients using aspirin + dipyr",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -655,8 +655,8 @@
       "sentence": "Mortality at 3 and 12 months and cardiovascular events in patients using aspirin + dipyridamole (A + D) vs. use of aspirin only (A) after acute stroke/TIA (%)\n\n** = P < 0.01 for comparison A + D vs.",
       "context_window": "s. use of aspirin only (A) after acute stroke/TIA (%) ** = P < 0.01 for comparison A + D vs. A only, : mortality, CVD: Cardiova",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -692,7 +692,7 @@
       "context_window": "Group (21) has demonstrated that after a mean follow-up of 25 months there was no difference in mortality, stroke or retinal inf",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "aspirin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },

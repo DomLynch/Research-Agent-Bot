@@ -1,0 +1,301 @@
+{
+  "paper_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp",
+  "doi": "10.1093/jcag/gwae059.097",
+  "extracted_at": "2026-05-08T20:06:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 12,
+    "p_value": 2,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1016",
+      "claim_type": "percentage",
+      "raw_text": "60.8%",
+      "numeric_values": [
+        60.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "Patient median age was 35 and 60.8% were diagnosed with Crohn\u2019s disease, 40% with Ulcerative Colitis, and 2.4% with indeterminate disease.",
+      "context_window": "tients and 46 HCPs responded. Patient median age was 35 and 60.8% were diagnosed with Crohn\u2019s disease, 40% with Ulcerative Co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1059",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1059,
+      "sentence": "Patient median age was 35 and 60.8% were diagnosed with Crohn\u2019s disease, 40% with Ulcerative Colitis, and 2.4% with indeterminate disease.",
+      "context_window": "n age was 35 and 60.8% were diagnosed with Crohn\u2019s disease, 40% with Ulcerative Colitis, and 2.4% with indeterminate diseas",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1092",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1092,
+      "sentence": "Patient median age was 35 and 60.8% were diagnosed with Crohn\u2019s disease, 40% with Ulcerative Colitis, and 2.4% with indeterminate disease.",
+      "context_window": "osed with Crohn\u2019s disease, 40% with Ulcerative Colitis, and 2.4% with indeterminate disease. 73.15% of patients did not cons",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "73.15%",
+      "numeric_values": [
+        73.15
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1125,
+      "sentence": "73.15% of patients did not consider Aspirin to pose significant risks such as increased gastrointestinal side effects, IBD flares, or fetal harm.",
+      "context_window": "th Ulcerative Colitis, and 2.4% with indeterminate disease. 73.15% of patients did not consider Aspirin to pose significant ri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1271",
+      "claim_type": "percentage",
+      "raw_text": "64.8%",
+      "numeric_values": [
+        64.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1271,
+      "sentence": "64.8% of patients agreed with being comfortable taking aspirin if prescribed for preeclampsia risk.",
+      "context_window": "d gastrointestinal side effects, IBD flares, or fetal harm. 64.8% of patients agreed with being comfortable taking aspirin if",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-p-1474",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1474,
+      "sentence": "There was no association between age, education level, income, or ethnicity and perceived comfort (all p > 0.05).",
+      "context_window": "tion level, income, or ethnicity and perceived comfort (all p > 0.05). Among HCPs, 43% were gastroenterologists, 30% obstetricia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1497",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1497,
+      "sentence": "Among HCPs, 43% were gastroenterologists, 30% obstetricians, and 27% other (General Practitioners, General Internists, Nurse Practitioner, Rheumatologist, Midwife, Gynecologist).",
+      "context_window": "ethnicity and perceived comfort (all p > 0.05). Among HCPs, 43% were gastroenterologists, 30% obstetricians, and 27% other",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1527",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1527,
+      "sentence": "Among HCPs, 43% were gastroenterologists, 30% obstetricians, and 27% other (General Practitioners, General Internists, Nurse Practitioner, Rheumatologist, Midwife, Gynecologist).",
+      "context_window": "t (all p > 0.05). Among HCPs, 43% were gastroenterologists, 30% obstetricians, and 27% other (General Practitioners, Genera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1550",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1550,
+      "sentence": "Among HCPs, 43% were gastroenterologists, 30% obstetricians, and 27% other (General Practitioners, General Internists, Nurse Practitioner, Rheumatologist, Midwife, Gynecologist).",
+      "context_window": "HCPs, 43% were gastroenterologists, 30% obstetricians, and 27% other (General Practitioners, General Internists, Nurse Pra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1677",
+      "claim_type": "percentage",
+      "raw_text": "38.0%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1677,
+      "sentence": "Respondents (38.0%) most commonly recommended that obstetricians should prescribe LDA.",
+      "context_window": "ioner, Rheumatologist, Midwife, Gynecologist). Respondents (38.0%) most commonly recommended that obstetricians should prescr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1764",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1764,
+      "sentence": "For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, while 18.4% reported not knowing.",
+      "context_window": "ended that obstetricians should prescribe LDA. For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg da",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-u-1786",
+      "claim_type": "unit_value",
+      "raw_text": "162 mg",
+      "numeric_values": [
+        162.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1786,
+      "sentence": "For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, while 18.4% reported not knowing.",
+      "context_window": "ns should prescribe LDA. For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1803",
+      "claim_type": "percentage",
+      "raw_text": "16.3%",
+      "numeric_values": [
+        16.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1803,
+      "sentence": "For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, while 18.4% reported not knowing.",
+      "context_window": "be LDA. For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, wh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-u-1819",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1819,
+      "sentence": "For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, while 18.4% reported not knowing.",
+      "context_window": "ges, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, while 18.4% report",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-pct-1872",
+      "claim_type": "percentage",
+      "raw_text": "18.4%",
+      "numeric_values": [
+        18.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1872,
+      "sentence": "For dosages, 51% of HCPs indicated 162 mg daily and 16.3% indicated 81 mg daily should be prescribed if indicated, while 18.4% reported not knowing.",
+      "context_window": "icated 81 mg daily should be prescribed if indicated, while 18.4% reported not knowing. There was no association between year",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11807450_a97_physician_and_patient_perceptions_regarding_low_dose_asp-p-2148",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2148,
+      "sentence": "There was no association between years in practice, setting (academic versus community),or volume of IBD or pregnant patients seen in clinic (i.e., scope of practice), with HCP reported comfort levels in managing pregnancy related care in IBD (all p > 0.05).",
+      "context_window": "mfort levels in managing pregnancy related care in IBD (all p > 0.05). Scope of practice was also not associated with HCP percep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_randomized_controlled_trial_to_assess_effects_of_lacosamide_",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_randomized_controlled_trial_to_assess_effects_of_lacosamide_-u-1014",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1014,
+      "sentence": "Participation involves a physical exam, sleep testing at the Sleep Center, blood tests, completion of study questionnaires/diaries, and a random assignment to either take the study drug or placebo (often called a \"look alike\" or \"sugar pill\") for 5 to 8 weeks.",
+      "context_window": "cebo (often called a \"look alike\" or \"sugar pill\") for 5 to 8 weeks. There are 5 study visits. Participants will receive compen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_randomized_controlled_trial_to_assess_effects_of_lacosamide_-u-1421",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "Nancy Foldvary-Schaefer: 216-445-2990 Monica Bruton: 216-444-6718\n\nPosted outcomes: Change in Epworth Sleepiness Scale Score From Baseline to Visit 4. timeframe=Baseline and Visit 4 (approximately 1 - 2 months).",
+      "context_window": "Visit 4. timeframe=Baseline and Visit 4 (approximately 1 - 2 months). Lacosamide=-1.2; Sugar Pill=-1.1. p=0.027",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_randomized_controlled_trial_to_assess_effects_of_lacosamide_-p-1466",
+      "claim_type": "p_value",
+      "raw_text": "p=0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1466,
+      "sentence": "Lacosamide=-1.2; Sugar Pill=-1.1. p=0.027",
+      "context_window": "roximately 1 - 2 months). Lacosamide=-1.2; Sugar Pill=-1.1. p=0.027",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

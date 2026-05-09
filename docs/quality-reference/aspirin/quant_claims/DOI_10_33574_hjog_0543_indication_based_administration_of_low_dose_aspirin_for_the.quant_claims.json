@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_33574_hjog_0543_indication_based_administration_of_low_dose_aspirin_for_the",
+  "doi": "10.33574/hjog.0543",
+  "extracted_at": "2026-05-08T20:06:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_33574_hjog_0543_indication_based_administration_of_low_dose_aspirin_for_the-u-201",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 201,
+      "sentence": "The administration of low-dose aspirin is recommended before 16 weeks to delay or even avoid the onset of preeclampsia, based on screening tests.",
+      "context_window": "he administration of low-dose aspirin is recommended before 16 weeks to delay or even avoid the onset of preeclampsia, based on",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_33574_hjog_0543_indication_based_administration_of_low_dose_aspirin_for_the-pct-1513",
+      "claim_type": "percentage",
+      "raw_text": "78.6%",
+      "numeric_values": [
+        78.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1513,
+      "sentence": "Sensitivity was the highest based on NICE criteria (78.6%), while specificity and positive predictive value (PPV) were the highest based on FMF criteria (89.9% and 61.1%, respectively).",
+      "context_window": "found. Sensitivity was the highest based on NICE criteria (78.6%), while specificity and positive predictive value (PPV) wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_33574_hjog_0543_indication_based_administration_of_low_dose_aspirin_for_the-pct-1615",
+      "claim_type": "percentage",
+      "raw_text": "89.9%",
+      "numeric_values": [
+        89.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1615,
+      "sentence": "Sensitivity was the highest based on NICE criteria (78.6%), while specificity and positive predictive value (PPV) were the highest based on FMF criteria (89.9% and 61.1%, respectively).",
+      "context_window": "dictive value (PPV) were the highest based on FMF criteria (89.9% and 61.1%, respectively). Conclusion: Applying the FMF crit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_33574_hjog_0543_indication_based_administration_of_low_dose_aspirin_for_the-pct-1625",
+      "claim_type": "percentage",
+      "raw_text": "61.1%",
+      "numeric_values": [
+        61.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1625,
+      "sentence": "Sensitivity was the highest based on NICE criteria (78.6%), while specificity and positive predictive value (PPV) were the highest based on FMF criteria (89.9% and 61.1%, respectively).",
+      "context_window": "lue (PPV) were the highest based on FMF criteria (89.9% and 61.1%, respectively). Conclusion: Applying the FMF criteria for t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,823 @@
+{
+  "paper_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci",
+  "doi": "10.3858/emm.2012.44.11.075",
+  "extracted_at": "2026-05-08T20:10:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "unit_value": 29,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-pct-469",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 469,
+      "sentence": "Fourteen 50-week-old OLETF rats with chronic diabetes were fed a diet supplemented with taurine (2%) or a non-supplemented control diet for 12 weeks.",
+      "context_window": "chronic diabetes were fed a diet supplemented with taurine (2%) or a non-supplemented control diet for 12 weeks. Taurine r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-512",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 512,
+      "sentence": "Fourteen 50-week-old OLETF rats with chronic diabetes were fed a diet supplemented with taurine (2%) or a non-supplemented control diet for 12 weeks.",
+      "context_window": "ed with taurine (2%) or a non-supplemented control diet for 12 weeks. Taurine reduced blood glucose levels over 12 weeks, and im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-564",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 564,
+      "sentence": "Taurine reduced blood glucose levels over 12 weeks, and improved OGTT outcomes at 6 weeks after taurine supplementation, in OLETF rats.",
+      "context_window": "iet for 12 weeks. Taurine reduced blood glucose levels over 12 weeks, and improved OGTT outcomes at 6 weeks after taurine supple",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-604",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 604,
+      "sentence": "Taurine reduced blood glucose levels over 12 weeks, and improved OGTT outcomes at 6 weeks after taurine supplementation, in OLETF rats.",
+      "context_window": "glucose levels over 12 weeks, and improved OGTT outcomes at 6 weeks after taurine supplementation, in OLETF rats. Taurine signi",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-764",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 764,
+      "sentence": "After 12 weeks, taurine significantly decreased serum levels of lipids such as triglyceride, cholesterol, high density lipoprotein cholesterol, and low density lipoprotein cholesterol.",
+      "context_window": "ce but did not improve \u03b2-cell function or islet mass. After 12 weeks, taurine significantly decreased serum levels of lipids suc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-160",
+      "claim_type": "unit_value",
+      "raw_text": "50 weeks",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 160,
+      "sentence": "Male OLETF rats were maintained in plastic cages at 21\u2103 to 24\u2103 on a 12 h light/dark cycle, and were given free access to pellet food and water until the age of 50 weeks.",
+      "context_window": "given free access to pellet food and water until the age of 50 weeks. They were randomly assigned to two groups of seven rats ea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-pct-452",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 452,
+      "sentence": "Taurine (2%) was added to the food of the taurine-supplemented group between 50 and 62 weeks of age.",
+      "context_window": "al diet was based on AIN76 ( Bieri et al., 1977 ). Taurine (2%) was added to the food of the taurine-supplemented group be",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-527",
+      "claim_type": "unit_value",
+      "raw_text": "62 weeks",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 527,
+      "sentence": "Taurine (2%) was added to the food of the taurine-supplemented group between 50 and 62 weeks of age.",
+      "context_window": "o the food of the taurine-supplemented group between 50 and 62 weeks of age. Supplemental Data Table S1 shows the composition of",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-pct-4162",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4162,
+      "sentence": "Tissues were fixed with 10% buffered formalin, and paraffin-embedded sections were stained with hematoxylin and eosin (H&E).",
+      "context_window": "group were histologically examined. Tissues were fixed with 10% buffered formalin, and paraffin-embedded sections were stai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-4759",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4759,
+      "sentence": "Differences were considered statistically significant at P < 0.05.",
+      "context_window": "g. Differences were considered statistically significant at P < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-128",
+      "claim_type": "unit_value",
+      "raw_text": "30 weeks",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 128,
+      "sentence": "To test whether taurine improves glucose metabolism and lowers insulin resistance in OLETF rats that had diabetes for more than 30 weeks, the diet of OLETF rats was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age.",
+      "context_window": "in resistance in OLETF rats that had diabetes for more than 30 weeks, the diet of OLETF rats was supplemented with taurine (2%)",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-pct-192",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 192,
+      "sentence": "To test whether taurine improves glucose metabolism and lowers insulin resistance in OLETF rats that had diabetes for more than 30 weeks, the diet of OLETF rats was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age.",
+      "context_window": "eeks, the diet of OLETF rats was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age. During this peri",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-200",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 200,
+      "sentence": "To test whether taurine improves glucose metabolism and lowers insulin resistance in OLETF rats that had diabetes for more than 30 weeks, the diet of OLETF rats was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age.",
+      "context_window": "e diet of OLETF rats was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age. During this period, blood was",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-221",
+      "claim_type": "unit_value",
+      "raw_text": "50 weeks",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 221,
+      "sentence": "To test whether taurine improves glucose metabolism and lowers insulin resistance in OLETF rats that had diabetes for more than 30 weeks, the diet of OLETF rats was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age.",
+      "context_window": "was supplemented with taurine (2%) for 12 weeks starting at 50 weeks of age. During this period, blood was collected from the ta",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-635",
+      "claim_type": "unit_value",
+      "raw_text": "60 weeks",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 635,
+      "sentence": "In particular, at 60 weeks of age, the glucose level was > 300 mg/dl in the control group, and approximately 200 mg/dl in the taurine group.",
+      "context_window": "groups at some time points ( Figure 1A ). In particular, at 60 weeks of age, the glucose level was > 300 mg/dl in the control gr",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-676",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 676,
+      "sentence": "In particular, at 60 weeks of age, the glucose level was > 300 mg/dl in the control group, and approximately 200 mg/dl in the taurine group.",
+      "context_window": "In particular, at 60 weeks of age, the glucose level was > 300 mg/dl in the control group, and approximately 200 mg/dl in the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-726",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 726,
+      "sentence": "In particular, at 60 weeks of age, the glucose level was > 300 mg/dl in the control group, and approximately 200 mg/dl in the taurine group.",
+      "context_window": "vel was > 300 mg/dl in the control group, and approximately 200 mg/dl in the taurine group. In an attempt to explain the diffe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-pct-1329",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1329,
+      "sentence": "A taurine (2%)-supplemented diet was fed to OLETF rats for 12 weeks, beginning at 50 weeks of age. (A) Blood glucose levels during the 12-weeks supplementation period. (B) Comparison of food intake between taurine and control groups.",
+      "context_window": "etabolism in OLETF rats with long-term diabetes. A taurine (2%)-supplemented diet was fed to OLETF rats for 12 weeks, begi",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-1377",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1377,
+      "sentence": "A taurine (2%)-supplemented diet was fed to OLETF rats for 12 weeks, beginning at 50 weeks of age. (A) Blood glucose levels during the 12-weeks supplementation period. (B) Comparison of food intake between taurine and control groups.",
+      "context_window": "A taurine (2%)-supplemented diet was fed to OLETF rats for 12 weeks, beginning at 50 weeks of age. (A) Blood glucose levels dur",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-1400",
+      "claim_type": "unit_value",
+      "raw_text": "50 weeks",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1400,
+      "sentence": "A taurine (2%)-supplemented diet was fed to OLETF rats for 12 weeks, beginning at 50 weeks of age. (A) Blood glucose levels during the 12-weeks supplementation period. (B) Comparison of food intake between taurine and control groups.",
+      "context_window": "ented diet was fed to OLETF rats for 12 weeks, beginning at 50 weeks of age. (A) Blood glucose levels during the 12-weeks supple",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-1743",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1743,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant.",
+      "context_window": "t. Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant. To confirm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-1755",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1755,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant.",
+      "context_window": "es were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant. To confirm that taurine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-1768",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1768,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant.",
+      "context_window": "dered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant. To confirm that taurine enhanced glu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-2067",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2067,
+      "sentence": "At the beginning of taurine supplementation, the level of glucose (indicated by the OGTT) was not different between the two groups; however, at 6 weeks, the serum glucose level was significantly lower in the taurine group than the control group at 90 and 120 min after glucose loading.",
+      "context_window": "OGTT) was not different between the two groups; however, at 6 weeks, the serum glucose level was significantly lower in the tau",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-2212",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2212,
+      "sentence": "At 12 weeks, the serum glucose level at baseline (0 min) was significantly lower in the taurine group than the control group, although serum glucose levels after oral glucose loading did not differ significantly between the two groups.",
+      "context_window": "e control group at 90 and 120 min after glucose loading. At 12 weeks, the serum glucose level at baseline (0 min) was significan",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-2486",
+      "claim_type": "unit_value",
+      "raw_text": "60 weeks",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2486,
+      "sentence": "This finding suggests that OLETF rats at 60 weeks of age have severe glucotoxicity due to beta cell destruction, which is not overcome by a taurine-supplemented diet.",
+      "context_window": "en the two groups. This finding suggests that OLETF rats at 60 weeks of age have severe glucotoxicity due to beta cell destructi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-2778",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2778,
+      "sentence": "The effects of taurine supplementation on oral glucose tolerance tests (OGTTs) and glycated haemoglobin (HbA1c) in OLETF rats. (A) OGTTs were conducted at 0, 6, and 12 weeks after beginning the taurine-supplemented diet. (B) HbA1c levels.",
+      "context_window": "HbA1c) in OLETF rats. (A) OGTTs were conducted at 0, 6, and 12 weeks after beginning the taurine-supplemented diet. (B) HbA1c le",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-3047",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3047,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant.",
+      "context_window": "t. Differences were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant. As expected, the HbA1c l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-3059",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3059,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant.",
+      "context_window": "es were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant. As expected, the HbA1c level of OLET",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-3339",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3339,
+      "sentence": "However, taurine did not significantly reduce the level of HbA1c in diabetic OLETF rats after taurine feeding for 12 weeks ( Figure 2B ).",
+      "context_window": "l of HbA1c in diabetic OLETF rats after taurine feeding for 12 weeks ( Figure 2B ). These findings also indirectly suggest that",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-3830",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3830,
+      "sentence": "Taurine supplementation significantly reduced HOMA-IR as a marker of insulin resistance at 12 weeks, and also did not significantly increase HOMA-\u03b2 as a marker of basal beta cell function ( Figure 3B ).",
+      "context_window": "cantly reduced HOMA-IR as a marker of insulin resistance at 12 weeks, and also did not significantly increase HOMA-\u03b2 as a marker",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine supplementation",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-4243",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4243,
+      "sentence": "The effects of taurine supplementation on insulin resistance (HOMA-IR) and beta cell function (HOMA-\u03b2) in OLETF rats. (A) Levels of glucose and insulin 0, 6, and 12 weeks after beginning the taurine-supplemented diet. (B) Comparison of HOMA-IR and HOMA-\u03b2 between taurine and the control groups. (C) Comparison of Insulin Tolerance Test (ITT) between two groups.",
+      "context_window": "in OLETF rats. (A) Levels of glucose and insulin 0, 6, and 12 weeks after beginning the taurine-supplemented diet. (B) Comparis",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-4571",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4571,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant.",
+      "context_window": "t. Differences were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant. We wondered whether the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-4583",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4583,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant.",
+      "context_window": "es were considered statistically significant at P < 0.05. * P < 0.05; NS, not significant. We wondered whether the taurine enha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-5472",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5472,
+      "sentence": "The effects of taurine supplementation on tissue targets of insulin secretion and action in OLETF rats. (A) Pancreatic tissue was stained by H&E (upper panel) and anti-insulin antibody (lower panel) (Magnification: H&E stain, 40\u00d7; Immunostaining, 10\u00d7). (B) Fat, liver, and muscle tissues were stained by H&E after adhering to a taurine diet for 12 weeks (H&E stain, 100 \u00d7 magnification).",
+      "context_window": "es were stained by H&E after adhering to a taurine diet for 12 weeks (H&E stain, 100 \u00d7 magnification). Insulin resistance in li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-6277",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6277,
+      "sentence": "To examine whether a taurine-supplemented diet would improve lipid metabolism in diabetic rats, fasting serum was analysed for levels of TG, TC, HDL-C, and LDL-C at the time of sacrifice (after rats were fed a taurine diet for 12 weeks).",
+      "context_window": "e time of sacrifice (after rats were fed a taurine diet for 12 weeks). Serum levels of TG, TC, HDL-C, and LDL-C were significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-7189",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7189,
+      "sentence": "The effects of taurine supplementation on serum lipid and serum adipokine levels in OLETF rats. (A) Levels of triglycerides (TG), cholesterol, high density lipoprotein cholesterol (HDL-C) and low density lipoprotein cholesterol (LDL-C). (B) Serum adiponectin and leptin levels in OLETF rats after adhering to a taurine diet for 12 weeks.",
+      "context_window": "n levels in OLETF rats after adhering to a taurine diet for 12 weeks. Between-group differences were compared using the Mann-Whi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-7327",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7327,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant.",
+      "context_window": "t. Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant. Because tau",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-7339",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7339,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant.",
+      "context_window": "es were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant. Because taurine supplem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-p-7352",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7352,
+      "sentence": "Differences were considered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant.",
+      "context_window": "dered statistically significant at P < 0.05. * P < 0.05; ** P < 0.01; NS, not significant. Because taurine supplementation had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-15",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 15,
+      "sentence": "In this study, 12 weeks of taurine supplementation significantly improved insulin sensitivity and lowered serum glucose and serum lipid concentrations in diabetic OLETF rats that were 50 weeks old at the beginning of supplementation.",
+      "context_window": "In this study, 12 weeks of taurine supplementation significantly improved insulin s",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine supplementation",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-184",
+      "claim_type": "unit_value",
+      "raw_text": "50 weeks",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 184,
+      "sentence": "In this study, 12 weeks of taurine supplementation significantly improved insulin sensitivity and lowered serum glucose and serum lipid concentrations in diabetic OLETF rats that were 50 weeks old at the beginning of supplementation.",
+      "context_window": "serum lipid concentrations in diabetic OLETF rats that were 50 weeks old at the beginning of supplementation. However, the tauri",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine supplementation",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-434",
+      "claim_type": "unit_value",
+      "raw_text": "30 weeks",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 434,
+      "sentence": "However, the taurine-induced reductions in serum glucose and lipid levels did not alleviate the diabetic complications that had already been induced by hyperglycemia, which had persisted for at least 30 weeks.",
+      "context_window": "induced by hyperglycemia, which had persisted for at least 30 weeks. These results suggest that even though taurine supplementa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-631",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 631,
+      "sentence": "Furthermore, 12 weeks of taurine supplementation was not enough time to delay the progression of complications.",
+      "context_window": "too late to reverse the diabetic nephropathy. Furthermore, 12 weeks of taurine supplementation was not enough time to delay the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3509183_taurine_ameliorates_hyperglycemia_and_dyslipidemia_by_reduci-u-1864",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1864,
+      "sentence": "However, daily supplementation with 1.5 g taurine for 8 weeks had no effect on insulin secretion, insulin sensitivity, or blood lipid levels in overweight men with a genetic predisposition for T2DM, suggesting that dietary taurine supplementation may not prevent the development of T2DM in humans ( Brons et al., 2004 ).",
+      "context_window": "03 ). However, daily supplementation with 1.5 g taurine for 8 weeks had no effect on insulin secretion, insulin sensitivity, or",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "taurine",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "paper_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio",
+  "doi": "10.1161/circ.129.suppl_1.p449",
+  "extracted_at": "2026-05-08T20:05:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 1,
+    "percentage": 11,
+    "odds_ratio": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-u-489",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 489,
+      "sentence": "The objective of this study is to assess the low-dose aspirin use among US adults with ischemic vascular disease. </jats:p> <jats:p> <jats:bold>Methods:</jats:bold> Using data from the 2012 National Health Interview Survey, we identified participants aged \u226540 years with ischemic vascular disease (self-reported history of myocardial infarction, stroke, coronary heart disease, or angina).",
+      "context_window": "l Health Interview Survey, we identified participants aged \u226540 years with ischemic vascular disease (self-reported history of my",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-n-1353",
+      "claim_type": "sample_size",
+      "raw_text": "N=3213",
+      "numeric_values": [
+        3213.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1353,
+      "sentence": "Multivariable logistic regression models were used to determine the adjusted odds ratio of aspirin use, adjusting for sociodemographic characteristics, health insurance status, and cardiovascular risk factors. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> In 2012, among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told to take low-dose aspirin, and 87.8% (86.0-89.5) followed this advice.",
+      "context_window": ":bold> In 2012, among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1362",
+      "claim_type": "percentage",
+      "raw_text": "76.2%",
+      "numeric_values": [
+        76.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "Multivariable logistic regression models were used to determine the adjusted odds ratio of aspirin use, adjusting for sociodemographic characteristics, health insurance status, and cardiovascular risk factors. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> In 2012, among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told to take low-dose aspirin, and 87.8% (86.0-89.5) followed this advice.",
+      "context_window": "2012, among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told to take l",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1369",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1369,
+      "sentence": "Multivariable logistic regression models were used to determine the adjusted odds ratio of aspirin use, adjusting for sociodemographic characteristics, health insurance status, and cardiovascular risk factors. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> In 2012, among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told to take low-dose aspirin, and 87.8% (86.0-89.5) followed this advice.",
+      "context_window": "among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told to take low-do",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1448",
+      "claim_type": "percentage",
+      "raw_text": "87.8%",
+      "numeric_values": [
+        87.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1448,
+      "sentence": "Multivariable logistic regression models were used to determine the adjusted odds ratio of aspirin use, adjusting for sociodemographic characteristics, health insurance status, and cardiovascular risk factors. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> In 2012, among those with ischemic vascular disease (N=3213), 76.2% (95% confidence interval 74.3-77.9) had been told to take low-dose aspirin, and 87.8% (86.0-89.5) followed this advice.",
+      "context_window": "rval 74.3-77.9) had been told to take low-dose aspirin, and 87.8% (86.0-89.5) followed this advice. Among those who were not",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1552",
+      "claim_type": "percentage",
+      "raw_text": "11.4%",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1552,
+      "sentence": "Among those who were not advised to take low-dose aspirin, only 11.4% (8.7-14.8) were taking low-dose aspirin on their own.",
+      "context_window": "g those who were not advised to take low-dose aspirin, only 11.4% (8.7-14.8) were taking low-dose aspirin on their own. Among",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1658",
+      "claim_type": "percentage",
+      "raw_text": "53.2%",
+      "numeric_values": [
+        53.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1658,
+      "sentence": "Among those who weren\u2019t following the advice, 53.2% (45.5-60.9) were later told not to take low-dose aspirin.",
+      "context_window": "on their own. Among those who weren\u2019t following the advice, 53.2% (45.5-60.9) were later told not to take low-dose aspirin. O",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1731",
+      "claim_type": "percentage",
+      "raw_text": "69.6%",
+      "numeric_values": [
+        69.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1731,
+      "sentence": "Overall, 69.6% (67.6-71.5) were taking low-dose aspirin.",
+      "context_window": "0.9) were later told not to take low-dose aspirin. Overall, 69.6% (67.6-71.5) were taking low-dose aspirin. Logistic regressi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-u-1814",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1814,
+      "sentence": "Logistic regression showed those \u2265 65 years were more likely to take low-dose aspirin than those aged 40-64 (adjusted odds ratio =1.50, 95% CI=1.17-1.93).",
+      "context_window": "taking low-dose aspirin. Logistic regression showed those \u2265 65 years were more likely to take low-dose aspirin than those aged 4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-or-l-1888",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio =1.50",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1888,
+      "sentence": "Logistic regression showed those \u2265 65 years were more likely to take low-dose aspirin than those aged 40-64 (adjusted odds ratio =1.50, 95% CI=1.17-1.93).",
+      "context_window": "more likely to take low-dose aspirin than those aged 40-64 (adjusted odds ratio =1.50, 95% CI=1.17-1.93). Non-Hispanic blacks and Hispanics were",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-1915",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1915,
+      "sentence": "Logistic regression showed those \u2265 65 years were more likely to take low-dose aspirin than those aged 40-64 (adjusted odds ratio =1.50, 95% CI=1.17-1.93).",
+      "context_window": "e aspirin than those aged 40-64 (adjusted odds ratio =1.50, 95% CI=1.17-1.93). Non-Hispanic blacks and Hispanics were less",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-or-l-2030",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio =0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2030,
+      "sentence": "Non-Hispanic blacks and Hispanics were less likely to take LDA compared to non-Hispanic whites (adjusted odds ratio =0.71, CI=0.54-0.94; adjusted odds ratio =0.54, 95% CI=0.38-0.77, respectively).",
+      "context_window": "re less likely to take LDA compared to non-Hispanic whites (adjusted odds ratio =0.71, CI=0.54-0.94; adjusted odds ratio =0.54, 95% CI=0.38-0.77,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-or-l-2071",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio =0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2071,
+      "sentence": "Non-Hispanic blacks and Hispanics were less likely to take LDA compared to non-Hispanic whites (adjusted odds ratio =0.71, CI=0.54-0.94; adjusted odds ratio =0.54, 95% CI=0.38-0.77, respectively).",
+      "context_window": "n-Hispanic whites (adjusted odds ratio =0.71, CI=0.54-0.94; adjusted odds ratio =0.54, 95% CI=0.38-0.77, respectively). Those with a high school",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-2098",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2098,
+      "sentence": "Non-Hispanic blacks and Hispanics were less likely to take LDA compared to non-Hispanic whites (adjusted odds ratio =0.71, CI=0.54-0.94; adjusted odds ratio =0.54, 95% CI=0.38-0.77, respectively).",
+      "context_window": "odds ratio =0.71, CI=0.54-0.94; adjusted odds ratio =0.54, 95% CI=0.38-0.77, respectively). Those with a high school educa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-or-l-2266",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio =0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2266,
+      "sentence": "Those with a high school education or with some college were less likely than those with \u2265 college education to take low-dose aspirin (adjusted odds ratio =0.64, CI=0.46-0.90; adjusted odds ratio =0.66, CI=0.47-0.92, respectively).",
+      "context_window": "an those with \u2265 college education to take low-dose aspirin (adjusted odds ratio =0.64, CI=0.46-0.90; adjusted odds ratio =0.66, CI=0.47-0.92, res",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-or-l-2307",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio =0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2307,
+      "sentence": "Those with a high school education or with some college were less likely than those with \u2265 college education to take low-dose aspirin (adjusted odds ratio =0.64, CI=0.46-0.90; adjusted odds ratio =0.66, CI=0.47-0.92, respectively).",
+      "context_window": "low-dose aspirin (adjusted odds ratio =0.64, CI=0.46-0.90; adjusted odds ratio =0.66, CI=0.47-0.92, respectively). Men were more likely to take",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-or-l-2421",
+      "claim_type": "odds_ratio",
+      "raw_text": "adjusted odds ratio =1.39",
+      "numeric_values": [
+        1.39
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2421,
+      "sentence": "Men were more likely to take low-dose aspirin than women (adjusted odds ratio =1.39, CI=1.10-1.75). </jats:p> <jats:p> <jats:bold>Conclusions:</jats:bold> Among US adults with ischemic vascular disease, only 76% reported being advised to take low-dose aspirin, and 88% followed this advice.",
+      "context_window": ". Men were more likely to take low-dose aspirin than women (adjusted odds ratio =1.39, CI=1.10-1.75). </jats:p> <jats:p> <jats:bold>Conclusions:<",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-2571",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2571,
+      "sentence": "Men were more likely to take low-dose aspirin than women (adjusted odds ratio =1.39, CI=1.10-1.75). </jats:p> <jats:p> <jats:bold>Conclusions:</jats:bold> Among US adults with ischemic vascular disease, only 76% reported being advised to take low-dose aspirin, and 88% followed this advice.",
+      "context_window": ":bold> Among US adults with ischemic vascular disease, only 76% reported being advised to take low-dose aspirin, and 88% fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-2628",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2628,
+      "sentence": "Men were more likely to take low-dose aspirin than women (adjusted odds ratio =1.39, CI=1.10-1.75). </jats:p> <jats:p> <jats:bold>Conclusions:</jats:bold> Among US adults with ischemic vascular disease, only 76% reported being advised to take low-dose aspirin, and 88% followed this advice.",
+      "context_window": "ly 76% reported being advised to take low-dose aspirin, and 88% followed this advice. Of the 12% who did not follow this ad",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_129_suppl_1_p449_abstract_p449_use_of_low_dose_aspirin_as_secondary_preventio-pct-2661",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2661,
+      "sentence": "Of the 12% who did not follow this advice, half were later advised to not take low-dose aspirin.",
+      "context_window": "take low-dose aspirin, and 88% followed this advice. Of the 12% who did not follow this advice, half were later advised to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

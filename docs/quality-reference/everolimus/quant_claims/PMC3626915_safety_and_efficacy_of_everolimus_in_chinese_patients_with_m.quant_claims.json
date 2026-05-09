@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m",
   "doi": "10.1186/1471-2407-13-136",
-  "extracted_at": "2026-05-05T21:30:14+00:00",
+  "extracted_at": "2026-05-08T19:55:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 22,
@@ -43,9 +43,9 @@
       "context_window": "us VEGFr-TKI therapy (N = 64). Patients received everolimus 10 mg daily until objective tumor progression (according to RECIS",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1084",
@@ -115,9 +115,9 @@
       "context_window": "tients were male. Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). Expected known class-effect toxic",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1210",
@@ -133,9 +133,9 @@
       "context_window": "n duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). Expected known class-effect toxicities related to mTOR in",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1330",
@@ -151,7 +151,7 @@
       "context_window": "to mTOR inhibitor therapy were observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyper",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "torc1 inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -169,7 +169,7 @@
       "context_window": "ere observed, including anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholest",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "torc1 inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -187,7 +187,7 @@
       "context_window": "anemia (64%), hypertriglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulm",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "torc1 inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -205,7 +205,7 @@
       "context_window": "iglyceridemia (55%), mouth ulceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%). C",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "torc1 inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -223,7 +223,7 @@
       "context_window": "lceration (53%), hyperglycemia (52%), hypercholesterolemia (50%), and pulmonary events (31%). Common grade 3/4 adverse even",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "torc1 inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -241,7 +241,7 @@
       "context_window": "ia (52%), hypercholesterolemia (50%), and pulmonary events (31%). Common grade 3/4 adverse events were anemia (20%), hyperg",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "torc1 inhibitor",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -529,7 +529,7 @@
       "context_window": "s demonstrated that continuous daily dosing with everolimus 10 mg resulted in a more profound and sustained inhibition of mTO",
       "claim_role": "dose",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -547,7 +547,7 @@
       "context_window": "age schedule [ 20 , 21 ]. Anti-tumor activity of everolimus 10 mg daily was shown in a phase 2 trial of patients with mRCC [",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -565,7 +565,7 @@
       "context_window": "ted a progression-free survival (PFS) benefit of everolimus 10 mg daily over placebo in patients with VEGFr-TKI-refractory mR",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -583,7 +583,7 @@
       "context_window": "placebo in patients with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ]. In addition,",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -601,7 +601,7 @@
       "context_window": "with VEGFr-TKI-refractory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ]. In addition, pharmacodynam",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -619,7 +619,7 @@
       "context_window": "actory mRCC (4.9 vs 1.9 months; HR 0.33; 95% CI, 0.25-0.43; P < .001) [ 10 ]. In addition, pharmacodynamic modeling of tumor gro",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -637,7 +637,7 @@
       "context_window": "patients enrolled in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mR",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -655,7 +655,7 @@
       "context_window": "led in RECORD-1 demonstrated that everolimus 5 mg daily and 10 mg daily significantly slowed the growth of mRCC target lesion",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -673,7 +673,7 @@
       "context_window": "-target lesions, and new metastases compared with placebo ( P < .001) [ 24 , 25 ]. A phase 1 study in Chinese patients with adv",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -691,9 +691,9 @@
       "context_window": "ase 1 study in Chinese patients with advanced solid tumors (N = 24), including mRCC (n = 6), was conducted to specifically eva",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-4048",
@@ -709,9 +709,9 @@
       "context_window": "tients with advanced solid tumors (N = 24), including mRCC (n = 6), was conducted to specifically evaluate the efficacy and s",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4211",
@@ -727,9 +727,9 @@
       "context_window": "ation [ 26 ]. Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients ex",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4220",
@@ -745,9 +745,9 @@
       "context_window": "6 ]. Results demonstrated that everolimus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-4257",
@@ -763,9 +763,9 @@
       "context_window": "imus doses of 5 mg and 10 mg daily were well tolerated, and 67% of patients experienced stable disease as their best overal",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4411",
@@ -781,9 +781,9 @@
       "context_window": "duration of everolimus exposure for patients with mRCC was 26.4 weeks (6.1 months). Herein, we report results of a larger study o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-4423",
@@ -799,9 +799,9 @@
       "context_window": "everolimus exposure for patients with mRCC was 26.4 weeks (6.1 months). Herein, we report results of a larger study of everolimus",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-77",
@@ -817,9 +817,9 @@
       "context_window": "l, multicenter phase 1b study, patients received everolimus 10 mg (2 \u00d7 5-mg tablets) daily until objective tumor progression",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-322",
@@ -925,9 +925,9 @@
       "context_window": "l preparation, pazopanib and axitinib were included) within 4 weeks of study entry or sunitinib and/or sorafenib within 2 weeks",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-2051",
@@ -943,9 +943,9 @@
       "context_window": "4 weeks of study entry or sunitinib and/or sorafenib within 2 weeks of first everolimus dose. Previous treatment with mTOR inhi",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-2674",
@@ -1051,9 +1051,9 @@
       "context_window": "ng/mL. Pre-dose trough samples (C min ) collected at cycle 2 day 1 and cycle 4 day 1 could represent the minimum everolimus",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5099",
@@ -1069,9 +1069,9 @@
       "context_window": "rough samples (C min ) collected at cycle 2 day 1 and cycle 4 day 1 could represent the minimum everolimus exposure under ste",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-5322",
@@ -1321,9 +1321,9 @@
       "context_window": "t comprised 64 patients who received \u2265 1 dose of everolimus 10 mg/day (Table 1 ). The majority of patients were male (n = 44, 69%",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-387",
@@ -1591,9 +1591,9 @@
       "context_window": "inase inhibitor. Median duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). The mean cumulative dose was 1616",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1205",
@@ -1609,9 +1609,9 @@
       "context_window": "n duration of everolimus therapy was 4.1 months (range, 0.0-16.1 months). The mean cumulative dose was 1616.88 mg, with a mean dose",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-1248",
@@ -1717,7 +1717,7 @@
       "context_window": "se intensity between 0.90 and < 1.10. Overall, 37 patients (58%) required \u2265 1 dose reduction/interruption of everolimus: 14",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1735,7 +1735,7 @@
       "context_window": "\u2265 1 dose reduction/interruption of everolimus: 14 patients (22%) had their dose reduced/interrupted once, and 23 patients (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1753,7 +1753,7 @@
       "context_window": ") had their dose reduced/interrupted once, and 23 patients (36%) required dose reductions/interruptions more than once over",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2617,7 +2617,7 @@
       "context_window": "de 3 non-infectious pneumonitis was reported in 4 patients (6%), all of whom had lung metastases at study entry: 3 events",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3409,9 +3409,9 @@
       "context_window": "apy in this patient population was associated with a DCR of 66% (95% CI, 53-77%). Mean C min after administration of evero",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-6003",
@@ -3427,9 +3427,9 @@
       "context_window": "n this patient population was associated with a DCR of 66% (95% CI, 53-77%). Mean C min after administration of everolimus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-6014",
@@ -3445,9 +3445,9 @@
       "context_window": "ent population was associated with a DCR of 66% (95% CI, 53-77%). Mean C min after administration of everolimus 10 mg/day",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6067",
@@ -3463,9 +3463,9 @@
       "context_window": "CI, 53-77%). Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-msd-6081",
@@ -3482,9 +3482,9 @@
       "context_window": "Mean C min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at c",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6088",
@@ -3500,9 +3500,9 @@
       "context_window": "min after administration of everolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6118",
@@ -3518,9 +3518,9 @@
       "context_window": "erolimus 10 mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-msd-6130",
@@ -3537,9 +3537,9 @@
       "context_window": "mg/day was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C min after administ",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6137",
@@ -3555,9 +3555,9 @@
       "context_window": "was 21.4 \u00b1 12.4 ng/mL at cycle 2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C min after administration",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6167",
@@ -3573,9 +3573,9 @@
       "context_window": "2, day 1 (n = 36) and 15.0 \u00b1 9.97 ng/mL at cycle 4, day 1 (n = 22). Mean C min after administration of everolimus 5 mg/day wa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6222",
@@ -3591,9 +3591,9 @@
       "context_window": "y 1 (n = 22). Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6235",
@@ -3609,9 +3609,9 @@
       "context_window": "Mean C min after administration of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6264",
@@ -3627,9 +3627,9 @@
       "context_window": "ion of everolimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-msd-6275",
@@ -3646,9 +3646,9 @@
       "context_window": "olimus 5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min at cycle 4, day",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6281",
@@ -3664,9 +3664,9 @@
       "context_window": "5 mg/day was 0.7 ng/mL at cycle 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min at cycle 4, day 1 at",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-n-6311",
@@ -3682,9 +3682,9 @@
       "context_window": "le 2, day 1 (n = 1) and 8.8 \u00b1 1.14 ng/mL at cycle 4, day 1 (n = 3). Mean C min at cycle 4, day 1 at the 10-mg/day dose was ap",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-6711",
@@ -3718,9 +3718,9 @@
       "context_window": "nts in the everolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6944",
@@ -3736,9 +3736,9 @@
       "context_window": "erolimus time-normalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumoniti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-6960",
@@ -3754,9 +3754,9 @@
       "context_window": "rmalized C min categories of < 10 ng/mL, 10-25 ng/mL, and > 25 ng/mL and all grades of non-infectious pneumonitis and stomatitis",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-402",
@@ -3772,9 +3772,9 @@
       "context_window": "with advanced solid tumors [ 26 ]. In RECORD-1, everolimus 10 mg daily was generally well tolerated in patients with mRCC wh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-803",
@@ -3790,7 +3790,7 @@
       "context_window": "ased cholesterol and triglycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ]. A phase",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3808,7 +3808,7 @@
       "context_window": "ycerides; pneumonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ]. A phase 1 study investigated eve",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3826,7 +3826,7 @@
       "context_window": "umonitis occurred in 14% of patients (grade 3, 4%; grade 4, 0%) [ 10 , 28 ]. A phase 1 study investigated everolimus 5 mg",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3844,9 +3844,9 @@
       "context_window": "4, 0%) [ 10 , 28 ]. A phase 1 study investigated everolimus 5 mg and 10 mg daily in Chinese patients with different tumor ty",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-u-908",
@@ -3862,9 +3862,9 @@
       "context_window": "10 , 28 ]. A phase 1 study investigated everolimus 5 mg and 10 mg daily in Chinese patients with different tumor types (breas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3626915_safety_and_efficacy_of_everolimus_in_chinese_patients_with_m-pct-1647",
@@ -4006,7 +4006,7 @@
       "context_window": "CORD-1 population based on blinded investigator assessment (14%) [ 10 ], it was similar to the incidence reported based on",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4024,7 +4024,7 @@
       "context_window": "xperienced radiographic changes while receiving everolimus (38.9%) [ 31 ]. Additionally, our results were consistent with the",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4168,7 +4168,7 @@
       "context_window": "who achieved PR or SD in RECORD-1. In RECORD-1, everolimus 10 mg daily provided clinical benefit to patients with mRCC whose",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4186,7 +4186,7 @@
       "context_window": "sease had progressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001). In compariso",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4204,7 +4204,7 @@
       "context_window": "ressed despite VEGFr-TKI therapy (median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001). In comparison, the median",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4222,7 +4222,7 @@
       "context_window": "(median PFS, 4.9 months vs 1.9 months for placebo; HR 0.33, P < .001). In comparison, the median PFS associated with everolimus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "everolimus",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4240,9 +4240,9 @@
       "context_window": "to previous VEGFr-TKI therapy in this single-arm study was 6.9 months.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "everolimus",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

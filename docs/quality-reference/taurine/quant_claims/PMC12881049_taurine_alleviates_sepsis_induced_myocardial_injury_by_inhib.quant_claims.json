@@ -1,0 +1,1130 @@
+{
+  "paper_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib",
+  "doi": "10.1007/s12012-026-10096-w",
+  "extracted_at": "2026-05-08T20:10:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 16,
+    "unit_value": 7,
+    "p_value": 3,
+    "sample_size": 36
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-409",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 409,
+      "sentence": "Sepsis-induced cardiomyopathy (SICM) denotes any type of myocardial dysfunction caused by sepsis itself [ 3 ], which can increase sepsis mortality by approximately 50-70%, representing a critical global medical challenge [ 4 , 5 ].",
+      "context_window": "], which can increase sepsis mortality by approximately 50-70%, representing a critical global medical challenge [ 4 , 5 ]",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-3341",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3341,
+      "sentence": "Taurine accounts for approximately 50% of the total free amino acids in the heart and has been demonstrated to exert protective effects in various cardiac diseases [ 19 ].",
+      "context_window": "alcium signaling [ 20 ]. Taurine accounts for approximately 50% of the total free amino acids in the heart and has been dem",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-2",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2,
+      "sentence": "8-10 weeks male C57BL/6J mice (22-25 g) were purchased and housed at the Experimental Animal Center of the Air Force Medical University (Xi\u2019an, China).",
+      "context_window": "8-10 weeks male C57BL/6J mice (22-25 g) were purchased and housed at t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-783",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 783,
+      "sentence": "Briefly, mice were anesthetized with 4-5% isoflurane.",
+      "context_window": "CLP + Taurine group. Briefly, mice were anesthetized with 4-5% isoflurane. A 1-cm midline abdominal incision was made to e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-884",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 884,
+      "sentence": "The cecum was ligated 1 cm from the distal end with 4 - 0 silk suture and punctured through once with a 20-gauge needle.",
+      "context_window": "ncision was made to expose the cecum. The cecum was ligated 1 cm from the distal end with 4 - 0 silk suture and punctured th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-1382",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1382,
+      "sentence": "The taurine (200 mg/kg, T8691, Sigma-Aldrich, St.",
+      "context_window": "fluid resuscitation immediately after surgery. The taurine (200 mg/kg, T8691, Sigma-Aldrich, St. Louis, MO, USA) dosage was se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-1601",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1601,
+      "sentence": "Mice in the Taurine and CLP + Taurine groups received an intraperitoneal injection (i.p.) of taurine (200 mg/kg) dissolved in PBS 2 h post-surgery.",
+      "context_window": "ps received an intraperitoneal injection (i.p.) of taurine (200 mg/kg) dissolved in PBS 2 h post-surgery. Mice in the Sham and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-p-2251",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2251,
+      "sentence": "Statistical significance was set at P < 0.05.",
+      "context_window": "sing the log-rank test. Statistical significance was set at P < 0.05. The murine sepsis score (MSS) was assessed as previously d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-2774",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2774,
+      "sentence": "Mice were anesthetized with 2% isoflurane, chest hair was removed with depilatory cream, and mice were placed prone on a heated platform (37 \u00b0C).",
+      "context_window": "indicating more severe sepsis. Mice were anesthetized with 2% isoflurane, chest hair was removed with depilatory cream, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-4419",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4419,
+      "sentence": "The AC16 Human Cardiomyocyte cells (Servicebio, Wuhan, China) were cultured in high-glucose Dulbecco\u2019s Modified Eagle Medium (DMEM) supplemented with 10% fetal bovine serum (FBS) at 37 \u00b0C in a humidified atmosphere containing 5% CO2.",
+      "context_window": "e Dulbecco\u2019s Modified Eagle Medium (DMEM) supplemented with 10% fetal bovine serum (FBS) at 37 \u00b0C in a humidified atmospher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-4495",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4495,
+      "sentence": "The AC16 Human Cardiomyocyte cells (Servicebio, Wuhan, China) were cultured in high-glucose Dulbecco\u2019s Modified Eagle Medium (DMEM) supplemented with 10% fetal bovine serum (FBS) at 37 \u00b0C in a humidified atmosphere containing 5% CO2.",
+      "context_window": "serum (FBS) at 37 \u00b0C in a humidified atmosphere containing 5% CO2. When cell confluency reaches 80-90%, proceed with the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-4535",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4535,
+      "sentence": "When cell confluency reaches 80-90%, proceed with the experiment and use the cells as recommended until the tenth passage [ 35 ].",
+      "context_window": "mosphere containing 5% CO2. When cell confluency reaches 80-90%, proceed with the experiment and use the cells as recommend",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-6578",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6578,
+      "sentence": "Hearts were perfused with cold saline, fixed in 10% paraformaldehyde for 48 h, embedded in paraffin, sectioned (5 \u03bcm thickness), and stained with hematoxylin and eosin (H&E).",
+      "context_window": "h post-CLP. Hearts were perfused with cold saline, fixed in 10% paraformaldehyde for 48 h, embedded in paraffin, sectioned",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-6847",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6847,
+      "sentence": "Small pieces of myocardial tissue were fixed overnight in 2.5% glutaraldehyde at 4 \u00b0C, post-fixed in 1% osmium tetroxide, dehydrated through a graded ethanol series, and embedded in epoxy resin.",
+      "context_window": "Small pieces of myocardial tissue were fixed overnight in 2.5% glutaraldehyde at 4 \u00b0C, post-fixed in 1% osmium tetroxide,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-6890",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6890,
+      "sentence": "Small pieces of myocardial tissue were fixed overnight in 2.5% glutaraldehyde at 4 \u00b0C, post-fixed in 1% osmium tetroxide, dehydrated through a graded ethanol series, and embedded in epoxy resin.",
+      "context_window": "xed overnight in 2.5% glutaraldehyde at 4 \u00b0C, post-fixed in 1% osmium tetroxide, dehydrated through a graded ethanol serie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-12880",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12880,
+      "sentence": "Fix cells with 4% paraformaldehyde at room temperature for 20 min, then permeabilize in 0.3% Triton X-100 solution at room temperature for 15 min.",
+      "context_window": "processed according to different groupings. Fix cells with 4% paraformaldehyde at room temperature for 20 min, then perme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-12953",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12953,
+      "sentence": "Fix cells with 4% paraformaldehyde at room temperature for 20 min, then permeabilize in 0.3% Triton X-100 solution at room temperature for 15 min.",
+      "context_window": "dehyde at room temperature for 20 min, then permeabilize in 0.3% Triton X-100 solution at room temperature for 15 min. Block",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-13029",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13029,
+      "sentence": "Block cells with 5% BSA for 30 min.",
+      "context_window": "0 solution at room temperature for 15 min. Block cells with 5% BSA for 30 min. After blocking, cells were incubated overni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-p-13847",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13847,
+      "sentence": "A p-value less than 0.05 ( p < 0.05) was considered statistically significant.",
+      "context_window": "r method with the log-rank test. A p-value less than 0.05 ( p < 0.05) was considered statistically significant. Graphical abstra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-307",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 307,
+      "sentence": "Mice received intraperitoneal injection of taurine (200 mg/kg) 2 h after Sham or CLP surgery (Fig.",
+      "context_window": "n SICM. Mice received intraperitoneal injection of taurine (200 mg/kg) 2 h after Sham or CLP surgery (Fig. 1 A). To assess the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-670",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 670,
+      "sentence": "Results demonstrated that taurine treatment significantly improved mouse survival rates: the 72-hour survival rate in the CLP group was 30%, whereas the CLP + Taurine group showed an increase to 50% (Log-rank test, p < 0.05).",
+      "context_window": "vival rates: the 72-hour survival rate in the CLP group was 30%, whereas the CLP + Taurine group showed an increase to 50%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-729",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 729,
+      "sentence": "Results demonstrated that taurine treatment significantly improved mouse survival rates: the 72-hour survival rate in the CLP group was 30%, whereas the CLP + Taurine group showed an increase to 50% (Log-rank test, p < 0.05).",
+      "context_window": "30%, whereas the CLP + Taurine group showed an increase to 50% (Log-rank test, p < 0.05). Further analysis of survival cur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-p-749",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 749,
+      "sentence": "Results demonstrated that taurine treatment significantly improved mouse survival rates: the 72-hour survival rate in the CLP group was 30%, whereas the CLP + Taurine group showed an increase to 50% (Log-rank test, p < 0.05).",
+      "context_window": "P + Taurine group showed an increase to 50% (Log-rank test, p < 0.05). Further analysis of survival curve morphology revealed a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-pct-840",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 840,
+      "sentence": "Further analysis of survival curve morphology revealed a plateau phase near the 50% survival rate in both groups.",
+      "context_window": "survival curve morphology revealed a plateau phase near the 50% survival rate in both groups. Following standard methodolog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-3725",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3725,
+      "sentence": "C Murine sepsis score (MSS) of each group ( n = 10).",
+      "context_window": "for each group. C Murine sepsis score (MSS) of each group ( n = 10). D Representative echocardiographic M-mode images at 24 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-3867",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3867,
+      "sentence": "E - G Echocardiography quantification of LVEF, LVFS, and CO ( n = 6).",
+      "context_window": "- G Echocardiography quantification of LVEF, LVFS, and CO ( n = 6). H Representative H&E-stained images of ventricular tissue",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-4073",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4073,
+      "sentence": "I , J Serum levels of cTn-I and BNP ( n = 6).",
+      "context_window": "ry cell infiltration. I , J Serum levels of cTn-I and BNP ( n = 6). Data shown are Mean \u00b1 SEM Taurine improves clinical outc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-4569",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4569,
+      "sentence": "C Murine sepsis score (MSS) of each group ( n = 10).",
+      "context_window": "for each group. C Murine sepsis score (MSS) of each group ( n = 10). D Representative echocardiographic M-mode images at 24 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-4711",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4711,
+      "sentence": "E - G Echocardiography quantification of LVEF, LVFS, and CO ( n = 6).",
+      "context_window": "- G Echocardiography quantification of LVEF, LVFS, and CO ( n = 6). H Representative H&E-stained images of ventricular tissue",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-4917",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4917,
+      "sentence": "I , J Serum levels of cTn-I and BNP ( n = 6).",
+      "context_window": "ry cell infiltration. I , J Serum levels of cTn-I and BNP ( n = 6). Data shown are Mean \u00b1 SEM Inflammatory cytokines play a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8213",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8213,
+      "sentence": "A - C Serum levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6).",
+      "context_window": "rum levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6). D - F Myocardial tissue mRNA levels of IL-1\u03b2, TNF-\u03b1, and",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8306",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8306,
+      "sentence": "D - F Myocardial tissue mRNA levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6).",
+      "context_window": "RNA levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6). G - I Myocardial tissue levels of MDA, SOD, and GSH-Px at",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8392",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8392,
+      "sentence": "G - I Myocardial tissue levels of MDA, SOD, and GSH-Px at 24 h post-surgery ( n = 3).",
+      "context_window": "issue levels of MDA, SOD, and GSH-Px at 24 h post-surgery ( n = 3). J - K Representative Western blot images and quantitative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8601",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8601,
+      "sentence": "L AC16 cells viability treated with LPS (10 \u00b5g/ml) and different concentrations of taurine (0, 10, 20, 40, 80 mM) for 24 h ( n = 3).",
+      "context_window": "concentrations of taurine (0, 10, 20, 40, 80 mM) for 24 h ( n = 3). M , N Representative fluorescence images and quantificati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8727",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8727,
+      "sentence": "M , N Representative fluorescence images and quantification of relative fluorescence intensity of intracellular ROS ( n = 3).",
+      "context_window": "n of relative fluorescence intensity of intracellular ROS ( n = 3). Data shown are Mean \u00b1 SEM Taurine reduces inflammation a",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8906",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8906,
+      "sentence": "A - C Serum levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6).",
+      "context_window": "rum levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6). D - F Myocardial tissue mRNA levels of IL-1\u03b2, TNF-\u03b1, and",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-8999",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8999,
+      "sentence": "D - F Myocardial tissue mRNA levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6).",
+      "context_window": "RNA levels of IL-1\u03b2, TNF-\u03b1, and IL-6 at 24 h post-surgery ( n = 6). G - I Myocardial tissue levels of MDA, SOD, and GSH-Px at",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-9085",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9085,
+      "sentence": "G - I Myocardial tissue levels of MDA, SOD, and GSH-Px at 24 h post-surgery ( n = 3).",
+      "context_window": "issue levels of MDA, SOD, and GSH-Px at 24 h post-surgery ( n = 3). J - K Representative Western blot images and quantitative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-9294",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9294,
+      "sentence": "L AC16 cells viability treated with LPS (10 \u00b5g/ml) and different concentrations of taurine (0, 10, 20, 40, 80 mM) for 24 h ( n = 3).",
+      "context_window": "concentrations of taurine (0, 10, 20, 40, 80 mM) for 24 h ( n = 3). M , N Representative fluorescence images and quantificati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-9420",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9420,
+      "sentence": "M , N Representative fluorescence images and quantification of relative fluorescence intensity of intracellular ROS ( n = 3).",
+      "context_window": "n of relative fluorescence intensity of intracellular ROS ( n = 3). Data shown are Mean \u00b1 SEM Mitochondrial damage is a key",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-12763",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12763,
+      "sentence": "C OCR curve of AC16 cells (normalized to 10,000 cells). (D-F) Quantitative analysis of basal respiration D , maximal respiration E and ATP yield F calculated from OCR data, expressed in pmol/min/10,000 cells ( n = 3).",
+      "context_window": "culated from OCR data, expressed in pmol/min/10,000 cells ( n = 3). G Representative images of JC-1 staining of cells used to",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-12933",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12933,
+      "sentence": "H Quantification of cellular MMP levels using ImageJ software ( n = 3).",
+      "context_window": "antification of cellular MMP levels using ImageJ software ( n = 3). Data shown are Mean \u00b1 SEM Effects of taurine on myocardi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-13572",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13572,
+      "sentence": "C OCR curve of AC16 cells (normalized to 10,000 cells). (D-F) Quantitative analysis of basal respiration D , maximal respiration E and ATP yield F calculated from OCR data, expressed in pmol/min/10,000 cells ( n = 3).",
+      "context_window": "culated from OCR data, expressed in pmol/min/10,000 cells ( n = 3). G Representative images of JC-1 staining of cells used to",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-13742",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13742,
+      "sentence": "H Quantification of cellular MMP levels using ImageJ software ( n = 3).",
+      "context_window": "antification of cellular MMP levels using ImageJ software ( n = 3). Data shown are Mean \u00b1 SEM Apoptosis plays a crucial role",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-15168",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15168,
+      "sentence": "A , B Representative images of TUNEL staining (apoptotic cells were showing green) in heart tissues sections and quantitative analysis (scale bar = 50 \u03bcm; n = 3).",
+      "context_window": "sues sections and quantitative analysis (scale bar = 50 \u03bcm; n = 3). C , D Representative flow cytometry plots showing apoptos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-15282",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15282,
+      "sentence": "C , D Representative flow cytometry plots showing apoptosis levels and its quantification in AC16 cells ( n = 3).",
+      "context_window": "ing apoptosis levels and its quantification in AC16 cells ( n = 3). E - H apoptosis-related proteins (Bcl-2, Bax, Cleaved-Cas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-15374",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15374,
+      "sentence": "E - H apoptosis-related proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3).",
+      "context_window": "proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3). Data shown are Mean \u00b1 SEM Effects of taurine on apoptosi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-15637",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15637,
+      "sentence": "A , B Representative images of TUNEL staining (apoptotic cells were showing green) in heart tissues sections and quantitative analysis (scale bar = 50 \u03bcm; n = 3).",
+      "context_window": "sues sections and quantitative analysis (scale bar = 50 \u03bcm; n = 3). C , D Representative flow cytometry plots showing apoptos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-15751",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15751,
+      "sentence": "C , D Representative flow cytometry plots showing apoptosis levels and its quantification in AC16 cells ( n = 3).",
+      "context_window": "ing apoptosis levels and its quantification in AC16 cells ( n = 3). E - H apoptosis-related proteins (Bcl-2, Bax, Cleaved-Cas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-15843",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15843,
+      "sentence": "E - H apoptosis-related proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3).",
+      "context_window": "proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3). Data shown are Mean \u00b1 SEM Nuclear factor kappa-B (NF-\u03baB)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-17385",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17385,
+      "sentence": "B , C Representative Western blot images and quantitative analysis of p-NF-\u03baB p65, NF-\u03baB p65, p-IKB\u03b1 and IKB\u03b1 protein levels in mice cardiac muscles ( n = 3).",
+      "context_window": "5, p-IKB\u03b1 and IKB\u03b1 protein levels in mice cardiac muscles ( n = 3). Data shown are Mean \u00b1 SEM Taurine inhibits SICM-induced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-17852",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17852,
+      "sentence": "B , C Representative Western blot images and quantitative analysis of p-NF-\u03baB p65, NF-\u03baB p65, p-IKB\u03b1 and IKB\u03b1 protein levels in mice cardiac muscles ( n = 3).",
+      "context_window": "5, p-IKB\u03b1 and IKB\u03b1 protein levels in mice cardiac muscles ( n = 3). Data shown are Mean \u00b1 SEM To further investigate whether",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20029",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20029,
+      "sentence": "A , B Representative fluorescence images and quantification of relative fluorescence intensity of intracellular ROS ( n = 3).",
+      "context_window": "n of relative fluorescence intensity of intracellular ROS ( n = 3). C , D Representative images and quantification of JC-1 st",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20159",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20159,
+      "sentence": "C , D Representative images and quantification of JC-1 staining of cells used to measure MMP after different treatments ( n = 3).",
+      "context_window": "g of cells used to measure MMP after different treatments ( n = 3). E , F Representative flow cytometry plots showing apoptos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20273",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20273,
+      "sentence": "E , F Representative flow cytometry plots showing apoptosis levels and its quantification in AC16 cells ( n = 3).",
+      "context_window": "ing apoptosis levels and its quantification in AC16 cells ( n = 3). G - J Representative Western blot images and quantificati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20422",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20422,
+      "sentence": "G - J Representative Western blot images and quantification of apoptosis-related proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3).",
+      "context_window": "proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3). Data shown are Mean \u00b1 SEM NF-\u03baB activation weakened the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20661",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20661,
+      "sentence": "A , B Representative fluorescence images and quantification of relative fluorescence intensity of intracellular ROS ( n = 3).",
+      "context_window": "n of relative fluorescence intensity of intracellular ROS ( n = 3). C , D Representative images and quantification of JC-1 st",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20791",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20791,
+      "sentence": "C , D Representative images and quantification of JC-1 staining of cells used to measure MMP after different treatments ( n = 3).",
+      "context_window": "g of cells used to measure MMP after different treatments ( n = 3). E , F Representative flow cytometry plots showing apoptos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-20905",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20905,
+      "sentence": "E , F Representative flow cytometry plots showing apoptosis levels and its quantification in AC16 cells ( n = 3).",
+      "context_window": "ing apoptosis levels and its quantification in AC16 cells ( n = 3). G - J Representative Western blot images and quantificati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-n-21054",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21054,
+      "sentence": "G - J Representative Western blot images and quantification of apoptosis-related proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3).",
+      "context_window": "proteins (Bcl-2, Bax, Cleaved-Caspase-3) in heart tissues ( n = 3). Data shown are Mean \u00b1 SEM",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-8756",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8756,
+      "sentence": "Clinical studies (e.g., intravenous administration of 5 g [ 87 ], continuous oral intake for 6 months [ 88 ] and 8 weeks [ 81 ] have reported no serious adverse reactions at corresponding doses, providing evidence for its application in critical care settings.",
+      "context_window": "us administration of 5 g [ 87 ], continuous oral intake for 6 months [ 88 ] and 8 weeks [ 81 ] have reported no serious adverse",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12881049_taurine_alleviates_sepsis_induced_myocardial_injury_by_inhib-u-8776",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 8776,
+      "sentence": "Clinical studies (e.g., intravenous administration of 5 g [ 87 ], continuous oral intake for 6 months [ 88 ] and 8 weeks [ 81 ] have reported no serious adverse reactions at corresponding doses, providing evidence for its application in critical care settings.",
+      "context_window": "5 g [ 87 ], continuous oral intake for 6 months [ 88 ] and 8 weeks [ 81 ] have reported no serious adverse reactions at corres",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_the_aspree_study_disability_free_survival_updated_results_su",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_aspree_study_disability_free_survival_updated_results_su-u-244",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/d",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 244,
+      "sentence": "Abstract The NIA/NCI ASPREE (ASPirin in Reducing Events in the Elderly) Study was a landmark RCT of 19,114 healthy adults aged 70 (whites) and 65 (US minorities) in Australia and the US that demonstrated lack of effect of low dose aspirin (LDA:100 mg/d) on the novel primary end point of Disability- Free Survival (life free of disability and dementia) over a mean treatment of 4.7 years.",
+      "context_window": "S that demonstrated lack of effect of low dose aspirin (LDA:100 mg/d) on the novel primary end point of Disability- Free Surviva",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_aspree_study_disability_free_survival_updated_results_su-u-378",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 378,
+      "sentence": "Abstract The NIA/NCI ASPREE (ASPirin in Reducing Events in the Elderly) Study was a landmark RCT of 19,114 healthy adults aged 70 (whites) and 65 (US minorities) in Australia and the US that demonstrated lack of effect of low dose aspirin (LDA:100 mg/d) on the novel primary end point of Disability- Free Survival (life free of disability and dementia) over a mean treatment of 4.7 years.",
+      "context_window": "e free of disability and dementia) over a mean treatment of 4.7 years. Surprisingly, LDA was associated with a trend toward incre",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

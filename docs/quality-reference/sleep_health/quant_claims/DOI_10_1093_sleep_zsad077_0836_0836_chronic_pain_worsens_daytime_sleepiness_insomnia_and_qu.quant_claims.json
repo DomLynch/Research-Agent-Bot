@@ -1,0 +1,342 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu",
+  "doi": "10.1093/sleep/zsad077.0836",
+  "extracted_at": "2026-05-08T20:05:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 6,
+    "sample_size": 3,
+    "mean_sd": 4,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-pct-1052",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1052,
+      "sentence": "Regression analyses were performed to determine the influence of self-reported CP on sleep-related symptoms and quality of life while controlling for potential confounders (i.e., age, sex, OSA severity, body mass index, percentage of total sleep time spent with SpO2 &lt; 90%, and presence of psychiatric/mental health comorbidities).",
+      "context_window": "index, percentage of total sleep time spent with SpO2 &lt; 90%, and presence of psychiatric/mental health comorbidities).",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-pct-1199",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1199,
+      "sentence": "The Hochberg (step-up) method was used to control for the family-wise error rate at 5%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The final sample included N=111 participants with complete survey responses.",
+      "context_window": "ethod was used to control for the family-wise error rate at 5%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-n-1302",
+      "claim_type": "sample_size",
+      "raw_text": "N=111",
+      "numeric_values": [
+        111.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1302,
+      "sentence": "The Hochberg (step-up) method was used to control for the family-wise error rate at 5%.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>The final sample included N=111 participants with complete survey responses.",
+      "context_window": "itle>Results</jats:title> <jats:p>The final sample included N=111 participants with complete survey responses. Compared to th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-n-1390",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1390,
+      "sentence": "Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs.",
+      "context_window": "lete survey responses. Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-n-1432",
+      "claim_type": "sample_size",
+      "raw_text": "n=71",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1432,
+      "sentence": "Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs.",
+      "context_window": "up with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-msd-1476",
+      "claim_type": "mean_sd",
+      "raw_text": "12.7 \u00b1 5.5",
+      "numeric_values": [
+        12.7,
+        5.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1476,
+      "sentence": "Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs.",
+      "context_window": "bid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs. 13.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-msd-1490",
+      "claim_type": "mean_sd",
+      "raw_text": "10.2 \u00b1 5.2",
+      "numeric_values": [
+        10.2,
+        5.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1490,
+      "sentence": "Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs.",
+      "context_window": "(n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs. 13.7 \u00b1 7.4; p = .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-p-1502",
+      "claim_type": "p_value",
+      "raw_text": "p = .021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1502,
+      "sentence": "Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs.",
+      "context_window": "rienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs. 13.7 \u00b1 7.4; p = .002), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-msd-1528",
+      "claim_type": "mean_sd",
+      "raw_text": "18.1 \u00b1 6.2",
+      "numeric_values": [
+        18.1,
+        6.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1528,
+      "sentence": "Compared to the group with OSA-only (n=40), veterans with comorbid OSA and CP (n=71) experienced significantly higher ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs.",
+      "context_window": "er ESS (12.7 \u00b1 5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs. 13.7 \u00b1 7.4; p = .002), and worse quality of life across",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-msd-1543",
+      "claim_type": "mean_sd",
+      "raw_text": "13.7 \u00b1 7.4",
+      "numeric_values": [
+        13.7,
+        7.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "13.7 \u00b1 7.4; p = .002), and worse quality of life across all SF-20 domains.",
+      "context_window": "5.5 vs 10.2 \u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs. 13.7 \u00b1 7.4; p = .002), and worse quality of life across all SF-20 doma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-p-1555",
+      "claim_type": "p_value",
+      "raw_text": "p = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1555,
+      "sentence": "13.7 \u00b1 7.4; p = .002), and worse quality of life across all SF-20 domains.",
+      "context_window": "\u00b1 5.2; p = .021) and ISI scores (18.1 \u00b1 6.2 vs. 13.7 \u00b1 7.4; p = .002), and worse quality of life across all SF-20 domains. Of no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-pct-1736",
+      "claim_type": "percentage",
+      "raw_text": "68.7%",
+      "numeric_values": [
+        68.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1736,
+      "sentence": "Of note, clinically significant insomnia (ISI score &gt; 15) was most common among veterans with comorbid OSA and CP (68.7% vs.",
+      "context_window": "5) was most common among veterans with comorbid OSA and CP (68.7% vs. 45.5%, p = .010). In adjusted analyses, CP diagnosis wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-pct-1746",
+      "claim_type": "percentage",
+      "raw_text": "45.5%",
+      "numeric_values": [
+        45.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1746,
+      "sentence": "45.5%, p = .010).",
+      "context_window": "t common among veterans with comorbid OSA and CP (68.7% vs. 45.5%, p = .010). In adjusted analyses, CP diagnosis was signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-p-1753",
+      "claim_type": "p_value",
+      "raw_text": "p = .010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1753,
+      "sentence": "45.5%, p = .010).",
+      "context_window": "n among veterans with comorbid OSA and CP (68.7% vs. 45.5%, p = .010). In adjusted analyses, CP diagnosis was significantly asso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-pct-1871",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1871,
+      "sentence": "In adjusted analyses, CP diagnosis was significantly associated with higher ESS (adjusted mean difference [95% CI] = 2.72 [0.55, 4.88], p = .014) and ISI scores (adjusted mean difference [95% CI] = 3.82 [1.27, 6.37], p =.004).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>There is a high prevalence of CP among veterans with OSA and symptom burden is higher in patients with OSA and CP.",
+      "context_window": "antly associated with higher ESS (adjusted mean difference [95% CI] = 2.72 [0.55, 4.88], p = .014) and ISI scores (adjusted",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-p-1900",
+      "claim_type": "p_value",
+      "raw_text": "p = .014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1900,
+      "sentence": "In adjusted analyses, CP diagnosis was significantly associated with higher ESS (adjusted mean difference [95% CI] = 2.72 [0.55, 4.88], p = .014) and ISI scores (adjusted mean difference [95% CI] = 3.82 [1.27, 6.37], p =.004).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>There is a high prevalence of CP among veterans with OSA and symptom burden is higher in patients with OSA and CP.",
+      "context_window": "ESS (adjusted mean difference [95% CI] = 2.72 [0.55, 4.88], p = .014) and ISI scores (adjusted mean difference [95% CI] = 3.82 [",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-pct-1952",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1952,
+      "sentence": "In adjusted analyses, CP diagnosis was significantly associated with higher ESS (adjusted mean difference [95% CI] = 2.72 [0.55, 4.88], p = .014) and ISI scores (adjusted mean difference [95% CI] = 3.82 [1.27, 6.37], p =.004).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>There is a high prevalence of CP among veterans with OSA and symptom burden is higher in patients with OSA and CP.",
+      "context_window": "4.88], p = .014) and ISI scores (adjusted mean difference [95% CI] = 3.82 [1.27, 6.37], p =.004).</jats:p> </jats:sec> <ja",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsad077_0836_0836_chronic_pain_worsens_daytime_sleepiness_insomnia_and_qu-p-1981",
+      "claim_type": "p_value",
+      "raw_text": "p =.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1981,
+      "sentence": "In adjusted analyses, CP diagnosis was significantly associated with higher ESS (adjusted mean difference [95% CI] = 2.72 [0.55, 4.88], p = .014) and ISI scores (adjusted mean difference [95% CI] = 3.82 [1.27, 6.37], p =.004).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>There is a high prevalence of CP among veterans with OSA and symptom burden is higher in patients with OSA and CP.",
+      "context_window": "res (adjusted mean difference [95% CI] = 3.82 [1.27, 6.37], p =.004).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</j",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

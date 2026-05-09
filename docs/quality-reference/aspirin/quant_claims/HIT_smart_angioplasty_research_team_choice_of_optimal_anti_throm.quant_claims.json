@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_smart_angioplasty_research_team_choice_of_optimal_anti_throm",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_smart_angioplasty_research_team_choice_of_optimal_anti_throm-u-232",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 232,
+      "sentence": "This study is a prospective, open-label, two-arm, randomized multicenter trial to compare the efficacy and safety of clopidogrel versus aspirin monotherapy beyond the standard duration of dual antiplatelet therapy (DAPT) (more than 12 months for myocardial infarction \\[MI\\] and more than 6 months for non-MI) after percutaneous coronary intervention (PCI) in patients at high risk of recurrent ischemic events.",
+      "context_window": "ard duration of dual antiplatelet therapy (DAPT) (more than 12 months for myocardial infarction \\[MI\\] and more than 6 months for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_smart_angioplasty_research_team_choice_of_optimal_anti_throm-u-289",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 289,
+      "sentence": "This study is a prospective, open-label, two-arm, randomized multicenter trial to compare the efficacy and safety of clopidogrel versus aspirin monotherapy beyond the standard duration of dual antiplatelet therapy (DAPT) (more than 12 months for myocardial infarction \\[MI\\] and more than 6 months for non-MI) after percutaneous coronary intervention (PCI) in patients at high risk of recurrent ischemic events.",
+      "context_window": "an 12 months for myocardial infarction \\[MI\\] and more than 6 months for non-MI) after percutaneous coronary intervention (PCI)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1111_jgs_16489_geroscience_and_the_coronavirus_pandemic_the_whack_a_mole_ap",
+  "doi": "10.1111/jgs.16489",
+  "extracted_at": "2026-05-08T19:55:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jgs_16489_geroscience_and_the_coronavirus_pandemic_the_whack_a_mole_ap-u-3529",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 3529,
+      "sentence": "Other geroscience approaches currently under consideration include inhibition of the mechanistic target of rapamycin (mTOR) pathway of nutrient sensing.3 Inhibition of this pathway with a combination of everolimus (a derivative of rapamycin) and RTB101 (a catalytic site mTOR inhibitor), was shown to be effective in increasing antibody titers against influenza vaccination.5 In phase 2 trials in adults 65 years of age and older, RTB101 upregulated pan-antiviral gene expression, decreased the levels of inflammatory cytokines, and decreased the incidence and severity of laboratory-confirmed viral respiratory tract infections including coronavirus infections.",
+      "context_window": "against influenza vaccination.5 In phase 2 trials in adults 65 years of age and older, RTB101 upregulated pan-antiviral gene exp",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "everolimus",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

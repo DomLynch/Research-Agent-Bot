@@ -1,0 +1,175 @@
+{
+  "paper_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam",
+  "doi": "10.1177/1753944717711138",
+  "extracted_at": "2026-05-08T20:10:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 4,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-pct-279",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 279,
+      "sentence": "Methods Patients with HF and left ventricle ejection fraction less than 50%, and placed in functional class II or III according to the New York Heart Association classification, were randomly assigned to two groups: (1) taurine supplementation; or (2) placebo.",
+      "context_window": "ents with HF and left ventricle ejection fraction less than 50%, and placed in functional class II or III according to the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-u-509",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 509,
+      "sentence": "The taurine group received oral taurine (500 mg) 3 times a day for 2 weeks, and performed exercise before and after the supplementation period.",
+      "context_window": "n; or (2) placebo. The taurine group received oral taurine (500 mg) 3 times a day for 2 weeks, and performed exercise before a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-u-535",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 535,
+      "sentence": "The taurine group received oral taurine (500 mg) 3 times a day for 2 weeks, and performed exercise before and after the supplementation period.",
+      "context_window": "rine group received oral taurine (500 mg) 3 times a day for 2 weeks, and performed exercise before and after the supplementatio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-u-688",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 688,
+      "sentence": "The placebo group followed the same protocol, but with a starch supplement (500 mg) rather than taurine.",
+      "context_window": "p followed the same protocol, but with a starch supplement (500 mg) rather than taurine. The incremental multilevel treadmill",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-p-1056",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "Results Our results indicate that inflammatory indices [C-reactive protein (CRP), platelets] decreased in the taurine group in pre-exercise, post-supplementation and post-exercise, post-supplementation as compared with pre-exercise, pre-supplementation ( p < 0.05) whereas these indices increased in pre-exercise, post-supplementation and post-exercise, post-supplementation as compared with pre-exercise, pre-supplementation in the placebo group ( p < 0.05).",
+      "context_window": "tation as compared with pre-exercise, pre-supplementation ( p < 0.05) whereas these indices increased in pre-exercise, post-supp",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-p-1250",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1250,
+      "sentence": "Results Our results indicate that inflammatory indices [C-reactive protein (CRP), platelets] decreased in the taurine group in pre-exercise, post-supplementation and post-exercise, post-supplementation as compared with pre-exercise, pre-supplementation ( p < 0.05) whereas these indices increased in pre-exercise, post-supplementation and post-exercise, post-supplementation as compared with pre-exercise, pre-supplementation in the placebo group ( p < 0.05).",
+      "context_window": "th pre-exercise, pre-supplementation in the placebo group ( p < 0.05). Our results also show that atherogenic indices [Castelli'",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-p-1571",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1571,
+      "sentence": "Our results also show that atherogenic indices [Castelli's Risk Index-I (CRI-I), Castelli's Risk Index-II (CRI-II) and Atherogenic Coef\ufb01cient (AC)] decreased in the taurine group in pre-exercise, post-supplementation and post-exercise, post-supplementation as compared with pre-exercise, pre-supplementation ( p < 0.05).",
+      "context_window": "tation as compared with pre-exercise, pre-supplementation ( p < 0.05). No such changes were noted in the placebo group ( p > 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-p-1632",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1632,
+      "sentence": "No such changes were noted in the placebo group ( p > 0.05).",
+      "context_window": "< 0.05). No such changes were noted in the placebo group ( p > 0.05). Conclusions our results suggest that 2 weeks of oral taur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28580833_taurine_supplementation_has_anti_atherogenic_and_anti_inflam-u-1680",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1680,
+      "sentence": "Conclusions our results suggest that 2 weeks of oral taurine supplementation increases the taurine levels and has anti-atherogenic and anti-inflammatory effects prior to and following incremental exercise in HF patients.",
+      "context_window": "ebo group ( p > 0.05). Conclusions our results suggest that 2 weeks of oral taurine supplementation increases the taurine level",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "taurine supplementation",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

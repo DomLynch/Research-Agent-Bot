@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1152_ajpregu_00232_2004_human_placental_taurine_transporter_in_uncomplicated_and_iug",
+  "doi": "10.1152/ajpregu.00232.2004",
+  "extracted_at": "2026-05-08T20:10:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 1,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1152_ajpregu_00232_2004_human_placental_taurine_transporter_in_uncomplicated_and_iug-p-939",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 939,
+      "sentence": "The PKC activator PMA and the nitric oxide (NO) donor 3-morpholinosydnonimine decreased TAUT activity ( P < 0.05, n = 7-15).",
+      "context_window": "NO) donor 3-morpholinosydnonimine decreased TAUT activity ( P < 0.05, n = 7-15). However, none of the tested hormones, e.g., lep",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1152_ajpregu_00232_2004_human_placental_taurine_transporter_in_uncomplicated_and_iug-n-949",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 949,
+      "sentence": "The PKC activator PMA and the nitric oxide (NO) donor 3-morpholinosydnonimine decreased TAUT activity ( P < 0.05, n = 7-15).",
+      "context_window": "3-morpholinosydnonimine decreased TAUT activity ( P < 0.05, n = 7-15). However, none of the tested hormones, e.g., leptin and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

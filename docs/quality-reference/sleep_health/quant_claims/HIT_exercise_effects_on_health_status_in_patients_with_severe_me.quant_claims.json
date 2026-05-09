@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_exercise_effects_on_health_status_in_patients_with_severe_me",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_exercise_effects_on_health_status_in_patients_with_severe_me-u-1481",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1481,
+      "sentence": "However, the mechanism of action of exercise on health status and the optimal \"dose\" and intensity of exercise to achieve the greatest number of benefits with respect to cardiometabolic health in patients with severe mental disorder are unknown.The study will be carried out at the Mental Health Rehabilitation Unit of Navarra, a center under the Mental Health Management of Osasunbidea, where people between 18 and 65 years of age with a diagnosis of severe mental illness in a situation of clinical stability receive treatment.The sample will be composed of 100 participants from consecutive admissions to the Rehabilitation Unit.",
+      "context_window": "alth Management of Osasunbidea, where people between 18 and 65 years of age with a diagnosis of severe mental illness in a situa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_exercise_effects_on_health_status_in_patients_with_severe_me-u-1973",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1973,
+      "sentence": "The subjects will be randomized into 2 groups; a control group that will receive the usual specialized care and an intervention group, which in addition to receiving the usual rehabilitation treatment, will undergo a 6-week multicomponent physical exercise program performed 2 days per week.",
+      "context_window": "a 6-week multicomponent physical exercise program performed 2 days per week. The effects of exercise on the inflammatory profi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1096_fasebj_21_5_a667_c_alteration_of_intracellular_taurine_transporter_expression_i",
+  "doi": "10.1096/fasebj.21.5.a667-c",
+  "extracted_at": "2026-05-08T20:10:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1096_fasebj_21_5_a667_c_alteration_of_intracellular_taurine_transporter_expression_i-u-581",
+      "claim_type": "unit_value",
+      "raw_text": "15 weeks",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 581,
+      "sentence": "This study investigated the total, membrane and Mt TAUT expression level in LD. </jats:p> <jats:p> <jats:bold>Methods:</jats:bold> Rats were administrated CCl <jats:sub>4</jats:sub> with/out taurine for 5 or 15 weeks.",
+      "context_window": "trated CCl <jats:sub>4</jats:sub> with/out taurine for 5 or 15 weeks. The hepatic TAUT mRNA and protein expression levels were e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1096_fasebj_21_5_a667_c_alteration_of_intracellular_taurine_transporter_expression_i-u-1228",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1228,
+      "sentence": "The Mt porin level was significantly reduced by CCl <jats:sub>4</jats:sub> after 15 but not 5 weeks.",
+      "context_window": "ntly reduced by CCl <jats:sub>4</jats:sub> after 15 but not 5 weeks. Taurine administration prevented the loss of TAUT in the c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

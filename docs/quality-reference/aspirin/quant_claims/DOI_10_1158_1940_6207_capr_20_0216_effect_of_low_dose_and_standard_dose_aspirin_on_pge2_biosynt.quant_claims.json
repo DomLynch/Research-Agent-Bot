@@ -1,0 +1,306 @@
+{
+  "paper_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt",
+  "doi": "10.1158/1940-6207.capr-20-0216",
+  "extracted_at": "2026-05-08T20:06:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 5,
+    "mean_sd": 3,
+    "p_value": 2,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-n-579",
+      "claim_type": "sample_size",
+      "raw_text": "N = 180",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "Adults (N = 180) who recently underwent adenoma resection and did not regularly use aspirin or NSAIDs were recruited to a double-blind, placebo-controlled, randomized trial of aspirin at 81 or 325 mg/day for 8-12 weeks.",
+      "context_window": "pirin in individuals at risk for colorectal cancer. Adults (N = 180) who recently underwent adenoma resection and did not regul",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-u-764",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 764,
+      "sentence": "Adults (N = 180) who recently underwent adenoma resection and did not regularly use aspirin or NSAIDs were recruited to a double-blind, placebo-controlled, randomized trial of aspirin at 81 or 325 mg/day for 8-12 weeks.",
+      "context_window": "d, placebo-controlled, randomized trial of aspirin at 81 or 325 mg/day for 8-12 weeks. The primary outcome was postintervention ch",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-u-781",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 781,
+      "sentence": "Adults (N = 180) who recently underwent adenoma resection and did not regularly use aspirin or NSAIDs were recruited to a double-blind, placebo-controlled, randomized trial of aspirin at 81 or 325 mg/day for 8-12 weeks.",
+      "context_window": "lled, randomized trial of aspirin at 81 or 325 mg/day for 8-12 weeks. The primary outcome was postintervention change in urinary",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-msd-979",
+      "claim_type": "mean_sd",
+      "raw_text": "15.9 \u00b1 14.6",
+      "numeric_values": [
+        15.9,
+        14.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 979,
+      "sentence": "Baseline PGE-M excretion was 15.9 \u00b1 14.6 (mean \u00b1 S.D, ng/mg creatinine).",
+      "context_window": "ed urine samples for analysis. Baseline PGE-M excretion was 15.9 \u00b1 14.6 (mean \u00b1 S.D, ng/mg creatinine). Aspirin significantly reduc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-msd-1071",
+      "claim_type": "mean_sd",
+      "raw_text": "4.7 \u00b1 14.8",
+      "numeric_values": [
+        4.7,
+        14.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "Aspirin significantly reduced PGE-M excretion (-4.7 \u00b1 14.8) compared with no decrease (0.8 \u00b1 11.8) in the placebo group (P = 0.015; mean duration of treatment = 68.9 days).",
+      "context_window": "reatinine). Aspirin significantly reduced PGE-M excretion (-4.7 \u00b1 14.8) compared with no decrease (0.8 \u00b1 11.8) in the placebo grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-msd-1110",
+      "claim_type": "mean_sd",
+      "raw_text": "0.8 \u00b1 11.8",
+      "numeric_values": [
+        0.8,
+        11.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "Aspirin significantly reduced PGE-M excretion (-4.7 \u00b1 14.8) compared with no decrease (0.8 \u00b1 11.8) in the placebo group (P = 0.015; mean duration of treatment = 68.9 days).",
+      "context_window": "ed PGE-M excretion (-4.7 \u00b1 14.8) compared with no decrease (0.8 \u00b1 11.8) in the placebo group (P = 0.015; mean duration of treatmen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-p-1144",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1144,
+      "sentence": "Aspirin significantly reduced PGE-M excretion (-4.7 \u00b1 14.8) compared with no decrease (0.8 \u00b1 11.8) in the placebo group (P = 0.015; mean duration of treatment = 68.9 days).",
+      "context_window": "ompared with no decrease (0.8 \u00b1 11.8) in the placebo group (P = 0.015; mean duration of treatment = 68.9 days). Aspirin significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-u-1184",
+      "claim_type": "unit_value",
+      "raw_text": "68.9 days",
+      "numeric_values": [
+        68.9
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1184,
+      "sentence": "Aspirin significantly reduced PGE-M excretion (-4.7 \u00b1 14.8) compared with no decrease (0.8 \u00b1 11.8) in the placebo group (P = 0.015; mean duration of treatment = 68.9 days).",
+      "context_window": "the placebo group (P = 0.015; mean duration of treatment = 68.9 days). Aspirin significantly reduced PGE-M levels in participant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-pct-1277",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1277,
+      "sentence": "Aspirin significantly reduced PGE-M levels in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo.",
+      "context_window": "reduced PGE-M levels in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-p-1282",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "Aspirin significantly reduced PGE-M levels in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo.",
+      "context_window": "ced PGE-M levels in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-u-1296",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "Aspirin significantly reduced PGE-M levels in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo.",
+      "context_window": "ls in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo. In 40% and 50%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-pct-1309",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1309,
+      "sentence": "Aspirin significantly reduced PGE-M levels in participants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo.",
+      "context_window": "pants receiving either 81 (-15%; P = 0.018) or 325 mg/day (-28%; P &lt; 0.0001) compared with placebo. In 40% and 50% of th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-pct-1355",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1355,
+      "sentence": "In 40% and 50% of the individuals randomized to 81 or 325 mg/day aspirin, respectively, PGE-M reduction reached a threshold expected to prevent recurrence in 10% of individuals.",
+      "context_window": "325 mg/day (-28%; P &lt; 0.0001) compared with placebo. In 40% and 50% of the individuals randomized to 81 or 325 mg/day a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-pct-1363",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "In 40% and 50% of the individuals randomized to 81 or 325 mg/day aspirin, respectively, PGE-M reduction reached a threshold expected to prevent recurrence in 10% of individuals.",
+      "context_window": "day (-28%; P &lt; 0.0001) compared with placebo. In 40% and 50% of the individuals randomized to 81 or 325 mg/day aspirin,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-u-1406",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1406,
+      "sentence": "In 40% and 50% of the individuals randomized to 81 or 325 mg/day aspirin, respectively, PGE-M reduction reached a threshold expected to prevent recurrence in 10% of individuals.",
+      "context_window": "cebo. In 40% and 50% of the individuals randomized to 81 or 325 mg/day aspirin, respectively, PGE-M reduction reached a threshold",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_20_0216_effect_of_low_dose_and_standard_dose_aspirin_on_pge2_biosynt-pct-1510",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "In 40% and 50% of the individuals randomized to 81 or 325 mg/day aspirin, respectively, PGE-M reduction reached a threshold expected to prevent recurrence in 10% of individuals.",
+      "context_window": "ction reached a threshold expected to prevent recurrence in 10% of individuals. These results support that aspirin signific",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do",
+  "doi": "10.1161/01.str.0000231683.43347.ec",
+  "extracted_at": "2026-05-08T20:05:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do-u-203",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 203,
+      "sentence": "Meta-analysis has clearly shown that 75 mg plain aspirin is the lowest effective dose; however, it is not known whether the recent increased use of enteric-coated aspirin could account for aspirin resistance.",
+      "context_window": "with adverse outcome. Meta-analysis has clearly shown that 75 mg plain aspirin is the lowest effective dose; however, it is",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do-u-847",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 847,
+      "sentence": "Five aspirin preparations were evaluated, 3 different enteric-coated 75-mg aspirins, dispersible aspirin 75 mg and asasantin (25-mg standard release aspirin plus 200-mg modified-release dipyridamole given twice daily).",
+      "context_window": "ifferent enteric-coated 75-mg aspirins, dispersible aspirin 75 mg and asasantin (25-mg standard release aspirin plus 200-mg m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do-u-1097",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1097,
+      "sentence": "Serum thromboxane (TX) B <jats:sub>2</jats:sub> levels and arachidonic acid-induced platelet aggregation were measured before and after 14 days of treatment. </jats:p> <jats:p> <jats:bold> <jats:italic>Results-</jats:italic> </jats:bold> All other aspirin preparations tested were inferior to dispersible aspirin ( <jats:italic>P</jats:italic> <0.001) in their effect on serum TXB <jats:sub>2</jats:sub> level.",
+      "context_window": "induced platelet aggregation were measured before and after 14 days of treatment. </jats:p> <jats:p> <jats:bold> <jats:italic>R",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do-pct-1392",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1392,
+      "sentence": "Treatment failure (<95% inhibition serum TXB <jats:sub>2</jats:sub> formation) occurred in 14 subjects, none of whom were taking dispersible aspirin.",
+      "context_window": "serum TXB <jats:sub>2</jats:sub> level. Treatment failure (<95% inhibition serum TXB <jats:sub>2</jats:sub> formation) occu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do-pct-1642",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1642,
+      "sentence": "Mean weight for those demonstrating treatment failure was greater than those with complete TXB <jats:sub>2</jats:sub> (>99%) inhibition ( <jats:italic>P</jats:italic> <0.001).",
+      "context_window": "eater than those with complete TXB <jats:sub>2</jats:sub> (>99%) inhibition ( <jats:italic>P</jats:italic> <0.001). Using l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_str_0000231683_43347_ec_effect_of_enteric_coating_on_antiplatelet_activity_of_low_do-pct-1756",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "Using logistic regression analysis an 80-kg subject had a 20% probability of treatment failure.",
+      "context_window": ". Using logistic regression analysis an 80-kg subject had a 20% probability of treatment failure. Asasantin was the most po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

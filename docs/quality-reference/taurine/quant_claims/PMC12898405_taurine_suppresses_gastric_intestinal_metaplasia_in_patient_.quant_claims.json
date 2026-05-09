@@ -1,0 +1,1454 @@
+{
+  "paper_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_",
+  "doi": "10.4251/wjgo.v18.i2.114161",
+  "extracted_at": "2026-05-08T20:10:14+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 9,
+    "p_value": 27,
+    "percentage": 27,
+    "unit_value": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-530",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 530,
+      "sentence": "Patient-derived GIM organoids ( n = 3) and Atp4a -/- mice, which spontaneously develop GIM, were used as experimental models.",
+      "context_window": "nd Atp4a -/- mouse models. Patient-derived GIM organoids ( n = 3) and Atp4a -/- mice, which spontaneously develop GIM, were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-1353",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1353,
+      "sentence": "Under taurine treatment, MUC5AC expression was significantly increased, whereas the intestinal-specific markers CDX2 , MUC2 , and TFF3 were reduced ( P < 0.05).",
+      "context_window": "inal-specific markers CDX2 , MUC2 , and TFF3 were reduced ( P < 0.05). In parallel, in patient-derived GIM organoids, taurine tr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-149",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 149,
+      "sentence": "Gastric intestinal metaplasia (GIM) is a well-established risk factor for intestinal-type gastric cancer (GC), with a global prevalence ranging from 5% to 20%.",
+      "context_window": "gastric cancer (GC), with a global prevalence ranging from 5% to 20%. In East Asia, approximately 0.25%-10% of patients w",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-155",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 155,
+      "sentence": "Gastric intestinal metaplasia (GIM) is a well-established risk factor for intestinal-type gastric cancer (GC), with a global prevalence ranging from 5% to 20%.",
+      "context_window": "ic cancer (GC), with a global prevalence ranging from 5% to 20%. In East Asia, approximately 0.25%-10% of patients with GIM",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-188",
+      "claim_type": "percentage",
+      "raw_text": "0.25%",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 188,
+      "sentence": "In East Asia, approximately 0.25%-10% of patients with GIM progress to GC annually[ 1 ].",
+      "context_window": "valence ranging from 5% to 20%. In East Asia, approximately 0.25%-10% of patients with GIM progress to GC annually[ 1 ]. As a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-194",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 194,
+      "sentence": "In East Asia, approximately 0.25%-10% of patients with GIM progress to GC annually[ 1 ].",
+      "context_window": "e ranging from 5% to 20%. In East Asia, approximately 0.25%-10% of patients with GIM progress to GC annually[ 1 ]. As a hig",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-475",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 475,
+      "sentence": "As a high-incidence region for GC, China has a markedly higher prevalence of GIM than the global average does, largely attributable to dietary habits and potential genetic susceptibility, with rates in Chinese adults reaching 23%[ 2 , 3 ].",
+      "context_window": "netic susceptibility, with rates in Chinese adults reaching 23%[ 2 , 3 ]. Recognized as a precancerous lesion, GIM is consi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-3034",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3034,
+      "sentence": "Genetic ablation of the H + -K + -ATPase \u03b1-subunit in Atp4a -/- mice results in chronic achlorhydria beginning at approximately 12 weeks of age, accompanied by glandular hyperplasia and vesicle formation.",
+      "context_window": "results in chronic achlorhydria beginning at approximately 12 weeks of age, accompanied by glandular hyperplasia and vesicle fo",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1033,
+      "sentence": "Atp4a -/- mice were generated via the clustered regularly interspaced short palindromic repeats (CRISPR)/CRISPR-associated protein 9 system (Shanghai Model Organisms Center, Shanghai, China) and maintained in a specific pathogen-free facility under controlled conditions (50%-60% relative humidity, 22 \u00b0C \u00b1 3 \u00b0C temperature, and a 12-hours light/dark cycle).",
+      "context_window": "pecific pathogen-free facility under controlled conditions (50%-60% relative humidity, 22 \u00b0C \u00b1 3 \u00b0C temperature, and a 12-h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-1037",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1037,
+      "sentence": "Atp4a -/- mice were generated via the clustered regularly interspaced short palindromic repeats (CRISPR)/CRISPR-associated protein 9 system (Shanghai Model Organisms Center, Shanghai, China) and maintained in a specific pathogen-free facility under controlled conditions (50%-60% relative humidity, 22 \u00b0C \u00b1 3 \u00b0C temperature, and a 12-hours light/dark cycle).",
+      "context_window": "fic pathogen-free facility under controlled conditions (50%-60% relative humidity, 22 \u00b0C \u00b1 3 \u00b0C temperature, and a 12-hours",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-1505",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg/kg/day",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 1505,
+      "sentence": "The mice in the treatment group received taurine (MedChemExpress, Monmouth Junction, NJ, United States) ad libitum in the drinking water at 1000 mg/kg/day beginning at 12 weeks of age[ 28 ].",
+      "context_window": "ion, NJ, United States) ad libitum in the drinking water at 1000 mg/kg/day beginning at 12 weeks of age[ 28 ]. After 4 weeks of treatm",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-1533",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1533,
+      "sentence": "The mice in the treatment group received taurine (MedChemExpress, Monmouth Junction, NJ, United States) ad libitum in the drinking water at 1000 mg/kg/day beginning at 12 weeks of age[ 28 ].",
+      "context_window": "ibitum in the drinking water at 1000 mg/kg/day beginning at 12 weeks of age[ 28 ]. After 4 weeks of treatment, the gastric tissu",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-1562",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1562,
+      "sentence": "After 4 weeks of treatment, the gastric tissues were harvested for subsequent analyses.",
+      "context_window": "at 1000 mg/kg/day beginning at 12 weeks of age[ 28 ]. After 4 weeks of treatment, the gastric tissues were harvested for subseq",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-1675",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1675,
+      "sentence": "Gastric tissues were fixed in 4% paraformaldehyde and subsequently dehydrated through a graded ethanol series (75%-95%), cleared in xylene, and embedded in paraffin.",
+      "context_window": "ted for subsequent analyses. Gastric tissues were fixed in 4% paraformaldehyde and subsequently dehydrated through a grad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-1756",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1756,
+      "sentence": "Gastric tissues were fixed in 4% paraformaldehyde and subsequently dehydrated through a graded ethanol series (75%-95%), cleared in xylene, and embedded in paraffin.",
+      "context_window": "nd subsequently dehydrated through a graded ethanol series (75%-95%), cleared in xylene, and embedded in paraffin. The para",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-1760",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1760,
+      "sentence": "Gastric tissues were fixed in 4% paraformaldehyde and subsequently dehydrated through a graded ethanol series (75%-95%), cleared in xylene, and embedded in paraffin.",
+      "context_window": "ubsequently dehydrated through a graded ethanol series (75%-95%), cleared in xylene, and embedded in paraffin. The paraffin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2909",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2909,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": ", while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2917",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2917,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final sco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2920",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2920,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final score w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2929",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2929,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "on of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final score was calcul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2933",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2933,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "f positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final score was calculated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2942",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2942,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "e cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final score was calculated as the p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2946",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2946,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "lls was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final score was calculated as the produ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-2960",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2960,
+      "sentence": "The staining intensity was graded as 0 (negative), 1 (light yellow), 2 (brown), or 3 (dark brown), while the proportion of positive cells was scored as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%).",
+      "context_window": "as 0 (< 5%), 1 (5%-24%), 2 (25%-49%), 3 (50%-74%), or 4 (\u2265 75%). The final score was calculated as the product of intensit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-3430",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3430,
+      "sentence": "The tissues were washed thoroughly in cold phosphate-buffered saline containing 1% penicillin-streptomycin and then minced into approximately 1 mm 3 fragments.",
+      "context_window": "hed thoroughly in cold phosphate-buffered saline containing 1% penicillin-streptomycin and then minced into approximately",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-3492",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3492,
+      "sentence": "The tissues were washed thoroughly in cold phosphate-buffered saline containing 1% penicillin-streptomycin and then minced into approximately 1 mm 3 fragments.",
+      "context_window": "penicillin-streptomycin and then minced into approximately 1 mm 3 fragments. Tissue fragments were digested in 5 mL of adva",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-3544",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3544,
+      "sentence": "Tissue fragments were digested in 5 mL of advanced Dulbecco\u2019s Modified Eagle's Medium (DMEM)/F12 medium containing 1 mg/mL collagenase XI, 10 \u03bcM Y-27632 (Rho-associated protein kinase inhibitor), and 1% fetal bovine serum for 60-90 minutes at 37 \u00b0C with gentle agitation.",
+      "context_window": "imately 1 mm 3 fragments. Tissue fragments were digested in 5 mL of advanced Dulbecco\u2019s Modified Eagle's Medium (DMEM)/F12 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-3625",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3625,
+      "sentence": "Tissue fragments were digested in 5 mL of advanced Dulbecco\u2019s Modified Eagle's Medium (DMEM)/F12 medium containing 1 mg/mL collagenase XI, 10 \u03bcM Y-27632 (Rho-associated protein kinase inhibitor), and 1% fetal bovine serum for 60-90 minutes at 37 \u00b0C with gentle agitation.",
+      "context_window": "ecco\u2019s Modified Eagle's Medium (DMEM)/F12 medium containing 1 mg/mL collagenase XI, 10 \u03bcM Y-27632 (Rho-associated protein ki",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-3710",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3710,
+      "sentence": "Tissue fragments were digested in 5 mL of advanced Dulbecco\u2019s Modified Eagle's Medium (DMEM)/F12 medium containing 1 mg/mL collagenase XI, 10 \u03bcM Y-27632 (Rho-associated protein kinase inhibitor), and 1% fetal bovine serum for 60-90 minutes at 37 \u00b0C with gentle agitation.",
+      "context_window": "0 \u03bcM Y-27632 (Rho-associated protein kinase inhibitor), and 1% fetal bovine serum for 60-90 minutes at 37 \u00b0C with gentle a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-4381",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 4381,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "ted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin condition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-4398",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 4398,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "MEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-4425",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4425,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "\u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-4459",
+      "claim_type": "unit_value",
+      "raw_text": "100 ng/mL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4459,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-4477",
+      "claim_type": "unit_value",
+      "raw_text": "50 ng/mL",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4477,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "steine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-4491",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4491,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-4540",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4540,
+      "sentence": "The culture medium consisted of advanced DMEM/F12 supplemented with 1 \u00d7 B27, 1 \u00d7 N2, 10 mmol/L HEPES, 1 mmol/L N-acetylcysteine, 10% R-spondin conditioned medium, 100 ng/mL Noggin, 50 ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin.",
+      "context_window": "ng/mL EGF, 10% Wnt3a conditioned medium, 10 \u03bcM Y-27632, and 1% penicillin-streptomycin. The medium was changed every 2-3 d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-4599",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4599,
+      "sentence": "The medium was changed every 2-3 days, and organoids were passaged every 7-10 days using mechanical disruption and re-embedding in fresh Matrigel.",
+      "context_window": "1% penicillin-streptomycin. The medium was changed every 2-3 days, and organoids were passaged every 7-10 days using mechanic",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-4643",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4643,
+      "sentence": "The medium was changed every 2-3 days, and organoids were passaged every 7-10 days using mechanical disruption and re-embedding in fresh Matrigel.",
+      "context_window": "changed every 2-3 days, and organoids were passaged every 7-10 days using mechanical disruption and re-embedding in fresh Matri",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-4793",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4793,
+      "sentence": "All organoid cultures were maintained at 37 \u00b0C in a humidified incubator with 5% carbon dioxide[ 30 - 32 ].",
+      "context_window": "res were maintained at 37 \u00b0C in a humidified incubator with 5% carbon dioxide[ 30 - 32 ]. Total RNA was extracted via TRI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-5633",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5633,
+      "sentence": "Protein lysates were mixed with 5 \u00d7 sodium dodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE) loading buffer, boiled at 100 \u00b0C for 5 minutes, and separated on 5%-10% SDS-PAGE gels, followed by electrotransfer to polyvinylidene difluoride membranes.",
+      "context_window": "ng buffer, boiled at 100 \u00b0C for 5 minutes, and separated on 5%-10% SDS-PAGE gels, followed by electrotransfer to polyvinyl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-5636",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5636,
+      "sentence": "Protein lysates were mixed with 5 \u00d7 sodium dodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE) loading buffer, boiled at 100 \u00b0C for 5 minutes, and separated on 5%-10% SDS-PAGE gels, followed by electrotransfer to polyvinylidene difluoride membranes.",
+      "context_window": "buffer, boiled at 100 \u00b0C for 5 minutes, and separated on 5%-10% SDS-PAGE gels, followed by electrotransfer to polyvinyliden",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-pct-5753",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5753,
+      "sentence": "The membranes were blocked in 5% nonfat milk at room temperature for 2 hours, incubated with primary antibodies overnight at 4 \u00b0C, washed with Tris-buffered saline containing Tween 20, and then incubated with secondary antibodies for 1 hour at room temperature.",
+      "context_window": "ylidene difluoride membranes. The membranes were blocked in 5% nonfat milk at room temperature for 2 hours, incubated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-6991",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6991,
+      "sentence": "P < 0.05 was considered statistically significant.",
+      "context_window": "s were not satisfied, the Kruskal-Wallis test was employed. P < 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-197",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 197,
+      "sentence": "To validate the reliability of the Atp4a -/- mouse model for GIM research, we compared gastric mucosal morphology and histological features between 12-week-old Atp4a -/- mice and WT C57BL/6 mice ( n = 6 per group).",
+      "context_window": "es between 12-week-old Atp4a -/- mice and WT C57BL/6 mice ( n = 6 per group). In WT mice, the gastric mucosa appeared smooth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-1673",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1673,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "ematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-1756",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1756,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-1877",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1877,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "etaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-1943",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1943,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "; D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-1953",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1953,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "ive expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-1983",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1983,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-2001",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2001,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- . To evaluate the t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-2027",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2027,
+      "sentence": "A: Hematoxylin and eosin staining of the mouse gastric mucosa ( n = 6); B: Alcian blue-periodic acid Schiff staining of the mouse gastric mucosa ( n = 6); C: Relative expression levels of gastric intestinal metaplasia-related genes detected by quantitative PCR (qPCR; n = 6); D: Relative expression level of MUC5AC detected by qPCR ( n = 6). a P < 0.05 vs wild-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- .",
+      "context_window": "ld-type (WT); b P < 0.01 vs WT; c P < 0.05 vs Atp4a -/- ; d P < 0.01 vs Atp4a -/- . To evaluate the therapeutic effect of tauri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-3489",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3489,
+      "sentence": "In the Atp4a -/- model group, CDX2 (a transcription factor that initiates intestinal metaplasia), MUC2 (an intestinal mucin produced by goblet cells), and TFF3 (an intestinal repair factor reflecting GIM severity) were significantly upregulated compared with those in the WT group ( P < 0.05).",
+      "context_window": "ificantly upregulated compared with those in the WT group ( P < 0.05). Taurine intervention significantly reduced the expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-3577",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3577,
+      "sentence": "Taurine intervention significantly reduced the expression of these markers ( P < 0.05; Table 1 , Figure 1C ).",
+      "context_window": "ion significantly reduced the expression of these markers ( P < 0.05; Table 1 , Figure 1C ). MUC5AC, a gastric mucin secreted by",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-3729",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3729,
+      "sentence": "MUC5AC, a gastric mucin secreted by surface mucous cells, was downregulated in the model group but not significantly ( P > 0.05); however, taurine treatment led to a significant increase in MUC5AC expression ( P < 0.05; Table 1 , Figure 1D ).",
+      "context_window": "as downregulated in the model group but not significantly ( P > 0.05); however, taurine treatment led to a significant increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-3820",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3820,
+      "sentence": "MUC5AC, a gastric mucin secreted by surface mucous cells, was downregulated in the model group but not significantly ( P > 0.05); however, taurine treatment led to a significant increase in MUC5AC expression ( P < 0.05; Table 1 , Figure 1D ).",
+      "context_window": "atment led to a significant increase in MUC5AC expression ( P < 0.05; Table 1 , Figure 1D ). These findings indicate that taurin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-4759",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4759,
+      "sentence": "Taurine intervention markedly reduced the number of CDX2-positive cells, with staining restricted to the focal glandular epithelium ( P < 0.0001; Table 1 , Figure 2A and B ).",
+      "context_window": "ith staining restricted to the focal glandular epithelium ( P < 0.0001; Table 1 , Figure 2A and B ). MUC2 and TFF3 showed similar",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-4851",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4851,
+      "sentence": "MUC2 and TFF3 showed similar expression patterns ( P < 0.01; Table 1 , Figure 2A and B ).",
+      "context_window": "and B ). MUC2 and TFF3 showed similar expression patterns ( P < 0.01; Table 1 , Figure 2A and B ). By contrast, the MUC5AC-posit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-5086",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5086,
+      "sentence": "By contrast, the MUC5AC-positive areas were significantly smaller and weakly stained in the model group than in the WT group, but the staining intensity was restored following taurine treatment ( P < 0.001; Table 1 , Figure 2A and C ).",
+      "context_window": "aining intensity was restored following taurine treatment ( P < 0.001; Table 1 , Figure 2A and C ). Together, these results confi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-5738",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5738,
+      "sentence": "A: Expression of caudal type homeobox 2 (CDX2), mucin 2 (MUC2), Trefoil factor family 3 (TFF3) and MUC5AC in Atp4a -/- mouse gastric tissues was assessed via immunohistochemistry (IHC) staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT).",
+      "context_window": "sues was assessed via immunohistochemistry (IHC) staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-5786",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5786,
+      "sentence": "A: Expression of caudal type homeobox 2 (CDX2), mucin 2 (MUC2), Trefoil factor family 3 (TFF3) and MUC5AC in Atp4a -/- mouse gastric tissues was assessed via immunohistochemistry (IHC) staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT).",
+      "context_window": "staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-n-5819",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5819,
+      "sentence": "A: Expression of caudal type homeobox 2 (CDX2), mucin 2 (MUC2), Trefoil factor family 3 (TFF3) and MUC5AC in Atp4a -/- mouse gastric tissues was assessed via immunohistochemistry (IHC) staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT).",
+      "context_window": "of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-5829",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5829,
+      "sentence": "A: Expression of caudal type homeobox 2 (CDX2), mucin 2 (MUC2), Trefoil factor family 3 (TFF3) and MUC5AC in Atp4a -/- mouse gastric tissues was assessed via immunohistochemistry (IHC) staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT).",
+      "context_window": "MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT). To further va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-5855",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5855,
+      "sentence": "A: Expression of caudal type homeobox 2 (CDX2), mucin 2 (MUC2), Trefoil factor family 3 (TFF3) and MUC5AC in Atp4a -/- mouse gastric tissues was assessed via immunohistochemistry (IHC) staining ( n = 6); B: IHC scores of CDX2, MUC2, and TFF3 ( n = 6); C: IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT).",
+      "context_window": ": IHC score of MUC5AC ( n = 6). a P < 0.01 vs Atp4a -/- ; b P < 0.01 vs wild-type (WT). To further validate the effectiveness o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-6614",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6614,
+      "sentence": "In all 3 patients, the relative expression of CDX2 , MUC2 , and TFF3 was significantly greater in GIM organoids than in their normal counterparts ( P < 0.05), whereas MUC5AC expression was significantly lower ( Table 1 , Figures 3B - M and 4 ).",
+      "context_window": "reater in GIM organoids than in their normal counterparts ( P < 0.05), whereas MUC5AC expression was significantly lower ( Table",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-6844",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6844,
+      "sentence": "A: Typical growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-related markers in patient 1; F-I: Expression levels of gastrointestinal-related marker genes in patient 2; J-M: Expression levels of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON.",
+      "context_window": "l growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-rela",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7094",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7094,
+      "sentence": "A: Typical growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-related markers in patient 1; F-I: Expression levels of gastrointestinal-related marker genes in patient 2; J-M: Expression levels of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON.",
+      "context_window": "ls of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7130",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7130,
+      "sentence": "A: Typical growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-related markers in patient 1; F-I: Expression levels of gastrointestinal-related marker genes in patient 2; J-M: Expression levels of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON.",
+      "context_window": "r genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7156",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7156,
+      "sentence": "A: Typical growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-related markers in patient 1; F-I: Expression levels of gastrointestinal-related marker genes in patient 2; J-M: Expression levels of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON.",
+      "context_window": "< 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7183",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7183,
+      "sentence": "A: Typical growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-related markers in patient 1; F-I: Expression levels of gastrointestinal-related marker genes in patient 2; J-M: Expression levels of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON.",
+      "context_window": "ON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7242",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7242,
+      "sentence": "A: Typical growth progression of normal human gastric organoids over 7 days in culture; B-E: Expression levels of gastrointestinal-related markers in patient 1; F-I: Expression levels of gastrointestinal-related marker genes in patient 2; J-M: Expression levels of gastrointestinal-related marker genes in patient 3. a P < 0.05 vs normal control (CON); b P < 0.01 vs normal CON; c P < 0.001 vs normal CON; d P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON.",
+      "context_window": "P < 0.05 vs gastric intestinal metaplasia (GIM) control; e P < 0.01 vs GIM CON. Taurine downregulates the protein expression o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7597",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7597,
+      "sentence": "A-C: Western blotting was conducted to assess the protein levels of caudal type homeobox 2 (CDX2) and Trefoil factor family 3 (TFF3); D-I: Relative protein levels were quantified. a P < 0.01 vs normal control; b P < 0.05 vs gastric intestinal metaplasia (GIM) control (CON); c P < 0.01 vs GIM CON.",
+      "context_window": "y 3 (TFF3); D-I: Relative protein levels were quantified. a P < 0.01 vs normal control; b P < 0.05 vs gastric intestinal metapla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7627",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7627,
+      "sentence": "A-C: Western blotting was conducted to assess the protein levels of caudal type homeobox 2 (CDX2) and Trefoil factor family 3 (TFF3); D-I: Relative protein levels were quantified. a P < 0.01 vs normal control; b P < 0.05 vs gastric intestinal metaplasia (GIM) control (CON); c P < 0.01 vs GIM CON.",
+      "context_window": "ein levels were quantified. a P < 0.01 vs normal control; b P < 0.05 vs gastric intestinal metaplasia (GIM) control (CON); c P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-7692",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7692,
+      "sentence": "A-C: Western blotting was conducted to assess the protein levels of caudal type homeobox 2 (CDX2) and Trefoil factor family 3 (TFF3); D-I: Relative protein levels were quantified. a P < 0.01 vs normal control; b P < 0.05 vs gastric intestinal metaplasia (GIM) control (CON); c P < 0.01 vs GIM CON.",
+      "context_window": ".05 vs gastric intestinal metaplasia (GIM) control (CON); c P < 0.01 vs GIM CON. These findings confirm the successful establis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-8454",
+      "claim_type": "unit_value",
+      "raw_text": "80 mmol",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 8454,
+      "sentence": "The average plasma taurine concentration is approximately 80 mmol/L[ 13 ].",
+      "context_window": ". The average plasma taurine concentration is approximately 80 mmol/L[ 13 ]. To increase the level of intracellular taurine, th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "2-aminoethanesulfonic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-8582",
+      "claim_type": "unit_value",
+      "raw_text": "200 mmol",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 8582,
+      "sentence": "To increase the level of intracellular taurine, the organoids were cultured either in medium supplemented with 200 mmol/L taurine or in basal medium without taurine.",
+      "context_window": "organoids were cultured either in medium supplemented with 200 mmol/L taurine or in basal medium without taurine. After 1 week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-u-8643",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 8643,
+      "sentence": "After 1 week of continuous intervention, the following results were obtained.",
+      "context_window": "00 mmol/L taurine or in basal medium without taurine. After 1 week of continuous intervention, the following results were obta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-8885",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8885,
+      "sentence": "Compared with those in the corresponding control group, the expression levels of CDX2 , MUC2 , and TFF3 in the GIM organoid intervention group were significantly lower ( P < 0.05; Table 2 , Figures 3B - D , 3F-H , 3J-L and 4 ).",
+      "context_window": "GIM organoid intervention group were significantly lower ( P < 0.05; Table 2 , Figures 3B - D , 3F-H , 3J-L and 4 ). In additio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-9026",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9026,
+      "sentence": "In addition, MUC5AC expression was significantly upregulated in patients 1 and 3 ( P < 0.05; Table 2 , Figure 3E , I and M ).",
+      "context_window": "ression was significantly upregulated in patients 1 and 3 ( P < 0.05; Table 2 , Figure 3E , I and M ). By contrast, no significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12898405_taurine_suppresses_gastric_intestinal_metaplasia_in_patient_-p-9217",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9217,
+      "sentence": "By contrast, no significant differences in marker expression were detected in normal gastric mucosal organoids before and after taurine treatment ( P > 0.05), suggesting that taurine selectively modulates the GIM phenotype.",
+      "context_window": "tric mucosal organoids before and after taurine treatment ( P > 0.05), suggesting that taurine selectively modulates the GIM phe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

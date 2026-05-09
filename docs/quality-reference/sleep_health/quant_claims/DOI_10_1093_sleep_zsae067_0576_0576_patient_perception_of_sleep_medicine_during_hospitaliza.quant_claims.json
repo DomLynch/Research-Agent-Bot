@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza",
+  "doi": "10.1093/sleep/zsae067.0576",
+  "extracted_at": "2026-05-08T20:06:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 4,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-u-1192",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1192,
+      "sentence": "The responses were then analyzed.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Of the 152 patients interviewed, the mean age was 60 years (15) and 59% were female.",
+      "context_window": "> <jats:p>Of the 152 patients interviewed, the mean age was 60 years (15) and 59% were female. The average BMI for these patient",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1210,
+      "sentence": "The responses were then analyzed.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Of the 152 patients interviewed, the mean age was 60 years (15) and 59% were female.",
+      "context_window": "52 patients interviewed, the mean age was 60 years (15) and 59% were female. The average BMI for these patients was 39.2 (2",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-pct-1279",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1279,
+      "sentence": "76% (n=115) mentioned they were aware of sleep apnea before the sleep medicine team\u2019s assessment.",
+      "context_window": "female. The average BMI for these patients was 39.2 (20.5). 76% (n=115) mentioned they were aware of sleep apnea before the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-n-1284",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1284,
+      "sentence": "76% (n=115) mentioned they were aware of sleep apnea before the sleep medicine team\u2019s assessment.",
+      "context_window": "e. The average BMI for these patients was 39.2 (20.5). 76% (n=115) mentioned they were aware of sleep apnea before the sleep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-pct-1397",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "On a 5-point scale, 87% of patients ranked at least \u201c3\u201d (important) for the importance of knowing whether they had sleep apnea.",
+      "context_window": "e the sleep medicine team\u2019s assessment. On a 5-point scale, 87% of patients ranked at least \u201c3\u201d (important) for the importa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-n-1532",
+      "claim_type": "sample_size",
+      "raw_text": "n=26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1532,
+      "sentence": "Of the subset of patients (n=26) who were prescribed CPAP therapy in the hospital, 63% indicated they at least \u201cagreed\u201d (3 on 5-point scale) with confidence on their ability to use a CPAP device at home.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Our analyses signify most hospitalized patients who underwent sleep apnea screening and evaluation perceived sleep apnea is an important condition and exhibit a constructive attitude towards the sleep medicine team and CPAP therapy.",
+      "context_window": "ng whether they had sleep apnea. Of the subset of patients (n=26) who were prescribed CPAP therapy in the hospital, 63% indi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsae067_0576_0576_patient_perception_of_sleep_medicine_during_hospitaliza-pct-1588",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1588,
+      "sentence": "Of the subset of patients (n=26) who were prescribed CPAP therapy in the hospital, 63% indicated they at least \u201cagreed\u201d (3 on 5-point scale) with confidence on their ability to use a CPAP device at home.</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusion</jats:title> <jats:p>Our analyses signify most hospitalized patients who underwent sleep apnea screening and evaluation perceived sleep apnea is an important condition and exhibit a constructive attitude towards the sleep medicine team and CPAP therapy.",
+      "context_window": "ts (n=26) who were prescribed CPAP therapy in the hospital, 63% indicated they at least \u201cagreed\u201d (3 on 5-point scale) with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

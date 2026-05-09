@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_trial_of_dasatinib_sprycel_in_subjects_with_hormone_refracto",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:01:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_trial_of_dasatinib_sprycel_in_subjects_with_hormone_refracto-u-770",
+      "claim_type": "unit_value",
+      "raw_text": "150mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "Subjects who agree to participate will take 150mg (3 pills) of dasatinib (Sprycel\u00ae) daily by mouth for as long as the drug benefits them.",
+      "context_window": "er) is unknown. Subjects who agree to participate will take 150mg (3 pills) of dasatinib (Sprycel\u00ae) daily by mouth for as lon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dasatinib",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_trial_of_dasatinib_sprycel_in_subjects_with_hormone_refracto-u-1143",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1143,
+      "sentence": "Posted outcomes: Number of Subjects With Disease Control (DC) (Based on PSA, Bone Scan, FACT-P, RECIST). timeframe=From day 56 (8 weeks) and every 8 weeks thereafter until the date of first docum.",
+      "context_window": "on PSA, Bone Scan, FACT-P, RECIST). timeframe=From day 56 (8 weeks) and every 8 weeks thereafter until the date of first docum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_trial_of_dasatinib_sprycel_in_subjects_with_hormone_refracto-u-1162",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "Posted outcomes: Number of Subjects With Disease Control (DC) (Based on PSA, Bone Scan, FACT-P, RECIST). timeframe=From day 56 (8 weeks) and every 8 weeks thereafter until the date of first docum.",
+      "context_window": "FACT-P, RECIST). timeframe=From day 56 (8 weeks) and every 8 weeks thereafter until the date of first docum. Dasatinib=5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

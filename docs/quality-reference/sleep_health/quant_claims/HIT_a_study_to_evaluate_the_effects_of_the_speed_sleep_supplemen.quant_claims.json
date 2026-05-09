@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_a_study_to_evaluate_the_effects_of_the_speed_sleep_supplemen",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:06:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_study_to_evaluate_the_effects_of_the_speed_sleep_supplemen-u-111",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 111,
+      "sentence": "This study evaluates the effects of the Speed Sleep supplement on sleep quality and quantity in adults aged 18-65 years.",
+      "context_window": "supplement on sleep quality and quantity in adults aged 18-65 years. Participants will be randomized to receive either the supp",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_to_evaluate_the_effects_of_the_speed_sleep_supplemen-u-201",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 201,
+      "sentence": "Participants will be randomized to receive either the supplement or placebo for 4 weeks, with outcomes assessed using Fitbit sleep tracking data and questionnaires.",
+      "context_window": "randomized to receive either the supplement or placebo for 4 weeks, with outcomes assessed using Fitbit sleep tracking data an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

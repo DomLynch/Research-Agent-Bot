@@ -1,0 +1,175 @@
+{
+  "paper_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi",
+  "doi": "10.1161/str.57.suppl_1.dp200",
+  "extracted_at": "2026-05-08T20:10:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "sample_size": 3,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-u-922",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 922,
+      "sentence": "Here, we investigated the effects of taurine in mice both male and female mice subjected to stroke. </jats:p> <jats:p> <jats:bold>Hypothesis:</jats:bold> We hypothesized that aged mice treated with taurine will have changes in microbial composition in the gut and changes in intestinal immune responses after stroke, and reduced PSD-like behavior compared to vehicle-treated mice. </jats:p> <jats:p> <jats:bold>Methods:</jats:bold> Aged C57BL/6 male and female mice (16-18 months) were subjected to a transient 60-minute middle cerebral artery occlusion.",
+      "context_window": ">Methods:</jats:bold> Aged C57BL/6 male and female mice (16-18 months) were subjected to a transient 60-minute middle cerebral ar",
+      "claim_role": "effect",
+      "endpoint": "vaccine response",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-n-1646",
+      "claim_type": "sample_size",
+      "raw_text": "n=10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1646,
+      "sentence": "16S rRNA gene sequencing was used to determine changes in the gut microbiome composition. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> Aged mice treated with taurine after stroke had significant reductions in stroke-induced weight loss (n=10/grp) compared to mice that received vehicle treatment (n=11/grp; p<0.05).",
+      "context_window": "e had significant reductions in stroke-induced weight loss (n=10/grp) compared to mice that received vehicle treatment (n=11",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-n-1706",
+      "claim_type": "sample_size",
+      "raw_text": "n=11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1706,
+      "sentence": "16S rRNA gene sequencing was used to determine changes in the gut microbiome composition. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> Aged mice treated with taurine after stroke had significant reductions in stroke-induced weight loss (n=10/grp) compared to mice that received vehicle treatment (n=11/grp; p<0.05).",
+      "context_window": "n=10/grp) compared to mice that received vehicle treatment (n=11/grp; p<0.05). Taurine treated mice demonstrated improved ND",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-p-1716",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1716,
+      "sentence": "16S rRNA gene sequencing was used to determine changes in the gut microbiome composition. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> Aged mice treated with taurine after stroke had significant reductions in stroke-induced weight loss (n=10/grp) compared to mice that received vehicle treatment (n=11/grp; p<0.05).",
+      "context_window": "compared to mice that received vehicle treatment (n=11/grp; p<0.05). Taurine treated mice demonstrated improved NDS (p<0.05) a",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-p-1773",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1773,
+      "sentence": "Taurine treated mice demonstrated improved NDS (p<0.05) and higher grooming time in the sucrose splash test, indicative of reduced PSD (p<0.05).",
+      "context_window": "p; p<0.05). Taurine treated mice demonstrated improved NDS (p<0.05) and higher grooming time in the sucrose splash test, indic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-p-1861",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1861,
+      "sentence": "Taurine treated mice demonstrated improved NDS (p<0.05) and higher grooming time in the sucrose splash test, indicative of reduced PSD (p<0.05).",
+      "context_window": "time in the sucrose splash test, indicative of reduced PSD (p<0.05). Flow cytometry of gut tissue shows a reduction of stroke-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-p-2044",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2044,
+      "sentence": "Flow cytometry of gut tissue shows a reduction of stroke-associated cytotoxic T lymphocytes and increased B lymphocyte counts in taurine treated group compared to vehicle (**p<0.01 n=16,18).",
+      "context_window": "cyte counts in taurine treated group compared to vehicle (**p<0.01 n=16,18). 16S rRNA sequencing revealed taurine increased En",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-n-2051",
+      "claim_type": "sample_size",
+      "raw_text": "n=16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2051,
+      "sentence": "Flow cytometry of gut tissue shows a reduction of stroke-associated cytotoxic T lymphocytes and increased B lymphocyte counts in taurine treated group compared to vehicle (**p<0.01 n=16,18).",
+      "context_window": "unts in taurine treated group compared to vehicle (**p<0.01 n=16,18). 16S rRNA sequencing revealed taurine increased Enteroc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_str_57_suppl_1_dp200_abstract_dp200_taurine_supplementation_modulates_gut_microbi-p-2190",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2190,
+      "sentence": "16S rRNA sequencing revealed taurine increased Enterocloster, a beneficial microbial genus, while depleting Bacteroides species (p<0.05). </jats:p> <jats:p> <jats:bold>Conclusion:</jats:bold> Our results demonstrates that post-stroke taurine supplementation significantly changes the gut microbiome composition in parallel to enhancing overall recovery in aged mice.",
+      "context_window": "icial microbial genus, while depleting Bacteroides species (p<0.05). </jats:p> <jats:p> <jats:bold>Conclusion:</jats:bold> Our",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

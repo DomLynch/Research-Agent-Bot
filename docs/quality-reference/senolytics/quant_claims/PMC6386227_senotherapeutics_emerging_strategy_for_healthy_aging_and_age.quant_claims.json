@@ -1,0 +1,66 @@
+{
+  "paper_id": "PMC6386227_senotherapeutics_emerging_strategy_for_healthy_aging_and_age",
+  "doi": "10.5483/BMBRep.2019.52.1.293",
+  "extracted_at": "2026-05-08T20:01:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6386227_senotherapeutics_emerging_strategy_for_healthy_aging_and_age-pct-768",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 768,
+      "sentence": "SCs accumulated in various tissues in mice with age, and comprised 5-40% of the total cells, depending on the tissue types ( 3 ).",
+      "context_window": "ulated in various tissues in mice with age, and comprised 5-40% of the total cells, depending on the tissue types ( 3 ). Al",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6386227_senotherapeutics_emerging_strategy_for_healthy_aging_and_age-pct-1742",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1742,
+      "sentence": "Recently, clinical trials of CR in non-obese humans revealed that a 15% lower calorie intake for 2 years delayed metabolism accompanied by reduced oxidative damage, suggesting that CR could also slow down the aging process in humans ( 6 ).",
+      "context_window": ", clinical trials of CR in non-obese humans revealed that a 15% lower calorie intake for 2 years delayed metabolism accompa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6386227_senotherapeutics_emerging_strategy_for_healthy_aging_and_age-u-1771",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1771,
+      "sentence": "Recently, clinical trials of CR in non-obese humans revealed that a 15% lower calorie intake for 2 years delayed metabolism accompanied by reduced oxidative damage, suggesting that CR could also slow down the aging process in humans ( 6 ).",
+      "context_window": "n-obese humans revealed that a 15% lower calorie intake for 2 years delayed metabolism accompanied by reduced oxidative damage,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

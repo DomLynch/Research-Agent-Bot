@@ -1,0 +1,1645 @@
+{
+  "paper_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt",
+  "doi": "10.1186/s12877-019-1407-5",
+  "extracted_at": "2026-05-08T20:05:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 24,
+    "percentage": 22,
+    "p_value": 16,
+    "odds_ratio": 8,
+    "confidence_interval": 6,
+    "mean_sd": 2,
+    "sample_size": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-282",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 282,
+      "sentence": "Participants included 1726 community-dwelling elders aged 70-87 years.",
+      "context_window": "articipants included 1726 community-dwelling elders aged 70-87 years. Pittsburgh Sleep Quality Index (PSQI) was used to assess s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-547",
+      "claim_type": "percentage",
+      "raw_text": "43.6%",
+      "numeric_values": [
+        43.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 547,
+      "sentence": "Overall 43.6% of the participants had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h.",
+      "context_window": "iations. The average PSQI score was 5.4 (SD, 3.1). Overall 43.6% of the participants had poor sleep quality (PSQI> 5), 8.2%",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-607",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 607,
+      "sentence": "Overall 43.6% of the participants had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h.",
+      "context_window": "43.6% of the participants had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-644",
+      "claim_type": "percentage",
+      "raw_text": "27.8%",
+      "numeric_values": [
+        27.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 644,
+      "sentence": "Overall 43.6% of the participants had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h.",
+      "context_window": "eep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h. The prevalence of frailty and p",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-732",
+      "claim_type": "percentage",
+      "raw_text": "52.8%",
+      "numeric_values": [
+        52.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 732,
+      "sentence": "The prevalence of frailty and pre-frailty was 9.2 and 52.8%, respectively.",
+      "context_window": "9 h. The prevalence of frailty and pre-frailty was 9.2 and 52.8%, respectively. The proportions of PSQI> 5 increased with th",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-853",
+      "claim_type": "percentage",
+      "raw_text": "34.5%",
+      "numeric_values": [
+        34.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "The proportions of PSQI> 5 increased with the severity of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001).",
+      "context_window": "h the severity of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001). After adjustment for multiple pote",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-860",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "The proportions of PSQI> 5 increased with the severity of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001).",
+      "context_window": "everity of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001). After adjustment for multiple potential",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-865",
+      "claim_type": "percentage",
+      "raw_text": "56.1%",
+      "numeric_values": [
+        56.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 865,
+      "sentence": "The proportions of PSQI> 5 increased with the severity of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001).",
+      "context_window": "ty of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001). After adjustment for multiple potential confou",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-872",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 872,
+      "sentence": "The proportions of PSQI> 5 increased with the severity of frailty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001).",
+      "context_window": "railty status (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001). After adjustment for multiple potential confounders, poor",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-1010",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.78",
+      "numeric_values": [
+        1.78
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "After adjustment for multiple potential confounders, poor sleep quality (PSQI> 5) was associated with higher odds of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90).",
+      "context_window": "ality (PSQI> 5) was associated with higher odds of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-ci-1021",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.19-2.66",
+      "numeric_values": [
+        1.19,
+        2.66
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "After adjustment for multiple potential confounders, poor sleep quality (PSQI> 5) was associated with higher odds of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90).",
+      "context_window": "> 5) was associated with higher odds of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90). Sleep laten",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-1056",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.51",
+      "numeric_values": [
+        1.51
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1056,
+      "sentence": "After adjustment for multiple potential confounders, poor sleep quality (PSQI> 5) was associated with higher odds of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90).",
+      "context_window": "s of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90). Sleep latency, sleep disturbance, and d",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-ci-1067",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.20-1.90",
+      "numeric_values": [
+        1.2,
+        1.9
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1067,
+      "sentence": "After adjustment for multiple potential confounders, poor sleep quality (PSQI> 5) was associated with higher odds of frailty (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90).",
+      "context_window": "y (OR = 1.78, 95% CI 1.19-2.66) and pre-frailty (OR = 1.51, 95% CI 1.20-1.90). Sleep latency, sleep disturbance, and daytime dysfunction",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-1493",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1493,
+      "sentence": "We provided preliminary evidences that poor sleep quality and prolonged sleep duration were associated with being frailty and pre-frailty in an elderly population aged 70-87 years.",
+      "context_window": "ng frailty and pre-frailty in an elderly population aged 70-87 years. The associations need to be validated in other elderly pop",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-401",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 401,
+      "sentence": "Frailty is a public health problem with a prevalence of about 10% in the community-dwelling elderly population [ 4 ].",
+      "context_window": "ailty is a public health problem with a prevalence of about 10% in the community-dwelling elderly population [ 4 ]. However",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-986",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 986,
+      "sentence": "About 50% of the elderly people suffers from sleep problems [ 7 ].",
+      "context_window": "serious problems of the elderly population [ 7 , 8 ]. About 50% of the elderly people suffers from sleep problems [ 7 ]. Sl",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-2242",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2242,
+      "sentence": "In this study, we aimed to investigate the associations of different symptoms of sleep disturbance (poor sleep quality, several components of sleep quality, prolonged and insufficient sleep duration) with frailty in a community-dwelling population aged 70-87 years.",
+      "context_window": "on) with frailty in a community-dwelling population aged 70-87 years.",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-278",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 years",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 278,
+      "sentence": "The ageing arm of RuLAS is a longitudinal cohort followed-up every 1.5 years.",
+      "context_window": "ing arm of RuLAS is a longitudinal cohort followed-up every 1.5 years. A detailed description of this study was provided elsewher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-781",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 781,
+      "sentence": "Among the participants in the second wave, 1726 subjects aged 70-87 years with complete data on sleep and frailty variables were included in the present study.",
+      "context_window": "the participants in the second wave, 1726 subjects aged 70-87 years with complete data on sleep and frailty variables were incl",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-2347",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2347,
+      "sentence": "In brief, unintentional weight loss, exhaustion, and low activity were measured with self-reported items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the time or feeling tired all of the time (at least 3 or 4 days a week)\u201d, and \u201cneeding help to walk\u201d, respectively.",
+      "context_window": "measured with self-reported items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the ti",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-2357",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2357,
+      "sentence": "In brief, unintentional weight loss, exhaustion, and low activity were measured with self-reported items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the time or feeling tired all of the time (at least 3 or 4 days a week)\u201d, and \u201cneeding help to walk\u201d, respectively.",
+      "context_window": "with self-reported items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the time or",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-2376",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2376,
+      "sentence": "In brief, unintentional weight loss, exhaustion, and low activity were measured with self-reported items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the time or feeling tired all of the time (at least 3 or 4 days a week)\u201d, and \u201cneeding help to walk\u201d, respectively.",
+      "context_window": "items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the time or feeling tired all of the t",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-2464",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2464,
+      "sentence": "In brief, unintentional weight loss, exhaustion, and low activity were measured with self-reported items \u201cweight has decreased by 4.5 kg or 5% during the last 12 months\u201d, \u201cenergetic most of the time or feeling tired all of the time (at least 3 or 4 days a week)\u201d, and \u201cneeding help to walk\u201d, respectively.",
+      "context_window": "of the time or feeling tired all of the time (at least 3 or 4 days a week)\u201d, and \u201cneeding help to walk\u201d, respectively. Slownes",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3177",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3177,
+      "sentence": "Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, others), marital status (currently married, others), education level (illiterate; literate), smoking (none; ever, current smoker), drinking status (none, ever, current drinker), perceived overall health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ].",
+      "context_window": "frail, and zero is\u201cnon-frail\u201d. Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women),",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3190",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3190,
+      "sentence": "Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, others), marital status (currently married, others), education level (illiterate; literate), smoking (none; ever, current smoker), drinking status (none, ever, current drinker), perceived overall health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ].",
+      "context_window": "ro is\u201cnon-frail\u201d. Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3203",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3203,
+      "sentence": "Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, others), marital status (currently married, others), education level (illiterate; literate), smoking (none; ever, current smoker), drinking status (none, ever, current drinker), perceived overall health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ].",
+      "context_window": "il\u201d. Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, othe",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3519",
+      "claim_type": "unit_value",
+      "raw_text": "24 kg",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3519,
+      "sentence": "Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, others), marital status (currently married, others), education level (illiterate; literate), smoking (none; ever, current smoker), drinking status (none, ever, current drinker), perceived overall health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ].",
+      "context_window": "all health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ]. Diabetes",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3537",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3537,
+      "sentence": "Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, others), marital status (currently married, others), education level (illiterate; literate), smoking (none; ever, current smoker), drinking status (none, ever, current drinker), perceived overall health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ].",
+      "context_window": "(good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ]. Diabetes was defined as havi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3556",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3556,
+      "sentence": "Covariates included age (70-74 years, 75-79 years, 80-84 years, 85+ years), gender (men; women), occupation (farmers, others), marital status (currently married, others), education level (illiterate; literate), smoking (none; ever, current smoker), drinking status (none, ever, current drinker), perceived overall health status (good, poor), and body mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ].",
+      "context_window": "ody mass index (BMI, < 24 kg/m 2 , 24 to 27.9 kg/m 2 , or \u2265 28 kg/m 2 ) [ 27 ]. Diabetes was defined as having a diabetic his",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3693",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3693,
+      "sentence": "Diabetes was defined as having a diabetic history, on any anti-diabetic agent, or a fasting plasma glucose level of> 7.0 mmol/L.",
+      "context_window": "anti-diabetic agent, or a fasting plasma glucose level of> 7.0 mmol/L. Hypertension was defined as having a hypertension histo",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-3806",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 3806,
+      "sentence": "Hypertension was defined as having a hypertension history, or a mean blood pressure higher than 140/90 mmHg, or on any antihypertensive agent.",
+      "context_window": "ertension history, or a mean blood pressure higher than 140/90 mmHg, or on any antihypertensive agent. The Hasegawa Dementia Sc",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-4415",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4415,
+      "sentence": "Logistic regression models were used to estimate odds ratios and 95% confidence intervals for the associations of sleep variables with frailty.",
+      "context_window": "tic regression models were used to estimate odds ratios and 95% confidence intervals for the associations of sleep variable",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-4810",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4810,
+      "sentence": "A two-sided p < 0.05 was considered significant.",
+      "context_window": "M SPSS 19.0 (IBM Corporation, Armonk, NY, USA). A two-sided p < 0.05 was considered significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-msd-63",
+      "claim_type": "mean_sd",
+      "raw_text": "77.6 \u00b1 3.9",
+      "numeric_values": [
+        77.6,
+        3.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 63,
+      "sentence": "The average PSQI score of the studied elderly population (aged 77.6 \u00b1 3.9 years) was 5.4 (SD, 3.1) and the average night sleep time 7.6 h (SD, 1.7 h).",
+      "context_window": "average PSQI score of the studied elderly population (aged 77.6 \u00b1 3.9 years) was 5.4 (SD, 3.1) and the average night sleep time 7",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-70",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 years",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 70,
+      "sentence": "The average PSQI score of the studied elderly population (aged 77.6 \u00b1 3.9 years) was 5.4 (SD, 3.1) and the average night sleep time 7.6 h (SD, 1.7 h).",
+      "context_window": "e PSQI score of the studied elderly population (aged 77.6 \u00b1 3.9 years) was 5.4 (SD, 3.1) and the average night sleep time 7.6 h (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-159",
+      "claim_type": "percentage",
+      "raw_text": "43.6%",
+      "numeric_values": [
+        43.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 159,
+      "sentence": "Overall 43.6% of the elderly adults had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h.",
+      "context_window": "and the average night sleep time 7.6 h (SD, 1.7 h). Overall 43.6% of the elderly adults had poor sleep quality (PSQI> 5), 8.2",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-221",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 221,
+      "sentence": "Overall 43.6% of the elderly adults had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h.",
+      "context_window": ".6% of the elderly adults had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-258",
+      "claim_type": "percentage",
+      "raw_text": "27.8%",
+      "numeric_values": [
+        27.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 258,
+      "sentence": "Overall 43.6% of the elderly adults had poor sleep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h.",
+      "context_window": "eep quality (PSQI> 5), 8.2% had night sleep time \u2264 5 h, and 27.8% had night sleep time \u2265 9 h. The prevalence of frailty and p",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-346",
+      "claim_type": "percentage",
+      "raw_text": "52.8%",
+      "numeric_values": [
+        52.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 346,
+      "sentence": "The prevalence of frailty and pre-frailty was 9.2 and 52.8%, respectively.",
+      "context_window": "9 h. The prevalence of frailty and pre-frailty was 9.2 and 52.8%, respectively. The percentages of female, illiterate, uncou",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-557",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 557,
+      "sentence": "The percentages of female, illiterate, uncoupling, diabetes, MCI decreased from robust to pre-frail, then to frailty groups while the percentages of smokers and alcohol drinkers increased ( p < 0.05) (Table 1 ).",
+      "context_window": "the percentages of smokers and alcohol drinkers increased ( p < 0.05) (Table 1 ). Table 1 Demographic characteristics of partici",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-671",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1726",
+      "numeric_values": [
+        1726.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 671,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "ics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-690",
+      "claim_type": "sample_size",
+      "raw_text": "n = 656",
+      "numeric_values": [
+        656.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 690,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-711",
+      "claim_type": "sample_size",
+      "raw_text": "n = 911",
+      "numeric_values": [
+        911.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 711,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "aracteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-728",
+      "claim_type": "sample_size",
+      "raw_text": "n = 159",
+      "numeric_values": [
+        159.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 728,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (",
+      "claim_role": "duration",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-2573",
+      "claim_type": "percentage",
+      "raw_text": "34.5%",
+      "numeric_values": [
+        34.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2573,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "verity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ). Table 2 Distribution an",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-2580",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2580,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ). Table 2 Distribution and com",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-2585",
+      "claim_type": "percentage",
+      "raw_text": "56.1%",
+      "numeric_values": [
+        56.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2585,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "ailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ). Table 2 Distribution and comparison",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-2592",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2592,
+      "sentence": "Table 1 Demographic characteristics of participants by frailty status characteristics All ( n = 1726) Robust ( n = 656) Pre-frail ( n = 911) Frail ( n = 159) P _value Age groups (years) < 0.001 70-74 427 (24.7) 204 (31.1) 204 (22.4) 19 (11.9) 75-79 773 (44.8) 314 (47.9) 402 (44.1) 57 (35.8) 80-84 415 (24) 120 (18.3) 235 (25.8) 60 (37.7) 85 + 111 (6.4) 18 (2.7) 70 (7.7) 23 (14.5) Gender < 0.001 Male 816 (47.3) 385 (58.7) 382 (42) 49 (30.8) Female 909 (52.7) 271 (41.3) 528 (58) 110 (69.2) Occupation 0.032 Farmer 1502 (88.6) 566 (87.6) 790 (88.6) 146 (93) Other 193 (11.4) 80 (12.4) 102 (11.4) 11 (7) Education < 0.001 Illiterate 885 (51.6) 260 (39.9) 515 (57) 110 (69.2) Literate 829 (48.4) 391 (60.1) 389 (43) 49 (30.8) Marital status < 0.001 Current marital 1126 (66) 459 (70.8) 585 (65) 82 (52.2) Other 579 (34) 189 (29.2) 315 (35) 75 (47.8) Smoking < 0.001 None 1251 (73.7) 427 (65.8) 696 (77.9) 128 (82.1) Smoker 301 (17.7) 159 (24.5) 123 (13.8) 19 (12.2) Ever 146 (8.6) 63 (9.7) 74 (8.3) 9 (5.8) Drinking < 0.001 None 1098 (65.1) 364 (56.7) 617 (69.1) 117 (76.5) Drinker 443 (26.2) 218 (34) 199 (22.3) 26 (17) Ever 147 (8.7) 60 (9.4) 77 (8.6) 10 (6.5) BMI category 0.163 < 24 931 (54.9) 334 (51.9) 509 (56.8) 88 (56.1) 24-27.9 574 (33.8) 240 (37.3) 291 (32.5) 43 (27.4) \u2265 28 192 (11.3) 70 (10.9) 96 (10.7) 26 (16.6) Perceived overall health status 0.448 Good 1432 (83.6) 600 (92) 738 (81.6) 94 (59.5) Poor 282 (16.5) 52 (8) 166 (18.4) 64 (40.5) Hypertension 0.171 No 436 (25.5) 176 (27.2) 221 (24.4) 39 (24.5) Yes 1277 (74.6) 472 (72.8) 685 (75.6) 120 (75.5) Diabetes < 0.001 No 1401 (82.3) 545 (84.4) 734 (81.3) 122 (79.2) Yes 302 (17.7) 101 (15.6) 169 (18.7) 32 (20.8) MCI < 0.001 No 889 (51.7) 438 (67) 408 (44.8) 43 (27.4) Yes 832 (48.3) 216 (33) 502 (55.2) 114 (72.6)\n\nDemographic characteristics of participants by frailty status\n\nThe proportions of participants with poor sleep quality (PSQI> 5) increased with the severity of frailty in the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ).",
+      "context_window": "n the elderly (robust: pre-frail: frail, 34.5%: 48%: 56.1%, P < 0.001) (Table 2 ). Table 2 Distribution and comparison of the PSQ",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-4382",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.78",
+      "numeric_values": [
+        1.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4382,
+      "sentence": "Table 2 Distribution and comparison of the PSQI scores among robust, pre-frail and frail groups Sleep variables Robust(656) Pre-frail(911) Frail(157) P Poor subjective sleep quality < 0.001 Total score \u2264 5 430 (65.5) 473 (52) 69 (43.9) Total score > 5 226 (34.5) 436 (48) 88 (56.1) Sleep quality component < 0.001 0 155 (23.7) 212 (23.5) 25 (15.9) 1 427 (65.4) 524 (58) 95 (60.5) 2 64 (9.8) 156 (17.3) 33 (21) 3 7 (1.1) 12 (1.3) 4 (2.5) Sleep latency component < 0.001 0 231 (36.9) 234 (27.4) 40 (27.6) 1 276 (44.1) 396 (46.4) 50 (34.5) 2 81 (12.9) 137 (16) 30 (20.7) 3 38 (6.1) 87 (10.2) 25 (17.2) Sleep duration component 0.021 0 342 (53.3) 482 (54.2) 90 (59.6) 1 244 (38) 329 (37) 37 (24.5) 2 31 (4.8) 46 (5.2) 13 (8.6) 3 25 (3.9) 33 (3.7) 11 (7.3) Sleep efficiency component 0.002 0 322 (50.5) 409 (47.3) 65 (43.6) 1 129 (20.2) 149 (17.2) 23 (15.4) 2 76 (11.9) 123 (14.2) 13 (8.7) 3 111 (17.4) 184 (21.3) 48 (32.2) Sleep disturbances component < 0.001 0 31 (4.7) 24 (2.6) 2 (1.3) 1 531 (80.9) 640 (70.3) 102 (65) 2 93 (14.2) 242 (26.6) 51 (32.5) 3 1 (0.2) 4 (0.4) 2 (1.3) Sleep medication use component 0.147 0 643 (98.8) 888 (98.4) 149 (96.8) 1 2 (0.3) 1 (0.1) 2 (1.3) 2 4 (0.6) 5 (0.6) 2 (1.3) 3 2 (0.3) 8 (0.9) 1 (0.6) Daytime dysfunction component < 0.001 0 465 (71.6) 469 (51.8) 54 (34.4) 1 120 (18.5) 176 (19.4) 40 (25.5) 2 59 (9.1) 203 (22.4) 37 (23.6) 3 5 (0.8) 57 (6.3) 26 (16.6) -\n\nDistribution and comparison of the PSQI scores among robust, pre-frail and frail groups\n\nAfter adjustment for multiple potential confounders including age group, gender, occupation, education, smoking, drinking, BMI category, diabetes, hypertension, MCI, and perceived overall health status, poor sleep quality (PSQI> 5) was associated with higher odds of being frailty (OR = 1.78, 95% CI 1.19-2.66).",
+      "context_window": "(PSQI> 5) was associated with higher odds of being frailty (OR = 1.78, 95% CI 1.19-2.66). With 1 point increments in PSQI score,",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-ci-4393",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.19-2.66",
+      "numeric_values": [
+        1.19,
+        2.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4393,
+      "sentence": "Table 2 Distribution and comparison of the PSQI scores among robust, pre-frail and frail groups Sleep variables Robust(656) Pre-frail(911) Frail(157) P Poor subjective sleep quality < 0.001 Total score \u2264 5 430 (65.5) 473 (52) 69 (43.9) Total score > 5 226 (34.5) 436 (48) 88 (56.1) Sleep quality component < 0.001 0 155 (23.7) 212 (23.5) 25 (15.9) 1 427 (65.4) 524 (58) 95 (60.5) 2 64 (9.8) 156 (17.3) 33 (21) 3 7 (1.1) 12 (1.3) 4 (2.5) Sleep latency component < 0.001 0 231 (36.9) 234 (27.4) 40 (27.6) 1 276 (44.1) 396 (46.4) 50 (34.5) 2 81 (12.9) 137 (16) 30 (20.7) 3 38 (6.1) 87 (10.2) 25 (17.2) Sleep duration component 0.021 0 342 (53.3) 482 (54.2) 90 (59.6) 1 244 (38) 329 (37) 37 (24.5) 2 31 (4.8) 46 (5.2) 13 (8.6) 3 25 (3.9) 33 (3.7) 11 (7.3) Sleep efficiency component 0.002 0 322 (50.5) 409 (47.3) 65 (43.6) 1 129 (20.2) 149 (17.2) 23 (15.4) 2 76 (11.9) 123 (14.2) 13 (8.7) 3 111 (17.4) 184 (21.3) 48 (32.2) Sleep disturbances component < 0.001 0 31 (4.7) 24 (2.6) 2 (1.3) 1 531 (80.9) 640 (70.3) 102 (65) 2 93 (14.2) 242 (26.6) 51 (32.5) 3 1 (0.2) 4 (0.4) 2 (1.3) Sleep medication use component 0.147 0 643 (98.8) 888 (98.4) 149 (96.8) 1 2 (0.3) 1 (0.1) 2 (1.3) 2 4 (0.6) 5 (0.6) 2 (1.3) 3 2 (0.3) 8 (0.9) 1 (0.6) Daytime dysfunction component < 0.001 0 465 (71.6) 469 (51.8) 54 (34.4) 1 120 (18.5) 176 (19.4) 40 (25.5) 2 59 (9.1) 203 (22.4) 37 (23.6) 3 5 (0.8) 57 (6.3) 26 (16.6) -\n\nDistribution and comparison of the PSQI scores among robust, pre-frail and frail groups\n\nAfter adjustment for multiple potential confounders including age group, gender, occupation, education, smoking, drinking, BMI category, diabetes, hypertension, MCI, and perceived overall health status, poor sleep quality (PSQI> 5) was associated with higher odds of being frailty (OR = 1.78, 95% CI 1.19-2.66).",
+      "context_window": "as associated with higher odds of being frailty (OR = 1.78, 95% CI 1.19-2.66). With 1 point increments in PSQI score, the odds ratio of",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-4490",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4490,
+      "sentence": "With 1 point increments in PSQI score, the odds ratio of frailty increased by 16% (OR = 1.16, 95% CI (1.09-1.23).",
+      "context_window": "ments in PSQI score, the odds ratio of frailty increased by 16% (OR = 1.16, 95% CI (1.09-1.23). Poor sleep quality defined",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-4495",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.16",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4495,
+      "sentence": "With 1 point increments in PSQI score, the odds ratio of frailty increased by 16% (OR = 1.16, 95% CI (1.09-1.23).",
+      "context_window": "in PSQI score, the odds ratio of frailty increased by 16% (OR = 1.16, 95% CI (1.09-1.23). Poor sleep quality defined by PSQI> 5",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-4506",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4506,
+      "sentence": "With 1 point increments in PSQI score, the odds ratio of frailty increased by 16% (OR = 1.16, 95% CI (1.09-1.23).",
+      "context_window": "ore, the odds ratio of frailty increased by 16% (OR = 1.16, 95% CI (1.09-1.23). Poor sleep quality defined by PSQI> 5 was a",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-4707",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.51",
+      "numeric_values": [
+        1.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4707,
+      "sentence": "Poor sleep quality defined by PSQI> 5 was also significantly associated with the odds of pre-frailty compared with the robust participants independent of other factors pre-frailty (OR = 1.51, 95% CI 1.20-1.90).",
+      "context_window": "bust participants independent of other factors pre-frailty (OR = 1.51, 95% CI 1.20-1.90). With per SD increments in PSQI score, t",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-ci-4718",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.20-1.90",
+      "numeric_values": [
+        1.2,
+        1.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4718,
+      "sentence": "Poor sleep quality defined by PSQI> 5 was also significantly associated with the odds of pre-frailty compared with the robust participants independent of other factors pre-frailty (OR = 1.51, 95% CI 1.20-1.90).",
+      "context_window": "ipants independent of other factors pre-frailty (OR = 1.51, 95% CI 1.20-1.90). With per SD increments in PSQI score, the multivariable-a",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-4835",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4835,
+      "sentence": "With per SD increments in PSQI score, the multivariable-adjusted odds of pre-frailty increased by 11%, OR = 1.11, 95% CI (1.04-1.13) (Table 3 ).",
+      "context_window": "the multivariable-adjusted odds of pre-frailty increased by 11%, OR = 1.11, 95% CI (1.04-1.13) (Table 3 ). In addition, usi",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-4840",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.11",
+      "numeric_values": [
+        1.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4840,
+      "sentence": "With per SD increments in PSQI score, the multivariable-adjusted odds of pre-frailty increased by 11%, OR = 1.11, 95% CI (1.04-1.13) (Table 3 ).",
+      "context_window": "ultivariable-adjusted odds of pre-frailty increased by 11%, OR = 1.11, 95% CI (1.04-1.13) (Table 3 ). In addition, using PSQI> 6",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-pct-4851",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4851,
+      "sentence": "With per SD increments in PSQI score, the multivariable-adjusted odds of pre-frailty increased by 11%, OR = 1.11, 95% CI (1.04-1.13) (Table 3 ).",
+      "context_window": "e-adjusted odds of pre-frailty increased by 11%, OR = 1.11, 95% CI (1.04-1.13) (Table 3 ). In addition, using PSQI> 6 as cu",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-7538",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7538,
+      "sentence": "Model3 adjusted for diabetes, hypertension, MCI, perceived overall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAssociations between sleep quality and components of sleep quality and frailty status by logistic regression analysis\n\nModel1 adjusted for age, and gender on crude model.",
+      "context_window": "I, perceived overall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Associations between sleep qua",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-7551",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7551,
+      "sentence": "Model3 adjusted for diabetes, hypertension, MCI, perceived overall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAssociations between sleep quality and components of sleep quality and frailty status by logistic regression analysis\n\nModel1 adjusted for age, and gender on crude model.",
+      "context_window": "overall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Associations between sleep quality and comp",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-7565",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7565,
+      "sentence": "Model3 adjusted for diabetes, hypertension, MCI, perceived overall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAssociations between sleep quality and components of sleep quality and frailty status by logistic regression analysis\n\nModel1 adjusted for age, and gender on crude model.",
+      "context_window": "plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Associations between sleep quality and components of sleep",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-7975",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7975,
+      "sentence": "Model3 adjusted for diabetes, hypertension, MCI, perceived overall health plus the variables in Model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nFor components of PSQI, on the whole, higher percentages of sleep symptoms were found in sleep quality component, sleep latency component, sleep duration component, sleep efficiency component, sleep disturbance component, and daytime dysfunction component from robust group to pre-frail group, and then to frail group (Table 2 ).",
+      "context_window": ", perceived overall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 For components of PSQI, on the",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-7988",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7988,
+      "sentence": "Model3 adjusted for diabetes, hypertension, MCI, perceived overall health plus the variables in Model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nFor components of PSQI, on the whole, higher percentages of sleep symptoms were found in sleep quality component, sleep latency component, sleep duration component, sleep efficiency component, sleep disturbance component, and daytime dysfunction component from robust group to pre-frail group, and then to frail group (Table 2 ).",
+      "context_window": "verall health plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 For components of PSQI, on the whole, highe",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-8002",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8002,
+      "sentence": "Model3 adjusted for diabetes, hypertension, MCI, perceived overall health plus the variables in Model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nFor components of PSQI, on the whole, higher percentages of sleep symptoms were found in sleep quality component, sleep latency component, sleep duration component, sleep efficiency component, sleep disturbance component, and daytime dysfunction component from robust group to pre-frail group, and then to frail group (Table 2 ).",
+      "context_window": "plus the variables in Model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 For components of PSQI, on the whole, higher percentages o",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9081",
+      "claim_type": "sample_size",
+      "raw_text": "n = 137",
+      "numeric_values": [
+        137.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9081,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9161",
+      "claim_type": "sample_size",
+      "raw_text": "n = 360",
+      "numeric_values": [
+        360.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9161,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": ".4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.7",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9238",
+      "claim_type": "sample_size",
+      "raw_text": "n = 712",
+      "numeric_values": [
+        712.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9238,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9261",
+      "claim_type": "sample_size",
+      "raw_text": "n = 466",
+      "numeric_values": [
+        466.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9261,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)***",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9360",
+      "claim_type": "sample_size",
+      "raw_text": "n = 137",
+      "numeric_values": [
+        137.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9360,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9448",
+      "claim_type": "sample_size",
+      "raw_text": "n = 360",
+      "numeric_values": [
+        360.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9448,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9530",
+      "claim_type": "sample_size",
+      "raw_text": "n = 712",
+      "numeric_values": [
+        712.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9530,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-n-9553",
+      "claim_type": "sample_size",
+      "raw_text": "n = 466",
+      "numeric_values": [
+        466.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9553,
+      "sentence": "Table 4 Associations between sleep duration and frailty status by logistic regression analysis Sleep duration (h per 24-h period) Crude model Model 1 Model 2 Model 3 Pre-frail \u2264 5( n = 137) 0.9 (0.58-1.4) 1.04 (0.68-1.6) 1.11 (0.74-1.68) 1.31 (0.87-1.95) 5-7 ( n = 360) 1.29 (0.97-1.73) 1.33 (1-1.77) 1.3 (1-1.71) 1.36 (1.04-1.77)* 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 1.82 (1.37-2.42)*** 1.86 (1.41-2.45)*** 1.84 (1.41-2.4)*** 1.96 (1.51-2.53)*** Frail \u2264 5( n = 137) 2.93 (1.63-5.27)*** 2.04 (1.09-3.81)* 1.95 (1.01-3.77)* 1.77 (0.84-3.73) 5-7 ( n = 360) 0.78 (0.43-1.39) 0.69 (0.38-1.27) 0.75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)*** 2.55 (1.49-4.35)** Model1 adjusted for age, and gender on crude model.",
+      "context_window": "75 (0.4-1.38) 0.64 (0.32-1.27) 7-8 ( n = 712) 1 1 1 1 \u2265 9 ( n = 466) 2.98 (1.95-4.56)*** 2.4 (1.53-3.77)*** 2.43 (1.51-3.91)***",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-9937",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9937,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAssociations between sleep duration and frailty status by logistic regression analysis\n\nModel1 adjusted for age, and gender on crude model.",
+      "context_window": "urther added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Associations between sleep dur",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-9950",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9950,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAssociations between sleep duration and frailty status by logistic regression analysis\n\nModel1 adjusted for age, and gender on crude model.",
+      "context_window": "sleep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Associations between sleep duration and fra",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-9964",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9964,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001\n\nAssociations between sleep duration and frailty status by logistic regression analysis\n\nModel1 adjusted for age, and gender on crude model.",
+      "context_window": "(P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Associations between sleep duration and frailty status by",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-10361",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10361,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "rther added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Long sleep duration of \u22659 h, c",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-10374",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10374,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "leep quality (P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Long sleep duration of \u22659 h, compared with",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-p-10388",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10388,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "P PSQI> 5 vs. \u2264 5) to model 2 * P < 0.05, ** P < 0.01, *** P < 0.001 Long sleep duration of \u22659 h, compared with sleep 7-8 h, wa",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-10506",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.82",
+      "numeric_values": [
+        1.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10506,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "p 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-ci-10517",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.37-2.42",
+      "numeric_values": [
+        1.37,
+        2.42
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10517,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "s associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correla",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-or-a-10548",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.98",
+      "numeric_values": [
+        2.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10548,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "k of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-ci-10559",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.95-4.56",
+      "numeric_values": [
+        1.95,
+        4.56
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10559,
+      "sentence": "Model3 further added sleep quality (P PSQI> 5 vs. \u2264 5) to model 2\n\n* P < 0.05, ** P < 0.01, *** P < 0.001\n\nLong sleep duration of \u22659 h, compared with sleep 7-8 h, was associated with increased risk of pre-frailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors such as sleep quality (Table 4 ).",
+      "context_window": "ailty (OR = 1.82, 95% CI 1.37-2.42) and frailty (OR = 2.98, 95% CI 1.95-4.56), and the correlation was not affected by other factors suc",
+      "claim_role": "effect",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-406",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 406,
+      "sentence": "In addition, to the best of our knowledge, for the first time, we found that sleep disturbance variables such as sleep latency, were associated pre-frailty in this elderly population aged 70-87 years.",
+      "context_window": "e associated pre-frailty in this elderly population aged 70-87 years. In the Osteoporotic Fractures in Men (MrOS) cohort of U.S",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-487",
+      "claim_type": "unit_value",
+      "raw_text": "67 years",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 487,
+      "sentence": "In the Osteoporotic Fractures in Men (MrOS) cohort of U.S. males aged 67 years and older, Ensrud [ 15 ] et al. found that poor subjective sleep quality of PSQI> 5, objective parameters of less sleep efficiency, and objective parameters of sleep disordered breathing were independently associated with a higher odd of being frail in cross-sectional analysis.",
+      "context_window": "eoporotic Fractures in Men (MrOS) cohort of U.S. males aged 67 years and older, Ensrud [ 15 ] et al. found that poor subjective",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-832",
+      "claim_type": "unit_value",
+      "raw_text": "3.4 years",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 832,
+      "sentence": "Later, in a prospective study follow-up of an average of 3.4 years, they replicated these associations [ 17 ].",
+      "context_window": "s. Later, in a prospective study follow-up of an average of 3.4 years, they replicated these associations [ 17 ]. Our results are",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-msd-1401",
+      "claim_type": "mean_sd",
+      "raw_text": "77.52 \u00b1 7.82",
+      "numeric_values": [
+        77.52,
+        7.82
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1401,
+      "sentence": "Poor sleep quality measured by PSQI was associated with frailty not only in community population setting but also in institutionalized setting where frail elderly (374 elderly residents of long-stay institutions aged 77.52 \u00b1 7.82 years) exhibited poor sleep quality [ 31 ].",
+      "context_window": "derly (374 elderly residents of long-stay institutions aged 77.52 \u00b1 7.82 years) exhibited poor sleep quality [ 31 ]. In addition, th",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-1409",
+      "claim_type": "unit_value",
+      "raw_text": "7.82 years",
+      "numeric_values": [
+        7.82
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1409,
+      "sentence": "Poor sleep quality measured by PSQI was associated with frailty not only in community population setting but also in institutionalized setting where frail elderly (374 elderly residents of long-stay institutions aged 77.52 \u00b1 7.82 years) exhibited poor sleep quality [ 31 ].",
+      "context_window": "74 elderly residents of long-stay institutions aged 77.52 \u00b1 7.82 years) exhibited poor sleep quality [ 31 ]. In addition, the asso",
+      "claim_role": "population",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-1585",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1585,
+      "sentence": "In 351 Atahualpa residents aged \u226560 years, Brutto et al. found that higher scores of the PSQI were significantly associated with higher scores in the Edmonton Frail Scale [ 16 ].",
+      "context_window": "ed with other instruments. In 351 Atahualpa residents aged \u226560 years, Brutto et al. found that higher scores of the PSQI were si",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-2225",
+      "claim_type": "unit_value",
+      "raw_text": "87 years",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2225,
+      "sentence": "Another significant component associated with frailty we observed in this population aged 70-87 years is daytime dysfunction.",
+      "context_window": "ociated with frailty we observed in this population aged 70-87 years is daytime dysfunction. To the best of our knowledge, this",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6945401_associations_of_sleep_quality_and_sleep_duration_with_frailt-u-223",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 223,
+      "sentence": "In summary, we found that poor subjective sleep quality, some sleep symptoms measured by PSQI, and prolonged sleep duration were associated with higher odds of frailty, and even pre-frailty in an elderly population aged 70-84 years However, since the associations were cross-sectional, the effects of sleep disturbances on frailty incidences need to be validated in the prospective cohort studies of the elderly population of this age group.",
+      "context_window": "ilty, and even pre-frailty in an elderly population aged 70-84 years However, since the associations were cross-sectional, the e",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

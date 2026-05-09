@@ -1,0 +1,49 @@
+{
+  "paper_id": "DOI_10_2460_ajvr_2005_66_791_depletion_of_taurine_and_glutamate_from_damaged_photorecepto",
+  "doi": "10.2460/ajvr.2005.66.791",
+  "extracted_at": "2026-05-08T20:10:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2460_ajvr_2005_66_791_depletion_of_taurine_and_glutamate_from_damaged_photorecepto-msd-955",
+      "claim_type": "mean_sd",
+      "raw_text": "37.5 \u00b1 2.6",
+      "numeric_values": [
+        37.5,
+        2.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 955,
+      "sentence": "The density of immunostaining for taurine in damaged photoreceptors was significantly reduced to (mean \u00b1 SEM) 37.5 \u00b1 2.6% of the density in adjacent undamaged photoreceptors.",
+      "context_window": "ed photoreceptors was significantly reduced to (mean \u00b1 SEM) 37.5 \u00b1 2.6% of the density in adjacent undamaged photoreceptors. Photo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2460_ajvr_2005_66_791_depletion_of_taurine_and_glutamate_from_damaged_photorecepto-pct-962",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 962,
+      "sentence": "The density of immunostaining for taurine in damaged photoreceptors was significantly reduced to (mean \u00b1 SEM) 37.5 \u00b1 2.6% of the density in adjacent undamaged photoreceptors.",
+      "context_window": "oreceptors was significantly reduced to (mean \u00b1 SEM) 37.5 \u00b1 2.6% of the density in adjacent undamaged photoreceptors. Photor",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

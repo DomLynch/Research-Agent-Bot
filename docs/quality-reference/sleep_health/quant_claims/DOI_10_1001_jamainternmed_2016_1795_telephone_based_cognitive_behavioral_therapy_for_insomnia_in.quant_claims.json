@@ -1,0 +1,409 @@
+{
+  "paper_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in",
+  "doi": "10.1001/jamainternmed.2016.1795",
+  "extracted_at": "2026-05-08T20:05:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 8,
+    "percentage": 10,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-530",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 530,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: A single-site, randomized clinical trial was conducted from September 1, 2013, to August 31, 2015, in western Washington State among 106 perimenopausal or postmenopausal women aged 40 to 65 years with moderate insomnia symptoms (Insomnia Severity Index [ISI] score, \u226512) and 2 or more daily hot flashes.",
+      "context_window": "among 106 perimenopausal or postmenopausal women aged 40 to 65 years with moderate insomnia symptoms (Insomnia Severity Index [I",
+      "claim_role": "population",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-702",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 702,
+      "sentence": "Blinded assessments were conducted at baseline, 8, and 24 weeks postrandomization.",
+      "context_window": "hes. Blinded assessments were conducted at baseline, 8, and 24 weeks postrandomization. An intent-to-treat analysis was conducte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-827",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 827,
+      "sentence": "INTERVENTIONS: Six CBT-I or MEC telephone sessions in 8 weeks.",
+      "context_window": "cted. INTERVENTIONS: Six CBT-I or MEC telephone sessions in 8 weeks. Participants submitted weekly electronic sleep diaries and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-1533",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1533,
+      "sentence": "RESULTS: At 8 weeks, ISI scores had decreased 9.9 points among 53 women receiving CBT-I (mean [SD] age, 55.0 [3.5] years) and 4.7 points among 53 women receiving MEC (age, 54.7 [4.7] years), a mean between-group difference of 5.2 points (95% CI, -6.1 to -3.3; P < .001).",
+      "context_window": "ash diary variables and hot flash interference. RESULTS: At 8 weeks, ISI scores had decreased 9.9 points among 53 women receivi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-1759",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1759,
+      "sentence": "RESULTS: At 8 weeks, ISI scores had decreased 9.9 points among 53 women receiving CBT-I (mean [SD] age, 55.0 [3.5] years) and 4.7 points among 53 women receiving MEC (age, 54.7 [4.7] years), a mean between-group difference of 5.2 points (95% CI, -6.1 to -3.3; P < .001).",
+      "context_window": "4.7] years), a mean between-group difference of 5.2 points (95% CI, -6.1 to -3.3; P < .001). Pittsburgh Sleep Quality Index",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-p-1781",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1781,
+      "sentence": "RESULTS: At 8 weeks, ISI scores had decreased 9.9 points among 53 women receiving CBT-I (mean [SD] age, 55.0 [3.5] years) and 4.7 points among 53 women receiving MEC (age, 54.7 [4.7] years), a mean between-group difference of 5.2 points (95% CI, -6.1 to -3.3; P < .001).",
+      "context_window": "tween-group difference of 5.2 points (95% CI, -6.1 to -3.3; P < .001). Pittsburgh Sleep Quality Index scores decreased 4.0 point",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-1962",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1962,
+      "sentence": "Pittsburgh Sleep Quality Index scores decreased 4.0 points in women receiving CBT-I and 1.4 points in women receiving MEC, a mean between-group difference of 2.7 points (95% CI, -3.9 to -1.5; P < .001).",
+      "context_window": "ceiving MEC, a mean between-group difference of 2.7 points (95% CI, -3.9 to -1.5; P < .001). Significant group differences",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-p-1984",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1984,
+      "sentence": "Pittsburgh Sleep Quality Index scores decreased 4.0 points in women receiving CBT-I and 1.4 points in women receiving MEC, a mean between-group difference of 2.7 points (95% CI, -3.9 to -1.5; P < .001).",
+      "context_window": "tween-group difference of 2.7 points (95% CI, -3.9 to -1.5; P < .001). Significant group differences were sustained at 24 weeks.",
+      "claim_role": "effect",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-2043",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2043,
+      "sentence": "Significant group differences were sustained at 24 weeks.",
+      "context_window": "P < .001). Significant group differences were sustained at 24 weeks. At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%)",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-2062",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2062,
+      "sentence": "At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had ISI scores in the no-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively.",
+      "context_window": "cant group differences were sustained at 24 weeks. At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2088",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2088,
+      "sentence": "At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had ISI scores in the no-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively.",
+      "context_window": "e sustained at 24 weeks. At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2107",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2107,
+      "sentence": "At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had ISI scores in the no-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively.",
+      "context_window": "eeks. At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had ISI scores in the no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2210",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2210,
+      "sentence": "At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had ISI scores in the no-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively.",
+      "context_window": "ISI scores in the no-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively. The CBT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2229",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2229,
+      "sentence": "At 8 and 24 weeks, 33 of 47 women (70%) and 37 of 44 (84%) in the CBT-I group, respectively, had ISI scores in the no-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively.",
+      "context_window": "o-insomnia range compared with 10 of 41 (24%) and 16 of 37 (43%) in the MEC group, respectively. The CBT-I group also had g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-2511",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2511,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": ", but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compare",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2547",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2547,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": "nificantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2606",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2606,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": "95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintain",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-p-2629",
+      "claim_type": "p_value",
+      "raw_text": "P = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2629,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": ") compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-u-2675",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2675,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": "14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2712",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2712,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": "hat were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-pct-2758",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2758,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": "group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003). CONCLUSIONS AND RELEVANCE: T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jamainternmed_2016_1795_telephone_based_cognitive_behavioral_therapy_for_insomnia_in-p-2782",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2782,
+      "sentence": "There were no between-group differences in frequency of daily hot flashes, but hot flash interference was significantly decreased at 8 weeks for the CBT-I group (-15.7; 95% CI, -20.4 to -11.0) compared with the MEC group (-7.1; 95% CI, -14.6 to 0.4) (P = .03), differences that were maintained at 24 weeks for the CBT-I group (-22.8; 95% CI, -28.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003).",
+      "context_window": "8.6 to -16.9) and MEC group (-11.6; 95% CI, -19.4 to -3.8) (P = .003). CONCLUSIONS AND RELEVANCE: Telephone-based CBT-I improved",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cbt-i",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

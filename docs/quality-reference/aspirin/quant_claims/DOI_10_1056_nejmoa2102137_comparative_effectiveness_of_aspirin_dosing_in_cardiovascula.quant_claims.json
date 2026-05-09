@@ -1,0 +1,390 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula",
+  "doi": "10.1056/nejmoa2102137",
+  "extracted_at": "2026-05-08T20:06:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "percentage": 10
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-385",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 385,
+      "sentence": "METHODS: Using an open-label, pragmatic design, we randomly assigned patients with established atherosclerotic cardiovascular disease to a strategy of 81 mg or 325 mg of aspirin per day.",
+      "context_window": "hed atherosclerotic cardiovascular disease to a strategy of 81 mg or 325 mg of aspirin per day. The primary effectiveness out",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-394",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 394,
+      "sentence": "METHODS: Using an open-label, pragmatic design, we randomly assigned patients with established atherosclerotic cardiovascular disease to a strategy of 81 mg or 325 mg of aspirin per day.",
+      "context_window": "osclerotic cardiovascular disease to a strategy of 81 mg or 325 mg of aspirin per day. The primary effectiveness outcome was a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-784",
+      "claim_type": "unit_value",
+      "raw_text": "26.2 months",
+      "numeric_values": [
+        26.2
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 784,
+      "sentence": "RESULTS: A total of 15,076 patients were followed for a median of 26.2 months (interquartile range [IQR], 19.0 to 34.9).",
+      "context_window": "S: A total of 15,076 patients were followed for a median of 26.2 months (interquartile range [IQR], 19.0 to 34.9). Before randomiza",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-869",
+      "claim_type": "percentage",
+      "raw_text": "96.0%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 869,
+      "sentence": "Before randomization, 13,537 (96.0% of those with available information on previous aspirin use) were already taking aspirin, and 85.3% of these patients were previously taking 81 mg of daily aspirin.",
+      "context_window": "e range [IQR], 19.0 to 34.9). Before randomization, 13,537 (96.0% of those with available information on previous aspirin use",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-969",
+      "claim_type": "percentage",
+      "raw_text": "85.3%",
+      "numeric_values": [
+        85.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "Before randomization, 13,537 (96.0% of those with available information on previous aspirin use) were already taking aspirin, and 85.3% of these patients were previously taking 81 mg of daily aspirin.",
+      "context_window": "n on previous aspirin use) were already taking aspirin, and 85.3% of these patients were previously taking 81 mg of daily asp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-1016",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "Before randomization, 13,537 (96.0% of those with available information on previous aspirin use) were already taking aspirin, and 85.3% of these patients were previously taking 81 mg of daily aspirin.",
+      "context_window": "aspirin, and 85.3% of these patients were previously taking 81 mg of daily aspirin. Death, hospitalization for myocardial inf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1168",
+      "claim_type": "percentage",
+      "raw_text": "7.28%",
+      "numeric_values": [
+        7.28
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "Death, hospitalization for myocardial infarction, or hospitalization for stroke occurred in 590 patients (estimated percentage, 7.28%) in the 81-mg group and 569 patients (estimated percentage, 7.51%) in the 325-mg group (hazard ratio, 1.02; 95% confidence interval [CI], 0.91 to 1.14).",
+      "context_window": "for stroke occurred in 590 patients (estimated percentage, 7.28%) in the 81-mg group and 569 patients (estimated percentage,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1234",
+      "claim_type": "percentage",
+      "raw_text": "7.51%",
+      "numeric_values": [
+        7.51
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "Death, hospitalization for myocardial infarction, or hospitalization for stroke occurred in 590 patients (estimated percentage, 7.28%) in the 81-mg group and 569 patients (estimated percentage, 7.51%) in the 325-mg group (hazard ratio, 1.02; 95% confidence interval [CI], 0.91 to 1.14).",
+      "context_window": "in the 81-mg group and 569 patients (estimated percentage, 7.51%) in the 325-mg group (hazard ratio, 1.02; 95% confidence in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1282",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "Death, hospitalization for myocardial infarction, or hospitalization for stroke occurred in 590 patients (estimated percentage, 7.28%) in the 81-mg group and 569 patients (estimated percentage, 7.51%) in the 325-mg group (hazard ratio, 1.02; 95% confidence interval [CI], 0.91 to 1.14).",
+      "context_window": "percentage, 7.51%) in the 325-mg group (hazard ratio, 1.02; 95% confidence interval [CI], 0.91 to 1.14). Hospitalization fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1409",
+      "claim_type": "percentage",
+      "raw_text": "0.63%",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1409,
+      "sentence": "Hospitalization for major bleeding occurred in 53 patients (estimated percentage, 0.63%) in the 81-mg group and 44 patients (estimated percentage, 0.60%) in the 325-mg group (hazard ratio, 1.18; 95% CI, 0.79 to 1.77).",
+      "context_window": "jor bleeding occurred in 53 patients (estimated percentage, 0.63%) in the 81-mg group and 44 patients (estimated percentage,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1474",
+      "claim_type": "percentage",
+      "raw_text": "0.60%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1474,
+      "sentence": "Hospitalization for major bleeding occurred in 53 patients (estimated percentage, 0.63%) in the 81-mg group and 44 patients (estimated percentage, 0.60%) in the 325-mg group (hazard ratio, 1.18; 95% CI, 0.79 to 1.77).",
+      "context_window": ") in the 81-mg group and 44 patients (estimated percentage, 0.60%) in the 325-mg group (hazard ratio, 1.18; 95% CI, 0.79 to 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1522",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1522,
+      "sentence": "Hospitalization for major bleeding occurred in 53 patients (estimated percentage, 0.63%) in the 81-mg group and 44 patients (estimated percentage, 0.60%) in the 325-mg group (hazard ratio, 1.18; 95% CI, 0.79 to 1.77).",
+      "context_window": "percentage, 0.60%) in the 325-mg group (hazard ratio, 1.18; 95% CI, 0.79 to 1.77). Patients assigned to 325 mg had a higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-1566",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1566,
+      "sentence": "Patients assigned to 325 mg had a higher incidence of dose switching than those assigned to 81 mg (41.6% vs.",
+      "context_window": "rd ratio, 1.18; 95% CI, 0.79 to 1.77). Patients assigned to 325 mg had a higher incidence of dose switching than those assigne",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-1637",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1637,
+      "sentence": "Patients assigned to 325 mg had a higher incidence of dose switching than those assigned to 81 mg (41.6% vs.",
+      "context_window": "a higher incidence of dose switching than those assigned to 81 mg (41.6% vs. 7.1%) and fewer median days of exposure to the a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1644",
+      "claim_type": "percentage",
+      "raw_text": "41.6%",
+      "numeric_values": [
+        41.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1644,
+      "sentence": "Patients assigned to 325 mg had a higher incidence of dose switching than those assigned to 81 mg (41.6% vs.",
+      "context_window": "r incidence of dose switching than those assigned to 81 mg (41.6% vs. 7.1%) and fewer median days of exposure to the assigned",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-pct-1654",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1654,
+      "sentence": "7.1%) and fewer median days of exposure to the assigned dose (434 days [IQR, 139 to 737] vs.",
+      "context_window": "e of dose switching than those assigned to 81 mg (41.6% vs. 7.1%) and fewer median days of exposure to the assigned dose (43",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-1716",
+      "claim_type": "unit_value",
+      "raw_text": "434 days",
+      "numeric_values": [
+        434.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1716,
+      "sentence": "7.1%) and fewer median days of exposure to the assigned dose (434 days [IQR, 139 to 737] vs.",
+      "context_window": "1%) and fewer median days of exposure to the assigned dose (434 days [IQR, 139 to 737] vs. 650 days [IQR, 415 to 922]). CONCLUSI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-1747",
+      "claim_type": "unit_value",
+      "raw_text": "650 days",
+      "numeric_values": [
+        650.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1747,
+      "sentence": "650 days [IQR, 415 to 922]).",
+      "context_window": "posure to the assigned dose (434 days [IQR, 139 to 737] vs. 650 days [IQR, 415 to 922]). CONCLUSIONS: In this pragmatic trial in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-1913",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1913,
+      "sentence": "CONCLUSIONS: In this pragmatic trial involving patients with established cardiovascular disease, there was substantial dose switching to 81 mg of daily aspirin and no significant differences in cardiovascular events or major bleeding between patients assigned to 81 mg and those assigned to 325 mg of aspirin daily. (Funded by the Patient-Centered Outcomes Research Institute; ADAPTABLE ClinicalTrials.gov number, NCT02697916.).",
+      "context_window": "iovascular disease, there was substantial dose switching to 81 mg of daily aspirin and no significant differences in cardiova",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-2039",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2039,
+      "sentence": "CONCLUSIONS: In this pragmatic trial involving patients with established cardiovascular disease, there was substantial dose switching to 81 mg of daily aspirin and no significant differences in cardiovascular events or major bleeding between patients assigned to 81 mg and those assigned to 325 mg of aspirin daily. (Funded by the Patient-Centered Outcomes Research Institute; ADAPTABLE ClinicalTrials.gov number, NCT02697916.).",
+      "context_window": "cular events or major bleeding between patients assigned to 81 mg and those assigned to 325 mg of aspirin daily. (Funded by t",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa2102137_comparative_effectiveness_of_aspirin_dosing_in_cardiovascula-u-2067",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2067,
+      "sentence": "CONCLUSIONS: In this pragmatic trial involving patients with established cardiovascular disease, there was substantial dose switching to 81 mg of daily aspirin and no significant differences in cardiovascular events or major bleeding between patients assigned to 81 mg and those assigned to 325 mg of aspirin daily. (Funded by the Patient-Centered Outcomes Research Institute; ADAPTABLE ClinicalTrials.gov number, NCT02697916.).",
+      "context_window": "ng between patients assigned to 81 mg and those assigned to 325 mg of aspirin daily. (Funded by the Patient-Centered Outcomes",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

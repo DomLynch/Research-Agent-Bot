@@ -1,0 +1,751 @@
+{
+  "paper_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o",
+  "doi": "10.1007/s11357-023-00886-3",
+  "extracted_at": "2026-05-08T20:12:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 19,
+    "sample_size": 13,
+    "percentage": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-488",
+      "claim_type": "unit_value",
+      "raw_text": "81 years",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 488,
+      "sentence": "Data from 216 participants (age range 50-81 years) of the population-based Study of Health in Pomerania TREND were included in our analysis.",
+      "context_window": "peutic strategies. Data from 216 participants (age range 50-81 years) of the population-based Study of Health in Pomerania TREND",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-524",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 524,
+      "sentence": "The data used in our analyses were derived from this SHIP-TREND cohort, which was initiated 10 years after SHIP-START in the same region.",
+      "context_window": "re derived from this SHIP-TREND cohort, which was initiated 10 years after SHIP-START in the same region. A total of 4420 indivi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-1393",
+      "claim_type": "sample_size",
+      "raw_text": "N = 992",
+      "numeric_values": [
+        992.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1393,
+      "sentence": "From the original 4420 individuals who took part in the SHIP-TREND study, all participants who underwent polyamine ( N = 992), PSG ( N = 1264), or MRI ( N = 2154) assessment were initially included into the study.",
+      "context_window": "HIP-TREND study, all participants who underwent polyamine ( N = 992), PSG ( N = 1264), or MRI ( N = 2154) assessment were initi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-1409",
+      "claim_type": "sample_size",
+      "raw_text": "N = 1264",
+      "numeric_values": [
+        1264.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1409,
+      "sentence": "From the original 4420 individuals who took part in the SHIP-TREND study, all participants who underwent polyamine ( N = 992), PSG ( N = 1264), or MRI ( N = 2154) assessment were initially included into the study.",
+      "context_window": "all participants who underwent polyamine ( N = 992), PSG ( N = 1264), or MRI ( N = 2154) assessment were initially included int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-1429",
+      "claim_type": "sample_size",
+      "raw_text": "N = 2154",
+      "numeric_values": [
+        2154.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1429,
+      "sentence": "From the original 4420 individuals who took part in the SHIP-TREND study, all participants who underwent polyamine ( N = 992), PSG ( N = 1264), or MRI ( N = 2154) assessment were initially included into the study.",
+      "context_window": "o underwent polyamine ( N = 992), PSG ( N = 1264), or MRI ( N = 2154) assessment were initially included into the study. In a se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "polyamine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-1540",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1540,
+      "sentence": "In a second step, only participants who were aged 50 years or older were included into the study, since we were particularly interested in the associations between spermidine plasma levels, sleep, and brain health in aging.",
+      "context_window": "he study. In a second step, only participants who were aged 50 years or older were included into the study, since we were partic",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-1845",
+      "claim_type": "sample_size",
+      "raw_text": "N = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1845,
+      "sentence": "Participants with spermidine plasma values exceeding \u00b1 3 SD of the mean plasma concentration were excluded from the study sample ( N = 2).",
+      "context_window": "plasma concentration were excluded from the study sample ( N = 2). Additionally, PSGs that were shorter than 2 h or longer t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-1935",
+      "claim_type": "sample_size",
+      "raw_text": "N = 191",
+      "numeric_values": [
+        191.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1935,
+      "sentence": "Additionally, PSGs that were shorter than 2 h or longer than 10 h were excluded ( N = 191) leading to a sample of 216 participants with spermidine and PSG outcome variables.",
+      "context_window": "t were shorter than 2 h or longer than 10 h were excluded ( N = 191) leading to a sample of 216 participants with spermidine an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-2130",
+      "claim_type": "sample_size",
+      "raw_text": "N = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2130,
+      "sentence": "Participants with structural abnormalities of the brain (e.g., tumors, cysts, ventricular dilatations; N = 44) or missing values ( N = 30) were also excluded, leading to a sample of 186 participants with spermidine, PSG, and brain outcome variables (see Fig.",
+      "context_window": "of the brain (e.g., tumors, cysts, ventricular dilatations; N = 44) or missing values ( N = 30) were also excluded, leading to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-2158",
+      "claim_type": "sample_size",
+      "raw_text": "N = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2158,
+      "sentence": "Participants with structural abnormalities of the brain (e.g., tumors, cysts, ventricular dilatations; N = 44) or missing values ( N = 30) were also excluded, leading to a sample of 186 participants with spermidine, PSG, and brain outcome variables (see Fig.",
+      "context_window": "cysts, ventricular dilatations; N = 44) or missing values ( N = 30) were also excluded, leading to a sample of 186 participant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-2758",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2758,
+      "sentence": "The following measuring parameters were used: T1: orientation = axial plane, repetition time (TR) = 1900 ms, echo time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm.",
+      "context_window": "ho time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-2781",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2781,
+      "sentence": "The following measuring parameters were used: T1: orientation = axial plane, repetition time (TR) = 1900 ms, echo time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm.",
+      "context_window": "flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-2788",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2788,
+      "sentence": "The following measuring parameters were used: T1: orientation = axial plane, repetition time (TR) = 1900 ms, echo time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm.",
+      "context_window": "ngle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 32",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-2876",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2876,
+      "sentence": "The following measuring parameters were used: T1: orientation = axial plane, repetition time (TR) = 1900 ms, echo time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm.",
+      "context_window": "= axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm. For details, please see",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-2899",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 mm",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2899,
+      "sentence": "The following measuring parameters were used: T1: orientation = axial plane, repetition time (TR) = 1900 ms, echo time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm.",
+      "context_window": "0 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm. For details, please see also [ 32 ]. This score",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-2908",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 mm",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2908,
+      "sentence": "The following measuring parameters were used: T1: orientation = axial plane, repetition time (TR) = 1900 ms, echo time (TE) = 3.37 ms, flip angle = 15\u00b0, slice thickness = 1 mm, and resolution = 1 mm \u00d7 1 mm and FLAIR: orientation = axial plane, TR = 5000 ms, TE = 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm.",
+      "context_window": "= 325 ms, slice thickness = 3 mm, and resolution = 0.9 mm \u00d7 0.9 mm. For details, please see also [ 32 ]. This score is based",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-3228",
+      "claim_type": "sample_size",
+      "raw_text": "N = 165",
+      "numeric_values": [
+        165.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3228,
+      "sentence": "Briefly, L2-penalized (ridge) logistic regression was used to train a binary classifier using T1-weighted MRI scans of 374 individuals, including AD patients ( N = 165) and healthy controls ( N = 209), from the Alzheimer\u2019s Disease Neuroimaging Initiative (ADNI) 1 case control cohort [ 33 ].",
+      "context_window": "ghted MRI scans of 374 individuals, including AD patients ( N = 165) and healthy controls ( N = 209), from the Alzheimer\u2019s Dise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-3260",
+      "claim_type": "sample_size",
+      "raw_text": "N = 209",
+      "numeric_values": [
+        209.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3260,
+      "sentence": "Briefly, L2-penalized (ridge) logistic regression was used to train a binary classifier using T1-weighted MRI scans of 374 individuals, including AD patients ( N = 165) and healthy controls ( N = 209), from the Alzheimer\u2019s Disease Neuroimaging Initiative (ADNI) 1 case control cohort [ 33 ].",
+      "context_window": "ls, including AD patients ( N = 165) and healthy controls ( N = 209), from the Alzheimer\u2019s Disease Neuroimaging Initiative (ADN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-3947",
+      "claim_type": "sample_size",
+      "raw_text": "N = 416",
+      "numeric_values": [
+        416.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3947,
+      "sentence": "The classifier was validated in an independent data set ( N = 416) of the Open Access Series of Imaging Studies [ 35 ].",
+      "context_window": ". The classifier was validated in an independent data set ( N = 416) of the Open Access Series of Imaging Studies [ 35 ]. For m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-4420",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4420,
+      "sentence": "Since we were particularly interested in the associations between spermidine plasma levels, sleep, and brain health in aging, we restricted our analysis to participants aged 50 years or older.",
+      "context_window": "h in aging, we restricted our analysis to participants aged 50 years or older. Because we were exploring the link between sleep",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-5562",
+      "claim_type": "unit_value",
+      "raw_text": "81 years",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5562,
+      "sentence": "We were interested in demonstrating that elevated spermidine plasma levels were associated with deteriorated brain health, similar to findings from a larger subsample of 659 individuals across the lifespan (i.e., 21 to 81 years) of the SHIP-TREND cohort [ 26 ] in this smaller SHIP-TREND cohort, which included only adult participants aged 50 to 81 years, who took part in the PSG assessment.",
+      "context_window": "bsample of 659 individuals across the lifespan (i.e., 21 to 81 years) of the SHIP-TREND cohort [ 26 ] in this smaller SHIP-TREND",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-5689",
+      "claim_type": "unit_value",
+      "raw_text": "81 years",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5689,
+      "sentence": "We were interested in demonstrating that elevated spermidine plasma levels were associated with deteriorated brain health, similar to findings from a larger subsample of 659 individuals across the lifespan (i.e., 21 to 81 years) of the SHIP-TREND cohort [ 26 ] in this smaller SHIP-TREND cohort, which included only adult participants aged 50 to 81 years, who took part in the PSG assessment.",
+      "context_window": "D cohort, which included only adult participants aged 50 to 81 years, who took part in the PSG assessment. In a third step, the",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-6176",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6176,
+      "sentence": "Mediation analysis was performed with the help of the R package \u201cmediate\u201d [ 38 ]; the mediation and direct effect, as well as their 95% CIs, were estimated via bootstrapping with 100,000 simulations each.",
+      "context_window": "\u201d [ 38 ]; the mediation and direct effect, as well as their 95% CIs, were estimated via bootstrapping with 100,000 simulati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-154",
+      "claim_type": "unit_value",
+      "raw_text": "60.64 years",
+      "numeric_values": [
+        60.64
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 154,
+      "sentence": "Our sample for the first step of our analysis comprised 216 participants (mean age 60.64 years \u00b1 7.17 years, 120 women).",
+      "context_window": "t step of our analysis comprised 216 participants (mean age 60.64 years \u00b1 7.17 years, 120 women). The sample for our last two analy",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-168",
+      "claim_type": "unit_value",
+      "raw_text": "7.17 years",
+      "numeric_values": [
+        7.17
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 168,
+      "sentence": "Our sample for the first step of our analysis comprised 216 participants (mean age 60.64 years \u00b1 7.17 years, 120 women).",
+      "context_window": "analysis comprised 216 participants (mean age 60.64 years \u00b1 7.17 years, 120 women). The sample for our last two analysis steps inc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-271",
+      "claim_type": "unit_value",
+      "raw_text": "60.51 years",
+      "numeric_values": [
+        60.51
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 271,
+      "sentence": "The sample for our last two analysis steps included 186 participants (mean age 60.51 years \u00b1 7.25 years, 104 women).",
+      "context_window": "last two analysis steps included 186 participants (mean age 60.51 years \u00b1 7.25 years, 104 women). Descriptive characteristics of s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-285",
+      "claim_type": "unit_value",
+      "raw_text": "7.25 years",
+      "numeric_values": [
+        7.25
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 285,
+      "sentence": "The sample for our last two analysis steps included 186 participants (mean age 60.51 years \u00b1 7.25 years, 104 women).",
+      "context_window": "sis steps included 186 participants (mean age 60.51 years \u00b1 7.25 years, 104 women). Descriptive characteristics of study sample",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-448",
+      "claim_type": "sample_size",
+      "raw_text": "N = 216",
+      "numeric_values": [
+        216.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 448,
+      "sentence": "Unless indicated differently N = 216\n\nBMI body mass index\n\na N = 186\n\nb N = 214\n\nc Alcohol consumption was calculated as alcohol consumption during the last 30 days\n\nAnalyses on the relationship between spermidine plasma levels and the five different markers of sleep revealed two significant associations between spermidine and coupling between SO and spindle activity (Table 2 ).",
+      "context_window": "standard deviation or N and %. Unless indicated differently N = 216 BMI body mass index a N = 186 b N = 214 c Alcohol consu",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-480",
+      "claim_type": "sample_size",
+      "raw_text": "N = 186",
+      "numeric_values": [
+        186.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 480,
+      "sentence": "Unless indicated differently N = 216\n\nBMI body mass index\n\na N = 186\n\nb N = 214\n\nc Alcohol consumption was calculated as alcohol consumption during the last 30 days\n\nAnalyses on the relationship between spermidine plasma levels and the five different markers of sleep revealed two significant associations between spermidine and coupling between SO and spindle activity (Table 2 ).",
+      "context_window": "nless indicated differently N = 216 BMI body mass index a N = 186 b N = 214 c Alcohol consumption was calculated as alcohol",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-n-491",
+      "claim_type": "sample_size",
+      "raw_text": "N = 214",
+      "numeric_values": [
+        214.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 491,
+      "sentence": "Unless indicated differently N = 216\n\nBMI body mass index\n\na N = 186\n\nb N = 214\n\nc Alcohol consumption was calculated as alcohol consumption during the last 30 days\n\nAnalyses on the relationship between spermidine plasma levels and the five different markers of sleep revealed two significant associations between spermidine and coupling between SO and spindle activity (Table 2 ).",
+      "context_window": "ated differently N = 216 BMI body mass index a N = 186 b N = 214 c Alcohol consumption was calculated as alcohol consumptio",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-576",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 576,
+      "sentence": "Unless indicated differently N = 216\n\nBMI body mass index\n\na N = 186\n\nb N = 214\n\nc Alcohol consumption was calculated as alcohol consumption during the last 30 days\n\nAnalyses on the relationship between spermidine plasma levels and the five different markers of sleep revealed two significant associations between spermidine and coupling between SO and spindle activity (Table 2 ).",
+      "context_window": "ption was calculated as alcohol consumption during the last 30 days Analyses on the relationship between spermidine plasma lev",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-908",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 908,
+      "sentence": "Association between spermidine and sleep parameters of interest\n\n\u00df : standardized regression coefficient; 95% CI with lower and upper bound; q : q value.",
+      "context_window": "eters of interest \u00df : standardized regression coefficient; 95% CI with lower and upper bound; q : q value. A log transform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-1447",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1447,
+      "sentence": "Detailed results for all regression models including all variables can be found in the Supplementary Materials (Tables S1 - S9 )\n\nSWS slow-wave sleep, SO slow oscillations, CI confidence interval\n\n\ua749 This regression model does not explain variance\n\nThe regression model evaluating the association between spermidine and frontal spindle activity during SO upstate explained 14% of the variance [ R 2 = 0.14, adj .",
+      "context_window": "ne and frontal spindle activity during SO upstate explained 14% of the variance [ R 2 = 0.14, adj . R 2 = 0.12, F (3, 212)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-1756",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1756,
+      "sentence": "Finally, the regression model evaluating the association between spermidine and central coupling strength explained 12% of the variance [ R 2 = 0.12, adj .",
+      "context_window": "between spermidine and central coupling strength explained 12% of the variance [ R 2 = 0.12, adj . R 2 = 0.11, F (3, 212)",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-2243",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2243,
+      "sentence": "The regression model on the association between spermidine and AD score explained 19% of the variance [ R 2 = 0.18, adj.",
+      "context_window": "n the association between spermidine and AD score explained 19% of the variance [ R 2 = 0.18, adj. R 2 = 0.17, F (3, 182) =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-2611",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2611,
+      "sentence": "Association between spermidine and AD score\n\n\u00df : standardized regression coefficient; 95% CI with lower and upper bound; q : q value.",
+      "context_window": "dine and AD score \u00df : standardized regression coefficient; 95% CI with lower and upper bound; q : q value. A log transform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-3227",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3227,
+      "sentence": "Association between AD score and sleep parameters of interest\n\n\u00df : standardized regression coefficient; 95% CI with lower and upper bound; q : q value.",
+      "context_window": "eters of interest \u00df : standardized regression coefficient; 95% CI with lower and upper bound; q : q value. A log transform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-4495",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4495,
+      "sentence": "Overview of the mediation analysis testing the mediation effect of frontal spindle activity during SO upstate on the significant association between spermidine plasma levels and AD score\n\n1.75E -08\n\n[- 5.74E -08 , 0.00]\n\n3.84E -07\n\n[7.86E -08 , 0.00]\n\n4.02E -07\n\n[9.10E -08 , 0.00]\n\n4.35E -02\n\n[- 1.82E -01 , 0.29]\n\n95% CI with lower and upper bound\n\nAD Alzheimer\u2019s disease, CI confidence interval, SO slow oscillation\n\n* p value < 0.05; ** p value < 0.01\n\nOverview of the mediation analysis testing the mediation effect of central coupling strength on the significant association between spermidine plasma levels and AD score\n\n- 1.83E -09\n\n[- 8.89E -08 , 0.00]\n\n4.04E -07\n\n[9.39E -08 , 0.00]\n\n4.02E -07\n\n[9.02E -08 , 0.00]\n\n- 4.55E -03\n\n[- 2.95E -01 , 0.19]\n\n95% CI with lower and upper bound\n\nAD Alzheimer\u2019s disease, CI confidence interval\n\n* p value < 0.05; ** p value < 0.0",
+      "context_window": "E -07 [9.10E -08 , 0.00] 4.35E -02 [- 1.82E -01 , 0.29] 95% CI with lower and upper bound AD Alzheimer\u2019s disease, CI c",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-pct-4939",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4939,
+      "sentence": "Overview of the mediation analysis testing the mediation effect of frontal spindle activity during SO upstate on the significant association between spermidine plasma levels and AD score\n\n1.75E -08\n\n[- 5.74E -08 , 0.00]\n\n3.84E -07\n\n[7.86E -08 , 0.00]\n\n4.02E -07\n\n[9.10E -08 , 0.00]\n\n4.35E -02\n\n[- 1.82E -01 , 0.29]\n\n95% CI with lower and upper bound\n\nAD Alzheimer\u2019s disease, CI confidence interval, SO slow oscillation\n\n* p value < 0.05; ** p value < 0.01\n\nOverview of the mediation analysis testing the mediation effect of central coupling strength on the significant association between spermidine plasma levels and AD score\n\n- 1.83E -09\n\n[- 8.89E -08 , 0.00]\n\n4.04E -07\n\n[9.39E -08 , 0.00]\n\n4.02E -07\n\n[9.02E -08 , 0.00]\n\n- 4.55E -03\n\n[- 2.95E -01 , 0.19]\n\n95% CI with lower and upper bound\n\nAD Alzheimer\u2019s disease, CI confidence interval\n\n* p value < 0.05; ** p value < 0.0",
+      "context_window": "-07 [9.02E -08 , 0.00] - 4.55E -03 [- 2.95E -01 , 0.19] 95% CI with lower and upper bound AD Alzheimer\u2019s disease, CI c",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "spermidine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-548",
+      "claim_type": "unit_value",
+      "raw_text": "81 years",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 548,
+      "sentence": "In addition, in this subsample of 186 individuals, aged 50 to 81 years, we demonstrated that elevated spermidine plasma levels were associated with deteriorated brain health operationalized as AD score, similar to findings in the larger subsample of 659 individuals, aged 21 to 81 years, from the same SHIP-TREND study [ 26 ].",
+      "context_window": "addition, in this subsample of 186 individuals, aged 50 to 81 years, we demonstrated that elevated spermidine plasma levels wer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10828152_association_of_spermidine_blood_levels_with_microstructure_o-u-764",
+      "claim_type": "unit_value",
+      "raw_text": "81 years",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 764,
+      "sentence": "In addition, in this subsample of 186 individuals, aged 50 to 81 years, we demonstrated that elevated spermidine plasma levels were associated with deteriorated brain health operationalized as AD score, similar to findings in the larger subsample of 659 individuals, aged 21 to 81 years, from the same SHIP-TREND study [ 26 ].",
+      "context_window": "ings in the larger subsample of 659 individuals, aged 21 to 81 years, from the same SHIP-TREND study [ 26 ]. Sleep parameters of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "spermidine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

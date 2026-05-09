@@ -1,0 +1,83 @@
+{
+  "paper_id": "DOI_10_2460_ajvr_1992_53_09_1631_effects_of_low_dose_aspirin_and_specific_thromboxane_synthet",
+  "doi": "10.2460/ajvr.1992.53.09.1631",
+  "extracted_at": "2026-05-08T20:06:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2460_ajvr_1992_53_09_1631_effects_of_low_dose_aspirin_and_specific_thromboxane_synthet-u-298",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 298,
+      "sentence": "<jats:title>SUMMARY</jats:title> <jats:p> Platelet aggregation and adenosine triphosphate ( <jats:sc>atp</jats:sc> ) secretion in response to arachidonic acid (10 \u03bc <jats:italic>M</jats:italic> ) or collagen (5 \u03bcg/ml) were compared in healthy, adult female Beagles treated with low-dosage aspirin (3.5 mg/kg of body weight, <jats:sc>po</jats:sc> , q 12 h for 7 treatments) or with CGS 12970, a specific thromboxane synthetase inhibitor (10 mg/kg, <jats:sc>po</jats:sc> , q 8 h for 10 treatments).",
+      "context_window": "lthy, adult female Beagles treated with low-dosage aspirin (3.5 mg/kg of body weight, <jats:sc>po</jats:sc> , q 12 h for 7 tre",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2460_ajvr_1992_53_09_1631_effects_of_low_dose_aspirin_and_specific_thromboxane_synthet-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 437,
+      "sentence": "<jats:title>SUMMARY</jats:title> <jats:p> Platelet aggregation and adenosine triphosphate ( <jats:sc>atp</jats:sc> ) secretion in response to arachidonic acid (10 \u03bc <jats:italic>M</jats:italic> ) or collagen (5 \u03bcg/ml) were compared in healthy, adult female Beagles treated with low-dosage aspirin (3.5 mg/kg of body weight, <jats:sc>po</jats:sc> , q 12 h for 7 treatments) or with CGS 12970, a specific thromboxane synthetase inhibitor (10 mg/kg, <jats:sc>po</jats:sc> , q 8 h for 10 treatments).",
+      "context_window": "ith CGS 12970, a specific thromboxane synthetase inhibitor (10 mg/kg, <jats:sc>po</jats:sc> , q 8 h for 10 treatments). Plate",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2460_ajvr_1992_53_09_1631_effects_of_low_dose_aspirin_and_specific_thromboxane_synthet-u-1716",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1716,
+      "sentence": "In dogs treated orally with 0.1, 0.2, 1.0, or 10 mg of CGS 12970/kg, dose-dependent inhibition of arachidonic acid-induced platelet aggregation was observed, with impedance changes not observed at the 10-mg/kg dosage and normal platelet aggregation associated with the 0.1-mg/kg dosage.",
+      "context_window": "th CGS 12970. In dogs treated orally with 0.1, 0.2, 1.0, or 10 mg of CGS 12970/kg, dose-dependent inhibition of arachidonic a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_2460_ajvr_1992_53_09_1631_effects_of_low_dose_aspirin_and_specific_thromboxane_synthet-u-2002",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2002,
+      "sentence": "After a single orally administered dosage of 10 mg of CGS 12970/kg, platelet aggregation was maximally inhibited at 1 hour, remained negligible through 12 hours, and returned to normal by 96 hours.",
+      "context_window": "-mg/kg dosage. After a single orally administered dosage of 10 mg of CGS 12970/kg, platelet aggregation was maximally inhibit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

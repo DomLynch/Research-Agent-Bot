@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim",
+  "doi": "10.1160/th05-10-0649",
+  "extracted_at": "2026-05-08T20:05:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-u-355",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 355,
+      "sentence": "The aim of this study was to investigate the efficacy of aspirin in patients undergoing CABG surgery receiving either 100 mg or 325 mg of oral aspirin for 5-days.Platelet function was tested the day before surgery and on day+1 and day+5, and evaluated by changes in collagen-induced thromboxane-A2 (TxA2) release and platelet aggregation following stimulation with collagen, ADP and epinephrine.",
+      "context_window": "spirin in patients undergoing CABG surgery receiving either 100 mg or 325 mg of oral aspirin for 5-days.Platelet function was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-u-365",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 365,
+      "sentence": "The aim of this study was to investigate the efficacy of aspirin in patients undergoing CABG surgery receiving either 100 mg or 325 mg of oral aspirin for 5-days.Platelet function was tested the day before surgery and on day+1 and day+5, and evaluated by changes in collagen-induced thromboxane-A2 (TxA2) release and platelet aggregation following stimulation with collagen, ADP and epinephrine.",
+      "context_window": "patients undergoing CABG surgery receiving either 100 mg or 325 mg of oral aspirin for 5-days.Platelet function was tested the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-u-749",
+      "claim_type": "unit_value",
+      "raw_text": "150 \u00b5mol",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "abstract",
+      "source_offset": 749,
+      "sentence": "In all patients, baseline platelet aggregation was significantly inhibited by pre-incubation with in vitro aspirin (150 \u00b5mol/l), with a mean reduction in TxA2-release of \u226595.5% (82.3, 99.1).",
+      "context_window": "ficantly inhibited by pre-incubation with in vitro aspirin (150 \u00b5mol/l), with a mean reduction in TxA2-release of \u226595.5% (82.3,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-pct-804",
+      "claim_type": "percentage",
+      "raw_text": "95.5%",
+      "numeric_values": [
+        95.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 804,
+      "sentence": "In all patients, baseline platelet aggregation was significantly inhibited by pre-incubation with in vitro aspirin (150 \u00b5mol/l), with a mean reduction in TxA2-release of \u226595.5% (82.3, 99.1).",
+      "context_window": "rin (150 \u00b5mol/l), with a mean reduction in TxA2-release of \u226595.5% (82.3, 99.1). After 5-days of oral aspirin, platelet aggreg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-pct-996",
+      "claim_type": "percentage",
+      "raw_text": "99.5%",
+      "numeric_values": [
+        99.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "Oral aspirin was also associated with a \u226599.5% (97.8, 99.7) reduction in TxA2-release, and with the reversal of the second-phase of ADP-induced aggregation which is TxA2-dependent.",
+      "context_window": "in vitro aspirin. Oral aspirin was also associated with a \u226599.5% (97.8, 99.7) reduction in TxA2-release, and with the revers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-u-1165",
+      "claim_type": "unit_value",
+      "raw_text": "325mg",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1165,
+      "sentence": "In addition a single-dose of 325mg aspirin on the first post-operative morning may have a greater inhibitory effect on collagen-induced aggregation than 100mg aspirin.",
+      "context_window": "ation which is TxA2-dependent. In addition a single-dose of 325mg aspirin on the first post-operative morning may have a grea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1160_th05_10_0649_biological_efficacy_of_low_against_medium_dose_aspirin_regim-u-1289",
+      "claim_type": "unit_value",
+      "raw_text": "100mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1289,
+      "sentence": "In addition a single-dose of 325mg aspirin on the first post-operative morning may have a greater inhibitory effect on collagen-induced aggregation than 100mg aspirin.",
+      "context_window": "ater inhibitory effect on collagen-induced aggregation than 100mg aspirin. Western blot analysis provided no evidence for the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

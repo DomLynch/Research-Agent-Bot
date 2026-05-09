@@ -1,0 +1,105 @@
+{
+  "paper_id": "DOI_10_1016_s1836_9553_12_70106_6_exercise_training_improves_sleep_quality_in_middle_aged_and",
+  "doi": "10.1016/s1836-9553(12)70106-6",
+  "extracted_at": "2026-05-08T20:05:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_s1836_9553_12_70106_6_exercise_training_improves_sleep_quality_in_middle_aged_and-u-224",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 224,
+      "sentence": "PARTICIPANTS: Adults aged over 40 years with sleep problems.",
+      "context_window": "alysis of randomised trials. PARTICIPANTS: Adults aged over 40 years with sleep problems. INTERVENTION: A formal exercise traini",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s1836_9553_12_70106_6_exercise_training_improves_sleep_quality_in_middle_aged_and-u-745",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 745,
+      "sentence": "The duration of most of the training programs was between 10 and 16 weeks.",
+      "context_window": "uration of most of the training programs was between 10 and 16 weeks. All of the studies used the self-reported Pittsburgh Sleep",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_s1836_9553_12_70106_6_exercise_training_improves_sleep_quality_in_middle_aged_and-ci-1053",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.08 to 0.86",
+      "numeric_values": [
+        0.08,
+        0.86
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1053,
+      "sentence": "Compared to the control group, the participants who were randomised to an exercise program had a better global Pittsburgh Sleep Quality Index score, with a standardised mean difference (SMD) of 0.47 (95% CI 0.08 to 0.86).",
+      "context_window": "x score, with a standardised mean difference (SMD) of 0.47 (95% CI 0.08 to 0.86). The exercise group also had significantly reduced sleep l",
+      "claim_role": "unknown",
+      "endpoint": "sleep quality",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s1836_9553_12_70106_6_exercise_training_improves_sleep_quality_in_middle_aged_and-ci-1150",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.08 to 1.08",
+      "numeric_values": [
+        0.08,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1150,
+      "sentence": "The exercise group also had significantly reduced sleep latency (SMD 0.58, 95% CI 0.08 to 1.08), and medication use (SMD 0.44, 95% CI 0.14 to 0.74).",
+      "context_window": "oup also had significantly reduced sleep latency (SMD 0.58, 95% CI 0.08 to 1.08), and medication use (SMD 0.44, 95% CI 0.14 to 0.74). Howev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s1836_9553_12_70106_6_exercise_training_improves_sleep_quality_in_middle_aged_and-ci-1202",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.14 to 0.74",
+      "numeric_values": [
+        0.14,
+        0.74
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "The exercise group also had significantly reduced sleep latency (SMD 0.58, 95% CI 0.08 to 1.08), and medication use (SMD 0.44, 95% CI 0.14 to 0.74).",
+      "context_window": "D 0.58, 95% CI 0.08 to 1.08), and medication use (SMD 0.44, 95% CI 0.14 to 0.74). However, the groups did not differ significantly in sleep",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

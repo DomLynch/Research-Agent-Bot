@@ -1,0 +1,174 @@
+{
+  "paper_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general",
+  "doi": "10.1001/jama.2010.221",
+  "extracted_at": "2026-05-08T20:06:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-u-639",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 639,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: The Aspirin for Asymptomatic Atherosclerosis trial was an intention-to-treat double-blind randomized controlled trial conducted from April 1998 to October 2008, involving 28,980 men and women aged 50 to 75 years living in central Scotland, free of clinical cardiovascular disease, recruited from a community health registry, and had an ABI screening test.",
+      "context_window": "to October 2008, involving 28,980 men and women aged 50 to 75 years living in central Scotland, free of clinical cardiovascular",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-895",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "Of those, 3350 with a low ABI (< or = 0.95) were entered into the trial, which was powered to detect a 25% proportional risk reduction in events.",
+      "context_window": "were entered into the trial, which was powered to detect a 25% proportional risk reduction in events. INTERVENTIONS: Once",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-u-964",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 964,
+      "sentence": "INTERVENTIONS: Once daily 100 mg aspirin (enteric coated) or placebo.",
+      "context_window": "rtional risk reduction in events. INTERVENTIONS: Once daily 100 mg aspirin (enteric coated) or placebo. MAIN OUTCOME MEASURES:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-1489",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1489,
+      "sentence": "RESULTS: After a mean (SD) follow-up of 8.2 (1.6) years, 357 participants had a primary end point event (13.5 per 1000 person-years, 95% confidence interval [CI], 12.2-15.0).",
+      "context_window": "had a primary end point event (13.5 per 1000 person-years, 95% confidence interval [CI], 12.2-15.0). No statistically sign",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-1707",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1707,
+      "sentence": "No statistically significant difference was found between groups (13.7 events per 1000 person-years in the aspirin group vs 13.3 in the placebo group; hazard ratio [HR], 1.03; 95% CI, 0.84-1.27).",
+      "context_window": "roup vs 13.3 in the placebo group; hazard ratio [HR], 1.03; 95% CI, 0.84-1.27). A vascular event comprising the secondary e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-1837",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1837,
+      "sentence": "A vascular event comprising the secondary end point occurred in 578 participants (22.8 per 1000 person-years; 95% CI, 21.0-24.8) and no statistically significant difference between groups (22.8 events per 1000 person-years in the aspirin group vs 22.9 in the placebo group; HR, 1.00; 95% CI, 0.85-1.17).",
+      "context_window": "t occurred in 578 participants (22.8 per 1000 person-years; 95% CI, 21.0-24.8) and no statistically significant difference",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-2011",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2011,
+      "sentence": "A vascular event comprising the secondary end point occurred in 578 participants (22.8 per 1000 person-years; 95% CI, 21.0-24.8) and no statistically significant difference between groups (22.8 events per 1000 person-years in the aspirin group vs 22.9 in the placebo group; HR, 1.00; 95% CI, 0.85-1.17).",
+      "context_window": "n the aspirin group vs 22.9 in the placebo group; HR, 1.00; 95% CI, 0.85-1.17). There was no significant difference in all-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-2149",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2149,
+      "sentence": "There was no significant difference in all-cause mortality between groups (176 vs 186 deaths, respectively; HR, 0.95; 95% CI, 0.77-1.16).",
+      "context_window": "between groups (176 vs 186 deaths, respectively; HR, 0.95; 95% CI, 0.77-1.16). An initial event of major hemorrhage requir",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2010_221_aspirin_for_prevention_of_cardiovascular_events_in_a_general-pct-2382",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2382,
+      "sentence": "An initial event of major hemorrhage requiring admission to hospital occurred in 34 participants (2.5 per 1000 person-years) in the aspirin group and 20 (1.5 per 1000 person-years) in the placebo group (HR, 1.71; 95% CI, 0.99-2.97).",
+      "context_window": "(1.5 per 1000 person-years) in the placebo group (HR, 1.71; 95% CI, 0.99-2.97). CONCLUSION: Among participants without clin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

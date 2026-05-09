@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_",
   "doi": "10.3390/biomedicines11051403",
-  "extracted_at": "2026-05-05T21:43:40+00:00",
+  "extracted_at": "2026-05-08T20:12:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 13,
@@ -62,7 +62,7 @@
       "context_window": "8%, age: 83 [76-90] years). Spermidine levels were higher ( p = 0.002) and the spermine/spermidine ratio was lower ( p < 0.001) i",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "( p = 0.002) and the spermine/spermidine ratio was lower ( p < 0.001) in the sarcopenia group than in the non-sarcopenia group.",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -116,9 +116,9 @@
       "context_window": "cancer and those with a history of cancer treatment within 3 months were excluded. Flow diagram of the patient selection proce",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-2339",
@@ -224,9 +224,9 @@
       "context_window": "polyamine extraction, whole blood was diluted fivefold with 5% trichloroacetic acid (TCA) and incubated at 95 \u00b0C for 45 mi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "polyamine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-4933",
@@ -260,9 +260,9 @@
       "context_window": "oto, Japan) using a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, To",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5208",
@@ -278,9 +278,9 @@
       "context_window": "using a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5309",
@@ -350,9 +350,9 @@
       "context_window": "oric buffer (pH 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC.,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5855",
@@ -368,9 +368,9 @@
       "context_window": "H 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-5924",
@@ -386,9 +386,9 @@
       "context_window": "2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), and 0.06% o-phthalaldehyde (NACALAI TESQUE, INC., Kyoto, Japan) at 50",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "spermidine supplementation",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-6041",
@@ -674,7 +674,7 @@
       "context_window": "-C-high-density lipoprotein cholesterol; TG-triglyceride. # n = 110 due to missing measurements. The results showed higher SPD",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1109,7 +1109,7 @@
       "context_window": "ty lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. Binomial multivariate logistic",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1127,7 +1127,7 @@
       "context_window": "protein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. Binomial multivariate logistic regres",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1489,7 +1489,7 @@
       "context_window": "ty lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measu",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1507,7 +1507,7 @@
       "context_window": "protein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1525,7 +1525,7 @@
       "context_window": "glyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement of HbA1c. Table 6 shows the r",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1617,7 +1617,7 @@
       "context_window": "ty lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measur",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1635,7 +1635,7 @@
       "context_window": "protein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement o",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1653,7 +1653,7 @@
       "context_window": "iglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement of HbA1c.",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "spermidine",
       "direction": "",
       "binding_confidence": "partial"
     }

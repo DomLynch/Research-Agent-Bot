@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMC9913358_c_myc_driven_polyamine_metabolism_in_ovarian_cancer_from_pat",
+  "doi": "10.3390/cancers15030623",
+  "extracted_at": "2026-05-08T20:12:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9913358_c_myc_driven_polyamine_metabolism_in_ovarian_cancer_from_pat-pct-158",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 158,
+      "sentence": "The 5-year overall survival rate for ovarian cancer is approximately 50% and decreased to nearly 30% for patients with distant metastasis [ 1 ].",
+      "context_window": "r overall survival rate for ovarian cancer is approximately 50% and decreased to nearly 30% for patients with distant metas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9913358_c_myc_driven_polyamine_metabolism_in_ovarian_cancer_from_pat-pct-186",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 186,
+      "sentence": "The 5-year overall survival rate for ovarian cancer is approximately 50% and decreased to nearly 30% for patients with distant metastasis [ 1 ].",
+      "context_window": "ovarian cancer is approximately 50% and decreased to nearly 30% for patients with distant metastasis [ 1 ]. It is estimated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

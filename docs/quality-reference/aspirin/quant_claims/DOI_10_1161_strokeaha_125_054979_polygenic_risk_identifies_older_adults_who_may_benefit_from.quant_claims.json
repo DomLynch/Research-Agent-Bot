@@ -1,0 +1,156 @@
+{
+  "paper_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from",
+  "doi": "10.1161/strokeaha.125.054979",
+  "extracted_at": "2026-05-08T20:05:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-u-672",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 672,
+      "sentence": "We hypothesized that an integrative polygenic score (iPGS) could identify a subgroup of older individuals who derive net benefit from aspirin for the primary prevention of ischemic stroke.</jats:p> </jats:sec> <jats:sec> <jats:title>METHODS:</jats:title> <jats:p>We performed post hoc analysis of the ASPREE randomized, placebo-controlled trial (Aspirin in Reducing Events in the Elderly) of daily 100-mg aspirin, in 12 031 genotyped participants of European ancestry aged >70 years without prior cardiovascular disease.",
+      "context_window": "in 12 031 genotyped participants of European ancestry aged >70 years without prior cardiovascular disease. The iPGS was derived",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-u-1160",
+      "claim_type": "unit_value",
+      "raw_text": "75.1 years",
+      "numeric_values": [
+        75.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "Cox models assessed associations between polygenic risk, ischemic stroke, and major bleeding events, and tested the interaction between the iPGS and treatment allocation, with adjustment for baseline lifestyle and clinical covariates.</jats:p> </jats:sec> <jats:sec> <jats:title>RESULTS:</jats:title> <jats:p> The mean age of participants was 75.1 years, and 54.9% were women.",
+      "context_window": "LTS:</jats:title> <jats:p> The mean age of participants was 75.1 years, and 54.9% were women. Over a median of 4.6 years, 187 isch",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-pct-1176",
+      "claim_type": "percentage",
+      "raw_text": "54.9%",
+      "numeric_values": [
+        54.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "Cox models assessed associations between polygenic risk, ischemic stroke, and major bleeding events, and tested the interaction between the iPGS and treatment allocation, with adjustment for baseline lifestyle and clinical covariates.</jats:p> </jats:sec> <jats:sec> <jats:title>RESULTS:</jats:title> <jats:p> The mean age of participants was 75.1 years, and 54.9% were women.",
+      "context_window": "> <jats:p> The mean age of participants was 75.1 years, and 54.9% were women. Over a median of 4.6 years, 187 ischemic stroke",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-u-1211",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1211,
+      "sentence": "Over a median of 4.6 years, 187 ischemic strokes and 373 major bleeds occurred, including 101 intracranial bleeds (46 hemorrhagic strokes).",
+      "context_window": "ants was 75.1 years, and 54.9% were women. Over a median of 4.6 years, 187 ischemic strokes and 373 major bleeds occurred, includ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-pct-1443",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1443,
+      "sentence": "Each 1-SD increase in the iPGS was associated with higher incident ischemic stroke risk (hazard ratio, 1.39 [95% CI, 1.20-1.62]).",
+      "context_window": "h higher incident ischemic stroke risk (hazard ratio, 1.39 [95% CI, 1.20-1.62]). An interaction between the continuous iPGS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-pct-1703",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1703,
+      "sentence": "In the highest iPGS quintile, aspirin reduced ischemic stroke by 51% (hazard ratio, 0.49 [95% CI, 0.28-0.85]) without significantly increasing major bleeding (hazard ratio, 1.15 [95% CI, 0.71-1.88]).",
+      "context_window": "e highest iPGS quintile, aspirin reduced ischemic stroke by 51% (hazard ratio, 0.49 [95% CI, 0.28-0.85]) without significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-pct-1728",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1728,
+      "sentence": "In the highest iPGS quintile, aspirin reduced ischemic stroke by 51% (hazard ratio, 0.49 [95% CI, 0.28-0.85]) without significantly increasing major bleeding (hazard ratio, 1.15 [95% CI, 0.71-1.88]).",
+      "context_window": "aspirin reduced ischemic stroke by 51% (hazard ratio, 0.49 [95% CI, 0.28-0.85]) without significantly increasing major blee",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_125_054979_polygenic_risk_identifies_older_adults_who_may_benefit_from-pct-1817",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1817,
+      "sentence": "In the highest iPGS quintile, aspirin reduced ischemic stroke by 51% (hazard ratio, 0.49 [95% CI, 0.28-0.85]) without significantly increasing major bleeding (hazard ratio, 1.15 [95% CI, 0.71-1.88]).",
+      "context_window": "ignificantly increasing major bleeding (hazard ratio, 1.15 [95% CI, 0.71-1.88]). No benefit was observed in the overall coh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

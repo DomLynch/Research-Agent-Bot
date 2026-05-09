@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1096_fasebj_24_1_supplement_574_3_celecoxib_administration_interferes_with_the_anti_platelet_e",
+  "doi": "10.1096/fasebj.24.1_supplement.574.3",
+  "extracted_at": "2026-05-08T20:05:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1096_fasebj_24_1_supplement_574_3_celecoxib_administration_interferes_with_the_anti_platelet_e-u-273",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 273,
+      "sentence": "Patients at risk for adverse cardiovascular events often are prescribed a low dose (81 mg) of ASA to selectively inhibit the cyclooxygenase (COX)\u20101 dependent synthesis of thromboxane A2 in platelets.",
+      "context_window": "erse cardiovascular events often are prescribed a low dose (81 mg) of ASA to selectively inhibit the cyclooxygenase (COX)\u20101 d",
+      "claim_role": "dose",
+      "endpoint": "cardiovascular outcome",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1096_fasebj_24_1_supplement_574_3_celecoxib_administration_interferes_with_the_anti_platelet_e-u-978",
+      "claim_type": "unit_value",
+      "raw_text": "4.64 mg",
+      "numeric_values": [
+        4.64
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 978,
+      "sentence": "To test this question, dogs were administered ASA (1.16 or 4.64 mg/kg), CEL (1.43 mg/kg, bid) or the combination of both ASA and CEL for a period of at least three days.",
+      "context_window": "To test this question, dogs were administered ASA (1.16 or 4.64 mg/kg), CEL (1.43 mg/kg, bid) or the combination of both ASA a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1096_fasebj_24_1_supplement_574_3_celecoxib_administration_interferes_with_the_anti_platelet_e-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "1.43 mg",
+      "numeric_values": [
+        1.43
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "To test this question, dogs were administered ASA (1.16 or 4.64 mg/kg), CEL (1.43 mg/kg, bid) or the combination of both ASA and CEL for a period of at least three days.",
+      "context_window": "tion, dogs were administered ASA (1.16 or 4.64 mg/kg), CEL (1.43 mg/kg, bid) or the combination of both ASA and CEL for a perio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

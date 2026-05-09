@@ -34,8 +34,8 @@ def test_arbitration_benchmark_fixture_schema_and_coverage() -> None:
         "ESCALATE",
     }
     assert sum(row["expected_verdict"] == "APPLY" for row in rows) == 2
-    assert sum(row["expected_verdict"] == "REJECT" for row in rows) == 2
-    assert sum(row["expected_verdict"] == "ESCALATE" for row in rows) == 6
+    assert sum(row["expected_verdict"] == "REJECT" for row in rows) == 5
+    assert sum(row["expected_verdict"] == "ESCALATE" for row in rows) == 3
     for row in rows:
         assert required <= row.keys()
         assert Path(row["source_run"]).exists()

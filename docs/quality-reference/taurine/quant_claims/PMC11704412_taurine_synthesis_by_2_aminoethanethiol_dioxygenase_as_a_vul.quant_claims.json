@@ -1,0 +1,1366 @@
+{
+  "paper_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul",
+  "doi": "10.4062/biomolther.2024.086",
+  "extracted_at": "2026-05-08T20:10:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 18,
+    "percentage": 21,
+    "unit_value": 4,
+    "p_value": 27,
+    "correlation": 1,
+    "hazard_ratio": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-712",
+      "claim_type": "sample_size",
+      "raw_text": "n=54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 712,
+      "sentence": "Metabolomics analysis showed a 2.51-fold increase in taurine in PDAC compared to normal tissues (n=54).",
+      "context_window": "old increase in taurine in PDAC compared to normal tissues (n=54). IHC confirmed this in independent samples (n=99 PDAC, 19",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-762",
+      "claim_type": "sample_size",
+      "raw_text": "n=99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 762,
+      "sentence": "IHC confirmed this in independent samples (n=99 PDAC, 19 normal).",
+      "context_window": "tissues (n=54). IHC confirmed this in independent samples (n=99 PDAC, 19 normal). Bioinformatics identified 2-aminoethaneth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-216",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 216,
+      "sentence": "The notably low 5-year overall survival rate, at approximately 10%, positions pancreatic cancer to potentially become the second leading cause of cancer-related deaths in the United States by 2030 ( Park et al ., 2021 ).",
+      "context_window": "notably low 5-year overall survival rate, at approximately 10%, positions pancreatic cancer to potentially become the seco",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-494",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 494,
+      "sentence": "Pancreatic ductal adenocarcinoma (PDAC), an exocrine cell tumor, represents the most prevalent type accounting for over 90% of all pancreatic cancer cases.",
+      "context_window": "mor, represents the most prevalent type accounting for over 90% of all pancreatic cancer cases. The high mortality rate of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-2956",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2956,
+      "sentence": "Taurine, or 2-aminoethanesulfonic acid, is a semi-essential, non-proteinogenic amino acid and is one of the most abundant amino acids in eukaryotes, constituting up to 0.1% of human body weight ( Ripps and Shen, 2012 ).",
+      "context_window": "most abundant amino acids in eukaryotes, constituting up to 0.1% of human body weight ( Ripps and Shen, 2012 ). Taurine play",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-u-632",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 632,
+      "sentence": "For metabolite extraction, 40 mg of tissue samples were weighed, snap-frozen in liquid nitrogen, and pulverized.",
+      "context_window": "\u00b0C until metabolomics analysis. For metabolite extraction, 40 mg of tissue samples were weighed, snap-frozen in liquid nitro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-1893",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1893,
+      "sentence": "Two microliters of analytes were injected and eluted with a mobile phase of 10 mM ammonium acetate in water (A, pH 10.0) and 80% acetonitrile (B, pH 10.0).",
+      "context_window": "e phase of 10 mM ammonium acetate in water (A, pH 10.0) and 80% acetonitrile (B, pH 10.0). Gradient conditions were as foll",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-1969",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1969,
+      "sentence": "Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min.",
+      "context_window": "(B, pH 10.0). Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-2000",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2000,
+      "sentence": "Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min.",
+      "context_window": "ons were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-2018",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2018,
+      "sentence": "Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min.",
+      "context_window": "s: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-2049",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2049,
+      "sentence": "Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min.",
+      "context_window": "adient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-u-2076",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mL/min",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 2076,
+      "sentence": "Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min.",
+      "context_window": "n 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min. Both positive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-u-2106",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mL/min",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 2106,
+      "sentence": "Gradient conditions were as follows: 0-2 min 100% B, 2-7.5 min gradient 100-60% B, 7.5-16 min 60% B, 16.5-20 min gradient 60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min.",
+      "context_window": "60-100% B, under flow rate of 0.2 mL/min at 0-16.5 min, and 0.3 mL/min at 16.5-20 min. Both positive and negative modes for tissue",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-3168",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3168,
+      "sentence": "For immunostaining, 8-\u03bcm sections underwent deparaffinization, antigen retrieval in citrate buffer (pH 6.0), peroxidase quenching with 3% H 2 O 2 in phosphate-buffered saline (PBS), water rinse, and blocking with goat serum.",
+      "context_window": "ieval in citrate buffer (pH 6.0), peroxidase quenching with 3% H 2 O 2 in phosphate-buffered saline (PBS), water rinse, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-4381",
+      "claim_type": "sample_size",
+      "raw_text": "n=179",
+      "numeric_values": [
+        179.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4381,
+      "sentence": "In PDAC, tumor tissues (n=179) were all from TCGA, and among the corresponding normal tissues (n=171), 4 were from TCGA and the others were from GTEx.",
+      "context_window": "cohort, https://xenabrowser.net ). In PDAC, tumor tissues (n=179) were all from TCGA, and among the corresponding normal tis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-4452",
+      "claim_type": "sample_size",
+      "raw_text": "n=171",
+      "numeric_values": [
+        171.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4452,
+      "sentence": "In PDAC, tumor tissues (n=179) were all from TCGA, and among the corresponding normal tissues (n=171), 4 were from TCGA and the others were from GTEx.",
+      "context_window": "all from TCGA, and among the corresponding normal tissues (n=171), 4 were from TCGA and the others were from GTEx. Gene expr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-4866",
+      "claim_type": "sample_size",
+      "raw_text": "n=137",
+      "numeric_values": [
+        137.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4866,
+      "sentence": "In PDAC, tumor (n=137) and normal (n=74) tissues were compared for protein expression related to taurine metabolism.",
+      "context_window": "tps://pdc.cancer.gov/pdc/cptac-pancancer ). In PDAC, tumor (n=137) and normal (n=74) tissues were compared for protein expres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-4885",
+      "claim_type": "sample_size",
+      "raw_text": "n=74",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4885,
+      "sentence": "In PDAC, tumor (n=137) and normal (n=74) tissues were compared for protein expression related to taurine metabolism.",
+      "context_window": "v/pdc/cptac-pancancer ). In PDAC, tumor (n=137) and normal (n=74) tissues were compared for protein expression related to ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-5312",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5312,
+      "sentence": "Cells were grown in DMEM (LM 011-01, Welgene, Gyeongsan, Korea) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin, at 37\u00b0C incubator.",
+      "context_window": "EM (LM 011-01, Welgene, Gyeongsan, Korea) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin, at 37\u00b0C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-5339",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5339,
+      "sentence": "Cells were grown in DMEM (LM 011-01, Welgene, Gyeongsan, Korea) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin, at 37\u00b0C incubator.",
+      "context_window": "ongsan, Korea) supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin, at 37\u00b0C incubator. Three siRNAs (c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-u-7265",
+      "claim_type": "unit_value",
+      "raw_text": "20 days",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7265,
+      "sentence": "The cells were cultured for 20 days in DMEM supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin.",
+      "context_window": "were seeded into 6-well plate. The cells were cultured for 20 days in DMEM supplemented with 10% fetal bovine serum and 1% pen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-7299",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7299,
+      "sentence": "The cells were cultured for 20 days in DMEM supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin.",
+      "context_window": "e cells were cultured for 20 days in DMEM supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin. Once col",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-7326",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7326,
+      "sentence": "The cells were cultured for 20 days in DMEM supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin.",
+      "context_window": "0 days in DMEM supplemented with 10% fetal bovine serum and 1% penicillin-streptomycin. Once colonies had formed, the plat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-7427",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7427,
+      "sentence": "Once colonies had formed, the plate was washed with PBS and stained with 0.5% crystal violet solution for 30 min.",
+      "context_window": "had formed, the plate was washed with PBS and stained with 0.5% crystal violet solution for 30 min. Following staining, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-8788",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8788,
+      "sentence": "All statistical tests were two-sided, and p <0.05 was considered statistically significant.",
+      "context_window": "s://kmplot.com ). All statistical tests were two-sided, and p <0.05 was considered statistically significant. For multivariate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-307",
+      "claim_type": "sample_size",
+      "raw_text": "n=4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 307,
+      "sentence": "Of these 54 patients, 38 and 16 were diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)].",
+      "context_window": "diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-317",
+      "claim_type": "sample_size",
+      "raw_text": "n=14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 317,
+      "sentence": "Of these 54 patients, 38 and 16 were diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)].",
+      "context_window": "as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)]. Classif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-329",
+      "claim_type": "sample_size",
+      "raw_text": "n=6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 329,
+      "sentence": "Of these 54 patients, 38 and 16 were diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)].",
+      "context_window": "I and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)]. Classification of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-340",
+      "claim_type": "sample_size",
+      "raw_text": "n=14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 340,
+      "sentence": "Of these 54 patients, 38 and 16 were diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)].",
+      "context_window": "V, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)]. Classification of tumor stages",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-352",
+      "claim_type": "sample_size",
+      "raw_text": "n=11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 352,
+      "sentence": "Of these 54 patients, 38 and 16 were diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)].",
+      "context_window": "ely [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)]. Classification of tumor stages was accordi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-367",
+      "claim_type": "sample_size",
+      "raw_text": "n=5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 367,
+      "sentence": "Of these 54 patients, 38 and 16 were diagnosed as stage I-II and III-IV, respectively [stage IA (n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)].",
+      "context_window": "n=4), IB (n=14), IIA (n=6), IIB (n=14), III (n=11), and IV (n=5)]. Classification of tumor stages was according to the 8th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-542",
+      "claim_type": "percentage",
+      "raw_text": "29.6%",
+      "numeric_values": [
+        29.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 542,
+      "sentence": "Among the 54 patients, a total of 16 (29.6%) individuals either experienced no recurrence of the cancer or were subject to censoring during the study period.",
+      "context_window": "Chun et al ., 2018 ). Among the 54 patients, a total of 16 (29.6%) individuals either experienced no recurrence of the cancer",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-678",
+      "claim_type": "percentage",
+      "raw_text": "70.4%",
+      "numeric_values": [
+        70.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 678,
+      "sentence": "Conversely, 38 (70.4%) patients encountered cancer recurrence.",
+      "context_window": "bject to censoring during the study period. Conversely, 38 (70.4%) patients encountered cancer recurrence. We performed unta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-corr-1613",
+      "claim_type": "correlation",
+      "raw_text": "R2=0.737",
+      "numeric_values": [
+        0.737
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1613,
+      "sentence": "The OPLS-DA score plot showed a good separation between normal and tumor groups with good predictive values (R2=0.737, Q2= 0.543; Fig.",
+      "context_window": "etween normal and tumor groups with good predictive values (R2=0.737, Q2= 0.543; Fig. 1B ). Among 296 features detected from bot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-1767",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1767,
+      "sentence": "Among 296 features detected from both ESI(+) and ESI(-) modes of LC-HRMS, 109 features exhibited a significant decrease ( p <0.05) and 24 features a significant increase ( p <0.05) in tumor samples upon univariate analysis ( Fig.",
+      "context_window": "of LC-HRMS, 109 features exhibited a significant decrease ( p <0.05) and 24 features a significant increase ( p <0.05) in tumor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-1817",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1817,
+      "sentence": "Among 296 features detected from both ESI(+) and ESI(-) modes of LC-HRMS, 109 features exhibited a significant decrease ( p <0.05) and 24 features a significant increase ( p <0.05) in tumor samples upon univariate analysis ( Fig.",
+      "context_window": "ecrease ( p <0.05) and 24 features a significant increase ( p <0.05) in tumor samples upon univariate analysis ( Fig. 1C ). Twe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-2364",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2364,
+      "sentence": "In a comparison of 54 matched pairs, the amount of total taurine was significantly higher in tumor than in normal tissues, (fold change=2.51, p <0.0001; Fig.",
+      "context_window": "higher in tumor than in normal tissues, (fold change=2.51, p <0.0001; Fig. 1D ), and the ROC analysis yielded an area under the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-2454",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2454,
+      "sentence": "1D ), and the ROC analysis yielded an area under the curve (AUC) of .749 (95% CI=0.657 to 0.840; Fig.",
+      "context_window": "ROC analysis yielded an area under the curve (AUC) of .749 (95% CI=0.657 to 0.840; Fig. 1E ). To validate the elevated tau",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-2950",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2950,
+      "sentence": "The IHC staining showed a significant elevation of taurine level in the PDAC tissues ( p <0.001; Fig.",
+      "context_window": "ignificant elevation of taurine level in the PDAC tissues ( p <0.001; Fig. 2A ), confirming our metabolomics results. Next, we t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3191",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3191,
+      "sentence": "In terms of PDAC stages, taurine levels were significantly higher in PDAC stage I and II ( p <0.001 and p =0.001, respectively) and maintained the elevated trend in PDAC with combined stage III-IV ( p =0.09; Fig.",
+      "context_window": "e levels were significantly higher in PDAC stage I and II ( p <0.001 and p =0.001, respectively) and maintained the elevated tre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3204",
+      "claim_type": "p_value",
+      "raw_text": "p =0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3204,
+      "sentence": "In terms of PDAC stages, taurine levels were significantly higher in PDAC stage I and II ( p <0.001 and p =0.001, respectively) and maintained the elevated trend in PDAC with combined stage III-IV ( p =0.09; Fig.",
+      "context_window": "significantly higher in PDAC stage I and II ( p <0.001 and p =0.001, respectively) and maintained the elevated trend in PDAC wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3299",
+      "claim_type": "p_value",
+      "raw_text": "p =0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3299,
+      "sentence": "In terms of PDAC stages, taurine levels were significantly higher in PDAC stage I and II ( p <0.001 and p =0.001, respectively) and maintained the elevated trend in PDAC with combined stage III-IV ( p =0.09; Fig.",
+      "context_window": "ned the elevated trend in PDAC with combined stage III-IV ( p =0.09; Fig. 2B ). There was no significant difference in the stai",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3499",
+      "claim_type": "p_value",
+      "raw_text": "p =0.056",
+      "numeric_values": [
+        0.056
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3499,
+      "sentence": "In our clinical cohort, taurine levels showed higher trend in stage I ( p =0.056) and significant increase in other stages (stage II, p =0.002; combined stage III-IV, p <0.001; Fig.",
+      "context_window": "cal cohort, taurine levels showed higher trend in stage I ( p =0.056) and significant increase in other stages (stage II, p =0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3561",
+      "claim_type": "p_value",
+      "raw_text": "p =0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3561,
+      "sentence": "In our clinical cohort, taurine levels showed higher trend in stage I ( p =0.056) and significant increase in other stages (stage II, p =0.002; combined stage III-IV, p <0.001; Fig.",
+      "context_window": "=0.056) and significant increase in other stages (stage II, p =0.002; combined stage III-IV, p <0.001; Fig. 2C ). Moreover, taur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3594",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3594,
+      "sentence": "In our clinical cohort, taurine levels showed higher trend in stage I ( p =0.056) and significant increase in other stages (stage II, p =0.002; combined stage III-IV, p <0.001; Fig.",
+      "context_window": "in other stages (stage II, p =0.002; combined stage III-IV, p <0.001; Fig. 2C ). Moreover, taurine levels were elevated in both",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3672",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3672,
+      "sentence": "Moreover, taurine levels were elevated in both primary ( p <0.001) and metastatic tumors ( p =0.003; see Fig.",
+      "context_window": "). Moreover, taurine levels were elevated in both primary ( p <0.001) and metastatic tumors ( p =0.003; see Fig. 2B ) in the tis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3706",
+      "claim_type": "p_value",
+      "raw_text": "p =0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3706,
+      "sentence": "Moreover, taurine levels were elevated in both primary ( p <0.001) and metastatic tumors ( p =0.003; see Fig.",
+      "context_window": "levated in both primary ( p <0.001) and metastatic tumors ( p =0.003; see Fig. 2B ) in the tissue microarray. Consistently, our",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3842",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3842,
+      "sentence": "Consistently, our clinical cohort exhibited elevated taurine levels in both primary ( p <0.001) and metastatic tumors ( p <0.001; see Fig.",
+      "context_window": "cohort exhibited elevated taurine levels in both primary ( p <0.001) and metastatic tumors ( p <0.001; see Fig. 2C ). In terms",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-3876",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3876,
+      "sentence": "Consistently, our clinical cohort exhibited elevated taurine levels in both primary ( p <0.001) and metastatic tumors ( p <0.001; see Fig.",
+      "context_window": "levels in both primary ( p <0.001) and metastatic tumors ( p <0.001; see Fig. 2C ). In terms of tumor grade, both the tissue mi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-4598",
+      "claim_type": "p_value",
+      "raw_text": "p =0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4598,
+      "sentence": "For overall survival (OS), the high taurine group trended towards a shorter survival post-operation than low taurine group but did not meet statistical significance (Log-rank p =0.20, Hazard Ratio=1.58 [0.79-3.17]).",
+      "context_window": "e group but did not meet statistical significance (Log-rank p =0.20, Hazard Ratio=1.58 [0.79-3.17]). Notably, however, for dise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-hr-l-4607",
+      "claim_type": "hazard_ratio",
+      "raw_text": "Hazard Ratio=1.58",
+      "numeric_values": [
+        1.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4607,
+      "sentence": "For overall survival (OS), the high taurine group trended towards a shorter survival post-operation than low taurine group but did not meet statistical significance (Log-rank p =0.20, Hazard Ratio=1.58 [0.79-3.17]).",
+      "context_window": "ut did not meet statistical significance (Log-rank p =0.20, Hazard Ratio=1.58 [0.79-3.17]). Notably, however, for disease-free survival (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-4714",
+      "claim_type": "sample_size",
+      "raw_text": "n=28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4714,
+      "sentence": "Notably, however, for disease-free survival (DFS), the high taurine group (n=28) showed significantly more and faster onset of cancer recurrence (Log-rank p =0.023, Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group (n=26).",
+      "context_window": "r, for disease-free survival (DFS), the high taurine group (n=28) showed significantly more and faster onset of cancer recur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-4794",
+      "claim_type": "p_value",
+      "raw_text": "p =0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4794,
+      "sentence": "Notably, however, for disease-free survival (DFS), the high taurine group (n=28) showed significantly more and faster onset of cancer recurrence (Log-rank p =0.023, Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group (n=26).",
+      "context_window": "cantly more and faster onset of cancer recurrence (Log-rank p =0.023, Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-hr-l-4804",
+      "claim_type": "hazard_ratio",
+      "raw_text": "Hazard Ratio=2.15",
+      "numeric_values": [
+        2.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4804,
+      "sentence": "Notably, however, for disease-free survival (DFS), the high taurine group (n=28) showed significantly more and faster onset of cancer recurrence (Log-rank p =0.023, Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group (n=26).",
+      "context_window": "e and faster onset of cancer recurrence (Log-rank p =0.023, Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group (n=26). Overall, ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-4863",
+      "claim_type": "sample_size",
+      "raw_text": "n=26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4863,
+      "sentence": "Notably, however, for disease-free survival (DFS), the high taurine group (n=28) showed significantly more and faster onset of cancer recurrence (Log-rank p =0.023, Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group (n=26).",
+      "context_window": "Hazard Ratio=2.15 [1.09-4.21]) than the low taurine group (n=26). Overall, taurine levels were elevated in PDAC tissues fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-7443",
+      "claim_type": "sample_size",
+      "raw_text": "n=46",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7443,
+      "sentence": "For overall survival (OS), the high ADO group (n=46) showed significantly shorter survival period (Log-rank p =0.037, Hazard Ratio=1.61 [1.03-2.52]) compared to the low ADO group (n=131).",
+      "context_window": "( Fig. 3D ). For overall survival (OS), the high ADO group (n=46) showed significantly shorter survival period (Log-rank p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-7504",
+      "claim_type": "p_value",
+      "raw_text": "p =0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7504,
+      "sentence": "For overall survival (OS), the high ADO group (n=46) showed significantly shorter survival period (Log-rank p =0.037, Hazard Ratio=1.61 [1.03-2.52]) compared to the low ADO group (n=131).",
+      "context_window": "=46) showed significantly shorter survival period (Log-rank p =0.037, Hazard Ratio=1.61 [1.03-2.52]) compared to the low ADO gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-hr-l-7514",
+      "claim_type": "hazard_ratio",
+      "raw_text": "Hazard Ratio=1.61",
+      "numeric_values": [
+        1.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7514,
+      "sentence": "For overall survival (OS), the high ADO group (n=46) showed significantly shorter survival period (Log-rank p =0.037, Hazard Ratio=1.61 [1.03-2.52]) compared to the low ADO group (n=131).",
+      "context_window": "d significantly shorter survival period (Log-rank p =0.037, Hazard Ratio=1.61 [1.03-2.52]) compared to the low ADO group (n=131). In dise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-7576",
+      "claim_type": "sample_size",
+      "raw_text": "n=131",
+      "numeric_values": [
+        131.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7576,
+      "sentence": "For overall survival (OS), the high ADO group (n=46) showed significantly shorter survival period (Log-rank p =0.037, Hazard Ratio=1.61 [1.03-2.52]) compared to the low ADO group (n=131).",
+      "context_window": "zard Ratio=1.61 [1.03-2.52]) compared to the low ADO group (n=131). In disease-free survival (DFS), the high ADO group (n=49)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-7636",
+      "claim_type": "sample_size",
+      "raw_text": "n=49",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7636,
+      "sentence": "In disease-free survival (DFS), the high ADO group (n=49) showed significantly more rapid and frequent cancer recurrence (Log-rank p =0.035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=20).",
+      "context_window": "n=131). In disease-free survival (DFS), the high ADO group (n=49) showed significantly more rapid and frequent cancer recurr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-7715",
+      "claim_type": "p_value",
+      "raw_text": "p =0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7715,
+      "sentence": "In disease-free survival (DFS), the high ADO group (n=49) showed significantly more rapid and frequent cancer recurrence (Log-rank p =0.035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=20).",
+      "context_window": "icantly more rapid and frequent cancer recurrence (Log-rank p =0.035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-hr-l-7725",
+      "claim_type": "hazard_ratio",
+      "raw_text": "Hazard Ratio=3.08",
+      "numeric_values": [
+        3.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7725,
+      "sentence": "In disease-free survival (DFS), the high ADO group (n=49) showed significantly more rapid and frequent cancer recurrence (Log-rank p =0.035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=20).",
+      "context_window": "re rapid and frequent cancer recurrence (Log-rank p =0.035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=20). On the IHC ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-n-7780",
+      "claim_type": "sample_size",
+      "raw_text": "n=20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7780,
+      "sentence": "In disease-free survival (DFS), the high ADO group (n=49) showed significantly more rapid and frequent cancer recurrence (Log-rank p =0.035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=20).",
+      "context_window": "035, Hazard Ratio=3.08 [1.03-9.21)) than the low ADO group (n=20). On the IHC analysis of independent tissue microarray com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-8017",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8017,
+      "sentence": "The IHC staining revealed a significant increase in ADO protein levels in PDAC tissues ( p <0.0001; Fig.",
+      "context_window": "ignificant increase in ADO protein levels in PDAC tissues ( p <0.0001; Fig. 3E ), aligning with our bioinformatics findings. We t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-8248",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8248,
+      "sentence": "In terms of PDAC stages, ADO levels were significantly higher in PDAC stage I, II ( p <0.0001 for both) and maintained the elevated trend in PDAC with combined stage III-IV ( p <0.0001; Fig.",
+      "context_window": "ADO levels were significantly higher in PDAC stage I, II ( p <0.0001 for both) and maintained the elevated trend in PDAC with co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-8339",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8339,
+      "sentence": "In terms of PDAC stages, ADO levels were significantly higher in PDAC stage I, II ( p <0.0001 for both) and maintained the elevated trend in PDAC with combined stage III-IV ( p <0.0001; Fig.",
+      "context_window": "ned the elevated trend in PDAC with combined stage III-IV ( p <0.0001; Fig. 3F ). Additionally, increased ADO levels were observe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-8456",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8456,
+      "sentence": "Additionally, increased ADO levels were observed in both primary and metastatic PDAC samples ( p <0.0001; Fig.",
+      "context_window": "were observed in both primary and metastatic PDAC samples ( p <0.0001; Fig. 3F ). ADO levels were also significantly higher acros",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-8545",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8545,
+      "sentence": "ADO levels were also significantly higher across all PDAC grades ( p <0.0001 for grades 1, 2, and 3; Fig.",
+      "context_window": "els were also significantly higher across all PDAC grades ( p <0.0001 for grades 1, 2, and 3; Fig. 3F ) Overall, ADO showed highe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-9002",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9002,
+      "sentence": "ADO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to control siRNA, respectively ( Fig.",
+      "context_window": "eatic cancer cell line. ADO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-9010",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9010,
+      "sentence": "ADO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to control siRNA, respectively ( Fig.",
+      "context_window": "ncer cell line. ADO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-9027",
+      "claim_type": "p_value",
+      "raw_text": "p =0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9027,
+      "sentence": "ADO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to control siRNA, respectively ( Fig.",
+      "context_window": "DO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to control siRNA, respec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-9051",
+      "claim_type": "p_value",
+      "raw_text": "p =0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9051,
+      "sentence": "ADO expression was downregulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to control siRNA, respectively ( Fig.",
+      "context_window": "gulated by 82% and 46% in ADO-KD1 ( p =0.005) and ADO-KD2 ( p =0.012), compared to control siRNA, respectively ( Fig. 4A ). To s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-9246",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9246,
+      "sentence": "To see the ADO-Taurine relationship, we also measured the taurine levels in the knockdown cells and found that it was decreased by 78% only in cells treated with ADO-KD1 ( p =0.008), but not in those with ADO-KD2 ( Fig.",
+      "context_window": "s in the knockdown cells and found that it was decreased by 78% only in cells treated with ADO-KD1 ( p =0.008), but not in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-p-9287",
+      "claim_type": "p_value",
+      "raw_text": "p =0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9287,
+      "sentence": "To see the ADO-Taurine relationship, we also measured the taurine levels in the knockdown cells and found that it was decreased by 78% only in cells treated with ADO-KD1 ( p =0.008), but not in those with ADO-KD2 ( Fig.",
+      "context_window": "t was decreased by 78% only in cells treated with ADO-KD1 ( p =0.008), but not in those with ADO-KD2 ( Fig. 4B ). This confirms",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11704412_taurine_synthesis_by_2_aminoethanethiol_dioxygenase_as_a_vul-pct-9416",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9416,
+      "sentence": "This confirms the ADO-Taurine connection and suggests that a substantial (>50%) decrease in ADO expression is required to lower the taurine level.",
+      "context_window": "he ADO-Taurine connection and suggests that a substantial (>50%) decrease in ADO expression is required to lower the taurin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

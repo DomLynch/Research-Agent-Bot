@@ -1,0 +1,218 @@
+{
+  "paper_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con",
+  "doi": "10.1101/2025.10.20.25338423",
+  "extracted_at": "2026-05-08T20:06:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "unit_value": 2,
+    "percentage": 1,
+    "confidence_interval": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-msd-432",
+      "claim_type": "mean_sd",
+      "raw_text": "63.75 \u00b1 4.44",
+      "numeric_values": [
+        63.75,
+        4.44
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 432,
+      "sentence": "Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM) and actigraphy in a free-living condition.",
+      "context_window": "overall cardiovascular risk. Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years)",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-u-440",
+      "claim_type": "unit_value",
+      "raw_text": "4.44 years",
+      "numeric_values": [
+        4.44
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 440,
+      "sentence": "Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM) and actigraphy in a free-living condition.",
+      "context_window": "cardiovascular risk. Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underw",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-pct-456",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 456,
+      "sentence": "Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM) and actigraphy in a free-living condition.",
+      "context_window": "isk. Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambul",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-msd-485",
+      "claim_type": "mean_sd",
+      "raw_text": "12.3 \u00b1 6.24",
+      "numeric_values": [
+        12.3,
+        6.24
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 485,
+      "sentence": "Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM) and actigraphy in a free-living condition.",
+      "context_window": "ients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-u-492",
+      "claim_type": "unit_value",
+      "raw_text": "6.24 years",
+      "numeric_values": [
+        6.24
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 492,
+      "sentence": "Method A total of 20 patients (63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM) and actigraphy in a free-living condition.",
+      "context_window": "63.75 \u00b1 4.44 years old, 40% female, duration of T2D: 12.3 \u00b1 6.24 years) underwent ambulatory blood pressure monitoring (ABPM) and",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-ci-1156",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: [0.014, 0.632",
+      "numeric_values": [
+        0.014,
+        0.632
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1156,
+      "sentence": "Results Sleep onset latency was associated with 24-hour coefficient of variance of systolic blood pressure (\u03b2-coefficient: 0.323, 95% CI: [0.014, 0.632], p = 0.04).",
+      "context_window": "variance of systolic blood pressure (\u03b2-coefficient: 0.323, 95% CI: [0.014, 0.632], p = 0.04). Inter-day sleep efficiency was inversely assoc",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-p-1180",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1180,
+      "sentence": "Results Sleep onset latency was associated with 24-hour coefficient of variance of systolic blood pressure (\u03b2-coefficient: 0.323, 95% CI: [0.014, 0.632], p = 0.04).",
+      "context_window": "ood pressure (\u03b2-coefficient: 0.323, 95% CI: [0.014, 0.632], p = 0.04). Inter-day sleep efficiency was inversely associated with",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-ci-1286",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: [-0.676, -0.071",
+      "numeric_values": [
+        -0.676,
+        -0.071
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1286,
+      "sentence": "Inter-day sleep efficiency was inversely associated with SD and CV (SD: \u03b2-coefficient: -0.373, 95% CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0.04) of diastolic blood pressure.",
+      "context_window": "rsely associated with SD and CV (SD: \u03b2-coefficient: -0.373, 95% CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-p-1312",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1312,
+      "sentence": "Inter-day sleep efficiency was inversely associated with SD and CV (SD: \u03b2-coefficient: -0.373, 95% CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0.04) of diastolic blood pressure.",
+      "context_window": "nd CV (SD: \u03b2-coefficient: -0.373, 95% CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-ci-1349",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: [-1.141, -0.036",
+      "numeric_values": [
+        -1.141,
+        -0.036
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1349,
+      "sentence": "Inter-day sleep efficiency was inversely associated with SD and CV (SD: \u03b2-coefficient: -0.373, 95% CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0.04) of diastolic blood pressure.",
+      "context_window": "CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0.04) of diastolic blood pressure. Conclusion In indi",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_20_25338423_objective_sleep_parameters_and_diurnal_blood_pressure_in_con-p-1375",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1375,
+      "sentence": "Inter-day sleep efficiency was inversely associated with SD and CV (SD: \u03b2-coefficient: -0.373, 95% CI: [-0.676, -0.071], P = 0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0.04) of diastolic blood pressure.",
+      "context_window": "0.02; CV: \u03b2-coefficient: -0.588, 95% CI: [-1.141, -0.036], P = 0.04) of diastolic blood pressure. Conclusion In individuals wit",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1161_01_cir_71_2_332_cumulative_inhibitory_effect_of_low_dose_aspirin_on_vascular",
+  "doi": "10.1161/01.cir.71.2.332",
+  "extracted_at": "2026-05-08T20:05:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_cir_71_2_332_cumulative_inhibitory_effect_of_low_dose_aspirin_on_vascular-u-441",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 441,
+      "sentence": "Candidates for coronary artery vein graft bypass ingested 20 mg of aspirin daily during the week before surgery, and platelet aggregation, platelet formation of thromboxane A2 (TXA2), aortic and saphenous vein production of prostacyclin (PGI2), and hemostatic status were measured at the time of the bypass surgery.",
+      "context_window": ". Candidates for coronary artery vein graft bypass ingested 20 mg of aspirin daily during the week before surgery, and platel",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_71_2_332_cumulative_inhibitory_effect_of_low_dose_aspirin_on_vascular-pct-810",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 810,
+      "sentence": "Low-dose aspirin markedly inhibited platelet aggregation responses and reduced TXA2 generation by greater than 90%, effects similar to those observed with much higher doses of aspirin.",
+      "context_window": "ation responses and reduced TXA2 generation by greater than 90%, effects similar to those observed with much higher doses o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_71_2_332_cumulative_inhibitory_effect_of_low_dose_aspirin_on_vascular-pct-952",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 952,
+      "sentence": "Both aortic and saphenous vein production of PGI2 were inhibited by 50% compared with PGI2 produced by vascular tissues of control subjects who received no aspirin preoperatively (51 +/- 10 pg 6-keto-PGF1 alpha/mg aortic wet weight [mean +/- SEM] in aspirin-treated subjects vs 130 +/- 16 pg/mg in control subjects, and 71 +/- 8 pg/mg saphenous vein wet weight vs 131 +/- 17 pg/mg).",
+      "context_window": "tic and saphenous vein production of PGI2 were inhibited by 50% compared with PGI2 produced by vascular tissues of control",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_71_2_332_cumulative_inhibitory_effect_of_low_dose_aspirin_on_vascular-pct-1500",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1500,
+      "sentence": "Blood loss at surgery was not significantly increased by preoperative low-dose aspirin as measured by chest tube drainage (754 +/- 229 ml in aspirin-treated subjects vs 645 +/- 271 ml in control subjects), hematocrit nadir (31.2 +/- 1.9% vs 31.8 +/- 1.7%), or transfusions (2.2 +/- 1.3 units of red blood cells vs 2.2 +/- 1.7 units).(ABSTRACT TRUNCATED AT 250 WORDS)</jats:p>",
+      "context_window": "+/- 271 ml in control subjects), hematocrit nadir (31.2 +/- 1.9% vs 31.8 +/- 1.7%), or transfusions (2.2 +/- 1.3 units of re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_71_2_332_cumulative_inhibitory_effect_of_low_dose_aspirin_on_vascular-pct-1517",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1517,
+      "sentence": "Blood loss at surgery was not significantly increased by preoperative low-dose aspirin as measured by chest tube drainage (754 +/- 229 ml in aspirin-treated subjects vs 645 +/- 271 ml in control subjects), hematocrit nadir (31.2 +/- 1.9% vs 31.8 +/- 1.7%), or transfusions (2.2 +/- 1.3 units of red blood cells vs 2.2 +/- 1.7 units).(ABSTRACT TRUNCATED AT 250 WORDS)</jats:p>",
+      "context_window": "trol subjects), hematocrit nadir (31.2 +/- 1.9% vs 31.8 +/- 1.7%), or transfusions (2.2 +/- 1.3 units of red blood cells vs",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

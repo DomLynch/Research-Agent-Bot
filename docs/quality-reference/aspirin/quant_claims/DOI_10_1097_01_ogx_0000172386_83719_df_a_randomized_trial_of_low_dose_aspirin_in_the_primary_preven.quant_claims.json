@@ -1,0 +1,264 @@
+{
+  "paper_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven",
+  "doi": "10.1097/01.ogx.0000172386.83719.df",
+  "extracted_at": "2026-05-08T20:05:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 10
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-u-282",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 282,
+      "sentence": "Because less information is available for women, the investigators randomly assigned 39,876 healthy women 45 years of age or older to receive either 100 mg aspirin or placebo on alternate days and followed them up for 10.1 years on average.",
+      "context_window": "n, the investigators randomly assigned 39,876 healthy women 45 years of age or older to receive either 100 mg aspirin or placebo",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-u-325",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 325,
+      "sentence": "Because less information is available for women, the investigators randomly assigned 39,876 healthy women 45 years of age or older to receive either 100 mg aspirin or placebo on alternate days and followed them up for 10.1 years on average.",
+      "context_window": "76 healthy women 45 years of age or older to receive either 100 mg aspirin or placebo on alternate days and followed them up f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-u-394",
+      "claim_type": "unit_value",
+      "raw_text": "10.1 years",
+      "numeric_values": [
+        10.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 394,
+      "sentence": "Because less information is available for women, the investigators randomly assigned 39,876 healthy women 45 years of age or older to receive either 100 mg aspirin or placebo on alternate days and followed them up for 10.1 years on average.",
+      "context_window": "pirin or placebo on alternate days and followed them up for 10.1 years on average. The primary end point was a combination of majo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-706",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 706,
+      "sentence": "At the end of the trial, there was a nonsignificant 9% decrease in a first major cardiovascular event in women taking aspirin.",
+      "context_window": "istics. At the end of the trial, there was a nonsignificant 9% decrease in a first major cardiovascular event in women tak",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular outcome",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-815",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 815,
+      "sentence": "The risk of stroke was reduced by 17% in the aspirin group (relative risk [RR], 0.83; 95% confidence interval [CI], 0.69-0.99).",
+      "context_window": "in women taking aspirin. The risk of stroke was reduced by 17% in the aspirin group (relative risk [RR], 0.83; 95% confide",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-867",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 867,
+      "sentence": "The risk of stroke was reduced by 17% in the aspirin group (relative risk [RR], 0.83; 95% confidence interval [CI], 0.69-0.99).",
+      "context_window": "uced by 17% in the aspirin group (relative risk [RR], 0.83; 95% confidence interval [CI], 0.69-0.99). The risk of ischemic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-952",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 952,
+      "sentence": "The risk of ischemic stroke was lowered by 24% (RR, 0.76; 95% CI, 0.63-0.93).",
+      "context_window": "CI], 0.69-0.99). The risk of ischemic stroke was lowered by 24% (RR, 0.76; 95% CI, 0.63-0.93). The risk of hemorrhagic stro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-967",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 967,
+      "sentence": "The risk of ischemic stroke was lowered by 24% (RR, 0.76; 95% CI, 0.63-0.93).",
+      "context_window": ". The risk of ischemic stroke was lowered by 24% (RR, 0.76; 95% CI, 0.63-0.93). The risk of hemorrhagic stroke increased, b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-1204",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1204,
+      "sentence": "Aspirin had no significant effect on the risk of fatal or nonfatal MI (RR, 1.02; 95% CI, 0.84-1.25) or death from cardiovascular causes (RR, 0.95; 95% CI, 0.74-1.22).",
+      "context_window": "icant effect on the risk of fatal or nonfatal MI (RR, 1.02; 95% CI, 0.84-1.25) or death from cardiovascular causes (RR, 0.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-1270",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1270,
+      "sentence": "Aspirin had no significant effect on the risk of fatal or nonfatal MI (RR, 1.02; 95% CI, 0.84-1.25) or death from cardiovascular causes (RR, 0.95; 95% CI, 0.74-1.22).",
+      "context_window": ", 0.84-1.25) or death from cardiovascular causes (RR, 0.95; 95% CI, 0.74-1.22). Aspirin therapy was associated with a 22% r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-1328",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1328,
+      "sentence": "Aspirin therapy was associated with a 22% reduction in transient ischemic attacks (RR, 0.78; 93% CI, 0.64-0.94).",
+      "context_window": "; 95% CI, 0.74-1.22). Aspirin therapy was associated with a 22% reduction in transient ischemic attacks (RR, 0.78; 93% CI,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-1383",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1383,
+      "sentence": "Aspirin therapy was associated with a 22% reduction in transient ischemic attacks (RR, 0.78; 93% CI, 0.64-0.94).",
+      "context_window": "th a 22% reduction in transient ischemic attacks (RR, 0.78; 93% CI, 0.64-0.94). It had no significant effect on the risk of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-u-1688",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1688,
+      "sentence": "The most consistent benefit was noted in women who were 65 years of age or older when entering the study.",
+      "context_window": "ed. The most consistent benefit was noted in women who were 65 years of age or older when entering the study. Neither vitamin E",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1097_01_ogx_0000172386_83719_df_a_randomized_trial_of_low_dose_aspirin_in_the_primary_preven-pct-2120",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2120,
+      "sentence": "The RR of GI bleeding requiring transfusion for aspirin-treated women, compared with those given placebo, was 1.4 (95% CI, 1.07-1.83).",
+      "context_window": "-treated women, compared with those given placebo, was 1.4 (95% CI, 1.07-1.83). Hematuria, easy bruising, and epistaxis wer",
+      "claim_role": "unknown",
+      "endpoint": "gi bleeding",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_15829_1728_8800_2017_4_68_75_low_dosage_acetylsalicylic_acid_a_variety_of_formulations",
+  "doi": "10.15829/1728-8800-2017-4-68-75",
+  "extracted_at": "2026-05-08T20:05:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_15829_1728_8800_2017_4_68_75_low_dosage_acetylsalicylic_acid_a_variety_of_formulations-pct-134",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 134,
+      "sentence": "The most prevalent formulation of the low-dosage (ld) acetylsalicylic acid (ASA) for prevention purposes is the gut soluble pill - 80,6% of the ldASA registered in pharmacy market.",
+      "context_window": "(ASA) for prevention purposes is the gut soluble pill - 80,6% of the ldASA registered in pharmacy market. Formulations of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "acetylsalicylic acid",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15829_1728_8800_2017_4_68_75_low_dosage_acetylsalicylic_acid_a_variety_of_formulations-pct-241",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 241,
+      "sentence": "Formulations of ldASA mostly presented as ASA monodrugs (84,4%), containing only ASA as active substance, predominantly as 100 mg dosage.",
+      "context_window": "Formulations of ldASA mostly presented as ASA monodrugs (84,4%), containing only ASA as active substance, predominantly as",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15829_1728_8800_2017_4_68_75_low_dosage_acetylsalicylic_acid_a_variety_of_formulations-u-304",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 304,
+      "sentence": "Formulations of ldASA mostly presented as ASA monodrugs (84,4%), containing only ASA as active substance, predominantly as 100 mg dosage.",
+      "context_window": ", containing only ASA as active substance, predominantly as 100 mg dosage. Amount of ASA of 81 mg has become widespread only i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15829_1728_8800_2017_4_68_75_low_dosage_acetylsalicylic_acid_a_variety_of_formulations-u-336",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 336,
+      "sentence": "Amount of ASA of 81 mg has become widespread only in North America, that is related to nonmetric measurement system.",
+      "context_window": "substance, predominantly as 100 mg dosage. Amount of ASA of 81 mg has become widespread only in North America, that is relate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "asa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_15829_1728_8800_2017_4_68_75_low_dosage_acetylsalicylic_acid_a_variety_of_formulations-pct-550",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 550,
+      "sentence": "Combinational ldASA with non-soluble antacide (magnesium hydroxide) are not broadly used throughout the world - 1,6% of all pharmacy market registered labels, and mostly in use in the regions of former USSR.",
+      "context_window": "um hydroxide) are not broadly used throughout the world - 1,6% of all pharmacy market registered labels, and mostly in use",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

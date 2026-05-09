@@ -1,0 +1,312 @@
+{
+  "paper_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans",
+  "doi": "10.1093/sleep/zsaf090.0580",
+  "extracted_at": "2026-05-08T20:06:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "p_value": 4,
+    "mean_sd": 3,
+    "confidence_interval": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-u-911",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "A total of 131 eligible cases received brief behavioral therapy for insomnia (BBTI) over 6 weeks, 56 (43%) of whom did not achieve remission.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Fifty-six patients (43%) did not meet ISI criteria for BBTI response.",
+      "context_window": "received brief behavioral therapy for insomnia (BBTI) over 6 weeks, 56 (43%) of whom did not achieve remission.</jats:p> </jat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-pct-924",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 924,
+      "sentence": "A total of 131 eligible cases received brief behavioral therapy for insomnia (BBTI) over 6 weeks, 56 (43%) of whom did not achieve remission.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Fifty-six patients (43%) did not meet ISI criteria for BBTI response.",
+      "context_window": "ef behavioral therapy for insomnia (BBTI) over 6 weeks, 56 (43%) of whom did not achieve remission.</jats:p> </jats:sec> <j",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "A total of 131 eligible cases received brief behavioral therapy for insomnia (BBTI) over 6 weeks, 56 (43%) of whom did not achieve remission.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>Fifty-six patients (43%) did not meet ISI criteria for BBTI response.",
+      "context_window": "jats:title>Results</jats:title> <jats:p>Fifty-six patients (43%) did not meet ISI criteria for BBTI response. Patients who",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-p-1222",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1222,
+      "sentence": "Patients who did not respond to BBTI had a higher sleep propensity at baseline than those who did respond to BBTI (p=0.02), however, both groups had comparable degree of insomnia severity (p=0.78).",
+      "context_window": "propensity at baseline than those who did respond to BBTI (p=0.02), however, both groups had comparable degree of insomnia se",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-p-1296",
+      "claim_type": "p_value",
+      "raw_text": "p=0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "Patients who did not respond to BBTI had a higher sleep propensity at baseline than those who did respond to BBTI (p=0.02), however, both groups had comparable degree of insomnia severity (p=0.78).",
+      "context_window": "er, both groups had comparable degree of insomnia severity (p=0.78). Prior to BBTI, there was no significant difference in the",
+      "claim_role": "unknown",
+      "endpoint": "insomnia severity",
+      "arm": "cognitive behavioral therapy for insomnia",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-msd-1399",
+      "claim_type": "mean_sd",
+      "raw_text": "84.7\u00b153.9",
+      "numeric_values": [
+        84.7,
+        53.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1399,
+      "sentence": "Prior to BBTI, there was no significant difference in the CPAP usage between BBTI responders (84.7\u00b153.9 minutes) and BBTI nonresponders (78.9\u00b177.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0.62).",
+      "context_window": "icant difference in the CPAP usage between BBTI responders (84.7\u00b153.9 minutes) and BBTI nonresponders (78.9\u00b177.5 minutes) (differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-msd-1442",
+      "claim_type": "mean_sd",
+      "raw_text": "78.9\u00b177.5",
+      "numeric_values": [
+        78.9,
+        77.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1442,
+      "sentence": "Prior to BBTI, there was no significant difference in the CPAP usage between BBTI responders (84.7\u00b153.9 minutes) and BBTI nonresponders (78.9\u00b177.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0.62).",
+      "context_window": "BBTI responders (84.7\u00b153.9 minutes) and BBTI nonresponders (78.9\u00b177.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-ci-1486",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-18.3, 29.7",
+      "numeric_values": [
+        -18.3,
+        29.7
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "Prior to BBTI, there was no significant difference in the CPAP usage between BBTI responders (84.7\u00b153.9 minutes) and BBTI nonresponders (78.9\u00b177.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0.62).",
+      "context_window": "nonresponders (78.9\u00b177.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0.62). Post BBTI, patients in BBTI responders used CPAP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-p-1508",
+      "claim_type": "p_value",
+      "raw_text": "p=0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1508,
+      "sentence": "Prior to BBTI, there was no significant difference in the CPAP usage between BBTI responders (84.7\u00b153.9 minutes) and BBTI nonresponders (78.9\u00b177.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0.62).",
+      "context_window": "7.5 minutes) (difference 5.7 minutes, 95% CI [-18.3, 29.7]; p=0.62). Post BBTI, patients in BBTI responders used CPAP for a lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-ci-1637",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [51.1, 76.3",
+      "numeric_values": [
+        51.1,
+        76.3
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1637,
+      "sentence": "Post BBTI, patients in BBTI responders used CPAP for a longer duration compared with baseline (difference 63.6 minutes, 95% CI [51.1, 76.3]; p&lt; 0.001] but not for BBTI nonresponders (difference 9.1 minutes, 95% CI [-10.2, 28.4]; p=0.35).",
+      "context_window": "r duration compared with baseline (difference 63.6 minutes, 95% CI [51.1, 76.3]; p&lt; 0.001] but not for BBTI nonresponders (difference 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-ci-1727",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-10.2, 28.4",
+      "numeric_values": [
+        -10.2,
+        28.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1727,
+      "sentence": "Post BBTI, patients in BBTI responders used CPAP for a longer duration compared with baseline (difference 63.6 minutes, 95% CI [51.1, 76.3]; p&lt; 0.001] but not for BBTI nonresponders (difference 9.1 minutes, 95% CI [-10.2, 28.4]; p=0.35).",
+      "context_window": "01] but not for BBTI nonresponders (difference 9.1 minutes, 95% CI [-10.2, 28.4]; p=0.35). Moreover, BBTI responders achieved higher CPAP u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-p-1749",
+      "claim_type": "p_value",
+      "raw_text": "p=0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1749,
+      "sentence": "Post BBTI, patients in BBTI responders used CPAP for a longer duration compared with baseline (difference 63.6 minutes, 95% CI [51.1, 76.3]; p&lt; 0.001] but not for BBTI nonresponders (difference 9.1 minutes, 95% CI [-10.2, 28.4]; p=0.35).",
+      "context_window": "onresponders (difference 9.1 minutes, 95% CI [-10.2, 28.4]; p=0.35). Moreover, BBTI responders achieved higher CPAP use (148.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-msd-1810",
+      "claim_type": "mean_sd",
+      "raw_text": "148.3\u00b184.4",
+      "numeric_values": [
+        148.3,
+        84.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1810,
+      "sentence": "Moreover, BBTI responders achieved higher CPAP use (148.3\u00b184.4 minutes) than BBTI nonresponders (84.6\ud835\udefd \ud835\udefd 53.9 minutes), with a statistically significant difference between the two groups (60.3 minutes, 95%CI [30.3, 90.2]; p&lt; 0.001) (Figure 2).Non-whites (OR 3.5, 95% CI [1.4, 8.8]) and shorter sleep time (OR 0.98, 95% CI [0.98, 0.99] were independent predictors of blunted response to BBTI.",
+      "context_window": "=0.35). Moreover, BBTI responders achieved higher CPAP use (148.3\u00b184.4 minutes) than BBTI nonresponders (84.6\ud835\udefd \ud835\udefd 53.9 minutes), wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-ci-1960",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI [30.3, 90.2",
+      "numeric_values": [
+        30.3,
+        90.2
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1960,
+      "sentence": "Moreover, BBTI responders achieved higher CPAP use (148.3\u00b184.4 minutes) than BBTI nonresponders (84.6\ud835\udefd \ud835\udefd 53.9 minutes), with a statistically significant difference between the two groups (60.3 minutes, 95%CI [30.3, 90.2]; p&lt; 0.001) (Figure 2).Non-whites (OR 3.5, 95% CI [1.4, 8.8]) and shorter sleep time (OR 0.98, 95% CI [0.98, 0.99] were independent predictors of blunted response to BBTI.",
+      "context_window": "ignificant difference between the two groups (60.3 minutes, 95%CI [30.3, 90.2]; p&lt; 0.001) (Figure 2).Non-whites (OR 3.5, 95% CI [1.4,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-ci-2024",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [1.4, 8.8",
+      "numeric_values": [
+        1.4,
+        8.8
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2024,
+      "sentence": "Moreover, BBTI responders achieved higher CPAP use (148.3\u00b184.4 minutes) than BBTI nonresponders (84.6\ud835\udefd \ud835\udefd 53.9 minutes), with a statistically significant difference between the two groups (60.3 minutes, 95%CI [30.3, 90.2]; p&lt; 0.001) (Figure 2).Non-whites (OR 3.5, 95% CI [1.4, 8.8]) and shorter sleep time (OR 0.98, 95% CI [0.98, 0.99] were independent predictors of blunted response to BBTI.",
+      "context_window": "I [30.3, 90.2]; p&lt; 0.001) (Figure 2).Non-whites (OR 3.5, 95% CI [1.4, 8.8]) and shorter sleep time (OR 0.98, 95% CI [0.98, 0.99] were",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_sleep_zsaf090_0580_0580_determinants_of_treatment_response_to_cbt_i_in_veterans-ci-2076",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.98, 0.99",
+      "numeric_values": [
+        0.98,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2076,
+      "sentence": "Moreover, BBTI responders achieved higher CPAP use (148.3\u00b184.4 minutes) than BBTI nonresponders (84.6\ud835\udefd \ud835\udefd 53.9 minutes), with a statistically significant difference between the two groups (60.3 minutes, 95%CI [30.3, 90.2]; p&lt; 0.001) (Figure 2).Non-whites (OR 3.5, 95% CI [1.4, 8.8]) and shorter sleep time (OR 0.98, 95% CI [0.98, 0.99] were independent predictors of blunted response to BBTI.",
+      "context_window": "OR 3.5, 95% CI [1.4, 8.8]) and shorter sleep time (OR 0.98, 95% CI [0.98, 0.99] were independent predictors of blunted response to BBTI. T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "cpap",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

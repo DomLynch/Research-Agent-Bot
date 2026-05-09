@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_a_study_of_aspirin_and_simvastatin_in_pulmonary_arterial_hyp",
+  "doi": "",
+  "extracted_at": "2026-05-08T20:05:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_study_of_aspirin_and_simvastatin_in_pulmonary_arterial_hyp-u-229",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 229,
+      "sentence": "Posted outcomes: Distance Walked in Six Minutes. timeframe=Measured at 6 months.",
+      "context_window": "omes: Distance Walked in Six Minutes. timeframe=Measured at 6 months. Aspirin 81 mg=438.0; Aspirin Placebo=438.5; Simvastatin 40",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_study_of_aspirin_and_simvastatin_in_pulmonary_arterial_hyp-u-247",
+      "claim_type": "unit_value",
+      "raw_text": "81 mg",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 247,
+      "sentence": "Aspirin 81 mg=438.0; Aspirin Placebo=438.5; Simvastatin 40 mg=425.0",
+      "context_window": "ked in Six Minutes. timeframe=Measured at 6 months. Aspirin 81 mg=438.0; Aspirin Placebo=438.5; Simvastatin 40 mg=425.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_of_aspirin_and_simvastatin_in_pulmonary_arterial_hyp-u-295",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 295,
+      "sentence": "Aspirin 81 mg=438.0; Aspirin Placebo=438.5; Simvastatin 40 mg=425.0",
+      "context_window": "hs. Aspirin 81 mg=438.0; Aspirin Placebo=438.5; Simvastatin 40 mg=425.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

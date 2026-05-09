@@ -1,0 +1,325 @@
+{
+  "paper_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz",
+  "doi": "10.1016/j.ejca.2019.10.032",
+  "extracted_at": "2026-05-08T19:55:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "unit_value": 2,
+    "percentage": 7,
+    "confidence_interval": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-n-472",
+      "claim_type": "sample_size",
+      "raw_text": "n = 394",
+      "numeric_values": [
+        394.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 472,
+      "sentence": "Limited data are available on the use of targeted therapies in older patients with advanced RCC.MethodsEfficacy and safety in METEOR were retrospectively analysed for three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improved with cabozantinib compared with everolimus in all age subgroups.",
+      "context_window": "were retrospectively analysed for three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-n-489",
+      "claim_type": "sample_size",
+      "raw_text": "n = 201",
+      "numeric_values": [
+        201.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 489,
+      "sentence": "Limited data are available on the use of targeted therapies in older patients with advanced RCC.MethodsEfficacy and safety in METEOR were retrospectively analysed for three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improved with cabozantinib compared with everolimus in all age subgroups.",
+      "context_window": "ely analysed for three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improve",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-u-503",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 503,
+      "sentence": "Limited data are available on the use of targeted therapies in older patients with advanced RCC.MethodsEfficacy and safety in METEOR were retrospectively analysed for three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improved with cabozantinib compared with everolimus in all age subgroups.",
+      "context_window": "or three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improved with cabozant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-n-513",
+      "claim_type": "sample_size",
+      "raw_text": "n = 63",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 513,
+      "sentence": "Limited data are available on the use of targeted therapies in older patients with advanced RCC.MethodsEfficacy and safety in METEOR were retrospectively analysed for three age subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improved with cabozantinib compared with everolimus in all age subgroups.",
+      "context_window": "ge subgroups: <65 (n = 394), 65-74 (n = 201) and \u226575 years (n = 63).ResultsPFS, OS and ORR were improved with cabozantinib com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "everolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-662",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": "n all age subgroups. The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-ci-710",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.37-0.77",
+      "numeric_values": [
+        0.37,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 710,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": "were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-ci-739",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.18-0.79",
+      "numeric_values": [
+        0.18,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 739,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": "terval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-u-778",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 778,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": "0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-ci-828",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.54-0.95",
+      "numeric_values": [
+        0.54,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 828,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": "5-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-ci-854",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.44-0.99",
+      "numeric_values": [
+        0.44,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 854,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": "tively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14). The ORR for cabozantinib ver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-ci-883",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.28-1.14",
+      "numeric_values": [
+        0.28,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 883,
+      "sentence": "The PFS hazard ratios (HRs) were 0.53 (95% confidence interval [CI]: 0.41-0.68), 0.53 (95% CI: 0.37-0.77) and 0.38 (95% CI: 0.18-0.79) for <65, 65-74 and \u226575 years, respectively, and the OS HRs were 0.72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14).",
+      "context_window": ".72 (95% CI: 0.54-0.95), 0.66 (95% CI: 0.44-0.99) and 0.57 (95% CI: 0.28-1.14). The ORR for cabozantinib versus everolimus was 15% vs 5%,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-950",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 950,
+      "sentence": "The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively.",
+      "context_window": "0.28-1.14). The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively. No significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-957",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 957,
+      "sentence": "The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively.",
+      "context_window": ".14). The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively. No significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-961",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 961,
+      "sentence": "The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively.",
+      "context_window": ". The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively. No significant differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-968",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 968,
+      "sentence": "The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively.",
+      "context_window": "RR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively. No significant differences wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-975",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 975,
+      "sentence": "The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively.",
+      "context_window": "cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively. No significant differences were observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_ejca_2019_10_032_outcomes_based_on_age_in_the_phase_iii_meteor_trial_of_caboz-pct-982",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 982,
+      "sentence": "The ORR for cabozantinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively.",
+      "context_window": "tinib versus everolimus was 15% vs 5%, 21% vs 2% and 19% vs 0%, respectively. No significant differences were observed in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

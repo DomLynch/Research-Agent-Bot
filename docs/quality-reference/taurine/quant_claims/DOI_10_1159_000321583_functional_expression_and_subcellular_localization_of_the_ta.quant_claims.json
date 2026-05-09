@@ -1,0 +1,104 @@
+{
+  "paper_id": "DOI_10_1159_000321583_functional_expression_and_subcellular_localization_of_the_ta",
+  "doi": "10.1159/000321583",
+  "extracted_at": "2026-05-08T20:10:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1159_000321583_functional_expression_and_subcellular_localization_of_the_ta-msd-885",
+      "claim_type": "mean_sd",
+      "raw_text": "0.39 \u00b1 0.04",
+      "numeric_values": [
+        0.39,
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 885,
+      "sentence": "The saturable component showed an apparent 2:1:1 Na<sup>+</sup>/Cl<sup>-</sup>/taurine stoichiometry, a V<sub>max</sub> of 0.39 \u00b1 0.04 nmol/mg protein/min, and a K<sub>m</sub> of 21.7 \u00b1 2.6 \u00b5<i>M</i>.",
+      "context_window": "/Cl<sup>-</sup>/taurine stoichiometry, a V<sub>max</sub> of 0.39 \u00b1 0.04 nmol/mg protein/min, and a K<sub>m</sub> of 21.7 \u00b1 2.6 \u00b5<i>",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000321583_functional_expression_and_subcellular_localization_of_the_ta-msd-941",
+      "claim_type": "mean_sd",
+      "raw_text": "21.7 \u00b1 2.6",
+      "numeric_values": [
+        21.7,
+        2.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 941,
+      "sentence": "The saturable component showed an apparent 2:1:1 Na<sup>+</sup>/Cl<sup>-</sup>/taurine stoichiometry, a V<sub>max</sub> of 0.39 \u00b1 0.04 nmol/mg protein/min, and a K<sub>m</sub> of 21.7 \u00b1 2.6 \u00b5<i>M</i>.",
+      "context_window": "of 0.39 \u00b1 0.04 nmol/mg protein/min, and a K<sub>m</sub> of 21.7 \u00b1 2.6 \u00b5<i>M</i>. TauT in NPC was strongly inhibited by hypotaurin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000321583_functional_expression_and_subcellular_localization_of_the_ta-pct-1035",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "TauT in NPC was strongly inhibited by hypotaurine and \u03b2-alanine (92 and 79%, respectively) and reduced (71%) by \u03b3-aminobutyric acid.",
+      "context_window": "was strongly inhibited by hypotaurine and \u03b2-alanine (92 and 79%, respectively) and reduced (71%) by \u03b3-aminobutyric acid. Ta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000321583_functional_expression_and_subcellular_localization_of_the_ta-pct-1067",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1067,
+      "sentence": "TauT in NPC was strongly inhibited by hypotaurine and \u03b2-alanine (92 and 79%, respectively) and reduced (71%) by \u03b3-aminobutyric acid.",
+      "context_window": "urine and \u03b2-alanine (92 and 79%, respectively) and reduced (71%) by \u03b3-aminobutyric acid. TauT protein is expressed in NPC a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1159_000321583_functional_expression_and_subcellular_localization_of_the_ta-pct-1180",
+      "claim_type": "percentage",
+      "raw_text": "98.8%",
+      "numeric_values": [
+        98.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1180,
+      "sentence": "Essentially all (98.8%) of the neurosphere-forming cells were positive to TauT immunoreactivity.",
+      "context_window": "d in NPC as a single band of about 70 kDa. Essentially all (98.8%) of the neurosphere-forming cells were positive to TauT imm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

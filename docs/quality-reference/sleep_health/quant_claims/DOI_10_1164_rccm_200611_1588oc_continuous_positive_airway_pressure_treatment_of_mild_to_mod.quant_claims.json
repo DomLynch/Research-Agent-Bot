@@ -1,0 +1,194 @@
+{
+  "paper_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod",
+  "doi": "10.1164/rccm.200611-1588oc",
+  "extracted_at": "2026-05-08T20:05:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 1,
+    "percentage": 4,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-u-780",
+      "claim_type": "unit_value",
+      "raw_text": "10.5 years",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 780,
+      "sentence": "Of 449 patients enrolled (age, 56.0 +/- 10.5 years; body mass index, 30.8 +/- 5.4 kg/m(2)), 364 patients received OSA treatment, and 85 patients remained untreated.",
+      "context_window": "es, log-rank test). Of 449 patients enrolled (age, 56.0 +/- 10.5 years; body mass index, 30.8 +/- 5.4 kg/m(2)), 364 patients recei",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-u-818",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 kg",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 818,
+      "sentence": "Of 449 patients enrolled (age, 56.0 +/- 10.5 years; body mass index, 30.8 +/- 5.4 kg/m(2)), 364 patients received OSA treatment, and 85 patients remained untreated.",
+      "context_window": "rolled (age, 56.0 +/- 10.5 years; body mass index, 30.8 +/- 5.4 kg/m(2)), 364 patients received OSA treatment, and 85 patients",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-u-926",
+      "claim_type": "unit_value",
+      "raw_text": "72.0 months",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 926,
+      "sentence": "Median follow-up was 72.0 months (range, 1-156).",
+      "context_window": "t, and 85 patients remained untreated. Median follow-up was 72.0 months (range, 1-156). Mean apnea-hypopnea index before treatment",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-n-1192",
+      "claim_type": "sample_size",
+      "raw_text": "n = 288",
+      "numeric_values": [
+        288.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1192,
+      "sentence": "In patients with mild-moderate OSA (n = 288), events were more frequent in untreated patients (estimated event-free survival at 10 yr, 51.8 vs.",
+      "context_window": "dities or risk factors. In patients with mild-moderate OSA (n = 288), events were more frequent in untreated patients (estimate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-pct-1300",
+      "claim_type": "percentage",
+      "raw_text": "80.3%",
+      "numeric_values": [
+        80.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1300,
+      "sentence": "80.3% [P < 0.001]; absolute risk reduction, 28.5%; number needed to treat to prevent one event/10 yr, 3.5).",
+      "context_window": "patients (estimated event-free survival at 10 yr, 51.8 vs. 80.3% [P < 0.001]; absolute risk reduction, 28.5%; number needed",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-p-1307",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1307,
+      "sentence": "80.3% [P < 0.001]; absolute risk reduction, 28.5%; number needed to treat to prevent one event/10 yr, 3.5).",
+      "context_window": "ts (estimated event-free survival at 10 yr, 51.8 vs. 80.3% [P < 0.001]; absolute risk reduction, 28.5%; number needed to treat to",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-pct-1344",
+      "claim_type": "percentage",
+      "raw_text": "28.5%",
+      "numeric_values": [
+        28.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1344,
+      "sentence": "80.3% [P < 0.001]; absolute risk reduction, 28.5%; number needed to treat to prevent one event/10 yr, 3.5).",
+      "context_window": "10 yr, 51.8 vs. 80.3% [P < 0.001]; absolute risk reduction, 28.5%; number needed to treat to prevent one event/10 yr, 3.5). A",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-pct-1577",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1577,
+      "sentence": "After adjustment for age, gender, cardiovascular risk factors, and comorbidities at baseline, OSA treatment was an independent predictor for events (hazard ratio, 0.36; 95% confidence interval, 0.21-0.62; P < 0.001).",
+      "context_window": "as an independent predictor for events (hazard ratio, 0.36; 95% confidence interval, 0.21-0.62; P < 0.001). CONCLUSIONS: OS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-p-1613",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1613,
+      "sentence": "After adjustment for age, gender, cardiovascular risk factors, and comorbidities at baseline, OSA treatment was an independent predictor for events (hazard ratio, 0.36; 95% confidence interval, 0.21-0.62; P < 0.001).",
+      "context_window": "ts (hazard ratio, 0.36; 95% confidence interval, 0.21-0.62; P < 0.001). CONCLUSIONS: OSA treatment was associated with a cardiova",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1164_rccm_200611_1588oc_continuous_positive_airway_pressure_treatment_of_mild_to_mod-pct-1707",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1707,
+      "sentence": "CONCLUSIONS: OSA treatment was associated with a cardiovascular risk reduction of 64% independent from age and preexisting cardiovascular comorbidities.",
+      "context_window": "ment was associated with a cardiovascular risk reduction of 64% independent from age and preexisting cardiovascular comorbi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

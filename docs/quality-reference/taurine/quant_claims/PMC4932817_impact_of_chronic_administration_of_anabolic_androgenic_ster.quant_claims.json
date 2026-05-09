@@ -1,0 +1,1186 @@
+{
+  "paper_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster",
+  "doi": "10.1590/1414-431X20165116",
+  "extracted_at": "2026-05-08T20:10:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 31,
+    "p_value": 23,
+    "mean_sd": 1,
+    "sample_size": 1,
+    "percentage": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-501",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 501,
+      "sentence": "The study was conducted in 4 groups of 8 adult male Wistar rats, aged 14 weeks, treated for 12 weeks with: DECA (A group); vehicle (C group); taurine (T group), or with both drugs (AT group).",
+      "context_window": "was conducted in 4 groups of 8 adult male Wistar rats, aged 14 weeks, treated for 12 weeks with: DECA (A group); vehicle (C grou",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-523",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 523,
+      "sentence": "The study was conducted in 4 groups of 8 adult male Wistar rats, aged 14 weeks, treated for 12 weeks with: DECA (A group); vehicle (C group); taurine (T group), or with both drugs (AT group).",
+      "context_window": "ups of 8 adult male Wistar rats, aged 14 weeks, treated for 12 weeks with: DECA (A group); vehicle (C group); taurine (T group),",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-721",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 721,
+      "sentence": "Systolic blood pressure (SBP) was measured at the beginning of the study (SBP 1 ), 2 (SBP 2 ) and 3 months (SBP 3 ) later.",
+      "context_window": "ured at the beginning of the study (SBP 1 ), 2 (SBP 2 ) and 3 months (SBP 3 ) later. Plasma angiotensin-converting enzyme (ACE)",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-963",
+      "claim_type": "p_value",
+      "raw_text": "P<0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 963,
+      "sentence": "SBP 3 and SBP 2 were significantly increased compared to SBP 1 only in the A group (P<0.002 for both).",
+      "context_window": "nificantly increased compared to SBP 1 only in the A group (P<0.002 for both). SBP 2 , SBP 3 and ACE activity showed a statisti",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1072",
+      "claim_type": "p_value",
+      "raw_text": "P<0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1072,
+      "sentence": "SBP 2 , SBP 3 and ACE activity showed a statistically significant increase in the A vs C (P<0.005), and vs AT groups (P<0.05), while NO x was significantly decreased in the A and AT groups vs controls (P=0.01).",
+      "context_window": "showed a statistically significant increase in the A vs C (P<0.005), and vs AT groups (P<0.05), while NO x was significantly d",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1100",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1100,
+      "sentence": "SBP 2 , SBP 3 and ACE activity showed a statistically significant increase in the A vs C (P<0.005), and vs AT groups (P<0.05), while NO x was significantly decreased in the A and AT groups vs controls (P=0.01).",
+      "context_window": "ificant increase in the A vs C (P<0.005), and vs AT groups (P<0.05), while NO x was significantly decreased in the A and AT gr",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1184",
+      "claim_type": "p_value",
+      "raw_text": "P=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1184,
+      "sentence": "SBP 2 , SBP 3 and ACE activity showed a statistically significant increase in the A vs C (P<0.005), and vs AT groups (P<0.05), while NO x was significantly decreased in the A and AT groups vs controls (P=0.01).",
+      "context_window": "significantly decreased in the A and AT groups vs controls (P=0.01). ACE activity was strongly correlated with SBP 3 in the A",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1265",
+      "claim_type": "p_value",
+      "raw_text": "P=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1265,
+      "sentence": "ACE activity was strongly correlated with SBP 3 in the A group (r=0.71, P=0.04).",
+      "context_window": "was strongly correlated with SBP 3 in the A group (r=0.71, P=0.04). These findings suggest that oral supplementation of tauri",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-59",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 59,
+      "sentence": "The study was conducted in 32 adult male Wistar rats, aged 14 weeks, with body weight 323\u00b127 g (mean\u00b1SD), housed in individual cages, floored with wood shavings, in a room with constant temperature (23\u00b0C) and 12-h light-dark cycle (lights on at 7:00 am), with access to rat chow and water ad libitum .",
+      "context_window": "The study was conducted in 32 adult male Wistar rats, aged 14 weeks, with body weight 323\u00b127 g (mean\u00b1SD), housed in individual",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-msd-86",
+      "claim_type": "mean_sd",
+      "raw_text": "323\u00b127",
+      "numeric_values": [
+        323.0,
+        27.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 86,
+      "sentence": "The study was conducted in 32 adult male Wistar rats, aged 14 weeks, with body weight 323\u00b127 g (mean\u00b1SD), housed in individual cages, floored with wood shavings, in a room with constant temperature (23\u00b0C) and 12-h light-dark cycle (lights on at 7:00 am), with access to rat chow and water ad libitum .",
+      "context_window": "32 adult male Wistar rats, aged 14 weeks, with body weight 323\u00b127 g (mean\u00b1SD), housed in individual cages, floored with wood",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-822",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 822,
+      "sentence": "DECA was purchased from Norma Hellas Pharmaceutical Industry (Greece, 2 mL Vial, 100 mg/mL).",
+      "context_window": "urchased from Norma Hellas Pharmaceutical Industry (Greece, 2 mL Vial, 100 mg/mL). Taurine (crystalline powder) was obtained",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-833",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 833,
+      "sentence": "DECA was purchased from Norma Hellas Pharmaceutical Industry (Greece, 2 mL Vial, 100 mg/mL).",
+      "context_window": "om Norma Hellas Pharmaceutical Industry (Greece, 2 mL Vial, 100 mg/mL). Taurine (crystalline powder) was obtained from Merck K",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-n-976",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 976,
+      "sentence": "The animals were randomly assigned to four treatment groups (n=8 for each group) - androgen group (A): rats received a weekly high dose of DECA (10 mg/kg body weight), diluted in sesame oil with benzyl alcohol (90:10, v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 mM) taurine in drinking water for the same time period; animals in this group also received a weekly intramuscular injection of sesame oil with benzyl alcohol (90:10, v/v); androgen and taurine group (AT): rats treated with both DECA and taurine, in similar doses to those used in the aforementioned groups; control group (C): rats were given only weekly intramuscular vehicle injection.",
+      "context_window": "he animals were randomly assigned to four treatment groups (n=8 for each group) - androgen group (A): rats received a weekl",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1060",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1060,
+      "sentence": "The animals were randomly assigned to four treatment groups (n=8 for each group) - androgen group (A): rats received a weekly high dose of DECA (10 mg/kg body weight), diluted in sesame oil with benzyl alcohol (90:10, v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 mM) taurine in drinking water for the same time period; animals in this group also received a weekly intramuscular injection of sesame oil with benzyl alcohol (90:10, v/v); androgen and taurine group (AT): rats treated with both DECA and taurine, in similar doses to those used in the aforementioned groups; control group (C): rats were given only weekly intramuscular vehicle injection.",
+      "context_window": "drogen group (A): rats received a weekly high dose of DECA (10 mg/kg body weight), diluted in sesame oil with benzyl alcohol",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1150",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1150,
+      "sentence": "The animals were randomly assigned to four treatment groups (n=8 for each group) - androgen group (A): rats received a weekly high dose of DECA (10 mg/kg body weight), diluted in sesame oil with benzyl alcohol (90:10, v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 mM) taurine in drinking water for the same time period; animals in this group also received a weekly intramuscular injection of sesame oil with benzyl alcohol (90:10, v/v); androgen and taurine group (AT): rats treated with both DECA and taurine, in similar doses to those used in the aforementioned groups; control group (C): rats were given only weekly intramuscular vehicle injection.",
+      "context_window": "in sesame oil with benzyl alcohol (90:10, v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1192",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1192,
+      "sentence": "The animals were randomly assigned to four treatment groups (n=8 for each group) - androgen group (A): rats received a weekly high dose of DECA (10 mg/kg body weight), diluted in sesame oil with benzyl alcohol (90:10, v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 mM) taurine in drinking water for the same time period; animals in this group also received a weekly intramuscular injection of sesame oil with benzyl alcohol (90:10, v/v); androgen and taurine group (AT): rats treated with both DECA and taurine, in similar doses to those used in the aforementioned groups; control group (C): rats were given only weekly intramuscular vehicle injection.",
+      "context_window": "v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 m",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-1249",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1249,
+      "sentence": "The animals were randomly assigned to four treatment groups (n=8 for each group) - androgen group (A): rats received a weekly high dose of DECA (10 mg/kg body weight), diluted in sesame oil with benzyl alcohol (90:10, v/v) as vehicle (15 mg/mL), by intragluteal injection, for 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 mM) taurine in drinking water for the same time period; animals in this group also received a weekly intramuscular injection of sesame oil with benzyl alcohol (90:10, v/v); androgen and taurine group (AT): rats treated with both DECA and taurine, in similar doses to those used in the aforementioned groups; control group (C): rats were given only weekly intramuscular vehicle injection.",
+      "context_window": "or 12 weeks; taurine group (T): rats were supplemented with 2% (159.8 mM) taurine in drinking water for the same time peri",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "taurine",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1801",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1801,
+      "sentence": "The DECA dose was chosen according to previous studies and was comparable to the dose that has been reported as being frequently used by abuser athletes, 600 mg/week, or approximately 8 mg.kg -1 .week -1 ( 13 ).",
+      "context_window": "been reported as being frequently used by abuser athletes, 600 mg/week, or approximately 8 mg.kg -1 .week -1 ( 13 ). Noninva",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1831",
+      "claim_type": "unit_value",
+      "raw_text": "8 mg",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1831,
+      "sentence": "The DECA dose was chosen according to previous studies and was comparable to the dose that has been reported as being frequently used by abuser athletes, 600 mg/week, or approximately 8 mg.kg -1 .week -1 ( 13 ).",
+      "context_window": "ntly used by abuser athletes, 600 mg/week, or approximately 8 mg.kg -1 .week -1 ( 13 ). Noninvasive measurements of systoli",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1989",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1989,
+      "sentence": "Noninvasive measurements of systolic blood pressure (SBP) were performed at the beginning of the study (SBP 1 ), 2 (SBP 2 ), and 3 months later - at the end of the study (SBP 3 ).",
+      "context_window": "med at the beginning of the study (SBP 1 ), 2 (SBP 2 ), and 3 months later - at the end of the study (SBP 3 ). Since rat blood",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-2351",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2351,
+      "sentence": "The rats were euthanized by withdrawing blood from the heart, under induced and maintained anesthesia, after 12 weeks of treatment.",
+      "context_window": "m the heart, under induced and maintained anesthesia, after 12 weeks of treatment. Blood samples withdrawn by cardiac puncture w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-2861",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2861,
+      "sentence": "They were placed in a suitable body restrainer several times a day, for 3 days, accompanied each time by the tail warming procedure.",
+      "context_window": "aced in a suitable body restrainer several times a day, for 3 days, accompanied each time by the tail warming procedure. For a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-4693",
+      "claim_type": "unit_value",
+      "raw_text": "1 \u00b5mol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 4693,
+      "sentence": "One unit (U) of ACE activity was expressed as the amount of the enzyme that will hydrolyze 1 \u00b5mol of the substrate FAPGG into FAP and glycyl-glycine in 1 min at 37\u00b0C ( 14 ).",
+      "context_window": "s expressed as the amount of the enzyme that will hydrolyze 1 \u00b5mol of the substrate FAPGG into FAP and glycyl-glycine in 1 min",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-5094",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5094,
+      "sentence": "Plasma samples were diluted from an estimated initial total protein concentration of 7 g/dL (70 mg/mL).",
+      "context_window": "an estimated initial total protein concentration of 7 g/dL (70 mg/mL). Absorbance was measured spectrophotometrically at 595",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-5999",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5999,
+      "sentence": "After loading the plate with samples (50 \u00b5L), addition of a saturated solution of VCl 3 (40 mg in 5 mL 1 M HCl) to each well (50 \u00b5L) was immediately followed by addition of SULF 2% in 1 M HCl (25 \u00b5L) and 0.1% NEDD in dH 2 O (25 \u00b5L).",
+      "context_window": "samples (50 \u00b5L), addition of a saturated solution of VCl 3 (40 mg in 5 mL 1 M HCl) to each well (50 \u00b5L) was immediately follo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-6008",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6008,
+      "sentence": "After loading the plate with samples (50 \u00b5L), addition of a saturated solution of VCl 3 (40 mg in 5 mL 1 M HCl) to each well (50 \u00b5L) was immediately followed by addition of SULF 2% in 1 M HCl (25 \u00b5L) and 0.1% NEDD in dH 2 O (25 \u00b5L).",
+      "context_window": "50 \u00b5L), addition of a saturated solution of VCl 3 (40 mg in 5 mL 1 M HCl) to each well (50 \u00b5L) was immediately followed by a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-6088",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6088,
+      "sentence": "After loading the plate with samples (50 \u00b5L), addition of a saturated solution of VCl 3 (40 mg in 5 mL 1 M HCl) to each well (50 \u00b5L) was immediately followed by addition of SULF 2% in 1 M HCl (25 \u00b5L) and 0.1% NEDD in dH 2 O (25 \u00b5L).",
+      "context_window": "h well (50 \u00b5L) was immediately followed by addition of SULF 2% in 1 M HCl (25 \u00b5L) and 0.1% NEDD in dH 2 O (25 \u00b5L). The sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-6114",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6114,
+      "sentence": "After loading the plate with samples (50 \u00b5L), addition of a saturated solution of VCl 3 (40 mg in 5 mL 1 M HCl) to each well (50 \u00b5L) was immediately followed by addition of SULF 2% in 1 M HCl (25 \u00b5L) and 0.1% NEDD in dH 2 O (25 \u00b5L).",
+      "context_window": "tely followed by addition of SULF 2% in 1 M HCl (25 \u00b5L) and 0.1% NEDD in dH 2 O (25 \u00b5L). The samples were incubated for 40 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-7215",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7215,
+      "sentence": "A two-sided P<0.05 was considered to be statistically significant.",
+      "context_window": "0.0 software was used for statistical analysis. A two-sided P<0.05 was considered to be statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-87",
+      "claim_type": "p_value",
+      "raw_text": "P=0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 87,
+      "sentence": "Body weight was similar in the four groups of rats at the beginning of the experiment (P=0.55).",
+      "context_window": "the four groups of rats at the beginning of the experiment (P=0.55). At the end of the study the increase in body weight was s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-264",
+      "claim_type": "p_value",
+      "raw_text": "P=0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 264,
+      "sentence": "At the end of the study the increase in body weight was smaller in the A, T and AT groups ( Table 1 ), although the differences were not significant from the controls (P=0.06).",
+      "context_window": "ugh the differences were not significant from the controls (P=0.06). During the experiment, systolic blood pressure significa",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-478",
+      "claim_type": "p_value",
+      "raw_text": "P=0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 478,
+      "sentence": "In this group, SBP 2 and SBP 3 significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ).",
+      "context_window": "significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (C",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-509",
+      "claim_type": "unit_value",
+      "raw_text": "5.9 mmHg",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 509,
+      "sentence": "In this group, SBP 2 and SBP 3 significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ).",
+      "context_window": "d to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-519",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "In this group, SBP 2 and SBP 3 significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ).",
+      "context_window": "(SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-581",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 581,
+      "sentence": "In this group, SBP 2 and SBP 3 significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ).",
+      "context_window": "% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-610",
+      "claim_type": "unit_value",
+      "raw_text": "7.52 mmHg",
+      "numeric_values": [
+        7.52
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 610,
+      "sentence": "In this group, SBP 2 and SBP 3 significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ).",
+      "context_window": "1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ). A significant difference",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-621",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 621,
+      "sentence": "In this group, SBP 2 and SBP 3 significantly increased compared to SBP 1 (SBP 2 vs SBP 1 , P=0.002, SBP mean difference = 5.9 mmHg, 95% confidence interval (CI) = 1.95-9.84 and SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ).",
+      "context_window": "nd SBP 3 vs SBP 1 , P<0.001, SBP mean difference=7.52 mmHg; 95%CI =3.48-11.56) ( Figure 1 ). A significant difference was",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-756",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 756,
+      "sentence": "A significant difference was found in SBP among the 4 groups of rats (intergroup variation) at 2 and 3 months after the beginning of the study (P<0.001).",
+      "context_window": "among the 4 groups of rats (intergroup variation) at 2 and 3 months after the beginning of the study (P<0.001). Post hoc analys",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-799",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 799,
+      "sentence": "A significant difference was found in SBP among the 4 groups of rats (intergroup variation) at 2 and 3 months after the beginning of the study (P<0.001).",
+      "context_window": "iation) at 2 and 3 months after the beginning of the study (P<0.001). Post hoc analysis showed that SBP significantly increased",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-899",
+      "claim_type": "p_value",
+      "raw_text": "P=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 899,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 m",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-930",
+      "claim_type": "unit_value",
+      "raw_text": "12.6 mmHg",
+      "numeric_values": [
+        12.6
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 930,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean differen",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-941",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 941,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference =",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-963",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 963,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.3",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-973",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 973,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "ean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39). A sig",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1004",
+      "claim_type": "unit_value",
+      "raw_text": "16.07 mmHg",
+      "numeric_values": [
+        16.07
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1004,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39). A significant difference was also found",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-1016",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1016,
+      "sentence": "Post hoc analysis showed that SBP significantly increased in the A vs C group, at both 2 (P=0.001, SBP mean difference = 12.6 mmHg; 95%CI=3.99-21.21) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39).",
+      "context_window": "1) and 3 months (P<0.001, SBP mean difference = 16.07 mmHg; 95%CI=8.75-23.39). A significant difference was also found in t",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1107",
+      "claim_type": "p_value",
+      "raw_text": "P=0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1107,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "t difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1138",
+      "claim_type": "unit_value",
+      "raw_text": "10.95 mmHg",
+      "numeric_values": [
+        10.95
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1138,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean differen",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-1150",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1150,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference =",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1172",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1172,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "07, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.5",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1182",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1182,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "an difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59). No si",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1213",
+      "claim_type": "unit_value",
+      "raw_text": "12.27 mmHg",
+      "numeric_values": [
+        12.27
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1213,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59). No significant differences were found i",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-pct-1225",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1225,
+      "sentence": "A significant difference was also found in the A vs AT group at both 2 (P=0.007, SBP mean difference = 10.95 mmHg; 95%CI=2.34-19.56) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59).",
+      "context_window": "6) and 3 months (P<0.001, SBP mean difference = 12.27 mmHg; 95%CI=4.95-19.59). No significant differences were found in SBP",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1357",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1357,
+      "sentence": "No significant differences were found in SBP between the T and C groups, or between the AT and C groups, at 2 or 3 months (P>0.93; Figure 1 ).",
+      "context_window": "the T and C groups, or between the AT and C groups, at 2 or 3 months (P>0.93; Figure 1 ). A significant difference was found co",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1367",
+      "claim_type": "p_value",
+      "raw_text": "P>0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1367,
+      "sentence": "No significant differences were found in SBP between the T and C groups, or between the AT and C groups, at 2 or 3 months (P>0.93; Figure 1 ).",
+      "context_window": "C groups, or between the AT and C groups, at 2 or 3 months (P>0.93; Figure 1 ). A significant difference was found concerning",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1448",
+      "claim_type": "p_value",
+      "raw_text": "P=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1448,
+      "sentence": "A significant difference was found concerning ACE activity (P=0.001, Table 1 ).",
+      "context_window": "A significant difference was found concerning ACE activity (P=0.001, Table 1 ). Post hoc analysis revealed a statistically sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1553",
+      "claim_type": "p_value",
+      "raw_text": "P=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1553,
+      "sentence": "Post hoc analysis revealed a statistically significant increase in the A vs C group (P=0.004) and in the A vs AT group (P=0.04), while between the AT and C groups, or C and T groups there were no significant differences ( Figure 2 ).",
+      "context_window": "d a statistically significant increase in the A vs C group (P=0.004) and in the A vs AT group (P=0.04), while between the AT an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1588",
+      "claim_type": "p_value",
+      "raw_text": "P=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1588,
+      "sentence": "Post hoc analysis revealed a statistically significant increase in the A vs C group (P=0.004) and in the A vs AT group (P=0.04), while between the AT and C groups, or C and T groups there were no significant differences ( Figure 2 ).",
+      "context_window": "ase in the A vs C group (P=0.004) and in the A vs AT group (P=0.04), while between the AT and C groups, or C and T groups ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1774",
+      "claim_type": "p_value",
+      "raw_text": "P=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1774,
+      "sentence": "In the A group ACE activity was strongly correlated with SBP 3 (r=0.71, P=0.04), but not with SBP 2 .",
+      "context_window": "up ACE activity was strongly correlated with SBP 3 (r=0.71, P=0.04), but not with SBP 2 . ACE activity also tended to be relat",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-1924",
+      "claim_type": "p_value",
+      "raw_text": "P=0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1924,
+      "sentence": "ACE activity also tended to be related to SBP 3 in the AT group, but without reaching statistical significance (r=0.63, P=0.08).",
+      "context_window": "oup, but without reaching statistical significance (r=0.63, P=0.08). Mean values for plasma levels of NO stable metabolic end",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-2102",
+      "claim_type": "p_value",
+      "raw_text": "P=0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2102,
+      "sentence": "There was a significant difference concerning NO x (P=0.005).",
+      "context_window": "ble 1 . There was a significant difference concerning NO x (P=0.005). Post hoc analysis of NO x showed a significant decrease i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-p-2207",
+      "claim_type": "p_value",
+      "raw_text": "P=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2207,
+      "sentence": "Post hoc analysis of NO x showed a significant decrease in the A and AT groups vs the C group (P=0.01), while no significant differences were registered between the A and AT groups, or between the C and T groups ( Figure 3 ).",
+      "context_window": "significant decrease in the A and AT groups vs the C group (P=0.01), while no significant differences were registered between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-1656",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 1656,
+      "sentence": "The currently available data, coming mostly from observational studies, indicate either an elevation of blood pressure (which can persist for up to 1 year after drug intake cessation) ( 2 , 20 , 21 ) or no significant blood pressure changes in AAS users ( 3 , 22 , 23 ).",
+      "context_window": "an elevation of blood pressure (which can persist for up to 1 year after drug intake cessation) ( 2 , 20 , 21 ) or no signific",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-2551",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2551,
+      "sentence": "DECA, at doses twice the one we used, 20 mg.kg -1 .week -1 , was shown to induce an elevation of cardiac tissue ACE activity in untrained rats ( 16 ).",
+      "context_window": "model of PCOS ( 26 ). DECA, at doses twice the one we used, 20 mg.kg -1 .week -1 , was shown to induce an elevation of cardia",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4932817_impact_of_chronic_administration_of_anabolic_androgenic_ster-u-4844",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4844,
+      "sentence": "As it is revealed by the noninvasive pulse plethysmographic assessment, taurine exerted no influence on systolic blood pressure in intact rats, but significantly decreased its level at 2 and 3 months after administration in the mixed treated animals.",
+      "context_window": "intact rats, but significantly decreased its level at 2 and 3 months after administration in the mixed treated animals. This eff",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

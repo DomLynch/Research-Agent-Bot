@@ -1,0 +1,121 @@
+{
+  "paper_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l",
+  "doi": "10.1046/j.1365-2036.2002.01355.x",
+  "extracted_at": "2026-05-08T20:06:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2,
+    "risk_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l-u-93",
+      "claim_type": "unit_value",
+      "raw_text": "325 mg/day",
+      "numeric_values": [
+        325.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 93,
+      "sentence": "BACKGROUND: Most patients with vascular-occlusive diseases benefit from low-dose aspirin (75-325 mg/day).",
+      "context_window": "scular-occlusive diseases benefit from low-dose aspirin (75-325 mg/day). However, they have an increased risk of upper gastrointes",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "low-dose aspirin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l-pct-607",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 607,
+      "sentence": "RESULTS: Forty-one patients (4.5%) presented with UGIB requiring hospitalization during follow-up (45 +/- 22 months).",
+      "context_window": "ructured telephone interviews. RESULTS: Forty-one patients (4.5%) presented with UGIB requiring hospitalization during follo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l-u-684",
+      "claim_type": "unit_value",
+      "raw_text": "22 months",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 684,
+      "sentence": "RESULTS: Forty-one patients (4.5%) presented with UGIB requiring hospitalization during follow-up (45 +/- 22 months).",
+      "context_window": "ith UGIB requiring hospitalization during follow-up (45 +/- 22 months). The incidence of UGIB was uniform during follow-up (1.2 U",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l-rr-l-850",
+      "claim_type": "risk_ratio",
+      "raw_text": "risk ratio: 3.1",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 850,
+      "sentence": "Multivariate analysis showed that a history of peptic ulcer or UGIB [risk ratio: 3.1, 95% CI: (1.5-6.5)] and aspirin dose (per 100 mg/day) [1.8 (1.5-2.9)] was associated with higher risk of UGIB.",
+      "context_window": "ate analysis showed that a history of peptic ulcer or UGIB [risk ratio: 3.1, 95% CI: (1.5-6.5)] and aspirin dose (per 100 mg/day) [1.8",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l-pct-867",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 867,
+      "sentence": "Multivariate analysis showed that a history of peptic ulcer or UGIB [risk ratio: 3.1, 95% CI: (1.5-6.5)] and aspirin dose (per 100 mg/day) [1.8 (1.5-2.9)] was associated with higher risk of UGIB.",
+      "context_window": "ed that a history of peptic ulcer or UGIB [risk ratio: 3.1, 95% CI: (1.5-6.5)] and aspirin dose (per 100 mg/day) [1.8 (1.5-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1046_j_1365_2036_2002_01355_x_risk_of_upper_gastrointestinal_bleeding_in_patients_taking_l-u-908",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 908,
+      "sentence": "Multivariate analysis showed that a history of peptic ulcer or UGIB [risk ratio: 3.1, 95% CI: (1.5-6.5)] and aspirin dose (per 100 mg/day) [1.8 (1.5-2.9)] was associated with higher risk of UGIB.",
+      "context_window": "[risk ratio: 3.1, 95% CI: (1.5-6.5)] and aspirin dose (per 100 mg/day) [1.8 (1.5-2.9)] was associated with higher risk of UGIB. O",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "aspirin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMID28024286_taurine_treatment_preserves_brain_and_liver_mitochondrial_fu",
+  "doi": "10.1016/j.biopha.2016.11.095",
+  "extracted_at": "2026-05-08T20:10:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID28024286_taurine_treatment_preserves_brain_and_liver_mitochondrial_fu-u-411",
+      "claim_type": "unit_value",
+      "raw_text": "400mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 411,
+      "sentence": "The animals received thioacetamide (400mg/kg, i.p, for three consecutive days at 24-h intervals) as a model of acute liver failure and hyperammonemia.",
+      "context_window": "thy and hyperammonemia. The animals received thioacetamide (400mg/kg, i.p, for three consecutive days at 24-h intervals) as a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID28024286_taurine_treatment_preserves_brain_and_liver_mitochondrial_fu-u-1462",
+      "claim_type": "unit_value",
+      "raw_text": "1000mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "Taurine treatment (250, 500, and 1000mg/kg) decreased mitochondrial swelling, ROS, and LPO.",
+      "context_window": "acetamide-treated animals. Taurine treatment (250, 500, and 1000mg/kg) decreased mitochondrial swelling, ROS, and LPO. Moreove",
+      "claim_role": "effect",
+      "endpoint": "oxidative stress",
+      "arm": "taurine",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}
