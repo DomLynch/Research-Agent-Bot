@@ -186,6 +186,21 @@ def test_claim_patch_rejects_untraced_citation_attribution() -> None:
     assert "Smith 2020" not in new_md
 
 
+def test_claim_patch_allows_background_literature_attribution() -> None:
+    p = {
+        "id": "P-bg-cite", "patch_type": "claim", "severity": "P1",
+        "location": "Discussion",
+        "before": "This threshold marks impaired mobility.",
+        "after": "Studenski 2011 threshold marks impaired mobility.",
+        "reason": "attribute background threshold",
+    }
+    paper = "## Discussion\n\n" + p["before"] + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "Studenski 2011 threshold" in new_md
+    assert "citation attribution" in results[0].reason_for_decision
+
+
 def test_truncated_long_patch_is_rejected() -> None:
     before = "No trial measured patient-reported outcomes."
     after = "No trial measured patient-reported outcomes. " + ("word " * 115) + "funct"

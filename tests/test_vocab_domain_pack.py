@@ -219,6 +219,24 @@ def test_rapamycin_arm_binds_alias_and_retrieval_terms_to_active_canon() -> None
     ) == "vaccine response"
 
 
+def test_rapamycin_endpoint_binds_p_value_to_preceding_parenthetical_endpoint() -> None:
+    """When a p-value is inside an endpoint's parenthetical, a later endpoint
+    in the same sentence must not steal the binding merely by being closer."""
+    os.environ["TOPIC_DOMAIN"] = "rapamycin"
+    qe = _reload_quant_endpoints()
+    sentence = (
+        "Lean tissue mass (eta p 2 = 0.202, p = 0.013) and "
+        "self-reported pain (eta p 2 = 0.168, p = 0.015) improved "
+        "for women using 10 mg rapamycin."
+    )
+    assert qe.match_endpoint(
+        sentence, anchor_offset=sentence.find("p = 0.013"),
+    ) == "lean tissue mass"
+    assert qe.match_endpoint(
+        sentence, anchor_offset=sentence.find("p = 0.015"),
+    ) == "self-reported pain"
+
+
 def test_metformin_arm_unchanged_after_per_domain_refactor() -> None:
     """Default (metformin) ARM_VOCAB must keep working — backward
     compat after the per-domain split."""

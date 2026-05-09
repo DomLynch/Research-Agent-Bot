@@ -91,6 +91,14 @@ def _load_receipt_ids(manifest: dict) -> set[str]:
             if len(parts) >= 2 and parts[1].isdigit():
                 ids.add(f"{parts[0]} {parts[1]}")
                 ids.add(parts[0])
+    try:
+        import background_literature as _bg
+        for entry in _bg.load_registry(
+            topic=manifest.get("topic"),
+        ).values():
+            ids.add(str(entry.citation_token))
+    except (ImportError, OSError, ValueError, json.JSONDecodeError):
+        pass
     return ids
 
 

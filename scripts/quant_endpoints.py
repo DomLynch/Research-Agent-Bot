@@ -182,7 +182,7 @@ def match_endpoint(
                 return name
         return ""
     # Collect all matches with vocab priority for tiebreaking.
-    candidates: list[tuple[int, int, str]] = []  # (distance, vocab_priority, name)
+    candidates: list[tuple[int, int, str, int, int]] = []
     for prio, (name, pat) in enumerate(_ENDPOINT_COMPILED):
         for m in pat.finditer(sentence):
             if m.start() <= anchor_offset <= m.end():
@@ -192,9 +192,16 @@ def match_endpoint(
                     abs(m.start() - anchor_offset),
                     abs(m.end() - anchor_offset),
                 )
-            candidates.append((distance, prio, name))
+            candidates.append((distance, prio, name, m.start(), m.end()))
     if not candidates:
         return ""
+    open_idx = sentence.rfind("(", 0, anchor_offset + 1)
+    close_before = sentence.rfind(")", 0, anchor_offset + 1)
+    close_after = sentence.find(")", anchor_offset)
+    if open_idx > close_before and close_after != -1:
+        preceding = [c for c in candidates if c[4] <= open_idx]
+        if preceding:
+            candidates = preceding
     candidates.sort(key=lambda t: (t[0], t[1]))
     return candidates[0][2]
 
