@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import tomllib
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from types import MappingProxyType
 from typing import Literal
@@ -174,7 +174,9 @@ class TopicPack:
     # Endpoint polarity: which direction is "good" for the topic.
     # Was hardcoded in _claim_metformin_effect() polarity logic.
     # Map: outcome_class → "lower_is_better" | "higher_is_better"
-    endpoint_polarity: Mapping[str, str] = MappingProxyType({})
+    endpoint_polarity: Mapping[str, str] = field(
+        default_factory=lambda: MappingProxyType({}),
+    )
     # Slice 6 step 2: structured retrieval spec. None when the pack
     # has no [retrieval] block — caller falls back to the legacy
     # corpus_search_queries list.

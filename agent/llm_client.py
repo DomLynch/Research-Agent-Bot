@@ -34,7 +34,13 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from typing import Any
 
-import httpx
+try:
+    import httpx
+except ModuleNotFoundError:  # deterministic tests can import this module without live LLM deps.
+    httpx = None  # type: ignore[assignment]
+    _HTTPX_HTTP_ERROR = Exception
+else:
+    _HTTPX_HTTP_ERROR = httpx.HTTPError
 
 from agent.settings import Settings
 
@@ -251,6 +257,8 @@ async def chat_json(
     """
     if not chain:
         raise LLMError("chat_json called with empty chain")
+    if httpx is None and client is None:
+        raise LLMError("httpx is required for live LLM calls")
 
     own_client = client is None
     c = client or httpx.AsyncClient()
@@ -270,7 +278,7 @@ async def chat_json(
                     max_tokens=max_tokens,
                     seed=seed,
                 )
-            except (httpx.HTTPError, ValueError, KeyError, LLMError) as exc:
+            except (_HTTPX_HTTP_ERROR, ValueError, KeyError, LLMError) as exc:
                 errors.append((spec.model, f"{type(exc).__name__}: {exc}"))
                 logger.warning(
                     "llm_client: %s failed (%s); trying next in chain",

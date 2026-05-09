@@ -256,6 +256,9 @@ def test_rapamycin_vocab_covers_rescue_endpoint_terms() -> None:
     assert qe.match_endpoint(
         "RAPA significantly reduced CD4 T cell PD-1 expression.",
     ) == "T-cell function"
+    assert qe.match_endpoint(
+        "Rapamycin treatment significantly increased post infection survival rate.",
+    ) == "pathogen survival"
 
 
 def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
@@ -266,6 +269,7 @@ def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
     assert runner._outcome_class_for_endpoint("autophagy") == "longevity"
     assert runner._outcome_class_for_endpoint("lean tissue mass") == "muscle_function"
     assert runner._polarity_for_endpoint("respiratory infection rate") == -1
+    assert runner._polarity_for_endpoint("pathogen survival") == 1
     assert runner._polarity_for_endpoint("influenza vaccine response") == 1
     assert runner._claim_topic_effect({
         "claim_type": "percentage",

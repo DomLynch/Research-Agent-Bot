@@ -1,8 +1,13 @@
 from __future__ import annotations
 
 import json
+import re
 
 import qualification_rescue as rescue
+
+
+def _patterns(*labels: str) -> dict[str, re.Pattern[str]]:
+    return {label: re.compile(re.escape(label), re.IGNORECASE) for label in labels}
 
 
 def test_validate_claim_accepts_source_exact_effect() -> None:
@@ -25,6 +30,9 @@ def test_validate_claim_accepts_source_exact_effect() -> None:
         paper_id="P1",
         sections=sections,
         endpoint_map={"pathogen survival": "immune"},
+        endpoint_patterns={
+            "pathogen survival": re.compile(r"post infection survival|survival rate"),
+        },
         allowed_arms={"rapamycin", "placebo"},
         model="test-model",
     )
@@ -51,6 +59,7 @@ def test_validate_claim_parses_leading_dot_p_value() -> None:
         paper_id="P1",
         sections=sections,
         endpoint_map={"cardiac function": "cardiometabolic"},
+        endpoint_patterns={"cardiac function": re.compile(r"hypertrophy")},
         allowed_arms={"rapamycin"},
         model="test-model",
     )
@@ -74,6 +83,7 @@ def test_validate_claim_rejects_non_source_or_unknown_endpoint() -> None:
         paper_id="P1",
         sections=sections,
         endpoint_map={"pathogen survival": "immune"},
+        endpoint_patterns=_patterns("pathogen survival"),
         allowed_arms={"rapamycin"},
         model="test-model",
     )
@@ -99,6 +109,7 @@ def test_validate_claim_rejects_prose_fragment_as_raw_text() -> None:
         paper_id="P1",
         sections={"abstract": sentence},
         endpoint_map={"proteome turnover": "mechanism"},
+        endpoint_patterns={"proteome turnover": re.compile(r"proteome|half-lives")},
         allowed_arms={"rapamycin"},
         model="test-model",
     )
@@ -124,11 +135,38 @@ def test_validate_claim_rejects_number_belonging_to_prior_comparator() -> None:
         paper_id="P1",
         sections={"abstract": sentence},
         endpoint_map={"proteome turnover": "mechanism"},
+        endpoint_patterns={"proteome turnover": re.compile(r"proteome|half-lives")},
         allowed_arms={"rapamycin"},
         model="test-model",
     )
     assert claim is None
     assert reason == "arm_does_not_precede_raw_text"
+
+
+def test_validate_claim_rejects_endpoint_without_source_support() -> None:
+    sentence = (
+        "RAD001 treatment counter-regulated expression of 37% of the "
+        "age-regulated genes in the kidney."
+    )
+    claim, reason = rescue._validate_claim(
+        raw={
+            "claim_type": "percentage",
+            "raw_text": "37%",
+            "source_sentence": sentence,
+            "source_section": "abstract",
+            "endpoint": "mTOR signaling",
+            "arm": "RAD001",
+            "direction": "decrease",
+        },
+        paper_id="P1",
+        sections={"abstract": sentence},
+        endpoint_map={"mTOR signaling": "cardiometabolic"},
+        endpoint_patterns={"mTOR signaling": re.compile(r"\bmTOR\b", re.IGNORECASE)},
+        allowed_arms={"rad001"},
+        model="test-model",
+    )
+    assert claim is None
+    assert reason == "endpoint_not_in_sentence"
 
 
 def test_apply_claims_appends_without_duplicate(tmp_path) -> None:

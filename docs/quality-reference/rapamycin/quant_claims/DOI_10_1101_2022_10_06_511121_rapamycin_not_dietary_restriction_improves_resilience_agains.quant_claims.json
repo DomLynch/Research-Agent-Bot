@@ -114,11 +114,11 @@
       "claim_role": "unknown",
       "endpoint": "",
       "arm": "rapamycin",
-      "direction": "decrease",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
-      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-ed8c58b8b518",
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-9b1047286406",
       "claim_type": "p_value",
       "raw_text": "p=0.0015",
       "numeric_values": [
@@ -130,7 +130,7 @@
       "sentence": "Rapamycin treatment significantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
       "context_window": " post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
       "claim_role": "effect",
-      "endpoint": "respiratory infection rate",
+      "endpoint": "pathogen survival",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high",
@@ -138,7 +138,7 @@
       "rescue_model": "deepseek/deepseek-v4-pro"
     },
     {
-      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-59368bac0063",
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-llmrescue-60d845d31ad5",
       "claim_type": "confidence_interval",
       "raw_text": "CI=-1.17, -0.28",
       "numeric_values": [
@@ -151,7 +151,7 @@
       "sentence": "Rapamycin treatment significantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
       "context_window": "icantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
       "claim_role": "effect",
-      "endpoint": "respiratory infection rate",
+      "endpoint": "pathogen survival",
       "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "high",
@@ -170,11 +170,11 @@
       "source_offset": 1080,
       "sentence": "Importantly, the overall effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite effects on immune function.",
       "context_window": "effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite eff",
-      "claim_role": "effect",
-      "endpoint": "respiratory infection rate",
+      "claim_role": "unknown",
+      "endpoint": "",
       "arm": "rapamycin",
-      "direction": "increase",
-      "binding_confidence": "high",
+      "direction": "",
+      "binding_confidence": "partial",
       "rescue_method": "llm_qualification_rescue_v1",
       "rescue_model": "deepseek/deepseek-v4-pro"
     }

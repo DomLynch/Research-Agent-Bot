@@ -23,8 +23,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from agent.llm_client import CallSpec, CostLedger, chat_json  # noqa: E402
-from agent.settings import load_settings  # noqa: E402
 from agent.topic_pack import load_topic_pack  # noqa: E402
 from vocab import load_domain  # noqa: E402
 
@@ -134,6 +132,7 @@ def _validate_claim(
     paper_id: str,
     sections: dict[str, str],
     endpoint_map: dict[str, str],
+    endpoint_patterns: dict[str, re.Pattern[str]],
     allowed_arms: set[str],
     model: str,
 ) -> tuple[dict[str, Any] | None, str]:
@@ -156,6 +155,9 @@ def _validate_claim(
     section, offset = found
     if endpoint not in endpoint_map:
         return None, "unknown_endpoint"
+    pattern = endpoint_patterns.get(endpoint)
+    if pattern is not None and not pattern.search(sentence):
+        return None, "endpoint_not_in_sentence"
     if arm.lower() not in allowed_arms:
         return None, "unknown_arm"
     if arm.lower() not in sentence.lower():
@@ -236,7 +238,10 @@ def _load_candidates(topic: str) -> list[CandidatePaper]:
     return out
 
 
-def _chain() -> tuple[CallSpec, ...]:
+def _chain() -> tuple[Any, ...]:
+    from agent.llm_client import CallSpec
+    from agent.settings import load_settings
+
     settings = load_settings()
     return (
         CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.final_layer_reviewer_model, settings.mimo_timeout_sec),
@@ -286,11 +291,14 @@ async def _rescue_one(
     topic: str,
     endpoints: list[str],
     endpoint_map: dict[str, str],
+    endpoint_patterns: dict[str, re.Pattern[str]],
     arms: set[str],
-    chain: tuple[CallSpec, ...],
-    ledger: CostLedger,
+    chain: tuple[Any, ...],
+    ledger: Any,
     max_chars: int,
 ) -> dict[str, Any]:
+    from agent.llm_client import chat_json
+
     parsed = json.loads(paper.parsed_path.read_text())
     sections = _section_texts(parsed, max_chars)
     if not sections:
@@ -318,7 +326,8 @@ async def _rescue_one(
             continue
         claim, reason = _validate_claim(
             raw=item, paper_id=paper.paper_id, sections=sections,
-            endpoint_map=endpoint_map, allowed_arms=arms, model=resp.model,
+            endpoint_map=endpoint_map, endpoint_patterns=endpoint_patterns,
+            allowed_arms=arms, model=resp.model,
         )
         if claim is None:
             rejected[reason] += 1
@@ -372,9 +381,15 @@ def _apply_claims(paper: CandidatePaper, claims: list[dict[str, Any]]) -> None:
 
 
 async def _main_async(args: argparse.Namespace) -> int:
+    from agent.llm_client import CostLedger
+
     topic = args.topic
     vocab = load_domain(topic)
     endpoint_map = dict(getattr(vocab, "ENDPOINT_TO_OUTCOME_CLASS", {}))
+    endpoint_patterns = {
+        str(label): re.compile(str(pattern), re.IGNORECASE)
+        for label, pattern in getattr(vocab, "ENDPOINT_VOCAB", ())
+    }
     endpoints = sorted(endpoint_map)
     arms = _allowed_arms(topic)
     candidates = _load_candidates(topic)
@@ -395,7 +410,9 @@ async def _main_async(args: argparse.Namespace) -> int:
                 return await asyncio.wait_for(
                     _rescue_one(
                         p, topic=topic, endpoints=endpoints,
-                        endpoint_map=endpoint_map, arms=arms, chain=chain,
+                        endpoint_map=endpoint_map,
+                        endpoint_patterns=endpoint_patterns,
+                        arms=arms, chain=chain,
                         ledger=ledger, max_chars=args.max_chars,
                     ),
                     timeout=args.paper_timeout,
