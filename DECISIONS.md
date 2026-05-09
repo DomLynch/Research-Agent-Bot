@@ -1,5 +1,20 @@
 # DECISION JOURNAL
 
+## 2026-05-09 — LOC budget raise for final-gate and effect-normalizer primitives
+**Decision:** Raise `agent/` cloc ceiling from 19,300 to 19,750.
+**Why:** Claude's latest implementation added two runtime primitives that are
+load-bearing for Phases 5 and 8: `agent/effect_normalizer.py` normalizes raw
+study reports into poolable `EffectRow`s, and `agent/final_gate.py` aggregates
+audit, journal-surface, reviewer-P1, numeric, citation, RoB, GRADE, tension,
+corpus-depth, and template-language signals into a deterministic pre-cert gate.
+Measured runtime cloc is 19,543 after Codex's merge-review fixes, leaving about
+200 cloc of headroom rather than a broad bloat allowance.
+**Alternatives rejected:** Compressing the new modules would reduce clarity
+without removing behavior; moving them to `scripts/` would dodge the runtime
+budget while making ownership less explicit.
+**Revisit if:** These primitives are not wired into the next rapamycin
+WORLDCLASS run; unused paper-quality primitives should be deleted, not carried.
+
 ## 2026-05-09 (Claude lane, isolated worktree) — Three planning-layer architectural choices
 **Decision:** Three coupled choices made while shipping Phases 3/4/5/6/7/8 deterministic primitives on the `claude/cranky-shaw-dd257f` branch:
 1. **Tension-hypothesis registry is data, not LLM.** `agent/tension_elaboration.py::HYPOTHESIS_REGISTRY` ships fixed (conflict_type → 2 hypotheses) plus a `DEFAULT_HYPOTHESES` fallback. Adding new conflict types is a tuple edit, not a code change.
