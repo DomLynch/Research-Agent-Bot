@@ -37,18 +37,11 @@ asyncio_mode = "strict"
 python_version = "3.11"
 mypy_path = ["."]
 ignore_missing_imports = true
-# Scope mypy to release runtime only: agent/ + tests/.
+# Scope mypy to release runtime only: agent/.
 # scripts/ imports siblings as top-level modules which creates dual-module
-# naming conflicts. Exclude scripts/, legacy, archived, and run artifacts.
-exclude = [
-  "scripts/",
-  "tests_legacy/",
-  "agent_legacy/",
-  "agent_archived/",
-  "runs/",
-  "\\.codex-worktrees/",
-  "\\.claude/",
-]
+# naming conflicts. Exclude scripts/, tests/, legacy, archived, and run artifacts.
+# NOTE: mypy exclude takes a single regex string, NOT a TOML array.
+exclude = "(?x)(scripts/|tests/|tests_legacy/|agent_legacy/|agent_archived/|runs/|\\.codex-worktrees/|\\.claude/)"
 
 [tool.setuptools.packages.find]
 # Only ship the V1 runtime. agent_legacy/ stays on disk for git archaeology

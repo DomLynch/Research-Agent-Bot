@@ -42,7 +42,7 @@ def _mk(ref: int, *, nct: str | None = None, abstract: str = "") -> EvidenceItem
             source="openalex", nct=nct,
         ),
         abstract=abstract,
-        design="rct", role="published_results", tier=1,
+        design="rct", role="published_results", tier=1,  # type: ignore[arg-type]
         direct=True, strict=False,
     )
 
@@ -113,7 +113,7 @@ def test_canonical_via_isrctn_in_url_also_counts() -> None:
             source="europepmc", nct=None,
         ),
         abstract="No ID here.",
-        design="rct", role="published_results", tier=1,
+        design="rct", role="published_results", tier=1,  # type: ignore[arg-type]
         direct=True, strict=False,
     )
     # cap=1 with this single canonical item must succeed (1 canonical, cap=1).

@@ -24,7 +24,7 @@ def _spec(**kw) -> RetrievalSpec:
         date_from=2010, languages=("English",), species=("humans",),
     )
     base.update(kw)
-    return RetrievalSpec(**base)
+    return RetrievalSpec(**base)  # type: ignore[arg-type]
 
 
 def _hit(*, doi: str, source: str = "pubmed") -> AggregatedHit:
