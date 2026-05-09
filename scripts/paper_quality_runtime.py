@@ -377,8 +377,9 @@ def render_tension_section(payload: dict[str, Any]) -> str:
 
 def apply_template_repairs(markdown: str) -> tuple[str, list[dict[str, str]]]:
     replacements = {
-        "In conclusion,": "Taken together,",
-        "In summary,": "Taken together,",
+        "In conclusion,": "The receipt graph shows that",
+        "In summary,": "The receipt graph shows that",
+        "Taken together,": "The receipt graph shows that",
         "Further research is needed": "The next decisive test is",
         "This synthesis suggests": "The accepted receipt graph supports",
     }

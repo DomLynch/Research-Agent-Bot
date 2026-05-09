@@ -102,9 +102,18 @@ def test_meta_analysis_fails_closed_without_three_studies(tmp_path: Path) -> Non
 
 
 def test_template_repairs_remove_blocking_phrase() -> None:
-    repaired, log = pqr.apply_template_repairs("In conclusion, the evidence is mixed.")
-    assert repaired.startswith("Taken together,")
-    assert log == [{"before": "In conclusion,", "after": "Taken together,"}]
+    repaired, log = pqr.apply_template_repairs(
+        "In conclusion, the evidence is mixed. In summary, caution holds. "
+        "Taken together, the result is bounded."
+    )
+    assert repaired.startswith("The receipt graph shows that")
+    assert "In summary," not in repaired
+    assert "Taken together," not in repaired
+    assert log == [
+        {"before": "In conclusion,", "after": "The receipt graph shows that"},
+        {"before": "In summary,", "after": "The receipt graph shows that"},
+        {"before": "Taken together,", "after": "The receipt graph shows that"},
+    ]
 
 
 def test_tension_directness_normalizes_review_records(tmp_path: Path) -> None:
