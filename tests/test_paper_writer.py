@@ -132,6 +132,17 @@ def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
     assert "Rapamycin evidence remains bounded." in out
 
 
+def test_phase3_framework_sections_render_before_discussion() -> None:
+    """Phase 3 sections are deterministic interpretation layers and must
+    land after cross-domain synthesis but before the free-form Discussion."""
+    from agent.paper_writer import _FULL_PAPER_SECTION_ORDER
+
+    order = list(_FULL_PAPER_SECTION_ORDER)
+    assert order.index("cross_domain_synthesis") < order.index("novel_framework")
+    assert order.index("novel_framework") < order.index("framework_engagement")
+    assert order.index("framework_engagement") < order.index("discussion")
+
+
 def test_build_user_prompt_caller_filter_treats_accept_caveated_as_accepted() -> None:
     """Boundary test (reviewer pin): the production caller in
     render_full_paper computes `rejected` as `spar_verdict not in
