@@ -31,6 +31,9 @@ class GateThresholds:
     """Threshold configuration. Defaults match AAA-CLIN cert expectations.
 
     P1 thresholds (failure if violated):
+      audit_gates_passed                 existing Q/audit gate suite passed.
+      journal_surface_passed             journal surface gate passed.
+      unresolved_reviewer_p1_count       no unresolved reviewer P1 issues.
       min_numeric_coverage              every numeric must trace (1.0).
       require_complete_citation_registry every cite resolves (True).
       min_rob_coverage                  >=80% of receipts have source-text RoB.
@@ -79,11 +82,14 @@ class GateInputs:
     """
 
     numeric_coverage: float
+    audit_gates_passed: bool
+    journal_surface_passed: bool
     citation_registry_complete: bool
     rob_coverage: float
     grade_coverage: float
     n_tensions: int
     n_receipts: int
+    unresolved_reviewer_p1_count: int
     template_language_blocking: bool
 
     def __post_init__(self) -> None:
@@ -95,6 +101,11 @@ class GateInputs:
             raise ValueError(f"n_tensions must be ≥0, got {self.n_tensions}")
         if self.n_receipts < 0:
             raise ValueError(f"n_receipts must be ≥0, got {self.n_receipts}")
+        if self.unresolved_reviewer_p1_count < 0:
+            raise ValueError(
+                "unresolved_reviewer_p1_count must be ≥0, "
+                f"got {self.unresolved_reviewer_p1_count}"
+            )
 
 
 @dataclass(frozen=True, slots=True)
@@ -115,6 +126,14 @@ class GateResult:
 
 def _check_p1(inputs: GateInputs, thresholds: GateThresholds) -> list[str]:
     failures: list[str] = []
+    if not inputs.audit_gates_passed:
+        failures.append("audit_gates_failed")
+    if not inputs.journal_surface_passed:
+        failures.append("journal_surface_failed")
+    if inputs.unresolved_reviewer_p1_count:
+        failures.append(
+            f"unresolved_reviewer_p1_count={inputs.unresolved_reviewer_p1_count}"
+        )
     if inputs.numeric_coverage < thresholds.min_numeric_coverage:
         failures.append(
             f"numeric_coverage={inputs.numeric_coverage:.3f} "

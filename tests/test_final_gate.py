@@ -16,11 +16,14 @@ def _green_inputs(**overrides) -> GateInputs:
     """All-green inputs that pass DEFAULT_THRESHOLDS; override fields as needed."""
     base = dict(
         numeric_coverage=1.0,
+        audit_gates_passed=True,
+        journal_surface_passed=True,
         citation_registry_complete=True,
         rob_coverage=1.0,
         grade_coverage=1.0,
         n_tensions=5,
         n_receipts=34,
+        unresolved_reviewer_p1_count=0,
         template_language_blocking=False,
     )
     base.update(overrides)
@@ -74,6 +77,8 @@ def test_inputs_reject_negative_counts() -> None:
         _green_inputs(n_tensions=-1)
     with pytest.raises(ValueError, match="n_receipts"):
         _green_inputs(n_receipts=-1)
+    with pytest.raises(ValueError, match="unresolved_reviewer_p1_count"):
+        _green_inputs(unresolved_reviewer_p1_count=-1)
 
 
 # ---- evaluate_final_gate: pass cases --------------------------------------
@@ -104,6 +109,24 @@ def test_numeric_coverage_below_threshold_fails() -> None:
     r = evaluate_final_gate(_green_inputs(numeric_coverage=0.95))
     assert not r.passed
     assert any("numeric_coverage" in f for f in r.failures)
+
+
+def test_audit_gate_failure_fails() -> None:
+    r = evaluate_final_gate(_green_inputs(audit_gates_passed=False))
+    assert not r.passed
+    assert "audit_gates_failed" in r.failures
+
+
+def test_journal_surface_failure_fails() -> None:
+    r = evaluate_final_gate(_green_inputs(journal_surface_passed=False))
+    assert not r.passed
+    assert "journal_surface_failed" in r.failures
+
+
+def test_unresolved_reviewer_p1_fails() -> None:
+    r = evaluate_final_gate(_green_inputs(unresolved_reviewer_p1_count=1))
+    assert not r.passed
+    assert "unresolved_reviewer_p1_count=1" in r.failures
 
 
 def test_incomplete_citation_registry_fails() -> None:
@@ -144,20 +167,24 @@ def test_template_language_blocking_fails() -> None:
 
 def test_all_gates_failing_lists_every_failure() -> None:
     inputs = GateInputs(
-        numeric_coverage=0.0, citation_registry_complete=False,
+        numeric_coverage=0.0, audit_gates_passed=False,
+        journal_surface_passed=False, citation_registry_complete=False,
         rob_coverage=0.0, grade_coverage=0.0,
-        n_tensions=0, n_receipts=0, template_language_blocking=True,
+        n_tensions=0, n_receipts=0, unresolved_reviewer_p1_count=1,
+        template_language_blocking=True,
     )
     r = evaluate_final_gate(inputs)
     assert not r.passed
-    assert len(r.failures) == 7  # all P1 gates fired
+    assert len(r.failures) == 10  # all P1 gates fired
 
 
 def test_failure_summary_lists_blocker_count() -> None:
     inputs = GateInputs(
-        numeric_coverage=0.0, citation_registry_complete=False,
+        numeric_coverage=0.0, audit_gates_passed=True,
+        journal_surface_passed=True, citation_registry_complete=False,
         rob_coverage=1.0, grade_coverage=1.0,
-        n_tensions=5, n_receipts=34, template_language_blocking=False,
+        n_tensions=5, n_receipts=34, unresolved_reviewer_p1_count=0,
+        template_language_blocking=False,
     )
     r = evaluate_final_gate(inputs)
     assert "FAIL" in r.summary
@@ -174,9 +201,11 @@ def test_custom_relaxed_thresholds_pass_thin_corpus() -> None:
         warn_below_receipts=5,
     )
     inputs = GateInputs(
-        numeric_coverage=1.0, citation_registry_complete=True,
+        numeric_coverage=1.0, audit_gates_passed=True,
+        journal_surface_passed=True, citation_registry_complete=True,
         rob_coverage=0.5, grade_coverage=1.0,
-        n_tensions=0, n_receipts=3, template_language_blocking=False,
+        n_tensions=0, n_receipts=3, unresolved_reviewer_p1_count=0,
+        template_language_blocking=False,
     )
     r = evaluate_final_gate(inputs, thresholds=custom)
     assert r.passed

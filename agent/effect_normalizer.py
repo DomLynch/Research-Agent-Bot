@@ -174,13 +174,22 @@ def normalize_record(record: dict) -> EffectRow:
     has_binary = all(
         k in record for k in ("events_t", "n_t", "events_c", "n_c")
     )
+    shapes = sum((has_effect, has_continuous, has_binary))
+    if shapes > 1:
+        raise ValueError(
+            f"record for {study_id!r} has ambiguous effect-size shape"
+        )
     if has_effect:
+        if not str(record.get("metric") or "").strip():
+            raise ValueError(
+                f"pre-computed effect for {study_id!r} is missing metric"
+            )
         return normalize_passthrough(
             study_id=study_id,
             effect=float(record["effect"]),
             se=float(record["se"]),
             n=int(record.get("n") or record.get("n_total") or 0),
-            metric=str(record.get("metric") or "MD"),
+            metric=str(record["metric"]),
         )
     if has_continuous:
         return normalize_md(RawContinuous(

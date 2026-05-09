@@ -236,15 +236,19 @@ def test_template_detector_no_false_positive_in_specific_recommendation() -> Non
 def test_final_gate_at_threshold_boundaries() -> None:
     """Exactly at threshold passes; one ulp below fails."""
     pass_inputs = GateInputs(
-        numeric_coverage=1.0, citation_registry_complete=True,
+        numeric_coverage=1.0, audit_gates_passed=True,
+        journal_surface_passed=True, citation_registry_complete=True,
         rob_coverage=0.8, grade_coverage=1.0,
-        n_tensions=1, n_receipts=10, template_language_blocking=False,
+        n_tensions=1, n_receipts=10, unresolved_reviewer_p1_count=0,
+        template_language_blocking=False,
     )
     assert evaluate_final_gate(pass_inputs).passed
     fail_inputs = GateInputs(
-        numeric_coverage=1.0, citation_registry_complete=True,
+        numeric_coverage=1.0, audit_gates_passed=True,
+        journal_surface_passed=True, citation_registry_complete=True,
         rob_coverage=0.7999999999, grade_coverage=1.0,
-        n_tensions=1, n_receipts=10, template_language_blocking=False,
+        n_tensions=1, n_receipts=10, unresolved_reviewer_p1_count=0,
+        template_language_blocking=False,
     )
     assert not evaluate_final_gate(fail_inputs).passed
 

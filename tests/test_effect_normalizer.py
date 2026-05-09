@@ -184,11 +184,14 @@ def test_normalize_record_rejects_missing_study_id() -> None:
         normalize_record({"effect": 0.1, "se": 0.05})
 
 
-def test_normalize_record_passthrough_falls_through_to_continuous_only_when_effect_missing() -> None:
-    """If both effect and continuous fields are present, passthrough wins (cheaper)."""
-    r = normalize_record({
-        "study_id": "E", "effect": 99.0, "se": 0.5, "n": 40, "metric": "MD",
-        # continuous fields also present — should be ignored
-        "mean_t": 5, "sd_t": 1, "n_t": 20, "mean_c": 3, "sd_c": 1, "n_c": 20,
-    })
-    assert r.effect == pytest.approx(99.0)
+def test_normalize_record_rejects_precomputed_effect_without_metric() -> None:
+    with pytest.raises(ValueError, match="missing metric"):
+        normalize_record({"study_id": "E", "effect": 99.0, "se": 0.5, "n": 40})
+
+
+def test_normalize_record_rejects_ambiguous_shapes() -> None:
+    with pytest.raises(ValueError, match="ambiguous"):
+        normalize_record({
+            "study_id": "F", "effect": 99.0, "se": 0.5, "n": 40, "metric": "MD",
+            "mean_t": 5, "sd_t": 1, "n_t": 20, "mean_c": 3, "sd_c": 1, "n_c": 20,
+        })
