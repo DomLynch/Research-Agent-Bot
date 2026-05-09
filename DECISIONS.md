@@ -1,5 +1,14 @@
 # DECISION JOURNAL
 
+## 2026-05-09 — Raise LOC ceiling to 18,500 for generated packs and cross-topic V1
+**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 17,200 → 18,500. Per-file 600 LOC unchanged.
+**Why:** The measured runtime gate is now 17,995 cloc after two shipped, load-bearing slices: generated topic-pack V1 and cross-topic meta-synthesis V1. The runtime additions are bounded and auditable: `agent/topic_pack_generator.py` + `agent/topic_pack_store.py` for immutable generated-pack records, and `agent/cross_topic_aggregator.py` + `agent/convergence_detector.py` + `agent/contradiction_detector.py` + `agent/meta_writer.py` for read-only comparison of already-certified topic runs. The raw `agent/**/*.py` footprint is 22,081 lines, so the budget tracks cloc-style executable/documented runtime code while preserving the 600-line per-file hard cap.
+**Alternatives rejected:**
+- Delete or trim docstrings to force the old 17,200 ceiling — rejected; the new modules are the spec for recently shipped trust boundaries, and cosmetic deletion would hide real capability growth rather than reduce complexity.
+- Move generated-pack or cross-topic logic into `scripts/` to dodge the runtime budget — rejected; both are product behavior with reusable contracts, not one-off maintenance scripts.
+- Raise to a loose 20k+ ceiling — rejected; 18,500 leaves roughly 500 cloc headroom and keeps the next paper-quality sprint honest.
+**Revisit if:** runtime LOC exceeds 18,300 without a direct paper-quality or trust-spine gain; first response should be deletion/consolidation before another ceiling raise.
+
 ## 2026-05-08 — Raise LOC ceiling to 17,200 for BRIEFS-V1 core
 **Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 16,650 → 17,200. Per-file 600 LOC unchanged.
 **Why:** BRIEFS-V1 starts a new product surface: cheap focused evidence briefs derived from certified full papers. Phase 1-4 adds `agent/briefs/question_parser.py`, `topic_matcher.py`, `receipt_filter.py`, and `brief_writer.py`, converting a user question into a structured BriefQuery, matching interventions to topic-pack aliases, filtering manifest receipts by outcome plus available population/comorbidity/age signals, and rendering a deterministic fail-closed brief skeleton. Keeping this in `agent/briefs` avoids burying product logic in scripts and keeps the CLI/audit phase on a coherent package boundary.

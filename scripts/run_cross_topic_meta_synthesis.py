@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -13,15 +14,23 @@ from agent.cross_topic_aggregator import build_field_manifest, load_topic_run_su
 from agent.meta_writer import render_cross_topic_meta_synthesis
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+VALID_CERTIFICATION_TRACKS = frozenset({
+    "AAA-CLIN",
+    "AAA-INF",
+    "AAA-MECH",
+    "AAA-SCOP",
+})
 
 
 def select_best_runs(runs_root: Path) -> tuple[Path, ...]:
-    best: dict[str, tuple[tuple[int, int, int], Path]] = {}
+    best: dict[str, tuple[tuple[int, int, int, str, str], Path]] = {}
     for path in sorted(runs_root.glob("synthesis-*-v06-*")):
         if not path.is_dir():
             continue
         summary = load_topic_run_summary(path)
-        rank = _rank(summary)
+        if not _is_auto_selectable(summary, path):
+            continue
+        rank = _rank(summary, path)
         if rank[0] <= 0:
             continue
         current = best.get(summary.topic)
@@ -79,14 +88,53 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-def _rank(summary) -> tuple[int, int, int]:
+def _rank(summary, path: Path) -> tuple[int, int, int, str, str]:
     eligibility_rank = {
         "full_aaa_primary": 4,
         "analytical_support": 3,
         "scoped_support": 2,
         "excluded": 0,
     }[summary.eligibility]
-    return (eligibility_rank, summary.maturity_level, summary.n_receipts)
+    return (
+        eligibility_rank,
+        summary.maturity_level,
+        summary.n_receipts,
+        _run_time_key(path.name),
+        path.name,
+    )
+
+
+def _is_auto_selectable(summary, path: Path) -> bool:
+    if summary.eligibility == "excluded":
+        return False
+    if summary.certification_track not in VALID_CERTIFICATION_TRACKS:
+        return False
+    return _audit_is_complete(path)
+
+
+def _audit_is_complete(path: Path) -> bool:
+    audit_path = path / "full_paper.audit.json"
+    if not audit_path.exists():
+        return False
+    audit = json.loads(audit_path.read_text(encoding="utf-8"))
+    n_pass = int(audit.get("n_pass") or 0)
+    n_total = int(audit.get("n_total") or 0)
+    return n_total >= 14 and n_pass == n_total and audit.get("p1_pass") is not False
+
+
+def _run_time_key(run_id: str) -> str:
+    match = re.search(
+        r"(20\d{2})-(\d{2})-(\d{2})T(?:(\d{2})-(\d{2})-(\d{2})Z|(\d{1,2}))",
+        run_id,
+    )
+    if not match:
+        return ""
+    year, month, day, hour, minute, second, short_hour = match.groups()
+    if short_hour is not None:
+        hour = short_hour.zfill(2)
+        minute = "00"
+        second = "00"
+    return f"{year}{month}{day}{hour}{minute}{second}"
 
 
 def _write_json(path: Path, data: dict[str, Any]) -> None:

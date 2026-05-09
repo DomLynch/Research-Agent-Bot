@@ -1,80 +1,76 @@
 # AGENTS.md
 
 ## Purpose
-Research Agent Bot — Proof 001 build window. The bot compiles deterministic evidence (`claim_graph.json`); SPAR adjudicates; markdown is rendering, not source of truth. Optimize for correctness, reversibility, and low LOC.
+Research Agent Bot produces audited, source-grounded biomedical research papers.
+The current mission is Ivy-League / senior-PhD-grade paper quality: deep corpus,
+formal methods, quantitative synthesis where justified, calibrated prose, and a
+full trust-spine audit trail.
 
-**Runtime state — distinguish GitHub `main` from VPS live:**
+Researka/public reader/provenance is downstream. This repo's job is the research
+agent and paper engine.
 
-| State | What's there | Verify |
-|---|---|---|
-| **GitHub `main`** | Deploy-safe stub (`agent.app dashboard` returns HTTP 503 "service paused"). | `python -m agent.app dashboard --port 8791` → `curl :8791/` returns 503 |
-| **Brain VPS live** | Active deployment at `/opt/research-agent-bot`, service `research-agent-bot.service`, dashboard on `127.0.0.1:8791`. | `ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 'cd /opt/research-agent-bot && git rev-parse --short HEAD && systemctl is-active research-agent-bot.service && curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8791/'` |
+## Current State - 2026-05-09
+- MacBook, GitHub `main`, VPS `/opt`, and VPS `/root` are synced at `32f8b9e9`
+  before the current cleanup branch.
+- Service: `research-agent-bot.service`.
+- Live endpoint: deploy-safe paused dashboard, HTTP 503 by design.
+- Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
+- Flagship: rapamycin AAA/L6 reproducibly journal-ready.
+- Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.
+- Cross-topic meta-synthesis V1 shipped; auto-selection must use only fully
+  certified 14/14 runs.
 
-Brain VPS access: hostname `Brain`, public IP `49.12.7.18`, Tailscale IP `100.96.74.1`, SSH command `ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18` or `ssh -i ~/.ssh/binance_futures_tool root@100.96.74.1`. Do not use the old domain SSH path for deploys.
+## Session Start
+- Read this file and `PROJECT_STATE.md` before code changes.
+- Read `docs/active_50_task_plan_2026-05-09.md` after compaction or handover.
+- Read `docs/DESIGN-001.md` before trust-spine or paper-generation changes.
+- Read `FAILURES/research-agent-v1.md` before re-architecting LLM-touching code.
+- Use knowledge MCP `get_playbook()` + `get_aaa_protocol()` at session start when
+  available.
 
-Read [`docs/DESIGN-001.md`](docs/DESIGN-001.md) (DRAFT v2) for the full architecture before any code change. Read [`FAILURES/research-agent-v1.md`](FAILURES/research-agent-v1.md) before re-architecting any LLM-touching component.
-
-## Hard rule (posted at top of every prompt that touches the trust spine)
-```
+## Hard Rule
+```text
 LLM PROPOSES. CODE DISPOSES.
 - Role assignment: registry override > deterministic abstract classifier. Never LLM.
 - Fact identity: extracted by LLM, schema-validated, source-text-traced.
-- Claim membership in paper.md: gated by claim_graph.json. LLM cannot add claims.
+- Paper claims: gated by claim_graph / manifests / verdict JSON.
+- Markdown is rendering, not source of truth.
 ```
 
 ## Non-Negotiables
-- Python ≥ 3.11 only.
-- Runtime dep: `httpx` only. Topic packs use stdlib `tomllib` (TOML, not YAML — no PyYAML).
-- Hard ceiling: **12,000 LOC runtime** in `agent/` (raised 2026-04-30 per DECISIONS.md Day 10.17; previous 3,500 → 4,800 → 5,500 → 7,500 → 8,000 → 8,500 → 10,000 → 12,000 to fund the synthesis layer + multi-receipt mode + Day 10.10 trust-spine ordering + Day 10.16 full-paper writer + Day 10.17 audit-quality expansion). Per-file hard cap 600 LOC.
-- Soft per-file budget 300 LOC; per-function 50 LOC (v4 Rule 54).
-- All cross-stage objects are frozen dataclasses (`@dataclass(frozen=True, slots=True)`).
-- Source of truth is `claim_graph.json`. Markdown is downstream rendering only.
-- Three judge agents in SPAR (Evidence Auditor, Domain Skeptic, Final Judge); Methodologist / Statistician / Domain Advocate / Translation Judge / Editor are deferred to Proof 002+.
-- Dissent in any 2-1 SPAR verdict is **always published** verbatim in `spar_review.json`.
-- `citation_trace.py` is backend-agnostic via `trace_clients.py` Protocol layer (TrialRegistryClient / DrugAliasClient / LiteratureClient). Backend selected by env var `TRACE_BACKEND ∈ {mcp, http, fixture}`.
-- No imports from `agent_legacy/` or `agent_archived/`. CI guard: `tests/test_no_legacy_imports.py` (Day 1: extend to also block `agent_archived`).
-- Multiple LLMs are allowed — but only outside the categorical-decision spine. They generate prose, score thesis candidates, and serve as SPAR voices. They never assign roles, decide citation identity, or rule on tier elevation.
+- Python >= 3.11.
+- Runtime dependency discipline: prefer stdlib and existing deps; justify any new
+  dependency in `DECISIONS.md`.
+- Current runtime LOC ceiling: 18,500 cloc in `agent/`; per-file hard cap: 600.
+- Soft budgets: file ~300 cloc, function ~50 cloc.
+- All cross-stage objects should be explicit dataclasses or schema-shaped dicts.
+- No imports from `agent_legacy/` or `agent_archived/`.
+- LLMs may write, review, or arbitrate; they do not assign categorical truth,
+  certify maturity, silently elevate L5/L6, or introduce unsupported numerics.
+- Any new paper-quality tooling should generalize beyond rapamycin unless it is
+  explicitly topic-pack data.
 
-## Pipeline (Proof 001)
+## Active Critical Path
+1. Keep repo clean, synced, and reproducible.
+2. Clear release-green blockers: cross-topic run selection, LOC budget, state docs.
+3. Make the rapamycin paper genuinely candidate-publication-ready.
+4. Preserve trust-spine gates while improving corpus depth, RoB/GRADE,
+   meta-analysis, field engagement, cross-paper tension prose, and voice.
+
+## Verification Commands
+```bash
+git status --short
+.venv/bin/python -m pytest -q
+.venv/bin/python -m ruff check agent scripts tests
+.venv/bin/python scripts/run_cross_topic_meta_synthesis.py
+ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
+'cd /opt/research-agent-bot && git rev-parse --short HEAD && git status --short && systemctl is-active research-agent-bot.service && curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8791/'
 ```
-Stage 0  topic_pack ingest          DETERMINISTIC (tomllib)
-Stage 1  source retrieve+normalize  DETERMINISTIC (existing retrieve.py + sources/)
-Stage 2  evidence_cards             DETERMINISTIC + REGISTRY OVERRIDE
-Stage 3  fact extraction            LLM proposes, schema disposes
-Stage 4  claim graph compile        DETERMINISTIC edges + LLM attack surfaces
-Stage 5  thesis tournament          LLM generates, deterministic selector
-Stage 6  citation_trace             DETERMINISTIC (trace_clients backends)
-Stage 7  SPAR adjudication          3 LLM agents, deterministic tie-break
-Stage 8  drafting                   LLM writes prose from claim_graph only
-Stage 9  render + bundle            DETERMINISTIC
-```
 
-## Safety Rails (preserved from V1)
-Three env-gate controls checked before expensive work begins:
-
-| Env var | Default | Effect |
-|---|---|---|
-| `BOT_ENABLED` | `true` | Kill switch — `false`/`0`/`no`/`off` blocks all runs immediately |
-| `BOT_SUBMIT_ENABLED` | `true` | Submit switch — currently routes to Researka stub adapter only |
-| `DAILY_COST_CAP_USD` | `10.0` | Cost cap — blocks run if today's `runs/*.json` costs already >= cap |
-
-Plus added in Proof 001:
-
-| Env var | Default | Effect |
-|---|---|---|
-| `TRACE_BACKEND` | `fixture` | Selects `trace_clients` backend: `fixture` (CI default), `http` (VPS), `mcp` (dev/Codex) |
-
-All `BOT_*` flags accept `true`, `1`, `yes`, `on` (case-insensitive) as truthy.
-
-## Quality bar
-The 7-paper Quality Reference Corpus at [`docs/quality-reference/metformin/README.md`](docs/quality-reference/metformin/README.md) defines the prose standard. Embedded gold passages from MASTERS, Konopka 2019, MILES, MET-PREVENT, Mohammed 2021 feed `agent/prompts/writer_quality_bar.md` and `agent/prompts/judge_quality_checklist.md` at runtime. The bot retrieves its own evidence; quality is judged against these 7.
-
-## Stop conditions
-- Proof 001 fails any eval gate → iterate Proof 001. **Do not start rapamycin.**
-- All 3 proofs (metformin / rapamycin / everolimus) green → publish RFCs. Until then, no outreach.
-- Cost per run >$0.05 sustained → re-route to Gemma self-host before continuing.
-
-## Archive policy (v4 Rule 58)
-- `agent_legacy/` — pre-V1.1 codebase, retained for adapter archaeology.
-- `agent_archived/proof001/` — V1.1 LLM-coupled spine, retained for prompt/pattern archaeology. README at root explains contents and replacement modules.
-- New code in `agent/` MUST NOT import from either archive directory.
+## Deploy Notes
+- VPS public IP: `49.12.7.18`; Tailscale IP: `100.96.74.1`.
+- SSH key: `~/.ssh/binance_futures_tool`.
+- Live path: `/opt/research-agent-bot`.
+- Mirror path: `/root/Research-Agent-Bot`.
+- Never deploy from a dirty state.
+- Verify service status and 503 endpoint after deploy.

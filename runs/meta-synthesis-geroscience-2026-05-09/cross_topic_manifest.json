@@ -367,11 +367,11 @@
         "review": 7
       },
       "effect_direction_mix": {
-        "mixed": 5,
+        "mixed": 4,
         "negative": 2,
-        "null": 3,
-        "positive": 5,
-        "unclear": 32
+        "null": 11,
+        "positive": 7,
+        "unclear": 23
       },
       "eligibility": "full_aaa_primary",
       "evidence_tier_mix": {
@@ -386,7 +386,7 @@
       "maturity_level": 5,
       "n_high_confidence_claims": 416,
       "n_receipts": 47,
-      "n_tensions": 363,
+      "n_tensions": 366,
       "outcome_domains": [
         "cardiometabolic",
         "frailty",
@@ -397,39 +397,42 @@
       ],
       "outcome_effects": {
         "cardiometabolic": {
-          "mixed": 3,
+          "mixed": 2,
           "negative": 1,
-          "null": 3,
-          "positive": 4,
-          "unclear": 19
+          "null": 8,
+          "positive": 6,
+          "unclear": 13
         },
         "frailty": {
           "unclear": 1
         },
         "immune": {
           "mixed": 1,
+          "negative": 1,
           "positive": 1,
-          "unclear": 4
+          "unclear": 3
         },
         "longevity": {
-          "unclear": 4
+          "null": 1,
+          "unclear": 3
         },
         "muscle_function": {
           "mixed": 1,
-          "unclear": 3
+          "null": 1,
+          "unclear": 2
         },
         "other": {
-          "negative": 1,
+          "null": 1,
           "unclear": 1
         }
       },
-      "run_id": "synthesis-caloric_restriction-v06-CONTRIB-2026-05-08T00-58-42Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-caloric_restriction-v06-CONTRIB-2026-05-08T00-58-42Z",
+      "run_id": "synthesis-caloric_restriction-v06-PATH2RICHFIX2-2026-05-08T15-10-00Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-caloric_restriction-v06-PATH2RICHFIX2-2026-05-08T15-10-00Z",
       "topic": "caloric_restriction",
       "verdict": "AAA"
     },
     {
-      "certification_track": "",
+      "certification_track": "AAA-CLIN",
       "citation_keys": [
         "10.1002/jcsm.12094",
         "10.1007/s00421-014-2866-1",
@@ -448,22 +451,22 @@
         "10.3390/nu17061081"
       ],
       "directness_mix": {
-        "direct": 2,
-        "indirect": 8,
+        "direct": 3,
+        "indirect": 7,
         "review": 5
       },
       "effect_direction_mix": {
-        "mixed": 1,
-        "negative": 3,
-        "null": 2,
-        "positive": 2,
-        "unclear": 7
+        "mixed": 2,
+        "negative": 1,
+        "null": 7,
+        "positive": 1,
+        "unclear": 4
       },
       "eligibility": "full_aaa_primary",
       "evidence_tier_mix": {
-        "A1": 2,
+        "A1": 3,
         "B1": 5,
-        "B2": 8
+        "B2": 7
       },
       "exclusion_reason": null,
       "journal_ready": true,
@@ -471,7 +474,7 @@
       "maturity_level": 5,
       "n_high_confidence_claims": 95,
       "n_receipts": 15,
-      "n_tensions": 42,
+      "n_tensions": 60,
       "outcome_domains": [
         "cardiometabolic",
         "frailty",
@@ -480,29 +483,29 @@
       ],
       "outcome_effects": {
         "cardiometabolic": {
-          "null": 1
-        },
-        "frailty": {
           "unclear": 1
         },
+        "frailty": {
+          "null": 1
+        },
         "immune": {
-          "positive": 1
+          "null": 1
         },
         "muscle_function": {
-          "mixed": 1,
-          "negative": 3,
-          "null": 1,
+          "mixed": 2,
+          "negative": 1,
+          "null": 5,
           "positive": 1,
-          "unclear": 6
+          "unclear": 3
         }
       },
-      "run_id": "synthesis-creatine-v06-ACTIVE-2026-05-05T22-47-50Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-creatine-v06-ACTIVE-2026-05-05T22-47-50Z",
+      "run_id": "synthesis-creatine-v06-PATH2RICHFIX3-2026-05-08T09-10-00Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-creatine-v06-PATH2RICHFIX3-2026-05-08T09-10-00Z",
       "topic": "creatine",
       "verdict": "AAA"
     },
     {
-      "certification_track": "",
+      "certification_track": "AAA-CLIN",
       "citation_keys": [
         "10.1001/jamasurg.2023.2930",
         "10.1007/s00125-009-1472-y",
@@ -579,8 +582,8 @@
           "positive": 1
         }
       },
-      "run_id": "synthesis-glp1-v06-ACTIVE3-2026-05-05T22-18-50Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-glp1-v06-ACTIVE3-2026-05-05T22-18-50Z",
+      "run_id": "synthesis-glp1-v06-PATH2RICHFIX5-2026-05-08T08-10-00Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-glp1-v06-PATH2RICHFIX5-2026-05-08T08-10-00Z",
       "topic": "glp1",
       "verdict": "AAA"
     },
@@ -724,13 +727,13 @@
       "verdict": "AAA"
     },
     {
-      "certification_track": "",
+      "certification_track": "AAA-CLIN",
       "citation_keys": [
-        "10.1007/s00210-025-04017-x",
         "10.1016/j.arr.2025.102817",
         "10.1016/j.cell.2013.02.035",
         "10.1038/cddis.2016.334",
         "10.1038/s41598-020-64776-w",
+        "10.1056/nejmoa012512",
         "10.1093/gerona/glaf095",
         "10.1093/noajnl/vdag041",
         "10.1111/acel.12765",
@@ -739,11 +742,8 @@
         "10.1111/acel.13317",
         "10.1111/acel.13596",
         "10.1111/dom.70267",
-        "10.1111/jdi.12908",
-        "10.1111/liv.70608",
         "10.1136/bmjopen-2018-024954",
         "10.1161/circresaha.116.308445",
-        "10.1172/jci.insight.182578",
         "10.1177/20420188261431021",
         "10.1177/20420188261437346",
         "10.1186/s12877-017-0574-5",
@@ -752,51 +752,52 @@
         "10.1186/s12979-023-00394-0",
         "10.1186/s13075-019-1904-0",
         "10.1186/s13098-021-00746-0",
+        "10.1210/jc.2017-02419",
         "10.1371/journal.pone.0207947",
         "10.18632/aging.100230",
         "10.18632/aging.100245",
         "10.18632/aging.100273",
-        "10.18632/oncotarget.15027",
         "10.18632/oncotarget.26641",
+        "10.2337/db19-116-or",
         "10.2337/dc08-2175",
         "10.3389/fendo.2021.718942",
         "10.3389/fimmu.2026.1768882",
         "10.3389/fnut.2025.1639901",
-        "10.3390/jcm15062117",
-        "10.3390/molecules25194574",
-        "10.3390/ph15010062",
         "10.3892/mmr.2018.8541",
+        "10.4161/cc.7.17.6625",
         "10.5937/jomb0-60849",
-        "10.7717/peerj.14639",
+        "hit_effect_of_intensive_blood_glucose_control_with_metformin_on_",
+        "hit_frailty_attenuates_the_impact_of_metformin_on_reducing_morta",
+        "hit_study_to_evaluate_safety_and_efficacy_of_dapagliflozin_and_s",
         "witham_2025_met_prevent_metformin_trial"
       ],
       "directness_mix": {
         "direct": 5,
-        "indirect": 24,
+        "indirect": 19,
         "mechanistic": 7,
-        "review": 9
+        "review": 12
       },
       "effect_direction_mix": {
-        "mixed": 9,
-        "negative": 4,
-        "null": 1,
-        "positive": 6,
-        "unclear": 25
+        "mixed": 7,
+        "negative": 2,
+        "null": 8,
+        "positive": 2,
+        "unclear": 24
       },
       "eligibility": "full_aaa_primary",
       "evidence_tier_mix": {
         "A1": 5,
-        "B1": 9,
-        "B2": 24,
+        "B1": 12,
+        "B2": 19,
         "C1": 7
       },
       "exclusion_reason": null,
       "journal_ready": true,
       "maturity_label": "L5 \u2014 JOURNAL-READY",
       "maturity_level": 5,
-      "n_high_confidence_claims": 381,
-      "n_receipts": 45,
-      "n_tensions": 283,
+      "n_high_confidence_claims": 373,
+      "n_receipts": 43,
+      "n_tensions": 309,
       "outcome_domains": [
         "cardiometabolic",
         "frailty",
@@ -807,21 +808,21 @@
       "outcome_effects": {
         "cardiometabolic": {
           "mixed": 3,
-          "negative": 4,
-          "null": 1,
-          "positive": 3,
+          "negative": 2,
+          "null": 5,
+          "positive": 1,
           "unclear": 6
         },
         "frailty": {
-          "positive": 1,
-          "unclear": 2
-        },
-        "immune": {
-          "positive": 1,
           "unclear": 3
         },
+        "immune": {
+          "null": 1,
+          "unclear": 1
+        },
         "longevity": {
-          "mixed": 4,
+          "mixed": 2,
+          "null": 2,
           "positive": 1,
           "unclear": 14
         },
@@ -829,8 +830,8 @@
           "mixed": 2
         }
       },
-      "run_id": "synthesis-metformin-v06-CODEXFIX8-2026-05-05T19-42-41Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-metformin-v06-CODEXFIX8-2026-05-05T19-42-41Z",
+      "run_id": "synthesis-metformin-v06-PATH2RICHFIX5-2026-05-08TCLASSIFIER",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-metformin-v06-PATH2RICHFIX5-2026-05-08TCLASSIFIER",
       "topic": "metformin",
       "verdict": "AAA"
     },
@@ -895,8 +896,8 @@
           "mixed": 1
         }
       },
-      "run_id": "synthesis-nad_precursors-v06-PATH1-2026-05-07T17-23-53Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-nad_precursors-v06-PATH1-2026-05-07T17-23-53Z",
+      "run_id": "synthesis-nad_precursors-v06-PATH1FIX-2026-05-07T17-40-21Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-nad_precursors-v06-PATH1FIX-2026-05-07T17-40-21Z",
       "topic": "nad_precursors",
       "verdict": "AAA"
     },
@@ -1388,8 +1389,8 @@
           "unclear": 41
         }
       },
-      "run_id": "synthesis-resistance_training-v06-WIDEBASKET-2026-05-07T23-31-33Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-resistance_training-v06-WIDEBASKET-2026-05-07T23-31-33Z",
+      "run_id": "synthesis-resistance_training-v06-WIDEBASKETFIX3-2026-05-08T00-10-29Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-resistance_training-v06-WIDEBASKETFIX3-2026-05-08T00-10-29Z",
       "topic": "resistance_training",
       "verdict": "AAA"
     },
@@ -1780,8 +1781,8 @@
           "unclear": 2
         }
       },
-      "run_id": "synthesis-statins-v06-PATH2RICH-2026-05-08TSTATINS-WORKER",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-statins-v06-PATH2RICH-2026-05-08TSTATINS-WORKER",
+      "run_id": "synthesis-statins-v06-PATH2RICH5-2026-05-08TSTRICT",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-statins-v06-PATH2RICH5-2026-05-08TSTRICT",
       "topic": "statins",
       "verdict": "AAA"
     },
@@ -1917,8 +1918,8 @@
           "unclear": 2
         }
       },
-      "run_id": "synthesis-urolithin_a-v06-PATH2RICH3-2026-05-08TGRANITE",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-urolithin_a-v06-PATH2RICH3-2026-05-08TGRANITE",
+      "run_id": "synthesis-urolithin_a-v06-PATH2RICH5-2026-05-08TGRANITE",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-urolithin_a-v06-PATH2RICH5-2026-05-08TGRANITE",
       "topic": "urolithin_a",
       "verdict": "AAA"
     },
@@ -2016,5 +2017,5 @@
       "verdict": "AAA"
     }
   ],
-  "unique_citation_count": 808
+  "unique_citation_count": 806
 }

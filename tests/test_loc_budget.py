@@ -8,8 +8,8 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 14,000 LOC (raised 2026-05-04 from 13,500 by the
-all-sources hardening pass + new adapters). Two waves:
+Current ceiling: 18,500 LOC (raised 2026-05-09 from 17,200 by
+generated topic-pack V1 + cross-topic meta-synthesis V1). Earlier waves:
 
 Wave 1 — multi-topic refactor (12,000 → 13,500): added 9 source-client
 adapters (biorxiv/semantic_scholar/crossref/unpaywall/core/doaj/openaire/
@@ -166,12 +166,22 @@ cloc), plus package exports. Adds schema-first question parsing,
 topic-pack alias matching, receipt filtering, and a deterministic
 brief skeleton for cheap question-driven briefs derived from
 certified papers (2026-05-08).
+
+Wave 11 — Generated topic packs + cross-topic meta-synthesis
+(17,200 → 18,500): agent/topic_pack_generator.py and
+topic_pack_store.py add immutable generated-pack records without
+curated-TOML mutation; cross_topic_aggregator.py,
+convergence_detector.py, contradiction_detector.py, and meta_writer.py
+add read-only field synthesis from certified run artifacts. The
+measured gate was 17,995 cloc at the time of raise, with 22,081 raw
+agent/**/*.py lines. The new ceiling leaves about 500 cloc headroom,
+not a broad license for paper-quality sprint bloat (2026-05-09).
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 17200
+TOTAL_LIMIT = 18500
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
