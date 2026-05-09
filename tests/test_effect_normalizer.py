@@ -8,6 +8,8 @@ import pytest
 from agent.effect_normalizer import (
     RawBinary,
     RawContinuous,
+    RawHazardRatio,
+    normalize_log_hr,
     normalize_log_or,
     normalize_log_rr,
     normalize_md,
@@ -194,4 +196,96 @@ def test_normalize_record_rejects_ambiguous_shapes() -> None:
         normalize_record({
             "study_id": "F", "effect": 99.0, "se": 0.5, "n": 40, "metric": "MD",
             "mean_t": 5, "sd_t": 1, "n_t": 20, "mean_c": 3, "sd_c": 1, "n_c": 20,
+        })
+
+
+# ---- RawHazardRatio validation -------------------------------------------
+
+
+def test_raw_hr_valid() -> None:
+    r = RawHazardRatio("S", hr=0.75, ci_lower=0.60, ci_upper=0.94, n=200)
+    assert r.hr == 0.75
+    assert r.ci_level == 0.95
+
+
+def test_raw_hr_rejects_zero_or_negative_hr() -> None:
+    with pytest.raises(ValueError, match="hr"):
+        RawHazardRatio("S", hr=0.0, ci_lower=0.5, ci_upper=1.0, n=100)
+    with pytest.raises(ValueError, match="hr"):
+        RawHazardRatio("S", hr=-0.5, ci_lower=0.5, ci_upper=1.0, n=100)
+
+
+def test_raw_hr_rejects_inverted_ci() -> None:
+    with pytest.raises(ValueError, match="ci_lower"):
+        RawHazardRatio("S", hr=0.8, ci_lower=1.0, ci_upper=0.5, n=100)
+
+
+def test_raw_hr_rejects_hr_outside_ci() -> None:
+    with pytest.raises(ValueError, match="not within CI"):
+        RawHazardRatio("S", hr=2.0, ci_lower=0.5, ci_upper=1.0, n=100)
+
+
+def test_raw_hr_rejects_invalid_ci_level() -> None:
+    with pytest.raises(ValueError, match="ci_level"):
+        RawHazardRatio("S", hr=0.8, ci_lower=0.6, ci_upper=1.0, n=100, ci_level=1.5)
+
+
+# ---- normalize_log_hr ----------------------------------------------------
+
+
+def test_normalize_log_hr_textbook_protective_effect() -> None:
+    """HR=0.75, 95%CI=[0.60, 0.94] → log_HR=ln(0.75)≈-0.288, SE≈0.114."""
+    r = normalize_log_hr(RawHazardRatio("S", 0.75, 0.60, 0.94, n=200))
+    assert r.effect == pytest.approx(math.log(0.75))
+    expected_se = (math.log(0.94) - math.log(0.60)) / (2 * 1.95996)
+    assert r.se == pytest.approx(expected_se, abs=1e-3)
+    assert r.metric == "log_HR"
+    assert r.n == 200
+
+
+def test_normalize_log_hr_harmful_effect_yields_positive_log() -> None:
+    r = normalize_log_hr(RawHazardRatio("S", 1.25, 1.05, 1.49, n=300))
+    assert r.effect > 0
+    assert r.effect == pytest.approx(math.log(1.25))
+
+
+def test_normalize_log_hr_at_ninety_percent_ci_level() -> None:
+    """Custom CI level: 90% uses smaller z than 95% → larger inferred SE
+    for the same bounds."""
+    r95 = normalize_log_hr(RawHazardRatio("S", 0.80, 0.65, 0.99, n=200, ci_level=0.95))
+    r90 = normalize_log_hr(RawHazardRatio("S", 0.80, 0.65, 0.99, n=200, ci_level=0.90))
+    assert r90.se > r95.se
+
+
+def test_normalize_log_hr_unit_hr_yields_zero_effect() -> None:
+    """HR = 1 (null) → log_HR = 0."""
+    r = normalize_log_hr(RawHazardRatio("S", 1.0, 0.85, 1.18, n=500))
+    assert r.effect == pytest.approx(0.0)
+
+
+# ---- normalize_record dispatch to HR -------------------------------------
+
+
+def test_normalize_record_dispatches_hr() -> None:
+    r = normalize_record({
+        "study_id": "X", "hr": 0.75, "ci_lower": 0.60, "ci_upper": 0.94, "n": 200,
+    })
+    assert r.metric == "log_HR"
+    assert r.effect == pytest.approx(math.log(0.75))
+
+
+def test_normalize_record_hr_with_custom_ci_level() -> None:
+    r = normalize_record({
+        "study_id": "X", "hr": 0.80, "ci_lower": 0.65, "ci_upper": 0.99,
+        "n": 200, "ci_level": 0.90,
+    })
+    assert r.metric == "log_HR"
+
+
+def test_normalize_record_rejects_hr_plus_continuous_as_ambiguous() -> None:
+    with pytest.raises(ValueError, match="ambiguous"):
+        normalize_record({
+            "study_id": "X", "hr": 0.75, "ci_lower": 0.60, "ci_upper": 0.94,
+            "mean_t": 5, "sd_t": 1, "n_t": 30,
+            "mean_c": 3, "sd_c": 1, "n_c": 30,
         })

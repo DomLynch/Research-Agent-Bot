@@ -20,15 +20,18 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
+from statistics import NormalDist
 
 from agent.meta_analysis import EffectRow
 
 __all__ = [
     "RawContinuous",
     "RawBinary",
+    "RawHazardRatio",
     "normalize_md",
     "normalize_log_rr",
     "normalize_log_or",
+    "normalize_log_hr",
     "normalize_passthrough",
     "normalize_record",
 ]
@@ -78,6 +81,47 @@ class RawBinary:
             raise ValueError(f"events_c ({self.events_c}) exceeds n_c ({self.n_c})")
         if not self.study_id:
             raise ValueError("study_id must be non-empty")
+
+
+@dataclass(frozen=True, slots=True)
+class RawHazardRatio:
+    """Time-to-event raw report (HR + 95% CI). Common in cancer / aging
+    survival trials. Standard practice: report HR with bracketed CI; the
+    log-scale CI is symmetric under the normal approximation, which lets
+    us back-calculate SE(log_HR) without raw event counts.
+
+    Tolerance for "log-symmetric" is loose — published CIs are often
+    rounded; this dataclass validates monotonicity and positivity but does
+    not reject mild log-asymmetry."""
+
+    study_id: str
+    hr: float
+    ci_lower: float
+    ci_upper: float
+    n: int                     # total sample size across both arms
+    ci_level: float = 0.95     # most published HRs are 95% CI
+
+    def __post_init__(self) -> None:
+        if not self.study_id:
+            raise ValueError("study_id must be non-empty")
+        for name in ("hr", "ci_lower", "ci_upper"):
+            v = getattr(self, name)
+            if not math.isfinite(v) or v <= 0:
+                raise ValueError(f"{name} must be a positive finite number, got {v}")
+        if self.ci_lower > self.ci_upper:
+            raise ValueError(
+                f"ci_lower ({self.ci_lower}) must be ≤ ci_upper ({self.ci_upper})"
+            )
+        # Sanity: HR should fall within (or near) its CI. Allow 1% slack
+        # for rounded report tables.
+        slack = 1.01
+        if not (self.ci_lower / slack <= self.hr <= self.ci_upper * slack):
+            raise ValueError(
+                f"HR {self.hr} not within CI [{self.ci_lower}, {self.ci_upper}]"
+            )
+        _require_positive_int("n", self.n)
+        if not (0.0 < self.ci_level < 1.0):
+            raise ValueError(f"ci_level must be in (0,1), got {self.ci_level}")
 
 
 def normalize_md(raw: RawContinuous) -> EffectRow:
@@ -147,6 +191,35 @@ def normalize_log_or(raw: RawBinary) -> EffectRow:
     )
 
 
+def normalize_log_hr(raw: RawHazardRatio) -> EffectRow:
+    """Convert HR + 95% CI → log_HR + SE under the log-normal CI assumption.
+
+    Math:
+      log_HR     = ln(HR)
+      SE(log_HR) = (ln(CI_upper) - ln(CI_lower)) / (2 · z_{ci_level})
+      where z_{0.95} ≈ 1.95996 (two-tailed 95%).
+
+    This is the standard back-calculation when only HR + bracketed CI is
+    reported — exact under the normal approximation that virtually every
+    survival-analysis paper uses for CI reporting.
+    """
+    log_hr = math.log(raw.hr)
+    z = NormalDist().inv_cdf(1.0 - (1.0 - raw.ci_level) / 2.0)
+    se = (math.log(raw.ci_upper) - math.log(raw.ci_lower)) / (2.0 * z)
+    if se <= 0.0 or not math.isfinite(se):
+        raise ValueError(
+            f"computed log_HR SE is non-positive for {raw.study_id!r} — "
+            "check CI bounds"
+        )
+    return EffectRow(
+        study_id=raw.study_id,
+        effect=log_hr,
+        se=se,
+        n=raw.n,
+        metric="log_HR",
+    )
+
+
 def normalize_passthrough(
     *, study_id: str, effect: float, se: float, n: int, metric: str
 ) -> EffectRow:
@@ -160,8 +233,9 @@ def normalize_record(record: dict) -> EffectRow:
     Detection order:
       1. effect + se present → passthrough.
       2. mean_t/sd_t/n_t + mean_c/sd_c/n_c → normalize_md.
-      3. events_t + events_c with metric="log_OR" → normalize_log_or.
-      4. events_t + events_c (default or metric="log_RR") → normalize_log_rr.
+      3. hr + ci_lower + ci_upper → normalize_log_hr.
+      4. events_t + events_c with metric="log_OR" → normalize_log_or.
+      5. events_t + events_c (default or metric="log_RR") → normalize_log_rr.
 
     Records with ambiguous shapes raise ValueError."""
     study_id = str(record.get("study_id", "")).strip()
@@ -174,7 +248,8 @@ def normalize_record(record: dict) -> EffectRow:
     has_binary = all(
         k in record for k in ("events_t", "n_t", "events_c", "n_c")
     )
-    shapes = sum((has_effect, has_continuous, has_binary))
+    has_hr = all(k in record for k in ("hr", "ci_lower", "ci_upper"))
+    shapes = sum((has_effect, has_continuous, has_binary, has_hr))
     if shapes > 1:
         raise ValueError(
             f"record for {study_id!r} has ambiguous effect-size shape"
@@ -208,6 +283,15 @@ def normalize_record(record: dict) -> EffectRow:
         if str(record.get("metric") or "").lower() == "log_or":
             return normalize_log_or(raw)
         return normalize_log_rr(raw)
+    if has_hr:
+        return normalize_log_hr(RawHazardRatio(
+            study_id=study_id,
+            hr=float(record["hr"]),
+            ci_lower=float(record["ci_lower"]),
+            ci_upper=float(record["ci_upper"]),
+            n=int(record.get("n") or record.get("n_total") or 0),
+            ci_level=float(record.get("ci_level", 0.95)),
+        ))
     raise ValueError(
         f"record for {study_id!r} has no recognised effect-size shape"
     )
