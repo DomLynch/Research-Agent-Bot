@@ -25,7 +25,7 @@ Release `PASS` requires:
 - local full SHA equals `origin/main` full SHA
 - VPS short SHA is a prefix of local full SHA
 - VPS service is `active`
-- endpoint is expected; `503` is valid for the paused dashboard stub
+- endpoint is expected; `200` is required for the live status endpoint
 - no secret scan hits
 - no large generated file warnings
 - no OSF auth/API placement warnings inside bot runtime or bot-side publisher

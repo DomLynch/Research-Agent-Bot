@@ -18,8 +18,8 @@ Last pre-switch clean baseline: 415621b2
 Current branch target: Gemini Exacto reviewer switch
 Final deployed commit: verify with git rev-parse --short HEAD after deploy
 Service: research-agent-bot.service active
-Endpoint: HTTP 503 safe paused dashboard
-Full pytest at current branch validation: 2370 passed, 5 warnings
+Endpoint: HTTP 200 live status page
+Full pytest at current branch validation: 2961 passed, 5 warnings
 Ruff: clean
 ```
 
@@ -60,9 +60,10 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 3. Cross-topic labels remain coarse; V2 detector work is not part of this paper
    sprint unless it directly improves rapamycin.
 4. Rapamycin has certification strength and now 40 runner-admitted receipts
-   after source-validated qualification rescue; it still lacks publication-grade
-   corpus depth, formal RoB/GRADE, quantitative pooling, named framework
-   engagement, and final senior-researcher prose gates.
+   after source-validated qualification rescue. It is not yet "world-class
+   paper complete": real RoB/GRADE generation, quantitative pooling/forest
+   plots, and the publication scorer as a hard pre-submit gate remain blocking
+   paper-quality tasks.
 5. Gemini Exacto is the selected reviewer but still needs replay validation
    before being called Grok-equivalent; fallback/escalation guards remain
    required for production-critical paper runs.

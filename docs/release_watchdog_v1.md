@@ -24,7 +24,7 @@ Release `PASS` requires:
 - local full SHA equals `origin/main` full SHA
 - VPS `/opt` and `/root` match the intended SHA
 - VPS service is `active`
-- endpoint is expected safe status; `503` is valid for the paused dashboard stub
+- endpoint is expected safe status; `200` is required for the live status endpoint
 - selected tests and ruff are clean
 
 Short SHA values from tri-sync are display-only. Full 40-character SHA files

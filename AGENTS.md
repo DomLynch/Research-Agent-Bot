@@ -14,7 +14,7 @@ agent and paper engine.
 - Current branch target: Gemini Exacto reviewer switch; verify the exact deployed
   commit with `git rev-parse --short HEAD` after deploy.
 - Service: `research-agent-bot.service`.
-- Live endpoint: deploy-safe paused dashboard, HTTP 503 by design.
+- Live endpoint: deploy-safe live status page, HTTP 200 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
 - Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
   paper-quality sprint has lifted runner-admitted receipts from 16 to 40 via
@@ -79,4 +79,4 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - Live path: `/opt/research-agent-bot`.
 - Mirror path: `/root/Research-Agent-Bot`.
 - Never deploy from a dirty state.
-- Verify service status and 503 endpoint after deploy.
+- Verify service status and HTTP 200 live status endpoint after deploy.

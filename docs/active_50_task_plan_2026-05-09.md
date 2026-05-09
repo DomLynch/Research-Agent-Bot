@@ -26,10 +26,10 @@ horizon is rapamycin paper quality, not Researka platform engineering.
    in current branch.
 5. Run focused tests for cross-topic and LOC gates. Status: done in current branch.
 6. Run full pytest, ruff, diff check, and secret scan. Status: done in current
-   branch; latest full pytest `2369 passed`.
+   branch; latest full pytest `2961 passed`.
 7. Commit, push, sync VPS `/opt` and `/root`, verify service active and endpoint
-   503. Status: done through deployed baseline `05b962f5`; repeat after each
-   qualification-rescue checkpoint.
+   200. Status: repeat after each qualification-rescue checkpoint; HTTP 503 is
+   no longer accepted for a "live" release.
 
 ## Rapamycin World-Class Paper Sprint
 
@@ -87,6 +87,8 @@ horizon is rapamycin paper quality, not Researka platform engineering.
 35. Render Summary of Findings table.
 36. Re-render rapamycin with RoB/GRADE active.
 37. Verify discussion cites certainty ratings per outcome.
+    Status: blocker for world-class paper completion; schemas/renderers exist,
+    but real assessment generation is not yet wired into the runner.
 
 ### Phase 5 - Quantitative Meta-Analysis
 38. Audit existing numeric/QEI structures for comparable effect sizes.
@@ -97,6 +99,8 @@ horizon is rapamycin paper quality, not Researka platform engineering.
 42. Add funnel plot / Egger only if data shape is valid.
 43. Add `Meta-Analysis Results` section.
 44. Verify pooled estimates align with individual study effects.
+    Status: blocker for world-class paper completion; effect normalization,
+    pooling, and SVG primitives exist, but manuscript embedding is not yet wired.
 
 ### Phase 6 - Prose Elevation
 45. Audit rapamycin for AI-template language.
@@ -118,14 +122,16 @@ horizon is rapamycin paper quality, not Researka platform engineering.
 56. Render `WORLDCLASS` rapamycin run.
 57. Run Q1-Q14 audit and require 14/14.
 58. Run journal surface gate and require zero blocking issues.
-59. Run template-language detector and require zero hits.
-60. Generate final cert and verify L5 or L6.
-61. Read full paper end-to-end against: senior voice, submit-worthiness, novel
+59. Wire publication scorer as a hard pre-submit gate before claiming
+    candidate-publication/world-class completion. Status: blocker.
+60. Run template-language detector and require zero hits.
+61. Generate final cert and verify L5 or L6.
+62. Read full paper end-to-end against: senior voice, submit-worthiness, novel
    insight.
-62. Document publication-ready state or exact remaining gaps.
-63. Decide next venue path: bioRxiv, mid-tier review journal, or top-tier with
+63. Document publication-ready state or exact remaining gaps.
+64. Decide next venue path: bioRxiv, mid-tier review journal, or top-tier with
    senior co-author.
 
 ## Persistence Task
-64. After every compaction, reload this file and restore the task queue before new
+65. After every compaction, reload this file and restore the task queue before new
    work.
