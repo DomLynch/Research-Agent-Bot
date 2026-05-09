@@ -30,8 +30,197 @@ import json
 import os
 import sys
 from pathlib import Path
+from types import ModuleType
+from typing import Any
 
 import pytest
+
+
+def _install_httpx_test_stub_if_missing() -> None:
+    try:
+        import httpx  # noqa: F401
+        return
+    except ModuleNotFoundError:
+        pass
+
+    import json as _json
+    from urllib.parse import urlencode
+
+    class HTTPError(Exception):
+        pass
+
+    class HTTPStatusError(HTTPError):
+        def __init__(self, message: str, *, response: "Response") -> None:
+            super().__init__(message)
+            self.response = response
+
+    class ConnectError(HTTPError):
+        pass
+
+    class TimeoutException(HTTPError):
+        pass
+
+    class ReadTimeout(TimeoutException):
+        pass
+
+    class PoolTimeout(TimeoutException):
+        pass
+
+    class NetworkError(HTTPError):
+        pass
+
+    class RemoteProtocolError(HTTPError):
+        pass
+
+    class Request:
+        def __init__(
+            self,
+            method: str,
+            url: str,
+            *,
+            headers: dict[str, str] | None = None,
+            content: bytes = b"",
+        ) -> None:
+            self.method = method
+            self.url = url
+            self.headers = headers or {}
+            self.content = content
+
+    class Response:
+        def __init__(
+            self,
+            status_code: int,
+            *,
+            json: Any = None,
+            text: str | None = None,
+            content: bytes | None = None,
+            headers: dict[str, str] | None = None,
+        ) -> None:
+            self.status_code = status_code
+            self._json = json
+            self.headers = headers or {}
+            if content is not None:
+                self.content = content
+                self.text = content.decode("utf-8", errors="replace")
+            elif text is not None:
+                self.text = text
+                self.content = text.encode()
+            elif json is not None:
+                self.text = _json.dumps(json)
+                self.content = self.text.encode()
+            else:
+                self.text = ""
+                self.content = b""
+
+        def json(self) -> Any:
+            if self._json is not None:
+                return self._json
+            return _json.loads(self.text)
+
+        def raise_for_status(self) -> None:
+            if self.status_code >= 400:
+                raise HTTPStatusError(
+                    f"{self.status_code} error response",
+                    response=self,
+                )
+
+    class MockTransport:
+        def __init__(self, handler: Any) -> None:
+            self.handler = handler
+
+    def _url(url: str, params: dict[str, Any] | None) -> str:
+        if not params:
+            return url
+        sep = "&" if "?" in url else "?"
+        return f"{url}{sep}{urlencode(params, doseq=True)}"
+
+    def _body(json_payload: Any = None, data: Any = None) -> bytes:
+        if json_payload is not None:
+            return _json.dumps(json_payload).encode()
+        if data is None:
+            return b""
+        return data if isinstance(data, bytes) else str(data).encode()
+
+    class Client:
+        def __init__(
+            self,
+            *,
+            transport: MockTransport | None = None,
+            headers: dict[str, str] | None = None,
+            timeout: float | None = None,
+            **_: Any,
+        ) -> None:
+            self.transport = transport
+            self.headers = headers or {}
+            self.timeout = timeout
+
+        def request(self, method: str, url: str, **kwargs: Any) -> Response:
+            if self.transport is None:
+                raise ConnectError("test httpx stub has no transport")
+            headers = {**self.headers, **(kwargs.get("headers") or {})}
+            req = Request(
+                method,
+                _url(url, kwargs.get("params")),
+                headers=headers,
+                content=_body(kwargs.get("json"), kwargs.get("data")),
+            )
+            return self.transport.handler(req)
+
+        def get(self, url: str, **kwargs: Any) -> Response:
+            return self.request("GET", url, **kwargs)
+
+        def post(self, url: str, **kwargs: Any) -> Response:
+            return self.request("POST", url, **kwargs)
+
+        def close(self) -> None:
+            return None
+
+        def __enter__(self) -> "Client":
+            return self
+
+        def __exit__(self, *_args: Any) -> None:
+            self.close()
+
+    class AsyncClient(Client):
+        async def request(self, method: str, url: str, **kwargs: Any) -> Response:
+            return super().request(method, url, **kwargs)
+
+        async def get(self, url: str, **kwargs: Any) -> Response:
+            return await self.request("GET", url, **kwargs)
+
+        async def post(self, url: str, **kwargs: Any) -> Response:
+            return await self.request("POST", url, **kwargs)
+
+        async def aclose(self) -> None:
+            return None
+
+        async def __aenter__(self) -> "AsyncClient":
+            return self
+
+        async def __aexit__(self, *_args: Any) -> None:
+            await self.aclose()
+
+    stub = ModuleType("httpx")
+    for name, value in {
+        "AsyncClient": AsyncClient,
+        "Client": Client,
+        "ConnectError": ConnectError,
+        "HTTPError": HTTPError,
+        "HTTPStatusError": HTTPStatusError,
+        "MockTransport": MockTransport,
+        "NetworkError": NetworkError,
+        "PoolTimeout": PoolTimeout,
+        "ReadTimeout": ReadTimeout,
+        "RemoteProtocolError": RemoteProtocolError,
+        "Request": Request,
+        "Response": Response,
+        "TimeoutException": TimeoutException,
+    }.items():
+        setattr(stub, name, value)
+    sys.modules["httpx"] = stub
+
+
+_install_httpx_test_stub_if_missing()
 
 # Test-only metformin context — see module docstring rationale. This
 # only affects test collection + execution; production CLI runs always
