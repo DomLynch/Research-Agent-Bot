@@ -54,17 +54,33 @@ class ResearkaDatabaseClient:
             return []
         if not isinstance(body, dict):
             return []
-        hits: list[RawHit] = []
+        by_lane: dict[str, list[RawHit]] = {}
         for lane in ("established", "discovery", "semantic"):
             rows = body.get(lane, [])
             if not isinstance(rows, list):
                 continue
+            by_lane[lane] = []
             for row in rows:
                 if not isinstance(row, dict):
                     continue
                 hit = self._parse(row, lane=lane, query=query)
                 if hit is None:
                     continue
+                by_lane[lane].append(hit)
+
+        hits: list[RawHit] = []
+        seen: set[str] = set()
+        max_lane_len = max((len(rows) for rows in by_lane.values()), default=0)
+        for idx in range(max_lane_len):
+            for lane in ("established", "discovery", "semantic"):
+                rows = by_lane.get(lane, [])
+                if idx >= len(rows):
+                    continue
+                hit = rows[idx]
+                key = _dedupe_key(hit)
+                if key in seen:
+                    continue
+                seen.add(key)
                 hits.append(hit)
                 if len(hits) >= k:
                     return hits
@@ -111,3 +127,11 @@ def _int_or_none(value: object) -> int | None:
         return int(value)
     except (TypeError, ValueError):
         return None
+
+
+def _dedupe_key(hit: RawHit) -> str:
+    if hit.doi:
+        return f"doi:{hit.doi}"
+    if hit.pmid:
+        return f"pmid:{hit.pmid}"
+    return f"title:{hit.title.casefold()}:{hit.year or ''}"

@@ -72,6 +72,58 @@ async def test_search_posts_to_three_lane_endpoint_and_parses_hits() -> None:
 
 
 @pytest.mark.asyncio
+async def test_search_round_robins_lanes_before_applying_limit() -> None:
+    def row(i: int, lane: str) -> dict[str, object]:
+        return {
+            "id": f"openalex:{lane}{i}",
+            "title": f"{lane.title()} paper {i}",
+            "abstract": f"{lane} abstract about aging biology {i}.",
+            "publication_year": 2024,
+            "doi": f"10.1234/{lane}{i}",
+        }
+
+    def handler(req: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={
+            "established": [row(1, "established"), row(2, "established")],
+            "discovery": [row(1, "discovery"), row(2, "discovery")],
+            "semantic": [row(1, "semantic"), row(2, "semantic")],
+        })
+
+    with patch.dict(os.environ, {"RESEARKA_DATABASE_TOKEN": "test-token"}):
+        async with httpx.AsyncClient(transport=_mock_transport(handler)) as client:
+            hits = await ResearkaDatabaseClient().search(client, "aging", limit=4)
+
+    assert [h.raw["lane"] for h in hits] == [
+        "established", "discovery", "semantic", "established",
+    ]
+
+
+@pytest.mark.asyncio
+async def test_search_dedupes_same_paper_across_lanes() -> None:
+    same = {
+        "id": "openalex:W1",
+        "title": "Rapamycin lifespan in mice",
+        "abstract": "Rapamycin lifespan result in mice.",
+        "publication_year": 2014,
+        "doi": "10.1111/acel.12237",
+    }
+
+    def handler(req: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={
+            "established": [same],
+            "discovery": [same],
+            "semantic": [same],
+        })
+
+    with patch.dict(os.environ, {"RESEARKA_DATABASE_TOKEN": "test-token"}):
+        async with httpx.AsyncClient(transport=_mock_transport(handler)) as client:
+            hits = await ResearkaDatabaseClient().search(client, "rapamycin", limit=8)
+
+    assert len(hits) == 1
+    assert hits[0].raw["lane"] == "established"
+
+
+@pytest.mark.asyncio
 @pytest.mark.parametrize("status", [401, 403, 429, 500, 503])
 async def test_search_fails_soft_on_auth_rate_limit_or_server_error(status: int) -> None:
     def handler(req: httpx.Request) -> httpx.Response:
