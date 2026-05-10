@@ -364,6 +364,30 @@ def test_evidence_role_count_consistency_flags_stale_role_counts() -> None:
     )
 
 
+def test_appendix_distribution_counts_must_match_accepted_receipts() -> None:
+    manifest = _baseline_manifest(n_accepted_receipts=2)
+    md = (
+        "## Publication Appendix\n\n"
+        "**Evidence tier distribution:**\n\n"
+        "| Tier | Description | Count |\n"
+        "|---|---|---|\n"
+        "| A1 | RCT | 2 |\n"
+        "| B1 | Review | 10 |\n"
+        "\n"
+        "**Directness distribution:**\n\n"
+        "| Directness | Count |\n"
+        "|---|---|\n"
+        "| direct | 2 |\n"
+        "| review | 10 |\n"
+    )
+    r = validate(md, manifest)
+    assert any(
+        f.rule == "evidence_role_count_consistency"
+        and "distribution totals 12" in f.detail
+        for f in r.failures
+    )
+
+
 def test_section_outcome_integrity_flags_wrong_outcome_subsection() -> None:
     manifest = _baseline_manifest(
         receipts=[

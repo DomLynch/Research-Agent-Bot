@@ -1,20 +1,4 @@
-"""Topic Maturity Ladder L0-L6.
-
-Universal maturity badges from corpus + audit + reproducibility
-signals. Higher levels imply lower gates have cleared:
-
-  L0 — UNSEEDED        no receipts
-  L1 — SEEDED          receipts exist, but no high-confidence claims
-  L2 — PARTIAL         claims exist, but below certification floor
-  L3 — FLOOR-MET       cert floor met, but verdict not AAA
-                       (audit failures or unresolved Grok flags)
-  L4 — ANALYTICAL      verdict == "AAA", but journal-surface or
-                       surgery gate still requires editorial work
-  L5 — JOURNAL-READY   AAA + zero unresolved Grok + zero flagged review
-                       patches + zero auto-strip surgery + clean
-                       journal-surface gate
-  L6 — REPRODUCIBLE    at least two consecutive clean L5 runs
-"""
+"""Topic Maturity Ladder L0-L6."""
 from __future__ import annotations
 
 from typing import Any
@@ -44,11 +28,11 @@ _LEVEL_DESCRIPTIONS: dict[int, str] = {
        "(receipts / claims / tensions). AAA blocked on substance, "
        "not on audit.",
     3: "Corpus meets the certification floor, but the verdict is "
-       "below AAA — audit failures, P1 issues, or unresolved Grok "
+       "below AAA — audit failures, P1 issues, or unresolved reviewer "
        "patches are in the way.",
     4: "Analytical AAA — audits and corpus floors pass, but a "
        "journal-surface or surgery gate still requires editorial work.",
-    5: "Journal-Ready — AAA plus zero unresolved Grok flags plus "
+    5: "Journal-Ready — AAA plus zero unresolved reviewer flags plus "
        "zero auto-strip surgery. No structural patching was needed "
        "to clear the gates. Suitable for peer-reviewed submission.",
     6: "Reproducibly Journal-Ready — at least two consecutive clean "

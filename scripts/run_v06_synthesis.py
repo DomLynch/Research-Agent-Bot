@@ -194,11 +194,8 @@ def _restore_required_section_bodies(
             continue
         rendered = _rendered_section_match(out, heading)
         original = section.body_md.strip()
-        typed_safe = (
-            prefer_typed_sections
-            and not _section_body_has_public_residue(
-                _section_body_text(original, heading),
-            )
+        typed_safe = not _section_body_has_public_residue(
+            _section_body_text(original, heading),
         )
         if not typed_safe:
             continue

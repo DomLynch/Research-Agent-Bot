@@ -1,38 +1,4 @@
-"""Researka manuscript appendix composer (Phase A polish).
-
-Adds the four publication-ready sections that journals expect from
-AI-generated research synthesis:
-
-  1. Search Provenance     — honest reconstruction of what databases
-                             were queried, what filters applied, what
-                             scoring decided which papers reached
-                             synthesis. Acknowledges this is NOT a
-                             PRISMA-compliant systematic review; it's
-                             an auditable agent-to-agent synthesis
-                             with the equivalent transparency layer.
-  2. AI-Use Disclosure     — ICMJE-compliant statement. Names every
-                             model used, what role it played, what
-                             gates constrained it. Modeled on Nature/
-                             BMJ/ICMJE 2024 guidance.
-  3. Human Accountability  — template for the human submitter to
-                             fill in their name, affiliation, and
-                             accountability statement (per ICMJE,
-                             AI cannot be an author).
-  4. Data & Code Availability — links to the public bundle, run ID,
-                             git SHA at certification, and
-                             reproduction recipe.
-
-Pure-Python composer. No LLM calls. Reads from the run manifest,
-audit, and model-stack metadata.
-
-Usage from orchestrator (Stage 5 post-audit):
-    from agent.manuscript_appendix import compose_appendix
-    appendix_md = compose_appendix(manifest, audit, model_stack,
-                                   run_id=..., git_sha=...)
-    paper_md = paper_md.replace(
-        "## References", appendix_md + "\\n\\n## References", 1,
-    )
-"""
+"""Researka manuscript appendix composer."""
 from __future__ import annotations
 
 import re
@@ -189,6 +155,21 @@ def _post_spar_counts(
     return total, accepted, rejected
 
 
+def _accepted_receipts(
+    manifest: dict[str, Any],
+    spar_cache: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    receipts = [r for r in (manifest.get("receipts") or []) if isinstance(r, dict)]
+    verdicts = (spar_cache or {}).get("verdicts") or {}
+    if not isinstance(verdicts, dict):
+        return receipts
+    rejected_ids = {
+        rid for rid, v in verdicts.items()
+        if isinstance(v, dict) and str(v.get("verdict") or "").lower().startswith("reject")
+    }
+    return [r for r in receipts if r.get("receipt_id") not in rejected_ids]
+
+
 def build_search_provenance_appendix(
     manifest: dict[str, Any], topic: str,
     spar_cache: dict[str, Any] | None = None,
@@ -199,22 +180,24 @@ def build_search_provenance_appendix(
     tier/directness distribution. Names every database queried.
     Acknowledges what was NOT queried. Honest framing as 'auditable
     agent-to-agent synthesis' NOT 'PRISMA systematic review'."""
-    receipts = manifest.get("receipts", [])
     n_receipts, n_accepted, n_rejected = _post_spar_counts(
         manifest, spar_cache,
     )
-    n_claims = manifest.get("n_high_confidence_claims_total", 0)
+    accepted_receipts = _accepted_receipts(manifest, spar_cache)
+    n_claims = sum(
+        int(r.get("n_claims") or 0) for r in accepted_receipts
+    ) or manifest.get("n_high_confidence_claims_total", 0)
     n_tensions = manifest.get("n_non_orthogonal_tensions", 0)
     receipt_funnel = manifest.get("receipt_funnel") or {}
 
     tier_counts = Counter(
-        r.get("evidence_tier", "?") for r in receipts
+        r.get("evidence_tier", "?") for r in accepted_receipts
     )
     direct_counts = Counter(
-        r.get("directness", "?") for r in receipts
+        r.get("directness", "?") for r in accepted_receipts
     )
     outcome_counts = Counter(
-        r.get("outcome_class", "?") for r in receipts
+        r.get("outcome_class", "?") for r in accepted_receipts
     )
 
     lines = [
@@ -343,7 +326,7 @@ def build_search_provenance_appendix(
 
 def _verdict_phrase(verdict: str) -> str:
     """Conditional certification phrase. Verdict-honest by construction:
-    AAA            → 'Researka-Certified A2A-AAA artifact'
+    AAA            → 'Researka-Certified audit artifact'
     Trust-Spine    → 'Researka Trust-Spine Pass audit artifact'
     SHIP-BLOCKED   → 'Researka preliminary audit artifact'
     other / unset  → 'Researka audit-trail artifact'
@@ -352,7 +335,7 @@ def _verdict_phrase(verdict: str) -> str:
     statins publication run, which fails Q9 honestly)."""
     v = (verdict or "").strip()
     if v == "AAA":
-        return "Researka-Certified A2A-AAA artifact"
+        return "Researka-Certified audit artifact"
     if v in ("Trust-Spine Pass",
              "Trust-Spine Pass — Agent Review Unresolved"):
         return "Researka Trust-Spine Pass audit artifact"
@@ -377,8 +360,8 @@ def _submitter_attestation_text(verdict: str) -> str:
         )
     return (
         f"> I publicly release this {phrase} under the Researka "
-        "Independent Standard. This bundle is not represented as an "
-        "A2A-AAA certification. Its current verdict, limitations, "
+        "Independent Standard. This bundle is not represented as a "
+        "final journal certification. Its current verdict, limitations, "
         "unresolved review items, and corpus gaps are recorded in the "
         "audit trail for public inspection and re-run."
     )
@@ -419,7 +402,7 @@ def build_ai_use_disclosure(
         "## AI-Use Disclosure",
         "",
         "This manuscript was produced under an AI-native audit "
-        "protocol (the Researka A2A-AAA Protocol) designed to "
+        "protocol (the Researka independent audit protocol) designed to "
         "**complement, not replace,** conventional editorial peer "
         "review. The protocol provides a reproducible audit trail "
         "for every claim, citation, and numeric value in the "
@@ -504,7 +487,7 @@ def build_ai_use_disclosure(
         "checks: no duplicate sections, no internal labels, no "
         "change-value misreads, no anaphoric misreads (Fix #54), "
         "no internal-pipeline metadata leaks (Fix #56).",
-        "5. **Smart-gate review (Grok)** — adversarial reviewer "
+        "5. **Smart-gate review** — adversarial reviewer "
         "patches must pass safety simplification rules (no new "
         "numerics, no new citations, no new identifiers, AFTER "
         "words ⊆ BEFORE words).",
@@ -537,7 +520,7 @@ def build_ai_use_disclosure(
         "- The interpretation may reflect biases in the underlying "
         "model training data; the deterministic registries reduce "
         "but do not eliminate this.",
-        "- The reviewer model (Grok) and writer model differ to "
+        "- The reviewer model and writer model differ to "
         "reduce same-family blind spots, but adversarial review "
         "is not infallible.",
     ]
@@ -617,7 +600,7 @@ def build_data_code_availability(
     )
     verdict_clean = (verdict or "").strip()
     if verdict_clean == "AAA":
-        bundle_verdict_phrase = "the Researka A2A-AAA certification record"
+        bundle_verdict_phrase = "the Researka certification record"
         sha_label = "Git SHA at certification"
         code_label = "Cert/verdict code"
     else:
@@ -639,7 +622,7 @@ def build_data_code_availability(
         "The bundle contains: the manuscript itself, the Stage-1 "
         "audit (Q1-Q14), the Stage-2 consistency audit (C01-C14), "
         f"{bundle_verdict_phrase}, "
-        "the full Grok review-patch list (raw), the orchestrator's "
+        "the full adversarial review-patch list (raw), the orchestrator's "
         "decision per patch, the deterministic auto-fix log, the "
         "citation registry with traceback to corpus, the run "
         "manifest, and the no-regression report vs the prior "

@@ -529,6 +529,20 @@ def _check_evidence_role_counts(
     return failures
 
 
+_APPENDIX_DIST_RE = re.compile(r"\*\*(Evidence tier|Directness|Outcome-class) distribution:\*\*.*?\|[^\n]*Count[^\n]*\|\n\|[-|: ]+\|\n(?P<rows>(?:\|[^\n]*\|\n)+)", re.I | re.S)
+
+
+def _check_appendix_distribution_counts(body: str, canon: CanonicalCounts) -> list[ContractFailure]:
+    if canon.accepted_papers <= 0:
+        return []
+    return [
+        ContractFailure("evidence_role_count_consistency", f"{m.group(1)} distribution totals {n}, but post-SPAR accepted receipts total {canon.accepted_papers}.")
+        for m in _APPENDIX_DIST_RE.finditer(body)
+        for nums in ([int(x) for x in re.findall(r"\|\s*(\d+)\s*\|$", m.group("rows"), re.M)],)
+        if (n := sum(nums)) and n != canon.accepted_papers
+    ]
+
+
 # ---- rule 3: section boundary -------------------------------------------
 
 
@@ -594,24 +608,13 @@ def _check_sections(
 # Keep entries non-overlapping (no entry should be a strict prefix of
 # another) so we don't double-count the same residue site.
 FORBIDDEN_PHRASES: tuple[str, ...] = (
-    "no LLM authorship",
-    "LLM proposes, code disposes",
-    "deterministic evidence summary",
-    "Tournament selector",
-    "Selected thesis:",
-    "no matched source in the accepted evidence",
-    "source-context sentence",
-    "unsupported sentence",
-    "Researka-Certified",
-    "A2A-AAA",
-    "Grok",
-    "certification tolerances",
-    "In the Conclusion, this framing",
-    "In the Limitations, this framing",
-    "The surviving section therefore",
-    "source passage cannot support its own specificity",
-    "Cochrane RoB-2",
-    "ROBINS-I",
+    "no LLM authorship", "LLM proposes, code disposes", "deterministic evidence summary",
+    "Tournament selector", "Selected thesis:", "no matched source in the accepted evidence",
+    "source-context sentence", "unsupported sentence", "Researka-Certified", "A2A-AAA",
+    "Grok", "certification tolerances", "In the Conclusion, this framing",
+    "In the Limitations, this framing", "The surviving section therefore",
+    "source passage cannot support its own specificity", "Cochrane RoB-2", "ROBINS-I",
+    "risk-of-bias roll-up",
 )
 
 
@@ -1084,6 +1087,7 @@ def validate(
     fails.extend(_check_evidence_role_counts(
         paper_md, manifest, rejected_verdicts,
     ))
+    fails.extend(_check_appendix_distribution_counts(paper_md, canon))
     fails.extend(_check_section_outcome_integrity(
         paper_md, manifest, rejected_verdicts,
     ))

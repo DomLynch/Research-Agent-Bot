@@ -134,6 +134,27 @@ def test_search_provenance_includes_tier_distribution() -> None:
     assert "B1" in md
 
 
+def test_search_provenance_distributions_use_post_spar_accepted_receipts() -> None:
+    manifest = _fake_manifest()
+    manifest["n_receipts"] = 4
+    spar_cache = {
+        "verdicts": {
+            "Walton_2019": {"verdict": "accept_clean"},
+            "Konopka_2019": {"verdict": "accept_caveated"},
+            "Witham_2025": {"verdict": "reject_direction_mismatch"},
+            "Keys_2025": {"verdict": "reject_internal_contradiction"},
+        }
+    }
+    md = appx.build_search_provenance_appendix(
+        manifest, topic="metformin", spar_cache=spar_cache,
+    )
+    assert "Accepted receipts contributing to synthesis: **2**" in md
+    assert "| A1 | RCT or registered trial (highest) | 2 |" in md
+    assert "| B1 | Review or meta-analysis |" not in md
+    assert "| direct | 2 |" in md
+    assert "| review |" not in md
+
+
 # =========== AI-Use Disclosure ====================================
 
 
@@ -146,9 +167,8 @@ def test_ai_use_disclosure_declares_audit_protocol_complement() -> None:
         _fake_manifest(), model_stack=_fake_model_stack(),
     )
     assert "complement" in md.lower()
-    assert "Researka A2A-AAA Protocol" in md
     assert "ICMJE" not in md  # combative reference removed
-    assert "Researka A2A-AAA" in md
+    assert "A2A-AAA" not in md
     # Naming legacy policies is fine — the manifesto explicitly
     # contrasts with them — but the headline framing is RIS.
     assert "trust spine" in md.lower() or "trust-spine" in md.lower()
@@ -228,7 +248,7 @@ def test_submitter_block_does_not_certify_trust_spine_artifact() -> None:
     """Non-AAA artifacts get audit wording, not certification wording."""
     md = appx.build_human_accountability_template(verdict="Trust-Spine Pass")
     assert "Trust-Spine Pass audit artifact" in md
-    assert "not represented as an A2A-AAA certification" in md
+    assert "not represented as a final journal certification" in md
     assert "certification tolerances" not in md
     assert "pending AAA" not in md
 
@@ -236,7 +256,7 @@ def test_submitter_block_does_not_certify_trust_spine_artifact() -> None:
 def test_submitter_block_uses_certification_wording_only_for_aaa() -> None:
     """AAA artifacts may use certification wording."""
     md = appx.build_human_accountability_template(verdict="AAA")
-    assert "Researka-Certified A2A-AAA artifact" in md
+    assert "Researka-Certified audit artifact" in md
     assert "certification tolerances" in md
 
 
@@ -289,7 +309,7 @@ def test_data_code_availability_aaa_keeps_certification_language() -> None:
         run_id="r1", git_sha="abc1234", verdict="AAA",
     )
     assert "Git SHA at certification" in md
-    assert "A2A-AAA certification record" in md
+    assert "Researka certification record" in md
 
 
 # =========== Top-level composer ===================================

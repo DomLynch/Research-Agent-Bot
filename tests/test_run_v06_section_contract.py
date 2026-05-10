@@ -210,7 +210,7 @@ def test_restore_public_surface_floors_does_not_inject_filler() -> None:
     assert log == []
 
 
-def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
+def test_restore_required_section_body_restores_safe_typed_section() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (
         SynthesisSection(
@@ -223,7 +223,26 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
         paper, sections, prefer_typed_sections=False,
     )
     body = orch._rendered_section_match(out, "## Results").group(1)
-    assert "word499" not in body
+    assert "word499" in body
+    assert "Too short." not in body
+
+
+def test_restore_required_section_body_refuses_public_residue() -> None:
+    paper = "## Results\n\nToo short.\n"
+    sections = (
+        SynthesisSection(
+            name="results",
+            body_md=(
+                "## Results\n\n"
+                "When a source passage cannot support its own specificity, "
+                "the surviving section therefore fails.\n"
+            ),
+            anchors=(),
+        ),
+    )
+    out = orch._restore_rendered_section_contract(paper, sections)
+    body = orch._rendered_section_match(out, "## Results").group(1)
+    assert "source passage cannot support" not in body
     assert body.strip() == "Too short."
 
 
