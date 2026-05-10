@@ -281,6 +281,232 @@ def test_write_sidecar_emits_json(tmp_path: Path) -> None:
     assert payload["canonical_counts"]["source_papers"] == 40
 
 
+# ---- rule 6: wrong-topic residue ----------------------------------------
+
+
+def _topic_pack_root(tmp_path: Path, topics: list[str]) -> Path:
+    """Make a fake repo root with topic_packs/<topic>.toml stubs."""
+    pack_dir = tmp_path / "topic_packs"
+    pack_dir.mkdir()
+    for t in topics:
+        (pack_dir / f"{t}.toml").write_text(f"# stub topic pack for {t}\n")
+    return tmp_path
+
+
+def test_wrong_topic_residue_flags_sibling_claim_assertion(
+    tmp_path: Path,
+) -> None:
+    """metformin paper claiming 'rapamycin evidence should be interpreted'
+    is a sibling-topic leak — the universal regression case from the
+    2026-05-10 metf run."""
+    root = _topic_pack_root(tmp_path, ["metformin", "rapamycin", "statins"])
+    md = (
+        "## Discussion\n\nrapamycin evidence should be interpreted along "
+        "a gradient from proximal to distal outcomes.\n"
+    )
+    manifest = _baseline_manifest(topic="metformin")
+    r = validate(md, manifest, repo_root=root)
+    assert any(
+        f.rule == "wrong_topic_residue" and "rapamycin" in f.detail
+        for f in r.failures
+    )
+
+
+def test_wrong_topic_residue_allows_passing_mention(
+    tmp_path: Path,
+) -> None:
+    """Mentioning a sibling topic in non-claim-asserting context (a list,
+    a comparison without an asserting verb) must NOT flag."""
+    root = _topic_pack_root(tmp_path, ["metformin", "rapamycin"])
+    md = (
+        "## Background\n\nThis paper sits alongside related work on "
+        "rapamycin and other geroprotectors.\n"
+    )
+    manifest = _baseline_manifest(topic="metformin")
+    r = validate(md, manifest, repo_root=root)
+    assert not any(f.rule == "wrong_topic_residue" for f in r.failures)
+
+
+def test_wrong_topic_residue_skips_when_no_topic_packs(
+    tmp_path: Path,
+) -> None:
+    """No topic_packs/ dir → rule silently skips (universal contract:
+    rules degrade gracefully when their inputs are absent)."""
+    md = "## Methods\n\nrapamycin evidence should be interpreted ...\n"
+    manifest = _baseline_manifest(topic="metformin")
+    r = validate(md, manifest, repo_root=tmp_path)  # no topic_packs/ dir
+    assert not any(f.rule == "wrong_topic_residue" for f in r.failures)
+
+
+def test_wrong_topic_residue_skips_when_no_topic_in_manifest() -> None:
+    md = "## Methods\n\nrapamycin evidence should be interpreted ...\n"
+    manifest = _baseline_manifest()  # no topic field
+    r = validate(md, manifest)
+    assert not any(f.rule == "wrong_topic_residue" for f in r.failures)
+
+
+# ---- rule 7: broken prose -----------------------------------------------
+
+
+def test_broken_prose_flags_truncated_but_was() -> None:
+    md = (
+        "## Results\n\nThe drug was not associated with mortality in the "
+        "first three months but was mortality, underscoring timing.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "but was" in f.detail
+        for f in r.failures
+    )
+
+
+def test_broken_prose_flags_year_as_effect_estimate() -> None:
+    md = "## Results\n\nThe trial reported an effect estimate of 2023.\n"
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "year-as-effect-estimate" in f.detail
+        for f in r.failures
+    )
+
+
+def test_broken_prose_flags_dose_as_effect_estimate() -> None:
+    md = (
+        "## Results\n\nAnisimov 2010 reported an effect estimate of "
+        "100 mg/kg in mice.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "dose-as-effect-estimate" in f.detail
+        for f in r.failures
+    )
+
+
+def test_broken_prose_flags_duration_as_effect_estimate() -> None:
+    md = "## Results\n\nThe study reported an effect estimate of 5 years.\n"
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "duration-as-effect-estimate" in f.detail
+        for f in r.failures
+    )
+
+
+def test_broken_prose_flags_truncated_effect_estimate() -> None:
+    md = (
+        "## Results\n\nWitham 2025 reported an effect estimate. Yet the "
+        "direction remains unclear.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "no value" in f.detail
+        for f in r.failures
+    )
+
+
+def test_broken_prose_passes_clean_prose() -> None:
+    md = (
+        "## Results\n\nThe trial reported an effect estimate of 0.78 "
+        "(95% CI 0.62-0.94) on mortality.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert not any(f.rule == "broken_prose" for f in r.failures)
+
+
+# ---- rule 8: repeated boilerplate ---------------------------------------
+
+
+def test_repeated_boilerplate_flags_repeated_sentences() -> None:
+    sent = (
+        "Translational relevance to humans remains uncertain in this "
+        "particular framing."
+    )
+    md = f"## A\n\n{sent}\n## B\n\n{sent}\n## C\n\n{sent}\n"
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "repeated_boilerplate" and "Translational" in f.detail
+        for f in r.failures
+    )
+
+
+def test_repeated_boilerplate_passes_short_repeats() -> None:
+    """Short fragments (< min_words) should NOT trigger — sub-clause
+    repetition is normal English."""
+    md = "## A\n\nIt was good.\n## B\n\nIt was good.\n## C\n\nIt was good.\n"
+    r = validate(md, _baseline_manifest())
+    assert not any(f.rule == "repeated_boilerplate" for f in r.failures)
+
+
+# ---- rule 9: SPAR reject leakage ----------------------------------------
+
+
+def test_spar_reject_leakage_flags_reject_in_discussion(
+    tmp_path: Path,
+) -> None:
+    """A receipt with reject_* verdict must not be cited in Discussion /
+    Conclusion / Results / Synthesis / Tensions prose. Universal: applies
+    to any topic."""
+    md = (
+        "## Discussion\n\nThe disagreement between Cameron 2016 and "
+        "Hanem 2018 highlights heterogeneity.\n"
+    )
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Cameron 2016"},
+    ])
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "gemma-4-31b",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "test",
+                "judge_model": "gemma-4-31b",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert any(
+        f.rule == "spar_reject_leakage" and "Cameron 2016" in f.detail
+        for f in r.failures
+    )
+
+
+def test_spar_reject_leakage_allows_table_appearance(
+    tmp_path: Path,
+) -> None:
+    """Tables list rejects for transparency — leak rule must skip table
+    rows. Only prose-evidence sections count."""
+    md = (
+        "## Included Studies\n\n"
+        "| Citation | Verdict |\n| --- | --- |\n"
+        "| Cameron 2016 | reject_internal_contradiction |\n"
+    )
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Cameron 2016"},
+    ])
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "gemma-4-31b",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "x", "judge_model": "g",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(f.rule == "spar_reject_leakage" for f in r.failures)
+
+
+def test_spar_reject_leakage_skips_when_no_cache(tmp_path: Path) -> None:
+    """No spar_cache.json → rule silently skips (universal: degrades
+    gracefully when its input is absent)."""
+    md = "## Discussion\n\nThe disagreement between Cameron 2016 ... \n"
+    manifest = _baseline_manifest()
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(f.rule == "spar_reject_leakage" for f in r.failures)
+
+
 # ---- regression-anchor fixtures (live runs) -----------------------------
 
 

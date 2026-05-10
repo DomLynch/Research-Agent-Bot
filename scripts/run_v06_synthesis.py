@@ -2033,12 +2033,28 @@ async def _run(
                 "spar_adjudication_ran=False; keeping default verdicts.",
                 file=sys.stderr,
             )
-    matrix = build_tension_matrix(receipts)
-    thesis = build_thesis(receipts, matrix, topic=topic)
+    # SPAR enforcement (Wave 21, judge ≠ writer): tensions and thesis
+    # are evidence-bearing — they MUST NOT include receipts Gemma
+    # rejected. `filter_accepted` is universal (works for any topic);
+    # the full receipts list is preserved for the manifest, tables,
+    # and references (transparency / audit trail). Without this gate
+    # `Knowler 2002` (reject_internal_contradiction) was rendering as
+    # one pole of a published cross-domain tension.
+    from agent.synthesis_writer import filter_accepted as _spar_filter_acc
+    _accepted_receipts = list(_spar_filter_acc(receipts))
+    matrix = build_tension_matrix(_accepted_receipts)
+    thesis = build_thesis(_accepted_receipts, matrix, topic=topic)
+    _n_quarantined = len(receipts) - len(_accepted_receipts)
+    if _n_quarantined > 0:
+        print(
+            f"  SPAR enforcement: {_n_quarantined} receipt(s) quarantined "
+            f"from tensions/thesis (verdict reject_*)",
+            file=sys.stderr,
+        )
 
     print(f"Thesis: {thesis.text[:160]}...", file=sys.stderr)
     print(
-        f"  Receipts: {len(receipts)} | "
+        f"  Receipts: {len(receipts)} ({len(_accepted_receipts)} accepted) | "
         f"Non-orth tensions: {len(matrix.non_orthogonal())}",
         file=sys.stderr,
     )
