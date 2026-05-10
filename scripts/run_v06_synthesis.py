@@ -2896,6 +2896,57 @@ async def _run_post_paper_pipeline(
             file=sys.stderr,
         )
 
+    # Stage 5d: public manuscript contract. Final-render gate that blocks
+    # AAA/journal_ready when the rendered MD contradicts the manifest
+    # (count contradictions, duplicate Included-Studies rows, oversized
+    # abstract, engine-internal residue strings). Stdlib-only, no LLM.
+    # Sidecar: <run_dir>/public_manuscript_contract.json. The verdict
+    # function later reads the sidecar via the manifest dict to cap
+    # maturity at L4 on FAIL.
+    try:
+        from agent.public_manuscript_contract import (  # type: ignore[import-not-found]
+            validate_run_dir as _pmc_validate, write_sidecar as _pmc_write,
+        )
+        _pmc_result = _pmc_validate(paper_path.parent)
+        _pmc_write(paper_path.parent, _pmc_result)
+        print(
+            f"[pipeline] Stage 5d — public_manuscript_contract="
+            f"{_pmc_result.status} "
+            f"(failures={len(_pmc_result.failures)}, "
+            f"abstract_words={_pmc_result.abstract_words})",
+            file=sys.stderr,
+        )
+        # Cap the unified verdict if the contract failed: maturity ≤ L4,
+        # journal_ready=false. The verdict was computed earlier (before
+        # Stage 5c/5d sidecars existed); we post-process the JSON +
+        # markdown sibling files so dashboards see honest enforcement.
+        if _pmc_result.status == "FAIL":
+            _verdict_path = paper_path.with_suffix(".final_verdict.json")
+            if _verdict_path.exists():
+                _v = json.loads(_verdict_path.read_text())
+                _v["maturity_level"] = min(int(_v.get("maturity_level", 0)), 4)
+                _v["maturity_label"] = (
+                    "L4 — CERTIFIED (capped: public_manuscript_contract FAIL)"
+                )
+                _v["journal_ready"] = False
+                _v["reason"] = (
+                    f"public_manuscript_contract FAIL "
+                    f"({len(_pmc_result.failures)} P1) — "
+                    f"{_v.get('reason', '')}"
+                )
+                _verdict_path.write_text(json.dumps(_v, indent=2))
+                print(
+                    "[pipeline] Stage 5d — verdict capped: maturity≤L4, "
+                    "journal_ready=False (public_manuscript_contract FAIL)",
+                    file=sys.stderr,
+                )
+    except Exception as _e:  # pragma: no cover — best-effort
+        print(
+            f"[pipeline] Stage 5d — public_manuscript_contract skipped: "
+            f"{_e}",
+            file=sys.stderr,
+        )
+
     # Stage 6 (Fix #23): no-regression gate. If runs/_baseline.txt
     # names a baseline run dir, compare the new run's six dimensions
     # (P1, numeric trace, consistency, leakage, word count, orphan
