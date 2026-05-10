@@ -1,0 +1,1918 @@
+
+
+=== 2026-05-09T20:10:42.759133+00:00 :: python3 scripts/run_v06_synthesis.py --topic metformin --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-metformin-v06-AAA10x2-pass1-2026-05-09T20-10-42Z' ===
+Loading v0.6.0 quant_claims (topic='metformin')...
+  Receipt funnel: accepted=43 outside_scope=117 partial_only=46 partial_none_only=72 none_only=11
+  Built 43 receipts (one per contributing paper).
+Thesis: Across 43 curated reference papers, the evidence base for metformin shows a context-dependent profile. Positive signals appear in: cardiometabolic, longevity. N...
+  Receipts: 43 | Non-orth tensions: 296
+  - PMC7210926_effects_of_lifestyle_modification_in_po tier=B1 direct=review outcome=cardiometabolic effect=negative n_claims=58
+  - PMC6826125_metformin_blunts_muscle_hypertrophy_in_ tier=A1 direct=direct outcome=muscle_function effect=mixed n_claims=40
+  - Walton_2019_MASTERS_metformin_blunts_resistance_hy tier=A1 direct=direct outcome=muscle_function effect=mixed n_claims=40
+  - PMC6351883_metformin_inhibits_mitochondrial_adapta tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=20
+  - Konopka_2019_metformin_blunts_aerobic_exercise_ada tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=18
+  - PMC3898468_metformin_retards_aging_in_c_elegans_by tier=C1 direct=mechanistic outcome=longevity effect=mixed n_claims=18
+  - PMC12958111_metformin_exposure_after_glioblastoma_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=14
+  - PMC3006019_metformin_for_aging_and_cancer_preventi tier=B2 direct=indirect outcome=longevity effect=mixed n_claims=13
+  - Witham_2025_MET_PREVENT_metformin_trial            tier=A1 direct=direct outcome=frailty effect=unclear n_claims=13
+  - PMC3034183_gender_differences_in_metformin_effect_ tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=12
+  - PMC3082009_if_started_early_in_life_metformin_trea tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=12
+  - Mohammed_2021_Metformin_Anti_Aging_Critical_Review tier=B1 direct=review outcome=longevity effect=unclear n_claims=10
+  - PMC13009881_the_watch_dm_integer_based_risk_score_ tier=B2 direct=indirect outcome=longevity effect=positive n_claims=8
+  - PMC5865989_effects_of_metformin_on_the_expression_ tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=8
+  - DOI_10_4161_cc_7_17_6625_metformin_slows_down_agin tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=7
+  - Keys_2025_metformin_anti-aging_uncertainty         tier=B1 direct=review outcome=longevity effect=unclear n_claims=7
+  - PMC6407684_a_novel_therapeutic_approach_to_colorec tier=B2 direct=indirect outcome=immune effect=unclear n_claims=7
+  - PMC7884040_metformin_inhibits_chronic_kidney_disea tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=7
+  - DOI_10_2337_db19_116_or_116_or_hypoglycemia_leads_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC13055625_metformin_use_and_the_risk_of_incident tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=6
+  - PMC8596953_a_randomized_double_blind_clinical_tria tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=6
+  - PMC12803636_synergistic_associations_of_metformin_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - PMC7923493_metformin_activated_ampk_signaling_cont tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC5647555_efficacy_and_safety_of_metformin_in_the tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - PMC6258123_metformin_induces_significant_reduction tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=3
+  - DOI_10_1210_jc_2017_02419_metformin_use_in_pcos_pr tier=B1 direct=review outcome=cardiometabolic effect=negative n_claims=2
+  - HIT_effect_of_intensive_blood_glucose_control_with tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - HIT_frailty_attenuates_the_impact_of_metformin_on_ tier=B1 direct=review outcome=frailty effect=unclear n_claims=2
+  - HIT_study_to_evaluate_safety_and_efficacy_of_dapag tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC12401686_citrus_flavonoid_supplement_enhances_g tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=2
+  - PMC13069171_antidiabetic_drug_and_chronic_respirat tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC2732153_new_users_of_metformin_are_at_low_risk_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC4990459_anti_inflammatory_effects_of_metformin_ tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=2
+  - PMC5133996_metformin_protects_against_apoptosis_an tier=C1 direct=mechanistic outcome=cardiometabolic effect=negative n_claims=2
+  - PMC6052468_metformin_alleviates_human_cellular_agi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC6549273_metformin_improves_salivary_gland_infla tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=2
+  - DOI_10_1056_nejmoa012512_reduction_in_the_incidenc tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=1
+  - Kulkarni_2022_geroscience_repurposing_FDA_drugs    tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - PMC10714529_the_effect_of_metformin_on_senescence_ tier=B2 direct=indirect outcome=immune effect=positive n_claims=1
+  - PMC12223363_comparative_effectiveness_of_metformin tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC12978362_molecular_mechanisms_of_metformin_acti tier=C1 direct=mechanistic outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC6677947_effect_of_metformin_on_neurodegenerativ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC6686369_risk_factors_for_depression_in_elderly_ tier=B2 direct=indirect outcome=frailty effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 509 words
+[paper_writer] introduction              done — 1168 words
+[paper_writer] background                done — 402 words
+[paper_writer] inferential_bridge        done — 267 words
+[paper_writer] quantitative_results_table (deterministic) done — 659 words
+[paper_writer] methods (deterministic)   done — 1118 words
+[paper_writer] results                   done — 1748 words
+[paper_writer] cross_domain_synthesis    done — 1213 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1852 words
+[paper_writer] limitations_full          done — 768 words
+[paper_writer] conclusion                done — 144 words
+[paper_writer] references_full (deterministic) done — 2258 words
+[paper_writer] BACKSTOP: conclusion at 144 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion 144 → 405 words
+render_full_paper done.
+Claim-strength repair: 5 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 6 patches...
+[pipeline]   applied=1 rejected=0 flagged=5 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0 (Grok-unresolved P1 after repair: 5)
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=Trust-Spine Pass — Agent Review Unresolved (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate vs synthesis-metformin-v06-AAA2-2026-05-04T15-22-03Z: PASS
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-metformin-v06-AAA10x2-pass1-2026-05-09T20-10-42Z/full_paper.md
+  final_words: 25252
+  per-section: {'abstract': 511, 'introduction': 1170, 'background': 404, 'inferential_bridge': 270, 'quantitative_results_table': 665, 'methods': 1120, 'results': 1750, 'cross_domain_synthesis': 1216, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1854, 'limitations_full': 770, 'conclusion': 407, 'references_full': 2260}
+  llm_calls: 19 cost_usd: $0.0636 (writer-only; final-layer review cost in synthesis-metformin-v06-AAA10x2-pass1-2026-05-09T20-10-42Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T20:26:19.157775+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-metformin-v06-AAA10x2-pass1-2026-05-09T20-10-42Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-09T20:26:19.203524+00:00 :: python3 scripts/run_v06_synthesis.py --topic metformin --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-metformin-v06-AAA10x2-pass2-2026-05-09T20-26-19Z' ===
+Loading v0.6.0 quant_claims (topic='metformin')...
+  Receipt funnel: accepted=43 outside_scope=117 partial_only=46 partial_none_only=72 none_only=11
+  Built 43 receipts (one per contributing paper).
+Thesis: Across 43 curated reference papers, the evidence base for metformin shows a context-dependent profile. Positive signals appear in: cardiometabolic, longevity. N...
+  Receipts: 43 | Non-orth tensions: 296
+  - PMC7210926_effects_of_lifestyle_modification_in_po tier=B1 direct=review outcome=cardiometabolic effect=negative n_claims=58
+  - PMC6826125_metformin_blunts_muscle_hypertrophy_in_ tier=A1 direct=direct outcome=muscle_function effect=mixed n_claims=40
+  - Walton_2019_MASTERS_metformin_blunts_resistance_hy tier=A1 direct=direct outcome=muscle_function effect=mixed n_claims=40
+  - PMC6351883_metformin_inhibits_mitochondrial_adapta tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=20
+  - Konopka_2019_metformin_blunts_aerobic_exercise_ada tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=18
+  - PMC3898468_metformin_retards_aging_in_c_elegans_by tier=C1 direct=mechanistic outcome=longevity effect=mixed n_claims=18
+  - PMC12958111_metformin_exposure_after_glioblastoma_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=14
+  - PMC3006019_metformin_for_aging_and_cancer_preventi tier=B2 direct=indirect outcome=longevity effect=mixed n_claims=13
+  - Witham_2025_MET_PREVENT_metformin_trial            tier=A1 direct=direct outcome=frailty effect=unclear n_claims=13
+  - PMC3034183_gender_differences_in_metformin_effect_ tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=12
+  - PMC3082009_if_started_early_in_life_metformin_trea tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=12
+  - Mohammed_2021_Metformin_Anti_Aging_Critical_Review tier=B1 direct=review outcome=longevity effect=unclear n_claims=10
+  - PMC13009881_the_watch_dm_integer_based_risk_score_ tier=B2 direct=indirect outcome=longevity effect=positive n_claims=8
+  - PMC5865989_effects_of_metformin_on_the_expression_ tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=8
+  - DOI_10_4161_cc_7_17_6625_metformin_slows_down_agin tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=7
+  - Keys_2025_metformin_anti-aging_uncertainty         tier=B1 direct=review outcome=longevity effect=unclear n_claims=7
+  - PMC6407684_a_novel_therapeutic_approach_to_colorec tier=B2 direct=indirect outcome=immune effect=unclear n_claims=7
+  - PMC7884040_metformin_inhibits_chronic_kidney_disea tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=7
+  - DOI_10_2337_db19_116_or_116_or_hypoglycemia_leads_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC13055625_metformin_use_and_the_risk_of_incident tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=6
+  - PMC8596953_a_randomized_double_blind_clinical_tria tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=6
+  - PMC12803636_synergistic_associations_of_metformin_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - PMC7923493_metformin_activated_ampk_signaling_cont tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC5647555_efficacy_and_safety_of_metformin_in_the tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - PMC6258123_metformin_induces_significant_reduction tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=3
+  - DOI_10_1210_jc_2017_02419_metformin_use_in_pcos_pr tier=B1 direct=review outcome=cardiometabolic effect=negative n_claims=2
+  - HIT_effect_of_intensive_blood_glucose_control_with tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - HIT_frailty_attenuates_the_impact_of_metformin_on_ tier=B1 direct=review outcome=frailty effect=unclear n_claims=2
+  - HIT_study_to_evaluate_safety_and_efficacy_of_dapag tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC12401686_citrus_flavonoid_supplement_enhances_g tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=2
+  - PMC13069171_antidiabetic_drug_and_chronic_respirat tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC2732153_new_users_of_metformin_are_at_low_risk_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC4990459_anti_inflammatory_effects_of_metformin_ tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=2
+  - PMC5133996_metformin_protects_against_apoptosis_an tier=C1 direct=mechanistic outcome=cardiometabolic effect=negative n_claims=2
+  - PMC6052468_metformin_alleviates_human_cellular_agi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC6549273_metformin_improves_salivary_gland_infla tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=2
+  - DOI_10_1056_nejmoa012512_reduction_in_the_incidenc tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=1
+  - Kulkarni_2022_geroscience_repurposing_FDA_drugs    tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - PMC10714529_the_effect_of_metformin_on_senescence_ tier=B2 direct=indirect outcome=immune effect=positive n_claims=1
+  - PMC12223363_comparative_effectiveness_of_metformin tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC12978362_molecular_mechanisms_of_metformin_acti tier=C1 direct=mechanistic outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC6677947_effect_of_metformin_on_neurodegenerativ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC6686369_risk_factors_for_depression_in_elderly_ tier=B2 direct=indirect outcome=frailty effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 373 words
+[paper_writer] introduction              done — 914 words
+[paper_writer] background                done — 351 words
+[paper_writer] inferential_bridge        done — 292 words
+[paper_writer] quantitative_results_table (deterministic) done — 659 words
+[paper_writer] methods (deterministic)   done — 1118 words
+[paper_writer] results                   done — 1799 words
+[paper_writer] cross_domain_synthesis    done — 1465 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1592 words
+[paper_writer] limitations_full          done — 1085 words
+[paper_writer] conclusion                done — 153 words
+[paper_writer] references_full (deterministic) done — 2258 words
+[paper_writer] BACKSTOP: conclusion at 153 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion 153 → 390 words
+render_full_paper done.
+Claim-strength repair: 6 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate vs synthesis-metformin-v06-AAA2-2026-05-04T15-22-03Z: PASS
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-metformin-v06-AAA10x2-pass2-2026-05-09T20-26-19Z/full_paper.md
+  final_words: 25936
+  per-section: {'abstract': 375, 'introduction': 916, 'background': 353, 'inferential_bridge': 295, 'quantitative_results_table': 665, 'methods': 1120, 'results': 1801, 'cross_domain_synthesis': 1468, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1594, 'limitations_full': 1087, 'conclusion': 392, 'references_full': 2260}
+  llm_calls: 19 cost_usd: $0.0623 (writer-only; final-layer review cost in synthesis-metformin-v06-AAA10x2-pass2-2026-05-09T20-26-19Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T20:40:06.713659+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-metformin-v06-AAA10x2-pass2-2026-05-09T20-26-19Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-09T20:40:06.762150+00:00 :: python3 scripts/run_v06_synthesis.py --topic rapamycin --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-rapamycin-v06-AAA10x2-pass1-2026-05-09T20-40-06Z' ===
+Loading v0.6.0 quant_claims (topic='rapamycin')...
+  Receipt funnel: accepted=40 outside_scope=133 partial_only=19 partial_none_only=40 none_only=6
+  Built 40 receipts (one per contributing paper).
+Thesis: Across 40 curated reference papers, the evidence base for rapamycin shows a context-dependent profile. Positive signals appear in: immune, cardiometabolic. Nega...
+  Receipts: 40 | Non-orth tensions: 153
+  - PMC12074816_influence_of_rapamycin_on_safety_and_h tier=A1 direct=direct outcome=healthspan_qol effect=mixed n_claims=42
+  - PMC10195938_effect_of_mtor_inhibitors_in_epilepsy_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=16
+  - PMC2848616_inhibition_of_mtor_by_rapamycin_abolish tier=C1 direct=mechanistic outcome=cardiometabolic effect=negative n_claims=12
+  - PMC4433347_health_effects_of_long_term_rapamycin_t tier=C1 direct=mechanistic outcome=muscle_function effect=negative n_claims=11
+  - PMC12270913_the_geroprotectors_trametinib_and_rapa tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=8
+  - PMC13082878_exercise_and_weekly_sirolimus_rapamyci tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=7
+  - PMC5242306_dietary_rapamycin_supplementation_rever tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=7
+  - PMC5811247_rapamycin_prevents_the_intervertebral_d tier=B2 direct=indirect outcome=immune effect=unclear n_claims=6
+  - PMC10781157_role_of_maraviroc_and_or_rapamycin_in_ tier=C1 direct=mechanistic outcome=cardiometabolic effect=positive n_claims=5
+  - PMC6351839_rapamycin_improves_healthspan_but_not_i tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=5
+  - PMC6996961_rapamycin_persistently_improves_cardiac tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=5
+  - PMC4093196_rapamycin_rescues_the_poor_developmenta tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1101_2024_08_21_24312372_safety_and_efficac tier=B1 direct=review outcome=healthspan_qol effect=mixed n_claims=3
+  - DOI_10_1093_gerona_glq178_rapamycin_but_not_resver tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1101_2022_10_06_511121_rapamycin_not_dietar tier=B1 direct=review outcome=immune effect=positive n_claims=2
+  - DOI_10_1101_2025_08_25_671822_the_gerotherapeutic_ tier=B1 direct=review outcome=longevity effect=mixed n_claims=2
+  - DOI_10_1111_acel_12194_rapamycin_mediated_lifespan tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1111_acel_12203_altered_proteome_turnover_a tier=B1 direct=review outcome=mechanism effect=unclear n_claims=2
+  - DOI_10_1681_asn_2004080660_rapamycin_markedly_slow tier=C1 direct=mechanistic outcome=safety effect=unclear n_claims=2
+  - DOI_10_3354_ab00673_effects_of_rapamycin_on_life_s tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC12422820_what_is_the_clinical_evidence_to_suppo tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC12794675_rapamycin_exerts_its_geroprotective_ef tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC4498358_neuroprotective_effect_of_rapamycin_on_ tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=2
+  - PMC5385881_progressive_slowdown_prevention_of_cell tier=B2 direct=indirect outcome=immune effect=unclear n_claims=2
+  - PMC9018781_distinct_and_additive_effects_of_calori tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC9842044_intra_articular_injection_of_rapamycin_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC9886774_rapamycin_not_dietary_restriction_impro tier=B1 direct=review outcome=immune effect=positive n_claims=2
+  - PMC9983852_rapamycin_suppresses_inflammation_and_i tier=B2 direct=indirect outcome=immune effect=negative n_claims=2
+  - DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_gro tier=B1 direct=review outcome=safety effect=unclear n_claims=1
+  - DOI_10_1101_2022_02_18_481092_rapamycin_treatment_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1101_2023_06_12_544619_late_life_rapamycin_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC10185870_rapamycin_treatment_increases_survival tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=1
+  - PMC3824413_rapamycin_suppresses_brain_aging_in_sen tier=C1 direct=mechanistic outcome=cardiometabolic effect=null n_claims=1
+  - PMC4683033_sirolimus_use_in_liver_transplant_recip tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC4693453_chronic_mtor_inhibition_in_mice_with_ra tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - PMC4996648_transient_rapamycin_treatment_can_incre tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=1
+  - PMC5506398_short_term_rapamycin_treatment_increase tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=1
+  - PMC7892968_rapamycin_protects_skin_fibroblasts_fro tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC9889681_effects_of_sirolimus_treatment_on_patie tier=B2 direct=indirect outcome=immune effect=positive n_claims=1
+  - PMID25540326_mtor_inhibition_improves_immune_funct tier=B1 direct=review outcome=immune effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 528 words
+[paper_writer] introduction              done — 850 words
+[paper_writer] background                done — 807 words
+[paper_writer] inferential_bridge        done — 60 words
+[paper_writer] quantitative_results_table (deterministic) done — 507 words
+[paper_writer] methods (deterministic)   done — 1126 words
+[paper_writer] results                   done — 1623 words
+[paper_writer] cross_domain_synthesis    done — 499 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 73 words
+[paper_writer] discussion                done — 375 words
+[paper_writer] limitations_full          done — 1232 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 1997 words
+[paper_writer] BACKSTOP: cross_domain_synthesis at 499 words (floor 850); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: cross_domain_synthesis rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: discussion at 375 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: cross_domain_synthesis appended deterministic anchor (499 → 638 words); structural Q11/Q12 backstop
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (375 → 1203 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 17 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 7 patches...
+[pipeline]   applied=7 rejected=0 flagged=0 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=PASS | formal_sr_methods=PARTIAL (failures=0, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='rapamycin' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-rapamycin-v06-AAA10x2-pass1-2026-05-09T20-40-06Z/full_paper.md
+  final_words: 20984
+  per-section: {'abstract': 530, 'introduction': 852, 'background': 809, 'inferential_bridge': 63, 'quantitative_results_table': 513, 'methods': 1128, 'results': 1625, 'cross_domain_synthesis': 641, 'novel_framework': 137, 'framework_engagement': 78, 'discussion': 1205, 'limitations_full': 1234, 'conclusion': 18, 'references_full': 1999}
+  llm_calls: 25 cost_usd: $0.0653 (writer-only; final-layer review cost in synthesis-rapamycin-v06-AAA10x2-pass1-2026-05-09T20-40-06Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T20:59:13.699719+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-rapamycin-v06-AAA10x2-pass1-2026-05-09T20-40-06Z' ===
+paper_quality_gate=PASS | formal_sr_methods=PARTIAL | failures=0 warnings=0
+
+
+=== 2026-05-09T20:59:13.760848+00:00 :: python3 scripts/run_v06_synthesis.py --topic rapamycin --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-rapamycin-v06-AAA10x2-pass2-2026-05-09T20-59-13Z' ===
+Loading v0.6.0 quant_claims (topic='rapamycin')...
+  Receipt funnel: accepted=40 outside_scope=133 partial_only=19 partial_none_only=40 none_only=6
+  Built 40 receipts (one per contributing paper).
+Thesis: Across 40 curated reference papers, the evidence base for rapamycin shows a context-dependent profile. Positive signals appear in: immune, cardiometabolic. Nega...
+  Receipts: 40 | Non-orth tensions: 153
+  - PMC12074816_influence_of_rapamycin_on_safety_and_h tier=A1 direct=direct outcome=healthspan_qol effect=mixed n_claims=42
+  - PMC10195938_effect_of_mtor_inhibitors_in_epilepsy_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=16
+  - PMC2848616_inhibition_of_mtor_by_rapamycin_abolish tier=C1 direct=mechanistic outcome=cardiometabolic effect=negative n_claims=12
+  - PMC4433347_health_effects_of_long_term_rapamycin_t tier=C1 direct=mechanistic outcome=muscle_function effect=negative n_claims=11
+  - PMC12270913_the_geroprotectors_trametinib_and_rapa tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=8
+  - PMC13082878_exercise_and_weekly_sirolimus_rapamyci tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=7
+  - PMC5242306_dietary_rapamycin_supplementation_rever tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=7
+  - PMC5811247_rapamycin_prevents_the_intervertebral_d tier=B2 direct=indirect outcome=immune effect=unclear n_claims=6
+  - PMC10781157_role_of_maraviroc_and_or_rapamycin_in_ tier=C1 direct=mechanistic outcome=cardiometabolic effect=positive n_claims=5
+  - PMC6351839_rapamycin_improves_healthspan_but_not_i tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=5
+  - PMC6996961_rapamycin_persistently_improves_cardiac tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=5
+  - PMC4093196_rapamycin_rescues_the_poor_developmenta tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1101_2024_08_21_24312372_safety_and_efficac tier=B1 direct=review outcome=healthspan_qol effect=mixed n_claims=3
+  - DOI_10_1093_gerona_glq178_rapamycin_but_not_resver tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1101_2022_10_06_511121_rapamycin_not_dietar tier=B1 direct=review outcome=immune effect=positive n_claims=2
+  - DOI_10_1101_2025_08_25_671822_the_gerotherapeutic_ tier=B1 direct=review outcome=longevity effect=mixed n_claims=2
+  - DOI_10_1111_acel_12194_rapamycin_mediated_lifespan tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1111_acel_12203_altered_proteome_turnover_a tier=B1 direct=review outcome=mechanism effect=unclear n_claims=2
+  - DOI_10_1681_asn_2004080660_rapamycin_markedly_slow tier=C1 direct=mechanistic outcome=safety effect=unclear n_claims=2
+  - DOI_10_3354_ab00673_effects_of_rapamycin_on_life_s tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC12422820_what_is_the_clinical_evidence_to_suppo tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC12794675_rapamycin_exerts_its_geroprotective_ef tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC4498358_neuroprotective_effect_of_rapamycin_on_ tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=2
+  - PMC5385881_progressive_slowdown_prevention_of_cell tier=B2 direct=indirect outcome=immune effect=unclear n_claims=2
+  - PMC9018781_distinct_and_additive_effects_of_calori tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC9842044_intra_articular_injection_of_rapamycin_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC9886774_rapamycin_not_dietary_restriction_impro tier=B1 direct=review outcome=immune effect=positive n_claims=2
+  - PMC9983852_rapamycin_suppresses_inflammation_and_i tier=B2 direct=indirect outcome=immune effect=negative n_claims=2
+  - DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_gro tier=B1 direct=review outcome=safety effect=unclear n_claims=1
+  - DOI_10_1101_2022_02_18_481092_rapamycin_treatment_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1101_2023_06_12_544619_late_life_rapamycin_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC10185870_rapamycin_treatment_increases_survival tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=1
+  - PMC3824413_rapamycin_suppresses_brain_aging_in_sen tier=C1 direct=mechanistic outcome=cardiometabolic effect=null n_claims=1
+  - PMC4683033_sirolimus_use_in_liver_transplant_recip tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC4693453_chronic_mtor_inhibition_in_mice_with_ra tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - PMC4996648_transient_rapamycin_treatment_can_incre tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=1
+  - PMC5506398_short_term_rapamycin_treatment_increase tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=1
+  - PMC7892968_rapamycin_protects_skin_fibroblasts_fro tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC9889681_effects_of_sirolimus_treatment_on_patie tier=B2 direct=indirect outcome=immune effect=positive n_claims=1
+  - PMID25540326_mtor_inhibition_improves_immune_funct tier=B1 direct=review outcome=immune effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 468 words
+[paper_writer] introduction              done — 806 words
+[paper_writer] background                done — 850 words
+[paper_writer] inferential_bridge        done — 233 words
+[paper_writer] quantitative_results_table (deterministic) done — 507 words
+[paper_writer] methods (deterministic)   done — 1126 words
+[paper_writer] results                   done — 2079 words
+[paper_writer] cross_domain_synthesis    done — 1441 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 73 words
+[paper_writer] discussion                done — 163 words
+[paper_writer] limitations_full          done — 471 words
+[paper_writer] conclusion                done — 275 words
+[paper_writer] references_full (deterministic) done — 1997 words
+[paper_writer] BACKSTOP: discussion at 163 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion 163 → 1075 words
+render_full_paper done.
+Claim-strength repair: 19 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 4 patches...
+[pipeline]   applied=4 rejected=0 flagged=0 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='rapamycin' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-rapamycin-v06-AAA10x2-pass2-2026-05-09T20-59-13Z/full_paper.md
+  final_words: 21065
+  per-section: {'abstract': 470, 'introduction': 808, 'background': 852, 'inferential_bridge': 236, 'quantitative_results_table': 513, 'methods': 1128, 'results': 2081, 'cross_domain_synthesis': 1444, 'novel_framework': 137, 'framework_engagement': 78, 'discussion': 1077, 'limitations_full': 473, 'conclusion': 277, 'references_full': 1999}
+  llm_calls: 17 cost_usd: $0.0445 (writer-only; final-layer review cost in synthesis-rapamycin-v06-AAA10x2-pass2-2026-05-09T20-59-13Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T21:12:01.921097+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-rapamycin-v06-AAA10x2-pass2-2026-05-09T20-59-13Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-09T21:12:01.965523+00:00 :: python3 scripts/run_v06_synthesis.py --topic glp1 --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-glp1-v06-AAA10x2-pass1-2026-05-09T21-12-01Z' ===
+Loading v0.6.0 quant_claims (topic='glp1')...
+  Receipt funnel: accepted=29 outside_scope=11 partial_only=6 partial_none_only=81 none_only=3
+  Built 29 receipts (one per contributing paper).
+Thesis: Across 29 curated reference papers, the evidence base for glp1 shows a context-dependent profile. Positive signals appear in: longevity. Negative signals appear...
+  Receipts: 29 | Non-orth tensions: 275
+  - PMC9769143_semaglutide_2_4_mg_for_the_management_o tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=211
+  - PMC9556320_two_year_effects_of_semaglutide_in_adul tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=100
+  - PMC2699702_efficacy_and_safety_of_the_human_glucag tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=37
+  - PMC10039680_time_dependent_effect_of_glp_1_recepto tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=36
+  - PMC9738168_efficacy_and_safety_of_liraglutide_and_ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=26
+  - PMC4424381_treatment_with_a_glp_1_receptor_agonist tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=24
+  - PMC9097124_glucagon_like_peptide_1_glp_1_receptor_ tier=B1 direct=review outcome=longevity effect=positive n_claims=12
+  - PMC2744824_liraglutide_vs_insulin_glargine_and_pla tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=11
+  - PMC10372755_safety_and_efficacy_of_liraglutide_3_0 tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=9
+  - PMC11271387_long_term_weight_loss_effects_of_semag tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=9
+  - PMC11607825_management_of_obesity_with_semaglutide tier=A1 direct=direct outcome=cardiometabolic effect=negative n_claims=9
+  - PMC9440529_impact_of_semaglutide_on_high_sensitivi tier=B2 direct=indirect outcome=immune effect=null n_claims=8
+  - PMC10965408_healthy_weight_loss_maintenance_with_e tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=7
+  - PMC11270812_anti_inflammatory_effect_of_semaglutid tier=B1 direct=review outcome=immune effect=null n_claims=6
+  - PMC8635796_weight_loss_outcomes_among_early_high_r tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC3374073_safety_tolerability_and_sustained_weigh tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=5
+  - PMC7804890_sodium_glucose_cotransporter_protein_2_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=5
+  - PMC8258332_efficacy_and_safety_of_the_new_appetite tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=5
+  - PMC4973216_effect_of_liraglutide_3_0_mg_in_individ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC10159347_weight_loss_efficiency_and_safety_of_t tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=3
+  - PMC7069837_effects_of_semaglutide_versus_dulagluti tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC7823251_dual_gip_and_glp_1_receptor_agonist_tir tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=3
+  - PMC9759167_liraglutide_for_weight_management_in_ch tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC13021596_safety_and_efficacy_of_tirzepatide_in_ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=2
+  - PMC2909051_exenatide_affects_circulating_cardiovas tier=B2 direct=indirect outcome=immune effect=null n_claims=1
+  - PMC3465909_exenatide_pretreatment_improved_graft_f tier=C1 direct=mechanistic outcome=cardiometabolic effect=null n_claims=1
+  - PMC4010971_tolerability_of_nausea_and_vomiting_and tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC4506413_short_term_monotherapy_with_glp_1_recep tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=1
+  - PMC5891980_empagliflozin_influences_blood_viscosit tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 536 words
+[paper_writer] introduction              done — 1020 words
+[paper_writer] background                done — 679 words
+[paper_writer] quantitative_results_table (deterministic) done — 666 words
+[paper_writer] methods (deterministic)   done — 1110 words
+[paper_writer] results                   done — 1724 words
+[paper_writer] cross_domain_synthesis    done — 1220 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 18 words
+[paper_writer] limitations_full          done — 386 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 1573 words
+[paper_writer] BACKSTOP: discussion at 18 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (18 → 842 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 2 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 5 patches...
+[pipeline]   applied=3 rejected=0 flagged=2 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=SHIP-BLOCKED (stage1 13/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=2, warnings=1)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='glp1' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-glp1-v06-AAA10x2-pass1-2026-05-09T21-12-01Z/full_paper.md
+  final_words: 22476
+  per-section: {'abstract': 538, 'introduction': 1022, 'background': 681, 'inferential_bridge': 0, 'quantitative_results_table': 672, 'methods': 1112, 'results': 1726, 'cross_domain_synthesis': 1223, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 844, 'limitations_full': 388, 'conclusion': 18, 'references_full': 1575}
+  llm_calls: 26 cost_usd: $0.0770 (writer-only; final-layer review cost in synthesis-glp1-v06-AAA10x2-pass1-2026-05-09T21-12-01Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T21:29:52.370560+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-glp1-v06-AAA10x2-pass1-2026-05-09T21-12-01Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=2 warnings=1
+
+
+=== 2026-05-09T21:29:52.427268+00:00 :: python3 scripts/run_v06_synthesis.py --topic glp1 --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-glp1-v06-AAA10x2-pass2-2026-05-09T21-29-52Z' ===
+Loading v0.6.0 quant_claims (topic='glp1')...
+  Receipt funnel: accepted=29 outside_scope=11 partial_only=6 partial_none_only=81 none_only=3
+  Built 29 receipts (one per contributing paper).
+Thesis: Across 29 curated reference papers, the evidence base for glp1 shows a context-dependent profile. Positive signals appear in: longevity. Negative signals appear...
+  Receipts: 29 | Non-orth tensions: 275
+  - PMC9769143_semaglutide_2_4_mg_for_the_management_o tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=211
+  - PMC9556320_two_year_effects_of_semaglutide_in_adul tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=100
+  - PMC2699702_efficacy_and_safety_of_the_human_glucag tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=37
+  - PMC10039680_time_dependent_effect_of_glp_1_recepto tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=36
+  - PMC9738168_efficacy_and_safety_of_liraglutide_and_ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=26
+  - PMC4424381_treatment_with_a_glp_1_receptor_agonist tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=24
+  - PMC9097124_glucagon_like_peptide_1_glp_1_receptor_ tier=B1 direct=review outcome=longevity effect=positive n_claims=12
+  - PMC2744824_liraglutide_vs_insulin_glargine_and_pla tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=11
+  - PMC10372755_safety_and_efficacy_of_liraglutide_3_0 tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=9
+  - PMC11271387_long_term_weight_loss_effects_of_semag tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=9
+  - PMC11607825_management_of_obesity_with_semaglutide tier=A1 direct=direct outcome=cardiometabolic effect=negative n_claims=9
+  - PMC9440529_impact_of_semaglutide_on_high_sensitivi tier=B2 direct=indirect outcome=immune effect=null n_claims=8
+  - PMC10965408_healthy_weight_loss_maintenance_with_e tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=7
+  - PMC11270812_anti_inflammatory_effect_of_semaglutid tier=B1 direct=review outcome=immune effect=null n_claims=6
+  - PMC8635796_weight_loss_outcomes_among_early_high_r tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC3374073_safety_tolerability_and_sustained_weigh tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=5
+  - PMC7804890_sodium_glucose_cotransporter_protein_2_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=5
+  - PMC8258332_efficacy_and_safety_of_the_new_appetite tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=5
+  - PMC4973216_effect_of_liraglutide_3_0_mg_in_individ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC10159347_weight_loss_efficiency_and_safety_of_t tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=3
+  - PMC7069837_effects_of_semaglutide_versus_dulagluti tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC7823251_dual_gip_and_glp_1_receptor_agonist_tir tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=3
+  - PMC9759167_liraglutide_for_weight_management_in_ch tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC13021596_safety_and_efficacy_of_tirzepatide_in_ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=2
+  - PMC2909051_exenatide_affects_circulating_cardiovas tier=B2 direct=indirect outcome=immune effect=null n_claims=1
+  - PMC3465909_exenatide_pretreatment_improved_graft_f tier=C1 direct=mechanistic outcome=cardiometabolic effect=null n_claims=1
+  - PMC4010971_tolerability_of_nausea_and_vomiting_and tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC4506413_short_term_monotherapy_with_glp_1_recep tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=1
+  - PMC5891980_empagliflozin_influences_blood_viscosit tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 448 words
+[paper_writer] introduction              done — 489 words
+[paper_writer] background                done — 17 words
+[paper_writer] quantitative_results_table (deterministic) done — 666 words
+[paper_writer] methods (deterministic)   done — 1110 words
+[paper_writer] results                   done — 1502 words
+[paper_writer] cross_domain_synthesis    done — 1108 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 18 words
+[paper_writer] limitations_full          done — 1063 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 1573 words
+[paper_writer] BACKSTOP: discussion at 18 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (18 → 842 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 4 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 5 patches...
+[pipeline]   applied=5 rejected=0 flagged=0 repaired=2 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=SHIP-BLOCKED (stage1 13/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=2, warnings=1)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='glp1' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-glp1-v06-AAA10x2-pass2-2026-05-09T21-29-52Z/full_paper.md
+  final_words: 21874
+  per-section: {'abstract': 450, 'introduction': 491, 'background': 19, 'inferential_bridge': 0, 'quantitative_results_table': 672, 'methods': 1112, 'results': 1504, 'cross_domain_synthesis': 1111, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 844, 'limitations_full': 1065, 'conclusion': 18, 'references_full': 1575}
+  llm_calls: 28 cost_usd: $0.0823 (writer-only; final-layer review cost in synthesis-glp1-v06-AAA10x2-pass2-2026-05-09T21-29-52Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T21:48:32.217137+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-glp1-v06-AAA10x2-pass2-2026-05-09T21-29-52Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=2 warnings=1
+
+
+=== 2026-05-09T21:48:32.275137+00:00 :: python3 scripts/run_v06_synthesis.py --topic statins --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-statins-v06-AAA10x2-pass1-2026-05-09T21-48-32Z' ===
+Loading v0.6.0 quant_claims (topic='statins')...
+  Receipt funnel: accepted=70 outside_scope=39 partial_only=287 partial_none_only=214 none_only=77
+  Built 70 receipts (one per contributing paper).
+Thesis: Across 70 curated reference papers, the evidence base for statins shows a context-dependent profile. Positive signals appear in: cardiometabolic, longevity. Neg...
+  Receipts: 70 | Non-orth tensions: 628
+  - PMC13049982_the_impact_of_statin_use_on_colorectal tier=B1 direct=review outcome=longevity effect=unclear n_claims=71
+  - PMC10690971_methodology_and_results_of_cost_effect tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=40
+  - PMC11541451_efficacy_and_safety_of_lipid_lowering_ tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=33
+  - PMC13022028_alzheimer_s_disease_in_patients_prescr tier=B2 direct=indirect outcome=longevity effect=positive n_claims=24
+  - PMC12925127_reno_protective_effects_of_statins_amo tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=23
+  - DOI_10_2337_diacare_26_10_2713_secondary_preventio tier=B1 direct=review outcome=longevity effect=positive n_claims=20
+  - PMC10237439_trends_and_outcome_of_statin_therapy_i tier=B2 direct=indirect outcome=longevity effect=mixed n_claims=18
+  - PMC8650150_effects_of_evolocumab_added_to_moderate tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=18
+  - PMC9330289_kawasaki_disease_like_vasculitis_facili tier=C1 direct=mechanistic outcome=immune effect=positive n_claims=15
+  - DOI_10_1111_j_1447_0756_2001_tb01285_x_a_compariso tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=13
+  - PMC8606632_influence_of_statin_therapy_on_the_inci tier=B1 direct=review outcome=longevity effect=mixed n_claims=11
+  - DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_fun tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=9
+  - PMC11931303_treatment_strategies_and_ldl_cholester tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=8
+  - PMC9272390_effects_of_general_and_central_adiposit tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=8
+  - DOI_10_1001_jama_279_20_1615_primary_prevention_of tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=7
+  - DOI_10_1001_jama_291_9_1071_effect_of_intensive_co tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=7
+  - DOI_10_1161_01_cir_0000068311_40161_28_variants_of tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=7
+  - DOI_10_1161_01_cir_103_15_1933_effect_of_hydroxyme tier=B1 direct=review outcome=immune effect=positive n_claims=7
+  - DOI_10_1001_jama_297_12_1344_effect_of_rosuvastati tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=6
+  - DOI_10_1101_2022_08_09_22278584_common_and_rare_va tier=B1 direct=review outcome=safety effect=negative n_claims=6
+  - DOI_10_1200_jco_2013_49_4757_use_of_statins_and_th tier=B1 direct=review outcome=longevity effect=unclear n_claims=6
+  - PMC11670166_risk_of_sarcopenia_following_long_term tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=6
+  - DOI_10_1001_jama_297_5_499_statins_high_density_li tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=5
+  - DOI_10_1161_01_cir_0000018744_58460_62_efficacy_an tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=5
+  - DOI_10_1001_jama_288_23_2998_major_outcomes_in_mod tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=4
+  - DOI_10_1002_14651858_cd004816_pub5_statins_for_the tier=B1 direct=review outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1097_01_ogx_0000344393_60303_0a_rosuvastati tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=4
+  - DOI_10_1161_01_atv_21_6_937_hmg_coa_reductase_inhi tier=B1 direct=review outcome=immune effect=unclear n_claims=4
+  - DOI_10_1161_01_cir_90_4_1679_effect_of_lovastatin_ tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=4
+  - PMC10220252_the_neuroprotective_effect_of_statin_i tier=B1 direct=review outcome=longevity effect=unclear n_claims=4
+  - PMC9773517_safety_and_efficacy_of_a_cardiovascular tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=4
+  - DOI_10_1001_jama_295_13_jpc60002_effect_of_very_hi tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - DOI_10_1056_nejmoa043545_atorvastatin_in_patients_ tier=B1 direct=review outcome=longevity effect=positive n_claims=3
+  - DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - HIT_bempedoic_acid_versus_statins_in_primary_preve tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC6915904_a_prospective_study_of_hepatic_safety_o tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC9731457_the_prognosis_of_lipid_reprogramming_wi tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=3
+  - DOI_10_1001_archinternmed_2012_2145_statin_therapy tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1002_j_1552_4604_2000_tb05987_x_pharmacodyn tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1056_nejmoa0804602_intensive_lipid_lowering tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=2
+  - DOI_10_1056_nejmoa0807646_rosuvastatin_to_prevent_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1111_j_1365_2362_1994_tb00984_x_enhanced_ce tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=2
+  - DOI_10_1161_circulationaha_112_136101_effect_of_st tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=2
+  - DOI_10_1177_107424849600100205_atorvastatin_a_new_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1177_2047487313480435_comparative_benefits_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - HIT_ekvasis_of_atorvastatin_antorcin_treatment_in_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC10536732_effect_and_mechanism_of_hmg_coa_reduct tier=B2 direct=indirect outcome=immune effect=null n_claims=2
+  - PMC11458640_association_between_statin_usage_and_m tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC12758767_lipophilic_but_not_hydrophilic_statin_ tier=C1 direct=mechanistic outcome=muscle_function effect=unclear n_claims=2
+  - PMC2432025_statin_induced_myopathy_and_myalgia_tim tier=B2 direct=indirect outcome=safety effect=unclear n_claims=2
+  - PMC2714690_the_benefits_of_statins_in_people_witho tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC5231363_efficacy_of_statin_treatment_in_early_s tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC8540817_pleiotropic_effects_of_atorvastatin_res tier=C1 direct=mechanistic outcome=immune effect=negative n_claims=2
+  - DOI_10_1001_jamainternmed_2017_1442_effect_of_stat tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1056_nejm199011083231901_regression_of_coro tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_a tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1101_2021_07_20_21260891_real_world_evidenc tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1101_2024_10_14_24315493_omeprazole_and_car tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1101_2025_10_09_25337698_clinical_validatio tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=1
+  - DOI_10_1161_cir_0000000000000677_2019_acc_aha_guid tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1161_circ_128_suppl_22_a18592_abstract_1859 tier=B1 direct=review outcome=immune effect=unclear n_claims=1
+  - HIT_evaluation_of_rosuvastatin_effect_as_adjuvant_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - HIT_stream_trial_biomarker                         tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - HIT_the_efficacy_and_safety_of_combined_therapy_wi tier=C1 direct=mechanistic outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC12311946_comparative_effectiveness_and_safety_o tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC2040243_growth_hormone_gh_replacement_decreases tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC3425581_a_survey_of_the_fda_s_aers_database_reg tier=B2 direct=indirect outcome=safety effect=unclear n_claims=1
+  - PMC6123838_statins_for_primary_prevention_of_cardi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC8533153_hmg_coa_reductase_inhibitor_simvastatin tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC9703554_the_association_of_metformin_other_anti tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 453 words
+[paper_writer] introduction              done — 1234 words
+[paper_writer] background                done — 227 words
+[paper_writer] inferential_bridge        done — 272 words
+[paper_writer] quantitative_results_table (deterministic) done — 660 words
+[paper_writer] methods (deterministic)   done — 1118 words
+[paper_writer] results                   done — 1570 words
+[paper_writer] cross_domain_synthesis    done — 1404 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 283 words
+[paper_writer] limitations_full          done — 581 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 3580 words
+[paper_writer] BACKSTOP: discussion at 283 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (283 → 1111 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 3 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=PASS | formal_sr_methods=PARTIAL (failures=0, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='statins' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-statins-v06-AAA10x2-pass1-2026-05-09T21-48-32Z/full_paper.md
+  final_words: 37554
+  per-section: {'abstract': 455, 'introduction': 1236, 'background': 229, 'inferential_bridge': 275, 'quantitative_results_table': 666, 'methods': 1120, 'results': 1572, 'cross_domain_synthesis': 1407, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1113, 'limitations_full': 583, 'conclusion': 18, 'references_full': 3582}
+  llm_calls: 23 cost_usd: $0.1299 (writer-only; final-layer review cost in synthesis-statins-v06-AAA10x2-pass1-2026-05-09T21-48-32Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T22:06:03.323929+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-statins-v06-AAA10x2-pass1-2026-05-09T21-48-32Z' ===
+paper_quality_gate=PASS | formal_sr_methods=PARTIAL | failures=0 warnings=0
+
+
+=== 2026-05-09T22:06:03.385932+00:00 :: python3 scripts/run_v06_synthesis.py --topic statins --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z' ===
+Loading v0.6.0 quant_claims (topic='statins')...
+  Receipt funnel: accepted=70 outside_scope=39 partial_only=287 partial_none_only=214 none_only=77
+  Built 70 receipts (one per contributing paper).
+Thesis: Across 70 curated reference papers, the evidence base for statins shows a context-dependent profile. Positive signals appear in: cardiometabolic, longevity. Neg...
+  Receipts: 70 | Non-orth tensions: 628
+  - PMC13049982_the_impact_of_statin_use_on_colorectal tier=B1 direct=review outcome=longevity effect=unclear n_claims=71
+  - PMC10690971_methodology_and_results_of_cost_effect tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=40
+  - PMC11541451_efficacy_and_safety_of_lipid_lowering_ tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=33
+  - PMC13022028_alzheimer_s_disease_in_patients_prescr tier=B2 direct=indirect outcome=longevity effect=positive n_claims=24
+  - PMC12925127_reno_protective_effects_of_statins_amo tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=23
+  - DOI_10_2337_diacare_26_10_2713_secondary_preventio tier=B1 direct=review outcome=longevity effect=positive n_claims=20
+  - PMC10237439_trends_and_outcome_of_statin_therapy_i tier=B2 direct=indirect outcome=longevity effect=mixed n_claims=18
+  - PMC8650150_effects_of_evolocumab_added_to_moderate tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=18
+  - PMC9330289_kawasaki_disease_like_vasculitis_facili tier=C1 direct=mechanistic outcome=immune effect=positive n_claims=15
+  - DOI_10_1111_j_1447_0756_2001_tb01285_x_a_compariso tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=13
+  - PMC8606632_influence_of_statin_therapy_on_the_inci tier=B1 direct=review outcome=longevity effect=mixed n_claims=11
+  - DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_fun tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=9
+  - PMC11931303_treatment_strategies_and_ldl_cholester tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=8
+  - PMC9272390_effects_of_general_and_central_adiposit tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=8
+  - DOI_10_1001_jama_279_20_1615_primary_prevention_of tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=7
+  - DOI_10_1001_jama_291_9_1071_effect_of_intensive_co tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=7
+  - DOI_10_1161_01_cir_0000068311_40161_28_variants_of tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=7
+  - DOI_10_1161_01_cir_103_15_1933_effect_of_hydroxyme tier=B1 direct=review outcome=immune effect=positive n_claims=7
+  - DOI_10_1001_jama_297_12_1344_effect_of_rosuvastati tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=6
+  - DOI_10_1101_2022_08_09_22278584_common_and_rare_va tier=B1 direct=review outcome=safety effect=negative n_claims=6
+  - DOI_10_1200_jco_2013_49_4757_use_of_statins_and_th tier=B1 direct=review outcome=longevity effect=unclear n_claims=6
+  - PMC11670166_risk_of_sarcopenia_following_long_term tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=6
+  - DOI_10_1001_jama_297_5_499_statins_high_density_li tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=5
+  - DOI_10_1161_01_cir_0000018744_58460_62_efficacy_an tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=5
+  - DOI_10_1001_jama_288_23_2998_major_outcomes_in_mod tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=4
+  - DOI_10_1002_14651858_cd004816_pub5_statins_for_the tier=B1 direct=review outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1097_01_ogx_0000344393_60303_0a_rosuvastati tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=4
+  - DOI_10_1161_01_atv_21_6_937_hmg_coa_reductase_inhi tier=B1 direct=review outcome=immune effect=unclear n_claims=4
+  - DOI_10_1161_01_cir_90_4_1679_effect_of_lovastatin_ tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=4
+  - PMC10220252_the_neuroprotective_effect_of_statin_i tier=B1 direct=review outcome=longevity effect=unclear n_claims=4
+  - PMC9773517_safety_and_efficacy_of_a_cardiovascular tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=4
+  - DOI_10_1001_jama_295_13_jpc60002_effect_of_very_hi tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - DOI_10_1056_nejmoa043545_atorvastatin_in_patients_ tier=B1 direct=review outcome=longevity effect=positive n_claims=3
+  - DOI_10_1161_01_cir_89_3_959_effects_of_monotherapy tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - HIT_bempedoic_acid_versus_statins_in_primary_preve tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC6915904_a_prospective_study_of_hepatic_safety_o tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC9731457_the_prognosis_of_lipid_reprogramming_wi tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=3
+  - DOI_10_1001_archinternmed_2012_2145_statin_therapy tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1002_j_1552_4604_2000_tb05987_x_pharmacodyn tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1056_nejmoa0804602_intensive_lipid_lowering tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=2
+  - DOI_10_1056_nejmoa0807646_rosuvastatin_to_prevent_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1111_j_1365_2362_1994_tb00984_x_enhanced_ce tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=2
+  - DOI_10_1161_circulationaha_112_136101_effect_of_st tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=2
+  - DOI_10_1177_107424849600100205_atorvastatin_a_new_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1177_2047487313480435_comparative_benefits_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - HIT_ekvasis_of_atorvastatin_antorcin_treatment_in_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC10536732_effect_and_mechanism_of_hmg_coa_reduct tier=B2 direct=indirect outcome=immune effect=null n_claims=2
+  - PMC11458640_association_between_statin_usage_and_m tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC12758767_lipophilic_but_not_hydrophilic_statin_ tier=C1 direct=mechanistic outcome=muscle_function effect=unclear n_claims=2
+  - PMC2432025_statin_induced_myopathy_and_myalgia_tim tier=B2 direct=indirect outcome=safety effect=unclear n_claims=2
+  - PMC2714690_the_benefits_of_statins_in_people_witho tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC5231363_efficacy_of_statin_treatment_in_early_s tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC8540817_pleiotropic_effects_of_atorvastatin_res tier=C1 direct=mechanistic outcome=immune effect=negative n_claims=2
+  - DOI_10_1001_jamainternmed_2017_1442_effect_of_stat tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1056_nejm199011083231901_regression_of_coro tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1056_nejmoa1501031_efficacy_and_safety_of_a tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1101_2021_07_20_21260891_real_world_evidenc tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1101_2024_10_14_24315493_omeprazole_and_car tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1101_2025_10_09_25337698_clinical_validatio tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=1
+  - DOI_10_1161_cir_0000000000000677_2019_acc_aha_guid tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1161_circ_128_suppl_22_a18592_abstract_1859 tier=B1 direct=review outcome=immune effect=unclear n_claims=1
+  - HIT_evaluation_of_rosuvastatin_effect_as_adjuvant_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - HIT_stream_trial_biomarker                         tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - HIT_the_efficacy_and_safety_of_combined_therapy_wi tier=C1 direct=mechanistic outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC12311946_comparative_effectiveness_and_safety_o tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC2040243_growth_hormone_gh_replacement_decreases tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC3425581_a_survey_of_the_fda_s_aers_database_reg tier=B2 direct=indirect outcome=safety effect=unclear n_claims=1
+  - PMC6123838_statins_for_primary_prevention_of_cardi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC8533153_hmg_coa_reductase_inhibitor_simvastatin tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC9703554_the_association_of_metformin_other_anti tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 388 words
+[paper_writer] introduction              done — 842 words
+[paper_writer] background                done — 223 words
+[paper_writer] quantitative_results_table (deterministic) done — 660 words
+[paper_writer] methods (deterministic)   done — 1118 words
+[paper_writer] results                   done — 1579 words
+[paper_writer] cross_domain_synthesis    done — 510 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 478 words
+[paper_writer] limitations_full          done — 554 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 3580 words
+[paper_writer] BACKSTOP: cross_domain_synthesis at 510 words (floor 850); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: cross_domain_synthesis rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: discussion at 478 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: cross_domain_synthesis appended deterministic anchor (510 → 648 words); structural Q11/Q12 backstop
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (478 → 1306 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 0 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=PASS | formal_sr_methods=PARTIAL (failures=0, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='statins' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z/full_paper.md
+  final_words: 36960
+  per-section: {'abstract': 390, 'introduction': 844, 'background': 225, 'inferential_bridge': 0, 'quantitative_results_table': 666, 'methods': 1120, 'results': 1581, 'cross_domain_synthesis': 651, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1308, 'limitations_full': 556, 'conclusion': 18, 'references_full': 3582}
+  llm_calls: 25 cost_usd: $0.1465 (writer-only; final-layer review cost in synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T22:28:30.747599+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z' ===
+paper_quality_gate=PASS | formal_sr_methods=PARTIAL | failures=0 warnings=0
+
+
+=== 2026-05-09T22:28:30.809731+00:00 :: python3 scripts/run_v06_synthesis.py --topic acarbose --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-acarbose-v06-AAA10x2-pass1-2026-05-09T22-28-30Z' ===
+Loading v0.6.0 quant_claims (topic='acarbose')...
+  Receipt funnel: accepted=19 outside_scope=0 partial_only=2 partial_none_only=27 none_only=1
+  Built 19 receipts (one per contributing paper).
+Thesis: Across 19 curated reference papers, the evidence base for acarbose shows a context-dependent profile. Positive signals appear in: cardiometabolic. Null findings...
+  Receipts: 19 | Non-orth tensions: 105
+  - PMC10664642_the_effect_of_acarbose_on_lipid_profil tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=87
+  - PMC2861640_postprandial_endothelial_dysfunction_in tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=49
+  - PMC5585474_comparative_assessment_of_the_efficacy_ tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=18
+  - PMC3827349_comparisons_of_the_efficacy_of_alpha_gl tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=16
+  - PMC6581543_acarbose_add_on_therapy_in_patients_wit tier=A1 direct=direct outcome=cardiometabolic effect=positive n_claims=16
+  - PMC7378448_impact_of_baseline_characteristics_on_g tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=15
+  - PMC2040135_cardiovascular_benefits_and_safety_prof tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=13
+  - PMC4684859_effect_of_acarbose_on_long_term_prognos tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=13
+  - PMC3890482_comparison_of_acarbose_and_voglibose_in tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=12
+  - PMC3996310_on_the_potential_of_acarbose_to_reduce_ tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=11
+  - PMC6691948_effects_of_acarbose_and_metformin_on_th tier=A1 direct=direct outcome=immune effect=unclear n_claims=10
+  - PMC4141807_march2_comparative_assessment_of_therap tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=9
+  - PMC4149239_dpp_4_inhibitor_and_alpha_glucosidase_i tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=3
+  - PMC6717369_a_randomized_crossover_study_of_the_acu tier=A1 direct=direct outcome=cardiometabolic effect=positive n_claims=3
+  - PMC7291873_acarbose_with_comparable_glucose_loweri tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC7921127_the_effects_of_acarbose_therapy_on_redu tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC7537614_acarbose_metformin_is_more_effective_in tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=2
+  - PMC4153962_switching_glucosidase_inhibitors_to_mig tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC4998782_comparison_of_acarbose_and_metformin_on tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 463 words
+[paper_writer] introduction              done — 1121 words
+[paper_writer] background                done — 538 words
+[paper_writer] inferential_bridge        done — 177 words
+[paper_writer] quantitative_results_table (deterministic) done — 609 words
+[paper_writer] methods (deterministic)   done — 1106 words
+[paper_writer] results                   done — 1006 words
+[paper_writer] cross_domain_synthesis    done — 947 words
+[paper_writer] novel_framework (deterministic) done — 132 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1118 words
+[paper_writer] limitations_full          done — 665 words
+[paper_writer] conclusion                done — 216 words
+[paper_writer] references_full (deterministic) done — 1034 words
+[paper_writer] BACKSTOP: conclusion at 216 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion 216 → 395 words
+render_full_paper done.
+Claim-strength repair: 7 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 7 patches...
+[pipeline]   applied=5 rejected=0 flagged=2 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=1)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='acarbose' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-acarbose-v06-AAA10x2-pass1-2026-05-09T22-28-30Z/full_paper.md
+  final_words: 15466
+  per-section: {'abstract': 465, 'introduction': 1123, 'background': 540, 'inferential_bridge': 180, 'quantitative_results_table': 615, 'methods': 1108, 'results': 1008, 'cross_domain_synthesis': 950, 'novel_framework': 136, 'framework_engagement': 85, 'discussion': 1120, 'limitations_full': 667, 'conclusion': 397, 'references_full': 1036}
+  llm_calls: 21 cost_usd: $0.0378 (writer-only; final-layer review cost in synthesis-acarbose-v06-AAA10x2-pass1-2026-05-09T22-28-30Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T22:41:06.001533+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-acarbose-v06-AAA10x2-pass1-2026-05-09T22-28-30Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=1
+
+
+=== 2026-05-09T22:41:06.050021+00:00 :: python3 scripts/run_v06_synthesis.py --topic acarbose --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z' ===
+Loading v0.6.0 quant_claims (topic='acarbose')...
+  Receipt funnel: accepted=19 outside_scope=0 partial_only=2 partial_none_only=27 none_only=1
+  Built 19 receipts (one per contributing paper).
+Thesis: Across 19 curated reference papers, the evidence base for acarbose shows a context-dependent profile. Positive signals appear in: cardiometabolic. Null findings...
+  Receipts: 19 | Non-orth tensions: 105
+  - PMC10664642_the_effect_of_acarbose_on_lipid_profil tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=87
+  - PMC2861640_postprandial_endothelial_dysfunction_in tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=49
+  - PMC5585474_comparative_assessment_of_the_efficacy_ tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=18
+  - PMC3827349_comparisons_of_the_efficacy_of_alpha_gl tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=16
+  - PMC6581543_acarbose_add_on_therapy_in_patients_wit tier=A1 direct=direct outcome=cardiometabolic effect=positive n_claims=16
+  - PMC7378448_impact_of_baseline_characteristics_on_g tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=15
+  - PMC2040135_cardiovascular_benefits_and_safety_prof tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=13
+  - PMC4684859_effect_of_acarbose_on_long_term_prognos tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=13
+  - PMC3890482_comparison_of_acarbose_and_voglibose_in tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=12
+  - PMC3996310_on_the_potential_of_acarbose_to_reduce_ tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=11
+  - PMC6691948_effects_of_acarbose_and_metformin_on_th tier=A1 direct=direct outcome=immune effect=unclear n_claims=10
+  - PMC4141807_march2_comparative_assessment_of_therap tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=9
+  - PMC4149239_dpp_4_inhibitor_and_alpha_glucosidase_i tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=3
+  - PMC6717369_a_randomized_crossover_study_of_the_acu tier=A1 direct=direct outcome=cardiometabolic effect=positive n_claims=3
+  - PMC7291873_acarbose_with_comparable_glucose_loweri tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC7921127_the_effects_of_acarbose_therapy_on_redu tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC7537614_acarbose_metformin_is_more_effective_in tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=2
+  - PMC4153962_switching_glucosidase_inhibitors_to_mig tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC4998782_comparison_of_acarbose_and_metformin_on tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 305 words
+[paper_writer] introduction              done — 1172 words
+[paper_writer] background                done — 343 words
+[paper_writer] inferential_bridge        done — 187 words
+[paper_writer] quantitative_results_table (deterministic) done — 609 words
+[paper_writer] methods (deterministic)   done — 1106 words
+[paper_writer] results                   done — 1682 words
+[paper_writer] cross_domain_synthesis    done — 1846 words
+[paper_writer] novel_framework (deterministic) done — 132 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1080 words
+[paper_writer] limitations_full          done — 723 words
+[paper_writer] conclusion                done — 553 words
+[paper_writer] references_full (deterministic) done — 1034 words
+render_full_paper done.
+Claim-strength repair: 5 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 5 patches...
+[pipeline]   applied=5 rejected=0 flagged=0 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=PASS | formal_sr_methods=PARTIAL (failures=0, warnings=1)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='acarbose' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z/full_paper.md
+  final_words: 17358
+  per-section: {'abstract': 307, 'introduction': 1174, 'background': 345, 'inferential_bridge': 190, 'quantitative_results_table': 615, 'methods': 1108, 'results': 1684, 'cross_domain_synthesis': 1849, 'novel_framework': 136, 'framework_engagement': 85, 'discussion': 1082, 'limitations_full': 725, 'conclusion': 555, 'references_full': 1036}
+  llm_calls: 17 cost_usd: $0.0296 (writer-only; final-layer review cost in synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T22:50:41.279713+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z' ===
+paper_quality_gate=PASS | formal_sr_methods=PARTIAL | failures=0 warnings=1
+
+
+=== 2026-05-09T22:50:41.340330+00:00 :: python3 scripts/run_v06_synthesis.py --topic aspirin --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-aspirin-v06-AAA10x2-pass1-2026-05-09T22-50-41Z' ===
+Loading v0.6.0 quant_claims (topic='aspirin')...
+  Receipt funnel: accepted=83 outside_scope=9 partial_only=245 partial_none_only=383 none_only=40
+  Built 83 receipts (one per contributing paper).
+Thesis: Across 83 curated reference papers, the evidence base for aspirin shows a context-dependent profile. Positive signals appear in: longevity, cardiometabolic. Neg...
+  Receipts: 83 | Non-orth tensions: 859
+  - PMC6827248_aspirin_for_primary_prevention_of_cardi tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=26
+  - PMC6955566_all_cause_mortality_following_low_dose_ tier=B2 direct=indirect outcome=longevity effect=mixed n_claims=25
+  - PMC9780488_low_molecular_weight_heparin_in_additio tier=B1 direct=review outcome=longevity effect=positive n_claims=16
+  - PMC9974638_low_or_high_dose_preventive_aspirin_use tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=16
+  - PMC11466358_daily_low_dose_aspirin_and_blood_press tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=15
+  - DOI_10_1111_jce_13327_long_term_aspirin_does_not_l tier=B1 direct=review outcome=safety effect=negative n_claims=14
+  - PMC12461696_the_effect_of_low_dose_aspirin_on_reve tier=A1 direct=direct outcome=frailty effect=unclear n_claims=14
+  - DOI_10_1136_heart_85_3_265_aspirin_for_primary_pre tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=12
+  - PMC13090850_low_dose_aspirin_for_cardiovascular_di tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=11
+  - PMC2774388_aspirin_for_primary_prevention_of_cardi tier=B1 direct=review outcome=longevity effect=positive n_claims=11
+  - PMC7936068_effect_of_aspirin_on_cancer_incidence_a tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=11
+  - PMC9021558_aspirin_to_target_arterial_events_in_ch tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=11
+  - PMC10082109_low_dose_aspirin_and_risk_of_breast_ca tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=10
+  - DOI_10_1097_aog_0000000000001491_association_of_lo tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=9
+  - DOI_10_1161_str_56_suppl_1_wp282_abstract_wp282_ef tier=B1 direct=review outcome=longevity effect=positive n_claims=9
+  - DOI_10_1001_jama_295_3_306_aspirin_for_the_primary tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=8
+  - PMC12449462_association_between_low_dose_aspirin_u tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=8
+  - PMC6988172_low_dose_aspirin_treatment_attenuates_m tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=8
+  - PMC12008822_long_term_use_of_low_dose_aspirin_for_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=7
+  - PMC9844641_low_dose_aspirin_use_and_colorectal_can tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=7
+  - DOI_10_1093_eurheartj_ehaf784_4275_aspirin_for_the tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=6
+  - PMC2606820_a_randomized_trial_of_low_dose_aspirin_ tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC4310373_circulating_myeloid_related_protein_8_1 tier=B2 direct=indirect outcome=immune effect=unclear n_claims=6
+  - PMC6572181_low_dose_aspirin_for_the_primary_preven tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - DOI_10_1161_circ_148_suppl_1_15944_abstract_15944_ tier=B1 direct=review outcome=longevity effect=negative n_claims=5
+  - PMC5729386_aspirin_for_primary_stroke_prevention_i tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=5
+  - PMC8190001_efficacy_of_fluvastatin_and_aspirin_for tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=5
+  - PMC9404329_low_dose_aspirin_and_rivaroxaban_combin tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=5
+  - DOI_10_1097_00004872_200211000_00031_benefit_and_h tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=4
+  - DOI_10_1101_2022_08_03_22278392_association_of_mor tier=B1 direct=review outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1111_jgh_14261_risk_of_gastrointestinal_ble tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1158_1940_6207_capr_10_0319_aspirin_and_low tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1227_neu_0000000000002710_perioperative_low tier=B1 direct=review outcome=other effect=unclear n_claims=4
+  - DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_ tier=B1 direct=review outcome=longevity effect=positive n_claims=4
+  - PMC12479048_effect_of_aspirin_on_grip_strength_and tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC12596486_aspirin_cardiovascular_events_and_majo tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC8140285_a_longitudinal_study_to_evaluate_the_bl tier=B2 direct=indirect outcome=immune effect=unclear n_claims=4
+  - DOI_10_1093_ibd_izaf304_low_dose_aspirin_and_the_p tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - DOI_10_1097_mca_0000000000000840_effect_on_mortali tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC11255710_stroke_in_pregnancy_and_preeclampsia_e tier=C1 direct=mechanistic outcome=immune effect=positive n_claims=3
+  - PMC3482605_comparative_evaluation_of_treatment_wit tier=B2 direct=indirect outcome=longevity effect=positive n_claims=3
+  - DOI_10_1001_jamaneurol_2019_1120_frequency_of_intr tier=B1 direct=review outcome=other effect=unclear n_claims=2
+  - DOI_10_1056_nejmoa035572_efficacy_and_safety_of_lo tier=B1 direct=review outcome=longevity effect=positive n_claims=2
+  - DOI_10_1093_eurheartj_ehac544_2719_effect_of_low_d tier=A1 direct=direct outcome=immune effect=unclear n_claims=2
+  - DOI_10_1093_eurjpc_zwaf329_stratification_by_cvd_r tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1093_pubmed_fdz114_low_dose_aspirin_use_and tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dos tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1158_1940_6215_prev_13_c49_abstract_c49_a_r tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1161_strokeaha_115_012461_aspirin_for_strok tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1177_1074248406292263_dose_of_aspirin_in_th tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1200_jco_2017_35_4_suppl_527_comparing_mort tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC10469664_low_dose_aspirin_can_inhibit_exosomal_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC10480154_aspirin_for_primary_prevention_in_pati tier=B2 direct=indirect outcome=longevity effect=negative n_claims=2
+  - PMC11008052_low_dose_aspirin_for_the_prevention_of tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC2875463_aspirin_for_primary_prevention_of_cardi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC4973997_bleeding_risk_with_long_term_low_dose_a tier=B1 direct=review outcome=safety effect=unclear n_claims=2
+  - PMC7988000_low_dose_aspirin_was_associated_with_an tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=2
+  - PMC8174196_efficacy_and_safety_of_long_term_antith tier=A1 direct=direct outcome=other effect=unclear n_claims=2
+  - PMC9747129_platelet_thromboxane_inhibition_by_low_ tier=C1 direct=mechanistic outcome=longevity effect=positive n_claims=2
+  - DOI_10_1001_archinte_162_19_2197_evaluation_of_the tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1055_a_1667_7427_efficacy_and_safety_of_asp tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1093_eurheartj_ehaf784_2099_aspirin_does_no tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1093_eurheartj_ehaf784_3984_role_of_urinary tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1111_dom_15753_efficacy_of_aspirin_for_prim tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1136_heartjnl_2014_306342_individualised_pr tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1161_circ_124_suppl_21_a9385_abstract_9385_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1161_circulationaha_117_028321_low_dose_asp tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1213_ane_0000000000002053_preoperative_low_ tier=B1 direct=review outcome=other effect=unclear n_claims=1
+  - DOI_10_4081_btvb_2025_251_co45_role_of_urinary_11_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_7326_0003_4819_152_1_201001050_00179_contin tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_7326_m15_2113_aspirin_for_the_primary_preve tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - PMC10981149_low_dose_aspirin_for_prevention_of_car tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC11067524_body_mass_index_modified_the_effective tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11270423_the_effectiveness_of_no_or_low_dose_ve tier=B1 direct=review outcome=immune effect=null n_claims=1
+  - PMC12832624_the_efficacy_and_safety_of_lower_dose_ tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC3024334_low_dose_aspirin_therapy_in_patients_wi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC4053148_post_diagnostic_prescriptions_for_low_d tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC5069577_long_term_safety_of_a_coordinated_deliv tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC7230296_effect_of_proton_pump_inhibitors_on_ris tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC8387371_low_dose_aspirin_confers_a_survival_ben tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC9737230_the_use_of_aspirin_increases_the_risk_o tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 383 words
+[paper_writer] introduction              done — 774 words
+[paper_writer] background                done — 391 words
+[paper_writer] quantitative_results_table (deterministic) done — 665 words
+[paper_writer] methods (deterministic)   done — 1126 words
+[paper_writer] results                   done — 1541 words
+[paper_writer] cross_domain_synthesis    done — 764 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 613 words
+[paper_writer] limitations_full          done — 396 words
+[paper_writer] conclusion                done — 207 words
+[paper_writer] references_full (deterministic) done — 4521 words
+[paper_writer] BACKSTOP: cross_domain_synthesis at 764 words (floor 850); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: cross_domain_synthesis rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: discussion at 613 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 207 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: cross_domain_synthesis appended deterministic anchor (764 → 901 words); structural Q11/Q12 backstop
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (613 → 1445 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 2 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 13 patches...
+[pipeline]   applied=13 rejected=0 flagged=0 repaired=1 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='aspirin' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-aspirin-v06-AAA10x2-pass1-2026-05-09T22-50-41Z/full_paper.md
+  final_words: 44615
+  per-section: {'abstract': 385, 'introduction': 776, 'background': 393, 'inferential_bridge': 0, 'quantitative_results_table': 671, 'methods': 1128, 'results': 1543, 'cross_domain_synthesis': 904, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1447, 'limitations_full': 398, 'conclusion': 209, 'references_full': 4523}
+  llm_calls: 29 cost_usd: $0.2078 (writer-only; final-layer review cost in synthesis-aspirin-v06-AAA10x2-pass1-2026-05-09T22-50-41Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T23:15:31.358436+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-aspirin-v06-AAA10x2-pass1-2026-05-09T22-50-41Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-09T23:15:31.405430+00:00 :: python3 scripts/run_v06_synthesis.py --topic aspirin --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z' ===
+Loading v0.6.0 quant_claims (topic='aspirin')...
+  Receipt funnel: accepted=83 outside_scope=9 partial_only=245 partial_none_only=383 none_only=40
+  Built 83 receipts (one per contributing paper).
+Thesis: Across 83 curated reference papers, the evidence base for aspirin shows a context-dependent profile. Positive signals appear in: longevity, cardiometabolic. Neg...
+  Receipts: 83 | Non-orth tensions: 859
+  - PMC6827248_aspirin_for_primary_prevention_of_cardi tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=26
+  - PMC6955566_all_cause_mortality_following_low_dose_ tier=B2 direct=indirect outcome=longevity effect=mixed n_claims=25
+  - PMC9780488_low_molecular_weight_heparin_in_additio tier=B1 direct=review outcome=longevity effect=positive n_claims=16
+  - PMC9974638_low_or_high_dose_preventive_aspirin_use tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=16
+  - PMC11466358_daily_low_dose_aspirin_and_blood_press tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=15
+  - DOI_10_1111_jce_13327_long_term_aspirin_does_not_l tier=B1 direct=review outcome=safety effect=negative n_claims=14
+  - PMC12461696_the_effect_of_low_dose_aspirin_on_reve tier=A1 direct=direct outcome=frailty effect=unclear n_claims=14
+  - DOI_10_1136_heart_85_3_265_aspirin_for_primary_pre tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=12
+  - PMC13090850_low_dose_aspirin_for_cardiovascular_di tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=11
+  - PMC2774388_aspirin_for_primary_prevention_of_cardi tier=B1 direct=review outcome=longevity effect=positive n_claims=11
+  - PMC7936068_effect_of_aspirin_on_cancer_incidence_a tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=11
+  - PMC9021558_aspirin_to_target_arterial_events_in_ch tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=11
+  - PMC10082109_low_dose_aspirin_and_risk_of_breast_ca tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=10
+  - DOI_10_1097_aog_0000000000001491_association_of_lo tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=9
+  - DOI_10_1161_str_56_suppl_1_wp282_abstract_wp282_ef tier=B1 direct=review outcome=longevity effect=positive n_claims=9
+  - DOI_10_1001_jama_295_3_306_aspirin_for_the_primary tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=8
+  - PMC12449462_association_between_low_dose_aspirin_u tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=8
+  - PMC6988172_low_dose_aspirin_treatment_attenuates_m tier=C1 direct=mechanistic outcome=cardiometabolic effect=mixed n_claims=8
+  - PMC12008822_long_term_use_of_low_dose_aspirin_for_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=7
+  - PMC9844641_low_dose_aspirin_use_and_colorectal_can tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=7
+  - DOI_10_1093_eurheartj_ehaf784_4275_aspirin_for_the tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - DOI_10_1111_jgh_14562_low_dose_aspirin_can_reduce_ tier=B1 direct=review outcome=longevity effect=unclear n_claims=6
+  - PMC2606820_a_randomized_trial_of_low_dose_aspirin_ tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC4310373_circulating_myeloid_related_protein_8_1 tier=B2 direct=indirect outcome=immune effect=unclear n_claims=6
+  - PMC6572181_low_dose_aspirin_for_the_primary_preven tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - DOI_10_1161_circ_148_suppl_1_15944_abstract_15944_ tier=B1 direct=review outcome=longevity effect=negative n_claims=5
+  - PMC5729386_aspirin_for_primary_stroke_prevention_i tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=5
+  - PMC8190001_efficacy_of_fluvastatin_and_aspirin_for tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=5
+  - PMC9404329_low_dose_aspirin_and_rivaroxaban_combin tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=5
+  - DOI_10_1097_00004872_200211000_00031_benefit_and_h tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=4
+  - DOI_10_1101_2022_08_03_22278392_association_of_mor tier=B1 direct=review outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1111_jgh_14261_risk_of_gastrointestinal_ble tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1158_1940_6207_capr_10_0319_aspirin_and_low tier=C1 direct=mechanistic outcome=longevity effect=unclear n_claims=4
+  - DOI_10_1227_neu_0000000000002710_perioperative_low tier=B1 direct=review outcome=other effect=unclear n_claims=4
+  - DOI_10_3390_reprodmed6020008_low_dose_aspirin_for_ tier=B1 direct=review outcome=longevity effect=positive n_claims=4
+  - PMC12479048_effect_of_aspirin_on_grip_strength_and tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC12596486_aspirin_cardiovascular_events_and_majo tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC8140285_a_longitudinal_study_to_evaluate_the_bl tier=B2 direct=indirect outcome=immune effect=unclear n_claims=4
+  - DOI_10_1093_ibd_izaf304_low_dose_aspirin_and_the_p tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - DOI_10_1097_mca_0000000000000840_effect_on_mortali tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - DOI_10_1161_circ_124_suppl_21_a9426_abstract_9426_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC11255710_stroke_in_pregnancy_and_preeclampsia_e tier=C1 direct=mechanistic outcome=immune effect=positive n_claims=3
+  - PMC3482605_comparative_evaluation_of_treatment_wit tier=B2 direct=indirect outcome=longevity effect=positive n_claims=3
+  - DOI_10_1001_jamaneurol_2019_1120_frequency_of_intr tier=B1 direct=review outcome=other effect=unclear n_claims=2
+  - DOI_10_1056_nejmoa035572_efficacy_and_safety_of_lo tier=B1 direct=review outcome=longevity effect=positive n_claims=2
+  - DOI_10_1093_eurheartj_ehac544_2719_effect_of_low_d tier=A1 direct=direct outcome=immune effect=unclear n_claims=2
+  - DOI_10_1093_eurjpc_zwaf329_stratification_by_cvd_r tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=2
+  - DOI_10_1093_pubmed_fdz114_low_dose_aspirin_use_and tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1111_bcp_14329_prediagnostic_use_of_low_dos tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1158_1940_6215_prev_13_c49_abstract_c49_a_r tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1161_strokeaha_115_012461_aspirin_for_strok tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1177_1074248406292263_dose_of_aspirin_in_th tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_1200_jco_2017_35_4_suppl_527_comparing_mort tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC10469664_low_dose_aspirin_can_inhibit_exosomal_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC10480154_aspirin_for_primary_prevention_in_pati tier=B2 direct=indirect outcome=longevity effect=negative n_claims=2
+  - PMC11008052_low_dose_aspirin_for_the_prevention_of tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC2875463_aspirin_for_primary_prevention_of_cardi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC4973997_bleeding_risk_with_long_term_low_dose_a tier=B1 direct=review outcome=safety effect=unclear n_claims=2
+  - PMC7988000_low_dose_aspirin_was_associated_with_an tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=2
+  - PMC8174196_efficacy_and_safety_of_long_term_antith tier=A1 direct=direct outcome=other effect=unclear n_claims=2
+  - PMC9747129_platelet_thromboxane_inhibition_by_low_ tier=C1 direct=mechanistic outcome=longevity effect=positive n_claims=2
+  - DOI_10_1001_archinte_162_19_2197_evaluation_of_the tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1055_a_1667_7427_efficacy_and_safety_of_asp tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1093_eurheartj_ehaf784_2099_aspirin_does_no tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1093_eurheartj_ehaf784_3984_role_of_urinary tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1111_dom_15753_efficacy_of_aspirin_for_prim tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1136_heartjnl_2014_306342_individualised_pr tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1161_circ_124_suppl_21_a9385_abstract_9385_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1161_circulationaha_117_028321_low_dose_asp tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_1213_ane_0000000000002053_preoperative_low_ tier=B1 direct=review outcome=other effect=unclear n_claims=1
+  - DOI_10_4081_btvb_2025_251_co45_role_of_urinary_11_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_7326_0003_4819_152_1_201001050_00179_contin tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - DOI_10_7326_m15_2113_aspirin_for_the_primary_preve tier=B1 direct=review outcome=longevity effect=unclear n_claims=1
+  - PMC10981149_low_dose_aspirin_for_prevention_of_car tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC11067524_body_mass_index_modified_the_effective tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11270423_the_effectiveness_of_no_or_low_dose_ve tier=B1 direct=review outcome=immune effect=null n_claims=1
+  - PMC12832624_the_efficacy_and_safety_of_lower_dose_ tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC3024334_low_dose_aspirin_therapy_in_patients_wi tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC4053148_post_diagnostic_prescriptions_for_low_d tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC5069577_long_term_safety_of_a_coordinated_deliv tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC7230296_effect_of_proton_pump_inhibitors_on_ris tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC8387371_low_dose_aspirin_confers_a_survival_ben tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC9737230_the_use_of_aspirin_increases_the_risk_o tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 286 words
+[paper_writer] introduction              done — 1502 words
+[paper_writer] background                done — 164 words
+[paper_writer] inferential_bridge        done — 197 words
+[paper_writer] quantitative_results_table (deterministic) done — 665 words
+[paper_writer] methods (deterministic)   done — 1126 words
+[paper_writer] results                   done — 1605 words
+[paper_writer] cross_domain_synthesis    done — 726 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 647 words
+[paper_writer] limitations_full          done — 280 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 4521 words
+[paper_writer] BACKSTOP: cross_domain_synthesis at 726 words (floor 850); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: cross_domain_synthesis rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: discussion at 647 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: cross_domain_synthesis appended deterministic anchor (726 → 863 words); structural Q11/Q12 backstop
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (647 → 1481 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 1 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 4 patches...
+[pipeline]   applied=4 rejected=0 flagged=0 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='aspirin' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z/full_paper.md
+  final_words: 45892
+  per-section: {'abstract': 288, 'introduction': 1504, 'background': 166, 'inferential_bridge': 200, 'quantitative_results_table': 671, 'methods': 1128, 'results': 1607, 'cross_domain_synthesis': 866, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1483, 'limitations_full': 282, 'conclusion': 18, 'references_full': 4523}
+  llm_calls: 30 cost_usd: $0.2153 (writer-only; final-layer review cost in synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T23:40:51.064574+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-09T23:40:51.117714+00:00 :: python3 scripts/run_v06_synthesis.py --topic caloric_restriction --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-caloric_restriction-v06-AAA10x2-pass1-2026-05-09T23-40-51Z' ===
+Loading v0.6.0 quant_claims (topic='caloric_restriction')...
+  Receipt funnel: accepted=47 outside_scope=0 partial_only=25 partial_none_only=99 none_only=5
+  Built 47 receipts (one per contributing paper).
+Thesis: Across 47 curated reference papers, the evidence base for caloric_restriction shows a context-dependent profile. Positive signals appear in: cardiometabolic, im...
+  Receipts: 47 | Non-orth tensions: 366
+  - PMC9012799_lean_mass_sparing_in_resistance_trained tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=41
+  - PMC8467906_effects_of_caloric_restriction_and_rope tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=34
+  - PMC12195750_effects_of_intermittent_fasting_and_ca tier=B1 direct=review outcome=muscle_function effect=mixed n_claims=25
+  - PMC12956928_effect_of_protein_supplementation_on_h tier=A2 direct=indirect outcome=muscle_function effect=null n_claims=25
+  - PMC8233264_caloric_restriction_induces_anabolic_re tier=B2 direct=indirect outcome=immune effect=negative n_claims=25
+  - PMC10659943_the_effects_of_short_term_caloric_rest tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=24
+  - PMC10609268_effect_of_time_restricted_eating_versu tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=16
+  - PMC12430449_effect_of_time_restricted_eating_versu tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=16
+  - PMC8634604_calorie_restriction_with_exercise_inter tier=B1 direct=review outcome=immune effect=positive n_claims=16
+  - PMC12672340_effects_of_time_restricted_eating_with tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=15
+  - PMC9962072_caloric_restriction_cr_plus_high_nitrat tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=15
+  - PMC12827324_comparative_effects_of_intermittent_fa tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=14
+  - PMC12972406_development_of_a_multimorbidity_health tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=14
+  - PMC2634841_metabolic_and_behavioral_compensations_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=13
+  - PMC9070937_estimating_heterogeneity_of_physical_fu tier=B2 direct=indirect outcome=frailty effect=unclear n_claims=13
+  - PMC11369340_fasting_and_calorie_restriction_modula tier=B2 direct=indirect outcome=immune effect=unclear n_claims=8
+  - PMC11990601_time_restricted_eating_versus_daily_ca tier=B2 direct=indirect outcome=immune effect=unclear n_claims=8
+  - PMC8741476_calorie_restriction_improves_lipid_rela tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=7
+  - PMC9230116_overweight_management_through_mild_calo tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=7
+  - PMC11880040_multi_study_feasibility_analysis_on_a_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=6
+  - PMC12386805_a_pilot_randomized_control_trial_evalu tier=A1 direct=direct outcome=other effect=null n_claims=6
+  - PMC12762004_adaptations_in_energy_expenditure_foll tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC4993339_long_term_moderate_calorie_restriction_ tier=B2 direct=indirect outcome=immune effect=mixed n_claims=6
+  - PMC5244361_a_signature_of_renal_stress_resistance_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=6
+  - PMC10494137_metabolic_impact_of_intermittent_energ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=4
+  - PMC12505589_association_between_physical_activity_ tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=4
+  - PMC5295310_serum_polychlorinated_biphenyls_increas tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=4
+  - PMC8623687_short_term_caloric_restriction_and_biof tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=4
+  - PMC10107279_intermittent_fasting_and_protein_pacin tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC10820472_impact_of_intermittent_fasting_and_or_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC11368853_effect_of_5_2_intermittent_fasting_die tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - PMC4717266_effects_of_2_year_calorie_restriction_o tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=3
+  - PMC6395700_maternal_age_alters_offspring_lifespan_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=3
+  - PMC10726900_calorie_restriction_modulates_the_tran tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC5986503_pilot_study_examining_the_influence_of_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC7415503_changes_in_body_weight_adherence_and_ap tier=B2 direct=indirect outcome=other effect=unclear n_claims=2
+  - PMC7589692_does_the_energy_restriction_intermitten tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC8152778_iron_beats_electricity_resistance_train tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC10708501_effectiveness_of_time_restricted_eatin tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11425986_comparing_caloric_restriction_regimens tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11670075_quantitative_analysis_of_the_caloric_r tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11730777_maternal_effect_senescence_and_caloric tier=B2 direct=indirect outcome=longevity effect=null n_claims=1
+  - PMC11808004_optimal_calorie_restriction_threshold_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC6335535_influence_of_dietary_restriction_and_lo tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC7780671_caloric_restriction_in_female_reproduct tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC7898726_effects_of_moderate_sleep_restriction_d tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC9346980_caloric_restriction_and_weight_loss_are tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 544 words
+[paper_writer] introduction              done — 504 words
+[paper_writer] background                done — 719 words
+[paper_writer] inferential_bridge        done — 313 words
+[paper_writer] quantitative_results_table (deterministic) done — 702 words
+[paper_writer] methods (deterministic)   done — 1122 words
+[paper_writer] results                   done — 2684 words
+[paper_writer] cross_domain_synthesis    done — 1578 words
+[paper_writer] novel_framework (deterministic) done — 132 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1300 words
+[paper_writer] limitations_full          done — 456 words
+[paper_writer] conclusion                done — 308 words
+[paper_writer] references_full (deterministic) done — 2509 words
+render_full_paper done.
+Claim-strength repair: 3 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='caloric_restriction' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-caloric_restriction-v06-AAA10x2-pass1-2026-05-09T23-40-51Z/full_paper.md
+  final_words: 29839
+  per-section: {'abstract': 546, 'introduction': 506, 'background': 721, 'inferential_bridge': 316, 'quantitative_results_table': 708, 'methods': 1124, 'results': 2686, 'cross_domain_synthesis': 1581, 'novel_framework': 136, 'framework_engagement': 85, 'discussion': 1302, 'limitations_full': 458, 'conclusion': 310, 'references_full': 2511}
+  llm_calls: 16 cost_usd: $0.0601 (writer-only; final-layer review cost in synthesis-caloric_restriction-v06-AAA10x2-pass1-2026-05-09T23-40-51Z/full_paper.review_patches.json)
+
+
+=== 2026-05-09T23:52:08.408609+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-caloric_restriction-v06-AAA10x2-pass1-2026-05-09T23-40-51Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-09T23:52:08.471609+00:00 :: python3 scripts/run_v06_synthesis.py --topic caloric_restriction --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-caloric_restriction-v06-AAA10x2-pass2-2026-05-09T23-52-08Z' ===
+Loading v0.6.0 quant_claims (topic='caloric_restriction')...
+  Receipt funnel: accepted=47 outside_scope=0 partial_only=25 partial_none_only=99 none_only=5
+  Built 47 receipts (one per contributing paper).
+Thesis: Across 47 curated reference papers, the evidence base for caloric_restriction shows a context-dependent profile. Positive signals appear in: cardiometabolic, im...
+  Receipts: 47 | Non-orth tensions: 366
+  - PMC9012799_lean_mass_sparing_in_resistance_trained tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=41
+  - PMC8467906_effects_of_caloric_restriction_and_rope tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=34
+  - PMC12195750_effects_of_intermittent_fasting_and_ca tier=B1 direct=review outcome=muscle_function effect=mixed n_claims=25
+  - PMC12956928_effect_of_protein_supplementation_on_h tier=A2 direct=indirect outcome=muscle_function effect=null n_claims=25
+  - PMC8233264_caloric_restriction_induces_anabolic_re tier=B2 direct=indirect outcome=immune effect=negative n_claims=25
+  - PMC10659943_the_effects_of_short_term_caloric_rest tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=24
+  - PMC10609268_effect_of_time_restricted_eating_versu tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=16
+  - PMC12430449_effect_of_time_restricted_eating_versu tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=16
+  - PMC8634604_calorie_restriction_with_exercise_inter tier=B1 direct=review outcome=immune effect=positive n_claims=16
+  - PMC12672340_effects_of_time_restricted_eating_with tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=15
+  - PMC9962072_caloric_restriction_cr_plus_high_nitrat tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=15
+  - PMC12827324_comparative_effects_of_intermittent_fa tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=14
+  - PMC12972406_development_of_a_multimorbidity_health tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=14
+  - PMC2634841_metabolic_and_behavioral_compensations_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=13
+  - PMC9070937_estimating_heterogeneity_of_physical_fu tier=B2 direct=indirect outcome=frailty effect=unclear n_claims=13
+  - PMC11369340_fasting_and_calorie_restriction_modula tier=B2 direct=indirect outcome=immune effect=unclear n_claims=8
+  - PMC11990601_time_restricted_eating_versus_daily_ca tier=B2 direct=indirect outcome=immune effect=unclear n_claims=8
+  - PMC8741476_calorie_restriction_improves_lipid_rela tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=7
+  - PMC9230116_overweight_management_through_mild_calo tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=7
+  - PMC11880040_multi_study_feasibility_analysis_on_a_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=6
+  - PMC12386805_a_pilot_randomized_control_trial_evalu tier=A1 direct=direct outcome=other effect=null n_claims=6
+  - PMC12762004_adaptations_in_energy_expenditure_foll tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC4993339_long_term_moderate_calorie_restriction_ tier=B2 direct=indirect outcome=immune effect=mixed n_claims=6
+  - PMC5244361_a_signature_of_renal_stress_resistance_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=6
+  - PMC10494137_metabolic_impact_of_intermittent_energ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=4
+  - PMC12505589_association_between_physical_activity_ tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=4
+  - PMC5295310_serum_polychlorinated_biphenyls_increas tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=4
+  - PMC8623687_short_term_caloric_restriction_and_biof tier=B2 direct=indirect outcome=cardiometabolic effect=positive n_claims=4
+  - PMC10107279_intermittent_fasting_and_protein_pacin tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC10820472_impact_of_intermittent_fasting_and_or_ tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=3
+  - PMC11368853_effect_of_5_2_intermittent_fasting_die tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - PMC4717266_effects_of_2_year_calorie_restriction_o tier=A1 direct=direct outcome=cardiometabolic effect=null n_claims=3
+  - PMC6395700_maternal_age_alters_offspring_lifespan_ tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=3
+  - PMC10726900_calorie_restriction_modulates_the_tran tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMC5986503_pilot_study_examining_the_influence_of_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC7415503_changes_in_body_weight_adherence_and_ap tier=B2 direct=indirect outcome=other effect=unclear n_claims=2
+  - PMC7589692_does_the_energy_restriction_intermitten tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC8152778_iron_beats_electricity_resistance_train tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC10708501_effectiveness_of_time_restricted_eatin tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11425986_comparing_caloric_restriction_regimens tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11670075_quantitative_analysis_of_the_caloric_r tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11730777_maternal_effect_senescence_and_caloric tier=B2 direct=indirect outcome=longevity effect=null n_claims=1
+  - PMC11808004_optimal_calorie_restriction_threshold_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC6335535_influence_of_dietary_restriction_and_lo tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC7780671_caloric_restriction_in_female_reproduct tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=1
+  - PMC7898726_effects_of_moderate_sleep_restriction_d tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC9346980_caloric_restriction_and_weight_loss_are tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 552 words
+[paper_writer] introduction              done — 823 words
+[paper_writer] background                done — 1153 words
+[paper_writer] inferential_bridge        done — 235 words
+[paper_writer] quantitative_results_table (deterministic) done — 702 words
+[paper_writer] methods (deterministic)   done — 1122 words
+[paper_writer] results                   done — 3975 words
+[paper_writer] cross_domain_synthesis    done — 1614 words
+[paper_writer] novel_framework (deterministic) done — 132 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1176 words
+[paper_writer] limitations_full          done — 739 words
+[paper_writer] conclusion                done — 244 words
+[paper_writer] references_full (deterministic) done — 2509 words
+[paper_writer] BACKSTOP: conclusion at 244 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion 244 → 368 words
+render_full_paper done.
+Claim-strength repair: 5 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=PASS | formal_sr_methods=PARTIAL (failures=0, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='caloric_restriction' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-caloric_restriction-v06-AAA10x2-pass2-2026-05-09T23-52-08Z/full_paper.md
+  final_words: 31106
+  per-section: {'abstract': 554, 'introduction': 825, 'background': 1155, 'inferential_bridge': 238, 'quantitative_results_table': 708, 'methods': 1124, 'results': 3977, 'cross_domain_synthesis': 1617, 'novel_framework': 136, 'framework_engagement': 85, 'discussion': 1178, 'limitations_full': 741, 'conclusion': 370, 'references_full': 2511}
+  llm_calls: 18 cost_usd: $0.0692 (writer-only; final-layer review cost in synthesis-caloric_restriction-v06-AAA10x2-pass2-2026-05-09T23-52-08Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T00:06:05.701528+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-caloric_restriction-v06-AAA10x2-pass2-2026-05-09T23-52-08Z' ===
+paper_quality_gate=PASS | formal_sr_methods=PARTIAL | failures=0 warnings=0
+
+
+=== 2026-05-10T00:06:05.761333+00:00 :: python3 scripts/run_v06_synthesis.py --topic resistance_training --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z' ===
+Loading v0.6.0 quant_claims (topic='resistance_training')...
+  Receipt funnel: accepted=78 outside_scope=0 partial_only=11 partial_none_only=178 none_only=6
+  Built 78 receipts (one per contributing paper).
+Thesis: Across 78 curated reference papers, the evidence base for resistance_training shows a context-dependent profile. Positive signals appear in: muscle function. Ne...
+  Receipts: 78 | Non-orth tensions: 1375
+  - PMC10687931_is_moderate_resistance_training_adequa tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=217
+  - PMC10393929_resistance_training_and_weight_loss_in tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=104
+  - PMC8588667_does_the_combination_of_resistance_trai tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=83
+  - PMC10798924_the_effect_of_hormonal_contraceptive_u tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=73
+  - PMC7908670_effects_of_multimodal_agility_like_exer tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=61
+  - PMC9585015_muscle_protein_synthesis_responses_foll tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=38
+  - PMC5845592_whey_protein_consumption_after_resistan tier=B2 direct=indirect outcome=muscle_function effect=negative n_claims=27
+  - PMC12331617_effects_of_floorball_and_strength_trai tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=25
+  - PMC10127187_connective_adaptive_resistance_exercis tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=20
+  - PMC6303128_no_difference_between_spray_dried_milk_ tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=20
+  - PMC9325860_progressive_resistance_training_for_con tier=B1 direct=review outcome=muscle_function effect=positive n_claims=18
+  - PMC12522390_biomechanical_insights_into_gait_rehab tier=B1 direct=review outcome=frailty effect=unclear n_claims=16
+  - PMC4967245_neither_load_nor_systemic_hormones_dete tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=16
+  - PMC10650161_fish_oil_supplementation_with_resistan tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=15
+  - PMC5872753_effects_of_insect_protein_supplementati tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=15
+  - PMC12476412_aerobic_exercise_preconditioning_does_ tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=12
+  - PMC2858200_a_high_protein_diet_with_resistance_exe tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=11
+  - PMC8588688_effects_of_resistance_training_in_healt tier=B1 direct=review outcome=muscle_function effect=positive n_claims=11
+  - PMC11099261_a_botanical_extract_blend_of_mangifera tier=A1 direct=direct outcome=muscle_function effect=positive n_claims=10
+  - PMC3542109_the_effects_of_six_weeks_of_supplementa tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=10
+  - PMC4667405_effects_of_physical_exercise_interventi tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=10
+  - PMC12376810_contralateral_effects_by_unilateral_ec tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=9
+  - PMC4053565_biomarkers_of_muscle_quality_n_terminal tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=9
+  - PMC8686274_eccentric_only_versus_concentric_only_r tier=C1 direct=mechanistic outcome=muscle_function effect=unclear n_claims=9
+  - PMC9997646_resistance_exercise_training_increases_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=9
+  - PMC9367108_effectiveness_of_power_training_compare tier=B1 direct=review outcome=muscle_function effect=positive n_claims=8
+  - PMC12582911_postinactivity_exercise_training_impro tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=7
+  - PMC12883749_effects_of_resistance_training_on_musc tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=7
+  - PMC8718025_home_based_aerobic_exercise_and_resista tier=B2 direct=indirect outcome=immune effect=negative n_claims=7
+  - PMC12181168_resistance_exercise_training_in_older_ tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=6
+  - PMC9794326_aerobic_exercise_combined_with_resistan tier=B1 direct=review outcome=muscle_function effect=positive n_claims=6
+  - PMC12506341_impact_of_creatine_supplementation_and tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=5
+  - PMC6357404_load_magnitude_affects_patellar_tendon_ tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=5
+  - PMC9740942_a_review_of_rehabilitation_benefits_of_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=5
+  - PMC11057611_not_only_protein_dietary_supplements_t tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC11622696_what_specific_exercise_training_is_mos tier=B1 direct=review outcome=frailty effect=unclear n_claims=4
+  - PMC11688722_gait_speed_moderates_efficacy_of_home_ tier=B2 direct=indirect outcome=frailty effect=negative n_claims=4
+  - PMC5697397_native_whey_protein_with_high_levels_of tier=B2 direct=indirect outcome=muscle_function effect=negative n_claims=4
+  - PMC6826125_metformin_blunts_muscle_hypertrophy_in_ tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=4
+  - PMC7414534_effectiveness_of_a_resistance_training_ tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=4
+  - PMC8001546_effects_of_cardiovascular_resistance_an tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC8034230_increased_leg_strength_after_concurrent tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC8322027_effect_of_resistance_exercise_training_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC8489980_elbow_joint_angles_in_elbow_flexor_unil tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC8623877_effects_of_milk_or_soy_milk_combined_wi tier=B2 direct=indirect outcome=frailty effect=unclear n_claims=4
+  - PMC9690442_effects_of_12_week_progressive_sandbag_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=4
+  - PMC10874140_resistance_training_on_an_outdoor_exer tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=3
+  - PMC11011920_supplementation_with_lactiplantibacill tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC12178171_effects_of_high_intensity_progressive_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC2245953_effects_of_beta_hydroxy_beta_methylbuty tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC6090881_issn_exercise_sports_nutrition_review_u tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC8267934_effects_of_16_weeks_of_resistance_train tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=3
+  - PMC9656451_effects_of_twenty_four_weeks_of_resista tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=3
+  - PMC12115393_the_effects_of_exercise_intervention_i tier=B1 direct=review outcome=muscle_function effect=null n_claims=2
+  - PMC12387932_the_effects_of_pedaling_based_progress tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=2
+  - PMC12630110_effects_of_elastic_band_resistance_tra tier=B1 direct=review outcome=muscle_function effect=null n_claims=2
+  - PMC1752232_strength_training_improves_muscle_quali tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC4177181_resistance_training_exercise_program_fo tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=2
+  - PMC5041535_the_impact_of_protein_quality_on_the_pr tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC5541589_the_effect_of_combined_resistance_exerc tier=B1 direct=review outcome=muscle_function effect=null n_claims=2
+  - PMC6020314_eight_weeks_of_resistance_training_in_c tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC7913348_randomized_controlled_trial_on_the_effe tier=A1 direct=direct outcome=frailty effect=null n_claims=2
+  - PMC9339797_strength_training_in_elderly_an_useful_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC10096553_effects_of_protein_supplementation_com tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11341597_effects_of_detraining_on_neuromuscular tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC11946861_affective_responses_to_barbell_based_r tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=1
+  - PMC12277308_comparative_analysis_of_high_intensity tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC12879307_biological_sex_as_a_tailoring_variable tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=1
+  - PMC2800839_resistance_exercise_training_lowers_hba tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC4656698_dose_response_relationships_of_resistan tier=B1 direct=review outcome=muscle_function effect=null n_claims=1
+  - PMC4773557_in_healthy_young_men_a_short_exhaustive tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC5476889_the_effects_of_6_months_of_progressive_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC5852756_recent_perspectives_regarding_the_role_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC6008824_effects_of_strength_training_on_muscle_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC7300209_the_effects_of_concurrent_training_comb tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC7742461_type_2_diabetes_reduces_the_muscle_anab tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=1
+  - PMC8336391_efficacy_of_low_load_resistance_trainin tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC9865736_transfer_effects_of_a_multiple_joint_is tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 533 words
+[paper_writer] introduction              done — 948 words
+[paper_writer] background                done — 917 words
+[paper_writer] inferential_bridge        done — 228 words
+[paper_writer] quantitative_results_table (deterministic) done — 700 words
+[paper_writer] methods (deterministic)   done — 1114 words
+[paper_writer] results                   done — 1885 words
+[paper_writer] cross_domain_synthesis    done — 1549 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1248 words
+[paper_writer] limitations_full          done — 631 words
+[paper_writer] conclusion                done — 627 words
+[paper_writer] references_full (deterministic) done — 4373 words
+render_full_paper done.
+Claim-strength repair: 2 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=PASS | formal_sr_methods=PARTIAL (failures=0, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='resistance_training' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z/full_paper.md
+  final_words: 65300
+  per-section: {'abstract': 535, 'introduction': 950, 'background': 919, 'inferential_bridge': 231, 'quantitative_results_table': 706, 'methods': 1116, 'results': 1887, 'cross_domain_synthesis': 1552, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1250, 'limitations_full': 633, 'conclusion': 629, 'references_full': 4375}
+  llm_calls: 18 cost_usd: $0.1711 (writer-only; final-layer review cost in synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T00:19:18.153125+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z' ===
+paper_quality_gate=PASS | formal_sr_methods=PARTIAL | failures=0 warnings=0
+
+
+=== 2026-05-10T00:19:18.201996+00:00 :: python3 scripts/run_v06_synthesis.py --topic resistance_training --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-resistance_training-v06-AAA10x2-pass2-2026-05-10T00-19-18Z' ===
+Loading v0.6.0 quant_claims (topic='resistance_training')...
+  Receipt funnel: accepted=78 outside_scope=0 partial_only=11 partial_none_only=178 none_only=6
+  Built 78 receipts (one per contributing paper).
+Thesis: Across 78 curated reference papers, the evidence base for resistance_training shows a context-dependent profile. Positive signals appear in: muscle function. Ne...
+  Receipts: 78 | Non-orth tensions: 1375
+  - PMC10687931_is_moderate_resistance_training_adequa tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=217
+  - PMC10393929_resistance_training_and_weight_loss_in tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=104
+  - PMC8588667_does_the_combination_of_resistance_trai tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=83
+  - PMC10798924_the_effect_of_hormonal_contraceptive_u tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=73
+  - PMC7908670_effects_of_multimodal_agility_like_exer tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=61
+  - PMC9585015_muscle_protein_synthesis_responses_foll tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=38
+  - PMC5845592_whey_protein_consumption_after_resistan tier=B2 direct=indirect outcome=muscle_function effect=negative n_claims=27
+  - PMC12331617_effects_of_floorball_and_strength_trai tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=25
+  - PMC10127187_connective_adaptive_resistance_exercis tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=20
+  - PMC6303128_no_difference_between_spray_dried_milk_ tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=20
+  - PMC9325860_progressive_resistance_training_for_con tier=B1 direct=review outcome=muscle_function effect=positive n_claims=18
+  - PMC12522390_biomechanical_insights_into_gait_rehab tier=B1 direct=review outcome=frailty effect=unclear n_claims=16
+  - PMC4967245_neither_load_nor_systemic_hormones_dete tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=16
+  - PMC10650161_fish_oil_supplementation_with_resistan tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=15
+  - PMC5872753_effects_of_insect_protein_supplementati tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=15
+  - PMC12476412_aerobic_exercise_preconditioning_does_ tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=12
+  - PMC2858200_a_high_protein_diet_with_resistance_exe tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=11
+  - PMC8588688_effects_of_resistance_training_in_healt tier=B1 direct=review outcome=muscle_function effect=positive n_claims=11
+  - PMC11099261_a_botanical_extract_blend_of_mangifera tier=A1 direct=direct outcome=muscle_function effect=positive n_claims=10
+  - PMC3542109_the_effects_of_six_weeks_of_supplementa tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=10
+  - PMC4667405_effects_of_physical_exercise_interventi tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=10
+  - PMC12376810_contralateral_effects_by_unilateral_ec tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=9
+  - PMC4053565_biomarkers_of_muscle_quality_n_terminal tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=9
+  - PMC8686274_eccentric_only_versus_concentric_only_r tier=C1 direct=mechanistic outcome=muscle_function effect=unclear n_claims=9
+  - PMC9997646_resistance_exercise_training_increases_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=9
+  - PMC9367108_effectiveness_of_power_training_compare tier=B1 direct=review outcome=muscle_function effect=positive n_claims=8
+  - PMC12582911_postinactivity_exercise_training_impro tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=7
+  - PMC12883749_effects_of_resistance_training_on_musc tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=7
+  - PMC8718025_home_based_aerobic_exercise_and_resista tier=B2 direct=indirect outcome=immune effect=negative n_claims=7
+  - PMC12181168_resistance_exercise_training_in_older_ tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=6
+  - PMC9794326_aerobic_exercise_combined_with_resistan tier=B1 direct=review outcome=muscle_function effect=positive n_claims=6
+  - PMC12506341_impact_of_creatine_supplementation_and tier=B1 direct=review outcome=muscle_function effect=unclear n_claims=5
+  - PMC6357404_load_magnitude_affects_patellar_tendon_ tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=5
+  - PMC9740942_a_review_of_rehabilitation_benefits_of_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=5
+  - PMC11057611_not_only_protein_dietary_supplements_t tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC11622696_what_specific_exercise_training_is_mos tier=B1 direct=review outcome=frailty effect=unclear n_claims=4
+  - PMC11688722_gait_speed_moderates_efficacy_of_home_ tier=B2 direct=indirect outcome=frailty effect=negative n_claims=4
+  - PMC5697397_native_whey_protein_with_high_levels_of tier=B2 direct=indirect outcome=muscle_function effect=negative n_claims=4
+  - PMC6826125_metformin_blunts_muscle_hypertrophy_in_ tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=4
+  - PMC7414534_effectiveness_of_a_resistance_training_ tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=4
+  - PMC8001546_effects_of_cardiovascular_resistance_an tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC8034230_increased_leg_strength_after_concurrent tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC8322027_effect_of_resistance_exercise_training_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC8489980_elbow_joint_angles_in_elbow_flexor_unil tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=4
+  - PMC8623877_effects_of_milk_or_soy_milk_combined_wi tier=B2 direct=indirect outcome=frailty effect=unclear n_claims=4
+  - PMC9690442_effects_of_12_week_progressive_sandbag_ tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=4
+  - PMC10874140_resistance_training_on_an_outdoor_exer tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=3
+  - PMC11011920_supplementation_with_lactiplantibacill tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC12178171_effects_of_high_intensity_progressive_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC2245953_effects_of_beta_hydroxy_beta_methylbuty tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC6090881_issn_exercise_sports_nutrition_review_u tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=3
+  - PMC8267934_effects_of_16_weeks_of_resistance_train tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=3
+  - PMC9656451_effects_of_twenty_four_weeks_of_resista tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=3
+  - PMC12115393_the_effects_of_exercise_intervention_i tier=B1 direct=review outcome=muscle_function effect=null n_claims=2
+  - PMC12387932_the_effects_of_pedaling_based_progress tier=A1 direct=direct outcome=muscle_function effect=unclear n_claims=2
+  - PMC12630110_effects_of_elastic_band_resistance_tra tier=B1 direct=review outcome=muscle_function effect=null n_claims=2
+  - PMC1752232_strength_training_improves_muscle_quali tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC4177181_resistance_training_exercise_program_fo tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=2
+  - PMC5041535_the_impact_of_protein_quality_on_the_pr tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC5541589_the_effect_of_combined_resistance_exerc tier=B1 direct=review outcome=muscle_function effect=null n_claims=2
+  - PMC6020314_eight_weeks_of_resistance_training_in_c tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC7913348_randomized_controlled_trial_on_the_effe tier=A1 direct=direct outcome=frailty effect=null n_claims=2
+  - PMC9339797_strength_training_in_elderly_an_useful_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=2
+  - PMC10096553_effects_of_protein_supplementation_com tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC11341597_effects_of_detraining_on_neuromuscular tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC11946861_affective_responses_to_barbell_based_r tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=1
+  - PMC12277308_comparative_analysis_of_high_intensity tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC12879307_biological_sex_as_a_tailoring_variable tier=B2 direct=indirect outcome=muscle_function effect=positive n_claims=1
+  - PMC2800839_resistance_exercise_training_lowers_hba tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC4656698_dose_response_relationships_of_resistan tier=B1 direct=review outcome=muscle_function effect=null n_claims=1
+  - PMC4773557_in_healthy_young_men_a_short_exhaustive tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC5476889_the_effects_of_6_months_of_progressive_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC5852756_recent_perspectives_regarding_the_role_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC6008824_effects_of_strength_training_on_muscle_ tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC7300209_the_effects_of_concurrent_training_comb tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=1
+  - PMC7742461_type_2_diabetes_reduces_the_muscle_anab tier=B2 direct=indirect outcome=muscle_function effect=null n_claims=1
+  - PMC8336391_efficacy_of_low_load_resistance_trainin tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+  - PMC9865736_transfer_effects_of_a_multiple_joint_is tier=B2 direct=indirect outcome=muscle_function effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 695 words
+[paper_writer] introduction              done — 1225 words
+[paper_writer] background                done — 752 words
+[paper_writer] inferential_bridge        done — 387 words
+[paper_writer] quantitative_results_table (deterministic) done — 700 words
+[paper_writer] methods (deterministic)   done — 1114 words
+[paper_writer] results                   done — 1915 words
+[paper_writer] cross_domain_synthesis    done — 1284 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1052 words
+[paper_writer] limitations_full          done — 653 words
+[paper_writer] conclusion                done — 155 words
+[paper_writer] references_full (deterministic) done — 4373 words
+[paper_writer] BACKSTOP: conclusion at 155 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender failed (TimeoutError: ); keeping original
+render_full_paper done.
+Claim-strength repair: 2 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 5 patches...
+[pipeline]   applied=2 rejected=2 flagged=1 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='resistance_training' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-resistance_training-v06-AAA10x2-pass2-2026-05-10T00-19-18Z/full_paper.md
+  final_words: 64967
+  per-section: {'abstract': 697, 'introduction': 1227, 'background': 754, 'inferential_bridge': 390, 'quantitative_results_table': 706, 'methods': 1116, 'results': 1917, 'cross_domain_synthesis': 1287, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 1054, 'limitations_full': 655, 'conclusion': 157, 'references_full': 4375}
+  llm_calls: 17 cost_usd: $0.1610 (writer-only; final-layer review cost in synthesis-resistance_training-v06-AAA10x2-pass2-2026-05-10T00-19-18Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T00:32:19.855475+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-resistance_training-v06-AAA10x2-pass2-2026-05-10T00-19-18Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-10T00:32:19.904596+00:00 :: python3 scripts/run_v06_synthesis.py --topic omega3 --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-omega3-v06-AAA10x2-pass1-2026-05-10T00-32-19Z' ===
+Loading v0.6.0 quant_claims (topic='omega3')...
+  Receipt funnel: accepted=45 outside_scope=3 partial_only=216 partial_none_only=187 none_only=61
+  Built 45 receipts (one per contributing paper).
+Thesis: Across 45 curated reference papers, the evidence base for omega3 shows a context-dependent profile. Positive signals appear in: cardiometabolic, immune. Negativ...
+  Receipts: 45 | Non-orth tensions: 303
+  - PMC11990358_mechanisms_linking_obesity_insulin_res tier=B2 direct=indirect outcome=immune effect=unclear n_claims=36
+  - PMC12678151_retrospective_analysis_of_omega_3_fatt tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=16
+  - PMC9075326_a_head_to_head_comparison_of_a_free_fat tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=13
+  - DOI_10_1096_fasebj_24_1_supplement_210_5_a_factori tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=12
+  - DOI_10_1002_clc_20604_omega_3_dietary_supplements_ tier=B1 direct=review outcome=longevity effect=positive n_claims=11
+  - PMC4957603_switching_from_epa_dha_omega_3_acid_eth tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=11
+  - PMC10196397_differential_effects_of_high_dose_omeg tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=9
+  - DOI_10_1089_met_2014_0137_icosapent_ethyl_eicosape tier=B1 direct=review outcome=immune effect=null n_claims=8
+  - PMC4560373_dietary_omega_3_fatty_acid_supplementat tier=A1 direct=direct outcome=cardiometabolic effect=positive n_claims=8
+  - DOI_10_1161_01_atv_11_4_903_dietary_eicosapentaeno tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC2500009_the_omega_3_fatty_acid_eicosapentaenoic tier=B2 direct=indirect outcome=immune effect=unclear n_claims=6
+  - PMC6521162_dietary_docosahexaenoic_acid_dha_and_ei tier=C1 direct=mechanistic outcome=cardiometabolic effect=unclear n_claims=5
+  - PMC10382059_omega_3_polyunsaturated_fatty_acid_eic tier=B2 direct=indirect outcome=immune effect=null n_claims=4
+  - PMC11351866_eicosapentaenoic_acid_epa_and_docosahe tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=4
+  - PMC2993045_effects_of_b_vitamins_and_omega_3_fatty tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - PMC4626682_redox_status_and_neuro_inflammation_ind tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=4
+  - PMC4848711_long_chain_omega_3_polyunsaturated_fatt tier=C1 direct=mechanistic outcome=immune effect=null n_claims=4
+  - PMC12384005_fighting_autism_with_fatty_acids_mater tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - PMC12450000_comparative_risk_of_atrial_fibrillatio tier=B2 direct=indirect outcome=longevity effect=negative n_claims=3
+  - PMC2612582_effect_of_fish_oil_on_arrhythmias_and_m tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - PMC5571638_docosahexaenoic_acid_containing_choline tier=C1 direct=mechanistic outcome=immune effect=positive n_claims=3
+  - PMC5748755_effects_of_omega_3_long_chain_polyunsat tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - PMC6316589_low_sucrose_omega_3_enriched_diet_has_r tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=3
+  - PMC8211733_omega_3_fatty_acids_and_vitamin_d_decre tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - DOI_10_1136_bmj_38755_366331_2f_risks_and_benefits tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_37275_scipsy_v6i2_190_preventing_cognitive_ tier=B1 direct=review outcome=immune effect=negative n_claims=2
+  - PMC12532594_the_dietary_ligands_omega_3_fatty_acid tier=B2 direct=indirect outcome=immune effect=unclear n_claims=2
+  - PMC12596225_preventing_effect_of_plant_extracts_an tier=C1 direct=mechanistic outcome=immune effect=null n_claims=2
+  - PMC4710127_administration_of_dha_reduces_endoplasm tier=B2 direct=indirect outcome=immune effect=unclear n_claims=2
+  - PMC6330561_new_insights_into_mechanisms_of_action_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC8413259_effect_of_omega_3_fatty_acids_on_cardio tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC9868810_associations_of_eicosapentaenoic_acid_a tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMID31096898_the_effects_of_omega_3_supplementatio tier=B1 direct=review outcome=immune effect=positive n_claims=2
+  - DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_eleva tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1096_fasebj_21_6_a736_b_docosahexaenoic_aci tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - DOI_10_1161_atvbaha_119_313286_emerging_mechanisms tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_32889_actabioina_114_effect_of_pasak_bumi_e tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - PMC10915802_attenuation_of_chronic_stress_induced_ tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - PMC12166187_impact_of_omega_3_polyunsaturated_fatt tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=1
+  - PMC12698574_omega_3_fatty_acid_docosahexaenoic_aci tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC13008728_effect_of_omega_3_supplementation_on_m tier=B1 direct=review outcome=immune effect=unclear n_claims=1
+  - PMC5885893_associations_of_omega_3_fatty_acid_supp tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC6038194_unveiling_anti_oxidative_and_anti_infla tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC6966808_impact_of_omega_3_fatty_acid_oral_thera tier=A1 direct=direct outcome=immune effect=unclear n_claims=1
+  - PMC9834373_role_of_omega_3_fatty_acids_in_cardiova tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 492 words
+[paper_writer] introduction              done — 15 words
+[paper_writer] background                done — 141 words
+[paper_writer] inferential_bridge        done — 121 words
+[paper_writer] quantitative_results_table (deterministic) done — 663 words
+[paper_writer] methods (deterministic)   done — 1110 words
+[paper_writer] results                   done — 770 words
+[paper_writer] cross_domain_synthesis    done — 950 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 18 words
+[paper_writer] limitations_full          done — 678 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 2386 words
+[paper_writer] BACKSTOP: discussion at 18 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (18 → 846 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 0 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 0 patches...
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='omega3' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-omega3-v06-AAA10x2-pass1-2026-05-10T00-32-19Z/full_paper.md
+  final_words: 23762
+  per-section: {'abstract': 494, 'introduction': 17, 'background': 143, 'inferential_bridge': 124, 'quantitative_results_table': 669, 'methods': 1112, 'results': 772, 'cross_domain_synthesis': 953, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 848, 'limitations_full': 680, 'conclusion': 18, 'references_full': 2388}
+  llm_calls: 26 cost_usd: $0.0860 (writer-only; final-layer review cost in synthesis-omega3-v06-AAA10x2-pass1-2026-05-10T00-32-19Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T00:50:22.944411+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-omega3-v06-AAA10x2-pass1-2026-05-10T00-32-19Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-10T00:50:22.990225+00:00 :: python3 scripts/run_v06_synthesis.py --topic omega3 --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-omega3-v06-AAA10x2-pass2-2026-05-10T00-50-22Z' ===
+Loading v0.6.0 quant_claims (topic='omega3')...
+  Receipt funnel: accepted=45 outside_scope=3 partial_only=216 partial_none_only=187 none_only=61
+  Built 45 receipts (one per contributing paper).
+Thesis: Across 45 curated reference papers, the evidence base for omega3 shows a context-dependent profile. Positive signals appear in: cardiometabolic, immune. Negativ...
+  Receipts: 45 | Non-orth tensions: 303
+  - PMC11990358_mechanisms_linking_obesity_insulin_res tier=B2 direct=indirect outcome=immune effect=unclear n_claims=36
+  - PMC12678151_retrospective_analysis_of_omega_3_fatt tier=B2 direct=indirect outcome=cardiometabolic effect=negative n_claims=16
+  - PMC9075326_a_head_to_head_comparison_of_a_free_fat tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=13
+  - DOI_10_1096_fasebj_24_1_supplement_210_5_a_factori tier=B1 direct=review outcome=cardiometabolic effect=mixed n_claims=12
+  - DOI_10_1002_clc_20604_omega_3_dietary_supplements_ tier=B1 direct=review outcome=longevity effect=positive n_claims=11
+  - PMC4957603_switching_from_epa_dha_omega_3_acid_eth tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=11
+  - PMC10196397_differential_effects_of_high_dose_omeg tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=9
+  - DOI_10_1089_met_2014_0137_icosapent_ethyl_eicosape tier=B1 direct=review outcome=immune effect=null n_claims=8
+  - PMC4560373_dietary_omega_3_fatty_acid_supplementat tier=A1 direct=direct outcome=cardiometabolic effect=positive n_claims=8
+  - DOI_10_1161_01_atv_11_4_903_dietary_eicosapentaeno tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=6
+  - PMC2500009_the_omega_3_fatty_acid_eicosapentaenoic tier=B2 direct=indirect outcome=immune effect=unclear n_claims=6
+  - PMC6521162_dietary_docosahexaenoic_acid_dha_and_ei tier=C1 direct=mechanistic outcome=cardiometabolic effect=unclear n_claims=5
+  - PMC10382059_omega_3_polyunsaturated_fatty_acid_eic tier=B2 direct=indirect outcome=immune effect=null n_claims=4
+  - PMC11351866_eicosapentaenoic_acid_epa_and_docosahe tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=4
+  - PMC2993045_effects_of_b_vitamins_and_omega_3_fatty tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=4
+  - PMC4626682_redox_status_and_neuro_inflammation_ind tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=4
+  - PMC4848711_long_chain_omega_3_polyunsaturated_fatt tier=C1 direct=mechanistic outcome=immune effect=null n_claims=4
+  - PMC12384005_fighting_autism_with_fatty_acids_mater tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - PMC12450000_comparative_risk_of_atrial_fibrillatio tier=B2 direct=indirect outcome=longevity effect=negative n_claims=3
+  - PMC2612582_effect_of_fish_oil_on_arrhythmias_and_m tier=B1 direct=review outcome=longevity effect=unclear n_claims=3
+  - PMC5571638_docosahexaenoic_acid_containing_choline tier=C1 direct=mechanistic outcome=immune effect=positive n_claims=3
+  - PMC5748755_effects_of_omega_3_long_chain_polyunsat tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - PMC6316589_low_sucrose_omega_3_enriched_diet_has_r tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=3
+  - PMC8211733_omega_3_fatty_acids_and_vitamin_d_decre tier=B2 direct=indirect outcome=immune effect=unclear n_claims=3
+  - DOI_10_1136_bmj_38755_366331_2f_risks_and_benefits tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - DOI_10_37275_scipsy_v6i2_190_preventing_cognitive_ tier=B1 direct=review outcome=immune effect=negative n_claims=2
+  - PMC12532594_the_dietary_ligands_omega_3_fatty_acid tier=B2 direct=indirect outcome=immune effect=unclear n_claims=2
+  - PMC12596225_preventing_effect_of_plant_extracts_an tier=C1 direct=mechanistic outcome=immune effect=null n_claims=2
+  - PMC4710127_administration_of_dha_reduces_endoplasm tier=B2 direct=indirect outcome=immune effect=unclear n_claims=2
+  - PMC6330561_new_insights_into_mechanisms_of_action_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=2
+  - PMC8413259_effect_of_omega_3_fatty_acids_on_cardio tier=B1 direct=review outcome=longevity effect=unclear n_claims=2
+  - PMC9868810_associations_of_eicosapentaenoic_acid_a tier=B2 direct=indirect outcome=longevity effect=unclear n_claims=2
+  - PMID31096898_the_effects_of_omega_3_supplementatio tier=B1 direct=review outcome=immune effect=positive n_claims=2
+  - DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_eleva tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_1096_fasebj_21_6_a736_b_docosahexaenoic_aci tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - DOI_10_1161_atvbaha_119_313286_emerging_mechanisms tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - DOI_10_32889_actabioina_114_effect_of_pasak_bumi_e tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - PMC10915802_attenuation_of_chronic_stress_induced_ tier=C1 direct=mechanistic outcome=immune effect=unclear n_claims=1
+  - PMC12166187_impact_of_omega_3_polyunsaturated_fatt tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=1
+  - PMC12698574_omega_3_fatty_acid_docosahexaenoic_aci tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC13008728_effect_of_omega_3_supplementation_on_m tier=B1 direct=review outcome=immune effect=unclear n_claims=1
+  - PMC5885893_associations_of_omega_3_fatty_acid_supp tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC6038194_unveiling_anti_oxidative_and_anti_infla tier=B2 direct=indirect outcome=immune effect=unclear n_claims=1
+  - PMC6966808_impact_of_omega_3_fatty_acid_oral_thera tier=A1 direct=direct outcome=immune effect=unclear n_claims=1
+  - PMC9834373_role_of_omega_3_fatty_acids_in_cardiova tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 443 words
+[paper_writer] introduction              done — 15 words
+[paper_writer] background                done — 17 words
+[paper_writer] quantitative_results_table (deterministic) done — 663 words
+[paper_writer] methods (deterministic)   done — 1110 words
+[paper_writer] results                   done — 766 words
+[paper_writer] cross_domain_synthesis    done — 652 words
+[paper_writer] novel_framework (deterministic) done — 133 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 18 words
+[paper_writer] limitations_full          done — 578 words
+[paper_writer] conclusion                done — 16 words
+[paper_writer] references_full (deterministic) done — 2386 words
+[paper_writer] BACKSTOP: cross_domain_synthesis at 652 words (floor 850); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: cross_domain_synthesis rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: discussion at 18 words (floor 800); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: discussion rerender failed (TimeoutError: ); keeping original
+[paper_writer] BACKSTOP: conclusion at 16 words (floor 250); attempting final audit-aware rerender
+[paper_writer] BACKSTOP: conclusion rerender did not improve (16 → 16); keeping original
+[paper_writer] BACKSTOP: cross_domain_synthesis appended deterministic anchor (652 → 785 words); structural Q11/Q12 backstop
+[paper_writer] BACKSTOP: discussion appended deterministic anchor (18 → 846 words); structural Q11/Q12 backstop
+render_full_paper done.
+Claim-strength repair: 0 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 3 patches...
+[pipeline]   applied=1 rejected=0 flagged=2 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=0)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='omega3' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-omega3-v06-AAA10x2-pass2-2026-05-10T00-50-22Z/full_paper.md
+  final_words: 23628
+  per-section: {'abstract': 445, 'introduction': 17, 'background': 19, 'inferential_bridge': 0, 'quantitative_results_table': 669, 'methods': 1112, 'results': 768, 'cross_domain_synthesis': 788, 'novel_framework': 137, 'framework_engagement': 85, 'discussion': 848, 'limitations_full': 580, 'conclusion': 18, 'references_full': 2388}
+  llm_calls: 28 cost_usd: $0.0938 (writer-only; final-layer review cost in synthesis-omega3-v06-AAA10x2-pass2-2026-05-10T00-50-22Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T01:11:29.635458+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-omega3-v06-AAA10x2-pass2-2026-05-10T00-50-22Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=0
+
+
+=== 2026-05-10T01:11:29.693257+00:00 :: python3 scripts/run_v06_synthesis.py --topic berberine --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-berberine-v06-AAA10x2-pass1-2026-05-10T01-11-29Z' ===
+Loading v0.6.0 quant_claims (topic='berberine')...
+  Receipt funnel: accepted=15 outside_scope=0 partial_only=8 partial_none_only=50 none_only=3
+  Built 15 receipts (one per contributing paper).
+Thesis: Across 15 curated reference papers, the evidence base for berberine shows a context-dependent profile. Positive signals appear in: cardiometabolic. Null finding...
+  Receipts: 15 | Non-orth tensions: 77
+  - PMC8696197_the_effect_of_berberine_on_metabolic_pr tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=42
+  - PMC10483788_efficacy_and_safety_of_himaberb_berber tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=28
+  - PMC6321535_combination_of_berberine_with_resveratr tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=16
+  - PMC3539561_modulating_gut_microbiota_as_an_anti_di tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=9
+  - PMC9539808_dietary_berberine_alleviates_high_carbo tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=9
+  - PMC9135894_the_effects_of_berberine_on_inflammator tier=A1 direct=direct outcome=immune effect=unclear n_claims=6
+  - PMC12307485_efficacy_and_safety_of_berberine_on_th tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=5
+  - PMC8448729_a_phase_2_proof_of_concept_randomised_c tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=5
+  - PMC11050387_berberine_effects_in_pre_fibrotic_stag tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=4
+  - PMC4114874_berberine_promotes_glucose_consumption_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC3722087_effect_of_berberine_on_insulin_resistan tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=3
+  - PMC8107691_efficacy_and_safety_of_berberine_alone_ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=3
+  - PMC6434235_effects_of_berberine_on_glucose_lipid_m tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=2
+  - PMC12433188_biochemical_changes_associated_with_no tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC8401658_effect_of_berberine_on_cardiovascular_d tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 357 words
+[paper_writer] introduction              done — 947 words
+[paper_writer] background                done — 974 words
+[paper_writer] inferential_bridge        done — 123 words
+[paper_writer] quantitative_results_table (deterministic) done — 369 words
+[paper_writer] methods (deterministic)   done — 1106 words
+[paper_writer] results                   done — 1912 words
+[paper_writer] cross_domain_synthesis    done — 1240 words
+[paper_writer] novel_framework (deterministic) done — 132 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1138 words
+[paper_writer] limitations_full          done — 554 words
+[paper_writer] conclusion                done — 573 words
+[paper_writer] references_full (deterministic) done — 793 words
+render_full_paper done.
+Claim-strength repair: 2 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 8 patches...
+[pipeline]   applied=2 rejected=0 flagged=4 repaired=0 arbitrated=0 arb_rejected=0 auto_stripped=2 (Grok-unresolved P1 after repair: 2)
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=Trust-Spine Pass — Agent Review Unresolved (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=3, warnings=1)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='berberine' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-berberine-v06-AAA10x2-pass1-2026-05-10T01-11-29Z/full_paper.md
+  final_words: 15520
+  per-section: {'abstract': 359, 'introduction': 949, 'background': 976, 'inferential_bridge': 126, 'quantitative_results_table': 375, 'methods': 1108, 'results': 1914, 'cross_domain_synthesis': 1243, 'novel_framework': 136, 'framework_engagement': 85, 'discussion': 1140, 'limitations_full': 556, 'conclusion': 575, 'references_full': 795}
+  llm_calls: 15 cost_usd: $0.0227 (writer-only; final-layer review cost in synthesis-berberine-v06-AAA10x2-pass1-2026-05-10T01-11-29Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T01:20:56.590903+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-berberine-v06-AAA10x2-pass1-2026-05-10T01-11-29Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=3 warnings=1
+
+
+=== 2026-05-10T01:20:56.637380+00:00 :: python3 scripts/run_v06_synthesis.py --topic berberine --out-dir '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-berberine-v06-AAA10x2-pass2-2026-05-10T01-20-56Z' ===
+Loading v0.6.0 quant_claims (topic='berberine')...
+  Receipt funnel: accepted=15 outside_scope=0 partial_only=8 partial_none_only=50 none_only=3
+  Built 15 receipts (one per contributing paper).
+Thesis: Across 15 curated reference papers, the evidence base for berberine shows a context-dependent profile. Positive signals appear in: cardiometabolic. Null finding...
+  Receipts: 15 | Non-orth tensions: 77
+  - PMC8696197_the_effect_of_berberine_on_metabolic_pr tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=42
+  - PMC10483788_efficacy_and_safety_of_himaberb_berber tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=28
+  - PMC6321535_combination_of_berberine_with_resveratr tier=B2 direct=indirect outcome=cardiometabolic effect=mixed n_claims=16
+  - PMC3539561_modulating_gut_microbiota_as_an_anti_di tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=9
+  - PMC9539808_dietary_berberine_alleviates_high_carbo tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=9
+  - PMC9135894_the_effects_of_berberine_on_inflammator tier=A1 direct=direct outcome=immune effect=unclear n_claims=6
+  - PMC12307485_efficacy_and_safety_of_berberine_on_th tier=B1 direct=review outcome=cardiometabolic effect=positive n_claims=5
+  - PMC8448729_a_phase_2_proof_of_concept_randomised_c tier=A1 direct=direct outcome=cardiometabolic effect=unclear n_claims=5
+  - PMC11050387_berberine_effects_in_pre_fibrotic_stag tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=4
+  - PMC4114874_berberine_promotes_glucose_consumption_ tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=4
+  - PMC3722087_effect_of_berberine_on_insulin_resistan tier=A1 direct=direct outcome=cardiometabolic effect=mixed n_claims=3
+  - PMC8107691_efficacy_and_safety_of_berberine_alone_ tier=B1 direct=review outcome=cardiometabolic effect=null n_claims=3
+  - PMC6434235_effects_of_berberine_on_glucose_lipid_m tier=B2 direct=indirect outcome=cardiometabolic effect=null n_claims=2
+  - PMC12433188_biochemical_changes_associated_with_no tier=B1 direct=review outcome=cardiometabolic effect=unclear n_claims=1
+  - PMC8401658_effect_of_berberine_on_cardiovascular_d tier=B2 direct=indirect outcome=cardiometabolic effect=unclear n_claims=1
+
+Calling render_full_paper (target 5-15k words, multi-section, tiered validation)...
+[paper_writer] starting full-paper render
+[paper_writer] abstract                  done — 429 words
+[paper_writer] introduction              done — 1256 words
+[paper_writer] background                done — 1045 words
+[paper_writer] inferential_bridge        done — 116 words
+[paper_writer] quantitative_results_table (deterministic) done — 369 words
+[paper_writer] methods (deterministic)   done — 1106 words
+[paper_writer] results                   done — 1484 words
+[paper_writer] cross_domain_synthesis    done — 958 words
+[paper_writer] novel_framework (deterministic) done — 132 words
+[paper_writer] framework_engagement (deterministic) done — 80 words
+[paper_writer] discussion                done — 1491 words
+[paper_writer] limitations_full          done — 563 words
+[paper_writer] conclusion                done — 309 words
+[paper_writer] references_full (deterministic) done — 793 words
+render_full_paper done.
+Claim-strength repair: 3 sentence(s) repaired
+[pipeline] Stage 1/5 — initial audit...
+[pipeline] Stage 2/5 — consistency audit + auto-fix...
+[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...
+[pipeline] Stage 4/5 — auto-apply 7 patches...
+[pipeline]   applied=5 rejected=0 flagged=2 repaired=2 arbitrated=0 arb_rejected=0 auto_stripped=0
+[pipeline] Stage 5/5 — final audit + unified verdict...
+[pipeline] DONE — verdict=AAA (stage1 14/14; stage2 P1=0 P2=0)
+[pipeline] Stage 5b — manuscript appendix spliced (Search Provenance / AI Disclosure / Accountability / Data Availability)
+[pipeline] Stage 5c — paper_quality_gate=FAIL | formal_sr_methods=PARTIAL (failures=1, warnings=1)
+[pipeline] Stage 6/6 — no-regression gate skipped: new run topic='berberine' differs from baseline topic='metformin' (cross-topic comparison is not meaningful — promote a per-topic baseline)
+
+DONE: /Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-berberine-v06-AAA10x2-pass2-2026-05-10T01-20-56Z/full_paper.md
+  final_words: 14837
+  per-section: {'abstract': 431, 'introduction': 1258, 'background': 1047, 'inferential_bridge': 119, 'quantitative_results_table': 375, 'methods': 1108, 'results': 1486, 'cross_domain_synthesis': 961, 'novel_framework': 136, 'framework_engagement': 85, 'discussion': 1493, 'limitations_full': 565, 'conclusion': 311, 'references_full': 795}
+  llm_calls: 17 cost_usd: $0.0261 (writer-only; final-layer review cost in synthesis-berberine-v06-AAA10x2-pass2-2026-05-10T01-20-56Z/full_paper.review_patches.json)
+
+
+=== 2026-05-10T01:33:09.719187+00:00 :: python3 scripts/paper_quality_runtime.py '/Users/domininclynch/Desktop/Business/Research Agent Bot/.claude/worktrees/cranky-shaw-dd257f/runs/synthesis-berberine-v06-AAA10x2-pass2-2026-05-10T01-20-56Z' ===
+paper_quality_gate=FAIL | formal_sr_methods=PARTIAL | failures=1 warnings=1

@@ -1,0 +1,551 @@
+{
+  "started_at": "2026-05-09T20-10-42Z",
+  "topics": [
+    "metformin",
+    "rapamycin",
+    "glp1",
+    "statins",
+    "acarbose",
+    "aspirin",
+    "caloric_restriction",
+    "resistance_training",
+    "omega3",
+    "berberine"
+  ],
+  "passes": 2,
+  "label": "AAA10x2",
+  "log_path": "logs/aaa_sweep_2026-05-09T20-10-42Z.log",
+  "results": {
+    "metformin": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-metformin-v06-AAA10x2-pass1-2026-05-09T20-10-42Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "Trust-Spine Pass \u2014 Agent Review Unresolved",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": false,
+            "journal_ready": false,
+            "maturity_label": "L3 \u2014 FLOOR-MET",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "reject",
+            "rubric_total": 27
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-metformin-v06-AAA10x2-pass2-2026-05-09T20-26-19Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": true,
+            "template_total_hits": 2,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "revise",
+            "rubric_total": 28
+          }
+        }
+      ],
+      "l6_classification": "L5 (once)"
+    },
+    "rapamycin": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-rapamycin-v06-AAA10x2-pass1-2026-05-09T20-40-06Z",
+          "synth_exit": 0,
+          "adapter_exit": 0,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "PASS",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 29
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-rapamycin-v06-AAA10x2-pass2-2026-05-09T20-59-13Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": false,
+            "maturity_label": "L4 \u2014 ANALYTICALLY CERTIFIED",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": false,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 27
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "glp1": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-glp1-v06-AAA10x2-pass1-2026-05-09T21-12-01Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "SHIP-BLOCKED",
+            "stage1_pass_rate": "13/14",
+            "stage1_score": 9.3,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": false,
+            "journal_ready": false,
+            "maturity_label": "L3 \u2014 FLOOR-MET",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": false,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "revise",
+            "rubric_total": 25
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-glp1-v06-AAA10x2-pass2-2026-05-09T21-29-52Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "SHIP-BLOCKED",
+            "stage1_pass_rate": "13/14",
+            "stage1_score": 9.3,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": false,
+            "journal_ready": false,
+            "maturity_label": "L3 \u2014 FLOOR-MET",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "reject",
+            "rubric_total": 27
+          }
+        }
+      ],
+      "l6_classification": "below-L5"
+    },
+    "statins": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-statins-v06-AAA10x2-pass1-2026-05-09T21-48-32Z",
+          "synth_exit": 0,
+          "adapter_exit": 0,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "PASS",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 29
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z",
+          "synth_exit": 0,
+          "adapter_exit": 0,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "PASS",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 29
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "acarbose": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-acarbose-v06-AAA10x2-pass1-2026-05-09T22-28-30Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": false,
+            "maturity_label": "L4 \u2014 ANALYTICALLY CERTIFIED",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": false,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "revise",
+            "rubric_total": 26
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z",
+          "synth_exit": 0,
+          "adapter_exit": 0,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "PASS",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 28
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "aspirin": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-aspirin-v06-AAA10x2-pass1-2026-05-09T22-50-41Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "revise",
+            "rubric_total": 29
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": true,
+            "template_total_hits": 2,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "revise",
+            "rubric_total": 28
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "caloric_restriction": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-caloric_restriction-v06-AAA10x2-pass1-2026-05-09T23-40-51Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": true,
+            "template_total_hits": 1,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "revise",
+            "rubric_total": 26
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-caloric_restriction-v06-AAA10x2-pass2-2026-05-09T23-52-08Z",
+          "synth_exit": 0,
+          "adapter_exit": 0,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "PASS",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 29
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "resistance_training": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z",
+          "synth_exit": 0,
+          "adapter_exit": 0,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": true,
+            "maturity_label": "L5 \u2014 JOURNAL-READY",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "PASS",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 29
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-resistance_training-v06-AAA10x2-pass2-2026-05-10T00-19-18Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": false,
+            "maturity_label": "L4 \u2014 ANALYTICALLY CERTIFIED",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "reject",
+            "rubric_total": 27
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "omega3": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-omega3-v06-AAA10x2-pass1-2026-05-10T00-32-19Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": false,
+            "maturity_label": "L4 \u2014 ANALYTICALLY CERTIFIED",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": false,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 27
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-omega3-v06-AAA10x2-pass2-2026-05-10T00-50-22Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": false,
+            "maturity_label": "L4 \u2014 ANALYTICALLY CERTIFIED",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": false,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "accept",
+            "rubric_total": 27
+          }
+        }
+      ],
+      "l6_classification": "L6 \u2014 REPRODUCIBLY JOURNAL-READY"
+    },
+    "berberine": {
+      "passes": [
+        {
+          "pass": 1,
+          "out_dir": "runs/synthesis-berberine-v06-AAA10x2-pass1-2026-05-10T01-11-29Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "Trust-Spine Pass \u2014 Agent Review Unresolved",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": false,
+            "journal_ready": false,
+            "maturity_label": "L3 \u2014 FLOOR-MET",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": false,
+            "template_blocking": true,
+            "template_total_hits": 1,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "reject",
+            "rubric_total": 25
+          }
+        },
+        {
+          "pass": 2,
+          "out_dir": "runs/synthesis-berberine-v06-AAA10x2-pass2-2026-05-10T01-20-56Z",
+          "synth_exit": 0,
+          "adapter_exit": 1,
+          "gates": {
+            "verdict": "AAA",
+            "stage1_pass_rate": "14/14",
+            "stage1_score": 10.0,
+            "stage2_p1": 0,
+            "stage2_p2": 0,
+            "all_green": true,
+            "journal_ready": false,
+            "maturity_label": "L4 \u2014 ANALYTICALLY CERTIFIED",
+            "certification_track": "AAA-CLIN",
+            "journal_surface_passed": true,
+            "template_blocking": false,
+            "template_total_hits": 0,
+            "paper_quality_gate": "FAIL",
+            "formal_sr_methods": "PARTIAL",
+            "publication_verdict": "reject",
+            "rubric_total": 26
+          }
+        }
+      ],
+      "l6_classification": "L5 (once)"
+    }
+  },
+  "finished_at": "2026-05-10T01:33:09+00:00"
+}
