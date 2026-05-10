@@ -2928,13 +2928,28 @@ async def _run_post_paper_pipeline(
     # agnostic — works for any topic.
     try:
         from agent.manuscript_scrub import (  # type: ignore[import-not-found]
+            rejected_citation_tokens_from_artifacts as _rejected_tokens_from_artifacts,
             scrub_paper as _scrub_paper,
         )
         _paper_md_in = paper_path.read_text()
+        _rejected_tokens: tuple[str, ...] = ()
+        try:
+            _manifest_for_scrub = json.loads(
+                (paper_path.parent / "manifest.json").read_text()
+            )
+            _spar_cache_for_scrub = json.loads(
+                (paper_path.parent / "spar_cache.json").read_text()
+            )
+            _rejected_tokens = _rejected_tokens_from_artifacts(
+                _manifest_for_scrub, _spar_cache_for_scrub,
+            )
+        except Exception:
+            _rejected_tokens = ()
         # Wave 24: tighter abstract cap (350 words, journal convention)
         # — was 500 in Wave 23. Matches GPT's audit recommendation.
         _scrubbed_md, _scrub_report = _scrub_paper(
             _paper_md_in, abstract_cap=350,
+            rejected_citation_tokens=_rejected_tokens,
         )
         if _scrubbed_md != _paper_md_in:
             paper_path.write_text(_scrubbed_md)
@@ -2943,7 +2958,13 @@ async def _run_post_paper_pipeline(
             f"abstract={_scrub_report.abstract_words_before}→"
             f"{_scrub_report.abstract_words_after} words, "
             f"residue_phrases_scrubbed={_scrub_report.residue_phrases_scrubbed}, "
-            f"duplicate_rows_removed={_scrub_report.duplicate_rows_removed}",
+            f"duplicate_rows_removed={_scrub_report.duplicate_rows_removed}, "
+            f"broken_effect_sentences_removed="
+            f"{_scrub_report.broken_effect_sentences_removed}, "
+            f"rejected_rows_removed="
+            f"{_scrub_report.rejected_evidence_rows_removed}, "
+            f"rejected_sentences_removed="
+            f"{_scrub_report.rejected_evidence_sentences_removed}",
             file=sys.stderr,
         )
     except Exception as _e:  # pragma: no cover — best-effort

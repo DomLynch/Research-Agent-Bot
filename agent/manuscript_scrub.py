@@ -18,6 +18,10 @@ fixes for the failure classes the writer cannot self-correct:
                                 paper_writer_deterministic.py, but a
                                 paper rendered against a stale cache
                                 or alternative writer must not leak).
+  4. scrub_rejected_evidence  — removes SPAR-rejected citation tokens
+                                from main-body prose/table rows while
+                                preserving the quarantine appendix and
+                                References audit trail.
 
 Universal: all rules are domain-agnostic. The scrubber takes the
 public MD as input and returns the scrubbed MD; it never adds new
@@ -27,7 +31,9 @@ from __future__ import annotations
 
 import re
 from collections import OrderedDict
+from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
+from typing import Any
 
 # Same forbidden-phrase list the contract uses, expressed as regex
 # patterns so we can also strip a leading marker (e.g. "Tournament
@@ -45,6 +51,7 @@ _RESIDUE_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"deterministic\s+evidence\s+summary", re.I),
     re.compile(r"LLM\s+proposes,\s+code\s+disposes", re.I),
     re.compile(r"no\s+LLM\s+authorship", re.I),
+    re.compile(r"\bH3:\s*", re.I),
 )
 
 
@@ -57,6 +64,9 @@ class ScrubReport:
     abstract_words_after: int
     duplicate_rows_removed: int
     residue_phrases_scrubbed: int
+    broken_effect_sentences_removed: int = 0
+    rejected_evidence_rows_removed: int = 0
+    rejected_evidence_sentences_removed: int = 0
 
 
 def scrub_engine_residue(md: str) -> tuple[str, int]:
@@ -329,8 +339,169 @@ def fix_qei_title_count(md: str) -> tuple[str, bool]:
     return md[:start] + new_section + md[end:], True
 
 
+# ---- Wave 26: SPAR-source deterministic leak scrub ----------------------
+
+
+_BROKEN_EFFECT_SENTENCE_RE = re.compile(
+    r"(^|(?<=[.!?])\s+)([^.\n]*\breported\s+an\s+effect\s+estimate\.)\s*",
+    re.I | re.M,
+)
+_PROTECTED_REJECT_HEADING_RE = re.compile(
+    r"^#{1,4}\s*(?:Rejected\s*/?\s*Contested\s+Evidence|"
+    r"Quarantined\s+Evidence|Quarantined\s+Receipts|References\b)[^\n]*\n",
+    re.I | re.M,
+)
+
+
+def rejected_citation_tokens_from_artifacts(
+    manifest: Mapping[str, Any],
+    spar_cache: Mapping[str, Any],
+) -> tuple[str, ...]:
+    """Return citation_tokens whose receipt_id has a SPAR reject verdict.
+
+    Universal — uses only the manifest receipt schema and spar_cache
+    verdict schema. The public scrubber then removes those tokens from
+    main-body evidence surfaces while preserving the quarantine appendix
+    and References.
+    """
+    verdicts = spar_cache.get("verdicts")
+    if not isinstance(verdicts, Mapping):
+        return ()
+    rejected_ids = {
+        str(rid)
+        for rid, verdict_obj in verdicts.items()
+        if isinstance(verdict_obj, Mapping)
+        and str(verdict_obj.get("verdict") or "").lower().startswith("reject")
+    }
+    if not rejected_ids:
+        return ()
+    receipts = manifest.get("receipts")
+    if not isinstance(receipts, Iterable):
+        return ()
+    out: list[str] = []
+    seen: set[str] = set()
+    for receipt in receipts:
+        if not isinstance(receipt, Mapping):
+            continue
+        if str(receipt.get("receipt_id") or "") not in rejected_ids:
+            continue
+        token = str(receipt.get("citation_token") or "").strip()
+        if token and token not in seen:
+            seen.add(token)
+            out.append(token)
+    return tuple(out)
+
+
+def scrub_broken_effect_estimates(md: str) -> tuple[str, int]:
+    """Remove truncated placeholder sentences such as
+    'UKPDS 1998 reported an effect estimate.'.
+
+    Delete-only: no attempt is made to invent a replacement estimate.
+    """
+    n = 0
+
+    def repl(m: re.Match[str]) -> str:
+        nonlocal n
+        n += 1
+        return m.group(1)
+
+    return _BROKEN_EFFECT_SENTENCE_RE.sub(repl, md), n
+
+
+def _protected_spans_for_rejected(md: str) -> list[tuple[int, int]]:
+    spans: list[tuple[int, int]] = []
+    for m in _PROTECTED_REJECT_HEADING_RE.finditer(md):
+        nxt = re.search(r"^#{1,4}\s+\S", md[m.end():], re.M)
+        end = m.end() + nxt.start() if nxt else len(md)
+        spans.append((m.start(), end))
+    return spans
+
+
+def _compile_token_re(tokens: Iterable[str]) -> re.Pattern[str] | None:
+    clean = [re.escape(t.strip()) for t in tokens if t and t.strip()]
+    if not clean:
+        return None
+    return re.compile(r"\b(?:" + "|".join(clean) + r")\b")
+
+
+def _scrub_rejected_segment(
+    segment: str,
+    token_re: re.Pattern[str],
+) -> tuple[str, int, int]:
+    rows_removed = 0
+    lines: list[str] = []
+    for line in segment.splitlines(keepends=True):
+        if line.lstrip().startswith("|") and token_re.search(line):
+            rows_removed += 1
+            continue
+        lines.append(line)
+    segment = "".join(lines)
+
+    sentences_removed = 0
+    chunks = re.split(r"(\n\s*\n)", segment)
+    out_chunks: list[str] = []
+    for chunk in chunks:
+        if not chunk or re.fullmatch(r"\n\s*\n", chunk):
+            out_chunks.append(chunk)
+            continue
+        parts = re.split(r"(?<=[.!?])(\s+)", chunk)
+        kept: list[str] = []
+        i = 0
+        while i < len(parts):
+            sentence = parts[i]
+            sep = parts[i + 1] if i + 1 < len(parts) else ""
+            if token_re.search(sentence):
+                sentences_removed += 1
+                i += 2
+                continue
+            kept.append(sentence)
+            kept.append(sep)
+            i += 2
+        out_chunks.append("".join(kept))
+    return "".join(out_chunks), rows_removed, sentences_removed
+
+
+def scrub_rejected_evidence_leaks(
+    md: str,
+    rejected_citation_tokens: Iterable[str],
+) -> tuple[str, int, int]:
+    """Delete SPAR-rejected citations from main evidence surfaces.
+
+    Preserves the dedicated Rejected / Contested Evidence quarantine
+    section and References. Outside those audit-only zones, removes
+    full markdown table rows and full prose sentences containing a
+    rejected citation token. It never rewrites claims.
+    """
+    token_re = _compile_token_re(rejected_citation_tokens)
+    if token_re is None:
+        return md, 0, 0
+    spans = _protected_spans_for_rejected(md)
+    if not spans:
+        segment, rows, sentences = _scrub_rejected_segment(md, token_re)
+        return re.sub(r"\n{3,}", "\n\n", segment), rows, sentences
+    out: list[str] = []
+    rows_total = 0
+    sentences_total = 0
+    cursor = 0
+    for start, end in spans:
+        segment, rows, sentences = _scrub_rejected_segment(
+            md[cursor:start], token_re,
+        )
+        out.append(segment)
+        out.append(md[start:end])
+        rows_total += rows
+        sentences_total += sentences
+        cursor = end
+    segment, rows, sentences = _scrub_rejected_segment(md[cursor:], token_re)
+    out.append(segment)
+    rows_total += rows
+    sentences_total += sentences
+    return re.sub(r"\n{3,}", "\n\n", "".join(out)), rows_total, sentences_total
+
+
 def scrub_paper(
     md: str, *, abstract_cap: int = 500,
+    rejected_citation_tokens: Iterable[str] = (),
 ) -> tuple[str, ScrubReport]:
     """Apply all scrubber rules in order. Returns (new_md, report).
 
@@ -339,15 +510,23 @@ def scrub_paper(
       2. abstract truncation (preserves remaining prose intent)
       3. table dedupe (operates on table structure)
       4. references dedupe (Wave 25)
-      5. QEI title row-count fix (Wave 25)"""
+      5. rejected evidence leak deletion (Wave 26)
+      6. QEI title row-count fix (Wave 25/26)"""
     md, n_residue = scrub_engine_residue(md)
     md, abs_before, abs_after = truncate_abstract(md, cap=abstract_cap)
+    md, n_broken_effect = scrub_broken_effect_estimates(md)
     md, n_dup_tables = dedupe_included_studies(md)
     md, n_dup_refs = dedupe_references_section(md)
-    md, qei_fixed = fix_qei_title_count(md)
+    md, n_reject_rows, n_reject_sentences = scrub_rejected_evidence_leaks(
+        md, rejected_citation_tokens,
+    )
+    md, _qei_fixed = fix_qei_title_count(md)
     return md, ScrubReport(
         abstract_words_before=abs_before,
         abstract_words_after=abs_after,
         duplicate_rows_removed=n_dup_tables + n_dup_refs,
         residue_phrases_scrubbed=n_residue,
+        broken_effect_sentences_removed=n_broken_effect,
+        rejected_evidence_rows_removed=n_reject_rows,
+        rejected_evidence_sentences_removed=n_reject_sentences,
     )

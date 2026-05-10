@@ -7,8 +7,11 @@ from __future__ import annotations
 
 from agent.manuscript_scrub import (  # type: ignore[import-not-found]
     dedupe_included_studies,
+    rejected_citation_tokens_from_artifacts,
+    scrub_broken_effect_estimates,
     scrub_engine_residue,
     scrub_paper,
+    scrub_rejected_evidence_leaks,
     truncate_abstract,
 )
 
@@ -41,6 +44,14 @@ def test_scrub_residue_idempotent_on_clean_md() -> None:
     out, n = scrub_engine_residue(md)
     assert out == md
     assert n == 0
+
+
+def test_scrub_residue_removes_h3_section_tags() -> None:
+    md = "### H3: Cardiometabolic Outcomes\n\nClean body.\n"
+    out, n = scrub_engine_residue(md)
+    assert n == 1
+    assert "H3:" not in out
+    assert "### Cardiometabolic Outcomes" in out
 
 
 # ---- abstract truncation ------------------------------------------------
@@ -205,6 +216,74 @@ def test_fix_qei_title_no_op_when_count_matches() -> None:
     out, fixed = fix_qei_title_count(md)
     assert not fixed
     assert out == md
+
+
+def test_rejected_tokens_from_artifacts_maps_spar_rejects() -> None:
+    manifest = {
+        "receipts": [
+            {"receipt_id": "r1", "citation_token": "Smith 2020"},
+            {"receipt_id": "r2", "citation_token": "Jones 2021"},
+        ]
+    }
+    spar_cache = {
+        "verdicts": {
+            "r1": {"verdict": "reject_direction_mismatch"},
+            "r2": {"verdict": "accept_clean"},
+        }
+    }
+    assert rejected_citation_tokens_from_artifacts(
+        manifest, spar_cache,
+    ) == ("Smith 2020",)
+
+
+def test_scrub_broken_effect_estimate_sentence_removed() -> None:
+    md = (
+        "## Results\n\n"
+        "The trial was heterogeneous. UKPDS 1998 reported an effect "
+        "estimate. The next sentence remains supported.\n"
+    )
+    out, n = scrub_broken_effect_estimates(md)
+    assert n == 1
+    assert "reported an effect estimate." not in out
+    assert "The next sentence remains supported." in out
+
+
+def test_scrub_rejected_leaks_deletes_main_body_only() -> None:
+    md = (
+        "## Background\n\n"
+        "Smith 2020 reported a rejected effect. Jones 2021 remains.\n\n"
+        "## Rejected / Contested Evidence\n\n"
+        "| Citation | Verdict |\n| --- | --- |\n"
+        "| Smith 2020 | reject_direction_mismatch |\n\n"
+        "## References\n\n"
+        "- **Smith 2020.** _Rejected paper._ Journal.\n"
+    )
+    out, rows, sentences = scrub_rejected_evidence_leaks(
+        md, ("Smith 2020",),
+    )
+    assert rows == 0
+    assert sentences == 1
+    assert "Smith 2020 reported a rejected effect" not in out
+    assert "| Smith 2020 | reject_direction_mismatch |" in out
+    assert "- **Smith 2020.**" in out
+
+
+def test_scrub_rejected_qei_row_updates_top_count() -> None:
+    md = (
+        "## Quantitative Evidence Index\n\n"
+        "_Top 3 high-confidence numeric claims._\n\n"
+        "| Study | Endpoint | Value |\n| --- | --- | --- |\n"
+        "| Smith 2020 | A | 0.5 |\n"
+        "| Jones 2021 | B | 0.7 |\n"
+        "| Patel 2022 | C | 0.9 |\n"
+    )
+    out, report = scrub_paper(
+        md, rejected_citation_tokens=("Jones 2021",),
+    )
+    assert report.rejected_evidence_rows_removed == 1
+    assert "Jones 2021" not in out
+    assert "Top 2" in out
+    assert "Top 3" not in out
 
 
 def test_dedupe_runs_across_multiple_evidence_tables() -> None:
