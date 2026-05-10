@@ -143,10 +143,46 @@ def _build_grok_prompt(
         "4. If unsure, lean toward DELETION (auto-applies as long "
         "as the gate accepts it). Adding clarifying words goes to "
         "human review.\n"
-        "5. Look for: contradictions between sections, awkward phrasing, "
-        "missing hedges on overclaims, broken citations, factual errors, "
-        "stale boilerplate, dead links/references.\n"
-        "6. Output AT MOST 25 patches. Triage to highest-severity first.\n"
+        "5. Look for the following — be aggressive, do not let subtle "
+        "issues pass:\n"
+        "   (a) Contradictions between sections (Abstract vs Results, "
+        "Discussion vs Conclusion, Limitations vs claims).\n"
+        "   (b) Subtle reasoning gaps — specifically:\n"
+        "       • Mechanistic plausibility used to imply human clinical "
+        "effect without a direct-trial citation in the same sentence.\n"
+        "       • Surrogate endpoint (e.g. NAD+, HbA1c, biomarker) "
+        "presented as if equivalent to a hard outcome (mortality, "
+        "incidence, hospitalization).\n"
+        "       • Preclinical / animal evidence used as the load-bearing "
+        "support for a sentence about humans (must be hedged with "
+        "'in model organisms' or similar).\n"
+        "       • Effect-direction mismatch between the cited receipt's "
+        "claim and the prose summary.\n"
+        "       • Causation language ('reduces', 'prevents', 'causes') "
+        "used where only association is supported.\n"
+        "       • Aggregation across heterogeneous studies presented as "
+        "if they pooled, when no meta-analysis was actually run.\n"
+        "   (c) Lenient hedge-words. Be STRICT here — flag any of:\n"
+        "       • 'may' / 'might' / 'could' / 'suggests' WITHOUT a "
+        "supporting receipt cited in the same sentence.\n"
+        "       • 'is associated with' applied to a mechanistic study "
+        "(should be 'modulates' or 'affects' for mechanism; "
+        "'associated' implies clinical-population data).\n"
+        "       • 'demonstrates', 'confirms', 'establishes' — these "
+        "are stronger than 'suggests' or 'indicates' and require "
+        "the receipt to be a high-tier RCT or meta-analysis.\n"
+        "       • Soft hedges stacked to dilute a claim ('it has been "
+        "suggested that…may potentially…in some cases'). Each layer "
+        "of hedge after the first is rhetorical; one is enough.\n"
+        "   (d) Awkward phrasing, missing hedges on overclaims, broken "
+        "citations, factual errors, stale boilerplate, dead links / "
+        "references.\n"
+        "6. Output AT MOST 25 patches. Triage to highest-severity first. "
+        "When in doubt between 'flag this subtle reasoning gap' and "
+        "'leave it alone', flag it as P2 with patch_type=claim. The "
+        "downstream auto-strip gate will only apply pure deletions, "
+        "so over-flagging is recoverable; under-flagging ships bad "
+        "papers.\n"
     )
     n_receipts = len(manifest.get("receipts", []))
     audit_p1 = audit.get("p1_pass", False)
@@ -388,9 +424,10 @@ async def _call_with_fallback(
     """Try primary first; on any HTTP/parse failure, fall back. Returns
     (parsed_json, model_used, cost_usd_estimate). The fallback only
     fires on primary-model outage or invalid JSON."""
+    transport_errors: tuple[type[BaseException], ...]
     try:
         import httpx
-        transport_errors: tuple[type[BaseException], ...] = (httpx.HTTPError,)
+        transport_errors = (httpx.HTTPError,)
     except ModuleNotFoundError:
         transport_errors = ()
     attempts: list[dict[str, Any]] = []
@@ -560,6 +597,7 @@ async def repair_flagged_patches(
         import httpx
         c = httpx.AsyncClient(timeout=300.0)
     else:
+        assert client is not None  # narrows for mypy; own_client implies presence
         c = client
     try:
         raw, _model_used, _cost = await _call_with_fallback(
@@ -605,6 +643,7 @@ async def review_with_grok(
         import httpx
         c = httpx.AsyncClient(timeout=300.0)
     else:
+        assert client is not None  # narrows for mypy; own_client implies presence
         c = client
     try:
         raw, model_used, cost = await _call_with_fallback(
