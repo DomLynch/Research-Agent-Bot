@@ -135,6 +135,26 @@ def test_dedupe_skips_when_no_included_studies_table() -> None:
     assert n == 0
 
 
+def test_dedupe_runs_across_multiple_evidence_tables() -> None:
+    """Wave 24: dedupe also collapses Risk-of-Bias (Table 4) and
+    other ## Table N sections. Universal — every topic uses the same
+    `## Table N: ...` schema with citation_token first cell."""
+    md = (
+        "## Table 1: Included Studies\n\n"
+        "| Citation | Tier |\n| --- | --- |\n"
+        "| Walton 2019 | A1 |\n"
+        "| Walton 2019 | A1 |\n"
+        "## Table 4 (supplemental): Per-Domain Risk of Bias\n\n"
+        "| Citation | Domain1 | Domain2 |\n| --- | --- | --- |\n"
+        "| Konopka 2019 | Some | Concerns |\n"
+        "| Konopka 2019 | Some | Concerns |\n"
+    )
+    out, n = dedupe_included_studies(md)
+    assert n == 2
+    assert out.count("| Walton 2019") == 1
+    assert out.count("| Konopka 2019") == 1
+
+
 # ---- end-to-end scrub_paper ---------------------------------------------
 
 

@@ -41,16 +41,31 @@ from typing import Literal
 
 @dataclass(frozen=True, slots=True)
 class CanonicalCounts:
-    """Single source of truth for paper-wide totals."""
+    """Single source of truth for paper-wide totals.
 
-    source_papers: int
+    Wave 24 dual-count: a paper can honestly say either "43 screened"
+    OR "28 accepted" — both are correct numbers referring to different
+    surfaces. The contract treats either as a valid match for paper /
+    receipt count claims. Universal — every topic uses the same SPAR
+    pipeline."""
+
+    source_papers: int           # n_receipts (total screened)
+    accepted_papers: int         # n_accepted_receipts (post-SPAR)
     high_confidence_claims: int
     tensions: int
 
     @classmethod
     def from_manifest(cls, manifest: dict) -> "CanonicalCounts":
+        n_total = int(manifest.get("n_receipts") or 0)
+        # Fall back to total if dual-count fields missing (legacy runs).
+        n_acc = int(
+            manifest.get("n_accepted_receipts")
+            or manifest.get("n_receipts")
+            or 0
+        )
         return cls(
-            source_papers=int(manifest.get("n_receipts") or 0),
+            source_papers=n_total,
+            accepted_papers=n_acc,
             high_confidence_claims=int(
                 manifest.get("n_high_confidence_claims_total") or 0
             ),
@@ -174,23 +189,34 @@ def _check_counts(
             if _is_year_token(n) or n < _NOISE_THRESHOLD:
                 continue
             seen[cat].add(n)
-    for cat, attr in (
-        ("paper", "source_papers"),
-        ("receipt", "source_papers"),
-        ("claim", "high_confidence_claims"),
-        ("tension", "tensions"),
+    # Wave 24 dual-count: paper/receipt counts may match EITHER total
+    # screened (`source_papers`, e.g. 43) or post-SPAR accepted
+    # (`accepted_papers`, e.g. 28). Both are honest — they refer to
+    # different surfaces. Universal: every topic uses the same SPAR
+    # pipeline. Claims/tensions stay single-canonical (they don't have
+    # a meaningful "total vs accepted" distinction).
+    for cat, attrs in (
+        ("paper", ("source_papers", "accepted_papers")),
+        ("receipt", ("source_papers", "accepted_papers")),
+        ("claim", ("high_confidence_claims",)),
+        ("tension", ("tensions",)),
     ):
-        canonical = getattr(canon, attr)
-        if canonical <= 0:
+        valid_canonicals = {
+            getattr(canon, a) for a in attrs if getattr(canon, a) > 0
+        }
+        if not valid_canonicals:
             continue
-        bad = sorted(n for n in seen.get(cat, set()) if n != canonical)
+        bad = sorted(
+            n for n in seen.get(cat, set()) if n not in valid_canonicals
+        )
         if bad:
             fails.append(
                 ContractFailure(
                     rule="count_consistency",
                     detail=(
-                        f"{cat} count(s) {bad} in MD do not match canonical "
-                        f"{attr}={canonical}"
+                        f"{cat} count(s) {bad} in MD match neither total "
+                        f"({sorted(valid_canonicals)}) — likely stale or "
+                        f"hallucinated count."
                     ),
                 )
             )
@@ -807,7 +833,7 @@ def validate(
                     detail=f"manifest unreadable: {e!r}",
                 ),
             ),
-            canonical=CanonicalCounts(0, 0, 0),
+            canonical=CanonicalCounts(0, 0, 0, 0),
             abstract_words=0,
             n_failures_by_rule={"canonical_link": 1},
         )

@@ -118,11 +118,20 @@ def truncate_abstract(md: str, *, cap: int = 500) -> tuple[str, int, int]:
     return new_md, n_words_before, len(new_body.split())
 
 
-_INCLUDED_HEADING_RE = re.compile(
-    r"^(#{1,4}\s*(?:Included\s+Studies|Studies\s+Included|Table\s+1\b)"
-    r"[^\n]*\n)",
+# Wave 24: dedupe runs across ALL public evidence tables, not just
+# Included Studies. Walton 2019 was duplicating in Table 4 (Risk of
+# Bias) too. Universal: every topic's tables follow the same
+# `## Table N: ...` schema with a citation_token in the first cell.
+_EVIDENCE_TABLE_HEADING_RE = re.compile(
+    r"^(#{1,4}\s*(?:Included\s+Studies|Studies\s+Included|"
+    r"Table\s+\d+(?:\s*\([^)]+\))?\s*:?[^\n]*|"
+    r"Risk\s+of\s+Bias[^\n]*|"
+    r"Per[- ]Study\s+Endpoint[^\n]*|"
+    r"Numeric\s+Index[^\n]*|"
+    r"Quantitative\s+Evidence\s+Index[^\n]*)\n)",
     re.I | re.M,
 )
+_INCLUDED_HEADING_RE = _EVIDENCE_TABLE_HEADING_RE  # back-compat alias
 # First-cell citation-token pattern: "Surname 2019" / "Surname et al. 2020"
 # / "Surname & Other 2018".
 _CITE_FIRST_CELL_RE = re.compile(
@@ -145,21 +154,9 @@ def _row_tier(row: str) -> int:
     return 999
 
 
-def dedupe_included_studies(md: str) -> tuple[str, int]:
-    """Collapse duplicate rows in the Included Studies table.
-
-    Two rows are considered duplicates iff their first cell (the
-    citation_token) matches. Among duplicates, keep the row with the
-    best evidence tier (A1 > A2 > ... > D3); ties go to the first
-    encountered. Universal — every topic uses the same Included
-    Studies table schema.
-    """
-    m = _INCLUDED_HEADING_RE.search(md)
-    if not m:
-        return md, 0
-    start = m.end()
-    nxt = re.search(r"^#{1,4}\s+\S", md[start:], re.M)
-    end = start + nxt.start() if nxt else len(md)
+def _dedupe_one_table(md: str, start: int, end: int) -> tuple[str, int]:
+    """Dedupe rows of a single table block by citation_token (first
+    cell). Helper shared across all evidence tables."""
     section = md[start:end]
     lines = section.split("\n")
     out_lines: list[str] = []
@@ -168,14 +165,12 @@ def dedupe_included_studies(md: str) -> tuple[str, int]:
     in_data_block = False
     for line in lines:
         if not line.startswith("|"):
-            # Flush accumulated data rows.
             if rows_by_cite:
                 out_lines.extend(rows_by_cite.values())
                 rows_by_cite.clear()
                 in_data_block = False
             out_lines.append(line)
             continue
-        # Header / separator rows pass through untouched.
         if "---" in line or re.match(
             r"\s*\|\s*Citation\s*\|", line, re.I,
         ):
@@ -193,16 +188,50 @@ def dedupe_included_studies(md: str) -> tuple[str, int]:
         if cite not in rows_by_cite:
             rows_by_cite[cite] = line
         else:
-            # Duplicate citation. Keep the row with the better tier.
             existing = rows_by_cite[cite]
             if _row_tier(line) < _row_tier(existing):
                 rows_by_cite[cite] = line
             n_removed += 1
-    # Trailing data block.
     if rows_by_cite:
         out_lines.extend(rows_by_cite.values())
     new_section = "\n".join(out_lines)
     return md[:start] + new_section + md[end:], n_removed
+
+
+def dedupe_included_studies(md: str) -> tuple[str, int]:
+    """Collapse duplicate rows across ALL public evidence tables (Wave
+    24): Included Studies, Per-Study Endpoint, Cross-Domain Tensions,
+    Risk of Bias, Numeric Index, etc.
+
+    Two rows are considered duplicates iff their first cell (the
+    citation_token) matches. Among duplicates, keep the row with the
+    best evidence tier (A1 > A2 > ... > D3); ties go to the first
+    encountered. Universal — every topic uses the same `## Table N`
+    schema with citation_token first cell.
+    """
+    n_removed_total = 0
+    # Iterate non-overlapping table sections; each pass shifts offsets,
+    # so we walk fresh on the updated MD until no more matches.
+    while True:
+        # Find the first table whose body still contains duplicate cites.
+        m = _EVIDENCE_TABLE_HEADING_RE.search(md)
+        if not m:
+            break
+        start = m.end()
+        nxt = re.search(r"^#{1,4}\s+\S", md[start:], re.M)
+        end = start + nxt.start() if nxt else len(md)
+        new_md, n_removed = _dedupe_one_table(md, start, end)
+        n_removed_total += n_removed
+        # Mark this heading as processed by replacing the leading hashes
+        # with a sentinel so the next search skips it. After all passes
+        # complete, restore.
+        sentinel = "@@PMC_DEDUPED@@"
+        head = md[m.start():m.end()]
+        # Only mutate the heading text in the working copy; restoration
+        # happens after the loop.
+        md = new_md.replace(head, head.replace("##", sentinel, 1), 1)
+    md = md.replace("@@PMC_DEDUPED@@", "##")
+    return md, n_removed_total
 
 
 def scrub_paper(

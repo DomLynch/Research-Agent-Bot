@@ -2931,7 +2931,11 @@ async def _run_post_paper_pipeline(
             scrub_paper as _scrub_paper,
         )
         _paper_md_in = paper_path.read_text()
-        _scrubbed_md, _scrub_report = _scrub_paper(_paper_md_in)
+        # Wave 24: tighter abstract cap (350 words, journal convention)
+        # — was 500 in Wave 23. Matches GPT's audit recommendation.
+        _scrubbed_md, _scrub_report = _scrub_paper(
+            _paper_md_in, abstract_cap=350,
+        )
         if _scrubbed_md != _paper_md_in:
             paper_path.write_text(_scrubbed_md)
         print(

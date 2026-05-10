@@ -61,6 +61,29 @@ def test_count_consistency_passes_when_all_match() -> None:
     assert r.status == "PASS"
 
 
+def test_count_consistency_accepts_dual_count_total_or_accepted() -> None:
+    """Wave 24: paper/receipt counts may match EITHER n_receipts (total
+    screened) OR n_accepted_receipts (post-SPAR accepted). Both are
+    honest — they refer to different surfaces. Universal."""
+    manifest = _baseline_manifest(
+        n_receipts=43, n_accepted_receipts=28,
+    )
+    # Saying "28 accepted receipts" should pass.
+    md_accepted = "## Methods\n\nWe analysed 28 accepted receipts.\n"
+    r1 = validate(md_accepted, manifest)
+    rules1 = {f.rule for f in r1.failures}
+    assert "count_consistency" not in rules1, f"unexpected: {r1.failures}"
+    # Saying "43 source papers" should also pass (total screened).
+    md_total = "## Methods\n\nWe analysed 43 source papers.\n"
+    r2 = validate(md_total, manifest)
+    rules2 = {f.rule for f in r2.failures}
+    assert "count_consistency" not in rules2, f"unexpected: {r2.failures}"
+    # Saying "30" (neither) should fail.
+    md_bad = "## Methods\n\nWe analysed 30 source papers.\n"
+    r3 = validate(md_bad, manifest)
+    assert any(f.rule == "count_consistency" for f in r3.failures)
+
+
 def test_count_consistency_flags_paper_count_mismatch() -> None:
     md = "## Abstract\n\nWe analysed 20 studies of the topic.\n"
     r = validate(md, _baseline_manifest())
