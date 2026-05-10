@@ -177,6 +177,7 @@ _BUILDERS = {
     "clinicaltrials": build_keyword_query,
     "unpaywall": build_keyword_query,
     "chembl": build_keyword_query,
+    "researka_database": build_keyword_query,
 }
 
 

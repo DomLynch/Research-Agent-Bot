@@ -10,7 +10,7 @@ network call so local tests and public runs do not fail on private infra.
 from __future__ import annotations
 
 import os
-from typing import Any, SupportsInt
+from typing import Any
 
 import httpx
 
@@ -117,7 +117,7 @@ class ResearkaDatabaseClient:
 
 
 def _int_or_none(value: object) -> int | None:
-    if not isinstance(value, (str, bytes, bytearray, SupportsInt)):
+    if not isinstance(value, (int, float, str, bytes, bytearray)):
         return None
     try:
         return int(value)
