@@ -13,29 +13,10 @@ from agent.types import RawHit
 DEFAULT_BASE_URL = "https://database.researka.org"
 _TERM_RE = re.compile(r"[A-Za-z][A-Za-z0-9]{2,}")
 _RERANK_GENERIC_TERMS = frozenset({
-    "adult",
-    "adults",
-    "age",
-    "aged",
-    "aging",
-    "biology",
-    "cell",
-    "cells",
-    "clinical",
-    "disease",
-    "health",
-    "human",
-    "humans",
-    "intervention",
-    "life",
-    "lifespan",
-    "longevity",
-    "mice",
-    "mortality",
-    "mouse",
-    "older",
-    "study",
-    "trial",
+    "adult", "adults", "age", "aged", "aging", "biology", "cell", "cells",
+    "clinical", "disease", "health", "human", "humans", "intervention",
+    "life", "lifespan", "longevity", "mice", "mortality", "mouse", "older",
+    "study", "trial",
 })
 
 
