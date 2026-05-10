@@ -150,14 +150,16 @@ _BLOCKED_METHODS_PHRASES: tuple[str, ...] = (
 
 def validate_contract(c: RunModeContract) -> list[str]:
     """Return list of contradictions; empty list means contract is
-    self-consistent. Caller decides whether to raise or log."""
+    self-consistent. Caller decides whether to raise or log.
+
+    Fix #60: the legacy rule "spar_adjudication_ran=True requires
+    llm_fact_extraction_ran=True" was retired. The original SPAR
+    judged LLM-extracted CLAIMS (so it required LLM extraction). The
+    v06 pipeline does deterministic quant-claim extraction and runs
+    SPAR at the per-RECEIPT level instead — same intent (judge ≠
+    writer), different unit. The constraint no longer holds.
+    """
     errors: list[str] = []
-    if c.spar_adjudication_ran and not c.llm_fact_extraction_ran:
-        errors.append(
-            "spar_adjudication_ran=True requires llm_fact_extraction_ran=True "
-            "(SPAR adjudicates LLM-extracted facts; deterministic claims "
-            "don't go through SPAR)"
-        )
     if c.rejected_evidence_quarantine_ran and not c.spar_adjudication_ran:
         errors.append(
             "rejected_evidence_quarantine_ran=True requires "

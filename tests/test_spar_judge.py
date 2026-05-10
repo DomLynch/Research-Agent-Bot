@@ -182,15 +182,19 @@ async def test_adjudicate_receipt_handles_caller_exception() -> None:
 @pytest.mark.asyncio
 async def test_adjudicate_batch_returns_new_receipts_with_verdicts() -> None:
     """Batch path returns NEW ReceiptSummary objects with updated
-    spar_verdict; originals are not mutated (frozen dataclass)."""
+    spar_verdict; originals are not mutated (frozen dataclass).
+    Fix #60: also returns the verdict list so callers can compute
+    honest n_real_calls / n_fail_soft / verdict_counts."""
     receipts = [_receipt(f"PMC{i}") for i in range(5)]
-    out = await adjudicate_receipts(
+    out_receipts, out_verdicts = await adjudicate_receipts(
         receipts, call=_mock_caller("accept_caveated"), concurrency=2,
     )
-    assert len(out) == 5
-    for r_in, r_out in zip(receipts, out):
+    assert len(out_receipts) == 5
+    assert len(out_verdicts) == 5
+    for r_in, r_out, v in zip(receipts, out_receipts, out_verdicts):
         assert r_out.receipt_id == r_in.receipt_id
         assert r_out.spar_verdict == "accept_caveated"
+        assert v.fail_soft_default is False
     # Originals untouched (frozen → can't even mutate; verify no aliasing).
     for r_in in receipts:
         assert r_in.spar_verdict == "accept_clean"
@@ -202,9 +206,6 @@ async def test_adjudicate_batch_mix_of_verdicts() -> None:
     must preserve per-receipt mapping under concurrency."""
 
     async def per_id_caller(*, system: str, user: str) -> tuple[str, str, float]:  # noqa: ARG001
-        # Look at the user prompt to figure out which receipt this is.
-        # In production the receipt_id is in the user prompt's
-        # "paper_id:" line.
         if "PMC0" in user:
             v = "accept_clean"
         elif "PMC1" in user:
@@ -215,15 +216,19 @@ async def test_adjudicate_batch_mix_of_verdicts() -> None:
             v = "accept_clean"
         return json.dumps({"verdict": v, "rationale": "test"}), "mock", 0.0
     receipts = [_receipt(f"PMC{i}") for i in range(3)]
-    out = await adjudicate_receipts(receipts, call=per_id_caller, concurrency=3)
-    assert out[0].spar_verdict == "accept_clean"
-    assert out[1].spar_verdict == "accept_caveated"
-    assert out[2].spar_verdict == "reject_direction_mismatch"
+    out_receipts, _ = await adjudicate_receipts(
+        receipts, call=per_id_caller, concurrency=3,
+    )
+    assert out_receipts[0].spar_verdict == "accept_clean"
+    assert out_receipts[1].spar_verdict == "accept_caveated"
+    assert out_receipts[2].spar_verdict == "reject_direction_mismatch"
 
 
 @pytest.mark.asyncio
 async def test_adjudicate_batch_one_failure_doesnt_break_others() -> None:
-    """Per-receipt fail-soft: one broken call does not abort the batch."""
+    """Per-receipt fail-soft: one broken call does not abort the batch.
+    The verdict list distinguishes real verdicts from fail-soft
+    fallbacks so the runner can report n_real_calls honestly."""
     call_count = {"n": 0}
 
     async def flaky_caller(*, system: str, user: str) -> tuple[str, str, float]:  # noqa: ARG001
@@ -234,16 +239,55 @@ async def test_adjudicate_batch_one_failure_doesnt_break_others() -> None:
             "verdict": "accept_clean", "rationale": "ok",
         }), "mock", 0.0
     receipts = [_receipt(f"PMC{i}") for i in range(3)]
-    out = await adjudicate_receipts(receipts, call=flaky_caller, concurrency=1)
-    assert len(out) == 3
+    out_receipts, out_verdicts = await adjudicate_receipts(
+        receipts, call=flaky_caller, concurrency=1,
+    )
+    assert len(out_receipts) == 3
     # All three got verdicts; the failed one is accept_clean (fail-soft).
-    assert all(r.spar_verdict == "accept_clean" for r in out)
+    assert all(r.spar_verdict == "accept_clean" for r in out_receipts)
+    n_fail_soft = sum(1 for v in out_verdicts if v.fail_soft_default)
+    assert n_fail_soft == 1, "exactly one fail-soft expected"
+    n_real = sum(1 for v in out_verdicts if not v.fail_soft_default)
+    assert n_real == 2
+
+
+@pytest.mark.asyncio
+async def test_adjudicate_batch_cache_skips_llm_calls() -> None:
+    """Fix #60: cached verdicts must not trigger any LLM call. Cost
+    discipline on iterative reruns."""
+    from agent.spar_judge import SparJudgeVerdict  # type: ignore[import-not-found]
+
+    call_count = {"n": 0}
+
+    async def counting_caller(*, system: str, user: str) -> tuple[str, str, float]:  # noqa: ARG001
+        call_count["n"] += 1
+        return json.dumps({
+            "verdict": "accept_clean", "rationale": "should not be called",
+        }), "mock", 0.0
+    cache = {
+        "PMC0": SparJudgeVerdict(
+            receipt_id="PMC0", verdict="accept_caveated",
+            rationale="cached", judge_model="mock-cached",
+            fail_soft_default=False,
+        ),
+    }
+    receipts = [_receipt("PMC0"), _receipt("PMC1")]
+    out_receipts, _ = await adjudicate_receipts(
+        receipts, call=counting_caller, concurrency=2, cache=cache,
+    )
+    # Only PMC1 hit the LLM; PMC0 served from cache.
+    assert call_count["n"] == 1
+    assert out_receipts[0].spar_verdict == "accept_caveated"
+    assert out_receipts[1].spar_verdict == "accept_clean"
 
 
 @pytest.mark.asyncio
 async def test_adjudicate_batch_empty_input() -> None:
-    out = await adjudicate_receipts([], call=_mock_caller("accept_clean"))
-    assert out == []
+    out_receipts, out_verdicts = await adjudicate_receipts(
+        [], call=_mock_caller("accept_clean"),
+    )
+    assert out_receipts == []
+    assert out_verdicts == []
 
 
 # ---- Judge ≠ writer regression guard -------------------------------------

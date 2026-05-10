@@ -76,11 +76,16 @@ def test_methods_does_not_name_operational_models() -> None:
     assert contract.submission_id not in methods
 
 
-def test_contract_validates_self_consistency_spar_requires_fact_extraction() -> None:
-    """SPAR adjudicates LLM-extracted facts. spar_ran=True without
-    llm_fact_extraction_ran=True is a contradiction — must surface."""
-    bad = rmc.RunModeContract(
-        run_mode="hybrid (test)",
+def test_contract_allows_spar_without_llm_fact_extraction() -> None:
+    """Fix #60: the rule "spar_adjudication_ran requires
+    llm_fact_extraction_ran" was retired when SPAR moved from per-CLAIM
+    judging (LLM-extracted) to per-RECEIPT judging (works on
+    deterministically-extracted claims too). The v06 quant-claim
+    adapter does deterministic fact extraction AND now runs SPAR at
+    the receipt level — same intent (judge ≠ writer), different unit.
+    The contract must not flag this as a contradiction."""
+    contract = rmc.RunModeContract(
+        run_mode="v0.6 quant-claim adapter",
         topic="metformin",
         submission_id="test",
         n_papers_in_corpus=15,
@@ -90,13 +95,15 @@ def test_contract_validates_self_consistency_spar_requires_fact_extraction() -> 
         final_layer_reviewer_model="google/gemini-3.1-flash-lite:exacto",
         final_layer_fallback_model="mistralai/mistral-small-2603",
         claim_source="quant_claims_json",
-        spar_adjudication_ran=True,  # contradiction
+        spar_adjudication_ran=True,
         llm_fact_extraction_ran=False,
     )
-    errors = rmc.validate_contract(bad)
-    assert errors
-    assert any("spar" in e.lower() and "fact_extraction" in e.lower()
-               for e in errors)
+    errors = rmc.validate_contract(contract)
+    # No spar+fact_extraction error — the legacy constraint was retired.
+    assert not any(
+        "spar" in e.lower() and "fact_extraction" in e.lower()
+        for e in errors
+    ), f"legacy constraint should be retired but got: {errors}"
 
 
 def test_contract_validates_quarantine_requires_spar() -> None:

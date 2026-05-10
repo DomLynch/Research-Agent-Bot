@@ -1951,43 +1951,86 @@ async def _run(
         print("No high-confidence claims found.", file=sys.stderr)
         return 2
     # Fix #60 (judge ≠ writer): run SPAR adjudication per receipt.
-    # The previous pipeline hardcoded spar_verdict="accept_clean" — the
-    # writer (MiMo) effectively graded its own input. Now the build
-    # judge chain (Gemma 4 31B primary, MiMo fallback, Mistral last)
-    # judges each receipt as accept_clean / accept_caveated /
-    # reject_<reason>. Domain-agnostic prompt; fail-soft on any error
-    # (defaults to accept_clean). Disable with SPAR_ENABLED=false.
+    # Per GPT's strict acceptance criteria: spar_adjudication_ran flips
+    # to True ONLY when at least one real LLM verdict came back; cache
+    # results in <out_dir>/spar_cache.json so reruns don't re-spend;
+    # emit a `spar_summary` block in the manifest with real-vs-fail-soft
+    # counts so honest degradation is visible (not hidden under
+    # accept_clean defaults). Disable with SPAR_ENABLED=false.
+    spar_summary: dict[str, Any] = {
+        "ran": False, "n_total": len(receipts), "n_real_calls": 0,
+        "n_fail_soft": 0, "n_cache_hits": 0,
+        "verdict_counts": {}, "cost_usd": 0.0,
+        "judge_model": settings.judge_model,
+    }
     if _env_bool("SPAR_ENABLED", default=True):
         try:
             from agent.spar_judge import (  # type: ignore[import-not-found]  # noqa: E402
+                SparJudgeVerdict as _SJV,
                 adjudicate_receipts as _adjudicate, make_chain_caller,
             )
             from agent.llm_client import (  # noqa: E402
                 CostLedger as _SparCostLedger, build_judge_chain,
             )
+            _spar_cache_path = out_dir / "spar_cache.json"
+            _spar_cache: dict[str, _SJV] = {}
+            if _spar_cache_path.exists():
+                try:
+                    raw = json.loads(_spar_cache_path.read_text())
+                    for rid, d in raw.get("verdicts", {}).items():
+                        _spar_cache[rid] = _SJV(**d)
+                except (OSError, ValueError, TypeError, json.JSONDecodeError):
+                    _spar_cache = {}
             _spar_ledger = _SparCostLedger()
             judge_chain = build_judge_chain(settings)
             judge_caller = make_chain_caller(judge_chain, _spar_ledger)
             _spar_concurrency = max(
                 1, int(os.environ.get("SPAR_CONCURRENCY", "4")),
             )
-            receipts = await _adjudicate(
-                receipts, call=judge_caller, concurrency=_spar_concurrency,
+            receipts, _verdict_objs = await _adjudicate(
+                receipts, call=judge_caller,
+                concurrency=_spar_concurrency, cache=_spar_cache,
             )
             from collections import Counter as _Counter
             _verdicts = _Counter(r.spar_verdict for r in receipts)
             _spar_cost = sum(c.estimated_cost_usd for c in _spar_ledger.calls)
+            _n_fail_soft = sum(1 for v in _verdict_objs if v.fail_soft_default)
+            _n_cache_hits = sum(
+                1 for v in _verdict_objs if v.receipt_id in _spar_cache
+            )
+            _n_real = len(_verdict_objs) - _n_fail_soft
+            spar_summary.update(
+                ran=_n_real > 0,
+                n_real_calls=_n_real,
+                n_fail_soft=_n_fail_soft,
+                n_cache_hits=_n_cache_hits,
+                verdict_counts=dict(_verdicts),
+                cost_usd=round(_spar_cost, 6),
+            )
+            # Cache the real verdicts for cost discipline on reruns.
+            # Fail-soft verdicts are not cached — a future rerun should
+            # retry them rather than memoise the failure.
+            _cache_payload = {
+                "judge_model": settings.judge_model,
+                "verdicts": {
+                    v.receipt_id: dataclasses.asdict(v)
+                    for v in _verdict_objs if not v.fail_soft_default
+                },
+            }
+            _spar_cache_path.write_text(json.dumps(_cache_payload, indent=2))
             print(
                 f"  SPAR judge ({settings.judge_model}): "
                 + " ".join(f"{k}={v}" for k, v in sorted(_verdicts.items()))
-                + f" | cost=${_spar_cost:.4f} "
+                + f" | real={_n_real} fail_soft={_n_fail_soft} "
+                + f"cache_hits={_n_cache_hits} "
+                + f"cost=${_spar_cost:.4f} "
                 + f"calls={len(_spar_ledger.calls)}",
                 file=sys.stderr,
             )
         except Exception as exc:  # noqa: BLE001 — fail-soft per pipeline
             print(
                 f"  SPAR adjudication failed ({type(exc).__name__}: {exc}); "
-                "keeping default accept_clean verdicts.",
+                "spar_adjudication_ran=False; keeping default verdicts.",
                 file=sys.stderr,
             )
     matrix = build_tension_matrix(receipts)
@@ -2174,6 +2217,10 @@ async def _run(
         submission_id=submission_id,
         n_papers=len(receipts),
         n_claims=sum(r.n_claims for r in receipts),
+        # Fix #60: only flip the contract flag when at least one real
+        # judge call returned a verdict. spar_summary["ran"] is True
+        # iff n_real_calls > 0 (cache hits also count as real).
+        spar_adjudication_ran=bool(spar_summary.get("ran")),
     )
     contract_errors = _run_mode.validate_contract(contract)
     if contract_errors:
@@ -2246,6 +2293,11 @@ async def _run(
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
         "field_engagement_path": "field_engagement.json",
+        # Fix #60: SPAR judge summary for honest reporting. ran=True iff
+        # at least one real (non-fail-soft, non-cache-error) verdict
+        # came back; verdict_counts shows the post-judge distribution
+        # across receipts.
+        "spar_summary": spar_summary,
         "section_words": section_words,
         "total_words": word_count,
         "claim_strength_repairs": len(repair_log),
@@ -3375,11 +3427,14 @@ def _issue_to_dict(issue) -> dict[str, Any]:
 def _build_run_mode_contract(
     *, settings: Any, topic: str, submission_id: str,
     n_papers: int, n_claims: int,
+    spar_adjudication_ran: bool = False,
 ) -> _run_mode.RunModeContract:
     """Construct the contract from settings + run facts. The v0.6
-    quant-claim adapter never runs SPAR, never uses LLM fact
-    extraction, never builds multi-receipt clusters — those flags
-    are False because that's the literal pipeline behaviour."""
+    quant-claim adapter does deterministic fact extraction (no LLM)
+    and builds no multi-receipt clusters — those stay False. SPAR is
+    now wired at the receipt level (Fix #60); the caller passes the
+    real flag based on whether at least one judge call returned a
+    non-fail-soft verdict."""
     return _run_mode.RunModeContract(
         run_mode="v0.6 quant-claim adapter",
         topic=topic,
@@ -3391,7 +3446,7 @@ def _build_run_mode_contract(
         final_layer_reviewer_model=settings.final_layer_reviewer_model,
         final_layer_fallback_model=settings.fallback_model,
         claim_source=f"docs/quality-reference/{topic}/quant_claims/*.json",
-        spar_adjudication_ran=False,
+        spar_adjudication_ran=spar_adjudication_ran,
         multi_receipt_clusters_ran=False,
         llm_fact_extraction_ran=False,
         rejected_evidence_quarantine_ran=False,

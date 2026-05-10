@@ -293,22 +293,36 @@ async def adjudicate_receipts(
     *,
     call: _JudgeCaller,
     concurrency: int = 4,
-) -> list[ReceiptSummary]:
-    """Run SPAR judging across a batch of receipts and return new
-    ReceiptSummary instances with updated `spar_verdict`. Original
-    objects are not mutated (frozen dataclass)."""
+    cache: dict[str, SparJudgeVerdict] | None = None,
+) -> tuple[list[ReceiptSummary], list[SparJudgeVerdict]]:
+    """Run SPAR judging across a batch and return both the updated
+    receipts AND the per-receipt SparJudgeVerdict objects so the caller
+    can compute honest stats (n_real_calls, n_fail_soft, n_reject).
+
+    Original receipts are not mutated (frozen dataclass).
+
+    `cache` (optional): a {receipt_id: SparJudgeVerdict} dict pre-loaded
+    from disk on a rerun. Receipts whose id is in the cache skip the
+    LLM call and reuse the prior verdict — required for cost discipline
+    on iterative reruns. Cache hits are counted as real calls (not
+    fail-soft) so spar_adjudication_ran propagates correctly."""
     import asyncio
     sem = asyncio.Semaphore(max(1, concurrency))
+    cache = dict(cache) if cache else {}
 
     async def _one(r: ReceiptSummary) -> tuple[ReceiptSummary, SparJudgeVerdict]:
+        if r.receipt_id in cache:
+            return r, cache[r.receipt_id]
         async with sem:
             v = await adjudicate_receipt(r, call=call)
         return r, v
 
     results = await asyncio.gather(*(_one(r) for r in receipts))
-    out: list[ReceiptSummary] = []
+    out_receipts: list[ReceiptSummary] = []
+    out_verdicts: list[SparJudgeVerdict] = []
     for r, v in results:
-        out.append(replace(r, spar_verdict=v.verdict))
+        out_receipts.append(replace(r, spar_verdict=v.verdict))
+        out_verdicts.append(v)
         if v.fail_soft_default:
             LOGGER.info(
                 "spar_judge.fail_soft receipt=%s rationale=%s",
@@ -319,7 +333,7 @@ async def adjudicate_receipts(
                 "spar_judge.reject receipt=%s verdict=%s rationale=%s",
                 r.receipt_id, v.verdict, v.rationale,
             )
-    return out
+    return out_receipts, out_verdicts
 
 
 # ---- Default caller adapter (uses agent.llm_client chain) ----------------
