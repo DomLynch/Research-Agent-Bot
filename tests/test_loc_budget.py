@@ -267,8 +267,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 22900  # Wave 21 (2026-05-10): +250 for 4 universal contract rules
-PER_FILE_LIMIT = 700  # Wave 21: bumped to accommodate public_manuscript_contract.py (~692)
+TOTAL_LIMIT = 23100  # Wave 22 (2026-05-10): +200 for strict SPAR-leak + rejected appendix
+PER_FILE_LIMIT = 750  # Wave 22: pmc.py grew to 725 with strict trust-spine enforcement
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
 

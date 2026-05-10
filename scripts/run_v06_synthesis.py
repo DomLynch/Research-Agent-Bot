@@ -2852,6 +2852,16 @@ async def _run_post_paper_pipeline(
         # with no hyphens, so the parser fell through to "unknown" and
         # leaked that string into the Search Provenance section.
         _topic = _ACTIVE_TOPIC or "unknown"
+        # Wave 22: load spar_cache so the appendix composer can splice
+        # a 'Rejected / Contested Evidence' quarantine block. Universal
+        # — same schema across topics; absence is silently no-op.
+        _spar_cache_dict: dict[str, Any] | None = None
+        try:
+            _sc = paper_path.parent / "spar_cache.json"
+            if _sc.is_file():
+                _spar_cache_dict = json.loads(_sc.read_text())
+        except (OSError, ValueError):
+            _spar_cache_dict = None
         appendix_md = compose_appendix(
             manifest, audit=audit_report,
             model_stack=model_stack,
@@ -2860,6 +2870,7 @@ async def _run_post_paper_pipeline(
             git_sha=git_sha,
             bundle_path=f"bundles/{paper_path.parent.name}/",
             verdict=unified.verdict,
+            spar_cache=_spar_cache_dict,
         )
         paper_md = splice_appendix_before_references(
             paper_md, appendix_md,

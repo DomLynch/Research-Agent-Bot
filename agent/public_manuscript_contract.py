@@ -71,6 +71,7 @@ _RULES = (
     "broken_prose",
     "repeated_boilerplate",
     "spar_reject_leakage",
+    "rejected_appendix_required",
 )
 _RuleName = Literal[
     "count_consistency",
@@ -82,6 +83,7 @@ _RuleName = Literal[
     "broken_prose",
     "repeated_boilerplate",
     "spar_reject_leakage",
+    "rejected_appendix_required",
 ]
 
 
@@ -612,15 +614,30 @@ def _check_repeated_boilerplate(
 # ---- rule 9: SPAR reject leakage ----------------------------------------
 
 
-# Sections where rejected receipts must NEVER be cited as evidence.
-# Tables (Included Studies / RoB / etc.) may legitimately list rejects
-# for transparency; prose-evidence sections must not. Universal: every
-# topic this platform synthesises uses the same section vocabulary.
-_EVIDENCE_PROSE_SECTIONS_RE = re.compile(
-    r"^#{1,4}\s*(?:Cross[- ]?Domain\s+(?:Synthesis|Tensions)|"
-    r"Discussion|Conclusion|Results|Synthesis|Tensions)\b[^\n]*\n",
+# Wave 22 trust-spine enforcement: rejected receipts must NEVER appear
+# anywhere in the public MD except the dedicated 'Rejected / Contested
+# Evidence' quarantine appendix. This includes ALL main evidence tables
+# (Included Studies, QEI, RoB, Cross-Domain Tensions). Universal: same
+# heading across all topics. The contract excises the quarantine section
+# from the scan window, then any reject citation remaining is a fail.
+_QUARANTINE_HEADING_RE = re.compile(
+    r"^#{1,4}\s*(?:Rejected\s*/?\s*Contested\s+Evidence|"
+    r"Quarantined\s+Evidence|Quarantined\s+Receipts)\b[^\n]*\n",
     re.I | re.M,
 )
+
+
+def _excise_quarantine_section(body: str) -> str:
+    """Return body with the 'Rejected / Contested Evidence' section
+    removed. Anything outside that section is the 'main paper' for
+    leak-detection purposes."""
+    m = _QUARANTINE_HEADING_RE.search(body)
+    if not m:
+        return body
+    start = m.start()
+    nxt = re.search(r"^#{1,4}\s+\S", body[m.end():], re.M)
+    end = m.end() + nxt.start() if nxt else len(body)
+    return body[:start] + body[end:]
 
 
 def _load_spar_cache(run_dir: Path | None) -> dict[str, str] | None:
@@ -652,9 +669,12 @@ def _check_spar_reject_leakage(
     manifest: dict,
     run_dir: Path | None,
 ) -> list[ContractFailure]:
-    """Block AAA when SPAR-rejected receipts are cited as evidence in
-    the LLM-prose synthesis sections (Discussion / Conclusion / Results
-    / Cross-Domain Synthesis / Tensions). Universal — uses the manifest
+    """Wave 22 trust-spine: block AAA when SPAR-rejected receipts appear
+    ANYWHERE in the public MD outside the dedicated 'Rejected /
+    Contested Evidence' quarantine appendix. This includes evidence
+    prose (Discussion / Conclusion / Results / Synthesis / Tensions)
+    AND main evidence tables (Included Studies / QEI / RoB / Per-Study
+    Endpoint / Cross-Domain Tensions). Universal — uses the manifest
     citation_token mapping plus spar_cache.json (identical schema across
     topics). No domain assumptions.
     """
@@ -673,23 +693,13 @@ def _check_spar_reject_leakage(
             rejected_cites[cite] = rejected[rid]
     if not rejected_cites:
         return []
-    # Concatenate all evidence-prose sections.
-    prose = []
-    for m in _EVIDENCE_PROSE_SECTIONS_RE.finditer(body):
-        start = m.end()
-        nxt = re.search(r"^#{1,6}\s+\S", body[start:], re.M)
-        end = start + nxt.start() if nxt else len(body)
-        section = body[start:end]
-        # Drop table rows from each section — tables can list rejects
-        # for transparency without violating the gate.
-        prose.append(_strip_table_rows(section))
-    prose_text = "\n".join(prose)
-    if not prose_text:
-        return []
+    # Excise the Rejected / Contested Evidence quarantine zone from the
+    # body — that's the one legitimate surface for these citations.
+    main_paper = _excise_quarantine_section(body)
     fails: list[ContractFailure] = []
     leak_counts: dict[str, int] = {}
     for cite, verdict in rejected_cites.items():
-        n = len(re.findall(r"\b" + re.escape(cite) + r"\b", prose_text))
+        n = len(re.findall(r"\b" + re.escape(cite) + r"\b", main_paper))
         if n > 0:
             leak_counts[f"{cite} [{verdict}]"] = n
     if leak_counts:
@@ -700,14 +710,44 @@ def _check_spar_reject_leakage(
                     rule="spar_reject_leakage",
                     detail=(
                         f"SPAR-rejected citation '{label}' appears {n}x in "
-                        f"evidence-prose sections (Discussion / Conclusion "
-                        f"/ Results / Synthesis / Tensions). Gemma rejected "
-                        f"this receipt; the writer must not cite it as "
-                        f"evidence."
+                        f"the main paper (prose or evidence tables) outside "
+                        f"the Rejected / Contested Evidence quarantine zone. "
+                        f"cite it as evidence — the only legitimate "
+                        f"surface is the quarantine appendix."
                     ),
                 )
             )
     return fails
+
+
+# ---- rule 10: rejected appendix required ---------------------------------
+
+
+def _check_rejected_appendix_required(
+    body: str,
+    run_dir: Path | None,
+) -> list[ContractFailure]:
+    """Wave 22 trust-spine: when SPAR rejected ≥1 receipt, the public MD
+    must contain a 'Rejected / Contested Evidence' (or equivalent
+    quarantine) section. Universal — applies to every topic the platform
+    synthesises, since every topic uses the same SPAR pipeline.
+    """
+    rejected = _load_spar_cache(run_dir)
+    if not rejected:
+        return []
+    if _QUARANTINE_HEADING_RE.search(body):
+        return []
+    return [
+        ContractFailure(
+            rule="rejected_appendix_required",
+            detail=(
+                f"{len(rejected)} SPAR-rejected receipt(s) exist for this "
+                f"run but the public MD has no 'Rejected / Contested "
+                f"Evidence' quarantine section. Trust-spine ordering "
+                f"requires every reject to be listed transparently."
+            ),
+        )
+    ]
 
 
 # ---- helpers -------------------------------------------------------------
@@ -783,6 +823,7 @@ def validate(
     fails.extend(_check_broken_prose(paper_md))
     fails.extend(_check_repeated_boilerplate(paper_md))
     fails.extend(_check_spar_reject_leakage(paper_md, manifest, run_dir))
+    fails.extend(_check_rejected_appendix_required(paper_md, run_dir))
     by_rule: dict[str, int] = Counter(f.rule for f in fails)
     return ContractResult(
         status="FAIL" if fails else "PASS",

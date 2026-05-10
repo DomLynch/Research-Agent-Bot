@@ -470,13 +470,47 @@ def test_spar_reject_leakage_flags_reject_in_discussion(
     )
 
 
-def test_spar_reject_leakage_allows_table_appearance(
+def test_spar_reject_leakage_flags_main_evidence_table(
     tmp_path: Path,
 ) -> None:
-    """Tables list rejects for transparency — leak rule must skip table
-    rows. Only prose-evidence sections count."""
+    """Wave 22 trust-spine: rejected receipts must NOT appear in main
+    evidence tables either. The only legitimate surface is the
+    'Rejected / Contested Evidence' quarantine appendix."""
     md = (
         "## Included Studies\n\n"
+        "| Citation | Tier |\n| --- | --- |\n"
+        "| Cameron 2016 | B2 |\n"
+    )
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Cameron 2016"},
+    ])
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "gemma-4-31b",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "x", "judge_model": "g",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert any(
+        f.rule == "spar_reject_leakage" and "Cameron 2016" in f.detail
+        for f in r.failures
+    )
+
+
+def test_spar_reject_leakage_excises_quarantine_appendix(
+    tmp_path: Path,
+) -> None:
+    """Rejected citations inside the dedicated 'Rejected / Contested
+    Evidence' section are legitimate — that's the one allowed surface.
+    The rule must excise this section before scanning."""
+    md = (
+        "## Methods\n\nClean methods.\n"
+        "## Rejected / Contested Evidence\n\n"
         "| Citation | Verdict |\n| --- | --- |\n"
         "| Cameron 2016 | reject_internal_contradiction |\n"
     )
@@ -496,6 +530,73 @@ def test_spar_reject_leakage_allows_table_appearance(
     }))
     r = validate(md, manifest, run_dir=tmp_path)
     assert not any(f.rule == "spar_reject_leakage" for f in r.failures)
+
+
+# ---- rule 10: rejected appendix required --------------------------------
+
+
+def test_rejected_appendix_required_flags_missing_section(
+    tmp_path: Path,
+) -> None:
+    """Rejects exist in spar_cache but no quarantine heading in MD →
+    fail. Universal: applies to every topic."""
+    md = "## Methods\n\nClean methods.\n## Discussion\n\nClean prose.\n"
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Cameron 2016"},
+    ])
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "g",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "x", "judge_model": "g",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert any(
+        f.rule == "rejected_appendix_required" for f in r.failures
+    )
+
+
+def test_rejected_appendix_required_passes_when_section_present(
+    tmp_path: Path,
+) -> None:
+    md = (
+        "## Methods\n\nClean methods.\n"
+        "## Rejected / Contested Evidence\n\n_listed below._\n"
+    )
+    manifest = _baseline_manifest()
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "g",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "x", "judge_model": "g",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(
+        f.rule == "rejected_appendix_required" for f in r.failures
+    )
+
+
+def test_rejected_appendix_required_skips_when_no_rejects(
+    tmp_path: Path,
+) -> None:
+    """No rejects → rule is silently inapplicable (universal: degrades
+    gracefully when input absent)."""
+    md = "## Methods\n\nClean methods.\n"
+    manifest = _baseline_manifest()
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(
+        f.rule == "rejected_appendix_required" for f in r.failures
+    )
 
 
 def test_spar_reject_leakage_skips_when_no_cache(tmp_path: Path) -> None:

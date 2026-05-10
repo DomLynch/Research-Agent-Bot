@@ -42,7 +42,81 @@ from typing import Any
 from agent.selection_flow import render_selection_flow_lines
 
 
-__all__ = ["build_search_provenance_appendix", "build_ai_use_disclosure", "build_human_accountability_template", "build_data_code_availability", "compose_appendix"]
+__all__ = ["build_search_provenance_appendix", "build_ai_use_disclosure", "build_human_accountability_template", "build_data_code_availability", "build_rejected_evidence_appendix", "compose_appendix"]
+
+
+# Heading text used by the Rejected / Contested Evidence appendix.
+# Public_manuscript_contract uses this exact heading to identify the
+# quarantine zone — the contract excludes this section when scanning
+# for SPAR-reject leakage. Universal: same heading across all topics.
+REJECTED_EVIDENCE_HEADING = "## Rejected / Contested Evidence"
+
+
+def build_rejected_evidence_appendix(
+    manifest: dict[str, Any],
+    spar_cache: dict[str, Any] | None,
+) -> str:
+    """Universal trust-spine quarantine block.
+
+    Lists every SPAR-rejected receipt with its verdict + Gemma's
+    rationale. Domain-agnostic: uses fields present on every topic
+    (citation_token, verdict, rationale, evidence_tier, directness).
+    Returns "" when there are no rejects (no empty section emitted).
+
+    Trust-spine ordering: rejected receipts MUST NOT appear in the
+    Discussion / Conclusion / Results / Tensions / main evidence
+    tables. This appendix is the only legitimate surface for them.
+    """
+    if not spar_cache:
+        return ""
+    verdicts = spar_cache.get("verdicts") or {}
+    rejected = [
+        v for v in verdicts.values()
+        if isinstance(v, dict)
+        and (v.get("verdict") or "").lower().startswith("reject")
+    ]
+    if not rejected:
+        return ""
+    cite_by_rid: dict[str, dict[str, Any]] = {}
+    for r in manifest.get("receipts") or ():
+        if not isinstance(r, dict):
+            continue
+        rid = r.get("receipt_id")
+        if rid:
+            cite_by_rid[rid] = r
+    rejected.sort(
+        key=lambda v: (str(v.get("verdict") or ""), str(v.get("receipt_id") or "")),
+    )
+    lines = [
+        REJECTED_EVIDENCE_HEADING,
+        "",
+        "_The receipts below were retrieved and clustered, then "
+        "quarantined by the SPAR judge: their verdicts flag metadata-"
+        "vs-source contradictions, design misclassification, "
+        "direction sign-flips, internal inconsistency, or fabricated "
+        "numbers. Per the project's trust-spine rule (judge ≠ writer), "
+        "these receipts are listed here for transparency but are NOT "
+        "cited as evidence in the Discussion, Conclusion, Results, "
+        "Tensions, or main evidence tables._",
+        "",
+        "| Citation | SPAR verdict | Tier | Directness | Rationale |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for v in rejected:
+        rid = str(v.get("receipt_id") or "")
+        meta = cite_by_rid.get(rid, {})
+        cite = str(meta.get("citation_token") or rid[:32]) or "—"
+        verdict = str(v.get("verdict") or "?")
+        tier = str(meta.get("evidence_tier") or "—")
+        direct = str(meta.get("directness") or "—")
+        rationale = re.sub(r"\s+", " ", str(v.get("rationale") or "")).strip()
+        if len(rationale) > 240:
+            rationale = rationale[:237] + "…"
+        rationale = rationale.replace("|", "/")  # protect table cell
+        lines.append(
+            f"| {cite} | `{verdict}` | {tier} | {direct} | {rationale} |"
+        )
+    return "\n".join(lines) + "\n"
 
 
 # Databases the retrieval layer can query. Source of truth:
@@ -585,6 +659,7 @@ def compose_appendix(
     git_sha: str = "unknown",
     bundle_path: str | None = None,
     verdict: str = "",
+    spar_cache: dict[str, Any] | None = None,
 ) -> str:
     """Top-level composer. Returns the full appendix block, ready
     to splice into the paper before the References section.
@@ -592,12 +667,19 @@ def compose_appendix(
     Order matters — Search Provenance comes first because it sets
     the methodological frame; AI-Use is the longest and most
     journal-required; Accountability and Data/Code are short
-    closers.
+    closers. The Rejected / Contested Evidence quarantine block
+    (Wave 22) is appended last so the appendix flows from
+    methods → disclosure → accountability → data → quarantine.
 
     Verdict-aware (2026-05-05 wave 6 P1 reviewer fix): the
     'A2A-AAA-certified' language in the submitter block + AI-use
     disclosure is gated on the actual verdict. Trust-Spine Pass and
-    SHIP-BLOCKED artifacts no longer overclaim AAA."""
+    SHIP-BLOCKED artifacts no longer overclaim AAA.
+
+    Wave 22 trust-spine: when `spar_cache` is supplied and contains
+    rejected verdicts, append a 'Rejected / Contested Evidence'
+    block listing every quarantined receipt with verdict + Gemma's
+    rationale. Universal — works for any topic."""
     from agent.manuscript_prisma import build_prisma_bridge_appendix
     blocks = [
         build_search_provenance_appendix(manifest, topic=topic),
@@ -611,6 +693,9 @@ def compose_appendix(
             verdict=verdict,
         ),
     ]
+    rejected_block = build_rejected_evidence_appendix(manifest, spar_cache)
+    if rejected_block:
+        blocks.append(rejected_block)
     return "## Publication Appendix\n\n" + "\n\n".join(b.rstrip() for b in blocks) + "\n"
 
 
