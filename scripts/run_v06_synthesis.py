@@ -1950,6 +1950,46 @@ async def _run(
     if not receipts:
         print("No high-confidence claims found.", file=sys.stderr)
         return 2
+    # Fix #60 (judge ≠ writer): run SPAR adjudication per receipt.
+    # The previous pipeline hardcoded spar_verdict="accept_clean" — the
+    # writer (MiMo) effectively graded its own input. Now the build
+    # judge chain (Gemma 4 31B primary, MiMo fallback, Mistral last)
+    # judges each receipt as accept_clean / accept_caveated /
+    # reject_<reason>. Domain-agnostic prompt; fail-soft on any error
+    # (defaults to accept_clean). Disable with SPAR_ENABLED=false.
+    if _env_bool("SPAR_ENABLED", default=True):
+        try:
+            from agent.spar_judge import (  # type: ignore[import-not-found]  # noqa: E402
+                adjudicate_receipts as _adjudicate, make_chain_caller,
+            )
+            from agent.llm_client import (  # noqa: E402
+                CostLedger as _SparCostLedger, build_judge_chain,
+            )
+            _spar_ledger = _SparCostLedger()
+            judge_chain = build_judge_chain(settings)
+            judge_caller = make_chain_caller(judge_chain, _spar_ledger)
+            _spar_concurrency = max(
+                1, int(os.environ.get("SPAR_CONCURRENCY", "4")),
+            )
+            receipts = await _adjudicate(
+                receipts, call=judge_caller, concurrency=_spar_concurrency,
+            )
+            from collections import Counter as _Counter
+            _verdicts = _Counter(r.spar_verdict for r in receipts)
+            _spar_cost = sum(c.estimated_cost_usd for c in _spar_ledger.calls)
+            print(
+                f"  SPAR judge ({settings.judge_model}): "
+                + " ".join(f"{k}={v}" for k, v in sorted(_verdicts.items()))
+                + f" | cost=${_spar_cost:.4f} "
+                + f"calls={len(_spar_ledger.calls)}",
+                file=sys.stderr,
+            )
+        except Exception as exc:  # noqa: BLE001 — fail-soft per pipeline
+            print(
+                f"  SPAR adjudication failed ({type(exc).__name__}: {exc}); "
+                "keeping default accept_clean verdicts.",
+                file=sys.stderr,
+            )
     matrix = build_tension_matrix(receipts)
     thesis = build_thesis(receipts, matrix, topic=topic)
 

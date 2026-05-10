@@ -8,7 +8,14 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 22,000 LOC (raised 2026-05-10 from 21,800 by
+Current ceiling: 22,250 LOC (raised 2026-05-10 from 22,000 by
+agent/spar_judge.py — universal SPAR judge wired into v06 runner so
+the previously-bypassed Gemma 4 31B per-receipt adjudication actually
+runs. Domain-agnostic prompt, fail-soft on errors, env-controlled.
+Measured 22,131 cloc at the time of raise; new ceiling leaves ~119
+cloc headroom).
+
+Prior ceiling: 22,000 LOC (raised 2026-05-10 from 21,800 by
 agent/sources/synapse.py — opt-in Sage Bionetworks Synapse search
 adapter (~134 cloc) for free public bio-research data, merged from
 the parallel session. Measured 21,841 cloc at the time of raise;
@@ -260,7 +267,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 22000
+TOTAL_LIMIT = 22250
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
