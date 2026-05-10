@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import re
 from typing import Any
 
 import httpx
@@ -10,6 +11,32 @@ from agent.sources._base import clean_text, normalize_doi
 from agent.types import RawHit
 
 DEFAULT_BASE_URL = "https://database.researka.org"
+_TERM_RE = re.compile(r"[A-Za-z][A-Za-z0-9]{2,}")
+_RERANK_GENERIC_TERMS = frozenset({
+    "adult",
+    "adults",
+    "age",
+    "aged",
+    "aging",
+    "biology",
+    "cell",
+    "cells",
+    "clinical",
+    "disease",
+    "health",
+    "human",
+    "humans",
+    "intervention",
+    "life",
+    "lifespan",
+    "longevity",
+    "mice",
+    "mortality",
+    "mouse",
+    "older",
+    "study",
+    "trial",
+})
 
 
 class ResearkaDatabaseClient:
@@ -29,11 +56,12 @@ class ResearkaDatabaseClient:
         if not token:
             return []
         k = max(1, min(limit, 50))
+        lane_k = min(max(k * 3, 20), 50)
         payload = {
             "query": clean_text(query, limit=3000),
-            "established_k": k,
-            "discovery_k": max(0, min(k // 2, 25)),
-            "semantic_k": k,
+            "established_k": lane_k,
+            "discovery_k": min(lane_k, 25),
+            "semantic_k": lane_k,
         }
         try:
             response = await client.post(
@@ -54,6 +82,7 @@ class ResearkaDatabaseClient:
             return []
         if not isinstance(body, dict):
             return []
+        terms = _rerank_terms(query)
         by_lane: dict[str, list[RawHit]] = {}
         for lane in ("established", "discovery", "semantic"):
             rows = body.get(lane, [])
@@ -67,6 +96,7 @@ class ResearkaDatabaseClient:
                 if hit is None:
                     continue
                 by_lane[lane].append(hit)
+            by_lane[lane].sort(key=lambda hit: _lexical_score(hit, terms), reverse=True)
 
         hits: list[RawHit] = []
         seen: set[str] = set()
@@ -135,3 +165,28 @@ def _dedupe_key(hit: RawHit) -> str:
     if hit.pmid:
         return f"pmid:{hit.pmid}"
     return f"title:{hit.title.casefold()}:{hit.year or ''}"
+
+
+def _rerank_terms(query: str) -> tuple[str, ...]:
+    terms: list[str] = []
+    seen: set[str] = set()
+    for match in _TERM_RE.finditer(query):
+        term = match.group(0).casefold()
+        if term in seen:
+            continue
+        seen.add(term)
+        if term not in _RERANK_GENERIC_TERMS:
+            terms.append(term)
+    if terms:
+        return tuple(terms[:8])
+    return tuple(list(seen)[:8])
+
+
+def _lexical_score(hit: RawHit, terms: tuple[str, ...]) -> int:
+    if not terms:
+        return 0
+    title = hit.title.casefold()
+    abstract = hit.abstract.casefold()
+    return sum(2 for term in terms if term in title) + sum(
+        1 for term in terms if term in abstract
+    )

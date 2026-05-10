@@ -1,6 +1,7 @@
 """Tests for the private Researka Database source adapter."""
 from __future__ import annotations
 
+import json
 import os
 from unittest.mock import patch
 
@@ -61,6 +62,10 @@ async def test_search_posts_to_three_lane_endpoint_and_parses_hits() -> None:
     assert captured["method"] == "POST"
     assert captured["url"] == "https://database.test/api/v1/search"
     assert captured["token"] == "test-token"
+    payload = json.loads(str(captured["json"]))
+    assert payload["established_k"] == 20
+    assert payload["discovery_k"] == 20
+    assert payload["semantic_k"] == 20
     assert len(hits) == 1
     assert hits[0].source == "researka_database"
     assert hits[0].doi == "10.1111/acel.12237"
@@ -96,6 +101,37 @@ async def test_search_round_robins_lanes_before_applying_limit() -> None:
     assert [h.raw["lane"] for h in hits] == [
         "established", "discovery", "semantic", "established",
     ]
+
+
+@pytest.mark.asyncio
+async def test_search_reranks_lane_candidates_by_specific_query_terms() -> None:
+    def handler(req: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={
+            "established": [
+                {
+                    "id": "openalex:W1",
+                    "title": "Generic aging review",
+                    "abstract": "Aging biology in older adults.",
+                    "doi": "10.1234/generic",
+                },
+                {
+                    "id": "openalex:W2",
+                    "title": "Dasatinib and quercetin senolytic therapy",
+                    "abstract": "Dasatinib plus quercetin targets senescent cells.",
+                    "doi": "10.1234/dq",
+                },
+            ],
+            "discovery": [],
+            "semantic": [],
+        })
+
+    with patch.dict(os.environ, {"RESEARKA_DATABASE_TOKEN": "test-token"}):
+        async with httpx.AsyncClient(transport=_mock_transport(handler)) as client:
+            hits = await ResearkaDatabaseClient().search(
+                client, "dasatinib quercetin senescent cells", limit=1,
+            )
+
+    assert hits[0].doi == "10.1234/dq"
 
 
 @pytest.mark.asyncio
