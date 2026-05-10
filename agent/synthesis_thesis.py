@@ -425,6 +425,7 @@ def build_fallback_thesis(
     # the highest-severity non-orth pair and name its kind +
     # outcome class so a downstream reader (and the auditor) can see
     # what unresolved structural tension blocks a real thesis.
+    addressed: tuple[str, ...]
     if non_orth:
         top = max(non_orth, key=lambda t: t.severity)
         tensions_clause = (

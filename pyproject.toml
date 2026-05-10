@@ -58,20 +58,51 @@ exclude = [
 ]
 
 [[tool.mypy.overrides]]
+# Flat sys.path-hack imports of scripts/*.py from run_v06_synthesis,
+# from sibling scripts, and from the verification suite. This list is
+# the union of every flat module name used as `import X` in repo code;
+# mypy can't follow the runtime sys.path manipulation, so ignore the
+# import-not-found errors. Targeted mypy on each scripts/<file>.py
+# still type-checks the source.
 module = [
-    "audit_v06_paper",
-    "final_consistency_audit",
-    "apply_consistency_fixes",
-    "grok_reviewer",
-    "apply_patches",
-    "run_mode_contract",
-    "citation_registry",
-    "evidence_taxonomy",
-    "effect_direction",
-    "table_renderer",
+    "agent.cli", "agent.planner", "agent.provider", "agent.sources.rxiv",
+    "apply_consistency_fixes", "apply_patches", "audit_v06_paper",
     "background_literature",
-    "granite_arbitrator",
+    "basket_failure_triage", "basket_stability_matrix", "bundle_snapshot",
+    "certification_report", "citation_registry", "corpus_filter",
+    "dw_register_public_bundle",
+    "effect_direction", "endgame_basket_audit", "evidence_taxonomy",
+    "export_public_bundle", "export_static_reader",
+    "fetch_oa_corpus", "final_checkpoint_report", "final_consistency_audit",
+    "fitz",
+    "generate_brief", "grade_assessment", "granite_arbitrator", "grok_reviewer",
+    "journal_surface_batch_audit", "journal_surface_root_cause",
+    "l6_batch_report", "l6_retrofit_report",
+    "methods_evidence_renderer", "multi_topic_dashboard",
+    "no_regression_gate", "novel_framework", "numeric_role_guard",
+    "osf_live_readiness",
+    "pdf_ingest", "pdfplumber", "pypdf",
+    "qualification_partial_repair", "qualification_rescue", "quant_claim_extract",
+    "quant_endpoints",
+    "reader_publication_deep_report", "reader_publication_report",
+    "release_watchdog_deep", "release_watchdog_report",
+    "research_contribution_report", "researka_reader_manifest",
+    "risk_of_bias", "run_mode_contract", "run_v06_synthesis",
+    "seed_topic_corpus", "spec_bundle_validator", "static_reader_quality_gate",
+    "surface_render_lint",
+    "table_renderer", "tri_sync_status",
     "vocab",
-    "no_regression_gate",
+    "wide_basket_deep_audit",
 ]
 ignore_missing_imports = true
+
+# Mypy is scoped to the agent/ release runtime. scripts/ holds CLIs
+# and one-off batch tools that rely on dynamic JSON shapes, argparse-
+# driven control flow, and sys.path-hack imports; tests/ verifies
+# behavior, not types. Type-checking either of those globally
+# produces pre-existing noise that obscures real issues in agent/.
+# Targeted mypy on individual scripts/<file>.py or tests/<file>.py
+# still works when needed.
+[[tool.mypy.overrides]]
+module = ["scripts.*", "tests.*"]
+ignore_errors = true

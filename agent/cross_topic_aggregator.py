@@ -183,4 +183,10 @@ def _citation_keys(registry: dict[str, dict[str, Any]]) -> set[str]:
 
 
 def _nonempty(values: object) -> set[str]:
-    return {str(v) for v in values if v}
+    """Coerce any iterable (incl. generators) to a non-empty str set.
+    Returns empty set when `values` isn't iterable at all."""
+    try:
+        items = list(values)  # type: ignore[call-overload]
+    except TypeError:
+        return set()
+    return {str(v) for v in items if v}

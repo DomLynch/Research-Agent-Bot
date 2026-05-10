@@ -38,7 +38,7 @@ from __future__ import annotations
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
-from agent.schemas import Claim, Confidence, Directness, EvidenceTier
+from agent.schemas import Claim, Confidence, Directness
 from agent.types import EvidenceItem
 
 __all__ = [
@@ -57,7 +57,11 @@ class ThesisTournamentError(ValueError):
 _DIRECTNESS_RANK: Mapping[Directness, int] = {
     "direct": 0, "indirect": 1, "mechanistic": 2,
 }
-_TIER_RANK: Mapping[EvidenceTier, int] = {
+# Some receipts carry tier "C" (or "C1"/"C2") even though
+# agent/schemas.EvidenceTier narrows to {A1, A2, B, mixed}; treat the
+# rank map as a permissive str->int table to avoid silently dropping
+# C-tier rows. See risk_of_bias._VALID_TIERS.
+_TIER_RANK: Mapping[str, int] = {
     "A1": 0, "A2": 1, "B": 2, "C": 3, "mixed": 4,
 }
 _CONFIDENCE_RANK: Mapping[Confidence, int] = {

@@ -57,24 +57,54 @@ TEMPLATE_LANGUAGE_DISCIPLINE_RULE = """\
 ================================================================
 TEMPLATE-LANGUAGE DISCIPLINE (ship-blocking — gate fails the paper)
 ================================================================
-NEVER open a paragraph or sentence with these AI-summary tells:
+The post-render template-language gate performs LITERAL substring
+matching. Never write any of the forbidden phrases below — not as
+opener, not in the middle of a sentence, NOT EVEN INSIDE A QUOTE
+intended to negate them ("rather than concluding that 'further
+research is needed'..." STILL fails the gate, because the substring
+is present).
+
+FORBIDDEN AI-SUMMARY TELLS (P2 — block):
   "In summary,"   "In conclusion,"   "Taken together,"
   "This synthesis suggests"   "This review suggests"
-Lead with the specific finding instead.
+Replacement template — open the paragraph with the specific finding:
+  bad : "Taken together, these data suggest the case is incomplete."
+  good: "The mechanistic rationale exists, yet the human-RCT data
+         remain mixed: <direction> for <outcome class> (<receipts>),
+         null for <other class> (<receipts>)."
 
-NEVER use these unsupported-authority phrases (P1 ship-block):
+FORBIDDEN UNSUPPORTED-AUTHORITY (P1 — block):
   "It is clear that"   "Undeniably"   "Undoubtedly"
   "Proves that"   "Clearly demonstrates"   "Definitively shows"
-Use hedged "indicates", "suggests", "demonstrates" + citation.
+Replacement — hedged verbs + citation in the same sentence:
+  "indicates" / "suggests" / "demonstrates" / "is consistent with"
+  + Author Year.
 
-NEVER use these generic-research cliches:
+FORBIDDEN GENERIC RESEARCH CLICHES (P2 — block):
   "Further research is needed"   "More studies are needed"
-  "Additional research is warranted"
-Replace with concrete trial-design recommendations (population, n,
-endpoint, duration).
+  "Additional research is warranted"   "Further studies are warranted"
+Replacement template — name the missing trial:
+  bad : "Further research is needed."
+  good: "An RCT in <population> (n≥<count>) with <endpoint> over
+         <duration> would resolve <named tension>."
 
-VAGUE LIMITATIONS must be specific. "Evidence base is limited" must
-be paired with what is limited (n, duration, endpoint, population).
+VAGUE-LIMITATION DENYLIST (P2 — block):
+  "evidence base is limited"   "limited evidence base"
+  "the literature is limited"
+The gate accepts these phrases ONLY when the same sentence carries
+EITHER a citation token OR (a digit AND a measurement word like n=,
+RCTs, patients, weeks, months). "Small number of direct trials" is
+NOT specific enough. Use exact counts:
+  bad : "The frailty evidence base is limited by the small number of
+         direct trials."
+  good: "The frailty evidence base is limited to k=3 direct RCTs
+         (n=212 across Smith 2022, Jones 2023, Lee 2024), all under
+         24 weeks."
+  good: "The literature is limited to 5 mechanistic studies (cite)
+         and 0 hard-outcome RCTs."
+
+When in doubt, prefer rewriting around the forbidden substring
+entirely. The gate has zero tolerance for these specific phrases.
 ================================================================
 
 """
