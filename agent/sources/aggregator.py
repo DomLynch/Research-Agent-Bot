@@ -48,6 +48,7 @@ def _build_registry() -> dict:
     from agent.sources.chembl import ChemblClient
     from agent.sources.arxiv import ArxivClient
     from agent.sources.medrxiv import MedRxivClient
+    from agent.sources.researka_database import ResearkaDatabaseClient
     return {
         # Tier 1: free, no auth, in default discovery set
         "pubmed": (PubMedClient(), True, None),
@@ -66,6 +67,10 @@ def _build_registry() -> dict:
         "openaire": (OpenAireClient(), True, None),
         "pmc_oai": (PmcOaiClient(), True, None),
         "arxiv": (ArxivClient(), True, None),
+        # Private curated Researka hot index (auto-enables with bot token).
+        "researka_database": (
+            ResearkaDatabaseClient(), True, "RESEARKA_DATABASE_TOKEN",
+        ),
         # Tier 2: free with API key (auto-enables when key set;
         # the auth_env gate handles the "off without key" semantics)
         "core": (

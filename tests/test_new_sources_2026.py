@@ -300,11 +300,18 @@ def test_aggregator_core_auto_enables_with_key():
     assert auth == "CORE_API_KEY"
 
 
-def test_aggregator_total_source_count_is_15():
-    """Sanity check: 13 corpus sources + 2 new = 15 total in registry.
+def test_aggregator_total_source_count_is_16():
+    """Sanity check: 15 live APIs + private Researka DB = 16 sources.
     (10 default Tier-1 + arXiv + medRxiv = 12 Tier-1; +CORE=13 default-on
-    gated; +ChEMBL+Unpaywall=15 opt-in.)"""
+    gated; +private Researka DB=14 gated; +ChEMBL+Unpaywall=16 opt-in.)"""
     reg = _build_registry()
-    assert len(reg) == 15, (
-        f"Expected 15 registered sources, got {len(reg)}: {sorted(reg)}"
+    assert len(reg) == 16, (
+        f"Expected 16 registered sources, got {len(reg)}: {sorted(reg)}"
     )
+
+
+def test_aggregator_registers_researka_database_as_token_gated_source():
+    reg = _build_registry()
+    _, default_en, auth = reg["researka_database"]
+    assert default_en is True
+    assert auth == "RESEARKA_DATABASE_TOKEN"

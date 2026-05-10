@@ -1,16 +1,8 @@
-"""Researka Database adapter.
-
-Private hot-index source for the synthesis bot. It calls
-database.researka.org's three-lane `/api/v1/search` endpoint and converts
-Established / Discovery / Semantic hits into the standard RawHit contract.
-
-Opt-in via RESEARKA_DATABASE_TOKEN. Missing token returns [] without making a
-network call so local tests and public runs do not fail on private infra.
-"""
+"""Private Researka Database source adapter."""
 from __future__ import annotations
 
 import os
-from typing import Any, SupportsInt
+from typing import Any
 
 import httpx
 
@@ -26,9 +18,6 @@ class ResearkaDatabaseClient:
     def _base_url(self) -> str:
         return os.environ.get("RESEARKA_DATABASE_URL", DEFAULT_BASE_URL).rstrip("/")
 
-    def _token(self) -> str:
-        return os.environ.get("RESEARKA_DATABASE_TOKEN", "").strip()
-
     async def search(
         self,
         client: httpx.AsyncClient,
@@ -36,7 +25,7 @@ class ResearkaDatabaseClient:
         *,
         limit: int,
     ) -> list[RawHit]:
-        token = self._token()
+        token = os.environ.get("RESEARKA_DATABASE_TOKEN", "").strip()
         if not token:
             return []
         k = max(1, min(limit, 50))
@@ -66,7 +55,6 @@ class ResearkaDatabaseClient:
         if not isinstance(body, dict):
             return []
         hits: list[RawHit] = []
-        seen: set[tuple[str | None, str | None, str]] = set()
         for lane in ("established", "discovery", "semantic"):
             rows = body.get(lane, [])
             if not isinstance(rows, list):
@@ -77,10 +65,6 @@ class ResearkaDatabaseClient:
                 hit = self._parse(row, lane=lane, query=query)
                 if hit is None:
                     continue
-                key = (hit.doi, hit.pmid, hit.title.lower()[:120])
-                if key in seen:
-                    continue
-                seen.add(key)
                 hits.append(hit)
                 if len(hits) >= k:
                     return hits
@@ -100,7 +84,11 @@ class ResearkaDatabaseClient:
             title=title,
             abstract=abstract,
             year=year,
-            url=_best_url(row, doi=doi, pmid=pmid, base_url=self._base_url()),
+            url=(
+                f"https://doi.org/{doi}" if doi else
+                f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else
+                self._base_url()
+            ),
             doi=doi,
             pmid=pmid,
             nct=None,
@@ -117,26 +105,9 @@ class ResearkaDatabaseClient:
 
 
 def _int_or_none(value: object) -> int | None:
-    if not isinstance(value, (str, bytes, bytearray, SupportsInt)):
+    if not isinstance(value, (int, float, str, bytes, bytearray)):
         return None
     try:
         return int(value)
     except (TypeError, ValueError):
         return None
-
-
-def _best_url(
-    row: dict[str, Any],
-    *,
-    doi: str | None,
-    pmid: str | None,
-    base_url: str,
-) -> str:
-    if doi:
-        return f"https://doi.org/{doi}"
-    if pmid:
-        return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
-    paper_id = clean_text(row.get("id"), limit=256)
-    if paper_id:
-        return f"{base_url}/api/v1/papers/{paper_id}"
-    return base_url
