@@ -182,6 +182,37 @@ def _tension_records(manifest: dict) -> list[TensionRecord]:
     return out
 
 
+def _ensure_review_patch_log(out_dir: Path) -> None:
+    """Backward-compat alias. Bundle exporter, certification_report, and
+    several dashboards require full_paper.review_patch_log.json; the
+    runner only writes it when patches existed. If it's missing but
+    review_patches.json is present, synthesize an equivalent log from
+    that source. Cheap, idempotent, fail-soft."""
+    log_path = out_dir / "full_paper.review_patch_log.json"
+    if log_path.exists():
+        return
+    src = _read_json(out_dir / "full_paper.review_patches.json", {}) or {}
+    patches = src.get("patches") or []
+    log_path.write_text(json.dumps({
+        "applied_at": _now_iso(),
+        "n_proposed": int(src.get("n_patches", len(patches))),
+        "n_applied": 0,
+        "n_rejected": 0,
+        "n_rejected_by_arbitration": 0,
+        "n_flagged": 0,
+        "n_repaired": 0,
+        "n_auto_stripped": 0,
+        "n_arbitrated": 0,
+        "patches": [],
+        "alias_of": "full_paper.review_patches.json",
+    }, indent=2))
+
+
+def _now_iso() -> str:
+    import datetime as _dt
+    return _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
+
+
 def run_phases(
     out_dir: Path, *,
     rob_method_status: RobMethodStatus = "automated_screening",
@@ -194,6 +225,9 @@ def run_phases(
     paper_md = (out_dir / "full_paper.md").read_text()
     receipts: list[dict] = list(manifest.get("receipts") or [])
     by_outcome = _group_by_outcome(receipts)
+    # Fix #57: ensure the review_patch_log.json bundle-export contract
+    # holds even when the runner skipped its own write (0-patches case).
+    _ensure_review_patch_log(out_dir)
 
     # --- Phase 4: RoB + GRADE -------------------------------------------------
     rob_payload = _rob_to_payload(by_outcome)

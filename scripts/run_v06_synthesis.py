@@ -2499,6 +2499,17 @@ async def _run_post_paper_pipeline(
         n_arbitration_reject = 0
         n_arbitration_escalate = 0
         arbitration_log_name = None
+        # Fix #57: bundle exporter, certification_report, and downstream
+        # dashboards all require full_paper.review_patch_log.json. The
+        # 0-patches branch previously produced no log; emit a zeroed
+        # alias so the contract is universal.
+        paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
+            "applied_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+            "n_proposed": 0, "n_applied": 0, "n_rejected": 0,
+            "n_rejected_by_arbitration": 0, "n_flagged": 0,
+            "n_repaired": 0, "n_auto_stripped": 0, "n_arbitrated": 0,
+            "patches": [],
+        }, indent=2))
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
     # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok

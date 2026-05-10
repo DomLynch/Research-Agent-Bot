@@ -39,16 +39,39 @@ asyncio_mode = "strict"
 include = ["agent", "agent.*"]
 
 [tool.mypy]
-# tests_legacy/ + agent_legacy/ are pre-V1 archaeology on disk for git
-# history; they shadow live-suite module names and would raise
-# Duplicate-module on a flat walk.
-# scripts/ is imported via sys.path hacks (`import grok_reviewer`)
-# AND walked as the `scripts` package, so a flat walk finds every
-# scripts/*.py twice. Explicit-package-bases + mypy_path sequencing
-# (".", which prefers the in-tree top-level `scripts` package over
-# the auto-discovered `<file>` form) is the standard fix per
-# https://mypy.readthedocs.io/en/stable/running_mypy.html#mapping-file-paths-to-modules
-exclude = ["^tests_legacy/", "^agent_legacy/"]
+# Only `.` on mypy_path. Production imports of scripts/*.py all use the
+# package form (`from scripts.X import Y` — see agent/quality_methods_bundle).
+# Flat sys.path-hack imports (`import grok_reviewer`, `import granite_arbitrator`,
+# etc.) come from scripts/run_v06_synthesis.py and a handful of tests; those
+# are listed in the [[tool.mypy.overrides]] block below with
+# ignore_missing_imports=true so mypy doesn't error on them.
+# Adding `scripts` to mypy_path would cause every scripts/*.py to be
+# discovered under both the flat and packaged module names, producing
+# unrecoverable Duplicate-module errors on a flat walk.
+mypy_path = "$MYPY_CONFIG_FILE_DIR"
 explicit_package_bases = true
 namespace_packages = true
-mypy_path = "."
+exclude = [
+    "^agent_archived/",
+    "^agent_legacy/",
+    "^tests_legacy/",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "audit_v06_paper",
+    "final_consistency_audit",
+    "apply_consistency_fixes",
+    "grok_reviewer",
+    "apply_patches",
+    "run_mode_contract",
+    "citation_registry",
+    "evidence_taxonomy",
+    "effect_direction",
+    "table_renderer",
+    "background_literature",
+    "granite_arbitrator",
+    "vocab",
+    "no_regression_gate",
+]
+ignore_missing_imports = true
