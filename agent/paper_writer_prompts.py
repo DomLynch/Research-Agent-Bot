@@ -57,14 +57,15 @@ TEMPLATE_LANGUAGE_DISCIPLINE_RULE = """\
 ================================================================
 TEMPLATE-LANGUAGE DISCIPLINE (ship-blocking — gate fails the paper)
 ================================================================
-The post-render template-language gate performs LITERAL substring
-matching. Never write any of the forbidden phrases below — not as
-opener, not in the middle of a sentence, NOT EVEN INSIDE A QUOTE
-intended to negate them ("rather than concluding that 'further
-research is needed'..." STILL fails the gate, because the substring
-is present).
+The post-render gate distinguishes USE from MENTION. The forbidden
+phrases below are flagged when the writer ASSERTS them as their own
+claim. Quoting / negating / critiquing the cliché ("Rather than
+concluding that 'further research is needed,' this synthesis names
+specific gaps...") is GOOD writing and is NOT flagged. Default to
+asserting your specific finding; reach for quote-and-negate only
+when the cliché itself is genuinely the topic of the sentence.
 
-FORBIDDEN AI-SUMMARY TELLS (P2 — block):
+DO-NOT-USE AI-SUMMARY TELLS (P2 if used as own claim):
   "In summary,"   "In conclusion,"   "Taken together,"
   "This synthesis suggests"   "This review suggests"
 Replacement template — open the paragraph with the specific finding:
@@ -73,14 +74,14 @@ Replacement template — open the paragraph with the specific finding:
          remain mixed: <direction> for <outcome class> (<receipts>),
          null for <other class> (<receipts>)."
 
-FORBIDDEN UNSUPPORTED-AUTHORITY (P1 — block):
+DO-NOT-USE UNSUPPORTED-AUTHORITY (P1):
   "It is clear that"   "Undeniably"   "Undoubtedly"
   "Proves that"   "Clearly demonstrates"   "Definitively shows"
 Replacement — hedged verbs + citation in the same sentence:
   "indicates" / "suggests" / "demonstrates" / "is consistent with"
   + Author Year.
 
-FORBIDDEN GENERIC RESEARCH CLICHES (P2 — block):
+DO-NOT-USE GENERIC RESEARCH CLICHES (P2):
   "Further research is needed"   "More studies are needed"
   "Additional research is warranted"   "Further studies are warranted"
 Replacement template — name the missing trial:
@@ -88,7 +89,7 @@ Replacement template — name the missing trial:
   good: "An RCT in <population> (n≥<count>) with <endpoint> over
          <duration> would resolve <named tension>."
 
-VAGUE-LIMITATION DENYLIST (P2 — block):
+VAGUE-LIMITATION DENYLIST (P2):
   "evidence base is limited"   "limited evidence base"
   "the literature is limited"
 The gate accepts these phrases ONLY when the same sentence carries
@@ -100,11 +101,12 @@ NOT specific enough. Use exact counts:
   good: "The frailty evidence base is limited to k=3 direct RCTs
          (n=212 across Smith 2022, Jones 2023, Lee 2024), all under
          24 weeks."
-  good: "The literature is limited to 5 mechanistic studies (cite)
-         and 0 hard-outcome RCTs."
 
-When in doubt, prefer rewriting around the forbidden substring
-entirely. The gate has zero tolerance for these specific phrases.
+PERMITTED PATTERNS (do not avoid these — they are good writing):
+  - Quoted critique:   "Rather than 'further research is needed,' …"
+  - Negation pivot:    "Instead of further research is needed, …"
+  - Meta-discussion:   "The phrase 'evidence base is limited' is
+                       replaced here with k=3 RCTs (n=212)."
 ================================================================
 
 """

@@ -334,11 +334,14 @@ def detect_template_language(text: str) -> list[Hit]:
 
 
 def _scan_sentence(sentence: str, *, line_number: int, hits: list[Hit]) -> None:
-    """Run sentence through always-flag and conditional denylists."""
+    """Run sentence through always-flag and conditional denylists.
+
+    Fix #58: a match is suppressed when the phrase is a MENTION (quoted /
+    negated / meta-referenced) rather than a USE — see `_is_mention`."""
     trimmed = sentence.strip()
     for pattern, category, severity, reason in DENYLIST_ALWAYS:
         m = pattern.search(sentence)
-        if m:
+        if m and not _is_mention(sentence, m.start(), m.end()):
             hits.append(Hit(
                 phrase=m.group(0), category=category, severity=severity,
                 line_number=line_number, sentence=trimmed, reason=reason,
@@ -346,7 +349,7 @@ def _scan_sentence(sentence: str, *, line_number: int, hits: list[Hit]) -> None:
     if not _has_specifics(sentence):
         for pattern, category, severity, reason in DENYLIST_CONDITIONAL:
             m = pattern.search(sentence)
-            if m:
+            if m and not _is_mention(sentence, m.start(), m.end()):
                 hits.append(Hit(
                     phrase=m.group(0), category=category, severity=severity,
                     line_number=line_number, sentence=trimmed, reason=reason,
