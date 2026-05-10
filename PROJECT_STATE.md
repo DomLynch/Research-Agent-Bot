@@ -52,6 +52,12 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 - Rapamycin: AAA/L6 reproducibly journal-ready flagship.
 - Basket: 18 primary AAA/L5+ topics plus taurine as scoped support in the
   corrected cross-topic input set.
+- Researka Database source adapter: `agent/sources/researka_database.py` is
+  wired as source #16, token-gated by `RESEARKA_DATABASE_TOKEN`, and live-smoked
+  against `database.researka.org`.
+- Researka Database benchmark harness: `scripts/researka_database_benchmark.py`
+  produced `reports/researka_database_benchmark_latest.json` with 25/25 hit
+  rate and 20/25 expected-term hit rate.
 
 ## Current Risks
 1. Full pytest must stay green after the LOC budget correction.
@@ -67,6 +73,10 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 5. Gemini Exacto is the selected reviewer but still needs replay validation
    before being called Grok-equivalent; fallback/escalation guards remain
    required for production-critical paper runs.
+6. Researka Database benchmark misses are currently search/ranking-shape
+   problems, not proven corpus-size gaps. Do not expand the hot index until
+   `/api/v1/search` semantic results are lexically anchored or reranked and the
+   benchmark is rerun.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
