@@ -631,6 +631,94 @@ def test_spar_reject_leakage_skips_when_no_cache(tmp_path: Path) -> None:
     assert not any(f.rule == "spar_reject_leakage" for f in r.failures)
 
 
+# ---- rule 11: QEI title row mismatch ------------------------------------
+
+
+def test_qei_title_row_mismatch_flags_when_title_lies() -> None:
+    md = (
+        "## Quantitative Evidence Index — topic\n\n"
+        "_Top 40 high-confidence numeric claims._\n\n"
+        "| Study | Endpoint |\n| --- | --- |\n"
+        "| Smith 2020 | A |\n"
+        "| Jones 2021 | B |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "qei_title_row_mismatch" and "Top 40" in f.detail
+        for f in r.failures
+    )
+
+
+def test_qei_title_passes_when_count_matches() -> None:
+    md = (
+        "## Quantitative Evidence Index — topic\n\n"
+        "Top 2 claims.\n\n"
+        "| Study | Endpoint |\n| --- | --- |\n"
+        "| Smith 2020 | A |\n"
+        "| Jones 2021 | B |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert not any(f.rule == "qei_title_row_mismatch" for f in r.failures)
+
+
+# ---- rule 12: References section duplicates -----------------------------
+
+
+def test_reference_duplicates_flags_dup_entries() -> None:
+    md = (
+        "## References\n\n"
+        "- **Walton 2019.** _A._ Aging Cell, 2019.\n"
+        "- **Walton 2019.** _A._ Aging Cell, 2019.\n"
+        "- **Smith 2020.** _B._ JAMA, 2020.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "reference_duplicates" and "Walton 2019" in f.detail
+        for f in r.failures
+    )
+
+
+def test_reference_duplicates_passes_when_unique() -> None:
+    md = (
+        "## References\n\n"
+        "- **Walton 2019.** _A._ Aging Cell, 2019.\n"
+        "- **Smith 2020.** _B._ JAMA, 2020.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert not any(f.rule == "reference_duplicates" for f in r.failures)
+
+
+# ---- References excised from spar_reject_leakage scan -------------------
+
+
+def test_spar_leak_excises_references_section(tmp_path: Path) -> None:
+    """Wave 25: References is the audit trail (every receipt listed
+    with verdict tag). A rejected citation appearing in References is
+    legitimate transparency, not a leak. The leak rule must skip the
+    References section."""
+    md = (
+        "## Methods\n\nNothing controversial here.\n"
+        "## References\n\n"
+        "- **Cameron 2016.** _Quarantined paper._ J, 2016.\n"
+    )
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Cameron 2016"},
+    ])
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "g",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "x", "judge_model": "g",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(f.rule == "spar_reject_leakage" for f in r.failures)
+
+
 # ---- regression-anchor fixtures (live runs) -----------------------------
 
 

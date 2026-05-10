@@ -608,8 +608,13 @@ async def render_full_paper(
     _repo = _Path(__file__).resolve().parent.parent
     _quant_dir = _repo / "docs" / "quality-reference" / topic / "quant_claims"
     _parsed_dir = _repo / "docs" / "quality-reference" / topic / "parsed"
+    # Wave 25 trust-spine: pass the SPAR-accepted slice so QEI rows
+    # cannot be drawn from quarantined papers. Without this, the QEI
+    # table iterated every receipt's quant_claims regardless of SPAR
+    # verdict — Cesar 2025 / Henney 2025 / Hypoglycemia 2019 /
+    # Shadyab 2025 leaked into the metformin QEI in the Wave 23 audit.
     _accepted_paper_ids = resolve_accepted_paper_ids(
-        receipts, _parsed_dir,
+        accepted, _parsed_dir,
     )
     _table_md, _qei_diag = build_results_table_with_diagnostic(
         _quant_dir, topic=topic,

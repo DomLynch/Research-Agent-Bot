@@ -135,6 +135,78 @@ def test_dedupe_skips_when_no_included_studies_table() -> None:
     assert n == 0
 
 
+def test_dedupe_references_section_collapses_dup_citations() -> None:
+    """Wave 25: same paper retrieved under different identifiers
+    (PMID vs DOI vs manual ID) produces multiple receipt entries
+    that get rendered as multiple References lines. The scrubber
+    must collapse to one entry per citation_token."""
+    from agent.manuscript_scrub import (  # type: ignore[import-not-found]
+        dedupe_references_section,
+    )
+    md = (
+        "## References\n\n"
+        "- **Walton 2019.** _Title A._ Aging Cell, 2019. PMID 32385376.\n"
+        "- **Walton 2019.** _Title A._ Aging Cell, 2019. PMID 31557380.\n"
+        "- **Smith 2020.** _Other paper._ JAMA, 2020. PMID 12345.\n"
+    )
+    out, n = dedupe_references_section(md)
+    assert n == 1
+    assert out.count("**Walton 2019.**") == 1
+    assert "**Smith 2020.**" in out
+
+
+def test_dedupe_references_section_no_op_when_unique() -> None:
+    from agent.manuscript_scrub import (  # type: ignore[import-not-found]
+        dedupe_references_section,
+    )
+    md = (
+        "## References\n\n"
+        "- **Smith 2020.** _A._ J, 2020. PMID 1.\n"
+        "- **Jones 2021.** _B._ J, 2021. PMID 2.\n"
+    )
+    out, n = dedupe_references_section(md)
+    assert out == md
+    assert n == 0
+
+
+def test_fix_qei_title_count_updates_top_N_to_actual_rows() -> None:
+    """Wave 25: when the QEI title says 'Top 40' but only 3 data rows
+    follow, the title must be repaired to 'Top 3'. Universal — every
+    topic uses the same QEI title format. Markdown italic underscores
+    around 'Top N' must not block the match."""
+    from agent.manuscript_scrub import (  # type: ignore[import-not-found]
+        fix_qei_title_count,
+    )
+    md = (
+        "## Quantitative Evidence Index — testing\n\n"
+        "_Top 40 high-confidence numeric claims._\n\n"
+        "| Study | Endpoint | Value |\n| --- | --- | --- |\n"
+        "| Smith 2020 | A | 0.5 |\n"
+        "| Jones 2021 | B | 0.7 |\n"
+        "| Patel 2022 | C | 0.9 |\n"
+    )
+    out, fixed = fix_qei_title_count(md)
+    assert fixed
+    assert "Top 3" in out
+    assert "Top 40" not in out
+
+
+def test_fix_qei_title_no_op_when_count_matches() -> None:
+    from agent.manuscript_scrub import (  # type: ignore[import-not-found]
+        fix_qei_title_count,
+    )
+    md = (
+        "## Quantitative Evidence Index — testing\n\n"
+        "Top 2 high-confidence numeric claims.\n\n"
+        "| Study | Value |\n| --- | --- |\n"
+        "| Smith 2020 | 0.5 |\n"
+        "| Jones 2021 | 0.7 |\n"
+    )
+    out, fixed = fix_qei_title_count(md)
+    assert not fixed
+    assert out == md
+
+
 def test_dedupe_runs_across_multiple_evidence_tables() -> None:
     """Wave 24: dedupe also collapses Risk-of-Bias (Table 4) and
     other ## Table N sections. Universal — every topic uses the same

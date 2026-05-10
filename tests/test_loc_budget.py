@@ -267,8 +267,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 23300  # Wave 23 (2026-05-10): +200 for manuscript_scrub.py + dual-count manifest
-PER_FILE_LIMIT = 750  # Wave 22: pmc.py grew to 725 with strict trust-spine enforcement
+TOTAL_LIMIT = 23550  # Wave 25 (2026-05-10): +250 for QEI title + refs dedupe + 2 contract rules
+PER_FILE_LIMIT = 850  # Wave 25: pmc.py grew to 835 with rules 11/12 (qei_title + ref_dedupe)
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
 

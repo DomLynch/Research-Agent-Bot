@@ -234,20 +234,120 @@ def dedupe_included_studies(md: str) -> tuple[str, int]:
     return md, n_removed_total
 
 
+# ---- Wave 25: References dedupe + QEI title row-count repair -----------
+
+
+_REFERENCES_HEADING_RE = re.compile(
+    r"^(##\s+References\b[^\n]*\n)", re.I | re.M,
+)
+# Reference entries follow the pattern '- **Author Year.** _Title._ Venue, ...'
+# with the citation token in bold at the start. Universal across topics.
+_REF_ENTRY_LEAD_RE = re.compile(
+    r"^[-*]\s*\*\*([A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)\.?\*\*",
+)
+
+
+def dedupe_references_section(md: str) -> tuple[str, int]:
+    """Collapse duplicate citation entries in the References section.
+
+    Two entries are duplicates iff their bold-leading citation_token
+    matches. Same paper retrieved under different identifiers (PMID
+    vs DOI vs manual ID) produces multiple receipt rows but should
+    appear once in References. Universal — every topic uses the same
+    bibliography format. Keeps first occurrence; second+ are dropped.
+    """
+    m = _REFERENCES_HEADING_RE.search(md)
+    if not m:
+        return md, 0
+    start = m.end()
+    nxt = re.search(r"^##\s+\S", md[start:], re.M)
+    end = start + nxt.start() if nxt else len(md)
+    section = md[start:end]
+    # Each reference entry is a contiguous block starting with '- **'.
+    # Split by lookahead so blank lines / inline content are kept.
+    entries = re.split(r"(?m)(?=^[-*]\s*\*\*[A-Z])", section)
+    seen: set[str] = set()
+    out_entries: list[str] = []
+    n_removed = 0
+    for entry in entries:
+        m2 = _REF_ENTRY_LEAD_RE.match(entry)
+        if not m2:
+            out_entries.append(entry)
+            continue
+        cite = m2.group(1).strip()
+        if cite in seen:
+            n_removed += 1
+            continue
+        seen.add(cite)
+        out_entries.append(entry)
+    new_section = "".join(out_entries)
+    return md[:start] + new_section + md[end:], n_removed
+
+
+_QEI_HEADING_RE = re.compile(
+    r"^(##\s+Quantitative\s+Evidence\s+Index[^\n]*\n)", re.I | re.M,
+)
+# Title pattern: "Top N high-confidence ..." or "_Top N ..._" — count
+# claim that must match actual row count.
+# Match "Top N" without `\b` because `_` is a word character in Python
+# regex — and the QEI title commonly wraps in `_Top N high-confidence_`
+# markdown italics. A plain `Top\s+\d+` is precise enough since this
+# pattern only runs inside the QEI section.
+_TOP_N_RE = re.compile(r"Top\s+(\d+)", re.I)
+
+
+def fix_qei_title_count(md: str) -> tuple[str, bool]:
+    """Repair the QEI title's "Top N" count to match the actual number
+    of data rows in the QEI table. Universal — every topic's QEI uses
+    the same `Top N` title pattern."""
+    m = _QEI_HEADING_RE.search(md)
+    if not m:
+        return md, False
+    start = m.end()
+    nxt = re.search(r"^##\s+\S", md[start:], re.M)
+    end = start + nxt.start() if nxt else len(md)
+    section = md[start:end]
+    # Count data rows (start with `| ` and contain a citation).
+    rows = [
+        line for line in section.split("\n")
+        if re.match(
+            r"\s*\|\s*[A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}",
+            line,
+        )
+    ]
+    actual_n = len(rows)
+    if actual_n == 0:
+        return md, False
+    # Replace the first "Top N" in the section with the actual count.
+    title_m = _TOP_N_RE.search(section)
+    if not title_m:
+        return md, False
+    claimed_n = int(title_m.group(1))
+    if claimed_n == actual_n:
+        return md, False
+    new_section = section[:title_m.start()] + f"Top {actual_n}" + section[title_m.end():]
+    return md[:start] + new_section + md[end:], True
+
+
 def scrub_paper(
     md: str, *, abstract_cap: int = 500,
 ) -> tuple[str, ScrubReport]:
     """Apply all scrubber rules in order. Returns (new_md, report).
 
-    Order: residue first (lexical strip), abstract truncation second
-    (preserves remaining prose intent), dedupe last (operates on table
-    structure that the previous passes leave intact)."""
+    Order:
+      1. residue (lexical strip)
+      2. abstract truncation (preserves remaining prose intent)
+      3. table dedupe (operates on table structure)
+      4. references dedupe (Wave 25)
+      5. QEI title row-count fix (Wave 25)"""
     md, n_residue = scrub_engine_residue(md)
     md, abs_before, abs_after = truncate_abstract(md, cap=abstract_cap)
-    md, n_dup = dedupe_included_studies(md)
+    md, n_dup_tables = dedupe_included_studies(md)
+    md, n_dup_refs = dedupe_references_section(md)
+    md, qei_fixed = fix_qei_title_count(md)
     return md, ScrubReport(
         abstract_words_before=abs_before,
         abstract_words_after=abs_after,
-        duplicate_rows_removed=n_dup,
+        duplicate_rows_removed=n_dup_tables + n_dup_refs,
         residue_phrases_scrubbed=n_residue,
     )

@@ -87,6 +87,8 @@ _RULES = (
     "repeated_boilerplate",
     "spar_reject_leakage",
     "rejected_appendix_required",
+    "qei_title_row_mismatch",
+    "reference_duplicates",
 )
 _RuleName = Literal[
     "count_consistency",
@@ -99,6 +101,8 @@ _RuleName = Literal[
     "repeated_boilerplate",
     "spar_reject_leakage",
     "rejected_appendix_required",
+    "qei_title_row_mismatch",
+    "reference_duplicates",
 ]
 
 
@@ -666,6 +670,27 @@ def _excise_quarantine_section(body: str) -> str:
     return body[:start] + body[end:]
 
 
+# Wave 25: References is audit-only — it lists every receipt with
+# explicit [accepted] / [QUARANTINED] verdict tags (per
+# build_references_full_section). Including a rejected citation there
+# is part of trust-spine transparency, not an evidence claim. The leak
+# scan must skip it. Universal — every topic uses the same References
+# format.
+_REFERENCES_HEADING_RE_C = re.compile(
+    r"^(##\s+References\b[^\n]*\n)", re.I | re.M,
+)
+
+
+def _excise_references_section(body: str) -> str:
+    m = _REFERENCES_HEADING_RE_C.search(body)
+    if not m:
+        return body
+    start = m.start()
+    nxt = re.search(r"^##\s+\S", body[m.end():], re.M)
+    end = m.end() + nxt.start() if nxt else len(body)
+    return body[:start] + body[end:]
+
+
 def _load_spar_cache(run_dir: Path | None) -> dict[str, str] | None:
     """Return {receipt_id: verdict} for rejected receipts, or None if
     no spar_cache.json exists. Universal — works for any topic since
@@ -719,9 +744,14 @@ def _check_spar_reject_leakage(
             rejected_cites[cite] = rejected[rid]
     if not rejected_cites:
         return []
-    # Excise the Rejected / Contested Evidence quarantine zone from the
-    # body — that's the one legitimate surface for these citations.
-    main_paper = _excise_quarantine_section(body)
+    # Excise the Rejected / Contested Evidence quarantine zone AND the
+    # References section. References is the audit trail (every receipt
+    # listed with verdict tag — quarantined entries are legitimate
+    # there, not evidence claims). Universal — every topic uses the
+    # same References + Rejected / Contested Evidence headings.
+    main_paper = _excise_references_section(
+        _excise_quarantine_section(body)
+    )
     fails: list[ContractFailure] = []
     leak_counts: dict[str, int] = {}
     for cite, verdict in rejected_cites.items():
@@ -771,6 +801,93 @@ def _check_rejected_appendix_required(
                 f"run but the public MD has no 'Rejected / Contested "
                 f"Evidence' quarantine section. Trust-spine ordering "
                 f"requires every reject to be listed transparently."
+            ),
+        )
+    ]
+
+
+# ---- rule 11: QEI title row-count mismatch ------------------------------
+
+
+_QEI_HEADING_RE_C = re.compile(
+    r"^##\s+Quantitative\s+Evidence\s+Index[^\n]*\n", re.I | re.M,
+)
+# `\b` doesn't match the `_Top` boundary in markdown italics because
+# `_` is a word character in Python regex. Plain match is sufficient.
+_TOP_N_RE_C = re.compile(r"Top\s+(\d+)", re.I)
+_QEI_DATA_ROW_RE = re.compile(
+    r"^\s*\|\s*[A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}",
+)
+
+
+def _check_qei_title_row_mismatch(body: str) -> list[ContractFailure]:
+    """Wave 25: the QEI section's "Top N" title must match the actual
+    number of data rows. Universal — every topic's QEI uses the same
+    `## Quantitative Evidence Index` heading + `Top N` title pattern.
+    """
+    m = _QEI_HEADING_RE_C.search(body)
+    if not m:
+        return []
+    start = m.end()
+    nxt = re.search(r"^##\s+\S", body[start:], re.M)
+    end = start + nxt.start() if nxt else len(body)
+    section = body[start:end]
+    title_m = _TOP_N_RE_C.search(section)
+    if not title_m:
+        return []
+    claimed = int(title_m.group(1))
+    actual = sum(
+        1 for line in section.split("\n") if _QEI_DATA_ROW_RE.match(line)
+    )
+    if actual == 0 or claimed == actual:
+        return []
+    return [
+        ContractFailure(
+            rule="qei_title_row_mismatch",
+            detail=(
+                f"QEI title says 'Top {claimed}' but the table contains "
+                f"{actual} data rows. Title and content must agree."
+            ),
+        )
+    ]
+
+
+# ---- rule 12: References section duplicates -----------------------------
+
+
+def _check_reference_duplicates(body: str) -> list[ContractFailure]:
+    """Wave 25: the References section must not list the same citation
+    twice. Same paper retrieved under multiple identifiers (PMID/DOI/
+    manual ID) must be merged to a single bibliography entry. Universal
+    — every topic uses the same References format with bold-leading
+    citation tokens."""
+    m = _REFERENCES_HEADING_RE_C.search(body)
+    if not m:
+        return []
+    start = m.end()
+    nxt = re.search(r"^##\s+\S", body[start:], re.M)
+    end = start + nxt.start() if nxt else len(body)
+    section = body[start:end]
+    cites: list[str] = []
+    for line in section.split("\n"):
+        m2 = re.match(
+            r"^\s*[-*]\s*\*\*([A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)\.?\*\*",
+            line,
+        )
+        if m2:
+            cites.append(m2.group(1).strip())
+    counts = Counter(cites)
+    dupes = sorted(c for c, n in counts.items() if n > 1)
+    if not dupes:
+        return []
+    return [
+        ContractFailure(
+            rule="reference_duplicates",
+            detail=(
+                f"References section lists {len(dupes)} citation(s) "
+                f"more than once: {dupes[:5]}. Same paper retrieved under "
+                f"different identifiers must be merged to a single "
+                f"bibliography entry."
             ),
         )
     ]
@@ -850,6 +967,8 @@ def validate(
     fails.extend(_check_repeated_boilerplate(paper_md))
     fails.extend(_check_spar_reject_leakage(paper_md, manifest, run_dir))
     fails.extend(_check_rejected_appendix_required(paper_md, run_dir))
+    fails.extend(_check_qei_title_row_mismatch(paper_md))
+    fails.extend(_check_reference_duplicates(paper_md))
     by_rule: dict[str, int] = Counter(f.rule for f in fails)
     return ContractResult(
         status="FAIL" if fails else "PASS",
