@@ -8,7 +8,13 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 21,800 LOC (raised 2026-05-10 from 21,500 by
+Current ceiling: 22,000 LOC (raised 2026-05-10 from 21,800 by
+agent/sources/synapse.py — opt-in Sage Bionetworks Synapse search
+adapter (~134 cloc) for free public bio-research data, merged from
+the parallel session. Measured 21,841 cloc at the time of raise;
+new ceiling leaves ~159 cloc headroom).
+
+Prior ceiling: 21,800 LOC (raised 2026-05-10 from 21,500 by
 publication scoring and hazard-ratio normalization). Earlier waves:
 
 Wave 15 - Publication scorer + HR normalizer (20,750 -> 21,250):
@@ -254,7 +260,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 21800
+TOTAL_LIMIT = 22000
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
