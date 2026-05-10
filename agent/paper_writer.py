@@ -654,7 +654,9 @@ async def render_full_paper(
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
-    sections["novel_framework"] = build_novel_framework_section(accepted, matrix)
+    sections["novel_framework"] = build_novel_framework_section(
+        accepted, matrix, topic=topic,
+    )
     _log_section_done("novel_framework (deterministic)", sections["novel_framework"])
     sections["framework_engagement"] = build_framework_engagement_section(
         accepted,

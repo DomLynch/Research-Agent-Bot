@@ -88,7 +88,10 @@ def test_section_quotes_picked_thesis_verbatim() -> None:
         _thesis(thesis_text), topic="metformin",
     )
     assert thesis_text in md
-    assert "Picked thesis" in md
+    # Wave 23: 'Picked thesis (Tournament selector):' was renamed to
+    # 'Selected thesis:' to scrub engine-internal jargon from public
+    # MD. Either label proves the verbatim-quote behaviour.
+    assert "Selected thesis" in md or "Picked thesis" in md
 
 
 def test_section_highlights_load_bearing_tension() -> None:

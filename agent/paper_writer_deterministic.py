@@ -454,10 +454,13 @@ def build_what_this_adds_section(
     )
     lines.append("")
 
-    # Sentence 2 — picked thesis
+    # Sentence 2 — picked thesis. Wave 23: dropped engine-internal
+    # 'Tournament selector' jargon (public_manuscript_contract caught
+    # it as residue). Plain-language label is universal and reader-
+    # friendly across topics.
     if thesis and getattr(thesis, "text", "").strip():
         lines.append(
-            f"**Picked thesis (Tournament selector):** {thesis.text.strip()}"
+            f"**Selected thesis:** {thesis.text.strip()}"
         )
         lines.append("")
 

@@ -141,8 +141,17 @@ def build_framework_engagement_records(
 def build_novel_framework_section(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix,
+    *,
+    topic: str = "",
 ) -> SynthesisSection:
-    """Render a deterministic organizing framework from corpus structure."""
+    """Render a deterministic organizing framework from corpus structure.
+
+    Wave 23 universal fix: the prior version hardcoded 'rapamycin
+    evidence should be interpreted ...' which leaked into every paper
+    regardless of the actual topic — violating the universal-no-
+    hardcoding rule. This version takes the live `topic` and substitutes
+    it. When `topic` is empty/unknown, the prose falls back to the
+    domain-agnostic 'the corpus' phrasing."""
     directness = {str(r.directness).lower() for r in receipts}
     tension_kinds = {t.kind for t in matrix.non_orthogonal()}
     directness_phrase = ", ".join(
@@ -155,26 +164,27 @@ def build_novel_framework_section(
             "null_vs_positive",
         ) if label in tension_kinds
     ) or "cross-receipt"
+    subject = (topic.strip() or "the corpus").rstrip("_").replace("_", " ")
     body = [
         "## Novel Synthesis Framework",
         "",
         "We propose an Endpoint-Sensitivity framework for this corpus: "
-        "rapamycin evidence should be interpreted along a gradient from "
+        f"{subject} evidence should be interpreted along a gradient from "
         "proximal pathway effects, through intermediate functional or "
-        "biomarker endpoints, to distal clinical outcomes.",
+        "biomarker endpoints, to distal observable outcomes.",
         "",
         f"The accepted receipt graph contains {directness_phrase} evidence, "
         "so the manuscript should not collapse mechanistic plausibility and "
-        "clinical efficacy into one verdict.",
+        "downstream observed effect into one verdict.",
         "",
         "The framework is useful here because the matrix contains "
         f"{tension_phrase} tensions that can otherwise be mistaken for simple "
         "inconsistency.",
         "",
-        "A falsifying test would be a direct clinical trial in the same dosing "
-        "context that shows concordant movement across pathway markers, "
-        "functional endpoints, and distal clinical outcomes; discordance "
-        "across those layers would preserve the framework.",
+        "A falsifying test would be a study in the same context that shows "
+        "concordant movement across pathway markers, intermediate endpoints, "
+        "and distal observed outcomes; discordance across those layers would "
+        "preserve the framework.",
         "",
         "This is a paper-level organizing claim, not an added receipt: it can "
         "guide interpretation only where the manifest, tension matrix, and "
@@ -208,7 +218,11 @@ def build_framework_engagement_section(
                 item.matched_background_refs
             )
         else:
-            support = "no matched source in the accepted evidence registry"
+            # Wave 23 universal fix: 'no matched source in the accepted
+            # evidence registry' was engine-internal jargon that the
+            # public_manuscript_contract correctly flagged as residue.
+            # Use plain language readers can parse.
+            support = "no matching source in this corpus"
         body.append(
             f"- **{item.framework_name}: {item.status}.** {support}."
         )

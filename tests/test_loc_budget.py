@@ -267,7 +267,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 23100  # Wave 22 (2026-05-10): +200 for strict SPAR-leak + rejected appendix
+TOTAL_LIMIT = 23300  # Wave 23 (2026-05-10): +200 for manuscript_scrub.py + dual-count manifest
 PER_FILE_LIMIT = 750  # Wave 22: pmc.py grew to 725 with strict trust-spine enforcement
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

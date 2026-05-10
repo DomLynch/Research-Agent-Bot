@@ -2213,8 +2213,18 @@ async def _run(
     if what_adds_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md
 
+    # Wave 23 trust-spine: deterministic table renderers (Included
+    # Studies / Per-Study Endpoint / Cross-Domain Tensions / Evidence
+    # Limitations / Numeric Index) iterate the receipt list directly,
+    # so they must be fed the SPAR-accepted slice. Universal — every
+    # topic uses the same SPAR pipeline. The full receipt list still
+    # flows to references + manifest for transparency.
+    _accepted_writer_receipts = [
+        r for r in writer_receipts
+        if r.spar_verdict in ("accept_clean", "accept_caveated")
+    ]
     tables_md = _tables.render_all_tables(
-        writer_receipts, writer_matrix, claims_by_citation,
+        _accepted_writer_receipts, writer_matrix, claims_by_citation,
     )
     if tables_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
@@ -2268,6 +2278,17 @@ async def _run(
     _ACTIVE_MANIFEST = {
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
+        # Wave 23 dual-count model: distinguish total screened from
+        # SPAR-accepted evidence count from quarantined count. Universal
+        # — every topic uses the same SPAR pipeline.
+        "n_accepted_receipts": sum(
+            1 for r in receipts
+            if r.spar_verdict in ("accept_clean", "accept_caveated")
+        ),
+        "n_quarantined_receipts": sum(
+            1 for r in receipts
+            if (r.spar_verdict or "").startswith("reject")
+        ),
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "tensions": _serialized_tensions,
@@ -2302,6 +2323,17 @@ async def _run(
         # depending on module globals.
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
+        # Wave 23 dual-count model: distinguish total screened from
+        # SPAR-accepted evidence count from quarantined count. Universal
+        # — every topic uses the same SPAR pipeline.
+        "n_accepted_receipts": sum(
+            1 for r in receipts
+            if r.spar_verdict in ("accept_clean", "accept_caveated")
+        ),
+        "n_quarantined_receipts": sum(
+            1 for r in receipts
+            if (r.spar_verdict or "").startswith("reject")
+        ),
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "tensions": _serialized_tensions,
@@ -2885,6 +2917,34 @@ async def _run_post_paper_pipeline(
     except Exception as _e:  # pragma: no cover — best-effort
         print(
             f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
+            file=sys.stderr,
+        )
+
+    # Stage 5b.5 (Wave 23): universal post-render scrubber. Runs after
+    # the appendix splice and before the contract gate. Bounded
+    # reversible fixes for failure classes the writer cannot self-
+    # correct: residue strings (defence-in-depth), abstract-bleed
+    # truncation at 500 words, and Included-Studies dedup. Domain-
+    # agnostic — works for any topic.
+    try:
+        from agent.manuscript_scrub import (  # type: ignore[import-not-found]
+            scrub_paper as _scrub_paper,
+        )
+        _paper_md_in = paper_path.read_text()
+        _scrubbed_md, _scrub_report = _scrub_paper(_paper_md_in)
+        if _scrubbed_md != _paper_md_in:
+            paper_path.write_text(_scrubbed_md)
+        print(
+            f"[pipeline] Stage 5b.5 — manuscript_scrub: "
+            f"abstract={_scrub_report.abstract_words_before}→"
+            f"{_scrub_report.abstract_words_after} words, "
+            f"residue_phrases_scrubbed={_scrub_report.residue_phrases_scrubbed}, "
+            f"duplicate_rows_removed={_scrub_report.duplicate_rows_removed}",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — best-effort
+        print(
+            f"[pipeline] Stage 5b.5 — manuscript_scrub skipped: {_e}",
             file=sys.stderr,
         )
 
