@@ -55,42 +55,76 @@ class ExtractedRow:
     sentence: str
 
 
-# Ratio + CI patterns. Order matters: HR/AHR most specific first, then
-# OR/aOR, then RR/RR (relative risk).
+# Effect + 95% CI patterns. Each entry: (measure, scale, regex).
+#   - "log" scale: ratio measures (HR/OR/RR). effect = ln(eff),
+#     SE = (ln(hi) - ln(lo)) / (2 * z_95). Sign-preserving point check.
+#   - "linear" scale: absolute differences (MD/SMD/beta). effect = eff,
+#     SE = (hi - lo) / (2 * z_95). Allows negative effects/CIs.
+# Order matters: more specific patterns first so generic "OR" doesn't
+# eat "aOR" etc. Within scale, ratio patterns precede linear patterns
+# so a sentence with both reports flags the ratio (the canonical
+# meta-analysable shape).
 _Z95 = NormalDist().inv_cdf(0.975)  # ≈ 1.95996
 
-_RATIO_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
-    ("log_HR", re.compile(
+# Reusable shared tail: optional opener + space + lo, sep, hi, optional closer.
+_CI_TAIL_LOG = (
+    r"[\s,;]*\(?[\s,:]*"
+    r"(?:95\s*%\s*CI[\s,:]*|95\s*%\s*confidence\s+interval[\s,:]*)?"
+    r"(?P<lo>\d+\.\d+|\d+)"
+    r"\s*(?:[-–—]|to|,)\s*"
+    r"(?P<hi>\d+\.\d+|\d+)\s*\)?"
+)
+
+# Linear patterns must accept negative numbers in eff, lo, hi. The
+# em-dash separator collides with a leading minus sign, so for linear
+# CIs we accept "to" / "," / explicit dashes flanked by whitespace.
+_LIN_NUM = r"-?\d+\.\d+|-?\d+"
+_CI_TAIL_LINEAR = (
+    r"[\s,;]*\(?[\s,:]*"
+    r"(?:95\s*%\s*CI[\s,:]*|95\s*%\s*confidence\s+interval[\s,:]*)?"
+    r"(?P<lo>" + _LIN_NUM + r")"
+    r"\s*(?:to|,|–|—|\s-\s)\s*"
+    r"(?P<hi>" + _LIN_NUM + r")\s*\)?"
+)
+
+_RATIO_PATTERNS: tuple[tuple[str, str, re.Pattern[str]], ...] = (
+    ("log_HR", "log", re.compile(
         r"\b(?:adjusted\s+)?(?:hazard\s+ratio|aHR|HR)\s*"
         r"(?:was|of|=|:)?\s*"
-        r"(?P<eff>\d+\.\d+|\d+)"
-        r"[\s,;]*\(?[\s,:]*"
-        r"(?:95\s*%\s*CI[\s,:]*|95\s*%\s*confidence\s+interval[\s,:]*)?"
-        r"(?P<lo>\d+\.\d+|\d+)"
-        r"\s*(?:[-–—]|to|,)\s*"
-        r"(?P<hi>\d+\.\d+|\d+)\s*\)?",
+        r"(?P<eff>\d+\.\d+|\d+)" + _CI_TAIL_LOG,
         re.IGNORECASE,
     )),
-    ("log_OR", re.compile(
+    ("log_OR", "log", re.compile(
         r"\b(?:adjusted\s+)?(?:odds\s+ratio|aOR|OR)\s*"
         r"(?:was|of|=|:)?\s*"
-        r"(?P<eff>\d+\.\d+|\d+)"
-        r"[\s,;]*\(?[\s,:]*"
-        r"(?:95\s*%\s*CI[\s,:]*|95\s*%\s*confidence\s+interval[\s,:]*)?"
-        r"(?P<lo>\d+\.\d+|\d+)"
-        r"\s*(?:[-–—]|to|,)\s*"
-        r"(?P<hi>\d+\.\d+|\d+)\s*\)?",
+        r"(?P<eff>\d+\.\d+|\d+)" + _CI_TAIL_LOG,
         re.IGNORECASE,
     )),
-    ("log_RR", re.compile(
+    ("log_RR", "log", re.compile(
         r"\b(?:relative\s+risk|risk\s+ratio|RR)\s*"
         r"(?:was|of|=|:)?\s*"
-        r"(?P<eff>\d+\.\d+|\d+)"
-        r"[\s,;]*\(?[\s,:]*"
-        r"(?:95\s*%\s*CI[\s,:]*|95\s*%\s*confidence\s+interval[\s,:]*)?"
-        r"(?P<lo>\d+\.\d+|\d+)"
-        r"\s*(?:[-–—]|to|,)\s*"
-        r"(?P<hi>\d+\.\d+|\d+)\s*\)?",
+        r"(?P<eff>\d+\.\d+|\d+)" + _CI_TAIL_LOG,
+        re.IGNORECASE,
+    )),
+    # Wave 16+: absolute-difference measures. SE = (hi - lo) / (2*z_95)
+    # — no log transform. Effects can be negative.
+    ("MD", "linear", re.compile(
+        r"\b(?:mean\s+difference|MD)\s*"
+        r"(?:was|of|=|:)?\s*"
+        r"(?P<eff>" + _LIN_NUM + r")" + _CI_TAIL_LINEAR,
+        re.IGNORECASE,
+    )),
+    ("SMD", "linear", re.compile(
+        r"\b(?:standardi[sz]ed\s+mean\s+difference|SMD|Cohen'?s\s+d)\s*"
+        r"(?:was|of|=|:)?\s*"
+        r"(?P<eff>" + _LIN_NUM + r")" + _CI_TAIL_LINEAR,
+        re.IGNORECASE,
+    )),
+    ("beta", "linear", re.compile(
+        r"\b(?:beta|β|regression\s+coefficient)\s*"
+        r"(?:coefficient\s*)?"
+        r"(?:was|of|=|:)?\s*"
+        r"(?P<eff>" + _LIN_NUM + r")" + _CI_TAIL_LINEAR,
         re.IGNORECASE,
     )),
 )
@@ -102,41 +136,58 @@ def _row_from_match(
     paper_id: str,
     outcome_class: str,
     measure: str,
+    scale: str,
     eff_s: str,
     lo_s: str,
     hi_s: str,
     sentence: str,
 ) -> ExtractedRow | None:
     """Build an ExtractedRow from regex groups. Returns None when the
-    bracketed CI is degenerate (lo>=hi) or any value isn't strictly
-    positive (a ratio of 0 is mathematically undefined for log)."""
+    bracketed CI is degenerate or the scale-specific math is undefined
+    (e.g. a ratio of 0 for which log is undefined).
+
+    `scale` selects the math:
+      - "log"    : ratio measures (HR/OR/RR). Effect = ln(eff),
+                   SE = (ln(hi)-ln(lo))/(2*z_95). Requires all values > 0.
+      - "linear" : absolute differences (MD/SMD/beta). Effect = eff,
+                   SE = (hi-lo)/(2*z_95). Negative values are allowed.
+    """
     try:
         eff = float(eff_s)
         lo = float(lo_s)
         hi = float(hi_s)
     except ValueError:
         return None
-    if not (lo > 0.0 and hi > 0.0 and eff > 0.0):
-        return None
     if lo >= hi:
         return None
     # Sanity: the point estimate should fall within or very close to the CI.
     # Off by >5% on either side suggests the regex grabbed two unrelated
-    # numbers; reject silently.
-    margin = 1.05
-    if eff < lo / margin or eff > hi * margin:
-        return None
-    log_eff = math.log(eff)
-    se = (math.log(hi) - math.log(lo)) / (2.0 * _Z95)
-    if se <= 0.0 or not math.isfinite(se):
+    # numbers; reject silently. For linear scale the margin is additive
+    # (5% of the CI width) since multiplicative margins break around zero.
+    if scale == "log":
+        if not (lo > 0.0 and hi > 0.0 and eff > 0.0):
+            return None
+        margin = 1.05
+        if eff < lo / margin or eff > hi * margin:
+            return None
+        out_effect = math.log(eff)
+        out_se = (math.log(hi) - math.log(lo)) / (2.0 * _Z95)
+    else:
+        # linear
+        margin_abs = 0.05 * (hi - lo)
+        if eff < lo - margin_abs or eff > hi + margin_abs:
+            return None
+        out_effect = eff
+        out_se = (hi - lo) / (2.0 * _Z95)
+    if out_se <= 0.0 or not math.isfinite(out_se):
         return None
     return ExtractedRow(
         study_id=study_id,
         paper_id=paper_id,
         outcome_class=outcome_class,
         effect_measure=measure,
-        effect=log_eff,
-        se=se,
+        effect=out_effect,
+        se=out_se,
         point_estimate=eff,
         ci_lower=lo,
         ci_upper=hi,
@@ -175,7 +226,7 @@ def extract_rows_from_paper(
         sentence = str(claim.get("sentence") or claim.get("raw_text") or "").strip()
         if not sentence or sentence in seen_sentences:
             continue
-        for measure, pattern in _RATIO_PATTERNS:
+        for measure, scale, pattern in _RATIO_PATTERNS:
             m = pattern.search(sentence)
             if not m:
                 continue
@@ -184,6 +235,7 @@ def extract_rows_from_paper(
                 paper_id=paper_id,
                 outcome_class=outcome_class,
                 measure=measure,
+                scale=scale,
                 eff_s=m.group("eff"),
                 lo_s=m.group("lo"),
                 hi_s=m.group("hi"),

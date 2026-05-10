@@ -36,6 +36,7 @@ import dataclasses
 import json
 import sys
 from collections import defaultdict
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -50,6 +51,11 @@ from agent.final_gate import (  # noqa: E402
     GateInputs, RobMethodStatus, evaluate_final_gate,
 )
 from agent.publication_scorer import ScoreInputs, score_publication  # noqa: E402
+from agent.source_text_rob import (  # noqa: E402
+    assess_study_from_source_text,
+    default_call_llm_raises,
+    load_paper_sections,
+)
 from agent.template_gate_adapter import evaluate_template_gate  # noqa: E402
 from agent.tension_elaboration import TensionRecord, select_top_tensions  # noqa: E402
 
@@ -301,6 +307,93 @@ def _now_iso() -> str:
     return _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
 
 
+def _rob_source_text_payload(
+    manifest: dict[str, Any],
+    by_outcome: dict[str, list[dict]],
+    *,
+    call_llm: Callable[[str], str],
+) -> list[dict]:
+    """Wave 17: source-text Cochrane RoB-2 per-study assessment.
+
+    For each receipt in `by_outcome`, locate the parsed paper sections
+    under `docs/quality-reference/<topic>/parsed/<paper_id>.paper_sections.json`
+    and call `agent.source_text_rob.assess_study_from_source_text` to
+    issue per-domain LLM calls (5 per study). The default `call_llm`
+    raises NotImplementedError to prevent accidental spend; callers
+    that pass a real LLM caller (e.g. via the CLI flag) get full
+    Cochrane assessments emitted as dicts in the same shape as the
+    receipt-grounded path.
+
+    Studies whose paper_sections.json is missing fall back to the
+    receipt-grounded payload for THAT study only — fail-soft so a
+    single missing source doesn't sink the whole assessment.
+    """
+    topic = str(manifest.get("topic") or "").strip()
+    parsed_dir = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
+    out: list[dict] = []
+    seen: set[str] = set()
+    fallback_payload: dict[str, dict] = {
+        d["study_id"]: d for d in _rob_to_payload(by_outcome)
+    }
+    for outcome, recs in by_outcome.items():
+        for i, rec in enumerate(recs):
+            study_id = str(
+                rec.get("citation_token") or rec.get("receipt_id")
+                or f"unknown_{i}"
+            )
+            if study_id in seen:
+                continue
+            seen.add(study_id)
+            paper_id = str(rec.get("paper_id") or rec.get("receipt_id") or "")
+            sections_path = parsed_dir / f"{paper_id}.paper_sections.json"
+            sections = load_paper_sections(sections_path)
+            if not sections:
+                # Source text unavailable — fall back to receipt-grounded
+                # so the per-study coverage doesn't drop.
+                if study_id in fallback_payload:
+                    out.append(fallback_payload[study_id])
+                continue
+            try:
+                ass = assess_study_from_source_text(
+                    study_id=study_id, paper_id=paper_id,
+                    paper_sections=sections, call_llm=call_llm,
+                )
+            except Exception as exc:  # noqa: BLE001 — fail-soft per study
+                # If LLM extraction fails for one paper, fall back rather
+                # than aborting the whole pass.
+                if study_id in fallback_payload:
+                    fallback = dict(fallback_payload[study_id])
+                    fallback["notes"] = (
+                        f"source_text extraction failed ({type(exc).__name__}); "
+                        + fallback.get("notes", "")
+                    )
+                    out.append(fallback)
+                continue
+            out.append({
+                "study_id": ass.study_id,
+                "paper_id": ass.paper_id,
+                "design": _design_for_receipt(rec),
+                "tool": "rob2-cochrane",
+                "method_status": ass.method_status,
+                "outcome_class": outcome,
+                "overall_rating": ass.overall_rating,
+                "domains": [
+                    {"domain": d.domain, "rating": d.rating,
+                     "rationale": d.rationale,
+                     "signaling_answers": dict(d.signaling_answers)}
+                    for d in ass.domains
+                ],
+                "fail_closed": False,
+                "notes": (
+                    "Source-text Cochrane RoB-2 assessment via LLM "
+                    "signaling-question extraction. Each domain "
+                    "rating is grounded in the paper's Methods + "
+                    "Results sections."
+                ),
+            })
+    return out
+
+
 def _extract_effect_rows(
     manifest: dict[str, Any], out_dir: Path,
 ) -> list[dict[str, Any]]:
@@ -333,6 +426,7 @@ def _extract_effect_rows(
 def run_phases(
     out_dir: Path, *,
     rob_method_status: RobMethodStatus = "receipt_grounded_screening",
+    source_text_call_llm: Callable[[str], str] = default_call_llm_raises,
 ) -> dict[str, Any]:
     """Run Phases 3-8 against `out_dir`; write all sidecars; return verdict."""
     manifest = _read_json(out_dir / "manifest.json", {}) or {}
@@ -347,7 +441,13 @@ def run_phases(
     _ensure_review_patch_log(out_dir)
 
     # --- Phase 4: RoB + GRADE -------------------------------------------------
-    rob_payload = _rob_to_payload(by_outcome)
+    if rob_method_status == "source_text_full_cochrane":
+        rob_payload = _rob_source_text_payload(
+            manifest, by_outcome,
+            call_llm=source_text_call_llm,
+        )
+    else:
+        rob_payload = _rob_to_payload(by_outcome)
     grade_payload = _grade_to_payload(by_outcome)
     (out_dir / "risk_of_bias.json").write_text(json.dumps(rob_payload, indent=2))
     (out_dir / "grade_assessment.json").write_text(json.dumps(grade_payload, indent=2))
@@ -560,7 +660,33 @@ def main(argv: list[str] | None = None) -> int:
     if not (out_dir / "full_paper.md").is_file():
         print(f"error: {out_dir}/full_paper.md not found", file=sys.stderr)
         return 2
-    verdict = run_phases(out_dir, rob_method_status=args.rob_method_status)
+    # When the caller asks for source-text Cochrane RoB, wire a real
+    # LLM caller (agent.llm_client.chat_simple). For safety this only
+    # binds when the flag actually requests source-text mode — the
+    # default stays the no-op `default_call_llm_raises` so a routine
+    # adapter run can never accidentally burn LLM budget.
+    if args.rob_method_status == "source_text_full_cochrane":
+        try:
+            from agent.llm_client import simple_chat as _simple_chat  # type: ignore[import-not-found]  # noqa: E402
+
+            def _live_call_llm(prompt: str) -> str:
+                return _simple_chat(prompt)
+        except Exception as exc:  # noqa: BLE001
+            print(
+                f"warning: source_text_full_cochrane requested but live "
+                f"LLM caller unavailable ({type(exc).__name__}: {exc}); "
+                f"falling back to receipt_grounded_screening.",
+                file=sys.stderr,
+            )
+            args.rob_method_status = "receipt_grounded_screening"
+            _live_call_llm = default_call_llm_raises
+        verdict = run_phases(
+            out_dir,
+            rob_method_status=args.rob_method_status,
+            source_text_call_llm=_live_call_llm,
+        )
+    else:
+        verdict = run_phases(out_dir, rob_method_status=args.rob_method_status)
     r = verdict["result"]
     print(
         f"paper_quality_gate={r['paper_quality_gate']} | "

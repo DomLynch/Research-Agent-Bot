@@ -191,3 +191,97 @@ def test_extractor_is_fail_soft_on_corrupt_json(tmp_path: Path) -> None:
         p, study_id="X", paper_id="p", outcome_class="x",
     )
     assert rows == []
+
+
+# === Wave 16+ — linear-scale absolute-difference patterns ================
+# Mean-difference / SMD / beta share the same regex shape as ratios but
+# allow negative values and use additive (not log-normal) SE math.
+
+
+def test_extracts_mean_difference(tmp_path: Path) -> None:
+    p = tmp_path / "qc.json"
+    _write_quant_claims(p, [
+        "The mean difference was -2.4 (95% CI -3.1 to -1.7).",
+    ])
+    rows = extract_rows_from_paper(
+        p, study_id="Smith 2022", paper_id="p", outcome_class="cardiometabolic",
+    )
+    assert len(rows) == 1
+    r = rows[0]
+    assert r.effect_measure == "MD"
+    assert math.isclose(r.point_estimate, -2.4, rel_tol=1e-9)
+    assert math.isclose(r.ci_lower, -3.1, rel_tol=1e-9)
+    assert math.isclose(r.ci_upper, -1.7, rel_tol=1e-9)
+    # Linear-scale: effect IS the raw value, not the log.
+    assert math.isclose(r.effect, -2.4, rel_tol=1e-9)
+    # SE = (hi - lo) / (2 * z_95) ≈ (-1.7 - -3.1)/(2*1.96) = 1.4/3.92
+    assert math.isclose(r.se, 1.4 / (2.0 * 1.95996), rel_tol=1e-3)
+
+
+def test_extracts_smd(tmp_path: Path) -> None:
+    p = tmp_path / "qc.json"
+    _write_quant_claims(p, [
+        "Standardized mean difference SMD = 0.32 (95% CI 0.10 to 0.54).",
+    ])
+    rows = extract_rows_from_paper(
+        p, study_id="Jones 2023", paper_id="p", outcome_class="muscle_function",
+    )
+    assert len(rows) == 1
+    assert rows[0].effect_measure == "SMD"
+
+
+def test_extracts_cohens_d_as_smd(tmp_path: Path) -> None:
+    """SMD pattern accepts the "Cohen's d" alias commonly used in
+    psychology / behavioural-science meta-analyses."""
+    p = tmp_path / "qc.json"
+    _write_quant_claims(p, [
+        "Cohen's d was 0.45 (95% CI 0.21 to 0.69).",
+    ])
+    rows = extract_rows_from_paper(
+        p, study_id="X", paper_id="p", outcome_class="x",
+    )
+    assert len(rows) == 1
+    assert rows[0].effect_measure == "SMD"
+
+
+def test_extracts_beta_with_negative_effect(tmp_path: Path) -> None:
+    """Linear scale must handle negative point estimates + symmetric CIs."""
+    p = tmp_path / "qc.json"
+    _write_quant_claims(p, [
+        "The regression coefficient β was -0.14 (95% CI -0.22 to -0.06).",
+    ])
+    rows = extract_rows_from_paper(
+        p, study_id="Lee 2024", paper_id="p", outcome_class="longevity",
+    )
+    assert len(rows) == 1
+    assert rows[0].effect_measure == "beta"
+    assert rows[0].effect == -0.14
+
+
+def test_linear_pattern_rejects_point_outside_ci(tmp_path: Path) -> None:
+    """The 5%-of-CI-width margin keeps the gate strict on linear scale too."""
+    p = tmp_path / "qc.json"
+    _write_quant_claims(p, [
+        "MD was 5.0 (95% CI -1.0 to 1.0).",  # 5.0 way outside [-1, 1]
+    ])
+    rows = extract_rows_from_paper(
+        p, study_id="X", paper_id="p", outcome_class="x",
+    )
+    assert rows == []
+
+
+def test_ratio_takes_precedence_over_linear_in_same_sentence(tmp_path: Path) -> None:
+    """A sentence reporting both a ratio and a difference flags the
+    ratio (the canonical meta-analysable shape)."""
+    p = tmp_path / "qc.json"
+    _write_quant_claims(p, [
+        "HR 0.85 (95% CI 0.72 to 1.01); the absolute mean difference "
+        "was -2.4 (95% CI -3.1 to -1.7).",
+    ])
+    rows = extract_rows_from_paper(
+        p, study_id="X", paper_id="p", outcome_class="x",
+    )
+    # The first matching pattern (HR) wins per sentence; per-paper dedup
+    # then prevents the same sentence from also matching MD.
+    assert len(rows) == 1
+    assert rows[0].effect_measure == "log_HR"
