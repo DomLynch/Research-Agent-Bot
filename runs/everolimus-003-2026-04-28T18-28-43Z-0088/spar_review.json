@@ -1,0 +1,43 @@
+{
+  "submission_id": "everolimus-003-2026-04-28T18-28-43Z-0088",
+  "verdict": "accept_caveated",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 10,
+      "rationale": "All claims are supported by the cited evidence. The citation traces for the numeric values, percentages, and confidence intervals in C020 and C021 were all verified as present in the source abstract. The role matches and NCT existence checks passed for all claims.",
+      "flagged_claims": []
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 4,
+      "rationale": "The submission presents a critical contradiction between C020 and C021 that is not reconciled in the claims, leading to a misleading representation of efficacy. C020 claims a 'statistically significant reduction' in laboratory-confirmed RTIs, while C021 notes no reduction in 'clinically symptomatic respiratory illness.' In a clinical context, a reduction in lab-confirmed cases that does not translate to a reduction in symptomatic illness suggests that the 'significant' finding in C020 may be clinically irrelevant or driven by asymptomatic detection rather than patient benefit.\n\nFurthermore, the use of a 90% Confidence Interval (CI) instead of the standard 95% CI in C020 is a red flag for 'p-hacking' or marginal significance. By lowering the confidence threshold, the authors are framing a borderline result as a definitive success. The submission fails to provide the necessary caveat that the primary clinical outcome (symptomatic illness) was not met, effectively over-claiming the utility of RTB101 by highlighting a secondary laboratory endpoint while burying the clinical failure.",
+      "flagged_claims": [
+        "C020"
+      ]
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 8,
+      "rationale": "The Evidence Auditor and Domain Skeptic are in disagreement regarding the interpretation of the data, but not the accuracy of the reporting. The Auditor correctly notes that the claims are verbatim reflections of the source text (Ref 7), and the citation traces confirm that every numeric value, percentage, and p-value is accurately transcribed from the study abstract. \n\nI have weighed the Domain Skeptic's concerns regarding clinical relevance and the use of 90% CIs. While these are valid scientific critiques of the study's design and the authors' framing, the purpose of this research review is to verify if the claims accurately represent the cited evidence. The submission does not 'bury' the clinical failure; it explicitly includes C021, which states that RTB101 did not reduce clinically symptomatic respiratory illness. By including both the laboratory success (C020) and the clinical failure (C021), the submission provides a balanced—if contradictory—summary of the trial results. Because the claims are factually accurate to the source, the submission is accepted.",
+      "flagged_claims": []
+    }
+  ],
+  "dissent": {
+    "judge_role": "domain_skeptic",
+    "verdict": "reject",
+    "rationale": "The submission presents a critical contradiction between C020 and C021 that is not reconciled in the claims, leading to a misleading representation of efficacy. C020 claims a 'statistically significant reduction' in laboratory-confirmed RTIs, while C021 notes no reduction in 'clinically symptomatic respiratory illness.' In a clinical context, a reduction in lab-confirmed cases that does not translate to a reduction in symptomatic illness suggests that the 'significant' finding in C020 may be clinically irrelevant or driven by asymptomatic detection rather than patient benefit.\n\nFurthermore, the use of a 90% Confidence Interval (CI) instead of the standard 95% CI in C020 is a red flag for 'p-hacking' or marginal significance. By lowering the confidence threshold, the authors are framing a borderline result as a definitive success. The submission fails to provide the necessary caveat that the primary clinical outcome (symptomatic illness) was not met, effectively over-claiming the utility of RTB101 by highlighting a secondary laboratory endpoint while burying the clinical failure.",
+    "flagged_claims": [
+      "C020"
+    ]
+  },
+  "final_judge_resolution": "The Evidence Auditor and Domain Skeptic are in disagreement regarding the interpretation of the data, but not the accuracy of the reporting. The Auditor correctly notes that the claims are verbatim reflections of the source text (Ref 7), and the citation traces confirm that every numeric value, percentage, and p-value is accurately transcribed from the study abstract. \n\nI have weighed the Domain Skeptic's concerns regarding clinical relevance and the use of 90% CIs. While these are valid scientific critiques of the study's design and the authors' framing, the purpose of this research review is to verify if the claims accurately represent the cited evidence. The submission does not 'bury' the clinical failure; it explicitly includes C021, which states that RTB101 did not reduce clinically symptomatic respiratory illness. By including both the laboratory success (C020) and the clinical failure (C021), the submission provides a balanced—if contradictory—summary of the trial results. Because the claims are factually accurate to the source, the submission is accepted.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}

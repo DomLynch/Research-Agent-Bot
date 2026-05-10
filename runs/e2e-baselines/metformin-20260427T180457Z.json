@@ -1,0 +1,269 @@
+{
+  "topic": "metformin",
+  "domain": "longevity older adults",
+  "criteria": "",
+  "captured_at_utc": "20260427T180457Z",
+  "n_sources": 23,
+  "by_adapter": {
+    "pubmed": 8,
+    "openalex": 6,
+    "europepmc": 7,
+    "clinicaltrials": 2
+  },
+  "role_distribution": {
+    "mechanistic": 12,
+    "published_results": 10,
+    "review": 1
+  },
+  "tier_distribution": {
+    "C": 12,
+    "A2": 10,
+    "A1": 1
+  },
+  "direct_count": 7,
+  "strict_count": 7,
+  "perf_sec": {
+    "retrieve": 1.8347226670011878,
+    "bundle": 0.01577512500807643
+  },
+  "canonical_hits": [
+    {
+      "id": "NCT02308228",
+      "name": "MASTERS",
+      "role": "published_results",
+      "tier": "A1"
+    }
+  ],
+  "sources": [
+    {
+      "ref": 1,
+      "title": "Geroscience: A Translational Review.",
+      "year": 2025,
+      "source": "pubmed",
+      "doi": "10.1001/jama.2025.11289",
+      "pmid": "40773213",
+      "nct": null,
+      "venue": "JAMA"
+    },
+    {
+      "ref": 2,
+      "title": "Depressive Symptoms and Amyloid Pathology.",
+      "year": 2025,
+      "source": "pubmed",
+      "doi": "10.1001/jamapsychiatry.2024.4305",
+      "pmid": "39841452",
+      "nct": null,
+      "venue": "JAMA Psychiatry"
+    },
+    {
+      "ref": 3,
+      "title": "Metformin and the Development of Age-Related Macular Degeneration.",
+      "year": 2025,
+      "source": "pubmed",
+      "doi": "10.1001/jamaophthalmol.2025.3070",
+      "pmid": "40965862",
+      "nct": null,
+      "venue": "JAMA Ophthalmol"
+    },
+    {
+      "ref": 4,
+      "title": "Rationale and Study Design of a Randomized Clinical Trial of Metformin to Prevent Frailty in Older Adults With Prediabetes.",
+      "year": 2020,
+      "source": "pubmed",
+      "doi": "10.1093/gerona/glz078",
+      "pmid": "30888034",
+      "nct": null,
+      "venue": "J Gerontol A Biol Sci Med Sci"
+    },
+    {
+      "ref": 5,
+      "title": "Comparative Effectiveness of Metformin Versus Sulfonylureas on Exceptional Longevity in Women With Type 2 Diabetes: Target Trial Emulation.",
+      "year": 2025,
+      "source": "pubmed",
+      "doi": "10.1093/gerona/glaf095",
+      "pmid": "40388602",
+      "nct": null,
+      "venue": "J Gerontol A Biol Sci Med Sci"
+    },
+    {
+      "ref": 6,
+      "title": "Association of Hospitalizations With Randomized Glycemia-Lowering Treatment in GRADE.",
+      "year": 2025,
+      "source": "pubmed",
+      "doi": "10.2337/dc24-2839",
+      "pmid": "40424051",
+      "nct": null,
+      "venue": "Diabetes Care"
+    },
+    {
+      "ref": 7,
+      "title": "Integration of a fasting-mimicking diet programme in primary care for type 2 diabetes reduces the need for medication and improves glycaemic control: a 12-month randomised controlled trial.",
+      "year": 2024,
+      "source": "pubmed",
+      "doi": "10.1007/s00125-024-06137-0",
+      "pmid": "38546821",
+      "nct": null,
+      "venue": "Diabetologia"
+    },
+    {
+      "ref": 8,
+      "title": "Associations of muscle lipid content with physical function and resistance training outcomes in older adults: altered responses with metformin.",
+      "year": 2021,
+      "source": "pubmed",
+      "doi": "10.1007/s11357-020-00315-9",
+      "pmid": "33462708",
+      "nct": null,
+      "venue": "Geroscience"
+    },
+    {
+      "ref": 9,
+      "title": "Frailty Attenuates the Impact of Metformin on Reducing Mortality in Older Adults with Type 2 Diabetes.",
+      "year": 2014,
+      "source": "openalex",
+      "doi": null,
+      "pmid": null,
+      "nct": null,
+      "venue": "PubMed"
+    },
+    {
+      "ref": 10,
+      "title": "Health benefits of physical activity: the evidence",
+      "year": 2006,
+      "source": "openalex",
+      "doi": "10.1503/cmaj.051351",
+      "pmid": null,
+      "nct": null,
+      "venue": "Canadian Medical Association Journal"
+    },
+    {
+      "ref": 11,
+      "title": "2016 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+      "year": 2016,
+      "source": "openalex",
+      "doi": "10.1093/eurheartj/ehw128",
+      "pmid": null,
+      "nct": null,
+      "venue": "European Heart Journal"
+    },
+    {
+      "ref": 12,
+      "title": "Exercise and Physical Activity in the Prevention and Treatment of Atherosclerotic Cardiovascular Disease",
+      "year": 2003,
+      "source": "openalex",
+      "doi": "10.1161/01.cir.0000075572.40158.77",
+      "pmid": null,
+      "nct": null,
+      "venue": "Circulation"
+    },
+    {
+      "ref": 13,
+      "title": "Compounds that extend longevity are protective in neurodegenerative diseases and provide a novel treatment strategy for these devastating disorders",
+      "year": 2020,
+      "source": "openalex",
+      "doi": "10.1016/j.mad.2020.111297",
+      "pmid": null,
+      "nct": null,
+      "venue": "Mechanisms of Ageing and Development"
+    },
+    {
+      "ref": 14,
+      "title": "Aging and aging-related diseases: from molecular mechanisms to interventions and treatments",
+      "year": 2022,
+      "source": "openalex",
+      "doi": "10.1038/s41392-022-01251-0",
+      "pmid": null,
+      "nct": null,
+      "venue": "Signal Transduction and Targeted Therapy"
+    },
+    {
+      "ref": 15,
+      "title": "Metformin for Longevity and Sarcopenia: A Therapeutic Paradox in Aging.",
+      "year": 2026,
+      "source": "europepmc",
+      "doi": "10.3390/biomedicines14020376",
+      "pmid": "41751275",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 16,
+      "title": "Use of potential gerotherapeutic drugs and mortality in geriatric rehabilitation inpatients: RESORT.",
+      "year": 2026,
+      "source": "europepmc",
+      "doi": "10.1016/j.mad.2026.112163",
+      "pmid": "41713660",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 17,
+      "title": "From Elixirs to Geroscience: A Historical and Molecular Perspective on Anti-Aging Medicine.",
+      "year": 2025,
+      "source": "europepmc",
+      "doi": "10.3390/molecules30244728",
+      "pmid": "41471752",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 18,
+      "title": "Antiaging agents: pharmacological therapy targeted at preserving skeletal muscle size and function in aging adults.",
+      "year": 2025,
+      "source": "europepmc",
+      "doi": "10.1097/mco.0000000000001159",
+      "pmid": "40815152",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 19,
+      "title": "Dietary and Pharmacological Modulation of Aging-Related Metabolic Pathways: Molecular Insights, Clinical Evidence, and a Translational Model.",
+      "year": 2025,
+      "source": "europepmc",
+      "doi": "10.3390/ijms26199643",
+      "pmid": "41096907",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 20,
+      "title": "Links Between Autophagy and Healthy Aging.",
+      "year": 2026,
+      "source": "europepmc",
+      "doi": "10.1016/j.jmb.2026.169656",
+      "pmid": "41577121",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 21,
+      "title": "Integrative Approaches to Treating Cellular Senescence in Kidney Disease.",
+      "year": 2026,
+      "source": "europepmc",
+      "doi": "10.1002/advs.202519392",
+      "pmid": "41831318",
+      "nct": null,
+      "venue": null
+    },
+    {
+      "ref": 22,
+      "title": "Metformin in Longevity Study (MILES).",
+      "year": 2015,
+      "source": "clinicaltrials",
+      "doi": null,
+      "pmid": null,
+      "nct": "NCT02432287",
+      "venue": null
+    },
+    {
+      "ref": 23,
+      "title": "Effect of Metformin on Frailty in 12 Subjects",
+      "year": 2021,
+      "source": "clinicaltrials",
+      "doi": null,
+      "pmid": null,
+      "nct": "NCT03451006",
+      "venue": null
+    }
+  ]
+}

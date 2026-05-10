@@ -1,0 +1,79 @@
+{
+  "extract": {
+    "total_usd": 0.002586,
+    "by_model": {
+      "mimo-v2.5-pro": 0.002586
+    },
+    "calls": [
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 1924,
+        "output_tokens": 240,
+        "cost_usd": 0.000337
+      },
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 1778,
+        "output_tokens": 8,
+        "cost_usd": 0.000251
+      },
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 2405,
+        "output_tokens": 374,
+        "cost_usd": 0.000441
+      },
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 2000,
+        "output_tokens": 379,
+        "cost_usd": 0.000386
+      },
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 1978,
+        "output_tokens": 517,
+        "cost_usd": 0.000422
+      },
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 1774,
+        "output_tokens": 370,
+        "cost_usd": 0.000352
+      },
+      {
+        "model": "mimo-v2.5-pro",
+        "input_tokens": 2001,
+        "output_tokens": 417,
+        "cost_usd": 0.000397
+      }
+    ]
+  },
+  "spar": {
+    "total_usd": 0.000582,
+    "by_model": {
+      "google/gemma-4-31b-it": 0.000582
+    },
+    "calls": [
+      {
+        "model": "google/gemma-4-31b-it",
+        "input_tokens": 1250,
+        "output_tokens": 212,
+        "cost_usd": 0.000189
+      },
+      {
+        "model": "google/gemma-4-31b-it",
+        "input_tokens": 1238,
+        "output_tokens": 154,
+        "cost_usd": 0.00017
+      },
+      {
+        "model": "google/gemma-4-31b-it",
+        "input_tokens": 1621,
+        "output_tokens": 203,
+        "cost_usd": 0.000223
+      }
+    ]
+  },
+  "total_usd": 0.003167
+}

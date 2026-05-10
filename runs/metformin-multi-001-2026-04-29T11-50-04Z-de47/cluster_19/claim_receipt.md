@@ -1,0 +1,33 @@
+# Submission rejected
+
+## DRAFT REJECTED
+
+**SPAR verdict:** `reject_critical` (3-0 unanimous reject).
+
+## Proposed thesis (rejected)
+
+> the practical implementation of lifestyle modification or the use of metformin for treating prediabetes is inadequate and complicated by a lack of agreement on how to define the condition.
+
+## Panel reviews
+
+### `evidence_auditor` — `reject` (score 2)
+
+The submission fails the evidence audit due to a complete lack of source data. While the citation traces indicate a 'PASS' for role matching, there are no provided source abstracts or published results to verify the actual content of reference [18]. Consequently, the numeric and qualitative assertions in C041 and C042 cannot be traced to any evidence. Furthermore, C042 is marked as a 'mechanistic' claim but describes a systemic/implementation issue, and it lacks a published_results citation to support its direct assertion.
+
+**Flagged claims:** C041, C042
+
+### `domain_skeptic` — `reject` (score 3)
+
+The submission suffers from severe mechanism inflation and a lack of scoping. Claim C041 makes broad assertions regarding cost-effectiveness, diabetes prevention, and cardiovascular risk improvement based on a single reference. Without a systematic review or a meta-analysis of multiple RCTs, claiming these outcomes are 'demonstrated' across these diverse metrics is an over-reach. 
+
+Furthermore, Claim C042 attempts to make a systemic sociological and clinical claim about 'practical implementation' being 'inadequate' based on the same single reference. The leap from clinical trial data to a conclusion about the failure of global practical implementation is an extrapolation that is not supported by the provided evidence trace. The submission fails to provide the necessary caveats regarding which populations were studied or the specific nature of the 'lack of agreement' on definitions.
+
+**Flagged claims:** C041, C042
+
+### `final_judge` — `reject` (score 2)
+
+I align with both the Evidence Auditor and the Domain Skeptic. The submission is fundamentally flawed due to an extreme reliance on a single reference [18] to support two vastly different types of claims: one regarding clinical efficacy and cost-effectiveness (C041), and another regarding systemic implementation failures and diagnostic ambiguity (C042). As the Auditor noted, there is a total absence of source text to verify if reference [18] even contains the breadth of information required to support these assertions.
+
+Furthermore, I agree with the Skeptic that C042 represents a significant leap in logic. Moving from the results of clinical trials to a sweeping conclusion about the 'inadequate' practical implementation of these treatments requires sociological or public health data that is not present here. The claim is categorized as 'mechanistic' despite being a systemic critique, indicating a failure in the submission's internal logic and scoping. Given the lack of evidence and the over-reach of the claims, the submission cannot be accepted.
+
+**Flagged claims:** C041, C042

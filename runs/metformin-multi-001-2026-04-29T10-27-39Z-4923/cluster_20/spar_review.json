@@ -1,0 +1,40 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T10-27-39Z-4923-c20",
+  "verdict": "reject_critical",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "The submission contains a critical failure in the citation trace for claim C023. The alias match for 'Loss' was resolved to 'AZASETRON', which is a completely unrelated pharmacological agent (a 5-HT3 receptor antagonist) and bears no relation to the loss of the SIRT2 protein discussed in the thesis and claims. This indicates a fundamental failure in the evidence trace process.",
+      "flagged_claims": [
+        "C023"
+      ]
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 3,
+      "rationale": "The submission suffers from severe mechanism inflation and a critical failure in entity resolution. The claims extrapolate findings from a highly specific mouse model (Ang II-infused Sirt2 knockout mice) to broader conclusions about 'aging-related' cardiac hypertrophy [C023] without providing evidence that the Ang II model is a valid proxy for natural aging. This is a classic case of over-claiming where a specific pharmacological stressor is used to generalize a systemic biological process.\n\nFurthermore, the citation trace reveals a catastrophic error in the underlying data processing: the term 'Loss' in claim C023 was resolved as an alias for 'AZASETRON'. Azasetron is a 5-HT3 receptor antagonist and has no biological equivalence to the genetic loss of the SIRT2 protein. This indicates that the evidence supporting C023 is fundamentally flawed or based on a hallucinated entity match, rendering the claim scientifically baseless within the provided context.",
+      "flagged_claims": [
+        "C023"
+      ]
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "I align with both the Evidence Auditor and the Domain Skeptic. The submission contains a catastrophic failure in entity resolution where the term 'Loss' (referring to the genetic knockout of SIRT2) was mapped to 'AZASETRON', a 5-HT3 receptor antagonist. This is not a minor clerical error but a fundamental breakdown in the evidence trace, rendering the support for C023 completely invalid. \n\nAdditionally, I concur with the Domain Skeptic regarding the over-generalization in C023. The jump from an Ang II-infused mouse model to 'aging-related' hypertrophy is an unsupported extrapolation. Given that the primary evidence trace is corrupted by a hallucinated alias match and the claims overreach the experimental scope, the submission cannot be accepted.",
+      "flagged_claims": [
+        "C023"
+      ]
+    }
+  ],
+  "dissent": null,
+  "final_judge_resolution": "I align with both the Evidence Auditor and the Domain Skeptic. The submission contains a catastrophic failure in entity resolution where the term 'Loss' (referring to the genetic knockout of SIRT2) was mapped to 'AZASETRON', a 5-HT3 receptor antagonist. This is not a minor clerical error but a fundamental breakdown in the evidence trace, rendering the support for C023 completely invalid. \n\nAdditionally, I concur with the Domain Skeptic regarding the over-generalization in C023. The jump from an Ang II-infused mouse model to 'aging-related' hypertrophy is an unsupported extrapolation. Given that the primary evidence trace is corrupted by a hallucinated alias match and the claims overreach the experimental scope, the submission cannot be accepted.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}

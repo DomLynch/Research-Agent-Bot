@@ -1,0 +1,33 @@
+{
+  "submission_id": "synthesis-metformin-010-2026-04-29T16-21-11Z-61f4",
+  "topic": "metformin",
+  "n_receipts": 4,
+  "n_unique_source_units": 4,
+  "n_unique_canonical_trials": 2,
+  "canonical_trial_ids": [
+    "NCT01765946",
+    "NCT02308228"
+  ],
+  "n_untrialed_sources": 2,
+  "n_non_orthogonal_tensions": 0,
+  "thesis_text": "Metformin's potential to attenuate human aging is mediated by mitochondrial respiration and pyruvate metabolism, which may paradoxically inhibit muscle area and density gains.",
+  "thesis_picker_rationale": "picked from 3 candidates | 4 receipts | 0 tensions | 23 words",
+  "n_rejected_thesis_candidates": 2,
+  "rejected_thesis_candidates": [
+    {
+      "text": "Metformin improves whole-body insulin sensitivity through mitochondrial respiration and metabolic signaling, while simultaneously suppressing muscle density and",
+      "n_receipts_referenced": 3,
+      "n_tensions_addressed": 0
+    },
+    {
+      "text": "Metformin promotes systemic longevity and insulin sensitivity via mitochondrial and metabolic reprogramming, though these systemic benefits may come at the cost",
+      "n_receipts_referenced": 3,
+      "n_tensions_addressed": 0
+    }
+  ],
+  "audit_score": 8.0,
+  "audit_notes": "4/5 applicable checks passed (score 8.00/10, 2 N/A) | LOAD-BEARING FAIL ['Q3-mohammed-direct-vs-indirect'] \u2014 ship blocked | score below floor 8.5",
+  "elapsed_sec": 55.41,
+  "total_usd": 0.004493,
+  "render_version": "synthesis-writer/2026-04-29-day10-10"
+}

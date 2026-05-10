@@ -1,0 +1,34 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab-c05",
+  "verdict": "accept_clean",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 10,
+      "rationale": "All three claims are directly supported by the provided abstract from reference [2]. Claim C005 is explicitly stated ('metformin attenuated the increase in whole-body insulin sensitivity and VO2 max after AET'), C006 is explicitly stated ('Metformin also abrogated the exercise-mediated increase in skeletal muscle mitochondrial respiration'), and C007 is explicitly stated ('The change in whole-body insulin sensitivity was correlated to the change in mitochondrial respiration'). There are no numeric discrepancies or failed traces.",
+      "flagged_claims": []
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 9,
+      "rationale": "The claims are highly calibrated and strictly adhere to the provided evidence. The submission correctly identifies that metformin 'attenuated' and 'abrogated' specific exercise-induced gains rather than claiming a total reversal or a universal effect across all populations. The language mirrors the abstract's findings regarding the correlation between insulin sensitivity and mitochondrial respiration without overstating the causal link or extrapolating these results to younger populations or different exercise modalities.",
+      "flagged_claims": []
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "accept",
+      "score": 10,
+      "rationale": "The submission is an exceptionally faithful representation of the provided evidence. All three claims (C005, C006, and C007) are verbatim or near-verbatim reflections of the findings reported in the abstract of reference [2]. The Evidence Auditor correctly identified the direct textual support, and the Domain Skeptic rightly noted that the submission avoids overgeneralization by maintaining the specific context of aerobic exercise training (AET) and the nuanced terminology ('attenuated', 'abrogated') used in the source.\n\nThere is no dissent between the prior reviewers, and I find no grounds for objection. The mapping between the claims and the evidence is transparent and precise, leaving no room for misinterpretation.",
+      "flagged_claims": []
+    }
+  ],
+  "dissent": null,
+  "final_judge_resolution": "The submission is an exceptionally faithful representation of the provided evidence. All three claims (C005, C006, and C007) are verbatim or near-verbatim reflections of the findings reported in the abstract of reference [2]. The Evidence Auditor correctly identified the direct textual support, and the Domain Skeptic rightly noted that the submission avoids overgeneralization by maintaining the specific context of aerobic exercise training (AET) and the nuanced terminology ('attenuated', 'abrogated') used in the source.\n\nThere is no dissent between the prior reviewers, and I find no grounds for objection. The mapping between the claims and the evidence is transparent and precise, leaving no room for misinterpretation.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}

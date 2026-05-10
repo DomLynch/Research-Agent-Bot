@@ -1,0 +1,40 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T11-00-43Z-50c9-c26",
+  "verdict": "reject_critical",
+  "reviews": [
+    {
+      "judge_role": "evidence_auditor",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "The submission contains a critical failure in the citation trace. The alias_match for claim C003 resolves the term 'Therapies' (referring to caloric restriction, metformin, senolytics, or rapalogs) to 'LUMATEPERONE'. Lumateperone is an antipsychotic medication and is entirely unrelated to the aging biology therapies mentioned in the claim. This represents a complete failure of the evidence trace, as the cited evidence does not support the claim.",
+      "flagged_claims": [
+        "C003"
+      ]
+    },
+    {
+      "judge_role": "domain_skeptic",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "The submission suffers from a catastrophic failure in domain alignment and evidence mapping. While the thesis discusses aging biology and metformin, the citation trace reveals that the supporting evidence (ref 0) actually refers to 'LUMATEPERONE', an antipsychotic medication. There is zero logical or pharmacological connection between an antipsychotic and the systemic inhibition of aging biology via metformin or rapalogs.\n\nFurthermore, the claim is an extreme example of mechanism inflation. It extrapolates the general concept of 'inhibiting aging biology' to a broad promise of slowing disease progression and functional decline in humans without providing any human clinical trial data to support such a wide-reaching conclusion. The evidence provided is entirely off-topic.",
+      "flagged_claims": [
+        "C003"
+      ]
+    },
+    {
+      "judge_role": "final_judge",
+      "model": "google/gemma-4-31b-it",
+      "verdict": "reject",
+      "score": 1,
+      "rationale": "The submission fails on both technical and substantive grounds. The citation trace contains a catastrophic error where the term 'Therapies' (referring to metformin and other aging-biology inhibitors) was resolved to 'LUMATEPERONE', an antipsychotic medication. This means the evidence provided is entirely unrelated to the claim, rendering the supporting reference invalid. I align with both the Evidence Auditor and the Domain Skeptic in identifying this as a critical failure of the evidence chain. Additionally, the claim makes broad generalizations about human functional decline without any valid clinical evidence, as the only provided reference is pharmacologically irrelevant.",
+      "flagged_claims": [
+        "C003"
+      ]
+    }
+  ],
+  "dissent": null,
+  "final_judge_resolution": "The submission fails on both technical and substantive grounds. The citation trace contains a catastrophic error where the term 'Therapies' (referring to metformin and other aging-biology inhibitors) was resolved to 'LUMATEPERONE', an antipsychotic medication. This means the evidence provided is entirely unrelated to the claim, rendering the supporting reference invalid. I align with both the Evidence Auditor and the Domain Skeptic in identifying this as a critical failure of the evidence chain. Additionally, the claim makes broad generalizations about human functional decline without any valid clinical evidence, as the only provided reference is pharmacologically irrelevant.",
+  "gate_override": null,
+  "prompt_version": "spar/2026-04-28"
+}

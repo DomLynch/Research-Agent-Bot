@@ -1,0 +1,843 @@
+{
+  "receipts": [
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_01",
+      "topic": "metformin",
+      "thesis_text": "CT scan showed that increases in thigh muscle area (p = .005) and density (p = .020) were greater in placebo versus metformin.",
+      "spar_verdict": "accept_caveated",
+      "n_claims": 5,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT02308228",
+      "evidence_tier": "A1",
+      "directness": "direct",
+      "outcome_class": "muscle_function",
+      "effect_direction": "unclear",
+      "p_values": [
+        "p=0.005",
+        "p=0.020"
+      ],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_02",
+      "topic": "metformin",
+      "thesis_text": "Both metabolic and nonmetabolic pathways were significantly influenced, including pyruvate metabolism and DNA repair in muscle and PPAR and SREBP signaling, mitochondrial fatty acid oxidation, and collagen trimerization in adipose",
+      "spar_verdict": "reject_critical",
+      "n_claims": 3,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "A1",
+      "directness": "direct",
+      "outcome_class": "mechanism",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_03",
+      "topic": "metformin",
+      "thesis_text": "within diabetics, the strong boosting effect of the high-dose vaccine was significantly dampened for metformin users (n = 64) as compared to non-users (n = 30), but still remained slightly higher than standard-dose responses.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 4,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "A2",
+      "directness": "direct",
+      "outcome_class": "immune",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_04",
+      "topic": "metformin",
+      "thesis_text": "48 adverse events occurred in 16 (84%) of 19 participants who received metformin and 48 adverse events occurred in 19 (90%) of 21 participants who received placebo.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 3,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "A2",
+      "directness": "direct",
+      "outcome_class": "immune",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_05",
+      "topic": "metformin",
+      "thesis_text": "The results suggest that metformin not only improves glycemic levels, but may also have a protective effect on the overall cognitive function of older people with diabetes mellitus.",
+      "spar_verdict": "reject_majority",
+      "n_claims": 3,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "A2",
+      "directness": "direct",
+      "outcome_class": "cardiometabolic",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_06",
+      "topic": "metformin",
+      "thesis_text": "Metformin treatment status was not associated with improved neurocognitive outcomes.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 1,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "A2",
+      "directness": "direct",
+      "outcome_class": "cognitive",
+      "effect_direction": "positive",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_07",
+      "topic": "metformin",
+      "thesis_text": "Change in Total Recall Score in the Selective Reminding Test. timeframe=12 months. Placebo=5.7 (\u00b18.7); Metformin=9.4 (\u00b18.5). p=0.05",
+      "spar_verdict": "reject_critical",
+      "n_claims": 1,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT00620191",
+      "evidence_tier": "A2",
+      "directness": "direct",
+      "outcome_class": "cognitive",
+      "effect_direction": "null",
+      "p_values": [
+        "p=0.05"
+      ],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_08",
+      "topic": "metformin",
+      "thesis_text": "Objective To determine whether adding metformin to lifestyle therapy (diet-induced weight loss and supervised multicomponent exercise) improves physical function and musculoskeletal health, compared with lifestyle therapy alone and with a healthy-lifestyle program combined with metformin.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 5,
+      "n_failed_traces": 0,
+      "canonical_trial_id": null,
+      "evidence_tier": "B",
+      "directness": "direct",
+      "outcome_class": "frailty",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_09",
+      "topic": "metformin",
+      "thesis_text": "This research is being done to determine if Metformin, an FDA-approved diabetes medication, is effective at enhancing immune responses to flu vaccine in older men and women.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 4,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT03996538",
+      "evidence_tier": "B",
+      "directness": "direct",
+      "outcome_class": "immune",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_10",
+      "topic": "metformin",
+      "thesis_text": "Metformin treatment has been shown to improve insulin sensitivity and attenuate muscle loss in insulin resistance adults though the mechanisms are not fully known.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 2,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT03107884",
+      "evidence_tier": "B",
+      "directness": "direct",
+      "outcome_class": "cardiometabolic",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_11",
+      "topic": "metformin",
+      "thesis_text": "The objective of this research is to assess the efficacy of oral metformin in mitigating the aging process in middle-aged and elderly males, to pinpoint sensitive indicators of human senescence, and to offer innovative frameworks and scientific insights for pharmaceutical interventions in aging.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 1,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT06459310",
+      "evidence_tier": "B",
+      "directness": "direct",
+      "outcome_class": "mechanism",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_12",
+      "topic": "metformin",
+      "thesis_text": "This study aims to assess the safety and efficacy of study drugs and supplements on clinical (structural and functional) signs of aging and to explore/identify other possible biological measures of aging.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 1,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT04994561",
+      "evidence_tier": "B",
+      "directness": "indirect",
+      "outcome_class": "other",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    },
+    {
+      "receipt_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "receipt_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/metformin-multi-001-2026-04-29T09-23-01Z-44b9/cluster_13",
+      "topic": "metformin",
+      "thesis_text": "To determine whether metformin (MET) can improve the immune response to the pneumococcal conjugate vaccine (PCV-13) in older adults.",
+      "spar_verdict": "reject_critical",
+      "n_claims": 1,
+      "n_failed_traces": 0,
+      "canonical_trial_id": "NCT03713801",
+      "evidence_tier": "B",
+      "directness": "indirect",
+      "outcome_class": "other",
+      "effect_direction": "unclear",
+      "p_values": [],
+      "population_summary": "older adults"
+    }
+  ],
+  "pairs": [
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "muscle_function",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c01 (muscle_function) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c02 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c03 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c04 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c05 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "kind": "null_vs_positive",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (positive on cognitive) vs metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (null on cognitive) \u2014 partial conflict",
+      "severity": 4
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c06 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "cognitive",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c07 (cognitive) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "kind": "orthogonal",
+      "outcome_class": "frailty",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "frailty",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "frailty",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "frailty",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "frailty",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c08 (frailty) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "immune",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c09 (immune) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "cardiometabolic",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c10 (cardiometabolic) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "mechanism",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c11 (mechanism) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    },
+    {
+      "receipt_a_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12",
+      "receipt_b_id": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13",
+      "kind": "orthogonal",
+      "outcome_class": "other",
+      "summary": "metformin-multi-001-2026-04-29T09-23-01Z-44b9-c12 (other) and metformin-multi-001-2026-04-29T09-23-01Z-44b9-c13 (other) cover different outcome classes \u2014 no logical conflict",
+      "severity": 0
+    }
+  ]
+}

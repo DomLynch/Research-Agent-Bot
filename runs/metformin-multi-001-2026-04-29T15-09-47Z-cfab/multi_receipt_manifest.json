@@ -1,0 +1,46 @@
+{
+  "submission_id": "metformin-multi-001-2026-04-29T15-09-47Z-cfab",
+  "topic": "metformin",
+  "domain": "longevity older adults",
+  "n_clusters": 5,
+  "n_cluster_failures": 0,
+  "cluster_failures": [],
+  "n_protocol_only_excluded": 1,
+  "protocol_only_excluded_indices": [
+    4
+  ],
+  "clusters": [
+    {
+      "cluster_index": 1,
+      "subdir": "cluster_01",
+      "n_claims": 4,
+      "spar_verdict": "accept_clean"
+    },
+    {
+      "cluster_index": 2,
+      "subdir": "cluster_02",
+      "n_claims": 4,
+      "spar_verdict": "reject_majority"
+    },
+    {
+      "cluster_index": 3,
+      "subdir": "cluster_03",
+      "n_claims": 3,
+      "spar_verdict": "accept_caveated"
+    },
+    {
+      "cluster_index": 4,
+      "subdir": "cluster_04",
+      "n_claims": 4,
+      "spar_verdict": "accept_clean"
+    },
+    {
+      "cluster_index": 5,
+      "subdir": "cluster_05",
+      "n_claims": 3,
+      "spar_verdict": "accept_clean"
+    }
+  ],
+  "started_at": "2026-04-29T15:09:47.314431+00:00",
+  "finished_at": "2026-04-29T15:11:54.234804+00:00"
+}

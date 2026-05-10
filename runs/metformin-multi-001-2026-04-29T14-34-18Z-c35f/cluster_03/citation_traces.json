@@ -1,0 +1,50 @@
+[
+  {
+    "claim_id": "C008",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[3] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C008",
+    "ref": 3,
+    "trace_type": "nct_exists",
+    "passed": false,
+    "detail": "NCT01765946 role='published_results' but registry says has_results=False (status=completed). Protocol-as-results contradiction at trace layer.",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C009",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[3] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C009",
+    "ref": 3,
+    "trace_type": "nct_exists",
+    "passed": false,
+    "detail": "NCT01765946 role='published_results' but registry says has_results=False (status=completed). Protocol-as-results contradiction at trace layer.",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C010",
+    "ref": 0,
+    "trace_type": "role_match",
+    "passed": true,
+    "detail": "directness='direct', supporting_refs=[3] consistent",
+    "source_excerpt": null
+  },
+  {
+    "claim_id": "C010",
+    "ref": 3,
+    "trace_type": "nct_exists",
+    "passed": false,
+    "detail": "NCT01765946 role='published_results' but registry says has_results=False (status=completed). Protocol-as-results contradiction at trace layer.",
+    "source_excerpt": null
+  }
+]

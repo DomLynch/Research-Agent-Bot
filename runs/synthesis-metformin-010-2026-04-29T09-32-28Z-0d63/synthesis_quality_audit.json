@@ -1,0 +1,63 @@
+{
+  "submission_id": "synthesis-metformin-010-2026-04-29T09-32-28Z-0d63",
+  "checks": [
+    {
+      "question_id": "Q1-konopka-p008-hedging",
+      "question": "Borderline p-values must not be rounded to 'significant'",
+      "passed": true,
+      "detail": "no borderline p-value rounded to significant",
+      "excerpt": null,
+      "applicable": true
+    },
+    {
+      "question_id": "Q2-witham-null-acknowledgment",
+      "question": "Null primary endpoints must be acknowledged",
+      "passed": true,
+      "detail": "1 null receipts, all acknowledged",
+      "excerpt": null,
+      "applicable": true
+    },
+    {
+      "question_id": "Q3-mohammed-direct-vs-indirect",
+      "question": "Mixed-directness paragraphs need transition language",
+      "passed": false,
+      "detail": "mixed-directness sentence missing transition: Ongoing research continues to investigate whether the drug can enhance immune re; mixed-directness sentence missing transition: Broadly, the efficacy of metformin in mitigating the aging process and improving",
+      "excerpt": null,
+      "applicable": true
+    },
+    {
+      "question_id": "Q4-miles-replication-gap",
+      "question": "Single-trial / thin theses must name replication gap",
+      "passed": true,
+      "detail": "thesis references 13 receipts spanning 13 unique trials \u2014 synthesis is cross-trial, replication gate not triggered",
+      "excerpt": null,
+      "applicable": true
+    },
+    {
+      "question_id": "Q5-mohammed-healthspan-discipline",
+      "question": "Healthspan claims need direct longevity receipt OR hedge",
+      "passed": true,
+      "detail": "no unhedged healthspan claims",
+      "excerpt": null,
+      "applicable": true
+    },
+    {
+      "question_id": "Q6-witham-adverse-event-surfacing",
+      "question": "Safety receipts must appear in Tensions or Limitations",
+      "passed": true,
+      "detail": "no safety receipts in corpus (N/A)",
+      "excerpt": null,
+      "applicable": false
+    },
+    {
+      "question_id": "Q7-masters-numeric-fidelity",
+      "question": "Every numeric token must come from some receipt",
+      "passed": true,
+      "detail": "no novel numerics",
+      "excerpt": null,
+      "applicable": true
+    }
+  ],
+  "score": 8.33,
+  "notes": "5/6 applicable checks passed (score 8.33/10, 1 N/A) | LOAD-BEARING FAIL ['Q3-mohammed-direct-vs-indirect'] \u2014 ship blocked | score below floor 8.5"
+}
