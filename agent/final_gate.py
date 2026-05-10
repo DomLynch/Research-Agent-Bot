@@ -34,7 +34,14 @@ __all__ = [
     "evaluate_final_gate",
 ]
 
-RobMethodStatus = Literal["automated_screening", "source_text_full_cochrane"]
+RobMethodStatus = Literal[
+    "automated_screening",         # design + tier metadata only
+    "receipt_grounded_screening",  # per-domain rationale grounded in
+                                   # quant_claims / receipt content
+                                   # (Phase 4 honest middle tier)
+    "source_text_full_cochrane",   # full RoB-2 / ROBINS-I / SYRCLE
+                                   # signaling questionnaire per study
+]
 FormalSrMethodsStatus = Literal["PARTIAL", "FULL"]
 
 
@@ -220,7 +227,12 @@ def evaluate_final_gate(
         else "PARTIAL"
     )
     if formal_sr_methods == "PARTIAL":
-        summary += " | formal_sr_methods=PARTIAL (automated-screening RoB)"
+        rob_label = (
+            "receipt-grounded RoB"
+            if inputs.rob_method_status == "receipt_grounded_screening"
+            else "automated-screening RoB"
+        )
+        summary += f" | formal_sr_methods=PARTIAL ({rob_label})"
     return GateResult(
         passed=passed,
         failures=tuple(failures),

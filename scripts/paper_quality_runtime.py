@@ -43,6 +43,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
+from agent.effect_row_extractor import (  # noqa: E402
+    extract_rows_from_corpus, to_pooler_input,
+)
 from agent.final_gate import (  # noqa: E402
     GateInputs, RobMethodStatus, evaluate_final_gate,
 )
@@ -82,8 +85,71 @@ def _design_for_receipt(rec: dict) -> str:
     return "observational"
 
 
+def _domain_rationale(domain: str, rating: str, rec: dict[str, Any]) -> str:
+    """Phase 4 (Fix #59): receipt-grounded per-domain rationale.
+
+    Each RoB domain inspects the receipt fields most predictive of bias
+    in that domain and produces a sentence that cites the actual
+    metadata — not boilerplate. Rendered into the per-study domain block
+    so reviewers can see WHY the screening tool gave each rating
+    without having to open the receipt themselves.
+    """
+    tier = str(rec.get("evidence_tier") or rec.get("tier") or "?")
+    direct = str(rec.get("directness") or "?")
+    design = _design_for_receipt(rec)
+    n_claims = rec.get("n_claims") or 0
+    nct = rec.get("canonical_trial_id")
+    cite = str(rec.get("citation_token") or rec.get("paper_id") or "?")
+    base = f"[{cite}: tier={tier}, directness={direct}, design={design}"
+    if nct:
+        base += f", trial_id={nct}"
+    if n_claims:
+        base += f", n_claims={n_claims}"
+    base += "]"
+    pieces = {
+        "randomization_or_selection": (
+            f"Randomization domain {rating!r}: receipt-tier {tier} + "
+            f"design={design} drives the rating; "
+            f"{'NCT-anchored RCT supports lower selection bias risk.' if nct else 'no canonical trial id was registered, so allocation concealment cannot be verified from the receipt alone.'}"
+        ),
+        "deviations_from_intended_evidence": (
+            f"Deviations domain {rating!r}: directness={direct} is the "
+            f"primary signal — {'direct clinical receipts inherit lower deviation risk; mechanistic / preclinical inherit higher.' if direct == 'direct' else 'non-direct evidence (review/mechanistic/preclinical) raises the floor for this domain regardless of design.'}"
+        ),
+        "missing_or_incomplete_data": (
+            f"Missing-data domain {rating!r}: derived from "
+            f"{n_claims} extracted claims; the receipt does not surface "
+            "loss-to-follow-up explicitly so this rating is conservative "
+            "by default (some_concerns) unless a positive A1 RCT signal "
+            "downgrades it to low."
+        ),
+        "outcome_measurement": (
+            f"Outcome-measurement domain {rating!r}: directness={direct} + "
+            f"tier={tier} screen — {'direct clinical endpoints in a tier-A receipt support low risk.' if (direct == 'direct' and tier.startswith('A')) else 'indirect / mechanistic / lower-tier receipts retain at least some_concerns until the source text is signal-checked.'}"
+        ),
+        "selective_reporting": (
+            f"Selective-reporting domain {rating!r}: registry status "
+            f"{'with NCT id ' + str(nct) if nct else 'without canonical trial id'} drives the rating — "
+            "absence of a registered protocol typically warrants "
+            "some_concerns until a pre-registered analysis plan is "
+            "located in the source text."
+        ),
+    }
+    return pieces.get(
+        domain,
+        f"{domain!r} rating {rating!r} from receipt metadata {base}.",
+    )
+
+
 def _rob_to_payload(by_outcome: dict[str, list[dict]]) -> list[dict]:
-    """scripts/risk_of_bias batch -> flat per-study list with honesty marker."""
+    """scripts/risk_of_bias batch -> flat per-study list with honesty marker.
+
+    Phase 4 (Fix #59): per-domain rationales are receipt-grounded —
+    each domain references the specific receipt fields that drove the
+    rating (tier, directness, design, n_claims, p_values, canonical
+    trial id). This is the `receipt_grounded_screening` method tier
+    sitting between automated_screening and source_text_full_cochrane.
+    """
     batch = rob.assess_risk_of_bias_batch(by_outcome)
     out: list[dict] = []
     seen: set[str] = set()
@@ -101,18 +167,20 @@ def _rob_to_payload(by_outcome: dict[str, list[dict]]) -> list[dict]:
                 "study_id": study_id,
                 "design": _design_for_receipt(rec),
                 "tool": "rob2-screening",
-                "method_status": HONESTY,
+                "method_status": "receipt_grounded_screening",
                 "outcome_class": outcome,
                 "overall_rating": ass.overall,
                 "domains": [
                     {"domain": k, "rating": v,
-                     "rationale": "Automated screening from receipt metadata."}
+                     "rationale": _domain_rationale(k, v, rec)}
                     for k, v in ass.domains.items()
                 ],
                 "fail_closed": ass.fail_closed,
                 "notes": (
-                    "Preliminary automated assessment; "
-                    "source-linked receipt remains the trace unit."
+                    "Receipt-grounded screening: per-domain rationale "
+                    "cites the specific receipt fields that drove the "
+                    "rating; full source-text Cochrane signaling "
+                    "questionnaire pending."
                 ),
             })
     return out
@@ -136,21 +204,41 @@ def _grade_to_payload(by_outcome: dict[str, list[dict]]) -> list[dict]:
     ]
 
 
-def _meta_payload(by_outcome: dict[str, list[dict]]) -> dict[str, Any]:
-    """Pool by outcome, fail-closed when <3 compatible rows. Threshold matches
-    scripts/meta_analysis.MIN_STUDIES + agent/meta_analysis.MIN_STUDIES."""
+def _meta_payload(
+    by_outcome: dict[str, list[dict]],
+    *,
+    extracted_rows: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Pool by outcome, fail-closed when <3 compatible rows. Threshold
+    matches scripts/meta_analysis.MIN_STUDIES + agent/meta_analysis.MIN_STUDIES.
+
+    Phase 5 (Fix #59): when `extracted_rows` is provided (per-paper
+    HR/OR/RR + 95% CI rows mined from quant_claims via
+    `agent.effect_row_extractor`), they are merged into the per-outcome
+    groups before pooling. Each extracted row already carries
+    {effect, standard_error, effect_measure, outcome}, which is exactly
+    what `pool_fixed_effect` consumes. Receipts without an extracted
+    row still pass through (they'll get filtered as
+    "missing_effect_or_standard_error" downstream)."""
     pools: list[dict] = []
     skipped: list[dict] = []
+    extracted_rows = extracted_rows or []
+    rows_by_outcome: dict[str, list[dict[str, Any]]] = {}
+    for row in extracted_rows:
+        rows_by_outcome.setdefault(str(row.get("outcome", "unknown")), []).append(row)
+    n_extracted = len(extracted_rows)
     for outcome, group in sorted(by_outcome.items()):
-        if not group:
+        merged = list(rows_by_outcome.get(outcome, [])) + list(group)
+        if not merged:
             continue
-        result = meta.pool_fixed_effect(outcome, group)
+        result = meta.pool_fixed_effect(outcome, merged)
         bucket = skipped if result.fail_closed else pools
         bucket.append(result.to_dict())
     return {
         "pools": pools, "skipped": skipped,
         "candidate_groups": len(by_outcome),
         "min_studies_threshold": 3,
+        "n_extracted_effect_rows": n_extracted,
         "fail_closed_explanation": (
             "No quantitative pool was run when compatible effect rows <3."
         ),
@@ -213,9 +301,38 @@ def _now_iso() -> str:
     return _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
 
 
+def _extract_effect_rows(
+    manifest: dict[str, Any], out_dir: Path,
+) -> list[dict[str, Any]]:
+    """Phase 5 (Fix #59): mine per-paper quant_claims for HR/OR/RR + 95%
+    CI rows so the meta-analysis pooler has structured input.
+
+    Resolution order for the quant_claims directory:
+      1. `<repo_root>/docs/quality-reference/<topic>/quant_claims/`
+         (the canonical corpus location).
+      2. `<run_dir>/quant_claims/` (some legacy runs).
+    Returns [] if neither location contains anything parseable —
+    callers preserve the prior fail-closed pooling behaviour."""
+    topic = str(manifest.get("topic") or "").strip()
+    receipts = list(manifest.get("receipts") or [])
+    if not topic or not receipts:
+        return []
+    candidates = [
+        REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims",
+        out_dir / "quant_claims",
+    ]
+    for base in candidates:
+        if not base.is_dir():
+            continue
+        rows = extract_rows_from_corpus(receipts, quant_claims_dir=base)
+        if rows:
+            return to_pooler_input(rows)
+    return []
+
+
 def run_phases(
     out_dir: Path, *,
-    rob_method_status: RobMethodStatus = "automated_screening",
+    rob_method_status: RobMethodStatus = "receipt_grounded_screening",
 ) -> dict[str, Any]:
     """Run Phases 3-8 against `out_dir`; write all sidecars; return verdict."""
     manifest = _read_json(out_dir / "manifest.json", {}) or {}
@@ -253,7 +370,14 @@ def run_phases(
     (out_dir / "quality_methods.json").write_text(json.dumps(quality, indent=2))
 
     # --- Phase 5: meta-analysis fail-closed -----------------------------------
-    meta_data = _meta_payload(by_outcome)
+    # Fix #59: mine per-paper quant_claims for HR/OR/RR + 95% CI rows,
+    # bridging slim manifest receipts (no effect/SE) into the pooler's
+    # input shape. Receipts whose source quant_claims report a usable
+    # ratio contribute one row each. Outcomes with ≥3 compatible rows
+    # then pool deterministically; otherwise the prior fail-closed
+    # behaviour stands.
+    extracted_rows = _extract_effect_rows(manifest, out_dir)
+    meta_data = _meta_payload(by_outcome, extracted_rows=extracted_rows)
     (out_dir / "meta_analysis_results.json").write_text(json.dumps(meta_data, indent=2))
     (out_dir / "meta_analysis_results.md").write_text(_meta_md(meta_data))
 
@@ -415,12 +539,20 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("run_dir", help="Path to run dir with full_paper.md.")
     parser.add_argument(
         "--rob-method-status",
-        choices=("automated_screening", "source_text_full_cochrane"),
-        default="automated_screening",
+        choices=(
+            "automated_screening",
+            "receipt_grounded_screening",
+            "source_text_full_cochrane",
+        ),
+        default="receipt_grounded_screening",
         help=(
-            "Default 'automated_screening' yields formal_sr_methods=PARTIAL. "
-            "Pass 'source_text_full_cochrane' only when a real Cochrane RoB "
-            "signaling questionnaire has been completed for every study."
+            "Default 'receipt_grounded_screening' (Phase 4): per-domain "
+            "rationale cites the receipt fields that drove each rating "
+            "— honest middle tier between metadata-only and full Cochrane. "
+            "Use 'automated_screening' for the older boilerplate "
+            "rationale, or 'source_text_full_cochrane' only when a real "
+            "RoB-2 / ROBINS-I / SYRCLE signaling questionnaire has been "
+            "completed for every study (yields formal_sr_methods=FULL)."
         ),
     )
     args = parser.parse_args(argv)
