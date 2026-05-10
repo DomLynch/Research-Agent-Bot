@@ -8,7 +8,7 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 21,250 LOC (raised 2026-05-09 from 20,750 by
+Current ceiling: 21,800 LOC (raised 2026-05-10 from 21,500 by
 publication scoring and hazard-ratio normalization). Earlier waves:
 
 Wave 15 - Publication scorer + HR normalizer (20,750 -> 21,250):
@@ -18,6 +18,33 @@ ratio plus confidence-interval conversion into log_HR EffectRow inputs. Both
 are stdlib-only and directly support Phase 5/8 integration. The measured gate
 is 20,911 cloc at the time of raise, leaving about 300 cloc headroom after
 the final Claude-lane integration (2026-05-09).
+
+Wave 16 - Phase 5 effect-row extractor (21,250 -> 21,500):
+agent/effect_row_extractor.py (~163 cloc) bridges per-paper quant_claims
+into the meta-analysis pooler input. Pattern-matches the standard
+"HR/OR/RR + 95% CI" report shape from the canonical corpus location,
+computes log effect + SE under the log-normal CI assumption, and
+returns one row per parseable ratio. The measured gate is 21,371 cloc
+at the time of raise; the new ceiling leaves ~130 cloc headroom
+(2026-05-10). Verified live on statins: 72 rows extracted, 2 outcome
+groups pool deterministically (cardiometabolic log_HR=-0.166, k=3)
+where the prior fail-closed-everything behaviour gave zero pools.
+
+Wave 17 - Source-text Cochrane RoB-2 scaffold (21,500 -> 21,800):
+agent/source_text_rob.py (~150 cloc) defines the RoB-2 v9 5-domain
+signaling questionnaire as data, builds per-domain prompts that scope
+the relevant Methods/Results/Discussion text, parses + validates the
+LLM JSON response (rating ∈ {low, some_concerns, high}, signaling
+answers ∈ {yes, no, unclear, no_information}), and aggregates into
+StudyAssessmentSourceText with Cochrane "weakest-link" overall rating.
+Plus pattern coverage extension in agent/effect_row_extractor.py adds
+MD / SMD / Cohen's d / beta linear-scale patterns alongside the
+existing HR/OR/RR ratio patterns (with separate log vs linear SE
+math). Adapter wires the scaffold behind --rob-method-status=source_
+text_full_cochrane with a fail-safe import guard — accidental routine
+runs cannot trigger LLM spend. The measured gate is 21,732 cloc at
+the time of raise; the new ceiling leaves ~70 cloc headroom
+(2026-05-10).
 
 Prior ceiling: 20,750 LOC (raised 2026-05-09 from 19,750 by wired
 Phase 3-8 adapters). Earlier waves:
@@ -227,7 +254,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 21250
+TOTAL_LIMIT = 21800
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

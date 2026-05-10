@@ -207,3 +207,104 @@ def test_cli_json_payload_shape(tmp_path: Path) -> None:
     assert "hits" in payload and "summary" in payload
     assert isinstance(payload["hits"], list)
     assert payload["hits"][0]["category"] == "unsupported_authority"
+
+
+# === Fix #58 — use vs mention discipline =================================
+# A MENTION (the writer refers to a forbidden phrase via quoting,
+# negation, or critique) is good academic writing and must NOT be
+# flagged. A USE (the writer asserts the phrase as their own claim) is
+# what the gate is supposed to catch. These tests pin the boundary.
+
+
+def test_use_of_forbidden_phrase_still_fires() -> None:
+    """Plain assertion of a forbidden phrase = USE = flagged."""
+    hits = detect_template_language("Further research is needed in older adults.")
+    assert len(hits) == 1
+    assert hits[0].phrase.lower() == "further research is needed"
+
+
+def test_mention_inside_straight_single_quotes_skipped() -> None:
+    """The aspirin pass2 case: writer quotes the cliché to negate it."""
+    text = (
+        "Rather than concluding that 'further research is needed,' "
+        "this synthesis identifies specific gaps."
+    )
+    assert detect_template_language(text) == []
+
+
+def test_mention_inside_straight_double_quotes_skipped() -> None:
+    text = 'The standard ending "further research is needed" is replaced here.'
+    assert detect_template_language(text) == []
+
+
+def test_mention_inside_curly_double_quotes_skipped() -> None:
+    text = "The cliché “further research is needed” ends most reviews."
+    assert detect_template_language(text) == []
+
+
+def test_mention_inside_curly_single_quotes_skipped() -> None:
+    text = "Avoid the boilerplate ‘further research is needed’ ending."
+    assert detect_template_language(text) == []
+
+
+def test_mention_via_rather_than_pivot_skipped() -> None:
+    """Negation pivot before phrase suppresses even without quotes."""
+    text = (
+        "Rather than further research is needed, this paper enumerates "
+        "the missing trial design."
+    )
+    assert detect_template_language(text) == []
+
+
+def test_mention_via_instead_of_pivot_skipped() -> None:
+    text = (
+        "Instead of further research is needed, we name three specific "
+        "trial gaps."
+    )
+    assert detect_template_language(text) == []
+
+
+def test_mention_via_meta_marker_skipped() -> None:
+    text = "The phrase further research is needed has been retired here."
+    assert detect_template_language(text) == []
+
+
+def test_mention_does_not_swallow_real_violation_in_same_paragraph() -> None:
+    """Boundary: a paragraph with both a MENTION and a separate USE
+    must still flag the USE. Sentence-level scan keeps them isolated."""
+    text = (
+        "Rather than concluding that 'further research is needed,' we "
+        "name three gaps. "
+        "In conclusion, further research is needed across all three."
+    )
+    hits = detect_template_language(text)
+    # First sentence is a mention (skipped). Second sentence has TWO
+    # uses: "In conclusion," (P2 ai_summary_tell) and "further research
+    # is needed" (P2 generic_research_cliche).
+    phrases = sorted(h.phrase.lower() for h in hits)
+    assert phrases == ["further research is needed", "in conclusion,"]
+
+
+def test_pivot_lookback_respects_distance_limit() -> None:
+    """A negation pivot far away (beyond MENTION_PIVOT_LOOKBACK_CHARS)
+    does NOT suppress the match — that would be over-permissive."""
+    # Build a sentence where 'rather than' is >80 chars before the phrase.
+    filler = "x " * 80  # 160 chars of buffer
+    text = f"rather than {filler}further research is needed."
+    hits = detect_template_language(text)
+    assert len(hits) == 1
+
+
+def test_unsupported_authority_p1_quoted_is_mention() -> None:
+    """Quote-suppression applies to all categories incl. P1."""
+    text = "Critics warn against saying 'it is clear that' in any context."
+    assert detect_template_language(text) == []
+
+
+def test_vague_limitation_quoted_is_mention() -> None:
+    """Conditional denylist also respects the use/mention split."""
+    text = (
+        "Rather than the boilerplate 'evidence base is limited,' the "
+        "Methods section names every excluded study."
+    )
+    assert detect_template_language(text) == []

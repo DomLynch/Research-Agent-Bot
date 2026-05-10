@@ -12,6 +12,18 @@ Categories:
   - vague_limitation:        "evidence base is limited" without specifics
   - unsupported_authority:   "it is clear that", "undeniably", "proves that"
 
+Use-vs-mention discipline (Fix #58):
+  Good academic writing sometimes refers to forbidden phrases instead of
+  USING them — quoting, negating, or critiquing the cliché. E.g.,
+  "Rather than concluding that 'further research is needed,' …" is the
+  desired pattern, not a violation. The gate distinguishes:
+    - USE   : the writer is asserting the phrase as their own claim → flag.
+    - MENTION: the writer is referring to the phrase itself          → skip.
+  Mentions are detected by either (a) the phrase being inside a balanced
+  quote pair, or (b) a configured negation/meta-discourse pivot earlier
+  in the sentence. Pivots are data-driven (MENTION_NEGATION_PIVOTS,
+  MENTION_META_MARKERS) — extend without code changes.
+
 Skipped: code fences (```), markdown table rows (|), references and
 audit-metadata sections (until next heading of equal/higher level).
 
@@ -35,6 +47,8 @@ __all__ = [
     "has_blocking_severity",
     "DENYLIST_ALWAYS",
     "DENYLIST_CONDITIONAL",
+    "MENTION_NEGATION_PIVOTS",
+    "MENTION_META_MARKERS",
     "SKIP_SECTION_HEADINGS",
 ]
 
@@ -127,6 +141,116 @@ DENYLIST_CONDITIONAL: tuple[tuple[re.Pattern[str], Category, Severity, str], ...
 )
 
 
+# --- Use vs Mention discipline (Fix #58) ----------------------------------
+# A MENTION is when the writer refers to a forbidden phrase (quoting,
+# negating, critiquing) rather than asserting it as their own claim.
+# Mentions are good academic writing — the writer is pushing back against
+# the cliché — and must NOT be flagged.
+#
+# Detection signals (any one suffices):
+#   1. The phrase falls inside a balanced quote pair (straight or curly).
+#   2. A negation pivot appears within MENTION_PIVOT_LOOKBACK_CHARS before.
+#   3. A meta-discourse marker appears within the same window.
+#
+# Lists are data-driven so future patterns can be added without code edits.
+
+MENTION_NEGATION_PIVOTS: tuple[str, ...] = (
+    "rather than",
+    "instead of",
+    "in place of",
+    "as opposed to",
+    "not merely",
+    "not just",
+    "not the standard",
+    "not the boilerplate",
+    "more than just",
+    "beyond the standard",
+    "beyond merely",
+    "moves past",
+    "moving past",
+    "avoids the cliché",
+    "avoids the cliche",
+    "rejects the standard",
+    "no longer say",
+    "we do not conclude",
+    "we will not say",
+    "this paper does not",
+    "this synthesis does not",
+)
+
+MENTION_META_MARKERS: tuple[str, ...] = (
+    "the cliché",
+    "the cliche",
+    "the phrase",
+    "the boilerplate",
+    "the standard ending",
+    "the standard close",
+    "the usual ending",
+    "the formulaic",
+)
+
+# Curly + straight quote pairs. Curly are unambiguous; straight pairs
+# are noisy but useful as a fallback when curly aren't used.
+_QUOTE_PAIRS: tuple[tuple[str, str], ...] = (
+    ("‘", "’"),  # left/right single (curly)
+    ("“", "”"),  # left/right double (curly)
+    ("‹", "›"),  # single guillemets
+    ("«", "»"),  # double guillemets
+    ("'", "'"),            # straight single
+    ('"', '"'),            # straight double
+)
+
+MENTION_PIVOT_LOOKBACK_CHARS: int = 80
+
+
+def _quote_regions(sentence: str) -> list[tuple[int, int]]:
+    """Return (start, end) char-offset spans of every balanced quote pair.
+
+    Curly quotes are matched left→right so they're unambiguous. Straight
+    quotes are matched as adjacent pairs (greedy nearest-pair) — imperfect
+    but better than ignoring them entirely. A phrase whose match falls
+    inside any returned span is treated as quoted."""
+    regions: list[tuple[int, int]] = []
+    for opener, closer in _QUOTE_PAIRS:
+        i = 0
+        while i < len(sentence):
+            start = sentence.find(opener, i)
+            if start < 0:
+                break
+            search_from = start + len(opener)
+            if opener == closer:
+                # Straight quotes: nearest match wins; advance past it.
+                end = sentence.find(closer, search_from)
+            else:
+                end = sentence.find(closer, search_from)
+            if end < 0:
+                break
+            regions.append((start, end + len(closer)))
+            i = end + len(closer)
+    return regions
+
+
+def _is_mention(sentence: str, match_start: int, match_end: int) -> bool:
+    """Return True if the matched span is a MENTION (writer is referring
+    to the phrase) rather than a USE (writer is asserting it). Match
+    spans falling inside any quote region, or preceded by a negation
+    pivot / meta-discourse marker, are mentions."""
+    # Rule 1 — quoted: match falls inside a balanced quote pair.
+    for q_start, q_end in _quote_regions(sentence):
+        if q_start <= match_start and match_end <= q_end:
+            return True
+    # Rule 2 — negation/meta pivot earlier in the sentence.
+    lookback_start = max(0, match_start - MENTION_PIVOT_LOOKBACK_CHARS)
+    lookback = sentence[lookback_start:match_start].lower()
+    for pivot in MENTION_NEGATION_PIVOTS:
+        if pivot in lookback:
+            return True
+    for marker in MENTION_META_MARKERS:
+        if marker in lookback:
+            return True
+    return False
+
+
 # Specifics indicators
 _DIGIT = re.compile(r"\d")
 _CITATION = re.compile(r"\b[A-Z][A-Za-z]+\s+\d{4}[a-z]?\b")  # e.g. "Smith 2023"
@@ -210,11 +334,14 @@ def detect_template_language(text: str) -> list[Hit]:
 
 
 def _scan_sentence(sentence: str, *, line_number: int, hits: list[Hit]) -> None:
-    """Run sentence through always-flag and conditional denylists."""
+    """Run sentence through always-flag and conditional denylists.
+
+    Fix #58: a match is suppressed when the phrase is a MENTION (quoted /
+    negated / meta-referenced) rather than a USE — see `_is_mention`."""
     trimmed = sentence.strip()
     for pattern, category, severity, reason in DENYLIST_ALWAYS:
         m = pattern.search(sentence)
-        if m:
+        if m and not _is_mention(sentence, m.start(), m.end()):
             hits.append(Hit(
                 phrase=m.group(0), category=category, severity=severity,
                 line_number=line_number, sentence=trimmed, reason=reason,
@@ -222,7 +349,7 @@ def _scan_sentence(sentence: str, *, line_number: int, hits: list[Hit]) -> None:
     if not _has_specifics(sentence):
         for pattern, category, severity, reason in DENYLIST_CONDITIONAL:
             m = pattern.search(sentence)
-            if m:
+            if m and not _is_mention(sentence, m.start(), m.end()):
                 hits.append(Hit(
                     phrase=m.group(0), category=category, severity=severity,
                     line_number=line_number, sentence=trimmed, reason=reason,

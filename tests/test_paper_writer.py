@@ -175,7 +175,7 @@ def test_section_word_floors_protect_analytical_depth() -> None:
     assert SECTION_WORD_FLOORS["background"] <= 800
     assert SECTION_WORD_FLOORS["results"] <= 1700
     # Analytical-core floors RESTORED after Fix #27 over-compression
-    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] >= 850
+    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] >= 950
     assert SECTION_WORD_FLOORS["discussion"] >= 900
     assert SECTION_WORD_FLOORS["limitations_full"] <= 500
     assert SECTION_WORD_FLOORS["conclusion"] <= 300
@@ -213,20 +213,25 @@ def test_section_prompts_use_explicit_targets() -> None:
 
 
 def test_discussion_and_cross_domain_prompts_demand_900_word_floor() -> None:
-    """Fix #45: the analytical-core sections explicitly require ≥900
-    words to prevent the grok-smart 310/525 regression."""
+    """Fix #45 + Fix #56: analytical-core sections require ≥900
+    (Discussion) and ≥950 (Cross-Domain) words. CDS bumped to 950 for
+    a 100-word retry cushion above the 850 journal-surface gate."""
     from agent.paper_writer_prompts import (
         CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
         DISCUSSION_SYSTEM_PROMPT,
+    )
+    assert "900" in DISCUSSION_SYSTEM_PROMPT, (
+        "DISCUSSION prompt no longer carries the 900-word floor "
+        "(Fix #45 regression)"
+    )
+    assert "950" in CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT, (
+        "CROSS_DOMAIN prompt no longer carries the 950-word floor "
+        "(Fix #56 regression)"
     )
     for name, prompt in (
         ("DISCUSSION", DISCUSSION_SYSTEM_PROMPT),
         ("CROSS_DOMAIN", CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT),
     ):
-        assert "900" in prompt, (
-            f"{name} prompt no longer carries the 900-word floor "
-            "(Fix #45 regression)"
-        )
         assert "adjudicate" in prompt.lower(), (
             f"{name} prompt no longer requires per-paragraph "
             "tension adjudication"

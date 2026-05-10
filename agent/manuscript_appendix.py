@@ -140,8 +140,8 @@ def build_search_provenance_appendix(
         "### Databases NOT queried (transparency)",
         "",
     ]
-    for db in _DATABASES_NOT_QUERIED:
-        lines.append(f"- {db}")
+    for db_label in _DATABASES_NOT_QUERIED:
+        lines.append(f"- {db_label}")
     lines += [
         "",
         "### Selection logic",

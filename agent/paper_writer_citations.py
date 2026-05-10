@@ -73,7 +73,7 @@ def check_unsourced_background_uses(
     sys.path.insert(0, str(
         Path(__file__).resolve().parent.parent / "scripts",
     ))
-    import background_literature as _bg  # noqa: E402
+    import background_literature as _bg  # type: ignore[import-not-found]  # noqa: E402
     registry = {e.key: e for e in entries}
     return _bg.find_unsourced_background_uses(section_md, registry)
 

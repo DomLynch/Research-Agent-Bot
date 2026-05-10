@@ -37,3 +37,72 @@ asyncio_mode = "strict"
 # Only ship the V1 runtime. agent_legacy/ stays on disk for git archaeology
 # and is reachable via pythonpath = ["."], but must never be installed.
 include = ["agent", "agent.*"]
+
+[tool.mypy]
+# Only `.` on mypy_path. Production imports of scripts/*.py all use the
+# package form (`from scripts.X import Y` — see agent/quality_methods_bundle).
+# Flat sys.path-hack imports (`import grok_reviewer`, `import granite_arbitrator`,
+# etc.) come from scripts/run_v06_synthesis.py and a handful of tests; those
+# are listed in the [[tool.mypy.overrides]] block below with
+# ignore_missing_imports=true so mypy doesn't error on them.
+# Adding `scripts` to mypy_path would cause every scripts/*.py to be
+# discovered under both the flat and packaged module names, producing
+# unrecoverable Duplicate-module errors on a flat walk.
+mypy_path = "$MYPY_CONFIG_FILE_DIR"
+explicit_package_bases = true
+namespace_packages = true
+exclude = [
+    "^agent_archived/",
+    "^agent_legacy/",
+    "^tests_legacy/",
+]
+
+[[tool.mypy.overrides]]
+# Flat sys.path-hack imports of scripts/*.py from run_v06_synthesis,
+# from sibling scripts, and from the verification suite. This list is
+# the union of every flat module name used as `import X` in repo code;
+# mypy can't follow the runtime sys.path manipulation, so ignore the
+# import-not-found errors. Targeted mypy on each scripts/<file>.py
+# still type-checks the source.
+module = [
+    "agent.cli", "agent.planner", "agent.provider", "agent.sources.rxiv",
+    "apply_consistency_fixes", "apply_patches", "audit_v06_paper",
+    "background_literature",
+    "basket_failure_triage", "basket_stability_matrix", "bundle_snapshot",
+    "certification_report", "citation_registry", "corpus_filter",
+    "dw_register_public_bundle",
+    "effect_direction", "endgame_basket_audit", "evidence_taxonomy",
+    "export_public_bundle", "export_static_reader",
+    "fetch_oa_corpus", "final_checkpoint_report", "final_consistency_audit",
+    "fitz",
+    "generate_brief", "grade_assessment", "granite_arbitrator", "grok_reviewer",
+    "journal_surface_batch_audit", "journal_surface_root_cause",
+    "l6_batch_report", "l6_retrofit_report",
+    "methods_evidence_renderer", "multi_topic_dashboard",
+    "no_regression_gate", "novel_framework", "numeric_role_guard",
+    "osf_live_readiness",
+    "pdf_ingest", "pdfplumber", "pypdf",
+    "qualification_partial_repair", "qualification_rescue", "quant_claim_extract",
+    "quant_endpoints",
+    "reader_publication_deep_report", "reader_publication_report",
+    "release_watchdog_deep", "release_watchdog_report",
+    "research_contribution_report", "researka_reader_manifest",
+    "risk_of_bias", "run_mode_contract", "run_v06_synthesis",
+    "seed_topic_corpus", "spec_bundle_validator", "static_reader_quality_gate",
+    "surface_render_lint",
+    "table_renderer", "tri_sync_status",
+    "vocab",
+    "wide_basket_deep_audit",
+]
+ignore_missing_imports = true
+
+# Mypy is scoped to the agent/ release runtime. scripts/ holds CLIs
+# and one-off batch tools that rely on dynamic JSON shapes, argparse-
+# driven control flow, and sys.path-hack imports; tests/ verifies
+# behavior, not types. Type-checking either of those globally
+# produces pre-existing noise that obscures real issues in agent/.
+# Targeted mypy on individual scripts/<file>.py or tests/<file>.py
+# still works when needed.
+[[tool.mypy.overrides]]
+module = ["scripts.*", "tests.*"]
+ignore_errors = true

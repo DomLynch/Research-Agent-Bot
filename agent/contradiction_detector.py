@@ -62,6 +62,8 @@ def _dominant_effect(effects: dict[str, int]) -> str:
 
 
 def _unique_topics(topics: object) -> tuple[TopicRunSummary, ...]:
+    if not isinstance(topics, (list, tuple)):
+        return tuple()
     out: dict[str, TopicRunSummary] = {}
     for topic in topics:
         out.setdefault(topic.topic, topic)

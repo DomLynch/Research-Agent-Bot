@@ -2147,11 +2147,27 @@ async def _run(
             f"Rendered Methods contains blocked phrases: {blocked_in_rendered}"
         )
     full_paper_md = _run_mode.replace_methods_in_paper(full_paper_md, methods_md)
+    # Fix #59 (Phase 7): emit structured tensions alongside the count so
+    # the paper-quality adapter can build top-N TensionPlan records
+    # rather than fail-softing to zero plans on every run.
+    _serialized_tensions = [
+        {
+            "tension_id": f"t-{i:03d}",
+            "paper_a": t.receipt_a_id,
+            "paper_b": t.receipt_b_id,
+            "conflict_type": t.kind,
+            "outcome_class": t.outcome_class,
+            "severity": max(1, min(5, int(t.severity))),
+            "summary": t.summary,
+        }
+        for i, t in enumerate(matrix.non_orthogonal(), start=1)
+    ]
     _ACTIVE_MANIFEST = {
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
+        "tensions": _serialized_tensions,
         "thesis": thesis.text,
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
@@ -2185,6 +2201,7 @@ async def _run(
         "n_receipts": len(receipts),
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
+        "tensions": _serialized_tensions,
         "thesis": thesis.text,
         "receipts": manifest_receipts,
         "receipt_funnel": receipt_funnel,
@@ -2499,6 +2516,17 @@ async def _run_post_paper_pipeline(
         n_arbitration_reject = 0
         n_arbitration_escalate = 0
         arbitration_log_name = None
+        # Fix #57: bundle exporter, certification_report, and downstream
+        # dashboards all require full_paper.review_patch_log.json. The
+        # 0-patches branch previously produced no log; emit a zeroed
+        # alias so the contract is universal.
+        paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
+            "applied_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+            "n_proposed": 0, "n_applied": 0, "n_rejected": 0,
+            "n_rejected_by_arbitration": 0, "n_flagged": 0,
+            "n_repaired": 0, "n_auto_stripped": 0, "n_arbitrated": 0,
+            "patches": [],
+        }, indent=2))
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
     # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
@@ -2738,6 +2766,41 @@ async def _run_post_paper_pipeline(
     except Exception as _e:  # pragma: no cover — best-effort
         print(
             f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
+            file=sys.stderr,
+        )
+
+    # Stage 5c (Fix #56): Phase 3-8 paper-quality runtime adapter.
+    # Glue-only: writes the eight Phase 3-8 sidecars (RoB, GRADE,
+    # quality_methods, meta_analysis_results, template_language_gate,
+    # tension_elaboration_plans, publication_score, pre_submit_gate)
+    # by invoking the existing agent/* + scripts/* primitives. No new
+    # logic, no LLM calls. Default rob_method_status="receipt_grounded_screening"
+    # → final gate emits formal_sr_methods=PARTIAL. Promote to FULL only
+    # when source-text Cochrane signaling is wired (set via env var).
+    try:
+        from scripts.paper_quality_runtime import run_phases as _run_paper_quality_phases  # type: ignore[import-not-found]
+        _rob_status = os.environ.get(
+            "ROB_METHOD_STATUS", "receipt_grounded_screening",
+        )
+        if _rob_status not in (
+            "automated_screening",
+            "receipt_grounded_screening",
+            "source_text_full_cochrane",
+        ):
+            _rob_status = "receipt_grounded_screening"
+        _verdict = _run_paper_quality_phases(
+            paper_path.parent, rob_method_status=_rob_status,  # type: ignore[arg-type]
+        )
+        _r = _verdict["result"]
+        print(
+            f"[pipeline] Stage 5c — paper_quality_gate={_r['paper_quality_gate']} "
+            f"| formal_sr_methods={_r['formal_sr_methods']} "
+            f"(failures={len(_r['failures'])}, warnings={len(_r['warnings'])})",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — best-effort
+        print(
+            f"[pipeline] Stage 5c — paper-quality adapter skipped: {_e}",
             file=sys.stderr,
         )
 

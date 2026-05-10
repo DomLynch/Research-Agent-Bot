@@ -58,7 +58,9 @@ def test_public_methods_meets_journal_surface_depth_floor() -> None:
     """Regression for urolithin_a live repro: deterministic Methods must
     clear the public journal-surface depth floor without operational prose."""
     methods = rmc.render_methods(_v06_contract())
-    body = re.search(r"^## Methods\n\n(.*)", methods, flags=re.S).group(1)
+    match = re.search(r"^## Methods\n\n(.*)", methods, flags=re.S)
+    assert match is not None, "rendered Methods must start with '## Methods'"
+    body = match.group(1)
     assert len(re.findall(r"\b\w+\b", body)) >= 300
     assert rmc.validate_rendered(methods) == []
 

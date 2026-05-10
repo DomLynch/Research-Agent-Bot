@@ -12,18 +12,37 @@ The gate distinguishes:
   - failures (P1) — block the cert. Result.passed = False.
   - warnings (P2) — emitted with the result but do not block. Caller can
     promote to failures by tightening thresholds.
+
+Fix #56: the gate ALSO surfaces formal-SR-methods status independently
+of paper_quality_gate. With automated screening RoB (no source-text),
+formal_sr_methods="PARTIAL" — paper_quality_gate can still PASS, but
+the report flags this honestly. With source-text Cochrane RoB,
+formal_sr_methods="FULL".
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Literal
 
 __all__ = [
     "GateThresholds",
     "GateInputs",
     "GateResult",
     "DEFAULT_THRESHOLDS",
+    "RobMethodStatus",
+    "FormalSrMethodsStatus",
     "evaluate_final_gate",
 ]
+
+RobMethodStatus = Literal[
+    "automated_screening",         # design + tier metadata only
+    "receipt_grounded_screening",  # per-domain rationale grounded in
+                                   # quant_claims / receipt content
+                                   # (Phase 4 honest middle tier)
+    "source_text_full_cochrane",   # full RoB-2 / ROBINS-I / SYRCLE
+                                   # signaling questionnaire per study
+]
+FormalSrMethodsStatus = Literal["PARTIAL", "FULL"]
 
 
 @dataclass(frozen=True, slots=True)
@@ -91,6 +110,7 @@ class GateInputs:
     n_receipts: int
     unresolved_reviewer_p1_count: int
     template_language_blocking: bool
+    rob_method_status: RobMethodStatus = "automated_screening"
 
     def __post_init__(self) -> None:
         for name in ("numeric_coverage", "rob_coverage", "grade_coverage"):
@@ -112,16 +132,24 @@ class GateInputs:
 class GateResult:
     """Verdict from the final gate.
 
-    passed   — False if any P1 failure; otherwise True.
-    failures — names of P1 gates that failed, in declaration order.
-    warnings — names of P2 thresholds that were tripped (informational).
-    summary  — single human-readable line summarising the verdict.
+    passed             — False if any P1 failure; otherwise True. Synonym:
+                         paper_quality_gate is "PASS" when passed=True.
+    failures           — names of P1 gates that failed, in declaration order.
+    warnings           — names of P2 thresholds that were tripped.
+    summary            — single human-readable line summarising the verdict.
+    paper_quality_gate — "PASS" / "FAIL" mirror of `passed`.
+    formal_sr_methods  — "PARTIAL" when RoB is automated screening (no
+                         source-text Cochrane signaling); "FULL" otherwise.
+                         Independent of paper_quality_gate — automated RoB
+                         can pass paper-quality but is honestly partial SR.
     """
 
     passed: bool
     failures: tuple[str, ...]
     warnings: tuple[str, ...]
     summary: str
+    paper_quality_gate: Literal["PASS", "FAIL"]
+    formal_sr_methods: FormalSrMethodsStatus
 
 
 def _check_p1(inputs: GateInputs, thresholds: GateThresholds) -> list[str]:
@@ -193,9 +221,23 @@ def evaluate_final_gate(
         )
     else:
         summary = f"FAIL — {len(failures)} blocker(s): " + "; ".join(failures)
+    formal_sr_methods: FormalSrMethodsStatus = (
+        "FULL"
+        if inputs.rob_method_status == "source_text_full_cochrane"
+        else "PARTIAL"
+    )
+    if formal_sr_methods == "PARTIAL":
+        rob_label = (
+            "receipt-grounded RoB"
+            if inputs.rob_method_status == "receipt_grounded_screening"
+            else "automated-screening RoB"
+        )
+        summary += f" | formal_sr_methods=PARTIAL ({rob_label})"
     return GateResult(
         passed=passed,
         failures=tuple(failures),
         warnings=tuple(warnings),
         summary=summary,
+        paper_quality_gate="PASS" if passed else "FAIL",
+        formal_sr_methods=formal_sr_methods,
     )

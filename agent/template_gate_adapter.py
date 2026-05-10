@@ -148,7 +148,7 @@ def evaluate_template_gate(
         p1_count=p1,
         p2_count=p2,
         p3_count=p3,
-        total_hits=int(summary["total_hits"]),
+        total_hits=int(summary["total_hits"]),  # type: ignore[call-overload]
         hits=hits_tuple,
         markdown_report=_render_markdown_report(hits_tuple, summary, source),
         json_report=_render_json_report(hits_tuple, summary, source),

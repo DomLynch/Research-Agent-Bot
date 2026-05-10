@@ -37,7 +37,7 @@ from agent.synthesis_schemas import (
 # Audit/public-surface section floors. Map: section name → minimum words to
 # clear the strictest downstream gate. Cross-Domain is 850 because the
 # journal-surface gate is stricter than Q12's 800-word audit floor.
-AUDIT_GATED_FLOORS: Mapping[str, int] = {
+AUDIT_GATED_FLOORS: Mapping[SectionName, int] = {
     "cross_domain_synthesis": 850,
     "discussion": 800,               # Q11 audit floor
     "conclusion": 250,
@@ -177,10 +177,11 @@ async def apply_section_backstop(
     # paragraph. Universal across topics, no LLM cost, no
     # fabrication risk — every value traces to receipts/matrix.
     if matrix is not None:
-        for sec_name, anchor_fn in (
+        _backstop_pairs: tuple[tuple[SectionName, Any], ...] = (
             ("cross_domain_synthesis", build_cross_domain_anchor),
             ("discussion", build_discussion_anchor),
-        ):
+        )
+        for sec_name, anchor_fn in _backstop_pairs:
             cur = sections.get(sec_name)
             if cur is None:
                 continue
