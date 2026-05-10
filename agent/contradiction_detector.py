@@ -65,6 +65,6 @@ def _unique_topics(topics: object) -> tuple[TopicRunSummary, ...]:
     if not isinstance(topics, (list, tuple)):
         return tuple()
     out: dict[str, TopicRunSummary] = {}
-    for topic in topics:
+    for topic in topics:  # type: ignore[attr-defined]
         out.setdefault(topic.topic, topic)
     return tuple(out.values())

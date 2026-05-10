@@ -51,7 +51,7 @@ async def test_backstop_accepts_longer_section() -> None:
 
     sections = {"discussion": _section("discussion", 10)}
     out = await backstop.apply_section_backstop(
-        sections,
+        sections,  # type: ignore[arg-type]
         user_prompt="u",
         section_prompts={"discussion": "s"},
         topic="rapamycin",

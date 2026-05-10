@@ -182,7 +182,7 @@ async def _retrieve_live(
     return await retrieve(
         topic=topic,
         criteria=criteria,
-        sources=sources_clients,
+        sources=sources_clients,  # type: ignore[arg-type]
         domain=domain,
         extra_queries=tuple(extra_queries),
     )

@@ -122,7 +122,7 @@ async def retrieve(
                     adapter.name, q, type(r).__name__ + ": " + str(r),
                 )
                 continue
-            flat.extend(r)
+            flat.extend(r)  # type: ignore[arg-type]
         return flat
 
     if client is not None:

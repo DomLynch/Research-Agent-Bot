@@ -435,7 +435,7 @@ def build_fallback_thesis(
         addressed = (f"{top.kind}:{top.outcome_class}",)
     else:
         tensions_clause = "with receipts covering distinct outcomes"
-        addressed = ()
+        addressed = ()  # type: ignore[assignment]
     text = (
         f"{topic or 'evidence'} synthesis across {n} receipts is mixed, "
         f"{tensions_clause}; the integrating thesis defaults to a "
