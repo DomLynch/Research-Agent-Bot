@@ -18,6 +18,7 @@ from typing import Any
 
 def build_prisma_bridge_appendix(
     manifest: dict[str, Any], *, topic: str,
+    spar_cache: dict[str, Any] | None = None,
 ) -> str:
     """Universal across topics: all values pull from manifest +
     topic_pack TOML + corpus dir. No drug names, no per-topic logic.
@@ -42,6 +43,28 @@ def build_prisma_bridge_appendix(
     n_receipts = manifest.get(
         "n_receipts", len(manifest.get("receipts") or []),
     )
+    n_accepted = int(manifest.get("n_accepted_receipts") or n_receipts or 0)
+    n_rejected = int(
+        manifest.get("n_quarantined_receipts")
+        or max(int(n_receipts or 0) - n_accepted, 0)
+    )
+    verdicts = (spar_cache or {}).get("verdicts") or {}
+    receipts = [
+        r for r in (manifest.get("receipts") or [])
+        if isinstance(r, dict)
+    ]
+    if isinstance(verdicts, dict) and receipts:
+        rejected_ids = {
+            rid for rid, verdict_obj in verdicts.items()
+            if isinstance(verdict_obj, dict)
+            and str(verdict_obj.get("verdict") or "").lower().startswith("reject")
+        }
+        if rejected_ids:
+            n_rejected = len(rejected_ids)
+            n_accepted = sum(
+                1 for r in receipts
+                if r.get("receipt_id") not in rejected_ids
+            )
     n_claims = manifest.get("n_high_confidence_claims_total", 0)
     generated_at = manifest.get("generated_at", "unknown")
 
@@ -107,7 +130,9 @@ def build_prisma_bridge_appendix(
         f"**Screening counts** (this run):\n"
         f"  - Papers parsed into the corpus: **{n_parsed}**\n"
         f"  - Papers with quant-extracted claims: **{n_extracted}**\n"
-        f"  - Papers entering synthesis as receipts: **{n_receipts}**\n"
+        f"  - Candidate receipt papers before SPAR: **{n_receipts}**\n"
+        f"  - Post-SPAR accepted receipts entering synthesis: **{n_accepted}**\n"
+        f"  - SPAR-rejected/quarantined receipts: **{n_rejected}**\n"
         f"  - Total high-confidence bound claims: **{n_claims}**\n"
         "\n"
         f"**Why fewer receipts than parsed papers?** The deterministic "

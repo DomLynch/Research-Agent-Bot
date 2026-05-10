@@ -267,8 +267,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 23550  # Wave 25 (2026-05-10): +250 for QEI title + refs dedupe + 2 contract rules
-PER_FILE_LIMIT = 850  # Wave 25: pmc.py grew to 835 with rules 11/12 (qei_title + ref_dedupe)
+TOTAL_LIMIT = 23800  # Wave 26: +250 for post-SPAR EvidenceState contract + rerun-safe appendix splice
+PER_FILE_LIMIT = 950  # Wave 26: pmc.py carries final public contract rules 1-13 in one gate
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
 

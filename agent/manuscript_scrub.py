@@ -52,6 +52,9 @@ _RESIDUE_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"LLM\s+proposes,\s+code\s+disposes", re.I),
     re.compile(r"no\s+LLM\s+authorship", re.I),
     re.compile(r"\bH3:\s*", re.I),
+    re.compile(r"\*{0,2}Selected\s+thesis:\*{0,2}\s*", re.I),
+    re.compile(r"\bsource-context\s+sentence\b", re.I),
+    re.compile(r"\bunsupported\s+sentence\b", re.I),
 )
 
 

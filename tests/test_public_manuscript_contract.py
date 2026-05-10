@@ -34,6 +34,26 @@ def test_canonical_counts_from_manifest() -> None:
     assert c.source_papers == 40
     assert c.high_confidence_claims == 173
     assert c.tensions == 153
+    assert c.accepted_papers == 40
+    assert c.accepted_publications == 40
+
+
+def test_canonical_counts_from_manifest_with_spar_rejects() -> None:
+    m = {
+        "n_receipts": 3,
+        "n_accepted_receipts": 2,
+        "n_quarantined_receipts": 1,
+        "receipts": [
+            {"receipt_id": "r1", "citation_token": "Walton 2019"},
+            {"receipt_id": "r2", "citation_token": "Walton 2019"},
+            {"receipt_id": "r3", "citation_token": "Rejected 2020"},
+        ],
+    }
+    c = CanonicalCounts.from_manifest(m, {"r3": "reject_direction_mismatch"})
+    assert c.source_papers == 3
+    assert c.accepted_papers == 2
+    assert c.rejected_papers == 1
+    assert c.accepted_publications == 1
 
 
 def test_canonical_counts_missing_keys_default_zero() -> None:
@@ -84,6 +104,31 @@ def test_count_consistency_accepts_dual_count_total_or_accepted() -> None:
     assert any(f.rule == "count_consistency" for f in r3.failures)
 
 
+def test_count_consistency_rejects_accepted_label_with_source_count() -> None:
+    manifest = _baseline_manifest(
+        n_receipts=43, n_accepted_receipts=26, n_quarantined_receipts=17,
+    )
+    md = (
+        "## Appendix\n\n"
+        "The appendix contains 43 accepted high-confidence receipt papers.\n"
+    )
+    r = validate(md, manifest)
+    assert any(f.rule == "count_consistency" for f in r.failures)
+
+
+def test_count_consistency_enforces_rejected_count() -> None:
+    manifest = _baseline_manifest(
+        n_receipts=43, n_accepted_receipts=26, n_quarantined_receipts=17,
+    )
+    md_good = "## Methods\n\nThe run quarantined 17 rejected receipts.\n"
+    assert validate(md_good, manifest).status == "PASS"
+    md_bad = "## Methods\n\nThe run quarantined 11 rejected receipts.\n"
+    assert any(
+        f.rule == "count_consistency"
+        for f in validate(md_bad, manifest).failures
+    )
+
+
 def test_count_consistency_flags_paper_count_mismatch() -> None:
     md = "## Abstract\n\nWe analysed 20 studies of the topic.\n"
     r = validate(md, _baseline_manifest())
@@ -122,7 +167,7 @@ def test_count_consistency_flags_receipt_mismatch() -> None:
     md = "## Methods\n\nThe analysis pooled 21 accepted receipts.\n"
     r = validate(md, _baseline_manifest())
     assert r.status == "FAIL"
-    assert any("receipt" in f.detail for f in r.failures)
+    assert any(f.rule == "count_consistency" for f in r.failures)
 
 
 # ---- rule 2: duplicate rows ---------------------------------------------
@@ -184,6 +229,59 @@ def test_duplicate_row_flags_conflicting_tiers() -> None:
     assert any(
         "conflicting evidence tiers" in f.detail for f in r.failures
     )
+
+
+def test_table_count_consistency_matches_unique_accepted_citations(
+    tmp_path: Path,
+) -> None:
+    md = (
+        _DUP_TABLE_HEAD
+        + "| Walton 2019 | RCT | A1 | 49 | older adults |\n"
+        + "| Konopka 2019 | RCT | A1 | 53 | older adults |\n"
+    )
+    manifest = _baseline_manifest(
+        n_receipts=3,
+        n_accepted_receipts=3,
+        receipts=[
+            {"receipt_id": "r1", "citation_token": "Walton 2019"},
+            {"receipt_id": "r2", "citation_token": "Walton 2019"},
+            {"receipt_id": "r3", "citation_token": "Konopka 2019"},
+        ],
+    )
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "verdicts": {
+            "r1": {"verdict": "accept_clean"},
+            "r2": {"verdict": "accept_clean"},
+            "r3": {"verdict": "accept_clean"},
+        }
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(f.rule == "table_count_consistency" for f in r.failures)
+
+
+def test_table_count_consistency_flags_missing_accepted_citation(
+    tmp_path: Path,
+) -> None:
+    md = (
+        _DUP_TABLE_HEAD
+        + "| Walton 2019 | RCT | A1 | 49 | older adults |\n"
+    )
+    manifest = _baseline_manifest(
+        n_receipts=2,
+        n_accepted_receipts=2,
+        receipts=[
+            {"receipt_id": "r1", "citation_token": "Walton 2019"},
+            {"receipt_id": "r2", "citation_token": "Konopka 2019"},
+        ],
+    )
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "verdicts": {
+            "r1": {"verdict": "accept_clean"},
+            "r2": {"verdict": "accept_clean"},
+        }
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert any(f.rule == "table_count_consistency" for f in r.failures)
 
 
 def test_duplicate_row_flags_excess_rows_for_unsplit_citation() -> None:

@@ -160,8 +160,38 @@ _DATABASES_NOT_QUERIED = [
 ]
 
 
+def _post_spar_counts(
+    manifest: dict[str, Any],
+    spar_cache: dict[str, Any] | None = None,
+) -> tuple[int, int, int]:
+    receipts = [
+        r for r in (manifest.get("receipts") or [])
+        if isinstance(r, dict)
+    ]
+    total = int(manifest.get("n_receipts", len(receipts)) or 0)
+    accepted = int(manifest.get("n_accepted_receipts") or total)
+    rejected = int(
+        manifest.get("n_quarantined_receipts") or max(total - accepted, 0)
+    )
+    verdicts = (spar_cache or {}).get("verdicts") or {}
+    if isinstance(verdicts, dict) and receipts:
+        rejected_ids = {
+            rid for rid, verdict_obj in verdicts.items()
+            if isinstance(verdict_obj, dict)
+            and str(verdict_obj.get("verdict") or "").lower().startswith("reject")
+        }
+        if rejected_ids:
+            rejected = len(rejected_ids)
+            accepted = sum(
+                1 for r in receipts
+                if r.get("receipt_id") not in rejected_ids
+            )
+    return total, accepted, rejected
+
+
 def build_search_provenance_appendix(
     manifest: dict[str, Any], topic: str,
+    spar_cache: dict[str, Any] | None = None,
 ) -> str:
     """Compose the Search Provenance section.
 
@@ -170,10 +200,9 @@ def build_search_provenance_appendix(
     Acknowledges what was NOT queried. Honest framing as 'auditable
     agent-to-agent synthesis' NOT 'PRISMA systematic review'."""
     receipts = manifest.get("receipts", [])
-    # Prefer explicit n_receipts field; fall back to list length.
-    # The orchestrator writes both, but a synthetic test fixture
-    # may only set the field.
-    n_receipts = manifest.get("n_receipts", len(receipts))
+    n_receipts, n_accepted, n_rejected = _post_spar_counts(
+        manifest, spar_cache,
+    )
     n_claims = manifest.get("n_high_confidence_claims_total", 0)
     n_tensions = manifest.get("n_non_orthogonal_tensions", 0)
     receipt_funnel = manifest.get("receipt_funnel") or {}
@@ -225,18 +254,22 @@ def build_search_provenance_appendix(
         f"filtered to a corpus of high-confidence quant-extractable "
         f"papers (full corpus: see "
         f"`docs/quality-reference/{topic}/quant_claims/`). Of these, "
-        f"**{n_receipts} contributing papers** had sufficient claim "
-        f"density to enter the synthesis as evidence receipts. "
-        f"Selection was deterministic — the LLM proposed; "
-        f"the receipt builder disposed via the receipt-summary "
-        f"density gate.",
+        f"**{n_receipts} candidate receipt papers** had sufficient "
+        f"claim density to reach the judge gate. After "
+        f"SPAR, **{n_accepted} accepted receipts** entered the public "
+        f"synthesis and **{n_rejected} rejected/quarantined receipts** "
+        f"were reserved for the Rejected / Contested Evidence appendix. "
+        f"Selection was deterministic — the LLM proposed; the receipt "
+        f"builder and SPAR judge disposed.",
         "",
     ]
     lines.extend(render_selection_flow_lines(receipt_funnel))
     lines += [
         "### Per-receipt summary",
         "",
-        f"- Total receipts contributing to synthesis: **{n_receipts}**",
+        f"- Candidate receipt papers before SPAR: **{n_receipts}**",
+        f"- Accepted receipts contributing to synthesis: **{n_accepted}**",
+        f"- Rejected/quarantined receipts: **{n_rejected}**",
         f"- Total high-confidence quantitative claims: **{n_claims}**",
         f"- Non-orthogonal tensions identified: **{n_tensions}**",
         "",
@@ -682,8 +715,12 @@ def compose_appendix(
     rationale. Universal — works for any topic."""
     from agent.manuscript_prisma import build_prisma_bridge_appendix
     blocks = [
-        build_search_provenance_appendix(manifest, topic=topic),
-        build_prisma_bridge_appendix(manifest, topic=topic),
+        build_search_provenance_appendix(
+            manifest, topic=topic, spar_cache=spar_cache,
+        ),
+        build_prisma_bridge_appendix(
+            manifest, topic=topic, spar_cache=spar_cache,
+        ),
         build_ai_use_disclosure(
             manifest, audit, model_stack, verdict=verdict,
         ),
@@ -703,6 +740,13 @@ def compose_appendix(
 _REFERENCES_SPLICE_RE = re.compile(
     r"(\n)(##\s+References\b)", re.MULTILINE,
 )
+_PUBLICATION_APPENDIX_RE = re.compile(
+    r"^##\s+Publication Appendix\b[^\n]*\n", re.MULTILINE,
+)
+_BARE_SEARCH_PROVENANCE_RE = re.compile(
+    r"^##\s+Search Provenance and Selection\b[^\n]*\n",
+    re.MULTILINE,
+)
 
 
 def splice_appendix_before_references(
@@ -716,14 +760,28 @@ def splice_appendix_before_references(
     occurrence; if no References section exists, appends to end."""
     if "## Publication Appendix" not in appendix_md:
         appendix_md = "## Publication Appendix\n\n" + appendix_md.lstrip()
-    # Idempotency: don't double-insert; wrap historical bare appendix.
-    if "## Search Provenance and Selection" in paper_md:
-        if "## Publication Appendix" in paper_md:
-            return paper_md
-        return paper_md.replace(
-            "## Search Provenance and Selection",
-            "## Publication Appendix\n\n## Search Provenance and Selection",
-            1,
+    # Rerun-safe: replace any existing appendix block so stale count
+    # language cannot survive after manifest/SPAR-derived builders change.
+    existing = _PUBLICATION_APPENDIX_RE.search(paper_md)
+    if existing:
+        ref = _REFERENCES_SPLICE_RE.search(paper_md, existing.end())
+        end = ref.start() + 1 if ref else len(paper_md)
+        return (
+            paper_md[:existing.start()]
+            + appendix_md.rstrip()
+            + "\n\n"
+            + paper_md[end:].lstrip("\n")
+        )
+    # Historical bare appendix (pre wrapper): replace it too.
+    bare = _BARE_SEARCH_PROVENANCE_RE.search(paper_md)
+    if bare:
+        ref = _REFERENCES_SPLICE_RE.search(paper_md, bare.end())
+        end = ref.start() + 1 if ref else len(paper_md)
+        return (
+            paper_md[:bare.start()]
+            + appendix_md.rstrip()
+            + "\n\n"
+            + paper_md[end:].lstrip("\n")
         )
     m = _REFERENCES_SPLICE_RE.search(paper_md)
     if m:

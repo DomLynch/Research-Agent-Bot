@@ -33,7 +33,7 @@ import re
 from collections import Counter, defaultdict
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Mapping
 
 
 # ---- canonical counts ----------------------------------------------------
@@ -41,21 +41,26 @@ from typing import Literal
 
 @dataclass(frozen=True, slots=True)
 class CanonicalCounts:
-    """Single source of truth for paper-wide totals.
+    """Post-SPAR public evidence state for paper-wide totals.
 
-    Wave 24 dual-count: a paper can honestly say either "43 screened"
-    OR "28 accepted" — both are correct numbers referring to different
-    surfaces. The contract treats either as a valid match for paper /
-    receipt count claims. Universal — every topic uses the same SPAR
-    pipeline."""
+    Raw candidates can describe screening. Accepted receipts/citations
+    describe public synthesis. Rejected receipts can appear only in the
+    quarantine appendix/References. Universal — every topic uses the
+    same manifest + SPAR cache surfaces."""
 
     source_papers: int           # n_receipts (total screened)
     accepted_papers: int         # n_accepted_receipts (post-SPAR)
+    rejected_papers: int         # n_quarantined_receipts / SPAR rejects
     high_confidence_claims: int
     tensions: int
+    accepted_publications: int   # unique accepted citation_tokens
 
     @classmethod
-    def from_manifest(cls, manifest: dict) -> "CanonicalCounts":
+    def from_manifest(
+        cls,
+        manifest: dict,
+        rejected_verdicts: Mapping[str, str] | None = None,
+    ) -> "CanonicalCounts":
         n_total = int(manifest.get("n_receipts") or 0)
         # Fall back to total if dual-count fields missing (legacy runs).
         n_acc = int(
@@ -63,13 +68,37 @@ class CanonicalCounts:
             or manifest.get("n_receipts")
             or 0
         )
+        n_rej = int(
+            manifest.get("n_quarantined_receipts")
+            or max(n_total - n_acc, 0)
+        )
+        receipts = [
+            r for r in (manifest.get("receipts") or ())
+            if isinstance(r, dict)
+        ]
+        if rejected_verdicts is not None:
+            accepted_receipts = [
+                r for r in receipts
+                if str(r.get("receipt_id") or "") not in rejected_verdicts
+            ]
+            n_rej = len(rejected_verdicts)
+            n_acc = len(accepted_receipts) or n_acc
+        else:
+            accepted_receipts = receipts
+        accepted_cites = {
+            str(r.get("citation_token") or "").strip()
+            for r in accepted_receipts
+            if str(r.get("citation_token") or "").strip()
+        }
         return cls(
             source_papers=n_total,
             accepted_papers=n_acc,
+            rejected_papers=n_rej,
             high_confidence_claims=int(
                 manifest.get("n_high_confidence_claims_total") or 0
             ),
             tensions=int(manifest.get("n_non_orthogonal_tensions") or 0),
+            accepted_publications=len(accepted_cites) or n_acc,
         )
 
 
@@ -89,6 +118,7 @@ _RULES = (
     "rejected_appendix_required",
     "qei_title_row_mismatch",
     "reference_duplicates",
+    "table_count_consistency",
 )
 _RuleName = Literal[
     "count_consistency",
@@ -103,6 +133,7 @@ _RuleName = Literal[
     "rejected_appendix_required",
     "qei_title_row_mismatch",
     "reference_duplicates",
+    "table_count_consistency",
 ]
 
 
@@ -125,21 +156,61 @@ class ContractResult:
 # ---- rule 1: count consistency ------------------------------------------
 
 
-# (regex, category, canonical-counts attr name)
 _COUNT_PATTERNS: tuple[tuple[re.Pattern[str], str, str], ...] = (
     (
         re.compile(
-            r"\b(\d{1,4})\s+"
-            r"(?:source\s+papers?|reference\s+papers?|stud(?:y|ies)|papers?)\b",
+            r"\b(\d{1,4})\s+(?:candidate|source|screened|parsed)\s+"
+            r"(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?)\b",
             re.I,
         ),
-        "paper",
+        "source paper",
         "source_papers",
     ),
     (
-        re.compile(r"\b(\d{1,4})\s+(?:accepted\s+)?receipts?\b", re.I),
-        "receipt",
+        re.compile(
+            r"\b(\d{1,4})\s+source\s+papers?\s+screened\b",
+            re.I,
+        ),
+        "source paper",
         "source_papers",
+    ),
+    (
+        re.compile(
+            r"\b(\d{1,4})\s+(?:accepted|curated|included|contributing)"
+            r"(?:\s*/\s*(?:accepted|curated|included|contributing))*\s+"
+            r"(?:high[- ]confidence\s+)?(?:receipt\s+)?"
+            r"(?:papers?|stud(?:y|ies)|receipts?|reference\s+papers?)\b",
+            re.I,
+        ),
+        "accepted paper",
+        "accepted_papers",
+    ),
+    (
+        re.compile(
+            r"\b(\d{1,4})\s+(?:papers?|receipts?|stud(?:y|ies))\s+"
+            r"(?:entered|entering|included\s+in)\s+(?:the\s+)?synthesis\b",
+            re.I,
+        ),
+        "accepted paper",
+        "accepted_papers",
+    ),
+    (
+        re.compile(
+            r"\b(\d{1,4})\s+(?:rejected|quarantined|contested)\s+"
+            r"(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?)\b",
+            re.I,
+        ),
+        "rejected paper",
+        "rejected_papers",
+    ),
+    (
+        re.compile(
+            r"\b(\d{1,4})\s+"
+            r"(?:reference\s+papers?|stud(?:y|ies)|papers?)\b",
+            re.I,
+        ),
+        "generic paper",
+        "source_or_accepted",
     ),
     (
         re.compile(
@@ -193,15 +264,11 @@ def _check_counts(
             if _is_year_token(n) or n < _NOISE_THRESHOLD:
                 continue
             seen[cat].add(n)
-    # Wave 24 dual-count: paper/receipt counts may match EITHER total
-    # screened (`source_papers`, e.g. 43) or post-SPAR accepted
-    # (`accepted_papers`, e.g. 28). Both are honest — they refer to
-    # different surfaces. Universal: every topic uses the same SPAR
-    # pipeline. Claims/tensions stay single-canonical (they don't have
-    # a meaningful "total vs accepted" distinction).
     for cat, attrs in (
-        ("paper", ("source_papers", "accepted_papers")),
-        ("receipt", ("source_papers", "accepted_papers")),
+        ("source paper", ("source_papers",)),
+        ("accepted paper", ("accepted_papers",)),
+        ("rejected paper", ("rejected_papers",)),
+        ("generic paper", ("source_papers", "accepted_papers")),
         ("claim", ("high_confidence_claims",)),
         ("tension", ("tensions",)),
     ):
@@ -356,6 +423,39 @@ def _check_duplicate_rows(
     return fails
 
 
+def _check_table_row_counts(
+    body: str,
+    canon: CanonicalCounts,
+) -> list[ContractFailure]:
+    """Table 1 must render the public accepted-study surface.
+
+    The expected count is unique accepted citation_tokens, not raw
+    accepted receipts: one paper can legitimately contribute multiple
+    accepted receipts. Universal — manifest/SPAR state defines the
+    expected public row count for every topic.
+    """
+    expected = canon.accepted_publications or canon.accepted_papers
+    if expected <= 0:
+        return []
+    section = _extract_section(body, _INCLUDED_HEADING_RE)
+    if not section:
+        return []
+    rows = _CITATION_TOKEN_RE.findall(section)
+    if not rows or len(rows) == expected:
+        return []
+    return [
+        ContractFailure(
+            rule="table_count_consistency",
+            detail=(
+                f"Table 1 renders {len(rows)} included-study row(s), "
+                f"but post-SPAR evidence state expects {expected} unique "
+                f"accepted citation token(s). Public tables must derive "
+                f"from accepted evidence only."
+            ),
+        )
+    ]
+
+
 # ---- rule 3: section boundary -------------------------------------------
 
 
@@ -425,7 +525,10 @@ FORBIDDEN_PHRASES: tuple[str, ...] = (
     "LLM proposes, code disposes",
     "deterministic evidence summary",
     "Tournament selector",
+    "Selected thesis:",
     "no matched source in the accepted evidence",
+    "source-context sentence",
+    "unsupported sentence",
 )
 
 
@@ -940,7 +1043,8 @@ def validate(
     are absent so the orchestrator stays useful in unit-test contexts.
     """
     try:
-        canon = CanonicalCounts.from_manifest(manifest)
+        rejected_verdicts = _load_spar_cache(run_dir)
+        canon = CanonicalCounts.from_manifest(manifest, rejected_verdicts)
     except Exception as e:
         return ContractResult(
             status="FAIL",
@@ -950,13 +1054,14 @@ def validate(
                     detail=f"manifest unreadable: {e!r}",
                 ),
             ),
-            canonical=CanonicalCounts(0, 0, 0, 0),
+            canonical=CanonicalCounts(0, 0, 0, 0, 0, 0),
             abstract_words=0,
             n_failures_by_rule={"canonical_link": 1},
         )
     fails: list[ContractFailure] = []
     fails.extend(_check_counts(paper_md, canon))
     fails.extend(_check_duplicate_rows(paper_md, manifest))
+    fails.extend(_check_table_row_counts(paper_md, canon))
     section_fails, abs_words = _check_sections(
         paper_md, abstract_word_cap=abstract_word_cap,
     )

@@ -350,7 +350,7 @@ def test_splice_inserts_before_references() -> None:
 
 
 def test_splice_is_idempotent() -> None:
-    """Bare historical appendix is wrapped once, then stable."""
+    """Bare historical appendix is replaced once, then stable."""
     paper = (
         "## Conclusion\n\nFoo.\n\n"
         "## Search Provenance and Selection\n\nold body\n\n"
@@ -359,8 +359,22 @@ def test_splice_is_idempotent() -> None:
     appendix = "## Search Provenance and Selection\n\nNEW body\n"
     out = appx.splice_appendix_before_references(paper, appendix)
     assert out.count("## Publication Appendix") == 1
-    assert "old body" in out and "NEW body" not in out
+    assert "old body" not in out and "NEW body" in out
     assert appx.splice_appendix_before_references(out, appendix) == out
+
+
+def test_splice_replaces_stale_publication_appendix() -> None:
+    paper = (
+        "## Conclusion\n\nFoo.\n\n"
+        "## Publication Appendix\n\nold count text\n\n"
+        "## References\n\n[1] Bar.\n"
+    )
+    appendix = "## Publication Appendix\n\nnew count text\n"
+    out = appx.splice_appendix_before_references(paper, appendix)
+    assert out.count("## Publication Appendix") == 1
+    assert "old count text" not in out
+    assert "new count text" in out
+    assert "## References" in out
 
 
 def test_splice_appends_when_no_references_section() -> None:
